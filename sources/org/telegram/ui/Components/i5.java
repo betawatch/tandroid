@@ -1,433 +1,127 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
-import android.view.View;
-import android.view.animation.OvershootInterpolator;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.UserConfig;
+import android.os.Looper;
+import android.text.TextUtils;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Locale;
+import org.telegram.SQLite.SQLiteCursor;
+import org.telegram.SQLite.SQLiteDatabase;
+import org.telegram.SQLite.SQLiteException;
+import org.telegram.SQLite.SQLitePreparedStatement;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.MessagesStorage;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public class i5 extends Drawable implements q5 {
-    public gh.bb A;
-    public Integer B;
-    public int C;
-    public PorterDuffColorFilter D;
-    public int E;
-    public int F;
-    public final Rect G;
-    public final fg H;
-    public boolean a;
-    public final int b;
-    public final OvershootInterpolator c;
-    public final y5 d;
-    public final y5 e;
-    public final Drawable[] f;
-    public View h;
-    public org.telegram.ui.b61 n;
-    public final boolean r;
-    public final int s;
-    public int v;
-    public boolean w;
-    public Integer x;
-    public boolean y;
+public final /* synthetic */ class i5 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ l5 b;
+    public final /* synthetic */ ArrayList c;
 
-    public i5(int i9, View view) {
-        this(i9, 7, view, false);
+    public /* synthetic */ i5(l5 l5Var, ArrayList arrayList, int i10) {
+        this.a = i10;
+        this.b = l5Var;
+        this.c = arrayList;
     }
 
-    public final void a() {
-        if (this.w) {
-            return;
-        }
-        this.w = true;
-        Drawable[] drawableArr = this.f;
-        Drawable drawable = drawableArr[0];
-        if (drawable instanceof k5) {
-            ((k5) drawable).b(this);
-        }
-        Drawable drawable2 = drawableArr[1];
-        if (drawable2 instanceof k5) {
-            ((k5) drawable2).b(this);
-        }
-    }
-
-    public final void b() {
-        if (this.w) {
-            this.w = false;
-            Drawable[] drawableArr = this.f;
-            Drawable drawable = drawableArr[0];
-            if (drawable instanceof k5) {
-                ((k5) drawable).p(this);
-            }
-            Drawable drawable2 = drawableArr[1];
-            if (drawable2 instanceof k5) {
-                ((k5) drawable2).p(this);
-            }
-        }
-    }
-
-    public final Drawable c() {
-        return this.f[0];
-    }
-
-    public final boolean d() {
-        return this.f[0] == null;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        float d = this.d.d(1.0f, false);
-        Rect bounds = getBounds();
-        Rect rect = this.G;
-        rect.set(bounds);
-        rect.offset(this.E, this.F);
-        float e10 = this.e.e(this.y);
-        fg fgVar = this.H;
-        if (e10 > 0.0f) {
-            gh.bb bbVar = this.A;
-            bbVar.c.set(rect);
-            bbVar.e();
-            this.A.d();
-            gh.bb bbVar2 = this.A;
-            Integer num = this.B;
-            bbVar2.a(canvas, org.telegram.ui.ActionBar.f6.l1(e10, num == null ? -1 : num.intValue()));
-            ff.k.d().a(15, fgVar);
-        } else {
-            ff.k.d().g(fgVar);
-        }
-        Drawable[] drawableArr = this.f;
-        Drawable drawable = drawableArr[1];
-        int i9 = this.s;
-        if (drawable != null && d < 1.0f) {
-            drawable.setAlpha((int) ((1.0f - d) * this.v));
-            int intrinsicWidth = drawableArr[1].getIntrinsicWidth() < 0 ? i9 : drawableArr[1].getIntrinsicWidth();
-            int intrinsicHeight = drawableArr[1].getIntrinsicHeight() < 0 ? i9 : drawableArr[1].getIntrinsicHeight();
-            Drawable drawable2 = drawableArr[1];
-            if (drawable2 instanceof k5) {
-                drawable2.setBounds(rect);
-            } else if (this.a) {
-                int i10 = intrinsicWidth / 2;
-                int i11 = intrinsicHeight / 2;
-                drawable2.setBounds(rect.centerX() - i10, rect.centerY() - i11, rect.centerX() + i10, rect.centerY() + i11);
-            } else {
-                int i12 = intrinsicHeight / 2;
-                drawable2.setBounds(rect.left, rect.centerY() - i12, rect.left + intrinsicWidth, rect.centerY() + i12);
-            }
-            drawableArr[1].setColorFilter(this.D);
-            drawableArr[1].draw(canvas);
-            drawableArr[1].setColorFilter(null);
-        }
-        if (drawableArr[0] != null) {
-            canvas.save();
-            int intrinsicWidth2 = drawableArr[0].getIntrinsicWidth() < 0 ? i9 : drawableArr[0].getIntrinsicWidth();
-            if (drawableArr[0].getIntrinsicHeight() >= 0) {
-                i9 = drawableArr[0].getIntrinsicHeight();
-            }
-            Drawable drawable3 = drawableArr[0];
-            boolean z10 = drawable3 instanceof k5;
-            OvershootInterpolator overshootInterpolator = this.c;
-            if (z10) {
-                ih.z2 z2Var = ((k5) drawable3).k;
-                if (z2Var != null) {
-                    z2Var.setRoundRadius(AndroidUtilities.dp(4.0f));
+    /* JADX WARN: Removed duplicated region for block: B:18:0x0056 A[Catch: SQLiteException -> 0x005a, TryCatch #2 {SQLiteException -> 0x005a, blocks: (B:5:0x0013, B:6:0x001a, B:8:0x0020, B:10:0x0028, B:18:0x0056, B:25:0x0050, B:20:0x005c, B:29:0x005f), top: B:4:0x0013 }] */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x005c A[SYNTHETIC] */
+    @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run() {
+        NativeByteBuffer nativeByteBuffer;
+        switch (this.a) {
+            case 0:
+                ArrayList arrayList = this.c;
+                l5 l5Var = this.b;
+                int i10 = l5Var.e;
+                MessagesStorage messagesStorage = MessagesStorage.getInstance(i10);
+                SQLiteDatabase database = messagesStorage.getDatabase();
+                if (database != null) {
+                    try {
+                        String join = TextUtils.join(",", arrayList);
+                        Locale locale = Locale.US;
+                        SQLiteCursor queryFinalized = database.queryFinalized("SELECT data FROM animated_emoji WHERE document_id IN (" + join + ")", new Object[0]);
+                        ArrayList arrayList2 = new ArrayList();
+                        HashSet hashSet = new HashSet(arrayList);
+                        while (queryFinalized.next()) {
+                            NativeByteBuffer byteBufferValue = queryFinalized.byteBufferValue(0);
+                            try {
+                                TLRPC.Document TLdeserialize = TLRPC.Document.TLdeserialize(byteBufferValue, byteBufferValue.readInt32(true), true);
+                                if (TLdeserialize != null && TLdeserialize.id != 0) {
+                                    arrayList2.add(TLdeserialize);
+                                    hashSet.remove(Long.valueOf(TLdeserialize.id));
+                                }
+                            } catch (Exception e10) {
+                                FileLog.e(e10);
+                            }
+                            if (byteBufferValue != null) {
+                                byteBufferValue.reuse();
+                            }
+                        }
+                        if (Thread.currentThread() == Looper.getMainLooper().getThread()) {
+                            l5Var.d(arrayList2);
+                            if (!hashSet.isEmpty()) {
+                                ArrayList<Long> arrayList3 = new ArrayList<>(hashSet);
+                                TLRPC.TL_messages_getCustomEmojiDocuments tL_messages_getCustomEmojiDocuments = new TLRPC.TL_messages_getCustomEmojiDocuments();
+                                tL_messages_getCustomEmojiDocuments.document_id = arrayList3;
+                                ConnectionsManager.getInstance(i10).sendRequest(tL_messages_getCustomEmojiDocuments, new org.telegram.ui.zg(6, l5Var, arrayList3));
+                            }
+                        } else {
+                            NotificationCenter.getInstance(i10).doOnIdle(new j5(l5Var, arrayList2, hashSet, 0));
+                        }
+                        queryFinalized.dispose();
+                        break;
+                    } catch (SQLiteException e11) {
+                        messagesStorage.checkSQLException(e11);
+                        return;
+                    }
                 }
-                if (d < 1.0f) {
-                    float interpolation = overshootInterpolator.getInterpolation(d);
-                    canvas.scale(interpolation, interpolation, rect.centerX(), rect.centerY());
+                break;
+            default:
+                ArrayList arrayList4 = this.c;
+                try {
+                    SQLitePreparedStatement executeFast = MessagesStorage.getInstance(this.b.e).getDatabase().executeFast("REPLACE INTO animated_emoji VALUES(?, ?)");
+                    for (int i11 = 0; i11 < arrayList4.size(); i11++) {
+                        if (arrayList4.get(i11) instanceof TLRPC.Document) {
+                            TLRPC.Document document = (TLRPC.Document) arrayList4.get(i11);
+                            NativeByteBuffer nativeByteBuffer2 = null;
+                            try {
+                                nativeByteBuffer = new NativeByteBuffer(document.getObjectSize());
+                            } catch (Exception e12) {
+                                e = e12;
+                            }
+                            try {
+                                document.serializeToStream(nativeByteBuffer);
+                                executeFast.requery();
+                                executeFast.bindLong(1, document.id);
+                                executeFast.bindByteBuffer(2, nativeByteBuffer);
+                                executeFast.step();
+                            } catch (Exception e13) {
+                                e = e13;
+                                nativeByteBuffer2 = nativeByteBuffer;
+                                e.printStackTrace();
+                                nativeByteBuffer = nativeByteBuffer2;
+                                if (nativeByteBuffer == null) {
+                                }
+                            }
+                            if (nativeByteBuffer == null) {
+                                nativeByteBuffer.reuse();
+                            }
+                        }
+                    }
+                    executeFast.dispose();
+                    break;
+                } catch (SQLiteException e14) {
+                    FileLog.e(e14);
                 }
-                drawableArr[0].setBounds(rect);
-            } else if (this.a) {
-                if (d < 1.0f) {
-                    float interpolation2 = overshootInterpolator.getInterpolation(d);
-                    canvas.scale(interpolation2, interpolation2, rect.centerX(), rect.centerY());
-                }
-                int i13 = intrinsicWidth2 / 2;
-                int i14 = i9 / 2;
-                drawableArr[0].setBounds(rect.centerX() - i13, rect.centerY() - i14, rect.centerX() + i13, rect.centerY() + i14);
-            } else {
-                if (d < 1.0f) {
-                    float interpolation3 = overshootInterpolator.getInterpolation(d);
-                    canvas.scale(interpolation3, interpolation3, (intrinsicWidth2 / 2.0f) + rect.left, rect.centerY());
-                }
-                int i15 = i9 / 2;
-                drawableArr[0].setBounds(rect.left, rect.centerY() - i15, rect.left + intrinsicWidth2, rect.centerY() + i15);
-            }
-            drawableArr[0].setAlpha(this.v);
-            drawableArr[0].setColorFilter(this.D);
-            drawableArr[0].draw(canvas);
-            drawableArr[0].setColorFilter(null);
-            canvas.restore();
         }
-    }
-
-    public final float e() {
-        Drawable[] drawableArr = this.f;
-        Drawable drawable = drawableArr[1];
-        y5 y5Var = this.d;
-        return (drawable != null ? 1.0f - y5Var.c : 0.0f) + (drawableArr[0] != null ? y5Var.c : 0.0f);
-    }
-
-    public final void f() {
-        k5 k5Var;
-        ih.z2 z2Var;
-        Drawable drawable = this.f[0];
-        if (!(drawable instanceof k5) || (z2Var = (k5Var = (k5) drawable).k) == null) {
-            return;
-        }
-        k5Var.w(z2Var);
-        z2Var.startAnimation();
-    }
-
-    public final void g(Drawable drawable, boolean z10) {
-        Drawable[] drawableArr = this.f;
-        if (drawableArr[0] == drawable) {
-            return;
-        }
-        y5 y5Var = this.d;
-        if (z10) {
-            y5Var.d(0.0f, true);
-            Drawable drawable2 = drawableArr[1];
-            if (drawable2 != null) {
-                if (this.w && (drawable2 instanceof k5)) {
-                    ((k5) drawable2).p(this);
-                }
-                drawableArr[1] = null;
-            }
-            drawableArr[1] = drawableArr[0];
-            drawableArr[0] = drawable;
-        } else {
-            y5Var.d(1.0f, true);
-            boolean z11 = this.w;
-            if (z11) {
-                b();
-            }
-            drawableArr[0] = drawable;
-            if (z11) {
-                a();
-            }
-        }
-        this.B = null;
-        this.D = null;
-        this.C = 0;
-        f();
-        invalidate();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return this.s;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return this.s;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    public final void h(TLRPC.Document document, int i9, boolean z10) {
-        Drawable[] drawableArr = this.f;
-        Drawable drawable = drawableArr[0];
-        if ((drawable instanceof k5) && document != null && ((k5) drawable).i() == document.id) {
-            return;
-        }
-        y5 y5Var = this.d;
-        if (z10) {
-            y5Var.d(0.0f, true);
-            Drawable drawable2 = drawableArr[1];
-            if (drawable2 != null) {
-                if (drawable2 instanceof k5) {
-                    ((k5) drawable2).p(this);
-                }
-                drawableArr[1] = null;
-            }
-            drawableArr[1] = drawableArr[0];
-            if (document != null) {
-                Integer num = this.x;
-                k5 m10 = k5.m(num != null ? num.intValue() : UserConfig.selectedAccount, i9, document);
-                drawableArr[0] = m10;
-                if (this.w) {
-                    m10.b(this);
-                }
-            } else {
-                drawableArr[0] = null;
-            }
-        } else {
-            y5Var.d(1.0f, true);
-            boolean z11 = this.w;
-            if (z11) {
-                b();
-            }
-            if (document != null) {
-                Integer num2 = this.x;
-                drawableArr[0] = k5.m(num2 != null ? num2.intValue() : UserConfig.selectedAccount, i9, document);
-            } else {
-                drawableArr[0] = null;
-            }
-            if (z11) {
-                a();
-            }
-        }
-        this.B = null;
-        this.D = null;
-        this.C = 0;
-        f();
-        invalidate();
-    }
-
-    public final void i(TLRPC.Document document, boolean z10) {
-        h(document, this.b, z10);
-    }
-
-    public void invalidate() {
-        View view = this.h;
-        if (view != null) {
-            if (this.r && (view.getParent() instanceof View)) {
-                ((View) this.h.getParent()).invalidate();
-            } else {
-                this.h.invalidate();
-            }
-        }
-        org.telegram.ui.b61 b61Var = this.n;
-        if (b61Var != null) {
-            b61Var.invalidate();
-        }
-        invalidateSelf();
-    }
-
-    public final boolean j(long j10, boolean z10) {
-        Drawable[] drawableArr = this.f;
-        Drawable drawable = drawableArr[0];
-        if ((drawable instanceof k5) && ((k5) drawable).i() == j10) {
-            return false;
-        }
-        int i9 = this.b;
-        y5 y5Var = this.d;
-        if (z10) {
-            y5Var.d(0.0f, true);
-            Drawable drawable2 = drawableArr[1];
-            if (drawable2 != null) {
-                if (this.w && (drawable2 instanceof k5)) {
-                    ((k5) drawable2).p(this);
-                }
-                drawableArr[1] = null;
-            }
-            drawableArr[1] = drawableArr[0];
-            Integer num = this.x;
-            k5 n10 = k5.n(num != null ? num.intValue() : UserConfig.selectedAccount, j10, null, i9);
-            drawableArr[0] = n10;
-            if (this.w) {
-                n10.b(this);
-            }
-        } else {
-            y5Var.d(1.0f, true);
-            boolean z11 = this.w;
-            if (z11) {
-                b();
-            }
-            Integer num2 = this.x;
-            drawableArr[0] = k5.n(num2 != null ? num2.intValue() : UserConfig.selectedAccount, j10, null, i9);
-            if (z11) {
-                a();
-            }
-        }
-        this.B = null;
-        this.D = null;
-        this.C = 0;
-        f();
-        invalidate();
-        return true;
-    }
-
-    public final void k(Integer num) {
-        PorterDuffColorFilter porterDuffColorFilter;
-        Integer num2 = this.B;
-        if (num2 == null && num == null) {
-            return;
-        }
-        if (num2 == null || !num2.equals(num)) {
-            this.B = num;
-            if (num == null || this.C != num.intValue()) {
-                if (num != null) {
-                    int intValue = num.intValue();
-                    this.C = intValue;
-                    porterDuffColorFilter = new PorterDuffColorFilter(intValue, PorterDuff.Mode.SRC_IN);
-                } else {
-                    porterDuffColorFilter = null;
-                }
-                this.D = porterDuffColorFilter;
-            }
-        }
-    }
-
-    public final void l(View view) {
-        this.d.a = view;
-        this.e.a = view;
-        this.h = view;
-    }
-
-    public final void m(boolean z10, boolean z11) {
-        if (this.y == z10) {
-            return;
-        }
-        if (z11) {
-            if (this.A == null) {
-                this.A = new gh.bb(1, 8);
-            }
-            this.y = z10;
-            invalidate();
-            return;
-        }
-        this.y = z10;
-        if (z10 && this.A == null) {
-            this.A = new gh.bb(1, 8);
-        } else if (!z10 && this.A != null) {
-            this.A = null;
-        }
-        this.e.f(z10, true);
-        invalidate();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i9) {
-        this.v = i9;
-    }
-
-    public i5(View view, int i9, boolean z10) {
-        this(i9, 7, view, z10);
-    }
-
-    public i5(int i9, int i10, View view, boolean z10) {
-        this.a = false;
-        this.c = new OvershootInterpolator(2.0f);
-        gr grVar = gr.g;
-        y5 y5Var = new y5((View) null, 300L, grVar);
-        this.d = y5Var;
-        y5 y5Var2 = new y5((View) null, 300L, grVar);
-        this.e = y5Var2;
-        this.f = new Drawable[2];
-        this.v = 255;
-        this.G = new Rect();
-        this.H = new fg(this, 6);
-        y5Var.a = view;
-        this.h = view;
-        y5Var2.a = view;
-        this.s = i9;
-        this.b = i10;
-        this.r = z10;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

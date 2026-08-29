@@ -14,7 +14,7 @@ public enum r1 {
 
     public final int a;
 
-    r1(int i9) {
-        this.a = i9;
+    r1(int i10) {
+        this.a = i10;
     }
 }

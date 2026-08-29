@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.Arrays;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public class g implements Iterable, Serializable {
     public static final g c = new g(a0.b);
@@ -21,26 +21,26 @@ public class g implements Iterable, Serializable {
         this.b = bArr;
     }
 
-    public static g i(int i9, int i10, byte[] bArr) {
+    public static g i(int i10, int i11, byte[] bArr) {
         byte[] copyOfRange;
-        int i11 = i9 + i10;
+        int i12 = i10 + i11;
         int length = bArr.length;
-        if (((i11 - i9) | i9 | i11 | (length - i11)) < 0) {
-            if (i9 < 0) {
-                throw new IndexOutOfBoundsException(j3.r0.m(i9, "Beginning index: ", " < 0"));
+        if (((i12 - i10) | i10 | i12 | (length - i12)) < 0) {
+            if (i10 < 0) {
+                throw new IndexOutOfBoundsException(j7.l1.l(i10, "Beginning index: ", " < 0"));
             }
-            if (i11 < i9) {
-                throw new IndexOutOfBoundsException(aa.d.k(i9, i11, "Beginning index larger than ending index: ", ", "));
+            if (i12 < i10) {
+                throw new IndexOutOfBoundsException(a4.w.k(i10, i12, "Beginning index larger than ending index: ", ", "));
             }
-            throw new IndexOutOfBoundsException(aa.d.k(i11, length, "End index: ", " >= "));
+            throw new IndexOutOfBoundsException(a4.w.k(i12, length, "End index: ", " >= "));
         }
         switch (d.a) {
             case 0:
-                copyOfRange = Arrays.copyOfRange(bArr, i9, i10 + i9);
+                copyOfRange = Arrays.copyOfRange(bArr, i10, i11 + i10);
                 break;
             default:
-                copyOfRange = new byte[i10];
-                System.arraycopy(bArr, i9, copyOfRange, 0, i10);
+                copyOfRange = new byte[i11];
+                System.arraycopy(bArr, i10, copyOfRange, 0, i11);
                 break;
         }
         return new g(copyOfRange);
@@ -60,9 +60,9 @@ public class g implements Iterable, Serializable {
             return obj.equals(this);
         }
         g gVar = (g) obj;
-        int i9 = this.a;
-        int i10 = gVar.a;
-        if (i9 != 0 && i10 != 0 && i9 != i10) {
+        int i10 = this.a;
+        int i11 = gVar.a;
+        if (i10 != 0 && i11 != 0 && i10 != i11) {
             return false;
         }
         int size = size();
@@ -70,9 +70,9 @@ public class g implements Iterable, Serializable {
             throw new IllegalArgumentException("Length too large: " + size + size());
         }
         if (size > gVar.size()) {
-            StringBuilder p6 = j3.r0.p(size, "Ran off end of other: 0, ", ", ");
-            p6.append(gVar.size());
-            throw new IllegalArgumentException(p6.toString());
+            StringBuilder o10 = j7.l1.o(size, "Ran off end of other: 0, ", ", ");
+            o10.append(gVar.size());
+            throw new IllegalArgumentException(o10.toString());
         }
         byte[] bArr = gVar.b;
         int n10 = n() + size;
@@ -89,21 +89,21 @@ public class g implements Iterable, Serializable {
     }
 
     public final int hashCode() {
-        int i9 = this.a;
-        if (i9 != 0) {
-            return i9;
+        int i10 = this.a;
+        if (i10 != 0) {
+            return i10;
         }
         int size = size();
         int n10 = n();
-        int i10 = size;
-        for (int i11 = n10; i11 < n10 + size; i11++) {
-            i10 = (i10 * 31) + this.b[i11];
+        int i11 = size;
+        for (int i12 = n10; i12 < n10 + size; i12++) {
+            i11 = (i11 * 31) + this.b[i12];
         }
-        if (i10 == 0) {
-            i10 = 1;
+        if (i11 == 0) {
+            i11 = 1;
         }
-        this.a = i10;
-        return i10;
+        this.a = i11;
+        return i11;
     }
 
     @Override // java.lang.Iterable

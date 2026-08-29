@@ -1,34 +1,47 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.Utilities;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class jd0 implements NotificationCenter.NotificationCenterDelegate {
+public final class jd0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Utilities.Callback b;
-    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate[] c;
+    public final /* synthetic */ nh.l8 b;
 
-    public jd0(int i9, Utilities.Callback callback, NotificationCenter.NotificationCenterDelegate[] notificationCenterDelegateArr) {
-        this.a = i9;
-        this.b = callback;
-        this.c = notificationCenterDelegateArr;
+    public /* synthetic */ jd0(nh.l8 l8Var, int i10) {
+        this.a = i10;
+        this.b = l8Var;
     }
 
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public final void didReceivedNotification(int i9, int i10, Object... objArr) {
-        int i11 = NotificationCenter.activityPermissionsGranted;
-        if (i9 == i11) {
-            int intValue = ((Integer) objArr[0]).intValue();
-            int[] iArr = (int[]) objArr[2];
-            if (intValue == this.a) {
-                Utilities.Callback callback = this.b;
-                if (callback != null) {
-                    callback.run(iArr);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                nh.l8 l8Var = this.b;
+                AnimatorSet animatorSet = (AnimatorSet) l8Var.e;
+                if (animatorSet != null && animatorSet.equals(animator)) {
+                    l8Var.e = null;
+                    break;
                 }
-                NotificationCenter.getGlobalInstance().removeObserver(this.c[0], i11);
-            }
+                break;
+            case 1:
+                nh.l8 l8Var2 = this.b;
+                AnimatorSet animatorSet2 = (AnimatorSet) l8Var2.e;
+                if (animatorSet2 != null && animatorSet2.equals(animator)) {
+                    l8Var2.e = null;
+                    break;
+                }
+                break;
+            default:
+                nh.l8 l8Var3 = this.b;
+                AnimatorSet animatorSet3 = (AnimatorSet) l8Var3.e;
+                if (animatorSet3 != null && animatorSet3.equals(animator)) {
+                    l8Var3.e = null;
+                    break;
+                }
+                break;
         }
     }
 }

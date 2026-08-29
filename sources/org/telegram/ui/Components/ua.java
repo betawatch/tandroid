@@ -1,51 +1,41 @@
 package org.telegram.ui.Components;
 
-import android.widget.FrameLayout;
+import android.content.Context;
+import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ua implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ gc b;
+public final class ua extends org.telegram.ui.ActionBar.l {
+    public final /* synthetic */ hv0 p1;
+    public final /* synthetic */ xa q1;
 
-    public /* synthetic */ ua(gc gcVar, int i9) {
-        this.a = i9;
-        this.b = gcVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ua(xa xaVar, Context context, hv0 hv0Var) {
+        super(context, null);
+        this.q1 = xaVar;
+        this.p1 = hv0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.b();
-                break;
-            case 1:
-                gc gcVar = this.b;
-                FrameLayout frameLayout = gcVar.h;
-                lb lbVar = gcVar.e;
-                fb fbVar = gcVar.p;
-                if (fbVar != null && !lbVar.top) {
-                    fbVar.c(0.0f);
-                    gcVar.p.d(gcVar);
-                }
-                lbVar.transitionRunningExit = false;
-                lbVar.onExitTransitionEnd();
-                lbVar.onHide();
-                frameLayout.removeView(gcVar.f);
-                frameLayout.removeOnLayoutChangeListener(gcVar.c);
-                lbVar.onDetach();
-                Runnable runnable = gcVar.v;
-                if (runnable != null) {
-                    runnable.run();
-                    break;
-                }
-                break;
-            default:
-                gc gcVar2 = this.b;
-                FrameLayout frameLayout2 = gcVar2.h;
-                frameLayout2.removeView(gcVar2.f);
-                frameLayout2.removeOnLayoutChangeListener(gcVar2.c);
-                break;
+    @Override // org.telegram.ui.ActionBar.l, android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        xa xaVar = this.q1;
+        if (xaVar.H && xaVar.I) {
+            return false;
         }
+        return super.dispatchTouchEvent(motionEvent);
+    }
+
+    @Override // android.view.View
+    public final void setAlpha(float f9) {
+        if (getAlpha() != f9) {
+            super.setAlpha(f9);
+            this.p1.invalidate();
+        }
+    }
+
+    @Override // android.view.View
+    public final void setTag(Object obj) {
+        super.setTag(obj);
+        this.q1.L();
     }
 }

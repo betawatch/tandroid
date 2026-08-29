@@ -1,19 +1,79 @@
 package l7;
 
-import android.os.IBinder;
-import android.os.IInterface;
+import java.util.Map;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class c implements IInterface {
-    public final IBinder a;
+public final class c extends j7.f {
+    public final Object b;
+    public int c;
+    public final /* synthetic */ d d;
 
-    public c(IBinder iBinder) {
-        this.a = iBinder;
+    public c(d dVar, int i10) {
+        super(1, false);
+        this.d = dVar;
+        Object[] objArr = dVar.c;
+        objArr.getClass();
+        this.b = objArr[i10];
+        this.c = i10;
     }
 
-    @Override // android.os.IInterface
-    public final IBinder asBinder() {
-        return this.a;
+    public final void a() {
+        int i10 = this.c;
+        Object obj = this.b;
+        d dVar = this.d;
+        if (i10 != -1 && i10 < dVar.size()) {
+            int i11 = this.c;
+            Object[] objArr = dVar.c;
+            objArr.getClass();
+            if (i7.q.a(obj, objArr[i11])) {
+                return;
+            }
+        }
+        Object obj2 = d.s;
+        this.c = dVar.e(obj);
+    }
+
+    @Override // java.util.Map.Entry
+    public final Object getKey() {
+        return this.b;
+    }
+
+    @Override // java.util.Map.Entry
+    public final Object getValue() {
+        d dVar = this.d;
+        Map a2 = dVar.a();
+        if (a2 != null) {
+            return a2.get(this.b);
+        }
+        a();
+        int i10 = this.c;
+        if (i10 == -1) {
+            return null;
+        }
+        Object[] objArr = dVar.d;
+        objArr.getClass();
+        return objArr[i10];
+    }
+
+    @Override // java.util.Map.Entry
+    public final Object setValue(Object obj) {
+        d dVar = this.d;
+        Map a2 = dVar.a();
+        Object obj2 = this.b;
+        if (a2 != null) {
+            return a2.put(obj2, obj);
+        }
+        a();
+        int i10 = this.c;
+        if (i10 == -1) {
+            dVar.put(obj2, obj);
+            return null;
+        }
+        Object[] objArr = dVar.d;
+        objArr.getClass();
+        Object obj3 = objArr[i10];
+        objArr[i10] = obj;
+        return obj3;
     }
 }

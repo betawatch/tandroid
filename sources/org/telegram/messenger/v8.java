@@ -1,52 +1,94 @@
 package org.telegram.messenger;
 
 import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.video.VideoPlayerHolderBase;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class v8 implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ int b;
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
     public final /* synthetic */ long c;
-    public final /* synthetic */ long d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ int f;
-    public final /* synthetic */ boolean h;
-    public final /* synthetic */ BaseController n;
-    public final /* synthetic */ Object r;
+    public final /* synthetic */ boolean d;
+    public final /* synthetic */ Object e;
 
-    public /* synthetic */ v8(MediaDataController mediaDataController, int i9, ArrayList arrayList, boolean z10, long j10, int i10, int i11, long j11) {
-        this.n = mediaDataController;
-        this.b = i9;
-        this.r = arrayList;
-        this.h = z10;
+    public /* synthetic */ v8(Object obj, boolean z10, long j10, Object obj2, int i10) {
+        this.a = i10;
+        this.b = obj;
+        this.d = z10;
         this.c = j10;
-        this.e = i10;
-        this.f = i11;
-        this.d = j11;
+        this.e = obj2;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                ((MediaDataController) this.n).lambda$putMediaDatabase$140(this.b, (ArrayList) this.r, this.h, this.c, this.e, this.f, this.d);
+                ((MediaDataController) this.b).lambda$loadFeaturedStickers$57((TLObject) this.e, this.d, this.c);
+                break;
+            case 1:
+                ((MediaDataController) this.b).lambda$processLoadedFeaturedStickers$60((ArrayList) this.e, this.c, this.d);
+                break;
+            case 2:
+                ((MessagesController) this.b).lambda$processUpdates$376(this.d, this.c, (ArrayList) this.e);
+                break;
+            case 3:
+                ((MessagesController) this.b).lambda$getChannelRecommendations$481((TLObject) this.e, this.d, this.c);
+                break;
+            case 4:
+                ((MessagesController) this.b).lambda$processLoadedChannelAdmins$66(this.c, (a0.h) this.e, this.d);
+                break;
+            case 5:
+                ((MessagesStorage) this.b).lambda$createTaskForMid$115(this.d, this.c, (ArrayList) this.e);
+                break;
+            case 6:
+                ((MessagesStorage) this.b).lambda$loadPendingTasks$24((org.telegram.ui.ActionBar.z5) this.e, this.d, this.c);
+                break;
+            case 7:
+                ((VideoPlayerHolderBase) this.b).lambda$seekTo$12(this.c, this.d, (Runnable) this.e);
+                break;
+            case 8:
+                org.telegram.ui.x6.U((org.telegram.ui.x6) this.b, this.d, this.c, (org.telegram.ui.m6) this.e);
                 break;
             default:
-                ((MessagesStorage) this.n).lambda$putMessages$238(this.b, (TLRPC.messages_Messages) this.r, this.c, this.d, this.e, this.f, this.h);
+                ProfileActivity profileActivity = (ProfileActivity) this.b;
+                profileActivity.getMessagesController().getStoriesController().o0(this.c, (ArrayList) this.e, this.d, null);
                 break;
         }
     }
 
-    public /* synthetic */ v8(MessagesStorage messagesStorage, int i9, TLRPC.messages_Messages messages_messages, long j10, long j11, int i10, int i11, boolean z10) {
-        this.n = messagesStorage;
-        this.b = i9;
-        this.r = messages_messages;
+    public /* synthetic */ v8(BaseController baseController, Object obj, boolean z10, long j10, int i10) {
+        this.a = i10;
+        this.b = baseController;
+        this.e = obj;
+        this.d = z10;
         this.c = j10;
-        this.d = j11;
-        this.e = i10;
-        this.f = i11;
-        this.h = z10;
+    }
+
+    public /* synthetic */ v8(MediaDataController mediaDataController, ArrayList arrayList, long j10, boolean z10) {
+        this.a = 1;
+        this.b = mediaDataController;
+        this.e = arrayList;
+        this.c = j10;
+        this.d = z10;
+    }
+
+    public /* synthetic */ v8(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, long j10, Cloneable cloneable, boolean z10, int i10) {
+        this.a = i10;
+        this.b = notificationCenterDelegate;
+        this.c = j10;
+        this.e = cloneable;
+        this.d = z10;
+    }
+
+    public /* synthetic */ v8(VideoPlayerHolderBase videoPlayerHolderBase, long j10, boolean z10, Runnable runnable) {
+        this.a = 7;
+        this.b = videoPlayerHolderBase;
+        this.c = j10;
+        this.d = z10;
+        this.e = runnable;
     }
 }

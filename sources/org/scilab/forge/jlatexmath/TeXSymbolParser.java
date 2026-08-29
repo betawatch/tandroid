@@ -1,6 +1,6 @@
 package org.scilab.forge.jlatexmath;
 
-import aa.d;
+import a4.w;
 import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
@@ -9,7 +9,7 @@ import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 import ru.noties.jlatexmath.JLatexMathAndroid;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public class TeXSymbolParser {
     public static final String DELIMITER_ATTR = "del";
@@ -44,15 +44,15 @@ public class TeXSymbolParser {
     public Map<String, SymbolAtom> readSymbols() {
         HashMap hashMap = new HashMap();
         NodeList elementsByTagName = this.root.getElementsByTagName("Symbol");
-        for (int i9 = 0; i9 < elementsByTagName.getLength(); i9++) {
-            Element element = (Element) elementsByTagName.item(i9);
+        for (int i10 = 0; i10 < elementsByTagName.getLength(); i10++) {
+            Element element = (Element) elementsByTagName.item(i10);
             String attrValueAndCheckIfNotNull = getAttrValueAndCheckIfNotNull("name", element);
             String attrValueAndCheckIfNotNull2 = getAttrValueAndCheckIfNotNull(TYPE_ATTR, element);
             String attribute = element.getAttribute(DELIMITER_ATTR);
             boolean z10 = attribute != null && attribute.equals("true");
             Integer num = typeMappings.get(attrValueAndCheckIfNotNull2);
             if (num == null) {
-                throw new XMLResourceParseException(RESOURCE_NAME, "Symbol", TYPE_ATTR, d.o("has an unknown value '", attrValueAndCheckIfNotNull2, "'!"));
+                throw new XMLResourceParseException(RESOURCE_NAME, "Symbol", TYPE_ATTR, w.n("has an unknown value '", attrValueAndCheckIfNotNull2, "'!"));
             }
             hashMap.put(attrValueAndCheckIfNotNull, new SymbolAtom(attrValueAndCheckIfNotNull, num.intValue(), z10));
         }

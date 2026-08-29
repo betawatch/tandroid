@@ -7,7 +7,7 @@ import android.media.MediaFormat;
 import android.view.Surface;
 import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public class MediaCodecPlayer {
     private final MediaCodec codec;
@@ -26,25 +26,25 @@ public class MediaCodecPlayer {
         MediaExtractor mediaExtractor = new MediaExtractor();
         this.extractor = mediaExtractor;
         mediaExtractor.setDataSource(str);
-        int i9 = 0;
+        int i10 = 0;
         while (true) {
-            if (i9 >= this.extractor.getTrackCount()) {
+            if (i10 >= this.extractor.getTrackCount()) {
                 mediaFormat = null;
-                i9 = -1;
+                i10 = -1;
                 break;
             } else {
-                mediaFormat = this.extractor.getTrackFormat(i9);
+                mediaFormat = this.extractor.getTrackFormat(i10);
                 if (mediaFormat.getString("mime").startsWith("video/")) {
                     break;
                 } else {
-                    i9++;
+                    i10++;
                 }
             }
         }
-        if (i9 == -1 || mediaFormat == null) {
+        if (i10 == -1 || mediaFormat == null) {
             throw new IllegalArgumentException("No video track found in file.");
         }
-        this.extractor.selectTrack(i9);
+        this.extractor.selectTrack(i10);
         this.w = mediaFormat.getInteger("width");
         this.h = mediaFormat.getInteger("height");
         if (mediaFormat.containsKey("rotation-degrees")) {

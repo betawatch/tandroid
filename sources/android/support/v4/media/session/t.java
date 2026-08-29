@@ -13,7 +13,7 @@ import android.view.KeyEvent;
 import android.view.ViewConfiguration;
 import java.lang.ref.WeakReference;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public abstract class t {
     r mCallbackHandler;
@@ -55,7 +55,7 @@ public abstract class t {
                 rVar = this.mCallbackHandler;
             }
             if (uVar != null && rVar != null && (keyEvent = (KeyEvent) intent.getParcelableExtra("android.intent.extra.KEY_EVENT")) != null && keyEvent.getAction() == 0) {
-                y1.a c10 = uVar.c();
+                y1.a c3 = uVar.c();
                 int keyCode = keyEvent.getKeyCode();
                 if (keyCode != 79 && keyCode != 85) {
                     handleMediaPlayPauseIfPendingOnHandler(uVar, rVar);
@@ -67,7 +67,7 @@ public abstract class t {
                 }
                 if (!this.mMediaPlayPausePendingOnHandler) {
                     this.mMediaPlayPausePendingOnHandler = true;
-                    rVar.sendMessageDelayed(rVar.obtainMessage(1, c10), ViewConfiguration.getDoubleTapTimeout());
+                    rVar.sendMessageDelayed(rVar.obtainMessage(1, c3), ViewConfiguration.getDoubleTapTimeout());
                     return true;
                 }
                 rVar.removeMessages(1);
@@ -98,13 +98,13 @@ public abstract class t {
                     rVar2 = new r(this, handler.getLooper());
                 }
                 this.mCallbackHandler = rVar2;
-            } catch (Throwable th) {
-                throw th;
+            } catch (Throwable th2) {
+                throw th2;
             }
         }
     }
 
-    public void onAddQueueItem(MediaDescriptionCompat mediaDescriptionCompat, int i9) {
+    public void onAddQueueItem(MediaDescriptionCompat mediaDescriptionCompat, int i10) {
     }
 
     public void onSetRating(RatingCompat ratingCompat, Bundle bundle) {
@@ -138,7 +138,7 @@ public abstract class t {
     }
 
     @Deprecated
-    public void onRemoveQueueItemAt(int i9) {
+    public void onRemoveQueueItemAt(int i10) {
     }
 
     public void onSeekTo(long j10) {
@@ -147,13 +147,13 @@ public abstract class t {
     public void onSetCaptioningEnabled(boolean z10) {
     }
 
-    public void onSetPlaybackSpeed(float f10) {
+    public void onSetPlaybackSpeed(float f9) {
     }
 
-    public void onSetRepeatMode(int i9) {
+    public void onSetRepeatMode(int i10) {
     }
 
-    public void onSetShuffleMode(int i9) {
+    public void onSetShuffleMode(int i10) {
     }
 
     public void onSkipToQueueItem(long j10) {

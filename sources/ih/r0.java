@@ -1,53 +1,30 @@
 package ih;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import android.view.View;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.s10;
+import android.app.Activity;
+import android.view.Menu;
+import org.telegram.ui.Components.ChatActivityEnterView;
+import org.telegram.ui.tn;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
-/* loaded from: classes4.dex */
-public final class r0 extends TextView {
-    public int a;
-    public final s10 b;
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* loaded from: classes.dex */
+public final class r0 extends ChatActivityEnterView {
+    public final /* synthetic */ v0 j5;
 
-    public r0(Context context) {
-        super(context);
-        this.a = -1;
-        this.b = new s10();
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public r0(v0 v0Var, Activity activity, q0 q0Var) {
+        super(activity, q0Var, null, false, null);
+        this.j5 = v0Var;
     }
 
-    @Override // android.widget.TextView, android.view.View
-    public final void onDraw(Canvas canvas) {
-        if (this.a < 0) {
-            this.a = getLayout() != null ? (int) getLayout().getLineWidth(0) : 0;
-        }
-        if (this.a <= AndroidUtilities.dp(100.0f)) {
-            super.onDraw(canvas);
-            return;
-        }
-        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), 255, 31);
-        super.onDraw(canvas);
-        canvas.save();
-        RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(getWidth() - AndroidUtilities.dp(15.0f), 0.0f, getWidth(), getHeight());
-        this.b.b(canvas, rectF, 2, 1.0f);
-        canvas.restore();
-        canvas.restore();
+    @Override // org.telegram.ui.Components.ChatActivityEnterView
+    public final void A0(float f9) {
+        v0 v0Var = this.j5;
+        v0Var.f.setInputBubbleHeight(f9);
+        v0Var.o();
     }
 
-    @Override // android.widget.TextView, android.view.View
-    public final void onMeasure(int i9, int i10) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(100.0f), TLObject.FLAG_31), i10);
-    }
-
-    @Override // android.widget.TextView
-    public final void setText(CharSequence charSequence, TextView.BufferType bufferType) {
-        super.setText(charSequence, bufferType);
-        this.a = -1;
+    @Override // org.telegram.ui.Components.ChatActivityEnterView
+    public final void h0(Menu menu) {
+        tn.k8(menu, null, false, false, false, false);
     }
 }

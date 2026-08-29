@@ -9,7 +9,7 @@ import java.util.logging.Logger;
 import libcore.io.Memory;
 import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 final class zzvc {
     static final long zza;
@@ -21,9 +21,9 @@ final class zzvc {
     private static final boolean zzg;
     private static final boolean zzh;
 
-    /* JADX WARN: Removed duplicated region for block: B:15:0x011e  */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x0130  */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x006d  */
+    /* JADX WARN: Removed duplicated region for block: B:15:0x011d  */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x012f  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x006c  */
     static {
         boolean z10;
         zzvb zzvbVar;
@@ -32,7 +32,7 @@ final class zzvc {
         zzvb zzvbVar2;
         Unsafe zzg2 = zzg();
         zzc = zzg2;
-        int i9 = zzqa.zza;
+        int i10 = zzqa.zza;
         zzd = Memory.class;
         Class<?> cls = Long.TYPE;
         boolean zzv = zzv(cls);
@@ -53,8 +53,8 @@ final class zzvc {
                 Class<?> cls3 = zzvbVar3.zza.getClass();
                 cls3.getMethod("objectFieldOffset", Field.class);
                 cls3.getMethod("getLong", Object.class, cls);
-            } catch (Throwable th) {
-                zzh(th);
+            } catch (Throwable th2) {
+                zzh(th2);
             }
             if (zzB() != null) {
                 z10 = true;
@@ -73,8 +73,8 @@ final class zzvc {
                         cls4.getMethod("getObject", Object.class, cls);
                         cls4.getMethod("putObject", Object.class, cls, Object.class);
                         z11 = true;
-                    } catch (Throwable th2) {
-                        zzh(th2);
+                    } catch (Throwable th3) {
+                        zzh(th3);
                     }
                     zzh = z11;
                     zza = zzz(byte[].class);
@@ -155,7 +155,7 @@ final class zzvc {
     }
 
     private static Field zzB() {
-        int i9 = zzqa.zza;
+        int i10 = zzqa.zza;
         Field zzC = zzC(Buffer.class, "effectiveDirectAddress");
         if (zzC != null) {
             return zzC;
@@ -179,17 +179,17 @@ final class zzvc {
     public static void zzD(Object obj, long j10, byte b10) {
         Unsafe unsafe = zzf.zza;
         long j11 = (-4) & j10;
-        int i9 = unsafe.getInt(obj, j11);
-        int i10 = ((~((int) j10)) & 3) << 3;
-        unsafe.putInt(obj, j11, ((255 & b10) << i10) | (i9 & (~(255 << i10))));
+        int i10 = unsafe.getInt(obj, j11);
+        int i11 = ((~((int) j10)) & 3) << 3;
+        unsafe.putInt(obj, j11, ((255 & b10) << i11) | (i10 & (~(255 << i11))));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static void zzE(Object obj, long j10, byte b10) {
         Unsafe unsafe = zzf.zza;
         long j11 = (-4) & j10;
-        int i9 = (((int) j10) & 3) << 3;
-        unsafe.putInt(obj, j11, ((255 & b10) << i9) | (unsafe.getInt(obj, j11) & (~(255 << i9))));
+        int i10 = (((int) j10) & 3) << 3;
+        unsafe.putInt(obj, j11, ((255 & b10) << i10) | (unsafe.getInt(obj, j11) & (~(255 << i10))));
     }
 
     public static double zza(Object obj, long j10) {
@@ -228,8 +228,8 @@ final class zzvc {
         }
     }
 
-    public static /* bridge */ /* synthetic */ void zzh(Throwable th) {
-        Logger.getLogger(zzvc.class.getName()).logp(Level.WARNING, "com.google.protobuf.UnsafeUtil", "logMissingMethod", "platform method missing - proto runtime falling back to safer methods: ".concat(th.toString()));
+    public static /* bridge */ /* synthetic */ void zzh(Throwable th2) {
+        Logger.getLogger(zzvc.class.getName()).logp(Level.WARNING, "com.google.protobuf.UnsafeUtil", "logMissingMethod", "platform method missing - proto runtime falling back to safer methods: ".concat(th2.toString()));
     }
 
     public static void zzm(Object obj, long j10, boolean z10) {
@@ -244,12 +244,12 @@ final class zzvc {
         zzf.zze(obj, j10, d);
     }
 
-    public static void zzp(Object obj, long j10, float f10) {
-        zzf.zzf(obj, j10, f10);
+    public static void zzp(Object obj, long j10, float f9) {
+        zzf.zzf(obj, j10, f9);
     }
 
-    public static void zzq(Object obj, long j10, int i9) {
-        zzf.zza.putInt(obj, j10, i9);
+    public static void zzq(Object obj, long j10, int i10) {
+        zzf.zza.putInt(obj, j10, i10);
     }
 
     public static void zzr(Object obj, long j10, long j11) {
@@ -270,7 +270,7 @@ final class zzvc {
 
     /* JADX WARN: Multi-variable type inference failed */
     public static boolean zzv(Class cls) {
-        int i9 = zzqa.zza;
+        int i10 = zzqa.zza;
         try {
             Class cls2 = zzd;
             Class cls3 = Boolean.TYPE;

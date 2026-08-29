@@ -1,54 +1,72 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.text.style.ReplacementSpan;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class tz0 implements ValueAnimator.AnimatorUpdateListener {
+public final class tz0 extends ReplacementSpan {
     public final /* synthetic */ int a;
-    public final /* synthetic */ uz0 b;
+    public int b;
+    public final Object c;
 
-    public /* synthetic */ tz0(uz0 uz0Var, int i9) {
-        this.a = i9;
-        this.b = uz0Var;
+    public tz0(int i10) {
+        this.a = 0;
+        Paint paint = new Paint(1);
+        this.c = paint;
+        this.b = i10;
+        paint.setColor(org.telegram.ui.ActionBar.g6.l1(0.3f, org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.nd, false)));
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    public void a(int i10) {
+        org.telegram.ui.uo0 uo0Var = (org.telegram.ui.uo0) this.c;
+        if (uo0Var != null) {
+            uo0Var.a = i10 / 2.0f;
+            uo0Var.d();
+            this.b = i10;
+        }
+    }
+
+    @Override // android.text.style.ReplacementSpan
+    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f9, int i12, int i13, int i14, Paint paint) {
         switch (this.a) {
             case 0:
-                uz0 uz0Var = this.b;
-                uz0Var.getClass();
-                uz0Var.B = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                uz0Var.invalidate();
-                break;
-            case 1:
-                uz0 uz0Var2 = this.b;
-                uz0Var2.getClass();
-                uz0Var2.B = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                uz0Var2.invalidate();
-                break;
-            case 2:
-                uz0 uz0Var3 = this.b;
-                uz0Var3.getClass();
-                uz0Var3.f = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                uz0Var3.invalidate();
-                break;
-            case 3:
-                uz0 uz0Var4 = this.b;
-                uz0Var4.getClass();
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                uz0Var4.s = floatValue;
-                uz0Var4.w = (int) ((uz0Var4.h * floatValue) + 0);
-                uz0Var4.invalidate();
+                float dp = ((i12 + i14) / 2.0f) + AndroidUtilities.dp(1.33f);
+                float dp2 = AndroidUtilities.dp(6.66f);
+                RectF rectF = AndroidUtilities.rectTmp;
+                float f10 = dp2 / 2.0f;
+                rectF.set(f9, dp - f10, this.b + f9, dp + f10);
+                canvas.drawRoundRect(rectF, f10, f10, (Paint) this.c);
                 break;
             default:
-                uz0 uz0Var5 = this.b;
-                uz0Var5.getClass();
-                uz0Var5.v = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                uz0Var5.x = uz0Var5.r + ((int) Math.ceil((uz0Var5.n - r1) * r5));
-                uz0Var5.invalidate();
+                org.telegram.ui.uo0 uo0Var = (org.telegram.ui.uo0) this.c;
+                if (uo0Var != null) {
+                    int i15 = (i12 + i14) / 2;
+                    int i16 = this.b;
+                    uo0Var.setBounds((int) (AndroidUtilities.dp(3.0f) + f9), i15 - this.b, (int) (f9 + AndroidUtilities.dp(5.0f) + i16), i15 + i16);
+                    uo0Var.draw(canvas);
+                    break;
+                }
                 break;
         }
+    }
+
+    @Override // android.text.style.ReplacementSpan
+    public final int getSize(Paint paint, CharSequence charSequence, int i10, int i11, Paint.FontMetricsInt fontMetricsInt) {
+        switch (this.a) {
+            case 0:
+                return this.b;
+            default:
+                return AndroidUtilities.dp(3.0f) + AndroidUtilities.dp(3.0f) + this.b;
+        }
+    }
+
+    public tz0(boolean z10, int i10, int i11) {
+        this.a = 1;
+        this.b = AndroidUtilities.dp(21.0f);
+        this.c = z10 ? org.telegram.ui.uo0.c(i10, i11) : org.telegram.ui.uo0.a(i10, i11);
     }
 }

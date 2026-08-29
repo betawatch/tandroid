@@ -1,26 +1,23 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.SharedConfig;
+import android.animation.ValueAnimator;
+import android.text.StaticLayout;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class yx0 implements xb0, zb0 {
-    public final /* synthetic */ ay0 a;
+public final class yx0 {
+    public final EditTextBoldCursor a;
+    public StaticLayout b;
+    public StaticLayout c;
+    public StaticLayout d;
+    public boolean e;
+    public boolean f;
+    public boolean g;
+    public float h;
+    public float i;
+    public ValueAnimator j;
 
-    @Override // org.telegram.ui.Components.xb0
-    public String g(int i9) {
-        return this.a.h[i9];
-    }
-
-    @Override // org.telegram.ui.Components.zb0
-    public void m(bc0 bc0Var, int i9) {
-        ay0 ay0Var = this.a;
-        ay0Var.b();
-        SharedConfig.updateChatListSwipeSetting(i9);
-        ay0Var.invalidate();
-        try {
-            bc0Var.performHapticFeedback(3, 2);
-        } catch (Exception unused) {
-        }
+    public yx0(EditTextBoldCursor editTextBoldCursor) {
+        this.a = editTextBoldCursor;
     }
 }

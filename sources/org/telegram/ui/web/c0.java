@@ -1,37 +1,40 @@
 package org.telegram.ui.web;
 
-import android.os.Bundle;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.oc;
-import org.telegram.ui.qn;
+import android.app.Activity;
+import nh.d6;
+import org.json.JSONObject;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.ui.r9;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes4.dex */
-public final class c0 extends qn {
-    public boolean Mc;
-    public final /* synthetic */ TLRPC.User Nc;
-    public final /* synthetic */ long Oc;
-    public final /* synthetic */ y0 Pc;
+public final class c0 implements NotificationCenter.NotificationCenterDelegate {
+    public final /* synthetic */ z0 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c0(y0 y0Var, Bundle bundle, TLRPC.User user, long j10) {
-        super(bundle);
-        this.Pc = y0Var;
-        this.Nc = user;
-        this.Oc = j10;
+    public c0(z0 z0Var) {
+        this.a = z0Var;
     }
 
-    @Override // org.telegram.ui.qn, org.telegram.ui.ActionBar.o2
-    public final void onBecomeFullyVisible() {
-        super.onBecomeFullyVisible();
-        if (this.Mc) {
-            return;
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+        int i12 = NotificationCenter.onRequestPermissionResultReceived;
+        if (i10 == i12) {
+            int intValue = ((Integer) objArr[0]).intValue();
+            int[] iArr = (int[]) objArr[2];
+            if (intValue == 5000) {
+                NotificationCenter.getGlobalInstance().removeObserver(this, i12);
+                int i13 = iArr[0];
+                z0 z0Var = this.a;
+                if (i13 != 0) {
+                    z0Var.v("scan_qr_popup_closed", new JSONObject());
+                    return;
+                }
+                Activity activity = z0Var.S;
+                if (activity == null) {
+                    return;
+                }
+                z0Var.c0 = r9.e0(activity, 3, new d6(z0Var, 11));
+            }
         }
-        this.Mc = true;
-        oc.a0(this).M(LocaleController.formatString(R.string.CreateManagedBotCreatedTitle, UserObject.getUserName(this.Nc)), AndroidUtilities.replaceSingleTag(LocaleController.formatString(R.string.CreateManagedBotCreatedText, UserObject.getUserName(this.Pc.Q)), new b0(this, this.Oc, 0)), R.raw.contact_check).j();
     }
 }

@@ -1,40 +1,35 @@
 package af;
 
-import android.content.SharedPreferences;
-import android.os.SystemClock;
-import g7.n;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.NotificationBadge;
+import android.app.Activity;
+import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class a {
-    public final SharedPreferences a;
-    public long b;
-    public long c;
-    public int d;
+public final class a extends FrameLayout {
+    public final Activity a;
+    public int b;
+    public int c;
+    public boolean d;
 
-    public a(String str) {
-        SharedPreferences sharedPreferences = ApplicationLoader.applicationContext.getSharedPreferences("pip_duration_".concat(str), 0);
-        this.a = sharedPreferences;
-        this.b = sharedPreferences.getLong("estimated", 400L);
-        this.d = sharedPreferences.getInt(NotificationBadge.NewHtcHomeBadger.COUNT, 0);
+    public a(LaunchActivity launchActivity) {
+        super(launchActivity);
+        this.a = launchActivity;
     }
 
-    public final void a() {
-        if (this.c == 0) {
-            return;
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        int size = View.MeasureSpec.getSize(i10);
+        int size2 = View.MeasureSpec.getSize(i11);
+        boolean isInPictureInPictureMode = AndroidUtilities.isInPictureInPictureMode(this.a);
+        if (!isInPictureInPictureMode) {
+            this.b = size;
+            this.c = size2;
         }
-        this.b = (((SystemClock.uptimeMillis() - this.c) * (10 - r4)) / 10) + ((this.b * n.b(this.d, 0, 9)) / 10);
-        this.c = 0L;
-        this.d++;
-        this.a.edit().putLong("estimated", this.b).putInt(NotificationBadge.NewHtcHomeBadger.COUNT, this.d).apply();
-    }
-
-    public final float b() {
-        if (this.b > 0) {
-            return n.a((SystemClock.uptimeMillis() - this.c) / this.b, 0.0f, 1.0f);
-        }
-        return 0.5f;
+        this.d = isInPictureInPictureMode && size < this.b && size2 < this.c;
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_30));
     }
 }

@@ -1,79 +1,66 @@
 package org.telegram.ui.Components;
 
-import android.text.Layout;
-import android.text.SpannableString;
-import android.text.SpannableStringBuilder;
-import android.text.Spanned;
-import android.text.TextUtils;
-import android.view.MotionEvent;
-import org.telegram.messenger.AndroidUtilities;
+import android.text.TextPaint;
+import android.text.style.ClickableSpan;
+import android.view.View;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public class qc extends l80 {
-    public rc H;
-    public rc I;
+public final class qc extends ClickableSpan {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Runnable b;
 
-    @Override // android.widget.TextView, android.view.View
-    public final void onLayout(boolean z10, int i9, int i10, int i11, int i12) {
-        super.onLayout(z10, i9, i10, i11, i12);
-        if (this.I == null || getMeasuredWidth() <= 0) {
-            return;
-        }
-        SpannableString spannableString = new SpannableString(" btn");
-        spannableString.setSpan(this.I, 1, spannableString.length(), 33);
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(TextUtils.ellipsize(getText(), getPaint(), (((getMeasuredWidth() - getPaddingLeft()) - getPaddingRight()) - this.I.a()) - AndroidUtilities.dp(4.0f), TextUtils.TruncateAt.END));
-        spannableStringBuilder.append((CharSequence) spannableString);
-        setText(spannableStringBuilder);
-        this.I = null;
+    public /* synthetic */ qc(int i10, Runnable runnable) {
+        this.a = i10;
+        this.b = runnable;
     }
 
-    @Override // org.telegram.ui.Components.l80, android.widget.TextView, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        Layout layout;
-        rc rcVar;
-        Runnable runnable;
-        rc rcVar2;
-        int action = motionEvent.getAction();
-        float x10 = motionEvent.getX() - getPaddingLeft();
-        int y10 = ((int) motionEvent.getY()) - getPaddingTop();
-        if ((getText() instanceof Spanned) && (layout = getLayout()) != null) {
-            int lineForVertical = layout.getLineForVertical(y10);
-            Spanned spanned = (Spanned) getText();
-            rc[] rcVarArr = (rc[]) spanned.getSpans(layout.getLineStart(lineForVertical), layout.getLineEnd(lineForVertical), rc.class);
-            for (int i9 = 0; i9 < rcVarArr.length; i9++) {
-                rcVar = rcVarArr[i9];
-                float primaryHorizontal = layout.getPrimaryHorizontal(spanned.getSpanStart(rcVar));
-                float primaryHorizontal2 = layout.getPrimaryHorizontal(spanned.getSpanEnd(rcVar));
-                if (primaryHorizontal2 < primaryHorizontal) {
-                    primaryHorizontal2 = primaryHorizontal;
-                    primaryHorizontal = primaryHorizontal2;
-                }
-                if (x10 >= primaryHorizontal && x10 <= primaryHorizontal2) {
+    @Override // android.text.style.ClickableSpan
+    public final void onClick(View view) {
+        switch (this.a) {
+            case 0:
+                this.b.run();
+                break;
+            case 1:
+                Runnable runnable = this.b;
+                if (runnable != null) {
+                    runnable.run();
                     break;
                 }
-            }
-        }
-        rcVar = null;
-        if (action == 0) {
-            this.H = rcVar;
-            if (rcVar != null) {
-                rcVar.c(this, true);
-                return true;
-            }
-        } else if (action == 1 || action == 3) {
-            rc rcVar3 = this.H;
-            if (rcVar3 != null) {
-                rcVar3.c(this, false);
-                if (action == 1 && (runnable = this.H.d) != null) {
-                    runnable.run();
+                break;
+            case 2:
+                Runnable runnable2 = this.b;
+                if (runnable2 != null) {
+                    runnable2.run();
+                    break;
                 }
-            }
-            this.H = null;
-        } else if (action == 2 && (rcVar2 = this.H) != null && rcVar2 != rcVar) {
-            rcVar2.c(this, false);
-            this.H = null;
+                break;
+            default:
+                Runnable runnable3 = this.b;
+                if (runnable3 != null) {
+                    runnable3.run();
+                    break;
+                }
+                break;
         }
-        return this.H != null || super.onTouchEvent(motionEvent);
+    }
+
+    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        switch (this.a) {
+            case 0:
+                super.updateDrawState(textPaint);
+                textPaint.setUnderlineText(false);
+                break;
+            case 1:
+                textPaint.setUnderlineText(false);
+                break;
+            case 2:
+                textPaint.setUnderlineText(false);
+                break;
+            default:
+                textPaint.setUnderlineText(false);
+                break;
+        }
     }
 }

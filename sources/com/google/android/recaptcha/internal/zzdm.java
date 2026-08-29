@@ -1,6 +1,6 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class zzdm extends Exception {
     private final Throwable zza;
@@ -8,13 +8,13 @@ public final class zzdm extends Exception {
     private final int zzc;
     private final int zzd;
 
-    public zzdm(int i9, int i10, Throwable th) {
-        this.zzc = i9;
-        this.zzd = i10;
-        this.zza = th;
+    public zzdm(int i10, int i11, Throwable th2) {
+        this.zzc = i10;
+        this.zzd = i11;
+        this.zza = th2;
         zzys zzf = zzyt.zzf();
-        zzf.zzq(i10);
-        zzf.zzr(i9);
+        zzf.zzq(i11);
+        zzf.zzr(i10);
         this.zzb = zzf;
     }
 

@@ -2,9 +2,9 @@ package com.google.android.recaptcha.internal;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
-import pc.g;
+import rc.g;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class zzkv implements zzkt {
     private final zzku zza;
@@ -23,8 +23,8 @@ public final class zzkv implements zzkt {
             zzkqVar = zzkr.zza;
             zzkr zzkrVar = new zzkr(zza, 255L, zzkqVar);
             StringBuilder sb2 = new StringBuilder(str.length());
-            for (int i9 = 0; i9 < str.length(); i9++) {
-                sb2.append((char) (str.charAt(i9) ^ ((int) zzkrVar.zza())));
+            for (int i10 = 0; i10 < str.length(); i10++) {
+                sb2.append((char) (str.charAt(i10) ^ ((int) zzkrVar.zza())));
             }
             return zzzo.zzg(zzpp.zzh().zzj(sb2.toString()));
         } catch (Exception e10) {
@@ -38,7 +38,7 @@ public final class zzkv implements zzkt {
         zzzo zzb2 = zzb(zzzqVar.zzj(), zzzqVar.zzk());
         zzb.zzf();
         long zza = zzb.zza(TimeUnit.MICROSECONDS);
-        int i9 = zzco.zza;
+        int i10 = zzco.zza;
         zzco.zza(zzcp.zza.zza(), zza);
         return zzb2;
     }

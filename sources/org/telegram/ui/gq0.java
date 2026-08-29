@@ -5,14 +5,14 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.video.VideoAds;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class gq0 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ PhotoViewer b;
 
-    public /* synthetic */ gq0(PhotoViewer photoViewer, int i9) {
-        this.a = i9;
+    public /* synthetic */ gq0(PhotoViewer photoViewer, int i10) {
+        this.a = i10;
         this.b = photoViewer;
     }
 
@@ -23,8 +23,8 @@ public final /* synthetic */ class gq0 implements Runnable {
             case 0:
                 PhotoViewer photoViewer = this.b;
                 Drawable[] drawableArr = PhotoViewer.P8;
-                photoViewer.w0(false);
-                org.telegram.ui.Components.pf0.l0.k(true, true);
+                photoViewer.x0(false);
+                org.telegram.ui.Components.bg0.l0.k(true, true);
                 break;
             case 1:
                 PhotoViewer photoViewer2 = this.b;
@@ -62,17 +62,17 @@ public final /* synthetic */ class gq0 implements Runnable {
                 photoViewer8.h2();
                 break;
             case 8:
-                org.telegram.ui.Components.be0 be0Var = this.b.y1;
-                tf.e eVar = be0Var.c;
+                org.telegram.ui.Components.pe0 pe0Var = this.b.y1;
+                wf.e eVar = pe0Var.c;
                 eVar.b(0.0f);
                 eVar.setMirrored(false);
                 eVar.setRotated(false);
-                be0Var.b.l(true);
+                pe0Var.b.l(true);
                 break;
             case 9:
                 PhotoViewer photoViewer9 = this.b;
                 Drawable[] drawableArr9 = PhotoViewer.P8;
-                photoViewer9.l0();
+                photoViewer9.m0();
                 break;
             case 10:
                 PhotoViewer photoViewer10 = this.b;
@@ -98,7 +98,7 @@ public final /* synthetic */ class gq0 implements Runnable {
             case 15:
                 PhotoViewer photoViewer13 = this.b;
                 photoViewer13.e7 = null;
-                photoViewer13.l0();
+                photoViewer13.m0();
                 photoViewer13.e3(0);
                 break;
             case 16:
@@ -119,7 +119,7 @@ public final /* synthetic */ class gq0 implements Runnable {
             case 19:
                 PhotoViewer photoViewer17 = this.b;
                 Drawable[] drawableArr12 = PhotoViewer.P8;
-                photoViewer17.j0();
+                photoViewer17.k0();
                 break;
             case 20:
                 PhotoViewer photoViewer18 = this.b;
@@ -128,15 +128,15 @@ public final /* synthetic */ class gq0 implements Runnable {
                 break;
             case 21:
                 PhotoViewer photoViewer19 = this.b;
-                if (photoViewer19.r0.isEnabled() && AndroidUtilities.checkInlinePermissions(photoViewer19.y) && !org.telegram.ui.Components.pf0.l0.L && photoViewer19.L3) {
+                if (photoViewer19.r0.isEnabled() && AndroidUtilities.checkInlinePermissions(photoViewer19.y) && !org.telegram.ui.Components.bg0.l0.L && photoViewer19.L3) {
                     if (!photoViewer19.p4) {
                         photoViewer19.G3 = false;
                         photoViewer19.h3();
                         break;
                     } else {
-                        gt0 gt0Var = photoViewer19.b0;
-                        if (gt0Var != null) {
-                            if ((!gt0Var.x || !"inapp".equals(MessagesController.getInstance(gt0Var.a).youtubePipType)) && photoViewer19.b0.e()) {
+                        et0 et0Var = photoViewer19.b0;
+                        if (et0Var != null) {
+                            if ((!et0Var.x || !"inapp".equals(MessagesController.getInstance(et0Var.a).youtubePipType)) && photoViewer19.b0.e()) {
                                 photoViewer19.G3 = false;
                                 if (PhotoViewer.W8 != null) {
                                     PhotoViewer.W8.P0();
@@ -145,8 +145,8 @@ public final /* synthetic */ class gq0 implements Runnable {
                                 PhotoViewer.W8 = PhotoViewer.V8;
                                 PhotoViewer.V8 = null;
                                 photoViewer19.e = false;
-                                bu0 bu0Var = photoViewer19.Z4;
-                                if (bu0Var != null && !bu0Var.a.getVisible()) {
+                                zt0 zt0Var = photoViewer19.Z4;
+                                if (zt0Var != null && !zt0Var.a.getVisible()) {
                                     photoViewer19.Z4.a.setVisible(true, true);
                                 }
                                 photoViewer19.i6 = 1.0f;
@@ -172,20 +172,20 @@ public final /* synthetic */ class gq0 implements Runnable {
                 break;
             case 24:
                 PhotoViewer photoViewer22 = this.b;
-                org.telegram.ui.Components.k61 k61Var = photoViewer22.B2;
-                if (k61Var != null && photoViewer22.W5 <= 1.35f) {
-                    long o6 = k61Var.o();
-                    long q10 = photoViewer22.B2.q();
-                    if (o6 != -9223372036854775807L && q10 >= 8000) {
-                        float f10 = photoViewer22.z7;
+                org.telegram.ui.Components.x61 x61Var = photoViewer22.B2;
+                if (x61Var != null && photoViewer22.W5 <= 1.35f) {
+                    long o10 = x61Var.o();
+                    long q6 = photoViewer22.B2.q();
+                    if (o10 != -9223372036854775807L && q6 >= 8000) {
+                        float f9 = photoViewer22.z7;
                         int k12 = photoViewer22.k1(photoViewer22.q4);
-                        if (q10 <= 180000) {
-                            photoViewer22.Y3.startRewind(photoViewer22.B2, f10 > ((float) (k12 / 3)), photoViewer22.z7, photoViewer22.p1, photoViewer22.w1);
+                        if (q6 <= 180000) {
+                            photoViewer22.Y3.startRewind(photoViewer22.B2, f9 > ((float) (k12 / 3)), photoViewer22.z7, photoViewer22.p1, photoViewer22.w1);
                             break;
                         } else {
-                            int i9 = k12 / 3;
-                            if (f10 < i9 * 2) {
-                                z10 = f10 >= ((float) i9);
+                            int i10 = k12 / 3;
+                            if (f9 < i10 * 2) {
+                                z10 = f9 >= ((float) i10);
                             }
                             photoViewer22.W3.startRewind(photoViewer22.B2, z10, photoViewer22.p1);
                             break;
@@ -196,18 +196,18 @@ public final /* synthetic */ class gq0 implements Runnable {
             case 25:
                 PhotoViewer photoViewer23 = this.b;
                 if (!photoViewer23.Q4.isPopupShown()) {
-                    org.telegram.ui.Components.k61 k61Var2 = photoViewer23.B2;
-                    if (k61Var2 != null && photoViewer23.Q4.videoWasPlaying) {
-                        k61Var2.D();
+                    org.telegram.ui.Components.x61 x61Var2 = photoViewer23.B2;
+                    if (x61Var2 != null && photoViewer23.Q4.videoWasPlaying) {
+                        x61Var2.D();
                         break;
                     }
                 } else {
                     VideoAds videoAds = photoViewer23.Q4;
-                    org.telegram.ui.Components.k61 k61Var3 = photoViewer23.B2;
-                    videoAds.videoWasPlaying = k61Var3 != null ? k61Var3.z() : true;
-                    org.telegram.ui.Components.k61 k61Var4 = photoViewer23.B2;
-                    if (k61Var4 != null) {
-                        k61Var4.C();
+                    org.telegram.ui.Components.x61 x61Var3 = photoViewer23.B2;
+                    videoAds.videoWasPlaying = x61Var3 != null ? x61Var3.z() : true;
+                    org.telegram.ui.Components.x61 x61Var4 = photoViewer23.B2;
+                    if (x61Var4 != null) {
+                        x61Var4.C();
                         break;
                     }
                 }
@@ -215,10 +215,10 @@ public final /* synthetic */ class gq0 implements Runnable {
             case 26:
                 PhotoViewer photoViewer24 = this.b;
                 Drawable[] drawableArr15 = PhotoViewer.P8;
-                photoViewer24.F0(false, false);
-                org.telegram.ui.Components.ki kiVar = photoViewer24.W1;
-                if (kiVar != null) {
-                    kiVar.dismiss(true);
+                photoViewer24.G0(false, false);
+                org.telegram.ui.Components.ni niVar = photoViewer24.W1;
+                if (niVar != null) {
+                    niVar.dismiss(true);
                 }
                 org.telegram.ui.ActionBar.o2 o2Var = photoViewer24.i4;
                 if (o2Var != null) {

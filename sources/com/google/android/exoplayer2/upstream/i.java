@@ -10,7 +10,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.channels.FileChannel;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class i extends g {
     public final ContentResolver a;
@@ -54,7 +54,7 @@ public final class i extends g {
             } catch (IOException e11) {
                 throw new h(e11, 2000);
             }
-        } catch (Throwable th) {
+        } catch (Throwable th2) {
             this.d = null;
             try {
                 try {
@@ -67,7 +67,7 @@ public final class i extends g {
                         this.f = false;
                         transferEnded();
                     }
-                    throw th;
+                    throw th2;
                 } catch (IOException e12) {
                     throw new h(e12, 2000);
                 }
@@ -153,22 +153,22 @@ public final class i extends g {
     }
 
     @Override // com.google.android.exoplayer2.upstream.j
-    public final int read(byte[] bArr, int i9, int i10) {
-        if (i10 == 0) {
+    public final int read(byte[] bArr, int i10, int i11) {
+        if (i11 == 0) {
             return 0;
         }
         long j10 = this.e;
         if (j10 != 0) {
             if (j10 != -1) {
                 try {
-                    i10 = (int) Math.min(j10, i10);
+                    i11 = (int) Math.min(j10, i11);
                 } catch (IOException e10) {
                     throw new h(e10, 2000);
                 }
             }
             FileInputStream fileInputStream = this.d;
-            int i11 = d5.f0.a;
-            int read = fileInputStream.read(bArr, i9, i10);
+            int i12 = f5.d0.a;
+            int read = fileInputStream.read(bArr, i10, i11);
             if (read != -1) {
                 long j11 = this.e;
                 if (j11 != -1) {

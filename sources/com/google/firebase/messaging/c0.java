@@ -5,16 +5,16 @@ import android.content.Context;
 import android.content.Intent;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public abstract class c0 {
     public static final long a = TimeUnit.MINUTES.toMillis(1);
     public static final Object b = new Object();
-    public static z7.a c;
+    public static b8.a c;
 
     public static void a(Context context) {
         if (c == null) {
-            z7.a aVar = new z7.a(context);
+            b8.a aVar = new b8.a(context);
             c = aVar;
             synchronized (aVar.a) {
                 aVar.g = true;
@@ -29,8 +29,8 @@ public abstract class c0 {
                     intent.putExtra("com.google.firebase.iid.WakeLockHolder.wakefulintent", false);
                     c.c();
                 }
-            } catch (Throwable th) {
-                throw th;
+            } catch (Throwable th2) {
+                throw th2;
             }
         }
     }
@@ -44,9 +44,9 @@ public abstract class c0 {
                 if (!booleanExtra) {
                     c.a(a);
                 }
-                f0Var.b(intent).addOnCompleteListener(new a1.c(intent, 16));
-            } catch (Throwable th) {
-                throw th;
+                f0Var.b(intent).addOnCompleteListener(new a1.c(intent, 17));
+            } catch (Throwable th2) {
+                throw th2;
             }
         }
     }
@@ -65,8 +65,8 @@ public abstract class c0 {
                     c.a(a);
                 }
                 return startService;
-            } catch (Throwable th) {
-                throw th;
+            } catch (Throwable th2) {
+                throw th2;
             }
         }
     }

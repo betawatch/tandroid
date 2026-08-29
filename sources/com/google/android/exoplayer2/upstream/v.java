@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Map;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class v implements m {
     public final Context a;
@@ -29,21 +29,9 @@ public final class v implements m {
         this.b = new ArrayList();
     }
 
-    public static void b(m mVar, y0 y0Var) {
+    public static void e(m mVar, y0 y0Var) {
         if (mVar != null) {
             mVar.addTransferListener(y0Var);
-        }
-    }
-
-    public final void a(m mVar) {
-        int i9 = 0;
-        while (true) {
-            ArrayList arrayList = this.b;
-            if (i9 >= arrayList.size()) {
-                return;
-            }
-            mVar.addTransferListener((y0) arrayList.get(i9));
-            i9++;
         }
     }
 
@@ -52,13 +40,25 @@ public final class v implements m {
         y0Var.getClass();
         this.c.addTransferListener(y0Var);
         this.b.add(y0Var);
-        b(this.d, y0Var);
-        b(this.e, y0Var);
-        b(this.f, y0Var);
-        b(this.h, y0Var);
-        b(this.n, y0Var);
-        b(this.r, y0Var);
-        b(this.s, y0Var);
+        e(this.d, y0Var);
+        e(this.e, y0Var);
+        e(this.f, y0Var);
+        e(this.h, y0Var);
+        e(this.n, y0Var);
+        e(this.r, y0Var);
+        e(this.s, y0Var);
+    }
+
+    public final void b(m mVar) {
+        int i10 = 0;
+        while (true) {
+            ArrayList arrayList = this.b;
+            if (i10 >= arrayList.size()) {
+                return;
+            }
+            mVar.addTransferListener((y0) arrayList.get(i10));
+            i10++;
+        }
     }
 
     @Override // com.google.android.exoplayer2.upstream.m
@@ -90,10 +90,10 @@ public final class v implements m {
 
     @Override // com.google.android.exoplayer2.upstream.m
     public final long open(q qVar) {
-        d5.a.i(this.v == null);
+        f5.a.i(this.v == null);
         String scheme = qVar.a.getScheme();
         Uri uri = qVar.a;
-        int i9 = d5.f0.a;
+        int i10 = f5.d0.a;
         String scheme2 = uri.getScheme();
         boolean isEmpty = TextUtils.isEmpty(scheme2);
         Context context = this.a;
@@ -103,14 +103,14 @@ public final class v implements m {
                 if (this.d == null) {
                     d0 d0Var = new d0(false);
                     this.d = d0Var;
-                    a(d0Var);
+                    b(d0Var);
                 }
                 this.v = this.d;
             } else {
                 if (this.e == null) {
                     c cVar = new c(context);
                     this.e = cVar;
-                    a(cVar);
+                    b(cVar);
                 }
                 this.v = this.e;
             }
@@ -118,14 +118,14 @@ public final class v implements m {
             if (this.e == null) {
                 c cVar2 = new c(context);
                 this.e = cVar2;
-                a(cVar2);
+                b(cVar2);
             }
             this.v = this.e;
         } else if ("content".equals(scheme)) {
             if (this.f == null) {
                 i iVar = new i(context);
                 this.f = iVar;
-                a(iVar);
+                b(iVar);
             }
             this.v = this.f;
         } else {
@@ -136,9 +136,9 @@ public final class v implements m {
                     try {
                         m mVar2 = (m) Class.forName("com.google.android.exoplayer2.ext.rtmp.RtmpDataSource").getConstructor(null).newInstance(null);
                         this.h = mVar2;
-                        a(mVar2);
+                        b(mVar2);
                     } catch (ClassNotFoundException unused) {
-                        d5.a.K("DefaultDataSource", "Attempting to play RTMP stream without depending on the RTMP extension");
+                        f5.a.K("DefaultDataSource", "Attempting to play RTMP stream without depending on the RTMP extension");
                     } catch (Exception e10) {
                         throw new RuntimeException("Error instantiating RTMP extension", e10);
                     }
@@ -151,21 +151,21 @@ public final class v implements m {
                 if (this.n == null) {
                     a1 a1Var = new a1();
                     this.n = a1Var;
-                    a(a1Var);
+                    b(a1Var);
                 }
                 this.v = this.n;
             } else if ("data".equals(scheme)) {
                 if (this.r == null) {
                     k kVar = new k(false);
                     this.r = kVar;
-                    a(kVar);
+                    b(kVar);
                 }
                 this.v = this.r;
             } else if ("rawresource".equals(scheme) || "android.resource".equals(scheme)) {
                 if (this.s == null) {
                     RawResourceDataSource rawResourceDataSource = new RawResourceDataSource(context);
                     this.s = rawResourceDataSource;
-                    a(rawResourceDataSource);
+                    b(rawResourceDataSource);
                 }
                 this.v = this.s;
             } else {
@@ -176,9 +176,9 @@ public final class v implements m {
     }
 
     @Override // com.google.android.exoplayer2.upstream.j
-    public final int read(byte[] bArr, int i9, int i10) {
+    public final int read(byte[] bArr, int i10, int i11) {
         m mVar = this.v;
         mVar.getClass();
-        return mVar.read(bArr, i9, i10);
+        return mVar.read(bArr, i10, i11);
     }
 }

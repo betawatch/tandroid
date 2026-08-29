@@ -1,56 +1,73 @@
 package b7;
 
-import android.location.Location;
+import android.os.Bundle;
 import android.os.Parcel;
-import com.google.android.gms.common.api.Status;
-import com.google.android.gms.tasks.TaskCompletionSource;
-import f7.h5;
+import android.os.Parcelable;
+import com.google.android.gms.internal.cast.o;
+import java.util.ArrayList;
+import java.util.Arrays;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class h extends a7.a {
-    public final /* synthetic */ int b;
-    public final /* synthetic */ TaskCompletionSource c;
+public final class h extends a6.a {
+    public static final Parcelable.Creator<h> CREATOR = new w.a(19);
+    public final int a;
+    public final Bundle b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public h(int i9, TaskCompletionSource taskCompletionSource) {
-        super("com.google.android.gms.location.internal.ILocationStatusCallback", 1);
-        this.b = i9;
-        switch (i9) {
-            case 1:
-                this.c = taskCompletionSource;
-                super("com.google.android.gms.location.internal.ISettingsCallbacks", 1);
-                break;
-            default:
-                this.c = taskCompletionSource;
-                break;
-        }
+    public h(int i10, Bundle bundle) {
+        this.a = i10;
+        this.b = bundle;
     }
 
-    @Override // a7.a
-    public final boolean I0(Parcel parcel, int i9) {
-        switch (this.b) {
-            case 0:
-                if (i9 == 1) {
-                    Status status = (Status) f.a(parcel, Status.CREATOR);
-                    Location location = (Location) f.a(parcel, Location.CREATOR);
-                    f.b(parcel);
-                    h5.a(status, location, this.c);
-                    break;
-                }
-                break;
-            default:
-                if (i9 == 1) {
-                    q7.g gVar = (q7.g) f.a(parcel, q7.g.CREATOR);
-                    f.b(parcel);
-                    Status status2 = gVar.a;
-                    q7.f fVar = new q7.f();
-                    fVar.a = gVar;
-                    h5.a(status2, fVar, this.c);
-                    break;
-                }
-                break;
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof h)) {
+            return false;
+        }
+        h hVar = (h) obj;
+        Bundle bundle = hVar.b;
+        if (this.a != hVar.a) {
+            return false;
+        }
+        Bundle bundle2 = this.b;
+        if (bundle2 == null) {
+            return bundle == null;
+        }
+        if (bundle == null || bundle2.size() != bundle.size()) {
+            return false;
+        }
+        for (String str : bundle2.keySet()) {
+            if (!bundle.containsKey(str) || !z5.l.l(bundle2.getString(str), bundle.getString(str))) {
+                return false;
+            }
         }
         return true;
+    }
+
+    public final int hashCode() {
+        ArrayList arrayList = new ArrayList();
+        arrayList.add(Integer.valueOf(this.a));
+        Bundle bundle = this.b;
+        if (bundle != null) {
+            for (String str : bundle.keySet()) {
+                arrayList.add(str);
+                String string = bundle.getString(str);
+                if (string != null) {
+                    arrayList.add(string);
+                }
+            }
+        }
+        return Arrays.hashCode(arrayList.toArray(new Object[0]));
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i10) {
+        int q6 = o.q(parcel, 20293);
+        o.s(parcel, 1, 4);
+        parcel.writeInt(this.a);
+        o.b(parcel, 2, this.b);
+        o.r(parcel, q6);
     }
 }

@@ -1,172 +1,221 @@
 package org.telegram.ui;
 
+import android.animation.ValueAnimator;
 import android.view.View;
-import java.util.ArrayList;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class rx0 implements Runnable {
+public final /* synthetic */ class rx0 implements org.telegram.ui.ActionBar.h6 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
+    public final /* synthetic */ org.telegram.ui.ActionBar.o2 b;
 
-    public /* synthetic */ rx0(Object obj, Object obj2, Object obj3, Object obj4, Object obj5, int i9) {
-        this.a = i9;
-        this.b = obj;
-        this.c = obj2;
-        this.d = obj3;
-        this.e = obj4;
-        this.f = obj5;
+    public /* synthetic */ rx0(int i10, org.telegram.ui.ActionBar.o2 o2Var) {
+        this.a = i10;
+        this.b = o2Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
+    @Override // org.telegram.ui.ActionBar.h6
+    public final /* synthetic */ void a(float f9) {
+        int i10 = this.a;
+    }
+
+    @Override // org.telegram.ui.ActionBar.h6
+    public final void b() {
+        ValueAnimator valueAnimator;
+        int i10 = this.a;
+        int i11 = 0;
+        org.telegram.ui.ActionBar.o2 o2Var = this.b;
+        switch (i10) {
             case 0:
-                ProfileActivity.W((ProfileActivity) this.b, (TLObject) this.c, (TLRPC.UserFull) this.d, (TL_account.TL_birthday) this.e, (TLRPC.TL_error) this.f);
+                ProfileActivity.V((ProfileActivity) o2Var);
                 break;
             case 1:
-                f01 f01Var = (f01) this.b;
-                String str = (String) this.c;
-                ArrayList arrayList = (ArrayList) this.d;
-                ArrayList arrayList2 = (ArrayList) this.e;
-                ArrayList arrayList3 = (ArrayList) this.f;
-                org.telegram.ui.ActionBar.o2 o2Var = f01Var.e;
-                if (str.equals(f01Var.y)) {
-                    if (!f01Var.w && (o2Var instanceof ProfileActivity)) {
-                        try {
-                            ((ProfileActivity) o2Var).L.b.getImageReceiver().startAnimation();
-                            ((ProfileActivity) o2Var).L.d.setText(LocaleController.getString(R.string.SettingsNoResults));
-                        } catch (Exception e10) {
-                            FileLog.e(e10);
+                t01 t01Var = (t01) o2Var;
+                org.telegram.ui.Components.jl0 jl0Var = t01Var.a;
+                if (jl0Var != null) {
+                    int childCount = jl0Var.getChildCount();
+                    while (i11 < childCount) {
+                        View childAt = t01Var.a.getChildAt(i11);
+                        if (childAt instanceof org.telegram.ui.Cells.ra) {
+                            ((org.telegram.ui.Cells.ra) childAt).b();
                         }
+                        i11++;
                     }
-                    f01Var.w = true;
-                    f01Var.r = arrayList;
-                    f01Var.s = arrayList2;
-                    f01Var.n = arrayList3;
-                    f01Var.l();
-                    if (o2Var instanceof ProfileActivity) {
-                        try {
-                            ((ProfileActivity) o2Var).L.b.getImageReceiver().startAnimation();
-                            break;
-                        } catch (Exception e11) {
-                            FileLog.e(e11);
-                            return;
-                        }
-                    }
+                    break;
                 }
                 break;
             case 2:
-                b61 b61Var = (b61) this.b;
-                View view = (View) this.c;
-                org.telegram.ui.Components.t5 t5Var = (org.telegram.ui.Components.t5) this.d;
-                TLRPC.Document document = (TLRPC.Document) this.e;
-                k51 k51Var = (k51) this.f;
-                b61Var.getClass();
-                b61Var.p(view, Long.valueOf(t5Var.documentId), document, k51Var.v, null);
+                l11 l11Var = (l11) o2Var;
+                if (l11Var.h != null && ((valueAnimator = l11Var.D) == null || !valueAnimator.isRunning())) {
+                    l11Var.h.setTextColor(org.telegram.ui.ActionBar.g6.w0(null, l11Var.C ? org.telegram.ui.ActionBar.g6.q6 : org.telegram.ui.ActionBar.g6.z6, false));
+                }
+                if (l11Var.a != null) {
+                    int i12 = 0;
+                    while (true) {
+                        EditTextBoldCursor[] editTextBoldCursorArr = l11Var.a;
+                        if (i12 >= editTextBoldCursorArr.length) {
+                            break;
+                        } else {
+                            editTextBoldCursorArr[i12].setLineColors(org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.k6, false), org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.l6, false), org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.p7, false));
+                            i12++;
+                        }
+                    }
+                }
                 break;
             case 3:
-                l61 l61Var = (l61) this.b;
-                TLRPC.TL_error tL_error = (TLRPC.TL_error) this.f;
-                TLObject tLObject = (TLObject) this.c;
-                TwoStepVerificationActivity twoStepVerificationActivity = (TwoStepVerificationActivity) this.d;
-                TLRPC.User user = (TLRPC.User) this.e;
-                l61Var.getClass();
-                if (tL_error == null) {
-                    TL_account.Password password = (TL_account.Password) tLObject;
-                    twoStepVerificationActivity.E = password;
-                    TwoStepVerificationActivity.l0(password);
-                    l61Var.S(user, twoStepVerificationActivity.k0(), twoStepVerificationActivity);
-                    break;
-                }
+                a21 a21Var = (a21) o2Var;
+                a21Var.getClass();
+                a21Var.setNavigationBarColor(a21Var.getThemedColor(org.telegram.ui.ActionBar.g6.a7));
                 break;
             case 4:
-                pf.r1 r1Var = (pf.r1) this.b;
-                ArrayList<TLRPC.User> arrayList4 = (ArrayList) this.c;
-                ArrayList<TLRPC.Chat> arrayList5 = (ArrayList) this.d;
-                ArrayList arrayList6 = (ArrayList) this.e;
-                Runnable runnable = (Runnable) this.f;
-                r1Var.e = false;
-                int i9 = r1Var.a;
-                MessagesController.getInstance(i9).putUsers(arrayList4, true);
-                MessagesController.getInstance(i9).putChats(arrayList5, true);
-                ArrayList arrayList7 = r1Var.b;
-                arrayList7.clear();
-                arrayList7.addAll(arrayList6);
-                if (runnable != null) {
-                    runnable.run();
-                } else {
-                    r1Var.i(null, false);
-                }
-                NotificationCenter.getInstance(i9).lambda$postNotificationNameOnUIThread$1(NotificationCenter.quickRepliesUpdated, new Object[0]);
+                i21 i21Var = (i21) o2Var;
+                i21Var.a.setBackgroundColor(org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.a7, false));
+                i21Var.c.l();
                 break;
             case 5:
-                pf.r1 r1Var2 = (pf.r1) this.b;
-                ArrayList<TLRPC.User> arrayList8 = (ArrayList) this.c;
-                ArrayList<TLRPC.Chat> arrayList9 = (ArrayList) this.d;
-                pf.q1 q1Var = (pf.q1) this.e;
-                MessageObject messageObject = (MessageObject) this.f;
-                int i10 = r1Var2.a;
-                MessagesController.getInstance(i10).putUsers(arrayList8, true);
-                MessagesController.getInstance(i10).putChats(arrayList9, true);
-                q1Var.e = messageObject;
-                if (messageObject != null) {
-                    messageObject.applyQuickReply(q1Var.b, q1Var.a);
+                t91 t91Var = (t91) o2Var;
+                u81 u81Var = t91Var.O;
+                if (u81Var != null) {
+                    int childCount2 = u81Var.getChildCount();
+                    for (int i13 = 0; i13 < childCount2; i13++) {
+                        t91.l0(t91Var.O.getChildAt(i13));
+                    }
+                    int hiddenChildCount = t91Var.O.getHiddenChildCount();
+                    for (int i14 = 0; i14 < hiddenChildCount; i14++) {
+                        t91.l0(t91Var.O.V(i14));
+                    }
+                    int cachedChildCount = t91Var.O.getCachedChildCount();
+                    for (int i15 = 0; i15 < cachedChildCount; i15++) {
+                        t91.l0(t91Var.O.P(i15));
+                    }
+                    int attachedScrapChildCount = t91Var.O.getAttachedScrapChildCount();
+                    while (i11 < attachedScrapChildCount) {
+                        t91.l0(t91Var.O.O(i11));
+                        i11++;
+                    }
+                    t91Var.O.getRecycledViewPool().a();
                 }
-                r1Var2.l();
-                NotificationCenter.getInstance(i10).lambda$postNotificationNameOnUIThread$1(NotificationCenter.quickRepliesUpdated, new Object[0]);
+                tf.f fVar = t91Var.W;
+                if (fVar != null) {
+                    fVar.g = true;
+                    break;
+                }
+                break;
+            case 6:
+                ThemeActivity themeActivity = (ThemeActivity) o2Var;
+                for (int i16 = 0; i16 < themeActivity.b.getChildCount(); i16++) {
+                    View childAt2 = themeActivity.b.getChildAt(i16);
+                    if (childAt2 instanceof org.telegram.ui.Cells.t) {
+                        ((org.telegram.ui.Cells.t) childAt2).getAdapter().l();
+                    } else if (childAt2 instanceof go0) {
+                        ((go0) childAt2).a();
+                    }
+                }
+                for (int i17 = 0; i17 < themeActivity.b.getCachedChildCount(); i17++) {
+                    View P = themeActivity.b.P(i17);
+                    if (P instanceof org.telegram.ui.Cells.t) {
+                        ((org.telegram.ui.Cells.t) P).getAdapter().l();
+                    } else if (P instanceof go0) {
+                        ((go0) P).a();
+                    }
+                }
+                for (int i18 = 0; i18 < themeActivity.b.getHiddenChildCount(); i18++) {
+                    View V = themeActivity.b.V(i18);
+                    if (V instanceof org.telegram.ui.Cells.t) {
+                        ((org.telegram.ui.Cells.t) V).getAdapter().l();
+                    } else if (V instanceof go0) {
+                        ((go0) V).a();
+                    }
+                }
+                while (i11 < themeActivity.b.getAttachedScrapChildCount()) {
+                    View O = themeActivity.b.O(i11);
+                    if (O instanceof org.telegram.ui.Cells.t) {
+                        ((org.telegram.ui.Cells.t) O).getAdapter().l();
+                    } else if (O instanceof go0) {
+                        ((go0) O).a();
+                    }
+                    i11++;
+                }
+                break;
+            case 7:
+                qc1.W((qc1) o2Var);
+                break;
+            case 8:
+                md1 md1Var = (md1) o2Var;
+                org.telegram.ui.Components.jl0 jl0Var2 = md1Var.a;
+                if (jl0Var2 != null) {
+                    int childCount3 = jl0Var2.getChildCount();
+                    for (int i19 = 0; i19 < childCount3; i19++) {
+                        View childAt3 = md1Var.a.getChildAt(i19);
+                        if (childAt3 instanceof org.telegram.ui.Cells.e4) {
+                            ((org.telegram.ui.Cells.e4) childAt3).f(0);
+                        }
+                    }
+                }
+                org.telegram.ui.Components.jl0 jl0Var3 = md1Var.b;
+                if (jl0Var3 != null) {
+                    int childCount4 = jl0Var3.getChildCount();
+                    for (int i20 = 0; i20 < childCount4; i20++) {
+                        View childAt4 = md1Var.b.getChildAt(i20);
+                        if (childAt4 instanceof org.telegram.ui.Cells.e4) {
+                            ((org.telegram.ui.Cells.e4) childAt4).f(0);
+                        }
+                    }
+                }
+                md1Var.c.setBackground(org.telegram.ui.ActionBar.w5.f(new float[]{4.0f}, org.telegram.ui.ActionBar.g6.Oh));
+                md1Var.B.setProgressColor(org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.h6, false));
+                break;
+            case 9:
+                ze1.X((ze1) o2Var);
                 break;
             default:
-                pf.r1 r1Var3 = (pf.r1) this.b;
-                TLObject tLObject2 = (TLObject) this.c;
-                ArrayList<Integer> arrayList10 = (ArrayList) this.d;
-                TLRPC.TL_messages_sendQuickReplyMessages tL_messages_sendQuickReplyMessages = (TLRPC.TL_messages_sendQuickReplyMessages) this.e;
-                TLRPC.TL_error tL_error2 = (TLRPC.TL_error) this.f;
-                r1Var3.getClass();
-                if (tLObject2 instanceof TLRPC.TL_messages_messages) {
-                    ArrayList<TLRPC.Message> arrayList11 = ((TLRPC.TL_messages_messages) tLObject2).messages;
-                    arrayList10.clear();
-                    int size = arrayList11.size();
-                    int i11 = 0;
-                    while (i11 < size) {
-                        TLRPC.Message message = arrayList11.get(i11);
-                        i11++;
-                        arrayList10.add(Integer.valueOf(message.id));
+                UsersSelectActivity usersSelectActivity = (UsersSelectActivity) o2Var;
+                org.telegram.ui.Components.jl0 jl0Var4 = usersSelectActivity.d;
+                if (jl0Var4 != null) {
+                    int childCount5 = jl0Var4.getChildCount();
+                    for (int i21 = 0; i21 < childCount5; i21++) {
+                        View childAt5 = usersSelectActivity.d.getChildAt(i21);
+                        if (childAt5 instanceof org.telegram.ui.Cells.e4) {
+                            ((org.telegram.ui.Cells.e4) childAt5).f(0);
+                        }
                     }
-                    tL_messages_sendQuickReplyMessages.id = arrayList10;
-                    for (int i12 = 0; i12 < arrayList10.size(); i12++) {
-                        tL_messages_sendQuickReplyMessages.random_id.add(Long.valueOf(Utilities.random.nextLong()));
-                    }
-                    ConnectionsManager.getInstance(r1Var3.a).sendRequest(tL_messages_sendQuickReplyMessages, null);
-                    break;
-                } else {
-                    FileLog.e("received " + tLObject2 + " " + tL_error2 + " on getQuickReplyMessages when trying to send quick reply");
                     break;
                 }
+                break;
         }
     }
 
-    public /* synthetic */ rx0(l61 l61Var, TLRPC.TL_error tL_error, TLObject tLObject, TwoStepVerificationActivity twoStepVerificationActivity, TLRPC.User user) {
-        this.a = 3;
-        this.b = l61Var;
-        this.f = tL_error;
-        this.c = tLObject;
-        this.d = twoStepVerificationActivity;
-        this.e = user;
+    private final /* synthetic */ void c(float f9) {
+    }
+
+    private final /* synthetic */ void d(float f9) {
+    }
+
+    private final /* synthetic */ void e(float f9) {
+    }
+
+    private final /* synthetic */ void f(float f9) {
+    }
+
+    private final /* synthetic */ void g(float f9) {
+    }
+
+    private final /* synthetic */ void h(float f9) {
+    }
+
+    private final /* synthetic */ void i(float f9) {
+    }
+
+    private final /* synthetic */ void j(float f9) {
+    }
+
+    private final /* synthetic */ void k(float f9) {
+    }
+
+    private final /* synthetic */ void l(float f9) {
+    }
+
+    private final /* synthetic */ void m(float f9) {
     }
 }

@@ -1,38 +1,40 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ProfileActivity;
-
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class nv0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ qv0 b;
+    public final /* synthetic */ pv0 b;
 
-    public /* synthetic */ nv0(qv0 qv0Var, int i9) {
-        this.a = i9;
-        this.b = qv0Var;
+    public /* synthetic */ nv0(pv0 pv0Var, int i10) {
+        this.a = i10;
+        this.b = pv0Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                qv0 qv0Var = this.b;
-                qv0Var.invalidate();
-                AndroidUtilities.runOnUIThread(new nv0(qv0Var, 1));
-                break;
-            default:
-                qv0 qv0Var2 = this.b;
-                pv0 pv0Var = qv0Var2.e;
-                if (pv0Var != null) {
-                    qv0Var2.getVisibilityFactor();
-                    ProfileActivity profileActivity = ((org.telegram.ui.fx0) pv0Var).b;
-                    org.telegram.ui.ActionBar.h5[] h5VarArr = profileActivity.r;
-                    h5VarArr[1].setTranslationX(profileActivity.W3(profileActivity.V5));
-                    h5VarArr[1].setTranslationY(profileActivity.X3(profileActivity.W5));
+                pv0 pv0Var = this.b;
+                pv0Var.R0 = false;
+                if (!pv0Var.U0 && pv0Var.S0) {
+                    pv0Var.A(true);
                     break;
                 }
+                break;
+            case 1:
+                this.b.R0 = false;
+                break;
+            case 2:
+                pv0 pv0Var2 = this.b;
+                pv0Var2.U0 = false;
+                if (!pv0Var2.R0 && pv0Var2.S0) {
+                    pv0Var2.A(true);
+                    break;
+                }
+                break;
+            default:
+                this.b.U0 = false;
                 break;
         }
     }

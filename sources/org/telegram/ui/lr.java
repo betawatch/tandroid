@@ -8,33 +8,33 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
 public final class lr {
     public final ActionBarPopupWindow$ActionBarPopupWindowLayout a;
     public final LinearLayout b;
     public final oq0 c;
 
-    public lr(ContextThemeWrapper contextThemeWrapper, org.telegram.ui.Components.fg0 fg0Var, oq0 oq0Var) {
+    public lr(ContextThemeWrapper contextThemeWrapper, org.telegram.ui.Components.qg0 qg0Var, oq0 oq0Var) {
         this.c = oq0Var;
         ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = new ActionBarPopupWindow$ActionBarPopupWindowLayout(0, 0, contextThemeWrapper, null);
         this.a = actionBarPopupWindow$ActionBarPopupWindowLayout;
         actionBarPopupWindow$ActionBarPopupWindowLayout.setFitItems(true);
-        org.telegram.ui.ActionBar.g1 c10 = org.telegram.ui.ActionBar.w0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_arrow_back, LocaleController.getString(R.string.Back), false, null);
-        c10.setOnClickListener(new kr(fg0Var, 0));
-        c10.c(-328966, -328966);
-        c10.setSelectorColor(268435455);
-        View gVar = new dh.g(contextThemeWrapper, 10);
-        gVar.setMinimumWidth(AndroidUtilities.dp(196.0f));
-        gVar.setBackgroundColor(-15198184);
-        actionBarPopupWindow$ActionBarPopupWindowLayout.addView(gVar);
-        LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) gVar.getLayoutParams();
+        org.telegram.ui.ActionBar.g1 c3 = org.telegram.ui.ActionBar.w0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_arrow_back, LocaleController.getString(R.string.Back), false, null);
+        c3.setOnClickListener(new kr(qg0Var, 0));
+        c3.c(-328966, -328966);
+        c3.setSelectorColor(268435455);
+        View dVar = new bh.d(contextThemeWrapper, 12);
+        dVar.setMinimumWidth(AndroidUtilities.dp(196.0f));
+        dVar.setBackgroundColor(-15198184);
+        actionBarPopupWindow$ActionBarPopupWindowLayout.addView(dVar);
+        LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) dVar.getLayoutParams();
         if (LocaleController.isRTL) {
             layoutParams.gravity = 5;
         }
         layoutParams.width = -1;
         layoutParams.height = AndroidUtilities.dp(8.0f);
-        gVar.setLayoutParams(layoutParams);
+        dVar.setLayoutParams(layoutParams);
         LinearLayout linearLayout = new LinearLayout(contextThemeWrapper);
         this.b = linearLayout;
         linearLayout.setOrientation(1);

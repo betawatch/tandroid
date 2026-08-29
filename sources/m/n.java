@@ -10,7 +10,7 @@ import android.util.AttributeSet;
 import android.view.View;
 import java.util.WeakHashMap;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class n {
     public final View a;
@@ -28,8 +28,8 @@ public final class n {
         View view = this.a;
         Drawable background = view.getBackground();
         if (background != null) {
-            int i9 = Build.VERSION.SDK_INT;
-            if (i9 <= 21 ? i9 == 21 : this.d != null) {
+            int i10 = Build.VERSION.SDK_INT;
+            if (i10 <= 21 ? i10 == 21 : this.d != null) {
                 if (this.f == null) {
                     this.f = new f3();
                 }
@@ -39,10 +39,10 @@ public final class n {
                 f3Var.d = null;
                 f3Var.a = false;
                 WeakHashMap weakHashMap = r0.j0.a;
-                ColorStateList c10 = r0.b0.c(view);
-                if (c10 != null) {
+                ColorStateList c3 = r0.b0.c(view);
+                if (c3 != null) {
                     f3Var.b = true;
-                    f3Var.c = c10;
+                    f3Var.c = c3;
                 }
                 PorterDuff.Mode d = r0.b0.d(view);
                 if (d != null) {
@@ -86,34 +86,34 @@ public final class n {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void d(AttributeSet attributeSet, int i9) {
+    public final void d(AttributeSet attributeSet, int i10) {
         boolean z10;
-        ColorStateList i10;
+        ColorStateList i11;
         View view = this.a;
         Context context = view.getContext();
         int[] iArr = f.a.z;
-        j4.c E = j4.c.E(context, attributeSet, iArr, i9);
-        TypedArray typedArray = (TypedArray) E.c;
+        l3.g0 z11 = l3.g0.z(context, attributeSet, iArr, i10);
+        TypedArray typedArray = (TypedArray) z11.c;
         View view2 = this.a;
-        r0.j0.j(view2, view2.getContext(), iArr, attributeSet, (TypedArray) E.c, i9);
+        r0.j0.j(view2, view2.getContext(), iArr, attributeSet, (TypedArray) z11.c, i10);
         try {
             if (typedArray.hasValue(0)) {
                 this.c = typedArray.getResourceId(0, -1);
                 r rVar = this.b;
                 Context context2 = view.getContext();
-                int i11 = this.c;
+                int i12 = this.c;
                 synchronized (rVar) {
-                    i10 = rVar.a.i(context2, i11);
+                    i11 = rVar.a.i(context2, i12);
                 }
-                if (i10 != null) {
-                    g(i10);
+                if (i11 != null) {
+                    g(i11);
                 }
             }
             if (typedArray.hasValue(1)) {
-                ColorStateList v = E.v(1);
-                int i12 = Build.VERSION.SDK_INT;
-                r0.b0.g(view, v);
-                if (i12 == 21) {
+                ColorStateList p10 = z11.p(1);
+                int i13 = Build.VERSION.SDK_INT;
+                r0.b0.g(view, p10);
+                if (i13 == 21) {
                     Drawable background = view.getBackground();
                     if (r0.b0.c(view) == null && r0.b0.d(view) == null) {
                         z10 = false;
@@ -134,12 +134,12 @@ public final class n {
             }
             if (typedArray.hasValue(2)) {
                 PorterDuff.Mode b10 = m1.b(typedArray.getInt(2, -1), null);
-                int i13 = Build.VERSION.SDK_INT;
+                int i14 = Build.VERSION.SDK_INT;
                 r0.b0.h(view, b10);
-                if (i13 == 21) {
+                if (i14 == 21) {
                     Drawable background2 = view.getBackground();
-                    boolean z11 = (r0.b0.c(view) == null && r0.b0.d(view) == null) ? false : true;
-                    if (background2 != null && z11) {
+                    boolean z12 = (r0.b0.c(view) == null && r0.b0.d(view) == null) ? false : true;
+                    if (background2 != null && z12) {
                         if (background2.isStateful()) {
                             background2.setState(view.getDrawableState());
                         }
@@ -147,10 +147,10 @@ public final class n {
                     }
                 }
             }
-            E.G();
-        } catch (Throwable th) {
-            E.G();
-            throw th;
+            z11.B();
+        } catch (Throwable th2) {
+            z11.B();
+            throw th2;
         }
     }
 
@@ -160,14 +160,14 @@ public final class n {
         a();
     }
 
-    public final void f(int i9) {
+    public final void f(int i10) {
         ColorStateList colorStateList;
-        this.c = i9;
+        this.c = i10;
         r rVar = this.b;
         if (rVar != null) {
             Context context = this.a.getContext();
             synchronized (rVar) {
-                colorStateList = rVar.a.i(context, i9);
+                colorStateList = rVar.a.i(context, i10);
             }
         } else {
             colorStateList = null;

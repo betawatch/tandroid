@@ -79,8 +79,8 @@ public final class a {
         this.a.putObjectVolatile(obj, j10, lVar);
     }
 
-    public final boolean c(Object obj, long j10, int i9, int i10) {
-        return this.a.compareAndSwapInt(obj, j10, i9, i10);
+    public final boolean c(Object obj, long j10, int i10, int i11) {
+        return this.a.compareAndSwapInt(obj, j10, i10, i11);
     }
 
     public final boolean d(Object obj, long j10, long j11, long j12) {

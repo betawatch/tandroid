@@ -14,7 +14,7 @@ import androidx.appcompat.widget.ActionMenuView;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class i implements l.x {
     public int A;
@@ -39,7 +39,7 @@ public final class i implements l.x {
     public final int f = R.layout.abc_action_menu_layout;
     public final int h = R.layout.abc_action_menu_item_layout;
     public final SparseBooleanArray D = new SparseBooleanArray();
-    public final android.support.v4.media.c I = new android.support.v4.media.c(this, 25);
+    public final m5.i I = new m5.i(this, 23);
 
     public i(Context context) {
         this.a = context;
@@ -74,12 +74,7 @@ public final class i implements l.x {
     }
 
     @Override // l.x
-    public final boolean b(l.m mVar) {
-        return false;
-    }
-
-    @Override // l.x
-    public final void c(l.k kVar, boolean z10) {
+    public final void b(l.k kVar, boolean z10) {
         f();
         e eVar = this.F;
         if (eVar != null && eVar.b()) {
@@ -87,118 +82,123 @@ public final class i implements l.x {
         }
         l.w wVar = this.e;
         if (wVar != null) {
-            wVar.c(kVar, z10);
+            wVar.b(kVar, z10);
         }
+    }
+
+    @Override // l.x
+    public final boolean c(l.m mVar) {
+        return false;
     }
 
     @Override // l.x
     public final boolean d() {
         ArrayList arrayList;
-        int i9;
         int i10;
+        int i11;
         boolean z10;
         i iVar = this;
         l.k kVar = iVar.c;
         if (kVar != null) {
             arrayList = kVar.l();
-            i9 = arrayList.size();
+            i10 = arrayList.size();
         } else {
             arrayList = null;
-            i9 = 0;
+            i10 = 0;
         }
-        int i11 = iVar.B;
-        int i12 = iVar.A;
+        int i12 = iVar.B;
+        int i13 = iVar.A;
         int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(0, 0);
         ViewGroup viewGroup = (ViewGroup) iVar.n;
-        int i13 = 0;
-        boolean z11 = false;
         int i14 = 0;
+        boolean z11 = false;
         int i15 = 0;
+        int i16 = 0;
         while (true) {
-            i10 = 2;
+            i11 = 2;
             z10 = true;
-            if (i13 >= i9) {
+            if (i14 >= i10) {
                 break;
             }
-            l.m mVar = (l.m) arrayList.get(i13);
-            int i16 = mVar.y;
-            if ((i16 & 2) == 2) {
-                i14++;
-            } else if ((i16 & 1) == 1) {
+            l.m mVar = (l.m) arrayList.get(i14);
+            int i17 = mVar.y;
+            if ((i17 & 2) == 2) {
                 i15++;
+            } else if ((i17 & 1) == 1) {
+                i16++;
             } else {
                 z11 = true;
             }
             if (iVar.C && mVar.C) {
-                i11 = 0;
+                i12 = 0;
             }
-            i13++;
+            i14++;
         }
-        if (iVar.w && (z11 || i15 + i14 > i11)) {
-            i11--;
+        if (iVar.w && (z11 || i16 + i15 > i12)) {
+            i12--;
         }
-        int i17 = i11 - i14;
+        int i18 = i12 - i15;
         SparseBooleanArray sparseBooleanArray = iVar.D;
         sparseBooleanArray.clear();
-        int i18 = 0;
         int i19 = 0;
-        while (i18 < i9) {
-            l.m mVar2 = (l.m) arrayList.get(i18);
-            int i20 = mVar2.y;
-            boolean z12 = (i20 & 2) == i10;
-            int i21 = mVar2.b;
+        int i20 = 0;
+        while (i19 < i10) {
+            l.m mVar2 = (l.m) arrayList.get(i19);
+            int i21 = mVar2.y;
+            boolean z12 = (i21 & 2) == i11;
+            int i22 = mVar2.b;
             if (z12) {
                 View a2 = iVar.a(mVar2, null, viewGroup);
                 a2.measure(makeMeasureSpec, makeMeasureSpec);
                 int measuredWidth = a2.getMeasuredWidth();
-                i12 -= measuredWidth;
-                if (i19 == 0) {
-                    i19 = measuredWidth;
+                i13 -= measuredWidth;
+                if (i20 == 0) {
+                    i20 = measuredWidth;
                 }
-                if (i21 != 0) {
-                    sparseBooleanArray.put(i21, z10);
+                if (i22 != 0) {
+                    sparseBooleanArray.put(i22, z10);
                 }
                 mVar2.f(z10);
-            } else if ((i20 & 1) == z10) {
-                boolean z13 = sparseBooleanArray.get(i21);
-                boolean z14 = (i17 > 0 || z13) && i12 > 0;
+            } else if ((i21 & 1) == z10) {
+                boolean z13 = sparseBooleanArray.get(i22);
+                boolean z14 = (i18 > 0 || z13) && i13 > 0;
                 if (z14) {
-                    View a3 = iVar.a(mVar2, null, viewGroup);
-                    a3.measure(makeMeasureSpec, makeMeasureSpec);
-                    int measuredWidth2 = a3.getMeasuredWidth();
-                    i12 -= measuredWidth2;
-                    if (i19 == 0) {
-                        i19 = measuredWidth2;
+                    View a10 = iVar.a(mVar2, null, viewGroup);
+                    a10.measure(makeMeasureSpec, makeMeasureSpec);
+                    int measuredWidth2 = a10.getMeasuredWidth();
+                    i13 -= measuredWidth2;
+                    if (i20 == 0) {
+                        i20 = measuredWidth2;
                     }
-                    z14 &= i12 + i19 > 0;
+                    z14 &= i13 + i20 > 0;
                 }
-                if (z14 && i21 != 0) {
-                    sparseBooleanArray.put(i21, true);
+                if (z14 && i22 != 0) {
+                    sparseBooleanArray.put(i22, true);
                 } else if (z13) {
-                    sparseBooleanArray.put(i21, false);
-                    for (int i22 = 0; i22 < i18; i22++) {
-                        l.m mVar3 = (l.m) arrayList.get(i22);
-                        if (mVar3.b == i21) {
+                    sparseBooleanArray.put(i22, false);
+                    for (int i23 = 0; i23 < i19; i23++) {
+                        l.m mVar3 = (l.m) arrayList.get(i23);
+                        if (mVar3.b == i22) {
                             if ((mVar3.x & 32) == 32) {
-                                i17++;
+                                i18++;
                             }
                             mVar3.f(false);
                         }
                     }
                 }
                 if (z14) {
-                    i17--;
+                    i18--;
                 }
                 mVar2.f(z14);
             } else {
                 mVar2.f(false);
-                i18++;
-                i10 = 2;
+                i19++;
+                i11 = 2;
                 iVar = this;
                 z10 = true;
             }
-            i18++;
-            i10 = 2;
+            i19++;
+            i11 = 2;
             iVar = this;
             z10 = true;
         }
@@ -208,7 +208,7 @@ public final class i implements l.x {
     /* JADX WARN: Multi-variable type inference failed */
     @Override // l.x
     public final void e() {
-        int i9;
+        int i10;
         ViewGroup viewGroup = (ViewGroup) this.n;
         ArrayList arrayList = null;
         boolean z10 = false;
@@ -218,11 +218,11 @@ public final class i implements l.x {
                 kVar.i();
                 ArrayList l10 = this.c.l();
                 int size = l10.size();
-                i9 = 0;
-                for (int i10 = 0; i10 < size; i10++) {
-                    l.m mVar = (l.m) l10.get(i10);
+                i10 = 0;
+                for (int i11 = 0; i11 < size; i11++) {
+                    l.m mVar = (l.m) l10.get(i11);
                     if ((mVar.x & 32) == 32) {
-                        View childAt = viewGroup.getChildAt(i9);
+                        View childAt = viewGroup.getChildAt(i10);
                         l.m itemData = childAt instanceof l.y ? ((l.y) childAt).getItemData() : null;
                         View a2 = a(mVar, childAt, viewGroup);
                         if (mVar != itemData) {
@@ -234,19 +234,19 @@ public final class i implements l.x {
                             if (viewGroup2 != null) {
                                 viewGroup2.removeView(a2);
                             }
-                            ((ViewGroup) this.n).addView(a2, i9);
+                            ((ViewGroup) this.n).addView(a2, i10);
                         }
-                        i9++;
+                        i10++;
                     }
                 }
             } else {
-                i9 = 0;
+                i10 = 0;
             }
-            while (i9 < viewGroup.getChildCount()) {
-                if (viewGroup.getChildAt(i9) == this.r) {
-                    i9++;
+            while (i10 < viewGroup.getChildCount()) {
+                if (viewGroup.getChildAt(i10) == this.r) {
+                    i10++;
                 } else {
-                    viewGroup.removeViewAt(i9);
+                    viewGroup.removeViewAt(i10);
                 }
             }
         }
@@ -256,8 +256,8 @@ public final class i implements l.x {
             kVar2.i();
             ArrayList arrayList2 = kVar2.i;
             int size2 = arrayList2.size();
-            for (int i11 = 0; i11 < size2; i11++) {
-                l.n nVar = ((l.m) arrayList2.get(i11)).A;
+            for (int i12 = 0; i12 < size2; i12++) {
+                l.n nVar = ((l.m) arrayList2.get(i12)).A;
             }
         }
         l.k kVar3 = this.c;
@@ -285,9 +285,9 @@ public final class i implements l.x {
                 ActionMenuView actionMenuView = (ActionMenuView) this.n;
                 h hVar = this.r;
                 actionMenuView.getClass();
-                k i12 = ActionMenuView.i();
-                i12.a = true;
-                actionMenuView.addView(hVar, i12);
+                k i13 = ActionMenuView.i();
+                i13.a = true;
+                actionMenuView.addView(hVar, i13);
             }
         } else {
             h hVar2 = this.r;
@@ -320,14 +320,14 @@ public final class i implements l.x {
         return true;
     }
 
-    public final boolean g() {
-        e eVar = this.E;
-        return eVar != null && eVar.b();
+    @Override // l.x
+    public final void g(l.w wVar) {
+        throw null;
     }
 
-    @Override // l.x
-    public final void h(l.w wVar) {
-        throw null;
+    public final boolean h() {
+        e eVar = this.E;
+        return eVar != null && eVar.b();
     }
 
     @Override // l.x
@@ -339,20 +339,20 @@ public final class i implements l.x {
         if (!this.x) {
             this.w = true;
         }
-        int i9 = 2;
+        int i10 = 2;
         this.y = context.getResources().getDisplayMetrics().widthPixels / 2;
         Configuration configuration = context.getResources().getConfiguration();
-        int i10 = configuration.screenWidthDp;
-        int i11 = configuration.screenHeightDp;
-        if (configuration.smallestScreenWidthDp > 600 || i10 > 600 || ((i10 > 960 && i11 > 720) || (i10 > 720 && i11 > 960))) {
-            i9 = 5;
-        } else if (i10 >= 500 || ((i10 > 640 && i11 > 480) || (i10 > 480 && i11 > 640))) {
-            i9 = 4;
-        } else if (i10 >= 360) {
-            i9 = 3;
+        int i11 = configuration.screenWidthDp;
+        int i12 = configuration.screenHeightDp;
+        if (configuration.smallestScreenWidthDp > 600 || i11 > 600 || ((i11 > 960 && i12 > 720) || (i11 > 720 && i12 > 960))) {
+            i10 = 5;
+        } else if (i11 >= 500 || ((i11 > 640 && i12 > 480) || (i11 > 480 && i12 > 640))) {
+            i10 = 4;
+        } else if (i11 >= 360) {
+            i10 = 3;
         }
-        this.B = i9;
-        int i12 = this.y;
+        this.B = i10;
+        int i13 = this.y;
         if (this.w) {
             if (this.r == null) {
                 h hVar = new h(this, this.a);
@@ -365,12 +365,12 @@ public final class i implements l.x {
                 int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(0, 0);
                 this.r.measure(makeMeasureSpec, makeMeasureSpec);
             }
-            i12 -= this.r.getMeasuredWidth();
+            i13 -= this.r.getMeasuredWidth();
         } else {
             this.r = null;
         }
-        this.A = i12;
-        float f10 = resources.getDisplayMetrics().density;
+        this.A = i13;
+        float f9 = resources.getDisplayMetrics().density;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -391,34 +391,34 @@ public final class i implements l.x {
             View view = null;
             if (viewGroup != null) {
                 int childCount = viewGroup.getChildCount();
-                int i9 = 0;
+                int i10 = 0;
                 while (true) {
-                    if (i9 >= childCount) {
+                    if (i10 >= childCount) {
                         break;
                     }
-                    View childAt = viewGroup.getChildAt(i9);
+                    View childAt = viewGroup.getChildAt(i10);
                     if ((childAt instanceof l.y) && ((l.y) childAt).getItemData() == mVar) {
                         view = childAt;
                         break;
                     }
-                    i9++;
+                    i10++;
                 }
             }
             if (view != null) {
                 d0Var.A.getClass();
                 int size = d0Var.f.size();
-                int i10 = 0;
+                int i11 = 0;
                 while (true) {
-                    if (i10 >= size) {
+                    if (i11 >= size) {
                         z10 = false;
                         break;
                     }
-                    MenuItem item = d0Var.getItem(i10);
+                    MenuItem item = d0Var.getItem(i11);
                     if (item.isVisible() && item.getIcon() != null) {
                         z10 = true;
                         break;
                     }
-                    i10++;
+                    i11++;
                 }
                 e eVar = new e(this, this.b, d0Var, view);
                 this.F = eVar;
@@ -436,7 +436,7 @@ public final class i implements l.x {
                 }
                 l.w wVar = this.e;
                 if (wVar != null) {
-                    wVar.j(d0Var);
+                    wVar.h(d0Var);
                 }
                 return true;
             }
@@ -451,7 +451,7 @@ public final class i implements l.x {
 
     public final boolean l() {
         l.k kVar;
-        if (!this.w || g() || (kVar = this.c) == null || this.n == null || this.G != null) {
+        if (!this.w || h() || (kVar = this.c) == null || this.n == null || this.G != null) {
             return false;
         }
         kVar.i();

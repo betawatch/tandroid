@@ -1,19 +1,13 @@
 package h7;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class u3 implements q9.d {
+public final class u3 implements s9.d {
     public static final u3 a = new u3();
+    public static final s9.c b = new s9.c("identifiedLanguage", u3.c.h(com.google.android.recaptcha.internal.a.p(i.class, new e(1))));
 
-    static {
-        e2.c.u(e2.c.s(h0.class, e2.c.j(7, e2.c.s(h0.class, e2.c.j(6, e2.c.s(h0.class, e2.c.j(5, e2.c.s(h0.class, e2.c.j(4, e2.c.s(h0.class, e2.c.j(3, e2.c.s(h0.class, e2.c.j(2, e2.c.s(h0.class, new e0(1)))))))))))))));
-    }
-
-    @Override // q9.a
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
-        }
-        throw null;
+    @Override // s9.a
+    public final void a(Object obj, Object obj2) {
+        ((s9.e) obj2).e(b, ((f7) obj).a);
     }
 }

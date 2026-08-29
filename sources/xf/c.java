@@ -1,57 +1,42 @@
 package xf;
 
-import org.telegram.messenger.R;
+import android.os.Bundle;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.tn;
+import org.telegram.ui.ze1;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class c extends m {
-    @Override // xf.m
-    public final float a() {
-        return 0.3f;
+public final /* synthetic */ class c implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate b;
+
+    public /* synthetic */ c(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, int i10) {
+        this.a = i10;
+        this.b = notificationCenterDelegate;
     }
 
-    @Override // xf.m
-    public final float b() {
-        return (float) Math.toRadians(0.0d);
-    }
-
-    @Override // xf.m
-    public final int c() {
-        return -10742;
-    }
-
-    @Override // xf.m
-    public final float d() {
-        return 0.5f;
-    }
-
-    @Override // xf.m
-    public final int e() {
-        return R.raw.photo_marker;
-    }
-
-    @Override // xf.m
-    public final float f() {
-        return 0.45f;
-    }
-
-    @Override // xf.m
-    public final float g() {
-        return 0.4f;
-    }
-
-    @Override // xf.m
-    public final float h() {
-        return 1.5f;
-    }
-
-    @Override // xf.m
-    public final float k() {
-        return 0.04f;
-    }
-
-    @Override // xf.m
-    public final int l() {
-        return R.drawable.paint_elliptical_brush;
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10 = this.a;
+        NotificationCenter.NotificationCenterDelegate notificationCenterDelegate = this.b;
+        switch (i10) {
+            case 0:
+                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needSetDayNightTheme, (f6) notificationCenterDelegate, Boolean.TRUE, null, -1);
+                break;
+            default:
+                ze1 ze1Var = (ze1) notificationCenterDelegate;
+                if (ze1Var.getParentLayout() != null) {
+                    ze1Var.D = true;
+                    Bundle bundle = new Bundle();
+                    bundle.putLong("chat_id", ze1Var.a);
+                    tn tnVar = new tn(bundle);
+                    tnVar.fa = true;
+                    ze1Var.presentFragment(tnVar);
+                    break;
+                }
+                break;
+        }
     }
 }

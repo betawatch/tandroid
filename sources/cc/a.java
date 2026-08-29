@@ -1,71 +1,65 @@
 package cc;
 
-import f7.l7;
+import android.os.AsyncTask;
+import androidx.biometric.e;
+import dc.g;
+import fc.c;
+import h7.y7;
+import java.util.Locale;
+import m5.i;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.bo0;
+import org.telegram.ui.qn0;
+import org.telegram.ui.vk0;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class a {
-    public static final String[] o = {"34", "37"};
-    public static final String[] p = {"60", "62", "64", "65"};
-    public static final String[] q = {"35"};
-    public static final String[] r = {"300", "301", "302", "303", "304", "305", "309", "36", "38", "39"};
-    public static final String[] s = {"4"};
-    public static final String[] t = {"2221", "2222", "2223", "2224", "2225", "2226", "2227", "2228", "2229", "223", "224", "225", "226", "227", "228", "229", "23", "24", "25", "26", "270", "271", "2720", "50", "51", "52", "53", "54", "55"};
-    public final String a;
-    public final String b;
-    public final Integer c;
-    public final Integer d;
-    public final String e;
-    public final String f;
-    public final String g;
-    public final String h;
-    public final String i;
-    public final String j;
-    public final String k;
-    public String l;
-    public String m;
-    public final String n;
+public final class a extends AsyncTask {
+    public final /* synthetic */ String a;
+    public final /* synthetic */ ec.a b;
+    public final /* synthetic */ qn0 c;
+    public final /* synthetic */ i d;
 
-    public a(String str, Integer num, Integer num2, String str2, String str3, String str4, String str5, String str6, String str7, String str8, String str9, String str10, String str11, String str12, String str13, String str14, String str15) {
-        this.a = l7.e(str == null ? null : str.trim().replaceAll("\\s+|-", ""));
-        this.c = num;
-        this.d = num2;
-        this.b = l7.e(str2);
-        this.e = l7.e(str3);
-        this.f = l7.e(str4);
-        this.g = l7.e(str5);
-        this.h = l7.e(str6);
-        this.i = l7.e(str7);
-        this.j = l7.e(str8);
-        this.k = l7.e(str9);
-        this.m = l7.a(str10) == null ? a() : str10;
-        this.l = l7.e(str11) == null ? b() : str11;
-        l7.e(str12);
-        l7.b(str13);
-        l7.e(str14);
-        this.n = l7.e(str15);
+    public a(i iVar, String str, ec.a aVar, qn0 qn0Var) {
+        this.d = iVar;
+        this.a = str;
+        this.b = aVar;
+        this.c = qn0Var;
     }
 
-    public final String a() {
-        if (l7.d(this.m)) {
-            String str = this.a;
-            if (!l7.d(str)) {
-                this.m = l7.c(str, o) ? "American Express" : l7.c(str, p) ? "Discover" : l7.c(str, q) ? "JCB" : l7.c(str, r) ? "Diners Club" : l7.c(str, s) ? "Visa" : l7.c(str, t) ? "MasterCard" : "Unknown";
+    @Override // android.os.AsyncTask
+    public final Object doInBackground(Object[] objArr) {
+        i iVar = this.d;
+        try {
+            e c3 = c.c(y7.a(this.b), new fc.a(this.a, 0));
+            Object obj = iVar.b;
+            return new b(c3, null);
+        } catch (g e10) {
+            Object obj2 = iVar.b;
+            return new b(null, e10);
+        }
+    }
+
+    @Override // android.os.AsyncTask
+    public final void onPostExecute(Object obj) {
+        b bVar = (b) obj;
+        Object obj2 = this.d.b;
+        e eVar = bVar.a;
+        qn0 qn0Var = this.c;
+        if (eVar != null) {
+            bo0 bo0Var = qn0Var.a;
+            if (bo0Var.M0) {
+                return;
             }
+            bo0Var.s0 = String.format(Locale.US, "{\"type\":\"%1$s\", \"id\":\"%2$s\"}", (String) eVar.c, (String) eVar.b);
+            AndroidUtilities.runOnUIThread(new vk0(qn0Var, 8));
+            return;
         }
-        return this.m;
-    }
-
-    public final String b() {
-        if (!l7.d(this.l)) {
-            return this.l;
+        Exception exc = bVar.b;
+        if (exc != null) {
+            qn0Var.a(exc);
+        } else {
+            qn0Var.a(new RuntimeException("Somehow got neither a token response or an error response"));
         }
-        String str = this.a;
-        if (str == null || str.length() <= 4) {
-            return null;
-        }
-        String substring = str.substring(str.length() - 4, str.length());
-        this.l = substring;
-        return substring;
     }
 }

@@ -1,10 +1,25 @@
 package kotlin.jvm.internal;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class r {
-    public static String a(f fVar) {
-        String obj = fVar.getClass().getGenericInterfaces()[0].toString();
-        return obj.startsWith("kotlin.jvm.functions.") ? obj.substring(21) : obj;
+public abstract class r {
+    public static final s a;
+
+    static {
+        s sVar;
+        try {
+            sVar = (s) Class.forName("kotlin.reflect.jvm.internal.ReflectionFactoryImpl").newInstance();
+        } catch (ClassCastException | ClassNotFoundException | IllegalAccessException | InstantiationException unused) {
+            sVar = null;
+        }
+        if (sVar == null) {
+            sVar = new s();
+        }
+        a = sVar;
+    }
+
+    public static e a(Class cls) {
+        a.getClass();
+        return new e(cls);
     }
 }

@@ -1,78 +1,57 @@
 package org.telegram.ui.web;
 
-import android.webkit.WebResourceResponse;
+import android.webkit.ValueCallback;
 import android.webkit.WebView;
-import android.webkit.WebViewClient;
-import java.io.ByteArrayInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.nio.charset.StandardCharsets;
+import java.io.File;
 import java.util.ArrayList;
-import java.util.HashMap;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes4.dex */
-public final class y1 extends WebViewClient {
-    public boolean a = true;
-    public boolean b;
-    public final /* synthetic */ InputStream c;
-    public final /* synthetic */ d2 d;
+public final /* synthetic */ class y1 implements ValueCallback {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ f2 b;
+    public final /* synthetic */ WebView c;
+    public final /* synthetic */ File d;
+    public final /* synthetic */ x1 e;
 
-    public y1(d2 d2Var, InputStream inputStream) {
-        this.d = d2Var;
-        this.c = inputStream;
+    public /* synthetic */ y1(f2 f2Var, WebView webView, File file, x1 x1Var, int i10) {
+        this.a = i10;
+        this.b = f2Var;
+        this.c = webView;
+        this.d = file;
+        this.e = x1Var;
     }
 
-    @Override // android.webkit.WebViewClient
-    public final WebResourceResponse shouldInterceptRequest(WebView webView, String str) {
-        InputStream a2;
-        String str2;
-        if (this.a) {
-            this.a = false;
-            return new WebResourceResponse("text/html", "UTF-8", new ByteArrayInputStream(aa.d.o("<script>\n", AndroidUtilities.readRes(R.raw.instant).replace("$DEBUG$", "" + BuildVars.DEBUG_VERSION), "\n</script>").getBytes(StandardCharsets.UTF_8)));
-        }
-        d2 d2Var = this.d;
-        if (str == null || !str.endsWith("/index.html")) {
-            com.google.firebase.messaging.t tVar = d2Var.b;
-            g1 g1Var = tVar != null ? (g1) ((HashMap) tVar.d).get(str) : null;
-            if (g1Var == null) {
-                return new WebResourceResponse("text/plain", "utf-8", 404, "Not Found", null, null);
-            }
-            h1 h1Var = (h1) g1Var.a.get("content-type");
-            String str3 = h1Var == null ? null : h1Var.a;
-            if (!"text/html".equalsIgnoreCase(str3) && !"text/css".equalsIgnoreCase(str3)) {
-                return new WebResourceResponse("text/plain", "utf-8", 404, "Not Found", null, null);
-            }
-            try {
-                a2 = g1Var.a();
-                str2 = str3;
-            } catch (IOException e10) {
-                FileLog.e(e10);
-                return new WebResourceResponse("text/plain", "utf-8", 503, "Server error", null, null);
-            }
-        } else {
-            str2 = "application/octet-stream";
-            if (this.b) {
-                com.google.firebase.messaging.t tVar2 = d2Var.b;
-                g1 g1Var2 = tVar2 != null ? (g1) ((ArrayList) tVar2.c).get(0) : null;
-                if (g1Var2 == null) {
-                    return new WebResourceResponse("text/plain", "utf-8", 404, "Not Found", null, null);
-                }
+    @Override // android.webkit.ValueCallback
+    public final void onReceiveValue(Object obj) {
+        switch (this.a) {
+            case 0:
+                File file = this.d;
+                String absolutePath = file.getAbsolutePath();
+                f2 f2Var = this.b;
+                WebView webView = this.c;
+                webView.saveWebArchive(absolutePath, false, new y1(f2Var, webView, file, this.e, 1));
+                break;
+            default:
+                f2 f2Var2 = this.b;
+                File file2 = this.d;
+                x1 x1Var = this.e;
+                this.c.evaluateJavascript(AndroidUtilities.readRes(R.raw.open_collapsed).replace("$OPEN$", "false"), new g0(1));
                 try {
-                    a2 = g1Var2.a();
-                } catch (IOException e11) {
-                    FileLog.e(e11);
-                    return new WebResourceResponse("text/plain", "utf-8", 503, "Server error", null, null);
+                    com.google.firebase.messaging.s sVar = new com.google.firebase.messaging.s(file2);
+                    f2Var2.b = sVar;
+                    if (!((ArrayList) sVar.c).isEmpty()) {
+                        x1Var.run(((h1) ((ArrayList) f2Var2.b.c).get(0)).a());
+                        break;
+                    }
+                } catch (Exception e10) {
+                    FileLog.e(e10);
                 }
-            } else {
-                this.b = true;
-                a2 = this.c;
-            }
+                x1Var.run(null);
+                break;
         }
-        return new WebResourceResponse(str2, null, a2);
     }
 }

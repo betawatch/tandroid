@@ -6,12 +6,12 @@ import java.lang.ref.WeakReference;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class x {
     public static WeakReference d;
     public final SharedPreferences a;
-    public b3.b b;
+    public a5.j b;
     public final ScheduledThreadPoolExecutor c;
 
     public x(SharedPreferences sharedPreferences, ScheduledThreadPoolExecutor scheduledThreadPoolExecutor) {
@@ -21,11 +21,11 @@ public final class x {
 
     public final synchronized w a() {
         w wVar;
-        String v = this.b.v();
+        String o10 = this.b.o();
         Pattern pattern = w.d;
         wVar = null;
-        if (!TextUtils.isEmpty(v)) {
-            String[] split = v.split("!", -1);
+        if (!TextUtils.isEmpty(o10)) {
+            String[] split = o10.split("!", -1);
             if (split.length == 2) {
                 wVar = new w(split[0], split[1]);
             }
@@ -34,10 +34,10 @@ public final class x {
     }
 
     public final synchronized void b() {
-        this.b = b3.b.o(this.a, this.c);
+        this.b = a5.j.l(this.a, this.c);
     }
 
     public final synchronized void c(w wVar) {
-        this.b.w(wVar.c);
+        this.b.p(wVar.c);
     }
 }

@@ -1,32 +1,43 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
+import android.graphics.SurfaceTexture;
+import android.os.Looper;
+import android.view.Surface;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class nz implements ValueAnimator.AnimatorUpdateListener {
+public final /* synthetic */ class nz implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ tz b;
+    public final /* synthetic */ qz b;
 
-    public /* synthetic */ nz(tz tzVar, int i9) {
-        this.a = i9;
-        this.b = tzVar;
+    public /* synthetic */ nz(qz qzVar, int i10) {
+        this.a = i10;
+        this.b = qzVar;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                tz tzVar = this.b;
-                tzVar.x = floatValue;
-                tzVar.invalidate();
+                this.b.finish();
+                Looper myLooper = Looper.myLooper();
+                if (myLooper != null) {
+                    myLooper.quit();
+                    break;
+                }
+                break;
+            case 1:
+                qz.b(this.b);
                 break;
             default:
-                tz tzVar2 = this.b;
-                tzVar2.getClass();
-                tzVar2.y = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                tzVar2.invalidate();
+                qz qzVar = this.b;
+                cv cvVar = qzVar.X;
+                SurfaceTexture surfaceTexture = qzVar.w;
+                l61 l61Var = (l61) cvVar.b;
+                if (l61Var.a != null) {
+                    l61Var.a.U(new Surface(surfaceTexture));
+                    break;
+                }
                 break;
         }
     }

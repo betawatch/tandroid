@@ -1,32 +1,32 @@
 package org.webrtc;
 
-import j3.r0;
+import j7.l1;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes4.dex */
 public class MediaStreamTrack {
     public static final String AUDIO_TRACK_KIND = "audio";
     public static final String VIDEO_TRACK_KIND = "video";
     private long nativeTrack;
 
-    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
     public enum MediaType {
         MEDIA_TYPE_AUDIO(0),
         MEDIA_TYPE_VIDEO(1);
 
         private final int nativeIndex;
 
-        MediaType(int i9) {
-            this.nativeIndex = i9;
+        MediaType(int i10) {
+            this.nativeIndex = i10;
         }
 
-        public static MediaType fromNativeIndex(int i9) {
+        public static MediaType fromNativeIndex(int i10) {
             for (MediaType mediaType : values()) {
-                if (mediaType.getNative() == i9) {
+                if (mediaType.getNative() == i10) {
                     return mediaType;
                 }
             }
-            throw new IllegalArgumentException(r0.l(i9, "Unknown native media type: "));
+            throw new IllegalArgumentException(l1.k(i10, "Unknown native media type: "));
         }
 
         public int getNative() {
@@ -34,13 +34,13 @@ public class MediaStreamTrack {
         }
     }
 
-    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
     public enum State {
         LIVE,
         ENDED;
 
-        public static State fromNativeIndex(int i9) {
-            return values()[i9];
+        public static State fromNativeIndex(int i10) {
+            return values()[i10];
         }
     }
 

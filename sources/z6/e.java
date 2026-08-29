@@ -1,49 +1,36 @@
 package z6;
 
-import android.accounts.Account;
-import android.os.Parcel;
-import android.os.Parcelable;
-import g7.p8;
-import java.util.Arrays;
-
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class e extends y5.a {
-    public static final Parcelable.Creator<e> CREATOR = new w7.i(18);
-    public final g[] a;
-    public final String b;
-    public final boolean c;
-    public final Account d;
+public final class e extends d {
+    public final o6.x a;
 
-    public e(g[] gVarArr, String str, boolean z10, Account account) {
-        this.a = gVarArr;
-        this.b = str;
-        this.c = z10;
-        this.d = account;
+    public e(o6.x xVar) {
+        this.a = xVar;
+    }
+
+    @Override // z6.d
+    public final Object a() {
+        return this.a;
+    }
+
+    @Override // z6.d
+    public final boolean b() {
+        return true;
     }
 
     public final boolean equals(Object obj) {
         if (obj instanceof e) {
-            e eVar = (e) obj;
-            if (x5.l.l(this.b, eVar.b) && x5.l.l(Boolean.valueOf(this.c), Boolean.valueOf(eVar.c)) && x5.l.l(this.d, eVar.d) && Arrays.equals(this.a, eVar.a)) {
-                return true;
-            }
+            return this.a.equals(((e) obj).a);
         }
         return false;
     }
 
     public final int hashCode() {
-        return Arrays.hashCode(new Object[]{this.b, Boolean.valueOf(this.c), this.d, Integer.valueOf(Arrays.hashCode(this.a))});
+        return this.a.hashCode() + 1502476572;
     }
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i9) {
-        int q10 = p8.q(parcel, 20293);
-        p8.o(parcel, 1, this.a, i9);
-        p8.l(parcel, 2, this.b);
-        p8.s(parcel, 3, 4);
-        parcel.writeInt(this.c ? 1 : 0);
-        p8.k(parcel, 4, this.d, i9);
-        p8.r(parcel, q10);
+    public final String toString() {
+        return a4.w.n("Optional.of(", this.a.toString(), ")");
     }
 }

@@ -4,12 +4,12 @@ import android.text.InputFilter;
 import android.text.Selection;
 import android.text.Spannable;
 import android.widget.TextView;
-import androidx.emoji2.text.k;
+import androidx.emoji2.text.l;
 import java.lang.ref.WeakReference;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class c extends androidx.emoji2.text.h {
+public final class c extends androidx.emoji2.text.i {
     public final WeakReference a;
     public final WeakReference b;
 
@@ -18,7 +18,7 @@ public final class c extends androidx.emoji2.text.h {
         this.b = new WeakReference(dVar);
     }
 
-    @Override // androidx.emoji2.text.h
+    @Override // androidx.emoji2.text.i
     public final void a() {
         InputFilter[] filters;
         int length;
@@ -31,7 +31,7 @@ public final class c extends androidx.emoji2.text.h {
             if (inputFilter2 == inputFilter) {
                 if (textView.isAttachedToWindow()) {
                     CharSequence text = textView.getText();
-                    k a2 = k.a();
+                    l a2 = l.a();
                     if (text == null) {
                         length = 0;
                     } else {

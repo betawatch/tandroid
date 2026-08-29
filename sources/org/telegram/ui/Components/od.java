@@ -1,60 +1,28 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.AndroidUtilities;
+import android.text.InputFilter;
+import android.text.Spanned;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class od implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ChatActivityEnterView b;
-    public final /* synthetic */ boolean c;
-
-    public /* synthetic */ od(ChatActivityEnterView chatActivityEnterView, boolean z10, int i9) {
-        this.a = i9;
-        this.b = chatActivityEnterView;
-        this.c = z10;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        cf cfVar;
-        int i9 = this.a;
-        ChatActivityEnterView chatActivityEnterView = this.b;
-        boolean z10 = this.c;
-        switch (i9) {
-            case 0:
-                if (!z10) {
-                    chatActivityEnterView.o1.setVisibility(8);
-                    break;
-                } else {
-                    int i10 = ChatActivityEnterView.i5;
-                    chatActivityEnterView.getClass();
-                    break;
+public final /* synthetic */ class od implements InputFilter {
+    @Override // android.text.InputFilter
+    public final CharSequence filter(CharSequence charSequence, int i10, int i11, Spanned spanned, int i12, int i13) {
+        int i14 = ChatActivityEnterView.i5;
+        for (int i15 = i10; i15 < i11; i15++) {
+            char charAt = charSequence.charAt(i15);
+            if (charAt == '\n' || charAt == '\r') {
+                StringBuilder sb2 = new StringBuilder(i11 - i10);
+                while (i10 < i11) {
+                    char charAt2 = charSequence.charAt(i10);
+                    if (charAt2 != '\n' && charAt2 != '\r') {
+                        sb2.append(charAt2);
+                    }
+                    i10++;
                 }
-            case 1:
-                if (!z10) {
-                    chatActivityEnterView.p1.setVisibility(8);
-                    break;
-                } else {
-                    int i11 = ChatActivityEnterView.i5;
-                    chatActivityEnterView.getClass();
-                    break;
-                }
-            default:
-                ChatActivityEnterView chatActivityEnterView2 = this.b;
-                hd hdVar = chatActivityEnterView2.A4;
-                chatActivityEnterView2.I0 = System.currentTimeMillis();
-                boolean T0 = chatActivityEnterView2.T0(0, false, 0, true, 0L);
-                if (!z10 && (cfVar = chatActivityEnterView2.H0) != null) {
-                    cfVar.h(!T0);
-                    chatActivityEnterView2.H0 = null;
-                    break;
-                } else {
-                    chatActivityEnterView2.z4 = !T0;
-                    AndroidUtilities.cancelRunOnUIThread(hdVar);
-                    AndroidUtilities.runOnUIThread(hdVar, 500L);
-                    break;
-                }
+                return sb2;
+            }
         }
+        return null;
     }
 }

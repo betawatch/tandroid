@@ -2,7 +2,7 @@ package androidx.car.app.media;
 
 import androidx.car.app.h;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public abstract class b {
     public static final int AUDIO_CONTENT_BUFFER_SIZE = 512;
@@ -20,20 +20,20 @@ public abstract class b {
         throw null;
     }
 
-    public int read(byte[] bArr, int i9, int i10) {
+    public int read(byte[] bArr, int i10, int i11) {
         synchronized (this.mRecordingStateLock) {
-            int i11 = this.mRecordingState;
-            if (i11 == 0) {
+            int i12 = this.mRecordingState;
+            if (i12 == 0) {
                 throw new IllegalStateException("Called read before calling startRecording or after calling stopRecording");
             }
-            if (i11 != 2) {
-                return readInternal(bArr, i9, i10);
+            if (i12 != 2) {
+                return readInternal(bArr, i10, i11);
             }
             return -1;
         }
     }
 
-    public abstract int readInternal(byte[] bArr, int i9, int i10);
+    public abstract int readInternal(byte[] bArr, int i10, int i11);
 
     public void startRecording() {
         synchronized (this.mRecordingStateLock) {
@@ -42,8 +42,8 @@ public abstract class b {
                     throw null;
                 }
                 throw new IllegalStateException("Cannot start recording if it has started and not been stopped");
-            } catch (Throwable th) {
-                throw th;
+            } catch (Throwable th2) {
+                throw th2;
             }
         }
     }
@@ -60,8 +60,8 @@ public abstract class b {
                 }
                 stopRecordingInternal();
                 this.mRecordingState = 0;
-            } catch (Throwable th) {
-                throw th;
+            } catch (Throwable th2) {
+                throw th2;
             }
         }
     }

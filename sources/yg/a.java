@@ -1,44 +1,33 @@
 package yg;
 
-import android.text.TextUtils;
-import java.io.File;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.MessageObject;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.ActionBar.c6;
+import org.telegram.ui.Components.u51;
+import org.telegram.ui.ll0;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class a {
-    public final int a;
-    public final TLRPC.Document b;
-    public final String c;
-    public final MessageObject d;
-    public final String e;
-    public boolean f;
-    public boolean g;
-
-    public a(int i9, MessageObject messageObject, TLRPC.Document document, String str) {
-        this.a = i9;
-        this.d = messageObject;
-        this.b = document;
-        this.c = str;
-        this.e = TextUtils.isEmpty(str) ? FileLoader.getAttachFileName(document) : str;
-        a();
+public abstract class a extends u51 {
+    public a(Context context, int i10, Utilities.Callback2 callback2, Utilities.Callback5 callback5, c6 c6Var) {
+        super(context, i10, -1, false, callback2, callback5, null, c6Var, -1, 0);
+        this.v2 = true;
+        setOverScrollMode(2);
     }
 
-    public final void a() {
-        boolean z10 = false;
-        String str = this.c;
-        boolean exists = str != null ? new File(str).exists() : false;
-        int i9 = this.a;
-        if (!exists) {
-            exists = FileLoader.getInstance(i9).getPathToAttach(this.b).exists();
+    public final void I1(View view) {
+        if (view == null) {
+            return;
         }
-        this.f = exists;
-        String str2 = this.e;
-        if (!TextUtils.isEmpty(str2) && FileLoader.getInstance(i9).isLoadingFile(str2)) {
-            z10 = true;
+        float dp = AndroidUtilities.dp(92.0f);
+        float width = getWidth() - dp;
+        float x4 = view.getX();
+        float width2 = view.getWidth() + x4;
+        int i10 = x4 < dp ? (int) (x4 - dp) : width2 > width ? (int) (width2 - width) : 0;
+        if (i10 != 0) {
+            AndroidUtilities.doOnLayout(this, new ll0(this, view, i10, 18));
         }
-        this.g = z10;
     }
 }

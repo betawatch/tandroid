@@ -1,8 +1,8 @@
 package org.scilab.forge.jlatexmath;
 
-import aa.d;
+import a4.w;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public class AccentedAtom extends Atom {
     private boolean acc;
@@ -37,21 +37,21 @@ public class AccentedAtom extends Atom {
         float width = strutBox.getWidth();
         Atom atom2 = this.underbase;
         float skew = atom2 instanceof CharSymbol ? teXFont.getSkew(((CharSymbol) atom2).getCharFont(teXFont), style) : 0.0f;
-        Char r62 = teXFont.getChar(this.accent.getName(), style);
-        while (teXFont.hasNextLarger(r62)) {
-            Char nextLarger = teXFont.getNextLarger(r62, style);
+        Char r6 = teXFont.getChar(this.accent.getName(), style);
+        while (teXFont.hasNextLarger(r6)) {
+            Char nextLarger = teXFont.getNextLarger(r6, style);
             if (nextLarger.getWidth() > width) {
                 break;
             }
-            r62 = nextLarger;
+            r6 = nextLarger;
         }
-        float f10 = -SpaceAtom.getFactor(5, teXEnvironment);
+        float f9 = -SpaceAtom.getFactor(5, teXEnvironment);
         if (!this.acc) {
-            f10 = Math.min(strutBox.getHeight(), teXFont.getXHeight(style, r62.getFontCode()));
+            f9 = Math.min(strutBox.getHeight(), teXFont.getXHeight(style, r6.getFontCode()));
         }
         VerticalBox verticalBox = new VerticalBox();
-        float italic = r62.getItalic();
-        Box charBox = new CharBox(r62);
+        float italic = r6.getItalic();
+        Box charBox = new CharBox(r6);
         if (this.acc) {
             SymbolAtom symbolAtom = this.accent;
             if (this.changeSize) {
@@ -70,7 +70,7 @@ public class AccentedAtom extends Atom {
             strutBox = new HorizontalBox(strutBox, charBox.getWidth(), 2);
         }
         verticalBox.add(charBox);
-        verticalBox.add(new StrutBox(0.0f, this.changeSize ? -f10 : -strutBox.getHeight(), 0.0f, 0.0f));
+        verticalBox.add(new StrutBox(0.0f, this.changeSize ? -f9 : -strutBox.getHeight(), 0.0f, 0.0f));
         verticalBox.add(strutBox);
         float depth = verticalBox.getDepth() + verticalBox.getHeight();
         float depth2 = strutBox.getDepth();
@@ -107,7 +107,7 @@ public class AccentedAtom extends Atom {
                 return;
             }
         }
-        throw new InvalidSymbolTypeException(d.o("The symbol with the name '", str, "' is not defined as an accent (type='acc') in 'TeXSymbols.xml'!"));
+        throw new InvalidSymbolTypeException(w.n("The symbol with the name '", str, "' is not defined as an accent (type='acc') in 'TeXSymbols.xml'!"));
     }
 
     public AccentedAtom(Atom atom, TeXFormula teXFormula) {

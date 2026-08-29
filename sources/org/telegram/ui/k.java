@@ -1,100 +1,115 @@
 package org.telegram.ui;
 
-import android.text.TextUtils;
-import android.view.View;
-import android.view.ViewGroup;
-import java.util.ArrayList;
-import org.telegram.messenger.R;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class k extends wf.b {
-    public final /* synthetic */ l d;
+public final class k extends f2.j0 {
+    public final /* synthetic */ int I;
 
-    public k(l lVar) {
-        this.d = lVar;
+    public /* synthetic */ k(int i10) {
+        this.I = i10;
     }
 
-    @Override // org.telegram.ui.Components.vk0
-    public final boolean D(f2.q1 q1Var) {
-        int i9 = q1Var.f;
-        return (i9 == 2 || i9 == 0) ? false : true;
-    }
-
-    @Override // f2.r0
-    public final int h() {
-        return this.d.h.size();
-    }
-
-    @Override // f2.r0
-    public final int j(int i9) {
-        if (i9 < 0) {
-            return 0;
-        }
-        l lVar = this.d;
-        if (i9 >= lVar.h.size()) {
-            return 0;
-        }
-        return ((j) lVar.h.get(i9)).a;
-    }
-
-    @Override // f2.r0
-    public final void v(f2.q1 q1Var, int i9) {
-        boolean z10;
-        l lVar = this.d;
-        ArrayList arrayList = lVar.h;
-        if (i9 < 0 || i9 >= arrayList.size()) {
-            return;
-        }
-        j jVar = (j) arrayList.get(i9);
-        int i10 = i9 + 1;
-        int i11 = 0;
-        boolean z11 = i10 < arrayList.size() && ((j) arrayList.get(i10)).a == jVar.a;
-        int i12 = q1Var.f;
-        View view = q1Var.a;
-        if (i12 == 0) {
-            ((org.telegram.ui.Cells.m4) view).setText(jVar.c);
-            return;
-        }
-        if (i12 == 2) {
-            org.telegram.ui.Cells.b9 b9Var = (org.telegram.ui.Cells.b9) view;
-            if (TextUtils.isEmpty(jVar.c)) {
-                b9Var.setFixedSize(12);
-                b9Var.setText(null);
-                return;
-            } else {
-                b9Var.setFixedSize(0);
-                b9Var.setText(jVar.c);
-                return;
-            }
-        }
-        if (i12 == 1) {
-            org.telegram.ui.Cells.t8 t8Var = (org.telegram.ui.Cells.t8) view;
-            int i13 = jVar.d;
-            if (i13 == 1) {
-                z10 = lVar.d.keep_archived_unmuted;
-                t8Var.setCheckBoxIcon(0);
-            } else if (i13 == 4) {
-                z10 = lVar.d.keep_archived_folders;
-                t8Var.setCheckBoxIcon(0);
-            } else {
-                if (i13 != 7) {
-                    return;
-                }
-                boolean z12 = lVar.d.archive_and_mute_new_noncontact_peers;
-                if (!lVar.getUserConfig().isPremium() && !lVar.getMessagesController().autoarchiveAvailable) {
-                    i11 = R.drawable.permission_locked;
-                }
-                t8Var.setCheckBoxIcon(i11);
-                z10 = z12;
-            }
-            t8Var.f(jVar.c, z10, z11);
+    @Override // f2.j0
+    public int W0(f2.k1 k1Var) {
+        switch (this.I) {
+            case 3:
+                return 5000;
+            case 7:
+                return AndroidUtilities.dp(4000.0f);
+            default:
+                return super.W0(k1Var);
         }
     }
 
-    @Override // f2.r0
-    public final f2.q1 x(ViewGroup viewGroup, int i9) {
-        l lVar = this.d;
-        return new org.telegram.ui.Components.ik0(i9 == 0 ? new org.telegram.ui.Cells.m4(lVar.getParentActivity()) : i9 == 1 ? new org.telegram.ui.Cells.t8(lVar.getParentActivity()) : new org.telegram.ui.Cells.b9(lVar.getParentActivity()));
+    @Override // f2.j0, f2.w0
+    public boolean e() {
+        switch (this.I) {
+            case 20:
+                return false;
+            default:
+                return super.e();
+        }
+    }
+
+    @Override // f2.j0, f2.w0
+    public void v0(RecyclerView recyclerView, f2.k1 k1Var, int i10) {
+        switch (this.I) {
+            case 2:
+                uh.n nVar = new uh.n(recyclerView.getContext(), 0);
+                nVar.a = i10;
+                w0(nVar);
+                break;
+            case 13:
+                zr0 zr0Var = new zr0(recyclerView.getContext());
+                zr0Var.a = i10;
+                w0(zr0Var);
+                break;
+            default:
+                super.v0(recyclerView, k1Var, i10);
+                break;
+        }
+    }
+
+    @Override // f2.j0, f2.w0
+    public boolean y0() {
+        switch (this.I) {
+            case 0:
+                return false;
+            case 1:
+                return false;
+            case 2:
+                return true;
+            case 3:
+            case 4:
+            case 7:
+            case 13:
+            default:
+                return super.y0();
+            case 5:
+                return false;
+            case 6:
+                return false;
+            case 8:
+                return true;
+            case 9:
+                return false;
+            case 10:
+                return false;
+            case 11:
+                return false;
+            case 12:
+                return false;
+            case 14:
+                return false;
+            case 15:
+                return false;
+            case 16:
+                return true;
+            case 17:
+                return false;
+            case 18:
+                return false;
+            case 19:
+                return false;
+        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ k(int i10, boolean z10, int i11) {
+        super(i10, z10);
+        this.I = i11;
+    }
+
+    public k(ob obVar) {
+        this.I = 2;
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public k() {
+        super(0, true);
+        this.I = 13;
     }
 }

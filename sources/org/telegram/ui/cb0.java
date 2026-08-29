@@ -1,172 +1,54 @@
 package org.telegram.ui;
 
-import android.os.Bundle;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessageObject;
+import android.content.Context;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.widget.TextView;
+import org.telegram.messenger.BillingController;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class cb0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ProfileActivity b;
+public final class cb0 extends org.telegram.ui.Cells.g3 {
+    public boolean x;
+    public final /* synthetic */ eb0 y;
 
-    public /* synthetic */ cb0(ProfileActivity profileActivity, int i9) {
-        this.a = i9;
-        this.b = profileActivity;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public cb0(eb0 eb0Var, Context context, String str, org.telegram.ui.ActionBar.c6 c6Var) {
+        super(context, str, false, false, -1, c6Var);
+        this.y = eb0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        vz0 vz0Var;
-        switch (this.a) {
-            case 0:
-                ProfileActivity profileActivity = this.b;
-                hz0 hz0Var = profileActivity.K;
-                if (hz0Var != null) {
-                    hz0Var.Y0(14);
-                    profileActivity.G4(false);
-                    break;
-                }
-                break;
-            case 1:
-                ProfileActivity profileActivity2 = this.b;
-                hz0 hz0Var2 = profileActivity2.K;
-                if (hz0Var2 != null) {
-                    hz0Var2.Y0(14);
-                    profileActivity2.G4(false);
-                    break;
-                }
-                break;
-            case 2:
-                AndroidUtilities.runOnUIThread(new cb0(this.b, 0), 200L);
-                break;
-            case 3:
-                AndroidUtilities.runOnUIThread(new cb0(this.b, 1), 200L);
-                break;
-            case 4:
-                ProfileActivity profileActivity3 = this.b;
-                profileActivity3.getSendMessagesHelper().sendMessage(SendMessagesHelper.SendMessageParams.of("/start", profileActivity3.a1, null, null, null, false, null, null, null, true, 0, 0, null, false));
-                break;
-            case 5:
-                this.b.z4(false);
-                break;
-            case 6:
-                ProfileActivity profileActivity4 = this.b;
-                profileActivity4.getClass();
-                profileActivity4.presentFragment(new UserInfoActivity());
-                break;
-            case 7:
-                this.b.z4(true);
-                break;
-            case 8:
-                ProfileActivity profileActivity5 = this.b;
-                profileActivity5.getClass();
-                profileActivity5.presentFragment(new pf.y0());
-                break;
-            case 9:
-                ProfileActivity profileActivity6 = this.b;
-                profileActivity6.getClass();
-                profileActivity6.presentFragment(new pf.w0());
-                break;
-            case 10:
-                ProfileActivity profileActivity7 = this.b;
-                profileActivity7.getClass();
-                profileActivity7.presentFragment(new ma(null));
-                break;
-            case 11:
-                ProfileActivity profileActivity8 = this.b;
-                profileActivity8.getClass();
-                profileActivity8.presentFragment(new UserInfoActivity());
-                break;
-            case 12:
-                ProfileActivity profileActivity9 = this.b;
-                profileActivity9.getClass();
-                profileActivity9.presentFragment(new h(3));
-                break;
-            case 13:
-                org.telegram.ui.ActionBar.m2 m2Var = new org.telegram.ui.ActionBar.m2();
-                m2Var.a = true;
-                this.b.showAsSheet(new PrivacyControlActivity(11, false), m2Var);
-                break;
-            case 14:
-                ProfileActivity profileActivity10 = this.b;
-                profileActivity10.k4(true);
-                if (profileActivity10.f2.isRunning()) {
-                    profileActivity10.f2.cancel();
-                }
-                profileActivity10.J4(1.0f);
-                break;
-            case 15:
-                this.b.e5(false, false);
-                break;
-            case 16:
-                this.b.F3();
-                break;
-            case 17:
-                ProfileActivity profileActivity11 = this.b;
-                hz0 hz0Var3 = profileActivity11.K;
-                if (hz0Var3 != null) {
-                    hz0Var3.v1(true);
-                    profileActivity11.K.n1();
-                    break;
-                }
-                break;
-            case 18:
-                ProfileActivity profileActivity12 = this.b;
-                profileActivity12.getMessagesController().reloadUser(profileActivity12.a());
-                break;
-            case 19:
-                ProfileActivity profileActivity13 = this.b;
-                if (!profileActivity13.a.b0() && (vz0Var = profileActivity13.d) != null) {
-                    vz0Var.l();
-                    break;
-                }
-                break;
-            case 20:
-                this.b.e5(false, false);
-                break;
-            case 21:
-                this.b.u5.setVisibility(8);
-                break;
-            case 22:
-                ProfileActivity profileActivity14 = this.b;
-                profileActivity14.getClass();
-                Bundle bundle = new Bundle();
-                bundle.putLong("chat_id", profileActivity14.b1);
-                bundle.putLong("user_id", profileActivity14.a1);
-                profileActivity14.presentFragment(new z11(bundle));
-                break;
-            case 23:
-                ProfileActivity profileActivity15 = this.b;
-                profileActivity15.getClass();
-                profileActivity15.presentFragment(new ma(null));
-                break;
-            case 24:
-                ProfileActivity.V(this.b);
-                break;
-            case 25:
-                ProfileActivity profileActivity16 = this.b;
-                TLRPC.UserFull userFull = profileActivity16.r2;
-                if (userFull != null) {
-                    AndroidUtilities.addToClipboard(MessageObject.formatTextWithEntities(userFull.note, false));
-                    org.telegram.messenger.ll.o(R.string.TextCopied, org.telegram.ui.Components.oc.a0(profileActivity16));
-                    break;
-                }
-                break;
-            case 26:
-                ProfileActivity profileActivity17 = this.b;
-                profileActivity17.getClass();
-                Bundle bundle2 = new Bundle();
-                bundle2.putLong("user_id", profileActivity17.a1);
-                bundle2.putBoolean("focus_notes", true);
-                profileActivity17.presentFragment(new is(bundle2, profileActivity17.v0));
-                break;
-            default:
-                this.b.G4(true);
-                break;
+    @Override // org.telegram.ui.Cells.g3
+    public final void b(Editable editable) {
+        int i10;
+        if (this.x) {
+            return;
+        }
+        boolean isEmpty = TextUtils.isEmpty(editable);
+        eb0 eb0Var = this.y;
+        if (isEmpty) {
+            eb0Var.s.setText("");
+            return;
+        }
+        try {
+            long parseLong = Long.parseLong(editable.toString());
+            if (parseLong > eb0Var.getMessagesController().starsSubscriptionAmountMax) {
+                this.x = true;
+                parseLong = eb0Var.getMessagesController().starsSubscriptionAmountMax;
+                setText(Long.toString(parseLong));
+                this.x = false;
+            }
+            TextView textView = eb0Var.s;
+            int i11 = eb0Var.getConnectionsManager().isTestBackend() ? R.string.RequireMonthlyFeePriceTest5Minutes : R.string.RequireMonthlyFeePrice;
+            BillingController billingController = BillingController.getInstance();
+            i10 = ((org.telegram.ui.ActionBar.o2) eb0Var).currentAccount;
+            textView.setText(LocaleController.formatString(i11, billingController.formatCurrency((long) ((parseLong / 1000.0d) * MessagesController.getInstance(i10).starsUsdWithdrawRate1000), "USD")));
+        } catch (Exception e10) {
+            FileLog.e(e10);
         }
     }
 }

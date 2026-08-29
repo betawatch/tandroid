@@ -7,9 +7,9 @@ public final class i1 extends k1 {
     public final /* synthetic */ int b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ i1(Unsafe unsafe, int i9) {
+    public /* synthetic */ i1(Unsafe unsafe, int i10) {
         super(unsafe);
-        this.b = i9;
+        this.b = i10;
     }
 
     @Override // com.google.android.gms.internal.clearcut.k1
@@ -25,13 +25,13 @@ public final class i1 extends k1 {
     }
 
     @Override // com.google.android.gms.internal.clearcut.k1
-    public final void d(Object obj, long j10, float f10) {
+    public final void d(Object obj, long j10, float f9) {
         switch (this.b) {
             case 0:
-                b(j10, obj, Float.floatToIntBits(f10));
+                b(j10, obj, Float.floatToIntBits(f9));
                 break;
             default:
-                b(j10, obj, Float.floatToIntBits(f10));
+                b(j10, obj, Float.floatToIntBits(f9));
                 break;
         }
     }

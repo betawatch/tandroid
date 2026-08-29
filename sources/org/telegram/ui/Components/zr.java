@@ -1,65 +1,146 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
+import java.util.ArrayList;
+import java.util.Arrays;
+import org.telegram.messenger.ContactsController;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class zr extends View {
-    public final td.a a;
-    public final Paint b;
-    public final RectF c;
-    public final RectF d;
-    public final RectF e;
-    public final np f;
+public final class zr {
+    public final int a;
+    public String b;
+    public final ArrayList c;
+    public final boolean[] d;
+    public boolean[] e;
+    public boolean f;
+    public final int g;
+    public int h;
+    public int i;
+    public final /* synthetic */ as j;
 
-    public zr(Context context) {
-        super(context);
-        this.a = new td.a(this, gr.h, 380L);
-        Paint paint = new Paint(1);
-        this.b = paint;
-        this.c = new RectF();
-        this.d = new RectF();
-        this.e = new RectF();
-        this.f = new np(this, 5);
-        paint.setColor(org.telegram.ui.ActionBar.f6.w0(null, org.telegram.ui.ActionBar.f6.hl, false));
-        invalidate();
+    public zr(as asVar, int i10, ArrayList arrayList) {
+        this.j = asVar;
+        this.a = i10;
+        int size = arrayList.size();
+        this.g = size;
+        this.i = 0;
+        if (size > 0) {
+            this.c = arrayList;
+            this.d = new boolean[size];
+            this.f = true;
+            g();
+        }
     }
 
-    @Override // android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        AndroidUtilities.runOnUIThread(this.f, 3000L);
+    public final boolean a() {
+        boolean[] zArr;
+        for (int i10 = 0; i10 < this.g; i10++) {
+            if (!this.d[i10] || ((zArr = this.e) != null && !zArr[i10])) {
+                return false;
+            }
+        }
+        return true;
     }
 
-    @Override // android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        AndroidUtilities.cancelRunOnUIThread(this.f);
+    public final boolean b() {
+        return (this.e != null ? this.h : this.g) > 1;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        float f10 = this.a.e;
-        RectF rectF = this.d;
-        RectF rectF2 = this.c;
-        RectF rectF3 = this.e;
-        AndroidUtilities.lerp(rectF, rectF2, f10, rectF3);
-        float lerp = AndroidUtilities.lerp(AndroidUtilities.dp(15.0f), 0, f10);
-        canvas.drawRoundRect(rectF3, lerp, lerp, this.b);
+    public final boolean c() {
+        return (this.e != null ? this.h : this.g) > 0;
     }
 
-    @Override // android.view.View
-    public final void onMeasure(int i9, int i10) {
-        int currentActionBarHeight = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight();
-        int paddingTop = getPaddingTop();
-        super.onMeasure(i9, View.MeasureSpec.makeMeasureSpec(paddingTop + currentActionBarHeight, TLObject.FLAG_30));
-        this.c.set(0.0f, 0.0f, getMeasuredWidth(), paddingTop);
-        this.d.set(AndroidUtilities.dp(12.0f), ((currentActionBarHeight / 2) + paddingTop) - AndroidUtilities.dp(15.0f), AndroidUtilities.dp(30.0f) + AndroidUtilities.dp(12.0f), AndroidUtilities.dp(30.0f) + r6);
+    public final void d() {
+        int i10;
+        boolean[] zArr;
+        boolean[] zArr2;
+        boolean z10 = false;
+        while (true) {
+            int i11 = this.g;
+            zArr = this.d;
+            if (i10 >= i11) {
+                break;
+            } else {
+                i10 = (zArr[i10] && ((zArr2 = this.e) == null || zArr2[i10])) ? 0 : i10 + 1;
+            }
+        }
+        z10 = true;
+        Arrays.fill(zArr, !z10);
+        f();
+        this.j.T.N(true);
+    }
+
+    public final void e(int i10) {
+        boolean[] zArr = this.e;
+        if (zArr == null || zArr[i10]) {
+            boolean[] zArr2 = this.d;
+            boolean z10 = zArr2[i10];
+            zArr2[i10] = !z10;
+            if (z10) {
+                this.i--;
+            } else {
+                this.i++;
+            }
+            this.j.T.N(true);
+        }
+    }
+
+    public final void f() {
+        this.i = 0;
+        this.h = 0;
+        for (int i10 = 0; i10 < this.g; i10++) {
+            boolean[] zArr = this.e;
+            boolean[] zArr2 = this.d;
+            if (zArr == null) {
+                if (zArr2[i10]) {
+                    this.i++;
+                }
+            } else if (zArr[i10]) {
+                this.h++;
+                if (zArr2[i10]) {
+                    this.i++;
+                }
+            }
+        }
+    }
+
+    public final void g() {
+        TLObject tLObject;
+        int i10 = this.g;
+        if (i10 == 0) {
+            return;
+        }
+        for (int i11 = 0; i11 < i10; i11++) {
+            boolean[] zArr = this.e;
+            if (zArr == null || zArr[i11]) {
+                tLObject = (TLObject) this.c.get(i11);
+                break;
+            }
+        }
+        tLObject = null;
+        String forcedFirstName = tLObject instanceof TLRPC.User ? UserObject.getForcedFirstName((TLRPC.User) tLObject) : ContactsController.formatName(tLObject);
+        int i12 = this.a;
+        if (i12 == 0) {
+            this.b = LocaleController.getString(R.string.DeleteReportSpam);
+            return;
+        }
+        if (i12 == 1) {
+            this.b = b() ? LocaleController.getString(R.string.DeleteAllMessagesFromUsers) : LocaleController.formatString(R.string.DeleteAllFrom, forcedFirstName);
+            return;
+        }
+        if (i12 == 3) {
+            this.b = b() ? LocaleController.getString(R.string.DeleteAllReactionsFromUsers) : LocaleController.formatString(R.string.DeleteAllReactionsFrom, forcedFirstName);
+        } else if (i12 == 2) {
+            if (this.j.c0) {
+                this.b = b() ? LocaleController.getString(R.string.DeleteRestrictUsers) : LocaleController.formatString(R.string.DeleteRestrict, forcedFirstName);
+            } else {
+                this.b = b() ? LocaleController.getString(R.string.DeleteBanUsers) : LocaleController.formatString(R.string.DeleteBan, forcedFirstName);
+            }
+        }
     }
 }

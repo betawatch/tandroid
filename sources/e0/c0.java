@@ -5,7 +5,7 @@ import android.app.PendingIntent;
 import android.app.RemoteInput;
 import android.os.Bundle;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public abstract class c0 {
     public static Notification.Action.Builder a(Notification.Action.Builder builder, Bundle bundle) {
@@ -20,7 +20,7 @@ public abstract class c0 {
         return builder.build();
     }
 
-    public static Notification.Action.Builder d(int i9, CharSequence charSequence, PendingIntent pendingIntent) {
-        return new Notification.Action.Builder(i9, charSequence, pendingIntent);
+    public static Notification.Action.Builder d(int i10, CharSequence charSequence, PendingIntent pendingIntent) {
+        return new Notification.Action.Builder(i10, charSequence, pendingIntent);
     }
 }

@@ -4,6 +4,7 @@ import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
+import bg.c2;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import com.google.android.gms.tasks.Tasks;
@@ -14,25 +15,25 @@ import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class z {
     public static final long i = TimeUnit.HOURS.toSeconds(8);
     public static final /* synthetic */ int j = 0;
     public final Context a;
-    public final o b;
-    public final m c;
+    public final n b;
+    public final c2 c;
     public final FirebaseMessaging d;
     public final ScheduledThreadPoolExecutor f;
     public final x h;
     public final a0.f e = new a0.f(0);
     public boolean g = false;
 
-    public z(FirebaseMessaging firebaseMessaging, o oVar, x xVar, m mVar, Context context, ScheduledThreadPoolExecutor scheduledThreadPoolExecutor) {
+    public z(FirebaseMessaging firebaseMessaging, n nVar, x xVar, c2 c2Var, Context context, ScheduledThreadPoolExecutor scheduledThreadPoolExecutor) {
         this.d = firebaseMessaging;
-        this.b = oVar;
+        this.b = nVar;
         this.h = xVar;
-        this.c = mVar;
+        this.c = c2Var;
         this.a = context;
         this.f = scheduledThreadPoolExecutor;
     }
@@ -63,21 +64,21 @@ public final class z {
 
     public final void b(String str) {
         String a2 = this.d.a();
-        m mVar = this.c;
-        mVar.getClass();
+        c2 c2Var = this.c;
+        c2Var.getClass();
         Bundle bundle = new Bundle();
         bundle.putString("gcm.topic", "/topics/" + str);
-        a(mVar.m(mVar.A(a2, "/topics/" + str, bundle)));
+        a(c2Var.n(c2Var.A(a2, "/topics/" + str, bundle)));
     }
 
     public final void c(String str) {
         String a2 = this.d.a();
-        m mVar = this.c;
-        mVar.getClass();
+        c2 c2Var = this.c;
+        c2Var.getClass();
         Bundle bundle = new Bundle();
         bundle.putString("gcm.topic", "/topics/" + str);
         bundle.putString("delete", "1");
-        a(mVar.m(mVar.A(a2, "/topics/" + str, bundle)));
+        a(c2Var.n(c2Var.A(a2, "/topics/" + str, bundle)));
     }
 
     public final void e(w wVar) {
@@ -94,8 +95,8 @@ public final class z {
                         this.e.remove(str);
                     }
                 }
-            } catch (Throwable th) {
-                throw th;
+            } catch (Throwable th2) {
+                throw th2;
             }
         }
     }

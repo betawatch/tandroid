@@ -2,28 +2,23 @@ package y7;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import g7.p8;
-import w7.i;
-import x5.u;
+import com.google.android.gms.internal.cast.o;
+import w5.k;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class g extends y5.a {
-    public static final Parcelable.Creator<g> CREATOR = new i(16);
-    public final int a;
-    public final u b;
+public final class g extends a6.a {
+    public static final Parcelable.Creator<g> CREATOR = new k(11);
+    public final String a;
 
-    public g(int i9, u uVar) {
-        this.a = i9;
-        this.b = uVar;
+    public g(String str) {
+        this.a = str;
     }
 
     @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i9) {
-        int q10 = p8.q(parcel, 20293);
-        p8.s(parcel, 1, 4);
-        parcel.writeInt(this.a);
-        p8.k(parcel, 2, this.b, i9);
-        p8.r(parcel, q10);
+    public final void writeToParcel(Parcel parcel, int i10) {
+        int q6 = o.q(parcel, 20293);
+        o.l(parcel, 2, this.a);
+        o.r(parcel, q6);
     }
 }

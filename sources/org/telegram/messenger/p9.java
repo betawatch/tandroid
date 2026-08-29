@@ -1,108 +1,30 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+import org.telegram.tgnet.TLObject;
+
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class p9 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ MessagesController b;
+    public final /* synthetic */ MediaDataController b;
+    public final /* synthetic */ String c;
+    public final /* synthetic */ TLObject d;
 
-    public /* synthetic */ p9(MessagesController messagesController, int i9) {
-        this.a = i9;
-        this.b = messagesController;
+    public /* synthetic */ p9(MediaDataController mediaDataController, String str, TLObject tLObject, int i10) {
+        this.a = i10;
+        this.b = mediaDataController;
+        this.c = str;
+        this.d = tLObject;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$new$18();
-                break;
-            case 1:
-                this.b.lambda$new$39();
-                break;
-            case 2:
-                this.b.requestIsUserContactBlocked();
-                break;
-            case 3:
-                this.b.lambda$new$505();
-                break;
-            case 4:
-                this.b.lambda$updateTimerProc$158();
-                break;
-            case 5:
-                this.b.lambda$updateTimerProc$161();
-                break;
-            case 6:
-                this.b.lambda$applyAppConfig$36();
-                break;
-            case 7:
-                this.b.lambda$applyAppConfig$37();
-                break;
-            case 8:
-                this.b.lambda$processUpdates$380();
-                break;
-            case 9:
-                this.b.lambda$migrateDialogs$213();
-                break;
-            case 10:
-                this.b.lambda$loadRemoteFilters$26();
-                break;
-            case 11:
-                this.b.lambda$loadRemoteFilters$27();
-                break;
-            case 12:
-                this.b.lambda$loadRemoteFilters$28();
-                break;
-            case 13:
-                this.b.lambda$loadRemoteFilters$29();
-                break;
-            case 14:
-                this.b.lambda$cleanup$52();
-                break;
-            case 15:
-                this.b.lambda$cleanup$53();
-                break;
-            case 16:
-                this.b.lambda$cleanup$54();
-                break;
-            case 17:
-                this.b.lambda$toggleChannelInvitesHistory$287();
-                break;
-            case 18:
-                this.b.lambda$removeWebBrowserException$514();
-                break;
-            case 19:
-                this.b.lambda$checkPromoInfoInternal$166();
-                break;
-            case 20:
-                this.b.lambda$toggleChatJoinToSend$279();
-                break;
-            case 21:
-                this.b.lambda$migrateDialogs$215();
-                break;
-            case 22:
-                this.b.lambda$scheduleTranscriptionUpdate$38();
-                break;
-            case 23:
-                this.b.lambda$processUpdateArray$409();
-                break;
-            case 24:
-                this.b.lambda$processUpdateArray$410();
-                break;
-            case 25:
-                this.b.lambda$processUpdateArray$411();
-                break;
-            case 26:
-                this.b.lambda$registerForPush$323();
-                break;
-            case 27:
-                this.b.lambda$updateEmojiStatusUntil$474();
-                break;
-            case 28:
-                this.b.lambda$toggleChannelForum$285();
+                this.b.lambda$fetchStickerSetInternal$41(this.c, this.d);
                 break;
             default:
-                this.b.lambda$toggleChannelSignatures$283();
+                this.b.lambda$verifyAnimatedStickerMessageInternal$69(this.c, this.d);
                 break;
         }
     }

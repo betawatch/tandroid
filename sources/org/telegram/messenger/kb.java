@@ -1,29 +1,54 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.tl.TL_account;
+import android.content.Context;
+import org.telegram.messenger.voip.VoIPGroupNotification;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class kb implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ MessagesController b;
-    public final /* synthetic */ TL_account.TL_webBrowserSettings c;
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ boolean f;
+    public final /* synthetic */ Object h;
+    public final /* synthetic */ Object n;
+    public final /* synthetic */ Object r;
 
-    public /* synthetic */ kb(MessagesController messagesController, TL_account.TL_webBrowserSettings tL_webBrowserSettings, int i9) {
-        this.a = i9;
-        this.b = messagesController;
-        this.c = tL_webBrowserSettings;
+    public /* synthetic */ kb(MessagesController messagesController, long j10, int i10, int i11, long j11, TLRPC.TL_messages_affectedHistory tL_messages_affectedHistory, boolean z10, Runnable runnable) {
+        this.h = messagesController;
+        this.c = j10;
+        this.b = i10;
+        this.e = i11;
+        this.d = j11;
+        this.n = tL_messages_affectedHistory;
+        this.f = z10;
+        this.r = runnable;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$loadWebBrowserConfig$510(this.c);
+                ((MessagesController) this.h).lambda$deleteMessagesRange$464(this.c, this.b, this.e, this.d, (TLRPC.TL_messages_affectedHistory) this.n, this.f, (Runnable) this.r);
                 break;
             default:
-                this.b.lambda$loadWebBrowserConfig$508(this.c);
+                VoIPGroupNotification.lambda$request$0((TLObject) this.h, this.b, this.c, this.d, this.e, this.f, (Context) this.n, (String) this.r);
                 break;
         }
+    }
+
+    public /* synthetic */ kb(TLObject tLObject, int i10, long j10, long j11, int i11, boolean z10, Context context, String str) {
+        this.h = tLObject;
+        this.b = i10;
+        this.c = j10;
+        this.d = j11;
+        this.e = i11;
+        this.f = z10;
+        this.n = context;
+        this.r = str;
     }
 }

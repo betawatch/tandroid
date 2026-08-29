@@ -1,50 +1,39 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
 import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class u11 extends k41 {
-    public static final /* synthetic */ int a = 0;
+public final /* synthetic */ class u11 implements vd.b, Utilities.Callback5, Utilities.Callback5Return {
+    public final /* synthetic */ m21 a;
 
-    static {
-        k41.setup(new u11());
+    public /* synthetic */ u11(m21 m21Var) {
+        this.a = m21Var;
     }
 
-    @Override // org.telegram.ui.Components.k41
-    public final void bindView(View view, l41 l41Var, boolean z10, z41 z41Var, i51 i51Var) {
-        v11 v11Var = (v11) view;
-        boolean z11 = false;
-        if (l41Var.r) {
-            v11Var.f();
-        } else {
-            Object obj = l41Var.G;
-            if (obj == null) {
-                if (l41Var.d == -2) {
-                    v11Var.c();
-                } else {
-                    v11Var.d((l41Var.y & 1) != 0, l41Var.q, l41Var.e);
-                }
-            } else if (obj instanceof TLRPC.TL_forumTopic) {
-                if (l41Var.I) {
-                    v11Var.b(l41Var.x, (TLRPC.TL_forumTopic) obj, l41Var.e);
-                } else {
-                    v11Var.g(l41Var.x, (TLRPC.TL_forumTopic) obj, l41Var.e);
-                }
-            }
-        }
-        v11Var.H = g7.z7.a(l41Var.y, 8) ? AndroidUtilities.dp(10.0f) : 0;
-        if (i51Var != null && i51Var.Y2 && v11Var.s) {
-            z11 = true;
-        }
-        v11Var.setReorder(z11);
+    @Override // vd.b
+    public void N(int i10, float f9, float f10, vd.c cVar) {
+        this.a.g();
     }
 
-    @Override // org.telegram.ui.Components.k41
-    public final View createView(Context context, wk0 wk0Var, int i9, int i10, org.telegram.ui.ActionBar.b6 b6Var) {
-        return new v11(context, i9, b6Var);
+    @Override // org.telegram.messenger.Utilities.Callback5Return
+    public Object run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
+        ((Integer) obj3).getClass();
+        ((Float) obj4).getClass();
+        ((Float) obj5).getClass();
+        return Boolean.valueOf(m21.c(this.a, (w41) obj, (View) obj2));
+    }
+
+    @Override // org.telegram.messenger.Utilities.Callback5
+    public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
+        ((Integer) obj3).getClass();
+        ((Float) obj4).getClass();
+        ((Float) obj5).getClass();
+        m21.a(this.a, (w41) obj);
+    }
+
+    @Override // vd.b
+    public /* synthetic */ void z(float f9, int i10) {
     }
 }

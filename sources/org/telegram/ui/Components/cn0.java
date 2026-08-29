@@ -1,40 +1,42 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.text.TextUtils;
-import java.util.ArrayList;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import android.view.View;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class cn0 extends js {
-    public final /* synthetic */ org.telegram.ui.dy Z;
-    public final /* synthetic */ org.telegram.ui.mx a0;
+public final class cn0 extends kg.o0 {
+    public final /* synthetic */ dn0 h0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public cn0(org.telegram.ui.mx mxVar, wk0 wk0Var, Context context, int i9, int i10, org.telegram.ui.dy dyVar) {
-        super(wk0Var, context, i9, i10);
-        this.a0 = mxVar;
-        this.Z = dyVar;
+    public cn0(dn0 dn0Var, int i10, View view, TLRPC.TL_reactionCount tL_reactionCount, org.telegram.ui.ActionBar.c6 c6Var) {
+        super(null, i10, view, tL_reactionCount, false, true, c6Var);
+        this.h0 = dn0Var;
     }
 
-    @Override // org.telegram.ui.Components.z41
-    public final void N(boolean z10) {
-        ArrayList arrayList;
-        ArrayList arrayList2;
-        ArrayList arrayList3;
-        ArrayList arrayList4;
-        super.N(z10);
-        um0 um0Var = this.a0.c0;
-        um0Var.e(this.S || this.T || (arrayList = this.L) == null || !arrayList.isEmpty() || (arrayList2 = this.M) == null || !arrayList2.isEmpty() || (arrayList3 = this.O) == null || !arrayList3.isEmpty() || (arrayList4 = this.N) == null || !arrayList4.isEmpty(), z10);
-        if (!TextUtils.isEmpty(this.X)) {
-            um0Var.d.setText(LocaleController.getString(R.string.NoResult));
-            um0Var.e.setVisibility(8);
-        } else {
-            um0Var.d.setText(LocaleController.getString(R.string.NoChannelsTitle));
-            um0Var.e.setVisibility(0);
-            um0Var.e.setText(LocaleController.getString(R.string.NoChannelsMessage));
-        }
+    @Override // kg.o0
+    public final boolean e() {
+        return this.w > 0 || this.u || this.F.l != 1.0f;
+    }
+
+    @Override // kg.o0
+    public final boolean i() {
+        return !e();
+    }
+
+    @Override // kg.o0
+    public final int j() {
+        return 18;
+    }
+
+    @Override // kg.o0
+    public final void s(float f9) {
+        int i10 = this.i;
+        dn0 dn0Var = this.h0;
+        this.N = i0.a.d(f9, i10, org.telegram.ui.ActionBar.g6.v0(dn0Var.e ? org.telegram.ui.ActionBar.g6.Fj : org.telegram.ui.ActionBar.g6.va, dn0Var.s.c));
+        int d = i0.a.d(f9, this.g, dn0Var.e ? org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.Cj, dn0Var.s.c) : 0);
+        this.O = d;
+        this.N = org.telegram.ui.ActionBar.g6.v(d, this.N);
+        this.P = i0.a.d(f9, this.h, dn0Var.e ? 1526726655 : org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.wa, dn0Var.s.c));
     }
 }

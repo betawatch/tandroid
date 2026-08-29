@@ -1,40 +1,56 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Bitmap;
-import org.telegram.messenger.Utilities;
+import android.view.ViewGroup;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class i9 implements m9 {
-    public final /* synthetic */ n9 a;
-    public final /* synthetic */ g7.b6[] b;
-    public final /* synthetic */ Runnable[] c;
-    public final /* synthetic */ h50[] d;
+public final class i9 implements vd.g, yd.a {
+    public final ImageReceiver a;
+    public final e9 b;
+    public long c;
+    public boolean d;
+    public final /* synthetic */ j9 e;
 
-    public /* synthetic */ i9(n9 n9Var, g7.b6[] b6VarArr, Runnable[] runnableArr, h50[] h50VarArr) {
-        this.a = n9Var;
-        this.b = b6VarArr;
-        this.c = runnableArr;
-        this.d = h50VarArr;
+    public i9(j9 j9Var, ViewGroup viewGroup) {
+        this.e = j9Var;
+        ImageReceiver imageReceiver = new ImageReceiver(viewGroup);
+        this.a = imageReceiver;
+        imageReceiver.setRoundRadius(j9Var.e / 2);
+        e9 e9Var = new e9((org.telegram.ui.ActionBar.c6) null);
+        this.b = e9Var;
+        e9Var.u(AndroidUtilities.dp(22.0f));
     }
 
-    @Override // org.telegram.ui.Components.m9
-    public final void dispose() {
-        n9 n9Var = this.a;
-        g7.b6[] b6VarArr = this.b;
-        Runnable[] runnableArr = this.c;
-        h50[] h50VarArr = this.d;
-        b6VarArr[0] = null;
-        if (n9Var.e.contains(runnableArr)) {
-            Utilities.globalQueue.cancelRunnables(runnableArr);
-            n9Var.e.remove(runnableArr);
+    @Override // yd.a
+    public final void a() {
+        if (this.d) {
+            this.d = false;
+            this.a.onDetachedFromWindow();
         }
-        for (h50 h50Var : h50VarArr) {
-            Bitmap bitmap = (Bitmap) n9Var.b.remove(h50Var);
-            n9Var.c.remove(h50Var);
-            if (bitmap != null) {
-                bitmap.recycle();
-            }
+        this.c = 0L;
+    }
+
+    @Override // vd.g
+    public final int b(boolean z10) {
+        if (z10) {
+            return 0;
         }
+        return -this.e.f;
+    }
+
+    public final boolean equals(Object obj) {
+        return (obj instanceof i9) && this.c == ((i9) obj).c;
+    }
+
+    @Override // vd.g
+    public final int getHeight() {
+        return this.e.e;
+    }
+
+    @Override // vd.g
+    public final int getWidth() {
+        return this.e.e;
     }
 }

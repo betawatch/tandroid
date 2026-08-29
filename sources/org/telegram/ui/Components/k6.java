@@ -1,49 +1,38 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Paint;
-import android.graphics.drawable.Drawable;
-import android.graphics.drawable.ShapeDrawable;
+import android.graphics.Canvas;
+import android.text.StaticLayout;
+import android.view.View;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class k6 extends l6 {
-    public final /* synthetic */ int b;
+public final class k6 {
+    public final u5 a;
+    public final StaticLayout b;
+    public final float c;
+    public final int d;
+    public final float e;
+    public final float f;
+    public final /* synthetic */ n6 g;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ k6(String str, int i9) {
-        super(str, 1);
-        this.b = i9;
-    }
-
-    @Override // org.telegram.ui.Components.l6
-    public final void a(int i9, Object obj) {
-        switch (this.b) {
-            case 0:
-                ((Paint) obj).setAlpha(i9);
-                break;
-            case 1:
-                ((Paint) obj).setColor(i9);
-                break;
-            case 2:
-                ((Drawable) obj).setAlpha(i9);
-                break;
-            default:
-                ((ShapeDrawable) obj).getPaint().setAlpha(i9);
-                break;
+    public k6(n6 n6Var, StaticLayout staticLayout, float f9, int i10) {
+        this.g = n6Var;
+        this.b = staticLayout;
+        this.d = i10;
+        this.c = f9;
+        float f10 = 0.0f;
+        this.e = (staticLayout == null || staticLayout.getLineCount() <= 0) ? 0.0f : staticLayout.getLineLeft(0);
+        if (staticLayout != null && staticLayout.getLineCount() > 0) {
+            f10 = staticLayout.getLineWidth(0);
+        }
+        this.f = f10;
+        if (n6Var.getCallback() instanceof View) {
+            this.a = y5.update(n6Var.l, (View) n6Var.getCallback(), this.a, staticLayout);
         }
     }
 
-    @Override // android.util.Property
-    public final Object get(Object obj) {
-        switch (this.b) {
-            case 0:
-                return Integer.valueOf(((Paint) obj).getAlpha());
-            case 1:
-                return Integer.valueOf(((Paint) obj).getColor());
-            case 2:
-                return Integer.valueOf(((Drawable) obj).getAlpha());
-            default:
-                return Integer.valueOf(((ShapeDrawable) obj).getPaint().getAlpha());
-        }
+    public final void a(Canvas canvas, float f9) {
+        this.b.draw(canvas);
+        y5.drawAnimatedEmojis(canvas, this.b, this.a, 0.0f, null, 0.0f, 0.0f, 0.0f, f9, this.g.U);
     }
 }

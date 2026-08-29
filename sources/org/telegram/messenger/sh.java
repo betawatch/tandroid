@@ -1,43 +1,29 @@
 package org.telegram.messenger;
 
-import java.util.Comparator;
-import org.telegram.messenger.SavedMessagesController;
-import org.telegram.messenger.SecretChatHelper;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class sh implements Comparator {
+public final /* synthetic */ class sh implements Runnable {
     public final /* synthetic */ int a;
+    public final /* synthetic */ String b;
+    public final /* synthetic */ String c;
+    public final /* synthetic */ long d;
 
-    public /* synthetic */ sh(int i9) {
-        this.a = i9;
+    public /* synthetic */ sh(int i10, long j10, String str, String str2) {
+        this.a = i10;
+        this.b = str;
+        this.c = str2;
+        this.d = j10;
     }
 
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
-        int lambda$updateAllDialogs$0;
-        int lambda$resendMessages$13;
-        int lambda$checkSecretHoles$16;
-        int lambda$saveProxyList$4;
-        int lambda$sortTopics$9;
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                lambda$updateAllDialogs$0 = SavedMessagesController.lambda$updateAllDialogs$0((SavedMessagesController.SavedDialog) obj, (SavedMessagesController.SavedDialog) obj2);
-                return lambda$updateAllDialogs$0;
-            case 1:
-                lambda$resendMessages$13 = SecretChatHelper.lambda$resendMessages$13((TLRPC.Message) obj, (TLRPC.Message) obj2);
-                return lambda$resendMessages$13;
-            case 2:
-                lambda$checkSecretHoles$16 = SecretChatHelper.lambda$checkSecretHoles$16((SecretChatHelper.TL_decryptedMessageHolder) obj, (SecretChatHelper.TL_decryptedMessageHolder) obj2);
-                return lambda$checkSecretHoles$16;
-            case 3:
-                lambda$saveProxyList$4 = SharedConfig.lambda$saveProxyList$4((SharedConfig.ProxyInfo) obj, (SharedConfig.ProxyInfo) obj2);
-                return lambda$saveProxyList$4;
+                PushListenerController.lambda$processRemoteMessage$6(this.b, this.c, this.d);
+                break;
             default:
-                lambda$sortTopics$9 = TopicsController.lambda$sortTopics$9((TLRPC.TL_forumTopic) obj, (TLRPC.TL_forumTopic) obj2);
-                return lambda$sortTopics$9;
+                PushListenerController.lambda$processRemoteMessage$7(this.b, this.c, this.d);
+                break;
         }
     }
 }

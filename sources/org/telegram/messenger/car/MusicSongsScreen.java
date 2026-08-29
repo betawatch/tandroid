@@ -1,13 +1,13 @@
 package org.telegram.messenger.car;
 
-import androidx.car.app.m;
+import androidx.car.app.l;
 import androidx.lifecycle.e;
 import androidx.lifecycle.t;
 import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public class MusicSongsScreen extends m implements e, NotificationCenter.NotificationCenterDelegate {
+public class MusicSongsScreen extends l implements e, NotificationCenter.NotificationCenterDelegate {
     @Override // androidx.lifecycle.e
     public final void a(t tVar) {
         NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.messagePlayingDidStart);
@@ -16,8 +16,8 @@ public class MusicSongsScreen extends m implements e, NotificationCenter.Notific
     }
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public final void didReceivedNotification(int i9, int i10, Object... objArr) {
-        if (i9 != NotificationCenter.activeAccountChanged) {
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+        if (i10 != NotificationCenter.activeAccountChanged) {
             throw null;
         }
         throw null;

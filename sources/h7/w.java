@@ -1,50 +1,69 @@
 package h7;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+import android.hardware.biometrics.BiometricPrompt;
+import android.os.Build;
+import android.security.identity.IdentityCredential;
+import android.security.keystore.KeyGenParameterSpec;
+import android.util.Log;
+import java.io.IOException;
+import java.security.InvalidAlgorithmParameterException;
+import java.security.InvalidKeyException;
+import java.security.KeyStore;
+import java.security.KeyStoreException;
+import java.security.NoSuchAlgorithmException;
+import java.security.NoSuchProviderException;
+import java.security.Signature;
+import java.security.UnrecoverableKeyException;
+import java.security.cert.CertificateException;
+import javax.crypto.Cipher;
+import javax.crypto.KeyGenerator;
+import javax.crypto.Mac;
+import javax.crypto.NoSuchPaddingException;
+import javax.crypto.SecretKey;
+
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class w extends s {
-    public static final w e = new w(0, new Object[0]);
-    public final transient Object[] c;
-    public final transient int d;
-
-    public w(int i9, Object[] objArr) {
-        this.c = objArr;
-        this.d = i9;
+public abstract class w {
+    public static androidx.biometric.v a() {
+        try {
+            KeyStore keyStore = KeyStore.getInstance("AndroidKeyStore");
+            keyStore.load(null);
+            KeyGenParameterSpec.Builder b10 = androidx.biometric.b0.b("androidxBiometric", 3);
+            androidx.biometric.b0.d(b10);
+            androidx.biometric.b0.e(b10);
+            KeyGenerator keyGenerator = KeyGenerator.getInstance("AES", "AndroidKeyStore");
+            androidx.biometric.b0.c(keyGenerator, androidx.biometric.b0.a(b10));
+            keyGenerator.generateKey();
+            SecretKey secretKey = (SecretKey) keyStore.getKey("androidxBiometric", null);
+            Cipher cipher = Cipher.getInstance("AES/CBC/PKCS7Padding");
+            cipher.init(1, secretKey);
+            return new androidx.biometric.v(cipher);
+        } catch (IOException | InvalidAlgorithmParameterException | InvalidKeyException | KeyStoreException | NoSuchAlgorithmException | NoSuchProviderException | UnrecoverableKeyException | CertificateException | NoSuchPaddingException e10) {
+            Log.w("CryptoObjectUtils", "Failed to create fake crypto object.", e10);
+            return null;
+        }
     }
 
-    @Override // java.util.List
-    public final Object get(int i9) {
-        f7.b8.a(i9, this.d);
-        Object obj = this.c[i9];
-        obj.getClass();
-        return obj;
-    }
-
-    @Override // h7.s, h7.o
-    public final int i(Object[] objArr) {
-        Object[] objArr2 = this.c;
-        int i9 = this.d;
-        System.arraycopy(objArr2, 0, objArr, 0, i9);
-        return i9;
-    }
-
-    @Override // h7.o
-    public final int n() {
-        return this.d;
-    }
-
-    @Override // h7.o
-    public final int o() {
-        return 0;
-    }
-
-    @Override // h7.o
-    public final Object[] p() {
-        return this.c;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final int size() {
-        return this.d;
+    public static BiometricPrompt.CryptoObject b(androidx.biometric.v vVar) {
+        IdentityCredential identityCredential;
+        if (vVar == null) {
+            return null;
+        }
+        Cipher cipher = vVar.b;
+        if (cipher != null) {
+            return androidx.biometric.c0.b(cipher);
+        }
+        Signature signature = vVar.a;
+        if (signature != null) {
+            return androidx.biometric.c0.a(signature);
+        }
+        Mac mac = vVar.c;
+        if (mac != null) {
+            return androidx.biometric.c0.c(mac);
+        }
+        if (Build.VERSION.SDK_INT < 30 || (identityCredential = vVar.d) == null) {
+            return null;
+        }
+        return androidx.biometric.d0.a(identityCredential);
     }
 }

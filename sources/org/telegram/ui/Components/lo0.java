@@ -1,42 +1,27 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.AndroidUtilities;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class lo0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ rp0 b;
+public final class lo0 extends f2.a1 {
+    public final /* synthetic */ ye a;
 
-    public /* synthetic */ lo0(rp0 rp0Var, int i9) {
-        this.a = i9;
-        this.b = rp0Var;
+    public lo0(ye yeVar) {
+        this.a = yeVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                rp0 rp0Var = this.b;
-                rp0Var.w0 = true;
-                m10 m10Var = rp0Var.u0;
-                m10Var.r.setText("");
-                AndroidUtilities.showKeyboard(m10Var.r);
-                break;
-            default:
-                hc hcVar = new hc(12);
-                rp0 rp0Var2 = this.b;
-                if (!rp0Var2.isKeyboardVisible()) {
-                    hcVar.run();
-                    break;
-                } else {
-                    m10 m10Var2 = rp0Var2.u0;
-                    if (m10Var2 != null) {
-                        AndroidUtilities.hideKeyboard(m10Var2.r);
-                    }
-                    AndroidUtilities.runOnUIThread(hcVar, 300L);
-                    break;
-                }
+    @Override // f2.a1
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        ye yeVar = this.a;
+        View view = yeVar.u;
+        boolean z10 = yeVar.w.I0() != 0;
+        Boolean bool = yeVar.x;
+        if (bool == null || z10 != bool.booleanValue()) {
+            view.animate().cancel();
+            view.animate().alpha(z10 ? 1.0f : 0.0f).setDuration(150L).start();
+            yeVar.x = Boolean.valueOf(z10);
         }
     }
 }

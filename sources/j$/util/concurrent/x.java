@@ -28,8 +28,8 @@ public final class x implements x0 {
     }
 
     @Override // j$.util.Spliterator
-    public final /* synthetic */ boolean hasCharacteristics(int i9) {
-        return j$.com.android.tools.r8.a.p(this, i9);
+    public final /* synthetic */ boolean hasCharacteristics(int i10) {
+        return j$.com.android.tools.r8.a.p(this, i10);
     }
 
     @Override // j$.util.Spliterator
@@ -42,11 +42,11 @@ public final class x implements x0 {
         throw new IllegalStateException();
     }
 
-    public x(long j10, long j11, int i9, int i10) {
+    public x(long j10, long j11, int i10, int i11) {
         this.a = j10;
         this.b = j11;
-        this.c = i9;
-        this.d = i10;
+        this.c = i10;
+        this.d = i11;
     }
 
     @Override // j$.util.x0, j$.util.d1, j$.util.Spliterator

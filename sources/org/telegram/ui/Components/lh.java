@@ -1,42 +1,76 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.VideoEditedInfo;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class lh extends org.telegram.ui.rt0 {
-    public final /* synthetic */ MediaController.PhotoEntry a;
-    public final /* synthetic */ ki b;
+public final class lh extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ uh c;
 
-    public lh(ki kiVar, MediaController.PhotoEntry photoEntry) {
-        this.b = kiVar;
-        this.a = photoEntry;
+    public /* synthetic */ lh(uh uhVar, boolean z10, int i10) {
+        this.a = i10;
+        this.c = uhVar;
+        this.b = z10;
     }
 
-    @Override // org.telegram.ui.rt0, org.telegram.ui.zt0
-    public final void o(int i9, VideoEditedInfo videoEditedInfo, final boolean z10, final int i10, int i11, final boolean z11) {
-        ki kiVar = this.b;
-        kiVar.o2 = true;
-        if (kiVar.V1 == null) {
-            return;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                uh uhVar = this.c;
+                ni niVar = uhVar.e;
+                boolean z10 = this.b;
+                if (z10) {
+                    niVar.t1.setVisibility(8);
+                } else {
+                    niVar.A1.setVisibility(8);
+                }
+                int dp = z10 ? AndroidUtilities.dp(36.0f) : 0;
+                for (int i10 = 0; i10 < niVar.t0.size(); i10++) {
+                    ((ph.n3) niVar.t0.valueAt(i10)).setMeasureOffsetY(dp);
+                }
+                if (uhVar.a == animator) {
+                    uhVar.a = null;
+                    break;
+                }
+                break;
+            default:
+                ni niVar2 = this.c.e;
+                boolean z11 = this.b;
+                niVar2.x1 = z11;
+                if (!z11) {
+                    niVar2.y1.setVisibility(8);
+                    break;
+                }
+                break;
         }
-        final MediaController.PhotoEntry photoEntry = this.a;
-        photoEntry.editedInfo = videoEditedInfo;
-        y4.a0(kiVar.F1, kiVar.j1() + 1, 0L, new Utilities.Callback() { // from class: org.telegram.ui.Components.kh
-            @Override // org.telegram.messenger.Utilities.Callback
-            public final void run(Object obj) {
-                ArrayList arrayList = ChatAttachAlertPhotoLayout.p1;
-                arrayList.clear();
-                HashMap hashMap = ChatAttachAlertPhotoLayout.o1;
-                hashMap.clear();
-                arrayList.add(0);
-                hashMap.put(0, photoEntry);
-                lh.this.b.V1.L(7, true, z10, i10, 0, 0L, false, z11, ((Long) obj).longValue());
-            }
-        });
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationStart(Animator animator) {
+        switch (this.a) {
+            case 0:
+                ni niVar = this.c.e;
+                if (this.b) {
+                    niVar.A1.setAlpha(0.0f);
+                    niVar.A1.setVisibility(0);
+                    int dp = AndroidUtilities.dp(36.0f);
+                    for (int i10 = 0; i10 < niVar.t0.size(); i10++) {
+                        ((ph.n3) niVar.t0.valueAt(i10)).setMeasureOffsetY(dp);
+                    }
+                    break;
+                } else {
+                    niVar.t1.setAlpha(0.0f);
+                    niVar.t1.setVisibility(0);
+                    break;
+                }
+            default:
+                super.onAnimationStart(animator);
+                break;
+        }
     }
 }

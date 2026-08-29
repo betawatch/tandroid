@@ -22,7 +22,7 @@ import java.util.Random;
 import java.util.TimeZone;
 import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class r {
     public int a;
@@ -32,7 +32,7 @@ public final class r {
     public Object e;
     public Object f;
 
-    public r(s5.a aVar, byte[] bArr) {
+    public r(u5.a aVar, byte[] bArr) {
         this.f = aVar;
         this.a = aVar.e;
         this.c = aVar.d;
@@ -75,15 +75,15 @@ public final class r {
     }
 
     public g1 a() {
-        x5.l.a("Must set register function", ((s) this.c) != null);
-        x5.l.a("Must set unregister function", ((s) this.d) != null);
-        x5.l.a("Must set holder", ((p) this.e) != null);
+        z5.l.a("Must set register function", ((s) this.c) != null);
+        z5.l.a("Must set unregister function", ((s) this.d) != null);
+        z5.l.a("Must set holder", ((p) this.e) != null);
         n nVar = ((p) this.e).c;
-        x5.l.i(nVar, "Key must not be null");
-        return new g1(new com.google.android.exoplayer2.upstream.t(this, (p) this.e, (u5.c[]) this.f, this.b, this.a), new g1(this, nVar));
+        z5.l.i(nVar, "Key must not be null");
+        return new g1(new com.google.android.exoplayer2.upstream.t(this, (p) this.e, (w5.c[]) this.f, this.b, this.a), new g1(this, nVar));
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:22:0x016c  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x016b  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -91,11 +91,11 @@ public final class r {
         List e10;
         String str;
         String str2;
-        int i9;
+        int i10;
         u1 u1Var;
         long parseLong;
         long parseLong2;
-        s5.a aVar = (s5.a) this.f;
+        u5.a aVar = (u5.a) this.f;
         if (this.b) {
             throw new IllegalStateException("do not reuse LogEventBuilder");
         }
@@ -103,16 +103,16 @@ public final class r {
         this.b = true;
         e2 e2Var = new e2(aVar.b, aVar.c, this.a, (String) this.c, (com.google.android.gms.internal.clearcut.r1) this.d);
         y1 y1Var = (y1) this.e;
-        s5.c cVar = new s5.c(e2Var, y1Var);
+        u5.c cVar = new u5.c(e2Var, y1Var);
         Context context = aVar.i.a;
         boolean z11 = false;
-        int i10 = y1Var != null ? y1Var.c : 0;
+        int i11 = y1Var != null ? y1Var.c : 0;
         boolean booleanValue = ((Boolean) d2.i.a()).booleanValue();
         String str3 = e2Var.h;
-        int i11 = e2Var.c;
+        int i12 = e2Var.c;
         if (booleanValue) {
             if (str3 == null || str3.isEmpty()) {
-                str3 = i11 >= 0 ? String.valueOf(i11) : null;
+                str3 = i12 >= 0 ? String.valueOf(i12) : null;
             }
             if (str3 != null) {
                 if (context == null) {
@@ -122,9 +122,9 @@ public final class r {
                     com.google.android.gms.internal.clearcut.d dVar = (com.google.android.gms.internal.clearcut.d) concurrentHashMap.get(str3);
                     if (dVar == null) {
                         com.google.android.gms.internal.clearcut.i iVar = d2.c;
-                        v1 f10 = v1.f();
+                        v1 f9 = v1.f();
                         iVar.getClass();
-                        com.google.android.gms.internal.clearcut.g gVar = new com.google.android.gms.internal.clearcut.g(iVar, str3, f10);
+                        com.google.android.gms.internal.clearcut.g gVar = new com.google.android.gms.internal.clearcut.g(iVar, str3, f9);
                         dVar = (com.google.android.gms.internal.clearcut.d) concurrentHashMap.putIfAbsent(str3, gVar);
                         if (dVar == null) {
                             dVar = gVar;
@@ -138,7 +138,7 @@ public final class r {
                         break;
                     }
                     u1 u1Var2 = (u1) it.next();
-                    if (!u1Var2.i() || u1Var2.e() == 0 || u1Var2.e() == i10) {
+                    if (!u1Var2.i() || u1Var2.e() == 0 || u1Var2.e() == i11) {
                         if (!d2.b(d2.a(d2.d(context), u1Var2.j()), u1Var2.k(), u1Var2.l())) {
                             z10 = false;
                             break;
@@ -148,7 +148,7 @@ public final class r {
             }
         } else {
             if (str3 == null || str3.isEmpty()) {
-                str3 = i11 >= 0 ? String.valueOf(i11) : null;
+                str3 = i12 >= 0 ? String.valueOf(i12) : null;
             }
             if (str3 != null) {
                 if (context == null || !d2.c(context)) {
@@ -169,17 +169,17 @@ public final class r {
                     int indexOf = str.indexOf(44);
                     if (indexOf >= 0) {
                         str2 = str.substring(0, indexOf);
-                        i9 = indexOf + 1;
+                        i10 = indexOf + 1;
                     } else {
                         str2 = "";
-                        i9 = 0;
+                        i10 = 0;
                     }
-                    int indexOf2 = str.indexOf(47, i9);
+                    int indexOf2 = str.indexOf(47, i10);
                     if (indexOf2 <= 0) {
                         Log.e("LogSamplerImpl", str.length() != 0 ? "Failed to parse the rule: ".concat(str) : new String("Failed to parse the rule: "));
                     } else {
                         try {
-                            parseLong = Long.parseLong(str.substring(i9, indexOf2));
+                            parseLong = Long.parseLong(str.substring(i10, indexOf2));
                             parseLong2 = Long.parseLong(str.substring(indexOf2 + 1));
                         } catch (NumberFormatException e11) {
                             Log.e("LogSamplerImpl", str.length() != 0 ? "parseLong() failed while parsing: ".concat(str) : new String("parseLong() failed while parsing: "), e11);
@@ -203,20 +203,20 @@ public final class r {
                             u1.f((u1) m10.b, parseLong);
                             m10.b();
                             u1.h((u1) m10.b, parseLong2);
-                            com.google.android.gms.internal.clearcut.z c10 = m10.c();
-                            byte byteValue = ((Byte) c10.a(1)).byteValue();
+                            com.google.android.gms.internal.clearcut.z c3 = m10.c();
+                            byte byteValue = ((Byte) c3.a(1)).byteValue();
                             if (byteValue == 1) {
                                 z11 = true;
                             } else if (byteValue != 0) {
                                 com.google.android.gms.internal.clearcut.w0 w0Var = com.google.android.gms.internal.clearcut.w0.c;
                                 w0Var.getClass();
-                                z11 = w0Var.a(c10.getClass()).g(c10);
-                                c10.a(2);
+                                z11 = w0Var.a(c3.getClass()).g(c3);
+                                c3.a(2);
                             }
                             if (!z11) {
-                                throw new androidx.car.app.j();
+                                throw new a6.b();
                             }
-                            u1Var = (u1) c10;
+                            u1Var = (u1) c3;
                             if (u1Var != null) {
                             }
                         }
@@ -250,9 +250,9 @@ public final class r {
                 this.a = 0;
             }
         }
-        int i9 = this.a;
-        this.a = i9 + 1;
-        this.f = arrayList.get(i9);
+        int i10 = this.a;
+        this.a = i10 + 1;
+        this.f = arrayList.get(i10);
         return obj;
     }
 

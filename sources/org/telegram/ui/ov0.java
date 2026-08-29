@@ -3,22 +3,22 @@ package org.telegram.ui;
 import android.view.View;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ov0 implements org.telegram.ui.ActionBar.b2, Utilities.Callback5 {
     public final /* synthetic */ int a;
     public final /* synthetic */ pv0 b;
 
-    public /* synthetic */ ov0(pv0 pv0Var, int i9) {
-        this.a = i9;
+    public /* synthetic */ ov0(pv0 pv0Var, int i10) {
+        this.a = i10;
         this.b = pv0Var;
     }
 
     @Override // org.telegram.ui.ActionBar.b2
-    public void f(org.telegram.ui.ActionBar.c2 c2Var, int i9) {
+    public void g(org.telegram.ui.ActionBar.c2 c2Var, int i10) {
         switch (this.a) {
             case 0:
-                this.b.X();
+                this.b.Y();
                 break;
             default:
                 this.b.finishFragment();
@@ -34,13 +34,13 @@ public final /* synthetic */ class ov0 implements org.telegram.ui.ActionBar.b2, 
         ((Float) obj5).floatValue();
         pv0 pv0Var = this.b;
         pv0Var.getClass();
-        if (((org.telegram.ui.Components.l41) obj).d == 1) {
-            org.telegram.ui.Cells.t8 t8Var = (org.telegram.ui.Cells.t8) view;
-            boolean z10 = !t8Var.e.h;
+        if (((org.telegram.ui.Components.w41) obj).d == 1) {
+            org.telegram.ui.Cells.q8 q8Var = (org.telegram.ui.Cells.q8) view;
+            boolean z10 = !q8Var.e.h;
             pv0Var.r = z10;
-            t8Var.setChecked(z10);
+            q8Var.setChecked(z10);
             pv0Var.d.U2.N(true);
-            pv0Var.U(true);
+            pv0Var.V(true);
         }
     }
 }

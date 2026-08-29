@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes4.dex */
 public final class RenderSynchronizer {
     private static final float DEFAULT_TARGET_FPS = 30.0f;
@@ -25,17 +25,17 @@ public final class RenderSynchronizer {
     private boolean renderWindowOpen;
     private final long targetFrameIntervalNanos;
 
-    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
     public interface Listener {
         void onRenderWindowClose();
 
         void onRenderWindowOpen();
     }
 
-    public RenderSynchronizer(float f10) {
+    public RenderSynchronizer(float f9) {
         this.lock = new Object();
         this.listeners = new CopyOnWriteArrayList();
-        this.targetFrameIntervalNanos = Math.round(TimeUnit.SECONDS.toNanos(1L) / f10);
+        this.targetFrameIntervalNanos = Math.round(TimeUnit.SECONDS.toNanos(1L) / f9);
         Handler handler = new Handler(Looper.getMainLooper());
         this.mainThreadHandler = handler;
         handler.post(new n(this, 1));
@@ -80,8 +80,8 @@ public final class RenderSynchronizer {
                 } else if (this.renderWindowOpen) {
                     closeRenderWindow();
                 }
-            } catch (Throwable th) {
-                throw th;
+            } catch (Throwable th2) {
+                throw th2;
             }
         }
     }
@@ -110,8 +110,8 @@ public final class RenderSynchronizer {
                     this.isListening = true;
                     this.mainThreadHandler.post(new n(this, 0));
                 }
-            } catch (Throwable th) {
-                throw th;
+            } catch (Throwable th2) {
+                throw th2;
             }
         }
     }

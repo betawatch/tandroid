@@ -1,54 +1,66 @@
 package od;
 
-import hd.a0;
-import hd.y0;
-import j3.r0;
-import java.util.concurrent.Executor;
-import md.v;
+import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class d extends y0 implements Executor {
-    public static final d c = new d();
-    public static final a0 d;
+public abstract class d {
+    public static final /* synthetic */ AtomicReferenceFieldUpdater a = AtomicReferenceFieldUpdater.newUpdater(d.class, Object.class, "_next$volatile");
+    public static final /* synthetic */ AtomicReferenceFieldUpdater b = AtomicReferenceFieldUpdater.newUpdater(d.class, Object.class, "_prev$volatile");
+    private volatile /* synthetic */ Object _next$volatile;
+    private volatile /* synthetic */ Object _prev$volatile;
 
-    static {
-        a0 a0Var = l.c;
-        int i9 = v.a;
-        if (64 >= i9) {
-            i9 = 64;
+    public d(u uVar) {
+        this._prev$volatile = uVar;
+    }
+
+    public final void b() {
+        b.set(this, null);
+    }
+
+    public final d c() {
+        Object obj = a.get(this);
+        if (obj == a.b) {
+            return null;
         }
-        int j10 = md.a.j(i9, 12, "kotlinx.coroutines.io.parallelism");
-        a0Var.getClass();
-        if (j10 < 1) {
-            throw new IllegalArgumentException(r0.l(j10, "Expected positive parallelism level, but got ").toString());
+        return (d) obj;
+    }
+
+    public abstract boolean d();
+
+    public final void e() {
+        d c3;
+        if (c() == null) {
+            return;
         }
-        if (j10 < k.d) {
-            if (j10 < 1) {
-                throw new IllegalArgumentException(r0.l(j10, "Expected positive parallelism level, but got ").toString());
+        while (true) {
+            AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = b;
+            d dVar = (d) atomicReferenceFieldUpdater.get(this);
+            while (dVar != null && dVar.d()) {
+                dVar = (d) atomicReferenceFieldUpdater.get(dVar);
             }
-            a0Var = new md.i(a0Var, j10);
+            d c6 = c();
+            kotlin.jvm.internal.j.b(c6);
+            while (c6.d() && (c3 = c6.c()) != null) {
+                c6 = c3;
+            }
+            while (true) {
+                Object obj = atomicReferenceFieldUpdater.get(c6);
+                d dVar2 = ((d) obj) == null ? null : dVar;
+                while (!atomicReferenceFieldUpdater.compareAndSet(c6, obj, dVar2)) {
+                    if (atomicReferenceFieldUpdater.get(c6) != obj) {
+                        break;
+                    }
+                }
+            }
+            if (dVar != null) {
+                a.set(dVar, c6);
+            }
+            if (!c6.d() || c6.c() == null) {
+                if (dVar == null || !dVar.d()) {
+                    return;
+                }
+            }
         }
-        d = a0Var;
-    }
-
-    @Override // hd.a0
-    public final void c(qc.h hVar, Runnable runnable) {
-        d.c(hVar, runnable);
-    }
-
-    @Override // java.io.Closeable, java.lang.AutoCloseable
-    public final void close() {
-        throw new IllegalStateException("Cannot be invoked on Dispatchers.IO");
-    }
-
-    @Override // java.util.concurrent.Executor
-    public final void execute(Runnable runnable) {
-        c(qc.i.a, runnable);
-    }
-
-    @Override // hd.a0
-    public final String toString() {
-        return "Dispatchers.IO";
     }
 }

@@ -9,7 +9,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
 public final class dg0 {
     public final /* synthetic */ eg0 a;
@@ -19,20 +19,20 @@ public final class dg0 {
     }
 
     public final void a(tf0 tf0Var) {
-        int i9;
+        int i10;
         eg0 eg0Var = this.a;
         eg0Var.H = true;
         fg0 fg0Var = eg0Var.R;
         fg0Var.F = 0;
         fg0Var.n1(0, false);
-        int i10 = Build.VERSION.SDK_INT;
-        if (i10 >= 23 && AndroidUtilities.isSimAvailable()) {
+        int i11 = Build.VERSION.SDK_INT;
+        if (i11 >= 23 && AndroidUtilities.isSimAvailable()) {
             boolean z10 = fg0Var.getParentActivity().checkSelfPermission("android.permission.READ_PHONE_STATE") == 0;
             boolean z11 = fg0Var.getParentActivity().checkSelfPermission("android.permission.CALL_PHONE") == 0;
-            boolean z12 = i10 < 28 || fg0Var.getParentActivity().checkSelfPermission("android.permission.READ_CALL_LOG") == 0;
-            boolean z13 = i10 < 26 || fg0Var.getParentActivity().checkSelfPermission("android.permission.READ_PHONE_NUMBERS") == 0;
-            kj0 kj0Var = eg0Var.a;
-            if (kj0Var != null && "888".equals(kj0Var.getText())) {
+            boolean z12 = i11 < 28 || fg0Var.getParentActivity().checkSelfPermission("android.permission.READ_CALL_LOG") == 0;
+            boolean z13 = i11 < 26 || fg0Var.getParentActivity().checkSelfPermission("android.permission.READ_PHONE_NUMBERS") == 0;
+            ij0 ij0Var = eg0Var.a;
+            if (ij0Var != null && "888".equals(ij0Var.getText())) {
                 z10 = true;
                 z11 = true;
                 z12 = true;
@@ -49,7 +49,7 @@ public final class dg0 {
                 if (!z12) {
                     fg0Var.r.add("android.permission.READ_CALL_LOG");
                 }
-                if (!z13 && i10 >= 26) {
+                if (!z13 && i11 >= 26) {
                     fg0Var.r.add("android.permission.READ_PHONE_NUMBERS");
                 }
                 if (!fg0Var.r.isEmpty()) {
@@ -68,15 +68,15 @@ public final class dg0 {
                     alertDialog$Builder.k(LocaleController.getString("Continue", R.string.Continue), null);
                     if (!z10 && (!z11 || !z12)) {
                         alertDialog$Builder.a.P = LocaleController.getString("AllowReadCallAndLog", R.string.AllowReadCallAndLog);
-                        i9 = R.raw.calls_log;
+                        i10 = R.raw.calls_log;
                     } else if (z11 && z12) {
                         alertDialog$Builder.a.P = LocaleController.getString("AllowReadCall", R.string.AllowReadCall);
-                        i9 = R.raw.incoming_calls;
+                        i10 = R.raw.incoming_calls;
                     } else {
                         alertDialog$Builder.a.P = LocaleController.getString("AllowReadCallLog", R.string.AllowReadCallLog);
-                        i9 = R.raw.calls_log;
+                        i10 = R.raw.calls_log;
                     }
-                    alertDialog$Builder.m(i9, 46, org.telegram.ui.ActionBar.f6.w0(null, org.telegram.ui.ActionBar.f6.L5, false), null);
+                    alertDialog$Builder.m(i10, 46, org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.L5, false), null);
                     fg0Var.h = fg0Var.showDialog(alertDialog$Builder.a);
                     eg0Var.H = true;
                     return;

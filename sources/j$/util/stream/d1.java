@@ -37,13 +37,13 @@ public final class d1 extends e5 {
                     while (!this.a.q() && spliterator.tryAdvance((LongConsumer) m0Var)) {
                     }
                 }
-            } catch (Throwable th) {
+            } catch (Throwable th2) {
                 try {
                     longStream.close();
-                } catch (Throwable th2) {
-                    th.addSuppressed(th2);
+                } catch (Throwable th3) {
+                    th2.addSuppressed(th3);
                 }
-                throw th;
+                throw th2;
             }
         }
         if (longStream != null) {

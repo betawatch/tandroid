@@ -1,56 +1,24 @@
 package v9;
 
-import android.content.Context;
-import android.os.Build;
-import androidx.emoji2.text.v;
-import com.google.android.gms.tasks.Task;
-import com.google.android.gms.tasks.Tasks;
-import java.util.Set;
-import java.util.concurrent.Executor;
-
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class c implements e, f {
-    public final s8.d a;
-    public final Context b;
-    public final x9.b c;
-    public final Set d;
-    public final Executor e;
+public final class c {
+    public static final c a;
+    public static final /* synthetic */ c[] b;
 
-    public c(Context context, String str, Set set, x9.b bVar, Executor executor) {
-        this.a = new s8.d(context, str);
-        this.d = set;
-        this.e = executor;
-        this.c = bVar;
-        this.b = context;
+    static {
+        c cVar = new c("DEFAULT", 0);
+        a = cVar;
+        b = new c[]{cVar, new c("SIGNED", 1), new c("FIXED", 2)};
     }
 
-    public final synchronized int a() {
-        long currentTimeMillis = System.currentTimeMillis();
-        g gVar = (g) this.a.get();
-        if (!gVar.i(currentTimeMillis)) {
-            return 1;
-        }
-        gVar.g();
-        return 3;
+    public static c valueOf(String str) {
+        return (c) Enum.valueOf(c.class, str);
     }
 
-    public final Task b() {
-        if (Build.VERSION.SDK_INT >= 24 ? v.g(this.b) : true) {
-            return Tasks.call(this.e, new b(this, 0));
-        }
-        return Tasks.forResult("");
-    }
-
-    public final void c() {
-        if (this.d.size() <= 0) {
-            Tasks.forResult(null);
-            return;
-        }
-        if (Build.VERSION.SDK_INT >= 24 ? v.g(this.b) : true) {
-            Tasks.call(this.e, new b(this, 1));
-        } else {
-            Tasks.forResult(null);
-        }
+    public static c[] values() {
+        return (c[]) b.clone();
     }
 }

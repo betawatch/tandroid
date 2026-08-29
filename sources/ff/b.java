@@ -1,58 +1,61 @@
 package ff;
 
-import java.io.InputStream;
-import java.util.Iterator;
-import java.util.Map;
-import org.json.JSONObject;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.SerializedData;
-import org.telegram.tgnet.TLRPC;
+import android.os.Binder;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.IBinder;
+import android.os.IInterface;
+import android.os.Looper;
+import android.os.Parcel;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public abstract class b {
-    public static void a(Map map) {
-        if (map.isEmpty()) {
-            try {
-                InputStream open = ApplicationLoader.applicationContext.getAssets().open("currencies.json");
-                JSONObject jSONObject = new JSONObject(new String(d5.f0.R(open), n8.d.c));
-                Iterator<String> keys = jSONObject.keys();
-                while (keys.hasNext()) {
-                    String next = keys.next();
-                    map.put(next, Integer.valueOf(jSONObject.optJSONObject(next).optInt("exp")));
-                }
-                open.close();
-            } catch (Exception e10) {
-                FileLog.e(e10);
-            }
-        }
+public final class b extends Binder implements IInterface {
+    public final Handler a;
+    public final /* synthetic */ x9.d b;
+
+    public b(x9.d dVar) {
+        this.b = dVar;
+        attachInterface(this, "android.support.customtabs.ICustomTabsCallback");
+        this.a = new Handler(Looper.getMainLooper());
     }
 
-    public static TLRPC.InputStorePaymentPurpose b(String str) {
-        FileLog.d("BillingUtilities.getPurpose " + str);
-        SerializedData serializedData = new SerializedData(Utilities.hexToBytes(str));
-        a a2 = a.a(serializedData, serializedData.readInt32(true));
-        serializedData.cleanup();
-        if (a2.c != null) {
-            FileLog.d("BillingUtilities.getPurpose: got purpose from received obfuscated profile id");
-            return a2.c;
+    @Override // android.os.Binder
+    public final boolean onTransact(int i10, Parcel parcel, Parcel parcel2, int i11) {
+        Handler handler = this.a;
+        if (i10 == 2) {
+            parcel.enforceInterface("android.support.customtabs.ICustomTabsCallback");
+            handler.post(new a(this, parcel.readInt(), parcel.readInt() != 0 ? (Bundle) Bundle.CREATOR.createFromParcel(parcel) : null));
+            parcel2.writeNoException();
+            return true;
         }
-        SerializedData serializedData2 = new SerializedData(8);
-        serializedData2.writeInt64(a2.b);
-        String bytesToHex = Utilities.bytesToHex(serializedData2.toByteArray());
-        serializedData2.cleanup();
-        FileLog.d("BillingUtilities.getPurpose: searching purpose under " + bytesToHex);
-        String string = ApplicationLoader.applicationContext.getSharedPreferences("purchases", 0).getString(bytesToHex, null);
-        if (string == null) {
-            FileLog.d("BillingUtilities.getPurpose: purpose under " + bytesToHex + " not found");
-            throw new RuntimeException(aa.d.o("no purpose under ", bytesToHex, " found :("));
+        if (i10 == 3) {
+            parcel.enforceInterface("android.support.customtabs.ICustomTabsCallback");
+            handler.post(new a(this, parcel.readString(), parcel.readInt() != 0 ? (Bundle) Bundle.CREATOR.createFromParcel(parcel) : null, 1));
+            parcel2.writeNoException();
+            return true;
         }
-        FileLog.d("BillingUtilities.getPurpose: got {" + string + "} under " + bytesToHex);
-        SerializedData serializedData3 = new SerializedData(Utilities.hexToBytes(string));
-        a a3 = a.a(serializedData3, serializedData3.readInt32(true));
-        serializedData3.cleanup();
-        return a3.c;
+        if (i10 == 4) {
+            parcel.enforceInterface("android.support.customtabs.ICustomTabsCallback");
+            handler.post(new a(this, parcel.readInt() != 0 ? (Bundle) Bundle.CREATOR.createFromParcel(parcel) : null));
+            parcel2.writeNoException();
+            return true;
+        }
+        if (i10 != 5) {
+            if (i10 != 1598968902) {
+                return super.onTransact(i10, parcel, parcel2, i11);
+            }
+            parcel2.writeString("android.support.customtabs.ICustomTabsCallback");
+            return true;
+        }
+        parcel.enforceInterface("android.support.customtabs.ICustomTabsCallback");
+        handler.post(new a(this, parcel.readString(), parcel.readInt() != 0 ? (Bundle) Bundle.CREATOR.createFromParcel(parcel) : null, 3));
+        parcel2.writeNoException();
+        return true;
+    }
+
+    @Override // android.os.IInterface
+    public final IBinder asBinder() {
+        return this;
     }
 }

@@ -1,25 +1,34 @@
 package org.telegram.ui.Components.voip;
 
-import android.content.Context;
-import android.view.MotionEvent;
-import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.webrtc.RendererCommon;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
-/* loaded from: classes3.dex */
-public final class q extends TextView {
-    public final /* synthetic */ t a;
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* loaded from: classes.dex */
+public final class q implements RendererCommon.RendererEvents {
+    public final /* synthetic */ u a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public q(t tVar, Context context) {
-        super(context);
-        this.a = tVar;
+    public q(u uVar) {
+        this.a = uVar;
     }
 
-    @Override // android.widget.TextView, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        if (Math.abs(this.a.J.getAlpha() - 1.0f) > 0.001f) {
-            return false;
+    @Override // org.webrtc.RendererCommon.RendererEvents
+    public final void onFirstFrameRendered() {
+        int i10 = 0;
+        while (true) {
+            u uVar = this.a;
+            if (i10 >= uVar.i0.size()) {
+                uVar.i0.clear();
+                return;
+            } else {
+                AndroidUtilities.cancelRunOnUIThread((Runnable) uVar.i0.get(i10));
+                ((Runnable) uVar.i0.get(i10)).run();
+                i10++;
+            }
         }
-        return super.onTouchEvent(motionEvent);
+    }
+
+    @Override // org.webrtc.RendererCommon.RendererEvents
+    public final void onFrameResolutionChanged(int i10, int i11, int i12) {
     }
 }

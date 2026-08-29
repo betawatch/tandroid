@@ -7,23 +7,23 @@ import android.os.PowerManager;
 import android.util.Log;
 import java.io.IOException;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class b0 implements Runnable {
     public static final Object f = new Object();
     public static Boolean h;
     public static Boolean n;
     public final Context a;
-    public final o b;
+    public final n b;
     public final PowerManager.WakeLock c;
     public final z d;
     public final long e;
 
-    public b0(z zVar, Context context, o oVar, long j10) {
+    public b0(z zVar, Context context, n nVar, long j10) {
         this.d = zVar;
         this.a = context;
         this.e = j10;
-        this.b = oVar;
+        this.b = nVar;
         this.c = ((PowerManager) context.getSystemService("power")).newWakeLock(1, "wake:com.google.firebase.messaging");
     }
 
@@ -35,8 +35,8 @@ public final class b0 implements Runnable {
                 Boolean valueOf = Boolean.valueOf(bool == null ? b(context, "android.permission.ACCESS_NETWORK_STATE", bool) : bool.booleanValue());
                 n = valueOf;
                 booleanValue = valueOf.booleanValue();
-            } catch (Throwable th) {
-                throw th;
+            } catch (Throwable th2) {
+                throw th2;
             }
         }
         return booleanValue;
@@ -61,8 +61,8 @@ public final class b0 implements Runnable {
                 Boolean valueOf = Boolean.valueOf(bool == null ? b(context, "android.permission.WAKE_LOCK", bool) : bool.booleanValue());
                 h = valueOf;
                 booleanValue = valueOf.booleanValue();
-            } catch (Throwable th) {
-                throw th;
+            } catch (Throwable th2) {
+                throw th2;
             }
         }
         return booleanValue;
@@ -76,8 +76,8 @@ public final class b0 implements Runnable {
             if (activeNetworkInfo != null) {
                 z10 = activeNetworkInfo.isConnected();
             }
-        } catch (Throwable th) {
-            throw th;
+        } catch (Throwable th2) {
+            throw th2;
         }
         return z10;
     }
@@ -87,9 +87,9 @@ public final class b0 implements Runnable {
     public final void run() {
         z zVar = this.d;
         Context context = this.a;
-        boolean c10 = c(context);
+        boolean c3 = c(context);
         PowerManager.WakeLock wakeLock = this.c;
-        if (c10) {
+        if (c3) {
             wakeLock.acquire(f.a);
         }
         try {
@@ -139,7 +139,7 @@ public final class b0 implements Runnable {
             } catch (RuntimeException unused3) {
                 Log.i("FirebaseMessaging", "TopicsSyncTask's wakelock was already released due to timeout.");
             }
-        } catch (Throwable th) {
+        } catch (Throwable th2) {
             if (c(context)) {
                 try {
                     wakeLock.release();
@@ -147,7 +147,7 @@ public final class b0 implements Runnable {
                     Log.i("FirebaseMessaging", "TopicsSyncTask's wakelock was already released due to timeout.");
                 }
             }
-            throw th;
+            throw th2;
         }
     }
 }

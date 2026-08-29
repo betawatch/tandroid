@@ -1,121 +1,126 @@
 package f2;
 
-import android.os.Bundle;
-import android.view.View;
-import android.view.accessibility.AccessibilityEvent;
-import android.view.accessibility.AccessibilityNodeInfo;
-import androidx.recyclerview.widget.RecyclerView;
+import android.text.TextUtils;
+import i7.n6;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class r1 extends r0.b {
-    public final /* synthetic */ int d = 0;
-    public final Object e;
+public final class r1 {
+    public int a;
+    public int b;
+    public int c;
+    public int d;
+    public int e;
 
-    public r1(s1 s1Var) {
-        this.e = s1Var;
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:9:0x0022, code lost:
-    
-        if (r3.b() > 1) goto L12;
-     */
-    @Override // r0.b
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public void b(View view, AccessibilityEvent accessibilityEvent) {
-        boolean z10;
-        m2.a aVar;
-        switch (this.d) {
-            case 1:
-                m2.g gVar = (m2.g) this.e;
-                super.b(view, accessibilityEvent);
-                accessibilityEvent.setClassName(m2.g.class.getName());
-                m2.a aVar2 = gVar.e;
-                if (aVar2 != null) {
-                    z10 = true;
-                    break;
-                }
-                z10 = false;
-                accessibilityEvent.setScrollable(z10);
-                if (accessibilityEvent.getEventType() == 4096 && (aVar = gVar.e) != null) {
-                    accessibilityEvent.setItemCount(aVar.b());
-                    accessibilityEvent.setFromIndex(gVar.f);
-                    accessibilityEvent.setToIndex(gVar.f);
-                    break;
-                }
-                break;
-            default:
-                super.b(view, accessibilityEvent);
-                break;
-        }
-    }
-
-    @Override // r0.b
-    public final void c(View view, s0.d dVar) {
-        switch (this.d) {
-            case 0:
-                this.a.onInitializeAccessibilityNodeInfo(view, dVar.a);
-                s1 s1Var = (s1) this.e;
-                RecyclerView recyclerView = s1Var.d;
-                RecyclerView recyclerView2 = s1Var.d;
-                if (!recyclerView.Z() && recyclerView2.getLayoutManager() != null) {
-                    recyclerView2.getLayoutManager().T(view, dVar);
-                    break;
-                }
-                break;
-            default:
-                AccessibilityNodeInfo accessibilityNodeInfo = dVar.a;
-                this.a.onInitializeAccessibilityNodeInfo(view, accessibilityNodeInfo);
-                dVar.i(m2.g.class.getName());
-                m2.g gVar = (m2.g) this.e;
-                m2.a aVar = gVar.e;
-                accessibilityNodeInfo.setScrollable(aVar != null && aVar.b() > 1);
-                if (gVar.canScrollHorizontally(1)) {
-                    dVar.a(4096);
-                }
-                if (gVar.canScrollHorizontally(-1)) {
-                    dVar.a(8192);
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // r0.b
-    public final boolean d(View view, int i9, Bundle bundle) {
-        switch (this.d) {
-            case 0:
-                s1 s1Var = (s1) this.e;
-                if (!super.d(view, i9, bundle)) {
-                    RecyclerView recyclerView = s1Var.d;
-                    RecyclerView recyclerView2 = s1Var.d;
-                    if (!recyclerView.Z() && recyclerView2.getLayoutManager() != null) {
-                        g1 g1Var = recyclerView2.getLayoutManager().b.b;
+    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
+    public static r1 b(String str) {
+        char c3;
+        f5.a.f(str.startsWith("Format:"));
+        String[] split = TextUtils.split(str.substring(7), ",");
+        int i10 = -1;
+        int i11 = -1;
+        int i12 = -1;
+        int i13 = -1;
+        for (int i14 = 0; i14 < split.length; i14++) {
+            String b10 = n6.b(split[i14].trim());
+            b10.getClass();
+            switch (b10.hashCode()) {
+                case 100571:
+                    if (b10.equals("end")) {
+                        c3 = 0;
                         break;
                     }
-                }
-                break;
-            default:
-                m2.g gVar = (m2.g) this.e;
-                if (!super.d(view, i9, bundle)) {
-                    if (i9 == 4096) {
-                        if (gVar.canScrollHorizontally(1)) {
-                            gVar.setCurrentItem(gVar.f + 1);
-                            break;
-                        }
-                    } else if (i9 == 8192 && gVar.canScrollHorizontally(-1)) {
-                        gVar.setCurrentItem(gVar.f - 1);
+                    c3 = 65535;
+                    break;
+                case 3556653:
+                    if (b10.equals("text")) {
+                        c3 = 1;
                         break;
                     }
-                }
-                break;
+                    c3 = 65535;
+                    break;
+                case 109757538:
+                    if (b10.equals("start")) {
+                        c3 = 2;
+                        break;
+                    }
+                    c3 = 65535;
+                    break;
+                case 109780401:
+                    if (b10.equals("style")) {
+                        c3 = 3;
+                        break;
+                    }
+                    c3 = 65535;
+                    break;
+                default:
+                    c3 = 65535;
+                    break;
+            }
+            switch (c3) {
+                case 0:
+                    i11 = i14;
+                    break;
+                case 1:
+                    i12 = i14;
+                    break;
+                case 2:
+                    i10 = i14;
+                    break;
+                case 3:
+                    i13 = i14;
+                    break;
+            }
+        }
+        if (i10 == -1 || i11 == -1 || i12 == -1) {
+            return null;
+        }
+        int length = split.length;
+        r1 r1Var = new r1();
+        r1Var.a = i10;
+        r1Var.b = i11;
+        r1Var.c = i13;
+        r1Var.d = i12;
+        r1Var.e = length;
+        return r1Var;
+    }
+
+    public boolean a() {
+        int i10 = this.a;
+        int i11 = 2;
+        if ((i10 & 7) != 0) {
+            int i12 = this.d;
+            int i13 = this.b;
+            if (((i12 > i13 ? 1 : i12 == i13 ? 2 : 4) & i10) == 0) {
+                return false;
+            }
+        }
+        if ((i10 & 112) != 0) {
+            int i14 = this.d;
+            int i15 = this.c;
+            if ((((i14 > i15 ? 1 : i14 == i15 ? 2 : 4) << 4) & i10) == 0) {
+                return false;
+            }
+        }
+        if ((i10 & 1792) != 0) {
+            int i16 = this.e;
+            int i17 = this.b;
+            if ((((i16 > i17 ? 1 : i16 == i17 ? 2 : 4) << 8) & i10) == 0) {
+                return false;
+            }
+        }
+        if ((i10 & 28672) != 0) {
+            int i18 = this.e;
+            int i19 = this.c;
+            if (i18 > i19) {
+                i11 = 1;
+            } else if (i18 != i19) {
+                i11 = 4;
+            }
+            if ((i10 & (i11 << 12)) == 0) {
+                return false;
+            }
         }
         return true;
-    }
-
-    public r1(m2.g gVar) {
-        this.e = gVar;
     }
 }

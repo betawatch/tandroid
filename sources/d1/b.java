@@ -1,17 +1,18 @@
 package d1;
 
+import kotlin.jvm.internal.j;
 import org.json.JSONException;
 import v0.i;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ e b;
     public final /* synthetic */ JSONException c;
 
-    public /* synthetic */ b(e eVar, JSONException jSONException, int i9) {
-        this.a = i9;
+    public /* synthetic */ b(e eVar, JSONException jSONException, int i10) {
+        this.a = i10;
         this.b = eVar;
         this.c = jSONException;
     }
@@ -25,13 +26,13 @@ public final /* synthetic */ class b implements Runnable {
                     iVar.onError(new y0.a(new x0.a(4), this.c.getMessage()));
                     return;
                 } else {
-                    kotlin.jvm.internal.i.h("callback");
+                    j.h("callback");
                     throw null;
                 }
             default:
                 i iVar2 = this.b.f;
                 if (iVar2 == null) {
-                    kotlin.jvm.internal.i.h("callback");
+                    j.h("callback");
                     throw null;
                 }
                 String message = this.c.getMessage();

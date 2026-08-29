@@ -1,19 +1,73 @@
 package j5;
 
-import android.accounts.Account;
-import java.util.HashMap;
-import java.util.HashSet;
+import android.os.Parcel;
+import android.os.Parcelable;
+import com.google.android.gms.internal.cast.o;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import z5.l;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class a {
-    public HashSet a;
-    public boolean b;
-    public boolean c;
-    public boolean d;
-    public String e;
-    public Account f;
-    public String g;
-    public HashMap h;
-    public String i;
+public final class a extends a6.a {
+    public static final Parcelable.Creator<a> CREATOR = new i4.g(14);
+    public final boolean a;
+    public final String b;
+    public final String c;
+    public final boolean d;
+    public final String e;
+    public final ArrayList f;
+    public final boolean h;
+
+    public a(boolean z10, String str, String str2, boolean z11, String str3, ArrayList arrayList, boolean z12) {
+        boolean z13 = true;
+        if (z11 && z12) {
+            z13 = false;
+        }
+        l.a("filterByAuthorizedAccounts and requestVerifiedPhoneNumber must not both be true; the Verified Phone Number feature only works in sign-ups.", z13);
+        this.a = z10;
+        if (z10) {
+            l.i(str, "serverClientId must be provided if Google ID tokens are requested");
+        }
+        this.b = str;
+        this.c = str2;
+        this.d = z11;
+        ArrayList arrayList2 = null;
+        if (arrayList != null && !arrayList.isEmpty()) {
+            arrayList2 = new ArrayList(arrayList);
+            Collections.sort(arrayList2);
+        }
+        this.f = arrayList2;
+        this.e = str3;
+        this.h = z12;
+    }
+
+    public final boolean equals(Object obj) {
+        if (!(obj instanceof a)) {
+            return false;
+        }
+        a aVar = (a) obj;
+        return this.a == aVar.a && l.l(this.b, aVar.b) && l.l(this.c, aVar.c) && this.d == aVar.d && l.l(this.e, aVar.e) && l.l(this.f, aVar.f) && this.h == aVar.h;
+    }
+
+    public final int hashCode() {
+        return Arrays.hashCode(new Object[]{Boolean.valueOf(this.a), this.b, this.c, Boolean.valueOf(this.d), this.e, this.f, Boolean.valueOf(this.h)});
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i10) {
+        int q6 = o.q(parcel, 20293);
+        o.s(parcel, 1, 4);
+        parcel.writeInt(this.a ? 1 : 0);
+        o.l(parcel, 2, this.b);
+        o.l(parcel, 3, this.c);
+        o.s(parcel, 4, 4);
+        parcel.writeInt(this.d ? 1 : 0);
+        o.l(parcel, 5, this.e);
+        o.n(parcel, 6, this.f);
+        o.s(parcel, 7, 4);
+        parcel.writeInt(this.h ? 1 : 0);
+        o.r(parcel, q6);
+    }
 }

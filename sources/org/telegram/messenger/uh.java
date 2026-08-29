@@ -1,33 +1,31 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class uh implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ SecretChatHelper b;
-    public final /* synthetic */ long c;
+import android.text.Spanned;
+import java.util.Comparator;
+import org.telegram.messenger.RichMessageLayout;
 
-    public /* synthetic */ uh(SecretChatHelper secretChatHelper, long j10, int i9) {
-        this.a = i9;
-        this.b = secretChatHelper;
-        this.c = j10;
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class uh implements Comparator {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Spanned b;
+
+    public /* synthetic */ uh(Spanned spanned, int i10) {
+        this.a = i10;
+        this.b = spanned;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
+        int lambda$withReplacements$0;
+        int lambda$new$0;
         switch (this.a) {
             case 0:
-                this.b.lambda$processDecryptedObject$12(this.c);
-                break;
-            case 1:
-                this.b.lambda$processDecryptedObject$10(this.c);
-                break;
-            case 2:
-                this.b.lambda$processDecryptedObject$11(this.c);
-                break;
+                lambda$withReplacements$0 = RichMessageLayout.RichBlock.lambda$withReplacements$0(this.b, (org.telegram.ui.Cells.q9) obj, (org.telegram.ui.Cells.q9) obj2);
+                return lambda$withReplacements$0;
             default:
-                this.b.lambda$processUpdateEncryption$3(this.c);
-                break;
+                lambda$new$0 = RichMessageLayout.Text.lambda$new$0(this.b, (RichMessageLayout.RichButtonSpan) obj, (RichMessageLayout.RichButtonSpan) obj2);
+                return lambda$new$0;
         }
     }
 }

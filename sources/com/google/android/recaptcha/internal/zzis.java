@@ -1,11 +1,11 @@
 package com.google.android.recaptcha.internal;
 
 import android.webkit.WebView;
-import hd.c0;
-import hd.f0;
 import java.util.Arrays;
+import jd.c0;
+import jd.e0;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class zzis {
     private final WebView zza;
@@ -17,6 +17,6 @@ public final class zzis {
     }
 
     public final void zzb(String str, String... strArr) {
-        f0.q(this.zzb, new zzir((String[]) Arrays.copyOf(strArr, strArr.length), this, str, null));
+        e0.q(this.zzb, new zzir((String[]) Arrays.copyOf(strArr, strArr.length), this, str, null));
     }
 }

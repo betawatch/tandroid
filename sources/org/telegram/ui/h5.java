@@ -1,60 +1,109 @@
 package org.telegram.ui;
 
-import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ContactsController;
+import org.telegram.messenger.ImageLoader;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.R;
+import org.telegram.messenger.SharedConfig;
+import org.telegram.messenger.camera.CameraController;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class h5 implements org.telegram.ui.Components.on0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ TextView b;
-    public final /* synthetic */ i5 c;
+public abstract class h5 extends androidx.fragment.app.v {
+    public int K = -1;
 
-    public /* synthetic */ h5(i5 i5Var, TextView textView, int i9) {
-        this.a = i9;
-        this.c = i5Var;
-        this.b = textView;
-    }
-
-    @Override // org.telegram.ui.Components.on0
-    public final void Q(float f10, boolean z10) {
-        switch (this.a) {
-            case 0:
-                i5.c = f10;
-                this.b.setText("Saturation " + (f10 * 5.0f));
-                org.telegram.ui.Components.xu0 xu0Var = this.c.b;
-                xu0Var.N();
-                xu0Var.M();
-                break;
-            default:
-                this.b.setText("Alpha " + i5.e);
-                i5.e = f10;
-                this.c.b.M();
-                break;
+    public final boolean u(int i10, String[] strArr, int[] iArr) {
+        if (iArr == null) {
+            iArr = new int[0];
         }
-    }
-
-    @Override // org.telegram.ui.Components.on0
-    public final /* synthetic */ int c0() {
-        switch (this.a) {
+        if (strArr == null) {
+            strArr = new String[0];
         }
-        return 0;
-    }
-
-    @Override // org.telegram.ui.Components.on0
-    public final /* synthetic */ CharSequence getContentDescription() {
-        switch (this.a) {
+        boolean z10 = iArr.length > 0 && iArr[0] == 0;
+        if (i10 == 104) {
+            if (!z10) {
+                x(R.raw.permission_request_camera, LocaleController.getString(R.string.VoipNeedCameraPermission));
+                return true;
+            }
+            r50 r50Var = r50.z3;
+            if (r50Var != null) {
+                r50Var.n.callOnClick();
+                return true;
+            }
+        } else {
+            if (i10 == 4 || i10 == 151) {
+                if (z10) {
+                    ImageLoader.getInstance().checkMediaPaths();
+                    return true;
+                }
+                x(R.raw.permission_request_folder, i10 == 151 ? LocaleController.getString(R.string.PermissionNoStorageAvatar) : LocaleController.getString(R.string.PermissionStorageWithHint));
+                return true;
+            }
+            if (i10 == 5) {
+                if (z10) {
+                    ContactsController.getInstance(this.K).forceImportContacts();
+                    return true;
+                }
+                x(R.raw.permission_request_contacts, LocaleController.getString(R.string.PermissionNoContactsSharing));
+                return false;
+            }
+            if (i10 == 3 || i10 == 150) {
+                int min = Math.min(strArr.length, iArr.length);
+                boolean z11 = true;
+                boolean z12 = true;
+                for (int i11 = 0; i11 < min; i11++) {
+                    if ("android.permission.RECORD_AUDIO".equals(strArr[i11])) {
+                        z11 = iArr[i11] == 0;
+                    } else if ("android.permission.CAMERA".equals(strArr[i11])) {
+                        z12 = iArr[i11] == 0;
+                    }
+                }
+                if (i10 == 150 && (!z11 || !z12)) {
+                    x(R.raw.permission_request_camera, LocaleController.getString(R.string.PermissionNoCameraMicVideo));
+                    return true;
+                }
+                if (!z11) {
+                    x(R.raw.permission_request_microphone, LocaleController.getString(R.string.PermissionNoAudioWithHint));
+                    return true;
+                }
+                if (!z12) {
+                    x(R.raw.permission_request_camera, LocaleController.getString(R.string.PermissionNoCameraWithHint));
+                    return true;
+                }
+                if (SharedConfig.inappCamera) {
+                    CameraController.getInstance().initCamera(null);
+                }
+                return false;
+            }
+            if (i10 != 18 && i10 != 19 && i10 != 20 && i10 != 22) {
+                if (i10 == 2) {
+                    NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(z10 ? NotificationCenter.locationPermissionGranted : NotificationCenter.locationPermissionDenied, new Object[0]);
+                    return true;
+                }
+                if (i10 == 211) {
+                    NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(z10 ? NotificationCenter.locationPermissionGranted : NotificationCenter.locationPermissionDenied, 1);
+                    return true;
+                }
+            } else if (!z10) {
+                x(R.raw.permission_request_camera, LocaleController.getString(R.string.PermissionNoCameraWithHint));
+            }
         }
-        return null;
+        return true;
     }
 
-    @Override // org.telegram.ui.Components.on0
-    public final void n() {
-        int i9 = this.a;
+    public final org.telegram.ui.ActionBar.c2 w(int i10, String str) {
+        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(this);
+        alertDialog$Builder.m(i10, 72, org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.L5, false), null);
+        alertDialog$Builder.a.P = AndroidUtilities.replaceTags(str);
+        alertDialog$Builder.k(LocaleController.getString(R.string.PermissionOpenSettings), new c1(this, 4));
+        alertDialog$Builder.h(LocaleController.getString(R.string.ContactsPermissionAlertNotNow), null);
+        return alertDialog$Builder.a;
     }
 
-    private final void a() {
-    }
-
-    private final void b() {
+    public final void x(int i10, String str) {
+        w(i10, str).show();
     }
 }

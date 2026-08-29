@@ -1,39 +1,66 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Rect;
-import android.text.Layout;
-import android.view.View;
-import org.telegram.messenger.Emoji;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class o5 implements q5 {
-    public final View a;
-    public final boolean b;
-    public Layout c;
-    public t5 d;
-    public Rect e;
-    public k5 f;
-    public Emoji.EmojiDrawable h;
-    public boolean n;
-    public float r;
-    public float s;
-    public boolean v;
+public class o5 extends Drawable {
+    public final Drawable a;
+    public final int b;
+    public final int c;
+    public int d = 255;
 
-    public o5(View view, boolean z10) {
-        this.a = view;
-        this.b = z10;
+    public o5(int i10, int i11, Drawable drawable) {
+        this.a = drawable;
+        this.b = i10;
+        this.c = i11;
     }
 
-    @Override // org.telegram.ui.Components.q5
-    public final void invalidate() {
-        View view = this.a;
-        if (view != null) {
-            if (!this.b || view.getParent() == null) {
-                view.invalidate();
-            } else {
-                ((View) view.getParent()).invalidate();
-            }
+    @Override // android.graphics.drawable.Drawable
+    public void draw(Canvas canvas) {
+        Drawable drawable = this.a;
+        if (drawable != null) {
+            drawable.setBounds(getBounds());
+            drawable.setAlpha(this.d);
+            drawable.draw(canvas);
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        return this.c;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        return this.b;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        Drawable drawable = this.a;
+        if (drawable != null) {
+            return drawable.getOpacity();
+        }
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+        this.d = i10;
+        Drawable drawable = this.a;
+        if (drawable != null) {
+            drawable.setAlpha(i10);
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+        Drawable drawable = this.a;
+        if (drawable != null) {
+            drawable.setColorFilter(colorFilter);
         }
     }
 }

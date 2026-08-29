@@ -27,30 +27,30 @@ public abstract class a extends t3 implements BaseStream {
 
     public abstract boolean P0();
 
-    public abstract j5 Q0(int i9, j5 j5Var);
+    public abstract j5 Q0(int i10, j5 j5Var);
 
     public abstract Spliterator T0(a aVar, Supplier supplier, boolean z10);
 
-    public a(Spliterator spliterator, int i9, boolean z10) {
+    public a(Spliterator spliterator, int i10, boolean z10) {
         this.i = null;
         this.n = spliterator;
         this.h = this;
-        int i10 = v6.g & i9;
-        this.j = i10;
-        this.m = (~(i10 << 1)) & v6.l;
+        int i11 = v6.g & i10;
+        this.j = i11;
+        this.m = (~(i11 << 1)) & v6.l;
         this.l = 0;
         this.r = z10;
     }
 
-    public a(a aVar, int i9) {
+    public a(a aVar, int i10) {
         if (aVar.o) {
             throw new IllegalStateException("stream has already been operated upon or closed");
         }
         aVar.o = true;
         aVar.k = this;
         this.i = aVar;
-        this.j = v6.h & i9;
-        this.m = v6.j(i9, aVar.m);
+        this.j = v6.h & i10;
+        this.m = v6.j(i10, aVar.m);
         a aVar2 = aVar.h;
         this.h = aVar2;
         if (P0()) {
@@ -172,44 +172,44 @@ public abstract class a extends t3 implements BaseStream {
         return A0.build();
     }
 
-    public final Spliterator R0(int i9) {
-        int i10;
+    public final Spliterator R0(int i10) {
         int i11;
+        int i12;
         a aVar = this.h;
         Spliterator spliterator = aVar.n;
         if (spliterator != null) {
             aVar.n = null;
             if (aVar.r && aVar.p) {
                 a aVar2 = aVar.k;
-                int i12 = 1;
+                int i13 = 1;
                 while (aVar != this) {
-                    int i13 = aVar2.j;
+                    int i14 = aVar2.j;
                     if (aVar2.P0()) {
-                        if (v6.SHORT_CIRCUIT.m(i13)) {
-                            i13 &= ~v6.u;
+                        if (v6.SHORT_CIRCUIT.m(i14)) {
+                            i14 &= ~v6.u;
                         }
                         spliterator = aVar2.O0(aVar, spliterator);
                         if (spliterator.hasCharacteristics(64)) {
-                            i10 = (~v6.t) & i13;
-                            i11 = v6.s;
+                            i11 = (~v6.t) & i14;
+                            i12 = v6.s;
                         } else {
-                            i10 = (~v6.s) & i13;
-                            i11 = v6.t;
+                            i11 = (~v6.s) & i14;
+                            i12 = v6.t;
                         }
-                        i13 = i10 | i11;
-                        i12 = 0;
+                        i14 = i11 | i12;
+                        i13 = 0;
                     }
-                    int i14 = i12 + 1;
-                    aVar2.l = i12;
-                    aVar2.m = v6.j(i13, aVar.m);
+                    int i15 = i13 + 1;
+                    aVar2.l = i13;
+                    aVar2.m = v6.j(i14, aVar.m);
                     a aVar3 = aVar2;
                     aVar2 = aVar2.k;
                     aVar = aVar3;
-                    i12 = i14;
+                    i13 = i15;
                 }
             }
-            if (i9 != 0) {
-                this.m = v6.j(i9, this.m);
+            if (i10 != 0) {
+                this.m = v6.j(i10, this.m);
             }
             return spliterator;
         }

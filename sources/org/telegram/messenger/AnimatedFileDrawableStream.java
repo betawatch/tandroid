@@ -3,7 +3,7 @@ package org.telegram.messenger;
 import java.util.concurrent.CountDownLatch;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public class AnimatedFileDrawableStream implements FileLoadOperationStream {
     private volatile boolean canceled;
@@ -23,14 +23,14 @@ public class AnimatedFileDrawableStream implements FileLoadOperationStream {
     private final Object sync = new Object();
     private boolean waitingForLoad;
 
-    public AnimatedFileDrawableStream(TLRPC.Document document, ImageLocation imageLocation, Object obj, int i9, boolean z10, int i10, int i11) {
+    public AnimatedFileDrawableStream(TLRPC.Document document, ImageLocation imageLocation, Object obj, int i10, boolean z10, int i11, int i12) {
         this.document = document;
         this.location = imageLocation;
         this.parentObject = obj;
-        this.currentAccount = i9;
+        this.currentAccount = i10;
         this.preview = z10;
-        this.loadingPriority = i10;
-        this.loadOperation = FileLoader.getInstance(i9).loadStreamFile(this, this.document, this.location, this.parentObject, 0L, this.preview, i10, i11);
+        this.loadingPriority = i11;
+        this.loadOperation = FileLoader.getInstance(i10).loadStreamFile(this, this.document, this.location, this.parentObject, 0L, this.preview, i11, i12);
     }
 
     private void cancelLoadingInternal() {
@@ -89,28 +89,28 @@ public class AnimatedFileDrawableStream implements FileLoadOperationStream {
         }
     }
 
-    public int read(int i9, int i10) {
+    public int read(int i10, int i11) {
         long j10;
         long j11;
         synchronized (this.sync) {
             try {
                 if (this.canceled) {
-                    int i11 = this.debugCanceledCount + 1;
-                    this.debugCanceledCount = i11;
-                    if (!this.debugReportSend && i11 > 200) {
+                    int i12 = this.debugCanceledCount + 1;
+                    this.debugCanceledCount = i12;
+                    if (!this.debugReportSend && i12 > 200) {
                         this.debugReportSend = true;
                         FileLog.e(new RuntimeException("infinity stream reading!!!"));
                     }
                     return 0;
                 }
-                if (i10 == 0) {
+                if (i11 == 0) {
                     return 0;
                 }
                 long j12 = 0;
                 while (j12 == 0) {
                     try {
-                        j10 = i9;
-                        long[] downloadedLengthFromOffset = this.loadOperation.getDownloadedLengthFromOffset(j10, i10);
+                        j10 = i10;
+                        long[] downloadedLengthFromOffset = this.loadOperation.getDownloadedLengthFromOffset(j10, i11);
                         j11 = downloadedLengthFromOffset[0];
                         try {
                             if (!this.finishedLoadingFile && downloadedLengthFromOffset[1] != 0) {
@@ -170,7 +170,7 @@ public class AnimatedFileDrawableStream implements FileLoadOperationStream {
                     }
                     j12 = j11;
                 }
-                this.lastOffset = i9 + j12;
+                this.lastOffset = i10 + j12;
                 return (int) j12;
             } finally {
             }
@@ -208,8 +208,8 @@ public class AnimatedFileDrawableStream implements FileLoadOperationStream {
                     cancelLoadingInternal();
                 }
                 this.canceled = true;
-            } catch (Throwable th) {
-                throw th;
+            } catch (Throwable th2) {
+                throw th2;
             }
         }
     }

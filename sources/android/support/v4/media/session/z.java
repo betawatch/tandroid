@@ -10,7 +10,7 @@ import android.text.style.LineHeightSpan;
 import android.view.View;
 import android.view.WindowInsets;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public abstract /* synthetic */ class z {
     public static void a(g.x xVar, View view) {
@@ -21,8 +21,8 @@ public abstract /* synthetic */ class z {
         }
     }
 
-    public static /* synthetic */ RadialGradient b(float f10, float f11, float f12, long[] jArr, float[] fArr) {
-        return new RadialGradient(f10, f11, f12, jArr, fArr, Shader.TileMode.CLAMP);
+    public static /* synthetic */ RadialGradient b(float f9, float f10, float f11, long[] jArr, float[] fArr) {
+        return new RadialGradient(f9, f10, f11, jArr, fArr, Shader.TileMode.CLAMP);
     }
 
     public static /* synthetic */ RenderNode c() {
@@ -37,8 +37,8 @@ public abstract /* synthetic */ class z {
         return new MediaSession(context, str, null);
     }
 
-    public static /* synthetic */ LineHeightSpan.Standard f(int i9) {
-        return new LineHeightSpan.Standard(i9);
+    public static /* synthetic */ LineHeightSpan.Standard f(int i10) {
+        return new LineHeightSpan.Standard(i10);
     }
 
     public static /* synthetic */ WindowInsets.Builder g() {

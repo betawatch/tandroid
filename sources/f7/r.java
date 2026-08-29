@@ -1,24 +1,38 @@
 package f7;
 
-import android.os.Parcel;
-import android.os.Parcelable;
+import android.content.Context;
+import j$.util.Objects;
+import java.util.HashMap;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public abstract class r {
-    public static Object a(Parcel parcel, Parcelable.Creator creator) {
-        if (parcel.readInt() != 0) {
-            return creator.createFromParcel(parcel);
-        }
-        return null;
-    }
+public final class r {
+    public static final l b = l.b(1, new Object[]{"optional-module-barcode", "com.google.android.gms.vision.barcode"}, null);
+    public final String a;
 
-    public static void b(Parcel parcel, Parcelable parcelable, int i9) {
-        if (parcelable == null) {
-            parcel.writeInt(0);
-        } else {
-            parcel.writeInt(1);
-            parcelable.writeToParcel(parcel, i9);
+    public r(Context context, ab.l lVar) {
+        new HashMap();
+        new HashMap();
+        context.getPackageName();
+        ab.c.a(context);
+        synchronized (v.class) {
+            if (v.b == null) {
+                v.b = new v(0);
+            }
+        }
+        this.a = "common";
+        ab.g a2 = ab.g.a();
+        p pVar = new p(this, 0);
+        a2.getClass();
+        ab.g.b(pVar);
+        ab.g a10 = ab.g.a();
+        Objects.requireNonNull(lVar);
+        q qVar = new q(lVar, 0);
+        a10.getClass();
+        ab.g.b(qVar);
+        l lVar2 = b;
+        if (lVar2.containsKey("common")) {
+            k6.e.d(context, (String) lVar2.get("common"), false);
         }
     }
 }

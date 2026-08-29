@@ -17,10 +17,10 @@ public final class g8 extends d5 {
     }
 
     @Override // j$.util.stream.h5, java.util.function.IntConsumer
-    public final void accept(int i9) {
+    public final void accept(int i10) {
         if (this.b) {
             IntPredicate intPredicate = null;
-            intPredicate.test(i9);
+            intPredicate.test(i10);
             throw null;
         }
     }

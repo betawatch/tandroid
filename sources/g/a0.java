@@ -12,20 +12,20 @@ import androidx.appcompat.widget.ActionBarContainer;
 import androidx.appcompat.widget.ActionBarContextView;
 import androidx.appcompat.widget.ActionBarOverlayLayout;
 import androidx.appcompat.widget.Toolbar;
-import f7.n7;
+import h7.m7;
 import java.util.ArrayList;
 import java.util.WeakHashMap;
-import kh.g4;
+import lh.d5;
 import m.l1;
-import m.p3;
+import m.o3;
 import org.telegram.messenger.BuildConfig;
 import r0.b0;
 import r0.j0;
 import r0.m0;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class a0 extends n7 implements m.c {
+public final class a0 extends m7 implements m.c {
     public static final AccelerateInterpolator x = new AccelerateInterpolator();
     public static final DecelerateInterpolator y = new DecelerateInterpolator();
     public Context a;
@@ -38,7 +38,7 @@ public final class a0 extends n7 implements m.c {
     public boolean h;
     public z i;
     public z j;
-    public we.b k;
+    public ze.b k;
     public boolean l;
     public final ArrayList m;
     public int n;
@@ -46,11 +46,11 @@ public final class a0 extends n7 implements m.c {
     public boolean p;
     public boolean q;
     public boolean r;
-    public jb.d s;
+    public k.j s;
     public boolean t;
     public final y u;
     public final y v;
-    public final fa.c w;
+    public final za.c w;
 
     public a0(Activity activity, boolean z10) {
         new ArrayList();
@@ -60,7 +60,7 @@ public final class a0 extends n7 implements m.c {
         this.r = true;
         this.u = new y(this, 0);
         this.v = new y(this, 1);
-        this.w = new fa.c(this, 18);
+        this.w = new za.c(this, 16);
         View decorView = activity.getWindow().getDecorView();
         b(decorView);
         if (z10) {
@@ -70,7 +70,7 @@ public final class a0 extends n7 implements m.c {
     }
 
     public final void a(boolean z10) {
-        m0 i9;
+        m0 i10;
         m0 m0Var;
         if (z10) {
             if (!this.q) {
@@ -93,42 +93,42 @@ public final class a0 extends n7 implements m.c {
         WeakHashMap weakHashMap = j0.a;
         if (!actionBarContainer.isLaidOut()) {
             if (z10) {
-                ((p3) this.e).a.setVisibility(4);
+                ((o3) this.e).a.setVisibility(4);
                 this.f.setVisibility(0);
                 return;
             } else {
-                ((p3) this.e).a.setVisibility(0);
+                ((o3) this.e).a.setVisibility(0);
                 this.f.setVisibility(8);
                 return;
             }
         }
         if (z10) {
-            p3 p3Var = (p3) this.e;
-            i9 = j0.a(p3Var.a);
-            i9.a(0.0f);
-            i9.c(100L);
-            i9.d(new k.i(p3Var, 4));
+            o3 o3Var = (o3) this.e;
+            i10 = j0.a(o3Var.a);
+            i10.a(0.0f);
+            i10.c(100L);
+            i10.d(new k.i(o3Var, 4));
             m0Var = this.f.i(0, 200L);
         } else {
-            p3 p3Var2 = (p3) this.e;
-            m0 a2 = j0.a(p3Var2.a);
+            o3 o3Var2 = (o3) this.e;
+            m0 a2 = j0.a(o3Var2.a);
             a2.a(1.0f);
             a2.c(200L);
-            a2.d(new k.i(p3Var2, 0));
-            i9 = this.f.i(8, 100L);
+            a2.d(new k.i(o3Var2, 0));
+            i10 = this.f.i(8, 100L);
             m0Var = a2;
         }
-        jb.d dVar = new jb.d();
-        ArrayList arrayList = (ArrayList) dVar.c;
-        arrayList.add(i9);
-        View view = (View) i9.a.get();
+        k.j jVar = new k.j();
+        ArrayList arrayList = (ArrayList) jVar.c;
+        arrayList.add(i10);
+        View view = (View) i10.a.get();
         long duration = view != null ? view.animate().getDuration() : 0L;
         View view2 = (View) m0Var.a.get();
         if (view2 != null) {
             view2.animate().setStartDelay(duration);
         }
         arrayList.add(m0Var);
-        dVar.b();
+        jVar.b();
     }
 
     public final void b(View view) {
@@ -155,22 +155,22 @@ public final class a0 extends n7 implements m.c {
         if (l1Var == null || this.f == null || actionBarContainer == null) {
             throw new IllegalStateException(a0.class.getSimpleName().concat(" can only be used with a compatible window decor layout"));
         }
-        Context context = ((p3) l1Var).a.getContext();
+        Context context = ((o3) l1Var).a.getContext();
         this.a = context;
-        if ((((p3) this.e).b & 4) != 0) {
+        if ((((o3) this.e).b & 4) != 0) {
             this.h = true;
         }
-        int i9 = context.getApplicationInfo().targetSdkVersion;
+        int i10 = context.getApplicationInfo().targetSdkVersion;
         this.e.getClass();
         if (context.getResources().getBoolean(org.telegram.messenger.beta.R.bool.abc_action_bar_embed_tabs)) {
             this.d.setTabContainer(null);
-            ((p3) this.e).getClass();
+            ((o3) this.e).getClass();
         } else {
-            ((p3) this.e).getClass();
+            ((o3) this.e).getClass();
             this.d.setTabContainer(null);
         }
         this.e.getClass();
-        ((p3) this.e).a.setCollapsible(false);
+        ((o3) this.e).a.setCollapsible(false);
         this.c.setHasNonEmbeddedTabs(false);
         TypedArray obtainStyledAttributes = this.a.obtainStyledAttributes(null, f.a.a, org.telegram.messenger.beta.R.attr.actionBarStyle, 0);
         if (obtainStyledAttributes.getBoolean(14, false)) {
@@ -194,68 +194,68 @@ public final class a0 extends n7 implements m.c {
         if (this.h) {
             return;
         }
-        int i9 = z10 ? 4 : 0;
-        p3 p3Var = (p3) this.e;
-        int i10 = p3Var.b;
+        int i10 = z10 ? 4 : 0;
+        o3 o3Var = (o3) this.e;
+        int i11 = o3Var.b;
         this.h = true;
-        p3Var.a((i9 & 4) | (i10 & (-5)));
+        o3Var.a((i10 & 4) | (i11 & (-5)));
     }
 
     public final void d(boolean z10) {
         boolean z11 = this.p;
         boolean z12 = this.q;
-        fa.c cVar = this.w;
+        za.c cVar = this.w;
         View view = this.g;
         if (!z12 && z11) {
             if (this.r) {
                 this.r = false;
-                jb.d dVar = this.s;
-                if (dVar != null) {
-                    dVar.a();
+                k.j jVar = this.s;
+                if (jVar != null) {
+                    jVar.a();
                 }
-                int i9 = this.n;
+                int i10 = this.n;
                 y yVar = this.u;
-                if (i9 != 0 || !z10) {
+                if (i10 != 0 || !z10) {
                     yVar.c();
                     return;
                 }
                 this.d.setAlpha(1.0f);
                 this.d.setTransitioning(true);
-                jb.d dVar2 = new jb.d();
-                ArrayList arrayList = (ArrayList) dVar2.c;
-                float f10 = -this.d.getHeight();
+                k.j jVar2 = new k.j();
+                ArrayList arrayList = (ArrayList) jVar2.c;
+                float f9 = -this.d.getHeight();
                 if (z10) {
                     this.d.getLocationInWindow(new int[]{0, 0});
-                    f10 -= r12[1];
+                    f9 -= r12[1];
                 }
                 m0 a2 = j0.a(this.d);
-                a2.e(f10);
+                a2.e(f9);
                 View view2 = (View) a2.a.get();
                 if (view2 != null) {
-                    view2.animate().setUpdateListener(cVar != null ? new g4(cVar, view2) : null);
+                    view2.animate().setUpdateListener(cVar != null ? new d5(cVar, view2) : null);
                 }
-                if (!dVar2.b) {
+                if (!jVar2.b) {
                     arrayList.add(a2);
                 }
                 if (this.o && view != null) {
-                    m0 a3 = j0.a(view);
-                    a3.e(f10);
-                    if (!dVar2.b) {
-                        arrayList.add(a3);
+                    m0 a10 = j0.a(view);
+                    a10.e(f9);
+                    if (!jVar2.b) {
+                        arrayList.add(a10);
                     }
                 }
-                boolean z13 = dVar2.b;
+                boolean z13 = jVar2.b;
                 if (!z13) {
-                    dVar2.d = x;
+                    jVar2.d = x;
                 }
                 if (!z13) {
-                    dVar2.a = 250L;
+                    jVar2.a = 250L;
                 }
                 if (!z13) {
-                    dVar2.e = yVar;
+                    jVar2.e = yVar;
                 }
-                this.s = dVar2;
-                dVar2.b();
+                this.s = jVar2;
+                jVar2.b();
                 return;
             }
             return;
@@ -264,52 +264,52 @@ public final class a0 extends n7 implements m.c {
             return;
         }
         this.r = true;
-        jb.d dVar3 = this.s;
-        if (dVar3 != null) {
-            dVar3.a();
+        k.j jVar3 = this.s;
+        if (jVar3 != null) {
+            jVar3.a();
         }
         this.d.setVisibility(0);
-        int i10 = this.n;
+        int i11 = this.n;
         y yVar2 = this.v;
-        if (i10 == 0 && z10) {
+        if (i11 == 0 && z10) {
             this.d.setTranslationY(0.0f);
-            float f11 = -this.d.getHeight();
+            float f10 = -this.d.getHeight();
             if (z10) {
                 this.d.getLocationInWindow(new int[]{0, 0});
-                f11 -= r12[1];
+                f10 -= r12[1];
             }
-            this.d.setTranslationY(f11);
-            jb.d dVar4 = new jb.d();
-            ArrayList arrayList2 = (ArrayList) dVar4.c;
-            m0 a10 = j0.a(this.d);
-            a10.e(0.0f);
-            View view3 = (View) a10.a.get();
+            this.d.setTranslationY(f10);
+            k.j jVar4 = new k.j();
+            ArrayList arrayList2 = (ArrayList) jVar4.c;
+            m0 a11 = j0.a(this.d);
+            a11.e(0.0f);
+            View view3 = (View) a11.a.get();
             if (view3 != null) {
-                view3.animate().setUpdateListener(cVar != null ? new g4(cVar, view3) : null);
+                view3.animate().setUpdateListener(cVar != null ? new d5(cVar, view3) : null);
             }
-            if (!dVar4.b) {
-                arrayList2.add(a10);
+            if (!jVar4.b) {
+                arrayList2.add(a11);
             }
             if (this.o && view != null) {
-                view.setTranslationY(f11);
-                m0 a11 = j0.a(view);
-                a11.e(0.0f);
-                if (!dVar4.b) {
-                    arrayList2.add(a11);
+                view.setTranslationY(f10);
+                m0 a12 = j0.a(view);
+                a12.e(0.0f);
+                if (!jVar4.b) {
+                    arrayList2.add(a12);
                 }
             }
-            boolean z14 = dVar4.b;
+            boolean z14 = jVar4.b;
             if (!z14) {
-                dVar4.d = y;
+                jVar4.d = y;
             }
             if (!z14) {
-                dVar4.a = 250L;
+                jVar4.a = 250L;
             }
             if (!z14) {
-                dVar4.e = yVar2;
+                jVar4.e = yVar2;
             }
-            this.s = dVar4;
-            dVar4.b();
+            this.s = jVar4;
+            jVar4.b();
         } else {
             this.d.setAlpha(1.0f);
             this.d.setTranslationY(0.0f);
@@ -333,7 +333,7 @@ public final class a0 extends n7 implements m.c {
         this.r = true;
         this.u = new y(this, 0);
         this.v = new y(this, 1);
-        this.w = new fa.c(this, 18);
+        this.w = new za.c(this, 16);
         b(sVar.getWindow().getDecorView());
     }
 }

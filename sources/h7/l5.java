@@ -1,19 +1,28 @@
 package h7;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+import com.google.android.gms.tasks.Task;
+import com.google.mlkit.nl.languageid.internal.LanguageIdentifierImpl;
+import java.util.concurrent.Executor;
+
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class l5 implements q9.d {
-    public static final l5 a = new l5();
-
-    static {
-        e2.c.u(e2.c.s(h0.class, e2.c.j(5, e2.c.s(h0.class, e2.c.j(4, e2.c.s(h0.class, e2.c.j(3, e2.c.s(h0.class, e2.c.j(2, e2.c.s(h0.class, new e0(1)))))))))));
-    }
-
-    @Override // q9.a
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
-        }
-        throw null;
+public abstract class l5 {
+    public static LanguageIdentifierImpl a() {
+        eb.a aVar = (eb.a) ab.h.c().a(eb.a.class);
+        eb.e eVar = aVar.b;
+        eVar.getClass();
+        a9 a9Var = aVar.a;
+        LanguageIdentifierImpl languageIdentifierImpl = new LanguageIdentifierImpl(eVar, a9Var, (Executor) aVar.c.a.get());
+        com.google.firebase.messaging.s sVar = new com.google.firebase.messaging.s(9, false);
+        sVar.d = languageIdentifierImpl.f;
+        androidx.biometric.e eVar2 = new androidx.biometric.e(17, false);
+        eVar2.c = LanguageIdentifierImpl.k();
+        sVar.e = new h7(eVar2);
+        ag.j2 j2Var = new ag.j2(sVar, 1);
+        Task task = a9Var.e;
+        String a2 = task.isSuccessful() ? (String) task.getResult() : z5.i.c.a(a9Var.g);
+        ab.q.a.execute(new c2.p(a9Var, j2Var, k6.c, a2, false, 4));
+        ((eb.e) languageIdentifierImpl.d.get()).b.incrementAndGet();
+        return languageIdentifierImpl;
     }
 }

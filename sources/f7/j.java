@@ -1,29 +1,35 @@
 package f7;
 
-import java.util.Map;
+import java.util.Iterator;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class j implements q9.d {
-    public static final /* synthetic */ j b = new j(0);
-    public static final /* synthetic */ j c = new j(1);
-    public final /* synthetic */ int a;
+public final class j extends f {
+    public final transient l c;
+    public final transient k d;
 
-    public /* synthetic */ j(int i9) {
-        this.a = i9;
+    public j(l lVar, k kVar) {
+        this.c = lVar;
+        this.d = kVar;
     }
 
-    @Override // q9.a
-    public final void a(Object obj, Object obj2) {
-        switch (this.a) {
-            case 0:
-                Map.Entry entry = (Map.Entry) obj;
-                q9.e eVar = (q9.e) obj2;
-                eVar.g(k.g, entry.getKey());
-                eVar.g(k.h, entry.getValue());
-                return;
-            default:
-                throw new q9.b("Couldn't find encoder for type ".concat(String.valueOf(obj.getClass().getCanonicalName())));
-        }
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final boolean contains(Object obj) {
+        return this.c.get(obj) != null;
+    }
+
+    @Override // f7.a
+    public final int i(Object[] objArr) {
+        return this.d.i(objArr);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
+    public final /* synthetic */ Iterator iterator() {
+        return this.d.listIterator(0);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final int size() {
+        return this.c.h;
     }
 }

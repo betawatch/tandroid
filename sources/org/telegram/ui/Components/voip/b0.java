@@ -3,35 +3,37 @@ package org.telegram.ui.Components.voip;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* loaded from: classes.dex */
 public final class b0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ k0 b;
+    public final /* synthetic */ u a;
+    public final /* synthetic */ l0 b;
 
-    public /* synthetic */ b0(k0 k0Var, int i9) {
-        this.a = i9;
-        this.b = k0Var;
+    public b0(l0 l0Var, u uVar) {
+        this.b = l0Var;
+        this.a = uVar;
     }
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                super.onAnimationEnd(animator);
-                k0 k0Var = this.b;
-                k0Var.F0 = null;
-                k0Var.E0 = 0.0f;
-                k0Var.invalidate();
-                break;
-            default:
-                k0 k0Var2 = this.b;
-                k0Var2.x0 = null;
-                k0Var2.u0 = 1.0f;
-                k0Var2.n0 = 0.0f;
-                k0Var2.o0 = 0.0f;
-                k0Var2.invalidate();
-                break;
+        l0 l0Var = this.b;
+        l0Var.x.unlock();
+        l0Var.r = null;
+        this.a.r = false;
+        if (!l0Var.b) {
+            l0Var.d();
+            l0Var.y = null;
+            l0Var.d = 0L;
         }
+        l0Var.c = l0Var.b ? 1.0f : 0.0f;
+        l0Var.l();
+        l0Var.i(false);
+        if (l0Var.b) {
+            return;
+        }
+        l0Var.g0.setVisibility(8);
+        l0Var.h0.setVisibility(8);
+        l0Var.a0.setVisibility(8);
+        l0Var.b0.setVisibility(8);
     }
 }

@@ -1,10 +1,14 @@
 package h7;
 
-import java.util.Collection;
-import java.util.Set;
-
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public interface v extends Collection {
-    Set zza();
+public abstract class v {
+    public void b() {
+    }
+
+    public void c(androidx.biometric.u uVar) {
+    }
+
+    public void a(int i10, CharSequence charSequence) {
+    }
 }

@@ -1,40 +1,108 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class v9 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ MessagesController b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ boolean e;
-    public final /* synthetic */ int f;
-    public final /* synthetic */ int h;
 
-    public /* synthetic */ v9(MessagesController messagesController, long j10, int i9, boolean z10, int i10, int i11, int i12) {
-        this.a = i12;
+    public /* synthetic */ v9(MessagesController messagesController, int i10) {
+        this.a = i10;
         this.b = messagesController;
-        this.c = j10;
-        this.d = i9;
-        this.e = z10;
-        this.f = i10;
-        this.h = i11;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                int i9 = this.f;
-                int i10 = this.h;
-                int i11 = this.d;
-                this.b.lambda$markDialogAsRead$243(this.c, i11, this.e, i9, i10);
+                this.b.lambda$new$18();
+                break;
+            case 1:
+                this.b.lambda$new$39();
+                break;
+            case 2:
+                this.b.requestIsUserContactBlocked();
+                break;
+            case 3:
+                this.b.lambda$new$505();
+                break;
+            case 4:
+                this.b.lambda$updateTimerProc$158();
+                break;
+            case 5:
+                this.b.lambda$updateTimerProc$161();
+                break;
+            case 6:
+                this.b.lambda$applyAppConfig$36();
+                break;
+            case 7:
+                this.b.lambda$applyAppConfig$37();
+                break;
+            case 8:
+                this.b.lambda$processUpdates$380();
+                break;
+            case 9:
+                this.b.lambda$migrateDialogs$213();
+                break;
+            case 10:
+                this.b.lambda$loadRemoteFilters$26();
+                break;
+            case 11:
+                this.b.lambda$loadRemoteFilters$27();
+                break;
+            case 12:
+                this.b.lambda$loadRemoteFilters$28();
+                break;
+            case 13:
+                this.b.lambda$loadRemoteFilters$29();
+                break;
+            case 14:
+                this.b.lambda$cleanup$52();
+                break;
+            case 15:
+                this.b.lambda$cleanup$53();
+                break;
+            case 16:
+                this.b.lambda$cleanup$54();
+                break;
+            case 17:
+                this.b.lambda$toggleChannelInvitesHistory$287();
+                break;
+            case 18:
+                this.b.lambda$removeWebBrowserException$514();
+                break;
+            case 19:
+                this.b.lambda$checkPromoInfoInternal$166();
+                break;
+            case 20:
+                this.b.lambda$toggleChatJoinToSend$279();
+                break;
+            case 21:
+                this.b.lambda$migrateDialogs$215();
+                break;
+            case 22:
+                this.b.lambda$scheduleTranscriptionUpdate$38();
+                break;
+            case 23:
+                this.b.lambda$processUpdateArray$409();
+                break;
+            case 24:
+                this.b.lambda$processUpdateArray$410();
+                break;
+            case 25:
+                this.b.lambda$processUpdateArray$411();
+                break;
+            case 26:
+                this.b.lambda$registerForPush$323();
+                break;
+            case 27:
+                this.b.lambda$updateEmojiStatusUntil$474();
+                break;
+            case 28:
+                this.b.lambda$toggleChannelForum$285();
                 break;
             default:
-                int i12 = this.f;
-                int i13 = this.h;
-                int i14 = this.d;
-                this.b.lambda$markDialogAsRead$244(this.c, i14, this.e, i12, i13);
+                this.b.lambda$toggleChannelSignatures$283();
                 break;
         }
     }

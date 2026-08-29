@@ -1,32 +1,33 @@
 package org.telegram.messenger;
 
-import android.content.SharedPreferences;
-import org.telegram.tgnet.TLObject;
+import android.net.Uri;
+import java.util.ArrayList;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.MessagesStorage;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class c8 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ MediaDataController b;
-    public final /* synthetic */ TLObject c;
-    public final /* synthetic */ SharedPreferences d;
+public final /* synthetic */ class c8 implements MediaDataController.KeywordResultCallback, MessagesStorage.LongCallback {
+    public final /* synthetic */ BaseController a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
 
-    public /* synthetic */ c8(MediaDataController mediaDataController, TLObject tLObject, SharedPreferences sharedPreferences, int i9) {
-        this.a = i9;
-        this.b = mediaDataController;
-        this.c = tLObject;
-        this.d = sharedPreferences;
+    public /* synthetic */ c8(BaseController baseController, Object obj, Object obj2, Object obj3) {
+        this.a = baseController;
+        this.b = obj;
+        this.c = obj2;
+        this.d = obj3;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.lambda$loadRestrictedStatusEmojis$245(this.c, this.d);
-                break;
-            default:
-                this.b.lambda$loadReplyIcons$243(this.c, this.d);
-                break;
-        }
+    @Override // org.telegram.messenger.MessagesStorage.LongCallback
+    public void run(long j10) {
+        ((SendMessagesHelper) this.a).lambda$prepareImportHistory$105((Uri) this.b, (ArrayList) this.c, (MessagesStorage.LongCallback) this.d, j10);
+    }
+
+    @Override // org.telegram.messenger.MediaDataController.KeywordResultCallback
+    public void run(ArrayList arrayList, String str) {
+        ((MediaDataController) this.a).lambda$searchStickers$248((MediaDataController.SearchStickersKey) this.b, (MediaDataController.SearchStickersResult) this.c, (Utilities.Callback) this.d, arrayList, str);
     }
 }

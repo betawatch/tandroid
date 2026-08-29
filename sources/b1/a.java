@@ -3,19 +3,19 @@ package b1;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.ResultReceiver;
-import kotlin.jvm.internal.i;
+import kotlin.jvm.internal.j;
 import org.telegram.tgnet.ConnectionsManager;
-import w0.j;
+import w0.i;
 import w0.k;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class a {
     public static w0.d a(String str, String str2) {
-        return i.a(str, "CREATE_CANCELED") ? new w0.b(str2) : i.a(str, "CREATE_INTERRUPTED") ? new w0.e(str2) : new w0.c(str2, 2);
+        return j.a(str, "CREATE_CANCELED") ? new w0.b(str2) : j.a(str, "CREATE_INTERRUPTED") ? new w0.e(str2) : new w0.c(str2, 2);
     }
 
-    public static w0.i b(String str, String str2) {
+    public static i b(String str, String str2) {
         if (str != null) {
             int hashCode = str.hashCode();
             if (hashCode != -1567968963) {
@@ -24,7 +24,7 @@ public final class a {
                         return new k(str2);
                     }
                 } else if (str.equals("GET_INTERRUPTED")) {
-                    return new j(str2);
+                    return new w0.j(str2);
                 }
             } else if (str.equals("GET_CANCELED_TAG")) {
                 return new w0.g(str2);
@@ -34,8 +34,8 @@ public final class a {
     }
 
     public static void c(ResultReceiver resultReceiver, String str, String errMsg) {
-        i.e(resultReceiver, "<this>");
-        i.e(errMsg, "errMsg");
+        j.e(resultReceiver, "<this>");
+        j.e(errMsg, "errMsg");
         Bundle bundle = new Bundle();
         bundle.putBoolean("FAILURE_RESPONSE", true);
         bundle.putString("EXCEPTION_TYPE", str);
@@ -43,12 +43,12 @@ public final class a {
         resultReceiver.send(ConnectionsManager.DEFAULT_DATACENTER_ID, bundle);
     }
 
-    public static void d(ResultReceiver resultReceiver, int i9, int i10, Intent intent) {
-        i.e(resultReceiver, "<this>");
+    public static void d(ResultReceiver resultReceiver, int i10, int i11, Intent intent) {
+        j.e(resultReceiver, "<this>");
         Bundle bundle = new Bundle();
         bundle.putBoolean("FAILURE_RESPONSE", false);
-        bundle.putInt("ACTIVITY_REQUEST_CODE", i9);
+        bundle.putInt("ACTIVITY_REQUEST_CODE", i10);
         bundle.putParcelable("RESULT_DATA", intent);
-        resultReceiver.send(i10, bundle);
+        resultReceiver.send(i11, bundle);
     }
 }

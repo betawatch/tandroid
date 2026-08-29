@@ -1,28 +1,25 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import androidx.core.widget.NestedScrollView;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class zd0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ be0 b;
+public final /* synthetic */ class zd0 implements u0.g, b5 {
+    public final /* synthetic */ ke0 a;
 
-    public /* synthetic */ zd0(be0 be0Var, int i9) {
-        this.a = i9;
-        this.b = be0Var;
+    public /* synthetic */ zd0(ke0 ke0Var) {
+        this.a = ke0Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                this.b.s = null;
-                break;
-            default:
-                this.b.v = null;
-                break;
-        }
+    @Override // org.telegram.ui.Components.b5
+    public void I(int i10, int i11, boolean z10) {
+        ke0 ke0Var = this.a;
+        ke0Var.G.a(ke0Var.J, z10, i10, 0L);
+        ke0Var.dismiss();
+    }
+
+    @Override // u0.g
+    public void a(NestedScrollView nestedScrollView) {
+        this.a.G(!r2.s);
     }
 }

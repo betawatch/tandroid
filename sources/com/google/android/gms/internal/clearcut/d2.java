@@ -63,7 +63,7 @@ public final class d2 {
 
     public static boolean c(Context context) {
         if (g == null) {
-            g = Boolean.valueOf(g6.c.a(context).a.checkCallingOrSelfPermission("com.google.android.providers.gsf.permission.READ_GSERVICES") == 0);
+            g = Boolean.valueOf(i6.b.a(context).a.checkCallingOrSelfPermission("com.google.android.providers.gsf.permission.READ_GSERVICES") == 0);
         }
         return g.booleanValue();
     }

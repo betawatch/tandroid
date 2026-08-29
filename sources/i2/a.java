@@ -3,15 +3,14 @@ package i2;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.Trace;
-import androidx.car.app.j;
-import f7.r8;
+import h7.m8;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class a {
     public static volatile a d;
@@ -64,7 +63,7 @@ public final class a {
                     b((Class) it2.next(), hashSet2);
                 }
             } catch (ClassNotFoundException e10) {
-                throw new j(e10);
+                throw new a6.b(e10);
             }
         }
     }
@@ -72,12 +71,12 @@ public final class a {
     public final Object b(Class cls, HashSet hashSet) {
         Object obj;
         HashMap hashMap = this.a;
-        if (r8.b()) {
+        if (m8.b()) {
             try {
-                r8.a(cls.getSimpleName());
-            } catch (Throwable th) {
+                m8.a(cls.getSimpleName());
+            } catch (Throwable th2) {
                 Trace.endSection();
-                throw th;
+                throw th2;
             }
         }
         if (hashSet.contains(cls)) {
@@ -100,8 +99,8 @@ public final class a {
                 obj = bVar.b(this.c);
                 hashSet.remove(cls);
                 hashMap.put(cls, obj);
-            } catch (Throwable th2) {
-                throw new j(th2);
+            } catch (Throwable th3) {
+                throw new a6.b(th3);
             }
         }
         Trace.endSection();

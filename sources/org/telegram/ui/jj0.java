@@ -1,28 +1,46 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.widget.TextView;
-import org.telegram.messenger.NotificationCenter;
+import android.text.TextUtils;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.MrzRecognizer;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class jj0 extends TextView {
-    public final jt a;
+public final class jj0 implements q9 {
+    public final /* synthetic */ kj0 a;
 
-    public jj0(Context context) {
-        super(context);
-        this.a = new jt(1, this);
+    public jj0(kj0 kj0Var) {
+        this.a = kj0Var;
     }
 
-    @Override // android.widget.TextView, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        NotificationCenter.getGlobalInstance().addObserver(this.a, NotificationCenter.emojiLoaded);
+    @Override // org.telegram.ui.q9
+    public final /* synthetic */ String E0() {
+        return null;
     }
 
-    @Override // android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        NotificationCenter.getGlobalInstance().removeObserver(this.a, NotificationCenter.emojiLoaded);
+    @Override // org.telegram.ui.q9
+    public final void J(String str) {
+        int i10;
+        String b10 = ye.d.b(str);
+        if (TextUtils.isEmpty(b10)) {
+            AndroidUtilities.runOnUIThread(new ef0(1));
+        } else {
+            i10 = ((org.telegram.ui.ActionBar.f3) this.a).currentAccount;
+            MessagesController.getInstance(i10).getUserNameResolver().resolve(b10, new l4.x0(11));
+        }
+    }
+
+    @Override // org.telegram.ui.q9
+    public final /* synthetic */ boolean d1(String str, i9 i9Var) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.q9
+    public final /* synthetic */ void S0(MrzRecognizer.Result result) {
+    }
+
+    @Override // org.telegram.ui.q9
+    public final /* synthetic */ void onDismiss() {
     }
 }

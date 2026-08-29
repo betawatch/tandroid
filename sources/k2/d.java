@@ -18,17 +18,17 @@ import android.os.Build;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.util.Xml;
-import f7.q8;
+import h7.l8;
 import java.io.IOException;
 import java.util.ArrayList;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class d extends g implements Animatable {
     public final Context c;
-    public final eg.a d = new eg.a(this, 5);
+    public final hg.a d = new hg.a(this, 4);
     public final b b = new b();
 
     public d(Context context) {
@@ -157,8 +157,8 @@ public final class d extends g implements Animatable {
             if (eventType == 2) {
                 String name = xmlPullParser.getName();
                 if ("animated-vector".equals(name)) {
-                    TypedArray f10 = h0.b.f(resources, theme, attributeSet, a.e);
-                    int resourceId = f10.getResourceId(0, 0);
+                    TypedArray f9 = h0.b.f(resources, theme, attributeSet, a.e);
+                    int resourceId = f9.getResourceId(0, 0);
                     if (resourceId != 0) {
                         PorterDuff.Mode mode = p.s;
                         if (Build.VERSION.SDK_INT >= 24) {
@@ -190,7 +190,7 @@ public final class d extends g implements Animatable {
                                 if (pVar2 != null) {
                                 }
                                 bVar.a = pVar;
-                                f10.recycle();
+                                f9.recycle();
                                 eventType = xmlPullParser.next();
                             } catch (XmlPullParserException e11) {
                                 Log.e("VectorDrawableCompat", "parser error", e11);
@@ -201,7 +201,7 @@ public final class d extends g implements Animatable {
                                 if (pVar2 != null) {
                                 }
                                 bVar.a = pVar;
-                                f10.recycle();
+                                f9.recycle();
                                 eventType = xmlPullParser.next();
                             }
                         }
@@ -213,7 +213,7 @@ public final class d extends g implements Animatable {
                         }
                         bVar.a = pVar;
                     }
-                    f10.recycle();
+                    f9.recycle();
                 } else {
                     XmlResourceParser xmlResourceParser = null;
                     if ("target".equals(name)) {
@@ -234,8 +234,8 @@ public final class d extends g implements Animatable {
                                 try {
                                     try {
                                         animation = resources2.getAnimation(resourceId2);
-                                    } catch (Throwable th) {
-                                        th = th;
+                                    } catch (Throwable th2) {
+                                        th = th2;
                                     }
                                 } catch (IOException e12) {
                                     e = e12;
@@ -255,8 +255,8 @@ public final class d extends g implements Animatable {
                                     Resources.NotFoundException notFoundException2 = new Resources.NotFoundException("Can't load animation resource ID #0x" + Integer.toHexString(resourceId2));
                                     notFoundException2.initCause(e);
                                     throw notFoundException2;
-                                } catch (Throwable th2) {
-                                    th = th2;
+                                } catch (Throwable th3) {
+                                    th = th3;
                                     xmlResourceParser = animation;
                                     if (xmlResourceParser != null) {
                                         xmlResourceParser.close();
@@ -320,9 +320,9 @@ public final class d extends g implements Animatable {
     }
 
     @Override // k2.g, android.graphics.drawable.Drawable
-    public final boolean onLevelChange(int i9) {
+    public final boolean onLevelChange(int i10) {
         Drawable drawable = this.a;
-        return drawable != null ? drawable.setLevel(i9) : this.b.a.setLevel(i9);
+        return drawable != null ? drawable.setLevel(i10) : this.b.a.setLevel(i10);
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -332,12 +332,12 @@ public final class d extends g implements Animatable {
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i9) {
+    public final void setAlpha(int i10) {
         Drawable drawable = this.a;
         if (drawable != null) {
-            drawable.setAlpha(i9);
+            drawable.setAlpha(i10);
         } else {
-            this.b.a.setAlpha(i9);
+            this.b.a.setAlpha(i10);
         }
     }
 
@@ -362,12 +362,12 @@ public final class d extends g implements Animatable {
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final void setTint(int i9) {
+    public final void setTint(int i10) {
         Drawable drawable = this.a;
         if (drawable != null) {
-            q8.c(i9, drawable);
+            l8.c(i10, drawable);
         } else {
-            this.b.a.setTint(i9);
+            this.b.a.setTint(i10);
         }
     }
 

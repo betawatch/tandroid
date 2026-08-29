@@ -1,75 +1,75 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Paint;
-import android.graphics.Path;
-import java.util.ArrayList;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.voip.VoIPService;
-import org.telegram.tgnet.TLRPC;
+import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
+import android.view.View;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class i10 {
-    public h10[] a;
-    public h10 b;
-    public h10 c;
-    public h10 d;
-    public float e;
-    public float f;
-    public float g;
-    public float h;
-    public float i;
-    public long j;
-    public float k;
-    public ArrayList l;
-    public Paint m;
-    public Path n;
+public final /* synthetic */ class i10 implements View.OnLongClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public final void a(float f10) {
-        this.g = f10;
-        float f11 = this.e;
-        this.h = (f10 - f11) / 250.0f;
-        this.i = (f10 - f11) / 120.0f;
+    public /* synthetic */ i10(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    public final void b(int i9, boolean z10) {
-        h10 h10Var = this.b;
-        if (h10Var == null || h10Var.i != i9) {
-            if (VoIPService.getSharedInstance() == null && this.b == null) {
-                this.b = this.d;
-                return;
-            }
-            h10 h10Var2 = z10 ? this.b : null;
-            this.c = h10Var2;
-            this.b = this.a[i9];
-            if (h10Var2 != null) {
-                this.k = 0.0f;
-            } else {
-                this.k = 1.0f;
-            }
-        }
-    }
-
-    public final void c(boolean z10) {
-        VoIPService sharedInstance = VoIPService.getSharedInstance();
-        if (sharedInstance != null) {
-            int callState = sharedInstance.getCallState();
-            if (!sharedInstance.isSwitchingStream() && (callState == 1 || callState == 2 || callState == 6 || callState == 5)) {
-                b(2, z10);
-                return;
-            }
-            ChatObject.Call call = sharedInstance.groupCall;
-            if (call == null) {
-                b(sharedInstance.isMicMute() ? 1 : 0, z10);
-                return;
-            }
-            TLRPC.GroupCallParticipant groupCallParticipant = (TLRPC.GroupCallParticipant) call.participants.f(sharedInstance.getSelfId());
-            if ((groupCallParticipant == null || groupCallParticipant.can_self_unmute || !groupCallParticipant.muted || ChatObject.canManageCalls(sharedInstance.getChat())) && !sharedInstance.groupCall.call.rtmp_stream) {
-                b(sharedInstance.isMicMute() ? 1 : 0, z10);
-            } else {
-                sharedInstance.setMicMute(true, false, false);
-                b(3, z10);
-            }
+    @Override // android.view.View.OnLongClickListener
+    public final boolean onLongClick(View view) {
+        int i10 = this.a;
+        Object obj = this.b;
+        switch (i10) {
+            case 0:
+                final FragmentContextView fragmentContextView = (FragmentContextView) obj;
+                float[] fArr = FragmentContextView.I0;
+                final float playbackSpeed = MediaController.getInstance().getPlaybackSpeed(fragmentContextView.R);
+                fragmentContextView.D.d(playbackSpeed, false);
+                org.telegram.ui.ActionBar.c1 c1Var = fragmentContextView.D;
+                int i11 = org.telegram.ui.ActionBar.g6.G8;
+                c1Var.setBackgroundColor(org.telegram.ui.ActionBar.g6.v0(i11, fragmentContextView.l0));
+                org.telegram.ui.ActionBar.c1 c1Var2 = fragmentContextView.D;
+                c1Var2.J = fragmentContextView.h instanceof org.telegram.ui.tn;
+                c1Var2.B.setShader(null);
+                c1Var2.h = null;
+                Bitmap bitmap = c1Var2.f;
+                if (bitmap != null) {
+                    bitmap.recycle();
+                    c1Var2.f = null;
+                }
+                fragmentContextView.B.B(org.telegram.ui.ActionBar.g6.w0(null, i11, false));
+                fragmentContextView.B.N();
+                fragmentContextView.q(false);
+                fragmentContextView.B.setDimMenu(0.3f);
+                fragmentContextView.B.M(fragmentContextView.D, null);
+                fragmentContextView.B.setOnMenuDismiss(new Utilities.Callback() { // from class: org.telegram.ui.Components.h10
+                    @Override // org.telegram.messenger.Utilities.Callback
+                    public final void run(Object obj2) {
+                        float[] fArr2 = FragmentContextView.I0;
+                        if (((Boolean) obj2).booleanValue()) {
+                            return;
+                        }
+                        MediaController mediaController = MediaController.getInstance();
+                        FragmentContextView fragmentContextView2 = FragmentContextView.this;
+                        fragmentContextView2.l(playbackSpeed, mediaController.getPlaybackSpeed(fragmentContextView2.R), false);
+                    }
+                });
+                MessagesController.getGlobalNotificationsSettings().edit().putInt("speedhint", -15).apply();
+                return true;
+            case 1:
+                nd0 nd0Var = (nd0) obj;
+                nd0Var.r.setText("");
+                nh.l8.a(nd0Var.s, true);
+                Drawable drawable = nd0Var.a;
+                if (drawable instanceof yb0) {
+                    ((yb0) drawable).y();
+                }
+                return true;
+            default:
+                return dq0.n((dq0) obj);
         }
     }
 }

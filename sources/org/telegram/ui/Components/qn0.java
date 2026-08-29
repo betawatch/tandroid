@@ -1,13 +1,27 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+import androidx.recyclerview.widget.RecyclerView;
+
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class qn0 {
-    public float a;
-    public float b;
-    public float c;
-    public float d;
-    public float e;
-    public float f;
-    public float g;
+public final class qn0 extends f2.a1 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ sn0 b;
+
+    public /* synthetic */ qn0(sn0 sn0Var, int i10) {
+        this.a = i10;
+        this.b = sn0Var;
+    }
+
+    @Override // f2.a1
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        switch (this.a) {
+            case 0:
+                this.b.b.S(i10, i11);
+                break;
+            default:
+                this.b.b.S(i10, i11);
+                break;
+        }
+    }
 }

@@ -1,66 +1,75 @@
 package org.telegram.ui.Components;
 
-import android.view.KeyEvent;
-import android.widget.LinearLayout;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
+import android.graphics.Canvas;
+import android.graphics.RectF;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class dh implements o1.g {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ float c;
-    public final /* synthetic */ float d;
-    public final /* synthetic */ KeyEvent.Callback e;
+public final /* synthetic */ class dh implements mg.a {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ dh(ki kiVar, float f10, float f11, boolean z10) {
-        this.e = kiVar;
-        this.c = f10;
-        this.d = f11;
-        this.b = z10;
+    public /* synthetic */ dh(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // o1.g
-    public final void a(o1.h hVar, float f10, float f11) {
+    @Override // mg.a
+    public final void e(Canvas canvas, RectF rectF) {
+        Canvas canvas2;
+        RectF rectF2;
+        fi fiVar;
+        ih.o2 o2Var;
         switch (this.a) {
             case 0:
-                ki kiVar = (ki) this.e;
-                LinearLayout linearLayout = kiVar.h1;
-                LinearLayout linearLayout2 = kiVar.j1;
-                float f12 = f10 / 500.0f;
-                kiVar.a0.set(kiVar.u0, Float.valueOf(f12));
-                kiVar.T0.setAlpha(AndroidUtilities.lerp(this.c, this.d, f12));
-                kiVar.X1(kiVar.u0, 0);
-                kiVar.X1(kiVar.v0, 0);
-                if (!(kiVar.v0 instanceof hm) || this.b) {
-                    f12 = 1.0f - f12;
+                ni niVar = (ni) this.b;
+                int i10 = 0;
+                while (i10 < 2) {
+                    fi fiVar2 = i10 == 0 ? niVar.u0 : niVar.v0;
+                    if (fiVar2 == null || fiVar2.c == null || fiVar2.getVisibility() != 0) {
+                        canvas2 = canvas;
+                        rectF2 = rectF;
+                    } else {
+                        canvas2 = canvas;
+                        rectF2 = rectF;
+                        rg.c.a(fiVar2.c, canvas2, rectF2, fiVar2.d, niVar.getContainerView(), (int) (((i10 == 0 && (fiVar = niVar.v0) != null && fiVar.getVisibility() == 0) ? (1.0f - niVar.v0.getAlpha()) * fiVar2.getAlpha() : fiVar2.getAlpha()) * 255.0f));
+                    }
+                    i10++;
+                    canvas = canvas2;
+                    rectF = rectF2;
                 }
-                float clamp = Utilities.clamp(f12, 1.0f, 0.0f);
-                linearLayout2.setAlpha(clamp);
-                float f13 = 1.0f - clamp;
-                linearLayout.setAlpha(f13);
-                linearLayout.setTranslationX(clamp * (-AndroidUtilities.dp(16.0f)));
-                linearLayout2.setTranslationX(f13 * AndroidUtilities.dp(16.0f));
+                break;
+            case 1:
+                mg.a[] aVarArr = (mg.a[]) this.b;
+                for (int i11 = 0; i11 < 3; i11++) {
+                    mg.a aVar = aVarArr[i11];
+                    if (aVar != null) {
+                        aVar.e(canvas, rectF);
+                    }
+                }
                 break;
             default:
-                fo0 fo0Var = (fo0) this.e;
-                boolean z10 = this.b;
-                if (z10) {
-                    if (f10 > this.c / 2.0f || !fo0Var.s) {
+                qu0 qu0Var = (qu0) this.b;
+                for (it0 it0Var : qu0Var.g0) {
+                    lg.k kVar = it0Var.n;
+                    if (kVar != null) {
+                        kVar.e(canvas, rectF);
                     }
-                } else if (f10 < this.d / 2.0f || !fo0Var.r) {
                 }
-                fo0Var.s = !z10;
-                fo0Var.r = z10;
+                gr0 gr0Var = qu0Var.R;
+                if (gr0Var != null && (o2Var = gr0Var.N) != null) {
+                    o2Var.e(canvas, rectF);
+                    break;
+                }
                 break;
         }
     }
 
-    public /* synthetic */ dh(fo0 fo0Var, boolean z10, float f10, float f11) {
-        this.e = fo0Var;
-        this.b = z10;
-        this.c = f10;
-        this.d = f11;
+    /* JADX WARN: Failed to find 'out' block for switch in B:2:0x0002. Please report as an issue. */
+    @Override // mg.a
+    public final void g(g.x xVar, RectF rectF) {
+        switch (this.a) {
+        }
+        xVar.b = true;
     }
 }

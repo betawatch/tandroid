@@ -1,56 +1,36 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
 import android.view.View;
-import android.widget.LinearLayout;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class a70 extends LinearLayout {
-    public boolean a;
-    public final /* synthetic */ g70 b;
+public final /* synthetic */ class a70 implements View.OnLayoutChangeListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public a70(g70 g70Var, Context context) {
-        super(context);
-        this.b = g70Var;
+    public /* synthetic */ a70(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // android.widget.LinearLayout, android.view.View
-    public final void onMeasure(int i9, int i10) {
-        g70 g70Var = this.b;
-        ArrayList arrayList = g70Var.h;
-        if (g70Var.s == 0) {
-            int size = View.MeasureSpec.getSize(i9);
-            int dp = AndroidUtilities.dp(95.0f) * arrayList.size();
-            LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) g70Var.d.getLayoutParams();
-            if (dp > size) {
-                layoutParams.width = -1;
-                layoutParams.gravity = 51;
-                if (!this.a) {
-                    TLRPC.Peer peer = g70Var.v;
-                    if (peer != null) {
-                        arrayList.remove(peer);
-                        arrayList.add(0, g70Var.v);
-                    }
-                    this.a = true;
+    @Override // android.view.View.OnLayoutChangeListener
+    public final void onLayoutChange(View view, int i10, int i11, int i12, int i13, int i14, int i15, int i16, int i17) {
+        switch (this.a) {
+            case 0:
+                j70 j70Var = (j70) this.b;
+                if (j70Var.D()) {
+                    j70Var.O();
+                    break;
                 }
-            } else {
-                layoutParams.width = -2;
-                layoutParams.gravity = 49;
-                if (!this.a) {
-                    if (g70Var.v != null) {
-                        int max = arrayList.size() % 2 == 0 ? Math.max(0, (arrayList.size() / 2) - 1) : arrayList.size() / 2;
-                        arrayList.remove(g70Var.v);
-                        arrayList.add(max, g70Var.v);
-                    }
-                    this.a = true;
+                break;
+            default:
+                vw0 vw0Var = (vw0) this.b;
+                eg.r rVar = vw0Var.h;
+                if (rVar != null && rVar.getLayout() != null) {
+                    vw0Var.B = rVar.getLayout().getLineWidth(0);
+                    break;
                 }
-            }
+                break;
         }
-        super.onMeasure(i9, i10);
     }
 }

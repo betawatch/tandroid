@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.Map;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class q {
     public static final /* synthetic */ int c = 0;
@@ -19,13 +19,13 @@ public final class q {
     public q() {
     }
 
-    public static void b(k kVar, a2 a2Var, int i9, Object obj) {
+    public static void b(k kVar, a2 a2Var, int i10, Object obj) {
         if (a2Var == a2.d) {
-            kVar.R(i9, 3);
+            kVar.R(i10, 3);
             ((a) obj).c(kVar);
-            kVar.R(i9, 4);
+            kVar.R(i10, 4);
         }
-        kVar.R(i9, a2Var.b);
+        kVar.R(i10, a2Var.b);
         switch (a2Var.ordinal()) {
             case 0:
                 kVar.L(Double.doubleToRawLongBits(((Double) obj).doubleValue()));
@@ -130,11 +130,11 @@ public final class q {
         q qVar = new q();
         e1 e1Var = this.a;
         if (e1Var.b.size() > 0) {
-            Map.Entry c10 = e1Var.c(0);
-            if (c10.getKey() != null) {
+            Map.Entry c3 = e1Var.c(0);
+            if (c3.getKey() != null) {
                 throw new ClassCastException();
             }
-            c10.getValue();
+            c3.getValue();
             throw null;
         }
         Iterator it = e1Var.d().iterator();
@@ -163,7 +163,7 @@ public final class q {
         return this.a.hashCode();
     }
 
-    public q(int i9) {
+    public q(int i10) {
         a();
         a();
     }

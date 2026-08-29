@@ -1,28 +1,67 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class om0 implements org.telegram.ui.ActionBar.b2 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ sm0 b;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.view.View;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Emoji;
+import org.telegram.tgnet.TLObject;
 
-    public /* synthetic */ om0(sm0 sm0Var, int i9) {
-        this.a = i9;
-        this.b = sm0Var;
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* loaded from: classes3.dex */
+public final class om0 extends TextView {
+    public final /* synthetic */ int a;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ om0(Context context, int i10) {
+        super(context);
+        this.a = i10;
     }
 
-    @Override // org.telegram.ui.ActionBar.b2
-    public final void f(org.telegram.ui.ActionBar.c2 c2Var, int i9) {
+    @Override // android.view.View
+    public void dispatchDraw(Canvas canvas) {
+        switch (this.a) {
+            case 2:
+                super.dispatchDraw(canvas);
+                canvas.drawCircle(AndroidUtilities.dp(3.5f), AndroidUtilities.dp(11.5f), AndroidUtilities.dp(2.5f), getPaint());
+                break;
+            case 3:
+            default:
+                super.dispatchDraw(canvas);
+                break;
+            case 4:
+                if (getPaddingLeft() > 0) {
+                    canvas.drawCircle((getPaddingLeft() - AndroidUtilities.dp(2.5f)) / 2.0f, AndroidUtilities.dp(10.0f), AndroidUtilities.dp(2.5f), getPaint());
+                }
+                super.dispatchDraw(canvas);
+                break;
+        }
+    }
+
+    @Override // android.widget.TextView, android.view.View
+    public void onMeasure(int i10, int i11) {
         switch (this.a) {
             case 0:
-                sm0 sm0Var = this.b;
-                sm0Var.c(true);
-                sm0Var.M.finishFragment();
+                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(100.0f), TLObject.FLAG_31));
+                break;
+            case 1:
+                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(AndroidUtilities.dp(26.0f)), TLObject.FLAG_30));
                 break;
             default:
-                sm0 sm0Var2 = this.b;
-                sm0Var2.c(true);
-                sm0Var2.M.K1(0, true, null);
+                super.onMeasure(i10, i11);
+                break;
+        }
+    }
+
+    @Override // android.widget.TextView
+    public void setText(CharSequence charSequence, TextView.BufferType bufferType) {
+        switch (this.a) {
+            case 3:
+                super.setText(Emoji.replaceEmoji(charSequence, getPaint().getFontMetricsInt(), false), bufferType);
+                break;
+            default:
+                super.setText(charSequence, bufferType);
                 break;
         }
     }

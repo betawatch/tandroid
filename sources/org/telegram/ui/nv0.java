@@ -5,14 +5,14 @@ import android.view.ViewTreeObserver;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
 public final class nv0 implements ViewTreeObserver.OnPreDrawListener {
     public final /* synthetic */ int a;
     public final /* synthetic */ PopupNotificationActivity b;
 
-    public /* synthetic */ nv0(PopupNotificationActivity popupNotificationActivity, int i9) {
-        this.a = i9;
+    public /* synthetic */ nv0(PopupNotificationActivity popupNotificationActivity, int i10) {
+        this.a = i10;
         this.b = popupNotificationActivity;
     }
 
@@ -25,16 +25,16 @@ public final class nv0 implements ViewTreeObserver.OnPreDrawListener {
                 if (frameLayout != null) {
                     frameLayout.getViewTreeObserver().removeOnPreDrawListener(this);
                 }
-                int y10 = org.telegram.messenger.ll.y(48.0f, org.telegram.ui.ActionBar.k.getCurrentActionBarHeight(), 2);
+                int x4 = b.x(48.0f, org.telegram.ui.ActionBar.l.getCurrentActionBarHeight(), 2);
                 FrameLayout frameLayout2 = popupNotificationActivity.f;
-                frameLayout2.setPadding(frameLayout2.getPaddingLeft(), y10, popupNotificationActivity.f.getPaddingRight(), y10);
+                frameLayout2.setPadding(frameLayout2.getPaddingLeft(), x4, popupNotificationActivity.f.getPaddingRight(), x4);
                 break;
             default:
                 PopupNotificationActivity popupNotificationActivity2 = this.b;
                 popupNotificationActivity2.n.getViewTreeObserver().removeOnPreDrawListener(this);
                 if (!popupNotificationActivity2.c() && !popupNotificationActivity2.T) {
                     ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) popupNotificationActivity2.n.getLayoutParams();
-                    marginLayoutParams.topMargin = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight();
+                    marginLayoutParams.topMargin = org.telegram.ui.ActionBar.l.getCurrentActionBarHeight();
                     marginLayoutParams.bottomMargin = AndroidUtilities.dp(48.0f);
                     marginLayoutParams.width = -1;
                     marginLayoutParams.height = -1;

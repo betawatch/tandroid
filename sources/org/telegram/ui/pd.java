@@ -1,34 +1,130 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class pd implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ fe b;
-    public final /* synthetic */ s91 c;
-    public final /* synthetic */ TwoStepVerificationActivity d;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stats;
 
-    public /* synthetic */ pd(fe feVar, s91 s91Var, TwoStepVerificationActivity twoStepVerificationActivity, int i9) {
-        this.a = i9;
-        this.b = feVar;
-        this.c = s91Var;
-        this.d = twoStepVerificationActivity;
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class pd implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ de b;
+
+    public /* synthetic */ pd(de deVar, int i10) {
+        this.a = i10;
+        this.b = deVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(final TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                this.b.G0.setLoading(false);
-                this.c.presentFragment(this.d);
+                if (tL_error == null) {
+                    if (tLObject instanceof TLRPC.Updates) {
+                        de deVar = this.b;
+                        AndroidUtilities.runOnUIThread(new jd(deVar, 4));
+                        MessagesController.getInstance(deVar.u0).processUpdates((TLRPC.Updates) tLObject, false);
+                        break;
+                    }
+                } else {
+                    AndroidUtilities.runOnUIThread(new it0(tL_error, 22));
+                    break;
+                }
                 break;
             case 1:
-                this.b.M0.setLoading(false);
-                this.c.presentFragment(this.d);
+                final int i10 = 0;
+                final de deVar2 = this.b;
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.qd
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i10) {
+                            case 0:
+                                TLObject tLObject2 = tLObject;
+                                if (tLObject2 instanceof TLRPC.TL_payments_starsRevenueStats) {
+                                    TLRPC.TL_payments_starsRevenueStats tL_payments_starsRevenueStats = (TLRPC.TL_payments_starsRevenueStats) tLObject2;
+                                    f91 f02 = t91.f0(tL_payments_starsRevenueStats.top_hours_graph, LocaleController.getString(R.string.MonetizationGraphImpressions), 0, false);
+                                    de deVar3 = deVar2;
+                                    deVar3.k1 = f02;
+                                    TL_stats.StatsGraph statsGraph = tL_payments_starsRevenueStats.revenue_graph;
+                                    if (statsGraph != null) {
+                                        statsGraph.rate = (float) (1.0E7d / tL_payments_starsRevenueStats.usd_rate);
+                                    }
+                                    deVar3.l1 = t91.f0(statsGraph, LocaleController.getString(R.string.MonetizationGraphRevenue), 2, false);
+                                    f91 f91Var = deVar3.k1;
+                                    if (f91Var != null) {
+                                        f91Var.n = true;
+                                    }
+                                    deVar3.f1 = tL_payments_starsRevenueStats.usd_rate;
+                                    deVar3.g0(true, tL_payments_starsRevenueStats.status);
+                                    deVar3.Y0.animate().alpha(0.0f).setDuration(380L).setInterpolator(org.telegram.ui.Components.jr.h).withEndAction(new jd(deVar3, 6)).start();
+                                    deVar3.a0();
+                                    break;
+                                }
+                                break;
+                            default:
+                                TLObject tLObject3 = tLObject;
+                                boolean z10 = tLObject3 instanceof TLRPC.TL_payments_starsRevenueStats;
+                                de deVar4 = deVar2;
+                                if (!z10) {
+                                    deVar4.getClass();
+                                    break;
+                                } else {
+                                    deVar4.Z((TLRPC.TL_payments_starsRevenueStats) tLObject3);
+                                    break;
+                                }
+                        }
+                    }
+                });
                 break;
             default:
-                this.b.M0.setLoading(false);
-                this.c.presentFragment(this.d);
+                final int i11 = 1;
+                final de deVar3 = this.b;
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.qd
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i11) {
+                            case 0:
+                                TLObject tLObject2 = tLObject;
+                                if (tLObject2 instanceof TLRPC.TL_payments_starsRevenueStats) {
+                                    TLRPC.TL_payments_starsRevenueStats tL_payments_starsRevenueStats = (TLRPC.TL_payments_starsRevenueStats) tLObject2;
+                                    f91 f02 = t91.f0(tL_payments_starsRevenueStats.top_hours_graph, LocaleController.getString(R.string.MonetizationGraphImpressions), 0, false);
+                                    de deVar32 = deVar3;
+                                    deVar32.k1 = f02;
+                                    TL_stats.StatsGraph statsGraph = tL_payments_starsRevenueStats.revenue_graph;
+                                    if (statsGraph != null) {
+                                        statsGraph.rate = (float) (1.0E7d / tL_payments_starsRevenueStats.usd_rate);
+                                    }
+                                    deVar32.l1 = t91.f0(statsGraph, LocaleController.getString(R.string.MonetizationGraphRevenue), 2, false);
+                                    f91 f91Var = deVar32.k1;
+                                    if (f91Var != null) {
+                                        f91Var.n = true;
+                                    }
+                                    deVar32.f1 = tL_payments_starsRevenueStats.usd_rate;
+                                    deVar32.g0(true, tL_payments_starsRevenueStats.status);
+                                    deVar32.Y0.animate().alpha(0.0f).setDuration(380L).setInterpolator(org.telegram.ui.Components.jr.h).withEndAction(new jd(deVar32, 6)).start();
+                                    deVar32.a0();
+                                    break;
+                                }
+                                break;
+                            default:
+                                TLObject tLObject3 = tLObject;
+                                boolean z10 = tLObject3 instanceof TLRPC.TL_payments_starsRevenueStats;
+                                de deVar4 = deVar3;
+                                if (!z10) {
+                                    deVar4.getClass();
+                                    break;
+                                } else {
+                                    deVar4.Z((TLRPC.TL_payments_starsRevenueStats) tLObject3);
+                                    break;
+                                }
+                        }
+                    }
+                });
                 break;
         }
     }

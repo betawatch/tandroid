@@ -1,95 +1,61 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.view.ViewPropertyAnimator;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Emoji;
 import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class b00 extends org.telegram.ui.Cells.m4 {
-    public final TextView r;
-    public final gh.ca s;
-    public int v;
-    public final org.telegram.ui.Components.b5 w;
-    public boolean x;
-    public final /* synthetic */ n00 y;
+public final class b00 extends FrameLayout {
+    public final /* synthetic */ c00 a;
 
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public b00(n00 n00Var, Context context) {
-        super(context, r2, 22, 15, false, r6);
-        org.telegram.ui.ActionBar.b6 b6Var;
-        this.y = n00Var;
-        int i9 = org.telegram.ui.ActionBar.f6.L6;
-        b6Var = ((org.telegram.ui.ActionBar.o2) n00Var).resourceProvider;
-        TextView textView = new TextView(getContext());
-        this.r = textView;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public b00(c00 c00Var, Context context) {
+        super(context);
+        this.a = c00Var;
+        ImageView imageView = new ImageView(context);
+        ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
+        imageView.setScaleType(scaleType);
+        imageView.setImageResource(R.drawable.msg_limit_links);
+        imageView.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
+        imageView.setBackground(org.telegram.ui.ActionBar.g6.b0(AndroidUtilities.dp(22.0f), org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.Oh, false)));
+        addView(imageView, i7.f6.d(54, 44.0f, 49, 0.0f, 22.0f, 0.0f, 0.0f));
+        gh.s sVar = new gh.s(context);
+        sVar.setTypeface(AndroidUtilities.bold());
+        sVar.setTextSize(1, 20.0f);
+        int i10 = org.telegram.ui.ActionBar.g6.j5;
+        sVar.setTextColor(org.telegram.ui.ActionBar.g6.w0(null, i10, false));
+        sVar.setGravity(1);
+        sVar.setText(c00Var.R(sVar));
+        MessagesController.DialogFilter dialogFilter = c00Var.T;
+        sVar.h = (dialogFilter == null || !dialogFilter.title_noanimate) ? 0 : 26;
+        addView(sVar, i7.f6.d(-2, -2.0f, 49, 20.0f, 84.0f, 20.0f, 0.0f));
+        TextView textView = new TextView(context);
+        textView.setText(c00Var.U.isEmpty() ? LocaleController.getString(R.string.FolderLinkShareSubtitleEmpty) : LocaleController.getString(R.string.FolderLinkShareSubtitle));
+        textView.setLines(2);
+        textView.setGravity(1);
         textView.setTextSize(1, 14.0f);
-        textView.setTextColor(n00Var.getThemedColor(org.telegram.ui.ActionBar.f6.z6));
-        org.telegram.messenger.ll.l(n00Var.getUserConfig().isPremium() ? R.string.FolderTagNoColor : R.string.FolderTagNoColorPremium, textView, 5);
-        int i10 = (LocaleController.isRTL ? 3 : 5) | 48;
-        float f10 = this.b;
-        addView(textView, g7.e6.d(-1, -1.0f, i10, f10, 16.66f, f10, this.c));
-        textView.setAlpha(0.0f);
-        gh.ca caVar = new gh.ca(this, getContext());
-        this.s = caVar;
-        this.w = new org.telegram.ui.Components.b5(caVar, 320L, org.telegram.ui.Components.gr.h, 0);
-        caVar.setTextSize(AndroidUtilities.dp(10.0f));
-        caVar.setTypeface(AndroidUtilities.bold());
-        caVar.setGravity(5);
-        caVar.setPadding(AndroidUtilities.dp(4.66f), 0, AndroidUtilities.dp(4.66f), 0);
-        int i11 = LocaleController.isRTL ? 3 : 5;
-        float f11 = this.b;
-        addView(caVar, g7.e6.d(-1, -1.0f, i11 | 48, f11, 16.66f, f11, this.c));
+        textView.setTextColor(org.telegram.ui.ActionBar.g6.w0(null, i10, false));
+        addView(textView, i7.f6.d(-2, -2.0f, 49, 30.0f, 117.0f, 30.0f, 0.0f));
+        ImageView imageView2 = new ImageView(context);
+        imageView2.setScaleType(scaleType);
+        imageView2.setImageResource(R.drawable.msg_close);
+        imageView2.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.C6, false), PorterDuff.Mode.MULTIPLY));
+        imageView2.setOnClickListener(new a(this, 23));
+        addView(imageView2, i7.f6.d(48, 48.0f, 53, 0.0f, -4.0f, 2.0f, 0.0f));
     }
 
-    public final void d(int i9, boolean z10) {
-        n00 n00Var = this.y;
-        String string = LocaleController.getString(n00Var.getUserConfig().isPremium() ? R.string.FolderTagNoColor : R.string.FolderTagNoColorPremium);
-        TextView textView = this.r;
-        textView.setText(string);
-        int i10 = 0;
-        boolean z11 = i9 < 0;
-        if (!z11) {
-            int[] iArr = org.telegram.ui.ActionBar.f6.r8;
-            i10 = n00Var.getThemedColor(iArr[i9 % iArr.length]);
-        }
-        this.v = i10;
-        gh.ca caVar = this.s;
-        if (!z11) {
-            caVar.setEmojiColor(i10);
-        }
-        if (!z10) {
-            this.w.a(this.v, true);
-        }
-        if (z11 != this.x) {
-            this.x = z11;
-            ViewPropertyAnimator duration = textView.animate().alpha(z11 ? 1.0f : 0.0f).setDuration(320L);
-            org.telegram.ui.Components.gr grVar = org.telegram.ui.Components.gr.h;
-            duration.setInterpolator(grVar).start();
-            caVar.animate().alpha(z11 ? 0.0f : 1.0f).setDuration(320L).setInterpolator(grVar).start();
-        }
-    }
-
-    public final void e(CharSequence charSequence, boolean z10) {
-        if (charSequence == null) {
-            charSequence = "";
-        }
-        boolean z11 = false;
-        if (charSequence.length() > 12) {
-            charSequence = charSequence.subSequence(0, 12);
-        }
-        gh.ca caVar = this.s;
-        CharSequence replaceEmoji = Emoji.replaceEmoji(charSequence, caVar.getPaint().getFontMetricsInt(), false);
-        if (z10 && !LocaleController.isRTL) {
-            z11 = true;
-        }
-        caVar.c(replaceEmoji, z11, true);
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(171.0f), TLObject.FLAG_30));
     }
 }

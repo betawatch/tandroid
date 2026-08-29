@@ -3,17 +3,17 @@ package com.google.android.gms.internal.cast;
 import java.util.Iterator;
 import java.util.Map;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class o0 extends k0 {
     public final transient j0 d;
     public final transient Object[] e;
     public final transient int f;
 
-    public o0(j0 j0Var, Object[] objArr, int i9) {
+    public o0(j0 j0Var, Object[] objArr, int i10) {
         this.d = j0Var;
         this.e = objArr;
-        this.f = i9;
+        this.f = i10;
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set

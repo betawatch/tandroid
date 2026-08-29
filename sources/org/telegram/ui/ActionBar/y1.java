@@ -10,58 +10,57 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.ll;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
 public final class y1 extends FrameLayout {
     public final TextView a;
     public final ImageView b;
 
-    public y1(Context context, b6 b6Var) {
+    public y1(Context context, c6 c6Var) {
         super(context);
-        setBackground(f6.f0(f6.v0(f6.I5, b6Var), 2, -1));
+        setBackground(g6.f0(g6.v0(g6.I5, c6Var), 2, -1));
         setPadding(AndroidUtilities.dp(23.0f), 0, AndroidUtilities.dp(23.0f), 0);
         ImageView imageView = new ImageView(context);
         this.b = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER);
-        imageView.setColorFilter(new PorterDuffColorFilter(f6.v0(f6.J5, b6Var), PorterDuff.Mode.MULTIPLY));
-        addView(imageView, g7.e6.e(-2, 40, (LocaleController.isRTL ? 5 : 3) | 16));
+        imageView.setColorFilter(new PorterDuffColorFilter(g6.v0(g6.J5, c6Var), PorterDuff.Mode.MULTIPLY));
+        addView(imageView, i7.f6.e(-2, 40, (LocaleController.isRTL ? 5 : 3) | 16));
         TextView textView = new TextView(context);
         this.a = textView;
         textView.setLines(1);
         textView.setSingleLine(true);
         textView.setGravity(1);
         textView.setEllipsize(TextUtils.TruncateAt.END);
-        ll.n(f6.j5, b6Var, textView, 1, 16.0f);
-        addView(textView, g7.e6.e(-2, -2, (LocaleController.isRTL ? 5 : 3) | 16));
+        org.telegram.ui.b.m(g6.j5, c6Var, textView, 1, 16.0f);
+        addView(textView, i7.f6.e(-2, -2, (LocaleController.isRTL ? 5 : 3) | 16));
     }
 
-    public final void a(int i9, CharSequence charSequence) {
+    public final void a(int i10, CharSequence charSequence) {
         TextView textView = this.a;
         textView.setText(charSequence);
         ImageView imageView = this.b;
-        if (i9 == 0) {
+        if (i10 == 0) {
             imageView.setVisibility(4);
             textView.setPadding(0, 0, 0, 0);
         } else {
-            imageView.setImageResource(i9);
+            imageView.setImageResource(i10);
             imageView.setVisibility(0);
             textView.setPadding(LocaleController.isRTL ? 0 : AndroidUtilities.dp(56.0f), 0, LocaleController.isRTL ? AndroidUtilities.dp(56.0f) : 0, 0);
         }
     }
 
     @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i9, int i10) {
-        super.onMeasure(i9, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLObject.FLAG_30));
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLObject.FLAG_30));
     }
 
-    public void setGravity(int i9) {
-        this.a.setGravity(i9);
+    public void setGravity(int i10) {
+        this.a.setGravity(i10);
     }
 
-    public void setTextColor(int i9) {
-        this.a.setTextColor(i9);
+    public void setTextColor(int i10) {
+        this.a.setTextColor(i10);
     }
 }

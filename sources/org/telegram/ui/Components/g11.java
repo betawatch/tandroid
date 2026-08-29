@@ -1,77 +1,76 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.MotionEvent;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessageObject;
+import android.text.Editable;
+import android.text.TextWatcher;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.ThemeEditorView;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public abstract class g11 extends View {
-    public final h11 a;
-    public Utilities.Callback b;
-    public final org.telegram.ui.ActionBar.b6 c;
-    public int d;
+public final class g11 implements TextWatcher {
+    public final /* synthetic */ h11 a;
 
-    public g11(Context context, int i9, org.telegram.ui.ActionBar.b6 b6Var) {
-        super(context);
-        this.c = b6Var;
-        h11 h11Var = new h11(i9, this, b6Var, false);
+    public g11(h11 h11Var) {
         this.a = h11Var;
-        h11Var.r = new tp0(this, 18);
     }
 
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        org.telegram.ui.ActionBar.b6 b6Var = this.c;
-        if (b6Var != null) {
-            b6Var.o(0.0f, 0.0f, getMeasuredWidth(), this.d);
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        boolean z10 = this.a.b.length() > 0;
+        if (z10 != (this.a.a.getAlpha() != 0.0f)) {
+            this.a.a.animate().alpha(z10 ? 1.0f : 0.0f).setDuration(150L).scaleX(z10 ? 1.0f : 0.1f).scaleY(z10 ? 1.0f : 0.1f).start();
+        }
+        String obj = this.a.b.getText().toString();
+        if (obj.length() != 0) {
+            hz hzVar = this.a.c.e;
+            if (hzVar != null) {
+                hzVar.setText(LocaleController.getString(R.string.NoResult));
+            }
         } else {
-            org.telegram.ui.ActionBar.f6.q(0.0f, 0.0f, getMeasuredWidth(), this.d);
+            f2.p0 adapter = this.a.c.c.getAdapter();
+            ThemeEditorView.EditorAlert editorAlert = this.a.c;
+            if (adapter != editorAlert.n) {
+                int I = ThemeEditorView.EditorAlert.I(editorAlert);
+                this.a.c.e.setText(LocaleController.getString(R.string.NoChats));
+                this.a.c.e.c();
+                ThemeEditorView.EditorAlert editorAlert2 = this.a.c;
+                editorAlert2.c.setAdapter(editorAlert2.n);
+                this.a.c.n.l();
+                if (I > 0) {
+                    this.a.c.h.h1(0, -I);
+                }
+            }
         }
-        this.a.c(canvas, getWidth(), 0.0f, 0.0f, 0.75f, 1.0f, true);
-    }
-
-    @Override // android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.a.a();
-    }
-
-    @Override // android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.a.b();
-    }
-
-    @Override // android.view.View
-    public final void onMeasure(int i9, int i10) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i9), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(33.0f), TLObject.FLAG_30));
-    }
-
-    @Override // android.view.View
-    public boolean onTouchEvent(MotionEvent motionEvent) {
-        return this.a.d(motionEvent, false) || super.onTouchEvent(motionEvent);
-    }
-
-    public void set(MessageObject messageObject) {
-        h11 h11Var = this.a;
-        h11Var.f(messageObject);
-        if (isAttachedToWindow()) {
-            h11Var.a();
+        d11 d11Var = this.a.c.r;
+        if (d11Var == null || obj.equals(d11Var.n)) {
+            return;
         }
+        d11Var.n = obj;
+        if (d11Var.h != null) {
+            Utilities.searchQueue.cancelRunnable(d11Var.h);
+            d11Var.h = null;
+        }
+        if (obj.length() != 0) {
+            int i10 = d11Var.d + 1;
+            d11Var.d = i10;
+            d11Var.h = new rm(d11Var, obj, i10, 22);
+            Utilities.searchQueue.postRunnable(d11Var.h, 300L);
+            return;
+        }
+        d11Var.e.clear();
+        ThemeEditorView.EditorAlert editorAlert3 = d11Var.r;
+        editorAlert3.B = ThemeEditorView.EditorAlert.I(editorAlert3);
+        d11Var.d = -1;
+        d11Var.l();
     }
 
-    public void setBackgroundHeight(int i9) {
-        this.d = i9;
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 
-    public void setOnTopicClickListener(Utilities.Callback<Long> callback) {
-        this.b = callback;
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

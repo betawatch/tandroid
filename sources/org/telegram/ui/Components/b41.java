@@ -1,29 +1,62 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.MessageObject;
-import org.telegram.tgnet.TLRPC;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class b41 implements zw0 {
-    public final /* synthetic */ h41 a;
+public final class b41 extends f2.a1 {
+    public final /* synthetic */ int a;
+    public int b;
+    public final /* synthetic */ Object c;
 
-    public b41(h41 h41Var) {
-        this.a = h41Var;
+    public b41(e41 e41Var) {
+        this.a = 0;
+        this.c = e41Var;
     }
 
-    @Override // org.telegram.ui.Components.zw0
-    public final void a(TLRPC.Document document, String str, Object obj, MessageObject.SendAnimationData sendAnimationData, boolean z10, boolean z11, int i9, int i10) {
-        this.a.b.f(document, obj, z11, i9);
+    @Override // f2.a1
+    public void a(RecyclerView recyclerView, int i10) {
+        switch (this.a) {
+            case 0:
+                if (i10 == 0) {
+                    this.b = 0;
+                    break;
+                }
+                break;
+        }
     }
 
-    @Override // org.telegram.ui.Components.zw0
-    public final boolean b() {
-        return this.a.b.a();
+    @Override // f2.a1
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        switch (this.a) {
+            case 0:
+                e41 e41Var = (e41) this.c;
+                this.b += i11;
+                if (recyclerView.getScrollState() == 1 && Math.abs(this.b) > AndroidUtilities.dp(96.0f)) {
+                    View findFocus = e41Var.e.findFocus();
+                    if (findFocus == null) {
+                        findFocus = e41Var.e;
+                    }
+                    AndroidUtilities.hideKeyboard(findFocus);
+                }
+                if (i11 != 0) {
+                    e41.m(e41Var);
+                    break;
+                }
+                break;
+            default:
+                int i12 = this.b + i11;
+                this.b = i12;
+                ((org.telegram.ui.z11) this.c).D.setAlpha((i12 * 1.0f) / AndroidUtilities.dp(6.0f));
+                break;
+        }
     }
 
-    @Override // org.telegram.ui.Components.zw0
-    public final boolean c() {
-        return this.a.b.c();
+    public b41(org.telegram.ui.z11 z11Var) {
+        this.a = 1;
+        this.c = z11Var;
+        this.b = 0;
     }
 }

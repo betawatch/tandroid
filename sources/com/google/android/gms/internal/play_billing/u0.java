@@ -3,7 +3,7 @@ package com.google.android.gms.internal.play_billing;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class u0 implements Runnable {
     public w0 a;
@@ -32,9 +32,9 @@ public final class u0 implements Runnable {
                     try {
                         t0Var.a(c0Var, p0.a);
                         return;
-                    } catch (Throwable th) {
+                    } catch (Throwable th2) {
                         try {
-                            e0Var = new e0(th);
+                            e0Var = new e0(th2);
                         } catch (Error | Exception unused) {
                             e0Var = e0.b;
                         }
@@ -60,11 +60,11 @@ public final class u0 implements Runnable {
                     if (abs > 10) {
                         str = "Timed out (timeout delayed by " + abs + " ms after scheduled time)";
                     }
-                } catch (Throwable th2) {
+                } catch (Throwable th3) {
                     if (l0.h.f(w0Var, null, new e0(new v0(str)))) {
                         w0.i(w0Var);
                     }
-                    throw th2;
+                    throw th3;
                 }
             }
             if (l0.h.f(w0Var, null, new e0(new v0(str + ": " + t0Var.toString())))) {

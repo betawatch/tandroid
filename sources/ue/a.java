@@ -1,49 +1,61 @@
 package ue;
 
-import com.google.firebase.messaging.d;
-import java.io.InputStream;
+import android.graphics.Bitmap;
+import java.io.BufferedInputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.RandomAccessFile;
+import we.l;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class a extends d {
-    public final long d;
+public abstract class a {
+    public String a;
+    public long b;
+    public String c;
+    public String d;
+    public String e;
+    public String f;
+    public short g;
+    public String h;
+    public String i;
+    public short j;
+    public short k;
+    public String l;
+    public String m;
+    public String n;
+    public Bitmap o;
+    public Bitmap p;
+    public File q;
 
-    public a(InputStream inputStream, long j10, long j11) {
-        super(inputStream, j10);
-        this.d = j10 + j11;
-    }
-
-    public final long e() {
-        return this.d - this.b;
-    }
-
-    @Override // com.google.firebase.messaging.d, java.io.FilterInputStream, java.io.InputStream
-    public final int read() {
-        if (this.b == this.d) {
-            return -1;
+    public static a a(File file) {
+        byte b10;
+        try {
+            byte[] bArr = new byte[12];
+            RandomAccessFile randomAccessFile = new RandomAccessFile(file, "r");
+            randomAccessFile.readFully(bArr, 0, 8);
+            randomAccessFile.close();
+            BufferedInputStream bufferedInputStream = new BufferedInputStream(new FileInputStream(file));
+            if (bArr[4] == 102 && bArr[5] == 116 && bArr[6] == 121 && bArr[7] == 112) {
+                return new ve.a(bufferedInputStream);
+            }
+            if (bArr[0] == 102 && bArr[1] == 76 && bArr[2] == 97 && bArr[3] == 99) {
+                b bVar = new b(file);
+                if (bVar.s) {
+                    return null;
+                }
+                return bVar;
+            }
+            if (!file.getAbsolutePath().endsWith("mp3") && (((b10 = bArr[0]) != 73 || bArr[1] != 68 || bArr[2] != 51) && (b10 != 84 || bArr[1] != 65 || bArr[2] != 71))) {
+                b bVar2 = new b(file);
+                if (bVar2.s) {
+                    return null;
+                }
+                return bVar2;
+            }
+            return new l(bufferedInputStream, file.length());
+        } catch (Exception unused) {
+            return null;
         }
-        return super.read();
-    }
-
-    @Override // com.google.firebase.messaging.d, java.io.FilterInputStream, java.io.InputStream
-    public final long skip(long j10) {
-        long j11 = this.b;
-        long j12 = j11 + j10;
-        long j13 = this.d;
-        if (j12 > j13) {
-            j10 = (int) (j13 - j11);
-        }
-        return super.skip(j10);
-    }
-
-    @Override // com.google.firebase.messaging.d, java.io.FilterInputStream, java.io.InputStream
-    public final int read(byte[] bArr, int i9, int i10) {
-        long j10 = this.b;
-        long j11 = i10 + j10;
-        long j12 = this.d;
-        if (j11 <= j12 || (i10 = (int) (j12 - j10)) != 0) {
-            return super.read(bArr, i9, i10);
-        }
-        return -1;
     }
 }

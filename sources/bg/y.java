@@ -1,17 +1,29 @@
 package bg;
 
-import org.telegram.ui.ActionBar.b6;
+import android.widget.PopupWindow;
+import nh.t5;
+import org.telegram.ui.Components.iv0;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class y {
-    public final /* synthetic */ h1 a;
-    public final /* synthetic */ b6 b;
-    public final /* synthetic */ a0 c;
+public final /* synthetic */ class y implements PopupWindow.OnDismissListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ iv0 b;
 
-    public y(a0 a0Var, h1 h1Var, b6 b6Var) {
-        this.c = a0Var;
-        this.a = h1Var;
-        this.b = b6Var;
+    public /* synthetic */ y(iv0 iv0Var, int i10) {
+        this.a = i10;
+        this.b = iv0Var;
+    }
+
+    @Override // android.widget.PopupWindow.OnDismissListener
+    public final void onDismiss() {
+        switch (this.a) {
+            case 0:
+                ((g1) this.b).O1.d();
+                break;
+            default:
+                ((t5) this.b).E1.d();
+                break;
+        }
     }
 }

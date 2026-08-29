@@ -1,14 +1,37 @@
 package org.telegram.ui.Components.voip;
 
-import android.view.View;
-import android.widget.ImageView;
-import org.telegram.tgnet.TLObject;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
-/* loaded from: classes3.dex */
-public final class c0 extends ImageView {
-    @Override // android.widget.ImageView, android.view.View
-    public final void onMeasure(int i9, int i10) {
-        super.onMeasure(i9, View.MeasureSpec.makeMeasureSpec(org.telegram.ui.ActionBar.k.getCurrentActionBarHeight(), TLObject.FLAG_30));
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* loaded from: classes.dex */
+public final class c0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ l0 b;
+
+    public /* synthetic */ c0(l0 l0Var, int i10) {
+        this.a = i10;
+        this.b = l0Var;
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                super.onAnimationEnd(animator);
+                l0 l0Var = this.b;
+                l0Var.F0 = null;
+                l0Var.E0 = 0.0f;
+                l0Var.invalidate();
+                break;
+            default:
+                l0 l0Var2 = this.b;
+                l0Var2.x0 = null;
+                l0Var2.u0 = 1.0f;
+                l0Var2.n0 = 0.0f;
+                l0Var2.o0 = 0.0f;
+                l0Var2.invalidate();
+                break;
+        }
     }
 }

@@ -1,29 +1,69 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.VideoEditedInfo;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class nl extends AnimatorListenerAdapter {
-    public final /* synthetic */ boolean a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ qn d;
+public final class nl extends pt0 {
+    public final /* synthetic */ MessageObject a;
+    public final /* synthetic */ MediaController.PhotoEntry b;
+    public final /* synthetic */ tn c;
 
-    public nl(qn qnVar, boolean z10, boolean z11, boolean z12) {
-        this.d = qnVar;
-        this.a = z10;
-        this.b = z11;
-        this.c = z12;
+    public nl(tn tnVar, MessageObject messageObject, MediaController.PhotoEntry photoEntry) {
+        this.c = tnVar;
+        this.a = messageObject;
+        this.b = photoEntry;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        qn qnVar = this.d;
-        qnVar.I2 = null;
-        qnVar.F2.setVisibility(this.a ? 0 : 4);
-        qnVar.H2.setVisibility(this.b ? 0 : 4);
-        qnVar.G2.setVisibility(this.c ? 0 : 4);
+    @Override // org.telegram.ui.pt0, org.telegram.ui.xt0
+    public final zt0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
+        return tn.A1(this.c, this.a, null, i10, z10, true);
+    }
+
+    @Override // org.telegram.ui.pt0, org.telegram.ui.xt0
+    public final boolean O() {
+        tn tnVar = this.c;
+        if (tnVar.U == null || !tnVar.x9()) {
+            return false;
+        }
+        tnVar.U.P();
+        return true;
+    }
+
+    @Override // org.telegram.ui.pt0, org.telegram.ui.xt0
+    public final MessageObject U() {
+        MessageObject messageObject = this.c.l5;
+        MessageObject messageObject2 = this.a;
+        if (messageObject == messageObject2) {
+            return messageObject2;
+        }
+        return null;
+    }
+
+    @Override // org.telegram.ui.pt0, org.telegram.ui.xt0
+    public final void e(CharSequence charSequence) {
+        this.c.U.f1(charSequence, false);
+    }
+
+    @Override // org.telegram.ui.pt0, org.telegram.ui.xt0
+    public final boolean g() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.pt0, org.telegram.ui.xt0
+    public final void o(int i10, VideoEditedInfo videoEditedInfo, boolean z10, int i11, int i12, boolean z11) {
+        tn tnVar = this.c;
+        if (tnVar.l5 != this.a) {
+            return;
+        }
+        MediaController.PhotoEntry photoEntry = this.b;
+        if (photoEntry.isCropped || photoEntry.isPainted || photoEntry.isFiltered || videoEditedInfo != null) {
+            tnVar.r(photoEntry, videoEditedInfo, z10, i11, 0, z11, 0L);
+        } else {
+            tnVar.U.d0();
+        }
     }
 }

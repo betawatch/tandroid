@@ -1,36 +1,28 @@
 package ag;
 
-import android.animation.AnimatorSet;
-import android.animation.ValueAnimator;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class g implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ j b;
-
-    public /* synthetic */ g(j jVar, int i9) {
-        this.a = i9;
-        this.b = jVar;
+public final class g extends l {
+    @Override // ag.m
+    public final int e() {
+        return R.drawable.photo_arrowshape;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        ValueAnimator valueAnimator;
-        switch (this.a) {
-            case 0:
-                j jVar = this.b;
-                AnimatorSet animatorSet = jVar.P;
-                if ((animatorSet != null && animatorSet.isRunning()) || ((valueAnimator = jVar.O) != null && valueAnimator.isRunning())) {
-                    jVar.h(jVar.E);
-                    break;
-                } else {
-                    jVar.k();
-                    break;
-                }
-            default:
-                this.b.i();
-                break;
-        }
+    @Override // ag.l
+    public final int m() {
+        return R.drawable.photo_arrowshape;
+    }
+
+    @Override // ag.l
+    public final String n() {
+        return LocaleController.getString(R.string.PaintArrow);
+    }
+
+    @Override // ag.l
+    public final int o() {
+        return 4;
     }
 }

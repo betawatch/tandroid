@@ -1,22 +1,37 @@
 package ic;
 
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public abstract class c {
-    public final String a;
-    public final int b;
-    public final Map c;
-    public int d = -1;
+public final class c implements Iterable {
+    public final HashMap a = new HashMap();
+    public final ArrayList b = new ArrayList();
 
-    public c(int i9, String str, Map map) {
-        this.a = str;
-        this.b = i9;
-        this.c = map;
+    public c(HashMap hashMap) {
+        String str = (String) hashMap.get("cookie");
+        if (str != null) {
+            for (String str2 : str.split(";")) {
+                String[] split = str2.trim().split("=");
+                if (split.length == 2) {
+                    this.a.put(split[0], split[1]);
+                }
+            }
+        }
     }
 
-    public Map a() {
-        return this.c;
+    public final void i() {
+        Iterator it = this.b.iterator();
+        if (it.hasNext()) {
+            it.next().getClass();
+            throw new ClassCastException();
+        }
+    }
+
+    @Override // java.lang.Iterable
+    public final Iterator iterator() {
+        return this.a.keySet().iterator();
     }
 }

@@ -1,50 +1,100 @@
 package gd;
 
-import g7.n7;
-import java.util.concurrent.TimeUnit;
+import i7.c7;
+import java.util.Iterator;
+import java.util.NoSuchElementException;
+import kotlin.jvm.internal.j;
+import sc.i;
+import uc.h;
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class c {
-    public static final c b;
-    public static final c c;
-    public static final c d;
-    public static final c e;
-    public static final c f;
-    public static final c h;
-    public static final /* synthetic */ c[] n;
-    public final TimeUnit a;
+public final class c implements Iterator, sc.c {
+    public int a;
+    public Object b;
+    public sc.c c;
 
-    static {
-        c cVar = new c("NANOSECONDS", 0, TimeUnit.NANOSECONDS);
-        b = cVar;
-        c cVar2 = new c("MICROSECONDS", 1, TimeUnit.MICROSECONDS);
-        c cVar3 = new c("MILLISECONDS", 2, TimeUnit.MILLISECONDS);
-        c = cVar3;
-        c cVar4 = new c("SECONDS", 3, TimeUnit.SECONDS);
-        d = cVar4;
-        c cVar5 = new c("MINUTES", 4, TimeUnit.MINUTES);
-        e = cVar5;
-        c cVar6 = new c("HOURS", 5, TimeUnit.HOURS);
-        f = cVar6;
-        c cVar7 = new c("DAYS", 6, TimeUnit.DAYS);
-        h = cVar7;
-        c[] cVarArr = {cVar, cVar2, cVar3, cVar4, cVar5, cVar6, cVar7};
-        n = cVarArr;
-        n7.a(cVarArr);
+    public final RuntimeException b() {
+        int i10 = this.a;
+        if (i10 == 4) {
+            return new NoSuchElementException();
+        }
+        if (i10 == 5) {
+            return new IllegalStateException("Iterator has failed.");
+        }
+        return new IllegalStateException("Unexpected state of the iterator: " + this.a);
     }
 
-    public c(String str, int i9, TimeUnit timeUnit) {
-        this.a = timeUnit;
+    public final void c(Object obj, h hVar) {
+        this.b = obj;
+        this.a = 3;
+        this.c = hVar;
+        tc.a aVar = tc.a.a;
     }
 
-    public static c valueOf(String str) {
-        return (c) Enum.valueOf(c.class, str);
+    @Override // sc.c
+    public final sc.h getContext() {
+        return i.a;
     }
 
-    public static c[] values() {
-        return (c[]) n.clone();
+    @Override // java.util.Iterator
+    public final boolean hasNext() {
+        int i10;
+        while (true) {
+            i10 = this.a;
+            if (i10 != 0) {
+                break;
+            }
+            this.a = 5;
+            sc.c cVar = this.c;
+            j.b(cVar);
+            this.c = null;
+            cVar.resumeWith(qc.i.a);
+        }
+        if (i10 == 1) {
+            j.b(null);
+            throw null;
+        }
+        if (i10 == 2 || i10 == 3) {
+            return true;
+        }
+        if (i10 == 4) {
+            return false;
+        }
+        throw b();
+    }
+
+    @Override // java.util.Iterator
+    public final Object next() {
+        int i10 = this.a;
+        if (i10 == 0 || i10 == 1) {
+            if (hasNext()) {
+                return next();
+            }
+            throw new NoSuchElementException();
+        }
+        if (i10 == 2) {
+            this.a = 1;
+            j.b(null);
+            throw null;
+        }
+        if (i10 != 3) {
+            throw b();
+        }
+        this.a = 0;
+        Object obj = this.b;
+        this.b = null;
+        return obj;
+    }
+
+    @Override // java.util.Iterator
+    public final void remove() {
+        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
+    }
+
+    @Override // sc.c
+    public final void resumeWith(Object obj) {
+        c7.b(obj);
+        this.a = 4;
     }
 }

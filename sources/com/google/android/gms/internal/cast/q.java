@@ -8,74 +8,74 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Set;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class q extends h {
-    public static final q5.b j = new q5.b("MediaRouterProxy", null);
-    public final c2.c0 c;
-    public final n5.b d;
+    public static final s5.b j = new s5.b("MediaRouterProxy", null);
+    public final c2.d0 c;
+    public final p5.b d;
     public final HashMap e;
     public final t f;
     public final boolean i;
 
-    public q(Context context, c2.c0 c0Var, n5.b bVar, q5.s sVar) {
+    public q(Context context, c2.d0 d0Var, p5.b bVar, s5.s sVar) {
         super("com.google.android.gms.cast.framework.internal.IMediaRouter", 0);
         this.e = new HashMap();
-        this.c = c0Var;
+        this.c = d0Var;
         this.d = bVar;
-        int i9 = Build.VERSION.SDK_INT;
-        q5.b bVar2 = j;
-        if (i9 <= 32) {
+        int i10 = Build.VERSION.SDK_INT;
+        s5.b bVar2 = j;
+        if (i10 <= 32) {
             Log.i(bVar2.a, bVar2.d("Don't need to set MediaRouterParams for Android S v2 or below", new Object[0]));
             return;
         }
         bVar2.b("Set up MediaRouterParams based on module flag and CastOptions for Android T or above", new Object[0]);
         this.f = new t(bVar);
-        Intent intent = new Intent(context, (Class<?>) c2.k0.class);
+        Intent intent = new Intent(context, (Class<?>) c2.l0.class);
         intent.setPackage(context.getPackageName());
         boolean isEmpty = context.getPackageManager().queryBroadcastReceivers(intent, 0).isEmpty();
         this.i = !isEmpty;
         if (!isEmpty) {
-            d2.a(d1.W);
+            e2.a(e1.W);
         }
-        sVar.f(new String[]{"com.google.android.gms.cast.FLAG_OUTPUT_SWITCHER_ENABLED"}).addOnCompleteListener(new we.b(this, bVar, false, 14));
+        sVar.f(new String[]{"com.google.android.gms.cast.FLAG_OUTPUT_SWITCHER_ENABLED"}).addOnCompleteListener(new ze.b(this, bVar));
     }
 
     public final void J0(android.support.v4.media.session.d0 d0Var) {
         this.c.getClass();
-        c2.c0.b();
-        c2.e c10 = c2.c0.c();
-        c10.D = d0Var;
-        a5.m mVar = d0Var != null ? new a5.m(c10, d0Var) : null;
-        a5.m mVar2 = c10.C;
-        if (mVar2 != null) {
-            mVar2.g();
+        c2.d0.b();
+        c2.e c3 = c2.d0.c();
+        c3.D = d0Var;
+        androidx.biometric.e eVar = d0Var != null ? new androidx.biometric.e(c3, d0Var) : null;
+        androidx.biometric.e eVar2 = c3.C;
+        if (eVar2 != null) {
+            eVar2.g();
         }
-        c10.C = mVar;
-        if (mVar != null) {
-            c10.l();
+        c3.C = eVar;
+        if (eVar != null) {
+            c3.l();
         }
     }
 
-    public final void K0(c2.v vVar, int i9) {
-        Set set = (Set) this.e.get(vVar);
+    public final void K0(c2.w wVar, int i10) {
+        Set set = (Set) this.e.get(wVar);
         if (set == null) {
             return;
         }
         Iterator it = set.iterator();
         while (it.hasNext()) {
-            this.c.a(vVar, (c2.w) it.next(), i9);
+            this.c.a(wVar, (c2.x) it.next(), i10);
         }
     }
 
-    public final void L0(c2.v vVar) {
-        Set set = (Set) this.e.get(vVar);
+    public final void L0(c2.w wVar) {
+        Set set = (Set) this.e.get(wVar);
         if (set == null) {
             return;
         }
         Iterator it = set.iterator();
         while (it.hasNext()) {
-            this.c.h((c2.w) it.next());
+            this.c.h((c2.x) it.next());
         }
     }
 }

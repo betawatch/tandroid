@@ -20,24 +20,24 @@ public final class p extends d {
         return new f(this, hVar);
     }
 
-    public p(n nVar, int i9, int i10, int i11) {
-        nVar.m(i9, i10, i11);
+    public p(n nVar, int i10, int i11, int i12) {
+        nVar.m(i10, i11, i12);
         this.a = nVar;
-        this.b = i9;
-        this.c = i10;
-        this.d = i11;
+        this.b = i10;
+        this.c = i11;
+        this.d = i12;
     }
 
     public p(n nVar, long j10) {
-        int i9 = (int) j10;
+        int i10 = (int) j10;
         nVar.k();
-        if (i9 < nVar.e || i9 >= nVar.f) {
+        if (i10 < nVar.e || i10 >= nVar.f) {
             throw new j$.time.b("Hijrah date out of range");
         }
-        int binarySearch = Arrays.binarySearch(nVar.d, i9);
+        int binarySearch = Arrays.binarySearch(nVar.d, i10);
         binarySearch = binarySearch < 0 ? (-binarySearch) - 2 : binarySearch;
-        int i10 = nVar.g;
-        int[] iArr = {(binarySearch + i10) / 12, ((i10 + binarySearch) % 12) + 1, (i9 - nVar.d[binarySearch]) + 1};
+        int i11 = nVar.g;
+        int[] iArr = {(binarySearch + i11) / 12, ((i11 + binarySearch) % 12) + 1, (i10 - nVar.d[binarySearch]) + 1};
         this.a = nVar;
         this.b = iArr[0];
         this.c = iArr[1];
@@ -63,8 +63,8 @@ public final class p extends d {
             throw new j$.time.temporal.r(j$.time.c.a("Unsupported field: ", oVar));
         }
         j$.time.temporal.a aVar = (j$.time.temporal.a) oVar;
-        int i9 = o.a[aVar.ordinal()];
-        return i9 != 1 ? i9 != 2 ? i9 != 3 ? this.a.s(aVar) : j$.time.temporal.s.e(1L, 5L) : j$.time.temporal.s.e(1L, this.a.y(this.b, 12)) : j$.time.temporal.s.e(1L, this.a.q(this.b, this.c));
+        int i10 = o.a[aVar.ordinal()];
+        return i10 != 1 ? i10 != 2 ? i10 != 3 ? this.a.s(aVar) : j$.time.temporal.s.e(1L, 5L) : j$.time.temporal.s.e(1L, this.a.y(this.b, 12)) : j$.time.temporal.s.e(1L, this.a.q(this.b, this.c));
     }
 
     @Override // j$.time.temporal.l
@@ -112,12 +112,12 @@ public final class p extends d {
         }
         j$.time.temporal.a aVar = (j$.time.temporal.a) oVar;
         this.a.s(aVar).b(j10, aVar);
-        int i9 = (int) j10;
+        int i10 = (int) j10;
         switch (o.a[aVar.ordinal()]) {
             case 1:
-                return Q(this.b, this.c, i9);
+                return Q(this.b, this.c, i10);
             case 2:
-                return J(Math.min(i9, this.a.y(this.b, 12)) - N());
+                return J(Math.min(i10, this.a.y(this.b, 12)) - N());
             case 3:
                 return J((j10 - y(j$.time.temporal.a.ALIGNED_WEEK_OF_MONTH)) * 7);
             case 4:
@@ -131,16 +131,16 @@ public final class p extends d {
             case 8:
                 return J((j10 - y(j$.time.temporal.a.ALIGNED_WEEK_OF_YEAR)) * 7);
             case 9:
-                return Q(this.b, i9, this.d);
+                return Q(this.b, i10, this.d);
             case 10:
                 return K(j10 - (((this.b * 12) + this.c) - 1));
             case 11:
                 if (this.b < 1) {
-                    i9 = 1 - i9;
+                    i10 = 1 - i10;
                 }
-                return Q(i9, this.c, this.d);
+                return Q(i10, this.c, this.d);
             case 12:
-                return Q(i9, this.c, this.d);
+                return Q(i10, this.c, this.d);
             case 13:
                 return Q(1 - this.b, this.c, this.d);
             default:
@@ -148,12 +148,12 @@ public final class p extends d {
         }
     }
 
-    public final p Q(int i9, int i10, int i11) {
-        int q10 = this.a.q(i9, i10);
-        if (i11 > q10) {
-            i11 = q10;
+    public final p Q(int i10, int i11, int i12) {
+        int q6 = this.a.q(i10, i11);
+        if (i12 > q6) {
+            i12 = q6;
         }
-        return new p(this.a, i9, i10, i11);
+        return new p(this.a, i10, i11, i12);
     }
 
     @Override // j$.time.chrono.d
@@ -182,9 +182,9 @@ public final class p extends d {
             return this;
         }
         long j11 = this.b + ((int) j10);
-        int i9 = (int) j11;
-        if (j11 == i9) {
-            return Q(i9, this.c, this.d);
+        int i10 = (int) j11;
+        if (j11 == i10) {
+            return Q(i10, this.c, this.d);
         }
         throw new ArithmeticException();
     }
@@ -198,8 +198,8 @@ public final class p extends d {
         long j11 = (this.b * 12) + (this.c - 1) + j10;
         n nVar = this.a;
         long S = j$.com.android.tools.r8.a.S(j11, 12L);
-        int i9 = nVar.g;
-        if (S >= i9 / 12 && S <= (((nVar.d.length - 1) + i9) / 12) - 1) {
+        int i10 = nVar.g;
+        if (S >= i10 / 12 && S <= (((nVar.d.length - 1) + i10) / 12) - 1) {
             return Q((int) S, ((int) j$.com.android.tools.r8.a.R(j11, 12L)) + 1, this.d);
         }
         throw new j$.time.b("Invalid Hijrah year: " + S);
@@ -248,11 +248,11 @@ public final class p extends d {
 
     @Override // j$.time.chrono.d, j$.time.chrono.b
     public final int hashCode() {
-        int i9 = this.b;
-        int i10 = this.c;
-        int i11 = this.d;
+        int i10 = this.b;
+        int i11 = this.c;
+        int i12 = this.d;
         this.a.getClass();
-        return (((i9 << 11) + (i10 << 6)) + i11) ^ ((i9 & (-2048)) ^ 2100100019);
+        return (((i10 << 11) + (i11 << 6)) + i12) ^ ((i10 & (-2048)) ^ 2100100019);
     }
 
     private void readObject(ObjectInputStream objectInputStream) {

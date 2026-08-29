@@ -49,9 +49,9 @@ public final class LocalDateTime implements Temporal, j$.time.temporal.m, Chrono
         return temporal.c(((LocalDate) f()).z(), j$.time.temporal.a.EPOCH_DAY).c(b().R(), j$.time.temporal.a.NANO_OF_DAY);
     }
 
-    public static LocalDateTime K(long j10, int i9, ZoneOffset zoneOffset) {
+    public static LocalDateTime K(long j10, int i10, ZoneOffset zoneOffset) {
         Objects.requireNonNull(zoneOffset, "offset");
-        long j11 = i9;
+        long j11 = i10;
         j$.time.temporal.a.NANO_OF_SECOND.w(j11);
         return new LocalDateTime(LocalDate.R(j$.com.android.tools.r8.a.S(j10 + zoneOffset.getTotalSeconds(), 86400)), h.K((((int) j$.com.android.tools.r8.a.R(r5, r7)) * 1000000000) + j11));
     }

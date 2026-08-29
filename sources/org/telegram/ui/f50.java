@@ -1,34 +1,55 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
+import android.animation.ValueAnimator;
+import java.util.HashSet;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class f50 extends org.telegram.ui.Cells.e4 {
-    public final /* synthetic */ i50 b0;
+public final class f50 extends f2.l {
+    public float F;
+    public ValueAnimator G;
+    public final HashSet H = new HashSet();
+    public final HashSet I = new HashSet();
+    public float J;
+    public float K;
+    public final /* synthetic */ r50 L;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f50(i50 i50Var, Context context) {
-        super(context);
-        this.b0 = i50Var;
+    public f50(r50 r50Var) {
+        this.L = r50Var;
     }
 
-    @Override // org.telegram.ui.Cells.e4
-    public final void d(org.telegram.ui.Cells.e4 e4Var) {
-        o50 o50Var = this.b0.I;
-        o50 o50Var2 = o50.z3;
-        o50Var.F1(e4Var);
+    @Override // f2.l, f2.u0
+    public final void g() {
+        super.g();
+        this.I.clear();
+        this.H.clear();
+        this.K = Float.MAX_VALUE;
+        this.L.M.invalidate();
     }
 
-    @Override // org.telegram.ui.Cells.e4, android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i9, int i10) {
-        if (AndroidUtilities.isTablet()) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(Math.min(AndroidUtilities.dp(420.0f), View.MeasureSpec.getSize(i9)), TLObject.FLAG_30), i10);
-        } else {
-            super.onMeasure(i9, i10);
+    @Override // f2.l, f2.u0
+    public final void m() {
+        boolean isEmpty = this.p.isEmpty();
+        boolean isEmpty2 = this.r.isEmpty();
+        boolean isEmpty3 = this.q.isEmpty();
+        ValueAnimator valueAnimator = this.G;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
+            this.G = null;
         }
+        if (!isEmpty || !isEmpty2 || !isEmpty3) {
+            this.F = 0.0f;
+            ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+            this.G = ofFloat;
+            ofFloat.addUpdateListener(new g3(this, 17));
+            this.G.addListener(new e50(this, 0));
+            this.G.setDuration(350L);
+            this.G.setInterpolator(org.telegram.ui.Components.jr.f);
+            this.G.start();
+            r50 r50Var = this.L;
+            r50Var.M.invalidate();
+            r50Var.W1.invalidate();
+        }
+        super.m();
     }
 }

@@ -48,21 +48,21 @@ public final class x implements l, Serializable {
         return s(this.a + 1);
     }
 
-    public x(int i9, LocalDate localDate, String str) {
-        this.a = i9;
+    public x(int i10, LocalDate localDate, String str) {
+        this.a = i10;
         this.b = localDate;
         this.c = str;
     }
 
-    public static x s(int i9) {
-        int i10 = i9 + 1;
-        if (i10 >= 0) {
+    public static x s(int i10) {
+        int i11 = i10 + 1;
+        if (i11 >= 0) {
             x[] xVarArr = e;
-            if (i10 < xVarArr.length) {
-                return xVarArr[i10];
+            if (i11 < xVarArr.length) {
+                return xVarArr[i11];
             }
         }
-        throw new j$.time.b("Invalid era: " + i9);
+        throw new j$.time.b("Invalid era: " + i10);
     }
 
     @Override // j$.time.temporal.m

@@ -1,51 +1,106 @@
 package jh;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.View;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import g7.e6;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.f6;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.Vector;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes4.dex */
-public final class s extends LinearLayout {
-    public final TextView a;
-    public final TextView b;
-    public boolean c;
+public final /* synthetic */ class s implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ b0 b;
 
-    public s(Context context) {
-        super(context);
-        setPadding(AndroidUtilities.dp(22.0f), 0, AndroidUtilities.dp(22.0f), 0);
-        setOrientation(1);
-        TextView textView = new TextView(context);
-        this.a = textView;
-        textView.setTextSize(1, 16.0f);
-        textView.setTextColor(f6.w0(null, f6.j5, false));
-        textView.setGravity(LocaleController.isRTL ? 5 : 3);
-        addView(textView, e6.t(-1, -2, 51, 0, 7, 0, 0));
-        TextView textView2 = new TextView(context);
-        this.b = textView2;
-        textView2.setTextSize(1, 13.0f);
-        textView2.setTextColor(f6.w0(null, f6.q5, false));
-        textView2.setGravity(LocaleController.isRTL ? 5 : 3);
-        addView(textView2, e6.t(-1, -2, 51, 0, 4, 0, 0));
+    public /* synthetic */ s(b0 b0Var, int i10) {
+        this.a = i10;
+        this.b = b0Var;
     }
 
-    @Override // android.widget.LinearLayout, android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        if (this.c) {
-            canvas.drawRect(getPaddingLeft(), getHeight() - 1, getWidth(), getHeight(), f6.k0);
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(final TLObject tLObject, TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 0:
+                final int i10 = 0;
+                final b0 b0Var = this.b;
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: jh.t
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i10) {
+                            case 0:
+                                b0 b0Var2 = b0Var;
+                                b0Var2.getClass();
+                                b0Var2.j = new ArrayList();
+                                b0Var2.i = false;
+                                TLObject tLObject2 = tLObject;
+                                if (tLObject2 instanceof Vector) {
+                                    Vector vector = (Vector) tLObject2;
+                                    for (int i11 = 0; i11 < vector.objects.size(); i11++) {
+                                        b0Var2.j.add((TLRPC.User) vector.objects.get(i11));
+                                    }
+                                    MessagesController.getInstance(b0Var2.a).putUsers(b0Var2.j, false);
+                                    break;
+                                }
+                                break;
+                            default:
+                                b0 b0Var3 = b0Var;
+                                int i12 = b0Var3.a;
+                                b0Var3.l = new ArrayList();
+                                b0Var3.k = false;
+                                TLObject tLObject3 = tLObject;
+                                if (tLObject3 instanceof TLRPC.messages_Chats) {
+                                    TLRPC.messages_Chats messages_chats = (TLRPC.messages_Chats) tLObject3;
+                                    MessagesController.getInstance(i12).putChats(messages_chats.chats, false);
+                                    b0Var3.l.addAll(messages_chats.chats);
+                                }
+                                NotificationCenter.getInstance(i12).lambda$postNotificationNameOnUIThread$1(NotificationCenter.adminedChannelsLoaded, new Object[0]);
+                                break;
+                        }
+                    }
+                });
+                break;
+            default:
+                final int i11 = 1;
+                final b0 b0Var2 = this.b;
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: jh.t
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i11) {
+                            case 0:
+                                b0 b0Var22 = b0Var2;
+                                b0Var22.getClass();
+                                b0Var22.j = new ArrayList();
+                                b0Var22.i = false;
+                                TLObject tLObject2 = tLObject;
+                                if (tLObject2 instanceof Vector) {
+                                    Vector vector = (Vector) tLObject2;
+                                    for (int i112 = 0; i112 < vector.objects.size(); i112++) {
+                                        b0Var22.j.add((TLRPC.User) vector.objects.get(i112));
+                                    }
+                                    MessagesController.getInstance(b0Var22.a).putUsers(b0Var22.j, false);
+                                    break;
+                                }
+                                break;
+                            default:
+                                b0 b0Var3 = b0Var2;
+                                int i12 = b0Var3.a;
+                                b0Var3.l = new ArrayList();
+                                b0Var3.k = false;
+                                TLObject tLObject3 = tLObject;
+                                if (tLObject3 instanceof TLRPC.messages_Chats) {
+                                    TLRPC.messages_Chats messages_chats = (TLRPC.messages_Chats) tLObject3;
+                                    MessagesController.getInstance(i12).putChats(messages_chats.chats, false);
+                                    b0Var3.l.addAll(messages_chats.chats);
+                                }
+                                NotificationCenter.getInstance(i12).lambda$postNotificationNameOnUIThread$1(NotificationCenter.adminedChannelsLoaded, new Object[0]);
+                                break;
+                        }
+                    }
+                });
+                break;
         }
-    }
-
-    @Override // android.widget.LinearLayout, android.view.View
-    public final void onMeasure(int i9, int i10) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i9), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(56.0f), TLObject.FLAG_30));
     }
 }

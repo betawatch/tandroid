@@ -1,14 +1,16 @@
 package androidx.biometric;
 
-import android.graphics.drawable.AnimatedVectorDrawable;
-import android.graphics.drawable.Drawable;
+import android.hardware.biometrics.BiometricPrompt;
+import android.security.identity.IdentityCredential;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public abstract class d0 {
-    public static void a(Drawable drawable) {
-        if (drawable instanceof AnimatedVectorDrawable) {
-            ((AnimatedVectorDrawable) drawable).start();
-        }
+    public static BiometricPrompt.CryptoObject a(IdentityCredential identityCredential) {
+        return new BiometricPrompt.CryptoObject(identityCredential);
+    }
+
+    public static IdentityCredential b(BiometricPrompt.CryptoObject cryptoObject) {
+        return cryptoObject.getIdentityCredential();
     }
 }

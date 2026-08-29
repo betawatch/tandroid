@@ -7,8 +7,8 @@ import android.content.pm.PackageManager;
 import android.graphics.Typeface;
 import android.widget.TextView;
 import com.google.android.gms.internal.cast.p0;
-import com.google.android.gms.internal.cast.r1;
 import com.google.android.gms.internal.cast.s1;
+import com.google.android.gms.internal.cast.t1;
 import com.google.android.gms.internal.vision.f0;
 import com.google.android.gms.vision.clearcut.DynamiteClearcutLogger;
 import com.google.android.gms.vision.clearcut.VisionClearcutLogger;
@@ -18,11 +18,11 @@ import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.ru0;
-import org.telegram.ui.Components.tu0;
-import org.telegram.ui.Components.xu0;
+import org.telegram.ui.Components.cv0;
+import org.telegram.ui.Components.dv0;
+import org.telegram.ui.Components.hv0;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class g implements Runnable {
     public final /* synthetic */ int a;
@@ -30,31 +30,31 @@ public final class g implements Runnable {
     public final /* synthetic */ Object c;
     public Object d;
 
-    public /* synthetic */ g(Object obj, int i9, Object obj2, int i10) {
-        this.a = i10;
+    public /* synthetic */ g(Object obj, int i10, Object obj2, int i11) {
+        this.a = i11;
         this.c = obj;
-        this.b = i9;
+        this.b = i10;
         this.d = obj2;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:43:0x013f  */
-    /* JADX WARN: Removed duplicated region for block: B:45:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:45:0x0151  */
+    /* JADX WARN: Removed duplicated region for block: B:47:? A[RETURN, SYNTHETIC] */
     @Override // java.lang.Runnable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void run() {
+        v2.a aVar;
+        y2.p pVar;
         VisionClearcutLogger visionClearcutLogger;
-        t2.a aVar;
-        w2.p pVar;
-        int i9 = 0;
+        int i10 = 0;
         switch (this.a) {
             case 0:
                 h hVar = (h) this.c;
-                int i10 = this.b;
+                int i11 = this.b;
                 Object obj = ((e.a) this.d).a;
-                String str = (String) hVar.a.get(Integer.valueOf(i10));
+                String str = (String) hVar.a.get(Integer.valueOf(i11));
                 if (str == null) {
                     return;
                 }
@@ -66,7 +66,7 @@ public final class g implements Runnable {
                 } else {
                     androidx.activity.result.b bVar = dVar.a;
                     if (hVar.d.remove(str)) {
-                        bVar.f(obj);
+                        bVar.l(obj);
                         return;
                     }
                     return;
@@ -75,84 +75,84 @@ public final class g implements Runnable {
                 ((h) this.c).a(this.b, 0, new Intent().setAction("androidx.activity.result.contract.action.INTENT_SENDER_REQUEST").putExtra("androidx.activity.result.contract.extra.SEND_INTENT_EXCEPTION", (IntentSender.SendIntentException) this.d));
                 return;
             case 2:
-                visionClearcutLogger = ((DynamiteClearcutLogger) this.c).zzc;
-                visionClearcutLogger.zza(this.b, (f0) this.d);
-                return;
-            case 3:
                 com.google.android.gms.internal.cast.q qVar = (com.google.android.gms.internal.cast.q) this.d;
-                c2.v vVar = (c2.v) this.c;
-                int i11 = this.b;
+                c2.w wVar = (c2.w) this.c;
+                int i12 = this.b;
                 synchronized (qVar.e) {
-                    qVar.K0(vVar, i11);
+                    qVar.K0(wVar, i12);
                 }
                 return;
-            case 4:
+            case 3:
                 p0 p0Var = (p0) this.d;
-                s1 s1Var = (s1) this.c;
-                int i12 = this.b;
-                r1 n10 = s1.n(s1Var);
+                t1 t1Var = (t1) this.c;
+                int i13 = this.b;
+                s1 n10 = t1.n(t1Var);
                 String str2 = p0Var.d;
                 n10.c();
-                s1.v((s1) n10.b, str2);
+                t1.v((t1) n10.b, str2);
                 n10.c();
-                s1.w((s1) n10.b, str2);
+                t1.w((t1) n10.b, str2);
                 Long l10 = p0Var.e;
                 if (l10 != null) {
                     int longValue = (int) l10.longValue();
                     n10.c();
-                    s1.x((s1) n10.b, longValue);
+                    t1.x((t1) n10.b, longValue);
                 }
-                s1 s1Var2 = (s1) n10.a();
-                int i13 = p0Var.h;
-                int i14 = i13 - 1;
-                t2.a aVar2 = null;
-                if (i13 == 0) {
+                t1 t1Var2 = (t1) n10.a();
+                int i14 = p0Var.h;
+                int i15 = i14 - 1;
+                v2.a aVar2 = null;
+                if (i14 == 0) {
                     throw null;
                 }
-                if (i14 != 0) {
-                    if (i14 == 1) {
-                        aVar = new t2.a(Integer.valueOf(i12 - 1), s1Var2, t2.d.a, null);
+                if (i15 != 0) {
+                    if (i15 == 1) {
+                        aVar = new v2.a(Integer.valueOf(i13 - 1), t1Var2, v2.d.a, null);
                     }
                     p0.i.b("analytics event: %s", aVar2);
-                    x5.l.h(aVar2);
+                    z5.l.h(aVar2);
                     pVar = p0Var.g;
                     if (pVar == null) {
-                        pVar.a(aVar2, new v0.l(1));
+                        pVar.a(aVar2, new sg.j(17));
                         return;
                     }
                     return;
                 }
-                aVar = new t2.a(Integer.valueOf(i12 - 1), s1Var2, t2.d.b, null);
+                aVar = new v2.a(Integer.valueOf(i13 - 1), t1Var2, v2.d.b, null);
                 aVar2 = aVar;
                 p0.i.b("analytics event: %s", aVar2);
-                x5.l.h(aVar2);
+                z5.l.h(aVar2);
                 pVar = p0Var.g;
                 if (pVar == null) {
                 }
-            case 5:
+            case 4:
                 String[] strArr = (String[]) this.d;
                 int[] iArr = new int[strArr.length];
                 Activity activity = (Activity) this.c;
                 PackageManager packageManager = activity.getPackageManager();
                 String packageName = activity.getPackageName();
                 int length = strArr.length;
-                while (i9 < length) {
-                    iArr[i9] = packageManager.checkPermission(strArr[i9], packageName);
-                    i9++;
+                while (i10 < length) {
+                    iArr[i10] = packageManager.checkPermission(strArr[i10], packageName);
+                    i10++;
                 }
                 ((e0.c) activity).onRequestPermissionsResult(this.b, strArr, iArr);
+                return;
+            case 5:
+                visionClearcutLogger = ((DynamiteClearcutLogger) this.c).zzc;
+                visionClearcutLogger.zza(this.b, (f0) this.d);
                 return;
             case 6:
                 ((TextView) this.d).setTypeface((Typeface) this.c, this.b);
                 return;
             case 7:
                 ArrayList<MessageObject> arrayList = (ArrayList) this.d;
-                while (i9 < arrayList.size()) {
-                    if (!((String) this.c).equals(arrayList.get(i9).getFileName())) {
-                        arrayList.remove(i9);
-                        i9--;
+                while (i10 < arrayList.size()) {
+                    if (!((String) this.c).equals(arrayList.get(i10).getFileName())) {
+                        arrayList.remove(i10);
+                        i10--;
                     }
-                    i9++;
+                    i10++;
                 }
                 if (arrayList.size() > 0) {
                     FileLoader.getInstance(this.b).checkMediaExistance(arrayList);
@@ -161,31 +161,31 @@ public final class g implements Runnable {
                 return;
             default:
                 long currentTimeMillis = System.currentTimeMillis();
-                Utilities.stackBlurBitmap(((tu0) this.d).c, this.b);
-                ((tu0) this.d).getClass();
-                xu0 xu0Var = (xu0) this.c;
-                xu0Var.f0 = (int) ((System.currentTimeMillis() - currentTimeMillis) + xu0Var.f0);
-                int i15 = xu0Var.e0 + 1;
-                xu0Var.e0 = i15;
-                if (i15 > 1000) {
-                    FileLog.d("chat blur generating average time" + (xu0Var.f0 / xu0Var.e0));
-                    xu0Var.e0 = 0;
-                    xu0Var.f0 = 0;
+                Utilities.stackBlurBitmap(((dv0) this.d).c, this.b);
+                ((dv0) this.d).getClass();
+                hv0 hv0Var = (hv0) this.c;
+                hv0Var.f0 = (int) ((System.currentTimeMillis() - currentTimeMillis) + hv0Var.f0);
+                int i16 = hv0Var.e0 + 1;
+                hv0Var.e0 = i16;
+                if (i16 > 1000) {
+                    FileLog.d("chat blur generating average time" + (hv0Var.f0 / hv0Var.e0));
+                    hv0Var.e0 = 0;
+                    hv0Var.f0 = 0;
                 }
-                AndroidUtilities.runOnUIThread(new ru0(this, i9));
+                AndroidUtilities.runOnUIThread(new cv0(this, i10));
                 return;
         }
     }
 
-    public /* synthetic */ g(Object obj, Object obj2, int i9, int i10) {
-        this.a = i10;
+    public /* synthetic */ g(Object obj, Object obj2, int i10, int i11) {
+        this.a = i11;
         this.d = obj;
         this.c = obj2;
-        this.b = i9;
+        this.b = i10;
     }
 
-    public g(xu0 xu0Var) {
+    public g(hv0 hv0Var) {
         this.a = 8;
-        this.c = xu0Var;
+        this.c = hv0Var;
     }
 }

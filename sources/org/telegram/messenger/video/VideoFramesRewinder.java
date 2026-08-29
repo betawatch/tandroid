@@ -4,7 +4,7 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.view.View;
-import e5.w;
+import g5.v;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -18,7 +18,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.AnimatedFileNative;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public class VideoFramesRewinder {
     private Frame currentFrame;
@@ -42,7 +42,7 @@ public class VideoFramesRewinder {
     private float lastSpeed = 1.0f;
     private Runnable prepareRunnable = new a(this, 2);
 
-    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
     public class Frame {
         Bitmap bitmap;
         long position;
@@ -97,7 +97,7 @@ public class VideoFramesRewinder {
             }
         }
         while (!arrayList.isEmpty() && this.frames.size() < this.maxFramesCount) {
-            this.frames.add((Frame) e2.c.k(1, arrayList));
+            this.frames.add((Frame) com.google.android.recaptcha.internal.a.j(1, arrayList));
         }
         if (arrayList.size() > 0) {
             FileLog.d("[VideoFramesRewinder] prepared " + arrayList.size() + " more frames than I could fit :(");
@@ -110,31 +110,31 @@ public class VideoFramesRewinder {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$2() {
-        int i9;
         int i10;
+        int i11;
         ArrayList arrayList = new ArrayList();
         long currentTimeMillis = System.currentTimeMillis();
         int[] iArr = this.meta;
-        int i11 = iArr[4];
-        int i12 = 0;
+        int i12 = iArr[4];
+        int i13 = 0;
         int min = Math.min(this.w / 4, iArr[0]);
         int min2 = Math.min(this.h / 4, this.meta[1]);
-        int i13 = this.maxFrameSide;
-        if (min > i13 || min2 > i13) {
-            float max = i13 / Math.max(min, min2);
+        int i14 = this.maxFrameSide;
+        if (min > i14 || min2 > i14) {
+            float max = i14 / Math.max(min, min2);
             min = (int) (min * max);
             min2 = (int) (min2 * max);
         }
         this.mDecoder.g(this.prepareToMs - ((long) (this.prepareWithSpeed * 350.0f)), false);
         long j10 = this.meta[3];
-        int i14 = 0;
         int i15 = 0;
-        for (char c10 = 3; this.meta[c10] <= this.until.get() && i14 < this.maxFramesCount && !this.stop.get(); c10 = 3) {
-            float f10 = 1000.0f / i11;
+        int i16 = 0;
+        for (char c3 = 3; this.meta[c3] <= this.until.get() && i15 < this.maxFramesCount && !this.stop.get(); c3 = 3) {
+            float f9 = 1000.0f / i12;
             long j11 = j10;
-            char c11 = 3;
-            long j12 = (long) ((this.prepareWithSpeed * f10) + j10);
-            Frame remove = !this.freeFrames.isEmpty() ? this.freeFrames.remove(i12) : new Frame();
+            char c6 = 3;
+            long j12 = (long) ((this.prepareWithSpeed * f9) + j10);
+            Frame remove = !this.freeFrames.isEmpty() ? this.freeFrames.remove(i13) : new Frame();
             Bitmap bitmap = remove.bitmap;
             if (bitmap == null || bitmap.getWidth() != min || remove.bitmap.getHeight() != min2) {
                 AndroidUtilities.recycleBitmap(remove.bitmap);
@@ -145,19 +145,19 @@ public class VideoFramesRewinder {
                 }
             }
             while (true) {
-                i9 = i11;
-                i10 = i14;
-                if (this.meta[c11] + ((long) Math.ceil(f10)) >= j12) {
+                i10 = i12;
+                i11 = i15;
+                if (this.meta[c6] + ((long) Math.ceil(f9)) >= j12) {
                     break;
                 }
                 this.mDecoder.c(null, true, 0.0f, this.meta[4], false);
-                i11 = i9;
-                i14 = i10;
-                c11 = 3;
+                i12 = i10;
+                i15 = i11;
+                c6 = 3;
             }
             if (this.mDecoder.c(remove.bitmap, true, 0.0f, this.meta[4], false) == 0) {
-                i15++;
-                if (i15 > 6) {
+                i16++;
+                if (i16 > 6) {
                     break;
                 } else {
                     j10 = j11;
@@ -168,11 +168,11 @@ public class VideoFramesRewinder {
                 arrayList.add(remove);
                 j10 = j13;
             }
-            i14 = i10 + 1;
-            i11 = i9;
-            i12 = 0;
+            i15 = i11 + 1;
+            i12 = i10;
+            i13 = 0;
         }
-        AndroidUtilities.runOnUIThread(new w(this, arrayList, currentTimeMillis, 13));
+        AndroidUtilities.runOnUIThread(new v(this, arrayList, currentTimeMillis, 12));
     }
 
     private void prepare(long j10) {
@@ -193,14 +193,14 @@ public class VideoFramesRewinder {
         }
     }
 
-    public void draw(Canvas canvas, int i9, int i10) {
-        this.w = i9;
-        this.h = i10;
+    public void draw(Canvas canvas, int i10, int i11) {
+        this.w = i10;
+        this.h = i11;
         if (this.mDecoder == null || this.currentFrame == null) {
             return;
         }
         canvas.save();
-        canvas.scale(i9 / this.currentFrame.bitmap.getWidth(), i10 / this.currentFrame.bitmap.getHeight());
+        canvas.scale(i10 / this.currentFrame.bitmap.getWidth(), i11 / this.currentFrame.bitmap.getHeight());
         canvas.drawBitmap(this.currentFrame.bitmap, 0.0f, 0.0f, this.paint);
         canvas.restore();
     }
@@ -220,7 +220,7 @@ public class VideoFramesRewinder {
             animatedFileNative.f();
             this.mDecoder = null;
         }
-        int i9 = 0;
+        int i10 = 0;
         this.destroyAfterPrepare = false;
         clearCurrent();
         this.until.set(0L);
@@ -231,46 +231,46 @@ public class VideoFramesRewinder {
         this.frames.clear();
         ArrayList<Frame> arrayList = this.freeFrames;
         int size = arrayList.size();
-        while (i9 < size) {
-            Frame frame = arrayList.get(i9);
-            i9++;
+        while (i10 < size) {
+            Frame frame = arrayList.get(i10);
+            i10++;
             AndroidUtilities.recycleBitmap(frame.bitmap);
         }
         this.freeFrames.clear();
     }
 
-    public void seek(long j10, float f10) {
+    public void seek(long j10, float f9) {
         if (this.mDecoder == null) {
             return;
         }
         this.lastSeek = j10;
-        this.lastSpeed = f10;
+        this.lastSpeed = f9;
         this.until.set(j10);
         Iterator<Frame> it = this.frames.iterator();
         ArrayList arrayList = new ArrayList();
         while (it.hasNext()) {
             Frame next = it.next();
             arrayList.add(Long.valueOf(next.position));
-            float f11 = 25.0f * f10;
-            if (Math.abs(next.position - j10) < f11) {
+            float f10 = 25.0f * f9;
+            if (Math.abs(next.position - j10) < f10) {
                 if (this.currentFrame != next) {
                     FileLog.d("[VideoFramesRewinder] found a frame " + next.position + "ms to fit to " + j10 + "ms from " + this.frames.size() + " frames");
                     this.currentFrame = next;
                     invalidate();
-                    int i9 = 0;
+                    int i10 = 0;
                     while (it.hasNext()) {
                         it.next();
                         it.remove();
-                        i9++;
+                        i10++;
                     }
-                    if (i9 > 0) {
-                        FileLog.d("[VideoFramesRewinder] also deleted " + i9 + " frames after this frame");
+                    if (i10 > 0) {
+                        FileLog.d("[VideoFramesRewinder] also deleted " + i10 + " frames after this frame");
                     }
                 }
                 for (int size = arrayList.size() - 2; size >= 0; size--) {
                     long longValue = ((Long) arrayList.get(size + 1)).longValue();
                     long longValue2 = ((Long) arrayList.get(size)).longValue();
-                    if (Math.abs(longValue - longValue2) > f11) {
+                    if (Math.abs(longValue - longValue2) > f10) {
                         prepare(longValue2);
                         return;
                     }

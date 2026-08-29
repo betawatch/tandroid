@@ -1,13 +1,13 @@
 package com.google.android.gms.internal.vision;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class g1 implements d2 {
     public static final g1 b = new g1(0);
     public final /* synthetic */ int a;
 
-    public /* synthetic */ g1(int i9) {
-        this.a = i9;
+    public /* synthetic */ g1(int i10) {
+        this.a = i10;
     }
 
     @Override // com.google.android.gms.internal.vision.d2

@@ -1,9 +1,9 @@
 package i0;
 
 import android.graphics.Insets;
-import com.google.firebase.messaging.q;
+import com.google.firebase.messaging.p;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class b {
     public static final b e = new b(0, 0, 0, 0);
@@ -12,35 +12,35 @@ public final class b {
     public final int c;
     public final int d;
 
-    public b(int i9, int i10, int i11, int i12) {
-        this.a = i9;
-        this.b = i10;
-        this.c = i11;
-        this.d = i12;
+    public b(int i10, int i11, int i12, int i13) {
+        this.a = i10;
+        this.b = i11;
+        this.c = i12;
+        this.d = i13;
     }
 
     public static b a(b bVar, b bVar2) {
         return b(Math.max(bVar.a, bVar2.a), Math.max(bVar.b, bVar2.b), Math.max(bVar.c, bVar2.c), Math.max(bVar.d, bVar2.d));
     }
 
-    public static b b(int i9, int i10, int i11, int i12) {
-        return (i9 == 0 && i10 == 0 && i11 == 0 && i12 == 0) ? e : new b(i9, i10, i11, i12);
+    public static b b(int i10, int i11, int i12, int i13) {
+        return (i10 == 0 && i11 == 0 && i12 == 0 && i13 == 0) ? e : new b(i10, i11, i12, i13);
     }
 
     public static b c(Insets insets) {
-        int i9;
         int i10;
         int i11;
         int i12;
-        i9 = insets.left;
-        i10 = insets.top;
-        i11 = insets.right;
-        i12 = insets.bottom;
-        return b(i9, i10, i11, i12);
+        int i13;
+        i10 = insets.left;
+        i11 = insets.top;
+        i12 = insets.right;
+        i13 = insets.bottom;
+        return b(i10, i11, i12, i13);
     }
 
     public final Insets d() {
-        return q.d(this.a, this.b, this.c, this.d);
+        return p.d(this.a, this.b, this.c, this.d);
     }
 
     public final boolean equals(Object obj) {

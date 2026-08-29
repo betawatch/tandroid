@@ -1,37 +1,42 @@
 package org.telegram.messenger;
 
-import android.view.View;
-import org.telegram.messenger.RichMessageLayout;
+import android.os.SystemClock;
+import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class qh implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ RichMessageLayout.Text b;
-    public final /* synthetic */ RichMessageLayout c;
-    public final /* synthetic */ View d;
+    public final /* synthetic */ int a;
+    public final /* synthetic */ SharedConfig.ProxyInfo b;
+    public final /* synthetic */ long c;
 
-    public /* synthetic */ qh(RichMessageLayout.Text text, View view, RichMessageLayout richMessageLayout) {
-        this.b = text;
-        this.d = view;
-        this.c = richMessageLayout;
+    public /* synthetic */ qh(SharedConfig.ProxyInfo proxyInfo, long j10, int i10) {
+        this.a = i10;
+        this.b = proxyInfo;
+        this.c = j10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        switch (this.a) {
+        int i10 = this.a;
+        long j10 = this.c;
+        SharedConfig.ProxyInfo proxyInfo = this.b;
+        switch (i10) {
             case 0:
-                this.b.lambda$revealSpoilers$4(this.d, this.c);
+                ProxyRotationController.lambda$new$0(proxyInfo, j10);
                 break;
             default:
-                this.b.lambda$revealSpoilers$3(this.c, this.d);
+                proxyInfo.availableCheckTime = SystemClock.elapsedRealtime();
+                proxyInfo.checking = false;
+                if (j10 == -1) {
+                    proxyInfo.available = false;
+                    proxyInfo.ping = 0L;
+                } else {
+                    proxyInfo.ping = j10;
+                    proxyInfo.available = true;
+                }
+                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.proxyCheckDone, proxyInfo);
                 break;
         }
-    }
-
-    public /* synthetic */ qh(RichMessageLayout.Text text, RichMessageLayout richMessageLayout, View view) {
-        this.b = text;
-        this.c = richMessageLayout;
-        this.d = view;
     }
 }

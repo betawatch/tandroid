@@ -5,7 +5,7 @@ import androidx.car.app.h;
 import java.io.IOException;
 import java.io.InputStream;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public class ProjectedCarAudioRecord extends b {
     private InputStream mInputStream;
@@ -14,13 +14,13 @@ public class ProjectedCarAudioRecord extends b {
     }
 
     @Override // androidx.car.app.media.b
-    public int readInternal(byte[] bArr, int i9, int i10) {
+    public int readInternal(byte[] bArr, int i10, int i11) {
         InputStream inputStream = this.mInputStream;
         if (inputStream == null) {
             return -1;
         }
         try {
-            return inputStream.read(bArr, i9, i10);
+            return inputStream.read(bArr, i10, i11);
         } catch (IOException unused) {
             stopRecording();
             return -1;

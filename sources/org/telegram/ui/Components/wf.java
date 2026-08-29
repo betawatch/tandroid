@@ -1,28 +1,35 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import android.os.Bundle;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class wf extends t31 {
-    public final /* synthetic */ xf h;
+public final class wf extends org.telegram.ui.tn {
+    public boolean Mc;
+    public final /* synthetic */ TLRPC.User Nc;
+    public final /* synthetic */ TLRPC.User Oc;
+    public final /* synthetic */ long Pc;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public wf(xf xfVar, Context context, org.telegram.ui.ActionBar.o2 o2Var, h41 h41Var, org.telegram.ui.ActionBar.b6 b6Var) {
-        super(context, o2Var, h41Var, b6Var);
-        this.h = xfVar;
+    public wf(Bundle bundle, TLRPC.User user, TLRPC.User user2, long j10) {
+        super(bundle);
+        this.Nc = user;
+        this.Oc = user2;
+        this.Pc = j10;
     }
 
-    @Override // org.telegram.ui.Components.t31, org.telegram.ui.ActionBar.f3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.k2
-    public final void dismiss() {
-        super.dismiss();
-        ChatActivityEnterView chatActivityEnterView = this.h.a;
-        if (chatActivityEnterView.V2 == this) {
-            chatActivityEnterView.V2 = null;
+    @Override // org.telegram.ui.tn, org.telegram.ui.ActionBar.o2
+    public final void onBecomeFullyVisible() {
+        super.onBecomeFullyVisible();
+        if (this.Mc) {
+            return;
         }
-        eg egVar = chatActivityEnterView.U2;
-        if (egVar != null) {
-            egVar.p(false);
-        }
+        this.Mc = true;
+        tc.a0(this).M(LocaleController.formatString(R.string.CreateManagedBotCreatedTitle, UserObject.getUserName(this.Nc)), AndroidUtilities.replaceSingleTag(LocaleController.formatString(R.string.CreateManagedBotCreatedText, UserObject.getUserName(this.Oc)), new eg.z1(this, this.Pc, 20)), R.raw.contact_check).j();
     }
 }

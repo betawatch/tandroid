@@ -1,196 +1,181 @@
 package md;
 
-import java.util.concurrent.atomic.AtomicLongFieldUpdater;
-import java.util.concurrent.atomic.AtomicReferenceArray;
-import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
+import i7.a7;
+import i7.c7;
+import ja.u;
+import java.io.Serializable;
+import java.util.NoSuchElementException;
+import java.util.concurrent.CancellationException;
+import jd.b0;
+import jd.f1;
+import kotlin.jvm.internal.q;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class n {
-    public static final /* synthetic */ AtomicReferenceFieldUpdater e = AtomicReferenceFieldUpdater.newUpdater(n.class, Object.class, "_next$volatile");
-    public static final /* synthetic */ AtomicLongFieldUpdater f = AtomicLongFieldUpdater.newUpdater(n.class, "_state$volatile");
-    public static final e5.c g = new e5.c("REMOVE_FROZEN", 2);
-    private volatile /* synthetic */ Object _next$volatile;
-    private volatile /* synthetic */ long _state$volatile;
-    public final int a;
-    public final boolean b;
-    public final int c;
-    public final /* synthetic */ AtomicReferenceArray d;
+public abstract class n {
+    public static final fc.a a = new fc.a("NONE", 2);
+    public static final fc.a b = new fc.a("PENDING", 2);
 
-    public n(int i9, boolean z10) {
-        this.a = i9;
-        this.b = z10;
-        int i10 = i9 - 1;
-        this.c = i10;
-        this.d = new AtomicReferenceArray(i9);
-        if (i10 > 1073741823) {
-            throw new IllegalStateException("Check failed.");
+    /* JADX WARN: Removed duplicated region for block: B:30:0x0080 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x0081  */
+    /* JADX WARN: Removed duplicated region for block: B:39:0x0033  */
+    /* JADX WARN: Removed duplicated region for block: B:8:0x0021  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static final Serializable a(b bVar, c cVar, uc.c cVar2) {
+        e eVar;
+        int i10;
+        q qVar;
+        Throwable th2;
+        f1 f1Var;
+        CancellationException cancellationException;
+        if (cVar2 instanceof e) {
+            eVar = (e) cVar2;
+            int i11 = eVar.c;
+            if ((i11 & TLObject.FLAG_31) != 0) {
+                eVar.c = i11 - TLObject.FLAG_31;
+                Object obj = eVar.b;
+                tc.a aVar = tc.a.a;
+                i10 = eVar.c;
+                if (i10 != 0) {
+                    c7.b(obj);
+                    q qVar2 = new q();
+                    try {
+                        c gVar = new g(cVar, qVar2);
+                        eVar.a = qVar2;
+                        eVar.c = 1;
+                        if (bVar.e(gVar, eVar) == aVar) {
+                            return aVar;
+                        }
+                        return null;
+                    } catch (Throwable th3) {
+                        th = th3;
+                        qVar = qVar2;
+                    }
+                } else {
+                    if (i10 != 1) {
+                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                    }
+                    qVar = eVar.a;
+                    try {
+                        c7.b(obj);
+                        return null;
+                    } catch (Throwable th4) {
+                        th = th4;
+                    }
+                }
+                th2 = (Throwable) qVar.a;
+                if ((th2 == null && th2.equals(th)) || ((f1Var = (f1) eVar.getContext().get(b0.b)) != null && f1Var.isCancelled() && (cancellationException = f1Var.getCancellationException()) != null && cancellationException.equals(th))) {
+                    throw th;
+                }
+                if (th2 != null) {
+                    return th;
+                }
+                if (th instanceof CancellationException) {
+                    a7.a(th2, th);
+                    throw th2;
+                }
+                a7.a(th, th2);
+                throw th;
+            }
         }
-        if ((i9 & i10) != 0) {
-            throw new IllegalStateException("Check failed.");
+        eVar = new e(cVar2);
+        Object obj2 = eVar.b;
+        tc.a aVar2 = tc.a.a;
+        i10 = eVar.c;
+        if (i10 != 0) {
+        }
+        th2 = (Throwable) qVar.a;
+        if (th2 == null) {
+        }
+        if (th2 != null) {
         }
     }
 
-    public final int a(Object obj) {
-        while (true) {
-            AtomicLongFieldUpdater atomicLongFieldUpdater = f;
-            long j10 = atomicLongFieldUpdater.get(this);
-            if ((3458764513820540928L & j10) != 0) {
-                return (2305843009213693952L & j10) != 0 ? 2 : 1;
-            }
-            int i9 = (int) (1073741823 & j10);
-            int i10 = (int) ((1152921503533105152L & j10) >> 30);
-            int i11 = this.c;
-            if (((i10 + 2) & i11) == (i9 & i11)) {
-                return 1;
-            }
-            boolean z10 = this.b;
-            AtomicReferenceArray atomicReferenceArray = this.d;
-            if (z10 || atomicReferenceArray.get(i10 & i11) == null) {
-                if (f.compareAndSet(this, j10, ((-1152921503533105153L) & j10) | (((i10 + 1) & 1073741823) << 30))) {
-                    atomicReferenceArray.set(i10 & i11, obj);
-                    n nVar = this;
-                    while ((atomicLongFieldUpdater.get(nVar) & 1152921504606846976L) != 0) {
-                        nVar = nVar.c();
-                        AtomicReferenceArray atomicReferenceArray2 = nVar.d;
-                        int i12 = nVar.c & i10;
-                        Object obj2 = atomicReferenceArray2.get(i12);
-                        if ((obj2 instanceof m) && ((m) obj2).a == i10) {
-                            atomicReferenceArray2.set(i12, obj);
-                        } else {
-                            nVar = null;
+    /* JADX WARN: Removed duplicated region for block: B:14:0x0062 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x0063  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x006b  */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x0037  */
+    /* JADX WARN: Removed duplicated region for block: B:8:0x0023  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static final Object b(b bVar, uc.c cVar) {
+        j jVar;
+        int i10;
+        fc.a aVar;
+        q qVar;
+        nd.a e10;
+        u uVar;
+        Object obj;
+        if (cVar instanceof j) {
+            jVar = (j) cVar;
+            int i11 = jVar.d;
+            if ((i11 & TLObject.FLAG_31) != 0) {
+                jVar.d = i11 - TLObject.FLAG_31;
+                Object obj2 = jVar.c;
+                Object obj3 = tc.a.a;
+                i10 = jVar.d;
+                aVar = nd.e.a;
+                if (i10 != 0) {
+                    c7.b(obj2);
+                    q qVar2 = new q();
+                    qVar2.a = aVar;
+                    u uVar2 = new u(qVar2, 1);
+                    try {
+                        jVar.a = qVar2;
+                        jVar.b = uVar2;
+                        jVar.d = 1;
+                        if (bVar.e(uVar2, jVar) == obj3) {
+                            return obj3;
                         }
-                        if (nVar == null) {
-                            return 0;
+                        qVar = qVar2;
+                    } catch (nd.a e11) {
+                        qVar = qVar2;
+                        e10 = e11;
+                        uVar = uVar2;
+                        if (e10.a != uVar) {
+                            throw e10;
+                        }
+                        obj = qVar.a;
+                        if (obj == aVar) {
                         }
                     }
-                    return 0;
+                } else {
+                    if (i10 != 1) {
+                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                    }
+                    uVar = jVar.b;
+                    qVar = jVar.a;
+                    try {
+                        c7.b(obj2);
+                    } catch (nd.a e12) {
+                        e10 = e12;
+                        if (e10.a != uVar) {
+                        }
+                        obj = qVar.a;
+                        if (obj == aVar) {
+                        }
+                    }
                 }
-            } else {
-                int i13 = this.a;
-                if (i13 < 1024 || ((i10 - i9) & 1073741823) > (i13 >> 1)) {
-                    return 1;
-                }
-            }
-        }
-    }
-
-    public final boolean b() {
-        AtomicLongFieldUpdater atomicLongFieldUpdater;
-        long j10;
-        do {
-            atomicLongFieldUpdater = f;
-            j10 = atomicLongFieldUpdater.get(this);
-            if ((j10 & 2305843009213693952L) != 0) {
-                return true;
-            }
-            if ((1152921504606846976L & j10) != 0) {
-                return false;
-            }
-        } while (!atomicLongFieldUpdater.compareAndSet(this, j10, 2305843009213693952L | j10));
-        return true;
-    }
-
-    public final n c() {
-        AtomicLongFieldUpdater atomicLongFieldUpdater;
-        long j10;
-        n nVar;
-        while (true) {
-            atomicLongFieldUpdater = f;
-            j10 = atomicLongFieldUpdater.get(this);
-            if ((j10 & 1152921504606846976L) != 0) {
-                nVar = this;
-                break;
-            }
-            long j11 = 1152921504606846976L | j10;
-            nVar = this;
-            if (atomicLongFieldUpdater.compareAndSet(nVar, j10, j11)) {
-                j10 = j11;
-                break;
-            }
-        }
-        while (true) {
-            AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = e;
-            n nVar2 = (n) atomicReferenceFieldUpdater.get(this);
-            if (nVar2 != null) {
-                return nVar2;
-            }
-            n nVar3 = new n(nVar.a * 2, nVar.b);
-            int i9 = (int) (1073741823 & j10);
-            int i10 = (int) ((1152921503533105152L & j10) >> 30);
-            while (true) {
-                int i11 = nVar.c;
-                int i12 = i9 & i11;
-                if (i12 == (i11 & i10)) {
-                    break;
-                }
-                Object obj = nVar.d.get(i12);
-                if (obj == null) {
-                    obj = new m(i9);
-                }
-                nVar3.d.set(nVar3.c & i9, obj);
-                i9++;
-            }
-            atomicLongFieldUpdater.set(nVar3, (-1152921504606846977L) & j10);
-            while (!atomicReferenceFieldUpdater.compareAndSet(this, null, nVar3) && atomicReferenceFieldUpdater.get(this) == null) {
-            }
-        }
-    }
-
-    public final Object d() {
-        n nVar = this;
-        while (true) {
-            AtomicLongFieldUpdater atomicLongFieldUpdater = f;
-            long j10 = atomicLongFieldUpdater.get(nVar);
-            if ((j10 & 1152921504606846976L) != 0) {
-                return g;
-            }
-            int i9 = (int) (j10 & 1073741823);
-            int i10 = (int) ((1152921503533105152L & j10) >> 30);
-            int i11 = nVar.c;
-            int i12 = i9 & i11;
-            if ((i10 & i11) == i12) {
-                break;
-            }
-            AtomicReferenceArray atomicReferenceArray = nVar.d;
-            Object obj = atomicReferenceArray.get(i12);
-            boolean z10 = nVar.b;
-            if (obj == null) {
-                if (z10) {
-                    break;
-                }
-            } else {
-                if (obj instanceof m) {
-                    break;
-                }
-                long j11 = (i9 + 1) & 1073741823;
-                if (f.compareAndSet(nVar, j10, (j10 & (-1073741824)) | j11)) {
-                    atomicReferenceArray.set(i12, null);
+                obj = qVar.a;
+                if (obj == aVar) {
                     return obj;
                 }
-                nVar = this;
-                if (z10) {
-                    while (true) {
-                        long j12 = atomicLongFieldUpdater.get(nVar);
-                        int i13 = (int) (j12 & 1073741823);
-                        if ((j12 & 1152921504606846976L) != 0) {
-                            nVar = nVar.c();
-                        } else {
-                            n nVar2 = nVar;
-                            if (f.compareAndSet(nVar2, j12, (j12 & (-1073741824)) | j11)) {
-                                nVar2.d.set(i13 & nVar2.c, null);
-                                nVar = null;
-                            } else {
-                                nVar = nVar2;
-                            }
-                        }
-                        if (nVar == null) {
-                            return obj;
-                        }
-                    }
-                }
+                throw new NoSuchElementException("Expected at least one element");
             }
         }
-        return null;
+        jVar = new j(cVar);
+        Object obj22 = jVar.c;
+        Object obj32 = tc.a.a;
+        i10 = jVar.d;
+        aVar = nd.e.a;
+        if (i10 != 0) {
+        }
+        obj = qVar.a;
+        if (obj == aVar) {
+        }
     }
 }

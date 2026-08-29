@@ -7,8 +7,8 @@ import java.util.function.Consumer;
 public final class o implements ListIterator, y {
     public final ListIterator a;
 
-    public o(p pVar, int i9) {
-        this.a = pVar.b.listIterator(i9);
+    public o(p pVar, int i10) {
+        this.a = pVar.b.listIterator(i10);
     }
 
     @Override // java.util.ListIterator, java.util.Iterator

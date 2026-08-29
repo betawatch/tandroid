@@ -121,7 +121,7 @@ public final class e extends b implements Set, j$.util.Set {
     @Override // java.util.Collection, java.util.Set
     public final int hashCode() {
         l[] lVarArr = this.a.a;
-        int i9 = 0;
+        int i10 = 0;
         if (lVarArr != null) {
             p pVar = new p(lVarArr, lVarArr.length, 0, lVarArr.length);
             while (true) {
@@ -129,10 +129,10 @@ public final class e extends b implements Set, j$.util.Set {
                 if (a2 == null) {
                     break;
                 }
-                i9 += a2.hashCode();
+                i10 += a2.hashCode();
             }
         }
-        return i9;
+        return i10;
     }
 
     @Override // java.util.Collection, java.util.Set

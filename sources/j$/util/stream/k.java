@@ -71,13 +71,13 @@ public final class k extends f5 {
                             while (!j5Var2.q() && spliterator.tryAdvance(j5Var2)) {
                             }
                         }
-                    } catch (Throwable th) {
+                    } catch (Throwable th2) {
                         try {
                             stream.close();
-                        } catch (Throwable th2) {
-                            th.addSuppressed(th2);
+                        } catch (Throwable th3) {
+                            th2.addSuppressed(th3);
                         }
-                        throw th;
+                        throw th2;
                     }
                 }
                 if (stream != null) {

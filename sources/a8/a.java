@@ -1,89 +1,101 @@
 package a8;
 
+import android.accounts.Account;
+import android.content.Context;
 import android.os.Bundle;
-import h3.c2;
-import h3.q2;
-import h3.r2;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.List;
-import kotlin.jvm.internal.i;
-import r0.m1;
+import android.os.IBinder;
+import android.os.IInterface;
+import android.os.Looper;
+import android.os.Parcel;
+import android.os.RemoteException;
+import android.util.Log;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.common.api.k;
+import com.google.android.gms.common.api.l;
+import m.s3;
+import z5.u;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public abstract class a implements c2 {
-    public Object a;
+public final class a extends z5.g implements com.google.android.gms.common.api.c {
+    public final boolean Q;
+    public final s3 R;
+    public final Bundle S;
+    public final Integer T;
 
-    public abstract Object F(Object obj);
+    public a(Context context, Looper looper, s3 s3Var, Bundle bundle, k kVar, l lVar) {
+        super(context, looper, 44, s3Var, kVar, lVar, 0);
+        this.Q = true;
+        this.R = s3Var;
+        this.S = bundle;
+        this.T = (Integer) s3Var.h;
+    }
 
-    public Object G(Object obj) {
-        synchronized (((HashMap) this.a)) {
+    public final void G() {
+        d(new z5.c(this));
+    }
+
+    public final void H(c cVar) {
+        try {
+            this.R.getClass();
+            Account account = new Account("<<default account>>", "com.google");
+            GoogleSignInAccount b10 = "<<default account>>".equals(account.name) ? m5.b.a(this.n).b() : null;
+            Integer num = this.T;
+            z5.l.h(num);
+            u uVar = new u(2, account, num.intValue(), b10);
+            e eVar = (e) u();
+            g gVar = new g(1, uVar);
+            Parcel G0 = eVar.G0();
+            w6.a.c(G0, gVar);
+            w6.a.d(G0, cVar);
+            eVar.H0(G0, 12);
+        } catch (RemoteException e10) {
+            Log.w("SignInClientImpl", "Remote service probably died when signIn is called");
             try {
-                if (((HashMap) this.a).containsKey(obj)) {
-                    return ((HashMap) this.a).get(obj);
-                }
-                Object F = F(obj);
-                ((HashMap) this.a).put(obj, F);
-                return F;
-            } catch (Throwable th) {
-                throw th;
+                cVar.t0(new h(1, new w5.a(8, null), null));
+            } catch (RemoteException unused) {
+                Log.wtf("SignInClientImpl", "ISignInCallbacks#onSignInComplete should be executed from the same process, unexpected RemoteException.", e10);
             }
         }
     }
 
-    public boolean H(int i9) {
-        return f().a.a.get(i9);
+    @Override // z5.g, com.google.android.gms.common.api.c
+    public final int k() {
+        return 12451000;
     }
 
-    public boolean I() {
-        r2 A = A();
-        return !A.p() && A.m(x(), (q2) this.a, 0L).r;
+    @Override // z5.g, com.google.android.gms.common.api.c
+    public final boolean p() {
+        return this.Q;
     }
 
-    public boolean J() {
-        r2 A = A();
-        return !A.p() && A.m(x(), (q2) this.a, 0L).a();
-    }
-
-    public boolean K() {
-        return b() == 3 && h() && z() == 0;
-    }
-
-    public abstract void L();
-
-    public abstract m1 M(m1 m1Var, List list);
-
-    public void N() {
-        synchronized (this.a) {
+    @Override // z5.g
+    public final IInterface q(IBinder iBinder) {
+        if (iBinder == null) {
+            return null;
         }
+        IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.signin.internal.ISignInService");
+        return queryLocalInterface instanceof e ? (e) queryLocalInterface : new e(iBinder, "com.google.android.gms.signin.internal.ISignInService", 10);
     }
 
-    public abstract void O(long j10, int i9, int i10, boolean z10);
-
-    public void P(int i9, long j10) {
-        O(j10, x(), i9, false);
-    }
-
-    public a(int i9) {
-        switch (i9) {
-            case 3:
-                this.a = new q2();
-                break;
-            case 7:
-                this.a = new LinkedHashMap();
-                break;
-            case 8:
-                this.a = new HashMap();
-                break;
-            default:
-                this.a = new Object();
-                break;
+    @Override // z5.g
+    public final Bundle t() {
+        s3 s3Var = this.R;
+        boolean equals = this.n.getPackageName().equals((String) s3Var.d);
+        Bundle bundle = this.S;
+        if (!equals) {
+            bundle.putString("com.google.android.gms.signin.internal.realClientPackageName", (String) s3Var.d);
         }
+        return bundle;
     }
 
-    public a(String str, Bundle data) {
-        i.e(data, "data");
-        this.a = data;
+    @Override // z5.g
+    public final String v() {
+        return "com.google.android.gms.signin.internal.ISignInService";
+    }
+
+    @Override // z5.g
+    public final String w() {
+        return "com.google.android.gms.signin.service.START";
     }
 }

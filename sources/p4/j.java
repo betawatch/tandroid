@@ -1,66 +1,79 @@
 package p4;
 
-import java.util.List;
-import java.util.Map;
-import o8.b0;
-import o8.z;
+import a4.w;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class j extends n {
-    public final int d;
-    public final long e;
-    public final boolean f;
-    public final boolean g;
-    public final long h;
-    public final boolean i;
-    public final int j;
-    public final long k;
-    public final int l;
-    public final long m;
-    public final long n;
-    public final boolean o;
-    public final boolean p;
-    public final l3.c q;
-    public final z r;
-    public final z s;
-    public final b0 t;
-    public final long u;
-    public final i v;
+public final class j {
+    public final long a;
+    public final long b;
+    public final String c;
+    public int d;
 
-    public j(int i9, String str, List list, long j10, boolean z10, long j11, boolean z11, int i10, long j12, int i11, long j13, long j14, boolean z12, boolean z13, boolean z14, l3.c cVar, List list2, List list3, i iVar, Map map) {
-        super(str, list, z12);
-        this.d = i9;
-        this.h = j11;
-        this.g = z10;
-        this.i = z11;
-        this.j = i10;
-        this.k = j12;
-        this.l = i11;
-        this.m = j13;
-        this.n = j14;
-        this.o = z13;
-        this.p = z14;
-        this.q = cVar;
-        this.r = z.u(list2);
-        this.s = z.u(list3);
-        this.t = b0.a(map);
-        if (!list3.isEmpty()) {
-            e eVar = (e) o8.l.g(list3);
-            this.u = eVar.e + eVar.c;
-        } else if (list2.isEmpty()) {
-            this.u = 0L;
-        } else {
-            g gVar = (g) o8.l.g(list2);
-            this.u = gVar.e + gVar.c;
-        }
-        this.e = j10 != -9223372036854775807L ? j10 >= 0 ? Math.min(this.u, j10) : Math.max(0L, this.u + j10) : -9223372036854775807L;
-        this.f = j10 >= 0;
-        this.v = iVar;
+    public j(long j10, long j11, String str) {
+        this.c = str == null ? "" : str;
+        this.a = j10;
+        this.b = j11;
     }
 
-    @Override // i4.a
-    public final Object a(List list) {
-        return this;
+    public final j a(j jVar, String str) {
+        j jVar2;
+        long j10;
+        String G = f5.a.G(str, this.c);
+        if (jVar != null) {
+            long j11 = jVar.b;
+            if (G.equals(f5.a.G(str, jVar.c))) {
+                long j12 = this.b;
+                if (j12 != -1) {
+                    j10 = j11;
+                    long j13 = this.a;
+                    jVar2 = null;
+                    if (j13 + j12 == jVar.a) {
+                        return new j(j13, j10 == -1 ? -1L : j12 + j10, G);
+                    }
+                } else {
+                    jVar2 = null;
+                    j10 = j11;
+                }
+                if (j10 == -1) {
+                    return jVar2;
+                }
+                long j14 = jVar.a;
+                if (j14 + j10 == this.a) {
+                    return new j(j14, j12 == -1 ? -1L : j10 + j12, G);
+                }
+                return jVar2;
+            }
+        }
+        return null;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj != null && j.class == obj.getClass()) {
+            j jVar = (j) obj;
+            if (this.a == jVar.a && this.b == jVar.b && this.c.equals(jVar.c)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public final int hashCode() {
+        if (this.d == 0) {
+            this.d = this.c.hashCode() + ((((527 + ((int) this.a)) * 31) + ((int) this.b)) * 31);
+        }
+        return this.d;
+    }
+
+    public final String toString() {
+        StringBuilder sb2 = new StringBuilder("RangedUri(referenceUri=");
+        sb2.append(this.c);
+        sb2.append(", start=");
+        sb2.append(this.a);
+        sb2.append(", length=");
+        return w.p(sb2, this.b, ")");
     }
 }

@@ -1,32 +1,36 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class pc implements Utilities.Callback {
-    public final /* synthetic */ int a;
+public final /* synthetic */ class pc implements Runnable {
+    public final /* synthetic */ int a = 1;
     public final /* synthetic */ MessagesController b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ TLObject d;
 
-    public /* synthetic */ pc(MessagesController messagesController, int i9) {
-        this.a = i9;
+    public /* synthetic */ pc(MessagesController messagesController, long j10, TLObject tLObject) {
         this.b = messagesController;
+        this.c = j10;
+        this.d = tLObject;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$loadAppConfig$33((TLRPC.TL_help_appConfig) obj);
-                break;
-            case 1:
-                this.b.lambda$loadWebBrowserConfig$511((TL_account.TL_webBrowserSettings) obj);
+                this.b.lambda$deleteUserPhoto$114(this.d, this.c);
                 break;
             default:
-                this.b.lambda$getAvailableEffects$496((TLRPC.messages_AvailableEffects) obj);
+                this.b.lambda$loadPeerSettings$79(this.c, this.d);
                 break;
         }
+    }
+
+    public /* synthetic */ pc(MessagesController messagesController, TLObject tLObject, long j10) {
+        this.b = messagesController;
+        this.d = tLObject;
+        this.c = j10;
     }
 }

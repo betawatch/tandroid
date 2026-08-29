@@ -12,7 +12,7 @@ import java.security.KeyStoreException;
 import java.util.Locale;
 import javax.crypto.Cipher;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public class FingerprintController {
     private static final String KEY_ALIAS = "tmessages_passcode";
@@ -63,7 +63,7 @@ public class FingerprintController {
                 keyPairGenerator2.initialize(new KeyGenParameterSpec.Builder(KEY_ALIAS, 3).setDigests("SHA-256", "SHA-512").setEncryptionPaddings("OAEPPadding").setUserAuthenticationRequired(true).build());
                 keyPairGenerator2.generateKeyPair();
                 setLocale(locale);
-                AndroidUtilities.runOnUIThread(new w3(1, z10));
+                AndroidUtilities.runOnUIThread(new y3(1, z10));
             } catch (InvalidAlgorithmParameterException e10) {
                 FileLog.e(e10);
             } catch (Exception e11) {
@@ -133,9 +133,9 @@ public class FingerprintController {
             return;
         }
         Context context = ApplicationLoader.applicationContext;
-        ef.a aVar = ef.b.a;
-        if (aVar.v0(context) && aVar.d(ApplicationLoader.applicationContext)) {
-            Utilities.globalQueue.postRunnable(new w3(0, z10));
+        hf.a aVar = hf.b.a;
+        if (aVar.H0(context) && aVar.d(ApplicationLoader.applicationContext)) {
+            Utilities.globalQueue.postRunnable(new y3(0, z10));
         }
     }
 }

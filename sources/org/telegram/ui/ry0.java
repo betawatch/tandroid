@@ -8,59 +8,59 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class ry0 extends b61 {
-    public final /* synthetic */ s51[] Z1;
+public final class ry0 extends d61 {
+    public final /* synthetic */ u51[] Z1;
     public final /* synthetic */ ProfileActivity a2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ry0(ProfileActivity profileActivity, ProfileActivity profileActivity2, Activity activity, Integer num, int i9, org.telegram.ui.ActionBar.b6 b6Var, int i10, s51[] s51VarArr) {
-        super(profileActivity2, activity, true, num, i9, true, b6Var, i10);
+    public ry0(ProfileActivity profileActivity, ProfileActivity profileActivity2, Activity activity, Integer num, int i10, org.telegram.ui.ActionBar.c6 c6Var, int i11, u51[] u51VarArr) {
+        super(profileActivity2, activity, true, num, i10, true, c6Var, i11);
         this.a2 = profileActivity;
-        this.Z1 = s51VarArr;
+        this.Z1 = u51VarArr;
     }
 
-    @Override // org.telegram.ui.b61
+    @Override // org.telegram.ui.d61
     public final boolean F(TL_stars.TL_starGiftUnique tL_starGiftUnique) {
-        int i9;
+        int i10;
         if (tL_starGiftUnique == null) {
             return true;
         }
-        i9 = ((org.telegram.ui.ActionBar.o2) this.a2).currentAccount;
-        return gh.v7.y(i9, false).n(tL_starGiftUnique.id) == null || MessagesController.getGlobalMainSettings().getInt("statusgiftpage", 0) >= 2;
+        i10 = ((org.telegram.ui.ActionBar.o2) this.a2).currentAccount;
+        return jh.s7.y(i10, false).n(tL_starGiftUnique.id) == null || MessagesController.getGlobalMainSettings().getInt("statusgiftpage", 0) >= 2;
     }
 
-    @Override // org.telegram.ui.b61
+    @Override // org.telegram.ui.d61
     public final long getDialogId() {
         return this.a2.a();
     }
 
-    @Override // org.telegram.ui.b61
+    @Override // org.telegram.ui.d61
     public final void p(View view, Long l10, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, Integer num) {
         TLRPC.EmojiStatus emojiStatus;
-        int i9;
         int i10;
         int i11;
+        int i12;
         ProfileActivity profileActivity = this.a2;
-        org.telegram.ui.Components.i5[] i5VarArr = profileActivity.C;
-        s51[] s51VarArr = this.Z1;
+        org.telegram.ui.Components.n5[] n5VarArr = profileActivity.C;
+        u51[] u51VarArr = this.Z1;
         if (tL_starGiftUnique != null) {
-            i9 = ((org.telegram.ui.ActionBar.o2) profileActivity).currentAccount;
-            TL_stars.SavedStarGift n10 = gh.v7.y(i9, false).n(tL_starGiftUnique.id);
+            i10 = ((org.telegram.ui.ActionBar.o2) profileActivity).currentAccount;
+            TL_stars.SavedStarGift n10 = jh.s7.y(i10, false).n(tL_starGiftUnique.id);
             if (n10 != null && MessagesController.getGlobalMainSettings().getInt("statusgiftpage", 0) < 2) {
                 MessagesController.getGlobalMainSettings().edit().putInt("statusgiftpage", MessagesController.getGlobalMainSettings().getInt("statusgiftpage", 0) + 1).apply();
                 Context context = getContext();
-                i10 = ((org.telegram.ui.ActionBar.o2) profileActivity).currentAccount;
                 i11 = ((org.telegram.ui.ActionBar.o2) profileActivity).currentAccount;
-                gh.k5 k5Var = new gh.k5(context, i10, UserConfig.getInstance(i11).getClientUserId(), profileActivity.v0, null);
-                k5Var.j2(n10, null);
-                k5Var.m2();
-                k5Var.show();
-                s51 s51Var = s51VarArr[0];
-                if (s51Var != null) {
+                i12 = ((org.telegram.ui.ActionBar.o2) profileActivity).currentAccount;
+                jh.h5 h5Var = new jh.h5(context, i11, UserConfig.getInstance(i12).getClientUserId(), profileActivity.v0, null);
+                h5Var.j2(n10, null);
+                h5Var.m2();
+                h5Var.show();
+                u51 u51Var = u51VarArr[0];
+                if (u51Var != null) {
                     profileActivity.x5 = null;
-                    s51Var.dismiss();
+                    u51Var.dismiss();
                     return;
                 }
                 return;
@@ -89,33 +89,33 @@ public final class ry0 extends b61 {
         MessagesController messagesController = profileActivity.getMessagesController();
         TLRPC.Chat chat = profileActivity.A2;
         messagesController.updateEmojiStatus(chat == null ? 0L : -chat.id, emojiStatus, tL_starGiftUnique);
-        for (int i12 = 0; i12 < 2; i12++) {
-            org.telegram.ui.Components.i5 i5Var = i5VarArr[i12];
-            if (i5Var != null) {
+        for (int i13 = 0; i13 < 2; i13++) {
+            org.telegram.ui.Components.n5 n5Var = n5VarArr[i13];
+            if (n5Var != null) {
                 if (l10 == null && profileActivity.A2 == null) {
-                    i5Var.g(profileActivity.Y3(i12), true);
+                    n5Var.g(profileActivity.Y3(i13), true);
                 } else if (l10 != null) {
-                    i5Var.j(l10.longValue(), true);
+                    n5Var.j(l10.longValue(), true);
                 } else {
-                    i5Var.g(null, true);
+                    n5Var.g(null, true);
                 }
-                i5VarArr[i12].m(tL_starGiftUnique != null, true);
+                n5VarArr[i13].m(tL_starGiftUnique != null, true);
             }
         }
         if (l10 != null) {
             org.telegram.ui.Cells.o oVar = profileActivity.Z;
-            hg.r0 r0Var = new hg.r0();
+            kg.q0 q0Var = new kg.q0();
             long longValue = l10.longValue();
-            r0Var.g = longValue;
-            r0Var.h = longValue;
-            oVar.a(r0Var);
+            q0Var.g = longValue;
+            q0Var.h = longValue;
+            oVar.a(q0Var);
         }
         profileActivity.X4();
         profileActivity.Z4();
-        s51 s51Var2 = s51VarArr[0];
-        if (s51Var2 != null) {
+        u51 u51Var2 = u51VarArr[0];
+        if (u51Var2 != null) {
             profileActivity.x5 = null;
-            s51Var2.dismiss();
+            u51Var2.dismiss();
         }
     }
 }

@@ -4,10 +4,10 @@ import android.util.SparseIntArray;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class a4 implements nf.a {
-    public e6 a;
+public final class a4 implements qf.a {
+    public f6 a;
     public TLRPC.TL_theme b;
     public TLRPC.TL_chatThemeUniqueGift c;
     public int d;
@@ -35,7 +35,7 @@ public final class a4 implements nf.a {
         return 0L;
     }
 
-    public final TLRPC.ThemeSettings b(int i9) {
+    public final TLRPC.ThemeSettings b(int i10) {
         ArrayList<TLRPC.ThemeSettings> arrayList;
         TLRPC.TL_theme tL_theme = this.b;
         if (tL_theme == null) {
@@ -46,8 +46,8 @@ public final class a4 implements nf.a {
             return null;
         }
         arrayList = tL_theme.settings;
-        if (arrayList != null && i9 >= 0 && arrayList.size() > i9) {
-            return arrayList.get(i9);
+        if (arrayList != null && i10 >= 0 && arrayList.size() > i10) {
+            return arrayList.get(i10);
         }
         return null;
     }

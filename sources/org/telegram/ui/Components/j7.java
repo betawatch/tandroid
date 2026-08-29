@@ -1,81 +1,48 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MessageObject;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class j7 implements Runnable {
+public final /* synthetic */ class j7 implements o1.h {
     public final /* synthetic */ int a;
-    public final /* synthetic */ k7 b;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ j7(k7 k7Var, int i9) {
-        this.a = i9;
-        this.b = k7Var;
+    public /* synthetic */ j7(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // o1.h
+    public final void a(o1.i iVar, float f9, float f10) {
+        ViewGroup viewGroup;
         switch (this.a) {
             case 0:
-                k7 k7Var = this.b;
-                int i9 = k7Var.v + 1;
-                k7Var.v = i9;
-                if (i9 != 1) {
-                    if (i9 == 2) {
-                        AndroidUtilities.runOnUIThread(this, 2000L);
-                        break;
-                    }
-                } else {
-                    c8 c8Var = k7Var.D;
-                    c8Var.D0 = -1;
-                    c8Var.E0 = MediaController.getInstance().getPlayingMessageObject().audioProgress;
-                    k7Var.w = System.currentTimeMillis();
-                    AndroidUtilities.runOnUIThread(this, 2000L);
-                    AndroidUtilities.runOnUIThread(k7Var.A);
+                ((g8) this.b).P.setBufferedProgress(f9 / 1000.0f);
+                break;
+            case 1:
+                mc mcVar = (mc) this.b;
+                mcVar.o = (int) f9;
+                mcVar.l();
+                break;
+            case 2:
+                if (Math.abs(f9) > ((rb) this.b).getWidth()) {
+                    iVar.c();
                     break;
                 }
                 break;
-            default:
-                k7 k7Var2 = this.b;
-                c8 c8Var2 = k7Var2.D;
-                long duration = MediaController.getInstance().getDuration();
-                if (duration != 0 && duration != -9223372036854775807L) {
-                    float f10 = c8Var2.E0;
-                    long currentTimeMillis = System.currentTimeMillis();
-                    long j10 = currentTimeMillis - k7Var2.w;
-                    k7Var2.w = currentTimeMillis;
-                    long j11 = currentTimeMillis - k7Var2.x;
-                    int i10 = k7Var2.v;
-                    float f11 = ((long) ((f10 * r2) - (j10 * (i10 == 1 ? 3L : i10 == 2 ? 6L : 12L)))) / duration;
-                    if (f11 < 0.0f) {
-                        f11 = 0.0f;
-                    }
-                    c8Var2.E0 = f11;
-                    MessageObject playingMessageObject = MediaController.getInstance().getPlayingMessageObject();
-                    if (playingMessageObject != null && playingMessageObject.isMusic()) {
-                        c8Var2.F0(playingMessageObject, false);
-                    }
-                    if (c8Var2.D0 == -1 && k7Var2.v > 0) {
-                        if (j11 > 200 || c8Var2.E0 == 0.0f) {
-                            k7Var2.x = currentTimeMillis;
-                            if (c8Var2.E0 == 0.0f) {
-                                MediaController.getInstance().seekToProgress(MediaController.getInstance().getPlayingMessageObject(), 0.0f);
-                                MediaController.getInstance().pauseByRewind();
-                            } else {
-                                MediaController.getInstance().seekToProgress(MediaController.getInstance().getPlayingMessageObject(), f11);
-                            }
-                        }
-                        if (k7Var2.v > 0 && c8Var2.E0 > 0.0f) {
-                            AndroidUtilities.runOnUIThread(k7Var2.A, 16L);
-                            break;
-                        }
-                    }
-                } else {
-                    k7Var2.w = System.currentTimeMillis();
-                    break;
+            case 3:
+                ni niVar = (ni) ((jh.l3) this.b).d;
+                fi fiVar = niVar.v0;
+                if (fiVar == niVar.i0 || fiVar == niVar.j0 || (niVar.B && niVar.p1 != null)) {
+                    niVar.a2(1);
                 }
+                niVar.v0.k(niVar.h2);
+                viewGroup = ((org.telegram.ui.ActionBar.f3) niVar).containerView;
+                viewGroup.invalidate();
+                break;
+            default:
+                ((yb0) this.b).z();
                 break;
         }
     }

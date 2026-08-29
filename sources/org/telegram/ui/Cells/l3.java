@@ -2,32 +2,32 @@ package org.telegram.ui.Cells;
 
 import android.content.Context;
 import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.jl0;
+import org.telegram.ui.Components.k51;
+import org.telegram.ui.Components.u51;
+import org.telegram.ui.Components.v41;
+import org.telegram.ui.Components.w41;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class l3 extends FrameLayout {
-    public int a;
+public final class l3 extends v41 {
+    public static final /* synthetic */ int a = 0;
 
-    public l3(Context context) {
-        this(context, 8);
+    static {
+        v41.setup(new l3());
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i9, int i10) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i9), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(this.a, TLObject.FLAG_30));
+    @Override // org.telegram.ui.Components.v41
+    public final void bindView(View view, w41 w41Var, boolean z10, k51 k51Var, u51 u51Var) {
+        m3 m3Var = (m3) view;
+        m3Var.a((TLRPC.StickerSetCovered) w41Var.G, z10, w41Var.t, false);
+        m3Var.e.a(w41Var.t, false);
+        m3Var.setAddOnClickListener(w41Var.D);
     }
 
-    public void setHeight(int i9) {
-        if (this.a != i9) {
-            this.a = i9;
-            requestLayout();
-        }
-    }
-
-    public l3(Context context, int i9) {
-        super(context);
-        this.a = i9;
+    @Override // org.telegram.ui.Components.v41
+    public final View createView(Context context, jl0 jl0Var, int i10, int i11, org.telegram.ui.ActionBar.c6 c6Var) {
+        return new m3(context, c6Var);
     }
 }

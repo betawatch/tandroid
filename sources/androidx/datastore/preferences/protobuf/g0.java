@@ -5,26 +5,26 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class g0 extends i0 {
     public static final Class c = DesugarCollections.unmodifiableList(Collections.EMPTY_LIST).getClass();
 
-    public static List d(long j10, Object obj, int i9) {
+    public static List d(long j10, Object obj, int i10) {
         List list = (List) s1.d.i(obj, j10);
         if (list.isEmpty()) {
-            List e0Var = list instanceof f0 ? new e0(i9) : ((list instanceof y0) && (list instanceof z)) ? ((z) list).e(i9) : new ArrayList(i9);
+            List e0Var = list instanceof f0 ? new e0(i10) : ((list instanceof y0) && (list instanceof z)) ? ((z) list).e(i10) : new ArrayList(i10);
             s1.o(obj, j10, e0Var);
             return e0Var;
         }
         if (c.isAssignableFrom(list.getClass())) {
-            ArrayList arrayList = new ArrayList(list.size() + i9);
+            ArrayList arrayList = new ArrayList(list.size() + i10);
             arrayList.addAll(list);
             s1.o(obj, j10, arrayList);
             return arrayList;
         }
         if (list instanceof n1) {
-            e0 e0Var2 = new e0(list.size() + i9);
+            e0 e0Var2 = new e0(list.size() + i10);
             e0Var2.addAll((n1) list);
             s1.o(obj, j10, e0Var2);
             return e0Var2;
@@ -32,7 +32,7 @@ public final class g0 extends i0 {
         if ((list instanceof y0) && (list instanceof z)) {
             z zVar = (z) list;
             if (!((b) zVar).a) {
-                z e10 = zVar.e(list.size() + i9);
+                z e10 = zVar.e(list.size() + i10);
                 s1.o(obj, j10, e10);
                 return e10;
             }

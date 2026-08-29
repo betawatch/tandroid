@@ -1,7 +1,31 @@
 package ld;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public abstract class e {
-    public static final e5.c a = new e5.c("NULL", 2);
+public final class e extends f {
+    public final Throwable a;
+
+    public e(Throwable th2) {
+        this.a = th2;
+    }
+
+    public final boolean equals(Object obj) {
+        if (obj instanceof e) {
+            return kotlin.jvm.internal.j.a(this.a, ((e) obj).a);
+        }
+        return false;
+    }
+
+    public final int hashCode() {
+        Throwable th2 = this.a;
+        if (th2 != null) {
+            return th2.hashCode();
+        }
+        return 0;
+    }
+
+    @Override // ld.f
+    public final String toString() {
+        return "Closed(" + this.a + ')';
+    }
 }

@@ -1,72 +1,62 @@
 package jh;
 
-import android.graphics.Rect;
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import f2.n1;
-import f2.y0;
-import org.telegram.ui.Cells.r7;
+import android.text.TextUtils;
+import android.view.KeyEvent;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes4.dex */
-public final class j extends y0 {
+public final /* synthetic */ class j implements TextView.OnEditorActionListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ q b;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ j(q qVar, int i9) {
-        this.a = i9;
-        this.b = qVar;
+    public /* synthetic */ j(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // f2.y0
-    public final void a(Rect rect, View view, RecyclerView recyclerView, n1 n1Var) {
+    @Override // android.widget.TextView.OnEditorActionListener
+    public final boolean onEditorAction(TextView textView, int i10, KeyEvent keyEvent) {
+        th.c1 c1Var;
         switch (this.a) {
             case 0:
-                if (!(view instanceof r7)) {
-                    rect.left = 0;
-                    rect.top = 0;
-                    rect.bottom = 0;
-                    rect.right = 0;
-                    break;
-                } else {
-                    r7 r7Var = (r7) view;
-                    q qVar = this.b;
-                    qVar.f.getClass();
-                    int R = RecyclerView.R(r7Var);
-                    int i9 = qVar.h.J;
-                    r7Var.T = R < i9;
-                    int i10 = R % i9;
-                    r7Var.R = i10 == 0;
-                    r7Var.S = i10 == i9 - 1;
-                    rect.left = 0;
-                    rect.top = 0;
-                    rect.bottom = 0;
-                    rect.right = 0;
-                    break;
+                q qVar = (q) this.b;
+                if (i10 == 5) {
+                    qVar.k0();
+                    return true;
                 }
+                qVar.getClass();
+                return false;
+            case 1:
+                sf.l0 l0Var = (sf.l0) this.b;
+                sf.h0 h0Var = l0Var.B;
+                boolean z10 = false;
+                if (i10 == 6) {
+                    l0Var.x = false;
+                    AndroidUtilities.cancelRunOnUIThread(h0Var);
+                    z10 = true;
+                    if (TextUtils.isEmpty(l0Var.f.getText())) {
+                        l0Var.y = null;
+                        l0Var.d.b();
+                        l0Var.c.U2.N(true);
+                    } else {
+                        AndroidUtilities.runOnUIThread(h0Var);
+                    }
+                    l0Var.b0();
+                }
+                return z10;
             default:
-                if (!(view instanceof r7)) {
-                    rect.left = 0;
-                    rect.top = 0;
-                    rect.bottom = 0;
-                    rect.right = 0;
-                    break;
-                } else {
-                    r7 r7Var2 = (r7) view;
-                    q qVar2 = this.b;
-                    qVar2.r.getClass();
-                    int R2 = RecyclerView.R(r7Var2);
-                    int i11 = qVar2.s.J;
-                    r7Var2.T = R2 < i11;
-                    int i12 = R2 % i11;
-                    r7Var2.R = i12 == 0;
-                    r7Var2.S = i12 == i11 - 1;
-                    rect.left = 0;
-                    rect.top = 0;
-                    rect.bottom = 0;
-                    rect.right = 0;
-                    break;
+                th.d1 d1Var = (th.d1) this.b;
+                if (i10 != 5 || (c1Var = d1Var.c) == null || d1Var.w) {
+                    return false;
                 }
+                if (d1Var.r) {
+                    d1Var.p();
+                } else {
+                    c1Var.S0(d1Var);
+                }
+                return true;
         }
     }
 }

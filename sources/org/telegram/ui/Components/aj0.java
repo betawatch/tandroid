@@ -1,62 +1,274 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.view.View;
-import android.widget.LinearLayout;
+import android.widget.ImageView;
+import java.util.HashMap;
+import java.util.Map;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.DocumentObject;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.ImageLocation;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.SvgHelper;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class aj0 extends LinearLayout {
-    public boolean a;
+public class aj0 extends ImageView {
+    public HashMap a;
+    public xi0 b;
+    public yi0 c;
+    public boolean d;
+    public boolean e;
+    public boolean f;
+    public Integer h;
+    public boolean n;
 
     public aj0(Context context) {
         super(context);
     }
 
-    @Override // android.widget.LinearLayout, android.view.View
-    public final void onMeasure(int i9, int i10) {
-        int i11;
-        wi0 wi0Var = null;
-        if (this.a) {
-            i11 = 0;
+    public final void a() {
+        xi0 xi0Var = this.b;
+        if (xi0Var != null) {
+            xi0Var.stop();
+        }
+        yi0 yi0Var = this.c;
+        if (yi0Var != null) {
+            yi0Var.onDetachedFromWindow();
+            this.c = null;
+        }
+        this.b = null;
+        setImageDrawable(null);
+    }
+
+    public final boolean b() {
+        xi0 xi0Var = this.b;
+        return xi0Var != null && xi0Var.h0;
+    }
+
+    public final void d() {
+        xi0 xi0Var = this.b;
+        if (xi0Var == null && this.c == null) {
+            return;
+        }
+        this.f = true;
+        if (this.e) {
+            if (xi0Var != null) {
+                xi0Var.start();
+            }
+            yi0 yi0Var = this.c;
+            if (yi0Var != null) {
+                yi0Var.startAnimation();
+            }
+        }
+    }
+
+    public final void e(int i10, int i11, int i12) {
+        f(i10, i11, i12, null);
+    }
+
+    public final void f(int i10, int i11, int i12, int[] iArr) {
+        setAnimation(new xi0(i10, j7.l1.k(i10, ""), AndroidUtilities.dp(i11), AndroidUtilities.dp(i12), false, iArr));
+    }
+
+    public final void g(int i10, int i11, TLRPC.Document document) {
+        ImageLocation imageLocation;
+        String str;
+        yi0 yi0Var = this.c;
+        if (yi0Var != null) {
+            yi0Var.onDetachedFromWindow();
+            this.c = null;
+        }
+        if (document == null) {
+            return;
+        }
+        yi0 yi0Var2 = new yi0(this);
+        this.c = yi0Var2;
+        yi0Var2.setAllowLoadingOnAttachedOnly(true);
+        String str2 = document.localThumbPath;
+        if (str2 != null) {
+            ImageLocation forPath = ImageLocation.getForPath(str2);
+            str = com.google.android.recaptcha.internal.a.k(i10, "_", i11);
+            imageLocation = forPath;
         } else {
-            i11 = 0;
-            for (int i12 = 0; i12 < getChildCount(); i12++) {
-                if (getChildAt(i12) instanceof ej0) {
-                    wi0Var = ((ej0) getChildAt(i12)).e;
-                    if (wi0Var.getAdapter().h() == wi0Var.getChildCount()) {
-                        int childCount = wi0Var.getChildCount();
-                        for (int i13 = 0; i13 < childCount; i13++) {
-                            wi0Var.getChildAt(i13).measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), 0), i10);
-                            if (wi0Var.getChildAt(i13).getMeasuredWidth() > i11) {
-                                i11 = wi0Var.getChildAt(i13).getMeasuredWidth();
-                            }
-                        }
-                        i11 += AndroidUtilities.dp(16.0f);
-                    }
-                }
+            imageLocation = null;
+            str = null;
+        }
+        TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(document.thumbs, 90);
+        if (this.n) {
+            this.c.setImage(ImageLocation.getForDocument(document), i10 + "_" + i11 + "_lastframe", ImageLocation.getForDocument(closestPhotoSizeWithSize, document), com.google.android.recaptcha.internal.a.k(i10, "_", i11), imageLocation, str, null, 0L, null, document, 1);
+        } else if ("video/webm".equals(document.mime_type)) {
+            yi0 yi0Var3 = this.c;
+            ImageLocation forDocument = ImageLocation.getForDocument(document);
+            String str3 = i10 + "_" + i11 + "_g";
+            if (imageLocation == null) {
+                imageLocation = ImageLocation.getForDocument(closestPhotoSizeWithSize, document);
+            }
+            yi0Var3.setImage(forDocument, str3, imageLocation, str, null, document.size, null, document, 1);
+        } else {
+            SvgHelper.SvgDrawable svgThumb = DocumentObject.getSvgThumb(document.thumbs, org.telegram.ui.ActionBar.g6.m6, 0.2f);
+            if (svgThumb != null) {
+                svgThumb.overrideWidthAndHeight(512, 512);
+            }
+            this.c.setImage(ImageLocation.getForDocument(document), i10 + "_" + i11 + "", ImageLocation.getForDocument(closestPhotoSizeWithSize, document), com.google.android.recaptcha.internal.a.k(i10, "_", i11), imageLocation, str, svgThumb, 0L, null, document, 1);
+        }
+        this.c.setAspectFit(true);
+        this.c.setParentView(this);
+        if (this.d) {
+            this.c.setAutoRepeat(1);
+            this.c.setAllowStartLottieAnimation(true);
+            this.c.setAllowStartAnimation(true);
+        } else {
+            this.c.setAutoRepeat(0);
+        }
+        yi0 yi0Var4 = this.c;
+        Integer num = this.h;
+        yi0Var4.setLayerNum(num != null ? num.intValue() : 7);
+        this.c.clip = false;
+        setImageDrawable(new zi0(this, i10, i11));
+        if (this.e) {
+            this.c.onAttachedToWindow();
+        }
+    }
+
+    public xi0 getAnimatedDrawable() {
+        return this.b;
+    }
+
+    public ImageReceiver getImageReceiver() {
+        return this.c;
+    }
+
+    public final void h(int i10, String str) {
+        if (this.a == null) {
+            this.a = new HashMap();
+        }
+        this.a.put(str, Integer.valueOf(i10));
+        xi0 xi0Var = this.b;
+        if (xi0Var != null) {
+            xi0Var.O(i10, str);
+        }
+    }
+
+    public final void i() {
+        xi0 xi0Var = this.b;
+        if (xi0Var == null && this.c == null) {
+            return;
+        }
+        this.f = false;
+        if (this.e) {
+            if (xi0Var != null) {
+                xi0Var.stop();
+            }
+            yi0 yi0Var = this.c;
+            if (yi0Var != null) {
+                yi0Var.stopAnimation();
             }
         }
-        int size = View.MeasureSpec.getSize(i9);
-        if (size < AndroidUtilities.dp(240.0f)) {
-            size = AndroidUtilities.dp(240.0f);
-        }
-        if (size > AndroidUtilities.dp(280.0f)) {
-            size = AndroidUtilities.dp(280.0f);
-        }
-        if (size < 0) {
-            size = 0;
-        }
-        if (i11 == 0 || i11 >= size) {
-            i11 = size;
-        }
-        if (wi0Var != null) {
-            for (int i14 = 0; i14 < wi0Var.getChildCount(); i14++) {
-                wi0Var.getChildAt(i14).measure(View.MeasureSpec.makeMeasureSpec(i11, TLObject.FLAG_30), i10);
+    }
+
+    @Override // android.widget.ImageView, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.e = true;
+        yi0 yi0Var = this.c;
+        if (yi0Var != null) {
+            yi0Var.onAttachedToWindow();
+            if (this.f) {
+                this.c.startAnimation();
             }
         }
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(i11, TLObject.FLAG_30), i10);
+        xi0 xi0Var = this.b;
+        if (xi0Var != null) {
+            xi0Var.setCallback(this);
+            if (this.f) {
+                this.b.start();
+            }
+        }
+    }
+
+    @Override // android.widget.ImageView, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        this.e = false;
+        xi0 xi0Var = this.b;
+        if (xi0Var != null) {
+            xi0Var.stop();
+        }
+        yi0 yi0Var = this.c;
+        if (yi0Var != null) {
+            yi0Var.onDetachedFromWindow();
+        }
+    }
+
+    public void setAnimation(xi0 xi0Var) {
+        if (this.b == xi0Var) {
+            return;
+        }
+        yi0 yi0Var = this.c;
+        if (yi0Var != null) {
+            yi0Var.onDetachedFromWindow();
+            this.c = null;
+        }
+        this.b = xi0Var;
+        xi0Var.r0 = this;
+        if (this.d) {
+            xi0Var.I(1);
+        }
+        HashMap hashMap = this.a;
+        if (hashMap != null) {
+            this.b.W = true;
+            for (Map.Entry entry : hashMap.entrySet()) {
+                xi0 xi0Var2 = this.b;
+                String str = (String) entry.getKey();
+                Integer num = (Integer) entry.getValue();
+                num.getClass();
+                xi0Var2.s.put(str, num);
+                xi0Var2.E();
+            }
+            this.b.m();
+        }
+        this.b.H(true);
+        setImageDrawable(this.b);
+    }
+
+    public void setAutoRepeat(boolean z10) {
+        this.d = z10;
+    }
+
+    @Override // android.widget.ImageView
+    public void setImageResource(int i10) {
+        super.setImageResource(i10);
+        this.b = null;
+    }
+
+    public void setLayerNum(Integer num) {
+        this.h = num;
+        yi0 yi0Var = this.c;
+        if (yi0Var != null) {
+            yi0Var.setLayerNum(num.intValue());
+        }
+    }
+
+    public void setOnAnimationEndListener(Runnable runnable) {
+        xi0 xi0Var = this.b;
+        if (xi0Var != null) {
+            xi0Var.q0 = runnable;
+        }
+    }
+
+    public void setOnlyLastFrame(boolean z10) {
+        this.n = z10;
+    }
+
+    public void setProgress(float f9) {
+        xi0 xi0Var = this.b;
+        if (xi0Var != null) {
+            xi0Var.Q(f9, true);
+        }
+    }
+
+    public void c() {
     }
 }

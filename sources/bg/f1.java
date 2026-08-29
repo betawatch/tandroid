@@ -1,56 +1,17 @@
 package bg;
 
-import android.content.Context;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.lg;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.cr;
-import org.telegram.ui.dy;
+import android.graphics.PointF;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class f1 implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
+public final class f1 {
+    public final PointF a;
+    public final float b;
+    public final float c;
 
-    public /* synthetic */ f1(h1 h1Var, TL_stories.PrepaidGiveaway prepaidGiveaway, long j10, org.telegram.ui.ActionBar.o2 o2Var) {
-        this.a = 0;
-        this.c = h1Var;
-        this.d = prepaidGiveaway;
-        this.b = j10;
-        this.e = o2Var;
-    }
-
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
-            case 0:
-                h1.O((h1) this.c, (TL_stories.PrepaidGiveaway) this.d, this.b, (org.telegram.ui.ActionBar.o2) this.e);
-                break;
-            case 1:
-                cr.R((cr) this.c, (Context) this.d, (kh.d) this.e, this.b);
-                break;
-            default:
-                dy dyVar = (dy) this.c;
-                MessagesController.DialogFilter dialogFilter = (MessagesController.DialogFilter) this.d;
-                TLRPC.Dialog dialog = (TLRPC.Dialog) this.e;
-                dyVar.finishPreviewFragment();
-                AndroidUtilities.runOnUIThread(new lg(dyVar, dialogFilter, dialog, this.b, 7), 100L);
-                break;
-        }
-    }
-
-    public /* synthetic */ f1(Object obj, Object obj2, Object obj3, long j10, int i9) {
-        this.a = i9;
-        this.c = obj;
-        this.d = obj2;
-        this.e = obj3;
-        this.b = j10;
+    public /* synthetic */ f1(PointF pointF, float f9, float f10) {
+        this.a = pointF;
+        this.b = f9;
+        this.c = f10;
     }
 }

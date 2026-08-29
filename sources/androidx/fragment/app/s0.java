@@ -3,7 +3,7 @@ package androidx.fragment.app;
 import android.util.Log;
 import java.io.Writer;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class s0 extends Writer {
     public final StringBuilder b = new StringBuilder(128);
@@ -28,13 +28,13 @@ public final class s0 extends Writer {
     }
 
     @Override // java.io.Writer
-    public final void write(char[] cArr, int i9, int i10) {
-        for (int i11 = 0; i11 < i10; i11++) {
-            char c10 = cArr[i9 + i11];
-            if (c10 == '\n') {
+    public final void write(char[] cArr, int i10, int i11) {
+        for (int i12 = 0; i12 < i11; i12++) {
+            char c3 = cArr[i10 + i12];
+            if (c3 == '\n') {
                 a();
             } else {
-                this.b.append(c10);
+                this.b.append(c3);
             }
         }
     }

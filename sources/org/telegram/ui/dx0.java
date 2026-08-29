@@ -1,82 +1,108 @@
 package org.telegram.ui;
 
-import android.content.ClipData;
-import android.content.ClipboardManager;
-import android.content.Intent;
-import android.net.Uri;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.os.Bundle;
+import android.view.View;
+import java.util.HashSet;
+import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class dx0 implements Runnable {
+public final /* synthetic */ class dx0 implements View.OnClickListener {
     public final /* synthetic */ int a;
     public final /* synthetic */ ProfileActivity b;
-    public final /* synthetic */ TLRPC.User c;
 
-    public /* synthetic */ dx0(ProfileActivity profileActivity, TLRPC.User user, int i9) {
-        this.a = i9;
+    public /* synthetic */ dx0(ProfileActivity profileActivity, int i10) {
+        this.a = i10;
         this.b = profileActivity;
-        this.c = user;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        int i10 = this.a;
+        ProfileActivity profileActivity = this.b;
+        switch (i10) {
             case 0:
-                ProfileActivity profileActivity = this.b;
-                TLRPC.User user = this.c;
-                profileActivity.getClass();
-                profileActivity.presentFragment(qn.R9(user.id));
+                ProfileActivity.i0(profileActivity);
                 break;
             case 1:
-                ProfileActivity profileActivity2 = this.b;
-                TLRPC.User user2 = this.c;
-                if (profileActivity2.getParentActivity() != null) {
-                    TLRPC.UserFull userFull = profileActivity2.r2;
-                    org.telegram.ui.Components.voip.e2.n(user2, false, userFull != null && userFull.video_calls_available, profileActivity2.getParentActivity(), profileActivity2.r2, profileActivity2.getAccountInstance());
+                if (profileActivity.v.getTag() == null) {
+                    profileActivity.u4();
                     break;
                 }
                 break;
             case 2:
-                ProfileActivity profileActivity3 = this.b;
-                TLRPC.User user3 = this.c;
-                if (profileActivity3.getParentActivity() != null) {
-                    TLRPC.UserFull userFull2 = profileActivity3.r2;
-                    org.telegram.ui.Components.voip.e2.n(user3, true, userFull2 != null && userFull2.video_calls_available, profileActivity3.getParentActivity(), profileActivity3.r2, profileActivity3.getAccountInstance());
-                    break;
-                }
+                profileActivity.finishPreviewFragment();
                 break;
             case 3:
-                ProfileActivity profileActivity4 = this.b;
-                TLRPC.User user4 = this.c;
-                profileActivity4.getClass();
-                try {
-                    Intent intent = new Intent("android.intent.action.DIAL", Uri.parse("tel:+" + user4.phone));
-                    intent.addFlags(TLObject.FLAG_28);
-                    profileActivity4.getParentActivity().startActivityForResult(intent, 500);
-                    break;
-                } catch (Exception e10) {
-                    FileLog.e(e10);
-                    return;
-                }
-            default:
-                ProfileActivity profileActivity5 = this.b;
-                TLRPC.User user5 = this.c;
-                try {
-                    ((ClipboardManager) ApplicationLoader.applicationContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", "+" + user5.phone));
-                    if (AndroidUtilities.shouldShowClipboardToast()) {
-                        org.telegram.ui.Components.oc.a0(profileActivity5).i(LocaleController.getString(R.string.PhoneCopied)).j();
-                        break;
+                profileActivity.R4();
+                break;
+            case 4:
+                ProfileActivity.g0(profileActivity);
+                break;
+            case 5:
+                ProfileActivity.a0(profileActivity);
+                break;
+            case 6:
+                profileActivity.getClass();
+                Bundle bundle = new Bundle();
+                bundle.putLong("chat_id", profileActivity.b1);
+                bundle.putLong("user_id", profileActivity.a1);
+                profileActivity.presentFragment(new a21(bundle));
+                break;
+            case 7:
+                ProfileActivity.h0(profileActivity);
+                break;
+            case 8:
+                profileActivity.Q4();
+                break;
+            case 9:
+                profileActivity.Q4();
+                break;
+            case 10:
+                if (profileActivity.getParentLayout() != null && profileActivity.getParentLayout().getFragmentStack() != null) {
+                    int i11 = 0;
+                    while (i11 < profileActivity.getParentLayout().getFragmentStack().size()) {
+                        org.telegram.ui.ActionBar.o2 o2Var = (org.telegram.ui.ActionBar.o2) profileActivity.getParentLayout().getFragmentStack().get(i11);
+                        if (o2Var instanceof fy) {
+                            fy fyVar = (fy) o2Var;
+                            ax axVar = fyVar.B3;
+                            if (axVar != null) {
+                                org.telegram.ui.ActionBar.o2 fragment = axVar.getFragment();
+                                if ((fragment instanceof ze1) && (-((ze1) fragment).a) == profileActivity.a()) {
+                                    fyVar.B3.a();
+                                }
+                            }
+                        } else if (o2Var instanceof tn) {
+                            if (((tn) o2Var).a() == profileActivity.a()) {
+                                ((ActionBarLayout) profileActivity.getParentLayout()).a0(o2Var, false);
+                                i11--;
+                            }
+                        } else if (o2Var instanceof ze1) {
+                            if ((-((ze1) o2Var).a) == profileActivity.a()) {
+                                ((ActionBarLayout) profileActivity.getParentLayout()).a0(o2Var, false);
+                                i11--;
+                            }
+                        } else if ((o2Var instanceof ProfileActivity) && o2Var != profileActivity) {
+                            ProfileActivity profileActivity2 = (ProfileActivity) o2Var;
+                            if (profileActivity2.a() == profileActivity.a() && profileActivity2.m1) {
+                                ((ActionBarLayout) profileActivity.getParentLayout()).a0(o2Var, false);
+                                i11--;
+                            }
+                        }
+                        i11++;
                     }
-                } catch (Exception e11) {
-                    FileLog.e(e11);
                 }
+                profileActivity.F1 = 0;
+                Bundle bundle2 = new Bundle();
+                bundle2.putLong("chat_id", profileActivity.b1);
+                HashSet hashSet = ze1.j1;
+                profileActivity.presentFragment(ze1.E0(profileActivity.getMessagesController(), profileActivity.getMessagesStorage(), bundle2));
+                break;
+            case 11:
+                profileActivity.t4(view);
+                break;
+            default:
+                profileActivity.t4(view);
                 break;
         }
     }

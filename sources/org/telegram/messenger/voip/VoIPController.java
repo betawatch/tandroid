@@ -11,9 +11,9 @@ import java.util.Locale;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.MessagesController;
-import org.telegram.ui.Components.voip.e2;
+import org.telegram.ui.Components.voip.h2;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public class VoIPController {
     public static final int DATA_SAVING_ALWAYS = 2;
@@ -50,14 +50,14 @@ public class VoIPController {
     protected ConnectionStateListener listener;
     protected long nativeInst = nativeInit(new File(ApplicationLoader.applicationContext.getFilesDir(), "voip_persistent_state.json").getAbsolutePath());
 
-    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
     public interface ConnectionStateListener {
-        void onConnectionStateChanged(int i9, boolean z10);
+        void onConnectionStateChanged(int i10, boolean z10);
 
-        void onSignalBarCountChanged(int i9);
+        void onSignalBarCountChanged(int i10);
     }
 
-    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
     public static class Stats {
         public long bytesRecvdMobile;
         public long bytesRecvdWifi;
@@ -80,26 +80,26 @@ public class VoIPController {
         return nativeGetVersion();
     }
 
-    private void handleSignalBarsChange(int i9) {
+    private void handleSignalBarsChange(int i10) {
         ConnectionStateListener connectionStateListener = this.listener;
         if (connectionStateListener != null) {
-            connectionStateListener.onSignalBarCountChanged(i9);
+            connectionStateListener.onSignalBarCountChanged(i10);
         }
     }
 
-    private void handleStateChange(int i9) {
-        if (i9 == 3 && this.callStartTime == 0) {
+    private void handleStateChange(int i10) {
+        if (i10 == 3 && this.callStartTime == 0) {
             this.callStartTime = SystemClock.elapsedRealtime();
         }
         ConnectionStateListener connectionStateListener = this.listener;
         if (connectionStateListener != null) {
-            connectionStateListener.onConnectionStateChanged(i9, false);
+            connectionStateListener.onConnectionStateChanged(i10, false);
         }
     }
 
     private native void nativeConnect(long j10);
 
-    private native void nativeDebugCtl(long j10, int i9, int i10);
+    private native void nativeDebugCtl(long j10, int i10, int i11);
 
     private native String nativeGetDebugLog(long j10);
 
@@ -125,24 +125,24 @@ public class VoIPController {
 
     private native void nativeSetAudioOutputGainControlEnabled(long j10, boolean z10);
 
-    private native void nativeSetConfig(long j10, double d, double d9, int i9, boolean z10, boolean z11, boolean z12, String str, String str2, boolean z13);
+    private native void nativeSetConfig(long j10, double d, double d10, int i10, boolean z10, boolean z11, boolean z12, String str, String str2, boolean z13);
 
-    private native void nativeSetEchoCancellationStrength(long j10, int i9);
+    private native void nativeSetEchoCancellationStrength(long j10, int i10);
 
     private native void nativeSetEncryptionKey(long j10, byte[] bArr, boolean z10);
 
     private native void nativeSetMicMute(long j10, boolean z10);
 
-    private static native void nativeSetNativeBufferSize(int i9);
+    private static native void nativeSetNativeBufferSize(int i10);
 
-    private native void nativeSetNetworkType(long j10, int i9);
+    private native void nativeSetNetworkType(long j10, int i10);
 
-    private native void nativeSetProxy(long j10, String str, int i9, String str2, String str3);
+    private native void nativeSetProxy(long j10, String str, int i10, String str2, String str3);
 
     private native void nativeStart(long j10);
 
-    public static void setNativeBufferSize(int i9) {
-        nativeSetNativeBufferSize(i9);
+    public static void setNativeBufferSize(int i10) {
+        nativeSetNativeBufferSize(i10);
     }
 
     public void connect() {
@@ -150,9 +150,9 @@ public class VoIPController {
         nativeConnect(this.nativeInst);
     }
 
-    public void debugCtl(int i9, int i10) {
+    public void debugCtl(int i10, int i11) {
         ensureNativeInstance();
-        nativeDebugCtl(this.nativeInst, i9, i10);
+        nativeDebugCtl(this.nativeInst, i10, i11);
     }
 
     public void ensureNativeInstance() {
@@ -224,7 +224,7 @@ public class VoIPController {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public void setConfig(double d, double d9, int i9, long j10) {
+    public void setConfig(double d, double d10, int i10, long j10) {
         boolean z10;
         boolean z11;
         long j11;
@@ -250,7 +250,7 @@ public class VoIPController {
                 }
                 if (!BuildVars.DEBUG_VERSION) {
                 }
-                nativeSetConfig(j12, d, d9, i9, z13, z12, true, !BuildVars.DEBUG_VERSION ? getLogFilePath(aa.d.m(j10, "voip")) : getLogFilePath(j10), (BuildVars.DEBUG_VERSION || !z14) ? null : getLogFilePath("voipStats"), BuildVars.DEBUG_VERSION);
+                nativeSetConfig(j12, d, d10, i10, z13, z12, true, !BuildVars.DEBUG_VERSION ? getLogFilePath(a4.w.m(j10, "voip")) : getLogFilePath(j10), (BuildVars.DEBUG_VERSION || !z14) ? null : getLogFilePath("voipStats"), BuildVars.DEBUG_VERSION);
             }
         } catch (Throwable unused2) {
             z10 = false;
@@ -268,16 +268,16 @@ public class VoIPController {
         if (z11 && VoIPServerConfig.getBoolean("use_system_ns", true)) {
             z12 = false;
         }
-        nativeSetConfig(j12, d, d9, i9, z13, z12, true, !BuildVars.DEBUG_VERSION ? getLogFilePath(aa.d.m(j10, "voip")) : getLogFilePath(j10), (BuildVars.DEBUG_VERSION || !z142) ? null : getLogFilePath("voipStats"), BuildVars.DEBUG_VERSION);
+        nativeSetConfig(j12, d, d10, i10, z13, z12, true, !BuildVars.DEBUG_VERSION ? getLogFilePath(a4.w.m(j10, "voip")) : getLogFilePath(j10), (BuildVars.DEBUG_VERSION || !z142) ? null : getLogFilePath("voipStats"), BuildVars.DEBUG_VERSION);
     }
 
     public void setConnectionStateListener(ConnectionStateListener connectionStateListener) {
         this.listener = connectionStateListener;
     }
 
-    public void setEchoCancellationStrength(int i9) {
+    public void setEchoCancellationStrength(int i10) {
         ensureNativeInstance();
-        nativeSetEchoCancellationStrength(this.nativeInst, i9);
+        nativeSetEchoCancellationStrength(this.nativeInst, i10);
     }
 
     public void setEncryptionKey(byte[] bArr, boolean z10) {
@@ -294,17 +294,17 @@ public class VoIPController {
         nativeSetMicMute(this.nativeInst, z10);
     }
 
-    public void setNetworkType(int i9) {
+    public void setNetworkType(int i10) {
         ensureNativeInstance();
-        nativeSetNetworkType(this.nativeInst, i9);
+        nativeSetNetworkType(this.nativeInst, i10);
     }
 
-    public void setProxy(String str, int i9, String str2, String str3) {
+    public void setProxy(String str, int i10, String str2, String str3) {
         ensureNativeInstance();
         if (str == null) {
             throw new NullPointerException("address can't be null");
         }
-        nativeSetProxy(this.nativeInst, str, i9, str2, str3);
+        nativeSetProxy(this.nativeInst, str, i10, str2, str3);
     }
 
     public void start() {
@@ -313,16 +313,16 @@ public class VoIPController {
     }
 
     private String getLogFilePath(long j10) {
-        File f10 = e2.f();
+        File f9 = h2.f();
         if (!BuildVars.DEBUG_VERSION) {
-            ArrayList arrayList = new ArrayList(Arrays.asList(f10.listFiles()));
+            ArrayList arrayList = new ArrayList(Arrays.asList(f9.listFiles()));
             while (arrayList.size() > 20) {
-                int i9 = 0;
+                int i10 = 0;
                 File file = (File) arrayList.get(0);
                 int size = arrayList.size();
-                while (i9 < size) {
-                    Object obj = arrayList.get(i9);
-                    i9++;
+                while (i10 < size) {
+                    Object obj = arrayList.get(i10);
+                    i10++;
                     File file2 = (File) obj;
                     if (file2.getName().endsWith(".log") && file2.lastModified() < file.lastModified()) {
                         file = file2;
@@ -332,6 +332,6 @@ public class VoIPController {
                 arrayList.remove(file);
             }
         }
-        return new File(f10, j10 + ".log").getAbsolutePath();
+        return new File(f9, j10 + ".log").getAbsolutePath();
     }
 }

@@ -1,44 +1,44 @@
 package ih;
 
-import android.content.Context;
-import android.widget.FrameLayout;
+import android.content.DialogInterface;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.vw;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
-/* loaded from: classes4.dex */
-public final class k extends org.telegram.ui.ActionBar.m {
-    public final /* synthetic */ int d = 1;
-    public final /* synthetic */ FrameLayout e;
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class k implements DialogInterface.OnShowListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ EditTextBoldCursor b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public k(vw vwVar, Context context, com.google.firebase.messaging.l lVar) {
-        super(context, null, lVar);
-        this.e = vwVar;
+    public /* synthetic */ k(int i10, EditTextBoldCursor editTextBoldCursor) {
+        this.a = i10;
+        this.b = editTextBoldCursor;
     }
 
-    @Override // org.telegram.ui.ActionBar.m, td.i
-    public final void c(td.j jVar) {
-        switch (this.d) {
+    @Override // android.content.DialogInterface.OnShowListener
+    public final void onShow(DialogInterface dialogInterface) {
+        switch (this.a) {
             case 0:
-                super.c(jVar);
-                ((vw) this.e).invalidate();
+                bh.b bVar = (bh.b) this.b;
+                bVar.requestFocus();
+                AndroidUtilities.showKeyboard(bVar);
+                break;
+            case 1:
+                v2 v2Var = (v2) this.b;
+                v2Var.requestFocus();
+                AndroidUtilities.showKeyboard(v2Var);
+                break;
+            case 2:
+                sf.o oVar = (sf.o) this.b;
+                oVar.requestFocus();
+                AndroidUtilities.showKeyboard(oVar);
                 break;
             default:
-                super.c(jVar);
-                float totalVisibility = getTotalVisibility();
-                dh.g gVar = ((org.telegram.ui.ActionBar.k) this.e).B0;
-                if (gVar != null) {
-                    gVar.setTranslationY(totalVisibility * AndroidUtilities.dp(-11.0f));
-                    break;
-                }
+                EditTextBoldCursor editTextBoldCursor = this.b;
+                editTextBoldCursor.requestFocus();
+                AndroidUtilities.showKeyboard(editTextBoldCursor);
+                editTextBoldCursor.setSelection(0, editTextBoldCursor.length());
                 break;
         }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public k(org.telegram.ui.ActionBar.k kVar, Context context, org.telegram.ui.ActionBar.b6 b6Var, com.google.firebase.messaging.l lVar) {
-        super(context, b6Var, lVar);
-        this.e = kVar;
     }
 }

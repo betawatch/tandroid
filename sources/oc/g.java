@@ -1,42 +1,26 @@
 package oc;
 
-import java.io.Serializable;
+import java.util.regex.Pattern;
+import le.p;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class g implements c, Serializable {
-    public zc.a a;
-    public volatile Object b;
-    public final Object c;
+public final class g extends h {
+    public static final Pattern e = Pattern.compile("^(?:<[A-Za-z][A-Za-z0-9-]*(?:\\s+[a-zA-Z_:][a-zA-Z0-9:._-]*(?:\\s*=\\s*(?:[^\"'=<>`\\x00-\\x20]+|'[^']*'|\"[^\"]*\"))?)*\\s*/?>|</[A-Za-z][A-Za-z0-9-]*\\s*[>]|<!---->|<!--(?:-?[^>-])(?:-?[^-])*-->|[<][?].*?[?][>]|<![A-Z]+\\s+[^>]*>|<!\\[CDATA\\[[\\s\\S]*?\\]\\]>)", 2);
 
-    public g(zc.a initializer) {
-        kotlin.jvm.internal.i.e(initializer, "initializer");
-        this.a = initializer;
-        this.b = h.a;
-        this.c = this;
+    @Override // oc.h
+    public final p b() {
+        String a2 = a(e);
+        if (a2 == null) {
+            return null;
+        }
+        le.d dVar = new le.d(1);
+        dVar.h = a2;
+        return dVar;
     }
 
-    public final Object a() {
-        Object obj;
-        Object obj2 = this.b;
-        h hVar = h.a;
-        if (obj2 != hVar) {
-            return obj2;
-        }
-        synchronized (this.c) {
-            obj = this.b;
-            if (obj == hVar) {
-                zc.a aVar = this.a;
-                kotlin.jvm.internal.i.b(aVar);
-                obj = aVar.invoke();
-                this.b = obj;
-                this.a = null;
-            }
-        }
-        return obj;
-    }
-
-    public final String toString() {
-        return this.b != h.a ? String.valueOf(a()) : "Lazy value not initialized yet.";
+    @Override // oc.h
+    public final char d() {
+        return '<';
     }
 }

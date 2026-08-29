@@ -2,19 +2,19 @@ package org.telegram.ui;
 
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class m6 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ boolean[] b;
-    public final /* synthetic */ q6 c;
+    public final /* synthetic */ p6 c;
     public final /* synthetic */ long[] d;
     public final /* synthetic */ n6 e;
 
-    public /* synthetic */ m6(boolean[] zArr, q6 q6Var, long[] jArr, n6 n6Var, int i9) {
-        this.a = i9;
+    public /* synthetic */ m6(boolean[] zArr, p6 p6Var, long[] jArr, n6 n6Var, int i10) {
+        this.a = i10;
         this.b = zArr;
-        this.c = q6Var;
+        this.c = p6Var;
         this.d = jArr;
         this.e = n6Var;
     }
@@ -35,7 +35,7 @@ public final /* synthetic */ class m6 implements Runnable {
                     n6Var.dismiss();
                     break;
                 } else {
-                    AndroidUtilities.runOnUIThread(new kt0(n6Var, 16), Math.max(0L, 1000 - (System.currentTimeMillis() - jArr[0])));
+                    AndroidUtilities.runOnUIThread(new it0(n6Var, 16), Math.max(0L, 1000 - (System.currentTimeMillis() - jArr[0])));
                     break;
                 }
         }

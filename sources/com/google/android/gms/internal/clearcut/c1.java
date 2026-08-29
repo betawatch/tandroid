@@ -28,12 +28,12 @@ public abstract class c1 {
         d1 d1Var = zVar.zzjp;
         d1 d1Var2 = ((z) obj2).zzjp;
         if (!d1Var2.equals(d1.e)) {
-            int i9 = d1Var.a + d1Var2.a;
-            int[] copyOf = Arrays.copyOf(d1Var.b, i9);
+            int i10 = d1Var.a + d1Var2.a;
+            int[] copyOf = Arrays.copyOf(d1Var.b, i10);
             System.arraycopy(d1Var2.b, 0, copyOf, d1Var.a, d1Var2.a);
-            Object[] copyOf2 = Arrays.copyOf(d1Var.c, i9);
+            Object[] copyOf2 = Arrays.copyOf(d1Var.c, i10);
             System.arraycopy(d1Var2.c, 0, copyOf2, d1Var.a, d1Var2.a);
-            d1Var = new d1(i9, copyOf, copyOf2, true);
+            d1Var = new d1(i10, copyOf, copyOf2, true);
         }
         zVar.zzjp = d1Var;
     }

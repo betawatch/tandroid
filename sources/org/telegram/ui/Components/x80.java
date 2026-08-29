@@ -1,25 +1,9 @@
 package org.telegram.ui.Components;
 
-import java.util.regex.Pattern;
+import android.text.style.ClickableSpan;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class x80 extends mc.h {
-    public static final Pattern e = Pattern.compile("\\$([^\\s\\$][^\\$]*?)(?<!\\s)\\$(?![0-9])");
-
-    @Override // mc.h
-    public final ie.p b() {
-        String a2 = a(e);
-        if (a2 == null) {
-            return null;
-        }
-        hc.d dVar = new hc.d();
-        dVar.g = e2.c.m(a2, 1, 1);
-        return dVar;
-    }
-
-    @Override // mc.h
-    public final char d() {
-        return '$';
-    }
+public interface x80 {
+    void a(ClickableSpan clickableSpan);
 }

@@ -1,42 +1,46 @@
 package fa;
 
-import aa.d;
+import a5.j;
+import a9.e;
+import a9.v;
+import java.util.concurrent.Executor;
+import jd.y0;
+import w8.b;
+import w8.c;
+import w8.d;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class a {
-    public final String a;
-    public final String b;
+public final class a implements e {
+    public static final a b = new a(0);
+    public static final a c = new a(1);
+    public static final a d = new a(2);
+    public static final a e = new a(3);
+    public final /* synthetic */ int a;
 
-    public a(String str, String str2) {
-        this.a = str;
-        if (str2 == null) {
-            throw new NullPointerException("Null version");
-        }
-        this.b = str2;
+    public /* synthetic */ a(int i10) {
+        this.a = i10;
     }
 
-    public final boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
+    @Override // a9.e
+    public final Object I0(j jVar) {
+        switch (this.a) {
+            case 0:
+                Object d10 = jVar.d(new v(w8.a.class, Executor.class));
+                kotlin.jvm.internal.j.d(d10, "c.get(Qualified.qualifie…a, Executor::class.java))");
+                return new y0((Executor) d10);
+            case 1:
+                Object d11 = jVar.d(new v(c.class, Executor.class));
+                kotlin.jvm.internal.j.d(d11, "c.get(Qualified.qualifie…a, Executor::class.java))");
+                return new y0((Executor) d11);
+            case 2:
+                Object d12 = jVar.d(new v(b.class, Executor.class));
+                kotlin.jvm.internal.j.d(d12, "c.get(Qualified.qualifie…a, Executor::class.java))");
+                return new y0((Executor) d12);
+            default:
+                Object d13 = jVar.d(new v(d.class, Executor.class));
+                kotlin.jvm.internal.j.d(d13, "c.get(Qualified.qualifie…a, Executor::class.java))");
+                return new y0((Executor) d13);
         }
-        if (obj instanceof a) {
-            a aVar = (a) obj;
-            if (this.a.equals(aVar.a) && this.b.equals(aVar.b)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public final int hashCode() {
-        return ((this.a.hashCode() ^ 1000003) * 1000003) ^ this.b.hashCode();
-    }
-
-    public final String toString() {
-        StringBuilder sb2 = new StringBuilder("LibraryVersion{libraryName=");
-        sb2.append(this.a);
-        sb2.append(", version=");
-        return d.r(sb2, this.b, "}");
     }
 }

@@ -1,49 +1,30 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import java.util.ArrayList;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class gj0 implements d5.d {
+public final /* synthetic */ class gj0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ uj0 b;
+    public final /* synthetic */ pj0 b;
+    public final /* synthetic */ TLObject c;
 
-    public /* synthetic */ gj0(uj0 uj0Var, int i9) {
-        this.a = i9;
-        this.b = uj0Var;
+    public /* synthetic */ gj0(pj0 pj0Var, TLObject tLObject, int i10) {
+        this.a = i10;
+        this.b = pj0Var;
+        this.c = tLObject;
     }
 
-    @Override // d5.d
-    public final void accept(Object obj) {
-        View view = (View) obj;
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                uj0 uj0Var = this.b;
-                ArrayList arrayList = uj0Var.d;
-                uj0Var.b.getClass();
-                int R = RecyclerView.R(view);
-                if (R >= 0 && R < arrayList.size() && (view instanceof sj0)) {
-                    ((sj0) view).f(((lj0) arrayList.get(R)).c, true);
-                    break;
-                }
+                pj0 pj0Var = this.b;
+                NotificationCenter.getInstance(pj0Var.b).doOnIdle(new gj0(pj0Var, this.c, 1));
                 break;
             default:
-                if (view instanceof sj0) {
-                    sj0 sj0Var = (sj0) view;
-                    rj0 rj0Var = sj0Var.b;
-                    sj0Var.J = false;
-                    rj0Var.setAlpha(1.0f);
-                    if (!this.b.J0) {
-                        sj0Var.d();
-                        break;
-                    } else {
-                        rj0Var.setScaleX(sj0Var.E * (sj0Var.w ? 0.76f : 1.0f));
-                        rj0Var.setScaleY(sj0Var.E * (sj0Var.w ? 0.76f : 1.0f));
-                        break;
-                    }
-                }
+                pj0.a(this.b, this.c);
                 break;
         }
     }

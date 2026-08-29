@@ -20,18 +20,18 @@ public final class g implements Serializable {
     static {
         Object[] objArr = {ChronoUnit.YEARS, ChronoUnit.MONTHS, ChronoUnit.DAYS};
         ArrayList arrayList = new ArrayList(3);
-        for (int i9 = 0; i9 < 3; i9++) {
-            arrayList.add(Objects.requireNonNull(objArr[i9]));
+        for (int i10 = 0; i10 < 3; i10++) {
+            arrayList.add(Objects.requireNonNull(objArr[i10]));
         }
         Collections.unmodifiableList(arrayList);
     }
 
-    public g(k kVar, int i9, int i10, int i11) {
+    public g(k kVar, int i10, int i11, int i12) {
         Objects.requireNonNull(kVar, "chrono");
         this.a = kVar;
-        this.b = i9;
-        this.c = i10;
-        this.d = i11;
+        this.b = i10;
+        this.c = i11;
+        this.d = i12;
     }
 
     public final String toString() {
@@ -41,19 +41,19 @@ public final class g implements Serializable {
         StringBuilder sb2 = new StringBuilder();
         sb2.append(this.a.toString());
         sb2.append(" P");
-        int i9 = this.b;
-        if (i9 != 0) {
-            sb2.append(i9);
-            sb2.append('Y');
-        }
-        int i10 = this.c;
+        int i10 = this.b;
         if (i10 != 0) {
             sb2.append(i10);
-            sb2.append('M');
+            sb2.append('Y');
         }
-        int i11 = this.d;
+        int i11 = this.c;
         if (i11 != 0) {
             sb2.append(i11);
+            sb2.append('M');
+        }
+        int i12 = this.d;
+        if (i12 != 0) {
+            sb2.append(i12);
             sb2.append('D');
         }
         return sb2.toString();

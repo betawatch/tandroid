@@ -7,7 +7,7 @@ import android.widget.BaseAdapter;
 import androidx.appcompat.view.menu.ListMenuItemView;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class h extends BaseAdapter {
     public final k a;
@@ -17,11 +17,11 @@ public final class h extends BaseAdapter {
     public final LayoutInflater e;
     public final int f;
 
-    public h(k kVar, LayoutInflater layoutInflater, boolean z10, int i9) {
+    public h(k kVar, LayoutInflater layoutInflater, boolean z10, int i10) {
         this.d = z10;
         this.e = layoutInflater;
         this.a = kVar;
-        this.f = i9;
+        this.f = i10;
         a();
     }
 
@@ -32,9 +32,9 @@ public final class h extends BaseAdapter {
             kVar.i();
             ArrayList arrayList = kVar.j;
             int size = arrayList.size();
-            for (int i9 = 0; i9 < size; i9++) {
-                if (((m) arrayList.get(i9)) == mVar) {
-                    this.b = i9;
+            for (int i10 = 0; i10 < size; i10++) {
+                if (((m) arrayList.get(i10)) == mVar) {
+                    this.b = i10;
                     return;
                 }
             }
@@ -44,7 +44,7 @@ public final class h extends BaseAdapter {
 
     @Override // android.widget.Adapter
     /* renamed from: b, reason: merged with bridge method [inline-methods] */
-    public final m getItem(int i9) {
+    public final m getItem(int i10) {
         ArrayList l10;
         boolean z10 = this.d;
         k kVar = this.a;
@@ -54,11 +54,11 @@ public final class h extends BaseAdapter {
         } else {
             l10 = kVar.l();
         }
-        int i10 = this.b;
-        if (i10 >= 0 && i9 >= i10) {
-            i9++;
+        int i11 = this.b;
+        if (i11 >= 0 && i10 >= i11) {
+            i10++;
         }
-        return (m) l10.get(i9);
+        return (m) l10.get(i10);
     }
 
     @Override // android.widget.Adapter
@@ -76,21 +76,21 @@ public final class h extends BaseAdapter {
     }
 
     @Override // android.widget.Adapter
-    public final long getItemId(int i9) {
-        return i9;
+    public final long getItemId(int i10) {
+        return i10;
     }
 
     @Override // android.widget.Adapter
-    public final View getView(int i9, View view, ViewGroup viewGroup) {
+    public final View getView(int i10, View view, ViewGroup viewGroup) {
         boolean z10 = false;
         if (view == null) {
             view = this.e.inflate(this.f, viewGroup, false);
         }
-        int i10 = getItem(i9).b;
-        int i11 = i9 - 1;
-        int i12 = i11 >= 0 ? getItem(i11).b : i10;
+        int i11 = getItem(i10).b;
+        int i12 = i10 - 1;
+        int i13 = i12 >= 0 ? getItem(i12).b : i11;
         ListMenuItemView listMenuItemView = (ListMenuItemView) view;
-        if (this.a.m() && i10 != i12) {
+        if (this.a.m() && i11 != i13) {
             z10 = true;
         }
         listMenuItemView.setGroupDividerEnabled(z10);
@@ -98,7 +98,7 @@ public final class h extends BaseAdapter {
         if (this.c) {
             listMenuItemView.setForceShowIcon(true);
         }
-        yVar.b(getItem(i9));
+        yVar.b(getItem(i10));
         return view;
     }
 

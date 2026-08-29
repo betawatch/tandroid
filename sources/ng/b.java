@@ -1,103 +1,112 @@
 package ng;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapShader;
-import android.graphics.Canvas;
-import android.graphics.Matrix;
-import android.graphics.Paint;
-import android.graphics.Shader;
-import kg.f;
+import android.graphics.Outline;
+import android.graphics.RectF;
+import android.view.View;
+import android.view.ViewOutlineProvider;
+import nh.i;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.ActionBar.l;
+import org.telegram.ui.ActionBar.o2;
+import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
+import org.telegram.ui.Components.lb0;
+import org.telegram.ui.Components.ni;
+import org.telegram.ui.Components.s50;
+import org.telegram.ui.Components.voip.t1;
+import org.telegram.ui.Components.voip.u2;
+import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class b implements a {
-    public final Paint a;
-    public final Matrix b;
-    public BitmapShader c;
-    public Bitmap d;
-    public final Matrix e;
-    public Bitmap f;
-    public int h;
-    public int n;
+public final class b extends ViewOutlineProvider {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public b() {
-        Paint paint = new Paint(3);
-        this.a = paint;
-        this.b = new Matrix();
-        this.e = new Matrix();
-        paint.setFilterBitmap(true);
+    public /* synthetic */ b(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // ng.a
-    public final void T0(Canvas canvas, float f10, float f11, float f12, float f13) {
-        Bitmap bitmap = this.d;
-        if (bitmap == null || bitmap.isRecycled() || this.c == null) {
-            return;
+    @Override // android.view.ViewOutlineProvider
+    public final void getOutline(View view, Outline outline) {
+        l lVar;
+        int i10 = this.a;
+        Object obj = this.b;
+        switch (i10) {
+            case 0:
+                c cVar = ((d) obj).h;
+                d.h(outline, cVar.m, cVar.b);
+                break;
+            case 1:
+                ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = (ChatAttachAlertPhotoLayout) obj;
+                ni niVar = chatAttachAlertPhotoLayout.b;
+                float f9 = niVar.C0[1];
+                i iVar = niVar.x2;
+                int min = (int) Math.min((niVar.getContainerView().getTranslationY() + ((f9 - (iVar != null ? iVar.d() + AndroidUtilities.dp(16.0f) : 0.0f)) + chatAttachAlertPhotoLayout.S0)) - chatAttachAlertPhotoLayout.L.getTranslationY(), view.getMeasuredHeight());
+                if (chatAttachAlertPhotoLayout.U) {
+                    min = view.getMeasuredHeight();
+                } else if (chatAttachAlertPhotoLayout.W) {
+                    min = AndroidUtilities.lerp(min, view.getMeasuredHeight(), chatAttachAlertPhotoLayout.a0);
+                }
+                boolean z10 = chatAttachAlertPhotoLayout.W;
+                if (!z10) {
+                    if (!z10 && !chatAttachAlertPhotoLayout.U) {
+                        int dp = AndroidUtilities.dp(16.0f);
+                        boolean z11 = ChatAttachAlertPhotoLayout.m1;
+                        outline.setRoundRect((int) 0.0f, (int) chatAttachAlertPhotoLayout.S, view.getMeasuredWidth() + dp, Math.min(min, view.getMeasuredHeight()) + dp, dp);
+                        break;
+                    } else {
+                        outline.setRect(0, 0, view.getMeasuredWidth(), Math.min(min, view.getMeasuredHeight()));
+                        break;
+                    }
+                } else {
+                    RectF rectF = AndroidUtilities.rectTmp;
+                    float f10 = chatAttachAlertPhotoLayout.j1;
+                    boolean z12 = ChatAttachAlertPhotoLayout.m1;
+                    float f11 = 1.0f - chatAttachAlertPhotoLayout.a0;
+                    rectF.set((0.0f * f11) + f10, (f11 * chatAttachAlertPhotoLayout.S) + chatAttachAlertPhotoLayout.g1, chatAttachAlertPhotoLayout.i1, chatAttachAlertPhotoLayout.h1);
+                    outline.setRect((int) rectF.left, (int) rectF.top, (int) rectF.right, Math.min(min, (int) rectF.bottom));
+                    break;
+                }
+            case 2:
+                int i11 = ((s50) obj).J0;
+                outline.setOval(0, 0, i11, i11);
+                break;
+            case 3:
+                outline.setRoundRect(0, ((lb0) obj).P + 1, view.getMeasuredWidth(), view.getMeasuredHeight(), AndroidUtilities.dp(8.0f));
+                break;
+            case 4:
+                t1 t1Var = (t1) obj;
+                float f12 = t1Var.M;
+                if (f12 < 0.0f) {
+                    if (!t1Var.I) {
+                        outline.setRect(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight());
+                        break;
+                    } else {
+                        outline.setRoundRect(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight(), t1Var.I ? AndroidUtilities.dp(4.0f) : 0.0f);
+                        break;
+                    }
+                } else if (f12 >= 1.0f) {
+                    outline.setRoundRect(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight(), t1Var.M);
+                    break;
+                } else {
+                    outline.setRect(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight());
+                    break;
+                }
+            case 5:
+                u2 u2Var = (u2) obj;
+                if (u2Var.b >= 1.0f) {
+                    outline.setRoundRect((int) u2Var.K, (int) u2Var.J, (int) (view.getMeasuredWidth() - u2Var.K), (int) (view.getMeasuredHeight() - u2Var.J), u2Var.b);
+                    break;
+                } else {
+                    outline.setRect((int) u2Var.K, (int) u2Var.J, (int) (view.getMeasuredWidth() - u2Var.K), (int) (view.getMeasuredHeight() - u2Var.J));
+                    break;
+                }
+            default:
+                int dp2 = AndroidUtilities.dp(12.0f);
+                lVar = ((o2) ((PremiumPreviewFragment) obj)).actionBar;
+                outline.setRoundRect(dp2, AndroidUtilities.dp(12.0f) + lVar.getBottom(), view.getWidth() - AndroidUtilities.dp(12.0f), AndroidUtilities.dp(16.0f) + view.getMeasuredHeight(), AndroidUtilities.dp(16.0f));
+                break;
         }
-        Matrix matrix = this.e;
-        Matrix matrix2 = this.b;
-        matrix.set(matrix2);
-        matrix.postTranslate(f10, f11);
-        this.c.setLocalMatrix(matrix2);
-        canvas.drawRect(f10, f11, f12, f13, this.a);
-    }
-
-    public final void a(Bitmap bitmap) {
-        if (this.d == bitmap) {
-            return;
-        }
-        this.d = bitmap;
-        Paint paint = this.a;
-        paint.setShader(null);
-        this.c = null;
-        if (bitmap != null) {
-            Shader.TileMode tileMode = Shader.TileMode.CLAMP;
-            BitmapShader bitmapShader = new BitmapShader(bitmap, tileMode, tileMode);
-            this.c = bitmapShader;
-            paint.setShader(bitmapShader);
-            c();
-        }
-    }
-
-    public final void b(int i9, int i10) {
-        if (this.h == i9 && this.n == i10) {
-            return;
-        }
-        this.h = i9;
-        this.n = i10;
-        c();
-    }
-
-    public final void c() {
-        Bitmap bitmap = this.d;
-        Matrix matrix = this.b;
-        if (bitmap == null) {
-            matrix.reset();
-            return;
-        }
-        int width = bitmap.getWidth();
-        int height = this.d.getHeight();
-        int i9 = this.h;
-        int i10 = this.n;
-        matrix.reset();
-        if (width <= 0 || height <= 0 || i9 <= 0 || i10 <= 0) {
-            return;
-        }
-        float f10 = i9;
-        float f11 = width;
-        float f12 = i10;
-        float f13 = height;
-        float max = Math.max(f10 / f11, f12 / f13);
-        matrix.setScale(max, max);
-        matrix.postTranslate((f10 - (f11 * max)) * 0.5f, ((f12 - (f13 * max)) * 0.5f) + 0);
-    }
-
-    @Override // ng.a
-    public final kg.d y() {
-        return new f(this);
-    }
-
-    @Override // ng.a
-    public final /* synthetic */ void t() {
     }
 }

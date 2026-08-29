@@ -2,31 +2,88 @@ package o5;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import g7.p8;
+import java.util.Arrays;
+import java.util.regex.Pattern;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class b extends y5.a {
-    public static final Parcelable.Creator<b> CREATOR = new p(0);
-    public final int a;
-    public final int b;
-    public final int c;
+public final class b extends a6.a {
+    public static final Parcelable.Creator<b> CREATOR = new v(4);
+    public final long a;
+    public final String b;
+    public final long c;
+    public final boolean d;
+    public final String[] e;
+    public final boolean f;
+    public final boolean h;
 
-    public b(int i9, int i10, int i11) {
-        this.a = i9;
-        this.b = i10;
-        this.c = i11;
+    public b(long j10, String str, long j11, boolean z10, String[] strArr, boolean z11, boolean z12) {
+        this.a = j10;
+        this.b = str;
+        this.c = j11;
+        this.d = z10;
+        this.e = strArr;
+        this.f = z11;
+        this.h = z12;
+    }
+
+    public final JSONObject b() {
+        JSONObject jSONObject = new JSONObject();
+        try {
+            jSONObject.put("id", this.b);
+            long j10 = this.a;
+            Pattern pattern = s5.a.a;
+            jSONObject.put("position", j10 / 1000.0d);
+            jSONObject.put("isWatched", this.d);
+            jSONObject.put("isEmbedded", this.f);
+            jSONObject.put("duration", this.c / 1000.0d);
+            jSONObject.put("expanded", this.h);
+            String[] strArr = this.e;
+            if (strArr != null) {
+                JSONArray jSONArray = new JSONArray();
+                for (String str : strArr) {
+                    jSONArray.put(str);
+                }
+                jSONObject.put("breakClipIds", jSONArray);
+            }
+        } catch (JSONException unused) {
+        }
+        return jSONObject;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof b)) {
+            return false;
+        }
+        b bVar = (b) obj;
+        return s5.a.d(this.b, bVar.b) && this.a == bVar.a && this.c == bVar.c && this.d == bVar.d && Arrays.equals(this.e, bVar.e) && this.f == bVar.f && this.h == bVar.h;
+    }
+
+    public final int hashCode() {
+        return this.b.hashCode();
     }
 
     @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i9) {
-        int q10 = p8.q(parcel, 20293);
-        p8.s(parcel, 2, 4);
-        parcel.writeInt(this.a);
-        p8.s(parcel, 3, 4);
-        parcel.writeInt(this.b);
-        p8.s(parcel, 4, 4);
-        parcel.writeInt(this.c);
-        p8.r(parcel, q10);
+    public final void writeToParcel(Parcel parcel, int i10) {
+        int q6 = com.google.android.gms.internal.cast.o.q(parcel, 20293);
+        com.google.android.gms.internal.cast.o.s(parcel, 2, 8);
+        parcel.writeLong(this.a);
+        com.google.android.gms.internal.cast.o.l(parcel, 3, this.b);
+        com.google.android.gms.internal.cast.o.s(parcel, 4, 8);
+        parcel.writeLong(this.c);
+        com.google.android.gms.internal.cast.o.s(parcel, 5, 4);
+        parcel.writeInt(this.d ? 1 : 0);
+        com.google.android.gms.internal.cast.o.m(parcel, 6, this.e);
+        com.google.android.gms.internal.cast.o.s(parcel, 7, 4);
+        parcel.writeInt(this.f ? 1 : 0);
+        com.google.android.gms.internal.cast.o.s(parcel, 8, 4);
+        parcel.writeInt(this.h ? 1 : 0);
+        com.google.android.gms.internal.cast.o.r(parcel, q6);
     }
 }

@@ -1,19 +1,19 @@
 package androidx.sharetarget;
 
 import a0.f;
+import ab.o;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.PersistableBundle;
 import android.text.TextUtils;
-import androidx.biometric.j;
 import androidx.core.graphics.drawable.IconCompat;
 import c0.l;
-import d7.p;
 import e0.p0;
-import e9.m;
+import f7.p;
 import g0.c;
 import g0.e;
+import g9.n;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -24,7 +24,7 @@ import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public class ShortcutInfoCompatSaverImpl extends e {
     public static final Object h = new Object();
@@ -44,7 +44,7 @@ public class ShortcutInfoCompatSaverImpl extends e {
         File file = new File(context.getFilesDir(), "ShortcutInfoCompatSaver_share_targets");
         this.g = new File(file, "ShortcutInfoCompatSaver_share_targets_bitmaps");
         this.f = new File(file, "targets.xml");
-        threadPoolExecutor.submit(new j(9, this, file));
+        threadPoolExecutor.submit(new o(this, file, false, 14));
     }
 
     public static void f(File file) {
@@ -114,13 +114,13 @@ public class ShortcutInfoCompatSaverImpl extends e {
 
     @Override // g0.e
     public final List b() {
-        return (List) this.d.submit(new p(this, 4)).get();
+        return (List) this.d.submit(new p(this, 2)).get();
     }
 
     @Override // g0.e
     public final Object c() {
         l lVar = new l();
-        this.d.submit(new j(10, this, lVar));
+        this.d.submit(new o(this, lVar, false, 15));
         return lVar;
     }
 
@@ -135,10 +135,10 @@ public class ShortcutInfoCompatSaverImpl extends e {
     public final void e(ArrayList arrayList) {
         ArrayList arrayList2 = new ArrayList();
         int size = arrayList.size();
-        int i9 = 0;
-        while (i9 < size) {
-            Object obj = arrayList.get(i9);
-            i9++;
+        int i10 = 0;
+        while (i10 < size) {
+            Object obj = arrayList.get(i10);
+            i10++;
             h2.f fVar = (h2.f) obj;
             if (!TextUtils.isEmpty(fVar.b)) {
                 arrayList2.add(fVar.b);
@@ -152,27 +152,27 @@ public class ShortcutInfoCompatSaverImpl extends e {
     }
 
     public final IconCompat g(String str) {
-        int i9;
+        int i10;
         Context context = this.a;
-        h2.f fVar = (h2.f) this.d.submit(new m(4, this, str)).get();
+        h2.f fVar = (h2.f) this.d.submit(new n(4, this, str)).get();
         if (fVar == null) {
             return null;
         }
         String str2 = fVar.a;
         if (!TextUtils.isEmpty(str2)) {
             try {
-                i9 = context.getResources().getIdentifier(str2, null, null);
+                i10 = context.getResources().getIdentifier(str2, null, null);
             } catch (Exception unused) {
-                i9 = 0;
+                i10 = 0;
             }
-            if (i9 != 0) {
-                return IconCompat.d(context, i9);
+            if (i10 != 0) {
+                return IconCompat.d(context, i10);
             }
         }
         if (TextUtils.isEmpty(fVar.b)) {
             return null;
         }
-        Bitmap bitmap = (Bitmap) this.e.submit(new p(fVar, 5)).get();
+        Bitmap bitmap = (Bitmap) this.e.submit(new p(fVar, 3)).get();
         if (bitmap != null) {
             return IconCompat.c(bitmap);
         }
@@ -180,9 +180,9 @@ public class ShortcutInfoCompatSaverImpl extends e {
     }
 
     public final void h(l lVar) {
-        j jVar = new j(7, this, new ArrayList(this.b.values()));
+        o oVar = new o(this, new ArrayList(this.b.values()), false, 12);
         l lVar2 = new l();
-        this.e.submit(new j(lVar2, jVar, false, 11));
-        lVar2.c(new j(lVar2, lVar, false, 8), this.d);
+        this.e.submit(new o(16, lVar2, oVar));
+        lVar2.c(new o(13, lVar2, lVar), this.d);
     }
 }

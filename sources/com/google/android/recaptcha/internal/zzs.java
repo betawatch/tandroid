@@ -1,19 +1,19 @@
 package com.google.android.recaptcha.internal;
 
 import android.app.Application;
+import bd.p;
 import com.google.android.gms.common.api.b;
 import com.google.android.gms.common.api.internal.v;
 import com.google.android.gms.common.api.internal.w;
 import com.google.android.gms.tasks.Task;
-import g7.y5;
-import k7.e;
-import oc.f;
-import qc.c;
-import rc.a;
-import sc.i;
-import zc.p;
+import i7.c7;
+import kotlin.jvm.internal.j;
+import m7.e;
+import qc.f;
+import sc.c;
+import uc.i;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 final class zzs extends i implements p {
     final /* synthetic */ zzu zza;
@@ -26,42 +26,42 @@ final class zzs extends i implements p {
         this.zzb = zzxnVar;
     }
 
-    @Override // sc.a
+    @Override // uc.a
     public final c create(Object obj, c cVar) {
         return new zzs(this.zza, this.zzb, cVar);
     }
 
-    @Override // zc.p
+    @Override // bd.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzs) create((zzhk) obj, (c) obj2)).invokeSuspend(oc.i.a);
+        return ((zzs) create((zzhk) obj, (c) obj2)).invokeSuspend(qc.i.a);
     }
 
-    @Override // sc.a
+    @Override // uc.a
     public final Object invokeSuspend(Object obj) {
         zzcz zzczVar;
-        a aVar = a.a;
-        y5.b(obj);
+        tc.a aVar = tc.a.a;
+        c7.b(obj);
         zzu zzuVar = this.zza;
         zzczVar = zzuVar.zza;
         if (!zzczVar.zzb(zzu.zzl(zzuVar))) {
-            return new f(y5.a(new zzcg(zzce.zzb, zzcd.zzar, null, null, 12, null)));
+            return new f(c7.a(new zzcg(zzce.zzb, zzcd.zzar, null, null, 12, null)));
         }
         zzxn zzxnVar = this.zzb;
         if (!zzxnVar.zzR() || zzxnVar.zzg().zzf().zzn()) {
-            return new f(y5.a(new zzcg(zzce.zzb, zzcd.zzaD, null, null, 12, null)));
+            return new f(c7.a(new zzcg(zzce.zzb, zzcd.zzaD, null, null, 12, null)));
         }
         zzuVar.zzb = zzxnVar.zzg().zzf().zzm();
-        v7.c cVar = new v7.c();
+        x7.c cVar = new x7.c();
         Application context = zzu.zzl(zzuVar);
-        kotlin.jvm.internal.i.e(context, "context");
-        e eVar = new e(context, e.k, b.g, com.google.android.gms.common.api.i.c);
+        j.e(context, "context");
+        e eVar = new e(context, e.k, b.i, com.google.android.gms.common.api.i.c);
         v b10 = w.b();
-        b10.d = new u5.c[]{v7.f.b};
-        b10.c = new xa.c(cVar, 22);
+        b10.d = new w5.c[]{x7.f.b};
+        b10.c = new ha.c(cVar, 27);
         b10.a = 34001;
         Task e10 = eVar.e(0, b10.b());
-        kotlin.jvm.internal.i.d(e10, "doRead(...)");
+        j.d(e10, "doRead(...)");
         zzuVar.zzc = zzdf.zza(e10);
-        return new f(oc.i.a);
+        return new f(qc.i.a);
     }
 }

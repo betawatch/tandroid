@@ -1,19 +1,30 @@
 package h7;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
-/* loaded from: classes.dex */
-public final class j5 implements q9.d {
-    public static final j5 a = new j5();
+import android.os.Build;
+import android.util.Log;
 
-    static {
-        e2.c.u(e2.c.s(h0.class, e2.c.j(3, e2.c.s(h0.class, e2.c.j(2, e2.c.s(h0.class, new e0(1)))))));
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* loaded from: classes.dex */
+public abstract class j5 {
+    public static void a(Object obj, String str, String str2) {
+        String c3 = c(str);
+        if (Log.isLoggable(c3, 3)) {
+            Log.d(c3, String.format(str2, obj));
+        }
     }
 
-    @Override // q9.a
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
+    public static void b(String str, String str2, Exception exc) {
+        String c3 = c(str);
+        if (Log.isLoggable(c3, 6)) {
+            Log.e(c3, str2, exc);
         }
-        throw null;
+    }
+
+    public static String c(String str) {
+        if (Build.VERSION.SDK_INT >= 26) {
+            return "TRuntime.".concat(str);
+        }
+        String concat = "TRuntime.".concat(str);
+        return concat.length() > 23 ? concat.substring(0, 23) : concat;
     }
 }

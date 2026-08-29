@@ -1,29 +1,31 @@
 package org.telegram.messenger;
 
 import org.telegram.messenger.LanguageDetector;
-import org.telegram.messenger.TranslateController;
-import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class bl implements LanguageDetector.StringCallback, LanguageDetector.ExceptionCallback {
     public final /* synthetic */ TranslateController a;
-    public final /* synthetic */ TL_stories.StoryItem b;
-    public final /* synthetic */ TranslateController.StoryKey c;
+    public final /* synthetic */ MessageObject b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ int d;
 
-    public /* synthetic */ bl(TranslateController translateController, TL_stories.StoryItem storyItem, TranslateController.StoryKey storyKey) {
+    public /* synthetic */ bl(TranslateController translateController, MessageObject messageObject, long j10, int i10) {
         this.a = translateController;
-        this.b = storyItem;
-        this.c = storyKey;
+        this.b = messageObject;
+        this.c = j10;
+        this.d = i10;
     }
 
     @Override // org.telegram.messenger.LanguageDetector.ExceptionCallback
     public void run(Exception exc) {
-        this.a.lambda$detectStoryLanguage$34(this.b, this.c, exc);
+        this.a.lambda$checkLanguage$15(this.b, this.c, this.d, exc);
     }
 
     @Override // org.telegram.messenger.LanguageDetector.StringCallback
     public void run(String str) {
-        this.a.lambda$detectStoryLanguage$32(this.b, this.c, str);
+        long j10 = this.c;
+        int i10 = this.d;
+        this.a.lambda$checkLanguage$13(this.b, j10, i10, str);
     }
 }

@@ -1,37 +1,26 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import org.telegram.messenger.AndroidUtilities;
+import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class fp extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ gp b;
+public final class fp {
+    public final org.telegram.ui.ActionBar.b4 a;
+    public Drawable b;
+    public int c;
+    public boolean d;
+    public Bitmap e;
 
-    public /* synthetic */ fp(gp gpVar, int i9) {
-        this.a = i9;
-        this.b = gpVar;
+    public fp(org.telegram.ui.ActionBar.b4 b4Var) {
+        this.a = b4Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                gp gpVar = this.b;
-                gpVar.d = null;
-                fg fgVar = new fg(this, 29);
-                gpVar.e = fgVar;
-                AndroidUtilities.runOnUIThread(fgVar, 3000L);
-                break;
-            default:
-                gp gpVar2 = this.b;
-                gpVar2.setVisibility(4);
-                gpVar2.getClass();
-                gpVar2.getClass();
-                gpVar2.d = null;
-                break;
+    public final String a() {
+        org.telegram.ui.ActionBar.b4 b4Var = this.a;
+        if (b4Var == null || b4Var.a) {
+            return null;
         }
+        return b4Var.e;
     }
 }

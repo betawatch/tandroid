@@ -38,7 +38,7 @@ public final class r7 extends u7 implements j$.util.u0, DoubleConsumer {
     }
 
     @Override // j$.util.stream.u7
-    public final b7 e(int i9) {
-        return new y6(i9);
+    public final b7 e(int i10) {
+        return new y6(i10);
     }
 }

@@ -1,8 +1,8 @@
 package r0;
 
-import g7.a7;
+import i7.g7;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public abstract class c1 {
     public final m1 a;
@@ -25,15 +25,15 @@ public abstract class c1 {
                 bVar = m1Var.a.f(1);
             }
             g(i0.b.a(bVar, bVar2));
-            i0.b bVar3 = this.b[a7.a(16)];
+            i0.b bVar3 = this.b[g7.a(16)];
             if (bVar3 != null) {
                 f(bVar3);
             }
-            i0.b bVar4 = this.b[a7.a(32)];
+            i0.b bVar4 = this.b[g7.a(32)];
             if (bVar4 != null) {
                 d(bVar4);
             }
-            i0.b bVar5 = this.b[a7.a(64)];
+            i0.b bVar5 = this.b[g7.a(64)];
             if (bVar5 != null) {
                 h(bVar5);
             }
@@ -42,13 +42,13 @@ public abstract class c1 {
 
     public abstract m1 b();
 
-    public void c(int i9, i0.b bVar) {
+    public void c(int i10, i0.b bVar) {
         if (this.b == null) {
             this.b = new i0.b[10];
         }
-        for (int i10 = 1; i10 <= 512; i10 <<= 1) {
-            if ((i9 & i10) != 0) {
-                this.b[a7.a(i10)] = bVar;
+        for (int i11 = 1; i11 <= 512; i11 <<= 1) {
+            if ((i10 & i11) != 0) {
+                this.b[g7.a(i11)] = bVar;
             }
         }
     }

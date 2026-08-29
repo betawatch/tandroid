@@ -6,7 +6,7 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class q4 extends m4 implements ScheduledExecutorService {
     public final ScheduledExecutorService b;
@@ -18,7 +18,7 @@ public final class q4 extends m4 implements ScheduledExecutorService {
 
     @Override // com.google.android.gms.internal.cast.m4, java.lang.AutoCloseable
     public final /* synthetic */ void close() {
-        i4.d(this);
+        b9.b.e(this);
     }
 
     @Override // java.util.concurrent.ScheduledExecutorService

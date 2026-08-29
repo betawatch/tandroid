@@ -1,147 +1,66 @@
 package bg;
 
-import android.util.SparseIntArray;
-import ih.f8;
-import java.util.Calendar;
-import mh.m4;
-import org.telegram.messenger.UserConfig;
+import android.animation.ValueAnimator;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
-import org.telegram.ui.Components.bc0;
-import org.telegram.ui.Components.cj0;
-import org.telegram.ui.Components.ej0;
-import org.telegram.ui.Components.zb0;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class g implements zb0, org.telegram.ui.ActionBar.b2, cj0 {
+public final /* synthetic */ class g implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
+    public final /* synthetic */ k b;
 
-    public /* synthetic */ g(int i9, boolean[] zArr, TLRPC.Document document, int i10, boolean[] zArr2, Utilities.Callback callback) {
-        this.a = i9;
-        this.c = zArr;
-        this.d = document;
-        this.b = i10;
-        this.e = zArr2;
-        this.f = callback;
+    public /* synthetic */ g(k kVar, int i10) {
+        this.a = i10;
+        this.b = kVar;
     }
 
-    @Override // org.telegram.ui.Components.cj0
-    public void a(ej0 ej0Var, int i9) {
-        SparseIntArray sparseIntArray = (SparseIntArray) this.c;
-        m2.g gVar = (m2.g) this.d;
-        ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = (ActionBarPopupWindow$ActionBarPopupWindowLayout) this.e;
-        int[] iArr = (int[]) this.f;
-        int i10 = this.b + i9;
-        int i11 = this.a;
-        sparseIntArray.put(i11, i10);
-        if (gVar.getCurrentItem() == i11) {
-            actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack().f(iArr[0], i10, true);
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.b2
-    public void f(org.telegram.ui.ActionBar.c2 c2Var, int i9) {
-        boolean[] zArr = (boolean[]) this.c;
-        TLRPC.Document document = (TLRPC.Document) this.d;
-        boolean[] zArr2 = (boolean[]) this.e;
-        Utilities.Callback callback = (Utilities.Callback) this.f;
-        int i10 = this.a;
-        if (!UserConfig.getInstance(i10).isPremium()) {
-            new zf.x0((org.telegram.ui.ActionBar.o2) new m4(null), 12, false).show();
-            return;
-        }
-        zArr[0] = true;
-        TL_account.updateEmojiStatus updateemojistatus = new TL_account.updateEmojiStatus();
-        TLRPC.TL_emojiStatus tL_emojiStatus = new TLRPC.TL_emojiStatus();
-        tL_emojiStatus.document_id = document.id;
-        int i11 = this.b;
-        if (i11 > 0) {
-            tL_emojiStatus.flags = 1 | tL_emojiStatus.flags;
-            tL_emojiStatus.until = ConnectionsManager.getInstance(i10).getCurrentTime() + i11;
-        }
-        updateemojistatus.emoji_status = tL_emojiStatus;
-        ConnectionsManager.getInstance(i10).sendRequest(updateemojistatus, new f8(zArr2, callback, i10, updateemojistatus, 1));
-    }
-
-    @Override // org.telegram.ui.Components.zb0
-    public void m(bc0 bc0Var, int i9) {
-        s sVar = (s) this.c;
-        q qVar = (q) this.d;
-        r rVar = (r) this.e;
-        bc0 bc0Var2 = (bc0) this.f;
-        try {
-            sVar.performHapticFeedback(3, 2);
-        } catch (Exception unused) {
-        }
-        if (bc0Var.getTag() != null && bc0Var.getTag().equals("DAY")) {
-            if (bc0Var.getValue() == bc0Var.getMinValue()) {
-                Calendar calendar = Calendar.getInstance();
-                calendar.setTimeInMillis(System.currentTimeMillis());
-                int i10 = calendar.get(11);
-                int i11 = (calendar.get(12) / 5) + 1;
-                if (i11 > 11) {
-                    if (i10 == 23) {
-                        bc0Var.setMinValue(bc0Var.getMinValue() + 1);
-                        qVar.setMinValue(0);
-                    } else {
-                        qVar.setMinValue(i10 + 1);
-                    }
-                    rVar.setMinValue(0);
-                } else {
-                    qVar.setMinValue(i10);
-                    rVar.setMinValue(i11);
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                k kVar = this.b;
+                kVar.g(AndroidUtilities.lerpAngle(kVar.H, kVar.e0, kVar.M.getAnimatedFraction()));
+                break;
+            case 1:
+                k kVar2 = this.b;
+                kVar2.getClass();
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                kVar2.j0 = floatValue;
+                kVar2.setAlpha(floatValue);
+                j jVar = kVar2.D;
+                if (jVar != null) {
+                    jVar.setScaleX(Utilities.clamp(kVar2.j0 * 1.25f, 1.0f, 0.0f) * AndroidUtilities.lerp(0.9f, 1.0f, kVar2.f0));
+                    kVar2.D.setScaleY(Utilities.clamp(kVar2.j0 * 1.25f, 1.0f, 0.0f) * AndroidUtilities.lerp(0.9f, 1.0f, kVar2.f0));
+                    kVar2.D.setAlpha(Math.max(0.0f, kVar2.j0 - 0.8f) * kVar2.f0 * 5.0f);
                 }
-            } else if (bc0Var.getValue() == bc0Var.getMaxValue()) {
-                qVar.setMaxValue(this.a);
-                rVar.setMaxValue(Math.min(this.b / 5, 11));
-            } else {
-                qVar.setMinValue(0);
-                rVar.setMinValue(0);
-                qVar.setMaxValue(23);
-                rVar.setMaxValue(11);
-            }
+                kVar2.invalidate();
+                break;
+            case 2:
+                k kVar3 = this.b;
+                kVar3.getClass();
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                kVar3.f0 = floatValue2;
+                j jVar2 = kVar3.D;
+                if (jVar2 != null) {
+                    jVar2.setScaleX(Utilities.clamp(kVar3.j0 * 1.25f, 1.0f, 0.0f) * AndroidUtilities.lerp(0.9f, 1.0f, floatValue2));
+                    kVar3.D.setScaleY(Utilities.clamp(kVar3.j0 * 1.25f, 1.0f, 0.0f) * AndroidUtilities.lerp(0.9f, 1.0f, kVar3.f0));
+                    kVar3.D.setAlpha(Math.max(0.0f, kVar3.j0 - 0.8f) * kVar3.f0 * 5.0f);
+                    break;
+                }
+                break;
+            case 3:
+                this.b.k();
+                break;
+            case 4:
+                this.b.k();
+                break;
+            default:
+                k kVar4 = this.b;
+                float lerpAngle = AndroidUtilities.lerpAngle(kVar4.e0, kVar4.H, valueAnimator.getAnimatedFraction());
+                kVar4.K = lerpAngle;
+                kVar4.g(lerpAngle);
+                break;
         }
-        if (bc0Var.getTag() != null && bc0Var.getTag().equals("HOUR") && bc0Var2.getValue() == bc0Var2.getMinValue()) {
-            if (bc0Var.getValue() != bc0Var.getMinValue()) {
-                rVar.setMinValue(0);
-                rVar.setMaxValue(11);
-                return;
-            }
-            Calendar calendar2 = Calendar.getInstance();
-            calendar2.setTimeInMillis(System.currentTimeMillis());
-            int i12 = (calendar2.get(12) / 5) + 1;
-            if (i12 > 11) {
-                rVar.setMinValue(0);
-            } else {
-                rVar.setMinValue(i12);
-            }
-        }
-    }
-
-    public /* synthetic */ g(SparseIntArray sparseIntArray, int i9, int i10, m2.g gVar, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout, int[] iArr) {
-        this.c = sparseIntArray;
-        this.a = i9;
-        this.b = i10;
-        this.d = gVar;
-        this.e = actionBarPopupWindow$ActionBarPopupWindowLayout;
-        this.f = iArr;
-    }
-
-    public /* synthetic */ g(s sVar, q qVar, r rVar, int i9, int i10, bc0 bc0Var) {
-        this.c = sVar;
-        this.d = qVar;
-        this.e = rVar;
-        this.a = i9;
-        this.b = i10;
-        this.f = bc0Var;
     }
 }

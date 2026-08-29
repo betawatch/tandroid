@@ -1,35 +1,58 @@
 package g6;
 
-import android.content.Context;
+import java.util.Iterator;
+import java.util.regex.Pattern;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+import z5.l;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class c {
-    public static final c b;
-    public b a;
-
+public abstract class c {
     static {
-        c cVar = new c();
-        cVar.a = null;
-        b = cVar;
+        Pattern.compile("\\\\.");
+        Pattern.compile("[\\\\\"/\b\f\n\r\t]");
     }
 
-    public static b a(Context context) {
-        b bVar;
-        c cVar = b;
-        synchronized (cVar) {
+    public static boolean a(Object obj, Object obj2) {
+        int i10;
+        if (obj == null && obj2 == null) {
+            return true;
+        }
+        if (obj != null && obj2 != null) {
             try {
-                if (cVar.a == null) {
-                    if (context.getApplicationContext() != null) {
-                        context = context.getApplicationContext();
+                if ((obj instanceof JSONObject) && (obj2 instanceof JSONObject)) {
+                    JSONObject jSONObject = (JSONObject) obj;
+                    JSONObject jSONObject2 = (JSONObject) obj2;
+                    if (jSONObject.length() == jSONObject2.length()) {
+                        Iterator<String> keys = jSONObject.keys();
+                        while (keys.hasNext()) {
+                            String next = keys.next();
+                            if (jSONObject2.has(next)) {
+                                l.h(next);
+                                if (a(jSONObject.get(next), jSONObject2.get(next))) {
+                                }
+                            }
+                        }
+                        return true;
                     }
-                    cVar.a = new b(context, 0);
+                } else {
+                    if (!(obj instanceof JSONArray) || !(obj2 instanceof JSONArray)) {
+                        return obj.equals(obj2);
+                    }
+                    JSONArray jSONArray = (JSONArray) obj;
+                    JSONArray jSONArray2 = (JSONArray) obj2;
+                    if (jSONArray.length() == jSONArray2.length()) {
+                        while (i10 < jSONArray.length()) {
+                            i10 = a(jSONArray.get(i10), jSONArray2.get(i10)) ? i10 + 1 : 0;
+                        }
+                        return true;
+                    }
                 }
-                bVar = cVar.a;
-            } catch (Throwable th) {
-                throw th;
+            } catch (JSONException unused) {
             }
         }
-        return bVar;
+        return false;
     }
 }

@@ -1,51 +1,230 @@
 package kh;
 
-import android.animation.ValueAnimator;
+import android.util.LongSparseArray;
+import android.util.SparseArray;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
+import org.telegram.ui.q6;
+import org.telegram.ui.r6;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class b implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ d b;
+public final class b {
+    public final boolean a;
+    public long k;
+    public boolean m;
+    public boolean n;
+    public boolean o;
+    public boolean p;
+    public boolean q;
+    public long r;
+    public long s;
+    public long t;
+    public long u;
+    public long v;
+    public ArrayList b = new ArrayList();
+    public final LongSparseArray c = new LongSparseArray();
+    public final ArrayList d = new ArrayList();
+    public final ArrayList e = new ArrayList();
+    public final ArrayList f = new ArrayList();
+    public final ArrayList g = new ArrayList();
+    public final ArrayList h = new ArrayList();
+    public final HashSet i = new HashSet();
+    public final HashSet j = new HashSet();
+    public final HashSet l = new HashSet();
 
-    public /* synthetic */ b(d dVar, int i9) {
-        this.a = i9;
-        this.b = dVar;
+    public b(boolean z10) {
+        this.a = z10;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                d dVar = this.b;
-                dVar.getClass();
-                dVar.L = Math.max(1.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue());
-                dVar.invalidate();
-                break;
-            case 1:
-                d dVar2 = this.b;
-                dVar2.getClass();
-                dVar2.R = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                dVar2.invalidate();
-                break;
-            case 2:
-                d dVar3 = this.b;
-                dVar3.getClass();
-                dVar3.I = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                dVar3.invalidate();
-                break;
-            case 3:
-                d dVar4 = this.b;
-                dVar4.getClass();
-                dVar4.D = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                dVar4.invalidate();
-                break;
-            default:
-                d dVar5 = this.b;
-                dVar5.getClass();
-                dVar5.D = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                dVar5.invalidate();
-                break;
+    public final void a(int i10, boolean z10) {
+        if (this.a) {
+            if (!z10) {
+                if (i10 == 0) {
+                    this.m = false;
+                    return;
+                }
+                if (i10 == 1) {
+                    this.n = false;
+                    return;
+                }
+                if (i10 == 2) {
+                    this.o = false;
+                    return;
+                } else if (i10 == 3) {
+                    this.p = false;
+                    return;
+                } else {
+                    if (i10 == 4) {
+                        this.q = false;
+                        return;
+                    }
+                    return;
+                }
+            }
+            ArrayList arrayList = this.d;
+            if (i10 == 0) {
+                this.m = b(i10, arrayList);
+                return;
+            }
+            if (i10 == 1) {
+                this.n = b(i10, arrayList);
+                return;
+            }
+            if (i10 == 2) {
+                this.o = b(i10, this.e);
+                return;
+            }
+            if (i10 == 3) {
+                this.p = b(i10, this.f);
+            } else if (i10 == 4) {
+                this.q = b(i10, this.g);
+            } else if (i10 == 7) {
+                b(i10, this.h);
+            }
         }
+    }
+
+    public final boolean b(int i10, ArrayList arrayList) {
+        for (int i11 = 0; i11 < arrayList.size(); i11++) {
+            if (((a) arrayList.get(i11)).d == i10 && !this.j.contains(arrayList.get(i11))) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public final void c() {
+        if (this.a) {
+            return;
+        }
+        HashSet hashSet = this.i;
+        hashSet.clear();
+        HashSet hashSet2 = this.j;
+        Iterator it = hashSet2.iterator();
+        while (it.hasNext()) {
+            long j10 = ((a) it.next()).b;
+            if (j10 != 0) {
+                hashSet.add(Long.valueOf(j10));
+            }
+        }
+        HashSet hashSet3 = this.l;
+        hashSet3.clear();
+        Iterator it2 = hashSet.iterator();
+        while (it2.hasNext()) {
+            q6 q6Var = (q6) this.c.get(((Long) it2.next()).longValue());
+            if (q6Var != null) {
+                SparseArray sparseArray = q6Var.d;
+                int i10 = 0;
+                while (true) {
+                    if (i10 >= sparseArray.size()) {
+                        hashSet3.add(Long.valueOf(q6Var.a));
+                        break;
+                    }
+                    ArrayList arrayList = ((r6) sparseArray.valueAt(i10)).b;
+                    int size = arrayList.size();
+                    int i11 = 0;
+                    while (i11 < size) {
+                        Object obj = arrayList.get(i11);
+                        i11++;
+                        if (!hashSet2.contains((a) obj)) {
+                            break;
+                        }
+                    }
+                    i10++;
+                }
+            }
+        }
+    }
+
+    public final void d() {
+        this.k = 0L;
+        this.j.clear();
+        this.l.clear();
+    }
+
+    public final ArrayList e(int i10) {
+        if (i10 == 0 || i10 == 1) {
+            return this.d;
+        }
+        if (i10 == 2) {
+            return this.e;
+        }
+        if (i10 == 3) {
+            return this.f;
+        }
+        if (i10 == 4) {
+            return this.g;
+        }
+        if (i10 == 7) {
+            return this.h;
+        }
+        return null;
+    }
+
+    public final long f(int i10) {
+        if (i10 == 0) {
+            return this.r;
+        }
+        if (i10 == 1) {
+            return this.s;
+        }
+        if (i10 == 2) {
+            return this.t;
+        }
+        if (i10 == 3) {
+            return this.u;
+        }
+        if (i10 == 4) {
+            return this.v;
+        }
+        return -1L;
+    }
+
+    public final void g(a aVar, boolean z10) {
+        long j10 = aVar.c;
+        if (!z10) {
+            j10 = -j10;
+        }
+        int i10 = aVar.d;
+        if (i10 == 0) {
+            this.r += j10;
+            return;
+        }
+        if (i10 == 1) {
+            this.s += j10;
+            return;
+        }
+        if (i10 == 2) {
+            this.t += j10;
+        } else if (i10 == 3) {
+            this.u += j10;
+        } else if (i10 == 4) {
+            this.v += j10;
+        }
+    }
+
+    public final boolean h() {
+        if (this.d.isEmpty() && this.e.isEmpty() && this.f.isEmpty()) {
+            return this.a || this.b.isEmpty();
+        }
+        return false;
+    }
+
+    public final void i(a aVar) {
+        HashSet hashSet = this.j;
+        if (hashSet.contains(aVar)) {
+            hashSet.remove(aVar);
+            g(aVar, false);
+            this.k -= aVar.c;
+            a(aVar.d, false);
+        } else {
+            hashSet.add(aVar);
+            g(aVar, true);
+            this.k += aVar.c;
+            a(aVar.d, true);
+        }
+        c();
     }
 }

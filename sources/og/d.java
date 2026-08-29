@@ -1,67 +1,72 @@
 package og;
 
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Matrix;
-import android.graphics.RectF;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import pg.i;
+import j3.z;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.ActionBar.c6;
+import org.telegram.ui.ActionBar.g6;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public abstract class d {
-    public static final Matrix a = new Matrix();
-    public static final RectF b = new RectF();
-    public static final RectF c = new RectF();
+public final class d implements a {
+    public final c6 a;
+    public c b;
+    public c c;
+    public c d;
+    public c e;
+    public float f;
+    public float h;
+    public float n;
+    public float r;
 
-    public static void a(jg.a aVar, Canvas canvas, RectF rectF, View view, ViewGroup viewGroup, int i9) {
-        if (i9 <= 0) {
-            return;
-        }
-        RectF rectF2 = c;
-        if (i.c(view, viewGroup, rectF2)) {
-            float f10 = rectF2.left;
-            float f11 = rectF2.top;
-            RectF rectF3 = b;
-            rectF3.set(rectF);
-            rectF3.offset(-f10, -f11);
-            boolean z10 = (f10 == 0.0f && f11 == 0.0f) ? false : true;
-            boolean z11 = i9 != 255;
-            if (z10) {
-                canvas.save();
-                canvas.translate(f10, f11);
-            }
-            if (z11) {
-                canvas.saveLayerAlpha(rectF3, i9);
-            }
-            aVar.e(canvas, rectF3);
-            if (z11) {
-                canvas.restore();
-            }
-            if (z10) {
-                canvas.restore();
-            }
-        }
+    public d(c6 c6Var) {
+        this.a = c6Var;
+        float dpf2 = AndroidUtilities.dpf2(1.0f);
+        float dpf22 = AndroidUtilities.dpf2(0.33333334f);
+        this.n = dpf2;
+        this.r = dpf22;
+        float dpf23 = AndroidUtilities.dpf2(1.0f);
+        float dpf24 = AndroidUtilities.dpf2(0.6666667f);
+        this.f = dpf23;
+        this.h = dpf24;
     }
 
-    public static void b(jg.a aVar, Canvas canvas, RectF rectF, View view, FrameLayout frameLayout) {
-        a(aVar, canvas, rectF, view, frameLayout, 255);
-    }
-
-    public static void c(ng.b bVar, View view) {
-        Bitmap bitmap;
-        if (bVar == null || view == null || view.getWidth() == 0 || view.getHeight() == 0 || (bitmap = bVar.d) == null || bitmap.isRecycled() || bitmap.getWidth() == 0 || bitmap.getHeight() == 0) {
-            return;
+    public final int a(c cVar) {
+        if (cVar == null) {
+            return 0;
         }
-        Matrix matrix = a;
-        matrix.reset();
-        matrix.setScale(view.getWidth() / bitmap.getWidth(), view.getHeight() / bitmap.getHeight());
-        bVar.b.set(matrix);
+        c6 c6Var = this.a;
+        return cVar.f(c6Var, ((c6Var instanceof lh.b) || c6Var != null) ? c6Var.a() : g6.I.q());
     }
 
-    public static c d(kg.d dVar, int i9, int i10) {
-        return new c(i9, i10, dVar);
+    public final void b(int i10, int i11) {
+        this.b = new z(i11, i10, 2);
+    }
+
+    public final void c(int i10, int i11) {
+        this.d = new z(i11, i10, 2);
+    }
+
+    public final void d(int i10, int i11) {
+        this.c = new z(i11, i10, 2);
+    }
+
+    @Override // og.a
+    public final int h() {
+        return a(this.c);
+    }
+
+    @Override // og.a
+    public final int m() {
+        return a(this.d);
+    }
+
+    @Override // og.a
+    public final int v() {
+        return a(this.b);
+    }
+
+    @Override // og.a
+    public final int z() {
+        return a(this.e);
     }
 }

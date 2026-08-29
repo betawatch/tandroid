@@ -13,9 +13,9 @@ import android.view.SubMenu;
 import android.view.View;
 import java.lang.reflect.Method;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class r extends f2.x implements MenuItem {
+public final class r extends f2.v implements MenuItem {
     public final l0.a c;
     public Method d;
 
@@ -187,8 +187,8 @@ public final class r extends f2.x implements MenuItem {
     }
 
     @Override // android.view.MenuItem
-    public final MenuItem setAlphabeticShortcut(char c10) {
-        this.c.setAlphabeticShortcut(c10);
+    public final MenuItem setAlphabeticShortcut(char c3) {
+        this.c.setAlphabeticShortcut(c3);
         return this;
     }
 
@@ -241,8 +241,8 @@ public final class r extends f2.x implements MenuItem {
     }
 
     @Override // android.view.MenuItem
-    public final MenuItem setNumericShortcut(char c10) {
-        this.c.setNumericShortcut(c10);
+    public final MenuItem setNumericShortcut(char c3) {
+        this.c.setNumericShortcut(c3);
         return this;
     }
 
@@ -259,19 +259,19 @@ public final class r extends f2.x implements MenuItem {
     }
 
     @Override // android.view.MenuItem
-    public final MenuItem setShortcut(char c10, char c11) {
-        this.c.setShortcut(c10, c11);
+    public final MenuItem setShortcut(char c3, char c6) {
+        this.c.setShortcut(c3, c6);
         return this;
     }
 
     @Override // android.view.MenuItem
-    public final void setShowAsAction(int i9) {
-        this.c.setShowAsAction(i9);
+    public final void setShowAsAction(int i10) {
+        this.c.setShowAsAction(i10);
     }
 
     @Override // android.view.MenuItem
-    public final MenuItem setShowAsActionFlags(int i9) {
-        this.c.setShowAsActionFlags(i9);
+    public final MenuItem setShowAsActionFlags(int i10) {
+        this.c.setShowAsActionFlags(i10);
         return this;
     }
 
@@ -299,39 +299,39 @@ public final class r extends f2.x implements MenuItem {
     }
 
     @Override // android.view.MenuItem
-    public final MenuItem setAlphabeticShortcut(char c10, int i9) {
-        this.c.setAlphabeticShortcut(c10, i9);
+    public final MenuItem setAlphabeticShortcut(char c3, int i10) {
+        this.c.setAlphabeticShortcut(c3, i10);
         return this;
     }
 
     @Override // android.view.MenuItem
-    public final MenuItem setIcon(int i9) {
-        this.c.setIcon(i9);
+    public final MenuItem setIcon(int i10) {
+        this.c.setIcon(i10);
         return this;
     }
 
     @Override // android.view.MenuItem
-    public final MenuItem setNumericShortcut(char c10, int i9) {
-        this.c.setNumericShortcut(c10, i9);
+    public final MenuItem setNumericShortcut(char c3, int i10) {
+        this.c.setNumericShortcut(c3, i10);
         return this;
     }
 
     @Override // android.view.MenuItem
-    public final MenuItem setShortcut(char c10, char c11, int i9, int i10) {
-        this.c.setShortcut(c10, c11, i9, i10);
+    public final MenuItem setShortcut(char c3, char c6, int i10, int i11) {
+        this.c.setShortcut(c3, c6, i10, i11);
         return this;
     }
 
     @Override // android.view.MenuItem
-    public final MenuItem setTitle(int i9) {
-        this.c.setTitle(i9);
+    public final MenuItem setTitle(int i10) {
+        this.c.setTitle(i10);
         return this;
     }
 
     @Override // android.view.MenuItem
-    public final MenuItem setActionView(int i9) {
+    public final MenuItem setActionView(int i10) {
         l0.a aVar = this.c;
-        aVar.setActionView(i9);
+        aVar.setActionView(i10);
         View actionView = aVar.getActionView();
         if (actionView instanceof CollapsibleActionView) {
             aVar.setActionView(new o(actionView));

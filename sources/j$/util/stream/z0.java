@@ -6,6 +6,7 @@ import java.util.function.BiConsumer;
 import java.util.function.IntBinaryOperator;
 import java.util.function.IntConsumer;
 import java.util.function.IntFunction;
+import java.util.function.IntUnaryOperator;
 import java.util.function.ObjIntConsumer;
 import java.util.function.Supplier;
 
@@ -65,7 +66,7 @@ public abstract class z0 extends a implements IntStream {
     @Override // j$.util.stream.a
     public final boolean L0(Spliterator spliterator, j5 j5Var) {
         IntConsumer i0Var;
-        boolean q10;
+        boolean q6;
         j$.util.x0 U0 = U0(spliterator);
         if (j5Var instanceof IntConsumer) {
             i0Var = (IntConsumer) j5Var;
@@ -78,12 +79,12 @@ public abstract class z0 extends a implements IntStream {
             i0Var = new j$.util.i0(j5Var, 1);
         }
         do {
-            q10 = j5Var.q();
-            if (q10) {
+            q6 = j5Var.q();
+            if (q6) {
                 break;
             }
         } while (U0.tryAdvance(i0Var));
-        return q10;
+        return q6;
     }
 
     @Override // j$.util.stream.t3
@@ -119,9 +120,9 @@ public abstract class z0 extends a implements IntStream {
     }
 
     @Override // j$.util.stream.IntStream
-    public final IntStream e() {
-        Objects.requireNonNull(null);
-        return new s(this, v6.p | v6.n, 1);
+    public final IntStream map(IntUnaryOperator intUnaryOperator) {
+        Objects.requireNonNull(intUnaryOperator);
+        return new t0(this, v6.p | v6.n, intUnaryOperator, 1);
     }
 
     @Override // j$.util.stream.IntStream
@@ -143,15 +144,15 @@ public abstract class z0 extends a implements IntStream {
     }
 
     @Override // j$.util.stream.IntStream
-    public final int reduce(int i9, IntBinaryOperator intBinaryOperator) {
+    public final int reduce(int i10, IntBinaryOperator intBinaryOperator) {
         Objects.requireNonNull(intBinaryOperator);
-        return ((Integer) I0(new j4(w6.INT_VALUE, intBinaryOperator, i9))).intValue();
+        return ((Integer) I0(new j4(w6.INT_VALUE, intBinaryOperator, i10))).intValue();
     }
 
     @Override // j$.util.stream.IntStream
     public final IntStream q(k0 k0Var) {
         Objects.requireNonNull(k0Var);
-        return new t0(this, v6.p | v6.n | v6.t, k0Var, 1);
+        return new t0(this, v6.p | v6.n | v6.t, k0Var, 2);
     }
 
     @Override // j$.util.stream.IntStream
@@ -163,7 +164,7 @@ public abstract class z0 extends a implements IntStream {
     @Override // j$.util.stream.IntStream
     public final IntStream b() {
         Objects.requireNonNull(null);
-        return new s(this, v6.t, 3);
+        return new s(this, v6.t, 2);
     }
 
     @Override // j$.util.stream.IntStream
@@ -190,14 +191,14 @@ public abstract class z0 extends a implements IntStream {
 
     @Override // j$.util.stream.IntStream
     public final IntStream a() {
-        int i9 = w8.a;
+        int i10 = w8.a;
         Objects.requireNonNull(null);
         return new c6(this, w8.a, 1);
     }
 
     @Override // j$.util.stream.IntStream
     public final IntStream c() {
-        int i9 = w8.a;
+        int i10 = w8.a;
         Objects.requireNonNull(null);
         return new c6(this, w8.b, 2);
     }

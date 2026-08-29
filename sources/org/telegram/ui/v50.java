@@ -1,26 +1,31 @@
 package org.telegram.ui;
 
-import android.view.ViewTreeObserver;
-import android.widget.FrameLayout;
+import android.content.Context;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class v50 implements ViewTreeObserver.OnGlobalLayoutListener {
-    public final /* synthetic */ FrameLayout a;
-    public final /* synthetic */ y50 b;
+public final class v50 extends org.telegram.ui.Components.voip.l {
+    public final /* synthetic */ x50 h;
 
-    public v50(y50 y50Var, FrameLayout frameLayout) {
-        this.b = y50Var;
-        this.a = frameLayout;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public v50(x50 x50Var, Context context) {
+        super(context, true);
+        this.h = x50Var;
     }
 
-    @Override // android.view.ViewTreeObserver.OnGlobalLayoutListener
-    public final void onGlobalLayout() {
-        this.a.getViewTreeObserver().removeOnGlobalLayoutListener(this);
-        y50 y50Var = this.b;
-        if (y50Var.v0 == null) {
-            y50Var.v0 = (pc) y50Var.x0(y50Var.V);
+    @Override // org.telegram.ui.Components.voip.l, android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        x50 x50Var = this.h;
+        if (!x50Var.r || getParticipant() == null) {
+            return;
         }
-        y50Var.v0.f.setOnClickListener(new q50(this, 1));
+        x50Var.E(this, true);
+    }
+
+    @Override // org.telegram.ui.Components.voip.l, android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        this.h.E(this, false);
     }
 }

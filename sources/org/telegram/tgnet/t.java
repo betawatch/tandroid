@@ -2,22 +2,22 @@ package org.telegram.tgnet;
 
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class t implements Utilities.CallbackReturn {
     public final /* synthetic */ int a;
     public final /* synthetic */ InputSerializedData b;
 
-    public /* synthetic */ t(InputSerializedData inputSerializedData, int i9) {
-        this.a = i9;
+    public /* synthetic */ t(InputSerializedData inputSerializedData, int i10) {
+        this.a = i10;
         this.b = inputSerializedData;
     }
 
     @Override // org.telegram.messenger.Utilities.CallbackReturn
     public final Object run(Object obj) {
-        int i9 = this.a;
+        int i10 = this.a;
         boolean booleanValue = ((Boolean) obj).booleanValue();
-        switch (i9) {
+        switch (i10) {
             case 0:
                 return Long.valueOf(this.b.readInt64(booleanValue));
             case 1:

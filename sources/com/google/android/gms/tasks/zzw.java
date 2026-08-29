@@ -3,9 +3,9 @@ package com.google.android.gms.tasks;
 import android.app.Activity;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.Executor;
-import x5.l;
+import z5.l;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 final class zzw<TResult> extends Task<TResult> {
     private final Object zza = new Object();
@@ -37,8 +37,8 @@ final class zzw<TResult> extends Task<TResult> {
                 if (this.zzc) {
                     this.zzb.zzb(this);
                 }
-            } catch (Throwable th) {
-                throw th;
+            } catch (Throwable th2) {
+                throw th2;
             }
         }
     }
@@ -110,8 +110,8 @@ final class zzw<TResult> extends Task<TResult> {
                     throw new RuntimeExecutionException(exc);
                 }
                 tresult = (TResult) this.zze;
-            } catch (Throwable th) {
-                throw th;
+            } catch (Throwable th2) {
+                throw th2;
             }
         }
         return tresult;
@@ -184,8 +184,8 @@ final class zzw<TResult> extends Task<TResult> {
                 this.zzd = true;
                 this.zzb.zzb(this);
                 return true;
-            } catch (Throwable th) {
-                throw th;
+            } catch (Throwable th2) {
+                throw th2;
             }
         }
     }
@@ -201,8 +201,8 @@ final class zzw<TResult> extends Task<TResult> {
                 this.zzf = exc;
                 this.zzb.zzb(this);
                 return true;
-            } catch (Throwable th) {
-                throw th;
+            } catch (Throwable th2) {
+                throw th2;
             }
         }
     }
@@ -217,8 +217,8 @@ final class zzw<TResult> extends Task<TResult> {
                 this.zze = obj;
                 this.zzb.zzb(this);
                 return true;
-            } catch (Throwable th) {
-                throw th;
+            } catch (Throwable th2) {
+                throw th2;
             }
         }
     }
@@ -317,8 +317,8 @@ final class zzw<TResult> extends Task<TResult> {
                 } else {
                     throw cls.cast(this.zzf);
                 }
-            } catch (Throwable th) {
-                throw th;
+            } catch (Throwable th2) {
+                throw th2;
             }
         }
         return tresult;

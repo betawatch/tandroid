@@ -1,27 +1,89 @@
 package g9;
 
-import org.scilab.forge.jlatexmath.TeXSymbolParser;
+import android.util.Log;
+import java.lang.Thread;
+import java.util.concurrent.atomic.AtomicBoolean;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class t implements q9.d {
-    public static final t a = new t();
-    public static final q9.c b = q9.c.c("timestamp");
-    public static final q9.c c = q9.c.c(TeXSymbolParser.TYPE_ATTR);
-    public static final q9.c d = q9.c.c("app");
-    public static final q9.c e = q9.c.c("device");
-    public static final q9.c f = q9.c.c("log");
-    public static final q9.c g = q9.c.c("rollouts");
+public final class t implements Thread.UncaughtExceptionHandler {
+    public final za.c a;
+    public final e3.f b;
+    public final Thread.UncaughtExceptionHandler c;
+    public final d9.b d;
+    public final AtomicBoolean e = new AtomicBoolean(false);
 
-    @Override // q9.a
-    public final void a(Object obj, Object obj2) {
-        q9.e eVar = (q9.e) obj2;
-        l0 l0Var = (l0) ((a2) obj);
-        eVar.d(b, l0Var.a);
-        eVar.g(c, l0Var.b);
-        eVar.g(d, l0Var.c);
-        eVar.g(e, l0Var.d);
-        eVar.g(f, l0Var.e);
-        eVar.g(g, l0Var.f);
+    public t(za.c cVar, e3.f fVar, Thread.UncaughtExceptionHandler uncaughtExceptionHandler, d9.b bVar) {
+        this.a = cVar;
+        this.b = fVar;
+        this.c = uncaughtExceptionHandler;
+        this.d = bVar;
+    }
+
+    public final boolean a(Thread thread, Throwable th2) {
+        if (thread == null) {
+            Log.e("FirebaseCrashlytics", "Crashlytics will not record uncaught exception; null thread", null);
+            return false;
+        }
+        if (th2 == null) {
+            Log.e("FirebaseCrashlytics", "Crashlytics will not record uncaught exception; null throwable", null);
+            return false;
+        }
+        if (!this.d.b()) {
+            return true;
+        }
+        if (Log.isLoggable("FirebaseCrashlytics", 3)) {
+            Log.d("FirebaseCrashlytics", "Crashlytics will not record uncaught exception; native crash exists for session.", null);
+        }
+        return false;
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:10:0x0035, code lost:
+    
+        r0.uncaughtException(r10, r11);
+        r4.set(false);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:11:0x003b, code lost:
+    
+        return;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:20:0x0045, code lost:
+    
+        if (android.util.Log.isLoggable("FirebaseCrashlytics", 3) == false) goto L16;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:8:0x0030, code lost:
+    
+        if (android.util.Log.isLoggable("FirebaseCrashlytics", 3) != false) goto L15;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:9:0x0032, code lost:
+    
+        android.util.Log.d("FirebaseCrashlytics", "Completed exception processing. Invoking default exception handler.", null);
+     */
+    @Override // java.lang.Thread.UncaughtExceptionHandler
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void uncaughtException(Thread thread, Throwable th2) {
+        Thread.UncaughtExceptionHandler uncaughtExceptionHandler = this.c;
+        AtomicBoolean atomicBoolean = this.e;
+        atomicBoolean.set(true);
+        try {
+            try {
+                if (a(thread, th2)) {
+                    this.a.C(this.b, thread, th2);
+                } else if (Log.isLoggable("FirebaseCrashlytics", 3)) {
+                    Log.d("FirebaseCrashlytics", "Uncaught exception will not be recorded by Crashlytics.", null);
+                }
+            } catch (Exception e10) {
+                Log.e("FirebaseCrashlytics", "An error occurred in the uncaught exception handler", e10);
+            }
+        } catch (Throwable th3) {
+            if (Log.isLoggable("FirebaseCrashlytics", 3)) {
+                Log.d("FirebaseCrashlytics", "Completed exception processing. Invoking default exception handler.", null);
+            }
+            uncaughtExceptionHandler.uncaughtException(thread, th2);
+            atomicBoolean.set(false);
+            throw th3;
+        }
     }
 }

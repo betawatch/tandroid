@@ -1,50 +1,36 @@
 package na;
 
-import la.u;
+import qa.y;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class f extends u {
-    public volatile u a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ la.g d;
-    public final /* synthetic */ sa.a e;
-    public final /* synthetic */ g f;
+public class f extends y {
+    public u a = null;
 
-    public f(g gVar, boolean z10, boolean z11, la.g gVar2, sa.a aVar) {
-        this.f = gVar;
-        this.b = z10;
-        this.c = z11;
-        this.d = gVar2;
-        this.e = aVar;
+    @Override // qa.y
+    public final u a() {
+        u uVar = this.a;
+        if (uVar != null) {
+            return uVar;
+        }
+        throw new IllegalStateException("Adapter for type with cyclic dependency has been used before dependency has been resolved");
     }
 
-    @Override // la.u
-    public final Object read(ta.a aVar) {
-        if (this.b) {
-            aVar.C();
-            return null;
-        }
+    @Override // na.u
+    public final Object read(va.a aVar) {
         u uVar = this.a;
-        if (uVar == null) {
-            uVar = this.d.c(this.f, this.e);
-            this.a = uVar;
+        if (uVar != null) {
+            return uVar.read(aVar);
         }
-        return uVar.read(aVar);
+        throw new IllegalStateException("Adapter for type with cyclic dependency has been used before dependency has been resolved");
     }
 
-    @Override // la.u
-    public final void write(ta.c cVar, Object obj) {
-        if (this.c) {
-            cVar.i();
-            return;
-        }
+    @Override // na.u
+    public final void write(va.b bVar, Object obj) {
         u uVar = this.a;
         if (uVar == null) {
-            uVar = this.d.c(this.f, this.e);
-            this.a = uVar;
+            throw new IllegalStateException("Adapter for type with cyclic dependency has been used before dependency has been resolved");
         }
-        uVar.write(cVar, obj);
+        uVar.write(bVar, obj);
     }
 }

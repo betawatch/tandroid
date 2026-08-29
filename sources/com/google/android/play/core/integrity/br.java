@@ -4,7 +4,7 @@ import android.app.Activity;
 import com.google.android.gms.tasks.Task;
 import com.google.android.play.core.integrity.StandardIntegrityManager;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 final class br extends StandardIntegrityManager.StandardIntegrityToken {
     private final String a;
@@ -16,8 +16,8 @@ final class br extends StandardIntegrityManager.StandardIntegrityToken {
     }
 
     @Override // com.google.android.play.core.integrity.StandardIntegrityManager.StandardIntegrityToken
-    public final Task<Integer> showDialog(Activity activity, int i9) {
-        return this.b.a(activity, i9);
+    public final Task<Integer> showDialog(Activity activity, int i10) {
+        return this.b.a(activity, i10);
     }
 
     @Override // com.google.android.play.core.integrity.StandardIntegrityManager.StandardIntegrityToken

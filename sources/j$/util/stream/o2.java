@@ -16,10 +16,10 @@ public abstract class o2 extends g2 implements d2 {
     }
 
     @Override // j$.util.stream.d2
-    public final void c(int i9, Object obj) {
+    public final void c(int i10, Object obj) {
         e2 e2Var = this.a;
-        ((d2) e2Var).c(i9, obj);
-        ((d2) this.b).c(i9 + ((int) ((d2) e2Var).count()), obj);
+        ((d2) e2Var).c(i10, obj);
+        ((d2) this.b).c(i10 + ((int) ((d2) e2Var).count()), obj);
     }
 
     @Override // j$.util.stream.d2

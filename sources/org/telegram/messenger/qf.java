@@ -1,44 +1,33 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
-
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class qf implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ MessagesStorage b;
-    public final /* synthetic */ ArrayList c;
-    public final /* synthetic */ int d;
+    public final /* synthetic */ a0.h c;
 
-    public /* synthetic */ qf(int i9, ArrayList arrayList, MessagesStorage messagesStorage) {
-        this.a = 1;
+    public /* synthetic */ qf(MessagesStorage messagesStorage, a0.h hVar, int i10) {
+        this.a = i10;
         this.b = messagesStorage;
-        this.c = arrayList;
-        this.d = i9;
+        this.c = hVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$putWallpapers$78(this.d, this.c);
+                this.b.lambda$getDialogs$239(this.c);
                 break;
             case 1:
-                this.b.lambda$unpinAllDialogsExceptNew$247(this.c, this.d);
+                this.b.lambda$markMessagesAsDeletedInternal$225(this.c);
                 break;
             case 2:
-                this.b.lambda$getDownloadQueue$185(this.d, this.c);
+                this.b.lambda$putWebPages$188(this.c);
                 break;
             default:
-                this.b.lambda$putWidgetDialogs$166(this.d, this.c);
+                this.b.lambda$deleteEphemeralMessages$205(this.c);
                 break;
         }
-    }
-
-    public /* synthetic */ qf(MessagesStorage messagesStorage, int i9, ArrayList arrayList, int i10) {
-        this.a = i10;
-        this.b = messagesStorage;
-        this.d = i9;
-        this.c = arrayList;
     }
 }

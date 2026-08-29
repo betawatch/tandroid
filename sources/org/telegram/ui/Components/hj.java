@@ -1,35 +1,44 @@
 package org.telegram.ui.Components;
 
+import j$.util.Objects;
+import org.telegram.messenger.ContactsController;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class hj implements nj {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ TLRPC.User b;
+public final class hj {
+    public final int a;
+    public final long b;
 
-    public /* synthetic */ hj(int i9, TLRPC.User user) {
-        this.a = i9;
-        this.b = user;
+    public hj(int i10, long j10) {
+        this.a = i10;
+        this.b = j10;
     }
 
-    @Override // org.telegram.ui.Components.nj
-    public final String run() {
-        ne.b c10;
-        StringBuilder sb2;
-        String str;
-        switch (this.a) {
-            case 0:
-                c10 = ne.b.c();
-                sb2 = new StringBuilder("+");
-                str = this.b.phone;
-                break;
-            default:
-                c10 = ne.b.c();
-                sb2 = new StringBuilder("+");
-                str = this.b.phone;
-                break;
+    public static hj a(Object obj) {
+        if (obj instanceof ContactsController.Contact) {
+            return new hj(2, ((ContactsController.Contact) obj).contact_id);
         }
-        return org.telegram.messenger.ll.g(sb2, str, c10);
+        if (obj instanceof TLRPC.User) {
+            return new hj(1, ((TLRPC.User) obj).id);
+        }
+        return null;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || hj.class != obj.getClass()) {
+            return false;
+        }
+        hj hjVar = (hj) obj;
+        return this.b == hjVar.b && this.a == hjVar.a;
+    }
+
+    public final int hashCode() {
+        Long valueOf = Long.valueOf(this.b);
+        int i10 = this.a;
+        return Objects.hash(i10 == 0 ? null : Integer.valueOf(i10 - 1), valueOf);
     }
 }

@@ -1,94 +1,74 @@
 package org.telegram.ui;
 
-import android.view.View;
-import java.util.ArrayList;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class qe1 extends org.telegram.ui.Components.e71 {
-    public final ArrayList a;
-    public final /* synthetic */ re1 b;
+public final /* synthetic */ class qe1 implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
 
-    public qe1(re1 re1Var) {
-        this.b = re1Var;
-        ArrayList arrayList = new ArrayList();
-        this.a = arrayList;
-        arrayList.add(new ne1(0));
-        ne1 ne1Var = new ne1(2);
-        ne1Var.b = 0;
-        arrayList.add(ne1Var);
-        ne1 ne1Var2 = new ne1(2);
-        ne1Var2.b = 1;
-        arrayList.add(ne1Var2);
-        ne1 ne1Var3 = new ne1(2);
-        ne1Var3.b = 2;
-        arrayList.add(ne1Var3);
-        ne1 ne1Var4 = new ne1(2);
-        ne1Var4.b = 3;
-        arrayList.add(ne1Var4);
-        ne1 ne1Var5 = new ne1(2);
-        ne1Var5.b = 4;
-        arrayList.add(ne1Var5);
+    public /* synthetic */ qe1(int i10, Object obj, Object obj2) {
+        this.a = i10;
+        this.c = obj;
+        this.b = obj2;
     }
 
-    @Override // org.telegram.ui.Components.e71
-    public final void b(View view, int i9, int i10) {
-        re1 re1Var = this.b;
-        re1Var.K(view, i9, re1Var.U, true);
-    }
-
-    @Override // org.telegram.ui.Components.e71
-    public final View d(int i9) {
-        int i10;
-        re1 re1Var = this.b;
-        we1 we1Var = re1Var.p0;
-        if (i9 == 1) {
-            return re1Var.P;
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 0:
+                AndroidUtilities.runOnUIThread(new sc1((ve1) this.c, (String) this.b, tLObject, 5));
+                break;
+            case 1:
+                AndroidUtilities.runOnUIThread(new lx0((cg1) this.c, tLObject, (String) this.b, tL_error, 13));
+                break;
+            case 2:
+                cg1 cg1Var = (cg1) this.c;
+                byte[] bArr = (byte[]) this.b;
+                if (tL_error != null) {
+                    AndroidUtilities.runOnUIThread(new yf1(cg1Var, tL_error, 3));
+                    break;
+                } else {
+                    AndroidUtilities.runOnUIThread(new wf1(cg1Var, bArr, 1));
+                    break;
+                }
+            case 3:
+                AndroidUtilities.runOnUIThread(new t31(26, (wh1) this.c, (int[]) this.b));
+                break;
+            case 4:
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.yw0((boolean[]) this.c, tLObject, (ph.j1) this.b, 20));
+                break;
+            case 5:
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.yw0((ph.d3) this.c, tLObject, (org.telegram.ui.ActionBar.c2) this.b, 23));
+                break;
+            case 6:
+                AndroidUtilities.runOnUIThread(new lx0((rf.c) this.c, tL_error, (String) this.b, tLObject));
+                break;
+            case 7:
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.yw0((rf.v0) this.c, (String) this.b, tLObject, 26));
+                break;
+            case 8:
+                rf.l1 l1Var = (rf.l1) this.c;
+                TLRPC.TL_messages_searchStickerSets tL_messages_searchStickerSets = (TLRPC.TL_messages_searchStickerSets) this.b;
+                if (tLObject instanceof TLRPC.TL_messages_foundStickerSets) {
+                    AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.yw0(l1Var, tL_messages_searchStickerSets, (TLRPC.TL_messages_foundStickerSets) tLObject, 29));
+                    break;
+                }
+                break;
+            case 9:
+                AndroidUtilities.runOnUIThread(new sf.a(this.c, tLObject, this.b, 2));
+                break;
+            case 10:
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.web.y(27, (sf.f0) this.c, (org.telegram.ui.Components.i8) this.b));
+                break;
+            default:
+                AndroidUtilities.runOnUIThread(new sf.a(this.c, tLObject, this.b, 7));
+                break;
         }
-        if (i9 == 2) {
-            i10 = ((org.telegram.ui.ActionBar.o2) we1Var).currentAccount;
-            org.telegram.ui.Components.gm0 gm0Var = new org.telegram.ui.Components.gm0(i10, we1Var);
-            gm0Var.b.j(new pe1(0));
-            gm0Var.setUiCallback(re1Var);
-            return gm0Var;
-        }
-        f10 f10Var = new f10(we1Var);
-        f10Var.setChatPreviewDelegate(re1Var.n0);
-        f10Var.setUiCallback(re1Var);
-        f10Var.b.j(new pe1(1));
-        return f10Var;
-    }
-
-    @Override // org.telegram.ui.Components.e71
-    public final int e() {
-        return this.a.size();
-    }
-
-    @Override // org.telegram.ui.Components.e71
-    public final CharSequence g(int i9) {
-        ArrayList arrayList = this.a;
-        if (((ne1) arrayList.get(i9)).a == 0) {
-            return LocaleController.getString(R.string.SearchMessages);
-        }
-        if (((ne1) arrayList.get(i9)).a == 1) {
-            return LocaleController.getString(R.string.DownloadsTabs);
-        }
-        of.m0 m0Var = of.o0.Y2[((ne1) arrayList.get(i9)).b];
-        String str = m0Var.c;
-        return str != null ? str : LocaleController.getString(m0Var.b);
-    }
-
-    @Override // org.telegram.ui.Components.e71
-    public final int h(int i9) {
-        ArrayList arrayList = this.a;
-        if (((ne1) arrayList.get(i9)).a == 0) {
-            return 1;
-        }
-        if (((ne1) arrayList.get(i9)).a == 1) {
-            return 2;
-        }
-        return ((ne1) arrayList.get(i9)).a + i9;
     }
 }

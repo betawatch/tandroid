@@ -1,195 +1,352 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.View;
-import android.view.ViewGroup;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SharedConfig;
+import android.graphics.Bitmap;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Bitmaps;
+import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class al0 extends org.telegram.ui.Components.vk0 {
-    public final Context c;
-    public final /* synthetic */ PasscodeActivity d;
+public final class al0 extends org.telegram.ui.ActionBar.k {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public al0(PasscodeActivity passcodeActivity, Context context) {
-        this.d = passcodeActivity;
-        this.c = context;
+    public /* synthetic */ al0(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // org.telegram.ui.Components.vk0
-    public final boolean D(f2.q1 q1Var) {
-        int i9;
-        int i10;
-        int i11;
-        int i12;
-        int b10 = q1Var.b();
-        PasscodeActivity passcodeActivity = this.d;
-        i9 = passcodeActivity.fingerprintRow;
-        if (b10 == i9) {
-            return true;
-        }
-        i10 = passcodeActivity.autoLockRow;
-        if (b10 == i10 || b10 == passcodeActivity.F) {
-            return true;
-        }
-        i11 = passcodeActivity.changePasscodeRow;
-        if (b10 == i11) {
-            return true;
-        }
-        i12 = passcodeActivity.disablePasscodeRow;
-        return b10 == i12;
-    }
-
-    @Override // f2.r0
-    public final int h() {
-        return this.d.H;
-    }
-
-    @Override // f2.r0
-    public final int j(int i9) {
-        int i10;
-        int i11;
-        int i12;
-        int i13;
-        PasscodeActivity passcodeActivity = this.d;
-        i10 = passcodeActivity.fingerprintRow;
-        if (i9 == i10 || i9 == passcodeActivity.F) {
-            return 0;
-        }
-        i11 = passcodeActivity.changePasscodeRow;
-        if (i9 == i11) {
-            return 1;
-        }
-        i12 = passcodeActivity.autoLockRow;
-        if (i9 == i12) {
-            return 1;
-        }
-        i13 = passcodeActivity.disablePasscodeRow;
-        if (i9 == i13) {
-            return 1;
-        }
-        if (i9 == passcodeActivity.D || i9 == passcodeActivity.G || i9 == passcodeActivity.C) {
-            return 2;
-        }
-        if (i9 == passcodeActivity.E) {
-            return 3;
-        }
-        return i9 == 0 ? 4 : 0;
-    }
-
-    @Override // f2.r0
-    public final void v(f2.q1 q1Var, int i9) {
-        int i10;
-        int i11;
-        int i12;
-        int i13;
-        int i14 = q1Var.f;
-        View view = q1Var.a;
-        PasscodeActivity passcodeActivity = this.d;
-        if (i14 == 0) {
-            org.telegram.ui.Cells.t8 t8Var = (org.telegram.ui.Cells.t8) view;
-            i10 = passcodeActivity.fingerprintRow;
-            if (i9 == i10) {
-                t8Var.f(LocaleController.getString(R.string.UnlockFingerprint), SharedConfig.useFingerprintLock, false);
-                return;
-            } else {
-                if (i9 == passcodeActivity.F) {
-                    t8Var.f(LocaleController.getString(R.string.ScreenCaptureShowContent), SharedConfig.allowScreenCapture, false);
-                    return;
+    @Override // org.telegram.ui.ActionBar.k
+    public final void b(int i10) {
+        Bitmap bitmap;
+        org.telegram.ui.ActionBar.l lVar;
+        org.telegram.ui.ActionBar.l lVar2;
+        int i11 = this.a;
+        Object obj = this.b;
+        switch (i11) {
+            case 0:
+                if (i10 == -1) {
+                    ((PasskeysActivity) obj).finishFragment();
+                    break;
                 }
-                return;
-            }
-        }
-        if (i14 != 1) {
-            if (i14 != 2) {
-                if (i14 != 3) {
-                    if (i14 != 4) {
-                        return;
+                break;
+            case 1:
+                kp0 kp0Var = (kp0) obj;
+                if (i10 != -1) {
+                    if (i10 == 1) {
+                        if (kp0Var.c != null && !kp0Var.f) {
+                            ip0 ip0Var = kp0Var.d;
+                            float f9 = ip0Var.f - ip0Var.x;
+                            float f10 = ip0Var.v;
+                            float f11 = (ip0Var.h - ip0Var.y) / ip0Var.w;
+                            float f12 = ip0Var.d / f10;
+                            float f13 = ip0Var.e / f10;
+                            kp0 kp0Var2 = ip0Var.D;
+                            int width = (int) ((f9 / f10) * kp0Var2.a.getWidth());
+                            int height = (int) (f11 * kp0Var2.a.getHeight());
+                            int width2 = (int) (f12 * kp0Var2.a.getWidth());
+                            int width3 = (int) (f13 * kp0Var2.a.getWidth());
+                            if (width < 0) {
+                                width = 0;
+                            }
+                            if (height < 0) {
+                                height = 0;
+                            }
+                            if (width + width2 > kp0Var2.a.getWidth()) {
+                                width2 = kp0Var2.a.getWidth() - width;
+                            }
+                            if (height + width3 > kp0Var2.a.getHeight()) {
+                                width3 = kp0Var2.a.getHeight() - height;
+                            }
+                            try {
+                                bitmap = Bitmaps.createBitmap(kp0Var2.a, width, height, width2, width3);
+                            } catch (Throwable th2) {
+                                FileLog.e(th2);
+                                System.gc();
+                                try {
+                                    bitmap = Bitmaps.createBitmap(kp0Var2.a, width, height, width2, width3);
+                                } catch (Throwable th3) {
+                                    FileLog.e(th3);
+                                    bitmap = null;
+                                }
+                            }
+                            if (bitmap == kp0Var.a) {
+                                kp0Var.e = true;
+                            }
+                            ((org.telegram.ui.Components.s40) kp0Var.c).s(false, bitmap, null);
+                            kp0Var.f = true;
+                        }
+                        kp0Var.finishFragment();
+                        break;
                     }
-                    bl0 bl0Var = (bl0) view;
-                    bl0Var.a.f(R.raw.utyan_passcode, 100, 100, null);
-                    bl0Var.a.d();
-                    return;
+                } else {
+                    kp0Var.finishFragment();
+                    break;
                 }
-                org.telegram.ui.Cells.m4 m4Var = (org.telegram.ui.Cells.m4) view;
-                m4Var.setHeight(46);
-                if (i9 == passcodeActivity.E) {
-                    m4Var.setText(LocaleController.getString(R.string.ScreenCaptureHeader));
-                    return;
+                break;
+            case 2:
+                zp0 zp0Var = (zp0) obj;
+                if (i10 != -1) {
+                    if (i10 != 1) {
+                        if (i10 == 2) {
+                            yp0 yp0Var = zp0Var.o0;
+                            if (yp0Var != null) {
+                                yp0Var.g();
+                            }
+                            zp0Var.finishFragment();
+                            break;
+                        }
+                    } else {
+                        boolean z10 = zp0Var.U;
+                        zp0Var.U = !z10;
+                        if (z10) {
+                            zp0Var.G.setPadding(AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(50.0f));
+                        } else {
+                            zp0Var.G.setPadding(0, 0, 0, AndroidUtilities.dp(48.0f));
+                        }
+                        zp0Var.G.B0();
+                        zp0Var.I.h1(0, 0);
+                        zp0Var.H.l();
+                        break;
+                    }
+                } else {
+                    zp0Var.finishFragment();
+                    break;
                 }
-                return;
-            }
-            org.telegram.ui.Cells.b9 b9Var = (org.telegram.ui.Cells.b9) view;
-            if (i9 == passcodeActivity.C) {
-                b9Var.setText(LocaleController.getString(R.string.PasscodeScreenHint));
-                b9Var.setBackground(null);
-                b9Var.getTextView().setGravity(1);
-                return;
-            } else if (i9 == passcodeActivity.D) {
-                b9Var.setText(LocaleController.getString(R.string.AutoLockInfo));
-                b9Var.getTextView().setGravity(LocaleController.isRTL ? 5 : 3);
-                return;
-            } else {
-                if (i9 == passcodeActivity.G) {
-                    b9Var.setText(LocaleController.getString(R.string.ScreenCaptureInfo));
-                    b9Var.getTextView().setGravity(LocaleController.isRTL ? 5 : 3);
-                    return;
+                break;
+            case 3:
+                if (i10 == -1) {
+                    ((eq0) obj).finishFragment();
+                    break;
                 }
-                return;
-            }
+                break;
+            case 4:
+                PopupNotificationActivity popupNotificationActivity = (PopupNotificationActivity) obj;
+                if (i10 != -1) {
+                    if (i10 != 1) {
+                        if (i10 == 2) {
+                            int i12 = PopupNotificationActivity.X;
+                            popupNotificationActivity.p();
+                            break;
+                        }
+                    } else {
+                        int i13 = PopupNotificationActivity.X;
+                        popupNotificationActivity.k();
+                        break;
+                    }
+                } else {
+                    popupNotificationActivity.i();
+                    popupNotificationActivity.finish();
+                    break;
+                }
+                break;
+            case 5:
+                pv0 pv0Var = (pv0) obj;
+                if (i10 != -1) {
+                    if (i10 == 1) {
+                        pv0Var.Y();
+                        break;
+                    }
+                } else if (pv0Var.onBackPressed(true)) {
+                    pv0Var.finishFragment();
+                    break;
+                }
+                break;
+            case 6:
+                if (i10 == -1) {
+                    ((PremiumPreviewFragment) obj).finishFragment();
+                    break;
+                }
+                break;
+            case 7:
+                PrivacyControlActivity privacyControlActivity = (PrivacyControlActivity) obj;
+                if (i10 != -1) {
+                    if (i10 == 1) {
+                        privacyControlActivity.z0();
+                        break;
+                    }
+                } else if (privacyControlActivity.v0(true)) {
+                    privacyControlActivity.finishFragment();
+                    break;
+                }
+                break;
+            case 8:
+                if (i10 == -1) {
+                    ((PrivacySettingsActivity) obj).finishFragment();
+                    break;
+                }
+                break;
+            case 9:
+                if (i10 == -1) {
+                    ((bx0) obj).finishFragment();
+                    break;
+                }
+                break;
+            case 10:
+                if (i10 == -1) {
+                    ((ProxyListActivity) obj).finishFragment();
+                    break;
+                }
+                break;
+            case 11:
+                if (i10 == -1) {
+                    ((c21) obj).finishFragment();
+                    break;
+                }
+                break;
+            case 12:
+                if (i10 == -1) {
+                    ((i21) obj).finishFragment();
+                    break;
+                }
+                break;
+            case 13:
+                if (i10 == -1) {
+                    ((b31) obj).finishFragment();
+                    break;
+                }
+                break;
+            case 14:
+                if (i10 == -1) {
+                    ((SaveToGallerySettingsActivity) obj).finishFragment();
+                    break;
+                }
+                break;
+            case 15:
+                if (i10 == -1) {
+                    ((SecretMediaViewer) obj).e(true, false);
+                    break;
+                }
+                break;
+            case 16:
+                if (i10 == -1) {
+                    ((SessionsActivity) obj).finishFragment();
+                    break;
+                }
+                break;
+            case 17:
+                b81 b81Var = (b81) obj;
+                if (i10 != -1) {
+                    if (i10 == 2) {
+                        b81Var.l0(new hg0(null));
+                        break;
+                    }
+                } else {
+                    b81Var.finishFragment();
+                    break;
+                }
+                break;
+            case 18:
+                if (i10 == -1) {
+                    ((t91) obj).finishFragment();
+                    break;
+                }
+                break;
+            case 19:
+                StickersActivity stickersActivity = (StickersActivity) obj;
+                if (i10 != -1) {
+                    StickersActivity.d0(stickersActivity, i10);
+                    break;
+                } else if (stickersActivity.onBackPressed(true)) {
+                    stickersActivity.finishFragment();
+                    break;
+                }
+                break;
+            case 20:
+                vc1 vc1Var = (vc1) obj;
+                if (i10 != -1) {
+                    if (i10 == 1) {
+                        vc1.Y(vc1Var);
+                        break;
+                    }
+                } else {
+                    vc1Var.finishFragment();
+                    break;
+                }
+                break;
+            case 21:
+                if (i10 == -1) {
+                    ((md1) obj).finishFragment();
+                    break;
+                }
+                break;
+            case 22:
+                if (i10 == -1) {
+                    ((ff1) obj).finishFragment();
+                    break;
+                }
+                break;
+            case 23:
+                if (i10 == -1) {
+                    TwoStepVerificationActivity twoStepVerificationActivity = (TwoStepVerificationActivity) obj;
+                    if (twoStepVerificationActivity.T < 0) {
+                        twoStepVerificationActivity.finishFragment();
+                        break;
+                    } else {
+                        twoStepVerificationActivity.x0();
+                        break;
+                    }
+                }
+                break;
+            case 24:
+                UserInfoActivity userInfoActivity = (UserInfoActivity) obj;
+                if (i10 != -1) {
+                    if (i10 == 1) {
+                        userInfoActivity.c0(true);
+                        break;
+                    }
+                } else if (userInfoActivity.onBackPressed(true)) {
+                    userInfoActivity.finishFragment();
+                    break;
+                }
+                break;
+            case 25:
+                UsersSelectActivity usersSelectActivity = (UsersSelectActivity) obj;
+                if (i10 != -1) {
+                    if (i10 == 1) {
+                        usersSelectActivity.X();
+                        break;
+                    }
+                } else {
+                    usersSelectActivity.finishFragment();
+                    break;
+                }
+                break;
+            case 26:
+                org.telegram.ui.web.d1 d1Var = (org.telegram.ui.web.d1) obj;
+                if (i10 == -1) {
+                    lVar = ((org.telegram.ui.ActionBar.o2) d1Var).actionBar;
+                    if (!lVar.s()) {
+                        d1Var.finishFragment();
+                        break;
+                    } else {
+                        lVar2 = ((org.telegram.ui.ActionBar.o2) d1Var).actionBar;
+                        lVar2.r();
+                        d1Var.s.clear();
+                        AndroidUtilities.forEachViews((RecyclerView) d1Var.a, (f5.d) new l4.x0(15));
+                        break;
+                    }
+                }
+                break;
+            case 27:
+                if (i10 == -1) {
+                    ((ph.r) obj).finishFragment();
+                    break;
+                }
+                break;
+            case 28:
+                if (i10 == -1) {
+                    ((ph.p2) obj).q();
+                    break;
+                }
+                break;
+            default:
+                if (i10 == -1) {
+                    ((ph.x3) obj).finishFragment();
+                    break;
+                }
+                break;
         }
-        org.telegram.ui.Cells.ba baVar = (org.telegram.ui.Cells.ba) view;
-        i11 = passcodeActivity.changePasscodeRow;
-        if (i9 == i11) {
-            baVar.b(LocaleController.getString(R.string.ChangePasscode), true);
-            if (SharedConfig.passcodeHash.isEmpty()) {
-                int i15 = org.telegram.ui.ActionBar.f6.E6;
-                baVar.setTag(Integer.valueOf(i15));
-                baVar.setTextColor(org.telegram.ui.ActionBar.f6.w0(null, i15, false));
-                return;
-            } else {
-                int i16 = org.telegram.ui.ActionBar.f6.G6;
-                baVar.setTag(Integer.valueOf(i16));
-                baVar.setTextColor(org.telegram.ui.ActionBar.f6.w0(null, i16, false));
-                return;
-            }
-        }
-        i12 = passcodeActivity.autoLockRow;
-        if (i9 == i12) {
-            int i17 = SharedConfig.autoLockIn;
-            baVar.c(LocaleController.getString(R.string.AutoLock), i17 == 0 ? LocaleController.formatString("AutoLockDisabled", R.string.AutoLockDisabled, new Object[0]) : i17 < 3600 ? LocaleController.formatString("AutoLockInTime", R.string.AutoLockInTime, LocaleController.formatPluralString("Minutes", i17 / 60, new Object[0])) : i17 < 86400 ? LocaleController.formatString("AutoLockInTime", R.string.AutoLockInTime, LocaleController.formatPluralString("Hours", (int) Math.ceil((i17 / 60.0f) / 60.0f), new Object[0])) : LocaleController.formatString("AutoLockInTime", R.string.AutoLockInTime, LocaleController.formatPluralString("Days", (int) Math.ceil(((i17 / 60.0f) / 60.0f) / 24.0f), new Object[0])), false, true);
-            int i18 = org.telegram.ui.ActionBar.f6.G6;
-            baVar.setTag(Integer.valueOf(i18));
-            baVar.setTextColor(org.telegram.ui.ActionBar.f6.w0(null, i18, false));
-            return;
-        }
-        i13 = passcodeActivity.disablePasscodeRow;
-        if (i9 == i13) {
-            baVar.b(LocaleController.getString(R.string.DisablePasscode), false);
-            int i19 = org.telegram.ui.ActionBar.f6.q7;
-            baVar.setTag(Integer.valueOf(i19));
-            baVar.setTextColor(org.telegram.ui.ActionBar.f6.w0(null, i19, false));
-        }
-    }
-
-    @Override // f2.r0
-    public final f2.q1 x(ViewGroup viewGroup, int i9) {
-        View t8Var;
-        Context context = this.c;
-        if (i9 == 0) {
-            t8Var = new org.telegram.ui.Cells.t8(context);
-        } else if (i9 == 1) {
-            t8Var = new org.telegram.ui.Cells.ba(context);
-        } else if (i9 == 3) {
-            t8Var = new org.telegram.ui.Cells.m4(context);
-        } else if (i9 != 4) {
-            t8Var = new org.telegram.ui.Cells.b9(context);
-        } else {
-            t8Var = new bl0(context);
-            t8Var.setTag(-33024);
-        }
-        return new org.telegram.ui.Components.ik0(t8Var);
     }
 }

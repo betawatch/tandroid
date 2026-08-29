@@ -1,42 +1,35 @@
 package b7;
 
-import android.os.BadParcelableException;
-import android.os.IInterface;
+import a4.w;
 import android.os.Parcel;
 import android.os.Parcelable;
-import j3.r0;
+import com.google.android.gms.internal.cast.o;
+import org.telegram.ui.th;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public abstract class f {
-    static {
-        f.class.getClassLoader();
+public final class f extends a6.a {
+    public static final Parcelable.Creator<f> CREATOR = new w.a(17);
+    public final String a;
+    public final String b;
+    public final String c;
+
+    public f(String str, String str2, String str3) {
+        this.a = str;
+        this.b = str2;
+        this.c = str3;
     }
 
-    public static Parcelable a(Parcel parcel, Parcelable.Creator creator) {
-        if (parcel.readInt() == 0) {
-            return null;
-        }
-        return (Parcelable) creator.createFromParcel(parcel);
+    public final String toString() {
+        return w.q(th.k("DocumentId[packageName=", this.a, ", corpusName=", this.b, ", uri="), this.c, "]");
     }
 
-    public static void b(Parcel parcel) {
-        int dataAvail = parcel.dataAvail();
-        if (dataAvail > 0) {
-            throw new BadParcelableException(r0.l(dataAvail, "Parcel data not fully consumed, unread size: "));
-        }
-    }
-
-    public static void c(Parcel parcel, Parcelable parcelable) {
-        if (parcelable == null) {
-            parcel.writeInt(0);
-        } else {
-            parcel.writeInt(1);
-            parcelable.writeToParcel(parcel, 0);
-        }
-    }
-
-    public static void d(Parcel parcel, IInterface iInterface) {
-        parcel.writeStrongBinder(iInterface.asBinder());
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i10) {
+        int q6 = o.q(parcel, 20293);
+        o.l(parcel, 1, this.a);
+        o.l(parcel, 2, this.b);
+        o.l(parcel, 3, this.c);
+        o.r(parcel, q6);
     }
 }

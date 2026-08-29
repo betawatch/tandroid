@@ -1,106 +1,282 @@
 package com.google.android.gms.internal.cast;
 
-import android.content.Context;
-import java.util.concurrent.atomic.AtomicInteger;
-import org.telegram.messenger.MediaController;
-import org.telegram.ui.Components.k61;
-import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.u9;
+import android.os.IBinder;
+import android.os.IInterface;
+import android.os.Parcel;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class a implements i6.c, n5.h {
-    public int a;
+public abstract class a implements IInterface {
+    public final /* synthetic */ int a;
+    public final IBinder b;
+    public final String c;
 
-    public a() {
-        this.a = 3;
+    public /* synthetic */ a(IBinder iBinder, String str, int i10) {
+        this.a = i10;
+        this.b = iBinder;
+        this.c = str;
     }
 
-    @Override // i6.c
-    public int H(Context context, String str) {
-        return this.a;
+    public Parcel E0() {
+        Parcel obtain = Parcel.obtain();
+        obtain.writeInterfaceToken(this.c);
+        return obtain;
     }
 
-    @Override // n5.h
-    public void a(n5.f fVar) {
-        d1.f.d(false);
-        d1.f.B();
-    }
-
-    @Override // n5.h
-    public /* bridge */ /* synthetic */ void b(n5.f fVar, int i9) {
-    }
-
-    @Override // n5.h
-    public void c(n5.f fVar, int i9) {
-        d1.f.d(false);
-        d1.f.B();
-    }
-
-    @Override // n5.h
-    public /* bridge */ /* synthetic */ void d(n5.f fVar) {
-    }
-
-    @Override // n5.h
-    public /* bridge */ /* synthetic */ void e(n5.f fVar, boolean z10) {
-    }
-
-    @Override // n5.h
-    public /* bridge */ /* synthetic */ void f(n5.f fVar, int i9) {
-    }
-
-    @Override // n5.h
-    public /* bridge */ /* synthetic */ void g(n5.f fVar, int i9) {
-    }
-
-    @Override // n5.h
-    public void h(n5.f fVar, String str) {
-        n5.c cVar = (n5.c) fVar;
-        if (cVar == null) {
-            return;
+    public void F0(Parcel parcel, int i10) {
+        try {
+            this.b.transact(i10, parcel, null, 1);
+        } finally {
+            parcel.recycle();
         }
-        x5.l.e("Must be called from the main thread.");
-        o5.h hVar = cVar.j;
-        if (hVar == null) {
-            return;
+    }
+
+    public Parcel G0() {
+        Parcel obtain = Parcel.obtain();
+        obtain.writeInterfaceToken(this.c);
+        return obtain;
+    }
+
+    public void H0(Parcel parcel, int i10) {
+        Parcel obtain = Parcel.obtain();
+        try {
+            this.b.transact(i10, parcel, obtain, 0);
+            obtain.readException();
+        } finally {
+            parcel.recycle();
+            obtain.recycle();
         }
-        AtomicInteger atomicInteger = d1.f.b;
-        if (atomicInteger != null) {
-            atomicInteger.set(0);
+    }
+
+    public Parcel I0() {
+        Parcel obtain = Parcel.obtain();
+        obtain.writeInterfaceToken(this.c);
+        return obtain;
+    }
+
+    public void J0(Parcel parcel, int i10) {
+        Parcel obtain = Parcel.obtain();
+        try {
+            this.b.transact(i10, parcel, obtain, 0);
+            obtain.readException();
+        } finally {
+            parcel.recycle();
+            obtain.recycle();
         }
-        hVar.p(new u9());
-        x5.l.e("Must be called from the main thread.");
-        if (hVar.w()) {
-            o5.h.x(new o5.i(hVar, 3));
-        } else {
-            o5.h.t();
-        }
-        int i9 = this.a;
-        long j10 = -1;
-        if (i9 == 0) {
-            k61 k61Var = PhotoViewer.t1().B2;
-            if (k61Var != null) {
-                j10 = k61Var.o();
+    }
+
+    public Parcel K0(Parcel parcel, int i10) {
+        Parcel obtain = Parcel.obtain();
+        try {
+            try {
+                this.b.transact(i10, parcel, obtain, 0);
+                obtain.readException();
+                return obtain;
+            } catch (RuntimeException e10) {
+                obtain.recycle();
+                throw e10;
             }
-        } else if (i9 == 1) {
-            j10 = MediaController.getInstance().getCurrentPosition();
+        } finally {
+            parcel.recycle();
         }
-        if (j10 >= 0) {
-            d1.f.u(j10);
+    }
+
+    public Parcel L0(Parcel parcel, int i10) {
+        Parcel obtain = Parcel.obtain();
+        try {
+            try {
+                this.b.transact(i10, parcel, obtain, 0);
+                obtain.readException();
+                return obtain;
+            } catch (RuntimeException e10) {
+                obtain.recycle();
+                throw e10;
+            }
+        } finally {
+            parcel.recycle();
         }
-        d1.f.d(true);
     }
 
-    @Override // n5.h
-    public /* bridge */ /* synthetic */ void i(n5.f fVar, String str) {
+    public Parcel M0() {
+        switch (this.a) {
+            case 0:
+                Parcel obtain = Parcel.obtain();
+                obtain.writeInterfaceToken(this.c);
+                return obtain;
+            case 1:
+            case 2:
+            default:
+                Parcel obtain2 = Parcel.obtain();
+                obtain2.writeInterfaceToken(this.c);
+                return obtain2;
+            case 3:
+                Parcel obtain3 = Parcel.obtain();
+                obtain3.writeInterfaceToken(this.c);
+                return obtain3;
+            case 4:
+                Parcel obtain4 = Parcel.obtain();
+                obtain4.writeInterfaceToken(this.c);
+                return obtain4;
+            case 5:
+                Parcel obtain5 = Parcel.obtain();
+                obtain5.writeInterfaceToken(this.c);
+                return obtain5;
+        }
     }
 
-    @Override // i6.c
-    public int k(Context context, String str, boolean z10) {
-        return 0;
+    public Parcel N0(Parcel parcel, int i10) {
+        Parcel obtain = Parcel.obtain();
+        try {
+            try {
+                this.b.transact(i10, parcel, obtain, 0);
+                obtain.readException();
+                return obtain;
+            } catch (RuntimeException e10) {
+                obtain.recycle();
+                throw e10;
+            }
+        } finally {
+            parcel.recycle();
+        }
     }
 
-    public /* synthetic */ a(int i9) {
-        this.a = i9;
+    public Parcel O0(Parcel parcel, int i10) {
+        switch (this.a) {
+            case 0:
+                Parcel obtain = Parcel.obtain();
+                try {
+                    try {
+                        this.b.transact(i10, parcel, obtain, 0);
+                        obtain.readException();
+                        return obtain;
+                    } catch (RuntimeException e10) {
+                        obtain.recycle();
+                        throw e10;
+                    }
+                } finally {
+                }
+            case 5:
+                Parcel obtain2 = Parcel.obtain();
+                try {
+                    try {
+                        this.b.transact(i10, parcel, obtain2, 0);
+                        obtain2.readException();
+                        return obtain2;
+                    } finally {
+                    }
+                } catch (RuntimeException e11) {
+                    obtain2.recycle();
+                    throw e11;
+                }
+            default:
+                Parcel obtain3 = Parcel.obtain();
+                try {
+                    try {
+                        this.b.transact(i10, parcel, obtain3, 0);
+                        obtain3.readException();
+                        return obtain3;
+                    } catch (RuntimeException e12) {
+                        obtain3.recycle();
+                        throw e12;
+                    }
+                } finally {
+                }
+        }
+    }
+
+    public void P0(Parcel parcel) {
+        Parcel obtain = Parcel.obtain();
+        try {
+            this.b.transact(3, parcel, obtain, 0);
+            obtain.readException();
+        } finally {
+            parcel.recycle();
+            obtain.recycle();
+        }
+    }
+
+    public void Q0(Parcel parcel, int i10) {
+        Parcel obtain;
+        switch (this.a) {
+            case 0:
+                obtain = Parcel.obtain();
+                try {
+                    this.b.transact(i10, parcel, obtain, 0);
+                    obtain.readException();
+                    return;
+                } finally {
+                }
+            case 1:
+            case 2:
+            default:
+                obtain = Parcel.obtain();
+                try {
+                    this.b.transact(i10, parcel, obtain, 0);
+                    obtain.readException();
+                    return;
+                } finally {
+                }
+            case 3:
+                obtain = Parcel.obtain();
+                try {
+                    this.b.transact(i10, parcel, obtain, 0);
+                    obtain.readException();
+                    return;
+                } finally {
+                }
+            case 4:
+                obtain = Parcel.obtain();
+                try {
+                    this.b.transact(i10, parcel, obtain, 0);
+                    obtain.readException();
+                    return;
+                } finally {
+                }
+            case 5:
+                obtain = Parcel.obtain();
+                try {
+                    this.b.transact(i10, parcel, obtain, 0);
+                    obtain.readException();
+                    return;
+                } finally {
+                }
+        }
+    }
+
+    public void R0(Parcel parcel, int i10) {
+        try {
+            this.b.transact(i10, parcel, null, 1);
+        } finally {
+            parcel.recycle();
+        }
+    }
+
+    public Parcel S0() {
+        Parcel obtain = Parcel.obtain();
+        obtain.writeInterfaceToken(this.c);
+        return obtain;
+    }
+
+    public Parcel T0(Parcel parcel, int i10) {
+        Parcel obtain = Parcel.obtain();
+        try {
+            try {
+                this.b.transact(i10, parcel, obtain, 0);
+                obtain.readException();
+                return obtain;
+            } catch (RuntimeException e10) {
+                obtain.recycle();
+                throw e10;
+            }
+        } finally {
+            parcel.recycle();
+        }
+    }
+
+    @Override // android.os.IInterface
+    public final IBinder asBinder() {
+        switch (this.a) {
+        }
+        return this.b;
     }
 }

@@ -1,23 +1,53 @@
 package d5;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
-/* loaded from: classes.dex */
-public final class r {
-    public final int a;
-    public final boolean b;
-    public final int c;
-    public final int d;
-    public final int[] e;
-    public final int f;
-    public final float g;
+import j3.t0;
+import java.util.List;
+import l4.j1;
 
-    public r(int i9, boolean z10, int i10, int i11, int[] iArr, int i12, int i13, int i14, float f10) {
-        this.a = i9;
-        this.b = z10;
-        this.c = i10;
-        this.d = i11;
-        this.e = iArr;
-        this.f = i12;
-        this.g = f10;
-    }
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* loaded from: classes.dex */
+public interface r {
+    j1 a();
+
+    void b(long j10, long j11, long j12, List list, n4.l[] lVarArr);
+
+    int c();
+
+    boolean d(int i10, long j10);
+
+    boolean e(int i10, long j10);
+
+    void f(boolean z10);
+
+    t0 g(int i10);
+
+    void h();
+
+    int i(int i10);
+
+    int j(long j10, List list);
+
+    void k();
+
+    int l();
+
+    int length();
+
+    int m(t0 t0Var);
+
+    t0 n();
+
+    int o();
+
+    boolean p(long j10, n4.e eVar, List list);
+
+    void q(float f9);
+
+    Object r();
+
+    void s();
+
+    void t();
+
+    int u(int i10);
 }

@@ -1,30 +1,36 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.view.View;
+
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class x00 {
-    public long a;
-    public int b;
+public final class x00 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ pq b;
 
-    public x00(int i9, long j10) {
-        this.a = j10;
-        this.b = i9;
+    public x00(pq pqVar) {
+        this.b = pqVar;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                ((h10) this.b.d).h0.unlock();
+                break;
+            default:
+                pq pqVar = this.b;
+                View view = pqVar.b;
+                view.setAlpha(1.0f);
+                f2.w0.x0(view);
+                ((h10) pqVar.d).b.removeView(view);
+                break;
         }
-        if (obj != null && x00.class == obj.getClass()) {
-            x00 x00Var = (x00) obj;
-            if (this.a == x00Var.a && this.b == x00Var.b) {
-                return true;
-            }
-        }
-        return false;
     }
 
-    public final int hashCode() {
-        return this.b;
+    public x00(pq pqVar, f2.w0 w0Var) {
+        this.b = pqVar;
     }
 }

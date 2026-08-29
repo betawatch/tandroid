@@ -1,27 +1,169 @@
 package f4;
 
+import a4.w;
 import android.os.Parcel;
 import android.os.Parcelable;
-import g7.s6;
-import h3.g1;
-import h3.t0;
+import d6.d;
+import f5.d0;
+import j3.g1;
+import j3.t0;
+import java.util.List;
+import java.util.Map;
+import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class b implements z3.b {
-    public static final Parcelable.Creator<b> CREATOR = new c.c(23);
-    public final long a;
-    public final long b;
-    public final long c;
-    public final long d;
-    public final long e;
+public final class b implements b4.b {
+    public static final Parcelable.Creator<b> CREATOR = new d(17);
+    public final int a;
+    public final String b;
+    public final String c;
+    public final String d;
+    public final boolean e;
+    public final int f;
 
-    public b(long j10, long j11, long j12, long j13, long j14) {
-        this.a = j10;
-        this.b = j11;
-        this.c = j12;
-        this.d = j13;
-        this.e = j14;
+    public b(int i10, String str, String str2, String str3, boolean z10, int i11) {
+        f5.a.f(i11 == -1 || i11 > 0);
+        this.a = i10;
+        this.b = str;
+        this.c = str2;
+        this.d = str3;
+        this.e = z10;
+        this.f = i11;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:12:0x004c  */
+    /* JADX WARN: Removed duplicated region for block: B:15:0x0060  */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x0074  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x0088  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x00a2  */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x00cb  */
+    /* JADX WARN: Removed duplicated region for block: B:35:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:44:0x00c8  */
+    /* JADX WARN: Removed duplicated region for block: B:45:0x0097  */
+    /* JADX WARN: Removed duplicated region for block: B:46:0x007d  */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x0069  */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x0055  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static b a(Map map) {
+        boolean z10;
+        int i10;
+        List list;
+        String str;
+        List list2;
+        String str2;
+        List list3;
+        String str3;
+        List list4;
+        boolean z11;
+        List list5;
+        int i11;
+        int i12;
+        List list6 = (List) map.get("icy-br");
+        boolean z12 = true;
+        int i13 = -1;
+        if (list6 != null) {
+            String str4 = (String) list6.get(0);
+            try {
+                i12 = Integer.parseInt(str4) * MediaDataController.MAX_STYLE_RUNS_COUNT;
+                if (i12 > 0) {
+                    z10 = true;
+                } else {
+                    try {
+                        f5.a.K("IcyHeaders", "Invalid bitrate: " + str4);
+                        z10 = false;
+                        i12 = -1;
+                    } catch (NumberFormatException unused) {
+                        w.v("Invalid bitrate header: ", str4, "IcyHeaders");
+                        i10 = i12;
+                        z10 = false;
+                        list = (List) map.get("icy-genre");
+                        if (list == null) {
+                        }
+                        list2 = (List) map.get("icy-name");
+                        if (list2 == null) {
+                        }
+                        list3 = (List) map.get("icy-url");
+                        if (list3 == null) {
+                        }
+                        list4 = (List) map.get("icy-pub");
+                        if (list4 == null) {
+                        }
+                        list5 = (List) map.get("icy-metaint");
+                        if (list5 == null) {
+                        }
+                        if (z10) {
+                        }
+                    }
+                }
+                i10 = i12;
+            } catch (NumberFormatException unused2) {
+                i12 = -1;
+            }
+        } else {
+            z10 = false;
+            i10 = -1;
+        }
+        list = (List) map.get("icy-genre");
+        if (list == null) {
+            str = (String) list.get(0);
+            z10 = true;
+        } else {
+            str = null;
+        }
+        list2 = (List) map.get("icy-name");
+        if (list2 == null) {
+            str2 = (String) list2.get(0);
+            z10 = true;
+        } else {
+            str2 = null;
+        }
+        list3 = (List) map.get("icy-url");
+        if (list3 == null) {
+            str3 = (String) list3.get(0);
+            z10 = true;
+        } else {
+            str3 = null;
+        }
+        list4 = (List) map.get("icy-pub");
+        if (list4 == null) {
+            z11 = ((String) list4.get(0)).equals("1");
+            z10 = true;
+        } else {
+            z11 = false;
+        }
+        list5 = (List) map.get("icy-metaint");
+        if (list5 == null) {
+            String str5 = (String) list5.get(0);
+            try {
+                int parseInt = Integer.parseInt(str5);
+                if (parseInt > 0) {
+                    i13 = parseInt;
+                } else {
+                    try {
+                        f5.a.K("IcyHeaders", "Invalid metadata interval: " + str5);
+                        z12 = z10;
+                    } catch (NumberFormatException unused3) {
+                        i13 = parseInt;
+                        w.v("Invalid metadata interval: ", str5, "IcyHeaders");
+                        i11 = i13;
+                        if (z10) {
+                        }
+                    }
+                }
+                z10 = z12;
+            } catch (NumberFormatException unused4) {
+            }
+            i11 = i13;
+        } else {
+            i11 = -1;
+        }
+        if (z10) {
+            return new b(i10, str, str2, str3, z11, i11);
+        }
+        return null;
     }
 
     @Override // android.os.Parcelable
@@ -35,49 +177,67 @@ public final class b implements z3.b {
         }
         if (obj != null && b.class == obj.getClass()) {
             b bVar = (b) obj;
-            if (this.a == bVar.a && this.b == bVar.b && this.c == bVar.c && this.d == bVar.d && this.e == bVar.e) {
+            if (this.a == bVar.a && d0.a(this.b, bVar.b) && d0.a(this.c, bVar.c) && d0.a(this.d, bVar.d) && this.e == bVar.e && this.f == bVar.f) {
                 return true;
             }
         }
         return false;
     }
 
-    @Override // z3.b
+    @Override // b4.b
     public final /* synthetic */ byte[] getWrappedMetadataBytes() {
         return null;
     }
 
-    @Override // z3.b
+    @Override // b4.b
     public final /* synthetic */ t0 getWrappedMetadataFormat() {
         return null;
     }
 
     public final int hashCode() {
-        return s6.a(this.e) + ((s6.a(this.d) + ((s6.a(this.c) + ((s6.a(this.b) + ((s6.a(this.a) + 527) * 31)) * 31)) * 31)) * 31);
+        int i10 = (527 + this.a) * 31;
+        String str = this.b;
+        int hashCode = (i10 + (str != null ? str.hashCode() : 0)) * 31;
+        String str2 = this.c;
+        int hashCode2 = (hashCode + (str2 != null ? str2.hashCode() : 0)) * 31;
+        String str3 = this.d;
+        return ((((hashCode2 + (str3 != null ? str3.hashCode() : 0)) * 31) + (this.e ? 1 : 0)) * 31) + this.f;
+    }
+
+    @Override // b4.b
+    public final void populateMediaMetadata(g1 g1Var) {
+        String str = this.c;
+        if (str != null) {
+            g1Var.E = str;
+        }
+        String str2 = this.b;
+        if (str2 != null) {
+            g1Var.C = str2;
+        }
     }
 
     public final String toString() {
-        return "Motion photo metadata: photoStartPosition=" + this.a + ", photoSize=" + this.b + ", photoPresentationTimestampUs=" + this.c + ", videoStartPosition=" + this.d + ", videoSize=" + this.e;
+        return "IcyHeaders: name=\"" + this.c + "\", genre=\"" + this.b + "\", bitrate=" + this.a + ", metadataInterval=" + this.f;
     }
 
     @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i9) {
-        parcel.writeLong(this.a);
-        parcel.writeLong(this.b);
-        parcel.writeLong(this.c);
-        parcel.writeLong(this.d);
-        parcel.writeLong(this.e);
+    public final void writeToParcel(Parcel parcel, int i10) {
+        parcel.writeInt(this.a);
+        parcel.writeString(this.b);
+        parcel.writeString(this.c);
+        parcel.writeString(this.d);
+        int i11 = d0.a;
+        parcel.writeInt(this.e ? 1 : 0);
+        parcel.writeInt(this.f);
     }
 
     public b(Parcel parcel) {
-        this.a = parcel.readLong();
-        this.b = parcel.readLong();
-        this.c = parcel.readLong();
-        this.d = parcel.readLong();
-        this.e = parcel.readLong();
-    }
-
-    @Override // z3.b
-    public final /* synthetic */ void populateMediaMetadata(g1 g1Var) {
+        this.a = parcel.readInt();
+        this.b = parcel.readString();
+        this.c = parcel.readString();
+        this.d = parcel.readString();
+        int i10 = d0.a;
+        this.e = parcel.readInt() != 0;
+        this.f = parcel.readInt();
     }
 }

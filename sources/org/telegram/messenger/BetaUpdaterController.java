@@ -9,7 +9,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.web.HttpGetFileTask;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public class BetaUpdaterController {
     private static final long CHECK_INTERVAL = 1200000;
@@ -78,16 +78,16 @@ public class BetaUpdaterController {
         try {
             JSONObject jSONObject = new JSONObject(str);
             String string = jSONObject.getString("version");
-            int i9 = jSONObject.getInt("version_code");
+            int i10 = jSONObject.getInt("version_code");
             String string2 = jSONObject.getString("file_url");
             String optString = jSONObject.optString("changelog", null);
-            int i10 = this.versionCode;
+            int i11 = this.versionCode;
             String str3 = this.version;
             if (str3 != null) {
-                if (SharedConfig.versionBiggerOrEqual(string, str3) && i9 > this.versionCode) {
+                if (SharedConfig.versionBiggerOrEqual(string, str3) && i10 > this.versionCode) {
                 }
                 str2 = this.version;
-                if (str2 == null && this.versionCode != 0 && SharedConfig.versionBiggerOrEqual(str2, string) && this.versionCode == i9) {
+                if (str2 == null && this.versionCode != 0 && SharedConfig.versionBiggerOrEqual(str2, string) && this.versionCode == i10) {
                     this.fileUrl = string2;
                     this.changelog = optString;
                 } else {
@@ -99,21 +99,21 @@ public class BetaUpdaterController {
                         }
                     }
                     this.path = null;
-                    if (SharedConfig.versionBiggerOrEqual(getCurrentVersion(), string) || getCurrentVersionCode() >= i9) {
+                    if (SharedConfig.versionBiggerOrEqual(getCurrentVersion(), string) || getCurrentVersionCode() >= i10) {
                         this.version = null;
                         this.versionCode = 0;
                         this.fileUrl = null;
                         this.changelog = null;
                     } else {
                         this.version = string;
-                        this.versionCode = i9;
+                        this.versionCode = i10;
                         this.fileUrl = string2;
                         this.changelog = optString;
                     }
                 }
                 this.lastCheck = System.currentTimeMillis();
                 save();
-                if (this.versionCode != i10) {
+                if (this.versionCode != i11) {
                     NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.appUpdateAvailable, new Object[0]);
                 }
                 AndroidUtilities.cancelRunOnUIThread(this.scheduledUpdateCheck);
@@ -122,7 +122,7 @@ public class BetaUpdaterController {
                     runnable.run();
                     return;
                 }
-                if (this.versionCode == i10 || ApplicationLoader.mainInterfacePaused) {
+                if (this.versionCode == i11 || ApplicationLoader.mainInterfacePaused) {
                     return;
                 }
                 Context context = LaunchActivity.C1;
@@ -136,7 +136,7 @@ public class BetaUpdaterController {
                 ApplicationLoader.applicationLoaderInstance.showCustomUpdateAppPopup(context, update, UserConfig.selectedAccount);
                 return;
             }
-            if (SharedConfig.versionBiggerOrEqual(string, getCurrentVersion()) && i9 > getCurrentVersionCode()) {
+            if (SharedConfig.versionBiggerOrEqual(string, getCurrentVersion()) && i10 > getCurrentVersionCode()) {
                 if (!TextUtils.isEmpty(this.path)) {
                     try {
                         new File(this.path).delete();
@@ -146,12 +146,12 @@ public class BetaUpdaterController {
                 }
                 this.path = null;
                 this.version = string;
-                this.versionCode = i9;
+                this.versionCode = i10;
                 this.fileUrl = string2;
                 this.changelog = optString;
                 this.lastCheck = System.currentTimeMillis();
                 save();
-                if (this.versionCode != i10) {
+                if (this.versionCode != i11) {
                 }
                 AndroidUtilities.cancelRunOnUIThread(this.scheduledUpdateCheck);
                 AndroidUtilities.runOnUIThread(this.scheduledUpdateCheck, BuildVars.DEBUG_PRIVATE_VERSION ? CHECK_INTERVAL_PRIVATE : CHECK_INTERVAL);
@@ -172,7 +172,7 @@ public class BetaUpdaterController {
             this.changelog = null;
             this.lastCheck = System.currentTimeMillis();
             save();
-            if (this.versionCode != i10) {
+            if (this.versionCode != i11) {
             }
             AndroidUtilities.cancelRunOnUIThread(this.scheduledUpdateCheck);
             AndroidUtilities.runOnUIThread(this.scheduledUpdateCheck, BuildVars.DEBUG_PRIVATE_VERSION ? CHECK_INTERVAL_PRIVATE : CHECK_INTERVAL);
@@ -216,12 +216,12 @@ public class BetaUpdaterController {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$downloadUpdate$5(File file) {
-        AndroidUtilities.runOnUIThread(new c3(11, this, file));
+        AndroidUtilities.runOnUIThread(new d3(12, this, file));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$downloadUpdate$6(Float f10) {
-        this.downloadingProgress = f10.floatValue();
+    public /* synthetic */ void lambda$downloadUpdate$6(Float f9) {
+        this.downloadingProgress = f9.floatValue();
         NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.appUpdateLoading, new Object[0]);
     }
 
@@ -259,11 +259,11 @@ public class BetaUpdaterController {
         } else {
             edit.putString("changelog", this.changelog);
         }
-        int i9 = this.versionCode;
-        if (i9 == 0) {
+        int i10 = this.versionCode;
+        if (i10 == 0) {
             edit.remove("versionCode");
         } else {
-            edit.putInt("versionCode", i9);
+            edit.putInt("versionCode", i10);
         }
         if (TextUtils.isEmpty(this.path)) {
             edit.remove("path");
@@ -308,7 +308,7 @@ public class BetaUpdaterController {
         }
         this.checkingForUpdate = true;
         this.firstCheck = false;
-        new org.telegram.ui.web.e1(new w(0, this, runnable)).execute(BuildConfig.BETA_URL);
+        new org.telegram.ui.web.f1(new w(0, this, runnable)).execute(BuildConfig.BETA_URL);
     }
 
     public void downloadUpdate() {
@@ -333,12 +333,12 @@ public class BetaUpdaterController {
     }
 
     public BetaUpdate getUpdate() {
-        int i9;
+        int i10;
         String str = this.version;
-        if (str == null || (i9 = this.versionCode) == 0) {
+        if (str == null || (i10 = this.versionCode) == 0) {
             return null;
         }
-        return new BetaUpdate(str, i9, this.changelog);
+        return new BetaUpdate(str, i10, this.changelog);
     }
 
     public boolean isDownloading() {
@@ -361,8 +361,8 @@ public class BetaUpdaterController {
                 return;
             }
         }
-        final int i9 = 0;
-        final int i10 = 1;
+        final int i10 = 0;
+        final int i11 = 1;
         HttpGetFileTask overrideExtension = new HttpGetFileTask(new Utilities.Callback(this) { // from class: org.telegram.messenger.v
             public final /* synthetic */ BetaUpdaterController b;
 
@@ -372,7 +372,7 @@ public class BetaUpdaterController {
 
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
-                switch (i9) {
+                switch (i10) {
                     case 0:
                         this.b.lambda$downloadUpdate$5((File) obj);
                         break;
@@ -390,7 +390,7 @@ public class BetaUpdaterController {
 
             @Override // org.telegram.messenger.Utilities.Callback
             public final void run(Object obj) {
-                switch (i10) {
+                switch (i11) {
                     case 0:
                         this.b.lambda$downloadUpdate$5((File) obj);
                         break;

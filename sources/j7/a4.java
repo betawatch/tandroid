@@ -1,19 +1,165 @@
 package j7;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class a4 implements q9.d {
+public final class a4 implements s9.d {
     public static final a4 a = new a4();
+    public static final s9.c b = new s9.c("systemInfo", u3.c.h(com.google.android.recaptcha.internal.a.r(h0.class, new e0(1))));
+    public static final s9.c c = new s9.c("eventName", u3.c.h(com.google.android.recaptcha.internal.a.r(h0.class, new e0(2))));
+    public static final s9.c d = new s9.c("isThickClient", u3.c.h(com.google.android.recaptcha.internal.a.r(h0.class, new e0(37))));
+    public static final s9.c e = new s9.c("clientType", u3.c.h(com.google.android.recaptcha.internal.a.r(h0.class, new e0(61))));
+    public static final s9.c f = new s9.c("modelDownloadLogEvent", u3.c.h(com.google.android.recaptcha.internal.a.r(h0.class, new e0(3))));
+    public static final s9.c g = new s9.c("customModelLoadLogEvent", u3.c.h(com.google.android.recaptcha.internal.a.r(h0.class, new e0(20))));
+    public static final s9.c h = new s9.c("customModelInferenceLogEvent", u3.c.h(com.google.android.recaptcha.internal.a.r(h0.class, new e0(4))));
+    public static final s9.c i = new s9.c("customModelCreateLogEvent", u3.c.h(com.google.android.recaptcha.internal.a.r(h0.class, new e0(29))));
+    public static final s9.c j = new s9.c("onDeviceFaceDetectionLogEvent", u3.c.h(com.google.android.recaptcha.internal.a.r(h0.class, new e0(5))));
+    public static final s9.c k = new s9.c("onDeviceFaceLoadLogEvent", u3.c.h(com.google.android.recaptcha.internal.a.r(h0.class, new e0(59))));
+    public static final s9.c l = new s9.c("onDeviceTextDetectionLogEvent", u3.c.h(com.google.android.recaptcha.internal.a.r(h0.class, new e0(6))));
+    public static final s9.c m = new s9.c("onDeviceTextDetectionLoadLogEvent", u3.c.h(com.google.android.recaptcha.internal.a.r(h0.class, new e0(79))));
+    public static final s9.c n = new s9.c("onDeviceBarcodeDetectionLogEvent", u3.c.h(com.google.android.recaptcha.internal.a.r(h0.class, new e0(7))));
+    public static final s9.c o = new s9.c("onDeviceBarcodeLoadLogEvent", u3.c.h(com.google.android.recaptcha.internal.a.r(h0.class, new e0(58))));
+    public static final s9.c p = new s9.c("onDeviceImageLabelCreateLogEvent", u3.c.h(com.google.android.recaptcha.internal.a.r(h0.class, new e0(48))));
+    public static final s9.c q = new s9.c("onDeviceImageLabelLoadLogEvent", u3.c.h(com.google.android.recaptcha.internal.a.r(h0.class, new e0(49))));
+    public static final s9.c r = new s9.c("onDeviceImageLabelDetectionLogEvent", u3.c.h(com.google.android.recaptcha.internal.a.r(h0.class, new e0(18))));
+    public static final s9.c s = new s9.c("onDeviceObjectCreateLogEvent", u3.c.h(com.google.android.recaptcha.internal.a.r(h0.class, new e0(26))));
+    public static final s9.c t = new s9.c("onDeviceObjectLoadLogEvent", u3.c.h(com.google.android.recaptcha.internal.a.r(h0.class, new e0(27))));
+    public static final s9.c u = new s9.c("onDeviceObjectInferenceLogEvent", u3.c.h(com.google.android.recaptcha.internal.a.r(h0.class, new e0(28))));
+    public static final s9.c v = new s9.c("onDevicePoseDetectionLogEvent", u3.c.h(com.google.android.recaptcha.internal.a.r(h0.class, new e0(44))));
+    public static final s9.c w = new s9.c("onDeviceSegmentationLogEvent", u3.c.h(com.google.android.recaptcha.internal.a.r(h0.class, new e0(45))));
+    public static final s9.c x = new s9.c("onDeviceSmartReplyLogEvent", u3.c.h(com.google.android.recaptcha.internal.a.r(h0.class, new e0(19))));
+    public static final s9.c y = new s9.c("onDeviceLanguageIdentificationLogEvent", u3.c.h(com.google.android.recaptcha.internal.a.r(h0.class, new e0(21))));
+    public static final s9.c z = new s9.c("onDeviceTranslationLogEvent", u3.c.h(com.google.android.recaptcha.internal.a.r(h0.class, new e0(22))));
+    public static final s9.c A = new s9.c("cloudFaceDetectionLogEvent", u3.c.h(com.google.android.recaptcha.internal.a.r(h0.class, new e0(8))));
+    public static final s9.c B = new s9.c("cloudCropHintDetectionLogEvent", u3.c.h(com.google.android.recaptcha.internal.a.r(h0.class, new e0(9))));
+    public static final s9.c C = new s9.c("cloudDocumentTextDetectionLogEvent", u3.c.h(com.google.android.recaptcha.internal.a.r(h0.class, new e0(10))));
+    public static final s9.c D = new s9.c("cloudImagePropertiesDetectionLogEvent", u3.c.h(com.google.android.recaptcha.internal.a.r(h0.class, new e0(11))));
+    public static final s9.c E = new s9.c("cloudImageLabelDetectionLogEvent", u3.c.h(com.google.android.recaptcha.internal.a.r(h0.class, new e0(12))));
+    public static final s9.c F = new s9.c("cloudLandmarkDetectionLogEvent", u3.c.h(com.google.android.recaptcha.internal.a.r(h0.class, new e0(13))));
+    public static final s9.c G = new s9.c("cloudLogoDetectionLogEvent", u3.c.h(com.google.android.recaptcha.internal.a.r(h0.class, new e0(14))));
+    public static final s9.c H = new s9.c("cloudSafeSearchDetectionLogEvent", u3.c.h(com.google.android.recaptcha.internal.a.r(h0.class, new e0(15))));
+    public static final s9.c I = new s9.c("cloudTextDetectionLogEvent", u3.c.h(com.google.android.recaptcha.internal.a.r(h0.class, new e0(16))));
+    public static final s9.c J = new s9.c("cloudWebSearchDetectionLogEvent", u3.c.h(com.google.android.recaptcha.internal.a.r(h0.class, new e0(17))));
+    public static final s9.c K = new s9.c("automlImageLabelingCreateLogEvent", u3.c.h(com.google.android.recaptcha.internal.a.r(h0.class, new e0(23))));
+    public static final s9.c L = new s9.c("automlImageLabelingLoadLogEvent", u3.c.h(com.google.android.recaptcha.internal.a.r(h0.class, new e0(24))));
+    public static final s9.c M = new s9.c("automlImageLabelingInferenceLogEvent", u3.c.h(com.google.android.recaptcha.internal.a.r(h0.class, new e0(25))));
+    public static final s9.c N = new s9.c("isModelDownloadedLogEvent", u3.c.h(com.google.android.recaptcha.internal.a.r(h0.class, new e0(39))));
+    public static final s9.c O = new s9.c("deleteModelLogEvent", u3.c.h(com.google.android.recaptcha.internal.a.r(h0.class, new e0(40))));
+    public static final s9.c P = new s9.c("aggregatedAutomlImageLabelingInferenceLogEvent", u3.c.h(com.google.android.recaptcha.internal.a.r(h0.class, new e0(30))));
+    public static final s9.c Q = new s9.c("aggregatedCustomModelInferenceLogEvent", u3.c.h(com.google.android.recaptcha.internal.a.r(h0.class, new e0(31))));
+    public static final s9.c R = new s9.c("aggregatedOnDeviceFaceDetectionLogEvent", u3.c.h(com.google.android.recaptcha.internal.a.r(h0.class, new e0(32))));
+    public static final s9.c S = new s9.c("aggregatedOnDeviceBarcodeDetectionLogEvent", u3.c.h(com.google.android.recaptcha.internal.a.r(h0.class, new e0(33))));
+    public static final s9.c T = new s9.c("aggregatedOnDeviceImageLabelDetectionLogEvent", u3.c.h(com.google.android.recaptcha.internal.a.r(h0.class, new e0(34))));
+    public static final s9.c U = new s9.c("aggregatedOnDeviceObjectInferenceLogEvent", u3.c.h(com.google.android.recaptcha.internal.a.r(h0.class, new e0(35))));
+    public static final s9.c V = new s9.c("aggregatedOnDeviceTextDetectionLogEvent", u3.c.h(com.google.android.recaptcha.internal.a.r(h0.class, new e0(36))));
+    public static final s9.c W = new s9.c("aggregatedOnDevicePoseDetectionLogEvent", u3.c.h(com.google.android.recaptcha.internal.a.r(h0.class, new e0(46))));
+    public static final s9.c X = new s9.c("aggregatedOnDeviceSegmentationLogEvent", u3.c.h(com.google.android.recaptcha.internal.a.r(h0.class, new e0(47))));
+    public static final s9.c Y = new s9.c("pipelineAccelerationInferenceEvents", u3.c.h(com.google.android.recaptcha.internal.a.r(h0.class, new e0(69))));
+    public static final s9.c Z = new s9.c("remoteConfigLogEvent", u3.c.h(com.google.android.recaptcha.internal.a.r(h0.class, new e0(42))));
+    public static final s9.c a0 = new s9.c("inputImageConstructionLogEvent", u3.c.h(com.google.android.recaptcha.internal.a.r(h0.class, new e0(50))));
+    public static final s9.c b0 = new s9.c("leakedHandleEvent", u3.c.h(com.google.android.recaptcha.internal.a.r(h0.class, new e0(51))));
+    public static final s9.c c0 = new s9.c("cameraSourceLogEvent", u3.c.h(com.google.android.recaptcha.internal.a.r(h0.class, new e0(52))));
+    public static final s9.c d0 = new s9.c("imageLabelOptionalModuleLogEvent", u3.c.h(com.google.android.recaptcha.internal.a.r(h0.class, new e0(53))));
+    public static final s9.c e0 = new s9.c("languageIdentificationOptionalModuleLogEvent", u3.c.h(com.google.android.recaptcha.internal.a.r(h0.class, new e0(54))));
+    public static final s9.c f0 = new s9.c("faceDetectionOptionalModuleLogEvent", u3.c.h(com.google.android.recaptcha.internal.a.r(h0.class, new e0(60))));
+    public static final s9.c g0 = new s9.c("nlClassifierOptionalModuleLogEvent", u3.c.h(com.google.android.recaptcha.internal.a.r(h0.class, new e0(55))));
+    public static final s9.c h0 = new s9.c("nlClassifierClientLibraryLogEvent", u3.c.h(com.google.android.recaptcha.internal.a.r(h0.class, new e0(56))));
+    public static final s9.c i0 = new s9.c("accelerationAllowlistLogEvent", u3.c.h(com.google.android.recaptcha.internal.a.r(h0.class, new e0(57))));
+    public static final s9.c j0 = new s9.c("toxicityDetectionCreateEvent", u3.c.h(com.google.android.recaptcha.internal.a.r(h0.class, new e0(62))));
+    public static final s9.c k0 = new s9.c("toxicityDetectionLoadEvent", u3.c.h(com.google.android.recaptcha.internal.a.r(h0.class, new e0(63))));
+    public static final s9.c l0 = new s9.c("toxicityDetectionInferenceEvent", u3.c.h(com.google.android.recaptcha.internal.a.r(h0.class, new e0(64))));
+    public static final s9.c m0 = new s9.c("barcodeDetectionOptionalModuleLogEvent", u3.c.h(com.google.android.recaptcha.internal.a.r(h0.class, new e0(65))));
+    public static final s9.c n0 = new s9.c("customImageLabelOptionalModuleLogEvent", u3.c.h(com.google.android.recaptcha.internal.a.r(h0.class, new e0(66))));
+    public static final s9.c o0 = new s9.c("codeScannerScanApiEvent", u3.c.h(com.google.android.recaptcha.internal.a.r(h0.class, new e0(67))));
+    public static final s9.c p0 = new s9.c("codeScannerOptionalModuleEvent", u3.c.h(com.google.android.recaptcha.internal.a.r(h0.class, new e0(68))));
+    public static final s9.c q0 = new s9.c("onDeviceExplicitContentCreateLogEvent", u3.c.h(com.google.android.recaptcha.internal.a.r(h0.class, new e0(70))));
+    public static final s9.c r0 = new s9.c("onDeviceExplicitContentLoadLogEvent", u3.c.h(com.google.android.recaptcha.internal.a.r(h0.class, new e0(71))));
+    public static final s9.c s0 = new s9.c("onDeviceExplicitContentInferenceLogEvent", u3.c.h(com.google.android.recaptcha.internal.a.r(h0.class, new e0(72))));
+    public static final s9.c t0 = new s9.c("aggregatedOnDeviceExplicitContentLogEvent", u3.c.h(com.google.android.recaptcha.internal.a.r(h0.class, new e0(73))));
+    public static final s9.c u0 = new s9.c("onDeviceSelfieFaceCreateLogEvent", u3.c.h(com.google.android.recaptcha.internal.a.r(h0.class, new e0(74))));
+    public static final s9.c v0 = new s9.c("onDeviceSelfieFaceLoadLogEvent", u3.c.h(com.google.android.recaptcha.internal.a.r(h0.class, new e0(75))));
+    public static final s9.c w0 = new s9.c("onDeviceSelfieFaceLogEvent", u3.c.h(com.google.android.recaptcha.internal.a.r(h0.class, new e0(76))));
+    public static final s9.c x0 = new s9.c("aggregatedOnDeviceSelfieFaceLogEvent", u3.c.h(com.google.android.recaptcha.internal.a.r(h0.class, new e0(77))));
+    public static final s9.c y0 = new s9.c("smartReplyOptionalModuleLogEvent", u3.c.h(com.google.android.recaptcha.internal.a.r(h0.class, new e0(78))));
 
-    static {
-        e2.c.u(j3.r0.r(w.class, j3.r0.i(3, j3.r0.r(w.class, j3.r0.i(2, j3.r0.r(w.class, new s(1)))))));
-    }
-
-    @Override // q9.a
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
-        }
-        throw null;
+    @Override // s9.a
+    public final void a(Object obj, Object obj2) {
+        v7 v7Var = (v7) obj;
+        s9.e eVar = (s9.e) obj2;
+        eVar.e(b, v7Var.a);
+        eVar.e(c, v7Var.b);
+        eVar.e(d, null);
+        eVar.e(e, v7Var.c);
+        eVar.e(f, null);
+        eVar.e(g, null);
+        eVar.e(h, null);
+        eVar.e(i, null);
+        eVar.e(j, null);
+        eVar.e(k, null);
+        eVar.e(l, null);
+        eVar.e(m, null);
+        eVar.e(n, null);
+        eVar.e(o, null);
+        eVar.e(p, null);
+        eVar.e(q, v7Var.d);
+        eVar.e(r, v7Var.e);
+        eVar.e(s, null);
+        eVar.e(t, null);
+        eVar.e(u, null);
+        eVar.e(v, null);
+        eVar.e(w, null);
+        eVar.e(x, null);
+        eVar.e(y, null);
+        eVar.e(z, null);
+        eVar.e(A, null);
+        eVar.e(B, null);
+        eVar.e(C, null);
+        eVar.e(D, null);
+        eVar.e(E, null);
+        eVar.e(F, null);
+        eVar.e(G, null);
+        eVar.e(H, null);
+        eVar.e(I, null);
+        eVar.e(J, null);
+        eVar.e(K, null);
+        eVar.e(L, null);
+        eVar.e(M, null);
+        eVar.e(N, null);
+        eVar.e(O, null);
+        eVar.e(P, null);
+        eVar.e(Q, null);
+        eVar.e(R, null);
+        eVar.e(S, null);
+        eVar.e(T, v7Var.f);
+        eVar.e(U, null);
+        eVar.e(V, null);
+        eVar.e(W, null);
+        eVar.e(X, null);
+        eVar.e(Y, null);
+        eVar.e(Z, null);
+        eVar.e(a0, null);
+        eVar.e(b0, null);
+        eVar.e(c0, null);
+        eVar.e(d0, null);
+        eVar.e(e0, null);
+        eVar.e(f0, null);
+        eVar.e(g0, null);
+        eVar.e(h0, null);
+        eVar.e(i0, null);
+        eVar.e(j0, null);
+        eVar.e(k0, null);
+        eVar.e(l0, null);
+        eVar.e(m0, null);
+        eVar.e(n0, null);
+        eVar.e(o0, null);
+        eVar.e(p0, null);
+        eVar.e(q0, null);
+        eVar.e(r0, null);
+        eVar.e(s0, null);
+        eVar.e(t0, null);
+        eVar.e(u0, null);
+        eVar.e(v0, null);
+        eVar.e(w0, null);
+        eVar.e(x0, null);
+        eVar.e(y0, null);
     }
 }

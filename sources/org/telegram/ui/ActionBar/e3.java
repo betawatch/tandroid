@@ -9,7 +9,7 @@ import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
 public final class e3 extends Drawable {
     public final Paint a;
@@ -25,12 +25,12 @@ public final class e3 extends Drawable {
         paint.setColor(-16777216);
     }
 
-    public final void a(int i9) {
+    public final void a(int i10) {
         Rect rect = this.b;
-        if (rect.left == 0 && rect.top == 0 && rect.right == 0 && rect.bottom == i9) {
+        if (rect.left == 0 && rect.top == 0 && rect.right == 0 && rect.bottom == i10) {
             return;
         }
-        rect.set(0, 0, 0, i9);
+        rect.set(0, 0, 0, i10);
         onBoundsChange(getBounds());
         invalidateSelf();
     }
@@ -63,17 +63,17 @@ public final class e3 extends Drawable {
         super.onBoundsChange(rect);
         Rect rect2 = this.c;
         rect2.set(rect);
-        int i9 = rect2.left;
+        int i10 = rect2.left;
         Rect rect3 = this.b;
-        rect2.left = Math.max(0, rect3.left) + i9;
+        rect2.left = Math.max(0, rect3.left) + i10;
         rect2.top = Math.max(0, rect3.top) + rect2.top;
         rect2.right -= Math.max(0, rect3.right);
         rect2.bottom -= Math.max(0, rect3.bottom);
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i9) {
-        this.a.setAlpha(i9);
+    public final void setAlpha(int i10) {
+        this.a.setAlpha(i10);
         invalidateSelf();
     }
 

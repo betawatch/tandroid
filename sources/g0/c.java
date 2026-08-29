@@ -16,7 +16,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class c {
     public Context a;
@@ -76,17 +76,17 @@ public final class c {
         if (persistableBundle != null) {
             intents.setExtras(persistableBundle);
         }
-        int i9 = 0;
+        int i10 = 0;
         if (Build.VERSION.SDK_INT >= 29) {
             p0[] p0VarArr = this.i;
             if (p0VarArr != null && p0VarArr.length > 0) {
                 int length = p0VarArr.length;
                 Person[] personArr = new Person[length];
-                while (i9 < length) {
-                    p0 p0Var = this.i[i9];
+                while (i10 < length) {
+                    p0 p0Var = this.i[i10];
                     p0Var.getClass();
-                    personArr[i9] = d1.f.D(p0Var);
-                    i9++;
+                    personArr[i10] = d1.f.E(p0Var);
+                    i10++;
                 }
                 intents.setPersons(personArr);
             }
@@ -102,13 +102,13 @@ public final class c {
             p0[] p0VarArr2 = this.i;
             if (p0VarArr2 != null && p0VarArr2.length > 0) {
                 this.n.putInt("extraPersonCount", p0VarArr2.length);
-                while (i9 < this.i.length) {
+                while (i10 < this.i.length) {
                     PersistableBundle persistableBundle2 = this.n;
                     StringBuilder sb2 = new StringBuilder("extraPerson_");
-                    int i10 = i9 + 1;
-                    sb2.append(i10);
+                    int i11 = i10 + 1;
+                    sb2.append(i11);
                     String sb3 = sb2.toString();
-                    p0 p0Var2 = this.i[i9];
+                    p0 p0Var2 = this.i[i10];
                     p0Var2.getClass();
                     PersistableBundle persistableBundle3 = new PersistableBundle();
                     CharSequence charSequence = p0Var2.a;
@@ -118,7 +118,7 @@ public final class c {
                     persistableBundle3.putBoolean("isBot", p0Var2.e);
                     persistableBundle3.putBoolean("isImportant", p0Var2.f);
                     persistableBundle2.putPersistableBundle(sb3, persistableBundle3);
-                    i9 = i10;
+                    i10 = i11;
                 }
             }
             h hVar2 = this.k;

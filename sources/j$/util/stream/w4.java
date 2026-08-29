@@ -61,13 +61,13 @@ public final class w4 extends f5 {
                             while (!this.a.q() && spliterator.tryAdvance((LongConsumer) m0Var)) {
                             }
                         }
-                    } catch (Throwable th) {
+                    } catch (Throwable th2) {
                         try {
                             longStream.close();
-                        } catch (Throwable th2) {
-                            th.addSuppressed(th2);
+                        } catch (Throwable th3) {
+                            th2.addSuppressed(th3);
                         }
-                        throw th;
+                        throw th2;
                     }
                 }
                 if (longStream != null) {
@@ -87,13 +87,13 @@ public final class w4 extends f5 {
                             while (!this.a.q() && spliterator2.tryAdvance((IntConsumer) i0Var)) {
                             }
                         }
-                    } catch (Throwable th3) {
+                    } catch (Throwable th4) {
                         try {
                             intStream.close();
-                        } catch (Throwable th4) {
-                            th3.addSuppressed(th4);
+                        } catch (Throwable th5) {
+                            th4.addSuppressed(th5);
                         }
-                        throw th3;
+                        throw th4;
                     }
                 }
                 if (intStream != null) {
@@ -113,13 +113,13 @@ public final class w4 extends f5 {
                             while (!this.a.q() && spliterator3.tryAdvance((DoubleConsumer) e0Var)) {
                             }
                         }
-                    } catch (Throwable th5) {
+                    } catch (Throwable th6) {
                         try {
                             c0Var.close();
-                        } catch (Throwable th6) {
-                            th5.addSuppressed(th6);
+                        } catch (Throwable th7) {
+                            th6.addSuppressed(th7);
                         }
-                        throw th5;
+                        throw th6;
                     }
                 }
                 if (c0Var != null) {

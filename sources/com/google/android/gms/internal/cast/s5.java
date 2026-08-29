@@ -7,38 +7,38 @@ import java.util.Collection;
 import java.util.RandomAccess;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class s5 extends u4 implements RandomAccess, j5, d6 {
     public static final s5 d = new s5(new long[0], 0, false);
     public long[] b;
     public int c;
 
-    public s5(long[] jArr, int i9, boolean z10) {
+    public s5(long[] jArr, int i10, boolean z10) {
         super(z10);
         this.b = jArr;
-        this.c = i9;
+        this.c = i10;
     }
 
     @Override // java.util.AbstractList, java.util.List
-    public final void add(int i9, Object obj) {
-        int i10;
+    public final void add(int i10, Object obj) {
+        int i11;
         long longValue = ((Long) obj).longValue();
         i();
-        if (i9 < 0 || i9 > (i10 = this.c)) {
-            throw new IndexOutOfBoundsException(aa.d.k(i9, this.c, "Index:", ", Size:"));
+        if (i10 < 0 || i10 > (i11 = this.c)) {
+            throw new IndexOutOfBoundsException(a4.w.k(i10, this.c, "Index:", ", Size:"));
         }
-        int i11 = i9 + 1;
+        int i12 = i10 + 1;
         long[] jArr = this.b;
-        if (i10 < jArr.length) {
-            System.arraycopy(jArr, i9, jArr, i11, i10 - i9);
+        if (i11 < jArr.length) {
+            System.arraycopy(jArr, i10, jArr, i12, i11 - i10);
         } else {
-            long[] jArr2 = new long[((i10 * 3) / 2) + 1];
-            System.arraycopy(jArr, 0, jArr2, 0, i9);
-            System.arraycopy(this.b, i9, jArr2, i11, this.c - i9);
+            long[] jArr2 = new long[((i11 * 3) / 2) + 1];
+            System.arraycopy(jArr, 0, jArr2, 0, i10);
+            System.arraycopy(this.b, i10, jArr2, i12, this.c - i10);
             this.b = jArr2;
         }
-        this.b[i9] = longValue;
+        this.b[i10] = longValue;
         this.c++;
         ((AbstractList) this).modCount++;
     }
@@ -52,21 +52,21 @@ public final class s5 extends u4 implements RandomAccess, j5, d6 {
             return super.addAll(collection);
         }
         s5 s5Var = (s5) collection;
-        int i9 = s5Var.c;
-        if (i9 == 0) {
+        int i10 = s5Var.c;
+        if (i10 == 0) {
             return false;
         }
-        int i10 = this.c;
-        if (ConnectionsManager.DEFAULT_DATACENTER_ID - i10 < i9) {
+        int i11 = this.c;
+        if (ConnectionsManager.DEFAULT_DATACENTER_ID - i11 < i10) {
             throw new OutOfMemoryError();
         }
-        int i11 = i10 + i9;
+        int i12 = i11 + i10;
         long[] jArr = this.b;
-        if (i11 > jArr.length) {
-            this.b = Arrays.copyOf(jArr, i11);
+        if (i12 > jArr.length) {
+            this.b = Arrays.copyOf(jArr, i12);
         }
         System.arraycopy(s5Var.b, 0, this.b, this.c, s5Var.c);
-        this.c = i11;
+        this.c = i12;
         ((AbstractList) this).modCount++;
         return true;
     }
@@ -89,8 +89,8 @@ public final class s5 extends u4 implements RandomAccess, j5, d6 {
             return false;
         }
         long[] jArr = s5Var.b;
-        for (int i9 = 0; i9 < this.c; i9++) {
-            if (this.b[i9] != jArr[i9]) {
+        for (int i10 = 0; i10 < this.c; i10++) {
+            if (this.b[i10] != jArr[i10]) {
                 return false;
             }
         }
@@ -98,20 +98,20 @@ public final class s5 extends u4 implements RandomAccess, j5, d6 {
     }
 
     @Override // java.util.AbstractList, java.util.List
-    public final /* synthetic */ Object get(int i9) {
-        n(i9);
-        return Long.valueOf(this.b[i9]);
+    public final /* synthetic */ Object get(int i10) {
+        n(i10);
+        return Long.valueOf(this.b[i10]);
     }
 
     @Override // com.google.android.gms.internal.cast.u4, java.util.AbstractList, java.util.Collection, java.util.List
     public final int hashCode() {
-        int i9 = 1;
-        for (int i10 = 0; i10 < this.c; i10++) {
-            long j10 = this.b[i10];
+        int i10 = 1;
+        for (int i11 = 0; i11 < this.c; i11++) {
+            long j10 = this.b[i11];
             Charset charset = l5.a;
-            i9 = (i9 * 31) + ((int) (j10 ^ (j10 >>> 32)));
+            i10 = (i10 * 31) + ((int) (j10 ^ (j10 >>> 32)));
         }
-        return i9;
+        return i10;
     }
 
     @Override // java.util.AbstractList, java.util.List
@@ -120,29 +120,29 @@ public final class s5 extends u4 implements RandomAccess, j5, d6 {
             return -1;
         }
         long longValue = ((Long) obj).longValue();
-        int i9 = this.c;
-        for (int i10 = 0; i10 < i9; i10++) {
-            if (this.b[i10] == longValue) {
-                return i10;
+        int i10 = this.c;
+        for (int i11 = 0; i11 < i10; i11++) {
+            if (this.b[i11] == longValue) {
+                return i11;
             }
         }
         return -1;
     }
 
-    public final void n(int i9) {
-        if (i9 < 0 || i9 >= this.c) {
-            throw new IndexOutOfBoundsException(aa.d.k(i9, this.c, "Index:", ", Size:"));
+    public final void n(int i10) {
+        if (i10 < 0 || i10 >= this.c) {
+            throw new IndexOutOfBoundsException(a4.w.k(i10, this.c, "Index:", ", Size:"));
         }
     }
 
     @Override // com.google.android.gms.internal.cast.u4, java.util.AbstractList, java.util.List
-    public final /* bridge */ /* synthetic */ Object remove(int i9) {
+    public final /* bridge */ /* synthetic */ Object remove(int i10) {
         i();
-        n(i9);
+        n(i10);
         long[] jArr = this.b;
-        long j10 = jArr[i9];
-        if (i9 < this.c - 1) {
-            System.arraycopy(jArr, i9 + 1, jArr, i9, (r3 - i9) - 1);
+        long j10 = jArr[i10];
+        if (i10 < this.c - 1) {
+            System.arraycopy(jArr, i10 + 1, jArr, i10, (r3 - i10) - 1);
         }
         this.c--;
         ((AbstractList) this).modCount++;
@@ -150,25 +150,25 @@ public final class s5 extends u4 implements RandomAccess, j5, d6 {
     }
 
     @Override // java.util.AbstractList
-    public final void removeRange(int i9, int i10) {
+    public final void removeRange(int i10, int i11) {
         i();
-        if (i10 < i9) {
+        if (i11 < i10) {
             throw new IndexOutOfBoundsException("toIndex < fromIndex");
         }
         long[] jArr = this.b;
-        System.arraycopy(jArr, i10, jArr, i9, this.c - i10);
-        this.c -= i10 - i9;
+        System.arraycopy(jArr, i11, jArr, i10, this.c - i11);
+        this.c -= i11 - i10;
         ((AbstractList) this).modCount++;
     }
 
     @Override // java.util.AbstractList, java.util.List
-    public final /* bridge */ /* synthetic */ Object set(int i9, Object obj) {
+    public final /* bridge */ /* synthetic */ Object set(int i10, Object obj) {
         long longValue = ((Long) obj).longValue();
         i();
-        n(i9);
+        n(i10);
         long[] jArr = this.b;
-        long j10 = jArr[i9];
-        jArr[i9] = longValue;
+        long j10 = jArr[i10];
+        jArr[i10] = longValue;
         return Long.valueOf(j10);
     }
 
@@ -178,9 +178,9 @@ public final class s5 extends u4 implements RandomAccess, j5, d6 {
     }
 
     @Override // com.google.android.gms.internal.cast.k5
-    public final /* bridge */ /* synthetic */ k5 zzg(int i9) {
-        if (i9 >= this.c) {
-            return new s5(Arrays.copyOf(this.b, i9), this.c, true);
+    public final /* bridge */ /* synthetic */ k5 zzg(int i10) {
+        if (i10 >= this.c) {
+            return new s5(Arrays.copyOf(this.b, i10), this.c, true);
         }
         throw new IllegalArgumentException();
     }
@@ -189,17 +189,17 @@ public final class s5 extends u4 implements RandomAccess, j5, d6 {
     public final /* bridge */ /* synthetic */ boolean add(Object obj) {
         long longValue = ((Long) obj).longValue();
         i();
-        int i9 = this.c;
+        int i10 = this.c;
         long[] jArr = this.b;
-        if (i9 == jArr.length) {
-            long[] jArr2 = new long[((i9 * 3) / 2) + 1];
-            System.arraycopy(jArr, 0, jArr2, 0, i9);
+        if (i10 == jArr.length) {
+            long[] jArr2 = new long[((i10 * 3) / 2) + 1];
+            System.arraycopy(jArr, 0, jArr2, 0, i10);
             this.b = jArr2;
         }
         long[] jArr3 = this.b;
-        int i10 = this.c;
-        this.c = i10 + 1;
-        jArr3[i10] = longValue;
+        int i11 = this.c;
+        this.c = i11 + 1;
+        jArr3[i11] = longValue;
         return true;
     }
 }

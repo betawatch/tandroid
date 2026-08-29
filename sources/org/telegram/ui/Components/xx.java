@@ -1,59 +1,52 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
 import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLRPC;
+import android.widget.FrameLayout;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class xx extends k41 {
-    public static final /* synthetic */ int a = 0;
+public final class xx extends m2.a implements xc0 {
+    public final /* synthetic */ fz c;
 
-    static {
-        k41.setup(new xx());
+    public xx(fz fzVar) {
+        this.c = fzVar;
     }
 
-    public static l41 a(TLRPC.StickerSetCovered stickerSetCovered, ox oxVar, boolean z10) {
-        l41 J = l41.J(xx.class);
-        long j10 = stickerSetCovered.set.id;
-        long j11 = 1 + j10;
-        J.d = (int) (j11 ^ (j11 >>> 32));
-        J.B = j10;
-        J.G = stickerSetCovered;
-        J.H = oxVar;
-        J.e = z10;
-        return J;
+    @Override // m2.a
+    public final void a(m2.g gVar, Object obj) {
+        gVar.removeView((View) obj);
     }
 
-    @Override // org.telegram.ui.Components.k41
-    public final void bindView(View view, l41 l41Var, boolean z10, z41 z41Var, i51 i51Var) {
-        vg.d dVar = (vg.d) view;
-        Object obj = l41Var.G;
-        if (obj instanceof TLRPC.TL_messages_stickerSet) {
-            dVar.setPack((TLRPC.TL_messages_stickerSet) obj);
-        } else if (obj instanceof TLRPC.StickerSetCovered) {
-            TLRPC.Document document = ((ox) l41Var.H).e;
-            dVar.d.setText(((TLRPC.StickerSetCovered) obj).set.short_name);
-            dVar.c.d(document, null, null, null, false, false);
+    @Override // m2.a
+    public final int b() {
+        return this.c.e.size();
+    }
+
+    @Override // m2.a
+    public final CharSequence d(int i10) {
+        if (i10 == 0) {
+            return LocaleController.getString(R.string.Emoji);
         }
-        dVar.a(l41Var.e, false);
+        if (i10 == 1) {
+            return LocaleController.getString(R.string.AccDescrGIFs);
+        }
+        if (i10 != 2) {
+            return null;
+        }
+        return LocaleController.getString(R.string.AccDescrStickers);
     }
 
-    @Override // org.telegram.ui.Components.k41
-    public final boolean contentsEquals(l41 l41Var, l41 l41Var2) {
-        return l41Var.B == l41Var2.B && l41Var.e == l41Var2.e;
+    @Override // m2.a
+    public final Object e(m2.g gVar, int i10) {
+        FrameLayout frameLayout = ((bz) this.c.e.get(i10)).b;
+        gVar.addView(frameLayout);
+        return frameLayout;
     }
 
-    @Override // org.telegram.ui.Components.k41
-    public final View createView(Context context, wk0 wk0Var, int i9, int i10, org.telegram.ui.ActionBar.b6 b6Var) {
-        vg.d dVar = new vg.d(context, b6Var);
-        dVar.setLayoutParams(new f2.a1(AndroidUtilities.dp(64.0f), -1));
-        return dVar;
-    }
-
-    @Override // org.telegram.ui.Components.k41
-    public final boolean equals(l41 l41Var, l41 l41Var2) {
-        return l41Var.B == l41Var2.B;
+    @Override // m2.a
+    public final boolean f(View view, Object obj) {
+        return view == obj;
     }
 }

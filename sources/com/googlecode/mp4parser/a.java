@@ -1,20 +1,20 @@
 package com.googlecode.mp4parser;
 
-import g7.u8;
+import h7.o;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.channels.WritableByteChannel;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public abstract class a implements q2.b {
+public abstract class a implements s2.b {
     static final /* synthetic */ boolean $assertionsDisabled = false;
-    private static yb.c LOG = yb.c.a(a.class);
+    private static ac.c LOG = ac.c.a(a.class);
     private ByteBuffer content;
     long contentStartPosition;
     f dataSource;
     long offset;
-    private q2.f parent;
+    private s2.f parent;
     protected String type;
     private byte[] userType;
     long memMapSize = -1;
@@ -31,10 +31,10 @@ public abstract class a implements q2.b {
     public final void a(ByteBuffer byteBuffer) {
         if (b()) {
             byteBuffer.putInt((int) getSize());
-            byteBuffer.put(p2.c.d(getType()));
+            byteBuffer.put(r2.c.d(getType()));
         } else {
             byteBuffer.putInt((int) 1);
-            byteBuffer.put(p2.c.d(getType()));
+            byteBuffer.put(r2.c.d(getType()));
             byteBuffer.putLong(getSize());
         }
         if ("uuid".equals(getType())) {
@@ -43,16 +43,16 @@ public abstract class a implements q2.b {
     }
 
     public final boolean b() {
-        int i9 = "uuid".equals(getType()) ? 24 : 8;
+        int i10 = "uuid".equals(getType()) ? 24 : 8;
         if (!this.isRead) {
-            return this.memMapSize + ((long) i9) < 4294967296L;
+            return this.memMapSize + ((long) i10) < 4294967296L;
         }
         if (!this.isParsed) {
-            return ((long) (this.content.limit() + i9)) < 4294967296L;
+            return ((long) (this.content.limit() + i10)) < 4294967296L;
         }
         long contentSize = getContentSize();
         ByteBuffer byteBuffer = this.deadBytes;
-        return (contentSize + ((long) (byteBuffer != null ? byteBuffer.limit() : 0))) + ((long) i9) < 4294967296L;
+        return (contentSize + ((long) (byteBuffer != null ? byteBuffer.limit() : 0))) + ((long) i10) < 4294967296L;
     }
 
     public final synchronized void c() {
@@ -65,12 +65,12 @@ public abstract class a implements q2.b {
                     throw new RuntimeException(e10);
                 }
             }
-        } catch (Throwable th) {
-            throw th;
+        } catch (Throwable th2) {
+            throw th2;
         }
     }
 
-    @Override // q2.b
+    @Override // s2.b
     public void getBox(WritableByteChannel writableByteChannel) {
         if (!this.isRead) {
             ByteBuffer allocate = ByteBuffer.allocate((b() ? 8 : 16) + ("uuid".equals(getType()) ? 16 : 0));
@@ -85,7 +85,7 @@ public abstract class a implements q2.b {
             writableByteChannel.write((ByteBuffer) this.content.position(0));
             return;
         }
-        ByteBuffer allocate3 = ByteBuffer.allocate(u8.a(getSize()));
+        ByteBuffer allocate3 = ByteBuffer.allocate(o.a(getSize()));
         a(allocate3);
         getContent(allocate3);
         ByteBuffer byteBuffer = this.deadBytes;
@@ -106,16 +106,16 @@ public abstract class a implements q2.b {
         return this.offset;
     }
 
-    @Override // q2.b
-    public q2.f getParent() {
+    @Override // s2.b
+    public s2.f getParent() {
         return this.parent;
     }
 
     public String getPath() {
-        return yb.e.a(this, "");
+        return ac.e.a(this, "");
     }
 
-    @Override // q2.b
+    @Override // s2.b
     public long getSize() {
         long j10;
         if (!this.isRead) {
@@ -129,7 +129,7 @@ public abstract class a implements q2.b {
         return j10 + (j10 >= 4294967288L ? 8 : 0) + 8 + ("uuid".equals(getType()) ? 16 : 0) + (this.deadBytes != null ? r0.limit() : 0);
     }
 
-    @Override // q2.b
+    @Override // s2.b
     public String getType() {
         return this.type;
     }
@@ -142,7 +142,7 @@ public abstract class a implements q2.b {
         return this.isParsed;
     }
 
-    public void parse(f fVar, ByteBuffer byteBuffer, long j10, p2.a aVar) {
+    public void parse(f fVar, ByteBuffer byteBuffer, long j10, r2.a aVar) {
         long position = fVar.position();
         this.contentStartPosition = position;
         this.offset = position - byteBuffer.remaining();
@@ -167,8 +167,8 @@ public abstract class a implements q2.b {
                 }
                 this.content = null;
             }
-        } catch (Throwable th) {
-            throw th;
+        } catch (Throwable th2) {
+            throw th2;
         }
     }
 
@@ -176,8 +176,8 @@ public abstract class a implements q2.b {
         this.deadBytes = byteBuffer;
     }
 
-    @Override // q2.b
-    public void setParent(q2.f fVar) {
+    @Override // s2.b
+    public void setParent(s2.f fVar) {
         this.parent = fVar;
     }
 }

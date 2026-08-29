@@ -1,25 +1,34 @@
 package j3;
 
-import android.media.AudioDeviceInfo;
-import android.media.AudioTrack;
+import org.telegram.ui.ActionBar.c6;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public abstract class z {
-    public static void a(s sVar, Object obj) {
-        d0 d0Var;
-        AudioDeviceInfo d = i3.i.d(obj);
-        i0 i0Var = (i0) sVar;
-        if (d == null) {
-            d0Var = null;
-        } else {
-            i0Var.getClass();
-            d0Var = new d0(d);
-        }
-        i0Var.Y = d0Var;
-        AudioTrack audioTrack = i0Var.u;
-        if (audioTrack != null) {
-            b0.a(audioTrack, d0Var);
+public final /* synthetic */ class z implements f5.j, og.c {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ int c;
+
+    public /* synthetic */ z(int i10, int i11, int i12) {
+        this.a = i12;
+        this.b = i10;
+        this.c = i11;
+    }
+
+    @Override // og.c
+    public int f(c6 c6Var, boolean z10) {
+        return z10 ? this.b : this.c;
+    }
+
+    @Override // f5.j
+    public void invoke(Object obj) {
+        switch (this.a) {
+            case 0:
+                ((a2) obj).onSurfaceSizeChanged(this.b, this.c);
+                break;
+            default:
+                ((a2) obj).onSurfaceSizeChanged(this.b, this.c);
+                break;
         }
     }
 }

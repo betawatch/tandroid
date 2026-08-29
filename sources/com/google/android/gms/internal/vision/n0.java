@@ -5,7 +5,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.RandomAccess;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public abstract class n0 extends AbstractList implements o1 {
     public boolean a = true;
@@ -44,8 +44,8 @@ public abstract class n0 extends AbstractList implements o1 {
         if (size != list.size()) {
             return false;
         }
-        for (int i9 = 0; i9 < size; i9++) {
-            if (!get(i9).equals(list.get(i9))) {
+        for (int i10 = 0; i10 < size; i10++) {
+            if (!get(i10).equals(list.get(i10))) {
                 return false;
             }
         }
@@ -55,11 +55,11 @@ public abstract class n0 extends AbstractList implements o1 {
     @Override // java.util.AbstractList, java.util.Collection, java.util.List
     public int hashCode() {
         int size = size();
-        int i9 = 1;
-        for (int i10 = 0; i10 < size; i10++) {
-            i9 = (i9 * 31) + get(i10).hashCode();
+        int i10 = 1;
+        for (int i11 = 0; i11 < size; i11++) {
+            i10 = (i10 * 31) + get(i11).hashCode();
         }
-        return i9;
+        return i10;
     }
 
     public final void i() {
@@ -69,7 +69,7 @@ public abstract class n0 extends AbstractList implements o1 {
     }
 
     @Override // java.util.AbstractList, java.util.List
-    public abstract Object remove(int i9);
+    public abstract Object remove(int i10);
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
     public final boolean remove(Object obj) {
@@ -105,8 +105,8 @@ public abstract class n0 extends AbstractList implements o1 {
     }
 
     @Override // java.util.AbstractList, java.util.List
-    public boolean addAll(int i9, Collection collection) {
+    public boolean addAll(int i10, Collection collection) {
         i();
-        return super.addAll(i9, collection);
+        return super.addAll(i10, collection);
     }
 }

@@ -1,169 +1,104 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.text.TextUtils;
 import android.view.View;
-import android.widget.FrameLayout;
+import android.view.ViewGroup;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.UserObject;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.ContactsController;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class oj extends FrameLayout {
-    public final o9 a;
-    public final dg.c b;
-    public final org.telegram.ui.ActionBar.h5 c;
-    public final dp d;
-    public final z8 e;
-    public TLRPC.User f;
+public final class oj extends il0 {
+    public final Context c;
+    public ArrayList d = new ArrayList();
+    public ArrayList e = new ArrayList();
+    public mj f;
     public int h;
-    public CharSequence n;
-    public CharSequence r;
-    public TLRPC.User s;
-    public String v;
-    public String w;
-    public final int x;
-    public boolean y;
+    public final /* synthetic */ sj n;
 
-    public oj(Context context, org.telegram.ui.ActionBar.b6 b6Var) {
-        super(context);
-        this.x = UserConfig.selectedAccount;
-        this.e = new z8(b6Var);
-        o9 o9Var = new o9(context);
-        this.a = o9Var;
-        o9Var.setRoundRadius(AndroidUtilities.dp(23.0f));
-        boolean z10 = LocaleController.isRTL;
-        addView(o9Var, g7.e6.d(46, 46.0f, (z10 ? 5 : 3) | 48, z10 ? 0.0f : 14.0f, 9.0f, z10 ? 14.0f : 0.0f, 0.0f));
-        dg.c cVar = new dg.c(context, 5);
-        this.b = cVar;
-        NotificationCenter.listenEmojiLoading(cVar);
-        cVar.setTextColor(org.telegram.ui.ActionBar.f6.v0(org.telegram.ui.ActionBar.f6.j5, b6Var));
-        cVar.setTypeface(AndroidUtilities.bold());
-        cVar.setTextSize(16);
-        cVar.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
-        boolean z11 = LocaleController.isRTL;
-        addView(cVar, g7.e6.d(-1, 20.0f, (z11 ? 5 : 3) | 48, z11 ? 28.0f : 72.0f, 12.0f, z11 ? 72.0f : 28.0f, 0.0f));
-        org.telegram.ui.ActionBar.h5 h5Var = new org.telegram.ui.ActionBar.h5(context);
-        this.c = h5Var;
-        h5Var.setTextSize(13);
-        h5Var.setTextColor(org.telegram.ui.ActionBar.f6.v0(org.telegram.ui.ActionBar.f6.q5, b6Var));
-        h5Var.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
-        boolean z12 = LocaleController.isRTL;
-        addView(h5Var, g7.e6.d(-1, 20.0f, (z12 ? 5 : 3) | 48, z12 ? 28.0f : 72.0f, 36.0f, z12 ? 72.0f : 28.0f, 0.0f));
-        dp dpVar = new dp(context, 21, b6Var);
-        this.d = dpVar;
-        dpVar.b(-1, org.telegram.ui.ActionBar.f6.d6, org.telegram.ui.ActionBar.f6.k7);
-        dpVar.setDrawUnchecked(false);
-        dpVar.setDrawBackgroundAsArc(3);
-        boolean z13 = LocaleController.isRTL;
-        addView(dpVar, g7.e6.d(24, 24.0f, (z13 ? 5 : 3) | 48, z13 ? 0.0f : 44.0f, 37.0f, z13 ? 44.0f : 0.0f, 0.0f));
+    public oj(sj sjVar, Context context) {
+        this.n = sjVar;
+        this.c = context;
     }
 
-    public final void a(TLRPC.User user, CharSequence charSequence, nj njVar, boolean z10) {
-        if (user == null && charSequence == null) {
-            this.r = null;
-            this.n = null;
-            this.b.l("", false);
-            this.c.l("", false);
-            this.a.setImageDrawable(null);
-        } else {
-            this.r = null;
-            this.n = charSequence;
-            this.f = user;
-            this.y = z10;
-            setWillNotDraw(!z10);
-            b();
-        }
-        Utilities.globalQueue.postRunnable(new org.telegram.ui.wq(18, this, njVar));
+    @Override // org.telegram.ui.Components.il0
+    public final boolean D(f2.n1 n1Var) {
+        return n1Var.f == 0;
     }
 
-    public final void b() {
-        TLRPC.User user = this.f;
-        if (user != null) {
-            TLRPC.UserProfilePhoto userProfilePhoto = user.photo;
+    public final Object E(int i10) {
+        int i11 = i10 - 1;
+        if (i11 < 0 || i11 >= this.d.size()) {
+            return null;
         }
-        z8 z8Var = this.e;
-        if (user != null) {
-            z8Var.m(this.x, user);
-            TLRPC.UserStatus userStatus = this.f.status;
-        } else {
-            CharSequence charSequence = this.n;
-            if (charSequence != null) {
-                z8Var.n(this.h, charSequence.toString(), null);
+        return this.d.get(i11);
+    }
+
+    @Override // f2.p0
+    public final int h() {
+        return this.d.size() + 2;
+    }
+
+    @Override // f2.p0
+    public final int j(int i10) {
+        if (i10 == 0) {
+            return 1;
+        }
+        return i10 == h() - 1 ? 2 : 0;
+    }
+
+    @Override // f2.p0
+    public final void l() {
+        super.l();
+        this.n.M();
+    }
+
+    @Override // f2.p0
+    public final void v(f2.n1 n1Var, int i10) {
+        TLRPC.User user;
+        if (n1Var.f == 0) {
+            rj rjVar = (rj) n1Var.a;
+            boolean z10 = i10 != h() + (-2);
+            Object E = E(i10);
+            if (E instanceof ContactsController.Contact) {
+                ContactsController.Contact contact = (ContactsController.Contact) E;
+                user = contact.user;
+                if (user == null) {
+                    rjVar.setCurrentId(contact.contact_id);
+                    rjVar.a(null, (CharSequence) this.e.get(i10 - 1), new jj(contact, 1), z10);
+                    user = null;
+                }
             } else {
-                z8Var.n(this.h, "#", null);
+                user = (TLRPC.User) E;
             }
+            if (user != null) {
+                rjVar.a(user, (CharSequence) this.e.get(i10 - 1), new kj(1, user), z10);
+            }
+            boolean containsKey = this.n.w.containsKey(hj.a(E));
+            hp hpVar = rjVar.d;
+            if (hpVar.getVisibility() != 0) {
+                hpVar.setVisibility(0);
+            }
+            hpVar.a(containsKey, false);
         }
-        CharSequence charSequence2 = this.n;
-        dg.c cVar = this.b;
-        if (charSequence2 != null) {
-            this.w = null;
-            cVar.l(charSequence2, false);
+    }
+
+    @Override // f2.p0
+    public final f2.n1 x(ViewGroup viewGroup, int i10) {
+        View rjVar;
+        Context context = this.c;
+        if (i10 == 0) {
+            rjVar = new rj(context, this.n.a);
+        } else if (i10 != 1) {
+            rjVar = new View(context);
+            rjVar.setTag(-33024);
         } else {
-            TLRPC.User user2 = this.f;
-            if (user2 != null) {
-                this.w = UserObject.getUserName(user2);
-            } else {
-                this.w = "";
-            }
-            cVar.l(this.w, false);
+            rjVar = new View(context);
+            rjVar.setLayoutParams(new f2.x0(-1, AndroidUtilities.dp(56.0f)));
+            rjVar.setTag(-33024);
         }
-        setStatus(this.r);
-        TLRPC.User user3 = this.f;
-        o9 o9Var = this.a;
-        if (user3 != null) {
-            o9Var.e(user3, z8Var);
-        } else {
-            o9Var.setImageDrawable(z8Var);
-        }
-    }
-
-    @Override // android.view.View
-    public final boolean hasOverlappingRendering() {
-        return false;
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        if (this.y) {
-            canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(70.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(70.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.f6.k0);
-        }
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i9, int i10) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i9), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(64.0f) + (this.y ? 1 : 0), TLObject.FLAG_30));
-    }
-
-    public void setCurrentId(int i9) {
-        this.h = i9;
-    }
-
-    public void setStatus(CharSequence charSequence) {
-        String str;
-        this.r = charSequence;
-        if (charSequence != null) {
-            this.c.l(charSequence, false);
-            return;
-        }
-        TLRPC.User user = this.f;
-        if (user != null) {
-            if (TextUtils.isEmpty(user.phone)) {
-                this.c.l(LocaleController.getString(R.string.NumberUnknown), false);
-            } else if (this.s != this.f && (str = this.v) != null) {
-                this.c.l(str, false);
-            } else {
-                this.c.l("", false);
-                Utilities.globalQueue.postRunnable(new mj(this, 0));
-            }
-        }
+        return new vk0(rjVar);
     }
 }

@@ -9,27 +9,27 @@ import android.text.TextUtils;
 import android.util.Log;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.Tasks;
-import com.google.firebase.messaging.i;
-import e9.v;
-import f7.o6;
+import com.google.firebase.messaging.j;
+import g9.w;
+import h7.v6;
 import java.lang.ref.SoftReference;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
-import t5.k;
-import t5.l;
+import v5.k;
+import v5.l;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class FirebaseInstanceIdReceiver extends BroadcastReceiver {
     public static SoftReference a;
 
     public static int a(Context context, Intent intent) {
-        int i9;
-        Task c10;
-        int i10 = 500;
+        int i10;
+        Task c3;
+        int i11 = 500;
         if (intent.getExtras() == null) {
             return 500;
         }
@@ -38,7 +38,7 @@ public final class FirebaseInstanceIdReceiver extends BroadcastReceiver {
             stringExtra = intent.getStringExtra("message_id");
         }
         if (TextUtils.isEmpty(stringExtra)) {
-            c10 = Tasks.forResult(null);
+            c3 = Tasks.forResult(null);
         } else {
             Bundle bundle = new Bundle();
             String stringExtra2 = intent.getStringExtra("google.message_id");
@@ -53,22 +53,22 @@ public final class FirebaseInstanceIdReceiver extends BroadcastReceiver {
             bundle.putBoolean("supports_message_handled", true);
             l b10 = l.b(context);
             synchronized (b10) {
-                i9 = b10.a;
-                b10.a = i9 + 1;
+                i10 = b10.a;
+                b10.a = i10 + 1;
             }
-            c10 = b10.c(new k(i9, 2, bundle, 0));
+            c3 = b10.c(new k(i10, 2, bundle, 0));
         }
         try {
-            i10 = ((Integer) Tasks.await(new i(context).b(intent))).intValue();
+            i11 = ((Integer) Tasks.await(new j(context).b(intent))).intValue();
         } catch (InterruptedException | ExecutionException e10) {
             Log.e("FirebaseMessaging", "Failed to send message to service.", e10);
         }
         try {
-            Tasks.await(c10, TimeUnit.SECONDS.toMillis(1L), TimeUnit.MILLISECONDS);
+            Tasks.await(c3, TimeUnit.SECONDS.toMillis(1L), TimeUnit.MILLISECONDS);
         } catch (InterruptedException | ExecutionException | TimeoutException e11) {
             Log.w("CloudMessagingReceiver", "Message ack failed: ".concat(e11.toString()));
         }
-        return i10;
+        return i11;
     }
 
     public static int b(Intent intent) {
@@ -92,10 +92,10 @@ public final class FirebaseInstanceIdReceiver extends BroadcastReceiver {
             return 500;
         }
         Intent putExtras = new Intent("com.google.firebase.messaging.NOTIFICATION_DISMISS").putExtras(extras);
-        if (!o6.b(putExtras)) {
+        if (!v6.b(putExtras)) {
             return -1;
         }
-        o6.a("_nd", putExtras.getExtras());
+        v6.a("_nd", putExtras.getExtras());
         return -1;
     }
 
@@ -112,14 +112,14 @@ public final class FirebaseInstanceIdReceiver extends BroadcastReceiver {
                 SoftReference softReference = a;
                 ExecutorService executorService2 = softReference != null ? (ExecutorService) softReference.get() : null;
                 if (executorService2 == null) {
-                    executorService2 = Executors.unconfigurableExecutorService(Executors.newCachedThreadPool(new v("firebase-iid-executor")));
+                    executorService2 = Executors.unconfigurableExecutorService(Executors.newCachedThreadPool(new w("firebase-iid-executor")));
                     a = new SoftReference(executorService2);
                 }
                 executorService = executorService2;
-            } catch (Throwable th) {
-                throw th;
+            } catch (Throwable th2) {
+                throw th2;
             }
         }
-        executorService.execute(new org.telegram.ui.ActionBar.v(this, intent, context, isOrderedBroadcast, goAsync));
+        executorService.execute(new org.telegram.ui.ActionBar.w(this, intent, context, isOrderedBroadcast, goAsync));
     }
 }

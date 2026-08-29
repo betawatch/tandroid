@@ -1,74 +1,49 @@
 package nh;
 
-import java.util.ArrayList;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_communities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class o0 implements Utilities.Callback2 {
+public final /* synthetic */ class o0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ q0 b;
+    public final /* synthetic */ u0 b;
 
-    public /* synthetic */ o0(q0 q0Var, int i9) {
-        this.a = i9;
-        this.b = q0Var;
+    public /* synthetic */ o0(u0 u0Var, int i10) {
+        this.a = i10;
+        this.b = u0Var;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback2
-    public final void run(Object obj, Object obj2) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
-                q0 q0Var = this.b;
-                q0Var.q.dismiss();
-                q0Var.q = null;
-                q0Var.r = 0;
-                if (tL_error == null) {
-                    p0 p0Var = q0Var.h;
-                    if (p0Var != null) {
-                        p0Var.close();
-                        break;
-                    }
-                } else {
-                    q0Var.c.d0(tL_error, false);
-                    break;
-                }
+                this.b.b();
                 break;
             case 1:
-                TL_communities.PeerLinkRequests peerLinkRequests = (TL_communities.PeerLinkRequests) obj;
-                q0 q0Var2 = this.b;
-                q0Var2.m = false;
-                if (peerLinkRequests != null) {
-                    ArrayList arrayList = q0Var2.j;
-                    if (arrayList == null) {
-                        q0Var2.j = new ArrayList(peerLinkRequests.requests);
-                    } else {
-                        arrayList.addAll(peerLinkRequests.requests);
-                    }
-                    String str = peerLinkRequests.next_offset;
-                    q0Var2.k = str;
-                    q0Var2.l = peerLinkRequests.total_count;
-                    q0Var2.n = str == null;
-                    q0Var2.a();
-                    p0 p0Var2 = q0Var2.h;
-                    if (p0Var2 != null) {
-                        p0Var2.c();
-                        break;
-                    }
+                u0 u0Var = this.b;
+                u0Var.e = false;
+                r0 r0Var = u0Var.s;
+                if (r0Var != null) {
+                    r0Var.a(true);
+                    u0Var.s = null;
                 }
+                t0 t0Var = u0Var.n;
+                if (t0Var != null) {
+                    t0Var.a();
+                }
+                u0Var.c = false;
+                u0Var.d();
                 break;
             default:
-                TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
-                q0 q0Var3 = this.b;
-                if (tL_error2 == null) {
-                    q0Var3.getClass();
-                    break;
-                } else {
-                    q0Var3.c.d0(tL_error2, false);
+                u0 u0Var2 = this.b;
+                if (u0Var2.c && u0Var2.r != null) {
+                    u0Var2.n.b(R.raw.error, 3500, LocaleController.getString("VideoConvertFail"));
+                    u0Var2.c = false;
+                    u0Var2.d();
                     break;
                 }
+                break;
         }
     }
 }

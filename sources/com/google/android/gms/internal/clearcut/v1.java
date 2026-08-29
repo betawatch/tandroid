@@ -41,7 +41,7 @@ public final class v1 extends z {
             if (z10) {
                 return (v1) zVar;
             }
-            throw new d0(new androidx.car.app.j().getMessage());
+            throw new d0(new a6.b().getMessage());
         } catch (IOException e10) {
             if (e10.getCause() instanceof d0) {
                 throw ((d0) e10.getCause());
@@ -54,9 +54,9 @@ public final class v1 extends z {
 
     /* JADX WARN: Type inference failed for: r4v12, types: [com.google.android.gms.internal.clearcut.u0, java.lang.Object] */
     @Override // com.google.android.gms.internal.clearcut.z
-    public final Object a(int i9) {
+    public final Object a(int i10) {
         u0 u0Var;
-        switch (w1.a[i9 - 1]) {
+        switch (w1.a[i10 - 1]) {
             case 1:
                 return new v1();
             case 2:
@@ -79,8 +79,8 @@ public final class v1 extends z {
                             zzbg = yVar;
                             u0Var = yVar;
                         }
-                    } catch (Throwable th) {
-                        throw th;
+                    } catch (Throwable th2) {
+                        throw th2;
                     }
                 }
                 return u0Var;

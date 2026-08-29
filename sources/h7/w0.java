@@ -1,32 +1,19 @@
 package h7;
 
-import java.util.Arrays;
-
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class w0 {
-    public final s7 a;
-    public final Boolean b;
-    public final m8 c;
+public final class w0 implements s9.d {
+    public static final w0 a = new w0();
 
-    public /* synthetic */ w0(a5.m mVar) {
-        this.a = (s7) mVar.b;
-        this.b = (Boolean) mVar.c;
-        this.c = (m8) mVar.d;
+    static {
+        com.google.android.recaptcha.internal.a.t(com.google.android.recaptcha.internal.a.p(i.class, com.google.android.recaptcha.internal.a.h(6, com.google.android.recaptcha.internal.a.p(i.class, com.google.android.recaptcha.internal.a.h(5, com.google.android.recaptcha.internal.a.p(i.class, com.google.android.recaptcha.internal.a.h(4, com.google.android.recaptcha.internal.a.p(i.class, com.google.android.recaptcha.internal.a.h(3, com.google.android.recaptcha.internal.a.p(i.class, com.google.android.recaptcha.internal.a.h(2, com.google.android.recaptcha.internal.a.p(i.class, new e(1)))))))))))));
     }
 
-    public final boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
+    @Override // s9.a
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
         }
-        if (!(obj instanceof w0)) {
-            return false;
-        }
-        w0 w0Var = (w0) obj;
-        return x5.l.l(this.a, w0Var.a) && x5.l.l(this.b, w0Var.b) && x5.l.l(null, null) && x5.l.l(this.c, w0Var.c);
-    }
-
-    public final int hashCode() {
-        return Arrays.hashCode(new Object[]{this.a, this.b, null, this.c});
+        throw null;
     }
 }

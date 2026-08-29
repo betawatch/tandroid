@@ -1,150 +1,102 @@
 package ih;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.MotionEvent;
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import java.util.ArrayList;
-import java.util.Collections;
+import android.app.Activity;
+import android.content.DialogInterface;
+import java.util.Iterator;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.wk0;
-import org.telegram.ui.vw;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
-/* loaded from: classes4.dex */
-public final class j extends wk0 {
-    public final /* synthetic */ int T2;
-    public final /* synthetic */ vw U2;
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class j implements DialogInterface.OnDismissListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ j(vw vwVar, Context context, int i9) {
-        super(context, null);
-        this.T2 = i9;
-        this.U2 = vwVar;
+    public /* synthetic */ j(Object obj, Object obj2, Object obj3, int i10) {
+        this.a = i10;
+        this.c = obj;
+        this.d = obj2;
+        this.b = obj3;
     }
 
-    @Override // org.telegram.ui.Components.wk0, android.view.ViewGroup, android.view.View
-    public void dispatchDraw(Canvas canvas) {
-        Canvas canvas2;
-        switch (this.T2) {
-            case 1:
-                vw vwVar = this.U2;
-                ArrayList arrayList = vwVar.L;
-                arrayList.clear();
-                int i9 = 0;
-                for (int i10 = 0; i10 < getChildCount(); i10++) {
-                    q qVar = (q) getChildAt(i10);
-                    int R = RecyclerView.R(qVar);
-                    qVar.b = R;
-                    boolean z10 = true;
-                    qVar.a = true;
-                    qVar.d = R == 0;
-                    if (R != vwVar.y.size() - 1) {
-                        z10 = false;
-                    }
-                    qVar.c = z10;
-                    arrayList.add(qVar);
-                }
-                Collections.sort(arrayList, vwVar.s0);
-                while (i9 < arrayList.size()) {
-                    q qVar2 = (q) arrayList.get(i9);
-                    int save = canvas.save();
-                    canvas.translate(qVar2.getX(), qVar2.getY());
-                    if (qVar2.getAlpha() != 1.0f) {
-                        canvas2 = canvas;
-                        canvas2.saveLayerAlpha(-AndroidUtilities.dp(4.0f), -AndroidUtilities.dp(4.0f), AndroidUtilities.dp(50.0f), AndroidUtilities.dp(50.0f), (int) (qVar2.getAlpha() * 255.0f), 31);
-                    } else {
-                        canvas2 = canvas;
-                    }
-                    canvas2.scale(qVar2.getScaleX(), qVar2.getScaleY(), AndroidUtilities.dp(14.0f), qVar2.getCy());
-                    qVar2.draw(canvas2);
-                    canvas2.restoreToCount(save);
-                    i9++;
-                    canvas = canvas2;
-                }
-                break;
-            default:
-                super.dispatchDraw(canvas);
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.wk0, android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        switch (this.T2) {
+    @Override // android.content.DialogInterface.OnDismissListener
+    public final void onDismiss(DialogInterface dialogInterface) {
+        switch (this.a) {
             case 0:
-                if (motionEvent.getAction() == 0) {
-                    vw vwVar = this.U2;
-                    if (vwVar.V > 0.2f || vwVar.getAlpha() == 0.0f) {
-                        return false;
-                    }
-                }
-                return super.dispatchTouchEvent(motionEvent);
-            default:
-                return false;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.wk0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
-    public boolean drawChild(Canvas canvas, View view, long j10) {
-        switch (this.T2) {
-            case 0:
-                if (!this.U2.L.contains(view)) {
+                bh.b bVar = (bh.b) this.c;
+                org.telegram.ui.ActionBar.o2 o2Var = (org.telegram.ui.ActionBar.o2) this.d;
+                Activity activity = (Activity) this.b;
+                AndroidUtilities.hideKeyboard(bVar);
+                if (o2Var != null) {
+                    AndroidUtilities.requestAdjustResize(activity, o2Var.getClassGuid());
                     break;
                 }
                 break;
-        }
-        return super.drawChild(canvas, view, j10);
-    }
-
-    @Override // androidx.recyclerview.widget.RecyclerView
-    public void k0(int i9, int i10) {
-        switch (this.T2) {
             case 1:
-                kh.x3 x3Var = this.U2.F;
-                if (x3Var != null) {
-                    x3Var.e(true);
+                x3 x3Var = (x3) this.c;
+                v2 v2Var = (v2) this.d;
+                Activity activity2 = (Activity) this.b;
+                AndroidUtilities.hideKeyboard(v2Var);
+                AndroidUtilities.requestAdjustResize(activity2, x3Var.a.getClassGuid());
+                break;
+            case 2:
+                EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) this.c;
+                org.telegram.ui.ActionBar.o2 o2Var2 = (org.telegram.ui.ActionBar.o2) this.d;
+                Activity activity3 = (Activity) this.b;
+                AndroidUtilities.hideKeyboard(editTextBoldCursor);
+                if (o2Var2 != null) {
+                    AndroidUtilities.requestAdjustResize(activity3, o2Var2.getClassGuid());
                     break;
                 }
                 break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.wk0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
-    public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        switch (this.T2) {
-            case 1:
-                return false;
-            default:
-                return super.onInterceptTouchEvent(motionEvent);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.wk0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
-    public void onLayout(boolean z10, int i9, int i10, int i11, int i12) {
-        switch (this.T2) {
-            case 0:
-                ArrayList arrayList = this.U2.U;
-                super.onLayout(z10, i9, i10, i11, i12);
-                for (int i13 = 0; i13 < arrayList.size(); i13++) {
-                    ((Runnable) arrayList.get(i13)).run();
+            case 3:
+                Utilities.Callback callback = (Utilities.Callback) this.c;
+                org.telegram.ui.Components.p3 p3Var = (org.telegram.ui.Components.p3) this.d;
+                org.telegram.ui.Components.r3 r3Var = (org.telegram.ui.Components.r3) this.b;
+                callback.run(Integer.valueOf(r3Var.getValue() + (p3Var.getValue() * 60)));
+                break;
+            case 4:
+                org.telegram.ui.web.z0 z0Var = (org.telegram.ui.web.z0) this.c;
+                boolean[] zArr = (boolean[]) this.d;
+                String str = (String) this.b;
+                z0Var.getClass();
+                if (!zArr[0]) {
+                    zArr[0] = true;
+                    z0Var.v("requested_chat_failed", org.telegram.ui.web.z0.x(str, "req_id"));
+                    break;
                 }
-                arrayList.clear();
+                break;
+            case 5:
+                ph.q0 q0Var = (ph.q0) this.c;
+                boolean[] zArr2 = (boolean[]) this.d;
+                org.telegram.ui.web.s sVar = (org.telegram.ui.web.s) this.b;
+                q0Var.getClass();
+                if (!zArr2[0]) {
+                    q0Var.d = true;
+                    q0Var.e = false;
+                    q0Var.l();
+                    Iterator it = q0Var.f.iterator();
+                    while (it.hasNext()) {
+                        ((Runnable) it.next()).run();
+                    }
+                    zArr2[0] = true;
+                    sVar.run(Boolean.TRUE, Boolean.FALSE);
+                    break;
+                }
                 break;
             default:
-                super.onLayout(z10, i9, i10, i11, i12);
+                boolean[] zArr3 = (boolean[]) this.c;
+                boolean[] zArr4 = (boolean[]) this.d;
+                Utilities.Callback callback2 = (Utilities.Callback) this.b;
+                if (!zArr3[0] && !zArr4[0]) {
+                    zArr4[0] = true;
+                    callback2.run("USER_DECLINED");
+                    break;
+                }
                 break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.wk0, androidx.recyclerview.widget.RecyclerView, android.view.View
-    public boolean onTouchEvent(MotionEvent motionEvent) {
-        switch (this.T2) {
-            case 1:
-                return false;
-            default:
-                return super.onTouchEvent(motionEvent);
         }
     }
 }

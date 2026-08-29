@@ -1,58 +1,83 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.text.TextUtils;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.tl.TL_account;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class cl0 implements Utilities.Callback2 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ PasskeysActivity b;
+public final class cl0 extends FrameLayout {
+    public final int a;
+    public final org.telegram.ui.ActionBar.c6 b;
+    public final FrameLayout c;
+    public final org.telegram.ui.Components.t9 d;
+    public final TextView e;
+    public final TextView f;
+    public final ImageView h;
+    public boolean n;
+    public String r;
 
-    public /* synthetic */ cl0(PasskeysActivity passkeysActivity, int i9) {
-        this.a = i9;
-        this.b = passkeysActivity;
+    public cl0(Context context, int i10, org.telegram.ui.ActionBar.c6 c6Var) {
+        super(context);
+        this.a = i10;
+        this.b = c6Var;
+        FrameLayout frameLayout = new FrameLayout(context);
+        this.c = frameLayout;
+        addView(frameLayout, i7.f6.d(36, 36.0f, 19, 18.5f, 0.0f, 0.0f, 0.0f));
+        org.telegram.ui.Components.t9 t9Var = new org.telegram.ui.Components.t9(context);
+        this.d = t9Var;
+        t9Var.setImageResource(R.drawable.msg2_permissions);
+        int i11 = org.telegram.ui.ActionBar.g6.G6;
+        int l1 = org.telegram.ui.ActionBar.g6.l1(0.3f, org.telegram.ui.ActionBar.g6.v0(i11, c6Var));
+        PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
+        t9Var.setColorFilter(new PorterDuffColorFilter(l1, mode));
+        frameLayout.addView(t9Var, i7.f6.e(36, 36, 17));
+        TextView b10 = i7.j6.b(context, 15.0f, i11, true, null);
+        this.e = b10;
+        b10.setSingleLine();
+        TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
+        b10.setEllipsize(truncateAt);
+        addView(b10, i7.f6.d(-1, -2.0f, 55, 72.0f, 8.0f, 46.0f, 0.0f));
+        int i12 = org.telegram.ui.ActionBar.g6.y6;
+        TextView b11 = i7.j6.b(context, 13.0f, i12, false, null);
+        this.f = b11;
+        b11.setSingleLine();
+        b11.setEllipsize(truncateAt);
+        addView(b11, i7.f6.d(-1, -2.0f, 55, 72.0f, 31.0f, 46.0f, 0.0f));
+        ImageView imageView = new ImageView(context);
+        this.h = imageView;
+        imageView.setScaleType(ImageView.ScaleType.CENTER);
+        imageView.setImageResource(R.drawable.ic_ab_other);
+        imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.w0(null, i12, false), mode));
+        imageView.setBackground(org.telegram.ui.ActionBar.g6.f0(org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.i6, c6Var), 1, -1));
+        addView(imageView, i7.f6.d(32, 32.0f, 21, 0.0f, 0.0f, 13.0f, 0.0f));
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback2
-    public final void run(Object obj, Object obj2) {
-        int i9 = this.a;
-        PasskeysActivity passkeysActivity = this.b;
-        switch (i9) {
-            case 0:
-                ArrayList arrayList = (ArrayList) obj;
-                ArrayList arrayList2 = passkeysActivity.b;
-                passkeysActivity.addPasskeyRow = -1;
-                String string = LocaleController.getString(R.string.PasskeyTopInfo);
-                int i10 = R.raw.passkey;
-                org.telegram.ui.Components.l41 l41Var = new org.telegram.ui.Components.l41(2);
-                l41Var.l = string;
-                l41Var.k = i10;
-                arrayList.add(l41Var);
-                for (int i11 = 0; i11 < arrayList2.size(); i11++) {
-                    TL_account.Passkey passkey = (TL_account.Passkey) arrayList2.get(i11);
-                    q50 q50Var = new q50(passkeysActivity, 15);
-                    int i12 = el0.a;
-                    org.telegram.ui.Components.l41 J = org.telegram.ui.Components.l41.J(el0.class);
-                    J.G = passkey;
-                    J.D = q50Var;
-                    arrayList.add(J);
-                }
-                if (arrayList2.size() + 1 <= passkeysActivity.getMessagesController().config.passkeysAccountPasskeysMax.get()) {
-                    passkeysActivity.addPasskeyRow = arrayList.size();
-                    org.telegram.ui.Components.l41 c10 = org.telegram.ui.Components.l41.c(-1, R.drawable.menu_passkey_add, LocaleController.getString(R.string.PasskeyAdd));
-                    c10.q = true;
-                    arrayList.add(c10);
-                }
-                arrayList.add(org.telegram.ui.Components.l41.B(AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.PasskeyInfo), new zk0(passkeysActivity, 1)), true)));
-                break;
-            default:
-                PasskeysActivity.T(passkeysActivity, (TL_account.Passkey) obj, (String) obj2);
-                break;
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        if (this.n) {
+            Paint T0 = org.telegram.ui.ActionBar.g6.T0("paintDivider", this.b);
+            if (T0 == null) {
+                T0 = org.telegram.ui.ActionBar.g6.k0;
+            }
+            canvas.drawRect(AndroidUtilities.dp(LocaleController.isRTL ? 0.0f : 72.0f), getMeasuredHeight() - 1, getWidth() - AndroidUtilities.dp(LocaleController.isRTL ? 72.0f : 0.0f), getMeasuredHeight(), T0);
         }
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(56.0f), TLObject.FLAG_30));
     }
 }

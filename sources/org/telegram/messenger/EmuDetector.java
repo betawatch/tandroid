@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public class EmuDetector {
     private static final String IP = "10.0.2.15";
@@ -38,7 +38,7 @@ public class EmuDetector {
     private boolean isTelephony = false;
     private boolean isCheckPackage = true;
 
-    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
     public enum EmulatorTypes {
         GENY,
         ANDY,
@@ -48,12 +48,12 @@ public class EmuDetector {
         X86
     }
 
-    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
     public interface OnEmulatorDetectorListener {
         void onResult(boolean z10);
     }
 
-    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
     public static class Property {
         public String name;
         public String seek_value;
@@ -81,8 +81,8 @@ public class EmuDetector {
         return checkQEmuProps() && checkFiles(X86_FILES, EmulatorTypes.X86);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:41:0x00e0 A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:43:0x00e1  */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x00df A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:43:0x00e0  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -214,8 +214,8 @@ public class EmuDetector {
 
     private boolean checkQEmuDrivers() {
         File[] fileArr = {new File("/proc/tty/drivers"), new File("/proc/cpuinfo")};
-        for (int i9 = 0; i9 < 2; i9++) {
-            File file = fileArr[i9];
+        for (int i10 = 0; i10 < 2; i10++) {
+            File file = fileArr[i10];
             if (file.exists() && file.canRead()) {
                 byte[] bArr = new byte[1024];
                 try {
@@ -237,18 +237,18 @@ public class EmuDetector {
     }
 
     private boolean checkQEmuProps() {
-        int i9 = 0;
+        int i10 = 0;
         for (Property property : PROPERTIES) {
             String prop = getProp(this.mContext, property.name);
             String str = property.seek_value;
             if (str == null && prop != null) {
-                i9++;
+                i10++;
             }
             if (str != null && prop.contains(str)) {
-                i9++;
+                i10++;
             }
         }
-        return i9 >= 5;
+        return i10 >= 5;
     }
 
     private boolean checkTelephony() {

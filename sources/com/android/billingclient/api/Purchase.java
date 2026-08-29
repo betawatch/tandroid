@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class Purchase {
     public final String a;
@@ -32,8 +32,8 @@ public final class Purchase {
         if (jSONObject.has("productIds")) {
             JSONArray optJSONArray = jSONObject.optJSONArray("productIds");
             if (optJSONArray != null) {
-                for (int i9 = 0; i9 < optJSONArray.length(); i9++) {
-                    arrayList.add(optJSONArray.optString(i9));
+                for (int i10 = 0; i10 < optJSONArray.length(); i10++) {
+                    arrayList.add(optJSONArray.optString(i10));
                 }
             }
         } else if (jSONObject.has("productId")) {

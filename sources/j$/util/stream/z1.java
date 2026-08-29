@@ -6,19 +6,19 @@ import java.util.function.IntConsumer;
 public final /* synthetic */ class z1 implements IntConsumer {
     public final /* synthetic */ int a;
 
-    public /* synthetic */ z1(int i9) {
-        this.a = i9;
+    public /* synthetic */ z1(int i10) {
+        this.a = i10;
     }
 
-    private final void accept$j$$util$stream$Node$OfInt$$ExternalSyntheticLambda0(int i9) {
+    private final void accept$j$$util$stream$Node$OfInt$$ExternalSyntheticLambda0(int i10) {
     }
 
-    private final void accept$j$$util$stream$StreamSpliterators$SliceSpliterator$OfInt$$ExternalSyntheticLambda0(int i9) {
+    private final void accept$j$$util$stream$StreamSpliterators$SliceSpliterator$OfInt$$ExternalSyntheticLambda0(int i10) {
     }
 
     @Override // java.util.function.IntConsumer
-    public final void accept(int i9) {
-        int i10 = this.a;
+    public final void accept(int i10) {
+        int i11 = this.a;
     }
 
     public final /* synthetic */ IntConsumer andThen(IntConsumer intConsumer) {

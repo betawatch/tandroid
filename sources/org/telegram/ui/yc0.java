@@ -1,39 +1,29 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
-
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class yc0 implements org.telegram.ui.Components.wu0 {
+public final /* synthetic */ class yc0 implements org.telegram.ui.ActionBar.b2 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.o2 b;
+    public final /* synthetic */ fg0 b;
 
-    public /* synthetic */ yc0(int i9, org.telegram.ui.ActionBar.o2 o2Var) {
-        this.a = i9;
-        this.b = o2Var;
+    public /* synthetic */ yc0(fg0 fg0Var, int i10) {
+        this.a = i10;
+        this.b = fg0Var;
     }
 
-    @Override // org.telegram.ui.Components.wu0
-    public final void G(int i9, boolean z10) {
-        uf0 uf0Var;
-        vk0 vk0Var;
+    @Override // org.telegram.ui.ActionBar.b2
+    public final void g(org.telegram.ui.ActionBar.c2 c2Var, int i10) {
         switch (this.a) {
             case 0:
-                fg0 fg0Var = (fg0) this.b;
-                if (i9 > AndroidUtilities.dp(20.0f) && fg0Var.h1()) {
-                    AndroidUtilities.hideKeyboard(fg0Var.fragmentView);
-                }
-                if (i9 <= AndroidUtilities.dp(20.0f) && (uf0Var = fg0Var.P) != null) {
-                    uf0Var.run();
-                    fg0Var.P = null;
-                    break;
-                }
+                fg0 fg0Var = this.b;
+                fg0Var.b[fg0Var.a].d();
+                fg0Var.k1(true, true);
                 break;
             default:
-                PasscodeActivity passcodeActivity = (PasscodeActivity) this.b;
-                if (i9 >= AndroidUtilities.dp(20.0f) && (vk0Var = passcodeActivity.L) != null) {
-                    vk0Var.run();
-                    passcodeActivity.L = null;
+                fg0 fg0Var2 = this.b;
+                fg0Var2.h0 = true;
+                if (fg0Var2.a != 0) {
+                    fg0Var2.u1(0, true, null, true);
                     break;
                 }
                 break;

@@ -1,46 +1,21 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class bs0 implements org.telegram.ui.Cells.k7 {
-    public final /* synthetic */ eu0 a;
+public final class bs0 extends FragmentContextView {
+    public final /* synthetic */ qu0 J0;
 
-    public bs0(eu0 eu0Var) {
-        this.a = eu0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public bs0(qu0 qu0Var, Context context, org.telegram.ui.ActionBar.o2 o2Var, qu0 qu0Var2, org.telegram.ui.ActionBar.c6 c6Var) {
+        super(context, o2Var, qu0Var2, false, c6Var);
+        this.J0 = qu0Var;
     }
 
-    @Override // org.telegram.ui.Cells.k7
-    public final void a(String str, boolean z10) {
-        eu0 eu0Var = this.a;
-        org.telegram.ui.ActionBar.o2 o2Var = eu0Var.r1;
-        if (!z10) {
-            eu0Var.R0(str);
-            return;
-        }
-        org.telegram.ui.ActionBar.f3 f3Var = new org.telegram.ui.ActionBar.f3(o2Var.getParentActivity(), null, false, false);
-        f3Var.fixNavigationBar();
-        f3Var.title = str;
-        f3Var.bigTitle = false;
-        CharSequence[] charSequenceArr = {LocaleController.getString("Open", R.string.Open), LocaleController.getString("Copy", R.string.Copy)};
-        org.telegram.ui.v vVar = new org.telegram.ui.v(5, this, str);
-        f3Var.items = charSequenceArr;
-        f3Var.onClickListener = vVar;
-        o2Var.showDialog(f3Var);
-    }
-
-    @Override // org.telegram.ui.Cells.k7
-    public final void b(TLRPC.WebPage webPage, MessageObject messageObject) {
-        eu0 eu0Var = this.a;
-        gu.I(eu0Var.r1, messageObject, eu0Var.n1, webPage.site_name, webPage.description, webPage.url, webPage.embed_url, webPage.embed_width, webPage.embed_height, -1, false);
-    }
-
-    @Override // org.telegram.ui.Cells.k7
-    public final boolean f() {
-        return !this.a.y1;
+    @Override // org.telegram.ui.Components.FragmentContextView, android.view.View
+    public final void setVisibility(int i10) {
+        qu0 qu0Var = this.J0;
+        qu0Var.L0.i(qu0Var.M0, i10 == 0, true);
     }
 }

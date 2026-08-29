@@ -1,48 +1,28 @@
 package org.telegram.ui.Components;
 
+import android.content.DialogInterface;
 import android.view.KeyEvent;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
+import android.view.View;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ch implements Utilities.Callback4 {
+public final /* synthetic */ class ch implements DialogInterface.OnCancelListener {
     public final /* synthetic */ int a;
     public final /* synthetic */ KeyEvent.Callback b;
 
-    public /* synthetic */ ch(KeyEvent.Callback callback, int i9) {
-        this.a = i9;
+    public /* synthetic */ ch(KeyEvent.Callback callback, int i10) {
+        this.a = i10;
         this.b = callback;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback4
-    public final void run(Object obj, Object obj2, Object obj3, Object obj4) {
+    @Override // android.content.DialogInterface.OnCancelListener
+    public final void onCancel(DialogInterface dialogInterface) {
         switch (this.a) {
             case 0:
-                ki kiVar = (ki) this.b;
-                CharSequence charSequence = (CharSequence) obj;
-                qh qhVar = kiVar.A0;
-                qhVar.setText(charSequence);
-                qhVar.w(charSequence.length(), charSequence.length());
-                kiVar.z1();
-                break;
-            case 1:
-                ki kiVar2 = (ki) this.b;
-                CharSequence charSequence2 = (CharSequence) obj;
-                th thVar = kiVar2.L0;
-                thVar.setText(charSequence2);
-                thVar.w(charSequence2.length(), charSequence2.length());
-                kiVar2.z1();
+                ni.p((ni) this.b);
                 break;
             default:
-                ad adVar = (ad) this.b;
-                kh.g gVar = adVar.f;
-                gVar.setText((CharSequence) obj);
-                gVar.d();
-                gVar.k(true);
-                kh.e eVar = adVar.V;
-                AndroidUtilities.cancelRunOnUIThread(eVar);
-                eVar.run();
+                ((View) this.b).setTag(null);
                 break;
         }
     }

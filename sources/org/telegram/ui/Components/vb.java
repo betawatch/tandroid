@@ -1,126 +1,83 @@
 package org.telegram.ui.Components;
 
-import android.view.GestureDetector;
+import android.content.Context;
 import android.view.MotionEvent;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
+import android.view.WindowManager;
+import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class vb extends GestureDetector.SimpleOnGestureListener {
-    public final /* synthetic */ lb a;
-    public final /* synthetic */ za b;
+public final class vb extends fk0 {
+    public final /* synthetic */ int h1 = 0;
+    public final /* synthetic */ Object i1;
 
-    public vb(za zaVar, lb lbVar) {
-        this.b = zaVar;
-        this.a = lbVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public vb(org.telegram.ui.ht htVar, Context context, int i10, org.telegram.ui.ActionBar.c6 c6Var) {
+        super(4, i10, context, null, c6Var);
+        this.i1 = htVar;
     }
 
-    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
-    public final boolean onDown(MotionEvent motionEvent) {
-        za zaVar = this.b;
-        if (zaVar.s) {
-            return false;
-        }
-        lb lbVar = this.a;
-        zaVar.v = lb.access$1400(lbVar, true);
-        zaVar.w = lb.access$1400(lbVar, false);
-        return true;
-    }
-
-    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
-    public final boolean onFling(MotionEvent motionEvent, MotionEvent motionEvent2, float f10, float f11) {
-        boolean z10 = false;
-        if (Math.abs(f10) <= 2000.0f) {
-            return false;
-        }
-        za zaVar = this.b;
-        if ((f10 < 0.0f && zaVar.v) || (f10 > 0.0f && zaVar.w)) {
-            z10 = true;
-        }
-        float signum = Math.signum(f10);
-        lb lbVar = this.a;
-        o1.j jVar = new o1.j(lbVar, o1.h.m, signum * lbVar.getWidth() * 2.0f);
-        if (!z10) {
-            final int i9 = 0;
-            jVar.a(new o1.f(this) { // from class: org.telegram.ui.Components.tb
-                public final /* synthetic */ vb b;
-
-                {
-                    this.b = this;
-                }
-
-                @Override // o1.f
-                public final void a(o1.h hVar, boolean z11, float f12, float f13) {
-                    switch (i9) {
-                        case 0:
-                            this.b.b.y.b();
-                            break;
-                        default:
-                            this.b.b.y.b();
-                            break;
+    @Override // org.telegram.ui.Components.fk0, android.view.ViewGroup, android.view.View
+    public boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        mc mcVar;
+        switch (this.h1) {
+            case 0:
+                xb xbVar = (xb) this.i1;
+                if (motionEvent.getAction() == 0) {
+                    mc mcVar2 = xbVar.n;
+                    if (mcVar2 != null) {
+                        mcVar2.i(false);
                     }
+                } else if (motionEvent.getAction() == 1 && (mcVar = xbVar.n) != null) {
+                    mcVar.i(true);
                 }
-            });
-            jVar.b(new e7(lbVar, 2));
+                break;
         }
-        jVar.u.a(1.0f);
-        jVar.u.b(100.0f);
-        jVar.a = f10;
-        jVar.f();
-        if (z10) {
-            o1.j jVar2 = new o1.j(lbVar, o1.h.t, 0.0f);
-            final int i10 = 1;
-            jVar2.a(new o1.f(this) { // from class: org.telegram.ui.Components.tb
-                public final /* synthetic */ vb b;
-
-                {
-                    this.b = this;
-                }
-
-                @Override // o1.f
-                public final void a(o1.h hVar, boolean z11, float f12, float f13) {
-                    switch (i10) {
-                        case 0:
-                            this.b.b.y.b();
-                            break;
-                        default:
-                            this.b.b.y.b();
-                            break;
-                    }
-                }
-            });
-            jVar2.b(new ub());
-            jVar.u.a(1.0f);
-            jVar.u.b(10.0f);
-            jVar.a = f10;
-            jVar2.f();
-        }
-        zaVar.s = true;
-        return true;
+        return super.dispatchTouchEvent(motionEvent);
     }
 
-    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
-    public final boolean onScroll(MotionEvent motionEvent, MotionEvent motionEvent2, float f10, float f11) {
-        za zaVar = this.b;
-        float f12 = zaVar.h + f10;
-        zaVar.h = f12;
-        float f13 = zaVar.n + f11;
-        zaVar.n = f13;
-        if (Utilities.dist(0.0f, 0.0f, f12, f13) > AndroidUtilities.touchSlop) {
-            zaVar.r = true;
+    @Override // org.telegram.ui.Components.fk0
+    public void j() {
+        switch (this.h1) {
+            case 1:
+                super.j();
+                org.telegram.ui.ht htVar = (org.telegram.ui.ht) this.i1;
+                if (getReactionsWindow() != null) {
+                    WindowManager.LayoutParams layoutParams = htVar.x;
+                    layoutParams.flags &= -131073;
+                    layoutParams.softInputMode = 16;
+                } else {
+                    htVar.x.flags |= 131072;
+                }
+                try {
+                    ((WindowManager) htVar.w.getSystemService("window")).updateViewLayout(htVar.y, htVar.x);
+                    break;
+                } catch (Exception e10) {
+                    FileLog.e(e10);
+                    return;
+                }
+            default:
+                super.j();
+                break;
         }
-        if (!zaVar.d) {
-            return false;
+    }
+
+    @Override // org.telegram.ui.Components.fk0
+    public void m() {
+        switch (this.h1) {
+            case 0:
+                mc mcVar = mc.w;
+                if (mcVar != null) {
+                    mcVar.i(false);
+                }
+                ((xb) this.i1).d.getReactionsWindow().c.setOnClickListener(new h0(this, 5));
+                break;
         }
-        float f14 = zaVar.f - f10;
-        zaVar.f = f14;
-        lb lbVar = this.a;
-        lbVar.setTranslationX(f14);
-        float f15 = zaVar.f;
-        if (f15 == 0.0f || ((f15 < 0.0f && zaVar.v) || (f15 > 0.0f && zaVar.w))) {
-            lbVar.setAlpha(1.0f - (Math.abs(f15) / lbVar.getWidth()));
-        }
-        return true;
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public vb(xb xbVar, org.telegram.ui.ActionBar.o2 o2Var, Context context, int i10, org.telegram.ui.ActionBar.c6 c6Var) {
+        super(3, i10, context, o2Var, c6Var);
+        this.i1 = xbVar;
     }
 }

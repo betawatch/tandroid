@@ -1,12 +1,13 @@
 package com.google.android.gms.cast;
 
+import a6.a;
 import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
 import android.util.Log;
 import com.google.android.gms.common.internal.ReflectedParcelable;
-import g7.p8;
+import com.google.android.gms.internal.cast.o;
 import j$.util.DesugarCollections;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
@@ -14,12 +15,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
-import m5.v;
-import org.telegram.ui.Cells.j2;
-import q5.y;
-import y5.a;
+import o5.v;
+import org.telegram.ui.th;
+import s5.y;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public class CastDevice extends a implements ReflectedParcelable {
     public static final Parcelable.Creator<CastDevice> CREATOR = new v(22);
@@ -43,7 +43,7 @@ public class CastDevice extends a implements ReflectedParcelable {
     public final int x;
     public final String y;
 
-    public CastDevice(String str, String str2, String str3, String str4, String str5, int i9, ArrayList arrayList, int i10, int i11, String str6, String str7, int i12, String str8, byte[] bArr, String str9, boolean z10, y yVar, Integer num) {
+    public CastDevice(String str, String str2, String str3, String str4, String str5, int i10, ArrayList arrayList, int i11, int i12, String str6, String str7, int i13, String str8, byte[] bArr, String str9, boolean z10, y yVar, Integer num) {
         this.a = str == null ? "" : str;
         str2 = str2 == null ? "" : str2;
         this.b = str2;
@@ -57,13 +57,13 @@ public class CastDevice extends a implements ReflectedParcelable {
         this.d = str3 == null ? "" : str3;
         this.e = str4 == null ? "" : str4;
         this.f = str5 == null ? "" : str5;
-        this.h = i9;
+        this.h = i10;
         this.n = arrayList == null ? new ArrayList() : arrayList;
-        this.r = i10;
-        this.s = i11;
+        this.r = i11;
+        this.s = i12;
         this.v = str6 == null ? "" : str6;
         this.w = str7;
-        this.x = i12;
+        this.x = i13;
         this.y = str8;
         this.A = bArr;
         this.B = str9;
@@ -81,8 +81,8 @@ public class CastDevice extends a implements ReflectedParcelable {
         return (CastDevice) bundle.getParcelable("com.google.android.gms.cast.EXTRA_CAST_DEVICE");
     }
 
-    public final boolean c(int i9) {
-        return (this.r & i9) == i9;
+    public final boolean c(int i10) {
+        return (this.r & i10) == i10;
     }
 
     public final y d() {
@@ -94,7 +94,7 @@ public class CastDevice extends a implements ReflectedParcelable {
     }
 
     public final boolean equals(Object obj) {
-        int i9;
+        int i10;
         byte[] bArr;
         if (obj == this) {
             return true;
@@ -104,16 +104,16 @@ public class CastDevice extends a implements ReflectedParcelable {
         }
         CastDevice castDevice = (CastDevice) obj;
         byte[] bArr2 = castDevice.A;
-        int i10 = castDevice.h;
+        int i11 = castDevice.h;
         String str = castDevice.f;
         String str2 = castDevice.a;
         String str3 = this.a;
         if (str3 == null) {
             return str2 == null;
         }
-        if (q5.a.d(str3, str2) && q5.a.d(this.c, castDevice.c) && q5.a.d(this.e, castDevice.e) && q5.a.d(this.d, castDevice.d)) {
+        if (s5.a.d(str3, str2) && s5.a.d(this.c, castDevice.c) && s5.a.d(this.e, castDevice.e) && s5.a.d(this.d, castDevice.d)) {
             String str4 = this.f;
-            if (q5.a.d(str4, str) && (i9 = this.h) == i10 && q5.a.d(this.n, castDevice.n) && this.r == castDevice.r && this.s == castDevice.s && q5.a.d(this.v, castDevice.v) && q5.a.d(Integer.valueOf(this.x), Integer.valueOf(castDevice.x)) && q5.a.d(this.y, castDevice.y) && q5.a.d(this.w, castDevice.w) && q5.a.d(str4, str) && i9 == i10 && ((((bArr = this.A) == null && bArr2 == null) || Arrays.equals(bArr, bArr2)) && q5.a.d(this.B, castDevice.B) && this.C == castDevice.C && q5.a.d(d(), castDevice.d()))) {
+            if (s5.a.d(str4, str) && (i10 = this.h) == i11 && s5.a.d(this.n, castDevice.n) && this.r == castDevice.r && this.s == castDevice.s && s5.a.d(this.v, castDevice.v) && s5.a.d(Integer.valueOf(this.x), Integer.valueOf(castDevice.x)) && s5.a.d(this.y, castDevice.y) && s5.a.d(this.w, castDevice.w) && s5.a.d(str4, str) && i10 == i11 && ((((bArr = this.A) == null && bArr2 == null) || Arrays.equals(bArr, bArr2)) && s5.a.d(this.B, castDevice.B) && this.C == castDevice.C && s5.a.d(d(), castDevice.d()))) {
                 return true;
             }
         }
@@ -135,35 +135,35 @@ public class CastDevice extends a implements ReflectedParcelable {
             int length = str.length();
             str = length <= 2 ? length == 2 ? "xx" : "x" : String.format(locale, "%c%d%c", Character.valueOf(str.charAt(0)), Integer.valueOf(length - 2), Character.valueOf(str.charAt(length - 1)));
         }
-        return j2.h("\"", str, "\" (", this.a, ")");
+        return th.j("\"", str, "\" (", this.a, ")");
     }
 
     @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i9) {
-        int q10 = p8.q(parcel, 20293);
-        p8.l(parcel, 2, this.a);
-        p8.l(parcel, 3, this.b);
-        p8.l(parcel, 4, this.d);
-        p8.l(parcel, 5, this.e);
-        p8.l(parcel, 6, this.f);
-        p8.s(parcel, 7, 4);
+    public final void writeToParcel(Parcel parcel, int i10) {
+        int q6 = o.q(parcel, 20293);
+        o.l(parcel, 2, this.a);
+        o.l(parcel, 3, this.b);
+        o.l(parcel, 4, this.d);
+        o.l(parcel, 5, this.e);
+        o.l(parcel, 6, this.f);
+        o.s(parcel, 7, 4);
         parcel.writeInt(this.h);
-        p8.p(parcel, 8, DesugarCollections.unmodifiableList(this.n));
-        p8.s(parcel, 9, 4);
+        o.p(parcel, 8, DesugarCollections.unmodifiableList(this.n));
+        o.s(parcel, 9, 4);
         parcel.writeInt(this.r);
-        p8.s(parcel, 10, 4);
+        o.s(parcel, 10, 4);
         parcel.writeInt(this.s);
-        p8.l(parcel, 11, this.v);
-        p8.l(parcel, 12, this.w);
-        p8.s(parcel, 13, 4);
+        o.l(parcel, 11, this.v);
+        o.l(parcel, 12, this.w);
+        o.s(parcel, 13, 4);
         parcel.writeInt(this.x);
-        p8.l(parcel, 14, this.y);
-        p8.c(parcel, 15, this.A);
-        p8.l(parcel, 16, this.B);
-        p8.s(parcel, 17, 4);
+        o.l(parcel, 14, this.y);
+        o.c(parcel, 15, this.A);
+        o.l(parcel, 16, this.B);
+        o.s(parcel, 17, 4);
         parcel.writeInt(this.C ? 1 : 0);
-        p8.k(parcel, 18, d(), i9);
-        p8.i(parcel, 19, this.E);
-        p8.r(parcel, q10);
+        o.k(parcel, 18, d(), i10);
+        o.i(parcel, 19, this.E);
+        o.r(parcel, q6);
     }
 }

@@ -4,9 +4,9 @@ import android.os.BadParcelableException;
 import android.os.IInterface;
 import android.os.Parcel;
 import android.os.Parcelable;
-import j3.r0;
+import j7.l1;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public abstract class a {
     static {
@@ -23,11 +23,20 @@ public abstract class a {
     public static void b(Parcel parcel) {
         int dataAvail = parcel.dataAvail();
         if (dataAvail > 0) {
-            throw new BadParcelableException(r0.l(dataAvail, "Parcel data not fully consumed, unread size: "));
+            throw new BadParcelableException(l1.k(dataAvail, "Parcel data not fully consumed, unread size: "));
         }
     }
 
-    public static void c(Parcel parcel, IInterface iInterface) {
+    public static void c(Parcel parcel, Parcelable parcelable) {
+        if (parcelable == null) {
+            parcel.writeInt(0);
+        } else {
+            parcel.writeInt(1);
+            parcelable.writeToParcel(parcel, 0);
+        }
+    }
+
+    public static void d(Parcel parcel, IInterface iInterface) {
         if (iInterface == null) {
             parcel.writeStrongBinder(null);
         } else {

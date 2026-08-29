@@ -1,23 +1,12 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class c4 extends bc0 {
-    public final /* synthetic */ int[] s0;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c4(Context context, org.telegram.ui.ActionBar.b6 b6Var, int[] iArr) {
-        super(context, b6Var);
-        this.s0 = iArr;
-    }
-
-    @Override // org.telegram.ui.Components.bc0
-    public final CharSequence d(int i9) {
-        int i10 = this.s0[i9];
-        return i10 == 0 ? LocaleController.getString(R.string.AutoDeleteNever) : i10 < 10080 ? LocaleController.formatPluralString("Days", i10 / 1440, new Object[0]) : i10 < 44640 ? LocaleController.formatPluralString("Weeks", i10 / 1440, new Object[0]) : i10 < 525600 ? LocaleController.formatPluralString("Months", i10 / 10080, new Object[0]) : LocaleController.formatPluralString("Years", ((i10 * 5) / 31) * 1440, new Object[0]);
+public final class c4 extends qc0 {
+    @Override // org.telegram.ui.Components.qc0
+    public final CharSequence d(int i10) {
+        return LocaleController.formatPluralString("Minutes", i10, new Object[0]);
     }
 }

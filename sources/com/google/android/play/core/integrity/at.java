@@ -4,18 +4,18 @@ import android.app.Activity;
 import android.content.Context;
 import com.google.android.gms.tasks.TaskCompletionSource;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 final class at {
-    private final k8.r a;
-    private final k8.r b;
+    private final m8.r a;
+    private final m8.r b;
 
-    public at(k8.r rVar, k8.r rVar2) {
+    public at(m8.r rVar, m8.r rVar2) {
         this.a = rVar;
         this.b = rVar2;
     }
 
-    public final as a(Activity activity, TaskCompletionSource taskCompletionSource, k8.c cVar) {
+    public final as a(Activity activity, TaskCompletionSource taskCompletionSource, m8.c cVar) {
         Context context = (Context) this.a.a();
         context.getClass();
         k kVar = (k) this.b.a();

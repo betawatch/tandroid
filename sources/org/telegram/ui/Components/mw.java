@@ -1,40 +1,44 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.MotionEvent;
-import android.widget.ImageView;
-import org.telegram.messenger.AndroidUtilities;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class mw extends ImageView {
-    public final /* synthetic */ wy a;
+public final class mw extends f2.w {
+    public final /* synthetic */ fz Q;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public mw(wy wyVar, Context context) {
-        super(context);
-        this.a = wyVar;
+    public mw(fz fzVar) {
+        super(5);
+        this.Q = fzVar;
     }
 
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        wx wxVar;
-        int action = motionEvent.getAction();
-        wy wyVar = this.a;
-        if (action == 0) {
-            wyVar.L1 = true;
-            wyVar.M1 = false;
-            AndroidUtilities.runOnUIThread(new qd(wyVar, 350, 2), 350);
-        } else if (motionEvent.getAction() == 3 || motionEvent.getAction() == 1) {
-            wyVar.L1 = false;
-            if (!wyVar.M1 && (wxVar = wyVar.p1) != null && wxVar.k()) {
-                try {
-                    wyVar.x.performHapticFeedback(3);
-                } catch (Exception unused) {
-                }
-            }
+    @Override // f2.w, f2.j0, f2.w0
+    public final int o0(int i10, f2.d1 d1Var, f2.k1 k1Var) {
+        int o02 = super.o0(i10, d1Var, k1Var);
+        fz fzVar = this.Q;
+        if (o02 != 0 && fzVar.z0.getScrollState() == 1) {
+            fzVar.T1 = false;
+            fzVar.a0();
         }
-        super.onTouchEvent(motionEvent);
-        return true;
+        if (fzVar.P0 == null) {
+            vw vwVar = new vw(fzVar, fzVar.Y0, fzVar.p1.a(), fzVar.p1.f(), 0);
+            fzVar.P0 = vwVar;
+            vwVar.a();
+        }
+        fzVar.P0.b();
+        return o02;
+    }
+
+    @Override // f2.j0, f2.w0
+    public final void v0(RecyclerView recyclerView, f2.k1 k1Var, int i10) {
+        try {
+            uh.n nVar = new uh.n(recyclerView.getContext(), 2);
+            nVar.a = i10;
+            w0(nVar);
+        } catch (Exception e10) {
+            FileLog.e(e10);
+        }
     }
 }

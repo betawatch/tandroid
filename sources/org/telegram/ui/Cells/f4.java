@@ -1,32 +1,8 @@
 package org.telegram.ui.Cells;
 
-import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
-
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class f4 extends FrameLayout {
-    public Drawable a;
-    public TextView b;
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        Drawable drawable = this.a;
-        drawable.setBounds(0, getMeasuredHeight() - AndroidUtilities.dp(3.0f), getMeasuredWidth(), getMeasuredHeight());
-        drawable.draw(canvas);
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i9, int i10) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i9), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(40.0f), TLObject.FLAG_30));
-    }
-
-    public void setText(String str) {
-        this.b.setText(str);
-    }
+public final class f4 {
+    public int[] a;
+    public float[] b;
 }

@@ -1,52 +1,135 @@
 package vg;
 
 import android.content.Context;
-import android.os.Build;
-import ff.r0;
+import android.view.View;
+import android.view.ViewGroup;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.Map;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.b6;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.Components.gr;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.voip.x2;
+import org.telegram.ui.web.t1;
+import vd.c;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class b extends kh.d implements td.b {
-    public final td.a d0;
-    public final b6 e0;
+public abstract class b extends ViewGroup {
+    public int a;
+    public int b;
+    public final LinkedHashMap c;
 
-    public b(Context context, b6 b6Var) {
-        super(context, b6Var, true);
-        this.d0 = new td.a(0, this, gr.h, 320L, true);
-        this.e0 = b6Var;
-        e();
-        setOutlineProvider(r0.b);
+    public b(Context context) {
+        super(context);
+        this.c = new LinkedHashMap(16);
     }
 
-    @Override // td.b
-    public final void J0(int i9, float f10, float f11, td.c cVar) {
-        b6 b6Var = this.e0;
-        boolean a2 = b6Var != null ? b6Var.a() : f6.I.q();
-        float f12 = this.d0.e;
-        setElevation((1.0f - f12) * AndroidUtilities.dp(1.0f));
-        setColor(i0.a.d(f12, m(f6.d6), m(f6.Oh)));
-        setTextColor(i0.a.d(f12, m(f6.q7), m(f6.Sh)));
-        if (Build.VERSION.SDK_INT >= 28) {
-            if (a2) {
-                setOutlineAmbientShadowColor(553648127);
-                setOutlineSpotShadowColor(553648127);
-            } else {
-                setOutlineAmbientShadowColor(1610612736);
-                setOutlineSpotShadowColor(1610612736);
+    public final void a(x2 x2Var) {
+        addView(x2Var);
+        this.c.put(x2Var, new a(x2Var, new t1(this, 28)));
+    }
+
+    public final void b(boolean z10, boolean z11) {
+        int min;
+        int i10;
+        c cVar;
+        int measuredWidth;
+        int i11;
+        int measuredWidth2 = getMeasuredWidth();
+        int measuredHeight = getMeasuredHeight();
+        boolean z12 = measuredWidth2 <= measuredHeight;
+        if (measuredWidth2 <= 0 || measuredHeight <= 0) {
+            return;
+        }
+        LinkedHashMap linkedHashMap = this.c;
+        Iterator it = linkedHashMap.values().iterator();
+        int i12 = 0;
+        while (it.hasNext()) {
+            if (((a) it.next()).h) {
+                i12++;
             }
+        }
+        if (i12 == 0) {
+            i12 = 1;
+        }
+        if (z12) {
+            min = Math.min(AndroidUtilities.dp(50.0f) + Math.max((int) (org.telegram.ui.b.z(50.0f, i12, measuredHeight) / (i12 + 0.333f)), 0), measuredHeight / i12);
+            i10 = (measuredHeight - (i12 * min)) / 2;
+        } else {
+            int min2 = Math.min(AndroidUtilities.dp(50.0f) + Math.max((int) (org.telegram.ui.b.z(50.0f, i12, measuredWidth2) / (i12 + 0.333f)), 0), measuredWidth2 / i12);
+            min = AndroidUtilities.dp(76.0f);
+            i10 = (measuredWidth2 - (i12 * min2)) / 2;
+            measuredWidth2 = min2;
+        }
+        Iterator it2 = linkedHashMap.entrySet().iterator();
+        int i13 = 0;
+        while (it2.hasNext()) {
+            a aVar = (a) ((Map.Entry) it2.next()).getValue();
+            boolean z13 = aVar.h;
+            x2 x2Var = aVar.e;
+            c cVar2 = aVar.b;
+            vd.a aVar2 = aVar.c;
+            c cVar3 = aVar.a;
+            if (z13) {
+                if (z12) {
+                    measuredWidth = ((measuredWidth2 - x2Var.getMeasuredWidth()) / 2) + (getMeasuredWidth() - measuredWidth2);
+                    i11 = (min * i13) + i10;
+                } else {
+                    measuredWidth = ((measuredWidth2 - x2Var.getMeasuredWidth()) / 2) + (measuredWidth2 * i13) + i10;
+                    i11 = getMeasuredHeight() - AndroidUtilities.dp(76.0f);
+                }
+                if (z11 || !((z10 || cVar3.g) && aVar2.f)) {
+                    cVar3.c(measuredWidth);
+                } else {
+                    cVar3.a(measuredWidth);
+                }
+                if (z11 || !((z10 || cVar2.g) && aVar2.f)) {
+                    cVar2.c(i11);
+                } else {
+                    cVar2.a(i11);
+                }
+                i13++;
+            }
+            aVar2.a(aVar.h, !z11 && (z10 || ((cVar = aVar2.h) != null && cVar.g)));
+        }
+        invalidate();
+    }
+
+    public final void c(x2 x2Var, boolean z10, boolean z11) {
+        a aVar = (a) this.c.get(x2Var);
+        if (aVar == null || aVar.h == z10) {
+            return;
+        }
+        aVar.h = z10;
+        b(z11, false);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        int childCount = getChildCount();
+        for (int i14 = 0; i14 < childCount; i14++) {
+            View childAt = getChildAt(i14);
+            childAt.layout(0, 0, childAt.getMeasuredWidth(), childAt.getMeasuredHeight());
         }
     }
 
-    public final int m(int i9) {
-        b6 b6Var = this.e0;
-        return b6Var != null ? b6Var.N0(i9) : f6.w0(null, i9, false);
-    }
-
-    @Override // td.b
-    public final /* synthetic */ void B(float f10, int i9) {
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        int size = View.MeasureSpec.getSize(i10);
+        int size2 = View.MeasureSpec.getSize(i11);
+        setMeasuredDimension(size, size2);
+        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(76.0f), TLObject.FLAG_30);
+        int makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(76.0f), TLObject.FLAG_30);
+        int childCount = getChildCount();
+        for (int i12 = 0; i12 < childCount; i12++) {
+            getChildAt(i12).measure(makeMeasureSpec, makeMeasureSpec2);
+        }
+        if (this.a == size && this.b == size2) {
+            b(true, false);
+            return;
+        }
+        b(false, true);
+        this.a = size;
+        this.b = size2;
     }
 }

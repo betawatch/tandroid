@@ -1,5 +1,6 @@
 package com.google.android.gms.common.api.internal;
 
+import ag.j2;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.os.Bundle;
@@ -10,15 +11,14 @@ import android.view.View;
 import androidx.sharetarget.ShortcutInfoCompatSaverImpl;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
-import f7.d7;
-import f7.f8;
-import g7.i7;
-import g7.k9;
-import g7.ka;
-import g7.pa;
-import g7.r2;
-import g7.ra;
-import g7.ta;
+import h7.d8;
+import i7.j7;
+import i7.k9;
+import i7.ka;
+import i7.pa;
+import i7.r2;
+import i7.ra;
+import i7.ta;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -27,10 +27,11 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.concurrent.atomic.AtomicInteger;
+import nh.d6;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.ui.Components.dg;
+import org.telegram.ui.Components.gg;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class q1 implements Runnable {
     public final /* synthetic */ int a;
@@ -39,7 +40,7 @@ public final class q1 implements Runnable {
     public Object d;
 
     public /* synthetic */ q1() {
-        this.a = 11;
+        this.a = 7;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:6:0x0024, code lost:
@@ -53,105 +54,104 @@ public final class q1 implements Runnable {
         String str;
         ta taVar;
         ka kaVar = (ka) this.b;
-        g5.b bVar = (g5.b) this.d;
-        i7 i7Var = i7.b;
+        g9.l lVar = (g9.l) this.d;
+        j7 j7Var = j7.b;
         String str2 = (String) this.c;
-        a5.m mVar = (a5.m) bVar.b;
-        mVar.c = i7Var;
-        k9 k9Var = (k9) mVar.b;
+        androidx.biometric.e eVar = (androidx.biometric.e) lVar.b;
+        eVar.c = j7Var;
+        k9 k9Var = (k9) eVar.b;
         if (k9Var != null) {
             str = k9Var.d;
-            int i9 = r2.a;
+            int i10 = r2.a;
             if (str != null) {
             }
         }
         str = "NA";
-        f8 f8Var = new f8();
-        f8Var.a = kaVar.a;
-        f8Var.b = kaVar.b;
+        d8 d8Var = new d8();
+        d8Var.a = kaVar.a;
+        d8Var.b = kaVar.b;
         synchronized (ka.class) {
             taVar = ka.j;
             if (taVar == null) {
-                n0.c a2 = g7.a0.a(Resources.getSystem().getConfiguration());
+                n0.c a2 = i7.c0.a(Resources.getSystem().getConfiguration());
                 Object[] objArr = new Object[4];
-                int i10 = 0;
                 int i11 = 0;
-                while (i10 < a2.a.size()) {
-                    Locale locale = a2.a.get(i10);
-                    b9.c cVar = ya.c.a;
+                int i12 = 0;
+                while (i11 < a2.a.size()) {
+                    Locale locale = a2.a.get(i11);
+                    d9.c cVar = ab.c.a;
                     String languageTag = locale.toLanguageTag();
                     languageTag.getClass();
-                    int i12 = i11 + 1;
+                    int i13 = i12 + 1;
                     int length = objArr.length;
-                    if (length < i12) {
-                        int i13 = length + (length >> 1) + 1;
-                        if (i13 < i12) {
-                            int highestOneBit = Integer.highestOneBit(i11);
-                            i13 = highestOneBit + highestOneBit;
+                    if (length < i13) {
+                        int i14 = length + (length >> 1) + 1;
+                        if (i14 < i13) {
+                            int highestOneBit = Integer.highestOneBit(i12);
+                            i14 = highestOneBit + highestOneBit;
                         }
-                        if (i13 < 0) {
-                            i13 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                        if (i14 < 0) {
+                            i14 = ConnectionsManager.DEFAULT_DATACENTER_ID;
                         }
-                        objArr = Arrays.copyOf(objArr, i13);
+                        objArr = Arrays.copyOf(objArr, i14);
                     }
-                    objArr[i11] = languageTag;
-                    i10++;
-                    i11 = i12;
+                    objArr[i12] = languageTag;
+                    i11++;
+                    i12 = i13;
                 }
                 pa paVar = ra.b;
-                taVar = i11 == 0 ? ta.e : new ta(i11, objArr);
+                taVar = i12 == 0 ? ta.e : new ta(i12, objArr);
                 ka.j = taVar;
             }
         }
-        f8Var.k = taVar;
-        f8Var.g = Boolean.TRUE;
-        f8Var.d = str;
-        f8Var.c = str2;
-        f8Var.e = kaVar.f.isSuccessful() ? (String) kaVar.f.getResult() : kaVar.d.a();
-        f8Var.i = 10;
-        f8Var.j = Integer.valueOf(kaVar.h);
-        bVar.c = f8Var;
-        kaVar.c.a(bVar);
+        d8Var.k = taVar;
+        d8Var.g = Boolean.TRUE;
+        d8Var.d = str;
+        d8Var.c = str2;
+        d8Var.e = kaVar.f.isSuccessful() ? (String) kaVar.f.getResult() : kaVar.d.a();
+        d8Var.i = 10;
+        d8Var.j = Integer.valueOf(kaVar.h);
+        lVar.c = d8Var;
+        kaVar.c.a(lVar);
     }
 
     private final void b() {
-        m5.f fVar;
-        m5.e0 e0Var = (m5.e0) this.b;
-        HashMap hashMap = e0Var.b.C;
+        o5.f fVar;
+        o5.d0 d0Var = (o5.d0) this.b;
+        HashMap hashMap = d0Var.b.C;
         String str = (String) this.c;
         synchronized (hashMap) {
-            fVar = (m5.f) e0Var.b.C.get(str);
+            fVar = (o5.f) d0Var.b.C.get(str);
         }
         if (fVar != null) {
-            ((o5.h) fVar).o((String) this.d);
+            ((q5.h) fVar).o((String) this.d);
         } else {
-            m5.f0.G.b("Discarded message for unknown namespace '%s'", str);
+            o5.e0.G.b("Discarded message for unknown namespace '%s'", str);
         }
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        m5.f fVar;
+        o5.f fVar;
         Object obj = null;
-        boolean z10 = false;
         switch (this.a) {
             case 0:
                 l lVar = (l) this.b;
-                a6.a aVar = (a6.a) this.d;
-                if (aVar.c > 0) {
-                    Bundle bundle = (Bundle) aVar.d;
+                j2 j2Var = (j2) this.d;
+                if (j2Var.b > 0) {
+                    Bundle bundle = (Bundle) j2Var.d;
                     lVar.onCreate(bundle != null ? bundle.getBundle((String) this.c) : null);
                 }
-                if (aVar.c >= 2) {
+                if (j2Var.b >= 2) {
                     lVar.onStart();
                 }
-                if (aVar.c >= 3) {
+                if (j2Var.b >= 3) {
                     lVar.onResume();
                 }
-                if (aVar.c >= 4) {
+                if (j2Var.b >= 4) {
                     lVar.onStop();
                 }
-                if (aVar.c >= 5) {
+                if (j2Var.b >= 5) {
                     lVar.onDestroy();
                     return;
                 }
@@ -160,9 +160,6 @@ public final class q1 implements Runnable {
                 g.e.b(((g.e) this.d).e, (View) this.b, (View) this.c);
                 return;
             case 2:
-                a();
-                return;
-            case 3:
                 h2.e eVar = (h2.e) this.d;
                 eVar.d.c.remove((String) this.c);
                 c0.l lVar2 = (c0.l) this.b;
@@ -176,7 +173,7 @@ public final class q1 implements Runnable {
                     eVar.c.l(e10);
                     return;
                 }
-            case 4:
+            case 3:
                 ShortcutInfoCompatSaverImpl shortcutInfoCompatSaverImpl = (ShortcutInfoCompatSaverImpl) this.d;
                 Bitmap bitmap = (Bitmap) this.b;
                 String str = (String) this.c;
@@ -196,33 +193,36 @@ public final class q1 implements Runnable {
                         }
                         Log.wtf("ShortcutInfoCompatSaver", "Unable to compress bitmap");
                         throw new RuntimeException("Unable to compress bitmap for saving " + str);
-                    } catch (Throwable th) {
+                    } catch (Throwable th2) {
                         try {
                             fileOutputStream.close();
-                        } catch (Throwable th2) {
-                            th.addSuppressed(th2);
+                        } catch (Throwable th3) {
+                            th2.addSuppressed(th3);
                         }
-                        throw th;
+                        throw th2;
                     }
                 } catch (IOException | OutOfMemoryError | RuntimeException e11) {
                     Log.wtf("ShortcutInfoCompatSaver", "Unable to write bitmap to file", e11);
-                    throw new RuntimeException(ta.b.d("Unable to write bitmap to file ", str), e11);
+                    throw new RuntimeException(u3.c.e("Unable to write bitmap to file ", str), e11);
                 }
+            case 4:
+                a();
+                return;
             case 5:
-                h8.m mVar = (h8.m) this.b;
-                i8.m0 m0Var = (i8.m0) this.c;
-                i8.e0 e0Var = (i8.e0) this.d;
+                j8.m mVar = (j8.m) this.b;
+                k8.m0 m0Var = (k8.m0) this.c;
+                k8.e0 e0Var = (k8.e0) this.d;
                 Task<byte[]> onRequest = mVar.c.onRequest(m0Var.d, m0Var.b, m0Var.c);
                 if (onRequest == null) {
-                    h8.m.K0(e0Var, false, null);
+                    j8.m.K0(e0Var, false, null);
                     return;
                 } else {
-                    onRequest.addOnCompleteListener(new k5.i(e0Var, 17));
+                    onRequest.addOnCompleteListener(new ag.o1(e0Var, 18));
                     return;
                 }
             case 6:
-                k9.c cVar = (k9.c) this.d;
-                e9.b bVar = (e9.b) this.b;
+                m9.c cVar = (m9.c) this.d;
+                g9.b bVar = (g9.b) this.b;
                 cVar.b(bVar, (TaskCompletionSource) this.c);
                 ((AtomicInteger) cVar.i.c).set(0);
                 double min = Math.min(3600000.0d, Math.pow(cVar.b, cVar.a()) * (60000.0d / cVar.a));
@@ -237,69 +237,69 @@ public final class q1 implements Runnable {
                     return;
                 }
             case 7:
-                b();
-                return;
-            case 8:
-                n2.b bVar2 = (n2.b) this.b;
-                n2.h hVar = (n2.h) this.c;
-                d7 d7Var = (d7) this.d;
-                n2.g gVar = n2.b0.i;
-                bVar2.y(24, 4, gVar);
-                hVar.a(gVar, d7Var.a);
-                return;
-            case 9:
-                super/*n2.b*/.c((n2.p) this.c, (org.telegram.messenger.d) this.d);
-                return;
-            case 10:
-                super/*n2.b*/.a((d7) this.c, (n2.h) this.d);
-                return;
-            case 11:
                 try {
                     obj = ((o0.e) this.b).call();
                 } catch (Exception unused2) {
                 }
-                ((Handler) this.d).post(new androidx.biometric.j((n2.u) this.c, obj, z10, 29));
+                ((Handler) this.d).post(new ab.o(27, (o0.f) this.c, obj));
+                return;
+            case 8:
+                b();
+                return;
+            case 9:
+                ((gg) this.d).n((File) this.c, (ArrayList) this.b);
+                return;
+            case 10:
+                p2.b bVar2 = (p2.b) this.b;
+                p2.h hVar = (p2.h) this.c;
+                g5.c cVar2 = (g5.c) this.d;
+                p2.g gVar = p2.z.i;
+                bVar2.y(24, 4, gVar);
+                hVar.a(gVar, cVar2.a);
+                return;
+            case 11:
+                super/*p2.b*/.c((d6) this.c, (org.telegram.messenger.d) this.d);
                 return;
             case 12:
-                ((dg) this.d).n((File) this.c, (ArrayList) this.b);
+                super/*p2.b*/.a((g5.c) this.c, (p2.h) this.d);
                 return;
             default:
-                synchronized (((q5.w) this.b).T) {
-                    fVar = (m5.f) ((q5.w) this.b).T.get((String) this.c);
+                synchronized (((s5.w) this.b).T) {
+                    fVar = (o5.f) ((s5.w) this.b).T.get((String) this.c);
                 }
                 if (fVar != null) {
-                    ((o5.h) fVar).o((String) this.d);
+                    ((q5.h) fVar).o((String) this.d);
                     return;
                 } else {
-                    q5.w.j0.b("Discarded message for unknown namespace '%s'", (String) this.c);
+                    s5.w.j0.b("Discarded message for unknown namespace '%s'", (String) this.c);
                     return;
                 }
         }
     }
 
-    public /* synthetic */ q1(ka kaVar, g5.b bVar, String str) {
-        this.a = 2;
+    public /* synthetic */ q1(ka kaVar, g9.l lVar, String str) {
+        this.a = 4;
         this.b = kaVar;
-        this.d = bVar;
+        this.d = lVar;
         this.c = str;
     }
 
-    public /* synthetic */ q1(Object obj, Object obj2, Object obj3, int i9) {
-        this.a = i9;
+    public /* synthetic */ q1(Object obj, Object obj2, Object obj3, int i10) {
+        this.a = i10;
         this.b = obj2;
         this.c = obj3;
         this.d = obj;
     }
 
-    public /* synthetic */ q1(Object obj, Object obj2, Object obj3, boolean z10, int i9) {
-        this.a = i9;
+    public /* synthetic */ q1(Object obj, Object obj2, Object obj3, boolean z10, int i10) {
+        this.a = i10;
         this.b = obj;
         this.c = obj2;
         this.d = obj3;
     }
 
     public q1(h2.e eVar, String str, c0.l lVar) {
-        this.a = 3;
+        this.a = 2;
         this.d = eVar;
         this.c = str;
         this.b = lVar;

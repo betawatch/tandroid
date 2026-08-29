@@ -1,58 +1,13 @@
 package com.google.android.gms.internal.play_billing;
 
-import java.lang.ref.WeakReference;
-import java.util.concurrent.Executor;
-import java.util.concurrent.TimeUnit;
-
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class j4 implements t0 {
-    public final WeakReference a;
-    public final i4 b = new i4(this);
-
-    public j4(h4 h4Var) {
-        this.a = new WeakReference(h4Var);
-    }
-
-    @Override // com.google.android.gms.internal.play_billing.t0
-    public final void a(Runnable runnable, Executor executor) {
-        this.b.a(runnable, executor);
-    }
-
-    @Override // java.util.concurrent.Future
-    public final boolean cancel(boolean z10) {
-        h4 h4Var = (h4) this.a.get();
-        boolean cancel = this.b.cancel(z10);
-        if (!cancel || h4Var == null) {
-            return cancel;
+public final class j4 extends f4 {
+    public final boolean h(Object obj) {
+        if (!f4.f.d(this, null, f4.h)) {
+            return false;
         }
-        h4Var.a = null;
-        h4Var.b = null;
-        h4Var.c.h(null);
+        f4.c(this);
         return true;
-    }
-
-    @Override // java.util.concurrent.Future
-    public final Object get() {
-        return this.b.get();
-    }
-
-    @Override // java.util.concurrent.Future
-    public final boolean isCancelled() {
-        return this.b.a instanceof j1;
-    }
-
-    @Override // java.util.concurrent.Future
-    public final boolean isDone() {
-        return this.b.isDone();
-    }
-
-    public final String toString() {
-        return this.b.toString();
-    }
-
-    @Override // java.util.concurrent.Future
-    public final Object get(long j10, TimeUnit timeUnit) {
-        return this.b.get(j10, timeUnit);
     }
 }

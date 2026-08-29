@@ -1,52 +1,59 @@
 package org.telegram.ui.web;
 
-import java.util.ArrayList;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.Utilities;
+import java.io.BufferedInputStream;
+import java.io.FilterInputStream;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes4.dex */
-public final class j1 {
-    public static ArrayList d;
-    public final String a;
-    public final String b;
-    public final String c;
-
-    public j1(String str, String str2, String str3) {
-        this.a = str;
-        this.b = str2;
-        this.c = str3;
+public final class j1 extends FilterInputStream {
+    public j1(BufferedInputStream bufferedInputStream) {
+        super(bufferedInputStream);
     }
 
-    public static j1 a() {
-        ArrayList b10 = b();
-        return b10.isEmpty() ? new j1("Google", "https://www.google.com/search?q=", "https://suggestqueries.google.com/complete/search?client=chrome&amp;q=") : (j1) b10.get(Utilities.clamp(SharedConfig.searchEngineType, b10.size() - 1, 0));
+    public static int a(int i10) {
+        if (i10 >= 48 && i10 <= 57) {
+            return i10 - 48;
+        }
+        if (i10 >= 65 && i10 <= 70) {
+            return i10 - 55;
+        }
+        if (i10 < 97 || i10 > 102) {
+            return 0;
+        }
+        return i10 - 87;
     }
 
-    public static ArrayList b() {
-        if (d == null) {
-            d = new ArrayList();
-            int i9 = 1;
-            while (true) {
-                String c10 = c(LocaleController.getString("SearchEngine" + i9 + "Name"));
-                if (c10 == null) {
-                    break;
-                }
-                String c11 = c(LocaleController.getString("SearchEngine" + i9 + "SearchURL"));
-                String c12 = c(LocaleController.getString("SearchEngine" + i9 + "AutocompleteURL"));
-                c(LocaleController.getString("SearchEngine" + i9 + "PrivacyPolicyURL"));
-                d.add(new j1(c10, c11, c12));
-                i9++;
+    @Override // java.io.FilterInputStream, java.io.InputStream
+    public final int read() {
+        int read = ((FilterInputStream) this).in.read();
+        if (read != 61) {
+            return read;
+        }
+        int read2 = ((FilterInputStream) this).in.read();
+        int read3 = ((FilterInputStream) this).in.read();
+        if (read2 == -1 || read3 == -1) {
+            return -1;
+        }
+        return (read2 == 13 && read3 == 10) ? read() : (read2 == 10 || read3 == 10) ? read3 : (a(read2) << 4) | a(read3);
+    }
+
+    @Override // java.io.FilterInputStream, java.io.InputStream
+    public final int read(byte[] bArr, int i10, int i11) {
+        int i12 = 0;
+        int i13 = 0;
+        while (true) {
+            if (i12 >= i11) {
+                break;
+            }
+            int read = read();
+            if (read != -1) {
+                bArr[i10 + i12] = (byte) read;
+                i13++;
+                i12++;
+            } else if (i13 == 0) {
+                return -1;
             }
         }
-        return d;
-    }
-
-    public static String c(String str) {
-        if (str == null || str.startsWith("LOC_ERR") || "reserved".equals(str)) {
-            return null;
-        }
-        return str;
+        return i13;
     }
 }

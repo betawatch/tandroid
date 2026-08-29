@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import java.util.ListIterator;
 import org.scilab.forge.jlatexmath.dynamic.DynamicAtom;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public class RowAtom extends Atom implements Row {
     private static BitSet binSet;
@@ -61,13 +61,13 @@ public class RowAtom extends Atom implements Row {
 
     @Override // org.scilab.forge.jlatexmath.Atom
     public Box createBox(TeXEnvironment teXEnvironment) {
-        float f10;
+        float f9;
         Dummy dummy;
         TeXFont teXFont = teXEnvironment.getTeXFont();
         HorizontalBox horizontalBox = new HorizontalBox(teXEnvironment.getColor(), teXEnvironment.getBackground());
         teXEnvironment.reset();
         ListIterator<Atom> listIterator = this.elements.listIterator();
-        int i9 = 0;
+        int i10 = 0;
         while (true) {
             Atom atom = null;
             if (!listIterator.hasNext()) {
@@ -75,7 +75,7 @@ public class RowAtom extends Atom implements Row {
                 return horizontalBox;
             }
             Atom next = listIterator.next();
-            i9++;
+            i10++;
             boolean z10 = false;
             while (next instanceof BreakMarkAtom) {
                 if (!z10) {
@@ -85,17 +85,17 @@ public class RowAtom extends Atom implements Row {
                     break;
                 }
                 next = listIterator.next();
-                i9++;
+                i10++;
             }
             if (next instanceof DynamicAtom) {
                 DynamicAtom dynamicAtom = (DynamicAtom) next;
                 if (dynamicAtom.getInsertMode()) {
                     next = dynamicAtom.getAtom();
                     if (next instanceof RowAtom) {
-                        int i10 = i9 - 1;
-                        this.elements.remove(i10);
-                        this.elements.addAll(i10, ((RowAtom) next).elements);
-                        listIterator = this.elements.listIterator(i10);
+                        int i11 = i10 - 1;
+                        this.elements.remove(i11);
+                        this.elements.addAll(i11, ((RowAtom) next).elements);
+                        listIterator = this.elements.listIterator(i11);
                         next = listIterator.next();
                     }
                 }
@@ -108,7 +108,7 @@ public class RowAtom extends Atom implements Row {
             changeToOrd(dummy2, this.previousAtom, atom);
             while (listIterator.hasNext() && dummy2.getRightType() == 0 && dummy2.isCharSymbol()) {
                 Atom next2 = listIterator.next();
-                int i11 = i9 + 1;
+                int i12 = i10 + 1;
                 if (!(next2 instanceof CharSymbol) || !ligKernSet.get(next2.getLeftType())) {
                     listIterator.previous();
                     break;
@@ -118,14 +118,14 @@ public class RowAtom extends Atom implements Row {
                 CharFont charFont2 = ((CharSymbol) next2).getCharFont(teXFont);
                 CharFont ligature = teXFont.getLigature(charFont, charFont2);
                 if (ligature == null) {
-                    f10 = teXFont.getKern(charFont, charFont2, teXEnvironment.getStyle());
+                    f9 = teXFont.getKern(charFont, charFont2, teXEnvironment.getStyle());
                     listIterator.previous();
                     break;
                 }
                 dummy2.changeAtom(new FixedCharAtom(ligature));
-                i9 = i11;
+                i10 = i12;
             }
-            f10 = 0.0f;
+            f9 = 0.0f;
             if (listIterator.previousIndex() != 0 && (dummy = this.previousAtom) != null && !dummy.isKern() && !dummy2.isKern()) {
                 horizontalBox.add(Glue.get(this.previousAtom.getRightType(), dummy2.getLeftType(), teXEnvironment));
             }
@@ -139,8 +139,8 @@ public class RowAtom extends Atom implements Row {
             }
             horizontalBox.add(createBox);
             teXEnvironment.setLastFontId(createBox.getLastFontId());
-            if (Math.abs(f10) > 1.0E-7f) {
-                horizontalBox.add(new StrutBox(f10, 0.0f, 0.0f, 0.0f));
+            if (Math.abs(f9) > 1.0E-7f) {
+                horizontalBox.add(new StrutBox(f9, 0.0f, 0.0f, 0.0f));
             }
             if (!dummy2.isKern()) {
                 this.previousAtom = dummy2;

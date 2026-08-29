@@ -11,12 +11,12 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-import gh.i7;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.WeakHashMap;
+import jh.f7;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.Emoji;
@@ -27,13 +27,13 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.gr;
-import org.telegram.ui.Components.nz0;
+import org.telegram.ui.Components.jr;
+import org.telegram.ui.Components.zz0;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.ak;
-import org.telegram.ui.qn;
+import org.telegram.ui.dk;
+import org.telegram.ui.tn;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
 public final class m3 extends FrameLayout {
     public static final HashMap G = new HashMap();
@@ -51,11 +51,11 @@ public final class m3 extends FrameLayout {
     public final ActionBarLayout d;
     public final k3 e;
     public int f;
-    public final org.telegram.ui.Components.b5 h;
+    public final org.telegram.ui.Components.f5 h;
     public int n;
-    public final org.telegram.ui.Components.b5 r;
+    public final org.telegram.ui.Components.f5 r;
     public boolean s;
-    public final org.telegram.ui.Components.y5 v;
+    public final org.telegram.ui.Components.d6 v;
     public int w;
     public boolean x;
     public boolean y;
@@ -65,16 +65,16 @@ public final class m3 extends FrameLayout {
         this.a = new Paint(1);
         this.b = true;
         this.c = false;
-        gr grVar = gr.h;
-        this.h = new org.telegram.ui.Components.b5(this, 200L, grVar, 0);
-        this.r = new org.telegram.ui.Components.b5(this, 200L, grVar, 0);
-        this.v = new org.telegram.ui.Components.y5(this, 0L, 200L, grVar);
+        jr jrVar = jr.h;
+        this.h = new org.telegram.ui.Components.f5(this, 200L, jrVar, 0);
+        this.r = new org.telegram.ui.Components.f5(this, 200L, jrVar, 0);
+        this.v = new org.telegram.ui.Components.d6(this, 0L, 200L, jrVar);
         this.w = UserConfig.selectedAccount;
         this.A = new RectF();
         this.E = new HashSet();
         this.F = new HashSet();
         this.d = actionBarLayout;
-        setNavigationBarColor(f6.w0(null, f6.a7, false));
+        setNavigationBarColor(g6.w0(null, g6.a7, false));
         k3 k3Var = new k3(this, this);
         this.e = k3Var;
         r0.j0.k(this, k3Var);
@@ -108,7 +108,7 @@ public final class m3 extends FrameLayout {
         if (size == 0) {
             return;
         }
-        l3 l3Var = (l3) j3.r0.j(1, tabs);
+        l3 l3Var = (l3) j7.l1.i(1, tabs);
         LaunchActivity launchActivity = LaunchActivity.C1;
         v3 v3Var = launchActivity == null ? null : launchActivity.u0;
         if (v3Var != null && (valueAnimator = v3Var.d) != null) {
@@ -124,28 +124,28 @@ public final class m3 extends FrameLayout {
 
     public final j3 c(l3 l3Var) {
         ArrayList<j3> tabDrawables = getTabDrawables();
-        for (int i9 = 0; i9 < tabDrawables.size(); i9++) {
-            if (tabDrawables.get(i9).a == l3Var) {
-                return tabDrawables.get(i9);
+        for (int i10 = 0; i10 < tabDrawables.size(); i10++) {
+            if (tabDrawables.get(i10).a == l3Var) {
+                return tabDrawables.get(i10);
             }
         }
         return null;
     }
 
-    public final void d(RectF rectF, float f10) {
+    public final void d(RectF rectF, float f9) {
         rectF.set(AndroidUtilities.dp(4.0f), (getHeight() - AndroidUtilities.dp(4.0f)) - AndroidUtilities.dp(50.0f), getWidth() - AndroidUtilities.dp(4.0f), getHeight() - AndroidUtilities.dp(4.0f));
-        rectF.offset(0.0f, (-AndroidUtilities.dp(8.0f)) * f10);
-        float lerp = AndroidUtilities.lerp(1.0f, 0.95f, Math.abs(f10));
+        rectF.offset(0.0f, (-AndroidUtilities.dp(8.0f)) * f9);
+        float lerp = AndroidUtilities.lerp(1.0f, 0.95f, Math.abs(f9));
         float centerX = rectF.centerX();
         float centerY = rectF.centerY();
         float width = rectF.width();
         float height = rectF.height();
-        float f11 = (width / 2.0f) * lerp;
-        rectF.left = centerX - f11;
-        rectF.right = centerX + f11;
-        float f12 = (height / 2.0f) * lerp;
-        rectF.top = centerY - f12;
-        rectF.bottom = centerY + f12;
+        float f10 = (width / 2.0f) * lerp;
+        rectF.left = centerX - f10;
+        rectF.right = centerX + f10;
+        float f11 = (height / 2.0f) * lerp;
+        rectF.top = centerY - f11;
+        rectF.bottom = centerY + f11;
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -161,14 +161,14 @@ public final class m3 extends FrameLayout {
         int a2 = this.r.a(this.n, false);
         float e10 = this.v.e(this.s);
         if (this.b) {
-            int i9 = 0;
-            while (i9 < tabDrawables.size()) {
-                j3 j3Var = tabDrawables.get(i9);
-                float c10 = j3Var.c();
+            int i10 = 0;
+            while (i10 < tabDrawables.size()) {
+                j3 j3Var = tabDrawables.get(i10);
+                float c3 = j3Var.c();
                 float b10 = j3Var.b();
-                if (b10 > 0.0f && c10 <= 1.99f) {
+                if (b10 > 0.0f && c3 <= 1.99f) {
                     RectF rectF = this.A;
-                    d(rectF, c10);
+                    d(rectF, c3);
                     j3Var.v = 0.0f;
                     boolean z10 = e10 > 0.5f;
                     j3Var.l = a2;
@@ -178,7 +178,7 @@ public final class m3 extends FrameLayout {
                 } else {
                     canvas2 = canvas;
                 }
-                i9++;
+                i10++;
                 canvas = canvas2;
             }
         }
@@ -194,66 +194,66 @@ public final class m3 extends FrameLayout {
     }
 
     public final void e(l3 l3Var) {
-        qn qnVar;
-        ak akVar;
+        tn tnVar;
+        dk dkVar;
         o2 R = LaunchActivity.R();
         if (R == null || R.getParentActivity() == null) {
             return;
         }
-        boolean z10 = R instanceof qn;
-        if (z10 && (akVar = (qnVar = (qn) R).U) != null) {
-            akVar.O();
-            qnVar.U.m0(true, false, true);
+        boolean z10 = R instanceof tn;
+        if (z10 && (dkVar = (tnVar = (tn) R).U) != null) {
+            dkVar.P();
+            tnVar.U.n0(true, false, true);
         }
         if (l3Var.H == null) {
-            new fh.f1(25, this, l3Var).run(R);
+            new ih.b1(18, this, l3Var).run(R);
             if (l3Var.A) {
-                if (z10 && ((qn) R).a() == l3Var.a.c) {
+                if (z10 && ((tn) R).a() == l3Var.a.c) {
                     return;
                 }
                 this.c = true;
-                AndroidUtilities.runOnUIThread(new org.telegram.messenger.video.e(this, R, qn.R9(l3Var.a.c), 6), 220L);
+                AndroidUtilities.runOnUIThread(new l3.m(this, R, tn.R9(l3Var.a.c), 25), 220L);
                 return;
             }
             return;
         }
         o2 sheetFragment = this.d.getSheetFragment();
-        org.telegram.ui.l4 l4Var = l3Var.H;
-        org.telegram.ui.y3 y3Var = l4Var.G;
-        i3.b(y3Var);
-        sheetFragment.addSheet(y3Var);
-        org.telegram.ui.x3 x3Var = y3Var.c;
-        y3Var.h = false;
-        y3Var.n = false;
-        ValueAnimator valueAnimator = y3Var.y;
+        org.telegram.ui.m4 m4Var = l3Var.H;
+        org.telegram.ui.z3 z3Var = m4Var.G;
+        i3.b(z3Var);
+        sheetFragment.addSheet(z3Var);
+        org.telegram.ui.y3 y3Var = z3Var.c;
+        z3Var.h = false;
+        z3Var.n = false;
+        ValueAnimator valueAnimator = z3Var.y;
         if (valueAnimator != null) {
             valueAnimator.cancel();
         }
-        ValueAnimator valueAnimator2 = y3Var.A;
+        ValueAnimator valueAnimator2 = z3Var.A;
         if (valueAnimator2 != null) {
             valueAnimator2.cancel();
         }
-        y3Var.x = 0.0f;
-        y3Var.w = 0.0f;
-        y3Var.h();
-        y3Var.n();
-        x3Var.invalidate();
-        x3Var.requestLayout();
-        l4Var.Y(sheetFragment.getParentActivity(), sheetFragment);
-        y3Var.g(sheetFragment);
-        y3Var.f();
+        z3Var.x = 0.0f;
+        z3Var.w = 0.0f;
+        z3Var.h();
+        z3Var.n();
+        y3Var.invalidate();
+        y3Var.requestLayout();
+        m4Var.Y(sheetFragment.getParentActivity(), sheetFragment);
+        z3Var.g(sheetFragment);
+        z3Var.f();
         h(this.w, l3Var, false);
     }
 
     public final void f() {
         ArrayList<l3> tabs = getTabs();
         ArrayList<j3> tabDrawables = getTabDrawables();
-        for (int i9 = 0; i9 < tabs.size(); i9++) {
-            tabs.get(i9).a();
+        for (int i10 = 0; i10 < tabs.size(); i10++) {
+            tabs.get(i10).a();
         }
         tabs.clear();
-        for (int i10 = 0; i10 < tabDrawables.size(); i10++) {
-            tabDrawables.get(i10).c = -1;
+        for (int i11 = 0; i11 < tabDrawables.size(); i11++) {
+            tabDrawables.get(i11).c = -1;
         }
         n();
         o(true);
@@ -279,11 +279,11 @@ public final class m3 extends FrameLayout {
         c2Var.N = formatName;
         c2Var.P = LocaleController.getString(R.string.BotWebViewChangesMayNotBeSaved);
         alertDialog$Builder.k(LocaleController.getString(R.string.BotWebViewCloseAnyway), new f1.a(this, zArr, l3Var, callback, r8));
-        alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new androidx.car.app.utils.a(zArr, callback, r8, 15));
+        alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new androidx.car.app.utils.a(zArr, callback, r8, 13));
         c2[] c2VarArr = {c2Var};
-        c2Var.setOnDismissListener(new i7(zArr, callback));
+        c2Var.setOnDismissListener(new f7(zArr, callback));
         c2VarArr[0].show();
-        ((TextView) c2VarArr[0].d(-1)).setTextColor(f6.w0(null, f6.q7, false));
+        ((TextView) c2VarArr[0].d(-1)).setTextColor(g6.w0(null, g6.q7, false));
     }
 
     public Paint getBackgroundPaint() {
@@ -299,48 +299,48 @@ public final class m3 extends FrameLayout {
     }
 
     public ArrayList<j3> getTabDrawables() {
-        int i9 = this.w;
-        Integer valueOf = Integer.valueOf(i9);
+        int i10 = this.w;
+        Integer valueOf = Integer.valueOf(i10);
         HashMap hashMap = H;
         ArrayList<j3> arrayList = (ArrayList) hashMap.get(valueOf);
         if (arrayList != null) {
             return arrayList;
         }
-        Integer valueOf2 = Integer.valueOf(i9);
+        Integer valueOf2 = Integer.valueOf(i10);
         ArrayList<j3> arrayList2 = new ArrayList<>();
         hashMap.put(valueOf2, arrayList2);
         return arrayList2;
     }
 
     public ArrayList<l3> getTabs() {
-        int i9 = this.w;
-        Integer valueOf = Integer.valueOf(i9);
+        int i10 = this.w;
+        Integer valueOf = Integer.valueOf(i10);
         HashMap hashMap = G;
         ArrayList<l3> arrayList = (ArrayList) hashMap.get(valueOf);
         if (arrayList != null) {
             return arrayList;
         }
-        Integer valueOf2 = Integer.valueOf(i9);
+        Integer valueOf2 = Integer.valueOf(i10);
         ArrayList<l3> arrayList2 = new ArrayList<>();
         hashMap.put(valueOf2, arrayList2);
         return arrayList2;
     }
 
-    public final boolean h(int i9, l3 l3Var, boolean z10) {
-        Integer valueOf = Integer.valueOf(i9);
+    public final boolean h(int i10, l3 l3Var, boolean z10) {
+        Integer valueOf = Integer.valueOf(i10);
         HashMap hashMap = G;
         ArrayList arrayList = (ArrayList) hashMap.get(valueOf);
         if (arrayList == null) {
-            Integer valueOf2 = Integer.valueOf(i9);
+            Integer valueOf2 = Integer.valueOf(i10);
             ArrayList arrayList2 = new ArrayList();
             hashMap.put(valueOf2, arrayList2);
             arrayList = arrayList2;
         }
-        Integer valueOf3 = Integer.valueOf(i9);
+        Integer valueOf3 = Integer.valueOf(i10);
         HashMap hashMap2 = H;
         ArrayList arrayList3 = (ArrayList) hashMap2.get(valueOf3);
         if (arrayList3 == null) {
-            Integer valueOf4 = Integer.valueOf(i9);
+            Integer valueOf4 = Integer.valueOf(i10);
             arrayList3 = new ArrayList();
             hashMap2.put(valueOf4, arrayList3);
         }
@@ -348,8 +348,8 @@ public final class m3 extends FrameLayout {
         if (z10) {
             l3Var.a();
         }
-        for (int i10 = 0; i10 < arrayList3.size(); i10++) {
-            j3 j3Var = (j3) arrayList3.get(i10);
+        for (int i11 = 0; i11 < arrayList3.size(); i11++) {
+            j3 j3Var = (j3) arrayList3.get(i11);
             int indexOf = arrayList.indexOf(j3Var.a);
             j3Var.c = indexOf;
             if (indexOf >= 0) {
@@ -357,7 +357,7 @@ public final class m3 extends FrameLayout {
             }
         }
         n();
-        AndroidUtilities.runOnUIThread(new org.telegram.messenger.video.e(this, arrayList3, l3Var, 7), 320L);
+        AndroidUtilities.runOnUIThread(new l3.m(this, arrayList3, l3Var, 26), 320L);
         o(true);
         invalidate();
         k3 k3Var = this.e;
@@ -367,14 +367,14 @@ public final class m3 extends FrameLayout {
         return arrayList.isEmpty();
     }
 
-    public final void i(int i9, boolean z10) {
-        if (i9 != this.f) {
+    public final void i(int i10, boolean z10) {
+        if (i10 != this.f) {
             ActionBarLayout actionBarLayout = this.d;
             if (!actionBarLayout.M || actionBarLayout.P) {
                 z10 = false;
             }
-            this.f = i9;
-            int v = f6.v(i9, f6.l1((AndroidUtilities.computePerceivedBrightness(i9) > 0.721f ? 1 : (AndroidUtilities.computePerceivedBrightness(i9) == 0.721f ? 0 : -1)) < 0 ? 0.08f : 0.75f, -1));
+            this.f = i10;
+            int v = g6.v(i10, g6.l1((AndroidUtilities.computePerceivedBrightness(i10) > 0.721f ? 1 : (AndroidUtilities.computePerceivedBrightness(i10) == 0.721f ? 0 : -1)) < 0 ? 0.08f : 0.75f, -1));
             this.n = v;
             this.s = AndroidUtilities.computePerceivedBrightness(v) < 0.721f;
             if (!z10) {
@@ -386,35 +386,35 @@ public final class m3 extends FrameLayout {
         }
     }
 
-    public final boolean j(float f10, float f11, int i9) {
+    public final boolean j(float f9, float f10, int i10) {
         ArrayList<l3> tabs = getTabs();
         ArrayList<j3> tabDrawables = getTabDrawables();
         if (this.b) {
             l3 l3Var = tabs.isEmpty() ? null : tabs.get(0);
-            j3 c10 = c(l3Var);
-            if (c10 != null) {
-                org.telegram.ui.Cells.z zVar = c10.k;
-                float c11 = c10.c();
+            j3 c3 = c(l3Var);
+            if (c3 != null) {
+                org.telegram.ui.Cells.z zVar = c3.k;
+                float c6 = c3.c();
                 RectF rectF = this.A;
-                d(rectF, c11);
-                if (i9 == 0 || i9 == 2) {
-                    boolean contains = zVar.getBounds().contains((int) (f10 - rectF.left), (int) (f11 - rectF.centerY()));
+                d(rectF, c6);
+                if (i10 == 0 || i10 == 2) {
+                    boolean contains = zVar.getBounds().contains((int) (f9 - rectF.left), (int) (f10 - rectF.centerY()));
                     this.x = contains;
-                    this.y = !contains && rectF.contains(f10, f11);
+                    this.y = !contains && rectF.contains(f9, f10);
                     zVar.setState(this.x ? new int[]{android.R.attr.state_pressed, android.R.attr.state_enabled} : new int[0]);
-                } else if (i9 == 1 || i9 == 3) {
-                    if (this.y && i9 == 1) {
+                } else if (i10 == 1 || i10 == 3) {
+                    if (this.y && i10 == 1) {
                         b();
-                    } else if (this.x && i9 == 1) {
-                        g(l3Var, new bg.k(1));
+                    } else if (this.x && i10 == 1) {
+                        g(l3Var, new eg.h(1));
                     }
                     this.x = false;
                     this.y = false;
                     zVar.setState(new int[0]);
                 }
-                for (int i10 = 0; i10 < tabDrawables.size(); i10++) {
-                    if (tabDrawables.get(i10) != c10) {
-                        tabDrawables.get(i10).k.setState(new int[0]);
+                for (int i11 = 0; i11 < tabDrawables.size(); i11++) {
+                    if (tabDrawables.get(i11) != c3) {
+                        tabDrawables.get(i11).k.setState(new int[0]);
                     }
                 }
             } else {
@@ -428,7 +428,36 @@ public final class m3 extends FrameLayout {
         return this.y || this.x;
     }
 
-    public final l3 k(mh.s4 s4Var) {
+    public final l3 k(MessageObject messageObject) {
+        TLRPC.Message message;
+        TLRPC.MessageMedia messageMedia;
+        TLRPC.WebPage webPage;
+        if (messageObject == null || (message = messageObject.messageOwner) == null || (messageMedia = message.media) == null || (webPage = messageMedia.webpage) == null) {
+            return null;
+        }
+        return l(webPage);
+    }
+
+    public final l3 l(TLRPC.WebPage webPage) {
+        if (webPage == null) {
+            return null;
+        }
+        ArrayList<l3> tabs = getTabs();
+        for (int i10 = 0; i10 < tabs.size(); i10++) {
+            l3 l3Var = tabs.get(i10);
+            org.telegram.ui.m4 m4Var = l3Var.H;
+            if (m4Var != null && !m4Var.Z.isEmpty()) {
+                Object i11 = j7.l1.i(1, l3Var.H.Z);
+                if ((i11 instanceof TLRPC.WebPage) && ((TLRPC.WebPage) i11).id == webPage.id) {
+                    e(l3Var);
+                    return l3Var;
+                }
+            }
+        }
+        return null;
+    }
+
+    public final l3 m(ph.y3 y3Var) {
         Integer valueOf = Integer.valueOf(this.w);
         HashMap hashMap = G;
         ArrayList arrayList = (ArrayList) hashMap.get(valueOf);
@@ -438,40 +467,11 @@ public final class m3 extends FrameLayout {
             hashMap.put(valueOf2, arrayList2);
             arrayList = arrayList2;
         }
-        for (int i9 = 0; i9 < arrayList.size(); i9++) {
-            l3 l3Var = (l3) arrayList.get(i9);
-            if (s4Var.equals(l3Var.a)) {
+        for (int i10 = 0; i10 < arrayList.size(); i10++) {
+            l3 l3Var = (l3) arrayList.get(i10);
+            if (y3Var.equals(l3Var.a)) {
                 e(l3Var);
                 return l3Var;
-            }
-        }
-        return null;
-    }
-
-    public final l3 l(MessageObject messageObject) {
-        TLRPC.Message message;
-        TLRPC.MessageMedia messageMedia;
-        TLRPC.WebPage webPage;
-        if (messageObject == null || (message = messageObject.messageOwner) == null || (messageMedia = message.media) == null || (webPage = messageMedia.webpage) == null) {
-            return null;
-        }
-        return m(webPage);
-    }
-
-    public final l3 m(TLRPC.WebPage webPage) {
-        if (webPage == null) {
-            return null;
-        }
-        ArrayList<l3> tabs = getTabs();
-        for (int i9 = 0; i9 < tabs.size(); i9++) {
-            l3 l3Var = tabs.get(i9);
-            org.telegram.ui.l4 l4Var = l3Var.H;
-            if (l4Var != null && !l4Var.Z.isEmpty()) {
-                Object j10 = j3.r0.j(1, l3Var.H.Z);
-                if ((j10 instanceof TLRPC.WebPage) && ((TLRPC.WebPage) j10).id == webPage.id) {
-                    e(l3Var);
-                    return l3Var;
-                }
             }
         }
         return null;
@@ -482,8 +482,8 @@ public final class m3 extends FrameLayout {
         ArrayList<l3> tabs = getTabs();
         ArrayList<j3> tabDrawables = getTabDrawables();
         CharSequence charSequence = null;
-        for (int i9 = 0; i9 < tabDrawables.size(); i9++) {
-            j3 j3Var = tabDrawables.get(i9);
+        for (int i10 = 0; i10 < tabDrawables.size(); i10++) {
+            j3 j3Var = tabDrawables.get(i10);
             if (tabs.size() <= 1 || j3Var.b != 0) {
                 replaceEmoji = Emoji.replaceEmoji(j3Var.a.b(), getTextPaint().getFontMetricsInt(), false);
                 j3Var.u = null;
@@ -492,7 +492,7 @@ public final class m3 extends FrameLayout {
                 if (replaceEmoji == null) {
                     j3Var.u = null;
                 } else {
-                    j3Var.u = new nz0(replaceEmoji, 17.0f, AndroidUtilities.bold());
+                    j3Var.u = new zz0(replaceEmoji, 17.0f, AndroidUtilities.bold());
                 }
             }
             charSequence = replaceEmoji;
@@ -503,11 +503,11 @@ public final class m3 extends FrameLayout {
             return;
         }
         setImportantForAccessibility(1);
-        int i10 = R.string.AccDescrTabs;
+        int i11 = R.string.AccDescrTabs;
         if (charSequence == null) {
             charSequence = "";
         }
-        setContentDescription(LocaleController.formatString(i10, charSequence));
+        setContentDescription(LocaleController.formatString(i11, charSequence));
     }
 
     public final void o(boolean z10) {
@@ -528,7 +528,7 @@ public final class m3 extends FrameLayout {
             ValueAnimator ofFloat = ValueAnimator.ofFloat(this.C, this.D);
             this.B = ofFloat;
             ofFloat.addUpdateListener(new x0(this, 4));
-            this.B.addListener(new h(this, 3));
+            this.B.addListener(new i(this, 3));
             this.B.setDuration(250L);
             this.B.setInterpolator(q1.w);
             this.B.start();
@@ -548,16 +548,16 @@ public final class m3 extends FrameLayout {
         return j(motionEvent.getX(), motionEvent.getY(), motionEvent.getAction()) || super.onTouchEvent(motionEvent);
     }
 
-    public void setCurrentAccount(int i9) {
-        if (this.w != i9) {
-            this.w = i9;
+    public void setCurrentAccount(int i10) {
+        if (this.w != i10) {
+            this.w = i10;
             o(false);
             invalidate();
         }
     }
 
-    public void setNavigationBarColor(int i9) {
-        i(i9, true);
+    public void setNavigationBarColor(int i10) {
+        i(i10, true);
     }
 
     public void setupTab(j3 j3Var) {

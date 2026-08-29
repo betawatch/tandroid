@@ -13,9 +13,9 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
-import org.telegram.ui.gb0;
+import org.telegram.ui.ib0;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public abstract class g extends Service {
     static final long MESSAGE_TIMEOUT_S = 20;
@@ -27,7 +27,7 @@ public abstract class g extends Service {
     private int runningTasks;
 
     public g() {
-        ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(1, 1, 60L, TimeUnit.SECONDS, new LinkedBlockingQueue(), new e9.v("Firebase-Messaging-Intent-Handle"));
+        ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(1, 1, 60L, TimeUnit.SECONDS, new LinkedBlockingQueue(), new g9.w("Firebase-Messaging-Intent-Handle"));
         threadPoolExecutor.allowCoreThreadTimeOut(true);
         this.executor = Executors.unconfigurableExecutorService(threadPoolExecutor);
         this.lock = new Object();
@@ -40,13 +40,13 @@ public abstract class g extends Service {
         }
         synchronized (this.lock) {
             try {
-                int i9 = this.runningTasks - 1;
-                this.runningTasks = i9;
-                if (i9 == 0) {
+                int i10 = this.runningTasks - 1;
+                this.runningTasks = i10;
+                if (i10 == 0) {
                     stopSelfResultHook(this.lastStartId);
                 }
-            } catch (Throwable th) {
-                throw th;
+            } catch (Throwable th2) {
+                throw th2;
             }
         }
     }
@@ -56,7 +56,7 @@ public abstract class g extends Service {
             return Tasks.forResult(null);
         }
         TaskCompletionSource taskCompletionSource = new TaskCompletionSource();
-        this.executor.execute(new androidx.car.app.utils.b(this, intent, taskCompletionSource, 8));
+        this.executor.execute(new androidx.car.app.utils.b(this, intent, taskCompletionSource, 3));
         return taskCompletionSource.getTask();
     }
 
@@ -75,10 +75,10 @@ public abstract class g extends Service {
                 Log.d(TAG, "Service received bind request");
             }
             if (this.binder == null) {
-                this.binder = new d0(new fa.c(this, 10));
+                this.binder = new d0(new za.c(this, 10));
             }
-        } catch (Throwable th) {
-            throw th;
+        } catch (Throwable th2) {
+            throw th2;
         }
         return this.binder;
     }
@@ -90,9 +90,9 @@ public abstract class g extends Service {
     }
 
     @Override // android.app.Service
-    public final int onStartCommand(Intent intent, int i9, int i10) {
+    public final int onStartCommand(Intent intent, int i10, int i11) {
         synchronized (this.lock) {
-            this.lastStartId = i10;
+            this.lastStartId = i11;
             this.runningTasks++;
         }
         Intent startCommandIntent = getStartCommandIntent(intent);
@@ -105,11 +105,11 @@ public abstract class g extends Service {
             a(intent);
             return 2;
         }
-        b10.addOnCompleteListener(new gb0(1), new b5.d(11, this, intent));
+        b10.addOnCompleteListener(new ib0(1), new a9.s(4, this, intent));
         return 3;
     }
 
-    public boolean stopSelfResultHook(int i9) {
-        return stopSelfResult(i9);
+    public boolean stopSelfResultHook(int i10) {
+        return stopSelfResult(i10);
     }
 }

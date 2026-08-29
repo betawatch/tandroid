@@ -1,121 +1,73 @@
 package org.telegram.ui;
 
-import android.view.KeyEvent;
 import android.view.MotionEvent;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import android.view.View;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class gl0 implements TextView.OnEditorActionListener {
+public final /* synthetic */ class gl0 implements View.OnTouchListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ wm0 b;
+    public final /* synthetic */ vm0 b;
 
-    public /* synthetic */ gl0(wm0 wm0Var, int i9) {
-        this.a = i9;
-        this.b = wm0Var;
+    public /* synthetic */ gl0(vm0 vm0Var, int i10) {
+        this.a = i10;
+        this.b = vm0Var;
     }
 
-    @Override // android.widget.TextView.OnEditorActionListener
-    public final boolean onEditorAction(TextView textView, int i9, KeyEvent keyEvent) {
-        switch (this.a) {
+    @Override // android.view.View.OnTouchListener
+    public final boolean onTouch(View view, MotionEvent motionEvent) {
+        int i10 = this.a;
+        int i11 = 2;
+        vm0 vm0Var = this.b;
+        switch (i10) {
             case 0:
-                wm0 wm0Var = this.b;
-                if (i9 != 5) {
-                    if (i9 != 6) {
-                        wm0Var.getClass();
-                        break;
-                    } else {
-                        wm0Var.H.callOnClick();
+                if (vm0Var.getParentActivity() != null) {
+                    if (motionEvent.getAction() == 1) {
+                        rt rtVar = new rt(null, false);
+                        rtVar.r = new kl0(i11, vm0Var, view);
+                        vm0Var.presentFragment(rtVar);
                         break;
                     }
-                } else {
-                    wm0Var.U[2].requestFocus();
-                    break;
                 }
+                break;
             case 1:
-                wm0 wm0Var2 = this.b;
-                wm0Var2.getClass();
-                if (i9 == 5) {
-                    int intValue = ((Integer) textView.getTag()).intValue() + 1;
-                    EditTextBoldCursor[] editTextBoldCursorArr = wm0Var2.U;
-                    if (intValue < editTextBoldCursorArr.length) {
-                        if (!editTextBoldCursorArr[intValue].isFocusable()) {
-                            wm0Var2.U[intValue].dispatchTouchEvent(MotionEvent.obtain(0L, 0L, 1, 0.0f, 0.0f, 0));
-                            textView.clearFocus();
-                            AndroidUtilities.hideKeyboard(textView);
-                            break;
-                        } else {
-                            wm0Var2.U[intValue].requestFocus();
-                            break;
-                        }
+                if (vm0Var.getParentActivity() != null) {
+                    if (motionEvent.getAction() == 1) {
+                        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(vm0Var.getParentActivity());
+                        String string = LocaleController.getString(R.string.PassportSelectGender);
+                        org.telegram.ui.ActionBar.c2 c2Var = alertDialog$Builder.a;
+                        c2Var.N = string;
+                        alertDialog$Builder.f(new CharSequence[]{LocaleController.getString(R.string.PassportMale), LocaleController.getString(R.string.PassportFemale)}, new iv(vm0Var, i11));
+                        alertDialog$Builder.k(LocaleController.getString(R.string.Cancel), null);
+                        vm0Var.showDialog(c2Var);
+                        break;
                     }
                 }
                 break;
             case 2:
-                wm0 wm0Var3 = this.b;
-                wm0Var3.getClass();
-                if (i9 == 5) {
-                    int intValue2 = ((Integer) textView.getTag()).intValue() + 1;
-                    EditTextBoldCursor[] editTextBoldCursorArr2 = wm0Var3.W;
-                    if (intValue2 < editTextBoldCursorArr2.length) {
-                        if (!editTextBoldCursorArr2[intValue2].isFocusable()) {
-                            wm0Var3.W[intValue2].dispatchTouchEvent(MotionEvent.obtain(0L, 0L, 1, 0.0f, 0.0f, 0));
-                            textView.clearFocus();
-                            AndroidUtilities.hideKeyboard(textView);
-                            break;
-                        } else {
-                            wm0Var3.W[intValue2].requestFocus();
-                            break;
-                        }
+                if (vm0Var.getParentActivity() != null) {
+                    if (motionEvent.getAction() == 1) {
+                        rt rtVar2 = new rt(null, false);
+                        rtVar2.r = new hl0(vm0Var, i11);
+                        vm0Var.presentFragment(rtVar2);
+                        break;
                     }
-                }
-                break;
-            case 3:
-                wm0 wm0Var4 = this.b;
-                wm0Var4.getClass();
-                if (i9 == 6 || i9 == 5) {
-                    wm0Var4.H.callOnClick();
-                    break;
-                }
-                break;
-            case 4:
-                wm0 wm0Var5 = this.b;
-                wm0Var5.getClass();
-                if (i9 == 5) {
-                    int intValue3 = ((Integer) textView.getTag()).intValue() + 1;
-                    EditTextBoldCursor[] editTextBoldCursorArr3 = wm0Var5.U;
-                    if (intValue3 < editTextBoldCursorArr3.length) {
-                        if (!editTextBoldCursorArr3[intValue3].isFocusable()) {
-                            wm0Var5.U[intValue3].dispatchTouchEvent(MotionEvent.obtain(0L, 0L, 1, 0.0f, 0.0f, 0));
-                            textView.clearFocus();
-                            AndroidUtilities.hideKeyboard(textView);
-                            break;
-                        } else {
-                            wm0Var5.U[intValue3].requestFocus();
-                            break;
-                        }
-                    }
-                }
-                break;
-            case 5:
-                wm0 wm0Var6 = this.b;
-                wm0Var6.getClass();
-                if (i9 == 5 || i9 == 6) {
-                    wm0Var6.H.callOnClick();
-                    break;
                 }
                 break;
             default:
-                wm0 wm0Var7 = this.b;
-                wm0Var7.getClass();
-                if (i9 == 6 || i9 == 5) {
-                    wm0Var7.H.callOnClick();
-                    break;
+                if (vm0Var.getParentActivity() != null) {
+                    if (motionEvent.getAction() == 1) {
+                        rt rtVar3 = new rt(null, false);
+                        rtVar3.r = new hl0(vm0Var, 3);
+                        vm0Var.presentFragment(rtVar3);
+                        break;
+                    }
                 }
                 break;
         }
-        return true;
+        return false;
     }
 }

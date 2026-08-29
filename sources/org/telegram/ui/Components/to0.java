@@ -1,32 +1,32 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
-/* loaded from: classes3.dex */
-public final class to0 extends f2.x {
-    public final /* synthetic */ int c;
-    public final /* synthetic */ rp0 d;
+import android.view.View;
+import org.telegram.messenger.NotificationCenter;
 
-    public /* synthetic */ to0(rp0 rp0Var, int i9) {
-        this.c = i9;
-        this.d = rp0Var;
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class to0 implements o1.h {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int[] b;
+    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate c;
+    public final /* synthetic */ View d;
+
+    public /* synthetic */ to0(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, View view, int[] iArr, int i10) {
+        this.a = i10;
+        this.c = notificationCenterDelegate;
+        this.d = view;
+        this.b = iArr;
     }
 
-    @Override // f2.x
-    public final int i(int i9) {
-        switch (this.c) {
+    @Override // o1.h
+    public final void a(o1.i iVar, float f9, float f10) {
+        switch (this.a) {
             case 0:
-                if (i9 == 0) {
-                    return this.d.D.J;
-                }
-                return 1;
-            case 1:
-                np0 np0Var = this.d.I;
-                return (i9 == np0Var.w || i9 == np0Var.x || i9 == np0Var.y || i9 == np0Var.B || np0Var.j(i9) == 0) ? 4 : 1;
+                ((dq0) this.c).Q0((org.telegram.ui.Cells.c7) this.d, this.b, f9 / 1000.0f);
+                break;
             default:
-                if (i9 == 0) {
-                    return this.d.E.J;
-                }
-                return 1;
+                ((jp0) this.c).d.Q0(this.d, this.b, f9 / 1000.0f);
+                break;
         }
     }
 }

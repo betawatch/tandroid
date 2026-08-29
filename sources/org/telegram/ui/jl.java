@@ -1,50 +1,37 @@
 package org.telegram.ui;
 
+import android.content.Intent;
 import java.util.ArrayList;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.VideoEditedInfo;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class jl extends rt0 {
-    public final /* synthetic */ ArrayList a;
-    public final /* synthetic */ boolean[] b;
-    public final /* synthetic */ qn c;
+public final class jl implements gp0 {
+    public final /* synthetic */ tn a;
 
-    public jl(qn qnVar, ArrayList arrayList, boolean[] zArr) {
-        this.c = qnVar;
-        this.a = arrayList;
-        this.b = zArr;
+    public jl(tn tnVar) {
+        this.a = tnVar;
     }
 
-    @Override // org.telegram.ui.rt0, org.telegram.ui.zt0
-    public final boolean S() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.rt0, org.telegram.ui.zt0
-    public final ImageReceiver.BitmapHolder j(int i9) {
-        return null;
-    }
-
-    @Override // org.telegram.ui.rt0, org.telegram.ui.zt0
-    public final void o(int i9, VideoEditedInfo videoEditedInfo, boolean z10, int i10, int i11, boolean z11) {
-        ArrayList arrayList = this.a;
-        for (int size = arrayList.size() - 1; size >= 0; size--) {
-            if (!this.b[size]) {
-                arrayList.remove(size);
-            }
+    @Override // org.telegram.ui.gp0
+    public final void b() {
+        try {
+            Intent intent = new Intent();
+            intent.setType("video/*");
+            intent.setAction("android.intent.action.GET_CONTENT");
+            intent.putExtra("android.intent.extra.sizeLimit", FileLoader.DEFAULT_MAX_FILE_SIZE);
+            Intent intent2 = new Intent("android.intent.action.PICK");
+            intent2.setType("image/*");
+            Intent createChooser = Intent.createChooser(intent2, null);
+            createChooser.putExtra("android.intent.extra.INITIAL_INTENTS", new Intent[]{intent});
+            this.a.startActivityForResult(createChooser, 1);
+        } catch (Exception e10) {
+            FileLog.e(e10);
         }
-        this.c.eb(arrayList, i10, z10, z11);
     }
 
-    @Override // org.telegram.ui.rt0, org.telegram.ui.zt0
-    public final boolean x(int i9) {
-        return this.b[i9];
-    }
-
-    @Override // org.telegram.ui.rt0, org.telegram.ui.zt0
-    public final int k(int i9, VideoEditedInfo videoEditedInfo) {
-        return i9;
+    @Override // org.telegram.ui.gp0
+    public final void a(ArrayList arrayList) {
     }
 }

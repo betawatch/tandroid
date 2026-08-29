@@ -1,381 +1,119 @@
 package d5;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+import f5.d0;
+import q8.b0;
+import q8.c0;
+import q8.z;
+
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class x {
-    public final /* synthetic */ int a;
-    public byte[] b;
-    public int c;
-    public int d;
-    public int e;
+public class x implements j3.g {
+    public final int A;
+    public final int B;
+    public final int C;
+    public final z D;
+    public final z E;
+    public final int F;
+    public final int G;
+    public final boolean H;
+    public final boolean I;
+    public final boolean J;
+    public final b0 K;
+    public final c0 L;
+    public final int a;
+    public final int b;
+    public final int c;
+    public final int d;
+    public final int e;
+    public final int f;
+    public final int h;
+    public final int n;
+    public final int r;
+    public final int s;
+    public final boolean v;
+    public final z w;
+    public final int x;
+    public final z y;
 
-    public x() {
-        this.a = 0;
-        this.b = f0.f;
+    static {
+        new x(new w());
+        int i10 = d0.a;
+        Integer.toString(1, 36);
+        Integer.toString(2, 36);
+        Integer.toString(3, 36);
+        Integer.toString(4, 36);
+        Integer.toString(5, 36);
+        Integer.toString(6, 36);
+        Integer.toString(7, 36);
+        Integer.toString(8, 36);
+        Integer.toString(9, 36);
+        Integer.toString(10, 36);
+        Integer.toString(11, 36);
+        Integer.toString(12, 36);
+        Integer.toString(13, 36);
+        Integer.toString(14, 36);
+        Integer.toString(15, 36);
+        Integer.toString(16, 36);
+        Integer.toString(17, 36);
+        Integer.toString(18, 36);
+        Integer.toString(19, 36);
+        Integer.toString(20, 36);
+        Integer.toString(21, 36);
+        Integer.toString(22, 36);
+        Integer.toString(23, 36);
+        Integer.toString(24, 36);
+        Integer.toString(25, 36);
+        Integer.toString(26, 36);
     }
 
-    public void a() {
-        int i9;
-        int i10;
-        switch (this.a) {
-            case 0:
-                int i11 = this.c;
-                a.i(i11 >= 0 && (i11 < (i9 = this.e) || (i11 == i9 && this.d == 0)));
-                break;
-            default:
-                int i12 = this.d;
-                a.i(i12 >= 0 && (i12 < (i10 = this.c) || (i12 == i10 && this.e == 0)));
-                break;
+    public x(w wVar) {
+        this.a = wVar.a;
+        this.b = wVar.b;
+        this.c = wVar.c;
+        this.d = wVar.d;
+        this.e = wVar.e;
+        this.f = wVar.f;
+        this.h = wVar.g;
+        this.n = wVar.h;
+        this.r = wVar.i;
+        this.s = wVar.j;
+        this.v = wVar.k;
+        this.w = wVar.l;
+        this.x = wVar.m;
+        this.y = wVar.n;
+        this.A = wVar.o;
+        this.B = wVar.p;
+        this.C = wVar.q;
+        this.D = wVar.r;
+        this.E = wVar.s;
+        this.F = wVar.t;
+        this.G = wVar.u;
+        this.H = wVar.v;
+        this.I = wVar.w;
+        this.J = wVar.x;
+        this.K = b0.a(wVar.y);
+        this.L = c0.u(wVar.z);
+    }
+
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
-    }
-
-    public int b() {
-        return ((this.e - this.c) * 8) - this.d;
-    }
-
-    public void c() {
-        if (this.d == 0) {
-            return;
-        }
-        this.d = 0;
-        this.c++;
-        a();
-    }
-
-    public boolean d(int i9) {
-        int i10 = this.d;
-        int i11 = i9 / 8;
-        int i12 = i10 + i11;
-        int i13 = (this.e + i9) - (i11 * 8);
-        if (i13 > 7) {
-            i12++;
-            i13 -= 8;
-        }
-        while (true) {
-            i10++;
-            if (i10 > i12 || i12 >= this.c) {
-                break;
+        if (obj != null && getClass() == obj.getClass()) {
+            x xVar = (x) obj;
+            if (this.a == xVar.a && this.b == xVar.b && this.c == xVar.c && this.d == xVar.d && this.e == xVar.e && this.f == xVar.f && this.h == xVar.h && this.n == xVar.n && this.v == xVar.v && this.r == xVar.r && this.s == xVar.s && this.w.equals(xVar.w) && this.x == xVar.x && this.y.equals(xVar.y) && this.A == xVar.A && this.B == xVar.B && this.C == xVar.C && this.D.equals(xVar.D) && this.E.equals(xVar.E) && this.F == xVar.F && this.G == xVar.G && this.H == xVar.H && this.I == xVar.I && this.J == xVar.J) {
+                b0 b0Var = xVar.K;
+                b0 b0Var2 = this.K;
+                b0Var2.getClass();
+                if (q8.l.c(b0Var2, b0Var) && this.L.equals(xVar.L)) {
+                    return true;
+                }
             }
-            if (q(i10)) {
-                i12++;
-                i10 += 2;
-            }
         }
-        int i14 = this.c;
-        if (i12 >= i14) {
-            return i12 == i14 && i13 == 0;
-        }
-        return true;
+        return false;
     }
 
-    public boolean e() {
-        int i9 = this.d;
-        int i10 = this.e;
-        int i11 = 0;
-        while (this.d < this.c && !h()) {
-            i11++;
-        }
-        boolean z10 = this.d == this.c;
-        this.d = i9;
-        this.e = i10;
-        return !z10 && d((i11 * 2) + 1);
-    }
-
-    public int f() {
-        a.i(this.d == 0);
-        return this.c;
-    }
-
-    public int g() {
-        return (this.c * 8) + this.d;
-    }
-
-    public boolean h() {
-        switch (this.a) {
-            case 0:
-                boolean z10 = (this.b[this.c] & (128 >> this.d)) != 0;
-                r();
-                return z10;
-            case 1:
-                boolean z11 = (this.b[this.d] & (128 >> this.e)) != 0;
-                r();
-                return z11;
-            default:
-                boolean z12 = (((this.b[this.d] & 255) >> this.e) & 1) == 1;
-                s(1);
-                return z12;
-        }
-    }
-
-    public int i(int i9) {
-        switch (this.a) {
-            case 0:
-                if (i9 == 0) {
-                    return 0;
-                }
-                this.d += i9;
-                int i10 = 0;
-                while (true) {
-                    int i11 = this.d;
-                    if (i11 <= 8) {
-                        byte[] bArr = this.b;
-                        int i12 = this.c;
-                        int i13 = ((-1) >>> (32 - i9)) & (i10 | ((bArr[i12] & 255) >> (8 - i11)));
-                        if (i11 == 8) {
-                            this.d = 0;
-                            this.c = i12 + 1;
-                        }
-                        a();
-                        return i13;
-                    }
-                    int i14 = i11 - 8;
-                    this.d = i14;
-                    byte[] bArr2 = this.b;
-                    int i15 = this.c;
-                    this.c = i15 + 1;
-                    i10 |= (bArr2[i15] & 255) << i14;
-                }
-            case 1:
-                this.e += i9;
-                int i16 = 0;
-                while (true) {
-                    int i17 = this.e;
-                    if (i17 <= 8) {
-                        byte[] bArr3 = this.b;
-                        int i18 = this.d;
-                        int i19 = ((-1) >>> (32 - i9)) & (i16 | ((bArr3[i18] & 255) >> (8 - i17)));
-                        if (i17 == 8) {
-                            this.e = 0;
-                            this.d = i18 + (q(i18 + 1) ? 2 : 1);
-                        }
-                        a();
-                        return i19;
-                    }
-                    int i20 = i17 - 8;
-                    this.e = i20;
-                    byte[] bArr4 = this.b;
-                    int i21 = this.d;
-                    i16 |= (bArr4[i21] & 255) << i20;
-                    if (!q(i21 + 1)) {
-                        r3 = 1;
-                    }
-                    this.d = i21 + r3;
-                }
-            default:
-                int i22 = this.d;
-                int min = Math.min(i9, 8 - this.e);
-                byte[] bArr5 = this.b;
-                int i23 = i22 + 1;
-                int i24 = ((bArr5[i22] & 255) >> this.e) & (255 >> (8 - min));
-                while (min < i9) {
-                    i24 |= (bArr5[i23] & 255) << min;
-                    min += 8;
-                    i23++;
-                }
-                int i25 = i24 & ((-1) >>> (32 - i9));
-                s(i9);
-                return i25;
-        }
-    }
-
-    public void j(int i9, byte[] bArr) {
-        int i10 = i9 >> 3;
-        for (int i11 = 0; i11 < i10; i11++) {
-            byte[] bArr2 = this.b;
-            int i12 = this.c;
-            int i13 = i12 + 1;
-            this.c = i13;
-            byte b10 = bArr2[i12];
-            int i14 = this.d;
-            byte b11 = (byte) (b10 << i14);
-            bArr[i11] = b11;
-            bArr[i11] = (byte) (((255 & bArr2[i13]) >> (8 - i14)) | b11);
-        }
-        int i15 = i9 & 7;
-        if (i15 == 0) {
-            return;
-        }
-        byte b12 = (byte) (bArr[i10] & (255 >> i15));
-        bArr[i10] = b12;
-        int i16 = this.d;
-        if (i16 + i15 > 8) {
-            byte[] bArr3 = this.b;
-            int i17 = this.c;
-            this.c = i17 + 1;
-            bArr[i10] = (byte) (b12 | ((bArr3[i17] & 255) << i16));
-            this.d = i16 - 8;
-        }
-        int i18 = this.d + i15;
-        this.d = i18;
-        byte[] bArr4 = this.b;
-        int i19 = this.c;
-        bArr[i10] = (byte) (((byte) (((255 & bArr4[i19]) >> (8 - i18)) << (8 - i15))) | bArr[i10]);
-        if (i18 == 8) {
-            this.d = 0;
-            this.c = i19 + 1;
-        }
-        a();
-    }
-
-    public void k(int i9, byte[] bArr) {
-        a.i(this.d == 0);
-        System.arraycopy(this.b, this.c, bArr, 0, i9);
-        this.c += i9;
-        a();
-    }
-
-    public int l() {
-        int i9 = 0;
-        while (!h()) {
-            i9++;
-        }
-        return ((1 << i9) - 1) + (i9 > 0 ? i(i9) : 0);
-    }
-
-    public int m() {
-        int l10 = l();
-        return ((l10 + 1) / 2) * (l10 % 2 == 0 ? -1 : 1);
-    }
-
-    public void n(int i9, byte[] bArr) {
-        this.b = bArr;
-        this.c = 0;
-        this.d = 0;
-        this.e = i9;
-    }
-
-    public void o(y yVar) {
-        n(yVar.c, yVar.a);
-        p(yVar.b * 8);
-    }
-
-    public void p(int i9) {
-        int i10 = i9 / 8;
-        this.c = i10;
-        this.d = i9 - (i10 * 8);
-        a();
-    }
-
-    public boolean q(int i9) {
-        if (2 > i9 || i9 >= this.c) {
-            return false;
-        }
-        byte[] bArr = this.b;
-        return bArr[i9] == 3 && bArr[i9 + (-2)] == 0 && bArr[i9 - 1] == 0;
-    }
-
-    public void r() {
-        switch (this.a) {
-            case 0:
-                int i9 = this.d + 1;
-                this.d = i9;
-                if (i9 == 8) {
-                    this.d = 0;
-                    this.c++;
-                }
-                a();
-                break;
-            default:
-                int i10 = this.e + 1;
-                this.e = i10;
-                if (i10 == 8) {
-                    this.e = 0;
-                    int i11 = this.d;
-                    this.d = i11 + (q(i11 + 1) ? 2 : 1);
-                }
-                a();
-                break;
-        }
-    }
-
-    public void s(int i9) {
-        int i10;
-        switch (this.a) {
-            case 0:
-                int i11 = i9 / 8;
-                int i12 = this.c + i11;
-                this.c = i12;
-                int i13 = (i9 - (i11 * 8)) + this.d;
-                this.d = i13;
-                if (i13 > 7) {
-                    this.c = i12 + 1;
-                    this.d = i13 - 8;
-                }
-                a();
-                break;
-            case 1:
-                int i14 = this.d;
-                int i15 = i9 / 8;
-                int i16 = i14 + i15;
-                this.d = i16;
-                int i17 = (i9 - (i15 * 8)) + this.e;
-                this.e = i17;
-                if (i17 > 7) {
-                    this.d = i16 + 1;
-                    this.e = i17 - 8;
-                }
-                while (true) {
-                    i14++;
-                    if (i14 > this.d) {
-                        a();
-                        break;
-                    } else if (q(i14)) {
-                        this.d++;
-                        i14 += 2;
-                    }
-                }
-            default:
-                int i18 = i9 / 8;
-                int i19 = this.d + i18;
-                this.d = i19;
-                int i20 = (i9 - (i18 * 8)) + this.e;
-                this.e = i20;
-                boolean z10 = true;
-                if (i20 > 7) {
-                    this.d = i19 + 1;
-                    this.e = i20 - 8;
-                }
-                int i21 = this.d;
-                if (i21 < 0 || (i21 >= (i10 = this.c) && (i21 != i10 || this.e != 0))) {
-                    z10 = false;
-                }
-                a.i(z10);
-                break;
-        }
-    }
-
-    public void t(int i9) {
-        a.i(this.d == 0);
-        this.c += i9;
-        a();
-    }
-
-    public x(byte[] bArr, int i9, int i10) {
-        this.a = 1;
-        this.b = bArr;
-        this.d = i9;
-        this.c = i10;
-        this.e = 0;
-        a();
-    }
-
-    public x(byte[] bArr) {
-        this.a = 2;
-        this.b = bArr;
-        this.c = bArr.length;
-    }
-
-    public x(byte[] bArr, int i9) {
-        this.a = 0;
-        this.b = bArr;
-        this.e = i9;
-    }
-
-    public x(int i9, int i10) {
-        this.a = 3;
-        this.c = i9;
-        this.d = i10;
-        this.b = new byte[(i10 * 2) - 1];
-        this.e = 0;
+    public int hashCode() {
+        return this.L.hashCode() + ((this.K.hashCode() + ((((((((((((this.E.hashCode() + ((this.D.hashCode() + ((((((((this.y.hashCode() + ((((this.w.hashCode() + ((((((((((((((((((((((this.a + 31) * 31) + this.b) * 31) + this.c) * 31) + this.d) * 31) + this.e) * 31) + this.f) * 31) + this.h) * 31) + this.n) * 31) + (this.v ? 1 : 0)) * 31) + this.r) * 31) + this.s) * 31)) * 31) + this.x) * 31)) * 31) + this.A) * 31) + this.B) * 31) + this.C) * 31)) * 31)) * 31) + this.F) * 31) + this.G) * 31) + (this.H ? 1 : 0)) * 31) + (this.I ? 1 : 0)) * 31) + (this.J ? 1 : 0)) * 31)) * 31);
     }
 }

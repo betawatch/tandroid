@@ -1,6 +1,6 @@
 package org.scilab.forge.jlatexmath;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public class Dummy {
     private Atom el;
@@ -33,13 +33,13 @@ public class Dummy {
     }
 
     public int getLeftType() {
-        int i9 = this.type;
-        return i9 >= 0 ? i9 : this.el.getLeftType();
+        int i10 = this.type;
+        return i10 >= 0 ? i10 : this.el.getLeftType();
     }
 
     public int getRightType() {
-        int i9 = this.type;
-        return i9 >= 0 ? i9 : this.el.getRightType();
+        int i10 = this.type;
+        return i10 >= 0 ? i10 : this.el.getRightType();
     }
 
     public int getType() {
@@ -70,7 +70,7 @@ public class Dummy {
         }
     }
 
-    public void setType(int i9) {
-        this.type = i9;
+    public void setType(int i10) {
+        this.type = i10;
     }
 }

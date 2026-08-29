@@ -2,16 +2,16 @@ package com.google.android.recaptcha.internal;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import hd.f0;
-import hd.i0;
-import hd.s;
-import hd.t;
+import jd.e0;
+import jd.h0;
+import jd.s;
+import jd.t;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class zzdf {
-    public static final i0 zza(Task task) {
-        final t a2 = f0.a();
+    public static final h0 zza(Task task) {
+        final t a2 = e0.a();
         task.addOnCompleteListener(zzdd.zza, new OnCompleteListener() { // from class: com.google.android.recaptcha.internal.zzdc
             @Override // com.google.android.gms.tasks.OnCompleteListener
             public final void onComplete(Task task2) {

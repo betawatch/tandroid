@@ -1,111 +1,285 @@
 package bg;
 
-import android.util.SparseIntArray;
-import gh.b4;
-import ih.v6;
-import java.text.Collator;
-import java.util.ArrayList;
-import java.util.Comparator;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.UserObject;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.tgnet.tl.TL_stories;
-import qh.w5;
+import android.app.Activity;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.text.Layout;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import java.util.List;
+import nh.t5;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.d6;
+import org.telegram.ui.Components.jr;
+import org.telegram.ui.Components.l21;
+import org.telegram.ui.Components.qc0;
+import org.telegram.ui.Components.so0;
+import org.telegram.ui.Components.zz0;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class l0 implements Comparator {
+public final class l0 extends LinearLayout {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public Object b;
+    public Object c;
 
-    public /* synthetic */ l0(Object obj, int i9) {
-        this.a = i9;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ l0(Context context, Object obj, LinearLayout linearLayout, int i10) {
+        super(context);
+        this.a = i10;
         this.b = obj;
+        this.c = linearLayout;
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r0v16, types: [int] */
-    /* JADX WARN: Type inference failed for: r0v23 */
-    /* JADX WARN: Type inference failed for: r0v35 */
-    /* JADX WARN: Type inference failed for: r1v10 */
-    /* JADX WARN: Type inference failed for: r1v4, types: [int] */
-    /* JADX WARN: Type inference failed for: r1v6 */
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
-        int indexOf;
-        int indexOf2;
+    public static boolean a(View view, View view2) {
+        if (view == view2) {
+            return true;
+        }
+        if (view.getParent() == null) {
+            return false;
+        }
+        return view.getParent() instanceof View ? a((View) view.getParent(), view2) : view.getParent() == view2 || view.getRootView() == view2;
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public void dispatchDraw(Canvas canvas) {
+        switch (this.a) {
+            case 5:
+                super.dispatchDraw(canvas);
+                ((zz0) this.b).e(canvas, ((qc0) this.c).getX() - AndroidUtilities.dp(50.0f), getHeight() / 2.0f);
+                break;
+            case 6:
+                canvas.save();
+                d6 d6Var = (d6) this.b;
+                l21 l21Var = (l21) this.c;
+                float e10 = d6Var.e(l21Var.w);
+                if (e10 > 0.0f) {
+                    if (l21Var.c == null) {
+                        l21Var.c = new so0(this);
+                    }
+                    canvas.translate(getWidth() / 2.0f, getHeight() / 2.0f);
+                    l21Var.c.a(canvas, e10);
+                    canvas.translate((-getWidth()) / 2.0f, (-getHeight()) / 2.0f);
+                }
+                super.dispatchDraw(canvas);
+                canvas.restore();
+                break;
+            case 7:
+                RectF rectF = (RectF) this.b;
+                rectF.set(0.0f, 0.0f, getWidth(), getHeight());
+                org.telegram.ui.Components.voip.o1 o1Var = (org.telegram.ui.Components.voip.o1) this.c;
+                o1Var.d(getX(), getY());
+                canvas.drawRoundRect(rectF, AndroidUtilities.dp(20.0f), AndroidUtilities.dp(20.0f), o1Var.b());
+                super.dispatchDraw(canvas);
+                break;
+            default:
+                super.dispatchDraw(canvas);
+                break;
+        }
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        switch (this.a) {
+            case 3:
+                int[] iArr = (int[]) this.b;
+                boolean dispatchTouchEvent = super.dispatchTouchEvent(motionEvent);
+                if (!dispatchTouchEvent) {
+                    getLocationOnScreen(iArr);
+                    motionEvent.offsetLocation(iArr[0], iArr[1]);
+                    if (motionEvent.getAction() == 0) {
+                        List<View> allGlobalViews = AndroidUtilities.allGlobalViews();
+                        if (allGlobalViews != null && allGlobalViews.size() > 1) {
+                            for (int size = allGlobalViews.size() - 2; size >= 0; size--) {
+                                View view = allGlobalViews.get(size);
+                                if (!a(this, view)) {
+                                    view.getLocationOnScreen(iArr);
+                                    motionEvent.offsetLocation(-iArr[0], -iArr[1]);
+                                    dispatchTouchEvent = view.dispatchTouchEvent(motionEvent);
+                                    if (dispatchTouchEvent) {
+                                        this.c = view;
+                                        return true;
+                                    }
+                                    motionEvent.offsetLocation(iArr[0], iArr[1]);
+                                }
+                            }
+                        }
+                    } else {
+                        View view2 = (View) this.c;
+                        if (view2 != null) {
+                            view2.getLocationOnScreen(iArr);
+                            motionEvent.offsetLocation(-iArr[0], -iArr[1]);
+                            dispatchTouchEvent = view2.dispatchTouchEvent(motionEvent);
+                        }
+                    }
+                }
+                if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
+                    this.c = null;
+                }
+                return dispatchTouchEvent;
+            default:
+                return super.dispatchTouchEvent(motionEvent);
+        }
+    }
+
+    @Override // android.widget.LinearLayout, android.view.View
+    public void onDraw(Canvas canvas) {
         switch (this.a) {
             case 0:
-                return ((Collator) this.b).compare((String) obj, (String) obj2);
+                Paint paint = (Paint) this.b;
+                super.onDraw(canvas);
+                g1 g1Var = (g1) this.c;
+                TextView textView = (TextView) getChildAt(g1Var.c1);
+                int i10 = g1Var.d1;
+                TextView textView2 = i10 != -1 ? (TextView) getChildAt(i10) : null;
+                paint.setColor(textView.getCurrentTextColor());
+                float y8 = ((textView.getY() + textView.getHeight()) - textView.getPaddingBottom()) + AndroidUtilities.dp(3.0f);
+                Layout layout = textView.getLayout();
+                Layout layout2 = textView2 != null ? textView2.getLayout() : null;
+                float interpolation = layout2 == null ? 0.0f : jr.f.getInterpolation(g1Var.e1);
+                float lerp = AndroidUtilities.lerp(layout.getPrimaryHorizontal(layout.getLineStart(0)) + textView.getX(), textView2 != null ? layout2.getPrimaryHorizontal(layout.getLineStart(0)) + textView2.getX() : 0.0f, interpolation);
+                canvas.drawLine(lerp, y8, AndroidUtilities.lerp(layout.getPrimaryHorizontal(layout.getLineEnd(0)) - layout.getPrimaryHorizontal(layout.getLineStart(0)), layout2 != null ? layout2.getPrimaryHorizontal(layout2.getLineEnd(0)) - layout2.getPrimaryHorizontal(layout2.getLineStart(0)) : 0.0f, interpolation) + lerp, y8, paint);
+                break;
             case 1:
-                float[] fArr = ((b4) this.b).r;
-                return Float.compare(fArr[((Integer) obj).intValue()], fArr[((Integer) obj2).intValue()]);
+                Paint paint2 = (Paint) this.b;
+                super.onDraw(canvas);
+                t5 t5Var = (t5) this.c;
+                TextView textView3 = (TextView) getChildAt(t5Var.U0);
+                int i11 = t5Var.V0;
+                TextView textView4 = i11 != -1 ? (TextView) getChildAt(i11) : null;
+                paint2.setColor(textView3.getCurrentTextColor());
+                float y10 = ((textView3.getY() + textView3.getHeight()) - textView3.getPaddingBottom()) + AndroidUtilities.dp(3.0f);
+                Layout layout3 = textView3.getLayout();
+                if (layout3 != null) {
+                    Layout layout4 = textView4 != null ? textView4.getLayout() : null;
+                    float interpolation2 = layout4 == null ? 0.0f : jr.f.getInterpolation(t5Var.W0);
+                    float lerp2 = AndroidUtilities.lerp(layout3.getPrimaryHorizontal(layout3.getLineStart(0)) + textView3.getX(), layout4 != null ? layout4.getPrimaryHorizontal(layout3.getLineStart(0)) + textView4.getX() : 0.0f, interpolation2);
+                    canvas.drawLine(lerp2, y10, AndroidUtilities.lerp(layout3.getPrimaryHorizontal(layout3.getLineEnd(0)) - layout3.getPrimaryHorizontal(layout3.getLineStart(0)), layout4 != null ? layout4.getPrimaryHorizontal(layout4.getLineEnd(0)) - layout4.getPrimaryHorizontal(layout4.getLineStart(0)) : 0.0f, interpolation2) + lerp2, y10, paint2);
+                    break;
+                }
+                break;
             case 2:
-                v6 v6Var = (v6) this.b;
-                int i9 = v6Var.a;
-                TL_stories.PeerStories peerStories = (TL_stories.PeerStories) obj;
-                TL_stories.PeerStories peerStories2 = (TL_stories.PeerStories) obj2;
-                long peerDialogId = DialogObject.getPeerDialogId(peerStories.peer);
-                long peerDialogId2 = DialogObject.getPeerDialogId(peerStories2.peer);
-                boolean K = v6Var.K(peerDialogId);
-                boolean K2 = v6Var.K(peerDialogId2);
-                boolean J = v6Var.J(peerDialogId);
-                boolean J2 = v6Var.J(peerDialogId2);
-                boolean F = v6Var.F(peerDialogId);
-                boolean F2 = v6Var.F(peerDialogId2);
-                if (F != F2) {
-                    return (F2 ? 1 : 0) - (F ? 1 : 0);
-                }
-                if (K != K2) {
-                    return (K2 ? 1 : 0) - (K ? 1 : 0);
-                }
-                if (J != J2) {
-                    return (J2 ? 1 : 0) - (J ? 1 : 0);
-                }
-                boolean isService = UserObject.isService(peerDialogId);
-                boolean isService2 = UserObject.isService(peerDialogId2);
-                if (isService != isService2) {
-                    return (isService2 ? 1 : 0) - (isService ? 1 : 0);
-                }
-                TLRPC.User user = MessagesController.getInstance(i9).getUser(Long.valueOf(peerDialogId));
-                ?? r02 = user == null ? 0 : user.premium;
-                TLRPC.User user2 = MessagesController.getInstance(i9).getUser(Long.valueOf(peerDialogId2));
-                ?? r12 = user2 == null ? 0 : user2.premium;
-                if (r02 == r12) {
-                    return (peerStories2.stories.isEmpty() ? 0 : ((TL_stories.StoryItem) j3.r0.j(1, peerStories2.stories)).date) - (peerStories.stories.isEmpty() ? 0 : ((TL_stories.StoryItem) j3.r0.j(1, peerStories.stories)).date);
-                }
-                return r12 - r02;
             case 3:
-                ArrayList arrayList = (ArrayList) this.b;
-                MediaController.AlbumEntry albumEntry = (MediaController.AlbumEntry) obj;
-                MediaController.AlbumEntry albumEntry2 = (MediaController.AlbumEntry) obj2;
-                int i10 = albumEntry.bucketId;
-                if (i10 != 0 || albumEntry2.bucketId == 0) {
-                    if ((i10 != 0 && albumEntry2.bucketId == 0) || (indexOf = arrayList.indexOf(albumEntry)) > (indexOf2 = arrayList.indexOf(albumEntry2))) {
-                        return 1;
-                    }
-                    if (indexOf >= indexOf2) {
-                        return 0;
-                    }
-                }
-                return -1;
-            case 4:
-                w5 w5Var = (w5) this.b;
-                TL_iv.pageTableCell pagetablecell = (TL_iv.pageTableCell) obj;
-                TL_iv.pageTableCell pagetablecell2 = (TL_iv.pageTableCell) obj2;
-                int b10 = w5Var.b(pagetablecell);
-                int b11 = w5Var.b(pagetablecell2);
-                return b10 != b11 ? Integer.compare(b10, b11) : Integer.compare(w5Var.a(pagetablecell), w5Var.a(pagetablecell2));
-            case 5:
-                y3.v vVar = (y3.v) this.b;
-                return vVar.b(obj2) - vVar.b(obj);
             default:
-                SparseIntArray sparseIntArray = (SparseIntArray) this.b;
-                return sparseIntArray.get(((zf.h) obj).e, ConnectionsManager.DEFAULT_DATACENTER_ID) - sparseIntArray.get(((zf.h) obj2).e, ConnectionsManager.DEFAULT_DATACENTER_ID);
+                super.onDraw(canvas);
+                break;
+            case 4:
+                canvas.drawPath((Path) this.c, (Paint) this.b);
+                super.onDraw(canvas);
+                break;
         }
+    }
+
+    @Override // android.widget.LinearLayout, android.view.View
+    public void onMeasure(int i10, int i11) {
+        switch (this.a) {
+            case 2:
+                View view = (View) this.b;
+                org.telegram.ui.ActionBar.w0 w0Var = (org.telegram.ui.ActionBar.w0) this.c;
+                w0Var.b.measure(i10, i11);
+                if (w0Var.b.getSwipeBack() != null) {
+                    view.getLayoutParams().width = w0Var.b.getSwipeBack().getChildAt(0).getMeasuredWidth();
+                } else {
+                    view.getLayoutParams().width = w0Var.b.getMeasuredWidth() - AndroidUtilities.dp(16.0f);
+                }
+                super.onMeasure(i10, i11);
+                break;
+            case 4:
+                super.onMeasure(i10, i11);
+                Path path = (Path) this.c;
+                path.rewind();
+                RectF rectF = AndroidUtilities.rectTmp;
+                rectF.set(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(6.0f), getMeasuredWidth() - AndroidUtilities.dp(12.0f), getMeasuredHeight() - AndroidUtilities.dp(12.0f));
+                path.addRoundRect(rectF, AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), Path.Direction.CW);
+                break;
+            case 8:
+                int size = View.MeasureSpec.getSize(i10);
+                LinearLayout linearLayout = (LinearLayout) this.b;
+                linearLayout.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(0, 0));
+                LinearLayout linearLayout2 = (LinearLayout) this.c;
+                if (linearLayout2 == null) {
+                    setMeasuredDimension(linearLayout.getMeasuredWidth(), linearLayout.getMeasuredHeight());
+                    break;
+                } else {
+                    linearLayout2.measure(View.MeasureSpec.makeMeasureSpec(linearLayout.getMeasuredWidth(), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(0, 0));
+                    setMeasuredDimension(linearLayout.getMeasuredWidth(), linearLayout2.getMeasuredHeight() + linearLayout.getMeasuredHeight());
+                    break;
+                }
+            default:
+                super.onMeasure(i10, i11);
+                break;
+        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public l0(Activity activity, org.telegram.ui.Components.voip.o1 o1Var) {
+        super(activity);
+        this.a = 7;
+        this.b = new RectF();
+        this.c = o1Var;
+        o1Var.a(this);
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public l0(org.telegram.ui.ActionBar.w0 w0Var, Context context, View view) {
+        super(context);
+        this.a = 2;
+        this.c = w0Var;
+        this.b = view;
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public l0(l21 l21Var, Context context) {
+        super(context);
+        this.a = 6;
+        this.c = l21Var;
+        this.b = new d6(this, 360L, jr.h);
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public l0(g1 g1Var, Context context) {
+        super(context);
+        this.a = 0;
+        this.c = g1Var;
+        Paint paint = new Paint(1);
+        this.b = paint;
+        paint.setStrokeWidth(AndroidUtilities.dp(2.0f));
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeCap(Paint.Cap.ROUND);
+        setWillNotDraw(false);
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public l0(Context context, int i10) {
+        super(context);
+        this.a = i10;
+        switch (i10) {
+            case 4:
+                super(context);
+                break;
+            default:
+                this.b = new int[2];
+                this.c = null;
+                break;
+        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public l0(t5 t5Var, Context context) {
+        super(context);
+        this.a = 1;
+        this.c = t5Var;
+        Paint paint = new Paint(1);
+        this.b = paint;
+        paint.setStrokeWidth(AndroidUtilities.dp(2.0f));
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeCap(Paint.Cap.ROUND);
+        setWillNotDraw(false);
     }
 }

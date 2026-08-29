@@ -1,49 +1,37 @@
 package i8;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+import android.os.Parcel;
+import android.os.Parcelable;
+import com.google.android.gms.internal.cast.o;
+
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class d implements h8.c {
-    public final fa.c a;
+public final class d extends a6.a {
+    public static final Parcelable.Creator<d> CREATOR = new i4.g(5);
+    public int a;
+    public String b;
+    public double c;
+    public String d;
+    public long e;
+    public int f;
 
-    public d(fa.c cVar) {
-        this.a = cVar;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null || d.class != obj.getClass()) {
-            return false;
-        }
-        return this.a.equals(((d) obj).a);
-    }
-
-    public final int hashCode() {
-        return this.a.hashCode();
-    }
-
-    @Override // h8.c
-    public final void onChannelClosed(h8.b bVar, int i9, int i10) {
-        x5.l.i(bVar, "channel must not be null");
-        ((h8.k) this.a.b).onChannelClosed((h8.d) bVar, i9, i10);
-    }
-
-    @Override // h8.c
-    public final void onChannelOpened(h8.b bVar) {
-        x5.l.i(bVar, "channel must not be null");
-        ((h8.k) this.a.b).onChannelOpened((h8.d) bVar);
-    }
-
-    @Override // h8.c
-    public final void onInputClosed(h8.b bVar, int i9, int i10) {
-        x5.l.i(bVar, "channel must not be null");
-        ((h8.k) this.a.b).onInputClosed((h8.d) bVar, i9, i10);
-    }
-
-    @Override // h8.c
-    public final void onOutputClosed(h8.b bVar, int i9, int i10) {
-        x5.l.i(bVar, "channel must not be null");
-        ((h8.k) this.a.b).onOutputClosed((h8.d) bVar, i9, i10);
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i10) {
+        int q6 = o.q(parcel, 20293);
+        int i11 = this.a;
+        o.s(parcel, 2, 4);
+        parcel.writeInt(i11);
+        o.l(parcel, 3, this.b);
+        double d = this.c;
+        o.s(parcel, 4, 8);
+        parcel.writeDouble(d);
+        o.l(parcel, 5, this.d);
+        long j10 = this.e;
+        o.s(parcel, 6, 8);
+        parcel.writeLong(j10);
+        int i12 = this.f;
+        o.s(parcel, 7, 4);
+        parcel.writeInt(i12);
+        o.r(parcel, q6);
     }
 }

@@ -1,36 +1,67 @@
 package ih;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.w90;
+import android.text.SpannableStringBuilder;
+import android.view.MotionEvent;
+import org.telegram.messenger.R;
+import org.telegram.ui.Components.gr0;
+import org.telegram.ui.Components.iq;
+import org.telegram.ui.Components.y71;
+import org.telegram.ui.Components.z71;
+import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
-/* loaded from: classes4.dex */
-public final class r2 extends w90 {
-    public final /* synthetic */ i4 R;
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* loaded from: classes.dex */
+public final class r2 extends z71 {
+    public final /* synthetic */ org.telegram.ui.ActionBar.o2 P;
+    public final /* synthetic */ gr0 Q;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public r2(i4 i4Var, Context context, long j10, org.telegram.ui.ActionBar.o2 o2Var, org.telegram.ui.ActionBar.b6 b6Var) {
-        super(context, j10, 0L, o2Var, b6Var);
-        this.R = i4Var;
+    public r2(gr0 gr0Var, Context context, org.telegram.ui.ActionBar.o2 o2Var) {
+        super(context, null);
+        this.Q = gr0Var;
+        this.P = o2Var;
     }
 
-    @Override // org.telegram.ui.Components.w90
-    public final void f(Canvas canvas, Rect rect, float f10) {
-        i4 i4Var = this.R;
-        com.google.firebase.messaging.m mVar = i4Var.L1;
-        mVar.w(getX(), -getY(), getX() + getMeasuredWidth(), (-getY()) + getMeasuredHeight());
-        RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(rect);
-        rectF.offset(0.0f, 0.0f);
-        canvas.drawRoundRect(rectF, f10, f10, (Paint) mVar.a);
-        canvas.drawRoundRect(rectF, f10, f10, i4Var.j2);
-        if (rectF.top < getMeasuredHeight() - 1) {
-            canvas.drawRect(0.0f, getMeasuredHeight(), getMeasuredWidth(), getMeasuredHeight() - 1, i4Var.x0.O("paintDivider"));
+    @Override // org.telegram.ui.Components.z71
+    public final void h() {
+        gr0 gr0Var = this.Q;
+        y71 y71Var = gr0Var.n;
+        if (!gr0Var.b() || y71Var == null) {
+            return;
+        }
+        if (gr0Var.F == null) {
+            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(org.telegram.messenger.x3.i(R.string.Gift2NewCollection, new StringBuilder("+ ")));
+            iq iqVar = new iq(R.drawable.poll_add_plus, 0);
+            iqVar.spaceScaleX = 0.8f;
+            spannableStringBuilder.setSpan(iqVar, 0, 1, 33);
+            gr0Var.F = spannableStringBuilder;
+        }
+        y71Var.a(-1, gr0Var.F);
+    }
+
+    @Override // org.telegram.ui.Components.z71
+    public final boolean i(MotionEvent motionEvent) {
+        return !this.Q.g();
+    }
+
+    @Override // org.telegram.ui.Components.z71
+    public final void w(boolean z10) {
+        gr0 gr0Var = this.Q;
+        gr0Var.l();
+        org.telegram.ui.ActionBar.o2 o2Var = this.P;
+        if (o2Var instanceof ProfileActivity) {
+            ((ProfileActivity) o2Var).R();
+        }
+        gr0Var.o();
+    }
+
+    @Override // org.telegram.ui.Components.z71
+    public final void z(int i10) {
+        this.Q.l();
+        org.telegram.ui.ActionBar.o2 o2Var = this.P;
+        if (o2Var instanceof ProfileActivity) {
+            ((ProfileActivity) o2Var).R();
         }
     }
 }

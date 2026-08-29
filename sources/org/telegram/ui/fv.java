@@ -1,33 +1,38 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
+import android.content.DialogInterface;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class fv implements ValueAnimator.AnimatorUpdateListener {
+public final /* synthetic */ class fv implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ dy b;
+    public final /* synthetic */ fy b;
 
-    public /* synthetic */ fv(dy dyVar, int i9) {
-        this.a = i9;
-        this.b = dyVar;
+    public /* synthetic */ fv(fy fyVar, int i10) {
+        this.a = i10;
+        this.b = fyVar;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // android.content.DialogInterface.OnDismissListener
+    public final void onDismiss(DialogInterface dialogInterface) {
         switch (this.a) {
             case 0:
-                dy dyVar = this.b;
-                dyVar.getClass();
-                dyVar.z4(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                fy.i0(this.b);
                 break;
             case 1:
-                this.b.D4(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                fy fyVar = this.b;
+                if (fyVar.O3 != null) {
+                    fyVar.getMessagesController().removeSuggestion(0L, fyVar.O3);
+                    fyVar.O3 = null;
+                    fyVar.L4();
+                    break;
+                }
+                break;
+            case 2:
+                this.b.b4(true);
                 break;
             default:
-                dy dyVar2 = this.b;
-                dyVar2.getClass();
-                dyVar2.F4(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                this.b.b4(true);
                 break;
         }
     }

@@ -1,109 +1,172 @@
 package org.telegram.ui.Components;
 
+import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Path;
-import android.os.Build;
-import android.widget.FrameLayout;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.NotchInfoUtils;
-import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class eh0 extends FrameLayout {
-    public final Paint a;
-    public final Path b;
-    public final dh0 c;
-    public float d;
-    public float e;
-    public float f;
-    public boolean h;
-    public NotchInfoUtils.NotchInfo n;
+public final class eh0 extends t9 implements ev0 {
+    public final int C;
+    public RadialProgress2 D;
+    public ValueAnimator E;
+    public float F;
+    public long G;
+    public boolean H;
+    public final int I;
+    public final Paint J;
+    public Runnable K;
+    public final /* synthetic */ kh0 L;
 
-    public eh0(Context context) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public eh0(kh0 kh0Var, Context context, int i10, Paint paint) {
         super(context);
-        Paint paint = new Paint(1);
-        this.a = paint;
-        this.b = new Path();
-        paint.setColor(-16777216);
-        if (Build.VERSION.SDK_INT < 31 || SharedConfig.getDevicePerformanceClass() < 1) {
-            this.c = new bh0(this);
-        } else {
-            this.c = new ch0(this, SharedConfig.getDevicePerformanceClass() == 2 ? 1.0f : 1.5f);
-        }
-        setIntensity(15.0f);
-        setBlurIntensity(0.0f);
-        setWillNotDraw(false);
+        this.L = kh0Var;
+        this.C = AndroidUtilities.dp(64.0f);
+        this.G = -1L;
+        this.I = i10;
+        this.J = paint;
+        setLayerNum(kh0Var.h1);
     }
 
-    public static /* synthetic */ void a(eh0 eh0Var, Canvas canvas) {
-        canvas.save();
-        canvas.translate(0.0f, AndroidUtilities.dp(32.0f));
-        super.draw(canvas);
-        canvas.restore();
+    @Override // org.telegram.ui.Components.ev0
+    public final void g(Runnable runnable) {
+        this.K = runnable;
     }
 
     @Override // android.view.View
-    public final void draw(Canvas canvas) {
-        if (!this.h) {
-            super.draw(canvas);
-        } else {
-            this.c.c(new wu(this, 12), canvas);
+    public final void invalidate(int i10, int i11, int i12, int i13) {
+        super.invalidate(i10, i11, i12, i13);
+        Runnable runnable = this.K;
+        if (runnable != null) {
+            runnable.run();
         }
     }
 
-    public float getAvatarEndScale() {
-        float min;
-        int dp;
-        NotchInfoUtils.NotchInfo notchInfo = this.n;
-        if (notchInfo == null) {
-            return 0.8f;
+    @Override // org.telegram.ui.Components.t9, android.view.View
+    public final void onDraw(Canvas canvas) {
+        Canvas canvas2;
+        kh0 kh0Var = this.L;
+        float[] fArr = kh0Var.K0;
+        Path path = kh0Var.I0;
+        ArrayList arrayList = kh0Var.X0;
+        RectF rectF = kh0Var.J0;
+        org.telegram.ui.lu0 lu0Var = kh0Var.d1;
+        if (lu0Var == null || !lu0Var.n) {
+            if (this.D != null) {
+                int k9 = kh0Var.z0.k(this.I);
+                if (kh0Var.e1) {
+                    k9--;
+                }
+                Drawable drawable = getImageReceiver().getDrawable();
+                long j10 = 0;
+                int i10 = 4;
+                if (k9 >= arrayList.size() || arrayList.get(k9) == null ? drawable == null || (this.H && (!(drawable instanceof c6) || ((c6) drawable).d[4] <= 0)) : ((Float) arrayList.get(k9)).floatValue() < 1.0f) {
+                    if (this.G < 0) {
+                        this.G = System.currentTimeMillis();
+                    } else {
+                        long currentTimeMillis = System.currentTimeMillis() - this.G;
+                        long j11 = this.H ? 250L : 750L;
+                        if (currentTimeMillis <= 250 + j11 && currentTimeMillis > j11) {
+                            this.D.E = jr.f.getInterpolation((currentTimeMillis - j11) / 250.0f);
+                        }
+                    }
+                    if (kh0Var.c1) {
+                        invalidate();
+                    } else {
+                        postInvalidateOnAnimation();
+                    }
+                    invalidate();
+                } else if (this.E == null) {
+                    RadialProgress2 radialProgress2 = this.D;
+                    if ((radialProgress2.c ? radialProgress2.j : radialProgress2.i).w < 1.0f) {
+                        radialProgress2.o(1.0f, true);
+                        j10 = 100;
+                    }
+                    this.F = this.D.E;
+                    ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+                    this.E = ofFloat;
+                    ofFloat.setStartDelay(j10);
+                    this.E.setDuration((long) (this.F * 250.0f));
+                    this.E.setInterpolator(jr.f);
+                    this.E.addUpdateListener(new d70(this, i10));
+                    this.E.addListener(new org.telegram.ui.Cells.z3(this, k9, 5));
+                    this.E.start();
+                }
+                int i11 = kh0Var.i1;
+                if (i11 == 0 && kh0Var.j1 == 0) {
+                    canvas.drawRect(0.0f, 0.0f, getWidth(), getHeight(), this.J);
+                    canvas2 = canvas;
+                } else {
+                    canvas2 = canvas;
+                    int i12 = kh0Var.j1;
+                    Paint paint = this.J;
+                    if (i11 == i12) {
+                        rectF.set(0.0f, 0.0f, getWidth(), getHeight());
+                        float f9 = kh0Var.i1;
+                        canvas2.drawRoundRect(rectF, f9, f9, paint);
+                    } else {
+                        path.reset();
+                        rectF.set(0.0f, 0.0f, getWidth(), getHeight());
+                        for (int i13 = 0; i13 < 4; i13++) {
+                            fArr[i13] = kh0Var.i1;
+                            fArr[i13 + 4] = kh0Var.j1;
+                        }
+                        path.addRoundRect(rectF, fArr, Path.Direction.CW);
+                        canvas2.drawPath(path, paint);
+                    }
+                }
+            } else {
+                canvas2 = canvas;
+            }
+            super.onDraw(canvas);
+            RadialProgress2 radialProgress22 = this.D;
+            if (radialProgress22 == null || radialProgress22.E <= 0.0f) {
+                return;
+            }
+            radialProgress22.draw(canvas2);
         }
-        if (notchInfo.isLikelyCircle) {
-            min = notchInfo.bounds.width() - AndroidUtilities.dp(2.0f);
-            dp = AndroidUtilities.dp(100.0f);
-        } else {
-            min = Math.min(notchInfo.bounds.width(), this.n.bounds.height());
-            dp = AndroidUtilities.dp(100.0f);
-        }
-        return Math.min(0.8f, min / dp);
     }
 
     @Override // android.view.View
-    public final void onSizeChanged(int i9, int i10, int i11, int i12) {
-        super.onSizeChanged(i9, i10, i11, i12);
-        NotchInfoUtils.NotchInfo info = NotchInfoUtils.getInfo(getContext());
-        this.n = info;
-        if ((info != null && info.gravity != 17) || getWidth() > getHeight()) {
-            this.n = null;
+    public final void onSizeChanged(int i10, int i11, int i12, int i13) {
+        super.onSizeChanged(i10, i11, i12, i13);
+        if (this.D != null) {
+            int currentActionBarHeight = org.telegram.ui.ActionBar.l.getCurrentActionBarHeight() + (this.L.v0.getOccupyStatusBar() ? AndroidUtilities.statusBarHeight : 0);
+            int dp2 = AndroidUtilities.dp2(80.0f);
+            RadialProgress2 radialProgress2 = this.D;
+            int i14 = this.C;
+            int i15 = (i11 - currentActionBarHeight) - dp2;
+            radialProgress2.q((i10 - i14) / 2, j7.l1.e(i15, i14, 2, currentActionBarHeight), (i10 + i14) / 2, ((i15 + i14) / 2) + currentActionBarHeight);
         }
-        this.c.d(i9, i10);
     }
 
-    public void setBlurIntensity(float f10) {
-        this.f = f10;
-        this.c.b(f10);
-        invalidate();
-    }
-
-    public void setGooeyEnabled(boolean z10) {
-        if (this.h == z10) {
-            return;
+    @Override // android.view.View
+    public final void invalidate(Rect rect) {
+        super.invalidate(rect);
+        Runnable runnable = this.K;
+        if (runnable != null) {
+            runnable.run();
         }
-        this.h = z10;
-        invalidate();
     }
 
-    public void setIntensity(float f10) {
-        this.d = f10;
-        this.c.a(f10);
-        invalidate();
-    }
-
-    public void setPullProgress(float f10) {
-        this.e = f10;
-        invalidate();
+    @Override // android.view.View
+    public final void invalidate() {
+        super.invalidate();
+        kh0 kh0Var = this.L;
+        if (kh0Var.c1) {
+            kh0Var.invalidate();
+        }
+        Runnable runnable = this.K;
+        if (runnable != null) {
+            runnable.run();
+        }
     }
 }

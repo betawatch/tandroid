@@ -1,79 +1,47 @@
 package d8;
 
-import android.content.Context;
-import android.util.Log;
-import com.google.android.gms.internal.vision.t2;
+import android.os.Parcel;
+import android.os.Parcelable;
+import com.google.android.gms.internal.cast.o;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class b {
+public final class b extends a6.a {
+    public static final Parcelable.Creator<b> CREATOR = new d6.d(3);
     public int a;
     public int b;
-    public boolean c;
-    public final Object d;
+    public int c;
+    public int d;
+    public int e;
+    public int f;
+    public boolean h;
+    public String n;
 
-    public b(Context context) {
-        this.a = 0;
-        this.c = true;
-        this.b = 0;
-        this.d = context;
-    }
-
-    public c a() {
-        boolean z10;
-        e8.b bVar = new e8.b();
-        int i9 = this.b;
-        bVar.a = i9;
-        int i10 = this.a;
-        bVar.b = i10;
-        boolean z11 = false;
-        bVar.c = 0;
-        bVar.d = false;
-        bVar.e = this.c;
-        bVar.f = -1.0f;
-        if (i9 == 2 || i10 != 2) {
-            z10 = true;
-        } else {
-            Log.e("FaceDetector", "Contour is not supported for non-SELFIE mode.");
-            z10 = false;
-        }
-        if (bVar.b == 2 && bVar.c == 1) {
-            Log.e("FaceDetector", "Classification is not supported with contour.");
-        } else {
-            z11 = z10;
-        }
-        if (z11) {
-            return new c(new t2((Context) this.d, bVar));
-        }
-        throw new IllegalArgumentException("Invalid build options");
-    }
-
-    public void b(int i9) {
-        if (i9 == 0 || i9 == 1 || i9 == 2) {
-            this.a = i9;
-            return;
-        }
-        StringBuilder sb2 = new StringBuilder(34);
-        sb2.append("Invalid landmark type: ");
-        sb2.append(i9);
-        throw new IllegalArgumentException(sb2.toString());
-    }
-
-    public void c(int i9) {
-        if (i9 == 0 || i9 == 1 || i9 == 2) {
-            this.b = i9;
-            return;
-        }
-        StringBuilder sb2 = new StringBuilder(25);
-        sb2.append("Invalid mode: ");
-        sb2.append(i9);
-        throw new IllegalArgumentException(sb2.toString());
-    }
-
-    public b(ke.a... aVarArr) {
-        this.a = -1;
-        this.b = -1;
-        this.c = false;
-        this.d = aVarArr;
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i10) {
+        int q6 = o.q(parcel, 20293);
+        int i11 = this.a;
+        o.s(parcel, 2, 4);
+        parcel.writeInt(i11);
+        int i12 = this.b;
+        o.s(parcel, 3, 4);
+        parcel.writeInt(i12);
+        int i13 = this.c;
+        o.s(parcel, 4, 4);
+        parcel.writeInt(i13);
+        int i14 = this.d;
+        o.s(parcel, 5, 4);
+        parcel.writeInt(i14);
+        int i15 = this.e;
+        o.s(parcel, 6, 4);
+        parcel.writeInt(i15);
+        int i16 = this.f;
+        o.s(parcel, 7, 4);
+        parcel.writeInt(i16);
+        boolean z10 = this.h;
+        o.s(parcel, 8, 4);
+        parcel.writeInt(z10 ? 1 : 0);
+        o.l(parcel, 9, this.n);
+        o.r(parcel, q6);
     }
 }

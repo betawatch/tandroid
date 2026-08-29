@@ -1,39 +1,60 @@
 package u5;
 
-import android.app.Activity;
-import android.app.AlertDialog;
-import android.app.Dialog;
-import android.app.DialogFragment;
-import android.content.DialogInterface;
-import android.os.Bundle;
+import a4.w;
+import android.os.Parcel;
+import android.os.Parcelable;
+import com.google.android.gms.internal.cast.o;
+import java.util.Arrays;
+import s6.i;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
 /* loaded from: classes.dex */
-public class b extends DialogFragment {
-    public Dialog a;
-    public DialogInterface.OnCancelListener b;
-    public AlertDialog c;
+public final class b extends a6.a {
+    public static final Parcelable.Creator<b> CREATOR = new i(20);
+    public final boolean a;
+    public final long b;
+    public final long c;
 
-    @Override // android.app.DialogFragment, android.content.DialogInterface.OnCancelListener
-    public final void onCancel(DialogInterface dialogInterface) {
-        DialogInterface.OnCancelListener onCancelListener = this.b;
-        if (onCancelListener != null) {
-            onCancelListener.onCancel(dialogInterface);
-        }
+    public b(long j10, long j11, boolean z10) {
+        this.a = z10;
+        this.b = j10;
+        this.c = j11;
     }
 
-    @Override // android.app.DialogFragment
-    public final Dialog onCreateDialog(Bundle bundle) {
-        Dialog dialog = this.a;
-        if (dialog != null) {
-            return dialog;
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
-        setShowsDialog(false);
-        if (this.c == null) {
-            Activity activity = getActivity();
-            x5.l.h(activity);
-            this.c = new AlertDialog.Builder(activity).create();
+        if (obj instanceof b) {
+            b bVar = (b) obj;
+            if (this.a == bVar.a && this.b == bVar.b && this.c == bVar.c) {
+                return true;
+            }
         }
-        return this.c;
+        return false;
+    }
+
+    public final int hashCode() {
+        return Arrays.hashCode(new Object[]{Boolean.valueOf(this.a), Long.valueOf(this.b), Long.valueOf(this.c)});
+    }
+
+    public final String toString() {
+        StringBuilder sb2 = new StringBuilder("CollectForDebugParcelable[skipPersistentStorage: ");
+        sb2.append(this.a);
+        sb2.append(",collectForDebugStartTimeMillis: ");
+        sb2.append(this.b);
+        sb2.append(",collectForDebugExpiryTimeMillis: ");
+        return w.p(sb2, this.c, "]");
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i10) {
+        int q6 = o.q(parcel, 20293);
+        o.s(parcel, 1, 4);
+        parcel.writeInt(this.a ? 1 : 0);
+        o.s(parcel, 2, 8);
+        parcel.writeLong(this.c);
+        o.s(parcel, 3, 8);
+        parcel.writeLong(this.b);
+        o.r(parcel, q6);
     }
 }

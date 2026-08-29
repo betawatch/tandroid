@@ -6,7 +6,7 @@ import android.os.IBinder;
 import android.os.IInterface;
 import android.os.Parcel;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public interface ICarHost extends IInterface {
     public static final String DESCRIPTOR = "androidx$car$app$ICarHost".replace('$', '.');
@@ -17,7 +17,7 @@ public interface ICarHost extends IInterface {
 
     void startCarApp(Intent intent);
 
-    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
     public static class Default implements ICarHost {
         @Override // android.os.IInterface
         public IBinder asBinder() {
@@ -38,13 +38,13 @@ public interface ICarHost extends IInterface {
         }
     }
 
-    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
     public static abstract class Stub extends Binder implements ICarHost {
         static final int TRANSACTION_finish = 4;
         static final int TRANSACTION_getHost = 3;
         static final int TRANSACTION_startCarApp = 2;
 
-        /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+        /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
         public static class Proxy implements ICarHost {
             private IBinder mRemote;
 
@@ -125,25 +125,25 @@ public interface ICarHost extends IInterface {
         }
 
         @Override // android.os.Binder
-        public boolean onTransact(int i9, Parcel parcel, Parcel parcel2, int i10) {
+        public boolean onTransact(int i10, Parcel parcel, Parcel parcel2, int i11) {
             String str = ICarHost.DESCRIPTOR;
-            if (i9 >= 1 && i9 <= 16777215) {
+            if (i10 >= 1 && i10 <= 16777215) {
                 parcel.enforceInterface(str);
             }
-            if (i9 == 1598968902) {
+            if (i10 == 1598968902) {
                 parcel2.writeString(str);
                 return true;
             }
-            if (i9 == 2) {
+            if (i10 == 2) {
                 startCarApp((Intent) (parcel.readInt() != 0 ? Intent.CREATOR.createFromParcel(parcel) : null));
                 parcel2.writeNoException();
-            } else if (i9 == 3) {
+            } else if (i10 == 3) {
                 IBinder host = getHost(parcel.readString());
                 parcel2.writeNoException();
                 parcel2.writeStrongBinder(host);
             } else {
-                if (i9 != 4) {
-                    return super.onTransact(i9, parcel, parcel2, i10);
+                if (i10 != 4) {
+                    return super.onTransact(i10, parcel, parcel2, i11);
                 }
                 finish();
                 parcel2.writeNoException();

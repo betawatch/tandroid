@@ -1,38 +1,43 @@
 package ff;
 
-import org.telegram.tgnet.InputSerializedData;
-import org.telegram.tgnet.OutputSerializedData;
-import org.telegram.tgnet.SerializedData;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.os.Bundle;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class a extends TLObject {
-    public int a;
-    public long b;
-    public TLRPC.InputStorePaymentPurpose c;
+public final class a implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ b b;
 
-    public static a a(SerializedData serializedData, int i9) {
-        return (a) TLObject.TLdeserialize(a.class, i9 != 495638674 ? null : new a(), serializedData, i9, true);
+    public /* synthetic */ a(b bVar, String str, Bundle bundle, int i10) {
+        this.a = i10;
+        this.b = bVar;
     }
 
-    @Override // org.telegram.tgnet.TLObject
-    public final void readParams(InputSerializedData inputSerializedData, boolean z10) {
-        this.a = inputSerializedData.readInt32(z10);
-        this.b = inputSerializedData.readInt64(z10);
-        if ((this.a & 1) != 0) {
-            this.c = TLRPC.InputStorePaymentPurpose.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.b.getClass();
+                break;
+            case 1:
+                this.b.b.getClass();
+                break;
+            case 2:
+                this.b.b.getClass();
+                break;
+            default:
+                this.b.b.getClass();
+                break;
         }
     }
 
-    @Override // org.telegram.tgnet.TLObject
-    public final void serializeToStream(OutputSerializedData outputSerializedData) {
-        outputSerializedData.writeInt32(495638674);
-        outputSerializedData.writeInt32(this.a);
-        outputSerializedData.writeInt64(this.b);
-        if ((this.a & 1) != 0) {
-            this.c.serializeToStream(outputSerializedData);
-        }
+    public a(b bVar, int i10, Bundle bundle) {
+        this.a = 0;
+        this.b = bVar;
+    }
+
+    public a(b bVar, Bundle bundle) {
+        this.a = 2;
+        this.b = bVar;
     }
 }

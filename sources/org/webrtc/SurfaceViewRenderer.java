@@ -7,12 +7,12 @@ import android.os.Looper;
 import android.util.AttributeSet;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
-import j3.r0;
+import j7.l1;
 import org.webrtc.EglBase;
 import org.webrtc.EglRenderer;
 import org.webrtc.RendererCommon;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes4.dex */
 public class SurfaceViewRenderer extends SurfaceView implements SurfaceHolder.Callback, VideoSink, RendererCommon.RendererEvents {
     private static final String TAG = "SurfaceViewRenderer";
@@ -46,9 +46,9 @@ public class SurfaceViewRenderer extends SurfaceView implements SurfaceHolder.Ca
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$onFrameResolutionChanged$0(int i9, int i10) {
-        this.rotatedFrameWidth = i9;
-        this.rotatedFrameHeight = i10;
+    public /* synthetic */ void lambda$onFrameResolutionChanged$0(int i10, int i11) {
+        this.rotatedFrameWidth = i10;
+        this.rotatedFrameHeight = i11;
         updateSurfaceSize();
         requestLayout();
     }
@@ -74,15 +74,15 @@ public class SurfaceViewRenderer extends SurfaceView implements SurfaceHolder.Ca
             return;
         }
         float width = getWidth() / getHeight();
-        int i9 = this.rotatedFrameWidth;
-        int i10 = this.rotatedFrameHeight;
-        if (i9 / i10 > width) {
-            i9 = (int) (i10 * width);
+        int i10 = this.rotatedFrameWidth;
+        int i11 = this.rotatedFrameHeight;
+        if (i10 / i11 > width) {
+            i10 = (int) (i11 * width);
         } else {
-            i10 = (int) (i9 / width);
+            i11 = (int) (i10 / width);
         }
-        int min = Math.min(getWidth(), i9);
-        int min2 = Math.min(getHeight(), i10);
+        int min = Math.min(getWidth(), i10);
+        int min2 = Math.min(getHeight(), i11);
         StringBuilder sb2 = new StringBuilder("updateSurfaceSize. Layout size: ");
         sb2.append(getWidth());
         sb2.append("x");
@@ -90,7 +90,7 @@ public class SurfaceViewRenderer extends SurfaceView implements SurfaceHolder.Ca
         sb2.append(", frame size: ");
         sb2.append(this.rotatedFrameWidth);
         sb2.append("x");
-        r0.y(sb2, this.rotatedFrameHeight, ", requested surface size: ", min, "x");
+        l1.w(sb2, this.rotatedFrameHeight, ", requested surface size: ", min, "x");
         sb2.append(min2);
         sb2.append(", old surface size: ");
         sb2.append(this.surfaceWidth);
@@ -105,8 +105,8 @@ public class SurfaceViewRenderer extends SurfaceView implements SurfaceHolder.Ca
         getHolder().setFixedSize(min, min2);
     }
 
-    public void addFrameListener(EglRenderer.FrameListener frameListener, float f10, RendererCommon.GlDrawer glDrawer) {
-        this.eglRenderer.addFrameListener(frameListener, f10, glDrawer);
+    public void addFrameListener(EglRenderer.FrameListener frameListener, float f9, RendererCommon.GlDrawer glDrawer) {
+        this.eglRenderer.addFrameListener(frameListener, f9, glDrawer);
     }
 
     public void clearImage() {
@@ -135,29 +135,29 @@ public class SurfaceViewRenderer extends SurfaceView implements SurfaceHolder.Ca
     }
 
     @Override // org.webrtc.RendererCommon.RendererEvents
-    public void onFrameResolutionChanged(int i9, int i10, int i11) {
+    public void onFrameResolutionChanged(int i10, int i11, int i12) {
         RendererCommon.RendererEvents rendererEvents = this.rendererEvents;
         if (rendererEvents != null) {
-            rendererEvents.onFrameResolutionChanged(i9, i10, i11);
+            rendererEvents.onFrameResolutionChanged(i10, i11, i12);
         }
-        int i12 = (i11 == 0 || i11 == 180) ? i9 : i10;
-        if (i11 == 0 || i11 == 180) {
-            i9 = i10;
+        int i13 = (i12 == 0 || i12 == 180) ? i10 : i11;
+        if (i12 == 0 || i12 == 180) {
+            i10 = i11;
         }
-        postOrRun(new h3.y(this, i12, i9, 13));
+        postOrRun(new j3.y(this, i13, i10, 12));
     }
 
     @Override // android.view.View
-    public void onLayout(boolean z10, int i9, int i10, int i11, int i12) {
+    public void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         ThreadUtils.checkIsOnMainThread();
-        this.eglRenderer.setLayoutAspectRatio((i11 - i9) / (i12 - i10));
+        this.eglRenderer.setLayoutAspectRatio((i12 - i10) / (i13 - i11));
         updateSurfaceSize();
     }
 
     @Override // android.view.SurfaceView, android.view.View
-    public void onMeasure(int i9, int i10) {
+    public void onMeasure(int i10, int i11) {
         ThreadUtils.checkIsOnMainThread();
-        Point measure = this.videoLayoutMeasure.measure(true, i9, i10, this.rotatedFrameWidth, this.rotatedFrameHeight);
+        Point measure = this.videoLayoutMeasure.measure(true, i10, i11, this.rotatedFrameWidth, this.rotatedFrameHeight);
         setMeasuredDimension(measure.x, measure.y);
         logD("onMeasure(). New size: " + measure.x + "x" + measure.y);
     }
@@ -180,8 +180,8 @@ public class SurfaceViewRenderer extends SurfaceView implements SurfaceHolder.Ca
         updateSurfaceSize();
     }
 
-    public void setFpsReduction(float f10) {
-        this.eglRenderer.setFpsReduction(f10);
+    public void setFpsReduction(float f9) {
+        this.eglRenderer.setFpsReduction(f9);
     }
 
     public void setMirror(boolean z10) {
@@ -207,8 +207,8 @@ public class SurfaceViewRenderer extends SurfaceView implements SurfaceHolder.Ca
         updateSurfaceSize();
     }
 
-    public void addFrameListener(EglRenderer.FrameListener frameListener, float f10) {
-        this.eglRenderer.addFrameListener(frameListener, f10);
+    public void addFrameListener(EglRenderer.FrameListener frameListener, float f9) {
+        this.eglRenderer.addFrameListener(frameListener, f9);
     }
 
     public void init(EglBase.Context context, RendererCommon.RendererEvents rendererEvents, int[] iArr, RendererCommon.GlDrawer glDrawer) {
@@ -241,6 +241,6 @@ public class SurfaceViewRenderer extends SurfaceView implements SurfaceHolder.Ca
     }
 
     @Override // android.view.SurfaceHolder.Callback
-    public void surfaceChanged(SurfaceHolder surfaceHolder, int i9, int i10, int i11) {
+    public void surfaceChanged(SurfaceHolder surfaceHolder, int i10, int i11, int i12) {
     }
 }

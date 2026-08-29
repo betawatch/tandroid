@@ -14,12 +14,12 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.R;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
 public final class i3 extends Dialog {
     public final s3 a;
     public final h3 b;
-    public final fh.l2 c;
+    public final cg.h0 c;
     public final Paint d;
     public boolean e;
 
@@ -29,13 +29,13 @@ public final class i3 extends Dialog {
         this.d = paint;
         this.a = s3Var;
         t3 windowView = s3Var.getWindowView();
-        fh.l2 l2Var = new fh.l2(this, getContext(), 7);
-        this.c = l2Var;
-        paint.setColor(f6.w0(null, f6.a7, false));
+        cg.h0 h0Var = new cg.h0(this, getContext(), 5);
+        this.c = h0Var;
+        paint.setColor(g6.w0(null, g6.a7, false));
         h3 h3Var = new h3(windowView);
         this.b = h3Var;
         setContentView(h3Var, new ViewGroup.LayoutParams(-1, -1));
-        h3Var.addView(l2Var, g7.e6.e(-1, -2, 80));
+        h3Var.addView(h0Var, i7.f6.e(-1, -2, 80));
         h3Var.setClipToPadding(false);
     }
 
@@ -55,7 +55,7 @@ public final class i3 extends Dialog {
                 h3 h3Var = i3Var.b;
                 View view = (View) h3Var.a;
                 AndroidUtilities.removeFromParent(view);
-                h3Var.addView(view, g7.e6.e(-1, -1, 119));
+                h3Var.addView(view, i7.f6.e(-1, -1, 119));
             }
         }
     }
@@ -81,8 +81,8 @@ public final class i3 extends Dialog {
     public final void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         Window window = getWindow();
-        int i9 = Build.VERSION.SDK_INT;
-        if (i9 >= 30) {
+        int i10 = Build.VERSION.SDK_INT;
+        if (i10 >= 30) {
             window.addFlags(-2147483392);
         } else {
             window.addFlags(-2147417856);
@@ -95,11 +95,11 @@ public final class i3 extends Dialog {
         attributes.flags &= -3;
         attributes.softInputMode = 16;
         attributes.height = -1;
-        if (i9 >= 28) {
+        if (i10 >= 28) {
             attributes.layoutInDisplayCutoutMode = 1;
         }
         window.setAttributes(attributes);
-        if (i9 >= 23) {
+        if (i10 >= 23) {
             window.setStatusBarColor(0);
         }
         h3 h3Var = this.b;

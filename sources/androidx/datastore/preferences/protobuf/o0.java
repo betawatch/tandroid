@@ -7,7 +7,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class o0 extends LinkedHashMap {
     public static final o0 b;
@@ -80,10 +80,10 @@ public final class o0 extends LinkedHashMap {
     @Override // java.util.AbstractMap, java.util.Map
     public final int hashCode() {
         int hashCode;
-        int i9 = 0;
+        int i10 = 0;
         for (Map.Entry entry : entrySet()) {
             Object key = entry.getKey();
-            int i10 = 1;
+            int i11 = 1;
             if (key instanceof byte[]) {
                 byte[] bArr = (byte[]) key;
                 int length = bArr.length;
@@ -103,19 +103,19 @@ public final class o0 extends LinkedHashMap {
                 byte[] bArr2 = (byte[]) value;
                 int length2 = bArr2.length;
                 Charset charset2 = a0.a;
-                int i11 = length2;
+                int i12 = length2;
                 for (byte b11 : bArr2) {
-                    i11 = (i11 * 31) + b11;
+                    i12 = (i12 * 31) + b11;
                 }
-                if (i11 != 0) {
-                    i10 = i11;
+                if (i12 != 0) {
+                    i11 = i12;
                 }
             } else {
-                i10 = value.hashCode();
+                i11 = value.hashCode();
             }
-            i9 += hashCode ^ i10;
+            i10 += hashCode ^ i11;
         }
-        return i9;
+        return i10;
     }
 
     @Override // java.util.HashMap, java.util.AbstractMap, java.util.Map

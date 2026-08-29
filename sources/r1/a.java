@@ -3,7 +3,7 @@ package r1;
 import android.media.MediaDataSource;
 import java.io.IOException;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class a extends MediaDataSource {
     public long a;
@@ -19,8 +19,8 @@ public final class a extends MediaDataSource {
     }
 
     @Override // android.media.MediaDataSource
-    public final int readAt(long j10, byte[] bArr, int i9, int i10) {
-        if (i10 == 0) {
+    public final int readAt(long j10, byte[] bArr, int i10, int i11) {
+        if (i11 == 0) {
             return 0;
         }
         if (j10 < 0) {
@@ -35,10 +35,10 @@ public final class a extends MediaDataSource {
                 this.b.b(j10);
                 this.a = j10;
             }
-            if (i10 > this.b.a.available()) {
-                i10 = this.b.a.available();
+            if (i11 > this.b.a.available()) {
+                i11 = this.b.a.available();
             }
-            int read = this.b.read(bArr, i9, i10);
+            int read = this.b.read(bArr, i10, i11);
             if (read >= 0) {
                 this.a += read;
                 return read;

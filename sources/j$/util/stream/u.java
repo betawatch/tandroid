@@ -37,13 +37,13 @@ public final class u extends c5 {
                     while (!this.a.q() && spliterator.tryAdvance((DoubleConsumer) e0Var)) {
                     }
                 }
-            } catch (Throwable th) {
+            } catch (Throwable th2) {
                 try {
                     c0Var.close();
-                } catch (Throwable th2) {
-                    th.addSuppressed(th2);
+                } catch (Throwable th3) {
+                    th2.addSuppressed(th3);
                 }
-                throw th;
+                throw th2;
             }
         }
         if (c0Var != null) {

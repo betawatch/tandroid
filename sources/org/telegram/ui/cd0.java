@@ -1,333 +1,85 @@
 package org.telegram.ui;
 
-import android.graphics.Bitmap;
-import android.os.Bundle;
+import android.graphics.PointF;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Bitmaps;
-import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class cd0 extends org.telegram.ui.ActionBar.j {
+public final /* synthetic */ class cd0 implements o1.h {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
-    public /* synthetic */ cd0(Object obj, int i9) {
-        this.a = i9;
+    public /* synthetic */ cd0(Object obj, int i10) {
+        this.a = i10;
         this.b = obj;
     }
 
-    @Override // org.telegram.ui.ActionBar.j
-    public final void b(int i9) {
-        Bitmap bitmap;
+    @Override // o1.h
+    public final void a(o1.i iVar, float f9, float f10) {
         int i10 = this.a;
         Object obj = this.b;
         switch (i10) {
             case 0:
-                fg0 fg0Var = (fg0) obj;
-                if (i9 != 1) {
-                    if (i9 == -1 && fg0Var.onBackPressed(true)) {
-                        fg0Var.finishFragment();
-                        break;
-                    }
-                } else {
-                    fg0Var.p1();
+                tf0 tf0Var = ((fg0) obj).X;
+                if (tf0Var != null) {
+                    int i11 = tf0.A;
+                    View view = tf0Var.c;
+                    ViewGroup viewGroup = tf0Var.b;
+                    PointF pointF = tf0Var.y;
+                    sg.i.b(view, viewGroup, pointF);
+                    org.telegram.ui.Components.u10 u10Var = tf0Var.h;
+                    u10Var.setTranslationX(pointF.x);
+                    u10Var.setTranslationY(pointF.y);
+                    tf0Var.requestLayout();
                     break;
                 }
                 break;
             case 1:
-                if (i9 == -1) {
-                    ((hg0) obj).finishFragment();
-                    break;
+                xn0 xn0Var = (xn0) obj;
+                float f11 = f9 / 100.0f;
+                xn0Var.b = f11;
+                TextView textView = xn0Var.d.Q;
+                if (textView != null) {
+                    textView.setAlpha((f11 * 0.2f) + 0.8f);
                 }
+                xn0Var.invalidate();
                 break;
             case 2:
-                if (i9 == -1) {
-                    ((hh0) obj).finishFragment();
-                    break;
-                }
+                kt0 kt0Var = (kt0) obj;
+                kt0Var.V = f9;
+                kt0Var.a0 = f10;
+                kt0Var.G();
                 break;
             case 3:
-                if (i9 == -1) {
-                    ((ih0) obj).finishFragment();
+                gu0 gu0Var = (gu0) obj;
+                int dp = gu0Var.e > gu0Var.f ? AndroidUtilities.dp(48.0f) : 0;
+                org.telegram.ui.Components.z61 z61Var = gu0Var.s.m3;
+                int measuredHeight = gu0Var.getMeasuredHeight();
+                z61Var.h = (int) (((gu0Var.getMeasuredWidth() - AndroidUtilities.dp(16.0f)) - f9) - dp);
+                z61Var.i = measuredHeight;
+                View view2 = z61Var.v;
+                if (view2 != null) {
+                    view2.invalidate();
                     break;
                 }
                 break;
             case 4:
-                ti0 ti0Var = (ti0) obj;
-                if (i9 != -1) {
-                    if (i9 == 1) {
-                        Bundle bundle = new Bundle();
-                        bundle.putLong("chat_id", ti0Var.b);
-                        ti0Var.presentFragment(new s91(bundle));
-                        break;
-                    }
-                } else {
-                    ti0Var.finishFragment();
-                    break;
-                }
-                break;
-            case 5:
-                if (i9 == -1) {
-                    ((NotificationsCustomSettingsActivity) obj).finishFragment();
-                    break;
-                }
-                break;
-            case 6:
-                if (i9 == -1) {
-                    ((NotificationsSettingsActivity) obj).finishFragment();
-                    break;
-                }
-                break;
-            case 7:
-                if (i9 == -1) {
-                    ((PasscodeActivity) obj).finishFragment();
-                    break;
-                }
-                break;
-            case 8:
-                if (i9 == -1) {
-                    ((PasskeysActivity) obj).finishFragment();
-                    break;
-                }
-                break;
-            case 9:
-                lp0 lp0Var = (lp0) obj;
-                if (i9 != -1) {
-                    if (i9 == 1) {
-                        if (lp0Var.c != null && !lp0Var.f) {
-                            jp0 jp0Var = lp0Var.d;
-                            float f10 = jp0Var.f - jp0Var.x;
-                            float f11 = jp0Var.v;
-                            float f12 = (jp0Var.h - jp0Var.y) / jp0Var.w;
-                            float f13 = jp0Var.d / f11;
-                            float f14 = jp0Var.e / f11;
-                            lp0 lp0Var2 = jp0Var.D;
-                            int width = (int) ((f10 / f11) * lp0Var2.a.getWidth());
-                            int height = (int) (f12 * lp0Var2.a.getHeight());
-                            int width2 = (int) (f13 * lp0Var2.a.getWidth());
-                            int width3 = (int) (f14 * lp0Var2.a.getWidth());
-                            if (width < 0) {
-                                width = 0;
-                            }
-                            if (height < 0) {
-                                height = 0;
-                            }
-                            if (width + width2 > lp0Var2.a.getWidth()) {
-                                width2 = lp0Var2.a.getWidth() - width;
-                            }
-                            if (height + width3 > lp0Var2.a.getHeight()) {
-                                width3 = lp0Var2.a.getHeight() - height;
-                            }
-                            try {
-                                bitmap = Bitmaps.createBitmap(lp0Var2.a, width, height, width2, width3);
-                            } catch (Throwable th) {
-                                FileLog.e(th);
-                                System.gc();
-                                try {
-                                    bitmap = Bitmaps.createBitmap(lp0Var2.a, width, height, width2, width3);
-                                } catch (Throwable th2) {
-                                    FileLog.e(th2);
-                                    bitmap = null;
-                                }
-                            }
-                            if (bitmap == lp0Var.a) {
-                                lp0Var.e = true;
-                            }
-                            ((org.telegram.ui.Components.e40) lp0Var.c).s(false, bitmap, null);
-                            lp0Var.f = true;
-                        }
-                        lp0Var.finishFragment();
-                        break;
-                    }
-                } else {
-                    lp0Var.finishFragment();
-                    break;
-                }
-                break;
-            case 10:
-                zp0 zp0Var = (zp0) obj;
-                if (i9 != -1) {
-                    if (i9 != 1) {
-                        if (i9 == 2) {
-                            yp0 yp0Var = zp0Var.o0;
-                            if (yp0Var != null) {
-                                yp0Var.h();
-                            }
-                            zp0Var.finishFragment();
-                            break;
-                        }
-                    } else {
-                        boolean z10 = zp0Var.U;
-                        zp0Var.U = !z10;
-                        if (z10) {
-                            zp0Var.G.setPadding(AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(50.0f));
-                        } else {
-                            zp0Var.G.setPadding(0, 0, 0, AndroidUtilities.dp(48.0f));
-                        }
-                        zp0Var.G.B0();
-                        zp0Var.I.h1(0, 0);
-                        zp0Var.H.l();
-                        break;
-                    }
-                } else {
-                    zp0Var.finishFragment();
-                    break;
-                }
-                break;
-            case 11:
-                if (i9 == -1) {
-                    ((eq0) obj).finishFragment();
-                    break;
-                }
-                break;
-            case 12:
-                PopupNotificationActivity popupNotificationActivity = (PopupNotificationActivity) obj;
-                if (i9 != -1) {
-                    if (i9 != 1) {
-                        if (i9 == 2) {
-                            int i11 = PopupNotificationActivity.X;
-                            popupNotificationActivity.p();
-                            break;
-                        }
-                    } else {
-                        int i12 = PopupNotificationActivity.X;
-                        popupNotificationActivity.k();
-                        break;
-                    }
-                } else {
-                    popupNotificationActivity.i();
-                    popupNotificationActivity.finish();
-                    break;
-                }
-                break;
-            case 13:
-                pv0 pv0Var = (pv0) obj;
-                if (i9 != -1) {
-                    if (i9 == 1) {
-                        pv0Var.X();
-                        break;
-                    }
-                } else if (pv0Var.onBackPressed(true)) {
-                    pv0Var.finishFragment();
-                    break;
-                }
-                break;
-            case 14:
-                if (i9 == -1) {
-                    ((PremiumPreviewFragment) obj).finishFragment();
-                    break;
-                }
-                break;
-            case 15:
-                PrivacyControlActivity privacyControlActivity = (PrivacyControlActivity) obj;
-                if (i9 != -1) {
-                    if (i9 == 1) {
-                        privacyControlActivity.y0();
-                        break;
-                    }
-                } else if (privacyControlActivity.u0(true)) {
-                    privacyControlActivity.finishFragment();
-                    break;
-                }
-                break;
-            case 16:
-                if (i9 == -1) {
-                    ((PrivacySettingsActivity) obj).finishFragment();
-                    break;
-                }
-                break;
-            case 17:
-                if (i9 == -1) {
-                    ((cx0) obj).finishFragment();
-                    break;
-                }
-                break;
-            case 18:
-                if (i9 == -1) {
-                    ((ProxyListActivity) obj).finishFragment();
-                    break;
-                }
-                break;
-            case 19:
-                if (i9 == -1) {
-                    ((b21) obj).finishFragment();
-                    break;
-                }
-                break;
-            case 20:
-                if (i9 == -1) {
-                    ((h21) obj).finishFragment();
-                    break;
-                }
-                break;
-            case 21:
-                if (i9 == -1) {
-                    ((b31) obj).finishFragment();
-                    break;
-                }
-                break;
-            case 22:
-                if (i9 == -1) {
-                    ((SaveToGallerySettingsActivity) obj).finishFragment();
-                    break;
-                }
-                break;
-            case 23:
-                if (i9 == -1) {
-                    ((SecretMediaViewer) obj).e(true, false);
-                    break;
-                }
-                break;
-            case 24:
-                if (i9 == -1) {
-                    ((SessionsActivity) obj).finishFragment();
-                    break;
-                }
-                break;
-            case 25:
-                z71 z71Var = (z71) obj;
-                if (i9 != -1) {
-                    if (i9 == 2) {
-                        z71Var.k0(new hg0(null));
-                        break;
-                    }
-                } else {
-                    z71Var.finishFragment();
-                    break;
-                }
-                break;
-            case 26:
-                if (i9 == -1) {
-                    ((s91) obj).finishFragment();
-                    break;
-                }
-                break;
-            case 27:
-                StickersActivity stickersActivity = (StickersActivity) obj;
-                if (i9 != -1) {
-                    StickersActivity.c0(stickersActivity, i9);
-                    break;
-                } else if (stickersActivity.onBackPressed(true)) {
-                    stickersActivity.finishFragment();
-                    break;
-                }
-                break;
-            case 28:
-                tc1 tc1Var = (tc1) obj;
-                if (i9 != -1) {
-                    if (i9 == 1) {
-                        tc1.X(tc1Var);
-                        break;
-                    }
-                } else {
-                    tc1Var.finishFragment();
-                    break;
-                }
+                h31 h31Var = (h31) obj;
+                h31Var.y = f9 / 1000.0f;
+                h31Var.invalidate();
                 break;
             default:
-                if (i9 == -1) {
-                    ((kd1) obj).finishFragment();
+                z31 z31Var = (z31) obj;
+                org.telegram.ui.Components.z61 z61Var2 = z31Var.r.M;
+                int measuredHeight2 = z31Var.getMeasuredHeight();
+                z61Var2.h = (int) (((z31Var.getMeasuredWidth() - AndroidUtilities.dp(16.0f)) - f9) - 0);
+                z61Var2.i = measuredHeight2;
+                View view3 = z61Var2.v;
+                if (view3 != null) {
+                    view3.invalidate();
                     break;
                 }
                 break;

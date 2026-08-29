@@ -10,14 +10,14 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
 public final class sf0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
     public final /* synthetic */ tf0 b;
 
-    public /* synthetic */ sf0(tf0 tf0Var, int i9) {
-        this.a = i9;
+    public /* synthetic */ sf0(tf0 tf0Var, int i10) {
+        this.a = i10;
         this.b = tf0Var;
     }
 
@@ -51,7 +51,7 @@ public final class sf0 extends AnimatorListenerAdapter {
                 Bitmap createBitmap = Bitmap.createBitmap(measuredWidth, measuredHeight, Bitmap.Config.ARGB_8888);
                 Canvas canvas = new Canvas(createBitmap);
                 canvas.scale(0.1f, 0.1f);
-                canvas.drawColor(org.telegram.ui.ActionBar.f6.w0(null, org.telegram.ui.ActionBar.f6.d6, false));
+                canvas.drawColor(org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.d6, false));
                 tf0Var.b.draw(canvas);
                 Utilities.stackBlurBitmap(createBitmap, Math.max(8, Math.max(measuredWidth, measuredHeight) / ImageReceiver.DEFAULT_CROSSFADE_DURATION));
                 tf0Var.d.setBackground(new BitmapDrawable(tf0Var.getContext().getResources(), createBitmap));

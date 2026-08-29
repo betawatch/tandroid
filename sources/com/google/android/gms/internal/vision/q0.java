@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public class q0 implements Serializable, Iterable {
     public static final q0 c = new q0(j1.b);
@@ -22,46 +22,46 @@ public class q0 implements Serializable, Iterable {
         this.b = bArr;
     }
 
-    public static q0 o(int i9, int i10, byte[] bArr) {
+    public static q0 o(int i10, int i11, byte[] bArr) {
         byte[] copyOfRange;
-        q(i9, i9 + i10, bArr.length);
+        q(i10, i10 + i11, bArr.length);
         switch (d.a) {
             case 1:
-                copyOfRange = Arrays.copyOfRange(bArr, i9, i10 + i9);
+                copyOfRange = Arrays.copyOfRange(bArr, i10, i11 + i10);
                 break;
             default:
-                copyOfRange = new byte[i10];
-                System.arraycopy(bArr, i9, copyOfRange, 0, i10);
+                copyOfRange = new byte[i11];
+                System.arraycopy(bArr, i10, copyOfRange, 0, i11);
                 break;
         }
         return new q0(copyOfRange);
     }
 
-    public static int q(int i9, int i10, int i11) {
-        int i12 = i10 - i9;
-        if ((i9 | i10 | i12 | (i11 - i10)) >= 0) {
-            return i12;
+    public static int q(int i10, int i11, int i12) {
+        int i13 = i11 - i10;
+        if ((i10 | i11 | i13 | (i12 - i11)) >= 0) {
+            return i13;
         }
-        if (i9 < 0) {
+        if (i10 < 0) {
             StringBuilder sb2 = new StringBuilder(32);
             sb2.append("Beginning index: ");
-            sb2.append(i9);
+            sb2.append(i10);
             sb2.append(" < 0");
             throw new IndexOutOfBoundsException(sb2.toString());
         }
-        if (i10 < i9) {
+        if (i11 < i10) {
             StringBuilder sb3 = new StringBuilder(66);
             sb3.append("Beginning index larger than ending index: ");
-            sb3.append(i9);
-            sb3.append(", ");
             sb3.append(i10);
+            sb3.append(", ");
+            sb3.append(i11);
             throw new IndexOutOfBoundsException(sb3.toString());
         }
         StringBuilder sb4 = new StringBuilder(37);
         sb4.append("End index: ");
-        sb4.append(i10);
-        sb4.append(" >= ");
         sb4.append(i11);
+        sb4.append(" >= ");
+        sb4.append(i12);
         throw new IndexOutOfBoundsException(sb4.toString());
     }
 
@@ -79,9 +79,9 @@ public class q0 implements Serializable, Iterable {
             return obj.equals(this);
         }
         q0 q0Var = (q0) obj;
-        int i9 = this.a;
-        int i10 = q0Var.a;
-        if (i9 != 0 && i10 != 0 && i9 != i10) {
+        int i10 = this.a;
+        int i11 = q0Var.a;
+        if (i10 != 0 && i11 != 0 && i10 != i11) {
             return false;
         }
         int n10 = n();
@@ -103,39 +103,39 @@ public class q0 implements Serializable, Iterable {
             throw new IllegalArgumentException(sb3.toString());
         }
         byte[] bArr = q0Var.b;
-        int r10 = r() + n10;
-        int r11 = r();
-        int r12 = q0Var.r();
-        while (r11 < r10) {
-            if (this.b[r11] != bArr[r12]) {
+        int r6 = r() + n10;
+        int r9 = r();
+        int r10 = q0Var.r();
+        while (r9 < r6) {
+            if (this.b[r9] != bArr[r10]) {
                 return false;
             }
-            r11++;
-            r12++;
+            r9++;
+            r10++;
         }
         return true;
     }
 
     public final int hashCode() {
-        int i9 = this.a;
-        if (i9 != 0) {
-            return i9;
+        int i10 = this.a;
+        if (i10 != 0) {
+            return i10;
         }
         int n10 = n();
-        int r10 = r();
-        int i10 = n10;
-        for (int i11 = r10; i11 < r10 + n10; i11++) {
-            i10 = (i10 * 31) + this.b[i11];
+        int r6 = r();
+        int i11 = n10;
+        for (int i12 = r6; i12 < r6 + n10; i12++) {
+            i11 = (i11 * 31) + this.b[i12];
         }
-        if (i10 == 0) {
-            i10 = 1;
+        if (i11 == 0) {
+            i11 = 1;
         }
-        this.a = i10;
-        return i10;
+        this.a = i11;
+        return i11;
     }
 
-    public byte i(int i9) {
-        return this.b[i9];
+    public byte i(int i10) {
+        return this.b[i10];
     }
 
     @Override // java.lang.Iterable
@@ -147,8 +147,8 @@ public class q0 implements Serializable, Iterable {
         return this.b.length;
     }
 
-    public byte p(int i9) {
-        return this.b[i9];
+    public byte p(int i10) {
+        return this.b[i10];
     }
 
     public int r() {
@@ -163,14 +163,14 @@ public class q0 implements Serializable, Iterable {
         if (n() <= 50) {
             concat = e1.k(this);
         } else {
-            int q10 = q(0, 47, n());
-            concat = String.valueOf(e1.k(q10 == 0 ? c : new p0(this.b, r(), q10))).concat("...");
+            int q6 = q(0, 47, n());
+            concat = String.valueOf(e1.k(q6 == 0 ? c : new p0(this.b, r(), q6))).concat("...");
         }
         StringBuilder sb2 = new StringBuilder("<ByteString@");
         sb2.append(hexString);
         sb2.append(" size=");
         sb2.append(n10);
         sb2.append(" contents=\"");
-        return aa.d.r(sb2, concat, "\">");
+        return a4.w.q(sb2, concat, "\">");
     }
 }

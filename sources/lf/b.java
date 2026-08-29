@@ -1,23 +1,43 @@
 package lf;
 
-import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
-import java.util.List;
+import org.telegram.messenger.video.AudioConversions;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class b extends BitmapDrawable {
-    public final List a;
+public final class b extends a {
+    public final long b;
+    public int c;
 
-    public b(Bitmap bitmap, List list) {
-        super(bitmap);
-        this.a = list;
+    public b(long j10) {
+        this.b = j10;
     }
 
-    public static BitmapDrawable a(Bitmap bitmap, List list) {
-        if (bitmap == null) {
-            return null;
+    @Override // lf.a
+    public final short a() {
+        if (!c()) {
+            throw new RuntimeException("Audio input has no remaining value.");
         }
-        return (list == null || list.isEmpty()) ? new BitmapDrawable(bitmap) : new b(bitmap, list);
+        this.c--;
+        return (short) 0;
+    }
+
+    @Override // lf.a
+    public final int b() {
+        return -1;
+    }
+
+    @Override // lf.a
+    public final boolean c() {
+        return this.c > 0;
+    }
+
+    @Override // lf.a
+    public final void d() {
+        this.c = 0;
+    }
+
+    @Override // lf.a
+    public final void e(int i10, int i11) {
+        this.c = AudioConversions.usToShorts(this.b, i10, i11);
     }
 }

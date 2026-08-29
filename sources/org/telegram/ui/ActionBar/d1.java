@@ -30,11 +30,10 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.gr;
-import org.telegram.ui.Components.jb0;
-import org.telegram.ui.Components.vc;
+import org.telegram.ui.Components.jr;
+import org.telegram.ui.Components.yb0;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
 public abstract class d1 extends FrameLayout {
     public final Paint A;
@@ -54,7 +53,7 @@ public abstract class d1 extends FrameLayout {
     public int O;
     public ValueAnimator P;
     public boolean Q;
-    public final p R;
+    public final q R;
     public PorterDuffColorFilter S;
     public float T;
     public float U;
@@ -64,7 +63,7 @@ public abstract class d1 extends FrameLayout {
     public Utilities.Callback2 b;
     public final z0 c;
     public final z0 d;
-    public final org.telegram.ui.Components.y5 e;
+    public final org.telegram.ui.Components.d6 e;
     public Bitmap f;
     public BitmapShader h;
     public Matrix n;
@@ -72,14 +71,14 @@ public abstract class d1 extends FrameLayout {
     public float s;
     public boolean v;
     public boolean w;
-    public final b6 x;
+    public final c6 x;
     public final Paint y;
 
-    public d1(Context context, b6 b6Var) {
+    public d1(Context context, c6 c6Var) {
         super(context);
         this.a = 0.5f;
-        gr grVar = gr.h;
-        this.e = new org.telegram.ui.Components.y5(1.0f, this, 0L, 320L, grVar);
+        jr jrVar = jr.h;
+        this.e = new org.telegram.ui.Components.d6(1.0f, this, 0L, 320L, jrVar);
         this.r = new int[2];
         this.s = 0.0f;
         Paint paint = new Paint(1);
@@ -98,14 +97,14 @@ public abstract class d1 extends FrameLayout {
         this.G = paint6;
         this.J = true;
         this.Q = false;
-        this.R = new p(this, 3);
-        this.x = b6Var;
+        this.R = new q(this, 3);
+        this.x = c6Var;
         setWillNotDraw(false);
         z0 z0Var = new z0(this, 0);
         this.c = z0Var;
         z0Var.setCallback(this);
         z0Var.u(AndroidUtilities.bold());
-        z0Var.k(0.3f, 165L, grVar);
+        z0Var.k(0.3f, 165L, jrVar);
         z0Var.t(AndroidUtilities.dpf2(14.0f));
         Paint.Style style = Paint.Style.FILL_AND_STROKE;
         TextPaint textPaint = z0Var.a;
@@ -116,7 +115,7 @@ public abstract class d1 extends FrameLayout {
         this.d = z0Var2;
         z0Var2.setCallback(this);
         z0Var2.u(AndroidUtilities.bold());
-        z0Var2.k(0.3f, 165L, grVar);
+        z0Var2.k(0.3f, 165L, jrVar);
         z0Var2.t(AndroidUtilities.dpf2(14.0f));
         TextPaint textPaint2 = z0Var2.a;
         textPaint2.setStyle(style);
@@ -128,30 +127,30 @@ public abstract class d1 extends FrameLayout {
         AndroidUtilities.adjustSaturationColorMatrix(colorMatrix, -0.4f);
         AndroidUtilities.adjustBrightnessColorMatrix(colorMatrix, 0.1f);
         paint5.setColorFilter(new ColorMatrixColorFilter(colorMatrix));
-        paint2.setColor(f6.v0(f6.G8, b6Var));
+        paint2.setColor(g6.v0(g6.G8, c6Var));
         boolean z10 = AndroidUtilities.computePerceivedBrightness(paint2.getColor()) <= 0.721f;
         this.H = z10;
         z0Var.r(z10 ? -1 : -16777216);
         z0Var2.r(this.H ? -1 : -16777216);
-        paint4.setColor(f6.l1(0.025f, -16777216));
-        paint3.setColor(f6.l1(0.35f, -1));
-        paint6.setColor(f6.l1(0.2f, -1));
+        paint4.setColor(g6.l1(0.025f, -16777216));
+        paint3.setColor(g6.l1(0.35f, -1));
+        paint6.setColor(g6.l1(0.2f, -1));
     }
 
     public final void a(Canvas canvas) {
         if (this.I == null) {
             return;
         }
-        int i9 = 0;
+        int i10 = 0;
         while (true) {
             float[] fArr = this.I;
-            if (i9 >= fArr.length) {
+            if (i10 >= fArr.length) {
                 return;
             }
-            float f10 = fArr[i9];
+            float f9 = fArr[i10];
             RectF rectF = AndroidUtilities.rectTmp;
-            canvas.drawRect((rectF.width() * f10) + rectF.left, rectF.top, (rectF.width() * f10) + rectF.left + AndroidUtilities.dp(0.66f), rectF.bottom, this.G);
-            i9++;
+            canvas.drawRect((rectF.width() * f9) + rectF.left, rectF.top, (rectF.width() * f9) + rectF.left + AndroidUtilities.dp(0.66f), rectF.bottom, this.G);
+            i10++;
         }
     }
 
@@ -181,21 +180,21 @@ public abstract class d1 extends FrameLayout {
         z0Var2.draw(canvas);
     }
 
-    public final void c(float f10, boolean z10) {
+    public final void c(float f9, boolean z10) {
         ValueAnimator valueAnimator = this.P;
         String str = null;
         if (valueAnimator != null) {
             valueAnimator.cancel();
             this.P = null;
         }
-        float a2 = g7.n.a(f10, 0.0f, 1.0f);
+        float a2 = i7.w.a(f9, 0.0f, 1.0f);
         if (z10) {
-            int i9 = 0;
+            int i10 = 0;
             ValueAnimator ofFloat = ValueAnimator.ofFloat(this.a, a2);
             this.P = ofFloat;
-            ofFloat.addUpdateListener(new x0(this, i9));
-            this.P.addListener(new a1(this, a2, i9));
-            this.P.setInterpolator(gr.h);
+            ofFloat.addUpdateListener(new x0(this, i10));
+            this.P.addListener(new a1(this, a2, i10));
+            this.P.setInterpolator(jr.h);
             this.P.setDuration(220L);
             this.P.start();
         } else {
@@ -205,7 +204,7 @@ public abstract class d1 extends FrameLayout {
         c1 c1Var = (c1) this;
         String str2 = c1Var.b0;
         if (str2 == null) {
-            str2 = vc.a((a2 * 2.8f) + 0.2f) + "x";
+            str2 = cf.f.a((a2 * 2.8f) + 0.2f) + "x";
         }
         if (str2 != null) {
             z0 z0Var = this.c;
@@ -215,7 +214,7 @@ public abstract class d1 extends FrameLayout {
             }
         }
         if (c1Var.b0 != null) {
-            str = vc.a((a2 * 2.8f) + 0.2f) + "x";
+            str = cf.f.a((a2 * 2.8f) + 0.2f) + "x";
         }
         if (str != null) {
             z0 z0Var2 = this.d;
@@ -224,9 +223,9 @@ public abstract class d1 extends FrameLayout {
                 z0Var2.q(str, true, true);
             }
         }
-        int i10 = f6.sj;
-        b6 b6Var = c1Var.x;
-        this.F.setColor(i0.a.d(g7.n.a((((a2 * 2.8f) + 0.2f) - 1.0f) / 1.0f, 0.0f, 1.0f), f6.v0(i10, b6Var), f6.v0(f6.tj, b6Var)));
+        int i11 = g6.sj;
+        c6 c6Var = c1Var.x;
+        this.F.setColor(i0.a.d(i7.w.a((((a2 * 2.8f) + 0.2f) - 1.0f) / 1.0f, 0.0f, 1.0f), g6.v0(i11, c6Var), g6.v0(g6.tj, c6Var)));
     }
 
     public float getValue() {
@@ -301,10 +300,10 @@ public abstract class d1 extends FrameLayout {
     }
 
     @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i9, int i10, int i11, int i12) {
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         int v02;
-        int i13;
-        super.onLayout(z10, i9, i10, i11, i12);
+        int i14;
+        super.onLayout(z10, i10, i11, i12, i13);
         int[] iArr = this.r;
         getLocationOnScreen(iArr);
         Matrix matrix = this.n;
@@ -319,59 +318,59 @@ public abstract class d1 extends FrameLayout {
             }
         }
         boolean z11 = this.J;
-        b6 b6Var = this.x;
+        c6 c6Var = this.x;
         if (z11) {
-            Drawable r02 = f6.r0();
+            Drawable r02 = g6.r0();
             if (r02 instanceof ColorDrawable) {
                 v02 = ((ColorDrawable) r02).getColor();
             } else {
                 Pair pair = null;
-                Bitmap bitmap = r02 instanceof jb0 ? ((jb0) r02).k : r02 instanceof BitmapDrawable ? ((BitmapDrawable) r02).getBitmap() : null;
+                Bitmap bitmap = r02 instanceof yb0 ? ((yb0) r02).k : r02 instanceof BitmapDrawable ? ((BitmapDrawable) r02).getBitmap() : null;
                 if (bitmap != null) {
-                    float f10 = iArr[0] / AndroidUtilities.displaySize.x;
-                    int width = (int) (f10 * bitmap.getWidth());
+                    float f9 = iArr[0] / AndroidUtilities.displaySize.x;
+                    int width = (int) (f9 * bitmap.getWidth());
                     int measuredWidth = (int) (((getMeasuredWidth() + r13) / AndroidUtilities.displaySize.x) * bitmap.getWidth());
-                    int currentActionBarHeight = (int) ((((iArr[1] - AndroidUtilities.statusBarHeight) - k.getCurrentActionBarHeight()) / AndroidUtilities.displaySize.y) * bitmap.getHeight());
+                    int currentActionBarHeight = (int) ((((iArr[1] - AndroidUtilities.statusBarHeight) - l.getCurrentActionBarHeight()) / AndroidUtilities.displaySize.y) * bitmap.getHeight());
                     if (width >= 0 && width < bitmap.getWidth() && measuredWidth >= 0 && measuredWidth < bitmap.getWidth() && currentActionBarHeight >= 0 && currentActionBarHeight < bitmap.getHeight()) {
                         pair = new Pair(Integer.valueOf(bitmap.getPixel(width, currentActionBarHeight)), Integer.valueOf(bitmap.getPixel(measuredWidth, currentActionBarHeight)));
                     }
                 }
                 if (pair != null) {
                     v02 = ((Integer) pair.first).intValue();
-                    i13 = ((Integer) pair.second).intValue();
-                    if (this.K == null && this.L == v02 && this.M == i13) {
+                    i14 = ((Integer) pair.second).intValue();
+                    if (this.K == null && this.L == v02 && this.M == i14) {
                         return;
                     }
                     this.L = v02;
-                    this.M = i13;
-                    LinearGradient linearGradient = new LinearGradient(0.0f, 0.0f, 1.0f, 0.0f, new int[]{v02, i13}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
+                    this.M = i14;
+                    LinearGradient linearGradient = new LinearGradient(0.0f, 0.0f, 1.0f, 0.0f, new int[]{v02, i14}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
                     this.K = linearGradient;
                     this.E.setShader(linearGradient);
                 }
-                v02 = f6.l1(0.25f, f6.v0(f6.d6, b6Var));
+                v02 = g6.l1(0.25f, g6.v0(g6.d6, c6Var));
             }
         } else {
-            v02 = f6.v0(f6.d6, b6Var);
-            if (!f6.I.q()) {
-                v02 = f6.v(v02, f6.l1(0.18f, -16777216));
+            v02 = g6.v0(g6.d6, c6Var);
+            if (!g6.I.q()) {
+                v02 = g6.v(v02, g6.l1(0.18f, -16777216));
             }
         }
-        i13 = v02;
+        i14 = v02;
         if (this.K == null) {
         }
         this.L = v02;
-        this.M = i13;
-        LinearGradient linearGradient2 = new LinearGradient(0.0f, 0.0f, 1.0f, 0.0f, new int[]{v02, i13}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
+        this.M = i14;
+        LinearGradient linearGradient2 = new LinearGradient(0.0f, 0.0f, 1.0f, 0.0f, new int[]{v02, i14}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
         this.K = linearGradient2;
         this.E.setShader(linearGradient2);
     }
 
     @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i9, int i10) {
+    public final void onMeasure(int i10, int i11) {
         if (this.v) {
-            i9 = View.MeasureSpec.makeMeasureSpec(getPaddingLeft() + getPaddingRight() + View.MeasureSpec.getSize(i9), TLObject.FLAG_30);
+            i10 = View.MeasureSpec.makeMeasureSpec(getPaddingLeft() + getPaddingRight() + View.MeasureSpec.getSize(i10), TLObject.FLAG_30);
         }
-        super.onMeasure(i9, View.MeasureSpec.makeMeasureSpec(getPaddingBottom() + getPaddingTop() + AndroidUtilities.dp(44.0f), TLObject.FLAG_30));
+        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(getPaddingBottom() + getPaddingTop() + AndroidUtilities.dp(44.0f), TLObject.FLAG_30));
         boolean z10 = SharedConfig.getDevicePerformanceClass() >= 2 && LiteMode.isEnabled(256);
         if (this.w && this.f == null && !this.Q && z10) {
             this.R.run();
@@ -380,32 +379,32 @@ public abstract class d1 extends FrameLayout {
 
     @Override // android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
-        float x10 = motionEvent.getX() - getPaddingLeft();
+        float x4 = motionEvent.getX() - getPaddingLeft();
         int action = motionEvent.getAction();
         if (action == 0) {
             this.W = true;
-            this.T = x10;
+            this.T = x4;
             this.U = this.a;
             this.V = System.currentTimeMillis();
             return true;
         }
         if (action == 2 || action == 1) {
-            int i9 = 0;
+            int i10 = 0;
             if (action == 1) {
                 this.W = false;
                 if (System.currentTimeMillis() - this.V < ViewConfiguration.getTapTimeout()) {
-                    float paddingLeft = (x10 - getPaddingLeft()) / ((getWidth() - getPaddingLeft()) - getPaddingRight());
+                    float paddingLeft = (x4 - getPaddingLeft()) / ((getWidth() - getPaddingLeft()) - getPaddingRight());
                     if (this.I != null) {
                         while (true) {
                             float[] fArr = this.I;
-                            if (i9 >= fArr.length) {
+                            if (i10 >= fArr.length) {
                                 break;
                             }
-                            if (Math.abs(paddingLeft - fArr[i9]) < 0.1f) {
-                                paddingLeft = this.I[i9];
+                            if (Math.abs(paddingLeft - fArr[i10]) < 0.1f) {
+                                paddingLeft = this.I[i10];
                                 break;
                             }
-                            i9++;
+                            i10++;
                         }
                     }
                     Utilities.Callback2 callback2 = this.b;
@@ -415,19 +414,19 @@ public abstract class d1 extends FrameLayout {
                     }
                 }
             }
-            float max = ((x10 - this.T) / Math.max(1, (getWidth() - getPaddingLeft()) - getPaddingRight())) + this.U;
+            float max = ((x4 - this.T) / Math.max(1, (getWidth() - getPaddingLeft()) - getPaddingRight())) + this.U;
             if (this.I != null) {
-                int i10 = 0;
+                int i11 = 0;
                 while (true) {
                     float[] fArr2 = this.I;
-                    if (i10 >= fArr2.length) {
+                    if (i11 >= fArr2.length) {
                         break;
                     }
-                    if (Math.abs(max - fArr2[i10]) < 0.05f) {
-                        max = this.I[i10];
+                    if (Math.abs(max - fArr2[i11]) < 0.05f) {
+                        max = this.I[i11];
                         break;
                     }
-                    i10++;
+                    i11++;
                 }
             }
             boolean z10 = !this.W;
@@ -441,9 +440,9 @@ public abstract class d1 extends FrameLayout {
     }
 
     @Override // android.view.View
-    public void setBackgroundColor(int i9) {
+    public void setBackgroundColor(int i10) {
         Paint paint = this.A;
-        paint.setColor(i9);
+        paint.setColor(i10);
         boolean z10 = AndroidUtilities.computePerceivedBrightness(paint.getColor()) <= 0.721f;
         this.H = z10;
         this.c.r(z10 ? -1 : -16777216);
@@ -466,8 +465,8 @@ public abstract class d1 extends FrameLayout {
         this.b = callback2;
     }
 
-    public void setRoundRadiusDp(float f10) {
-        this.s = f10;
+    public void setRoundRadiusDp(float f9) {
+        this.s = f9;
         invalidate();
     }
 
@@ -475,8 +474,8 @@ public abstract class d1 extends FrameLayout {
         this.I = fArr;
     }
 
-    public void setTextColor(int i9) {
-        this.c.r(i9);
-        this.d.r(i9);
+    public void setTextColor(int i10) {
+        this.c.r(i10);
+        this.d.r(i10);
     }
 }

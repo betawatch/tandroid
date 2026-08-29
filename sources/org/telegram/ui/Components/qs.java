@@ -1,29 +1,82 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.text.style.ReplacementSpan;
-import org.telegram.messenger.AndroidUtilities;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.view.View;
+import android.view.ViewPropertyAnimator;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class qs extends ReplacementSpan {
-    public int b;
-    public final Paint a = new Paint(1);
-    public float c = 3.0f;
+public final class qs extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ f2.n1 b;
+    public final /* synthetic */ View c;
+    public final /* synthetic */ ViewPropertyAnimator d;
+    public final /* synthetic */ us e;
 
-    @Override // android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i9, int i10, float f10, int i11, int i12, int i13, Paint paint) {
-        int color = paint.getColor();
-        Paint paint2 = this.a;
-        if (color != 0) {
-            paint2.setColor(paint.getColor());
-        }
-        canvas.drawCircle(f10 + (AndroidUtilities.dpf2(this.c) / 2.0f), ((i13 - i11) / 2) + this.b, AndroidUtilities.dpf2(3.0f) / 2.0f, paint2);
+    public qs(us usVar, f2.n1 n1Var, ViewPropertyAnimator viewPropertyAnimator, View view) {
+        this.e = usVar;
+        this.b = n1Var;
+        this.d = viewPropertyAnimator;
+        this.c = view;
     }
 
-    @Override // android.text.style.ReplacementSpan
-    public final int getSize(Paint paint, CharSequence charSequence, int i9, int i10, Paint.FontMetricsInt fontMetricsInt) {
-        return AndroidUtilities.dp(this.c);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationCancel(Animator animator) {
+        switch (this.a) {
+            case 1:
+                this.c.setAlpha(1.0f);
+                break;
+            default:
+                super.onAnimationCancel(animator);
+                break;
+        }
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                this.d.setListener(null);
+                this.c.setAlpha(1.0f);
+                us usVar = this.e;
+                f2.n1 n1Var = this.b;
+                usVar.d(n1Var);
+                usVar.x.remove(n1Var);
+                usVar.A();
+                break;
+            default:
+                this.d.setListener(null);
+                us usVar2 = this.e;
+                f2.n1 n1Var2 = this.b;
+                usVar2.u(n1Var2);
+                usVar2.v.remove(n1Var2);
+                usVar2.A();
+                View view = n1Var2.a;
+                if (view instanceof org.telegram.ui.Cells.p2) {
+                    ((org.telegram.ui.Cells.p2) view).setMoving(false);
+                    break;
+                }
+                break;
+        }
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationStart(Animator animator) {
+        switch (this.a) {
+            case 0:
+                this.e.y();
+                break;
+            default:
+                this.e.getClass();
+                break;
+        }
+    }
+
+    public qs(us usVar, f2.n1 n1Var, View view, ViewPropertyAnimator viewPropertyAnimator) {
+        this.e = usVar;
+        this.b = n1Var;
+        this.c = view;
+        this.d = viewPropertyAnimator;
     }
 }

@@ -1,119 +1,33 @@
 package qc;
 
-import java.io.Serializable;
-import zc.p;
+import kotlin.jvm.internal.j;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class b implements h, Serializable {
-    public final h a;
-    public final f b;
+public final class b implements Comparable {
+    public static final b b = new b();
+    public final int a = 131348;
 
-    public b(f element, h left) {
-        kotlin.jvm.internal.i.e(left, "left");
-        kotlin.jvm.internal.i.e(element, "element");
-        this.a = left;
-        this.b = element;
+    @Override // java.lang.Comparable
+    public final int compareTo(Object obj) {
+        b other = (b) obj;
+        j.e(other, "other");
+        return this.a - other.a;
     }
 
     public final boolean equals(Object obj) {
-        boolean z10;
         if (this == obj) {
             return true;
         }
-        if (obj instanceof b) {
-            b bVar = (b) obj;
-            int i9 = 2;
-            b bVar2 = bVar;
-            int i10 = 2;
-            while (true) {
-                h hVar = bVar2.a;
-                bVar2 = hVar instanceof b ? (b) hVar : null;
-                if (bVar2 == null) {
-                    break;
-                }
-                i10++;
-            }
-            b bVar3 = this;
-            while (true) {
-                h hVar2 = bVar3.a;
-                bVar3 = hVar2 instanceof b ? (b) hVar2 : null;
-                if (bVar3 == null) {
-                    break;
-                }
-                i9++;
-            }
-            if (i10 == i9) {
-                b bVar4 = this;
-                while (true) {
-                    f fVar = bVar4.b;
-                    if (!kotlin.jvm.internal.i.a(bVar.get(fVar.getKey()), fVar)) {
-                        z10 = false;
-                        break;
-                    }
-                    h hVar3 = bVar4.a;
-                    if (!(hVar3 instanceof b)) {
-                        kotlin.jvm.internal.i.c(hVar3, "null cannot be cast to non-null type kotlin.coroutines.CoroutineContext.Element");
-                        f fVar2 = (f) hVar3;
-                        z10 = kotlin.jvm.internal.i.a(bVar.get(fVar2.getKey()), fVar2);
-                        break;
-                    }
-                    bVar4 = (b) hVar3;
-                }
-                if (z10) {
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
-
-    @Override // qc.h
-    public final Object fold(Object obj, p pVar) {
-        return pVar.invoke(this.a.fold(obj, pVar), this.b);
-    }
-
-    @Override // qc.h
-    public final f get(g key) {
-        kotlin.jvm.internal.i.e(key, "key");
-        b bVar = this;
-        while (true) {
-            f fVar = bVar.b.get(key);
-            if (fVar != null) {
-                return fVar;
-            }
-            h hVar = bVar.a;
-            if (!(hVar instanceof b)) {
-                return hVar.get(key);
-            }
-            bVar = (b) hVar;
-        }
+        b bVar = obj instanceof b ? (b) obj : null;
+        return bVar != null && this.a == bVar.a;
     }
 
     public final int hashCode() {
-        return this.b.hashCode() + this.a.hashCode();
-    }
-
-    @Override // qc.h
-    public final h minusKey(g key) {
-        kotlin.jvm.internal.i.e(key, "key");
-        f fVar = this.b;
-        f fVar2 = fVar.get(key);
-        h hVar = this.a;
-        if (fVar2 != null) {
-            return hVar;
-        }
-        h minusKey = hVar.minusKey(key);
-        return minusKey == hVar ? this : minusKey == i.a ? fVar : new b(fVar, minusKey);
-    }
-
-    @Override // qc.h
-    public final h plus(h context) {
-        kotlin.jvm.internal.i.e(context, "context");
-        return context == i.a ? this : (h) context.fold(this, new b1.e(5));
+        return this.a;
     }
 
     public final String toString() {
-        return "[" + ((String) fold("", new b1.e(4))) + ']';
+        return "2.1.20";
     }
 }

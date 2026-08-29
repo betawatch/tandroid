@@ -2,296 +2,437 @@ package org.telegram.ui;
 
 import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Rect;
 import android.graphics.RectF;
 import android.view.View;
+import android.view.ViewGroup;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
+import org.telegram.messenger.MessageObject;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class di0 extends org.telegram.ui.Components.xu0 {
-    public final int[] s0;
-    public final int[] t0;
-    public int u0;
-    public final int[] v0;
-    public final s10 w0;
-    public final Paint x0;
-    public final /* synthetic */ org.telegram.ui.ActionBar.b6 y0;
-    public final /* synthetic */ li0 z0;
+public final class di0 extends org.telegram.ui.Components.jl0 {
+    public final ArrayList T2;
+    public final org.telegram.ui.Components.d6 U2;
+    public final org.telegram.ui.Components.d6 V2;
+    public final u10 W2;
+    public final /* synthetic */ ki0 X2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public di0(li0 li0Var, Context context, org.telegram.ui.ActionBar.b6 b6Var) {
-        super(context, null);
-        this.z0 = li0Var;
-        this.y0 = b6Var;
-        this.s0 = new int[2];
-        this.t0 = new int[2];
-        this.u0 = 0;
-        this.v0 = new int[2];
-        this.w0 = new s10();
-        org.telegram.ui.Components.gr grVar = org.telegram.ui.Components.gr.f;
-        this.x0 = new Paint(1);
+    public di0(ki0 ki0Var, Context context, org.telegram.ui.ActionBar.c6 c6Var) {
+        super(context, c6Var);
+        this.X2 = ki0Var;
+        this.T2 = new ArrayList(10);
+        org.telegram.ui.Components.jr jrVar = org.telegram.ui.Components.jr.h;
+        this.U2 = new org.telegram.ui.Components.d6(this, 0L, 360L, jrVar);
+        this.V2 = new org.telegram.ui.Components.d6(this, 0L, 360L, jrVar);
+        this.W2 = new u10();
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:94:0x037e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:180:0x03b9, code lost:
     
-        if ((r5[1] - r3[1]) > r4) goto L81;
+        if (r3.messages.size() != 1) goto L167;
      */
-    @Override // org.telegram.ui.Components.xu0, android.view.ViewGroup, android.view.View
+    /* JADX WARN: Type inference failed for: r9v10, types: [boolean, int] */
+    /* JADX WARN: Type inference failed for: r9v35 */
+    /* JADX WARN: Type inference failed for: r9v44 */
+    @Override // org.telegram.ui.Components.jl0, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void dispatchDraw(Canvas canvas) {
-        final Canvas canvas2;
-        int[] iArr;
-        char c10;
-        org.telegram.ui.Cells.t1 t1Var;
-        float f10;
-        float f11;
-        float height;
-        final float f12;
-        float f13;
-        char c11;
-        float f14;
-        li0 li0Var = this.z0;
-        int[] iArr2 = li0Var.k0;
-        Paint paint = li0Var.P;
-        Rect rect = li0Var.q0;
-        ei0 ei0Var = li0Var.G;
-        if (li0Var.w && (t1Var = li0Var.M) != null && t1Var.getCurrentPosition() == null) {
-            if (li0Var.x) {
-                org.telegram.ui.Components.ff ffVar = li0Var.O;
-                if (ffVar != null) {
-                    ffVar.setAlpha(0.0f);
+        ArrayList arrayList;
+        ArrayList arrayList2;
+        ArrayList arrayList3;
+        MessageObject.GroupedMessages currentMessagesGroup;
+        ki0 ki0Var;
+        org.telegram.ui.Cells.s1 s1Var;
+        MessageObject.GroupedMessages currentMessagesGroup2;
+        ArrayList arrayList4;
+        di0 di0Var;
+        di0 di0Var2;
+        ArrayList arrayList5;
+        ki0 ki0Var2;
+        MessageObject.GroupedMessages currentMessagesGroup3;
+        MessageObject.GroupedMessages currentMessagesGroup4;
+        ki0 ki0Var3 = this.X2;
+        ci0 ci0Var = ki0Var3.C;
+        int measuredHeight = ci0Var.getMeasuredHeight();
+        di0 di0Var3 = ki0Var3.G;
+        int childCount = di0Var3.getChildCount();
+        boolean z10 = false;
+        for (int i10 = 0; i10 < childCount; i10++) {
+            View childAt = di0Var3.getChildAt(i10);
+            if (childAt instanceof org.telegram.ui.Cells.s1) {
+                org.telegram.ui.Cells.s1 s1Var2 = (org.telegram.ui.Cells.s1) childAt;
+                RectF rectF = sg.i.h;
+                sg.i.c(s1Var2, ci0Var, rectF);
+                float f9 = rectF.top;
+                int i11 = (int) f9;
+                childAt.getMeasuredHeight();
+                int i12 = i11 >= 0 ? 0 : -i11;
+                int measuredHeight2 = childAt.getMeasuredHeight();
+                if (measuredHeight2 > measuredHeight) {
+                    measuredHeight2 = i12 + measuredHeight;
                 }
-                li0Var.x = false;
+                s1Var2.b4(i12, measuredHeight2 - i12, measuredHeight, f9, f9, ci0Var.getMeasuredWidth(), ci0Var.getMeasuredHeight(), 0, 0, 0);
             }
-            boolean z10 = li0Var.M.getMessageObject() != null && li0Var.M.getMessageObject().type == 15;
-            float imageX = z10 ? li0Var.M.getPhotoImage().getImageX() : li0Var.M.getTextX();
-            float imageY = z10 ? li0Var.M.getPhotoImage().getImageY() : li0Var.M.getTextY();
-            float x10 = li0Var.M.getX() + ei0Var.getX() + imageX;
-            float y10 = li0Var.M.getY() + ei0Var.getY() + imageY;
-            float textSize = (li0Var.M.getMessageObject() != null ? li0Var.M.getMessageObject().getTextPaint() : org.telegram.ui.ActionBar.f6.o2).getTextSize();
-            org.telegram.ui.Components.ff ffVar2 = li0Var.O;
-            if (ffVar2 != null) {
-                int[] iArr3 = this.s0;
-                ffVar2.getLocationOnScreen(iArr3);
-                f11 = 255.0f;
-                float paddingLeft = li0Var.O.getPaddingLeft() + iArr3[0];
-                float paddingTop = (li0Var.O.getPaddingTop() + iArr3[1]) - li0Var.O.getScrollY();
-                float textSize2 = li0Var.O.getTextSize();
-                int i9 = iArr3[1];
-                f10 = imageY;
-                height = li0Var.O.getMeasuredHeight() + i9;
-                x10 = AndroidUtilities.lerp(paddingLeft, x10, li0Var.A);
-                y10 = AndroidUtilities.lerp(paddingTop, y10, li0Var.A);
-                f12 = AndroidUtilities.lerp(textSize2, textSize, li0Var.A);
-                f13 = i9;
-            } else {
-                f10 = imageY;
-                f11 = 255.0f;
-                height = getHeight();
-                f12 = textSize;
-                f13 = 0.0f;
+        }
+        boolean z11 = true;
+        canvas.saveLayerAlpha(0.0f, getScrollY() + 1, getWidth(), (getHeight() + getScrollY()) - 1, 255, 31);
+        Canvas canvas2 = canvas;
+        canvas2.save();
+        int childCount2 = getChildCount();
+        MessageObject.GroupedMessages groupedMessages = null;
+        for (int i13 = 0; i13 < childCount2; i13++) {
+            View childAt2 = getChildAt(i13);
+            if ((childAt2 instanceof org.telegram.ui.Cells.s1) && ((currentMessagesGroup4 = ((org.telegram.ui.Cells.s1) childAt2).getCurrentMessagesGroup()) == null || currentMessagesGroup4 != groupedMessages)) {
+                groupedMessages = currentMessagesGroup4;
             }
-            float f15 = x10;
-            float f16 = y10;
-            float f17 = li0Var.A;
-            if (li0Var.n0 != null) {
-                f13 = li0Var.o0;
+        }
+        int i14 = 0;
+        while (true) {
+            arrayList = this.T2;
+            int i15 = 2;
+            if (i14 >= 3) {
+                break;
             }
-            float lerp = AndroidUtilities.lerp(f13, ((1.0f - ei0Var.getScaleY()) * ei0Var.getHeight()) + ei0Var.getY(), li0Var.A);
-            float f18 = height;
-            float lerp2 = AndroidUtilities.lerp(0.0f, ei0Var.canScrollVertically(-1) ? 1.0f : 0.0f, li0Var.A);
-            float lerp3 = AndroidUtilities.lerp(li0Var.n0 != null ? li0Var.p0 : f18, ei0Var.getY() + ei0Var.getHeight(), li0Var.A);
-            float lerp4 = AndroidUtilities.lerp(0.0f, ei0Var.canScrollVertically(1) ? 1.0f : 0.0f, li0Var.A);
-            float f19 = imageX;
-            iArr = iArr2;
-            float f20 = f10;
-            canvas.saveLayerAlpha(0.0f, lerp + 1.0f, getWidth(), lerp3 - 1.0f, 255, 31);
-            if (li0Var.O != null) {
-                canvas2 = canvas;
-                canvas2.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), (int) ((1.0f - f17) * f11), 31);
-                canvas2.translate(f15, f16);
-                canvas2.translate((-li0Var.O.getX()) - li0Var.O.getPaddingLeft(), ((-li0Var.O.getY()) - li0Var.O.getPaddingTop()) + li0Var.O.getScrollY());
-                float alpha = li0Var.O.getAlpha();
-                li0Var.O.setAlpha(1.0f);
-                if (li0Var.A >= 0.001f) {
-                    f14 = alpha;
-                } else if (li0Var.R != null) {
-                    canvas2.save();
-                    canvas2.translate(0.0f, li0Var.O.getY());
-                    canvas2.saveLayerAlpha(li0Var.O.getX() + li0Var.O.getPaddingLeft(), 0.0f, ((li0Var.O.getX() + li0Var.O.getPaddingLeft()) + li0Var.O.getWidth()) - li0Var.O.getPaddingRight(), li0Var.O.getHeight(), (int) org.telegram.messenger.ll.v(li0Var.A, 0.1f, 1.0f, 255.0f), 31);
-                    li0Var.R.run(canvas2);
-                    canvas2.restore();
-                    canvas2.restore();
-                    f14 = alpha;
-                } else {
-                    f14 = alpha;
-                    paint.setColor(org.telegram.ui.ActionBar.f6.v0(org.telegram.ui.ActionBar.f6.Sd, this.y0));
-                    paint.setAlpha((int) org.telegram.messenger.ll.v(li0Var.A, 0.1f, 1.0f, paint.getAlpha()));
-                    canvas2.drawRect(li0Var.O.getPaddingLeft(), li0Var.O.getY(), ((li0Var.O.getX() + li0Var.O.getPaddingLeft()) + li0Var.O.getWidth()) - li0Var.O.getPaddingRight(), li0Var.O.getY() + li0Var.O.getHeight(), paint);
-                }
-                org.telegram.ui.Components.d dVar = li0Var.Q;
-                if (dVar != null) {
-                    dVar.run(canvas2, new Utilities.Callback0Return() { // from class: org.telegram.ui.ci0
-                        @Override // org.telegram.messenger.Utilities.Callback0Return
-                        public final Object run() {
-                            Canvas canvas3 = canvas2;
-                            canvas3.save();
-                            li0 li0Var2 = di0.this.z0;
-                            canvas3.translate(li0Var2.O.getX(), li0Var2.O.getY() - li0Var2.O.getScrollY());
-                            float textSize3 = f12 / li0Var2.O.getTextSize();
-                            canvas3.scale(textSize3, textSize3, li0Var2.O.getPaddingLeft(), li0Var2.O.getPaddingTop());
-                            li0Var2.O.draw(canvas3);
-                            canvas3.restore();
-                            return Boolean.TRUE;
+            arrayList.clear();
+            if (i14 != 2 || di0Var3.T1) {
+                int i16 = 0;
+                ?? r9 = z10;
+                while (i16 < childCount2) {
+                    View childAt3 = di0Var3.getChildAt(i16);
+                    if (childAt3 instanceof org.telegram.ui.Cells.s1) {
+                        org.telegram.ui.Cells.s1 s1Var3 = (org.telegram.ui.Cells.s1) childAt3;
+                        if (childAt3.getY() <= di0Var3.getHeight() && childAt3.getY() + childAt3.getHeight() >= 0.0f && (currentMessagesGroup3 = s1Var3.getCurrentMessagesGroup()) != null && ((i14 != 0 || currentMessagesGroup3.messages.size() != z11) && ((i14 != z11 || currentMessagesGroup3.transitionParams.drawBackgroundForDeletedItems) && ((i14 != 0 || !s1Var3.getMessageObject().deleted) && ((i14 != z11 || s1Var3.getMessageObject().deleted) && ((i14 != i15 || s1Var3.kc) && (i14 == i15 || !s1Var3.kc))))))) {
+                            if (!arrayList.contains(currentMessagesGroup3)) {
+                                MessageObject.GroupedMessages.TransitionParams transitionParams = currentMessagesGroup3.transitionParams;
+                                transitionParams.left = r9;
+                                transitionParams.top = r9;
+                                transitionParams.right = r9;
+                                transitionParams.bottom = r9;
+                                transitionParams.pinnedBotton = r9;
+                                transitionParams.pinnedTop = r9;
+                                transitionParams.cell = s1Var3;
+                                arrayList.add(currentMessagesGroup3);
+                            }
+                            currentMessagesGroup3.transitionParams.pinnedTop = s1Var3.n3();
+                            currentMessagesGroup3.transitionParams.pinnedBotton = s1Var3.m3();
+                            int x4 = (int) (s1Var3.getX() + s1Var3.getBackgroundDrawableLeft());
+                            int x10 = (int) (s1Var3.getX() + s1Var3.getBackgroundDrawableRight());
+                            int y8 = (int) (s1Var3.getY() + s1Var3.getPaddingTop() + s1Var3.getBackgroundDrawableTop());
+                            int y10 = (int) (s1Var3.getY() + s1Var3.getPaddingTop() + s1Var3.getBackgroundDrawableBottom());
+                            if ((s1Var3.getCurrentPosition().flags & 4) == 0) {
+                                y8 -= AndroidUtilities.dp(10.0f);
+                            }
+                            if ((s1Var3.getCurrentPosition().flags & 8) == 0) {
+                                y10 += AndroidUtilities.dp(10.0f);
+                            }
+                            if (s1Var3.kc) {
+                                currentMessagesGroup3.transitionParams.cell = s1Var3;
+                            }
+                            MessageObject.GroupedMessages.TransitionParams transitionParams2 = currentMessagesGroup3.transitionParams;
+                            int i17 = transitionParams2.top;
+                            if (i17 == 0 || y8 < i17) {
+                                transitionParams2.top = y8;
+                            }
+                            int i18 = transitionParams2.bottom;
+                            if (i18 == 0 || y10 > i18) {
+                                transitionParams2.bottom = y10;
+                            }
+                            int i19 = transitionParams2.left;
+                            if (i19 == 0 || x4 < i19) {
+                                transitionParams2.left = x4;
+                            }
+                            int i20 = transitionParams2.right;
+                            if (i20 == 0 || x10 > i20) {
+                                transitionParams2.right = x10;
+                            }
+                            i16++;
+                            i15 = 2;
+                            r9 = 0;
                         }
-                    });
+                    }
+                    i16++;
+                    i15 = 2;
+                    r9 = 0;
                 }
-                li0Var.O.setAlpha(f14);
-                canvas2.restore();
-            } else {
-                canvas2 = canvas;
+                int i21 = 0;
+                while (i21 < arrayList.size()) {
+                    MessageObject.GroupedMessages groupedMessages2 = (MessageObject.GroupedMessages) arrayList.get(i21);
+                    if (groupedMessages2 == null) {
+                        arrayList5 = arrayList;
+                        di0Var2 = di0Var3;
+                        ki0Var2 = ki0Var3;
+                    } else {
+                        float E2 = groupedMessages2.transitionParams.cell.E2(z11);
+                        MessageObject.GroupedMessages.TransitionParams transitionParams3 = groupedMessages2.transitionParams;
+                        float f10 = transitionParams3.left + E2 + transitionParams3.offsetLeft;
+                        float f11 = transitionParams3.top + transitionParams3.offsetTop;
+                        float f12 = transitionParams3.offsetRight + transitionParams3.right + E2;
+                        float f13 = transitionParams3.bottom + transitionParams3.offsetBottom;
+                        if (f11 < (-AndroidUtilities.dp(20.0f))) {
+                            f11 = -AndroidUtilities.dp(20.0f);
+                        }
+                        float f14 = f11;
+                        if (f13 > AndroidUtilities.dp(20.0f) + di0Var3.getMeasuredHeight()) {
+                            f13 = AndroidUtilities.dp(20.0f) + di0Var3.getMeasuredHeight();
+                        }
+                        float f15 = f13;
+                        boolean z12 = (groupedMessages2.transitionParams.cell.getScaleX() == 1.0f && groupedMessages2.transitionParams.cell.getScaleY() == 1.0f) ? false : true;
+                        if (z12) {
+                            canvas2.save();
+                            arrayList4 = arrayList;
+                            di0Var = di0Var3;
+                            canvas2.scale(groupedMessages2.transitionParams.cell.getScaleX(), groupedMessages2.transitionParams.cell.getScaleY(), com.google.android.recaptcha.internal.a.A(f12, f10, 2.0f, f10), com.google.android.recaptcha.internal.a.A(f15, f14, 2.0f, f14));
+                        } else {
+                            arrayList4 = arrayList;
+                            di0Var = di0Var3;
+                        }
+                        MessageObject.GroupedMessages.TransitionParams transitionParams4 = groupedMessages2.transitionParams;
+                        di0Var2 = di0Var;
+                        arrayList5 = arrayList4;
+                        ki0Var2 = ki0Var3;
+                        transitionParams4.cell.B1(canvas2, (int) f10, (int) f14, (int) f12, (int) f15, transitionParams4.pinnedTop, transitionParams4.pinnedBotton, false, 0);
+                        MessageObject.GroupedMessages.TransitionParams transitionParams5 = groupedMessages2.transitionParams;
+                        transitionParams5.cell = null;
+                        transitionParams5.drawCaptionLayout = groupedMessages2.hasCaption;
+                        if (z12) {
+                            canvas.restore();
+                            for (int i22 = 0; i22 < childCount2; i22++) {
+                                View childAt4 = di0Var2.getChildAt(i22);
+                                if (childAt4 instanceof org.telegram.ui.Cells.s1) {
+                                    org.telegram.ui.Cells.s1 s1Var4 = (org.telegram.ui.Cells.s1) childAt4;
+                                    if (s1Var4.getCurrentMessagesGroup() == groupedMessages2) {
+                                        int left = s1Var4.getLeft();
+                                        int top = s1Var4.getTop();
+                                        childAt4.setPivotX(((f12 - f10) / 2.0f) + (f10 - left));
+                                        childAt4.setPivotY(((f15 - f14) / 2.0f) + (f14 - top));
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    i21++;
+                    canvas2 = canvas;
+                    di0Var3 = di0Var2;
+                    ki0Var3 = ki0Var2;
+                    arrayList = arrayList5;
+                    z11 = true;
+                }
             }
-            li0Var.M.getTransitionParams().x0 = true;
-            org.telegram.ui.Cells.t1 t1Var2 = li0Var.n0;
-            if (t1Var2 == null) {
-                canvas2.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), (int) (f17 * 255.0f), 31);
-                canvas2.translate(f15, f16);
-                canvas2.translate(-f19, -f20);
-                float lerp5 = AndroidUtilities.lerp(1.0f, ei0Var.getScaleX(), li0Var.A);
-                canvas2.scale(lerp5, lerp5, (-li0Var.M.getX()) + ei0Var.getWidth(), (-li0Var.M.getY()) + ei0Var.getHeight());
-                float f21 = f12 / textSize;
-                canvas2.scale(f21, f21, f19, f20);
-                if (li0Var.M.C1()) {
-                    canvas2.save();
-                    canvas2.translate(0.0f, li0Var.M.getPaddingTop());
-                    li0Var.M.D1(canvas2, true, false);
-                    canvas2.restore();
-                }
-                li0Var.M.draw(canvas2);
-                canvas2.restore();
-            } else {
-                int[] iArr4 = this.t0;
-                t1Var2.getLocationInWindow(iArr4);
-                int translationY = li0Var.n0.getParent() instanceof View ? (int) ((View) li0Var.n0.getParent()).getTranslationY() : 0;
-                int i10 = this.u0;
-                int[] iArr5 = this.v0;
-                if (i10 > translationY) {
-                    c11 = 0;
-                } else {
-                    c11 = 0;
-                }
-                iArr5[c11] = iArr4[c11];
-                iArr5[1] = iArr4[1];
-                this.u0 = translationY;
-                float lerp6 = AndroidUtilities.lerp(li0Var.M.getX() + ei0Var.getX(), iArr5[c11], 1.0f - li0Var.A);
-                float lerp7 = AndroidUtilities.lerp(li0Var.M.getY() + ei0Var.getY(), iArr5[1], 1.0f - li0Var.A);
-                canvas2.save();
-                canvas2.translate(lerp6, lerp7);
-                float lerp8 = AndroidUtilities.lerp(1.0f, ei0Var.getScaleX(), li0Var.A);
-                canvas2.scale(lerp8, lerp8, (-li0Var.M.getX()) + ei0Var.getWidth(), (-li0Var.M.getY()) + ei0Var.getHeight());
-                li0Var.M.getTransitionParams().K1 = 1.0f - li0Var.A;
-                li0Var.M.getTransitionParams().g0 = rect.left * li0Var.A;
-                li0Var.M.getTransitionParams().j0 = rect.top * li0Var.A;
-                li0Var.M.getTransitionParams().h0 = rect.right * li0Var.A;
-                org.telegram.ui.Cells.s1 transitionParams = li0Var.M.getTransitionParams();
-                float f22 = rect.bottom;
-                float f23 = li0Var.A;
-                transitionParams.i0 = f22 * f23;
-                li0Var.M.setTimeAlpha(1.0f - f23);
-                if (li0Var.M.C1()) {
-                    canvas2.saveLayerAlpha(0.0f, 0.0f, li0Var.n0.getWidth(), li0Var.n0.getHeight(), (int) (li0Var.A * 255.0f), 31);
-                    canvas2.translate(0.0f, li0Var.M.getPaddingTop());
-                    li0Var.M.D1(canvas2, true, false);
-                    canvas2.restore();
-                    canvas2.saveLayerAlpha(0.0f, 0.0f, li0Var.n0.getWidth(), li0Var.n0.getHeight(), (int) ((1.0f - li0Var.A) * 255.0f), 31);
-                    canvas2.translate(0.0f, li0Var.n0.getPaddingTop());
-                    li0Var.n0.D1(canvas2, true, false);
-                    canvas2.restore();
-                }
-                li0Var.M.draw(canvas2);
-                if (li0Var.M.getTransitionParams().w0) {
-                    li0Var.M.W1(canvas2, 1.0f);
-                    li0Var.M.m2(1.0f - li0Var.A, canvas2, true);
-                }
-                canvas2.restore();
-            }
-            canvas2.save();
-            RectF rectF = AndroidUtilities.rectTmp;
-            rectF.set(0.0f, lerp, getWidth(), AndroidUtilities.dp(14.0f) + lerp);
-            s10 s10Var = this.w0;
-            s10Var.b(canvas2, rectF, 1, lerp2);
-            rectF.set(0.0f, lerp3 - AndroidUtilities.dp(14.0f), getWidth(), lerp3);
-            s10Var.b(canvas2, rectF, 3, lerp4);
-            canvas2.restore();
-            canvas2.restore();
-        } else {
+            i14++;
             canvas2 = canvas;
-            iArr = iArr2;
+            di0Var3 = di0Var3;
+            ki0Var3 = ki0Var3;
+            z10 = false;
+            z11 = true;
         }
-        if (li0Var.w) {
-            if (li0Var.y) {
-                org.telegram.ui.Components.lg lgVar = li0Var.S;
-                if (lgVar != null) {
-                    lgVar.setAlpha(0.0f);
-                }
-                c10 = 0;
-                li0Var.y = false;
-            } else {
-                c10 = 0;
-            }
-            canvas2.save();
-            int i11 = iArr[c10];
-            int width = li0Var.T.getWidth();
-            li0Var.T.getHeight();
-            canvas2.translate(AndroidUtilities.lerp(AndroidUtilities.dp(6.0f) + (i11 - (width - r4.m())), li0Var.T.getX(), li0Var.A), AndroidUtilities.lerp(iArr[1], li0Var.T.getY(), li0Var.A));
-            if (li0Var.v && li0Var.s) {
-                canvas2.saveLayerAlpha(0.0f, 0.0f, li0Var.T.getWidth(), li0Var.T.getHeight(), (int) (li0Var.A * 255.0f), 31);
-            }
-            li0Var.T.draw(canvas2);
-            if (li0Var.v && li0Var.s) {
-                canvas2.restore();
-            }
-            canvas2.restore();
-        }
+        ArrayList arrayList6 = arrayList;
+        di0 di0Var4 = di0Var3;
+        ki0 ki0Var4 = ki0Var3;
         super.dispatchDraw(canvas);
-        if (li0Var.h0 != null) {
-            if (li0Var.F == null) {
-                li0Var.F = new org.telegram.ui.Components.i5(AndroidUtilities.dp(24.0f), 23, this, false);
+        int childCount3 = getChildCount();
+        MessageObject.GroupedMessages groupedMessages3 = null;
+        int i23 = 0;
+        while (i23 < childCount3) {
+            View childAt5 = getChildAt(i23);
+            if (!(childAt5 instanceof org.telegram.ui.Cells.s1) || ((currentMessagesGroup2 = (s1Var = (org.telegram.ui.Cells.s1) childAt5).getCurrentMessagesGroup()) != null && currentMessagesGroup2 == groupedMessages3)) {
+                ki0Var = ki0Var4;
+            } else {
+                if (currentMessagesGroup2 == null) {
+                    float boundsLeft = s1Var.getBoundsLeft();
+                    float y11 = s1Var.getY();
+                    float boundsRight = s1Var.getBoundsRight();
+                    float y12 = s1Var.getY() + s1Var.getHeight();
+                    ki0Var = ki0Var4;
+                    ki0Var.j(canvas, boundsLeft, y11, boundsRight, y12);
+                } else {
+                    ki0Var = ki0Var4;
+                }
+                groupedMessages3 = currentMessagesGroup2;
             }
-            Rect rect2 = AndroidUtilities.rectTmp2;
-            rect2.set((int) ((li0Var.h0.right - AndroidUtilities.dp(12.0f)) - AndroidUtilities.dp(24.0f)), (int) ((li0Var.h0.bottom - AndroidUtilities.dp(12.0f)) - AndroidUtilities.dp(24.0f)), (int) (li0Var.h0.right - AndroidUtilities.dp(12.0f)), (int) (li0Var.h0.bottom - AndroidUtilities.dp(12.0f)));
-            RectF rectF2 = AndroidUtilities.rectTmp;
-            rectF2.set(rect2);
-            rectF2.inset(-AndroidUtilities.dp(12.0f), -AndroidUtilities.dp(6.0f));
-            float height2 = rectF2.height() / 2.0f;
-            Paint paint2 = this.x0;
-            paint2.setColor(503316480);
-            paint2.setAlpha((int) (li0Var.F.e() * 30.0f * li0Var.A));
-            canvas2.drawRoundRect(rectF2, height2, height2, paint2);
-            li0Var.F.setBounds(rect2);
-            org.telegram.ui.Components.i5 i5Var = li0Var.F;
-            i5Var.v = (int) (li0Var.A * 255.0f);
-            i5Var.draw(canvas2);
+            i23++;
+            ki0Var4 = ki0Var;
         }
+        ki0 ki0Var5 = ki0Var4;
+        int i24 = 0;
+        while (i24 < 3) {
+            arrayList6.clear();
+            if (i24 != 2 || di0Var4.T1) {
+                int i25 = 0;
+                while (i25 < childCount3) {
+                    View childAt6 = di0Var4.getChildAt(i25);
+                    if (childAt6 instanceof org.telegram.ui.Cells.s1) {
+                        org.telegram.ui.Cells.s1 s1Var5 = (org.telegram.ui.Cells.s1) childAt6;
+                        if (childAt6.getY() <= di0Var4.getHeight() && childAt6.getY() + childAt6.getHeight() >= 0.0f && (currentMessagesGroup = s1Var5.getCurrentMessagesGroup()) != null) {
+                            int i26 = i24 == 0 ? 1 : 1;
+                            if ((i24 != i26 || currentMessagesGroup.transitionParams.drawBackgroundForDeletedItems) && ((i24 != 0 || !s1Var5.getMessageObject().deleted) && ((i24 != 1 || s1Var5.getMessageObject().deleted) && ((i24 != 2 || s1Var5.kc) && (i24 == 2 || !s1Var5.kc))))) {
+                                arrayList3 = arrayList6;
+                                if (!arrayList3.contains(currentMessagesGroup)) {
+                                    MessageObject.GroupedMessages.TransitionParams transitionParams6 = currentMessagesGroup.transitionParams;
+                                    transitionParams6.left = 0;
+                                    transitionParams6.top = 0;
+                                    transitionParams6.right = 0;
+                                    transitionParams6.bottom = 0;
+                                    transitionParams6.pinnedBotton = false;
+                                    transitionParams6.pinnedTop = false;
+                                    transitionParams6.cell = s1Var5;
+                                    arrayList3.add(currentMessagesGroup);
+                                }
+                                currentMessagesGroup.transitionParams.pinnedTop = s1Var5.n3();
+                                currentMessagesGroup.transitionParams.pinnedBotton = s1Var5.m3();
+                                int x11 = (int) (s1Var5.getX() + s1Var5.getBackgroundDrawableLeft());
+                                int x12 = (int) (s1Var5.getX() + s1Var5.getBackgroundDrawableRight());
+                                int y13 = (int) (s1Var5.getY() + s1Var5.getPaddingTop() + s1Var5.getBackgroundDrawableTop());
+                                int y14 = (int) (s1Var5.getY() + s1Var5.getPaddingTop() + s1Var5.getBackgroundDrawableBottom());
+                                if ((s1Var5.getCurrentPosition().flags & 4) == 0) {
+                                    y13 -= AndroidUtilities.dp(10.0f);
+                                }
+                                if ((s1Var5.getCurrentPosition().flags & 8) == 0) {
+                                    y14 += AndroidUtilities.dp(10.0f);
+                                }
+                                if (s1Var5.kc) {
+                                    currentMessagesGroup.transitionParams.cell = s1Var5;
+                                }
+                                MessageObject.GroupedMessages.TransitionParams transitionParams7 = currentMessagesGroup.transitionParams;
+                                int i27 = transitionParams7.top;
+                                if (i27 == 0 || y13 < i27) {
+                                    transitionParams7.top = y13;
+                                }
+                                int i28 = transitionParams7.bottom;
+                                if (i28 == 0 || y14 > i28) {
+                                    transitionParams7.bottom = y14;
+                                }
+                                int i29 = transitionParams7.left;
+                                if (i29 == 0 || x11 < i29) {
+                                    transitionParams7.left = x11;
+                                }
+                                int i30 = transitionParams7.right;
+                                if (i30 == 0 || x12 > i30) {
+                                    transitionParams7.right = x12;
+                                }
+                                i25++;
+                                arrayList6 = arrayList3;
+                            }
+                        }
+                    }
+                    arrayList3 = arrayList6;
+                    i25++;
+                    arrayList6 = arrayList3;
+                }
+                arrayList2 = arrayList6;
+                for (int i31 = 0; i31 < arrayList2.size(); i31++) {
+                    MessageObject.GroupedMessages groupedMessages4 = (MessageObject.GroupedMessages) arrayList2.get(i31);
+                    float E22 = groupedMessages4.transitionParams.cell.E2(true);
+                    MessageObject.GroupedMessages.TransitionParams transitionParams8 = groupedMessages4.transitionParams;
+                    float f16 = transitionParams8.left + E22 + transitionParams8.offsetLeft;
+                    float f17 = transitionParams8.top + transitionParams8.offsetTop;
+                    float f18 = transitionParams8.right + E22 + transitionParams8.offsetRight;
+                    float f19 = transitionParams8.bottom + transitionParams8.offsetBottom;
+                    if (f17 < (-AndroidUtilities.dp(20.0f))) {
+                        f17 = -AndroidUtilities.dp(20.0f);
+                    }
+                    if (f19 > AndroidUtilities.dp(20.0f) + di0Var4.getMeasuredHeight()) {
+                        f19 = AndroidUtilities.dp(20.0f) + di0Var4.getMeasuredHeight();
+                    }
+                    ki0Var5.j(canvas, f16, f17, f18, f19);
+                    groupedMessages4.transitionParams.cell = null;
+                }
+            } else {
+                arrayList2 = arrayList6;
+            }
+            i24++;
+            arrayList6 = arrayList2;
+        }
+        canvas.save();
+        float e10 = this.U2.e(canScrollVertically(-1));
+        float e11 = this.V2.e(canScrollVertically(1));
+        RectF rectF2 = AndroidUtilities.rectTmp;
+        rectF2.set(0.0f, getScrollY(), getWidth(), AndroidUtilities.dp(14.0f) + getScrollY());
+        u10 u10Var = this.W2;
+        u10Var.b(canvas, rectF2, 1, e10);
+        rectF2.set(0.0f, (getHeight() + getScrollY()) - AndroidUtilities.dp(14.0f), getWidth(), getHeight() + getScrollY());
+        u10Var.b(canvas, rectF2, 3, e11);
+        canvas.restore();
+        canvas.restore();
+        canvas.restore();
     }
 
-    @Override // android.view.ViewGroup
+    @Override // org.telegram.ui.Components.jl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
     public final boolean drawChild(Canvas canvas, View view, long j10) {
-        li0 li0Var = this.z0;
-        if (li0Var.w) {
-            if (view == li0Var.T) {
-                return false;
-            }
-            org.telegram.ui.Cells.t1 t1Var = li0Var.M;
-            if (view == t1Var && t1Var != null && t1Var.getCurrentPosition() == null) {
-                return false;
+        org.telegram.ui.Cells.s1 s1Var;
+        ki0 ki0Var = this.X2;
+        if (ki0Var.w && ((view == (s1Var = ki0Var.M) && s1Var != null && s1Var.getCurrentPosition() == null) || view == ki0Var.T)) {
+            return false;
+        }
+        if (!(view instanceof org.telegram.ui.Cells.s1)) {
+            return true;
+        }
+        org.telegram.ui.Cells.s1 s1Var2 = (org.telegram.ui.Cells.s1) view;
+        s1Var2.setInvalidatesParent(true);
+        s1Var2.K1(canvas);
+        canvas.save();
+        canvas.translate(s1Var2.getX(), s1Var2.getY());
+        canvas.scale(s1Var2.getScaleX(), s1Var2.getScaleY(), s1Var2.getPivotX(), s1Var2.getPivotY());
+        if (s1Var2.C1() && s1Var2.getCurrentPosition() == null) {
+            canvas.save();
+            canvas.translate(0.0f, s1Var2.getPaddingTop());
+            s1Var2.D1(canvas, true, false);
+            canvas.restore();
+        }
+        canvas.restore();
+        boolean drawChild = super.drawChild(canvas, view, j10);
+        canvas.save();
+        canvas.translate(s1Var2.getX(), s1Var2.getY() + s1Var2.getPaddingTop());
+        canvas.scale(s1Var2.getScaleX(), s1Var2.getScaleY(), s1Var2.getPivotX(), s1Var2.getPivotY());
+        if (s1Var2.getCurrentPosition() != null && (((s1Var2.getCurrentPosition().flags & s1Var2.t0()) != 0 && (s1Var2.getCurrentPosition().flags & 1) != 0) || (s1Var2.getCurrentMessagesGroup() != null && s1Var2.getCurrentMessagesGroup().isDocuments))) {
+            s1Var2.I1(s1Var2.getAlpha(), canvas, false);
+        }
+        if (s1Var2.getCurrentPosition() != null && (((s1Var2.getCurrentPosition().flags & 8) != 0 && (s1Var2.getCurrentPosition().flags & 1) != 0) || (s1Var2.getCurrentMessagesGroup() != null && s1Var2.getCurrentMessagesGroup().isDocuments))) {
+            s1Var2.d2(canvas, s1Var2.getAlpha(), null);
+            s1Var2.N1(canvas, s1Var2.getAlpha());
+        }
+        if (s1Var2.getCurrentPosition() != null) {
+            s1Var2.W1(canvas, s1Var2.getAlpha());
+        }
+        if (s1Var2.getCurrentPosition() == null || s1Var2.getCurrentPosition().last) {
+            s1Var2.m2(s1Var2.getAlpha(), canvas, true);
+        }
+        s1Var2.X1(canvas);
+        s1Var2.getTransitionParams().i();
+        canvas.restore();
+        s1Var2.setInvalidatesParent(false);
+        return drawChild;
+    }
+
+    @Override // org.telegram.ui.Components.jl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        for (int i14 = 0; i14 < getChildCount(); i14++) {
+            View childAt = getChildAt(i14);
+            if (childAt.getTop() != 0 && (childAt instanceof ji0)) {
+                ji0 ji0Var = (ji0) childAt;
+                ji0Var.Be = childAt.getTop();
+                ji0Var.Ce = childAt.getBottom();
+                ji0Var.De = ji0Var.getMessageObject().getId();
             }
         }
-        return super.drawChild(canvas, view, j10);
+        super.onLayout(z10, i10, i11, i12, i13);
+    }
+
+    @Override // org.telegram.ui.Components.jl0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        ki0 ki0Var = this.X2;
+        int dp = AndroidUtilities.dp(ki0Var.J.isEmpty() ? -6.0f : 48.0f);
+        ViewGroup viewGroup = ki0Var.V;
+        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(Math.max(0, ((AndroidUtilities.displaySize.y - (dp + (viewGroup == null ? 0 : viewGroup.getMeasuredHeight()))) - AndroidUtilities.dp(8.0f)) - ki0Var.e.b), TLObject.FLAG_31));
+        int max = Math.max(AndroidUtilities.dp(12.0f) + (ki0Var.i0 ? ki0Var.U : ki0Var.S.l()), -((AndroidUtilities.dp(7.0f) + ki0Var.k0[0]) - getMeasuredWidth()));
+        float max2 = Math.max(1, getMeasuredWidth() - max) / Math.max(1, ((getMeasuredWidth() - max) - AndroidUtilities.dp(8.0f)) + Math.max(0, ki0Var.K - ((getMeasuredWidth() - max) - AndroidUtilities.dp((ki0Var.L.i() ? 0 : 40) + 8))));
+        setPivotX(getMeasuredWidth());
+        setPivotY(getMeasuredHeight());
+        setScaleX(max2);
+        setScaleY(max2);
     }
 }

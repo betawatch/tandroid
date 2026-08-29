@@ -4,7 +4,7 @@ import android.graphics.Matrix;
 import android.graphics.Paint;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class j extends k {
     public final Matrix a;
@@ -35,30 +35,30 @@ public final class j extends k {
 
     @Override // k2.k
     public final boolean a() {
-        int i9 = 0;
+        int i10 = 0;
         while (true) {
             ArrayList arrayList = this.b;
-            if (i9 >= arrayList.size()) {
+            if (i10 >= arrayList.size()) {
                 return false;
             }
-            if (((k) arrayList.get(i9)).a()) {
+            if (((k) arrayList.get(i10)).a()) {
                 return true;
             }
-            i9++;
+            i10++;
         }
     }
 
     @Override // k2.k
     public final boolean b(int[] iArr) {
-        int i9 = 0;
+        int i10 = 0;
         boolean z10 = false;
         while (true) {
             ArrayList arrayList = this.b;
-            if (i9 >= arrayList.size()) {
+            if (i10 >= arrayList.size()) {
                 return z10;
             }
-            z10 |= ((k) arrayList.get(i9)).b(iArr);
-            i9++;
+            z10 |= ((k) arrayList.get(i10)).b(iArr);
+            i10++;
         }
     }
 
@@ -107,51 +107,51 @@ public final class j extends k {
         return this.i;
     }
 
-    public void setPivotX(float f10) {
-        if (f10 != this.d) {
-            this.d = f10;
+    public void setPivotX(float f9) {
+        if (f9 != this.d) {
+            this.d = f9;
             c();
         }
     }
 
-    public void setPivotY(float f10) {
-        if (f10 != this.e) {
-            this.e = f10;
+    public void setPivotY(float f9) {
+        if (f9 != this.e) {
+            this.e = f9;
             c();
         }
     }
 
-    public void setRotation(float f10) {
-        if (f10 != this.c) {
-            this.c = f10;
+    public void setRotation(float f9) {
+        if (f9 != this.c) {
+            this.c = f9;
             c();
         }
     }
 
-    public void setScaleX(float f10) {
-        if (f10 != this.f) {
-            this.f = f10;
+    public void setScaleX(float f9) {
+        if (f9 != this.f) {
+            this.f = f9;
             c();
         }
     }
 
-    public void setScaleY(float f10) {
-        if (f10 != this.g) {
-            this.g = f10;
+    public void setScaleY(float f9) {
+        if (f9 != this.g) {
+            this.g = f9;
             c();
         }
     }
 
-    public void setTranslateX(float f10) {
-        if (f10 != this.h) {
-            this.h = f10;
+    public void setTranslateX(float f9) {
+        if (f9 != this.h) {
+            this.h = f9;
             c();
         }
     }
 
-    public void setTranslateY(float f10) {
-        if (f10 != this.i) {
-            this.i = f10;
+    public void setTranslateY(float f9) {
+        if (f9 != this.i) {
+            this.i = f9;
             c();
         }
     }
@@ -185,8 +185,8 @@ public final class j extends k {
         }
         matrix.set(jVar.j);
         ArrayList arrayList = jVar.b;
-        for (int i9 = 0; i9 < arrayList.size(); i9++) {
-            Object obj = arrayList.get(i9);
+        for (int i10 = 0; i10 < arrayList.size(); i10++) {
+            Object obj = arrayList.get(i10);
             if (obj instanceof j) {
                 this.b.add(new j((j) obj, fVar));
             } else {

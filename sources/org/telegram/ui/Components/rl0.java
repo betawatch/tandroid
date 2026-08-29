@@ -1,27 +1,23 @@
 package org.telegram.ui.Components;
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
+
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class rl0 {
-    public static final rl0 a;
-    public static final rl0 b;
-    public static final /* synthetic */ rl0[] c;
+public final class rl0 extends FrameLayout {
+    public View a;
+    public TextView b;
 
-    static {
-        rl0 rl0Var = new rl0("LINE", 0);
-        a = rl0Var;
-        rl0 rl0Var2 = new rl0("TAB", 1);
-        b = rl0Var2;
-        c = new rl0[]{rl0Var, rl0Var2};
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(80.0f), TLObject.FLAG_30));
     }
 
-    public static rl0 valueOf(String str) {
-        return (rl0) Enum.valueOf(rl0.class, str);
-    }
-
-    public static rl0[] values() {
-        return (rl0[]) c.clone();
+    public void setText(CharSequence charSequence) {
+        this.b.setText(charSequence);
     }
 }

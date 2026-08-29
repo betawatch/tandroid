@@ -1,57 +1,44 @@
 package qh;
 
-import android.content.Intent;
-import java.util.ArrayList;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.MessageObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.ki;
-import org.telegram.ui.Components.wj;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
+import android.view.View;
+import android.widget.FrameLayout;
+import i7.f6;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.x5;
+import org.telegram.ui.Components.t9;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes4.dex */
-public final class m implements wj {
-    public final /* synthetic */ ki a;
-    public final /* synthetic */ p b;
+public final class m extends FrameLayout implements x5 {
+    public final t9 a;
 
-    public m(p pVar, ki kiVar) {
-        this.b = pVar;
-        this.a = kiVar;
+    public m(Context context) {
+        super(context);
+        t9 t9Var = new t9(context);
+        this.a = t9Var;
+        t9Var.setRoundRadius(AndroidUtilities.dp(20.0f));
+        addView(t9Var, f6.d(72, 72.0f, 81, 0.0f, 0.0f, 0.0f, 28.0f));
     }
 
-    @Override // org.telegram.ui.Components.wj
-    public final void l(ArrayList arrayList, String str, ArrayList arrayList2, ArrayList arrayList3, boolean z10, int i9, long j10, boolean z11, long j11) {
-        o3 o3Var = this.b.r;
-        if (!arrayList.isEmpty()) {
-            o3Var.c2((String) arrayList.get(0));
-        } else if (!arrayList3.isEmpty()) {
-            MessageObject messageObject = (MessageObject) arrayList3.get(0);
-            o3Var.getClass();
-            if (messageObject != null && messageObject.getDocument() != null) {
-                TLRPC.Document document = messageObject.getDocument();
-                TLRPC.Message message = messageObject.messageOwner;
-                o3Var.d2(document, message != null ? message.attachPath : null);
-            }
-        }
-        this.a.dismiss(true);
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        Drawable drawable = g6.S0;
+        t9 t9Var = this.a;
+        jf.r.a(canvas, drawable, (t9Var.getWidth() / 2.0f) + t9Var.getLeft(), (t9Var.getHeight() / 2.0f) + t9Var.getTop(), t9Var.getHeight());
     }
 
-    @Override // org.telegram.ui.Components.wj
-    public final void x() {
-        try {
-            Intent intent = new Intent("android.intent.action.GET_CONTENT");
-            intent.setType("*/*");
-            this.b.b.b0.startActivityForResult(intent, 21);
-        } catch (Exception e10) {
-            FileLog.e(e10);
-        }
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(136.0f), TLObject.FLAG_30));
     }
 
-    @Override // org.telegram.ui.Components.wj
-    public final /* synthetic */ void N() {
-    }
-
-    @Override // org.telegram.ui.Components.wj
-    public final /* synthetic */ void m(long j10, ArrayList arrayList, boolean z10, int i9) {
+    @Override // org.telegram.ui.ActionBar.x5
+    public final void e() {
     }
 }

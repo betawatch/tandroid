@@ -9,7 +9,7 @@ import org.telegram.messenger.voip.VoIPPreNotificationService;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
 public class VoIPPermissionActivity extends Activity {
     @Override // android.app.Activity
@@ -41,18 +41,18 @@ public class VoIPPermissionActivity extends Activity {
     }
 
     @Override // android.app.Activity
-    public final void onRequestPermissionsResult(int i9, String[] strArr, int[] iArr) {
-        if (i9 == 101 || i9 == 102) {
+    public final void onRequestPermissionsResult(int i10, String[] strArr, int[] iArr) {
+        if (i10 == 101 || i10 == 102) {
             boolean z10 = false;
-            int i10 = 0;
+            int i11 = 0;
             while (true) {
-                if (i10 >= iArr.length) {
+                if (i11 >= iArr.length) {
                     z10 = true;
                     break;
-                } else if (iArr[i10] != 0) {
+                } else if (iArr[i11] != 0) {
                     break;
                 } else {
-                    i10++;
+                    i11++;
                 }
             }
             if (iArr.length > 0 && z10) {
@@ -74,7 +74,7 @@ public class VoIPPermissionActivity extends Activity {
             } else {
                 VoIPPreNotificationService.decline(this, 1);
             }
-            org.telegram.ui.Components.voip.e2.i(this, new ky0(this, 27), i9);
+            org.telegram.ui.Components.voip.h2.i(this, new ky0(this, 27), i10);
         }
     }
 }

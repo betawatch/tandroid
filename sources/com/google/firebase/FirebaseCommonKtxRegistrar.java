@@ -1,38 +1,37 @@
 package com.google.firebase;
 
+import a9.a;
+import a9.b;
+import a9.m;
+import a9.v;
 import com.google.firebase.components.ComponentRegistrar;
-import hd.a0;
 import java.util.List;
 import java.util.concurrent.Executor;
-import pc.h;
-import s8.i;
-import tg.b;
-import u8.c;
-import u8.d;
-import y8.a;
-import y8.j;
-import y8.r;
+import jd.a0;
+import u8.h;
+import w8.c;
+import w8.d;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class FirebaseCommonKtxRegistrar implements ComponentRegistrar {
     @Override // com.google.firebase.components.ComponentRegistrar
-    public List<a> getComponents() {
-        b b10 = a.b(new r(u8.a.class, a0.class));
-        b10.a(new j(new r(u8.a.class, Executor.class), 1, 0));
-        b10.f = i.b;
-        a b11 = b10.b();
-        b b12 = a.b(new r(c.class, a0.class));
-        b12.a(new j(new r(c.class, Executor.class), 1, 0));
-        b12.f = i.c;
-        a b13 = b12.b();
-        b b14 = a.b(new r(u8.b.class, a0.class));
-        b14.a(new j(new r(u8.b.class, Executor.class), 1, 0));
-        b14.f = i.d;
-        a b15 = b14.b();
-        b b16 = a.b(new r(d.class, a0.class));
-        b16.a(new j(new r(d.class, Executor.class), 1, 0));
-        b16.f = i.e;
-        return h.c(b11, b13, b15, b16.b());
+    public List<b> getComponents() {
+        a a2 = b.a(new v(w8.a.class, a0.class));
+        a2.a(new m(new v(w8.a.class, Executor.class), 1, 0));
+        a2.g = h.b;
+        b b10 = a2.b();
+        a a10 = b.a(new v(c.class, a0.class));
+        a10.a(new m(new v(c.class, Executor.class), 1, 0));
+        a10.g = h.c;
+        b b11 = a10.b();
+        a a11 = b.a(new v(w8.b.class, a0.class));
+        a11.a(new m(new v(w8.b.class, Executor.class), 1, 0));
+        a11.g = h.d;
+        b b12 = a11.b();
+        a a12 = b.a(new v(d.class, a0.class));
+        a12.a(new m(new v(d.class, Executor.class), 1, 0));
+        a12.g = h.e;
+        return rc.h.c(b10, b11, b12, a12.b());
     }
 }

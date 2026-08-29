@@ -1,24 +1,24 @@
 package com.google.android.recaptcha.internal;
 
-import g7.x5;
+import i7.b7;
 import java.io.InputStreamReader;
 import java.io.StringWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.zip.GZIPInputStream;
-import kotlin.jvm.internal.i;
-import oc.c;
-import oc.g;
+import kotlin.jvm.internal.j;
+import qc.c;
+import qc.g;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class zzhp implements zzhn {
     private final c zza;
 
     public zzhp() {
-        int i9 = zzby.zza;
-        this.zza = x5.a(zzho.zza);
+        int i10 = zzby.zza;
+        this.zza = b7.a(zzho.zza);
     }
 
     @Override // com.google.android.recaptcha.internal.zzhn
@@ -30,7 +30,7 @@ public final class zzhp implements zzhn {
                 zzhlVar.zzc();
                 zzhlVar.zze(zzzdVar.zzd());
                 zzts zza = zzhlVar.zza(zzxn.zzj());
-                i.b(zza);
+                j.b(zza);
                 zzxn zzxnVar = (zzxn) zza;
                 zzhlVar.zzd();
                 return zzxnVar;
@@ -38,7 +38,7 @@ public final class zzhp implements zzhn {
                 if (zzhlVar == null) {
                     throw e10;
                 }
-                if (!i.a(e10.zza(), zzcd.zzax)) {
+                if (!j.a(e10.zza(), zzcd.zzax)) {
                     throw e10;
                 }
                 try {
@@ -58,7 +58,7 @@ public final class zzhp implements zzhn {
         try {
             try {
                 URLConnection openConnection = new URL(str).openConnection();
-                i.c(openConnection, "null cannot be cast to non-null type java.net.HttpURLConnection");
+                j.c(openConnection, "null cannot be cast to non-null type java.net.HttpURLConnection");
                 HttpURLConnection httpURLConnection = (HttpURLConnection) openConnection;
                 httpURLConnection.setRequestMethod("GET");
                 httpURLConnection.setDoInput(true);
@@ -76,7 +76,7 @@ public final class zzhp implements zzhn {
                         stringWriter.write(cArr, 0, read);
                     }
                     String stringWriter2 = stringWriter.toString();
-                    i.d(stringWriter2, "toString(...)");
+                    j.d(stringWriter2, "toString(...)");
                     return stringWriter2;
                 } catch (Exception unused) {
                     throw new zzcg(zzce.zzc, zzcd.zzP, null, null, 12, null);

@@ -1,53 +1,35 @@
 package org.telegram.ui.web;
 
-import java.util.HashMap;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.Utilities;
+import android.text.TextUtils;
+import java.util.ArrayList;
+import org.telegram.tgnet.InputSerializedData;
+import org.telegram.tgnet.OutputSerializedData;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes4.dex */
-public final class i2 {
-    public static i2 e;
-    public HashMap a;
-    public boolean b;
-    public boolean c;
-    public boolean d;
+public final class i2 extends TLObject {
+    public final ArrayList a = new ArrayList();
 
-    public static i2 b() {
-        if (e == null) {
-            e = new i2();
+    @Override // org.telegram.tgnet.TLObject
+    public final void readParams(InputSerializedData inputSerializedData, boolean z10) {
+        int readInt32 = inputSerializedData.readInt32(z10);
+        for (int i10 = 0; i10 < readInt32; i10++) {
+            j2 j2Var = new j2();
+            j2Var.readParams(inputSerializedData, z10);
+            if (TextUtils.isEmpty(j2Var.b)) {
+                return;
+            }
+            this.a.add(j2Var);
         }
-        return e;
     }
 
-    public final h2 a(String str) {
-        c();
-        h2 h2Var = (h2) this.a.get(str);
-        if (h2Var == null) {
-            return null;
+    @Override // org.telegram.tgnet.TLObject
+    public final void serializeToStream(OutputSerializedData outputSerializedData) {
+        ArrayList arrayList = this.a;
+        outputSerializedData.writeInt32(arrayList.size());
+        for (int i10 = 0; i10 < arrayList.size(); i10++) {
+            ((j2) arrayList.get(i10)).serializeToStream(outputSerializedData);
         }
-        h2Var.a = Math.max(h2Var.a, System.currentTimeMillis());
-        d();
-        return h2Var;
-    }
-
-    public final void c() {
-        if (this.b || this.c) {
-            return;
-        }
-        this.c = true;
-        if (this.a == null) {
-            this.a = new HashMap();
-        }
-        Utilities.globalQueue.postRunnable(new e2(this, 1));
-    }
-
-    public final void d() {
-        AndroidUtilities.cancelRunOnUIThread(new e2(this, 0));
-        if (this.d) {
-            return;
-        }
-        AndroidUtilities.runOnUIThread(new e2(this, 0), BuildVars.DEBUG_PRIVATE_VERSION ? 1L : 1000L);
     }
 }

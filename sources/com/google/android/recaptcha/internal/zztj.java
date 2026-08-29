@@ -1,6 +1,6 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 final class zztj implements zztq {
     private final zztq[] zza;
@@ -11,8 +11,8 @@ final class zztj implements zztq {
 
     @Override // com.google.android.recaptcha.internal.zztq
     public final zztp zzb(Class cls) {
-        for (int i9 = 0; i9 < 2; i9++) {
-            zztq zztqVar = this.zza[i9];
+        for (int i10 = 0; i10 < 2; i10++) {
+            zztq zztqVar = this.zza[i10];
             if (zztqVar.zzc(cls)) {
                 return zztqVar.zzb(cls);
             }
@@ -22,8 +22,8 @@ final class zztj implements zztq {
 
     @Override // com.google.android.recaptcha.internal.zztq
     public final boolean zzc(Class cls) {
-        for (int i9 = 0; i9 < 2; i9++) {
-            if (this.zza[i9].zzc(cls)) {
+        for (int i10 = 0; i10 < 2; i10++) {
+            if (this.zza[i10].zzc(cls)) {
                 return true;
             }
         }

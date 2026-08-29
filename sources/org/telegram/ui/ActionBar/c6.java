@@ -1,54 +1,29 @@
 package org.telegram.ui.ActionBar;
 
-import android.graphics.Canvas;
 import android.graphics.ColorFilter;
-import android.graphics.Path;
-import android.graphics.Rect;
-import android.graphics.RectF;
+import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
-import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class c6 extends Drawable {
-    public float[] b;
-    public Path a = new Path();
-    public boolean c = true;
+public interface c6 {
+    ColorFilter B();
 
-    public c6(float f10, float f11) {
-        this.b = new float[]{r4, r4, r4, r4, r4, r4, r4, r4};
-        float dp = AndroidUtilities.dp(f10);
-        float dp2 = AndroidUtilities.dp(f11);
-    }
+    int C0(int i10);
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        Path path = this.a;
-        if (this.c) {
-            this.c = false;
-            path.reset();
-            RectF rectF = AndroidUtilities.rectTmp;
-            rectF.set(getBounds());
-            path.addRoundRect(rectF, this.b, Path.Direction.CW);
-        }
-        canvas.drawPath(path, f6.z);
-    }
+    Paint G(String str);
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return 0;
-    }
+    void L0(int i10, int i11);
 
-    @Override // android.graphics.drawable.Drawable
-    public final void onBoundsChange(Rect rect) {
-        this.c = true;
-    }
+    boolean a();
 
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i9) {
-    }
+    int g1(int i10);
 
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-    }
+    Drawable getDrawable(String str);
+
+    int h0(int i10);
+
+    void l(float f9, float f10, int i10, int i11);
+
+    boolean l0();
 }

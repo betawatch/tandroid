@@ -11,15 +11,15 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class c2 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
 
-    public /* synthetic */ c2(int i9, Object obj, Object obj2) {
-        this.a = i9;
+    public /* synthetic */ c2(int i10, Object obj, Object obj2) {
+        this.a = i10;
         this.b = obj;
         this.c = obj2;
     }
@@ -28,94 +28,94 @@ public final /* synthetic */ class c2 implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                ((DownloadController) this.b).lambda$loadAutoDownloadConfig$1((TLObject) this.c);
+                ((DownloadController) this.b).lambda$deleteRecentFiles$13((ArrayList) this.c);
                 break;
             case 1:
-                ((FactCheckController) this.b).lambda$applyFactCheck$14((TLRPC.Updates) this.c);
+                ((DownloadController) this.b).lambda$loadAutoDownloadConfig$1((TLObject) this.c);
                 break;
             case 2:
-                FactCheckController.lambda$saveToDatabase$6((MessagesStorage) this.b, (TLRPC.TL_factCheck) this.c);
+                ((FactCheckController) this.b).lambda$applyFactCheck$14((TLRPC.Updates) this.c);
                 break;
             case 3:
-                ((FileLoadOperation) this.b).lambda$start$11((boolean[]) this.c);
+                FactCheckController.lambda$saveToDatabase$6((MessagesStorage) this.b, (TLRPC.TL_factCheck) this.c);
                 break;
             case 4:
-                ((FileLoadOperation) this.b).lambda$addPart$2((ArrayList) this.c);
+                ((FileLoadOperation) this.b).lambda$start$11((boolean[]) this.c);
                 break;
             case 5:
-                ((FileLoader) this.b).lambda$uploadFile$19((NotificationCenter.NotificationCenterDelegate[]) this.c);
+                ((FileLoadOperation) this.b).lambda$addPart$2((ArrayList) this.c);
                 break;
             case 6:
-                ((FileLoader) this.b).lambda$checkCurrentDownloadsFiles$17((ArrayList) this.c);
+                ((FileLoader) this.b).lambda$uploadFile$19((NotificationCenter.NotificationCenterDelegate[]) this.c);
                 break;
             case 7:
-                FileLog.lambda$e$2((String) this.b, (Throwable) this.c);
+                ((FileLoader) this.b).lambda$checkCurrentDownloadsFiles$17((ArrayList) this.c);
                 break;
             case 8:
-                ((FilePathDatabase) this.b).lambda$removeFiles$6((List) this.c);
+                FileLog.lambda$e$2((String) this.b, (Throwable) this.c);
                 break;
             case 9:
-                ((FileRefController) this.b).lambda$onRequestComplete$47((TLRPC.User) this.c);
+                ((FilePathDatabase) this.b).lambda$removeFiles$6((List) this.c);
                 break;
             case 10:
-                ((FileRefController) this.b).lambda$onRequestComplete$50((TLRPC.TL_messages_stickerSet) this.c);
+                ((FileRefController) this.b).lambda$onRequestComplete$47((TLRPC.User) this.c);
                 break;
             case 11:
-                ((GiftAuctionController) this.b).lambda$sendBid$7((TLRPC.TL_payments_paymentResult) this.c);
+                ((FileRefController) this.b).lambda$onRequestComplete$50((TLRPC.TL_messages_stickerSet) this.c);
                 break;
             case 12:
-                ((ImageLoader) this.b).lambda$checkMediaPaths$1((Runnable) this.c);
+                ((GiftAuctionController) this.b).lambda$sendBid$7((TLRPC.TL_payments_paymentResult) this.c);
                 break;
             case 13:
-                ImageLoader.lambda$checkMediaPaths$0((SparseArray) this.b, (Runnable) this.c);
+                ((ImageLoader) this.b).lambda$checkMediaPaths$1((Runnable) this.c);
                 break;
             case 14:
-                ((MediaController) this.b).lambda$playEmojiSound$17((File) this.c);
+                ImageLoader.lambda$checkMediaPaths$0((SparseArray) this.b, (Runnable) this.c);
                 break;
             case 15:
-                ((MediaController) this.b).lambda$processMediaObserver$6((ArrayList) this.c);
+                ((MediaController) this.b).lambda$playEmojiSound$17((File) this.c);
                 break;
             case 16:
-                MediaController.lambda$playEmojiSound$18((AccountInstance) this.b, (TLRPC.TL_document) this.c);
+                ((MediaController) this.b).lambda$processMediaObserver$6((ArrayList) this.c);
                 break;
             case 17:
-                ((MediaController) this.b).lambda$startAudioAgain$7((MessageObject) this.c);
+                MediaController.lambda$playEmojiSound$18((AccountInstance) this.b, (TLRPC.TL_document) this.c);
                 break;
             case 18:
-                ((MediaDataController) this.b).lambda$loadHints$147((TLRPC.TL_contacts_topPeers) this.c);
+                ((MediaController) this.b).lambda$startAudioAgain$7((MessageObject) this.c);
                 break;
             case 19:
-                MediaDataController.lambda$loadReplyMessagesForMessages$172((AtomicInteger) this.b, (Runnable) this.c);
+                ((MediaDataController) this.b).lambda$loadHints$147((TLRPC.TL_contacts_topPeers) this.c);
                 break;
             case 20:
-                MediaDataController.lambda$fillWithAnimatedEmoji$228((boolean[]) this.b, (s6) this.c);
+                MediaDataController.lambda$loadReplyMessagesForMessages$172((AtomicInteger) this.b, (Runnable) this.c);
                 break;
             case 21:
-                ((MediaDataController) this.b).lambda$loadGroupStickerSet$44((TLRPC.StickerSet) this.c);
+                MediaDataController.lambda$fillWithAnimatedEmoji$228((boolean[]) this.b, (w6) this.c);
                 break;
             case 22:
-                ((MessageObject) this.b).lambda$loadAnimatedEmojiDocument$0((TLRPC.Document) this.c);
+                ((MediaDataController) this.b).lambda$loadGroupStickerSet$44((TLRPC.StickerSet) this.c);
                 break;
             case 23:
-                ((MessagesController) this.b).lambda$getDifference$351((TLRPC.updates_Difference) this.c);
+                ((MessageObject) this.b).lambda$loadAnimatedEmojiDocument$0((TLRPC.Document) this.c);
                 break;
             case 24:
-                ((MessagesController) this.b).lambda$requestContactToken$475((Utilities.Callback) this.c);
+                ((MessagesController) this.b).lambda$getDifference$351((TLRPC.updates_Difference) this.c);
                 break;
             case 25:
-                ((MessagesController) this.b).lambda$checkTosUpdate$162((TLRPC.TL_help_termsOfServiceUpdate) this.c);
+                ((MessagesController) this.b).lambda$requestContactToken$475((Utilities.Callback) this.c);
                 break;
             case 26:
-                ((MessagesController) this.b).lambda$changeChatAvatar$318((Runnable) this.c);
+                ((MessagesController) this.b).lambda$checkTosUpdate$162((TLRPC.TL_help_termsOfServiceUpdate) this.c);
                 break;
             case 27:
-                ((MessagesController) this.b).lambda$createChat$260((TLRPC.Updates) this.c);
+                ((MessagesController) this.b).lambda$changeChatAvatar$318((Runnable) this.c);
                 break;
             case 28:
-                ((MessagesController) this.b).lambda$processUpdateArray$392((TL_update.TL_updateServiceNotification) this.c);
+                ((MessagesController) this.b).lambda$createChat$260((TLRPC.Updates) this.c);
                 break;
             default:
-                ((MessagesController) this.b).lambda$processUpdateArray$393((TLRPC.Message) this.c);
+                ((MessagesController) this.b).lambda$processUpdateArray$392((TL_update.TL_updateServiceNotification) this.c);
                 break;
         }
     }

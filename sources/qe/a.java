@@ -1,48 +1,71 @@
 package qe;
 
-import android.content.Context;
-import android.util.SparseArray;
-import java.io.BufferedInputStream;
-import n2.p;
-import org.telegram.tgnet.SerializedData;
+import a4.w;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class a {
-    public static final a b = new a();
-    public final SparseArray a;
+    public String a;
+    public ArrayList b;
+    public ArrayList c;
+    public ArrayList d;
 
-    public a() {
-        this.a = new SparseArray();
-    }
-
-    public static void a(Context context, int i9, SparseArray sparseArray) {
-        BufferedInputStream bufferedInputStream = new BufferedInputStream(context.getResources().openRawResource(i9));
-        try {
-            SerializedData serializedData = new SerializedData(bufferedInputStream);
-            while (serializedData.remaining() > 0) {
-                sparseArray.put(serializedData.readInt32(true), serializedData.readString(true));
+    public final String a(String str) {
+        String str2;
+        String str3;
+        String str4;
+        String str5 = null;
+        if (str.startsWith(this.a)) {
+            str4 = this.a;
+            str3 = str.substring(str4.length());
+        } else {
+            ArrayList arrayList = this.b;
+            int size = arrayList.size();
+            int i10 = 0;
+            while (true) {
+                if (i10 >= size) {
+                    str2 = null;
+                    break;
+                }
+                Object obj = arrayList.get(i10);
+                i10++;
+                str2 = (String) obj;
+                if (str.startsWith(str2)) {
+                    break;
+                }
             }
-            bufferedInputStream.close();
-        } catch (Throwable th) {
-            try {
-                bufferedInputStream.close();
-            } catch (Throwable th2) {
-                th.addSuppressed(th2);
+            if (str2 != null) {
+                str3 = str.substring(str2.length());
+                str4 = null;
+                str5 = str2;
+            } else {
+                str3 = str;
+                str4 = null;
             }
-            throw th;
         }
-    }
-
-    public final String b(String str) {
-        if (str == null) {
-            return null;
+        ArrayList arrayList2 = this.d;
+        int size2 = arrayList2.size();
+        int i11 = 0;
+        while (i11 < size2) {
+            Object obj2 = arrayList2.get(i11);
+            i11++;
+            String a2 = ((d) obj2).a(str3, str4, str5, true);
+            if (a2 != null) {
+                return a2;
+            }
         }
-        return (String) this.a.get(str.hashCode());
-    }
-
-    public a(p pVar) {
-        SparseArray sparseArray = (SparseArray) pVar.b;
-        this.a = sparseArray == null ? new SparseArray() : sparseArray;
+        ArrayList arrayList3 = this.d;
+        int size3 = arrayList3.size();
+        int i12 = 0;
+        while (i12 < size3) {
+            Object obj3 = arrayList3.get(i12);
+            i12++;
+            String a10 = ((d) obj3).a(str3, str4, str5, false);
+            if (a10 != null) {
+                return a10;
+            }
+        }
+        return (str4 == null || str3.length() == 0) ? str : w.y(str4, " ", str3);
     }
 }

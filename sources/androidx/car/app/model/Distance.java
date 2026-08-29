@@ -3,7 +3,7 @@ package androidx.car.app.model;
 import j$.util.Objects;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class Distance {
     public static final int UNIT_FEET = 6;
@@ -16,20 +16,20 @@ public final class Distance {
     private final double mDisplayDistance;
     private final int mDisplayUnit;
 
-    private Distance(double d, int i9) {
+    private Distance(double d, int i10) {
         this.mDisplayDistance = d;
-        this.mDisplayUnit = i9;
+        this.mDisplayUnit = i10;
     }
 
-    public static Distance create(double d, int i9) {
+    public static Distance create(double d, int i10) {
         if (d >= 0.0d) {
-            return new Distance(d, i9);
+            return new Distance(d, i10);
         }
         throw new IllegalArgumentException("displayDistance must be a positive value");
     }
 
-    private static String unitToString(int i9) {
-        switch (i9) {
+    private static String unitToString(int i10) {
+        switch (i10) {
             case 1:
                 return "m";
             case 2:

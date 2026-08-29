@@ -10,8 +10,8 @@ public final class w3 extends t3 {
     public final /* synthetic */ int h;
     public final /* synthetic */ Object i;
 
-    public /* synthetic */ w3(w6 w6Var, Object obj, int i9) {
-        this.h = i9;
+    public /* synthetic */ w3(w6 w6Var, Object obj, int i10) {
+        this.h = i10;
         this.i = obj;
     }
 

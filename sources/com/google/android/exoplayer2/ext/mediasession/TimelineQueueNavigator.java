@@ -1,19 +1,20 @@
 package com.google.android.exoplayer2.ext.mediasession;
 
+import ab.e;
 import android.os.Bundle;
 import android.os.ResultReceiver;
 import android.support.v4.media.MediaDescriptionCompat;
 import android.support.v4.media.session.MediaSessionCompat$QueueItem;
 import android.support.v4.media.session.d0;
 import com.google.android.exoplayer2.ext.mediasession.MediaSessionConnector;
-import h3.c2;
-import h3.q2;
-import h3.r2;
+import j3.c2;
+import j3.q2;
+import j3.r2;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Collections;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public abstract class TimelineQueueNavigator implements MediaSessionConnector.QueueNavigator {
     public static final int DEFAULT_MAX_QUEUE_SIZE = 10;
@@ -35,18 +36,18 @@ public abstract class TimelineQueueNavigator implements MediaSessionConnector.Qu
         }
         ArrayDeque arrayDeque = new ArrayDeque();
         int min = Math.min(this.maxQueueSize, A.o());
-        int x10 = c2Var.x();
-        long j10 = x10;
-        arrayDeque.add(new MediaSessionCompat$QueueItem(null, getMediaDescription(c2Var, x10), j10));
+        int x4 = c2Var.x();
+        long j10 = x4;
+        arrayDeque.add(new MediaSessionCompat$QueueItem(null, getMediaDescription(c2Var, x4), j10));
         boolean C = c2Var.C();
-        int i9 = x10;
+        int i10 = x4;
         while (true) {
-            if ((x10 != -1 || i9 != -1) && arrayDeque.size() < min) {
-                if (i9 != -1 && (i9 = A.e(i9, 0, C)) != -1) {
-                    arrayDeque.add(new MediaSessionCompat$QueueItem(null, getMediaDescription(c2Var, i9), i9));
+            if ((x4 != -1 || i10 != -1) && arrayDeque.size() < min) {
+                if (i10 != -1 && (i10 = A.e(i10, 0, C)) != -1) {
+                    arrayDeque.add(new MediaSessionCompat$QueueItem(null, getMediaDescription(c2Var, i10), i10));
                 }
-                if (x10 != -1 && arrayDeque.size() < min && (x10 = A.k(x10, 0, C)) != -1) {
-                    arrayDeque.addFirst(new MediaSessionCompat$QueueItem(null, getMediaDescription(c2Var, x10), x10));
+                if (x4 != -1 && arrayDeque.size() < min && (x4 = A.k(x4, 0, C)) != -1) {
+                    arrayDeque.addFirst(new MediaSessionCompat$QueueItem(null, getMediaDescription(c2Var, x4), x4));
                 }
             }
         }
@@ -59,7 +60,7 @@ public abstract class TimelineQueueNavigator implements MediaSessionConnector.Qu
         return this.activeQueueItemId;
     }
 
-    public abstract MediaDescriptionCompat getMediaDescription(c2 c2Var, int i9);
+    public abstract MediaDescriptionCompat getMediaDescription(c2 c2Var, int i10);
 
     @Override // com.google.android.exoplayer2.ext.mediasession.MediaSessionConnector.QueueNavigator
     public long getSupportedQueueNavigatorActions(c2 c2Var) {
@@ -72,9 +73,9 @@ public abstract class TimelineQueueNavigator implements MediaSessionConnector.Qu
         } else {
             A.n(c2Var.x(), this.window);
             boolean z12 = A.o() > 1;
-            a8.a aVar = (a8.a) c2Var;
-            z11 = aVar.H(5) || !this.window.a() || aVar.H(6);
-            z10 = (this.window.a() && this.window.r) || aVar.H(8);
+            e eVar = (e) c2Var;
+            z11 = eVar.H(5) || !this.window.a() || eVar.H(6);
+            z10 = (this.window.a() && this.window.r) || eVar.H(8);
             r2 = z12;
         }
         long j10 = r2 ? 4096L : 0L;
@@ -105,87 +106,87 @@ public abstract class TimelineQueueNavigator implements MediaSessionConnector.Qu
     public void onSkipToNext(c2 c2Var) {
         int e10;
         int e11;
-        a8.a aVar = (a8.a) c2Var;
-        if (aVar.A().p() || aVar.c()) {
+        e eVar = (e) c2Var;
+        if (eVar.A().p() || eVar.c()) {
             return;
         }
-        r2 A = aVar.A();
+        r2 A = eVar.A();
         if (A.p()) {
             e10 = -1;
         } else {
-            int x10 = aVar.x();
-            int g10 = aVar.g();
+            int x4 = eVar.x();
+            int g10 = eVar.g();
             if (g10 == 1) {
                 g10 = 0;
             }
-            e10 = A.e(x10, g10, aVar.C());
+            e10 = A.e(x4, g10, eVar.C());
         }
         if (!(e10 != -1)) {
-            if (aVar.J() && aVar.I()) {
-                aVar.O(-9223372036854775807L, aVar.x(), 9, false);
+            if (eVar.J() && eVar.I()) {
+                eVar.O(-9223372036854775807L, eVar.x(), 9, false);
                 return;
             }
             return;
         }
-        r2 A2 = aVar.A();
+        r2 A2 = eVar.A();
         if (A2.p()) {
             e11 = -1;
         } else {
-            int x11 = aVar.x();
-            int g11 = aVar.g();
-            e11 = A2.e(x11, g11 != 1 ? g11 : 0, aVar.C());
+            int x10 = eVar.x();
+            int g11 = eVar.g();
+            e11 = A2.e(x10, g11 != 1 ? g11 : 0, eVar.C());
         }
         if (e11 == -1) {
             return;
         }
-        if (e11 == aVar.x()) {
-            aVar.O(-9223372036854775807L, aVar.x(), 9, true);
+        if (e11 == eVar.x()) {
+            eVar.O(-9223372036854775807L, eVar.x(), 9, true);
         } else {
-            aVar.O(-9223372036854775807L, e11, 9, false);
+            eVar.O(-9223372036854775807L, e11, 9, false);
         }
     }
 
     @Override // com.google.android.exoplayer2.ext.mediasession.MediaSessionConnector.QueueNavigator
     public void onSkipToPrevious(c2 c2Var) {
+        int k9;
         int k10;
         int k11;
-        int k12;
-        a8.a aVar = (a8.a) c2Var;
-        if (aVar.A().p() || aVar.c()) {
+        e eVar = (e) c2Var;
+        if (eVar.A().p() || eVar.c()) {
             return;
         }
-        r2 A = aVar.A();
+        r2 A = eVar.A();
         if (A.p()) {
-            k10 = -1;
+            k9 = -1;
         } else {
-            int x10 = aVar.x();
-            int g10 = aVar.g();
+            int x4 = eVar.x();
+            int g10 = eVar.g();
             if (g10 == 1) {
                 g10 = 0;
             }
-            k10 = A.k(x10, g10, aVar.C());
+            k9 = A.k(x4, g10, eVar.C());
         }
-        boolean z10 = k10 != -1;
-        if (aVar.J()) {
-            r2 A2 = aVar.A();
-            if (!(!A2.p() && A2.m(aVar.x(), (q2) aVar.a, 0L).n)) {
+        boolean z10 = k9 != -1;
+        if (eVar.J()) {
+            r2 A2 = eVar.A();
+            if (!(!A2.p() && A2.m(eVar.x(), (q2) eVar.a, 0L).n)) {
                 if (z10) {
-                    r2 A3 = aVar.A();
+                    r2 A3 = eVar.A();
                     if (A3.p()) {
-                        k12 = -1;
+                        k11 = -1;
                     } else {
-                        int x11 = aVar.x();
-                        int g11 = aVar.g();
-                        k12 = A3.k(x11, g11 != 1 ? g11 : 0, aVar.C());
+                        int x10 = eVar.x();
+                        int g11 = eVar.g();
+                        k11 = A3.k(x10, g11 != 1 ? g11 : 0, eVar.C());
                     }
-                    if (k12 == -1) {
+                    if (k11 == -1) {
                         return;
                     }
-                    if (k12 == aVar.x()) {
-                        aVar.O(-9223372036854775807L, aVar.x(), 7, true);
+                    if (k11 == eVar.x()) {
+                        eVar.O(-9223372036854775807L, eVar.x(), 7, true);
                         return;
                     } else {
-                        aVar.O(-9223372036854775807L, k12, 7, false);
+                        eVar.O(-9223372036854775807L, k11, 7, false);
                         return;
                     }
                 }
@@ -193,40 +194,40 @@ public abstract class TimelineQueueNavigator implements MediaSessionConnector.Qu
             }
         }
         if (z10) {
-            long D = aVar.D();
-            aVar.j();
+            long D = eVar.D();
+            eVar.j();
             if (D <= 3000) {
-                r2 A4 = aVar.A();
+                r2 A4 = eVar.A();
                 if (A4.p()) {
-                    k11 = -1;
+                    k10 = -1;
                 } else {
-                    int x12 = aVar.x();
-                    int g12 = aVar.g();
-                    k11 = A4.k(x12, g12 != 1 ? g12 : 0, aVar.C());
+                    int x11 = eVar.x();
+                    int g12 = eVar.g();
+                    k10 = A4.k(x11, g12 != 1 ? g12 : 0, eVar.C());
                 }
-                if (k11 == -1) {
+                if (k10 == -1) {
                     return;
                 }
-                if (k11 == aVar.x()) {
-                    aVar.O(-9223372036854775807L, aVar.x(), 7, true);
+                if (k10 == eVar.x()) {
+                    eVar.O(-9223372036854775807L, eVar.x(), 7, true);
                     return;
                 } else {
-                    aVar.O(-9223372036854775807L, k11, 7, false);
+                    eVar.O(-9223372036854775807L, k10, 7, false);
                     return;
                 }
             }
         }
-        aVar.P(7, 0L);
+        eVar.P(7, 0L);
     }
 
     @Override // com.google.android.exoplayer2.ext.mediasession.MediaSessionConnector.QueueNavigator
     public void onSkipToQueueItem(c2 c2Var, long j10) {
-        int i9;
+        int i10;
         r2 A = c2Var.A();
-        if (A.p() || c2Var.c() || (i9 = (int) j10) < 0 || i9 >= A.o()) {
+        if (A.p() || c2Var.c() || (i10 = (int) j10) < 0 || i10 >= A.o()) {
             return;
         }
-        ((a8.a) c2Var).O(-9223372036854775807L, i9, 10, false);
+        ((e) c2Var).O(-9223372036854775807L, i10, 10, false);
     }
 
     @Override // com.google.android.exoplayer2.ext.mediasession.MediaSessionConnector.QueueNavigator
@@ -234,10 +235,10 @@ public abstract class TimelineQueueNavigator implements MediaSessionConnector.Qu
         publishFloatingQueueWindow(c2Var);
     }
 
-    public TimelineQueueNavigator(d0 d0Var, int i9) {
-        d5.a.i(i9 > 0);
+    public TimelineQueueNavigator(d0 d0Var, int i10) {
+        f5.a.i(i10 > 0);
         this.mediaSession = d0Var;
-        this.maxQueueSize = i9;
+        this.maxQueueSize = i10;
         this.activeQueueItemId = -1L;
         this.window = new q2();
     }

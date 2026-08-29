@@ -55,36 +55,36 @@ public final class v6 {
 
     static {
         u6 u6Var = u6.SPLITERATOR;
-        j$.time.t q10 = q(u6Var);
+        j$.time.t q6 = q(u6Var);
         u6 u6Var2 = u6.STREAM;
-        q10.D(u6Var2);
+        q6.D(u6Var2);
         u6 u6Var3 = u6.OP;
-        ((EnumMap) ((Map) q10.b)).put((EnumMap) u6Var3, (u6) 3);
-        v6 v6Var = new v6("DISTINCT", 0, 0, q10);
+        ((EnumMap) ((Map) q6.b)).put((EnumMap) u6Var3, (u6) 3);
+        v6 v6Var = new v6("DISTINCT", 0, 0, q6);
         DISTINCT = v6Var;
+        j$.time.t q9 = q(u6Var);
+        q9.D(u6Var2);
+        ((EnumMap) ((Map) q9.b)).put((EnumMap) u6Var3, (u6) 3);
+        v6 v6Var2 = new v6("SORTED", 1, 1, q9);
+        SORTED = v6Var2;
+        j$.time.t q10 = q(u6Var);
+        q10.D(u6Var2);
+        ((EnumMap) ((Map) q10.b)).put((EnumMap) u6Var3, (u6) 3);
+        u6 u6Var4 = u6.TERMINAL_OP;
+        ((EnumMap) ((Map) q10.b)).put((EnumMap) u6Var4, (u6) 2);
+        u6 u6Var5 = u6.UPSTREAM_TERMINAL_OP;
+        ((EnumMap) ((Map) q10.b)).put((EnumMap) u6Var5, (u6) 2);
+        v6 v6Var3 = new v6("ORDERED", 2, 2, q10);
+        ORDERED = v6Var3;
         j$.time.t q11 = q(u6Var);
         q11.D(u6Var2);
-        ((EnumMap) ((Map) q11.b)).put((EnumMap) u6Var3, (u6) 3);
-        v6 v6Var2 = new v6("SORTED", 1, 1, q11);
-        SORTED = v6Var2;
-        j$.time.t q12 = q(u6Var);
-        q12.D(u6Var2);
-        ((EnumMap) ((Map) q12.b)).put((EnumMap) u6Var3, (u6) 3);
-        u6 u6Var4 = u6.TERMINAL_OP;
-        ((EnumMap) ((Map) q12.b)).put((EnumMap) u6Var4, (u6) 2);
-        u6 u6Var5 = u6.UPSTREAM_TERMINAL_OP;
-        ((EnumMap) ((Map) q12.b)).put((EnumMap) u6Var5, (u6) 2);
-        v6 v6Var3 = new v6("ORDERED", 2, 2, q12);
-        ORDERED = v6Var3;
-        j$.time.t q13 = q(u6Var);
-        q13.D(u6Var2);
-        ((EnumMap) ((Map) q13.b)).put((EnumMap) u6Var3, (u6) 2);
-        v6 v6Var4 = new v6("SIZED", 3, 3, q13);
+        ((EnumMap) ((Map) q11.b)).put((EnumMap) u6Var3, (u6) 2);
+        v6 v6Var4 = new v6("SIZED", 3, 3, q11);
         SIZED = v6Var4;
-        j$.time.t q14 = q(u6Var3);
-        q14.D(u6Var4);
-        int i9 = 0;
-        v6 v6Var5 = new v6("SHORT_CIRCUIT", 4, 12, q14);
+        j$.time.t q12 = q(u6Var3);
+        q12.D(u6Var4);
+        int i10 = 0;
+        v6 v6Var5 = new v6("SHORT_CIRCUIT", 4, 12, q12);
         SHORT_CIRCUIT = v6Var5;
         v = new v6[]{v6Var, v6Var2, v6Var3, v6Var4, v6Var5};
         f = k(u6Var);
@@ -93,14 +93,14 @@ public final class v6 {
         k(u6Var4);
         k(u6Var5);
         for (v6 v6Var6 : values()) {
-            i9 |= v6Var6.e;
+            i10 |= v6Var6.e;
         }
-        i = i9;
-        int i10 = g;
-        j = i10;
-        int i11 = i10 << 1;
-        k = i11;
-        l = i10 | i11;
+        i = i10;
+        int i11 = g;
+        j = i11;
+        int i12 = i11 << 1;
+        k = i12;
+        l = i11 | i12;
         v6 v6Var7 = DISTINCT;
         m = v6Var7.c;
         n = v6Var7.d;
@@ -122,44 +122,44 @@ public final class v6 {
         return tVar;
     }
 
-    public v6(String str, int i9, int i10, j$.time.t tVar) {
+    public v6(String str, int i10, int i11, j$.time.t tVar) {
         for (u6 u6Var : u6.values()) {
             Map.-EL.putIfAbsent((java.util.Map) tVar.b, u6Var, 0);
         }
         this.a = (java.util.Map) tVar.b;
-        int i11 = i10 * 2;
-        this.b = i11;
-        this.c = 1 << i11;
-        this.d = 2 << i11;
-        this.e = 3 << i11;
+        int i12 = i11 * 2;
+        this.b = i12;
+        this.c = 1 << i12;
+        this.d = 2 << i12;
+        this.e = 3 << i12;
     }
 
-    public final boolean m(int i9) {
-        return (i9 & this.e) == this.c;
+    public final boolean m(int i10) {
+        return (i10 & this.e) == this.c;
     }
 
     public static int k(u6 u6Var) {
-        int i9 = 0;
+        int i10 = 0;
         for (v6 v6Var : values()) {
-            i9 |= ((Integer) v6Var.a.get(u6Var)).intValue() << v6Var.b;
+            i10 |= ((Integer) v6Var.a.get(u6Var)).intValue() << v6Var.b;
         }
-        return i9;
+        return i10;
     }
 
-    public static int j(int i9, int i10) {
-        int i11;
-        if (i9 == 0) {
-            i11 = i;
+    public static int j(int i10, int i11) {
+        int i12;
+        if (i10 == 0) {
+            i12 = i;
         } else {
-            i11 = ~(((j & i9) << 1) | i9 | ((k & i9) >> 1));
+            i12 = ~(((j & i10) << 1) | i10 | ((k & i10) >> 1));
         }
-        return i9 | (i10 & i11);
+        return i10 | (i11 & i12);
     }
 
     public static int l(Spliterator spliterator) {
         int characteristics = spliterator.characteristics();
-        int i9 = characteristics & 4;
-        int i10 = f;
-        return (i9 == 0 || spliterator.getComparator() == null) ? characteristics & i10 : characteristics & i10 & (-5);
+        int i10 = characteristics & 4;
+        int i11 = f;
+        return (i10 == 0 || spliterator.getComparator() == null) ? characteristics & i11 : characteristics & i11 & (-5);
     }
 }

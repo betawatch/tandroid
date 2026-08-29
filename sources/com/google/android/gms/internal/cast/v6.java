@@ -8,10 +8,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class v6 {
-    public static final q5.b n = new q5.b("SessionFlowSummary", null);
+    public static final s5.b n = new s5.b("SessionFlowSummary", null);
     public static final String o = "21.4.0";
     public static long p = System.currentTimeMillis();
     public final d0 a;
@@ -23,15 +23,15 @@ public final class v6 {
     public final String g;
     public final long h;
     public final long i;
-    public n5.c j;
+    public p5.c j;
     public String k;
     public String l;
     public String m;
 
     public v6(p0 p0Var, String str) {
-        e1 e1Var = e1.b;
+        f1 f1Var = f1.b;
         d0 d0Var = new d0(0);
-        d0Var.c = e1Var;
+        d0Var.c = f1Var;
         this.a = d0Var;
         this.b = DesugarCollections.synchronizedList(new ArrayList());
         this.c = DesugarCollections.synchronizedList(new ArrayList());
@@ -45,12 +45,12 @@ public final class v6 {
         this.i = j10;
     }
 
-    public final void a(n5.c cVar) {
+    public final void a(p5.c cVar) {
         if (cVar == null) {
             b(2);
             return;
         }
-        x5.l.e("Must be called from the main thread.");
+        z5.l.e("Must be called from the main thread.");
         CastDevice castDevice = cVar.k;
         if (castDevice == null) {
             b(3);
@@ -71,15 +71,15 @@ public final class v6 {
         }
     }
 
-    public final void b(int i9) {
-        Integer valueOf = Integer.valueOf(i9 - 1);
+    public final void b(int i10) {
+        Integer valueOf = Integer.valueOf(i10 - 1);
         Map map = this.e;
         c cVar = (c) map.get(valueOf);
         if (cVar != null) {
             cVar.d.incrementAndGet();
             cVar.b = System.currentTimeMillis();
         } else {
-            c cVar2 = new c(new a(i9));
+            c cVar2 = new c(new a5.c(i10));
             cVar2.c = this.h;
             map.put(valueOf, cVar2);
         }

@@ -1,116 +1,62 @@
 package jh;
 
 import android.content.Context;
-import android.text.TextUtils;
-import android.view.MotionEvent;
-import android.widget.FrameLayout;
-import org.telegram.ui.Components.eu0;
-import org.telegram.ui.Components.n71;
-import org.telegram.ui.Components.uq0;
-import org.telegram.ui.Components.yq0;
-import org.telegram.ui.Components.zq0;
+import android.text.SpannableStringBuilder;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.ui.Components.gs;
+import org.telegram.ui.Components.ls;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes4.dex */
-public final class a extends n71 {
-    public final /* synthetic */ int P = 0;
-    public Object Q;
-    public final /* synthetic */ FrameLayout R;
+public final /* synthetic */ class a implements Runnable {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ org.telegram.ui.ActionBar.c6 b;
+    public final /* synthetic */ Context c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public a(zq0 zq0Var, Context context, yq0 yq0Var) {
-        super(context, null);
-        this.R = zq0Var;
-        this.Q = yq0Var;
+    public /* synthetic */ a(Context context, org.telegram.ui.ActionBar.c6 c6Var) {
+        this.c = context;
+        this.b = c6Var;
     }
 
-    @Override // org.telegram.ui.Components.n71
-    public boolean i(MotionEvent motionEvent) {
-        switch (this.P) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
             case 0:
-                return !((uq0) this.R).C.y1;
-            default:
-                return super.i(motionEvent);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.n71
-    public final void w(boolean z10) {
-        switch (this.P) {
-            case 0:
-                uq0 uq0Var = (uq0) this.R;
-                String currentLang = uq0Var.getCurrentLang();
-                if (!TextUtils.equals((String) this.Q, currentLang)) {
-                    this.Q = currentLang;
-                    uq0Var.C.L0();
-                    break;
-                }
+                new z9(this.c, this.b).show();
                 break;
             default:
-                yq0 yq0Var = (yq0) this.Q;
-                yq0Var.d.J0(((zq0) this.R).n.getAnimatingIndicatorProgress());
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.n71
-    public void x(int i9) {
-        switch (this.P) {
-            case 0:
-                uq0 uq0Var = (uq0) this.R;
-                String currentLang = uq0Var.getCurrentLang();
-                if (!TextUtils.equals((String) this.Q, currentLang)) {
-                    this.Q = currentLang;
-                    uq0Var.C.L0();
-                    break;
+                org.telegram.ui.ActionBar.c2[] c2VarArr = new org.telegram.ui.ActionBar.c2[1];
+                String string = LocaleController.getString(R.string.AppsTabInfoText);
+                gs gsVar = new gs(c2VarArr, 0);
+                org.telegram.ui.ActionBar.c6 c6Var = this.b;
+                SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(AndroidUtilities.replaceLinks(string, c6Var, gsVar));
+                Matcher matcher = Pattern.compile("@([a-zA-Z0-9_-]+)").matcher(replaceTags);
+                while (true) {
+                    boolean find = matcher.find();
+                    Context context = this.c;
+                    if (!find) {
+                        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context, 0, c6Var);
+                        String string2 = LocaleController.getString(R.string.AppsTabInfoTitle);
+                        org.telegram.ui.ActionBar.c2 c2Var = alertDialog$Builder.a;
+                        c2Var.N = string2;
+                        c2Var.P = replaceTags;
+                        alertDialog$Builder.k(LocaleController.getString(R.string.AppsTabInfoButton), null);
+                        c2VarArr[0] = alertDialog$Builder.o();
+                        break;
+                    } else {
+                        replaceTags.setSpan(new org.telegram.ui.r0(c2VarArr, context, matcher.group(1), 1), matcher.start(), matcher.end(), 33);
+                    }
                 }
-                break;
         }
     }
 
-    @Override // org.telegram.ui.Components.n71
-    public void y(int i9, boolean z10) {
-        switch (this.P) {
-            case 1:
-                yq0 yq0Var = (yq0) this.Q;
-                int i10 = ((zq0) this.R).n.U.get(i9, -1);
-                eu0 eu0Var = yq0Var.d;
-                if (i10 > 0) {
-                    eu0.t(eu0Var, eu0Var.i1(i10).a, z10);
-                    break;
-                } else {
-                    eu0.t(eu0Var, 8, z10);
-                    break;
-                }
-            default:
-                super.y(i9, z10);
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.n71
-    public final void z(int i9) {
-        switch (this.P) {
-            case 0:
-                uq0 uq0Var = (uq0) this.R;
-                String currentLang = uq0Var.getCurrentLang();
-                if (!TextUtils.equals((String) this.Q, currentLang)) {
-                    this.Q = currentLang;
-                    uq0Var.C.L0();
-                    break;
-                }
-                break;
-            default:
-                yq0 yq0Var = (yq0) this.Q;
-                ((zq0) this.R).n.U.get(i9, -1);
-                yq0Var.d.J0(1.0f);
-                break;
-        }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public a(uq0 uq0Var, Context context) {
-        super(context, null);
-        this.R = uq0Var;
+    public /* synthetic */ a(ls lsVar, org.telegram.ui.ActionBar.c6 c6Var, Context context) {
+        this.b = c6Var;
+        this.c = context;
     }
 }

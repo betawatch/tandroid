@@ -1,36 +1,31 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+import android.animation.ValueAnimator;
+
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class pm extends org.telegram.ui.rt0 {
-    public boolean a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ jn c;
+public final /* synthetic */ class pm implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ on b;
 
-    public pm(jn jnVar, int i9) {
-        this.c = jnVar;
-        this.b = i9;
+    public /* synthetic */ pm(on onVar, int i10) {
+        this.a = i10;
+        this.b = onVar;
     }
 
-    @Override // org.telegram.ui.rt0, org.telegram.ui.zt0
-    public final void D() {
-        if (this.a) {
-            this.c.a0(this.b);
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                on onVar = this.b;
+                onVar.getClass();
+                onVar.A.setTranslationY(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                break;
+            default:
+                on onVar2 = this.b;
+                onVar2.getClass();
+                onVar2.A.setTranslationY(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                break;
         }
-    }
-
-    @Override // org.telegram.ui.rt0, org.telegram.ui.zt0
-    public final void I() {
-        this.c.d0(this.b, null);
-    }
-
-    @Override // org.telegram.ui.rt0, org.telegram.ui.zt0
-    public final void V() {
-        this.a = true;
-    }
-
-    @Override // org.telegram.ui.rt0, org.telegram.ui.zt0
-    public final boolean z() {
-        return false;
     }
 }

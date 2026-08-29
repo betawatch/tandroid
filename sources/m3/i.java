@@ -1,91 +1,85 @@
 package m3;
 
-import d5.e0;
-import java.util.ArrayList;
-import java.util.Collections;
-import o8.l0;
-import o8.z;
-import w3.b0;
+import j3.r0;
+import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class i {
-    public static final int[] b = {5, 4, 12, 8, 3, 10, 9, 11, 6, 2, 0, 1, 7, 16, 15, 14};
-    public static final g5.b c = new g5.b(new i3.i(20));
-    public static final g5.b d = new g5.b(new i3.i(21));
-    public final l0 a;
+public class i extends a {
+    public final d a = new d();
+    public ByteBuffer b;
+    public boolean c;
+    public long d;
+    public ByteBuffer e;
+    public final int f;
+    public final int h;
 
-    public i() {
-        o8.x xVar = z.b;
-        this.a = l0.e;
+    static {
+        r0.a("goog.exo.decoder");
     }
 
-    public final void a(int i9, ArrayList arrayList) {
-        switch (i9) {
-            case 0:
-                arrayList.add(new w3.a());
-                break;
-            case 1:
-                arrayList.add(new w3.c());
-                break;
-            case 2:
-                arrayList.add(new w3.d(1));
-                break;
-            case 3:
-                arrayList.add(new n3.a(1));
-                break;
-            case 4:
-                k p6 = c.p(0);
-                if (p6 == null) {
-                    arrayList.add(new p3.b());
-                    break;
-                } else {
-                    arrayList.add(p6);
-                    break;
-                }
-            case 5:
-                arrayList.add(new q3.b());
-                break;
-            case 6:
-                arrayList.add(new s3.d(0));
-                break;
-            case 7:
-                arrayList.add(new t3.d(1));
-                break;
-            case 8:
-                arrayList.add(new u3.i(0, null, Collections.EMPTY_LIST, null));
-                arrayList.add(new u3.l(0));
-                break;
-            case 9:
-                arrayList.add(new v3.d());
-                break;
-            case 10:
-                arrayList.add(new w3.x());
-                break;
-            case 11:
-                arrayList.add(new b0(1, new e0(0L), new o0.h(0, this.a)));
-                break;
-            case 12:
-                x3.c cVar = new x3.c();
-                cVar.c = 0;
-                cVar.d = -1L;
-                cVar.f = -1;
-                cVar.g = -1L;
-                arrayList.add(cVar);
-                break;
-            case 14:
-                arrayList.add(new r3.a());
-                break;
-            case 15:
-                k p9 = d.p(new Object[0]);
-                if (p9 != null) {
-                    arrayList.add(p9);
-                    break;
-                }
-                break;
-            case 16:
-                arrayList.add(new o3.b());
-                break;
+    public i(int i10, int i11) {
+        this.f = i10;
+        this.h = i11;
+    }
+
+    public final ByteBuffer a(int i10) {
+        int i11 = this.f;
+        if (i11 == 1) {
+            return ByteBuffer.allocate(i10);
         }
+        if (i11 == 2) {
+            return ByteBuffer.allocateDirect(i10);
+        }
+        ByteBuffer byteBuffer = this.b;
+        throw new h("Buffer too small (" + (byteBuffer == null ? 0 : byteBuffer.capacity()) + " < " + i10 + ")");
+    }
+
+    public final void b(int i10) {
+        int i11 = i10 + this.h;
+        ByteBuffer byteBuffer = this.b;
+        if (byteBuffer == null) {
+            this.b = a(i11);
+            return;
+        }
+        int capacity = byteBuffer.capacity();
+        int position = byteBuffer.position();
+        int i12 = i11 + position;
+        if (capacity >= i12) {
+            this.b = byteBuffer;
+            return;
+        }
+        ByteBuffer a2 = a(i12);
+        a2.order(byteBuffer.order());
+        if (position > 0) {
+            byteBuffer.flip();
+            a2.put(byteBuffer);
+        }
+        this.b = a2;
+    }
+
+    public final void c() {
+        ByteBuffer byteBuffer = this.b;
+        if (byteBuffer != null) {
+            byteBuffer.flip();
+        }
+        ByteBuffer byteBuffer2 = this.e;
+        if (byteBuffer2 != null) {
+            byteBuffer2.flip();
+        }
+    }
+
+    @Override // m3.a
+    public void clear() {
+        super.clear();
+        ByteBuffer byteBuffer = this.b;
+        if (byteBuffer != null) {
+            byteBuffer.clear();
+        }
+        ByteBuffer byteBuffer2 = this.e;
+        if (byteBuffer2 != null) {
+            byteBuffer2.clear();
+        }
+        this.c = false;
     }
 }

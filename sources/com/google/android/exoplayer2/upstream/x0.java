@@ -4,7 +4,7 @@ import android.net.Uri;
 import java.util.Collections;
 import java.util.Map;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class x0 implements m {
     public final m a;
@@ -53,8 +53,8 @@ public final class x0 implements m {
     }
 
     @Override // com.google.android.exoplayer2.upstream.j
-    public final int read(byte[] bArr, int i9, int i10) {
-        int read = this.a.read(bArr, i9, i10);
+    public final int read(byte[] bArr, int i10, int i11) {
+        int read = this.a.read(bArr, i10, i11);
         if (read != -1) {
             this.b += read;
         }

@@ -1,28 +1,42 @@
 package org.telegram.ui;
 
+import android.animation.ValueAnimator;
 import android.view.View;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.function.ToIntFunction;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class xe implements ToIntFunction {
+public final /* synthetic */ class xe implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ tn b;
+    public final /* synthetic */ View c;
 
-    public /* synthetic */ xe(Object obj, int i9) {
-        this.a = i9;
-        this.b = obj;
+    public /* synthetic */ xe(tn tnVar, org.telegram.ui.Cells.v0 v0Var, int i10) {
+        this.a = i10;
+        this.b = tnVar;
+        this.c = v0Var;
     }
 
-    @Override // java.util.function.ToIntFunction
-    public final int applyAsInt(Object obj) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                return ((Integer) ((HashMap) this.b).get((View) obj)).intValue();
+                tn tnVar = this.b;
+                tnVar.getClass();
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                tnVar.w9 = AndroidUtilities.dp(30.0f) * floatValue;
+                tnVar.o9();
+                this.c.setAlpha(floatValue);
+                break;
             default:
-                return ((Integer) ((ArrayList) this.b).get(((Integer) obj).intValue())).intValue();
+                tn tnVar2 = this.b;
+                tnVar2.getClass();
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                tnVar2.w9 = AndroidUtilities.dp(30.0f) * floatValue2;
+                tnVar2.o9();
+                tnVar2.r9();
+                this.c.setAlpha(floatValue2);
+                break;
         }
     }
 }

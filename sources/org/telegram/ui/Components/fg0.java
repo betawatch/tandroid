@@ -1,383 +1,62 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
+import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.util.SparseIntArray;
-import android.view.GestureDetector;
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import java.util.ArrayList;
+import android.os.SystemClock;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.AnimationNotificationsLocker;
-import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class fg0 extends FrameLayout {
-    public float A;
-    public ValueAnimator B;
-    public int C;
-    public AnimationNotificationsLocker D;
-    public org.telegram.ui.ActionBar.b6 E;
-    public int F;
-    public dg0 G;
-    public Rect H;
-    public float I;
-    public float J;
-    public Runnable K;
-    public boolean L;
-    public SparseIntArray a;
-    public float b;
-    public float c;
-    public m5.c0 d;
-    public boolean e;
-    public boolean f;
-    public boolean h;
-    public Paint n;
-    public Paint r;
-    public int s;
-    public Path v;
-    public RectF w;
-    public ArrayList x;
-    public boolean y;
+public final class fg0 extends jl0 {
+    public final jf.b0 T2;
+    public long U2;
+    public final /* synthetic */ lg0 V2;
 
-    public final void a(float f10, float f11) {
-        ValueAnimator duration = ValueAnimator.ofFloat(this.b, f10).setDuration((long) (Math.max(0.5f, Math.abs(this.b - f10) - Math.min(0.2f, f11)) * 300.0f));
-        duration.setInterpolator(gr.f);
-        this.D.lock();
-        duration.addUpdateListener(new cg0(this, 0));
-        duration.addListener(new org.telegram.ui.ActionBar.a1(this, f10, 5));
-        duration.start();
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public fg0(lg0 lg0Var, Context context) {
+        super(context, null);
+        this.V2 = lg0Var;
+        this.T2 = new jf.b0(8);
     }
 
-    @Override // android.view.ViewGroup
-    public final void addView(View view, int i9, ViewGroup.LayoutParams layoutParams) {
-        super.addView(view, i9, layoutParams);
-        c(true);
+    @Override // org.telegram.ui.Components.jl0
+    public final boolean E0(float f9) {
+        return f9 >= ((float) (this.V2.A + AndroidUtilities.statusBarHeight));
     }
 
-    public final void b(boolean z10) {
-        if (this.f) {
-            return;
-        }
-        if (z10) {
-            a(0.0f, 0.0f);
-            return;
-        }
-        this.C = -1;
-        this.b = 0.0f;
-        c(true);
-    }
-
-    public final void c(boolean z10) {
-        float f10;
-        float f11;
-        ArrayList arrayList = this.x;
-        if (this.I != this.c || this.J != this.b) {
-            if (!arrayList.isEmpty()) {
-                for (int i9 = 0; i9 < arrayList.size(); i9++) {
-                    ((eg0) arrayList.get(i9)).a(this.c, this.b);
-                }
-            }
-            this.I = this.c;
-            this.J = this.b;
-        }
-        View childAt = getChildAt(0);
-        int i10 = this.C;
-        View childAt2 = (i10 < 0 || i10 >= getChildCount()) ? null : getChildAt(this.C);
-        childAt.setTranslationX((-this.b) * getWidth() * 0.5f);
-        float f12 = ((1.0f - this.b) * 0.05f) + 0.95f;
-        childAt.setScaleX(f12);
-        childAt.setScaleY(f12);
-        if (childAt2 != null) {
-            childAt2.setTranslationX((1.0f - this.b) * getWidth());
-        }
-        for (int i11 = 0; i11 < getChildCount(); i11++) {
-            View childAt3 = getChildAt(i11);
-            if (i11 == 0) {
-                if (this.b == 1.0f && childAt3.getVisibility() != 4) {
-                    childAt3.setVisibility(4);
-                }
-                if (this.b != 1.0f && childAt3.getVisibility() != 0) {
-                    childAt3.setVisibility(0);
-                }
-            } else if (i11 == this.C) {
-                if (this.b == 0.0f && childAt3.getVisibility() != 4) {
-                    childAt3.setVisibility(4);
-                }
-                if (this.b != 0.0f && childAt3.getVisibility() != 0) {
-                    childAt3.setVisibility(0);
-                }
-            } else {
-                childAt3.setVisibility(4);
-            }
-        }
-        float measuredWidth = childAt.getMeasuredWidth();
-        float measuredHeight = childAt.getMeasuredHeight();
-        if (childAt2 != null) {
-            f10 = childAt2.getMeasuredWidth();
-            f11 = this.A;
-            if (f11 == 0.0f) {
-                f11 = childAt2.getMeasuredHeight();
-            }
-        } else {
-            f10 = 0.0f;
-            f11 = 0.0f;
-        }
-        if (childAt.getMeasuredWidth() == 0 || childAt.getMeasuredHeight() == 0) {
-            return;
-        }
-        ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = (ActionBarPopupWindow$ActionBarPopupWindowLayout) getParent();
-        float f13 = this.b;
-        float f14 = ((f10 - measuredWidth) * f13) + measuredWidth;
-        float z11 = e2.c.z(f11, measuredHeight, f13, measuredHeight) + actionBarPopupWindow$ActionBarPopupWindowLayout.getPaddingBottom() + actionBarPopupWindow$ActionBarPopupWindowLayout.getPaddingTop();
-        actionBarPopupWindow$ActionBarPopupWindowLayout.a = false;
-        actionBarPopupWindow$ActionBarPopupWindowLayout.setBackScaleX((f14 + (actionBarPopupWindow$ActionBarPopupWindowLayout.getPaddingRight() + actionBarPopupWindow$ActionBarPopupWindowLayout.getPaddingLeft())) / actionBarPopupWindow$ActionBarPopupWindowLayout.getMeasuredWidth());
-        if (z10) {
-            actionBarPopupWindow$ActionBarPopupWindowLayout.setBackScaleY(Math.min(1.0f, z11 / actionBarPopupWindow$ActionBarPopupWindowLayout.getMeasuredHeight()));
-        }
-        actionBarPopupWindow$ActionBarPopupWindowLayout.a = true;
-        for (int i12 = 0; i12 < getChildCount(); i12++) {
-            View childAt4 = getChildAt(i12);
-            childAt4.setPivotX(0.0f);
-            childAt4.setPivotY(0.0f);
-        }
-        invalidate();
-    }
-
-    public final boolean d(MotionEvent motionEvent, View view) {
-        Rect rect = this.H;
-        view.getHitRect(rect);
-        if (rect.contains((int) motionEvent.getX(), (int) motionEvent.getY()) && (view.canScrollHorizontally(-1) || (view instanceof org.telegram.ui.ActionBar.d1))) {
-            return true;
-        }
-        if (view instanceof ViewGroup) {
-            ViewGroup viewGroup = (ViewGroup) view;
-            for (int i9 = 0; i9 < viewGroup.getChildCount(); i9++) {
-                if (d(motionEvent, viewGroup.getChildAt(i9))) {
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.jl0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
-        Path path = this.v;
-        RectF rectF = this.w;
-        if (getChildCount() == 0) {
-            return;
-        }
-        View childAt = getChildAt(0);
-        float top = childAt.getTop();
-        float measuredWidth = childAt.getMeasuredWidth();
-        float measuredHeight = childAt.getMeasuredHeight();
-        int i9 = this.C;
-        if (i9 != -1 && i9 < getChildCount()) {
-            View childAt2 = getChildAt(this.C);
-            float top2 = childAt2.getTop();
-            float measuredWidth2 = childAt2.getMeasuredWidth();
-            float f10 = this.A;
-            if (f10 == 0.0f) {
-                f10 = childAt2.getMeasuredHeight();
+        float f9;
+        lg0 lg0Var = this.V2;
+        if (lg0Var.H) {
+            long elapsedRealtime = SystemClock.elapsedRealtime();
+            long abs = Math.abs(this.U2 - elapsedRealtime);
+            if (abs > 17) {
+                abs = 16;
             }
-            if (childAt.getMeasuredWidth() != 0 && childAt.getMeasuredHeight() != 0 && childAt2.getMeasuredWidth() != 0 && childAt2.getMeasuredHeight() != 0) {
-                top = AndroidUtilities.lerp(top, top2, this.b);
-                measuredWidth = AndroidUtilities.lerp(measuredWidth, measuredWidth2, this.b);
-                measuredHeight = AndroidUtilities.lerp(measuredHeight, f10, this.b);
-            }
-        }
-        int save = canvas.save();
-        path.rewind();
-        int dp = AndroidUtilities.dp(12.0f);
-        if (this.L) {
-            rectF.set(getWidth() - measuredWidth, top, getWidth(), measuredHeight + top);
-        } else {
-            rectF.set(0.0f, top, measuredWidth, measuredHeight + top);
-        }
-        float f11 = dp;
-        path.addRoundRect(rectF, f11, f11, Path.Direction.CW);
-        canvas.clipPath(path);
-        super.dispatchDraw(canvas);
-        canvas.restoreToCount(save);
-        if (this.G == null || this.F == rectF.height()) {
-            return;
-        }
-        dg0 dg0Var = this.G;
-        int height = (int) rectF.height();
-        this.F = height;
-        org.telegram.ui.ActionBar.o2[] o2VarArr = (org.telegram.ui.ActionBar.o2[]) ((org.telegram.ui.wt) dg0Var).b;
-        org.telegram.ui.ActionBar.o2 o2Var = o2VarArr[0];
-        if (o2Var == null || o2Var.getFragmentView() == null || !o2VarArr[0].isInPreviewMode()) {
-            return;
-        }
-        ViewGroup.LayoutParams layoutParams = o2VarArr[0].getFragmentView().getLayoutParams();
-        if (layoutParams instanceof ViewGroup.MarginLayoutParams) {
-            ((ViewGroup.MarginLayoutParams) layoutParams).bottomMargin = AndroidUtilities.dp(48.0f) + height;
-            o2VarArr[0].getFragmentView().setLayoutParams(layoutParams);
-        }
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        boolean z10;
-        RectF rectF = this.w;
-        int action = motionEvent.getAction() & 255;
-        if (this.f) {
-            z10 = true;
-        } else if (((GestureDetector) this.d.b).onTouchEvent(motionEvent) || !(action == 1 || action == 3)) {
-            z10 = this.e;
-        } else {
-            if (this.e) {
-                this.e = false;
-                this.h = false;
-                a(this.b >= 0.5f ? 1.0f : 0.0f, 0.0f);
-            } else if (this.h) {
-                this.e = false;
-                this.h = false;
-            }
-            z10 = false;
-        }
-        if (!z10) {
-            int actionMasked = motionEvent.getActionMasked();
-            if (rectF != null) {
-                rectF.contains(motionEvent.getX(), motionEvent.getY());
-            }
-            if (actionMasked == 0 && !rectF.contains(motionEvent.getX(), motionEvent.getY())) {
-                callOnClick();
-                return true;
-            }
-            int i9 = this.C;
-            if (i9 < 0 || i9 >= getChildCount()) {
-                return super.dispatchTouchEvent(motionEvent);
-            }
-            View childAt = getChildAt(0);
-            View childAt2 = getChildAt(this.C);
-            if (this.b > 0.5f) {
-                childAt = childAt2;
-            }
-            boolean dispatchTouchEvent = childAt.dispatchTouchEvent(motionEvent);
-            if ((dispatchTouchEvent || actionMasked != 0) && !dispatchTouchEvent && !onTouchEvent(motionEvent)) {
-                return false;
-            }
-        }
-        return true;
-    }
-
-    @Override // android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j10) {
-        Paint paint = this.n;
-        Paint paint2 = this.r;
-        int indexOfChild = indexOfChild(view);
-        int save = canvas.save();
-        if (indexOfChild != 0) {
-            int i9 = this.s;
-            if (i9 == 0) {
-                paint2.setColor(org.telegram.ui.ActionBar.f6.v0(org.telegram.ui.ActionBar.f6.G8, this.E));
-            } else {
-                paint2.setColor(i9);
-            }
-            canvas.drawRect(view.getX(), 0.0f, view.getX() + view.getMeasuredWidth(), getMeasuredHeight(), paint2);
-        }
-        boolean drawChild = super.drawChild(canvas, view, j10);
-        if (indexOfChild == 0) {
-            paint.setAlpha((int) (this.b * 64.0f));
-            canvas.drawRect(0.0f, 0.0f, getWidth(), getHeight(), paint);
-        }
-        canvas.restoreToCount(save);
-        return drawChild;
-    }
-
-    public final void e(int i9) {
-        if (this.f) {
-            return;
-        }
-        this.C = i9;
-        this.A = this.a.get(i9);
-        a(1.0f, 0.0f);
-    }
-
-    public final void f(int i9, int i10, boolean z10) {
-        this.a.put(i9, i10);
-        int i11 = this.C;
-        if (i9 == i11 && i11 >= 0 && i11 < getChildCount()) {
-            ValueAnimator valueAnimator = this.B;
-            if (valueAnimator != null) {
-                valueAnimator.cancel();
-                this.B = null;
-            }
-            if (!z10) {
-                this.A = i10;
-                c(true);
-                return;
-            }
-            View childAt = getChildAt(this.C);
-            float f10 = this.A;
-            if (f10 == 0.0f) {
-                f10 = childAt.getMeasuredHeight();
-            }
-            ValueAnimator duration = ValueAnimator.ofFloat(f10, i10).setDuration(240L);
-            duration.setInterpolator(xs.e);
-            duration.addUpdateListener(new cg0(this, 1));
-            this.f = true;
-            duration.addListener(new r60(this, 10));
-            duration.start();
-            this.B = duration;
-        }
-    }
-
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i9, int i10, int i11, int i12) {
-        for (int i13 = 0; i13 < getChildCount(); i13++) {
-            View childAt = getChildAt(i13);
-            if ((childAt.getLayoutParams() instanceof FrameLayout.LayoutParams) && ((FrameLayout.LayoutParams) childAt.getLayoutParams()).gravity == 80) {
-                if (this.L) {
-                    int i14 = i11 - i9;
-                    int i15 = i12 - i10;
-                    childAt.layout(i14 - childAt.getMeasuredWidth(), i15 - childAt.getMeasuredHeight(), i14, i15);
+            this.U2 = elapsedRealtime;
+            lg0Var.F += (abs * lg0Var.G) / 1800.0f;
+            while (true) {
+                f9 = lg0Var.F;
+                float f10 = lg0Var.G * 2.0f;
+                if (f9 < f10) {
+                    break;
                 } else {
-                    int i16 = i12 - i10;
-                    childAt.layout(0, i16 - childAt.getMeasuredHeight(), childAt.getMeasuredWidth(), i16);
+                    lg0Var.F = f9 - f10;
                 }
-            } else if (this.L) {
-                int i17 = i11 - i9;
-                childAt.layout(i17 - childAt.getMeasuredWidth(), 0, i17, childAt.getMeasuredHeight());
-            } else {
-                childAt.layout(0, 0, childAt.getMeasuredWidth(), childAt.getMeasuredHeight());
             }
+            lg0Var.E.setTranslate(f9, 0.0f);
+            lg0Var.D.setLocalMatrix(lg0Var.E);
+            f1();
+            invalidate();
         }
-    }
-
-    @Override // android.view.View
-    public final void onSizeChanged(int i9, int i10, int i11, int i12) {
-        super.onSizeChanged(i9, i10, i11, i12);
-        c(true);
-    }
-
-    public void setForegroundColor(int i9) {
-        this.s = i9;
-    }
-
-    public void setOnForegroundOpenFinished(Runnable runnable) {
-        this.K = runnable;
-    }
-
-    public void setOnHeightUpdateListener(dg0 dg0Var) {
-        this.G = dg0Var;
-    }
-
-    public void setStickToRight(boolean z10) {
-        this.L = z10;
-    }
-
-    public void setSwipeBackDisallowed(boolean z10) {
-        this.y = z10;
+        super.dispatchDraw(canvas);
+        int measuredHeight = getMeasuredHeight() - AndroidUtilities.navigationBarHeight;
+        int measuredWidth = getMeasuredWidth();
+        int measuredHeight2 = getMeasuredHeight();
+        jf.b0 b0Var = this.T2;
+        b0Var.setBounds(0, measuredHeight, measuredWidth, measuredHeight2);
+        b0Var.b(org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.i5, this.l2));
+        b0Var.draw(canvas);
     }
 }

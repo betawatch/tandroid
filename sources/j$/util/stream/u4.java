@@ -12,7 +12,7 @@ public abstract class u4 extends p4 implements o4 {
         throw null;
     }
 
-    public /* synthetic */ void accept(int i9) {
+    public /* synthetic */ void accept(int i10) {
         t3.J();
         throw null;
     }

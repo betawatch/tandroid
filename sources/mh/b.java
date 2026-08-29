@@ -1,62 +1,62 @@
 package mh;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.view.View;
+import lh.c6;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.Components.fr0;
+import org.telegram.ui.Components.k31;
+import org.telegram.ui.Components.q71;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class b implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ l b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.c2 c;
+public final class b extends q71 {
+    public final /* synthetic */ Context a;
+    public final /* synthetic */ fr0 b;
 
-    public /* synthetic */ b(l lVar, org.telegram.ui.ActionBar.c2 c2Var, int i9) {
-        this.a = i9;
-        this.b = lVar;
-        this.c = c2Var;
+    public b(fr0 fr0Var, Context context) {
+        this.b = fr0Var;
+        this.a = context;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        switch (this.a) {
-            case 0:
-                final int i9 = 1;
-                final l lVar = this.b;
-                final org.telegram.ui.ActionBar.c2 c2Var = this.c;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: mh.d
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i9) {
-                            case 0:
-                                l.x0(lVar, c2Var, tLObject, tL_error);
-                                break;
-                            default:
-                                l.y0(lVar, c2Var, tLObject, tL_error);
-                                break;
-                        }
-                    }
-                });
-                break;
-            default:
-                final int i10 = 0;
-                final l lVar2 = this.b;
-                final org.telegram.ui.ActionBar.c2 c2Var2 = this.c;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: mh.d
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i10) {
-                            case 0:
-                                l.x0(lVar2, c2Var2, tLObject, tL_error);
-                                break;
-                            default:
-                                l.y0(lVar2, c2Var2, tLObject, tL_error);
-                                break;
-                        }
-                    }
-                });
-                break;
+    @Override // org.telegram.ui.Components.q71
+    public final void b(View view, int i10, int i11) {
+        r rVar = (r) view;
+        fr0 fr0Var = this.b;
+        c6 c6Var = i10 == 0 ? fr0Var.e : (c6) fr0Var.f.get(i10 - 1);
+        c6Var.H(null);
+        rVar.setList(c6Var);
+        rVar.setVisibleHeight(fr0Var.v);
+    }
+
+    @Override // org.telegram.ui.Components.q71
+    public final View d(int i10) {
+        return new r(this.b, this.a);
+    }
+
+    @Override // org.telegram.ui.Components.q71
+    public final int e() {
+        return this.b.f.size() + 1;
+    }
+
+    @Override // org.telegram.ui.Components.q71
+    public final int f(int i10) {
+        if (i10 == 0) {
+            return 0;
         }
+        return ((c6) this.b.f.get(i10 - 1)).E.hashCode();
+    }
+
+    @Override // org.telegram.ui.Components.q71
+    public final CharSequence g(int i10) {
+        if (i10 == 0) {
+            return LocaleController.getString(R.string.ProfileBotLanguageGeneral);
+        }
+        String D = k31.D(((c6) this.b.f.get(i10 - 1)).E, null, null);
+        if (D == null) {
+            return null;
+        }
+        return D.substring(0, 1).toUpperCase() + D.substring(1);
     }
 }

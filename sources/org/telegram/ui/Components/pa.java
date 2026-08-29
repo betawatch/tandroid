@@ -1,41 +1,81 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.view.MotionEvent;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.view.View;
+import android.view.animation.DecelerateInterpolator;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class pa extends org.telegram.ui.ActionBar.k {
-    public final /* synthetic */ xu0 p1;
-    public final /* synthetic */ sa q1;
+public final class pa extends View {
+    public final Paint a;
+    public float b;
+    public int c;
+    public int d;
+    public final RectF e;
+    public final m2.g f;
+    public final int h;
+    public int n;
+    public int r;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public pa(sa saVar, Context context, xu0 xu0Var) {
-        super(context, null);
-        this.q1 = saVar;
-        this.p1 = xu0Var;
-    }
-
-    @Override // org.telegram.ui.ActionBar.k, android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        sa saVar = this.q1;
-        if (saVar.H && saVar.I) {
-            return false;
-        }
-        return super.dispatchTouchEvent(motionEvent);
-    }
-
-    @Override // android.view.View
-    public final void setAlpha(float f10) {
-        if (getAlpha() != f10) {
-            super.setAlpha(f10);
-            this.p1.invalidate();
-        }
+    public pa(Context context, m2.g gVar, int i10) {
+        super(context);
+        this.a = new Paint(1);
+        new DecelerateInterpolator();
+        this.e = new RectF();
+        this.n = -1;
+        this.r = -1;
+        this.f = gVar;
+        this.h = i10;
     }
 
     @Override // android.view.View
-    public final void setTag(Object obj) {
-        super.setTag(obj);
-        this.q1.L();
+    public final void onDraw(Canvas canvas) {
+        RectF rectF;
+        AndroidUtilities.dp(5.0f);
+        int i10 = this.n;
+        Paint paint = this.a;
+        if (i10 >= 0) {
+            paint.setColor((org.telegram.ui.ActionBar.g6.w0(null, i10, false) & 16777215) | (-1275068416));
+        } else {
+            paint.setColor(org.telegram.ui.ActionBar.g6.A0().q() ? -11184811 : -4473925);
+        }
+        this.d = this.f.getCurrentItem();
+        int i11 = 0;
+        while (true) {
+            int i12 = this.h;
+            rectF = this.e;
+            if (i11 >= i12) {
+                break;
+            }
+            if (i11 != this.d) {
+                rectF.set(AndroidUtilities.dp(11.0f) * i11, 0.0f, AndroidUtilities.dp(5.0f) + r5, AndroidUtilities.dp(5.0f));
+                canvas.drawRoundRect(rectF, AndroidUtilities.dp(2.5f), AndroidUtilities.dp(2.5f), paint);
+            }
+            i11++;
+        }
+        int i13 = this.r;
+        if (i13 >= 0) {
+            paint.setColor(org.telegram.ui.ActionBar.g6.w0(null, i13, false));
+        } else {
+            paint.setColor(-14509328);
+        }
+        int dp = AndroidUtilities.dp(11.0f) * this.d;
+        if (this.b == 0.0f) {
+            rectF.set(dp, 0.0f, AndroidUtilities.dp(5.0f) + dp, AndroidUtilities.dp(5.0f));
+        } else if (this.c >= this.d) {
+            rectF.set(dp, 0.0f, (AndroidUtilities.dp(11.0f) * this.b) + AndroidUtilities.dp(5.0f) + dp, AndroidUtilities.dp(5.0f));
+        } else {
+            rectF.set(org.telegram.ui.th.b(1.0f, this.b, AndroidUtilities.dp(11.0f), dp), 0.0f, AndroidUtilities.dp(5.0f) + dp, AndroidUtilities.dp(5.0f));
+        }
+        canvas.drawRoundRect(rectF, AndroidUtilities.dp(2.5f), AndroidUtilities.dp(2.5f), paint);
+    }
+
+    public void setCurrentPage(int i10) {
+        this.d = i10;
+        invalidate();
     }
 }

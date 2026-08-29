@@ -12,8 +12,8 @@ public final class j4 extends t3 {
         return new i4(this.i, this.h);
     }
 
-    public j4(w6 w6Var, IntBinaryOperator intBinaryOperator, int i9) {
+    public j4(w6 w6Var, IntBinaryOperator intBinaryOperator, int i10) {
         this.h = intBinaryOperator;
-        this.i = i9;
+        this.i = i10;
     }
 }

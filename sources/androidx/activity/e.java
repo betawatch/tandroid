@@ -6,14 +6,14 @@ import androidx.lifecycle.i0;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class e implements g2.d {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
-    public /* synthetic */ e(Object obj, int i9) {
-        this.a = i9;
+    public /* synthetic */ e(Object obj, int i10) {
+        this.a = i10;
         this.b = obj;
     }
 
@@ -21,9 +21,9 @@ public final /* synthetic */ class e implements g2.d {
     public final Bundle a() {
         switch (this.a) {
             case 0:
-                m mVar = (m) this.b;
+                l lVar = (l) this.b;
                 Bundle bundle = new Bundle();
-                h hVar = mVar.w;
+                h hVar = lVar.w;
                 hVar.getClass();
                 HashMap hashMap = hVar.b;
                 bundle.putIntegerArrayList("KEY_COMPONENT_ACTIVITY_REGISTERED_RCS", new ArrayList<>(hashMap.values()));

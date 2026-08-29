@@ -8,14 +8,14 @@ import android.view.ActionMode;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
+import bg.m1;
 import java.util.WeakHashMap;
-import kh.w3;
 import m.q2;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import r0.j0;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public class ActionBarContainer extends FrameLayout {
     public boolean a;
@@ -90,8 +90,8 @@ public class ActionBarContainer extends FrameLayout {
     }
 
     @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i9, int i10, int i11, int i12) {
-        super.onLayout(z10, i9, i10, i11, i12);
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
         boolean z11 = true;
         if (this.h) {
             Drawable drawable = this.f;
@@ -121,16 +121,16 @@ public class ActionBarContainer extends FrameLayout {
     }
 
     @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i9, int i10) {
-        int i11;
-        if (this.b == null && View.MeasureSpec.getMode(i10) == Integer.MIN_VALUE && (i11 = this.r) >= 0) {
-            i10 = View.MeasureSpec.makeMeasureSpec(Math.min(i11, View.MeasureSpec.getSize(i10)), TLObject.FLAG_31);
+    public final void onMeasure(int i10, int i11) {
+        int i12;
+        if (this.b == null && View.MeasureSpec.getMode(i11) == Integer.MIN_VALUE && (i12 = this.r) >= 0) {
+            i11 = View.MeasureSpec.makeMeasureSpec(Math.min(i12, View.MeasureSpec.getSize(i11)), TLObject.FLAG_31);
         }
-        super.onMeasure(i9, i10);
+        super.onMeasure(i10, i11);
         if (this.b == null) {
             return;
         }
-        View.MeasureSpec.getMode(i10);
+        View.MeasureSpec.getMode(i11);
     }
 
     @Override // android.view.View
@@ -214,9 +214,9 @@ public class ActionBarContainer extends FrameLayout {
     }
 
     @Override // android.view.View
-    public void setVisibility(int i9) {
-        super.setVisibility(i9);
-        boolean z10 = i9 == 0;
+    public void setVisibility(int i10) {
+        super.setVisibility(i10);
+        boolean z10 = i10 == 0;
         Drawable drawable = this.d;
         if (drawable != null) {
             drawable.setVisible(z10, false);
@@ -251,9 +251,9 @@ public class ActionBarContainer extends FrameLayout {
 
     public ActionBarContainer(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
-        w3 w3Var = new w3(this);
+        m1 m1Var = new m1(this);
         WeakHashMap weakHashMap = j0.a;
-        setBackground(w3Var);
+        setBackground(m1Var);
         TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, f.a.a);
         boolean z10 = false;
         this.d = obtainStyledAttributes.getDrawable(0);
@@ -271,9 +271,9 @@ public class ActionBarContainer extends FrameLayout {
     }
 
     @Override // android.view.ViewGroup, android.view.ViewParent
-    public final ActionMode startActionModeForChild(View view, ActionMode.Callback callback, int i9) {
-        if (i9 != 0) {
-            return super.startActionModeForChild(view, callback, i9);
+    public final ActionMode startActionModeForChild(View view, ActionMode.Callback callback, int i10) {
+        if (i10 != 0) {
+            return super.startActionModeForChild(view, callback, i10);
         }
         return null;
     }

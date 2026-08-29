@@ -1,34 +1,28 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.TLRPC;
+import android.os.Build;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class hw extends f2.x {
-    public final /* synthetic */ wy c;
+public final class hw extends ez {
+    public final /* synthetic */ fz d;
 
-    public hw(wy wyVar) {
-        this.c = wyVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public hw(fz fzVar) {
+        super(fzVar, 2);
+        this.d = fzVar;
     }
 
-    @Override // f2.x
-    public final int i(int i9) {
-        wy wyVar = this.c;
-        ry ryVar = wyVar.v0;
-        f2.r0 adapter = wyVar.z0.getAdapter();
-        ny nyVar = wyVar.u0;
-        if (adapter != nyVar) {
-            if (i9 == ryVar.x || !(ryVar.r.get(i9) == null || (ryVar.r.get(i9) instanceof TLRPC.Document))) {
-                return nyVar.d;
-            }
-            return 1;
+    @Override // org.telegram.ui.Components.ez, f2.a1
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        fz fzVar;
+        lg.e eVar;
+        super.b(recyclerView, i10, i11);
+        if (Build.VERSION.SDK_INT < 31 || (eVar = (fzVar = this.d).f2) == null) {
+            return;
         }
-        if (i9 == 0) {
-            return nyVar.d;
-        }
-        if (i9 == nyVar.s || !(nyVar.h.get(i9) == null || (nyVar.h.get(i9) instanceof TLRPC.Document))) {
-            return nyVar.d;
-        }
-        return 1;
+        eVar.f(i10, i11);
+        fzVar.C();
     }
 }

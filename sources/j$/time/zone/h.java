@@ -55,8 +55,8 @@ public final class h {
                     }
                 }
                 Collections.unmodifiableSet(new HashSet(c.keySet()));
-            } catch (Throwable th) {
-                throw th;
+            } catch (Throwable th2) {
+                throw th2;
             }
         }
         b.add(hVar);

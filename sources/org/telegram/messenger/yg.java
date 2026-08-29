@@ -1,32 +1,25 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
-import org.telegram.messenger.support.LongSparseIntArray;
+import android.app.NotificationChannel;
+import org.telegram.tgnet.InputSerializedData;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.Vector;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class yg implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ NotificationsController b;
-    public final /* synthetic */ LongSparseIntArray c;
-    public final /* synthetic */ ArrayList d;
-
-    public /* synthetic */ yg(NotificationsController notificationsController, LongSparseIntArray longSparseIntArray, ArrayList arrayList, int i9) {
-        this.a = i9;
-        this.b = notificationsController;
-        this.c = longSparseIntArray;
-        this.d = arrayList;
+public final /* synthetic */ class yg implements org.telegram.ui.ActionBar.b2, Vector.TLDeserializer {
+    public static /* bridge */ /* synthetic */ NotificationChannel a(Object obj) {
+        return (NotificationChannel) obj;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.lambda$processDialogsUpdateRead$30(this.c, this.d);
-                break;
-            default:
-                this.b.lambda$removeDeletedHisoryFromNotifications$13(this.c, this.d);
-                break;
-        }
+    @Override // org.telegram.tgnet.Vector.TLDeserializer
+    public TLObject deserialize(InputSerializedData inputSerializedData, int i10, boolean z10) {
+        return TLRPC.PollAnswer.TLdeserialize(inputSerializedData, i10, z10);
+    }
+
+    @Override // org.telegram.ui.ActionBar.b2
+    public void g(org.telegram.ui.ActionBar.c2 c2Var, int i10) {
+        SharedConfig.lambda$checkSdCard$1(c2Var, i10);
     }
 }

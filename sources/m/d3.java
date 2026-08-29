@@ -9,9 +9,9 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
-import f7.t7;
+import h7.s7;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public abstract class d3 {
     public static final ThreadLocal a = new ThreadLocal();
@@ -33,10 +33,10 @@ public abstract class d3 {
         }
     }
 
-    public static int b(Context context, int i9) {
-        ColorStateList d9 = d(context, i9);
-        if (d9 != null && d9.isStateful()) {
-            return d9.getColorForState(b, d9.getDefaultColor());
+    public static int b(Context context, int i10) {
+        ColorStateList d10 = d(context, i10);
+        if (d10 != null && d10.isStateful()) {
+            return d10.getColorForState(b, d10.getDefaultColor());
         }
         ThreadLocal threadLocal = a;
         TypedValue typedValue = (TypedValue) threadLocal.get();
@@ -45,13 +45,13 @@ public abstract class d3 {
             threadLocal.set(typedValue);
         }
         context.getTheme().resolveAttribute(R.attr.disabledAlpha, typedValue, true);
-        float f10 = typedValue.getFloat();
-        return i0.a.k(c(context, i9), Math.round(Color.alpha(r4) * f10));
+        float f9 = typedValue.getFloat();
+        return i0.a.k(c(context, i10), Math.round(Color.alpha(r4) * f9));
     }
 
-    public static int c(Context context, int i9) {
+    public static int c(Context context, int i10) {
         int[] iArr = g;
-        iArr[0] = i9;
+        iArr[0] = i10;
         TypedArray obtainStyledAttributes = context.obtainStyledAttributes((AttributeSet) null, iArr);
         try {
             return obtainStyledAttributes.getColor(0, 0);
@@ -60,14 +60,14 @@ public abstract class d3 {
         }
     }
 
-    public static ColorStateList d(Context context, int i9) {
+    public static ColorStateList d(Context context, int i10) {
         ColorStateList colorStateList;
         int resourceId;
         int[] iArr = g;
-        iArr[0] = i9;
+        iArr[0] = i10;
         TypedArray obtainStyledAttributes = context.obtainStyledAttributes((AttributeSet) null, iArr);
         try {
-            if (!obtainStyledAttributes.hasValue(0) || (resourceId = obtainStyledAttributes.getResourceId(0, 0)) == 0 || (colorStateList = t7.a(context, resourceId)) == null) {
+            if (!obtainStyledAttributes.hasValue(0) || (resourceId = obtainStyledAttributes.getResourceId(0, 0)) == 0 || (colorStateList = s7.a(context, resourceId)) == null) {
                 colorStateList = obtainStyledAttributes.getColorStateList(0);
             }
             return colorStateList;

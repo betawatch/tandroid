@@ -1,0 +1,102 @@
+package jh;
+
+import java.util.Collections;
+import org.telegram.messenger.AccountInstance;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.BotForumHelper;
+import org.telegram.messenger.LocationController;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.SendMessagesHelper;
+import org.telegram.messenger.support.LongSparseIntArray;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.Components.qu0;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.tn;
+
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class z8 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ Object d;
+
+    public /* synthetic */ z8(Object obj, int i10, long j10, int i11) {
+        this.a = i11;
+        this.d = obj;
+        this.c = i10;
+        this.b = j10;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                Long l10 = (Long) this.d;
+                org.telegram.ui.ActionBar.o2 U = LaunchActivity.U();
+                if (U != null) {
+                    tn R9 = tn.R9(l10.longValue());
+                    U.presentFragment(R9);
+                    TLRPC.Chat chat = MessagesController.getInstance(this.c).getChat(Long.valueOf(-l10.longValue()));
+                    if (chat != null) {
+                        AndroidUtilities.runOnUIThread(new a9(R9, this.b, chat, 0), 250L);
+                        break;
+                    }
+                }
+                break;
+            case 1:
+                lh.s6 s6Var = (lh.s6) this.d;
+                LongSparseIntArray longSparseIntArray = s6Var.f;
+                long j10 = this.b;
+                int i10 = longSparseIntArray.get(j10, 0);
+                int i11 = this.c;
+                int max = Math.max(i10, i11);
+                s6Var.f.put(j10, max);
+                s6Var.k.i(max, j10);
+                TL_stories.PeerStories y8 = s6Var.y(j10);
+                if (y8 != null && i11 > y8.max_read_id) {
+                    y8.max_read_id = i11;
+                    Collections.sort(s6Var.g, s6Var.J);
+                    NotificationCenter.getInstance(s6Var.a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.storiesUpdated, new Object[0]);
+                    break;
+                }
+                break;
+            case 2:
+                ((LocationController) this.d).lambda$setProximityLocation$12(this.c, this.b);
+                break;
+            case 3:
+                ((MediaController) this.d).lambda$prepareResumedRecording$23(this.c, this.b);
+                break;
+            case 4:
+                ((MediaDataController) this.d).lambda$deletePeer$159(this.b, this.c);
+                break;
+            case 5:
+                ((MessagesController) this.d).lambda$processUpdateArray$420(this.b, this.c);
+                break;
+            case 6:
+                SendMessagesHelper.lambda$finishGroup$117((AccountInstance) this.d, this.b, this.c);
+                break;
+            case 7:
+                BotForumHelper.BotDraftAnimationsPool botDraftAnimationsPool = ((org.telegram.ui.Cells.s1) this.d).Ld;
+                if (botDraftAnimationsPool != null) {
+                    botDraftAnimationsPool.removeAnimator(this.b, this.c);
+                    break;
+                }
+                break;
+            default:
+                qu0.n((qu0) this.d, this.b, this.c);
+                break;
+        }
+    }
+
+    public /* synthetic */ z8(Object obj, long j10, int i10, int i11) {
+        this.a = i11;
+        this.d = obj;
+        this.b = j10;
+        this.c = i10;
+    }
+}

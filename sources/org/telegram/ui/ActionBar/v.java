@@ -1,67 +1,48 @@
 package org.telegram.ui.ActionBar;
 
-import android.content.BroadcastReceiver;
-import android.content.Context;
-import android.content.Intent;
-import android.os.Parcelable;
-import com.google.firebase.iid.FirebaseInstanceIdReceiver;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
 public final class v implements Runnable {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ o2 b;
+    public final /* synthetic */ o2 c;
+    public final /* synthetic */ boolean d;
+    public final /* synthetic */ ActionBarLayout e;
 
-    public /* synthetic */ v(FirebaseInstanceIdReceiver firebaseInstanceIdReceiver, Intent intent, Context context, boolean z10, BroadcastReceiver.PendingResult pendingResult) {
-        this.c = intent;
-        this.d = context;
-        this.b = z10;
-        this.e = pendingResult;
+    public v(ActionBarLayout actionBarLayout, boolean z10, o2 o2Var, o2 o2Var2, boolean z11) {
+        this.e = actionBarLayout;
+        this.a = z10;
+        this.b = o2Var;
+        this.c = o2Var2;
+        this.d = z11;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        switch (this.a) {
-            case 0:
-                ActionBarLayout actionBarLayout = (ActionBarLayout) this.e;
-                if (actionBarLayout.e != this) {
-                    return;
-                }
-                actionBarLayout.e = null;
-                o2 o2Var = (o2) this.c;
-                if (o2Var != null) {
-                    o2Var.onTransitionAnimationStart(false, false);
-                }
-                ((o2) this.d).onTransitionAnimationStart(true, false);
-                actionBarLayout.d0(true, true, this.b);
-                return;
-            default:
-                Intent intent = (Intent) this.c;
-                Context context = (Context) this.d;
-                BroadcastReceiver.PendingResult pendingResult = (BroadcastReceiver.PendingResult) this.e;
-                try {
-                    Parcelable parcelableExtra = intent.getParcelableExtra("wrapped_intent");
-                    Intent intent2 = parcelableExtra instanceof Intent ? (Intent) parcelableExtra : null;
-                    int b10 = intent2 != null ? FirebaseInstanceIdReceiver.b(intent2) : FirebaseInstanceIdReceiver.a(context, intent);
-                    if (this.b) {
-                        pendingResult.setResultCode(b10);
-                    }
-                    pendingResult.finish();
-                    return;
-                } catch (Throwable th) {
-                    pendingResult.finish();
-                    throw th;
-                }
+        ActionBarLayout actionBarLayout = this.e;
+        if (actionBarLayout.d != this) {
+            return;
         }
-    }
-
-    public v(ActionBarLayout actionBarLayout, o2 o2Var, o2 o2Var2, boolean z10) {
-        this.e = actionBarLayout;
-        this.c = o2Var;
-        this.d = o2Var2;
-        this.b = z10;
+        actionBarLayout.d = null;
+        if (this.a) {
+            o2 o2Var = this.b;
+            if (o2Var != null) {
+                o2Var.onTransitionAnimationStart(false, false);
+            }
+            this.c.onTransitionAnimationStart(true, false);
+            actionBarLayout.d0(true, true, this.d);
+            return;
+        }
+        Runnable runnable = actionBarLayout.e;
+        if (runnable != null) {
+            AndroidUtilities.cancelRunOnUIThread(runnable);
+            if (actionBarLayout.N0) {
+                actionBarLayout.e.run();
+            } else {
+                AndroidUtilities.runOnUIThread(actionBarLayout.e, 200L);
+            }
+        }
     }
 }

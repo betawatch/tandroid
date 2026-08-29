@@ -1,72 +1,138 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.LinearGradient;
+import android.graphics.Matrix;
 import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
+import android.graphics.Rect;
+import android.graphics.RectF;
 import android.graphics.Shader;
-import org.telegram.messenger.R;
+import android.graphics.drawable.Drawable;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class mb0 {
-    public final Paint a;
-    public final nb0 b;
-    public final nb0 c;
-    public final nb0 d;
-    public final lb0 e;
-    public final lb0 f;
-    public final float[] g;
-    public int h;
-    public float i;
+public final class mb0 extends Drawable {
+    public final /* synthetic */ int a;
+    public boolean b;
+    public Object c;
+    public Object d;
+    public Object e;
 
-    public mb0() {
-        Paint paint = new Paint();
-        this.a = paint;
-        Shader.TileMode tileMode = Shader.TileMode.CLAMP;
-        this.b = new nb0(tileMode);
-        this.c = new nb0(tileMode);
-        this.d = new nb0(Shader.TileMode.REPEAT);
-        this.e = new lb0(R.raw.wallpaper_pos_intensity);
-        this.f = new lb0(R.raw.wallpaper_neg_intensity);
-        this.g = new float[4];
-        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC));
+    public mb0(int i10) {
+        this.a = i10;
+        switch (i10) {
+            case 1:
+                this.c = new Paint(1);
+                Paint paint = new Paint(1);
+                this.d = paint;
+                this.e = new Matrix();
+                paint.setStyle(Paint.Style.STROKE);
+                paint.setShader(new LinearGradient(0.0f, 0.0f, 0.0f, AndroidUtilities.dp(28.0f), new int[]{1308622847, 0, 452984831}, new float[]{0.0f, 0.5f, 1.0f}, Shader.TileMode.CLAMP));
+                break;
+        }
     }
 
-    public final Paint a(Bitmap bitmap, Bitmap bitmap2, Bitmap bitmap3, int i9, int i10) {
-        nb0 nb0Var = this.b;
-        boolean b10 = nb0Var.b(bitmap);
-        nb0 nb0Var2 = this.d;
-        boolean b11 = b10 | nb0Var2.b(bitmap2);
-        Paint paint = this.a;
-        if (i10 >= 0) {
-            nb0 nb0Var3 = this.c;
-            if ((b11 | nb0Var3.b(bitmap3)) || this.h != 1) {
-                this.h = 1;
-                lb0 lb0Var = this.e;
-                lb0Var.a.setInputBuffer("shaderPattern", nb0Var2.d);
-                lb0Var.a.setInputBuffer("shaderGradient", nb0Var.d);
-                lb0Var.a.setInputBuffer("shaderGradientSoftLight", nb0Var3.d);
-                lb0Var.a.setFloatUniform("transformGradient", lb0Var.b);
-                lb0Var.a.setFloatUniform("transformPattern", lb0Var.c);
-                paint.setShader(lb0Var.a);
-                return paint;
-            }
-        } else {
-            float a2 = g7.n.a((i9 * (-i10)) / 25500.0f, 0.0f, 1.0f);
-            if (b11 || this.i != a2 || this.h != 2) {
-                this.h = 2;
-                this.i = a2;
-                lb0 lb0Var2 = this.f;
-                lb0Var2.a.setInputBuffer("shaderPattern", nb0Var2.d);
-                lb0Var2.a.setInputBuffer("shaderGradient", nb0Var.d);
-                lb0Var2.a.setFloatUniform("intensity", a2);
-                lb0Var2.a.setFloatUniform("transformGradient", lb0Var2.b);
-                lb0Var2.a.setFloatUniform("transformPattern", lb0Var2.c);
-                paint.setShader(lb0Var2.a);
-                return paint;
-            }
+    public void b(int i10, int i11) {
+        ((Paint) this.c).setShader(new LinearGradient(0.0f, 0.0f, 0.0f, AndroidUtilities.dp(28.0f), new int[]{i10, i11}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP));
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        switch (this.a) {
+            case 0:
+                xi0 xi0Var = (xi0) this.d;
+                xi0 xi0Var2 = (xi0) this.c;
+                Rect rect = AndroidUtilities.rectTmp2;
+                rect.set(getBounds().centerX() - AndroidUtilities.dp(12.0f), getBounds().centerY() - AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f) + getBounds().centerX(), AndroidUtilities.dp(12.0f) + getBounds().centerY());
+                if (((xi0) this.e).y()) {
+                    xi0 xi0Var3 = (xi0) this.e;
+                    boolean z10 = this.b;
+                    if (xi0Var3 != (z10 ? xi0Var2 : xi0Var)) {
+                        if (z10) {
+                            xi0Var = xi0Var2;
+                        }
+                        this.e = xi0Var;
+                        xi0Var.K(xi0Var.e[0] - 1);
+                    }
+                }
+                ((xi0) this.e).setBounds(rect);
+                ((xi0) this.e).draw(canvas);
+                break;
+            default:
+                Paint paint = (Paint) this.d;
+                float dp = AndroidUtilities.dp(10.0f);
+                RectF rectF = AndroidUtilities.rectTmp;
+                rectF.set(getBounds());
+                Matrix matrix = (Matrix) this.e;
+                matrix.reset();
+                matrix.postTranslate(rectF.left, rectF.top);
+                canvas.drawRoundRect(rectF, dp, dp, (Paint) this.c);
+                if (this.b) {
+                    float dp2 = AndroidUtilities.dp(1.0f);
+                    paint.setStrokeWidth(dp2);
+                    matrix.reset();
+                    matrix.postTranslate(rectF.left, rectF.top);
+                    float f9 = dp2 / 2.0f;
+                    rectF.inset(f9, f9);
+                    canvas.drawRoundRect(rectF, dp, dp, paint);
+                    break;
+                }
+                break;
         }
-        return paint;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public int getIntrinsicHeight() {
+        switch (this.a) {
+            case 0:
+                return AndroidUtilities.dp(24.0f);
+            default:
+                return super.getIntrinsicHeight();
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public int getIntrinsicWidth() {
+        switch (this.a) {
+            case 0:
+                return AndroidUtilities.dp(24.0f);
+            default:
+                return super.getIntrinsicWidth();
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        switch (this.a) {
+        }
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+        switch (this.a) {
+            case 0:
+                ((xi0) this.c).setAlpha(i10);
+                ((xi0) this.d).setAlpha(i10);
+                break;
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+        switch (this.a) {
+            case 0:
+                ((xi0) this.c).setColorFilter(colorFilter);
+                ((xi0) this.d).setColorFilter(colorFilter);
+                break;
+        }
+    }
+
+    private final void a(int i10) {
+    }
+
+    private final void c(ColorFilter colorFilter) {
     }
 }

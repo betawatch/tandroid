@@ -1,22 +1,31 @@
 package rh;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import org.telegram.messenger.MessageObject;
+import android.content.Context;
+import android.view.View;
+import org.telegram.ui.ActionBar.c6;
+import org.telegram.ui.Components.jl0;
+import org.telegram.ui.Components.k51;
+import org.telegram.ui.Components.u51;
+import org.telegram.ui.Components.v41;
+import org.telegram.ui.Components.w41;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes4.dex */
-public final class h extends AnimatorListenerAdapter {
-    public final /* synthetic */ MessageObject.GroupedMessages.TransitionParams a;
+public final class h extends v41 {
+    public static final /* synthetic */ int a = 0;
 
-    public h(MessageObject.GroupedMessages.TransitionParams transitionParams) {
-        this.a = transitionParams;
+    static {
+        v41.setup(new h());
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        MessageObject.GroupedMessages.TransitionParams transitionParams = this.a;
-        transitionParams.backgroundChangeBounds = false;
-        transitionParams.drawBackgroundForDeletedItems = false;
+    @Override // org.telegram.ui.Components.v41
+    public final void bindView(View view, w41 w41Var, boolean z10, k51 k51Var, u51 u51Var) {
+        long j10 = w41Var.B;
+        ((i) view).a((int) j10, (int) (j10 >>> 32), w41Var.k, w41Var.l, w41Var.n, w41Var.q);
+    }
+
+    @Override // org.telegram.ui.Components.v41
+    public final View createView(Context context, jl0 jl0Var, int i10, int i11, c6 c6Var) {
+        return new i(context, c6Var, false);
     }
 }

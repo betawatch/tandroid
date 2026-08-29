@@ -1,154 +1,112 @@
 package ih;
 
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.text.SpannableStringBuilder;
 import android.view.View;
+import android.widget.FrameLayout;
+import jh.ia;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessageObject;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.lj0;
-import org.telegram.ui.xc;
+import org.telegram.messenger.GiftAuctionController;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.Components.aj0;
+import org.telegram.ui.Components.iq;
+import org.telegram.ui.Components.o6;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
-/* loaded from: classes4.dex */
-public final /* synthetic */ class e implements d5.d {
-    public final /* synthetic */ int a;
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* loaded from: classes.dex */
+public final class e extends FrameLayout {
+    public final nh.d a;
+    public final o6 b;
+    public final o6 c;
+    public final GiftAuctionController.Auction d;
+    public final Paint e;
+    public final jf.p f;
+    public final iq h;
+    public final iq[] n;
 
-    public /* synthetic */ e(int i9) {
-        this.a = i9;
+    public e(Context context, GiftAuctionController.Auction auction) {
+        super(context);
+        Paint paint = new Paint(1);
+        this.e = paint;
+        this.f = new jf.p(new eg.n(this, 6));
+        this.h = new iq(R.drawable.filled_gift_sell_24, 0);
+        this.n = new iq[1];
+        this.d = auction;
+        setPadding(AndroidUtilities.dp(14.0f), AndroidUtilities.dp(9.0f), AndroidUtilities.dp(14.0f), AndroidUtilities.dp(9.0f));
+        paint.setShadowLayer(AndroidUtilities.dp(1.0f), 0.0f, 0.0f, TLObject.FLAG_29);
+        paint.setColor(g6.w0(null, g6.d6, false));
+        nh.d dVar = new nh.d(context, null, true);
+        this.a = dVar;
+        dVar.d.o(false, true, true);
+        aj0 aj0Var = new aj0(context);
+        o6 o6Var = new o6(context, false, false, false);
+        this.b = o6Var;
+        o6Var.setTextSize(AndroidUtilities.dp(14.0f));
+        o6Var.setTypeface(AndroidUtilities.bold());
+        o6Var.setTextColor(g6.w0(null, g6.G6, false));
+        o6 o6Var2 = new o6(context, false, false, false);
+        this.c = o6Var2;
+        o6Var2.setTextSize(AndroidUtilities.dp(12.0f));
+        TLRPC.Document document = auction.gift.sticker;
+        if (document != null) {
+            aj0Var.g(44, 44, document);
+        }
+        addView(o6Var, i7.f6.d(-1, 18.0f, 51, 64.0f, 15.0f, 15.0f, 0.0f));
+        addView(o6Var2, i7.f6.d(-1, 17.0f, 51, 64.0f, 34.0f, 15.0f, 0.0f));
+        addView(aj0Var, i7.f6.d(44, 44.0f, 51, 14.0f, 11.0f, 0.0f, 0.0f));
+        addView(dVar, i7.f6.d(-1, 44.0f, 80, 15.0f, 0.0f, 15.0f, 15.0f));
+        b(false);
     }
 
-    @Override // d5.d
-    public final void accept(Object obj) {
-        MessageObject messageObject;
-        MessageObject messageObject2;
-        switch (this.a) {
-            case 0:
-                View view = (View) obj;
-                view.setAlpha(1.0f);
-                view.setTranslationX(0.0f);
-                view.setTranslationY(0.0f);
-                break;
-            case 1:
-                ((View) obj).setTranslationY(0.0f);
-                break;
-            case 2:
-                ((q) ((View) obj)).invalidate();
-                break;
-            case 3:
-                ((j4.y0) obj).b.getClass();
-                break;
-            case 4:
-                xc.Y0((View) obj);
-                break;
-            case 5:
-                View view2 = (View) obj;
-                if ((view2 instanceof org.telegram.ui.Cells.t1) && (messageObject = ((org.telegram.ui.Cells.t1) view2).getMessageObject()) != null) {
-                    messageObject.forceUpdate = true;
-                    break;
-                }
-                break;
-            case 6:
-                View view3 = (View) obj;
-                if ((view3 instanceof org.telegram.ui.Cells.t1) && (messageObject2 = ((org.telegram.ui.Cells.t1) view3).getMessageObject()) != null) {
-                    messageObject2.forceUpdate = true;
-                    messageObject2.reactionsChanged = true;
-                    break;
-                }
-                break;
-            case 7:
-                View view4 = (View) obj;
-                if (!(view4 instanceof org.telegram.ui.ActionBar.y2)) {
-                    view4.invalidate();
-                    break;
-                } else {
-                    ((org.telegram.ui.ActionBar.y2) view4).getTextView().invalidate();
-                    break;
-                }
-            case 8:
-                View view5 = (View) obj;
-                if (!(view5 instanceof org.telegram.ui.Cells.h5)) {
-                    if (!(view5 instanceof pf.m1)) {
-                        view5.invalidate();
-                        break;
-                    } else {
-                        ((pf.m1) view5).c.invalidate();
-                        break;
-                    }
-                } else {
-                    org.telegram.ui.Cells.h5 h5Var = (org.telegram.ui.Cells.h5) view5;
-                    h5Var.b.invalidate();
-                    h5Var.c.invalidate();
-                    break;
-                }
-            case 9:
-                View view6 = (View) obj;
-                if (view6 instanceof org.telegram.ui.Cells.d8) {
-                    ((org.telegram.ui.Cells.d8) view6).a(true);
-                    break;
-                }
-                break;
-            case 10:
-                View view7 = (View) obj;
-                if (view7 instanceof org.telegram.ui.Cells.d8) {
-                    ((org.telegram.ui.Cells.d8) view7).c(true);
-                    break;
-                }
-                break;
-            case 11:
-                Long l10 = (Long) obj;
-                if (l10 != null && l10.longValue() != Long.MAX_VALUE) {
-                    org.telegram.ui.ActionBar.o2 U = LaunchActivity.U();
-                    if (U != null) {
-                        U.presentFragment(ProfileActivity.m4(l10.longValue()));
-                        break;
-                    }
-                } else {
-                    AndroidUtilities.runOnUIThread(new lj0(0));
-                    break;
-                }
-                break;
-            case 12:
-                break;
-            case 13:
-                View view8 = (View) obj;
-                view8.setScaleX(1.0f);
-                view8.setScaleY(1.0f);
-                break;
-            case 14:
-                View view9 = (View) obj;
-                if (view9 instanceof org.telegram.ui.web.h) {
-                    ((org.telegram.ui.web.h) view9).setChecked(false);
-                    break;
-                }
-                break;
-            case 15:
-                View view10 = (View) obj;
-                if (view10 instanceof org.telegram.ui.web.h) {
-                    ((org.telegram.ui.web.h) view10).setChecked(false);
-                    break;
-                }
-                break;
-            case 16:
-                View view11 = (View) obj;
-                if (view11 instanceof pf.m1) {
-                    ((pf.m1) view11).c.invalidate();
-                    break;
-                }
-                break;
-            case 17:
-                View view12 = (View) obj;
-                if (view12 instanceof pf.m1) {
-                    ((pf.m1) view12).d.a(false, true);
-                    break;
-                }
-                break;
-            default:
-                ((View) obj).invalidate();
-                break;
+    public final void a(long j10, boolean z10) {
+        String formatDurationNoHours = AndroidUtilities.formatDurationNoHours((int) j10, false);
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("*");
+        spannableStringBuilder.setSpan(this.h, 0, spannableStringBuilder.length(), 33);
+        spannableStringBuilder.append((CharSequence) "  ");
+        spannableStringBuilder.append((CharSequence) LocaleController.getString(R.string.Gift2ActiveAuctionsActiveRaiseBid));
+        spannableStringBuilder.append((CharSequence) "  ");
+        spannableStringBuilder.append((CharSequence) formatDurationNoHours);
+        this.a.g(spannableStringBuilder, z10, true);
+    }
+
+    public final void b(boolean z10) {
+        GiftAuctionController.Auction auction = this.d;
+        if (auction.auctionStateActive != null) {
+            this.b.c(LocaleController.formatString(R.string.Gift2ActiveAuctionsActiveRound, LocaleController.formatNumber(r1.current_round, ','), LocaleController.formatNumber(auction.auctionStateActive.total_rounds, ',')), z10, true);
+        }
+        String m10 = j7.l1.m(auction.auctionUserState.bid_amount, ',', new StringBuilder("⭐️"));
+        boolean isOutbid = auction.getBidStatus().isOutbid();
+        iq[] iqVarArr = this.n;
+        o6 o6Var = this.c;
+        if (isOutbid) {
+            o6Var.c(ia.X0(false, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2ActiveAuctionsActiveBidOutbid, m10)), 0.66f, iqVarArr), z10, true);
+            o6Var.setTextColor(g6.w0(null, g6.q7, false));
+        } else {
+            o6Var.c(ia.X0(false, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2ActiveAuctionsActiveBidActive, m10, Integer.valueOf(auction.getApproximatedMyPlace()))), 0.66f, iqVarArr), z10, true);
+            o6Var.setTextColor(g6.w0(null, g6.G6, false));
         }
     }
 
-    public /* synthetic */ e(xc xcVar) {
-        this.a = 4;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        canvas.drawRoundRect(AndroidUtilities.dp(14.0f), AndroidUtilities.dp(9.0f), getMeasuredWidth() - AndroidUtilities.dp(14.0f), getMeasuredHeight() - AndroidUtilities.dp(9.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), this.e);
+        super.dispatchDraw(canvas);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        this.f.b();
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(146), TLObject.FLAG_30));
     }
 }

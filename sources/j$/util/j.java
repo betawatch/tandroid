@@ -107,8 +107,8 @@ public final class j implements java.util.Map, Serializable, Map {
                     this.c = new l(this.a.keySet(), this.b);
                 }
                 lVar = this.c;
-            } catch (Throwable th) {
-                throw th;
+            } catch (Throwable th2) {
+                throw th2;
             }
         }
         return lVar;
@@ -123,8 +123,8 @@ public final class j implements java.util.Map, Serializable, Map {
                     this.d = new l(this.a.entrySet(), this.b);
                 }
                 lVar = this.d;
-            } catch (Throwable th) {
-                throw th;
+            } catch (Throwable th2) {
+                throw th2;
             }
         }
         return lVar;
@@ -139,8 +139,8 @@ public final class j implements java.util.Map, Serializable, Map {
                     this.e = new h(this.a.values(), this.b);
                 }
                 hVar = this.e;
-            } catch (Throwable th) {
-                throw th;
+            } catch (Throwable th2) {
+                throw th2;
             }
         }
         return hVar;

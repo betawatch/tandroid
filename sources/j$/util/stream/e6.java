@@ -24,12 +24,12 @@ public final class e6 extends z4 {
     }
 
     @Override // j$.util.stream.a
-    public final j5 Q0(int i9, j5 j5Var) {
+    public final j5 Q0(int i10, j5 j5Var) {
         Objects.requireNonNull(j5Var);
-        if (v6.SORTED.m(i9) && this.s) {
+        if (v6.SORTED.m(i10) && this.s) {
             return j5Var;
         }
-        if (v6.SIZED.m(i9)) {
+        if (v6.SIZED.m(i10)) {
             return new j6(j5Var, this.t);
         }
         return new f6(j5Var, this.t);

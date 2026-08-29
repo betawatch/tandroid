@@ -1,11 +1,11 @@
 package c0;
 
-import f7.k0;
+import h7.i5;
 import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class e extends k0 {
+public final class e extends i5 {
     public final AtomicReferenceFieldUpdater a;
     public final AtomicReferenceFieldUpdater b;
     public final AtomicReferenceFieldUpdater c;
@@ -20,7 +20,7 @@ public final class e extends k0 {
         this.e = atomicReferenceFieldUpdater5;
     }
 
-    @Override // f7.k0
+    @Override // h7.i5
     public final boolean a(h hVar, d dVar, d dVar2) {
         AtomicReferenceFieldUpdater atomicReferenceFieldUpdater;
         do {
@@ -32,7 +32,7 @@ public final class e extends k0 {
         return false;
     }
 
-    @Override // f7.k0
+    @Override // h7.i5
     public final boolean b(h hVar, Object obj, Object obj2) {
         AtomicReferenceFieldUpdater atomicReferenceFieldUpdater;
         do {
@@ -44,7 +44,7 @@ public final class e extends k0 {
         return false;
     }
 
-    @Override // f7.k0
+    @Override // h7.i5
     public final boolean c(h hVar, g gVar, g gVar2) {
         AtomicReferenceFieldUpdater atomicReferenceFieldUpdater;
         do {
@@ -56,12 +56,12 @@ public final class e extends k0 {
         return false;
     }
 
-    @Override // f7.k0
+    @Override // h7.i5
     public final void d(g gVar, g gVar2) {
         this.b.lazySet(gVar, gVar2);
     }
 
-    @Override // f7.k0
+    @Override // h7.i5
     public final void e(g gVar, Thread thread) {
         this.a.lazySet(gVar, thread);
     }

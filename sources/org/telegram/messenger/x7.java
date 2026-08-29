@@ -1,33 +1,69 @@
 package org.telegram.messenger;
 
-import android.net.Uri;
-import java.util.ArrayList;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.MessagesStorage;
+import java.util.List;
+import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class x7 implements MediaDataController.KeywordResultCallback, MessagesStorage.LongCallback {
-    public final /* synthetic */ BaseController a;
-    public final /* synthetic */ Object b;
+public final /* synthetic */ class x7 implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ BaseController b;
     public final /* synthetic */ Object c;
     public final /* synthetic */ Object d;
 
-    public /* synthetic */ x7(BaseController baseController, Object obj, Object obj2, Object obj3) {
-        this.a = baseController;
-        this.b = obj;
-        this.c = obj2;
-        this.d = obj3;
+    public /* synthetic */ x7(BaseController baseController, Object obj, Object obj2, int i10) {
+        this.a = i10;
+        this.b = baseController;
+        this.c = obj;
+        this.d = obj2;
     }
 
-    @Override // org.telegram.messenger.MessagesStorage.LongCallback
-    public void run(long j10) {
-        ((SendMessagesHelper) this.a).lambda$prepareImportHistory$105((Uri) this.b, (ArrayList) this.c, (MessagesStorage.LongCallback) this.d, j10);
-    }
-
-    @Override // org.telegram.messenger.MediaDataController.KeywordResultCallback
-    public void run(ArrayList arrayList, String str) {
-        ((MediaDataController) this.a).lambda$searchStickers$248((MediaDataController.SearchStickersKey) this.b, (MediaDataController.SearchStickersResult) this.c, (Utilities.Callback) this.d, arrayList, str);
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 0:
+                ((MediaDataController) this.b).lambda$addRecentSticker$21(this.c, (TLRPC.TL_messages_faveSticker) this.d, tLObject, tL_error);
+                break;
+            case 1:
+                ((MediaDataController) this.b).lambda$addRecentSticker$22(this.c, (TLRPC.TL_messages_saveRecentSticker) this.d, tLObject, tL_error);
+                break;
+            case 2:
+                ((MessagesController) this.b).lambda$createChat$258((org.telegram.ui.ActionBar.o2) this.c, (TLRPC.TL_messages_createChat) this.d, tLObject, tL_error);
+                break;
+            case 3:
+                ((MessagesController) this.b).lambda$createChat$261((org.telegram.ui.ActionBar.o2) this.c, (TLRPC.TL_channels_createChannel) this.d, tLObject, tL_error);
+                break;
+            case 4:
+                ((MessagesController) this.b).lambda$saveGif$146(this.c, (TLRPC.TL_messages_saveGif) this.d, tLObject, tL_error);
+                break;
+            case 5:
+                ((MessagesController) this.b).lambda$unpinAllMessages$129((TLRPC.Chat) this.c, (TLRPC.User) this.d, tLObject, tL_error);
+                break;
+            case 6:
+                ((MessagesController) this.b).lambda$saveRecentSticker$147(this.c, (TLRPC.TL_messages_saveRecentSticker) this.d, tLObject, tL_error);
+                break;
+            case 7:
+                ((MessagesController) this.b).lambda$toggleChatJoinToSend$280((Runnable) this.c, (Runnable) this.d, tLObject, tL_error);
+                break;
+            case 8:
+                ((MessagesController) this.b).lambda$loadChannelParticipants$149((Long) this.c, (Utilities.Callback) this.d, tLObject, tL_error);
+                break;
+            case 9:
+                ((MessagesController) this.b).lambda$updateChatAbout$290((TLRPC.ChatFull) this.c, (String) this.d, tLObject, tL_error);
+                break;
+            case 10:
+                ((SendMessagesHelper) this.b).lambda$performSendDelayedMessage$58((SendMessagesHelper.DelayedMessage) this.c, (String) this.d, tLObject, tL_error);
+                break;
+            case 11:
+                ((SendMessagesHelper) this.b).lambda$sendNotificationCallback$29((String) this.c, (List) this.d, tLObject, tL_error);
+                break;
+            default:
+                ((SendMessagesHelper) this.b).lambda$editMessage$21((org.telegram.ui.ActionBar.o2) this.c, (TLRPC.TL_messages_editMessage) this.d, tLObject, tL_error);
+                break;
+        }
     }
 }

@@ -25,11 +25,11 @@ public class t6 extends c implements Consumer, Iterable {
 
     public final void i(long j10) {
         long length;
-        int i9 = this.c;
-        if (i9 == 0) {
+        int i10 = this.c;
+        if (i10 == 0) {
             length = this.e.length;
         } else {
-            length = this.d[i9] + this.f[i9].length;
+            length = this.d[i10] + this.f[i10].length;
         }
         if (j10 > length) {
             if (this.f == null) {
@@ -38,24 +38,24 @@ public class t6 extends c implements Consumer, Iterable {
                 this.d = new long[8];
                 objArr[0] = this.e;
             }
-            int i10 = i9 + 1;
+            int i11 = i10 + 1;
             while (j10 > length) {
                 Object[][] objArr2 = this.f;
-                if (i10 >= objArr2.length) {
+                if (i11 >= objArr2.length) {
                     int length2 = objArr2.length * 2;
                     this.f = (Object[][]) Arrays.copyOf(objArr2, length2);
                     this.d = Arrays.copyOf(this.d, length2);
                 }
-                int i11 = this.a;
-                if (i10 != 0 && i10 != 1) {
-                    i11 = Math.min((i11 + i10) - 1, 30);
+                int i12 = this.a;
+                if (i11 != 0 && i11 != 1) {
+                    i12 = Math.min((i12 + i11) - 1, 30);
                 }
-                int i12 = 1 << i11;
-                this.f[i10] = new Object[i12];
+                int i13 = 1 << i12;
+                this.f[i11] = new Object[i13];
                 long[] jArr = this.d;
-                jArr[i10] = jArr[i10 - 1] + r5[r7].length;
-                length += i12;
-                i10++;
+                jArr[i11] = jArr[i11 - 1] + r5[r7].length;
+                length += i13;
+                i11++;
             }
         }
     }
@@ -65,20 +65,20 @@ public class t6 extends c implements Consumer, Iterable {
         Object[][] objArr = this.f;
         if (objArr != null) {
             this.e = objArr[0];
-            int i9 = 0;
+            int i10 = 0;
             while (true) {
                 Object[] objArr2 = this.e;
-                if (i9 >= objArr2.length) {
+                if (i10 >= objArr2.length) {
                     break;
                 }
-                objArr2[i9] = null;
-                i9++;
+                objArr2[i10] = null;
+                i10++;
             }
             this.f = null;
             this.d = null;
         } else {
-            for (int i10 = 0; i10 < this.b; i10++) {
-                this.e[i10] = null;
+            for (int i11 = 0; i11 < this.b; i11++) {
+                this.e[i11] = null;
             }
         }
         this.b = 0;
@@ -94,13 +94,13 @@ public class t6 extends c implements Consumer, Iterable {
 
     @Override // java.lang.Iterable
     public void forEach(Consumer consumer) {
-        for (int i9 = 0; i9 < this.c; i9++) {
-            for (Object obj : this.f[i9]) {
+        for (int i10 = 0; i10 < this.c; i10++) {
+            for (Object obj : this.f[i10]) {
                 consumer.x(obj);
             }
         }
-        for (int i10 = 0; i10 < this.b; i10++) {
-            consumer.x(this.e[i10]);
+        for (int i11 = 0; i11 < this.b; i11++) {
+            consumer.x(this.e[i11]);
         }
     }
 
@@ -108,35 +108,35 @@ public class t6 extends c implements Consumer, Iterable {
     /* renamed from: accept */
     public void x(Object obj) {
         long length;
-        int i9 = this.b;
+        int i10 = this.b;
         Object[] objArr = this.e;
-        if (i9 == objArr.length) {
+        if (i10 == objArr.length) {
             if (this.f == null) {
                 Object[][] objArr2 = new Object[8][];
                 this.f = objArr2;
                 this.d = new long[8];
                 objArr2[0] = objArr;
             }
-            int i10 = this.c;
-            int i11 = i10 + 1;
+            int i11 = this.c;
+            int i12 = i11 + 1;
             Object[][] objArr3 = this.f;
-            if (i11 >= objArr3.length || objArr3[i11] == null) {
-                if (i10 == 0) {
+            if (i12 >= objArr3.length || objArr3[i12] == null) {
+                if (i11 == 0) {
                     length = objArr.length;
                 } else {
-                    length = objArr3[i10].length + this.d[i10];
+                    length = objArr3[i11].length + this.d[i11];
                 }
                 i(length + 1);
             }
             this.b = 0;
-            int i12 = this.c + 1;
-            this.c = i12;
-            this.e = this.f[i12];
+            int i13 = this.c + 1;
+            this.c = i13;
+            this.e = this.f[i13];
         }
         Object[] objArr4 = this.e;
-        int i13 = this.b;
-        this.b = i13 + 1;
-        objArr4[i13] = obj;
+        int i14 = this.b;
+        this.b = i14 + 1;
+        objArr4[i14] = obj;
     }
 
     public final String toString() {

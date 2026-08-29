@@ -1,33 +1,41 @@
 package org.telegram.ui;
 
-import android.content.Intent;
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.NotificationCenter;
+import android.content.Context;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class md0 implements NotificationCenter.NotificationCenterDelegate {
-    public final /* synthetic */ pd0 a;
+public final class md0 extends sr {
+    public final /* synthetic */ int h;
+    public final /* synthetic */ Object n;
 
-    public md0(pd0 pd0Var) {
-        this.a = pd0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ md0(Object obj, Context context, int i10) {
+        super(context);
+        this.h = i10;
+        this.n = obj;
     }
 
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public final void didReceivedNotification(int i9, int i10, Object... objArr) {
-        pd0 pd0Var = this.a;
-        int intValue = ((Integer) objArr[0]).intValue();
-        ((Integer) objArr[1]).getClass();
-        Intent intent = (Intent) objArr[2];
-        NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.onActivityResultReceived);
-        if (intValue == 200) {
-            try {
-                pd0Var.B = (GoogleSignInAccount) f7.s8.b(intent).getResult(com.google.android.gms.common.api.f.class);
-                pd0Var.h(null);
-            } catch (com.google.android.gms.common.api.f e10) {
-                FileLog.e(e10);
-            }
+    @Override // org.telegram.ui.sr
+    public final void a() {
+        switch (this.h) {
+            case 0:
+                ((pd0) this.n).h(null);
+                break;
+            case 1:
+                ((ie0) this.n).h(null);
+                break;
+            case 2:
+                PasscodeActivity passcodeActivity = (PasscodeActivity) this.n;
+                if (passcodeActivity.A != 0) {
+                    passcodeActivity.g0();
+                    break;
+                } else {
+                    postDelayed(new vk0(this, 0), 260L);
+                    break;
+                }
+            default:
+                ((cg1) this.n).C0();
+                break;
         }
     }
 }

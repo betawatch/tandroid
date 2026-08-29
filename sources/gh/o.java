@@ -1,74 +1,7 @@
 package gh;
 
-import android.content.Context;
-import android.view.MotionEvent;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.EditTextBoldCursor;
-
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
-/* loaded from: classes.dex */
-public final class o extends EditTextBoldCursor {
-    public final /* synthetic */ int b;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ o(Context context, int i9) {
-        super(context);
-        this.b = i9;
-    }
-
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.ot, android.view.View
-    public void onDetachedFromWindow() {
-        switch (this.b) {
-            case 0:
-                super.onDetachedFromWindow();
-                AndroidUtilities.hideKeyboard(this);
-                break;
-            case 1:
-            default:
-                super.onDetachedFromWindow();
-                break;
-            case 2:
-                super.onDetachedFromWindow();
-                AndroidUtilities.hideKeyboard(this);
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
-    public void onMeasure(int i9, int i10) {
-        switch (this.b) {
-            case 3:
-                super.onMeasure(i9, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(64.0f), TLObject.FLAG_30));
-                break;
-            default:
-                super.onMeasure(i9, i10);
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
-    public boolean onTouchEvent(MotionEvent motionEvent) {
-        switch (this.b) {
-            case 1:
-                if (isEnabled()) {
-                    break;
-                }
-                break;
-            case 4:
-                if (motionEvent.getAction() == 0 && !AndroidUtilities.showKeyboard(this)) {
-                    clearFocus();
-                    requestFocus();
-                }
-                break;
-            case 5:
-                if (motionEvent.getAction() == 0 && !AndroidUtilities.showKeyboard(this)) {
-                    clearFocus();
-                    requestFocus();
-                }
-                break;
-        }
-        return super.onTouchEvent(motionEvent);
-    }
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* loaded from: classes3.dex */
+public interface o {
+    void m(k kVar, float f9, float f10);
 }

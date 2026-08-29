@@ -4,21 +4,21 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.gr;
-import org.telegram.ui.Components.jp;
+import org.telegram.ui.Components.jr;
+import org.telegram.ui.Components.np;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
 public abstract class i5 extends TextView {
     public boolean a;
-    public final org.telegram.ui.Components.y5 b;
-    public final jp c;
+    public final org.telegram.ui.Components.d6 b;
+    public final np c;
 
     public i5(Context context) {
         super(context);
         this.a = false;
-        this.b = new org.telegram.ui.Components.y5(this, 320L, gr.h);
-        this.c = new jp(-1);
+        this.b = new org.telegram.ui.Components.d6(this, 320L, jr.h);
+        this.c = new np(-1);
     }
 
     @Override // android.widget.TextView, android.view.View
@@ -43,17 +43,17 @@ public abstract class i5 extends TextView {
             int width = getWidth() / 2;
             int height = getHeight() / 2;
             int dp = width - ((int) ((1.0f - e10) * AndroidUtilities.dp(6.0f)));
-            jp jpVar = this.c;
-            jpVar.setAlpha((int) (e10 * 255.0f));
-            jpVar.setBounds(dp - (jpVar.getIntrinsicWidth() / 2), height - (jpVar.getIntrinsicWidth() / 2), (jpVar.getIntrinsicWidth() / 2) + dp, (jpVar.getIntrinsicHeight() / 2) + height);
-            jpVar.draw(canvas2);
+            np npVar = this.c;
+            npVar.setAlpha((int) (e10 * 255.0f));
+            npVar.setBounds(dp - (npVar.getIntrinsicWidth() / 2), height - (npVar.getIntrinsicWidth() / 2), (npVar.getIntrinsicWidth() / 2) + dp, (npVar.getIntrinsicHeight() / 2) + height);
+            npVar.draw(canvas2);
             invalidate();
         }
     }
 
     @Override // android.widget.TextView
-    public void setTextColor(int i9) {
-        super.setTextColor(i9);
-        this.c.b(i9);
+    public void setTextColor(int i10) {
+        super.setTextColor(i10);
+        this.c.b(i10);
     }
 }

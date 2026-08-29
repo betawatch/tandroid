@@ -1,30 +1,35 @@
 package qh;
 
-import android.text.Editable;
-import android.text.TextWatcher;
+import android.view.View;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.Components.w41;
+import r0.m1;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes4.dex */
-public final class o implements TextWatcher {
-    public final /* synthetic */ String[] a;
-    public final /* synthetic */ bg.p0 b;
+public final /* synthetic */ class o implements Utilities.Callback5, Utilities.Callback5Return, r0.o {
+    public final /* synthetic */ q a;
 
-    public o(String[] strArr, bg.p0 p0Var) {
-        this.a = strArr;
-        this.b = p0Var;
+    @Override // r0.o
+    public m1 I0(View view, m1 m1Var) {
+        this.a.V(m1Var.a.f(519).d);
+        return m1.b;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        this.a[0] = editable.toString();
-        this.b.run();
+    @Override // org.telegram.messenger.Utilities.Callback5Return
+    public Object run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
+        ((Integer) obj3).intValue();
+        ((Float) obj4).floatValue();
+        ((Float) obj5).floatValue();
+        this.a.getClass();
+        return Boolean.FALSE;
     }
 
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i9, int i10, int i11) {
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i9, int i10, int i11) {
+    @Override // org.telegram.messenger.Utilities.Callback5
+    public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
+        ((Integer) obj3).getClass();
+        ((Float) obj4).getClass();
+        ((Float) obj5).getClass();
+        q.U(this.a, (w41) obj);
     }
 }

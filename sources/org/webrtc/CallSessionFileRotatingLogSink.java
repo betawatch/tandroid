@@ -2,16 +2,16 @@ package org.webrtc;
 
 import org.webrtc.Logging;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes4.dex */
 public class CallSessionFileRotatingLogSink {
     private long nativeSink;
 
-    public CallSessionFileRotatingLogSink(String str, int i9, Logging.Severity severity) {
+    public CallSessionFileRotatingLogSink(String str, int i10, Logging.Severity severity) {
         if (str == null) {
             throw new IllegalArgumentException("dirPath may not be null.");
         }
-        this.nativeSink = nativeAddSink(str, i9, severity.ordinal());
+        this.nativeSink = nativeAddSink(str, i10, severity.ordinal());
     }
 
     public static byte[] getLogData(String str) {
@@ -21,7 +21,7 @@ public class CallSessionFileRotatingLogSink {
         throw new IllegalArgumentException("dirPath may not be null.");
     }
 
-    private static native long nativeAddSink(String str, int i9, int i10);
+    private static native long nativeAddSink(String str, int i10, int i11);
 
     private static native void nativeDeleteSink(long j10);
 

@@ -8,9 +8,9 @@ public final class h2 extends ContentObserver {
     public final /* synthetic */ int a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ h2(Handler handler, int i9) {
+    public /* synthetic */ h2(Handler handler, int i10) {
         super(handler);
-        this.a = i9;
+        this.a = i10;
     }
 
     @Override // android.database.ContentObserver
@@ -20,7 +20,7 @@ public final class h2 extends ContentObserver {
                 g2.e.set(true);
                 break;
             default:
-                d1.f.z(d1.f.g());
+                d1.f.A(d1.f.g());
                 break;
         }
     }

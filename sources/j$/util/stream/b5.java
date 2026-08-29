@@ -109,14 +109,14 @@ public abstract class b5 extends a implements Stream {
 
     @Override // j$.util.stream.a
     public final boolean L0(Spliterator spliterator, j5 j5Var) {
-        boolean q10;
+        boolean q6;
         do {
-            q10 = j5Var.q();
-            if (q10) {
+            q6 = j5Var.q();
+            if (q6) {
                 break;
             }
         } while (spliterator.tryAdvance(j5Var));
-        return q10;
+        return q6;
     }
 
     @Override // j$.util.stream.t3
@@ -146,7 +146,7 @@ public abstract class b5 extends a implements Stream {
     @Override // j$.util.stream.Stream
     public final IntStream mapToInt(ToIntFunction toIntFunction) {
         Objects.requireNonNull(toIntFunction);
-        return new t0(this, v6.p | v6.n, toIntFunction, 2);
+        return new t0(this, v6.p | v6.n, toIntFunction, 3);
     }
 
     @Override // j$.util.stream.Stream
@@ -183,7 +183,7 @@ public abstract class b5 extends a implements Stream {
     @Override // j$.util.stream.Stream
     public final IntStream u(j$.time.t tVar) {
         Objects.requireNonNull(tVar);
-        return new t0(this, v6.p | v6.n | v6.t, tVar, 3);
+        return new t0(this, v6.p | v6.n | v6.t, tVar, 4);
     }
 
     @Override // j$.util.stream.Stream
@@ -238,14 +238,14 @@ public abstract class b5 extends a implements Stream {
 
     @Override // j$.util.stream.Stream
     public final Stream takeWhile(Predicate predicate) {
-        int i9 = w8.a;
+        int i10 = w8.a;
         Objects.requireNonNull(predicate);
         return new e8(this, w8.a, predicate, 0);
     }
 
     @Override // j$.util.stream.Stream
     public final Stream dropWhile(Predicate predicate) {
-        int i9 = w8.a;
+        int i10 = w8.a;
         Objects.requireNonNull(predicate);
         return new e8(this, w8.b, predicate, 1);
     }

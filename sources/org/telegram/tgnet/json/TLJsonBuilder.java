@@ -7,12 +7,12 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
 public class TLJsonBuilder {
     private final JSONObject result2 = new JSONObject();
 
-    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
     public interface Serializable {
         void serializeToJson(TLJsonBuilder tLJsonBuilder);
     }
@@ -46,8 +46,8 @@ public class TLJsonBuilder {
         write(str, Boolean.valueOf(z10));
     }
 
-    public void writeInt32(String str, int i9) {
-        writeString(str, Integer.toString(i9, 10));
+    public void writeInt32(String str, int i10) {
+        writeString(str, Integer.toString(i10, 10));
     }
 
     public void writeInt64(String str, long j10) {

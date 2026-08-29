@@ -1,45 +1,45 @@
 package org.telegram.ui;
 
-import android.os.Build;
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
+import android.content.Context;
+import android.widget.FrameLayout;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.ui.Components.FragmentContextView;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class v8 extends f2.d1 {
-    public boolean a;
-    public final /* synthetic */ i9 b;
+public final class v8 extends FragmentContextView {
+    public final /* synthetic */ int J0;
+    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate K0;
 
-    public v8(i9 i9Var) {
-        this.b = i9Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ v8(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, Context context, org.telegram.ui.ActionBar.o2 o2Var, FrameLayout frameLayout, org.telegram.ui.ActionBar.c6 c6Var, int i10) {
+        super(context, o2Var, frameLayout, false, c6Var);
+        this.J0 = i10;
+        this.K0 = notificationCenterDelegate;
     }
 
-    @Override // f2.d1
-    public final void b(RecyclerView recyclerView, int i9, int i10) {
-        ig.e eVar;
-        i9 i9Var = this.b;
-        ArrayList arrayList = i9Var.C;
-        int L0 = i9Var.c.L0();
-        int abs = L0 == -1 ? 0 : Math.abs(i9Var.c.N0() - L0) + 1;
-        if (abs > 0) {
-            int size = i9Var.d.U2.x.size();
-            if (!i9Var.F && !i9Var.D && !arrayList.isEmpty() && abs + L0 >= size - 5) {
-                AndroidUtilities.runOnUIThread(new org.telegram.messenger.voip.l0(17, this, (e9) j3.r0.j(1, arrayList)));
-            }
+    @Override // org.telegram.ui.Components.FragmentContextView, android.view.View
+    public final void setVisibility(int i10) {
+        switch (this.J0) {
+            case 0:
+                h9 h9Var = (h9) this.K0;
+                h9Var.I.i(h9Var.J, i10 == 0, true);
+                break;
+            case 1:
+                org.telegram.ui.Components.yi yiVar = (org.telegram.ui.Components.yi) this.K0;
+                yiVar.x.i(yiVar.y, i10 == 0, true);
+                break;
+            default:
+                ze1 ze1Var = (ze1) this.K0;
+                ze1Var.Q0.i(ze1Var.B0, i10 == 0, true);
+                break;
         }
-        View childAt = recyclerView.getChildAt(0);
-        int top = childAt != null ? childAt.getTop() : 0;
-        if (i10 != 0 && this.a) {
-            i9Var.f.e(i10 < 0, true);
-        }
-        this.a = true;
-        i9Var.r.b(L0 != 0 || top < i9Var.d.getPaddingTop(), true);
-        if (Build.VERSION.SDK_INT < 31 || (eVar = i9Var.U) == null) {
-            return;
-        }
-        eVar.f(i9, i10);
-        i9Var.e0();
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public v8(ze1 ze1Var, Context context, ze1 ze1Var2) {
+        super(context, ze1Var2, null, false, null);
+        this.J0 = 2;
+        this.K0 = ze1Var;
     }
 }

@@ -1,122 +1,123 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.text.Layout;
-import android.text.SpannableString;
-import android.text.style.CharacterStyle;
-import android.text.style.ClickableSpan;
+import android.graphics.drawable.Drawable;
+import android.view.ActionMode;
+import android.view.Menu;
 import android.view.MotionEvent;
-import android.view.ViewConfiguration;
-import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Emoji;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.R;
+import org.telegram.messenger.XiaomiUtilities;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class vt extends dh.u {
-    public final i80 N;
-    public m80 O;
-    public boolean P;
-    public boolean Q;
-    public boolean R;
+public final class vt extends st {
+    public Drawable c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ au e;
 
-    public vt(Context context) {
-        super(context, null, true);
-        this.N = new i80(this);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public vt(au auVar, Context context, org.telegram.ui.ActionBar.c6 c6Var, int i10) {
+        super(context, c6Var);
+        this.e = auVar;
+        this.d = i10;
+        this.c = null;
     }
 
-    @Override // dh.u
-    public final ClickableSpan a(int i9, int i10) {
-        Layout layout = getLayout();
-        if (layout == null) {
-            return null;
+    @Override // org.telegram.ui.Components.ut
+    public final int emojiCacheType() {
+        return this.e.h();
+    }
+
+    @Override // org.telegram.ui.Components.EditTextBoldCursor
+    public final void extendActionMode(ActionMode actionMode, Menu menu) {
+        au auVar = this.e;
+        if (auVar.a()) {
+            org.telegram.ui.tn.k8(menu, null, auVar.H == 3, true, true, true);
+        } else {
+            auVar.i(menu);
         }
-        int paddingLeft = i9 - getPaddingLeft();
-        int paddingTop = i10 - getPaddingTop();
-        int lineForVertical = layout.getLineForVertical(paddingTop);
-        float f10 = paddingLeft;
-        int offsetForHorizontal = layout.getOffsetForHorizontal(lineForVertical, f10);
-        float lineLeft = getLayout().getLineLeft(lineForVertical);
-        if (lineLeft <= f10 && layout.getLineWidth(lineForVertical) + lineLeft >= f10 && paddingTop >= 0 && paddingTop <= layout.getHeight()) {
-            ClickableSpan[] clickableSpanArr = (ClickableSpan[]) new SpannableString(layout.getText()).getSpans(offsetForHorizontal, offsetForHorizontal, ClickableSpan.class);
-            if (clickableSpanArr.length != 0 && !AndroidUtilities.isAccessibilityScreenReaderEnabled()) {
-                return clickableSpanArr[0];
+    }
+
+    @Override // org.telegram.ui.Components.EditTextBoldCursor
+    public final int getActionModeStyle() {
+        int i10 = this.d;
+        if (i10 == 2 || i10 == 3) {
+            return 2;
+        }
+        return super.getActionModeStyle();
+    }
+
+    @Override // org.telegram.ui.Components.st
+    public final void onLineCountChanged(int i10, int i11) {
+        this.e.q(i10, i11);
+    }
+
+    @Override // org.telegram.ui.Components.ut, android.widget.TextView
+    public final void onSelectionChanged(int i10, int i11) {
+        super.onSelectionChanged(i10, i11);
+        au auVar = this.e;
+        ol0 ol0Var = auVar.c;
+        if (ol0Var != null) {
+            boolean z10 = false;
+            boolean z11 = i11 != i10;
+            if (auVar.a() && z11) {
+                XiaomiUtilities.isMIUI();
+                z10 = true;
             }
-        }
-        return null;
-    }
-
-    @Override // dh.u, android.widget.TextView, android.view.View
-    public final void onDraw(Canvas canvas) {
-        canvas.save();
-        if (!this.P) {
-            canvas.translate(this.Q ? 0.0f : getPaddingLeft(), this.R ? 0.0f : getPaddingTop());
-        }
-        if (this.N.f(canvas)) {
-            invalidate();
-        }
-        canvas.restore();
-        super.onDraw(canvas);
-    }
-
-    @Override // android.widget.TextView, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        CharacterStyle characterStyle;
-        i80 i80Var = this.N;
-        if (i80Var != null) {
-            Layout layout = getLayout();
-            ClickableSpan a2 = a((int) motionEvent.getX(), (int) motionEvent.getY());
-            if (a2 != null && motionEvent.getAction() == 0) {
-                m80 m80Var = new m80(a2, null, motionEvent.getX(), motionEvent.getY(), 0);
-                this.O = m80Var;
-                i80Var.a(m80Var, null);
-                SpannableString spannableString = new SpannableString(layout.getText());
-                int spanStart = spannableString.getSpanStart(this.O.i);
-                int spanEnd = spannableString.getSpanEnd(this.O.i);
-                f80 b10 = this.O.b();
-                b10.d(layout, spanStart, getPaddingTop());
-                layout.getSelectionPath(spanStart, spanEnd, b10);
-                AndroidUtilities.runOnUIThread(new np(this, m80Var, a2), ViewConfiguration.getLongPressTimeout());
-                return true;
-            }
-            if (motionEvent.getAction() == 1) {
-                i80Var.d(true);
-                m80 m80Var2 = this.O;
-                if (m80Var2 != null && (characterStyle = m80Var2.i) == a2) {
-                    if (characterStyle != null) {
-                        ((ClickableSpan) characterStyle).onClick(this);
-                    }
-                    this.O = null;
-                    return true;
+            if (auVar.n != z10) {
+                auVar.n = z10;
+                if (z10) {
+                    this.c = ol0Var.d;
+                    ol0Var.a(R.drawable.msg_edit, true);
+                } else {
+                    ol0Var.b(this.c, true);
+                    this.c = null;
                 }
-                this.O = null;
-            }
-            if (motionEvent.getAction() == 3) {
-                i80Var.d(true);
-                this.O = null;
             }
         }
-        return this.O != null || super.onTouchEvent(motionEvent);
     }
 
-    @Override // dh.u
-    public void setDisablePaddingsOffset(boolean z10) {
-        this.P = z10;
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        wt wtVar;
+        au auVar = this.e;
+        if (auVar.e && motionEvent.getAction() == 0) {
+            auVar.u();
+            if (!auVar.x || (wtVar = auVar.d) == null) {
+                auVar.x(AndroidUtilities.usingHardwareInput ? 0 : 2);
+            } else {
+                wtVar.t(false);
+                auVar.x = false;
+                auVar.k(true);
+                AndroidUtilities.showKeyboard(this);
+            }
+            auVar.v();
+        }
+        if (motionEvent.getAction() == 0) {
+            boolean isFocused = isFocused();
+            requestFocus();
+            if (!AndroidUtilities.showKeyboard(this)) {
+                clearFocus();
+                requestFocus();
+            }
+            if (!isFocused) {
+                setSelection(getText().length());
+            }
+        }
+        try {
+            return super.onTouchEvent(motionEvent);
+        } catch (Exception e10) {
+            FileLog.e(e10);
+            return false;
+        }
     }
 
-    @Override // dh.u
-    public void setDisablePaddingsOffsetX(boolean z10) {
-        this.Q = z10;
-    }
-
-    @Override // dh.u
-    public void setDisablePaddingsOffsetY(boolean z10) {
-        this.R = z10;
-    }
-
-    @Override // dh.u, android.widget.TextView
-    public final void setText(CharSequence charSequence, TextView.BufferType bufferType) {
-        super.setText(Emoji.replaceEmoji(charSequence, getPaint().getFontMetricsInt(), false), bufferType);
+    @Override // android.view.View
+    public final void scrollTo(int i10, int i11) {
+        if (this.e.t(i11)) {
+            super.scrollTo(i10, i11);
+        }
     }
 }

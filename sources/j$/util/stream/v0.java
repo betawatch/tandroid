@@ -24,8 +24,8 @@ public final class v0 extends d5 {
     }
 
     @Override // j$.util.stream.h5, java.util.function.IntConsumer
-    public final void accept(int i9) {
-        IntStream intStream = (IntStream) ((k0) this.d.t).apply(i9);
+    public final void accept(int i10) {
+        IntStream intStream = (IntStream) ((k0) this.d.t).apply(i10);
         if (intStream != null) {
             try {
                 boolean z10 = this.b;
@@ -37,13 +37,13 @@ public final class v0 extends d5 {
                     while (!this.a.q() && spliterator.tryAdvance((IntConsumer) i0Var)) {
                     }
                 }
-            } catch (Throwable th) {
+            } catch (Throwable th2) {
                 try {
                     intStream.close();
-                } catch (Throwable th2) {
-                    th.addSuppressed(th2);
+                } catch (Throwable th3) {
+                    th2.addSuppressed(th3);
                 }
-                throw th;
+                throw th2;
             }
         }
         if (intStream != null) {

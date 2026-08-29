@@ -1,124 +1,99 @@
 package kg;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.Rect;
-import ff.m0;
-import g7.n;
-import java.util.Arrays;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.th;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
 public final class c {
-    public int d;
-    public boolean e;
-    public int f;
-    public float i;
-    public float j;
-    public final Rect a = new Rect();
-    public final float[] b = new float[8];
-    public final float[] c = new float[8];
-    public float g = 0.75f;
-    public final float h = 1.5f;
-    public final Path k = new Path();
-    public boolean l = true;
-    public final Rect m = new Rect();
-    public final Path n = new Path();
-    public final Path o = new Path();
+    public float a;
+    public float b;
+    public float c;
+    public float d;
+    public float e;
+    public float f;
+    public float g;
+    public float h;
+    public long i;
+    public boolean j;
+    public float k;
+    public final /* synthetic */ d l;
+
+    public c(d dVar) {
+        this.l = dVar;
+    }
 
     public final void a() {
-        float[] fArr = this.b;
-        this.l = m0.c(fArr);
-        Rect rect = this.a;
-        Rect rect2 = this.m;
-        rect2.set(rect);
-        int i9 = this.d;
-        rect2.inset(i9, i9);
-        Path path = this.k;
-        path.rewind();
-        float f10 = rect2.left;
-        float f11 = rect2.top;
-        float f12 = rect2.right;
-        float f13 = rect2.bottom;
-        Path.Direction direction = Path.Direction.CW;
-        path.addRoundRect(f10, f11, f12, f13, this.b, direction);
-        path.close();
-        float min = Math.min(rect2.width(), rect2.height()) / 2.0f;
-        float[] fArr2 = d.C;
-        Arrays.fill(fArr2, 0.0f);
-        fArr2[0] = fArr[0];
-        fArr2[1] = fArr[1];
-        fArr2[2] = fArr[2];
-        fArr2[3] = fArr[3];
-        if (this.l && fArr[0] > min) {
-            fArr2[3] = min;
-            fArr2[2] = min;
-            fArr2[1] = min;
-            fArr2[0] = min;
+        d dVar;
+        float f9 = 0.0f;
+        this.h = 0.0f;
+        float b10 = b();
+        float c3 = c();
+        int i10 = 0;
+        while (true) {
+            dVar = this.l;
+            if (i10 >= 20) {
+                break;
+            }
+            float b11 = b();
+            float c6 = c();
+            float f10 = 2.14748365E9f;
+            for (int i11 = 0; i11 < dVar.c.size(); i11++) {
+                float f11 = ((c) dVar.c.get(i11)).c - b11;
+                float f12 = ((c) dVar.c.get(i11)).d - c6;
+                float f13 = (f12 * f12) + (f11 * f11);
+                if (f13 < f10) {
+                    f10 = f13;
+                }
+            }
+            if (f10 > f9) {
+                b10 = b11;
+                c3 = c6;
+                f9 = f10;
+            }
+            i10++;
         }
-        Path path2 = this.n;
-        path2.rewind();
-        float f14 = rect2.left;
-        int i10 = rect2.top;
-        path2.addRoundRect(f14, i10, rect2.right, Math.min(i10 + fArr[0], rect2.bottom), fArr2, direction);
-        float f15 = rect2.left;
-        int i11 = rect2.top;
-        float f16 = i11 + this.i;
-        float f17 = rect2.right;
-        float min2 = Math.min(i11 + fArr[0], rect2.bottom);
-        Path.Direction direction2 = Path.Direction.CCW;
-        path2.addRoundRect(f15, f16, f17, min2, fArr2, direction2);
-        path2.close();
-        Arrays.fill(fArr2, 0.0f);
-        fArr2[4] = fArr[4];
-        fArr2[5] = fArr[5];
-        fArr2[6] = fArr[6];
-        fArr2[7] = fArr[7];
-        if (this.l && fArr[0] > min) {
-            fArr2[7] = min;
-            fArr2[6] = min;
-            fArr2[5] = min;
-            fArr2[4] = min;
+        float f14 = dVar.f ? 0.8f : 0.5f;
+        this.c = b10;
+        if (b10 > dVar.b.width() * f14) {
+            this.a = dVar.b.width() * f14;
+        } else {
+            float width = dVar.b.width() * f14;
+            this.a = width;
+            if (this.c > width) {
+                this.c = width - 0.1f;
+            }
         }
-        Path path3 = this.o;
-        path3.rewind();
-        path3.addRoundRect(rect2.left, Math.max(rect2.bottom - fArr[4], rect2.top), rect2.right, rect2.bottom, fArr2, direction);
-        path3.addRoundRect(rect2.left, Math.max(rect2.bottom - fArr[4], rect2.top), rect2.right, rect2.bottom - this.j, fArr2, direction2);
-        path3.close();
+        this.b = u3.c.c(th.f(Utilities.fastRandom, 100), 100.0f, dVar.b.height() * 0.1f, dVar.b.height() * 0.45f);
+        if (dVar.f) {
+            float c10 = u3.c.c(th.f(Utilities.fastRandom, 100), 100.0f, dVar.b.width() * 0.1f, dVar.b.width() * 0.05f);
+            this.f = c10;
+            this.g = (((th.f(Utilities.fastRandom, 100) / 100.0f) * 1.5f) + 1.5f) * c10;
+            this.d = u3.c.c(th.f(Utilities.fastRandom, 100), 100.0f, dVar.b.height() * 0.1f, this.f / 2.0f);
+            this.e = dVar.b.height() + this.f;
+            this.i = Math.abs(Utilities.fastRandom.nextInt() % 600) + MediaDataController.MAX_STYLE_RUNS_COUNT;
+        } else {
+            float c11 = u3.c.c(th.f(Utilities.fastRandom, 100), 100.0f, dVar.b.width() * 0.1f, dVar.b.width() * 0.05f);
+            this.f = c11;
+            this.g = (((th.f(Utilities.fastRandom, 100) / 100.0f) * 0.5f) + 1.5f) * c11;
+            this.d = c3;
+            this.e = c3 + dVar.b.height();
+            this.i = 1800L;
+        }
+        this.i = (long) (this.i / 1.75f);
+        this.j = Utilities.fastRandom.nextBoolean();
+        this.k = ((Utilities.fastRandom.nextInt() % 100) / 100.0f) * 20.0f;
     }
 
-    public final void b(Canvas canvas, Paint paint) {
-        if (!this.l) {
-            canvas.drawPath(this.k, paint);
-            return;
+    public final float b() {
+        if (!this.l.f) {
+            return (th.f(Utilities.fastRandom, 100) / 100.0f) * r0.b.width();
         }
-        Rect rect = this.m;
-        float f10 = rect.left;
-        float f11 = rect.top;
-        float f12 = rect.right;
-        float f13 = rect.bottom;
-        float f14 = this.b[0];
-        canvas.drawRoundRect(f10, f11, f12, f13, f14, f14, paint);
+        return u3.c.c(th.f(Utilities.fastRandom, 100), 100.0f, r0.b.width() * 1.5f, r0.b.width() * (-0.25f));
     }
 
-    public final void c(Canvas canvas, Paint paint, boolean z10) {
-        if (!z10) {
-            b(canvas, paint);
-            return;
-        }
-        Rect rect = this.m;
-        float f10 = rect.top;
-        float[] fArr = this.b;
-        float a2 = n.a((fArr[0] * 2.0f) + f10, f10, rect.bottom);
-        canvas.save();
-        Rect rect2 = this.a;
-        canvas.clipRect(rect2.left, rect2.top, rect2.right, a2);
-        float f11 = rect.left;
-        float f12 = rect.top;
-        float f13 = rect.right;
-        float f14 = fArr[0];
-        canvas.drawRoundRect(f11, f12, f13, a2, f14, f14, paint);
-        canvas.restore();
+    public final float c() {
+        return (th.f(Utilities.fastRandom, 100) / 100.0f) * this.l.b.height() * 0.5f;
     }
 }

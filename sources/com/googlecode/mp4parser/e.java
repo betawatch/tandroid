@@ -6,18 +6,18 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public abstract class e implements q2.f, Iterator, Closeable {
+public abstract class e implements s2.f, Iterator, Closeable {
     public static final d c = new d("eof ");
-    public q2.b a;
+    public s2.b a;
     public ArrayList b;
 
     static {
-        yb.c.a(e.class);
+        ac.c.a(e.class);
     }
 
-    public final void a(q2.b bVar) {
+    public final void a(s2.b bVar) {
         if (bVar != null) {
             this.b = new ArrayList(this.b);
             bVar.setParent(this);
@@ -27,8 +27,8 @@ public abstract class e implements q2.f, Iterator, Closeable {
 
     public final long b() {
         long j10 = 0;
-        for (int i9 = 0; i9 < this.b.size(); i9++) {
-            j10 += ((q2.b) this.b.get(i9)).getSize();
+        for (int i10 = 0; i10 < this.b.size(); i10++) {
+            j10 += ((s2.b) this.b.get(i10)).getSize();
         }
         return j10;
     }
@@ -36,11 +36,11 @@ public abstract class e implements q2.f, Iterator, Closeable {
     public final void c(WritableByteChannel writableByteChannel) {
         ArrayList arrayList = this.b;
         int size = arrayList.size();
-        int i9 = 0;
-        while (i9 < size) {
-            Object obj = arrayList.get(i9);
-            i9++;
-            ((q2.b) obj).getBox(writableByteChannel);
+        int i10 = 0;
+        while (i10 < size) {
+            Object obj = arrayList.get(i10);
+            i10++;
+            ((s2.b) obj).getBox(writableByteChannel);
         }
     }
 
@@ -51,7 +51,7 @@ public abstract class e implements q2.f, Iterator, Closeable {
 
     @Override // java.util.Iterator
     public final boolean hasNext() {
-        q2.b bVar = this.a;
+        s2.b bVar = this.a;
         d dVar = c;
         if (bVar == dVar) {
             return false;
@@ -74,7 +74,7 @@ public abstract class e implements q2.f, Iterator, Closeable {
 
     @Override // java.util.Iterator
     public final Object next() {
-        q2.b bVar = this.a;
+        s2.b bVar = this.a;
         d dVar = c;
         if (bVar == null || bVar == dVar) {
             this.a = dVar;
@@ -93,11 +93,11 @@ public abstract class e implements q2.f, Iterator, Closeable {
         StringBuilder sb2 = new StringBuilder();
         sb2.append(getClass().getSimpleName());
         sb2.append("[");
-        for (int i9 = 0; i9 < this.b.size(); i9++) {
-            if (i9 > 0) {
+        for (int i10 = 0; i10 < this.b.size(); i10++) {
+            if (i10 > 0) {
                 sb2.append(";");
             }
-            sb2.append(((q2.b) this.b.get(i9)).toString());
+            sb2.append(((s2.b) this.b.get(i10)).toString());
         }
         sb2.append("]");
         return sb2.toString();

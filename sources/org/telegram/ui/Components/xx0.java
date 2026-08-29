@@ -1,98 +1,86 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Rect;
+import android.animation.AnimatorSet;
+import android.animation.ValueAnimator;
+import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
-import org.telegram.messenger.R;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class xx0 extends Drawable {
-    public boolean a;
-    public final y5 b;
-    public final Drawable c;
-    public final Drawable d;
-    public int e = 255;
+public final class xx0 extends FrameLayout {
+    public float A;
+    public float B;
+    public ValueAnimator C;
+    public ValueAnimator D;
+    public ab.m E;
+    public float F;
+    public boolean G;
+    public org.telegram.ui.Components.voip.h H;
+    public Paint a;
+    public Paint b;
+    public Paint c;
+    public Paint d;
+    public boolean e;
+    public cg.h0 f;
+    public TextView h;
+    public TextView n;
+    public TextView r;
+    public TextView s;
+    public TextView v;
+    public View w;
+    public int x;
+    public org.telegram.ui.Cells.y9 y;
 
-    public xx0(org.telegram.ui.Cells.t1 t1Var) {
-        this.b = new y5(t1Var, 420L, gr.h);
-        this.c = t1Var.getContext().getResources().getDrawable(R.drawable.summary_arrow);
-        this.d = t1Var.getContext().getResources().getDrawable(R.drawable.summary_stars);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        Rect bounds = getBounds();
-        Drawable drawable = this.d;
-        drawable.setBounds(bounds);
-        drawable.setAlpha(this.e);
-        drawable.draw(canvas);
-        float e10 = this.b.e(this.a);
-        float centerX = getBounds().centerX();
-        float centerY = getBounds().centerY();
-        float width = getBounds().width();
-        canvas.save();
-        if (e10 < 0.5f) {
-            float abs = Math.abs(e10 - 0.5f) + 0.5f;
-            canvas.scale(abs, abs, centerX, centerY);
+    @Override // android.view.View
+    public final void invalidate() {
+        TextView textView = this.s;
+        TextView textView2 = this.r;
+        TextView textView3 = this.n;
+        TextView textView4 = this.h;
+        super.invalidate();
+        this.f.invalidate();
+        int i10 = this.x;
+        int i11 = org.telegram.ui.ActionBar.g6.Vi;
+        if (i10 != org.telegram.ui.ActionBar.g6.w0(null, i11, false)) {
+            this.x = org.telegram.ui.ActionBar.g6.w0(null, i11, false);
+            textView4.setCompoundDrawablesWithIntrinsicBounds(org.telegram.ui.ActionBar.g6.K(AndroidUtilities.dp(10.0f), this.x), (Drawable) null, (Drawable) null, (Drawable) null);
+            textView4.setCompoundDrawablePadding(AndroidUtilities.dp(6.0f));
+            textView3.setCompoundDrawablesWithIntrinsicBounds(org.telegram.ui.ActionBar.g6.K(AndroidUtilities.dp(10.0f), this.x), (Drawable) null, (Drawable) null, (Drawable) null);
+            textView3.setCompoundDrawablePadding(AndroidUtilities.dp(6.0f));
+            textView2.setCompoundDrawablesWithIntrinsicBounds(org.telegram.ui.ActionBar.g6.K(AndroidUtilities.dp(10.0f), i0.a.k(this.x, 64)), (Drawable) null, (Drawable) null, (Drawable) null);
+            textView2.setCompoundDrawablePadding(AndroidUtilities.dp(6.0f));
+            textView.setCompoundDrawablesWithIntrinsicBounds(org.telegram.ui.ActionBar.g6.K(AndroidUtilities.dp(10.0f), i0.a.k(this.x, 127)), (Drawable) null, (Drawable) null, (Drawable) null);
+            textView.setCompoundDrawablePadding(AndroidUtilities.dp(6.0f));
         }
-        canvas.save();
-        if (e10 > 0.5f) {
-            float abs2 = Math.abs(e10 - 0.5f) + 0.5f;
-            float f10 = -abs2;
-            float f11 = width * 0.32f;
-            canvas.scale(f10, f10, getBounds().left + f11, getBounds().bottom - f11);
-            float f12 = 1.0f - abs2;
-            canvas.translate((-width) * f12 * 0.4f, f12 * width * 0.4f);
+        this.y.setTextColor(org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.G6, false));
+        this.w.setBackgroundColor(org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.d7, false));
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        ab.m mVar = this.E;
+        if (mVar != null) {
+            mVar.a = true;
+            AnimatorSet animatorSet = (AnimatorSet) mVar.c;
+            if (animatorSet.isRunning()) {
+                return;
+            }
+            animatorSet.start();
         }
-        Rect bounds2 = getBounds();
-        Drawable drawable2 = this.c;
-        drawable2.setBounds(bounds2);
-        drawable2.setAlpha(this.e);
-        drawable2.draw(canvas);
-        canvas.restore();
-        canvas.save();
-        if (e10 > 0.5f) {
-            float f13 = -(Math.abs(e10 - 0.5f) + 0.5f);
-            float f14 = 0.32f * width;
-            canvas.scale(f13, f13, getBounds().right - f14, getBounds().top + f14);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        ab.m mVar = this.E;
+        if (mVar != null) {
+            mVar.a = false;
+            ((AnimatorSet) mVar.c).cancel();
         }
-        canvas.rotate(180.0f, centerX, centerY);
-        if (e10 > 0.5f) {
-            float abs3 = 1.0f - (Math.abs(e10 - 0.5f) + 0.5f);
-            canvas.translate((-width) * abs3 * 0.4f, width * abs3 * 0.4f);
-        }
-        drawable2.setBounds(getBounds());
-        drawable2.setAlpha(this.e);
-        drawable2.draw(canvas);
-        canvas.restore();
-        canvas.restore();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return this.c.getIntrinsicHeight();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return this.c.getIntrinsicWidth();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i9) {
-        this.e = i9;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        this.c.setColorFilter(colorFilter);
-        this.d.setColorFilter(colorFilter);
     }
 }

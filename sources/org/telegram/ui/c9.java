@@ -2,128 +2,61 @@ package org.telegram.ui;
 
 import android.content.Context;
 import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.drawable.Drawable;
-import android.text.SpannableString;
-import android.text.style.ImageSpan;
-import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
-import java.util.ArrayList;
-import org.telegram.messenger.DialogObject;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.CheckBoxBase;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class c9 extends org.telegram.ui.Components.k41 {
-    public static final /* synthetic */ int a = 0;
+public final class c9 extends FrameLayout {
+    public final int a;
+    public final org.telegram.ui.Components.h9 b;
+    public final ImageView c;
+    public final org.telegram.ui.Cells.f6 d;
+    public final org.telegram.ui.Components.hp e;
 
-    static {
-        org.telegram.ui.Components.k41.setup(new c9());
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r12v10, types: [boolean, int] */
-    /* JADX WARN: Type inference failed for: r12v12 */
-    /* JADX WARN: Type inference failed for: r12v9 */
-    @Override // org.telegram.ui.Components.k41
-    public final void bindView(View view, org.telegram.ui.Components.l41 l41Var, boolean z10, org.telegram.ui.Components.z41 z41Var, org.telegram.ui.Components.i51 i51Var) {
-        SpannableString spannableString;
-        boolean z11;
-        ?? r12;
-        e9 e9Var = (e9) l41Var.G;
-        d9 d9Var = (d9) view;
-        View.OnClickListener onClickListener = l41Var.D;
-        int i9 = d9Var.a;
-        org.telegram.ui.Components.c9 c9Var = d9Var.b;
-        org.telegram.ui.Cells.h6 h6Var = d9Var.d;
-        ImageView imageView = d9Var.c;
-        boolean z12 = e9Var.e;
-        ArrayList arrayList = e9Var.c;
-        ArrayList arrayList2 = e9Var.b;
-        imageView.setImageResource(z12 ? R.drawable.menu_videocall : R.drawable.menu_call_create_2_24);
-        TLRPC.Message message = (TLRPC.Message) arrayList.get(0);
-        String str = LocaleController.isRTL ? "\u202b" : "";
-        if (arrayList.size() == 1) {
-            StringBuilder e10 = ta.b.e(str, "  ");
-            e10.append(LocaleController.formatDateCallLog(message.date));
-            spannableString = new SpannableString(e10.toString());
-        } else {
-            spannableString = new SpannableString(String.format(str.concat("  (%d) %s"), Integer.valueOf(arrayList.size()), LocaleController.formatDateCallLog(message.date)));
+    public c9(Context context, int i10) {
+        super(context);
+        this.a = i10;
+        org.telegram.ui.Cells.f6 f6Var = new org.telegram.ui.Cells.f6(context, null);
+        this.d = f6Var;
+        f6Var.I0 = true;
+        f6Var.A0 = true;
+        f6Var.setPadding(LocaleController.isRTL ? AndroidUtilities.dp(32.0f) : 0, 0, LocaleController.isRTL ? 0 : AndroidUtilities.dp(32.0f), 0);
+        int dp = AndroidUtilities.dp(LocaleController.isRTL ? 2.0f : -2.0f);
+        int i11 = -AndroidUtilities.dp(7.0f);
+        f6Var.U = dp;
+        f6Var.V = i11;
+        addView(f6Var, i7.f6.c(-1.0f, -1));
+        org.telegram.ui.Components.h9 h9Var = new org.telegram.ui.Components.h9(context, false);
+        this.b = h9Var;
+        h9Var.setAvatarsTextSize(AndroidUtilities.dp(18.0f));
+        h9Var.setStepFactor(0.4f);
+        h9Var.setSize(AndroidUtilities.dp(29.0f));
+        h9Var.setCentered(true);
+        h9Var.setVisibility(8);
+        addView(h9Var, i7.f6.d(72, -1.0f, LocaleController.isRTL ? 5 : 3, -2.0f, 0.0f, 0.0f, 0.0f));
+        ImageView imageView = new ImageView(context);
+        this.c = imageView;
+        imageView.setColorFilter(org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.il, false), PorterDuff.Mode.SRC_IN);
+        imageView.setBackground(org.telegram.ui.ActionBar.g6.f0(org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.i6, false), 1, -1));
+        imageView.setScaleType(ImageView.ScaleType.CENTER);
+        imageView.setContentDescription(LocaleController.getString(R.string.Call));
+        addView(imageView, i7.f6.d(48, 48.0f, (LocaleController.isRTL ? 3 : 5) | 16, 8.0f, 0.0f, 8.0f, 0.0f));
+        org.telegram.ui.Components.hp hpVar = new org.telegram.ui.Components.hp(context, 21, null);
+        this.e = hpVar;
+        CheckBoxBase checkBoxBase = hpVar.getCheckBoxBase();
+        int w02 = org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.hl, false);
+        if (checkBoxBase.x != w02) {
+            checkBoxBase.x = w02;
+            checkBoxBase.b();
         }
-        int i10 = e9Var.d;
-        if (i10 == 0) {
-            Drawable mutate = d9Var.getContext().getResources().getDrawable(R.drawable.mini_call_out_16).mutate();
-            mutate.setBounds(0, 0, mutate.getIntrinsicWidth(), mutate.getIntrinsicHeight());
-            mutate.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.f6.w0(null, org.telegram.ui.ActionBar.f6.A6, false), PorterDuff.Mode.MULTIPLY));
-            spannableString.setSpan(new ImageSpan(mutate, 0), str.length(), str.length() + 1, 33);
-        } else if (i10 == 1) {
-            Drawable mutate2 = d9Var.getContext().getResources().getDrawable(R.drawable.mini_call_in_16).mutate();
-            mutate2.setBounds(0, 0, mutate2.getIntrinsicWidth(), mutate2.getIntrinsicHeight());
-            mutate2.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.f6.w0(null, org.telegram.ui.ActionBar.f6.A6, false), PorterDuff.Mode.MULTIPLY));
-            spannableString.setSpan(new ImageSpan(mutate2, 0), str.length(), str.length() + 1, 33);
-        } else if (i10 == 2) {
-            Drawable mutate3 = d9Var.getContext().getResources().getDrawable(R.drawable.mini_call_in_16).mutate();
-            mutate3.setBounds(0, 0, mutate3.getIntrinsicWidth(), mutate3.getIntrinsicHeight());
-            mutate3.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.f6.w0(null, org.telegram.ui.ActionBar.f6.r7, false), PorterDuff.Mode.MULTIPLY));
-            spannableString.setSpan(new ImageSpan(mutate3, 0), str.length(), str.length() + 1, 33);
-        } else if (i10 == 3) {
-            Drawable mutate4 = d9Var.getContext().getResources().getDrawable(R.drawable.mini_call_out_16).mutate();
-            mutate4.setBounds(0, 0, mutate4.getIntrinsicWidth(), mutate4.getIntrinsicHeight());
-            mutate4.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.f6.w0(null, org.telegram.ui.ActionBar.f6.r7, false), PorterDuff.Mode.MULTIPLY));
-            spannableString.setSpan(new ImageSpan(mutate4, 0), str.length(), str.length() + 1, 33);
-        }
-        if (e9Var.a != 0) {
-            StringBuilder sb2 = new StringBuilder();
-            for (int i11 = 0; i11 < Math.min(3, arrayList2.size()); i11++) {
-                if (i11 > 0) {
-                    sb2.append(", ");
-                }
-                sb2.append(DialogObject.getShortName((TLObject) arrayList2.get(i11)));
-            }
-            if (arrayList2.size() > 3) {
-                sb2.append(" ");
-                r12 = 0;
-                sb2.append(LocaleController.formatPluralString("AndOther", arrayList2.size() - 3, new Object[0]));
-            } else {
-                r12 = 0;
-            }
-            ArrayList arrayList3 = new ArrayList(arrayList2);
-            arrayList3.add(UserConfig.getInstance(i9).getCurrentUser());
-            h6Var.setAllowEmojiStatus(r12);
-            d9Var.d.t(!arrayList2.isEmpty() ? arrayList2.get(r12) : null, null, sb2.toString(), spannableString, false, false);
-            c9Var.setVisibility(r12);
-            h6Var.r.clearImage();
-            h6Var.f = true;
-            int min = Math.min(3, arrayList3.size());
-            for (int i12 = 0; i12 < min; i12++) {
-                c9Var.b(i12, (TLObject) arrayList3.get(i12), i9);
-            }
-            z11 = false;
-            c9Var.a(false);
-        } else {
-            SpannableString spannableString2 = spannableString;
-            z11 = false;
-            h6Var.setAllowEmojiStatus(true);
-            d9Var.d.t(!arrayList2.isEmpty() ? arrayList2.get(0) : null, null, null, spannableString2, false, false);
-            c9Var.setVisibility(8);
-            h6Var.f = false;
-        }
-        imageView.setTag(e9Var);
-        imageView.setOnClickListener(onClickListener);
-        boolean z13 = l41Var.e;
-        org.telegram.ui.Components.dp dpVar = d9Var.e;
-        if (dpVar == null) {
-            return;
-        }
-        dpVar.a(z13, z11);
-    }
-
-    @Override // org.telegram.ui.Components.k41
-    public final View createView(Context context, org.telegram.ui.Components.wk0 wk0Var, int i9, int i10, org.telegram.ui.ActionBar.b6 b6Var) {
-        return new d9(context, i9);
+        hpVar.b(-1, org.telegram.ui.ActionBar.g6.d6, org.telegram.ui.ActionBar.g6.k7);
+        hpVar.setDrawUnchecked(false);
+        hpVar.setDrawBackgroundAsArc(3);
+        addView(hpVar, i7.f6.d(24, 24.0f, (LocaleController.isRTL ? 5 : 3) | 48, 42.0f, 32.0f, 42.0f, 0.0f));
     }
 }

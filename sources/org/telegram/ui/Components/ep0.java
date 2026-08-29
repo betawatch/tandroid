@@ -1,57 +1,32 @@
 package org.telegram.ui.Components;
 
-import android.text.Editable;
-import android.text.TextUtils;
-import android.text.TextWatcher;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class ep0 implements TextWatcher {
-    public final /* synthetic */ rp0 a;
+public final class ep0 extends f2.v {
+    public final /* synthetic */ int c;
+    public final /* synthetic */ dq0 d;
 
-    public ep0(rp0 rp0Var) {
-        this.a = rp0Var;
+    public /* synthetic */ ep0(dq0 dq0Var, int i10) {
+        this.c = i10;
+        this.d = dq0Var;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        rp0 rp0Var = this.a;
-        jp0 jp0Var = rp0Var.G;
-        gw0 gw0Var = rp0Var.M;
-        m10 m10Var = rp0Var.u0;
-        if (!TextUtils.isEmpty(m10Var.r.getText())) {
-            rp0Var.K0(false);
-        }
-        if (rp0Var.w0) {
-            String obj = m10Var.r.getText().toString();
-            if (obj.length() != 0) {
-                if (gw0Var != null) {
-                    gw0Var.d.setText(LocaleController.getString(R.string.NoResult));
+    @Override // f2.v
+    public final int i(int i10) {
+        switch (this.c) {
+            case 0:
+                if (i10 == 0) {
+                    return this.d.D.J;
                 }
-            } else if (rp0Var.B.getAdapter() != jp0Var) {
-                int E0 = rp0.E0(rp0Var);
-                gw0Var.d.setText(LocaleController.getString(R.string.NoResult));
-                gw0Var.e(false, true);
-                rp0Var.K0(false);
-                jp0Var.l();
-                if (E0 > 0) {
-                    rp0Var.D.h1(0, -E0);
+                return 1;
+            case 1:
+                zp0 zp0Var = this.d.I;
+                return (i10 == zp0Var.w || i10 == zp0Var.x || i10 == zp0Var.y || i10 == zp0Var.B || zp0Var.j(i10) == 0) ? 4 : 1;
+            default:
+                if (i10 == 0) {
+                    return this.d.E.J;
                 }
-            }
-            np0 np0Var = rp0Var.I;
-            if (np0Var != null) {
-                np0Var.E(obj);
-            }
+                return 1;
         }
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i9, int i10, int i11) {
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i9, int i10, int i11) {
     }
 }

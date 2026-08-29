@@ -1,17 +1,51 @@
 package g9;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
-/* loaded from: classes.dex */
-public final class w implements q9.d {
-    public static final w a = new w();
-    public static final q9.c b = q9.c.c("rolloutId");
-    public static final q9.c c = q9.c.c("variantId");
+import java.util.concurrent.Executors;
+import java.util.concurrent.ThreadFactory;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicLong;
 
-    @Override // q9.a
-    public final void a(Object obj, Object obj2) {
-        q9.e eVar = (q9.e) obj2;
-        x0 x0Var = (x0) ((x1) obj);
-        eVar.g(b, x0Var.a);
-        eVar.g(c, x0Var.b);
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* loaded from: classes.dex */
+public final class w implements ThreadFactory {
+    public final /* synthetic */ int a;
+    public final Object b;
+    public final Object c;
+
+    public w(String str) {
+        this.a = 1;
+        this.c = Executors.defaultThreadFactory();
+        this.b = str;
+    }
+
+    @Override // java.util.concurrent.ThreadFactory
+    public final Thread newThread(Runnable runnable) {
+        switch (this.a) {
+            case 0:
+                Thread newThread = Executors.defaultThreadFactory().newThread(new v(runnable));
+                newThread.setName(((String) this.b) + ((AtomicLong) this.c).getAndIncrement());
+                return newThread;
+            case 1:
+                Thread newThread2 = ((ThreadFactory) this.c).newThread(new b9.k(1, runnable));
+                newThread2.setName((String) this.b);
+                return newThread2;
+            default:
+                AtomicInteger atomicInteger = (AtomicInteger) this.c;
+                Thread newThread3 = ((ThreadFactory) this.b).newThread(runnable);
+                newThread3.setName("PlayBillingLibrary-" + atomicInteger.getAndIncrement());
+                return newThread3;
+        }
+    }
+
+    public w(p2.b bVar) {
+        this.a = 2;
+        this.b = Executors.defaultThreadFactory();
+        this.c = new AtomicInteger(1);
+    }
+
+    public w(String str, AtomicLong atomicLong) {
+        this.a = 0;
+        this.b = str;
+        this.c = atomicLong;
     }
 }

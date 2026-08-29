@@ -3,40 +3,40 @@ package org.telegram.messenger;
 import android.content.SharedPreferences;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public class AccountInstance {
     private static volatile AccountInstance[] Instance = new AccountInstance[4];
     private int currentAccount;
 
-    public AccountInstance(int i9) {
-        this.currentAccount = i9;
+    public AccountInstance(int i10) {
+        this.currentAccount = i10;
     }
 
-    public static AccountInstance getInstance(int i9) {
+    public static AccountInstance getInstance(int i10) {
         AccountInstance accountInstance;
-        AccountInstance accountInstance2 = Instance[i9];
+        AccountInstance accountInstance2 = Instance[i10];
         if (accountInstance2 != null) {
             return accountInstance2;
         }
         synchronized (AccountInstance.class) {
             try {
-                accountInstance = Instance[i9];
+                accountInstance = Instance[i10];
                 if (accountInstance == null) {
                     AccountInstance[] accountInstanceArr = Instance;
-                    AccountInstance accountInstance3 = new AccountInstance(i9);
-                    accountInstanceArr[i9] = accountInstance3;
+                    AccountInstance accountInstance3 = new AccountInstance(i10);
+                    accountInstanceArr[i10] = accountInstance3;
                     accountInstance = accountInstance3;
                 }
-            } catch (Throwable th) {
-                throw th;
+            } catch (Throwable th2) {
+                throw th2;
             }
         }
         return accountInstance;
     }
 
-    public xf.s0 getColorPalette() {
-        return xf.s0.e(this.currentAccount);
+    public ag.h1 getColorPalette() {
+        return ag.h1.e(this.currentAccount);
     }
 
     public ConnectionsManager getConnectionsManager() {

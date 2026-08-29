@@ -1,25 +1,17 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class cp implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ dp b;
+public final class cp implements s60 {
+    public final /* synthetic */ kp a;
 
-    public /* synthetic */ cp(dp dpVar, int i9) {
-        this.a = i9;
-        this.b = dpVar;
+    public cp(kp kpVar) {
+        this.a = kpVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.x.d.L = false;
-                break;
-            default:
-                this.b.x.d.L = false;
-                break;
-        }
+    @Override // org.telegram.ui.s60
+    public final void a(t60 t60Var, long j10) {
+        kp kpVar = this.a;
+        kpVar.Y(kpVar.getMessagesController().getChat(Long.valueOf(j10)), t60Var);
     }
 }

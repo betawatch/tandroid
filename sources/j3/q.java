@@ -1,19 +1,21 @@
 package j3;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+import android.util.Base64;
+
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public interface q {
-    void D();
+public final /* synthetic */ class q implements p8.i {
+    public final /* synthetic */ int a;
 
-    void a(long j10);
-
-    void g();
-
-    void o(int i9, long j10, long j11);
-
-    void onSkipSilenceEnabledChanged(boolean z10);
-
-    void w(Exception exc);
-
-    void x();
+    @Override // p8.i
+    public final Object get() {
+        switch (this.a) {
+            case 0:
+                return new j(new com.google.android.exoplayer2.upstream.r(), 2500, 5000);
+            default:
+                byte[] bArr = new byte[12];
+                k3.h.h.nextBytes(bArr);
+                return Base64.encodeToString(bArr, 10);
+        }
+    }
 }

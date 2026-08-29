@@ -3,19 +3,19 @@ package org.telegram.ui;
 import android.view.View;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class tg0 implements org.telegram.ui.Components.ok0, org.telegram.ui.ActionBar.b2 {
+public final /* synthetic */ class tg0 implements org.telegram.ui.Components.bl0, org.telegram.ui.ActionBar.b2 {
     public final /* synthetic */ hh0 a;
 
     public /* synthetic */ tg0(hh0 hh0Var) {
         this.a = hh0Var;
     }
 
-    @Override // org.telegram.ui.Components.ok0
-    public boolean a(int i9, View view) {
+    @Override // org.telegram.ui.Components.bl0
+    public boolean c(int i10, View view) {
         hh0 hh0Var = this.a;
-        if ((i9 < hh0Var.y || i9 >= hh0Var.A) && (i9 < hh0Var.D || i9 >= hh0Var.E)) {
+        if ((i10 < hh0Var.y || i10 >= hh0Var.A) && (i10 < hh0Var.D || i10 >= hh0Var.E)) {
             return false;
         }
         ((eh0) view).x.callOnClick();
@@ -28,7 +28,7 @@ public final /* synthetic */ class tg0 implements org.telegram.ui.Components.ok0
     }
 
     @Override // org.telegram.ui.ActionBar.b2
-    public void f(org.telegram.ui.ActionBar.c2 c2Var, int i9) {
+    public void g(org.telegram.ui.ActionBar.c2 c2Var, int i10) {
         TLRPC.TL_messages_deleteRevokedExportedChatInvites tL_messages_deleteRevokedExportedChatInvites = new TLRPC.TL_messages_deleteRevokedExportedChatInvites();
         hh0 hh0Var = this.a;
         tL_messages_deleteRevokedExportedChatInvites.peer = hh0Var.getMessagesController().getInputPeer(-hh0Var.n);

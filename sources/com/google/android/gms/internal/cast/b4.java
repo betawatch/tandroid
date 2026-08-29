@@ -1,79 +1,51 @@
 package com.google.android.gms.internal.cast;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
+
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class b4 extends f7.q5 {
-    @Override // f7.q5
-    public final z3 a(f4 f4Var) {
-        z3 z3Var;
-        z3 z3Var2 = z3.d;
-        synchronized (f4Var) {
-            try {
-                z3Var = f4Var.b;
-                if (z3Var != z3Var2) {
-                    f4Var.b = z3Var2;
-                }
-            } catch (Throwable th) {
-                throw th;
-            }
-        }
-        return z3Var;
+public final class b4 extends h7.x5 {
+    public final AtomicReferenceFieldUpdater a;
+    public final AtomicReferenceFieldUpdater b;
+    public final AtomicReferenceFieldUpdater c;
+    public final AtomicReferenceFieldUpdater d;
+    public final AtomicReferenceFieldUpdater e;
+
+    public b4(AtomicReferenceFieldUpdater atomicReferenceFieldUpdater, AtomicReferenceFieldUpdater atomicReferenceFieldUpdater2, AtomicReferenceFieldUpdater atomicReferenceFieldUpdater3, AtomicReferenceFieldUpdater atomicReferenceFieldUpdater4, AtomicReferenceFieldUpdater atomicReferenceFieldUpdater5) {
+        this.a = atomicReferenceFieldUpdater;
+        this.b = atomicReferenceFieldUpdater2;
+        this.c = atomicReferenceFieldUpdater3;
+        this.d = atomicReferenceFieldUpdater4;
+        this.e = atomicReferenceFieldUpdater5;
     }
 
-    @Override // f7.q5
-    public final e4 b(f4 f4Var) {
-        e4 e4Var;
-        e4 e4Var2 = e4.c;
-        synchronized (f4Var) {
-            try {
-                e4Var = f4Var.c;
-                if (e4Var != e4Var2) {
-                    f4Var.c = e4Var2;
-                }
-            } catch (Throwable th) {
-                throw th;
-            }
-        }
-        return e4Var;
+    @Override // h7.x5
+    public final a4 a(g4 g4Var) {
+        return (a4) this.d.getAndSet(g4Var, a4.d);
     }
 
-    @Override // f7.q5
-    public final void c(e4 e4Var, e4 e4Var2) {
-        e4Var.b = e4Var2;
+    @Override // h7.x5
+    public final f4 b(g4 g4Var) {
+        return (f4) this.c.getAndSet(g4Var, f4.c);
     }
 
-    @Override // f7.q5
-    public final void d(e4 e4Var, Thread thread) {
-        e4Var.a = thread;
+    @Override // h7.x5
+    public final void c(f4 f4Var, f4 f4Var2) {
+        this.b.lazySet(f4Var, f4Var2);
     }
 
-    @Override // f7.q5
-    public final boolean e(f4 f4Var, Object obj, Object obj2) {
-        synchronized (f4Var) {
-            try {
-                if (f4Var.a != obj) {
-                    return false;
-                }
-                f4Var.a = obj2;
-                return true;
-            } catch (Throwable th) {
-                throw th;
-            }
-        }
+    @Override // h7.x5
+    public final void d(f4 f4Var, Thread thread) {
+        this.a.lazySet(f4Var, thread);
     }
 
-    @Override // f7.q5
-    public final boolean f(f4 f4Var, e4 e4Var, e4 e4Var2) {
-        synchronized (f4Var) {
-            try {
-                if (f4Var.c != e4Var) {
-                    return false;
-                }
-                f4Var.c = e4Var2;
-                return true;
-            } catch (Throwable th) {
-                throw th;
-            }
-        }
+    @Override // h7.x5
+    public final boolean e(g4 g4Var, Object obj, Object obj2) {
+        return h7.y5.a(this.e, g4Var, obj, obj2);
+    }
+
+    @Override // h7.x5
+    public final boolean f(g4 g4Var, f4 f4Var, f4 f4Var2) {
+        return h7.y5.a(this.c, g4Var, f4Var, f4Var2);
     }
 }

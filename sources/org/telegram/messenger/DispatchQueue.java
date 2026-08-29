@@ -7,7 +7,7 @@ import android.os.Process;
 import android.os.SystemClock;
 import java.util.concurrent.CountDownLatch;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public class DispatchQueue extends Thread {
     private static final int THREAD_PRIORITY_DEFAULT = -1000;
@@ -92,20 +92,20 @@ public class DispatchQueue extends Thread {
         Looper.prepare();
         this.handler = new Handler(Looper.myLooper(), new y1(this, 0));
         this.syncLatch.countDown();
-        int i9 = this.threadPriority;
-        if (i9 != THREAD_PRIORITY_DEFAULT) {
-            Process.setThreadPriority(i9);
+        int i10 = this.threadPriority;
+        if (i10 != THREAD_PRIORITY_DEFAULT) {
+            Process.setThreadPriority(i10);
         }
         Looper.loop();
     }
 
-    public void sendMessage(Message message, int i9) {
+    public void sendMessage(Message message, int i10) {
         try {
             this.syncLatch.await();
-            if (i9 <= 0) {
+            if (i10 <= 0) {
                 this.handler.sendMessage(message);
             } else {
-                this.handler.sendMessageDelayed(message, i9);
+                this.handler.sendMessageDelayed(message, i10);
             }
         } catch (Exception unused) {
         }
@@ -114,9 +114,9 @@ public class DispatchQueue extends Thread {
     public DispatchQueue(String str, boolean z10) {
         this.handler = null;
         this.syncLatch = new CountDownLatch(1);
-        int i9 = indexPointer;
-        indexPointer = i9 + 1;
-        this.index = i9;
+        int i10 = indexPointer;
+        indexPointer = i10 + 1;
+        this.index = i10;
         this.threadPriority = THREAD_PRIORITY_DEFAULT;
         setName(str);
         if (z10) {
@@ -136,13 +136,13 @@ public class DispatchQueue extends Thread {
         return this.handler.postDelayed(runnable, j10);
     }
 
-    public DispatchQueue(String str, boolean z10, int i9) {
+    public DispatchQueue(String str, boolean z10, int i10) {
         this.handler = null;
         this.syncLatch = new CountDownLatch(1);
-        int i10 = indexPointer;
-        indexPointer = i10 + 1;
-        this.index = i10;
-        this.threadPriority = i9;
+        int i11 = indexPointer;
+        indexPointer = i11 + 1;
+        this.index = i11;
+        this.threadPriority = i10;
         setName(str);
         if (z10) {
             start();

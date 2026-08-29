@@ -1,70 +1,82 @@
 package s3;
 
-import h3.t1;
-import m3.v;
-import m3.w;
-import m3.x;
+import ab.e;
+import f5.w;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class c {
-    public int A;
-    public int B;
-    public int C;
-    public float D;
-    public float E;
-    public float F;
-    public float G;
-    public float H;
-    public float I;
-    public float J;
-    public float K;
-    public float L;
-    public float M;
-    public byte[] N;
-    public int O;
-    public int P;
-    public int Q;
-    public long R;
-    public long S;
-    public x T;
-    public boolean U;
-    public boolean V;
-    public String W;
-    public w X;
-    public int Y;
-    public String a;
-    public String b;
-    public int c;
-    public int d;
-    public int e;
-    public int f;
-    public int g;
-    public boolean h;
-    public byte[] i;
-    public v j;
-    public byte[] k;
-    public l3.c l;
-    public int m;
-    public int n;
-    public int o;
-    public int p;
-    public int q;
-    public int r;
-    public float s;
-    public float t;
-    public float u;
-    public byte[] v;
-    public int w;
-    public boolean x;
-    public int y;
-    public int z;
+public final class c extends e {
+    public long b;
+    public long[] c;
+    public long[] d;
 
-    public final byte[] a(String str) {
-        byte[] bArr = this.k;
-        if (bArr != null) {
-            return bArr;
+    public static Serializable Q(int i10, w wVar) {
+        if (i10 == 0) {
+            return Double.valueOf(Double.longBitsToDouble(wVar.l()));
         }
-        throw t1.a("Missing CodecPrivate for codec " + str, null);
+        if (i10 == 1) {
+            return Boolean.valueOf(wVar.r() == 1);
+        }
+        if (i10 == 2) {
+            return S(wVar);
+        }
+        if (i10 != 3) {
+            if (i10 == 8) {
+                return R(wVar);
+            }
+            if (i10 != 10) {
+                if (i10 != 11) {
+                    return null;
+                }
+                Date date = new Date((long) Double.longBitsToDouble(wVar.l()));
+                wVar.D(2);
+                return date;
+            }
+            int u10 = wVar.u();
+            ArrayList arrayList = new ArrayList(u10);
+            for (int i11 = 0; i11 < u10; i11++) {
+                Serializable Q = Q(wVar.r(), wVar);
+                if (Q != null) {
+                    arrayList.add(Q);
+                }
+            }
+            return arrayList;
+        }
+        HashMap hashMap = new HashMap();
+        while (true) {
+            String S = S(wVar);
+            int r6 = wVar.r();
+            if (r6 == 9) {
+                return hashMap;
+            }
+            Serializable Q2 = Q(r6, wVar);
+            if (Q2 != null) {
+                hashMap.put(S, Q2);
+            }
+        }
+    }
+
+    public static HashMap R(w wVar) {
+        int u10 = wVar.u();
+        HashMap hashMap = new HashMap(u10);
+        for (int i10 = 0; i10 < u10; i10++) {
+            String S = S(wVar);
+            Serializable Q = Q(wVar.r(), wVar);
+            if (Q != null) {
+                hashMap.put(S, Q);
+            }
+        }
+        return hashMap;
+    }
+
+    public static String S(w wVar) {
+        int w10 = wVar.w();
+        int i10 = wVar.b;
+        wVar.D(w10);
+        return new String(wVar.a, i10, w10);
     }
 }

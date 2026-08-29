@@ -1,45 +1,50 @@
 package org.telegram.ui.Components.voip;
 
-import android.animation.ValueAnimator;
+import android.app.Activity;
+import android.graphics.Canvas;
+import android.graphics.CornerPathEffect;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.Shader;
+import nh.t3;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class f3 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ i3 b;
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* loaded from: classes.dex */
+public final class f3 extends t3 {
+    public final Paint H0;
+    public final o1 I0;
 
-    public /* synthetic */ f3(i3 i3Var, int i9) {
-        this.a = i9;
-        this.b = i3Var;
+    public f3(Activity activity, int i10, o1 o1Var, boolean z10) {
+        super(activity, i10);
+        Paint paint = new Paint(1);
+        this.H0 = paint;
+        this.I0 = o1Var;
+        o1Var.a(this);
+        paint.setPathEffect(new CornerPathEffect(this.v));
+        if (z10) {
+            i();
+        }
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                i3 i3Var = this.b;
-                i3Var.getClass();
-                i3Var.C = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                i3Var.invalidate();
-                break;
-            case 1:
-                i3 i3Var2 = this.b;
-                i3Var2.getClass();
-                i3Var2.w = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-                i3Var2.invalidate();
-                break;
-            case 2:
-                i3 i3Var3 = this.b;
-                i3Var3.getClass();
-                i3Var3.s = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-                i3Var3.invalidate();
-                break;
-            default:
-                i3 i3Var4 = this.b;
-                i3Var4.getClass();
-                i3Var4.r = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-                i3Var4.invalidate();
-                break;
+    @Override // nh.t3
+    public final void c(Canvas canvas, float f9) {
+        o1 o1Var = this.I0;
+        Shader shader = o1Var.b().getShader();
+        Paint paint = this.H0;
+        paint.setShader(shader);
+        canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), (int) (Math.min(this.B.getAlpha(), o1Var.b().getAlpha()) * f9), 31);
+        Path path = this.p0;
+        canvas.drawPath(path, paint);
+        if (o1Var.e) {
+            paint.setShader(((Paint) o1Var.d.d).getShader());
+            canvas.drawPath(path, paint);
         }
+        canvas.restore();
+    }
+
+    @Override // nh.t3, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        this.I0.d(getX(), getY());
+        super.dispatchDraw(canvas);
     }
 }

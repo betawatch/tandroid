@@ -3,16 +3,16 @@ package org.telegram.ui;
 import android.view.View;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class vp0 implements org.telegram.ui.Components.xk0 {
+public final class vp0 implements org.telegram.ui.Components.kl0 {
     public final /* synthetic */ zp0 a;
 
     public vp0(zp0 zp0Var) {
         this.a = zp0Var;
     }
 
-    @Override // org.telegram.ui.Components.xk0
+    @Override // org.telegram.ui.Components.kl0
     public final void a(boolean z10) {
         org.telegram.ui.ActionBar.b5 b5Var;
         zp0 zp0Var = this.a;
@@ -24,23 +24,23 @@ public final class vp0 implements org.telegram.ui.Components.xk0 {
         zp0Var.G.d1(true);
     }
 
-    @Override // org.telegram.ui.Components.xk0
-    public final boolean b(int i9) {
-        return this.a.H.j(i9) == 0;
+    @Override // org.telegram.ui.Components.kl0
+    public final boolean b(int i10) {
+        return this.a.H.j(i10) == 0;
     }
 
-    @Override // org.telegram.ui.Components.xk0
+    @Override // org.telegram.ui.Components.kl0
     public final void c(View view, boolean z10) {
-        if (z10 == this.a.T && (view instanceof org.telegram.ui.Cells.t5)) {
-            org.telegram.ui.Cells.t5 t5Var = (org.telegram.ui.Cells.t5) view;
-            t5Var.w.d(t5Var);
+        if (z10 == this.a.T && (view instanceof org.telegram.ui.Cells.r5)) {
+            org.telegram.ui.Cells.r5 r5Var = (org.telegram.ui.Cells.r5) view;
+            r5Var.w.d(r5Var);
         }
     }
 
-    @Override // org.telegram.ui.Components.xk0
-    public final boolean d(int i9) {
+    @Override // org.telegram.ui.Components.kl0
+    public final boolean d(int i10) {
         zp0 zp0Var = this.a;
         MediaController.AlbumEntry albumEntry = zp0Var.F;
-        return zp0Var.b.containsKey(albumEntry != null ? Integer.valueOf(albumEntry.photos.get(i9).imageId) : ((MediaController.SearchImage) zp0Var.f.get(i9)).id);
+        return zp0Var.b.containsKey(albumEntry != null ? Integer.valueOf(albumEntry.photos.get(i10).imageId) : ((MediaController.SearchImage) zp0Var.f.get(i10)).id);
     }
 }

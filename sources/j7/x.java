@@ -1,29 +1,31 @@
 package j7;
 
-import java.util.Map;
+import java.util.AbstractMap;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class x implements q9.d {
-    public static final /* synthetic */ x b = new x(0);
-    public static final /* synthetic */ x c = new x(1);
-    public final /* synthetic */ int a;
+public final class x extends s {
+    public final /* synthetic */ y c;
 
-    public /* synthetic */ x(int i9) {
-        this.a = i9;
+    public x(y yVar) {
+        this.c = yVar;
     }
 
-    @Override // q9.a
-    public final void a(Object obj, Object obj2) {
-        switch (this.a) {
-            case 0:
-                Map.Entry entry = (Map.Entry) obj;
-                q9.e eVar = (q9.e) obj2;
-                eVar.g(y.g, entry.getKey());
-                eVar.g(y.h, entry.getValue());
-                return;
-            default:
-                throw new q9.b("Couldn't find encoder for type ".concat(String.valueOf(obj.getClass().getCanonicalName())));
-        }
+    @Override // java.util.List
+    public final /* synthetic */ Object get(int i10) {
+        y yVar = this.c;
+        h7.u8.a(i10, yVar.e);
+        int i11 = i10 + i10;
+        Object[] objArr = yVar.d;
+        Object obj = objArr[i11];
+        obj.getClass();
+        Object obj2 = objArr[i11 + 1];
+        obj2.getClass();
+        return new AbstractMap.SimpleImmutableEntry(obj, obj2);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final int size() {
+        return this.c.e;
     }
 }

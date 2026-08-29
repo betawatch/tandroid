@@ -1,127 +1,346 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import android.view.MotionEvent;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.ImageLocation;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
+import android.media.AudioDeviceInfo;
+import android.media.AudioManager;
+import android.os.Build;
+import android.os.PowerManager;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.BuildVars;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.voip.VoIPService;
+import org.telegram.ui.PhotoViewer;
+import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public class bt extends View {
-    public final nz0 a;
-    public final Drawable b;
-    public final ImageReceiver c;
-    public final Rect d;
-    public final RectF e;
-    public kg.d f;
+public final class bt implements SensorEventListener {
+    public int A;
+    public int B;
+    public long C;
+    public boolean E;
+    public boolean F;
+    public float H;
+    public final SensorManager a;
+    public final AudioManager b;
+    public final Sensor c;
+    public final Sensor d;
+    public final Sensor e;
+    public final Sensor f;
+    public final PowerManager.WakeLock h;
+    public boolean n;
+    public boolean r;
+    public x61 s;
+    public boolean v;
+    public long w;
+    public int x;
+    public int y;
+    public long D = 0;
+    public float G = -100.0f;
+    public final float[] I = new float[3];
+    public final float[] J = new float[3];
+    public final float[] K = new float[3];
 
-    public bt(Context context, CharSequence charSequence) {
-        super(context);
-        this.d = new Rect();
-        this.e = new RectF();
-        ImageReceiver imageReceiver = new ImageReceiver(this);
-        this.c = imageReceiver;
-        imageReceiver.setRoundRadius(AndroidUtilities.dp(22.66f));
-        this.a = new nz0(charSequence, 14.0f, AndroidUtilities.bold());
-        Drawable mutate = context.getResources().getDrawable(R.drawable.arrow_newchat).mutate();
-        this.b = mutate;
-        mutate.setColorFilter(new PorterDuffColorFilter(-1711276033, PorterDuff.Mode.SRC_IN));
-    }
-
-    public final void a(TLRPC.Photo photo, Object obj) {
-        TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(photo.sizes, AndroidUtilities.dp(48.0f), false, null, true);
-        TLRPC.PhotoSize closestPhotoSizeWithSize2 = FileLoader.getClosestPhotoSizeWithSize(photo.sizes, AndroidUtilities.dp(24.0f), false, closestPhotoSizeWithSize, false);
-        this.c.setImage(ImageLocation.getForPhoto(closestPhotoSizeWithSize, photo), "24_24", ImageLocation.getForPhoto(closestPhotoSizeWithSize2, photo), "24_24", 0L, null, obj, 0);
-    }
-
-    @Override // android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        if (this.d.contains((int) motionEvent.getX(), (int) motionEvent.getY()) || motionEvent.getAction() != 0) {
-            return super.dispatchTouchEvent(motionEvent);
+    public bt() {
+        SensorManager sensorManager = (SensorManager) ApplicationLoader.applicationContext.getSystemService("sensor");
+        this.a = sensorManager;
+        this.c = sensorManager.getDefaultSensor(8);
+        Sensor defaultSensor = sensorManager.getDefaultSensor(10);
+        this.e = defaultSensor;
+        Sensor defaultSensor2 = sensorManager.getDefaultSensor(9);
+        this.f = defaultSensor2;
+        if (defaultSensor == null || defaultSensor2 == null) {
+            if (BuildVars.LOGS_ENABLED) {
+                FileLog.d("gravity or linear sensor not found");
+            }
+            this.d = sensorManager.getDefaultSensor(1);
+            this.e = null;
+            this.f = null;
         }
-        return false;
+        this.h = ((PowerManager) ApplicationLoader.applicationContext.getSystemService("power")).newWakeLock(32, "telegram:proximity_lock2");
+        this.b = (AudioManager) ApplicationLoader.applicationContext.getSystemService(MediaStreamTrack.AUDIO_TRACK_KIND);
     }
 
-    @Override // android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.c.onAttachedToWindow();
-    }
-
-    @Override // android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.c.onDetachedFromWindow();
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        ImageReceiver imageReceiver = this.c;
-        boolean hasBitmapImage = imageReceiver.hasBitmapImage();
-        int dp = AndroidUtilities.dp(19.0f) + ((int) Math.ceil(this.a.c)) + AndroidUtilities.dp(hasBitmapImage ? 30.33f : 11.33f);
-        int dp2 = AndroidUtilities.dp(24.0f);
-        int width = (getWidth() - dp) / 2;
-        int height = getHeight() / 2;
-        int i9 = height - (dp2 / 2);
-        int i10 = dp + width;
-        Rect rect = this.d;
-        rect.set(width, i9, i10, dp2 + i9);
-        rect.inset(-AndroidUtilities.dp(4.0f), -AndroidUtilities.dp(4.0f));
-        kg.d dVar = this.f;
-        if (dVar != null) {
-            dVar.setBounds(rect);
-            this.f.draw(canvas);
+    public final void a() {
+        x61 x61Var = this.s;
+        if (x61Var == null) {
+            return;
         }
-        if (hasBitmapImage) {
-            float dp3 = AndroidUtilities.dp(0.66f) + width;
-            float f10 = height;
-            float dp4 = f10 - (AndroidUtilities.dp(22.66f) / 2.0f);
-            float dp5 = AndroidUtilities.dp(23.32f) + width;
-            float dp6 = (AndroidUtilities.dp(22.66f) / 2.0f) + f10;
-            RectF rectF = this.e;
-            rectF.set(dp3, dp4, dp5, dp6);
-            imageReceiver.setImageCoords(rectF);
-            imageReceiver.draw(canvas);
+        x61Var.T(this.r ? 0 : 3);
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:125:0x02b5, code lost:
+    
+        if (r6.isBluetoothScoOn() == false) goto L157;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:53:0x02f9  */
+    @Override // android.hardware.SensorEventListener
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void onSensorChanged(SensorEvent sensorEvent) {
+        Sensor sensor;
+        char c3;
+        char c6;
+        char c10;
+        long j10;
+        Sensor sensor2;
+        double d;
+        boolean z10;
+        int i10;
+        boolean z11;
+        int i11;
+        AudioManager audioManager;
+        PowerManager.WakeLock wakeLock;
+        boolean z12;
+        boolean isHeld;
+        if (this.n && VoIPService.getSharedInstance() == null) {
+            int type = sensorEvent.sensor.getType();
+            Sensor sensor3 = this.f;
+            Sensor sensor4 = this.e;
+            float[] fArr = this.K;
+            float[] fArr2 = this.I;
+            Sensor sensor5 = this.d;
+            float[] fArr3 = this.J;
+            if (type == 8) {
+                if (BuildVars.LOGS_ENABLED) {
+                    FileLog.d("proximity changed to " + sensorEvent.values[0] + " max value = " + sensorEvent.sensor.getMaximumRange());
+                }
+                float f9 = this.G;
+                float f10 = sensorEvent.values[0];
+                if (f9 != f10) {
+                    this.F = true;
+                }
+                this.G = f10;
+                if (this.F) {
+                    this.E = f10 < 5.0f && f10 != this.c.getMaximumRange();
+                }
+                sensor2 = sensor3;
+                c3 = 0;
+                c6 = 2;
+                c10 = 1;
+                j10 = 0;
+            } else {
+                Sensor sensor6 = sensorEvent.sensor;
+                if (sensor6 == sensor5) {
+                    if (this.D == 0) {
+                        d = 0.9800000190734863d;
+                        c6 = 2;
+                        c10 = 1;
+                    } else {
+                        c6 = 2;
+                        c10 = 1;
+                        d = 1.0d / (((sensorEvent.timestamp - r8) / 1.0E9d) + 1.0d);
+                    }
+                    this.D = sensorEvent.timestamp;
+                    double d10 = 1.0d - d;
+                    float[] fArr4 = sensorEvent.values;
+                    j10 = 0;
+                    c3 = 0;
+                    float f11 = (float) ((fArr4[0] * d10) + (fArr2[0] * d));
+                    fArr2[0] = f11;
+                    sensor = sensor3;
+                    float f12 = (float) ((fArr4[c10] * d10) + (fArr2[c10] * d));
+                    fArr2[c10] = f12;
+                    float f13 = (float) ((d10 * fArr4[c6]) + (d * fArr2[c6]));
+                    fArr2[c6] = f13;
+                    fArr3[0] = (fArr4[0] * 0.19999999f) + (f11 * 0.8f);
+                    fArr3[c10] = (fArr4[c10] * 0.19999999f) + (f12 * 0.8f);
+                    fArr3[c6] = (fArr4[c6] * 0.19999999f) + (f13 * 0.8f);
+                    fArr[0] = fArr4[0] - fArr2[0];
+                    fArr[c10] = fArr4[c10] - fArr2[c10];
+                    fArr[c6] = fArr4[c6] - fArr2[c6];
+                } else {
+                    sensor = sensor3;
+                    c3 = 0;
+                    c6 = 2;
+                    c10 = 1;
+                    j10 = 0;
+                    if (sensor6 == sensor4) {
+                        float[] fArr5 = sensorEvent.values;
+                        fArr[0] = fArr5[0];
+                        fArr[1] = fArr5[1];
+                        fArr[2] = fArr5[2];
+                    } else {
+                        sensor2 = sensor;
+                        if (sensor6 == sensor2) {
+                            float[] fArr6 = sensorEvent.values;
+                            float f14 = fArr6[0];
+                            fArr2[0] = f14;
+                            fArr3[0] = f14;
+                            float f15 = fArr6[1];
+                            fArr2[1] = f15;
+                            fArr3[1] = f15;
+                            float f16 = fArr6[2];
+                            fArr2[2] = f16;
+                            fArr3[2] = f16;
+                        }
+                    }
+                }
+                sensor2 = sensor;
+            }
+            Sensor sensor7 = sensorEvent.sensor;
+            if (sensor7 == sensor4 || sensor7 == sensor2 || sensor7 == sensor5) {
+                float f17 = (fArr2[c6] * fArr[c6]) + (fArr2[c10] * fArr[c10]) + (fArr2[c3] * fArr[c3]);
+                int i12 = this.A;
+                if (i12 != 6 && ((f17 > 0.0f && this.H > 0.0f) || (f17 < 0.0f && this.H < 0.0f))) {
+                    if (f17 > 0.0f) {
+                        z10 = f17 > 15.0f;
+                        i10 = 1;
+                    } else {
+                        z10 = f17 < -15.0f;
+                        i10 = 2;
+                    }
+                    int i13 = this.y;
+                    if (i13 != 0 && i13 != i10) {
+                        int i14 = this.x;
+                        if (i14 != 6 || !z10) {
+                            if (!z10) {
+                                this.B++;
+                            }
+                            if (this.B == 10 || i14 != 6 || i12 != 0) {
+                                this.x = 0;
+                                this.y = 0;
+                                this.A = 0;
+                                this.B = 0;
+                            }
+                        } else if (i12 < 6) {
+                            int i15 = i12 + 1;
+                            this.A = i15;
+                            if (i15 == 6) {
+                                this.x = 0;
+                                this.y = 0;
+                                this.B = 0;
+                                this.C = System.currentTimeMillis();
+                                if (BuildVars.LOGS_ENABLED && BuildVars.DEBUG_PRIVATE_VERSION) {
+                                    FileLog.d("motion detected");
+                                }
+                            }
+                        }
+                    } else if (z10 && i12 == 0 && (i13 == 0 || i13 == i10)) {
+                        int i16 = this.x;
+                        if (i16 < 6 && !this.E) {
+                            this.y = i10;
+                            int i17 = i16 + 1;
+                            this.x = i17;
+                            if (i17 == 6) {
+                                this.B = 0;
+                            }
+                        }
+                    } else {
+                        if (!z10) {
+                            this.B++;
+                        }
+                        if (i13 != i10 || this.B == 10 || this.x != 6 || i12 != 0) {
+                            this.A = 0;
+                            this.x = 0;
+                            this.y = 0;
+                            this.B = 0;
+                        }
+                    }
+                }
+                this.H = f17;
+                this.v = fArr3[c10] > 2.5f && Math.abs(fArr3[c6]) < 4.0f && Math.abs(fArr3[0]) > 1.5f;
+            }
+            if (this.A == 6 || this.v) {
+                this.w = System.currentTimeMillis();
+            }
+            if (this.A == 6 || this.v || System.currentTimeMillis() - this.w < 60) {
+                try {
+                    i11 = Build.VERSION.SDK_INT;
+                    audioManager = this.b;
+                } catch (Exception e10) {
+                    FileLog.e(e10);
+                }
+                if (i11 >= 23) {
+                    AudioDeviceInfo[] devices = audioManager.getDevices(2);
+                    for (AudioDeviceInfo audioDeviceInfo : devices) {
+                        int type2 = audioDeviceInfo.getType();
+                        if ((type2 == 8 || type2 == 7 || type2 == 26 || type2 == 27 || type2 == 4 || type2 == 3) && audioDeviceInfo.isSink()) {
+                            break;
+                        }
+                    }
+                    if (!VoIPService.isAnyKindOfCallActive() && !PhotoViewer.t1().Q1()) {
+                        z11 = true;
+                        wakeLock = this.h;
+                        if (wakeLock != null && !Build.MANUFACTURER.equalsIgnoreCase("samsung")) {
+                            isHeld = wakeLock.isHeld();
+                            if (!isHeld && !z11) {
+                                if (BuildVars.LOGS_ENABLED) {
+                                    FileLog.d("wake lock releasing");
+                                }
+                                wakeLock.release();
+                            } else if (!isHeld && z11) {
+                                if (BuildVars.LOGS_ENABLED) {
+                                    FileLog.d("wake lock acquiring");
+                                }
+                                wakeLock.acquire();
+                            }
+                        }
+                        z12 = this.E;
+                        if (!z12 && z11) {
+                            if (!this.r) {
+                                this.r = true;
+                                a();
+                            }
+                            this.A = 0;
+                            this.x = 0;
+                            this.y = 0;
+                            this.B = 0;
+                        } else if (z12 || !((sensor5 == null || sensor4 == null) && sensor2 == null && !VoIPService.isAnyKindOfCallActive())) {
+                            if (!this.E && this.r) {
+                                this.r = false;
+                                a();
+                            }
+                        } else if (!this.r) {
+                            this.r = true;
+                            a();
+                        }
+                        if (this.C == j10 && this.A == 6 && Math.abs(System.currentTimeMillis() - this.C) > 1000) {
+                            this.A = 0;
+                            this.x = 0;
+                            this.y = 0;
+                            this.B = 0;
+                            this.C = j10;
+                            return;
+                        }
+                        return;
+                    }
+                } else if (!audioManager.isWiredHeadsetOn()) {
+                    if (!audioManager.isBluetoothA2dpOn()) {
+                    }
+                }
+            }
+            z11 = false;
+            wakeLock = this.h;
+            if (wakeLock != null) {
+                isHeld = wakeLock.isHeld();
+                if (!isHeld) {
+                }
+                if (!isHeld) {
+                    if (BuildVars.LOGS_ENABLED) {
+                    }
+                    wakeLock.acquire();
+                }
+            }
+            z12 = this.E;
+            if (!z12) {
+            }
+            if (z12) {
+            }
+            if (!this.E) {
+                this.r = false;
+                a();
+            }
+            if (this.C == j10) {
+            }
         }
-        this.a.c(width + r2, height, 1.0f, -1, canvas);
-        int dp7 = i10 - AndroidUtilities.dp(17.0f);
-        int dp8 = height - AndroidUtilities.dp(6.0f);
-        int dp9 = i10 - AndroidUtilities.dp(5.0f);
-        int dp10 = AndroidUtilities.dp(6.0f) + height;
-        Drawable drawable = this.b;
-        drawable.setBounds(dp7, dp8, dp9, dp10);
-        drawable.draw(canvas);
     }
 
-    public void setBlurredBackgroundDrawable(kg.d dVar) {
-        dVar.o(AndroidUtilities.dp(4.0f));
-        dVar.p(AndroidUtilities.dp(11.0f));
-        this.f = dVar;
-    }
-
-    public void setImage(Bitmap bitmap) {
-        this.c.setImageBitmap(bitmap);
-        invalidate();
-    }
-
-    public void setImage(String str) {
-        if (str == null) {
-            setImage((Bitmap) null);
-        } else {
-            Utilities.globalQueue.postRunnable(new zq(3, this, str));
-        }
+    @Override // android.hardware.SensorEventListener
+    public final void onAccuracyChanged(Sensor sensor, int i10) {
     }
 }

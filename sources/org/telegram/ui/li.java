@@ -1,101 +1,23 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import org.telegram.messenger.AndroidUtilities;
+import android.app.Activity;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class li extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ qn b;
+public final class li extends org.telegram.ui.Cells.v0 {
+    public final /* synthetic */ tn g2;
 
-    public /* synthetic */ li(qn qnVar, int i9) {
-        this.a = i9;
-        this.b = qnVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public li(Activity activity, org.telegram.ui.ActionBar.c6 c6Var, tn tnVar) {
+        super(activity, c6Var, false);
+        this.g2 = tnVar;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        ij ijVar;
-        switch (this.a) {
-            case 0:
-                qn qnVar = this.b;
-                uk ukVar = qnVar.X2;
-                if (ukVar != null) {
-                    ukVar.setIsMessageTransition(false);
-                    qnVar.X2.h(true);
-                    qnVar.X2.setVisibility(4);
-                    break;
-                }
-                break;
-            case 1:
-                float dp = AndroidUtilities.dp(30.0f);
-                qn qnVar2 = this.b;
-                qnVar2.w9 = dp;
-                qnVar2.o9();
-                break;
-            case 2:
-                qn qnVar3 = this.b;
-                if (qnVar3.fragmentView != null && (ijVar = qnVar3.t0) != null) {
-                    ijVar.invalidate();
-                    qnVar3.fragmentView.invalidate();
-                    break;
-                }
-                break;
-            case 3:
-                this.b.L.setVisibility(4);
-                break;
-            case 4:
-                AndroidUtilities.runOnUIThread(new ri(this, 3), 2000L);
-                break;
-            case 5:
-                qn qnVar4 = this.b;
-                if (animator.equals(qnVar4.c3)) {
-                    qnVar4.c3 = null;
-                    break;
-                }
-                break;
-            case 6:
-                qn qnVar5 = this.b;
-                if (animator.equals(qnVar5.c3)) {
-                    qnVar5.c3 = null;
-                    break;
-                }
-                break;
-            case 7:
-                qn qnVar6 = this.b;
-                if (animator.equals(qnVar6.d3)) {
-                    qnVar6.e3 = 1.0f;
-                    qnVar6.lc();
-                    qnVar6.d3 = null;
-                    break;
-                }
-                break;
-            case 8:
-                qn qnVar7 = this.b;
-                if (animator.equals(qnVar7.d3)) {
-                    qnVar7.e3 = 0.0f;
-                    qnVar7.lc();
-                    qnVar7.d3 = null;
-                    break;
-                }
-                break;
-            case 9:
-                this.b.P4 = null;
-                break;
-            case 10:
-                qn qnVar8 = this.b;
-                qnVar8.za = 1.0f;
-                qnVar8.U.setVisibility(4);
-                qnVar8.K0.setVisibility(4);
-                qnVar8.o9();
-                break;
-            default:
-                qn qnVar9 = this.b;
-                qnVar9.za = 0.0f;
-                qnVar9.o9();
-                break;
-        }
+    @Override // org.telegram.ui.Cells.v0, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        float y8 = getY();
+        tn tnVar = this.g2;
+        W(tnVar.N0.getY() + y8, tnVar.T0.getBackgroundSizeY());
     }
 }

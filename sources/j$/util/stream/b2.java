@@ -6,8 +6,8 @@ import java.util.function.LongConsumer;
 public final /* synthetic */ class b2 implements LongConsumer {
     public final /* synthetic */ int a;
 
-    public /* synthetic */ b2(int i9) {
-        this.a = i9;
+    public /* synthetic */ b2(int i10) {
+        this.a = i10;
     }
 
     private final void accept$j$$util$stream$Node$OfLong$$ExternalSyntheticLambda0(long j10) {
@@ -18,7 +18,7 @@ public final /* synthetic */ class b2 implements LongConsumer {
 
     @Override // java.util.function.LongConsumer
     public final void accept(long j10) {
-        int i9 = this.a;
+        int i10 = this.a;
     }
 
     public final /* synthetic */ LongConsumer andThen(LongConsumer longConsumer) {

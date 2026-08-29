@@ -35,8 +35,8 @@ public abstract class g2 {
                     obj = obj2;
                 }
                 return obj;
-            } catch (Throwable th) {
-                throw th;
+            } catch (Throwable th2) {
+                throw th2;
             }
         }
     }
@@ -90,12 +90,12 @@ public abstract class g2 {
                             query2.close();
                             return r3;
                         }
-                    } catch (Throwable th) {
+                    } catch (Throwable th2) {
                         if (query2 == null) {
-                            throw th;
+                            throw th2;
                         }
                         query2.close();
-                        throw th;
+                        throw th2;
                     }
                 }
                 d(obj, str, null);
@@ -136,8 +136,8 @@ public abstract class g2 {
                 if (obj == k) {
                     f.put(str, str2);
                 }
-            } catch (Throwable th) {
-                throw th;
+            } catch (Throwable th2) {
+                throw th2;
             }
         }
     }
@@ -149,8 +149,8 @@ public abstract class g2 {
                     hashMap.put(str, obj2);
                     f.remove(str);
                 }
-            } catch (Throwable th) {
-                throw th;
+            } catch (Throwable th2) {
+                throw th2;
             }
         }
     }

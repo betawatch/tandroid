@@ -6,7 +6,7 @@ import java.util.function.Consumer;
 public interface j5 extends Consumer {
     void accept(double d);
 
-    void accept(int i9);
+    void accept(int i10);
 
     void accept(long j10);
 

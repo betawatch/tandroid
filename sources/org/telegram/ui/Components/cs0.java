@@ -1,173 +1,91 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
 import android.text.TextUtils;
-import android.view.View;
-import android.widget.EditText;
-import android.widget.ImageView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class cs0 extends org.telegram.ui.ActionBar.e5 {
-    public final /* synthetic */ eu0 f;
+public final class cs0 extends en0 {
+    public final /* synthetic */ qu0 E;
 
-    public cs0(eu0 eu0Var) {
-        this.f = eu0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public cs0(int i10, long j10, Context context, org.telegram.ui.ActionBar.o2 o2Var, org.telegram.ui.ActionBar.c6 c6Var, qu0 qu0Var) {
+        super(i10, j10, context, o2Var, c6Var);
+        this.E = qu0Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.e5
-    public final void l() {
-        this.f.j0.setTranslationX(((View) r0.getParent()).getMeasuredWidth() - r0.getRight());
+    @Override // org.telegram.ui.Components.en0
+    public final void b(boolean z10) {
+        fs0 fs0Var = this.E.E0;
+        fs0Var.setAlpha(1.0f - this.A);
+        fs0Var.setPivotX(fs0Var.getWidth() / 2.0f);
+        fs0Var.setScaleX(((1.0f - this.A) * 0.2f) + 0.8f);
+        fs0Var.setPivotY(AndroidUtilities.dp(48.0f));
+        fs0Var.setScaleY(((1.0f - this.A) * 0.2f) + 0.8f);
     }
 
-    @Override // org.telegram.ui.ActionBar.e5
-    public final void m() {
-        eu0 eu0Var = this.f;
-        rr0 rr0Var = eu0Var.F0;
-        ImageView imageView = eu0Var.n0;
-        eu0Var.R0 = false;
-        eu0Var.S0 = null;
-        org.telegram.ui.ActionBar.w0 w0Var = eu0Var.i0;
-        if (w0Var != null) {
-            w0Var.setVisibility(0);
+    @Override // org.telegram.ui.Components.en0
+    public final boolean f(kg.q0 q0Var) {
+        vs0 vs0Var;
+        qu0 qu0Var = this.E;
+        org.telegram.ui.ActionBar.w0 w0Var = qu0Var.j0;
+        if (w0Var == null) {
+            return false;
         }
-        if (imageView != null && eu0Var.a0(0.0f) > 0.5f) {
-            imageView.setVisibility(0);
-        }
-        if (rr0Var != null) {
-            rr0Var.d.M(new org.telegram.ui.yq(2));
-            rr0Var.h = 0L;
-            rr0Var.g(false);
-        }
-        ks0 ks0Var = eu0Var.P;
-        if (ks0Var != null) {
-            org.telegram.ui.rn rnVar = ks0Var.a;
-            org.telegram.ui.in inVar = rnVar.kc;
-            if (inVar != null) {
-                inVar.m();
+        qu0Var.S0 = q0Var;
+        String obj = w0Var.getSearchField().getText().toString();
+        qu0Var.Q0 = (obj.length() == 0 && qu0Var.S0 == null) ? false : true;
+        qu0Var.m1(false);
+        int i10 = qu0Var.g0[0].B;
+        if (i10 == 11) {
+            bu0 bu0Var = qu0Var.O;
+            if (bu0Var != null) {
+                bu0Var.E(qu0Var.S0, obj);
             }
-            rnVar.o3 = false;
-            rnVar.k0 = false;
-            rnVar.hc(false);
-            rnVar.Ic();
+            AndroidUtilities.hideKeyboard(w0Var.getSearchField());
+            return true;
         }
-        eu0Var.Q0 = false;
-        eu0Var.j0.setVisibility(0);
-        eu0Var.c0.G(null, true);
-        eu0Var.e0.G(null, true);
-        eu0Var.d0.G(null, true);
-        eu0Var.f0.F(null, true);
-        pt0 pt0Var = eu0Var.O;
-        if (pt0Var != null) {
-            pt0Var.E(null, null);
-        }
-        eu0Var.K0(false);
-        pi0 pi0Var = eu0Var.o0;
-        if (pi0Var != null) {
-            pi0Var.animate().scaleX(1.0f).scaleY(1.0f).alpha(1.0f).setDuration(320L).setInterpolator(gr.h).start();
-        }
-        if (eu0Var.v0) {
-            eu0Var.v0 = false;
-        } else {
-            eu0Var.m1(false);
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.e5
-    public final void n() {
-        eu0 eu0Var = this.f;
-        eu0Var.R0 = true;
-        rr0 rr0Var = eu0Var.F0;
-        if (rr0Var != null) {
-            rr0Var.g((eu0Var.getSelectedTab() == 11 || eu0Var.getSelectedTab() == 12) && rr0Var.a());
-        }
-        ImageView imageView = eu0Var.n0;
-        if (imageView != null) {
-            imageView.setVisibility(8);
-        }
-        org.telegram.ui.ActionBar.w0 w0Var = eu0Var.i0;
-        if (w0Var != null) {
-            w0Var.setVisibility(8);
-        }
-        eu0Var.j0.setVisibility(8);
-        eu0Var.K0(true);
-        pi0 pi0Var = eu0Var.o0;
-        if (pi0Var != null) {
-            pi0Var.animate().scaleX(0.6f).scaleY(0.6f).alpha(0.0f).setDuration(320L).setInterpolator(gr.h).start();
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.e5
-    public final void p(fg.g gVar) {
-        ks0 ks0Var = this.f.P;
-        if (ks0Var != null) {
-            ks0Var.a.m9();
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.e5
-    public final void q(EditText editText) {
-        pt0 pt0Var;
-        String obj = editText.getText().toString();
-        eu0 eu0Var = this.f;
-        ks0 ks0Var = eu0Var.P;
-        if (ks0Var != null) {
-            org.telegram.ui.rn rnVar = ks0Var.a;
-            org.telegram.ui.ActionBar.w0 w0Var = rnVar.f0;
-            if (w0Var != null) {
-                rnVar.p3 = obj;
-                w0Var.H(obj, false);
+        if (i10 == 12 && (vs0Var = qu0Var.P) != null) {
+            org.telegram.ui.un unVar = vs0Var.a;
+            org.telegram.ui.pk pkVar = unVar.k1;
+            if (pkVar != null) {
+                pkVar.e(q0Var, true);
             }
-            if (TextUtils.isEmpty(obj) && eu0Var.S0 == null) {
-                org.telegram.ui.rn rnVar2 = ks0Var.a;
-                org.telegram.ui.in inVar = rnVar2.kc;
-                if (inVar != null) {
-                    inVar.m();
+            boolean z10 = (TextUtils.isEmpty(unVar.p3) && unVar.m3 == null) ? false : true;
+            unVar.o3 = z10;
+            unVar.k0 = z10;
+            unVar.hc(false);
+            unVar.Ic();
+        }
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.en0
+    public final void h(boolean z10) {
+        super.h(z10);
+        qu0 qu0Var = this.E;
+        cs0 cs0Var = qu0Var.F0;
+        g(qu0Var.R0 && (qu0Var.getSelectedTab() == 11 || qu0Var.getSelectedTab() == 12) && cs0Var.a());
+        org.telegram.ui.ActionBar.w0 w0Var = qu0Var.i0;
+        if (w0Var != null) {
+            int i10 = (a() && qu0Var.r1.getUserConfig().isPremium()) ? R.drawable.navbar_search_tag : R.drawable.outline_header_search;
+            aj0 aj0Var = w0Var.x;
+            if (aj0Var != null && w0Var.y != i10) {
+                if (z10) {
+                    w0Var.y = i10;
+                    AndroidUtilities.updateImageViewImageAnimated(aj0Var, i10);
+                } else {
+                    w0Var.y = i10;
+                    aj0Var.setImageResource(i10);
                 }
-                rnVar2.o3 = false;
-                rnVar2.k0 = false;
-                rnVar2.hc(false);
-                rnVar2.Ic();
             }
         }
-        eu0Var.j0.setVisibility(8);
-        eu0Var.Q0 = (obj.length() == 0 && eu0Var.S0 == null) ? false : true;
-        eu0Var.post(new tp0(this, 2));
-        int i9 = eu0Var.g0[0].B;
-        if (i9 == 1) {
-            at0 at0Var = eu0Var.c0;
-            if (at0Var == null) {
-                return;
-            }
-            at0Var.G(obj, true);
-            return;
+        org.telegram.ui.ActionBar.w0 w0Var2 = qu0Var.j0;
+        if (w0Var2 != null) {
+            w0Var2.setSearchFieldHint(LocaleController.getString((cs0Var != null && cs0Var.a() && qu0Var.getSelectedTab() == 11) ? R.string.SavedTagSearchHint : R.string.Search));
         }
-        if (i9 == 3) {
-            at0 at0Var2 = eu0Var.e0;
-            if (at0Var2 == null) {
-                return;
-            }
-            at0Var2.G(obj, true);
-            return;
-        }
-        if (i9 == 4) {
-            at0 at0Var3 = eu0Var.d0;
-            if (at0Var3 == null) {
-                return;
-            }
-            at0Var3.G(obj, true);
-            return;
-        }
-        if (i9 == 7) {
-            vs0 vs0Var = eu0Var.f0;
-            if (vs0Var == null) {
-                return;
-            }
-            vs0Var.F(obj, true);
-            return;
-        }
-        if (i9 != 11 || (pt0Var = eu0Var.O) == null) {
-            return;
-        }
-        pt0Var.E(eu0Var.S0, obj);
     }
 }

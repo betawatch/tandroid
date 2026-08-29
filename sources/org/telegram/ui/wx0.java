@@ -1,30 +1,32 @@
 package org.telegram.ui;
 
-import android.view.View;
+import java.util.ArrayList;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class wx0 implements View.OnClickListener {
+public final /* synthetic */ class wx0 implements Utilities.Callback {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Runnable b;
+    public final /* synthetic */ ProfileActivity b;
 
-    public /* synthetic */ wx0(int i9, Runnable runnable) {
-        this.a = i9;
-        this.b = runnable;
+    public /* synthetic */ wx0(ProfileActivity profileActivity, int i10) {
+        this.a = i10;
+        this.b = profileActivity;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
         switch (this.a) {
             case 0:
-                this.b.run();
+                ProfileActivity profileActivity = this.b;
+                profileActivity.getClass();
+                ArrayList arrayList = new ArrayList(1);
+                arrayList.add((TLRPC.InputStickerSet) obj);
+                profileActivity.showDialog(new org.telegram.ui.Components.jv(profileActivity, profileActivity.getParentActivity(), profileActivity.v0, arrayList));
                 break;
             default:
-                Runnable runnable = this.b;
-                if (runnable != null) {
-                    runnable.run();
-                    break;
-                }
+                ProfileActivity.e0(this.b, (Boolean) obj);
                 break;
         }
     }

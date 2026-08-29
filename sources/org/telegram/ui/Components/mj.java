@@ -1,16 +1,24 @@
 package org.telegram.ui.Components;
 
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ContactsController;
+import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class mj implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ oj b;
+    public final /* synthetic */ String c;
+    public final /* synthetic */ int d;
 
-    public /* synthetic */ mj(oj ojVar, int i9) {
-        this.a = i9;
+    public /* synthetic */ mj(oj ojVar, String str, int i10, int i11) {
+        this.a = i11;
         this.b = ojVar;
+        this.c = str;
+        this.d = i10;
     }
 
     @Override // java.lang.Runnable
@@ -18,16 +26,18 @@ public final /* synthetic */ class mj implements Runnable {
         switch (this.a) {
             case 0:
                 oj ojVar = this.b;
-                if (ojVar.f != null) {
-                    ojVar.v = org.telegram.messenger.ll.g(new StringBuilder("+"), ojVar.f.phone, ne.b.c());
-                    ojVar.s = ojVar.f;
-                    AndroidUtilities.runOnUIThread(new mj(ojVar, 1));
-                    break;
-                }
+                String str = this.c;
+                int i10 = this.d;
+                ojVar.getClass();
+                AndroidUtilities.runOnUIThread(new mj(ojVar, str, i10, 1));
                 break;
             default:
                 oj ojVar2 = this.b;
-                ojVar2.c.l(ojVar2.v, false);
+                String str2 = this.c;
+                int i11 = this.d;
+                ojVar2.getClass();
+                int i12 = UserConfig.selectedAccount;
+                Utilities.searchQueue.postRunnable(new nj(ojVar2, str2, new ArrayList(ContactsController.getInstance(i12).contactsBook.values()), new ArrayList(ContactsController.getInstance(i12).contacts), i12, i11));
                 break;
         }
     }

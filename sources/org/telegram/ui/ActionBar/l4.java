@@ -4,7 +4,7 @@ import android.view.animation.Animation;
 import android.view.animation.Transformation;
 import android.widget.RelativeLayout;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
 public final class l4 extends Animation {
     public final /* synthetic */ int a;
@@ -13,24 +13,24 @@ public final class l4 extends Animation {
     public final /* synthetic */ float d;
     public final /* synthetic */ t4 e;
 
-    public /* synthetic */ l4(t4 t4Var, int i9, int i10, float f10, float f11, int i11) {
-        this.a = i11;
+    public /* synthetic */ l4(t4 t4Var, int i10, int i11, float f9, float f10, int i12) {
+        this.a = i12;
         this.e = t4Var;
-        this.b = i9;
-        this.c = i10;
-        this.d = f11;
+        this.b = i10;
+        this.c = i11;
+        this.d = f10;
     }
 
     @Override // android.view.animation.Animation
-    public final void applyTransformation(float f10, Transformation transformation) {
+    public final void applyTransformation(float f9, Transformation transformation) {
         switch (this.a) {
             case 0:
-                int i9 = this.b;
-                int i10 = this.c;
-                int i11 = (int) (f10 * (i9 - i10));
+                int i10 = this.b;
+                int i11 = this.c;
+                int i12 = (int) (f9 * (i10 - i11));
                 t4 t4Var = this.e;
                 RelativeLayout relativeLayout = t4Var.f;
-                t4.l(relativeLayout, relativeLayout.getLayoutParams().width, i10 + i11);
+                t4.l(relativeLayout, relativeLayout.getLayoutParams().width, i11 + i12);
                 if (t4Var.M) {
                     relativeLayout.setY(this.d - relativeLayout.getHeight());
                     t4.a(t4Var);
@@ -38,46 +38,46 @@ public final class l4 extends Animation {
                 }
                 break;
             case 1:
-                int i12 = this.b;
-                int i13 = this.c;
+                int i13 = this.b;
+                int i14 = this.c;
                 t4 t4Var2 = this.e;
                 RelativeLayout relativeLayout2 = t4Var2.f;
-                t4.l(relativeLayout2, ((int) (f10 * (i12 - i13))) + i13, relativeLayout2.getLayoutParams().height);
+                t4.l(relativeLayout2, ((int) (f9 * (i13 - i14))) + i14, relativeLayout2.getLayoutParams().height);
                 relativeLayout2.setX(this.d - relativeLayout2.getWidth());
-                t4Var2.g.setX(relativeLayout2.getWidth() - i13);
-                t4Var2.h.setX(relativeLayout2.getWidth() - i12);
+                t4Var2.g.setX(relativeLayout2.getWidth() - i14);
+                t4Var2.h.setX(relativeLayout2.getWidth() - i13);
                 break;
             case 2:
-                int i14 = this.b;
-                int i15 = this.c;
-                int i16 = (int) (f10 * (i14 - i15));
+                int i15 = this.b;
+                int i16 = this.c;
+                int i17 = (int) (f9 * (i15 - i16));
                 t4 t4Var3 = this.e;
                 RelativeLayout relativeLayout3 = t4Var3.f;
-                t4.l(relativeLayout3, relativeLayout3.getLayoutParams().width, i16 + i15);
+                t4.l(relativeLayout3, relativeLayout3.getLayoutParams().width, i17 + i16);
                 if (t4Var3.M) {
-                    relativeLayout3.setY(this.d - (relativeLayout3.getHeight() - i15));
+                    relativeLayout3.setY(this.d - (relativeLayout3.getHeight() - i16));
                     t4.a(t4Var3);
                     break;
                 }
                 break;
             default:
-                int i17 = this.b;
-                int i18 = this.c;
+                int i18 = this.b;
+                int i19 = this.c;
                 t4 t4Var4 = this.e;
                 RelativeLayout relativeLayout4 = t4Var4.f;
-                t4.l(relativeLayout4, ((int) (f10 * (i17 - i18))) + i18, relativeLayout4.getLayoutParams().height);
+                t4.l(relativeLayout4, ((int) (f9 * (i18 - i19))) + i19, relativeLayout4.getLayoutParams().height);
                 relativeLayout4.setX(this.d - relativeLayout4.getWidth());
-                t4Var4.g.setX(relativeLayout4.getWidth() - i17);
-                t4Var4.h.setX(relativeLayout4.getWidth() - i18);
+                t4Var4.g.setX(relativeLayout4.getWidth() - i18);
+                t4Var4.h.setX(relativeLayout4.getWidth() - i19);
                 break;
         }
     }
 
-    public /* synthetic */ l4(t4 t4Var, int i9, int i10, float f10, int i11) {
-        this.a = i11;
+    public /* synthetic */ l4(t4 t4Var, int i10, int i11, float f9, int i12) {
+        this.a = i12;
         this.e = t4Var;
-        this.b = i9;
-        this.c = i10;
-        this.d = f10;
+        this.b = i10;
+        this.c = i11;
+        this.d = f9;
     }
 }

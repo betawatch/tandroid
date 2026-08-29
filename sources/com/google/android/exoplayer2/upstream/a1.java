@@ -9,7 +9,7 @@ import java.net.InetSocketAddress;
 import java.net.MulticastSocket;
 import java.net.SocketTimeoutException;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class a1 extends g {
     public final int a;
@@ -92,13 +92,13 @@ public final class a1 extends g {
     }
 
     @Override // com.google.android.exoplayer2.upstream.j
-    public final int read(byte[] bArr, int i9, int i10) {
-        if (i10 == 0) {
+    public final int read(byte[] bArr, int i10, int i11) {
+        if (i11 == 0) {
             return 0;
         }
-        int i11 = this.r;
+        int i12 = this.r;
         DatagramPacket datagramPacket = this.c;
-        if (i11 == 0) {
+        if (i12 == 0) {
             try {
                 DatagramSocket datagramSocket = this.e;
                 datagramSocket.getClass();
@@ -113,9 +113,9 @@ public final class a1 extends g {
             }
         }
         int length2 = datagramPacket.getLength();
-        int i12 = this.r;
-        int min = Math.min(i12, i10);
-        System.arraycopy(this.b, length2 - i12, bArr, i9, min);
+        int i13 = this.r;
+        int min = Math.min(i13, i11);
+        System.arraycopy(this.b, length2 - i13, bArr, i10, min);
         this.r -= min;
         return min;
     }

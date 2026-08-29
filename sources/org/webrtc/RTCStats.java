@@ -2,7 +2,7 @@ package org.webrtc;
 
 import java.util.Map;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes4.dex */
 public class RTCStats {
     private final String id;
@@ -30,11 +30,11 @@ public class RTCStats {
         }
         Object[] objArr = (Object[]) obj;
         sb2.append('[');
-        for (int i9 = 0; i9 < objArr.length; i9++) {
-            if (i9 != 0) {
+        for (int i10 = 0; i10 < objArr.length; i10++) {
+            if (i10 != 0) {
                 sb2.append(", ");
             }
-            appendValue(sb2, objArr[i9]);
+            appendValue(sb2, objArr[i10]);
         }
         sb2.append(']');
     }
@@ -60,7 +60,7 @@ public class RTCStats {
     }
 
     public String toString() {
-        StringBuilder n10 = e2.c.n("{ timestampUs: ");
+        StringBuilder n10 = com.google.android.recaptcha.internal.a.n("{ timestampUs: ");
         n10.append(this.timestampUs);
         n10.append(", type: ");
         n10.append(this.type);

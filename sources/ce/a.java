@@ -1,53 +1,28 @@
 package ce;
 
-import fe.c;
-import ie.p;
-import ie.s;
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import org.chromium.support_lib_boundary.FeatureFlagHolderBoundaryInterface;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class a implements le.a {
-    @Override // le.a
-    public final int a(c cVar, c cVar2) {
-        return (cVar.g < 2 || cVar2.g < 2) ? 0 : 2;
+public final class a implements InvocationHandler {
+    public final FeatureFlagHolderBoundaryInterface a;
+
+    public a(FeatureFlagHolderBoundaryInterface featureFlagHolderBoundaryInterface) {
+        this.a = featureFlagHolderBoundaryInterface;
     }
 
-    @Override // le.a
-    public final void b(s sVar, s sVar2, int i9) {
-        be.a aVar = new be.a();
-        p pVar = (p) sVar.f;
-        while (pVar != null && pVar != sVar2) {
-            p pVar2 = (p) pVar.f;
-            aVar.b(pVar);
-            pVar = pVar2;
+    @Override // java.lang.reflect.InvocationHandler
+    public final Object invoke(Object obj, Method method, Object[] objArr) {
+        FeatureFlagHolderBoundaryInterface featureFlagHolderBoundaryInterface = this.a;
+        try {
+            return Class.forName(method.getDeclaringClass().getName(), true, featureFlagHolderBoundaryInterface.getClass().getClassLoader()).getDeclaredMethod(method.getName(), method.getParameterTypes()).invoke(featureFlagHolderBoundaryInterface, objArr);
+        } catch (InvocationTargetException e10) {
+            throw e10.getTargetException();
+        } catch (ReflectiveOperationException e11) {
+            throw new RuntimeException("Reflection failed for method " + method, e11);
         }
-        aVar.g();
-        p pVar3 = (p) sVar.f;
-        aVar.f = pVar3;
-        if (pVar3 != null) {
-            pVar3.e = aVar;
-        }
-        aVar.e = sVar;
-        sVar.f = aVar;
-        p pVar4 = (p) sVar.b;
-        aVar.b = pVar4;
-        if (((p) aVar.f) == null) {
-            pVar4.d = aVar;
-        }
-    }
-
-    @Override // le.a
-    public final char c() {
-        return '~';
-    }
-
-    @Override // le.a
-    public final int d() {
-        return 2;
-    }
-
-    @Override // le.a
-    public final char e() {
-        return '~';
     }
 }

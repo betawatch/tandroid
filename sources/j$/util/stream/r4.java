@@ -30,7 +30,7 @@ public final class r4 extends u4 implements h5 {
     }
 
     @Override // j$.util.stream.u4, j$.util.stream.j5, j$.util.stream.h5, java.util.function.IntConsumer
-    public final void accept(int i9) {
+    public final void accept(int i10) {
         this.b++;
     }
 }

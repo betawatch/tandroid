@@ -15,14 +15,14 @@ import java.util.Iterator;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 import org.telegram.messenger.FileLog;
-import org.telegram.ui.Components.ue0;
-import org.telegram.ui.np0;
+import org.telegram.ui.Components.yw0;
+import org.telegram.ui.mp0;
 import org.webrtc.EglBase;
 import org.webrtc.GlGenericDrawer;
 import org.webrtc.GlUtil;
 import org.webrtc.RendererCommon;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes4.dex */
 public class EglRenderer implements VideoSink {
     private static final long LOG_INTERVAL_SEC = 4;
@@ -57,7 +57,7 @@ public class EglRenderer implements VideoSink {
     private int rotation;
     private boolean usePresentationTimeStamp;
 
-    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
     public class EglSurfaceCreation implements Runnable {
         private final boolean background;
         private Object surface;
@@ -105,8 +105,8 @@ public class EglRenderer implements VideoSink {
                         }
                     }
                 }
-            } catch (Throwable th) {
-                throw th;
+            } catch (Throwable th2) {
+                throw th2;
             }
         }
 
@@ -115,32 +115,32 @@ public class EglRenderer implements VideoSink {
         }
     }
 
-    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
     public interface ErrorCallback {
         void onGlOutOfMemory();
     }
 
-    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
     public interface FrameListener {
         void onFrame(Bitmap bitmap);
     }
 
-    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
     public static class FrameListenerAndParams {
         public final boolean applyFpsReduction;
         public final RendererCommon.GlDrawer drawer;
         public final FrameListener listener;
         public final float scale;
 
-        public FrameListenerAndParams(FrameListener frameListener, float f10, RendererCommon.GlDrawer glDrawer, boolean z10) {
+        public FrameListenerAndParams(FrameListener frameListener, float f9, RendererCommon.GlDrawer glDrawer, boolean z10) {
             this.listener = frameListener;
-            this.scale = f10;
+            this.scale = f9;
             this.drawer = glDrawer;
             this.applyFpsReduction = z10;
         }
     }
 
-    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
     public static class HandlerWithExceptionCallback extends Handler {
         private final Runnable exceptionCallback;
 
@@ -167,11 +167,11 @@ public class EglRenderer implements VideoSink {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: clearSurfaceOnRenderThread, reason: merged with bridge method [inline-methods] */
-    public void lambda$clearImage$6(float f10, float f11, float f12, float f13) {
+    public void lambda$clearImage$6(float f9, float f10, float f11, float f12) {
         EglBase eglBase = this.eglBase;
         if (eglBase != null && eglBase.hasSurface()) {
             logD("clearSurface");
-            GLES20.glClearColor(f10, f11, f12, f13);
+            GLES20.glClearColor(f9, f10, f11, f12);
             GLES20.glClear(16384);
             this.eglBase.swapBuffers(false);
         }
@@ -181,7 +181,7 @@ public class EglRenderer implements VideoSink {
         }
         this.eglBase.makeBackgroundCurrent();
         logD("clearSurface in background");
-        GLES20.glClearColor(f10, f11, f12, f13);
+        GLES20.glClearColor(f9, f10, f11, f12);
         GLES20.glClear(16384);
         this.eglBase.swapBuffers(true);
         this.eglBase.makeCurrent();
@@ -202,18 +202,18 @@ public class EglRenderer implements VideoSink {
                 } else {
                     FileLog.d("can't create background surface. render thread is null");
                 }
-            } catch (Throwable th) {
-                throw th;
+            } catch (Throwable th2) {
+                throw th2;
             }
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$addFrameListener$3(RendererCommon.GlDrawer glDrawer, FrameListener frameListener, float f10, boolean z10) {
+    public /* synthetic */ void lambda$addFrameListener$3(RendererCommon.GlDrawer glDrawer, FrameListener frameListener, float f9, boolean z10) {
         if (glDrawer == null) {
             glDrawer = this.drawer;
         }
-        this.frameListeners.add(new FrameListenerAndParams(frameListener, f10, glDrawer, z10));
+        this.frameListeners.add(new FrameListenerAndParams(frameListener, f9, glDrawer, z10));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -287,8 +287,8 @@ public class EglRenderer implements VideoSink {
         Logging.d(TAG, this.name + str);
     }
 
-    private void logE(String str, Throwable th) {
-        Logging.e(TAG, this.name + str, th);
+    private void logE(String str, Throwable th2) {
+        Logging.e(TAG, this.name + str, th2);
     }
 
     private void logW(String str) {
@@ -341,8 +341,8 @@ public class EglRenderer implements VideoSink {
                 if (handler != null) {
                     handler.post(runnable);
                 }
-            } catch (Throwable th) {
-                throw th;
+            } catch (Throwable th2) {
+                throw th2;
             }
         }
     }
@@ -350,9 +350,9 @@ public class EglRenderer implements VideoSink {
     /* JADX INFO: Access modifiers changed from: private */
     public void renderFrameOnRenderThread() {
         boolean z10;
+        float f9;
         float f10;
         float f11;
-        float f12;
         synchronized (this.frameLock) {
             try {
                 VideoFrame videoFrame = this.pendingFrame;
@@ -386,23 +386,23 @@ public class EglRenderer implements VideoSink {
                 boolean z11 = Math.abs(this.rotation) == 90 || Math.abs(this.rotation) == 270;
                 float rotatedHeight = (z11 ? videoFrame.getRotatedHeight() : videoFrame.getRotatedWidth()) / (z11 ? videoFrame.getRotatedWidth() : videoFrame.getRotatedHeight());
                 synchronized (this.layoutLock) {
-                    f10 = this.layoutAspectRatio;
-                    if (f10 == 0.0f) {
-                        f10 = rotatedHeight;
+                    f9 = this.layoutAspectRatio;
+                    if (f9 == 0.0f) {
+                        f9 = rotatedHeight;
                     }
                 }
-                if (rotatedHeight > f10) {
-                    f12 = f10 / rotatedHeight;
-                    f11 = 1.0f;
+                if (rotatedHeight > f9) {
+                    f11 = f9 / rotatedHeight;
+                    f10 = 1.0f;
                 } else {
-                    f11 = rotatedHeight / f10;
-                    f12 = 1.0f;
+                    f10 = rotatedHeight / f9;
+                    f11 = 1.0f;
                 }
                 this.drawMatrix.reset();
                 this.drawMatrix.preTranslate(0.5f, 0.5f);
                 this.drawMatrix.preRotate(this.rotation);
                 this.drawMatrix.preScale(this.mirrorHorizontally ? -1.0f : 1.0f, this.mirrorVertically ? -1.0f : 1.0f);
-                this.drawMatrix.preScale(f12, f11);
+                this.drawMatrix.preScale(f11, f10);
                 this.drawMatrix.preTranslate(-0.5f, -0.5f);
                 if (z10) {
                     try {
@@ -440,9 +440,9 @@ public class EglRenderer implements VideoSink {
                             videoFrame.release();
                             return;
                         }
-                    } catch (Throwable th) {
+                    } catch (Throwable th2) {
                         videoFrame.release();
-                        throw th;
+                        throw th2;
                     }
                 }
                 notifyCallbacks(videoFrame, z10);
@@ -452,8 +452,8 @@ public class EglRenderer implements VideoSink {
         }
     }
 
-    public void addFrameListener(FrameListener frameListener, float f10) {
-        addFrameListener(frameListener, f10, null, false);
+    public void addFrameListener(FrameListener frameListener, float f9) {
+        addFrameListener(frameListener, f9, null, false);
     }
 
     public void clearImage() {
@@ -507,10 +507,10 @@ public class EglRenderer implements VideoSink {
                     }
                 });
                 this.renderThreadHandler = handlerWithExceptionCallback;
-                handlerWithExceptionCallback.post(new ue0(this, context, iArr, 27));
+                handlerWithExceptionCallback.post(new yw0(this, context, iArr, 16));
                 this.renderThreadHandler.post(this.eglSurfaceCreationRunnable);
-            } catch (Throwable th) {
-                throw th;
+            } catch (Throwable th2) {
+                throw th2;
             }
         }
     }
@@ -535,8 +535,8 @@ public class EglRenderer implements VideoSink {
                     } finally {
                     }
                 }
-            } catch (Throwable th) {
-                throw th;
+            } catch (Throwable th2) {
+                throw th2;
             }
         }
     }
@@ -601,12 +601,12 @@ public class EglRenderer implements VideoSink {
                 Handler handler = this.renderThreadHandler;
                 if (handler != null) {
                     handler.removeCallbacks(this.eglSurfaceCreationRunnable);
-                    this.renderThreadHandler.postAtFrontOfQueue(new np0(this, z10, runnable, 9));
+                    this.renderThreadHandler.postAtFrontOfQueue(new mp0(this, z10, runnable, 9));
                 } else if (runnable != null) {
                     runnable.run();
                 }
-            } catch (Throwable th) {
-                throw th;
+            } catch (Throwable th2) {
+                throw th2;
             }
         }
     }
@@ -621,10 +621,10 @@ public class EglRenderer implements VideoSink {
                 if (Thread.currentThread() == this.renderThreadHandler.getLooper().getThread()) {
                     throw new RuntimeException("removeFrameListener must not be called on the render thread.");
                 }
-                postToRenderThread(new ue0(this, countDownLatch, frameListener, 28));
+                postToRenderThread(new yw0(this, countDownLatch, frameListener, 17));
                 ThreadUtils.awaitUninterruptibly(countDownLatch);
-            } catch (Throwable th) {
-                throw th;
+            } catch (Throwable th2) {
+                throw th2;
             }
         }
     }
@@ -633,29 +633,29 @@ public class EglRenderer implements VideoSink {
         this.errorCallback = errorCallback;
     }
 
-    public void setFpsReduction(float f10) {
-        logD("setFpsReduction: " + f10);
+    public void setFpsReduction(float f9) {
+        logD("setFpsReduction: " + f9);
         synchronized (this.fpsReductionLock) {
             try {
                 long j10 = this.minRenderPeriodNs;
-                if (f10 <= 0.0f) {
+                if (f9 <= 0.0f) {
                     this.minRenderPeriodNs = Long.MAX_VALUE;
                 } else {
-                    this.minRenderPeriodNs = (long) (TimeUnit.SECONDS.toNanos(1L) / f10);
+                    this.minRenderPeriodNs = (long) (TimeUnit.SECONDS.toNanos(1L) / f9);
                 }
                 if (this.minRenderPeriodNs != j10) {
                     this.nextFrameTimeNs = System.nanoTime();
                 }
-            } catch (Throwable th) {
-                throw th;
+            } catch (Throwable th2) {
+                throw th2;
             }
         }
     }
 
-    public void setLayoutAspectRatio(float f10) {
-        if (this.layoutAspectRatio != f10) {
+    public void setLayoutAspectRatio(float f9) {
+        if (this.layoutAspectRatio != f9) {
             synchronized (this.layoutLock) {
-                this.layoutAspectRatio = f10;
+                this.layoutAspectRatio = f9;
             }
         }
     }
@@ -679,9 +679,9 @@ public class EglRenderer implements VideoSink {
         e0.a(this, videoSink);
     }
 
-    public void setRotation(int i9) {
+    public void setRotation(int i10) {
         synchronized (this.layoutLock) {
-            this.rotation = i9;
+            this.rotation = i10;
         }
     }
 
@@ -699,24 +699,24 @@ public class EglRenderer implements VideoSink {
         this.frameDrawer = videoFrameDrawer;
     }
 
-    public void addFrameListener(FrameListener frameListener, float f10, RendererCommon.GlDrawer glDrawer) {
-        addFrameListener(frameListener, f10, glDrawer, false);
+    public void addFrameListener(FrameListener frameListener, float f9, RendererCommon.GlDrawer glDrawer) {
+        addFrameListener(frameListener, f9, glDrawer, false);
     }
 
     public void createEglSurface(SurfaceTexture surfaceTexture) {
         createEglSurfaceInternal(surfaceTexture, false);
     }
 
-    public void addFrameListener(final FrameListener frameListener, final float f10, final RendererCommon.GlDrawer glDrawer, final boolean z10) {
+    public void addFrameListener(final FrameListener frameListener, final float f9, final RendererCommon.GlDrawer glDrawer, final boolean z10) {
         postToRenderThread(new Runnable() { // from class: org.webrtc.f
             @Override // java.lang.Runnable
             public final void run() {
-                EglRenderer.this.lambda$addFrameListener$3(glDrawer, frameListener, f10, z10);
+                EglRenderer.this.lambda$addFrameListener$3(glDrawer, frameListener, f9, z10);
             }
         });
     }
 
-    public void clearImage(final float f10, final float f11, final float f12, final float f13) {
+    public void clearImage(final float f9, final float f10, final float f11, final float f12) {
         synchronized (this.handlerLock) {
             try {
                 Handler handler = this.renderThreadHandler;
@@ -726,11 +726,11 @@ public class EglRenderer implements VideoSink {
                 handler.postAtFrontOfQueue(new Runnable() { // from class: org.webrtc.g
                     @Override // java.lang.Runnable
                     public final void run() {
-                        EglRenderer.this.lambda$clearImage$6(f10, f11, f12, f13);
+                        EglRenderer.this.lambda$clearImage$6(f9, f10, f11, f12);
                     }
                 });
-            } catch (Throwable th) {
-                throw th;
+            } catch (Throwable th2) {
+                throw th2;
             }
         }
     }

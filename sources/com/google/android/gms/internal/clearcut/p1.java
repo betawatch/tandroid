@@ -7,11 +7,11 @@ import java.util.Arrays;
 
 /* loaded from: classes.dex */
 public abstract class p1 {
-    public static final void a(p1 p1Var, byte[] bArr, int i9) {
+    public static final void b(p1 p1Var, byte[] bArr, int i10) {
         try {
-            xa.c cVar = new xa.c(bArr, i9);
-            p1Var.b(cVar);
-            ByteBuffer byteBuffer = (ByteBuffer) cVar.b;
+            ag.o1 o1Var = new ag.o1(bArr, i10);
+            p1Var.a(o1Var);
+            ByteBuffer byteBuffer = (ByteBuffer) o1Var.b;
             if (byteBuffer.remaining() == 0) {
                 return;
             }
@@ -21,7 +21,7 @@ public abstract class p1 {
         }
     }
 
-    public abstract void b(xa.c cVar);
+    public abstract void a(ag.o1 o1Var);
 
     public final int c() {
         int[] iArr;
@@ -32,71 +32,71 @@ public abstract class p1 {
         String str4 = y1Var.h;
         byte[] bArr = y1Var.e;
         long j10 = y1Var.a;
-        int i9 = 0;
-        int U = j10 != 0 ? xa.c.U(j10) + xa.c.V(1) : 0;
+        int i10 = 0;
+        int C = j10 != 0 ? ag.o1.C(j10) + ag.o1.E(1) : 0;
         z1[] z1VarArr = y1Var.d;
         if (z1VarArr != null && z1VarArr.length > 0) {
-            int i10 = 0;
+            int i11 = 0;
             while (true) {
                 z1[] z1VarArr2 = y1Var.d;
-                if (i10 >= z1VarArr2.length) {
+                if (i11 >= z1VarArr2.length) {
                     break;
                 }
-                z1 z1Var = z1VarArr2[i10];
-                i10++;
+                z1 z1Var = z1VarArr2[i11];
+                i11++;
             }
         }
         byte[] bArr2 = o1.d;
         if (!Arrays.equals(bArr, bArr2)) {
-            U += xa.c.W(bArr.length) + bArr.length + xa.c.V(4);
+            C += ag.o1.F(bArr.length) + bArr.length + ag.o1.E(4);
         }
         if (!Arrays.equals(y1Var.f, bArr2)) {
             byte[] bArr3 = y1Var.f;
-            U += xa.c.W(bArr3.length) + bArr3.length + xa.c.V(6);
+            C += ag.o1.F(bArr3.length) + bArr3.length + ag.o1.E(6);
         }
         if (str4 != null && !str4.equals("")) {
-            U += xa.c.P(8, str4);
+            C += ag.o1.w(8, str4);
         }
-        int i11 = y1Var.c;
-        if (i11 != 0) {
-            U += (i11 >= 0 ? xa.c.W(i11) : 10) + xa.c.V(11);
+        int i12 = y1Var.c;
+        if (i12 != 0) {
+            C += (i12 >= 0 ? ag.o1.F(i12) : 10) + ag.o1.E(11);
         }
         if (str3 != null && !str3.equals("")) {
-            U += xa.c.P(13, str3);
+            C += ag.o1.w(13, str3);
         }
         if (str2 != null && !str2.equals("")) {
-            U += xa.c.P(14, str2);
+            C += ag.o1.w(14, str2);
         }
         long j11 = y1Var.s;
         if (j11 != 180000) {
-            U += xa.c.U((j11 >> 63) ^ (j11 << 1)) + xa.c.V(15);
+            C += ag.o1.C((j11 >> 63) ^ (j11 << 1)) + ag.o1.E(15);
         }
         long j12 = y1Var.b;
         if (j12 != 0) {
-            U += xa.c.U(j12) + xa.c.V(17);
+            C += ag.o1.C(j12) + ag.o1.E(17);
         }
         if (!Arrays.equals(y1Var.v, bArr2)) {
             byte[] bArr4 = y1Var.v;
-            U += xa.c.W(bArr4.length) + bArr4.length + xa.c.V(18);
+            C += ag.o1.F(bArr4.length) + bArr4.length + ag.o1.E(18);
         }
         int[] iArr2 = y1Var.x;
         if (iArr2 != null && iArr2.length > 0) {
-            int i12 = 0;
+            int i13 = 0;
             while (true) {
                 iArr = y1Var.x;
-                if (i9 >= iArr.length) {
+                if (i10 >= iArr.length) {
                     break;
                 }
-                int i13 = iArr[i9];
-                i12 += i13 >= 0 ? xa.c.W(i13) : 10;
-                i9++;
+                int i14 = iArr[i10];
+                i13 += i14 >= 0 ? ag.o1.F(i14) : 10;
+                i10++;
             }
-            U = U + i12 + (iArr.length * 2);
+            C = C + i13 + (iArr.length * 2);
         }
         if (str != null && !str.equals("")) {
-            U += xa.c.P(24, str);
+            C += ag.o1.w(24, str);
         }
-        return y1Var.y ? xa.c.V(25) + 1 + U : U;
+        return y1Var.y ? ag.o1.E(25) + 1 + C : C;
     }
 
     public final p1 d() {

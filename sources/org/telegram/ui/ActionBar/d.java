@@ -1,73 +1,36 @@
 package org.telegram.ui.ActionBar;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import org.telegram.ui.Components.xu0;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class d extends z {
-    public final /* synthetic */ k h;
+public final class d extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ l c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d(k kVar, Context context, k kVar2) {
-        super(context, kVar2);
-        this.h = kVar;
+    public /* synthetic */ d(l lVar, boolean z10, int i10) {
+        this.a = i10;
+        this.c = lVar;
+        this.b = z10;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        Canvas canvas2;
-        k kVar = this.h;
-        Paint paint = kVar.H0;
-        if (kVar.G0 && this.a && kVar.w != 0) {
-            kVar.I0.set(0, 0, getMeasuredWidth(), getMeasuredHeight());
-            paint.setColor(kVar.w);
-            canvas2 = canvas;
-            kVar.F0.J(canvas2, 0.0f, kVar.I0, paint, true);
-        } else {
-            canvas2 = canvas;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                float f9 = this.b ? 1.0f : 0.0f;
+                l lVar = this.c;
+                lVar.n1 = f9;
+                lVar.b();
+                break;
+            default:
+                float f10 = this.b ? 1.0f : 0.0f;
+                l lVar2 = this.c;
+                lVar2.n1 = f10;
+                lVar2.b();
+                break;
         }
-        super.dispatchDraw(canvas2);
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        xu0 xu0Var = this.h.F0;
-        if (xu0Var != null) {
-            xu0Var.P.add(this);
-        }
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        xu0 xu0Var = this.h.F0;
-        if (xu0Var != null) {
-            xu0Var.P.remove(this);
-        }
-    }
-
-    @Override // android.view.View
-    public final void setAlpha(float f10) {
-        super.setAlpha(f10);
-        k kVar = this.h;
-        kVar.invalidate();
-        Runnable runnable = kVar.P0;
-        if (runnable != null) {
-            runnable.run();
-        }
-    }
-
-    @Override // android.view.View
-    public final void setBackgroundColor(int i9) {
-        k kVar = this.h;
-        kVar.w = i9;
-        if (kVar.G0) {
-            return;
-        }
-        super.setBackgroundColor(i9);
     }
 }

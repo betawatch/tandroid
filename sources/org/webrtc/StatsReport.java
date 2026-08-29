@@ -1,6 +1,6 @@
 package org.webrtc;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes4.dex */
 public class StatsReport {
     public final String id;
@@ -8,7 +8,7 @@ public class StatsReport {
     public final String type;
     public final Value[] values;
 
-    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
     public static class Value {
         public final String name;
         public final String value;
@@ -22,7 +22,7 @@ public class StatsReport {
             StringBuilder sb2 = new StringBuilder("[");
             sb2.append(this.name);
             sb2.append(": ");
-            return aa.d.r(sb2, this.value, "]");
+            return a4.w.q(sb2, this.value, "]");
         }
     }
 
@@ -41,15 +41,15 @@ public class StatsReport {
         sb2.append(", timestamp: ");
         sb2.append(this.timestamp);
         sb2.append(", values: ");
-        int i9 = 0;
+        int i10 = 0;
         while (true) {
             Value[] valueArr = this.values;
-            if (i9 >= valueArr.length) {
+            if (i10 >= valueArr.length) {
                 return sb2.toString();
             }
-            sb2.append(valueArr[i9].toString());
+            sb2.append(valueArr[i10].toString());
             sb2.append(", ");
-            i9++;
+            i10++;
         }
     }
 }

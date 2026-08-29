@@ -1,15 +1,14 @@
 package com.google.android.recaptcha.internal;
 
-import fd.j;
-import g7.o6;
+import i7.m7;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
-import kotlin.jvm.internal.i;
-import pc.g;
+import kotlin.jvm.internal.j;
+import rc.g;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class zziq {
     private Set zza;
@@ -19,21 +18,21 @@ public final class zziq {
 
     private static final boolean zzc(String str, Set set) {
         List list;
-        i.e(str, "<this>");
+        j.e(str, "<this>");
         String valueOf = String.valueOf(new char[]{'.'}[0]);
-        int d = j.d(0, str, valueOf, false);
+        int d = hd.j.d(0, str, valueOf, false);
         if (d != -1) {
             ArrayList arrayList = new ArrayList(10);
-            int i9 = 0;
+            int i10 = 0;
             do {
-                arrayList.add(str.subSequence(i9, d).toString());
-                i9 = valueOf.length() + d;
-                d = j.d(i9, str, valueOf, false);
+                arrayList.add(str.subSequence(i10, d).toString());
+                i10 = valueOf.length() + d;
+                d = hd.j.d(i10, str, valueOf, false);
             } while (d != -1);
-            arrayList.add(str.subSequence(i9, str.length()).toString());
+            arrayList.add(str.subSequence(i10, str.length()).toString());
             list = arrayList;
         } else {
-            list = o6.a(str.toString());
+            list = m7.a(str.toString());
         }
         Iterator it = list.iterator();
         String str2 = "";
@@ -65,7 +64,7 @@ public final class zziq {
             return true;
         }
         Set set2 = this.zzb;
-        i.c(set2, "null cannot be cast to non-null type kotlin.collections.Set<kotlin.String>");
+        j.c(set2, "null cannot be cast to non-null type kotlin.collections.Set<kotlin.String>");
         if (zzc(str, set2)) {
             return false;
         }

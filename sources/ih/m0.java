@@ -1,34 +1,25 @@
 package ih;
 
+import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.text.style.ReplacementSpan;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.Components.nz0;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
-/* loaded from: classes4.dex */
-public final class m0 extends ReplacementSpan {
-    public final RectF a = new RectF();
-    public final Paint b = new Paint(1);
-    public final nz0 c = new nz0(LocaleController.getString(R.string.LiveStoryBadge), 8.0f, AndroidUtilities.bold());
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* loaded from: classes.dex */
+public final class m0 extends FrameLayout {
+    public final /* synthetic */ float a;
 
-    @Override // android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i9, int i10, float f10, int i11, int i12, int i13, Paint paint) {
-        float dp = ((i11 + i13) / 2.0f) + AndroidUtilities.dp(0.0f);
-        RectF rectF = this.a;
-        rectF.set(f10, dp - AndroidUtilities.dp(6.0f), this.c.l() + f10 + AndroidUtilities.dp(8.0f), AndroidUtilities.dp(6.0f) + dp);
-        Paint paint2 = this.b;
-        paint2.setColor(-572850);
-        canvas.drawRoundRect(rectF, rectF.height() / 2.0f, rectF.height() / 2.0f, paint2);
-        this.c.c(AndroidUtilities.dp(4.0f) + f10, dp, 1.0f, -1, canvas);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public m0(Context context, float f9) {
+        super(context);
+        this.a = f9;
     }
 
-    @Override // android.text.style.ReplacementSpan
-    public final int getSize(Paint paint, CharSequence charSequence, int i9, int i10, Paint.FontMetricsInt fontMetricsInt) {
-        return (int) (this.c.l() + AndroidUtilities.dp(8.0f));
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        canvas.save();
+        canvas.clipRect(0.0f, 0.0f, getWidth() * this.a, getHeight());
+        super.dispatchDraw(canvas);
+        canvas.restore();
     }
 }

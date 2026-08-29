@@ -11,15 +11,15 @@ public final class s8 extends v8 implements IntConsumer, j$.util.x0 {
     public final /* synthetic */ int f;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ s8(Spliterator spliterator, int i9) {
+    public /* synthetic */ s8(Spliterator spliterator, int i10) {
         super(spliterator);
-        this.f = i9;
+        this.f = i10;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ s8(Spliterator spliterator, v8 v8Var, int i9) {
+    public /* synthetic */ s8(Spliterator spliterator, v8 v8Var, int i10) {
         super(spliterator, v8Var);
-        this.f = i9;
+        this.f = i10;
     }
 
     public final /* synthetic */ IntConsumer andThen(IntConsumer intConsumer) {
@@ -43,9 +43,9 @@ public final class s8 extends v8 implements IntConsumer, j$.util.x0 {
     }
 
     @Override // java.util.function.IntConsumer
-    public final void accept(int i9) {
+    public final void accept(int i10) {
         this.d = (this.d + 1) & 63;
-        this.e = i9;
+        this.e = i10;
     }
 
     @Override // j$.util.stream.v8

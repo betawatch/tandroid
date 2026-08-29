@@ -14,15 +14,15 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import com.google.android.gms.tasks.Tasks;
 import java.util.ArrayList;
-import k8.a0;
-import k8.b0;
-import k8.g0;
-import k8.k0;
+import m8.a0;
+import m8.b0;
+import m8.g0;
+import m8.k0;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 final class aj {
-    final k8.c a;
+    final m8.c a;
     private final g0 b;
     private final String c;
     private final Context d;
@@ -36,20 +36,20 @@ final class aj {
         this.e = atVar;
         this.f = kVar;
         this.d = context;
-        g0 g0Var3 = k8.e.a;
+        g0 g0Var3 = m8.e.a;
         try {
             if (context.getPackageManager().getApplicationInfo("com.android.vending", 0).enabled) {
                 try {
-                    if (k8.e.b(context.getPackageManager().getPackageInfo("com.android.vending", 64).signatures)) {
-                        this.a = new k8.c(context, g0Var, "IntegrityService", ak.a, new k0() { // from class: com.google.android.play.core.integrity.ae
-                            @Override // k8.k0
+                    if (m8.e.b(context.getPackageManager().getPackageInfo("com.android.vending", 64).signatures)) {
+                        this.a = new m8.c(context, g0Var, "IntegrityService", ak.a, new k0() { // from class: com.google.android.play.core.integrity.ae
+                            @Override // m8.k0
                             public final Object a(IBinder iBinder) {
-                                int i9 = a0.i;
+                                int i10 = a0.i;
                                 if (iBinder == null) {
                                     return null;
                                 }
                                 IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.play.core.integrity.protocol.IIntegrityService");
-                                return queryLocalInterface instanceof b0 ? (b0) queryLocalInterface : new k8.z(iBinder, "com.google.android.play.core.integrity.protocol.IIntegrityService", 7);
+                                return queryLocalInterface instanceof b0 ? (b0) queryLocalInterface : new m8.z(iBinder, "com.google.android.play.core.integrity.protocol.IIntegrityService", 7);
                             }
                         });
                         return;
@@ -88,8 +88,8 @@ final class aj {
             bundle.putParcelable("network", parcelable);
         }
         ArrayList arrayList = new ArrayList();
-        arrayList.add(new k8.t(3, System.currentTimeMillis()));
-        bundle.putParcelableArrayList("event_timestamps", new ArrayList<>(g7.j.a(arrayList)));
+        arrayList.add(new m8.t(3, System.currentTimeMillis()));
+        bundle.putParcelableArrayList("event_timestamps", new ArrayList<>(i7.a0.a(arrayList)));
         return bundle;
     }
 
@@ -97,10 +97,10 @@ final class aj {
         if (this.a == null) {
             return Tasks.forException(new IntegrityServiceException(-2, null));
         }
-        int i9 = bundle.getInt("dialog.intent.type");
-        this.b.b("requestAndShowDialog(%s, %s)", this.c, Integer.valueOf(i9));
+        int i10 = bundle.getInt("dialog.intent.type");
+        this.b.b("requestAndShowDialog(%s, %s)", this.c, Integer.valueOf(i10));
         TaskCompletionSource taskCompletionSource = new TaskCompletionSource();
-        this.a.c(new ag(this, taskCompletionSource, bundle, activity, taskCompletionSource, i9), taskCompletionSource);
+        this.a.c(new ag(this, taskCompletionSource, bundle, activity, taskCompletionSource, i10), taskCompletionSource);
         return taskCompletionSource.getTask();
     }
 
@@ -108,7 +108,7 @@ final class aj {
         if (this.a == null) {
             return Tasks.forException(new IntegrityServiceException(-2, null));
         }
-        if (k8.e.a(this.d) < 82380000) {
+        if (m8.e.a(this.d) < 82380000) {
             return Tasks.forException(new IntegrityServiceException(-14, null));
         }
         try {

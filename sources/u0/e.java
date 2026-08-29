@@ -8,7 +8,7 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.ScrollView;
 import androidx.core.widget.NestedScrollView;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class e extends r0.b {
     @Override // r0.b
@@ -24,23 +24,23 @@ public final class e extends r0.b {
     }
 
     @Override // r0.b
-    public final void c(View view, s0.d dVar) {
+    public final void c(View view, s0.c cVar) {
         int scrollRange;
-        AccessibilityNodeInfo accessibilityNodeInfo = dVar.a;
+        AccessibilityNodeInfo accessibilityNodeInfo = cVar.a;
         this.a.onInitializeAccessibilityNodeInfo(view, accessibilityNodeInfo);
         NestedScrollView nestedScrollView = (NestedScrollView) view;
-        dVar.i("android.widget.ScrollView");
+        cVar.i("android.widget.ScrollView");
         if (!nestedScrollView.isEnabled() || (scrollRange = nestedScrollView.getScrollRange()) <= 0) {
             return;
         }
         accessibilityNodeInfo.setScrollable(true);
         if (nestedScrollView.getScrollY() > 0) {
-            dVar.b(s0.c.e);
-            dVar.b(s0.c.f);
+            cVar.b(s0.b.e);
+            cVar.b(s0.b.f);
         }
         if (nestedScrollView.getScrollY() < scrollRange) {
-            dVar.b(s0.c.d);
-            dVar.b(s0.c.g);
+            cVar.b(s0.b.d);
+            cVar.b(s0.b.g);
         }
     }
 
@@ -52,8 +52,8 @@ public final class e extends r0.b {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final boolean d(View view, int i9, Bundle bundle) {
-        if (super.d(view, i9, bundle)) {
+    public final boolean d(View view, int i10, Bundle bundle) {
+        if (super.d(view, i10, bundle)) {
             return true;
         }
         NestedScrollView nestedScrollView = (NestedScrollView) view;
@@ -63,8 +63,8 @@ public final class e extends r0.b {
             if (nestedScrollView.getMatrix().isIdentity() && nestedScrollView.getGlobalVisibleRect(rect)) {
                 height = rect.height();
             }
-            if (i9 != 4096) {
-                if (i9 == 8192 || i9 == 16908344) {
+            if (i10 != 4096) {
+                if (i10 == 8192 || i10 == 16908344) {
                     int max = Math.max(nestedScrollView.getScrollY() - ((height - nestedScrollView.getPaddingBottom()) - nestedScrollView.getPaddingTop()), 0);
                     if (max != nestedScrollView.getScrollY()) {
                         nestedScrollView.y(0 - nestedScrollView.getScrollX(), max - nestedScrollView.getScrollY(), true);

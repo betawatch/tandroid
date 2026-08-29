@@ -20,17 +20,17 @@ public abstract class l1 {
     public static final boolean h;
 
     /* JADX WARN: Can't wrap try/catch for region: R(27:0|1|(24:3|(1:(1:6)(1:(1:67)))(1:68)|7|(3:55|56|(1:58)(21:59|(1:62)|61|11|(18:47|48|(1:51)|50|14|(1:18)|19|20|21|22|23|24|(1:40)(1:28)|(1:32)|33|(1:35)(1:39)|36|37)|13|14|(2:16|18)|19|20|21|22|23|24|(1:26)|40|(2:30|32)|33|(0)(0)|36|37))|9|10|11|(0)|13|14|(0)|19|20|21|22|23|24|(0)|40|(0)|33|(0)(0)|36|37)|69|7|(0)|9|10|11|(0)|13|14|(0)|19|20|21|22|23|24|(0)|40|(0)|33|(0)(0)|36|37|(1:(0))) */
-    /* JADX WARN: Code restructure failed: missing block: B:44:0x0291, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:44:0x0290, code lost:
     
         r0 = null;
      */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x0277  */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x0294  */
-    /* JADX WARN: Removed duplicated region for block: B:30:0x02a1  */
-    /* JADX WARN: Removed duplicated region for block: B:35:0x02b1  */
-    /* JADX WARN: Removed duplicated region for block: B:39:0x02b3  */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x0128 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:55:0x006e A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x0276  */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x0293  */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x02a0  */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x02b0  */
+    /* JADX WARN: Removed duplicated region for block: B:39:0x02b2  */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x0127 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:55:0x006d A[EXC_TOP_SPLITTER, SYNTHETIC] */
     static {
         k1 k1Var;
         Class<?> cls;
@@ -42,32 +42,32 @@ public abstract class l1 {
         Field field;
         k1 k1Var2;
         k1 k1Var3;
-        Unsafe f10 = f();
-        b = f10;
+        Unsafe f9 = f();
+        b = f9;
         c = l.a;
         Class<?> cls3 = Long.TYPE;
         boolean j10 = j(cls3);
         Class<?> cls4 = Integer.TYPE;
         boolean j11 = j(cls4);
-        if (f10 != null) {
+        if (f9 != null) {
             if (!l.a()) {
-                k1Var = new j1(f10);
+                k1Var = new j1(f9);
             } else if (j10) {
-                k1Var = new i1(f10, 1);
+                k1Var = new i1(f9, 1);
             } else if (j11) {
-                k1Var = new i1(f10, 0);
+                k1Var = new i1(f9, 0);
             }
             d = k1Var;
             Class<?> cls5 = Byte.TYPE;
-            if (f10 != null) {
+            if (f9 != null) {
                 try {
-                    cls2 = f10.getClass();
+                    cls2 = f9.getClass();
                     cls2.getMethod("objectFieldOffset", Field.class);
                     cls2.getMethod("getLong", Object.class, cls3);
-                } catch (Throwable th) {
+                } catch (Throwable th2) {
                     Logger logger = a;
                     Level level = Level.WARNING;
-                    String valueOf = String.valueOf(th);
+                    String valueOf = String.valueOf(th2);
                     cls = cls3;
                     StringBuilder sb2 = new StringBuilder(valueOf.length() + 71);
                     sb2.append("platform method missing - proto runtime falling back to safer methods: ");
@@ -112,10 +112,10 @@ public abstract class l1 {
                                 cls6.getMethod("putDouble", Object.class, cls, Double.TYPE);
                             }
                             z11 = true;
-                        } catch (Throwable th2) {
+                        } catch (Throwable th3) {
                             Logger logger2 = a;
                             Level level2 = Level.WARNING;
-                            String valueOf2 = String.valueOf(th2);
+                            String valueOf2 = String.valueOf(th3);
                             StringBuilder sb3 = new StringBuilder(valueOf2.length() + 71);
                             sb3.append("platform method missing - proto runtime falling back to safer methods: ");
                             sb3.append(valueOf2);
@@ -211,7 +211,7 @@ public abstract class l1 {
         k1Var = null;
         d = k1Var;
         Class<?> cls52 = Byte.TYPE;
-        if (f10 != null) {
+        if (f9 != null) {
         }
         cls = cls3;
         z10 = false;
@@ -250,15 +250,15 @@ public abstract class l1 {
         return d.l(bArr, g + j10);
     }
 
-    public static void b(long j10, Object obj, int i9) {
-        d.b(j10, obj, i9);
+    public static void b(long j10, Object obj, int i10) {
+        d.b(j10, obj, i10);
     }
 
     public static void c(Object obj, long j10, byte b10) {
         long j11 = (-4) & j10;
         int g10 = d.g(obj, j11);
-        int i9 = ((~((int) j10)) & 3) << 3;
-        b(j11, obj, ((255 & b10) << i9) | (g10 & (~(255 << i9))));
+        int i10 = ((~((int) j10)) & 3) << 3;
+        b(j11, obj, ((255 & b10) << i10) | (g10 & (~(255 << i10))));
     }
 
     public static void d(Object obj, long j10, Object obj2) {
@@ -267,8 +267,8 @@ public abstract class l1 {
 
     public static void e(Object obj, long j10, byte b10) {
         long j11 = (-4) & j10;
-        int i9 = (((int) j10) & 3) << 3;
-        b(j11, obj, ((255 & b10) << i9) | (d.g(obj, j11) & (~(255 << i9))));
+        int i10 = (((int) j10) & 3) << 3;
+        b(j11, obj, ((255 & b10) << i10) | (d.g(obj, j11) & (~(255 << i10))));
     }
 
     public static Unsafe f() {

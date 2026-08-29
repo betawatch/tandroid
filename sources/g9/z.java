@@ -1,13 +1,63 @@
 package g9;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
-/* loaded from: classes.dex */
-public final class z implements q9.d {
-    public static final z a = new z();
-    public static final q9.c b = q9.c.c("identifier");
+import com.google.android.gms.tasks.Continuation;
+import com.google.android.gms.tasks.Task;
+import com.google.android.gms.tasks.TaskCompletionSource;
 
-    @Override // q9.a
-    public final void a(Object obj, Object obj2) {
-        ((q9.e) obj2).g(b, ((a1) ((c2) obj)).a);
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class z implements Continuation {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ TaskCompletionSource b;
+
+    public /* synthetic */ z(int i10, TaskCompletionSource taskCompletionSource) {
+        this.a = i10;
+        this.b = taskCompletionSource;
+    }
+
+    @Override // com.google.android.gms.tasks.Continuation
+    public final Object then(Task task) {
+        switch (this.a) {
+            case 0:
+                boolean isSuccessful = task.isSuccessful();
+                TaskCompletionSource taskCompletionSource = this.b;
+                if (!isSuccessful) {
+                    if (task.getException() != null) {
+                        taskCompletionSource.trySetException(task.getException());
+                        break;
+                    }
+                } else {
+                    taskCompletionSource.trySetResult(task.getResult());
+                    break;
+                }
+                break;
+            case 1:
+                boolean isSuccessful2 = task.isSuccessful();
+                TaskCompletionSource taskCompletionSource2 = this.b;
+                if (!isSuccessful2) {
+                    if (task.getException() != null) {
+                        taskCompletionSource2.trySetException(task.getException());
+                        break;
+                    }
+                } else {
+                    taskCompletionSource2.trySetResult(task.getResult());
+                    break;
+                }
+                break;
+            default:
+                boolean isSuccessful3 = task.isSuccessful();
+                TaskCompletionSource taskCompletionSource3 = this.b;
+                if (!isSuccessful3) {
+                    if (task.getException() != null) {
+                        taskCompletionSource3.setException(task.getException());
+                        break;
+                    }
+                } else {
+                    taskCompletionSource3.setResult(task.getResult());
+                    break;
+                }
+                break;
+        }
+        return null;
     }
 }

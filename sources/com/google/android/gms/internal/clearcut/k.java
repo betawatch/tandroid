@@ -16,9 +16,9 @@ public abstract class k extends AbstractList implements c0 {
     }
 
     @Override // java.util.AbstractList, java.util.List
-    public boolean addAll(int i9, Collection collection) {
+    public boolean addAll(int i10, Collection collection) {
         i();
-        return super.addAll(i9, collection);
+        return super.addAll(i10, collection);
     }
 
     @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
@@ -43,8 +43,8 @@ public abstract class k extends AbstractList implements c0 {
         if (size != list.size()) {
             return false;
         }
-        for (int i9 = 0; i9 < size; i9++) {
-            if (!get(i9).equals(list.get(i9))) {
+        for (int i10 = 0; i10 < size; i10++) {
+            if (!get(i10).equals(list.get(i10))) {
                 return false;
             }
         }
@@ -54,11 +54,11 @@ public abstract class k extends AbstractList implements c0 {
     @Override // java.util.AbstractList, java.util.Collection, java.util.List
     public final int hashCode() {
         int size = size();
-        int i9 = 1;
-        for (int i10 = 0; i10 < size; i10++) {
-            i9 = (i9 * 31) + get(i10).hashCode();
+        int i10 = 1;
+        for (int i11 = 0; i11 < size; i11++) {
+            i10 = (i10 * 31) + get(i11).hashCode();
         }
-        return i9;
+        return i10;
     }
 
     public final void i() {

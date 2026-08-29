@@ -23,27 +23,27 @@ import org.telegram.tgnet.RequestTimeDelegate;
 import org.telegram.tgnet.ResultCallback;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.WriteToSocketDelegate;
-import org.telegram.ui.Components.kn0;
-import org.telegram.ui.qn;
+import org.telegram.ui.Components.vn0;
+import org.telegram.ui.tn;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class d implements RequestTimeDelegate, ResultCallback, WriteToSocketDelegate, OnSuccessListener, OnFailureListener, kh.y7, TelegramMediaSession.BrowseChildrenCallback, ImageReceiver.ImageReceiverDelegate, OnCompleteListener, kn0, org.telegram.ui.ActionBar.b2 {
+public final /* synthetic */ class d implements RequestTimeDelegate, ResultCallback, WriteToSocketDelegate, OnSuccessListener, OnFailureListener, nh.m7, TelegramMediaSession.BrowseChildrenCallback, ImageReceiver.ImageReceiverDelegate, OnCompleteListener, vn0, org.telegram.ui.ActionBar.b2 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
-    public /* synthetic */ d(Object obj, int i9) {
-        this.a = i9;
+    public /* synthetic */ d(Object obj, int i10) {
+        this.a = i10;
         this.b = obj;
     }
 
-    public void a(n2.g gVar, n2.q qVar) {
-        BillingController.lambda$queryProductDetails$0((BillingController.ProductDetailsResponseListenerLegacy) this.b, gVar, qVar);
+    public void a(p2.g gVar, p2.p pVar) {
+        BillingController.lambda$queryProductDetails$0((BillingController.ProductDetailsResponseListenerLegacy) this.b, gVar, pVar);
     }
 
-    @Override // org.telegram.ui.Components.kn0
-    public void b(float f10) {
-        ((RichMessageLayout.RichAudioBlock) this.b).lambda$new$0(f10);
+    @Override // org.telegram.ui.Components.vn0
+    public void c(float f9) {
+        ((RichMessageLayout.RichAudioBlock) this.b).lambda$new$0(f9);
     }
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
@@ -52,17 +52,17 @@ public final /* synthetic */ class d implements RequestTimeDelegate, ResultCallb
     }
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
-    public /* synthetic */ void didSetImageBitmap(int i9, String str, Drawable drawable) {
-        g5.a(this, i9, str, drawable);
+    public /* synthetic */ void didSetImageBitmap(int i10, String str, Drawable drawable) {
+        i5.a(this, i10, str, drawable);
     }
 
     @Override // org.telegram.ui.ActionBar.b2
-    public void f(org.telegram.ui.ActionBar.c2 c2Var, int i9) {
-        SendMessagesHelper.lambda$sendCallback$42((qn) this.b, c2Var, i9);
+    public void g(org.telegram.ui.ActionBar.c2 c2Var, int i10) {
+        SendMessagesHelper.lambda$sendCallback$42((tn) this.b, c2Var, i10);
     }
 
-    @Override // kh.y7
-    public Bitmap g(BitmapFactory.Options options) {
+    @Override // nh.m7
+    public Bitmap h(BitmapFactory.Options options) {
         Bitmap lambda$rebuildPhoto$0;
         lambda$rebuildPhoto$0 = ((MediaController.PhotoEntry) this.b).lambda$rebuildPhoto$0(options);
         return lambda$rebuildPhoto$0;
@@ -70,7 +70,7 @@ public final /* synthetic */ class d implements RequestTimeDelegate, ResultCallb
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public /* synthetic */ void onAnimationReady(ImageReceiver imageReceiver) {
-        g5.b(this, imageReceiver);
+        i5.b(this, imageReceiver);
     }
 
     @Override // com.google.android.gms.tasks.OnCompleteListener
@@ -79,9 +79,9 @@ public final /* synthetic */ class d implements RequestTimeDelegate, ResultCallb
     }
 
     @Override // org.telegram.tgnet.ResultCallback
-    public /* synthetic */ void onError(Throwable th) {
-        int i9 = this.a;
-        org.telegram.tgnet.k.a(this, th);
+    public /* synthetic */ void onError(Throwable th2) {
+        int i10 = this.a;
+        org.telegram.tgnet.k.a(this, th2);
     }
 
     @Override // com.google.android.gms.tasks.OnFailureListener
@@ -118,7 +118,7 @@ public final /* synthetic */ class d implements RequestTimeDelegate, ResultCallb
 
     @Override // org.telegram.tgnet.ResultCallback
     public /* synthetic */ void onError(TLRPC.TL_error tL_error) {
-        int i9 = this.a;
+        int i10 = this.a;
         org.telegram.tgnet.k.b(this, tL_error);
     }
 
@@ -126,7 +126,7 @@ public final /* synthetic */ class d implements RequestTimeDelegate, ResultCallb
     public void run(long j10) {
         switch (this.a) {
             case 0:
-                AndroidUtilities.lambda$showProxyAlert$18((org.telegram.ui.Components.qc[]) this.b, j10);
+                AndroidUtilities.lambda$showProxyAlert$18((org.telegram.ui.Components.vc[]) this.b, j10);
                 break;
             default:
                 ProxyRotationController.lambda$new$1((SharedConfig.ProxyInfo) this.b, j10);
@@ -134,7 +134,7 @@ public final /* synthetic */ class d implements RequestTimeDelegate, ResultCallb
         }
     }
 
-    @Override // org.telegram.ui.Components.kn0
-    public /* synthetic */ void e(float f10) {
+    @Override // org.telegram.ui.Components.vn0
+    public /* synthetic */ void d(float f9) {
     }
 }

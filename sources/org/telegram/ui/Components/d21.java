@@ -1,40 +1,41 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.NotificationCenter;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class d21 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ MessageObject b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ String d;
+public final class d21 extends AnimatorListenerAdapter {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ m21 b;
 
-    public /* synthetic */ d21(String str, MessageObject messageObject, long j10, int i9) {
-        this.a = i9;
-        this.b = messageObject;
-        this.c = j10;
-        this.d = str;
+    public d21(m21 m21Var, boolean z10) {
+        this.b = m21Var;
+        this.a = z10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i9 = this.a;
-        String str = this.d;
-        long j10 = this.c;
-        MessageObject messageObject = this.b;
-        switch (i9) {
-            case 0:
-                NotificationCenter notificationCenter = NotificationCenter.getInstance(messageObject.currentAccount);
-                int i10 = NotificationCenter.voiceTranscriptionUpdate;
-                Long valueOf = Long.valueOf(j10);
-                Boolean bool = Boolean.TRUE;
-                notificationCenter.lambda$postNotificationNameOnUIThread$1(i10, messageObject, valueOf, str, bool, bool);
-                break;
-            default:
-                i21.g(messageObject, j10, str);
-                break;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        m21 m21Var = this.b;
+        long j10 = m21Var.c;
+        if (m21Var.Q == animator) {
+            boolean z10 = this.a;
+            m21Var.N = z10 ? 1.0f : 0.0f;
+            m21Var.n();
+            m21Var.O = false;
+            m21Var.A.setImageResource(m21Var.L ? R.drawable.menu_sidebar_top : R.drawable.menu_sidebar_bottom);
+            m21Var.Q = null;
+            MessagesController.getInstance(m21Var.b).getMainSettings().edit().putBoolean(a4.w.m(j10, "topicssidetabs"), m21Var.M).putBoolean(a4.w.m(j10, "topicssidetabsb"), m21Var.L).apply();
+            Boolean bool = m21Var.P;
+            if (bool != null && z10 != bool.booleanValue()) {
+                boolean booleanValue = m21Var.P.booleanValue();
+                m21Var.P = null;
+                m21Var.d(booleanValue);
+            }
+            AndroidUtilities.runOnUIThread(new fq0(this, 19));
         }
     }
 }

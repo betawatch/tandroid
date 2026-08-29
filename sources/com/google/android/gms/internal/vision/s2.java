@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.ListIterator;
 import java.util.RandomAccess;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class s2 extends AbstractList implements t1, RandomAccess {
     public final r1 a;
@@ -17,13 +17,13 @@ public final class s2 extends AbstractList implements t1, RandomAccess {
     }
 
     @Override // com.google.android.gms.internal.vision.t1
-    public final Object a(int i9) {
-        return this.a.b.get(i9);
+    public final Object a(int i10) {
+        return this.a.b.get(i10);
     }
 
     @Override // java.util.AbstractList, java.util.List
-    public final /* synthetic */ Object get(int i9) {
-        return (String) this.a.get(i9);
+    public final /* synthetic */ Object get(int i10) {
+        return (String) this.a.get(i10);
     }
 
     @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.List
@@ -34,9 +34,9 @@ public final class s2 extends AbstractList implements t1, RandomAccess {
     }
 
     @Override // java.util.AbstractList, java.util.List
-    public final ListIterator listIterator(int i9) {
+    public final ListIterator listIterator(int i10) {
         r2 r2Var = new r2();
-        r2Var.a = this.a.listIterator(i9);
+        r2Var.a = this.a.listIterator(i10);
         return r2Var;
     }
 

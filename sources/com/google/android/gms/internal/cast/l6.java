@@ -2,13 +2,13 @@ package com.google.android.gms.internal.cast;
 
 import java.util.ListIterator;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class l6 implements ListIterator {
     public final ListIterator a;
 
-    public l6(n6 n6Var, int i9) {
-        this.a = n6Var.a.listIterator(i9);
+    public l6(n6 n6Var, int i10) {
+        this.a = n6Var.a.listIterator(i10);
     }
 
     @Override // java.util.ListIterator

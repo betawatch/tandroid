@@ -1,6 +1,6 @@
 package com.google.android.recaptcha.internal;
 
-import j3.r0;
+import j7.l1;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.util.Arrays;
@@ -11,9 +11,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 import org.scilab.forge.jlatexmath.TeXFormulaSettingsParser;
-import ta.b;
+import u3.c;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 final class zztu {
     private static final char[] zza;
@@ -25,33 +25,33 @@ final class zztu {
     }
 
     public static String zza(zzts zztsVar, String str) {
-        StringBuilder e10 = b.e("# ", str);
-        zzd(zztsVar, e10, 0);
-        return e10.toString();
+        StringBuilder f9 = c.f("# ", str);
+        zzd(zztsVar, f9, 0);
+        return f9.toString();
     }
 
-    public static void zzb(StringBuilder sb2, int i9, String str, Object obj) {
+    public static void zzb(StringBuilder sb2, int i10, String str, Object obj) {
         if (obj instanceof List) {
             Iterator it = ((List) obj).iterator();
             while (it.hasNext()) {
-                zzb(sb2, i9, str, it.next());
+                zzb(sb2, i10, str, it.next());
             }
             return;
         }
         if (obj instanceof Map) {
             Iterator it2 = ((Map) obj).entrySet().iterator();
             while (it2.hasNext()) {
-                zzb(sb2, i9, str, (Map.Entry) it2.next());
+                zzb(sb2, i10, str, (Map.Entry) it2.next());
             }
             return;
         }
         sb2.append('\n');
-        zzc(i9, sb2);
+        zzc(i10, sb2);
         if (!str.isEmpty()) {
             StringBuilder sb3 = new StringBuilder();
             sb3.append(Character.toLowerCase(str.charAt(0)));
-            for (int i10 = 1; i10 < str.length(); i10++) {
-                char charAt = str.charAt(i10);
+            for (int i11 = 1; i11 < str.length(); i11++) {
+                char charAt = str.charAt(i11);
                 if (Character.isUpperCase(charAt)) {
                     sb3.append("_");
                 }
@@ -75,9 +75,9 @@ final class zztu {
         }
         if (obj instanceof zzsn) {
             sb2.append(" {");
-            zzd((zzsn) obj, sb2, i9 + 2);
+            zzd((zzsn) obj, sb2, i10 + 2);
             sb2.append("\n");
-            zzc(i9, sb2);
+            zzc(i10, sb2);
             sb2.append("}");
             return;
         }
@@ -86,29 +86,29 @@ final class zztu {
             sb2.append(obj);
             return;
         }
-        int i11 = i9 + 2;
+        int i12 = i10 + 2;
         sb2.append(" {");
         Map.Entry entry = (Map.Entry) obj;
-        zzb(sb2, i11, "key", entry.getKey());
-        zzb(sb2, i11, "value", entry.getValue());
+        zzb(sb2, i12, "key", entry.getKey());
+        zzb(sb2, i12, "value", entry.getValue());
         sb2.append("\n");
-        zzc(i9, sb2);
+        zzc(i10, sb2);
         sb2.append("}");
     }
 
-    private static void zzc(int i9, StringBuilder sb2) {
-        while (i9 > 0) {
-            int i10 = 80;
-            if (i9 <= 80) {
-                i10 = i9;
+    private static void zzc(int i10, StringBuilder sb2) {
+        while (i10 > 0) {
+            int i11 = 80;
+            if (i10 <= 80) {
+                i11 = i10;
             }
-            sb2.append(zza, 0, i10);
-            i9 -= i10;
+            sb2.append(zza, 0, i11);
+            i10 -= i11;
         }
     }
 
-    private static void zzd(zzts zztsVar, StringBuilder sb2, int i9) {
-        int i10;
+    private static void zzd(zzts zztsVar, StringBuilder sb2, int i10) {
+        int i11;
         boolean equals;
         Method method;
         Method method2;
@@ -117,13 +117,13 @@ final class zztu {
         TreeMap treeMap = new TreeMap();
         Method[] declaredMethods = zztsVar.getClass().getDeclaredMethods();
         int length = declaredMethods.length;
-        int i11 = 0;
+        int i12 = 0;
         while (true) {
-            i10 = 3;
-            if (i11 >= length) {
+            i11 = 3;
+            if (i12 >= length) {
                 break;
             }
-            Method method3 = declaredMethods[i11];
+            Method method3 = declaredMethods[i12];
             if (!Modifier.isStatic(method3.getModifiers()) && method3.getName().length() >= 3) {
                 if (method3.getName().startsWith("set")) {
                     hashSet.add(method3.getName());
@@ -135,14 +135,14 @@ final class zztu {
                     }
                 }
             }
-            i11++;
+            i12++;
         }
         for (Map.Entry entry : treeMap.entrySet()) {
-            String substring = ((String) entry.getKey()).substring(i10);
+            String substring = ((String) entry.getKey()).substring(i11);
             if (substring.endsWith("List") && !substring.endsWith("OrBuilderList") && !substring.equals("List") && (method2 = (Method) entry.getValue()) != null && method2.getReturnType().equals(List.class)) {
-                zzb(sb2, i9, substring.substring(0, substring.length() - 4), zzsn.zzE(method2, zztsVar, new Object[0]));
+                zzb(sb2, i10, substring.substring(0, substring.length() - 4), zzsn.zzE(method2, zztsVar, new Object[0]));
             } else if (substring.endsWith(TeXFormulaSettingsParser.CHARTODEL_MAPPING_EL) && !substring.equals(TeXFormulaSettingsParser.CHARTODEL_MAPPING_EL) && (method = (Method) entry.getValue()) != null && method.getReturnType().equals(Map.class) && !method.isAnnotationPresent(Deprecated.class) && Modifier.isPublic(method.getModifiers())) {
-                zzb(sb2, i9, substring.substring(0, substring.length() - 3), zzsn.zzE(method, zztsVar, new Object[0]));
+                zzb(sb2, i10, substring.substring(0, substring.length() - 3), zzsn.zzE(method, zztsVar, new Object[0]));
             } else if (hashSet.contains("set".concat(substring)) && (!substring.endsWith("Bytes") || !treeMap.containsKey("get".concat(String.valueOf(substring.substring(0, substring.length() - 5)))))) {
                 Method method4 = (Method) entry.getValue();
                 Method method5 = (Method) hashMap.get("has".concat(substring));
@@ -151,23 +151,23 @@ final class zztu {
                     if (method5 != null) {
                         if (!((Boolean) zzsn.zzE(method5, zztsVar, new Object[0])).booleanValue()) {
                         }
-                        zzb(sb2, i9, substring, zzE);
+                        zzb(sb2, i10, substring, zzE);
                     } else if (zzE instanceof Boolean) {
                         if (!((Boolean) zzE).booleanValue()) {
                         }
-                        zzb(sb2, i9, substring, zzE);
+                        zzb(sb2, i10, substring, zzE);
                     } else if (zzE instanceof Integer) {
                         if (((Integer) zzE).intValue() == 0) {
                         }
-                        zzb(sb2, i9, substring, zzE);
+                        zzb(sb2, i10, substring, zzE);
                     } else if (zzE instanceof Float) {
                         if (Float.floatToRawIntBits(((Float) zzE).floatValue()) == 0) {
                         }
-                        zzb(sb2, i9, substring, zzE);
+                        zzb(sb2, i10, substring, zzE);
                     } else if (zzE instanceof Double) {
                         if (Double.doubleToRawLongBits(((Double) zzE).doubleValue()) == 0) {
                         }
-                        zzb(sb2, i9, substring, zzE);
+                        zzb(sb2, i10, substring, zzE);
                     } else {
                         if (zzE instanceof String) {
                             equals = zzE.equals("");
@@ -176,30 +176,30 @@ final class zztu {
                         } else if (zzE instanceof zzts) {
                             if (zzE == ((zzts) zzE).zzm()) {
                             }
-                            zzb(sb2, i9, substring, zzE);
+                            zzb(sb2, i10, substring, zzE);
                         } else {
                             if ((zzE instanceof Enum) && ((Enum) zzE).ordinal() == 0) {
                             }
-                            zzb(sb2, i9, substring, zzE);
+                            zzb(sb2, i10, substring, zzE);
                         }
                         if (equals) {
                         }
-                        zzb(sb2, i9, substring, zzE);
+                        zzb(sb2, i10, substring, zzE);
                     }
                 }
             }
-            i10 = 3;
+            i11 = 3;
         }
         if (zztsVar instanceof zzsk) {
             Iterator zzf = ((zzsk) zztsVar).zzb.zzf();
             while (zzf.hasNext()) {
                 Map.Entry entry2 = (Map.Entry) zzf.next();
-                zzb(sb2, i9, r0.m(((zzsl) entry2.getKey()).zza, "[", "]"), entry2.getValue());
+                zzb(sb2, i10, l1.l(((zzsl) entry2.getKey()).zza, "[", "]"), entry2.getValue());
             }
         }
         zzuw zzuwVar = ((zzsn) zztsVar).zzc;
         if (zzuwVar != null) {
-            zzuwVar.zzi(sb2, i9);
+            zzuwVar.zzi(sb2, i10);
         }
     }
 }

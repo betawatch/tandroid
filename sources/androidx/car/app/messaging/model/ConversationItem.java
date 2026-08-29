@@ -6,13 +6,14 @@ import androidx.car.app.model.CarText;
 import androidx.car.app.model.q;
 import androidx.car.app.utils.j;
 import e0.p0;
-import f7.u;
+import f7.v;
+import h7.c0;
 import j$.util.Objects;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public class ConversationItem implements q {
     private final List<Action> mActions;
@@ -62,7 +63,7 @@ public class ConversationItem implements q {
             return false;
         }
         ConversationItem conversationItem = (ConversationItem) obj;
-        return Objects.equals(this.mId, conversationItem.mId) && Objects.equals(this.mTitle, conversationItem.mTitle) && Objects.equals(this.mIcon, conversationItem.mIcon) && u.a(getSelf(), conversationItem.getSelf()) && this.mIsGroupConversation == conversationItem.mIsGroupConversation && Objects.equals(this.mMessages, conversationItem.mMessages) && Objects.equals(this.mActions, conversationItem.mActions);
+        return Objects.equals(this.mId, conversationItem.mId) && Objects.equals(this.mTitle, conversationItem.mTitle) && Objects.equals(this.mIcon, conversationItem.mIcon) && c0.a(getSelf(), conversationItem.getSelf()) && this.mIsGroupConversation == conversationItem.mIsGroupConversation && Objects.equals(this.mMessages, conversationItem.mMessages) && Objects.equals(this.mActions, conversationItem.mActions);
     }
 
     public List<Action> getActions() {
@@ -94,7 +95,7 @@ public class ConversationItem implements q {
     }
 
     public int hashCode() {
-        return Objects.hash(Integer.valueOf(u.b(getSelf())), this.mId, this.mTitle, this.mIcon, Boolean.valueOf(this.mIsGroupConversation), this.mMessages, this.mActions);
+        return Objects.hash(Integer.valueOf(c0.b(getSelf())), this.mId, this.mTitle, this.mIcon, Boolean.valueOf(this.mIsGroupConversation), this.mMessages, this.mActions);
     }
 
     public boolean isGroupConversation() {
@@ -115,7 +116,7 @@ public class ConversationItem implements q {
         this.mIcon = null;
         this.mIsGroupConversation = false;
         this.mMessages = new ArrayList();
-        this.mConversationCallbackDelegate = new ConversationCallbackDelegateImpl(new ya.b(1));
+        this.mConversationCallbackDelegate = new ConversationCallbackDelegateImpl(new v(2));
         this.mActions = Collections.EMPTY_LIST;
     }
 }

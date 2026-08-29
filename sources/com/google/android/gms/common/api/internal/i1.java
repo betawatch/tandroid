@@ -5,15 +5,15 @@ import android.os.RemoteException;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.tasks.TaskCompletionSource;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class i1 extends w0 {
     public final TaskCompletionSource b;
     public final /* synthetic */ int c;
     public final Object d;
 
-    public i1(int i9, TaskCompletionSource taskCompletionSource) {
-        super(i9);
+    public i1(int i10, TaskCompletionSource taskCompletionSource) {
+        super(i10);
         this.b = taskCompletionSource;
     }
 
@@ -43,7 +43,7 @@ public final class i1 extends w0 {
 
     @Override // com.google.android.gms.common.api.internal.k1
     public final /* bridge */ /* synthetic */ void d(g1 g1Var, boolean z10) {
-        int i9 = this.c;
+        int i10 = this.c;
     }
 
     @Override // com.google.android.gms.common.api.internal.w0
@@ -58,16 +58,16 @@ public final class i1 extends w0 {
     }
 
     @Override // com.google.android.gms.common.api.internal.w0
-    public final u5.c[] g(p0 p0Var) {
+    public final w5.c[] g(p0 p0Var) {
         switch (this.c) {
             case 0:
-                return (u5.c[]) ((b1) this.d).a.d;
+                return (w5.c[]) ((b1) this.d).a.d;
             default:
                 b1 b1Var = (b1) p0Var.f.get((n) this.d);
                 if (b1Var == null) {
                     return null;
                 }
-                return (u5.c[]) b1Var.a.d;
+                return (w5.c[]) b1Var.a.d;
         }
     }
 

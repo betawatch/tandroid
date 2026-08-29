@@ -1,42 +1,30 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.AnimatorSet;
-import org.telegram.ui.Components.ThemeEditorView;
-
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class l01 extends AnimatorListenerAdapter {
-    public final /* synthetic */ boolean a;
-    public final /* synthetic */ ThemeEditorView.EditorAlert b;
+public final /* synthetic */ class l01 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ n01 b;
+    public final /* synthetic */ m01 c;
 
-    public l01(ThemeEditorView.EditorAlert editorAlert, boolean z10) {
-        this.b = editorAlert;
-        this.a = z10;
+    public /* synthetic */ l01(n01 n01Var, m01 m01Var, int i10) {
+        this.a = i10;
+        this.b = n01Var;
+        this.c = m01Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationCancel(Animator animator) {
-        AnimatorSet[] animatorSetArr = this.b.x;
-        AnimatorSet animatorSet = animatorSetArr[0];
-        if (animatorSet == null || !animatorSet.equals(animator)) {
-            return;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.b(this.c);
+                break;
+            case 1:
+                this.b.b(this.c);
+                break;
+            default:
+                this.b.b(this.c);
+                break;
         }
-        animatorSetArr[0] = null;
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        ThemeEditorView.EditorAlert editorAlert = this.b;
-        AnimatorSet[] animatorSetArr = editorAlert.x;
-        AnimatorSet animatorSet = animatorSetArr[0];
-        if (animatorSet == null || !animatorSet.equals(animator)) {
-            return;
-        }
-        if (!this.a) {
-            editorAlert.w[0].setVisibility(4);
-        }
-        animatorSetArr[0] = null;
     }
 }

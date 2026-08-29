@@ -1,20 +1,20 @@
 package com.google.android.recaptcha.internal;
 
-import androidx.car.app.j;
+import a6.b;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import kotlin.jvm.internal.e;
-import pc.h;
-import pc.i;
-import pc.p;
-import pc.r;
-import qc.c;
+import kotlin.jvm.internal.f;
+import rc.h;
+import rc.i;
+import rc.p;
+import rc.r;
+import sc.c;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class zzaj extends zzg {
     private final List zza;
@@ -65,7 +65,7 @@ public final class zzaj extends zzg {
             zzf.zzf(zzdn.zza(zzpp.zzh().zzi(zzd, 0, zzd.length), zzqmVar));
         } else {
             if (!(zzatVar instanceof zzak)) {
-                throw new j();
+                throw new b();
             }
             zzyt zza2 = ((zzak) zzatVar).zza();
             zzqm zzqmVar3 = this.zzb;
@@ -87,10 +87,10 @@ public final class zzaj extends zzg {
             }
         }
         int size = arrayList.size();
-        int i9 = 0;
-        while (i9 < size) {
-            Object obj2 = arrayList.get(i9);
-            i9++;
+        int i10 = 0;
+        while (i10 < size) {
+            Object obj2 = arrayList.get(i10);
+            i10++;
             zzar zzarVar = (zzar) obj2;
             if (!map.containsKey(Integer.valueOf(zzarVar.zza()))) {
                 int zza = zzarVar.zza();
@@ -148,7 +148,7 @@ public final class zzaj extends zzg {
         return this.zzc;
     }
 
-    public /* synthetic */ zzaj(List list, int i9, e eVar) {
+    public /* synthetic */ zzaj(List list, int i10, f fVar) {
         this.zza = h.c(new zzav(), new zzad(), new zzx(), new zzz(), new zzba(null, null, 3, null));
         this.zzc = new LinkedHashMap();
     }

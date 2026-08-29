@@ -1,17 +1,26 @@
 package t4;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
-/* loaded from: classes.dex */
-public final class c {
-    public final int a;
-    public final boolean b;
-    public final byte[] c;
-    public final byte[] d;
+import f5.d0;
+import java.util.List;
+import q8.l0;
+import q8.x;
+import q8.z;
 
-    public c(byte[] bArr, byte[] bArr2, boolean z10, int i9) {
-        this.a = i9;
-        this.b = z10;
-        this.c = bArr;
-        this.d = bArr2;
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* loaded from: classes.dex */
+public final class c implements j3.g {
+    public static final /* synthetic */ int b = 0;
+    public final z a;
+
+    static {
+        x xVar = z.b;
+        new c(0L, l0.e);
+        int i10 = d0.a;
+        Integer.toString(0, 36);
+        Integer.toString(1, 36);
+    }
+
+    public c(long j10, List list) {
+        this.a = z.u(list);
     }
 }

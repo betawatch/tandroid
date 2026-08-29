@@ -6,18 +6,18 @@ import android.os.IInterface;
 import android.os.Parcel;
 import androidx.car.app.IOnDoneCallback;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public interface IOnItemVisibilityChangedListener extends IInterface {
     public static final String DESCRIPTOR = "androidx$car$app$model$IOnItemVisibilityChangedListener".replace('$', '.');
 
-    void onItemVisibilityChanged(int i9, int i10, IOnDoneCallback iOnDoneCallback);
+    void onItemVisibilityChanged(int i10, int i11, IOnDoneCallback iOnDoneCallback);
 
-    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
     public static abstract class Stub extends Binder implements IOnItemVisibilityChangedListener {
         static final int TRANSACTION_onItemVisibilityChanged = 2;
 
-        /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+        /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
         public static class Proxy implements IOnItemVisibilityChangedListener {
             private IBinder mRemote;
 
@@ -35,12 +35,12 @@ public interface IOnItemVisibilityChangedListener extends IInterface {
             }
 
             @Override // androidx.car.app.model.IOnItemVisibilityChangedListener
-            public void onItemVisibilityChanged(int i9, int i10, IOnDoneCallback iOnDoneCallback) {
+            public void onItemVisibilityChanged(int i10, int i11, IOnDoneCallback iOnDoneCallback) {
                 Parcel obtain = Parcel.obtain();
                 try {
                     obtain.writeInterfaceToken(IOnItemVisibilityChangedListener.DESCRIPTOR);
-                    obtain.writeInt(i9);
                     obtain.writeInt(i10);
+                    obtain.writeInt(i11);
                     obtain.writeStrongInterface(iOnDoneCallback);
                     this.mRemote.transact(2, obtain, null, 1);
                 } finally {
@@ -62,17 +62,17 @@ public interface IOnItemVisibilityChangedListener extends IInterface {
         }
 
         @Override // android.os.Binder
-        public boolean onTransact(int i9, Parcel parcel, Parcel parcel2, int i10) {
+        public boolean onTransact(int i10, Parcel parcel, Parcel parcel2, int i11) {
             String str = IOnItemVisibilityChangedListener.DESCRIPTOR;
-            if (i9 >= 1 && i9 <= 16777215) {
+            if (i10 >= 1 && i10 <= 16777215) {
                 parcel.enforceInterface(str);
             }
-            if (i9 == 1598968902) {
+            if (i10 == 1598968902) {
                 parcel2.writeString(str);
                 return true;
             }
-            if (i9 != 2) {
-                return super.onTransact(i9, parcel, parcel2, i10);
+            if (i10 != 2) {
+                return super.onTransact(i10, parcel, parcel2, i11);
             }
             onItemVisibilityChanged(parcel.readInt(), parcel.readInt(), IOnDoneCallback.Stub.asInterface(parcel.readStrongBinder()));
             return true;
@@ -84,7 +84,7 @@ public interface IOnItemVisibilityChangedListener extends IInterface {
         }
     }
 
-    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
     public static class Default implements IOnItemVisibilityChangedListener {
         @Override // android.os.IInterface
         public IBinder asBinder() {
@@ -92,7 +92,7 @@ public interface IOnItemVisibilityChangedListener extends IInterface {
         }
 
         @Override // androidx.car.app.model.IOnItemVisibilityChangedListener
-        public void onItemVisibilityChanged(int i9, int i10, IOnDoneCallback iOnDoneCallback) {
+        public void onItemVisibilityChanged(int i10, int i11, IOnDoneCallback iOnDoneCallback) {
         }
     }
 }

@@ -1,197 +1,106 @@
 package yg;
 
-import android.app.Activity;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.Rect;
-import android.view.ViewTreeObserver;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.drawable.ShapeDrawable;
+import android.text.TextUtils;
 import android.widget.FrameLayout;
-import fh.s;
-import g7.e6;
-import g7.g6;
+import android.widget.TextView;
+import i7.f6;
+import jf.r;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.ui.ActionBar.b6;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.h5;
-import org.telegram.ui.Cells.t1;
-import org.telegram.ui.Components.gr;
-import org.telegram.ui.Components.j10;
-import org.telegram.ui.b81;
-import org.telegram.ui.jg;
-import org.telegram.ui.qn;
-import pf.v;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.c6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.x5;
+import org.telegram.ui.Cells.b8;
+import org.telegram.ui.Components.jr;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class c extends FrameLayout implements ViewTreeObserver.OnPreDrawListener {
-    public final Rect A;
-    public ViewTreeObserver B;
-    public int C;
-    public final td.a D;
-    public final td.a E;
-    public final s a;
-    public final b b;
-    public final d c;
-    public final qn d;
-    public final FrameLayout.LayoutParams e;
-    public final h5 f;
-    public e h;
-    public t1 n;
-    public int r;
-    public jg s;
-    public final b81 v;
-    public final b81 w;
-    public final int x;
-    public final int[] y;
+public final class c extends FrameLayout implements vd.b, x5 {
+    public ShapeDrawable a;
+    public final c6 b;
+    public final b8 c;
+    public final TextView d;
+    public final vd.a e;
 
-    public c(Activity activity, b6 b6Var, qn qnVar) {
-        super(activity);
-        FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(0, -2);
-        this.e = layoutParams;
-        this.y = new int[2];
-        this.A = new Rect();
-        int i9 = 16;
-        t0.c cVar = new t0.c(this, i9);
-        gr grVar = gr.h;
-        this.D = new td.a(0, cVar, grVar, 380L, false);
-        this.E = new td.a(0, new t0.c(this, i9), grVar, 380L, false);
-        this.d = qnVar;
-        this.x = qnVar.getMessagesController().config.pollAnswerLengthMax.get();
-        s sVar = new s(this, activity, b6Var, 3);
-        this.a = sVar;
-        sVar.setAllowTextEntitiesIntersection(true);
-        sVar.setTextColor(f6.v0(f6.G6, b6Var));
-        sVar.setLinkTextColor(f6.v0(f6.gc, b6Var));
-        sVar.setHintTextColor(f6.v0(f6.H6, b6Var));
-        sVar.setHint(LocaleController.getString(R.string.PollAddAnOptionHint));
-        sVar.setTextSize(1, 15.0f);
-        sVar.setMaxLines(ConnectionsManager.DEFAULT_DATACENTER_ID);
-        sVar.setBackground(null);
-        sVar.setImeOptions(268435462);
-        sVar.setInputType(sVar.getInputType() | 16384);
-        sVar.addTextChangedListener(new bh.f(this, 19));
-        b bVar = new b(activity);
-        this.b = bVar;
-        int i10 = f6.Vh;
-        bVar.setBackground(f6.f0(f6.v0(i10, b6Var), 1, -1));
-        g6.a(bVar);
-        d dVar = new d(getContext(), 36);
-        this.c = dVar;
-        dVar.setBackground(f6.f0(f6.v0(i10, b6Var), 1, -1));
-        dVar.setOnClickListener(new v(6, this, qnVar));
-        g6.a(dVar);
-        h5 h5Var = new h5(getContext());
-        this.f = h5Var;
-        h5Var.setTextSize(13);
-        h5Var.setGravity(17);
-        h5Var.setTranslationY(AndroidUtilities.dp(44.0f));
-        h5Var.setVisibility(8);
-        b81 b81Var = new b81(activity, 10);
-        this.w = b81Var;
-        addView(b81Var, layoutParams);
-        b81 b81Var2 = new b81(activity, 9);
-        this.v = b81Var2;
-        b81Var.addView(b81Var2, e6.c(-2.0f, -1));
-        b81Var2.addView(h5Var, e6.e(54, 24, 53));
-        b81Var2.addView(bVar, e6.e(44, 44, 51));
-        b81Var2.addView(dVar, e6.d(44, 44.0f, 53, 0.0f, 0.0f, 5.0f, 0.0f));
-        b81Var2.addView(sVar, e6.d(-1, -2.0f, 119, 39.0f, 0.0f, 47.0f, 0.0f));
-        sVar.setPadding(AndroidUtilities.dp(5.0f), AndroidUtilities.dp(11.0f), AndroidUtilities.dp(5.0f), AndroidUtilities.dp(11.0f));
+    public c(Context context, c6 c6Var) {
+        super(context);
+        this.e = new vd.a(0, this, jr.h, 380L, false);
+        this.b = c6Var;
+        b8 b8Var = new b8(context, c6Var, false);
+        this.c = b8Var;
+        addView(b8Var, f6.d(45, 45.0f, 49, 0.0f, 8.0f, 0.0f, 0.0f));
+        TextView textView = new TextView(context);
+        this.d = textView;
+        textView.setTextSize(1, 10.0f);
+        textView.setGravity(17);
+        textView.setEllipsize(TextUtils.TruncateAt.END);
+        textView.setSingleLine();
+        addView(textView, f6.d(-1, -2.0f, 80, 6.0f, 0.0f, 6.0f, 5.0f));
+        e();
     }
 
-    public static void a(c cVar) {
-        h5 h5Var = cVar.f;
-        j10.d(h5Var, cVar.D.e);
-        int i9 = f6.A6;
-        qn qnVar = cVar.d;
-        h5Var.setTextColor(i0.a.d(cVar.E.e, f6.v0(i9, qnVar.getResourceProvider()), f6.v0(f6.p7, qnVar.getResourceProvider())));
+    @Override // vd.b
+    public final void N(int i10, float f9, float f10, vd.c cVar) {
+        ShapeDrawable shapeDrawable = this.a;
+        if (shapeDrawable != null) {
+            shapeDrawable.setAlpha((int) (f9 * 255.0f));
+        }
+        invalidate();
     }
 
-    public e getAttachedMedia() {
-        return this.h;
+    public final void a(boolean z10, boolean z11) {
+        if (z10 && this.a == null) {
+            this.a = g6.b0(AndroidUtilities.dp(10.0f), i0.a.k(g6.v0(g6.Wk, this.b), 25));
+        }
+        vd.a aVar = this.e;
+        if (aVar.f != z10 || z11) {
+            aVar.a(z10, z11);
+        }
     }
 
     @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        ViewTreeObserver viewTreeObserver = getViewTreeObserver();
-        this.B = viewTreeObserver;
-        viewTreeObserver.addOnPreDrawListener(this);
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        ViewTreeObserver viewTreeObserver = this.B;
-        if (viewTreeObserver != null && viewTreeObserver.isAlive()) {
-            this.B.removeOnPreDrawListener(this);
-        }
-        this.B = null;
-        super.onDetachedFromWindow();
-    }
-
-    @Override // android.view.ViewTreeObserver.OnPreDrawListener
-    public final boolean onPreDraw() {
-        t1 t1Var;
-        ah.a aVar;
-        t1 t1Var2 = this.n;
-        if (t1Var2 != null) {
-            int id2 = t1Var2.getMessageObject().getId();
-            if (this.n.isAttachedToWindow() && this.r == id2 && (aVar = (t1Var = this.n).W5) != null && t1Var.j6) {
-                Rect bounds = aVar.getBounds();
-                Rect rect = this.A;
-                rect.set(bounds);
-                t1 t1Var3 = this.n;
-                int[] iArr = this.y;
-                t1Var3.getLocationInWindow(iArr);
-                int i9 = iArr[0];
-                int i10 = iArr[1];
-                getLocationInWindow(iArr);
-                rect.offset(i9 - iArr[0], i10 - iArr[1]);
-                int width = rect.width();
-                FrameLayout.LayoutParams layoutParams = this.e;
-                int i11 = layoutParams.width;
-                b81 b81Var = this.w;
-                if (i11 != width) {
-                    layoutParams.width = width;
-                    b81Var.setLayoutParams(layoutParams);
-                }
-                b81Var.setTranslationX(rect.left);
-                b81Var.setTranslationY(AndroidUtilities.dp(0.66f) + rect.top);
-                return true;
-            }
-            jg jgVar = this.s;
-            if (jgVar != null) {
-                jgVar.run();
-                this.s = null;
+    public final void dispatchDraw(Canvas canvas) {
+        ShapeDrawable shapeDrawable = this.a;
+        if (shapeDrawable != null) {
+            vd.a aVar = this.e;
+            if (aVar.e > 0.0f) {
+                shapeDrawable.setBounds(0, 0, getWidth(), getHeight());
+                r.b(canvas, this.a, AndroidUtilities.lerp(0.9f, 1.0f, aVar.e));
             }
         }
-        return true;
+        super.dispatchDraw(canvas);
     }
 
-    public void setAnimatedVisibility(float f10) {
-        this.v.setAlpha(f10);
-    }
-
-    public void setCellToWatch(t1 t1Var) {
-        this.n = t1Var;
-        this.r = t1Var.getMessageObject().getId();
-    }
-
-    public void setColor(int i9) {
-        if (this.C != i9) {
-            this.C = i9;
-            PorterDuffColorFilter porterDuffColorFilter = new PorterDuffColorFilter(i9, PorterDuff.Mode.SRC_IN);
-            b bVar = this.b;
-            bVar.b.setColorFilter(porterDuffColorFilter);
-            bVar.c.setColorFilter(porterDuffColorFilter);
-            this.c.a.setColorFilter(porterDuffColorFilter);
-            s sVar = this.a;
-            sVar.setCursorColor(i9);
-            sVar.setHandlesColor(i9);
-            sVar.setHintTextColor(i9);
+    @Override // org.telegram.ui.ActionBar.x5
+    public final void e() {
+        ShapeDrawable shapeDrawable = this.a;
+        c6 c6Var = this.b;
+        if (shapeDrawable != null) {
+            ShapeDrawable b02 = g6.b0(AndroidUtilities.dp(10.0f), i0.a.k(g6.v0(g6.Wk, c6Var), 25));
+            this.a = b02;
+            b02.setAlpha((int) (this.e.e * 255.0f));
         }
+        this.d.setTextColor(i0.a.k(g6.v0(g6.Wk, c6Var), TLRPC.LAYER));
+    }
+
+    public /* bridge */ /* synthetic */ int[] getColorKeys() {
+        return null;
+    }
+
+    @Override // android.view.View
+    public final boolean isSelected() {
+        return this.e.f;
+    }
+
+    public void setPack(TLRPC.TL_messages_stickerSet tL_messages_stickerSet) {
+        this.d.setText(tL_messages_stickerSet.set.short_name);
+        this.c.d(!tL_messages_stickerSet.documents.isEmpty() ? tL_messages_stickerSet.documents.get(0) : null, null, null, null, false, false);
+    }
+
+    @Override // vd.b
+    public final /* synthetic */ void z(float f9, int i10) {
     }
 }

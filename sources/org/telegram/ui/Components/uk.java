@@ -1,39 +1,49 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Point;
 import android.view.View;
-import android.widget.FrameLayout;
-import java.util.HashMap;
-import java.util.Map;
+import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.IMapsProvider;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class uk extends FrameLayout {
-    public final HashMap a;
-    public final /* synthetic */ xk b;
+public final class uk extends f2.a1 {
+    public final /* synthetic */ bl a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public uk(xk xkVar, Context context) {
-        super(context);
-        this.b = xkVar;
-        this.a = new HashMap();
+    public uk(bl blVar) {
+        this.a = blVar;
     }
 
-    public final void a() {
-        IMapsProvider.IMap iMap = this.b.D;
-        if (iMap == null) {
-            return;
+    @Override // f2.a1
+    public final void a(RecyclerView recyclerView, int i10) {
+        vk0 vk0Var;
+        bl blVar = this.a;
+        jh.e1 e1Var = blVar.L;
+        ni niVar = blVar.b;
+        boolean z10 = i10 != 0;
+        blVar.H = z10;
+        if (!z10 && blVar.F != null) {
+            blVar.F = null;
         }
-        IMapsProvider.IProjection projection = iMap.getProjection();
-        for (Map.Entry entry : this.a.entrySet()) {
-            IMapsProvider.IMarker iMarker = (IMapsProvider.IMarker) entry.getKey();
-            View view = (View) entry.getValue();
-            Point screenLocation = projection.toScreenLocation(iMarker.getPosition());
-            view.setTranslationX(screenLocation.x - (view.getMeasuredWidth() / 2));
-            view.setTranslationY(AndroidUtilities.dp(22.0f) + (screenLocation.y - view.getMeasuredHeight()));
+        if (i10 == 0) {
+            int dp = AndroidUtilities.dp(13.0f);
+            int backgroundPaddingTop = niVar.getBackgroundPaddingTop();
+            if (((niVar.X1[0] - backgroundPaddingTop) - dp) + backgroundPaddingTop >= org.telegram.ui.ActionBar.l.getCurrentActionBarHeight() || (vk0Var = (vk0) e1Var.K(0)) == null) {
+                return;
+            }
+            View view = vk0Var.a;
+            if (view.getTop() > blVar.w0 - blVar.v0) {
+                e1Var.v0(0, view.getTop() - (blVar.w0 - blVar.v0), null);
+            }
         }
+    }
+
+    @Override // f2.a1
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        bl blVar = this.a;
+        blVar.e0();
+        if (blVar.F != null) {
+            blVar.G += i11;
+        }
+        blVar.b.X1(blVar, i11);
     }
 }

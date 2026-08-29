@@ -8,7 +8,7 @@ import android.view.ViewTreeObserver;
 import android.widget.ListAdapter;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class n0 extends e2 implements p0 {
     public CharSequence O;
@@ -34,27 +34,27 @@ public final class n0 extends e2 implements p0 {
     }
 
     @Override // m.p0
-    public final void h(CharSequence charSequence) {
+    public final void i(CharSequence charSequence) {
         this.O = charSequence;
     }
 
     @Override // m.p0
-    public final void l(int i9) {
-        this.R = i9;
+    public final void l(int i10) {
+        this.R = i10;
     }
 
     @Override // m.p0
-    public final void m(int i9, int i10) {
+    public final void m(int i10, int i11) {
         ViewTreeObserver viewTreeObserver;
         y yVar = this.K;
         boolean isShowing = yVar.isShowing();
-        r();
+        s();
         yVar.setInputMethodMode(2);
-        g();
+        h();
         s1 s1Var = this.c;
         s1Var.setChoiceMode(1);
-        h0.d(s1Var, i9);
-        h0.c(s1Var, i10);
+        h0.d(s1Var, i10);
+        h0.c(s1Var, i11);
         q0 q0Var = this.S;
         int selectedItemPosition = q0Var.getSelectedItemPosition();
         s1 s1Var2 = this.c;
@@ -68,47 +68,47 @@ public final class n0 extends e2 implements p0 {
         if (isShowing || (viewTreeObserver = q0Var.getViewTreeObserver()) == null) {
             return;
         }
-        androidx.mediarouter.app.k kVar = new androidx.mediarouter.app.k(this, 4);
-        viewTreeObserver.addOnGlobalLayoutListener(kVar);
-        yVar.setOnDismissListener(new m0(this, kVar));
+        androidx.mediarouter.app.h hVar = new androidx.mediarouter.app.h(this, 4);
+        viewTreeObserver.addOnGlobalLayoutListener(hVar);
+        yVar.setOnDismissListener(new m0(this, hVar));
     }
 
     @Override // m.e2, m.p0
-    public final void o(ListAdapter listAdapter) {
-        super.o(listAdapter);
+    public final void p(ListAdapter listAdapter) {
+        super.p(listAdapter);
         this.P = (k0) listAdapter;
     }
 
-    public final void r() {
-        int i9;
+    public final void s() {
+        int i10;
         q0 q0Var = this.S;
         Rect rect = q0Var.n;
         y yVar = this.K;
         Drawable background = yVar.getBackground();
         if (background != null) {
             background.getPadding(rect);
-            i9 = w3.a(q0Var) ? rect.right : -rect.left;
+            i10 = v3.a(q0Var) ? rect.right : -rect.left;
         } else {
-            i9 = 0;
+            i10 = 0;
             rect.right = 0;
             rect.left = 0;
         }
         int paddingLeft = q0Var.getPaddingLeft();
         int paddingRight = q0Var.getPaddingRight();
         int width = q0Var.getWidth();
-        int i10 = q0Var.h;
-        if (i10 == -2) {
+        int i11 = q0Var.h;
+        if (i11 == -2) {
             int a2 = q0Var.a(this.P, yVar.getBackground());
-            int i11 = (q0Var.getContext().getResources().getDisplayMetrics().widthPixels - rect.left) - rect.right;
-            if (a2 > i11) {
-                a2 = i11;
+            int i12 = (q0Var.getContext().getResources().getDisplayMetrics().widthPixels - rect.left) - rect.right;
+            if (a2 > i12) {
+                a2 = i12;
             }
-            q(Math.max(a2, (width - paddingLeft) - paddingRight));
-        } else if (i10 == -1) {
-            q((width - paddingLeft) - paddingRight);
+            r(Math.max(a2, (width - paddingLeft) - paddingRight));
+        } else if (i11 == -1) {
+            r((width - paddingLeft) - paddingRight);
         } else {
-            q(i10);
+            r(i11);
         }
-        this.f = w3.a(q0Var) ? (((width - paddingRight) - this.e) - this.R) + i9 : paddingLeft + this.R + i9;
+        this.f = v3.a(q0Var) ? (((width - paddingRight) - this.e) - this.R) + i10 : paddingLeft + this.R + i10;
     }
 }

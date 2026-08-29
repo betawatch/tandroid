@@ -1,134 +1,173 @@
 package org.telegram.ui.Cells;
 
-import android.text.TextUtils;
-import java.io.File;
+import android.graphics.ColorMatrixColorFilter;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.ImageLoader;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.a81;
+import org.telegram.ui.Components.f00;
+import org.telegram.ui.Components.pe0;
+import org.telegram.ui.Components.t81;
+import org.telegram.ui.Components.u81;
+import org.telegram.ui.PhotoViewer;
+import org.telegram.ui.ProfileActivity;
+import org.telegram.ui.tn;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class b2 implements Runnable {
-    public final /* synthetic */ boolean a;
-    public final /* synthetic */ e2 b;
+public final class b2 extends org.telegram.ui.Components.q6 {
+    public final /* synthetic */ int b;
+    public final /* synthetic */ Object c;
 
-    public b2(e2 e2Var, boolean z10) {
-        this.b = e2Var;
-        this.a = z10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ b2(int i10, FrameLayout frameLayout) {
+        super("animationValue", 0);
+        this.b = i10;
+        this.c = frameLayout;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:14:0x00fe  */
-    @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void run() {
-        File file;
-        File file2;
-        String str;
-        String attachFileName;
-        File pathToAttach;
-        TLRPC.Document document;
-        e2 e2Var = this.b;
-        int i9 = e2Var.d;
-        int i10 = e2Var.K;
-        String str2 = null;
-        if (i10 == 5 || i10 == 3) {
-            TLRPC.Document document2 = e2Var.G;
-            if (document2 != null) {
-                str2 = FileLoader.getAttachFileName(document2);
-                file = FileLoader.getInstance(i9).getPathToAttach(e2Var.G);
-            } else {
-                if (e2Var.E.content instanceof TLRPC.TL_webDocument) {
-                    StringBuilder sb2 = new StringBuilder();
-                    sb2.append(Utilities.MD5(e2Var.E.content.url));
-                    sb2.append(".");
-                    sb2.append(ImageLoader.getHttpUrlExtension(e2Var.E.content.url, e2Var.K == 5 ? "mp3" : "ogg"));
-                    str2 = sb2.toString();
-                    file = new File(FileLoader.getDirectory(4), str2);
+    @Override // org.telegram.ui.Components.q6
+    public final void b(Object obj, float f9) {
+        ViewGroup viewGroup;
+        switch (this.b) {
+            case 0:
+                d2 d2Var = (d2) this.c;
+                d2Var.c0 = f9;
+                d2Var.invalidate();
+                break;
+            case 1:
+                tn.Ec = f9;
+                tn tnVar = (tn) this.c;
+                tnVar.N6.setSaturation(f9);
+                tnVar.M6.setColorFilter(new ColorMatrixColorFilter(tnVar.N6));
+                break;
+            case 2:
+                org.telegram.ui.ActionBar.l lVar = (org.telegram.ui.ActionBar.l) obj;
+                org.telegram.ui.Components.g8 g8Var = (org.telegram.ui.Components.g8) this.c;
+                g8Var.M0 = f9;
+                org.telegram.ui.ActionBar.h5 titleTextView = lVar.getTitleTextView();
+                ImageView backButton = lVar.getBackButton();
+                float f10 = 1.0f - f9;
+                titleTextView.setTranslationX(AndroidUtilities.dp(-52.0f) * f10);
+                backButton.setTranslationX(AndroidUtilities.dp(-52.0f) * f10);
+                org.telegram.ui.ActionBar.w0 w0Var = g8Var.h0;
+                if (w0Var != null && w0Var.getSearchContainer() != null) {
+                    w0Var.getSearchContainer().setClipChildren(false);
+                    w0Var.getSearchContainer().setClipToPadding(false);
+                    w0Var.getSearchContainer().setPadding(0, 0, AndroidUtilities.dp(AndroidUtilities.isTablet() ? 74.0f : 66.0f), 0);
+                    w0Var.getSearchContainer().setTranslationX((AndroidUtilities.dp(-52.0f) * f10) + AndroidUtilities.dp(AndroidUtilities.isTablet() ? 74.0f : 66.0f));
+                    if (w0Var.getSearchClearButton() != null) {
+                        w0Var.getSearchClearButton().setTranslationX(AndroidUtilities.dp(52.0f) * f10);
+                    }
                 }
-                str = null;
-                file2 = null;
-            }
-            file2 = file;
-            str = str2;
-        } else {
-            if (e2Var.L) {
-                TLRPC.BotInlineResult botInlineResult = e2Var.E;
-                if (botInlineResult != null) {
-                    TLRPC.Document document3 = botInlineResult.document;
-                    if (document3 instanceof TLRPC.TL_document) {
-                        attachFileName = FileLoader.getAttachFileName(document3);
-                        pathToAttach = FileLoader.getInstance(i9).getPathToAttach(e2Var.E.document);
-                    } else {
-                        TLRPC.Photo photo = botInlineResult.photo;
-                        if (photo instanceof TLRPC.TL_photo) {
-                            TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(photo.sizes, AndroidUtilities.getPhotoSize(), true);
-                            e2Var.J = closestPhotoSizeWithSize;
-                            attachFileName = FileLoader.getAttachFileName(closestPhotoSizeWithSize);
-                            pathToAttach = FileLoader.getInstance(i9).getPathToAttach(e2Var.J);
-                        } else if (botInlineResult.content instanceof TLRPC.TL_webDocument) {
-                            StringBuilder sb3 = new StringBuilder();
-                            sb3.append(Utilities.MD5(e2Var.E.content.url));
-                            sb3.append(".");
-                            TLRPC.WebDocument webDocument = e2Var.E.content;
-                            sb3.append(ImageLoader.getHttpUrlExtension(webDocument.url, FileLoader.getMimeTypePart(webDocument.mime_type)));
-                            attachFileName = sb3.toString();
-                            pathToAttach = new File(FileLoader.getDirectory(4), attachFileName);
-                            if (e2Var.K == 2) {
-                                TLRPC.WebDocument webDocument2 = e2Var.E.thumb;
-                                if ((webDocument2 instanceof TLRPC.TL_webDocument) && "video/mp4".equals(webDocument2.mime_type)) {
-                                    attachFileName = null;
-                                }
-                            }
-                        } else {
-                            if (botInlineResult.thumb instanceof TLRPC.TL_webDocument) {
-                                StringBuilder sb4 = new StringBuilder();
-                                sb4.append(Utilities.MD5(e2Var.E.thumb.url));
-                                sb4.append(".");
-                                TLRPC.WebDocument webDocument3 = e2Var.E.thumb;
-                                sb4.append(ImageLoader.getHttpUrlExtension(webDocument3.url, FileLoader.getMimeTypePart(webDocument3.mime_type)));
-                                attachFileName = sb4.toString();
-                                pathToAttach = new File(FileLoader.getDirectory(4), attachFileName);
-                            }
-                            pathToAttach = null;
-                            attachFileName = null;
-                        }
-                    }
-                    document = e2Var.G;
-                    if (document == null && e2Var.K == 2 && MessageObject.getDocumentVideoThumb(document) != null) {
-                        file2 = pathToAttach;
-                        str = str2;
-                    } else {
-                        file2 = pathToAttach;
-                        str = attachFileName;
-                    }
-                } else {
-                    TLRPC.Document document4 = e2Var.G;
-                    if (document4 != null) {
-                        attachFileName = FileLoader.getAttachFileName(document4);
-                        pathToAttach = FileLoader.getInstance(i9).getPathToAttach(e2Var.G);
-                        document = e2Var.G;
-                        if (document == null) {
-                        }
-                        file2 = pathToAttach;
-                        str = attachFileName;
-                    }
-                    pathToAttach = null;
-                    attachFileName = null;
-                    document = e2Var.G;
-                    if (document == null) {
-                    }
-                    file2 = pathToAttach;
-                    str = attachFileName;
+                backButton.setScaleX(AndroidUtilities.lerp(0.6f, 1.0f, f9));
+                backButton.setScaleY(AndroidUtilities.lerp(0.6f, 1.0f, f9));
+                backButton.setAlpha(AndroidUtilities.lerp(0.0f, 1.0f, f9));
+                viewGroup = ((org.telegram.ui.ActionBar.f3) g8Var).containerView;
+                viewGroup.invalidate();
+                break;
+            case 3:
+                f00 f00Var = (f00) this.c;
+                f00Var.s0 = f9;
+                int i10 = f00Var.Q;
+                org.telegram.ui.ActionBar.c6 c6Var = f00Var.a;
+                f00Var.P.setColor(i0.a.d(f9, org.telegram.ui.ActionBar.g6.v0(i10, c6Var), org.telegram.ui.ActionBar.g6.v0(f00Var.V, c6Var)));
+                jh.e1 e1Var = f00Var.B;
+                e1Var.f1();
+                e1Var.invalidate();
+                ((f00) obj).invalidate();
+                break;
+            case 4:
+                a81 a81Var = (a81) this.c;
+                a81Var.x = f9;
+                a81Var.invalidate();
+                break;
+            case 5:
+                u81 u81Var = (u81) this.c;
+                u81Var.A = f9;
+                t81 t81Var = u81Var.H;
+                if (t81Var != null) {
+                    t81Var.a(f9);
                 }
-            }
-            str = null;
-            file2 = null;
+                u81Var.invalidate();
+                break;
+            case 6:
+                ((View) obj).setAlpha(f9);
+                pe0 pe0Var = ((PhotoViewer) this.c).y1;
+                if (pe0Var != null) {
+                    pe0Var.setVideoThumbFlashAlpha(f9);
+                    break;
+                }
+                break;
+            default:
+                ((ProfileActivity) this.c).X0 = f9;
+                break;
         }
-        AndroidUtilities.runOnUIThread(new org.telegram.messenger.camera.i(this, str, file2, !TextUtils.isEmpty(str) && file2.exists(), this.a));
+    }
+
+    @Override // android.util.Property
+    public final Object get(Object obj) {
+        switch (this.b) {
+            case 0:
+                return Float.valueOf(((d2) this.c).c0);
+            case 1:
+                return Float.valueOf(tn.Ec);
+            case 2:
+                return Float.valueOf(((org.telegram.ui.Components.g8) this.c).M0);
+            case 3:
+                return Float.valueOf(((f00) this.c).s0);
+            case 4:
+                return Float.valueOf(((a81) this.c).x);
+            case 5:
+                return Float.valueOf(((u81) this.c).A);
+            case 6:
+                return Float.valueOf(((View) obj).getAlpha());
+            default:
+                return Float.valueOf(((ProfileActivity) this.c).X0);
+        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public b2(a81 a81Var) {
+        super("progress", 0);
+        this.b = 4;
+        this.c = a81Var;
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public b2(u81 u81Var) {
+        super("clipProgress", 0);
+        this.b = 5;
+        this.c = u81Var;
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public b2(ProfileActivity profileActivity) {
+        super("headerShadow", 0);
+        this.b = 7;
+        this.c = profileActivity;
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public b2(PhotoViewer photoViewer) {
+        super("flashViewAlpha", 0);
+        this.b = 6;
+        this.c = photoViewer;
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public b2(tn tnVar) {
+        super("", 0);
+        this.b = 1;
+        this.c = tnVar;
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public b2(org.telegram.ui.Components.g8 g8Var) {
+        super("actionBarSlide", 0);
+        this.b = 2;
+        this.c = g8Var;
     }
 }

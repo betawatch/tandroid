@@ -5,15 +5,15 @@ import android.app.FragmentManager;
 import android.os.Build;
 import androidx.lifecycle.h0;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public abstract class f0 {
     /* JADX WARN: Multi-variable type inference failed */
     public static void a(Activity activity, m event) {
-        kotlin.jvm.internal.i.e(event, "event");
+        kotlin.jvm.internal.j.e(event, "event");
         if (activity instanceof t) {
             o m10 = ((t) activity).m();
-            if (e2.c.v(m10)) {
+            if (com.google.android.recaptcha.internal.a.u(m10)) {
                 ((v) m10).e(event);
             }
         }

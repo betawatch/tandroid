@@ -1,34 +1,27 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class om extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ jn b;
+public final /* synthetic */ class om implements wk, org.telegram.ui.ActionBar.b2 {
+    public final /* synthetic */ Utilities.Callback a;
 
-    public /* synthetic */ om(jn jnVar, int i9) {
-        this.a = i9;
-        this.b = jnVar;
+    public /* synthetic */ om(Utilities.Callback callback) {
+        this.a = callback;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                this.b.A.setTranslationY(0.0f);
-                break;
-            case 1:
-                this.b.A.setTranslationY(0.0f);
-                break;
-            default:
-                jn jnVar = this.b;
-                jnVar.b1 = false;
-                jnVar.A.setTranslationY(0.0f);
-                jnVar.Z();
-                break;
+    @Override // org.telegram.ui.Components.wk
+    public void d(TLRPC.MessageMedia messageMedia, int i10, boolean z10, int i11, long j10) {
+        this.a.run(new ch.g(messageMedia));
+    }
+
+    @Override // org.telegram.ui.ActionBar.b2
+    public void g(org.telegram.ui.ActionBar.c2 c2Var, int i10) {
+        Utilities.Callback callback = this.a;
+        if (callback != null) {
+            callback.run(Boolean.FALSE);
         }
     }
 }

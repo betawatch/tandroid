@@ -1,166 +1,95 @@
 package eg;
 
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
-import android.view.View;
-import gh.x4;
-import hg.p0;
-import org.telegram.ui.Components.h21;
-import org.telegram.ui.Components.tn0;
-import org.telegram.ui.Components.up;
-import org.telegram.ui.Components.vc;
-import qh.q0;
+import android.text.SpannableString;
+import android.text.TextPaint;
+import android.text.style.ReplacementSpan;
+import android.util.Pair;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.R;
+import org.telegram.ui.Components.jr;
+import org.telegram.ui.Components.n6;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class a implements Drawable.Callback {
-    public final /* synthetic */ int a;
-    public Object b;
+public final class a extends ReplacementSpan {
+    public final Drawable a;
+    public final Drawable b;
+    public boolean c;
+    public boolean d;
+    public final n6 e;
+    public final TextPaint f;
+    public final int h;
 
-    @Override // android.graphics.drawable.Drawable.Callback
-    public final void invalidateDrawable(Drawable drawable) {
-        switch (this.a) {
-            case 0:
-                ((b) this.b).c.invalidate();
-                break;
-            case 1:
-                ((d) this.b).c.invalidate();
-                break;
-            case 2:
-                ((x4) this.b).f.invalidate();
-                break;
-            case 3:
-                p0 p0Var = (p0) this.b;
-                View view = p0Var.W;
-                if (view != null) {
-                    view.invalidate();
-                    if (p0Var.R && p0Var.W.getParent() != null && (p0Var.W.getParent().getParent() instanceof View)) {
-                        ((View) p0Var.W.getParent().getParent()).invalidate();
-                        break;
-                    }
-                }
-                break;
-            case 4:
-                break;
-            case 5:
-                ((k2.d) this.b).invalidateSelf();
-                break;
-            case 6:
-                ((up) this.b).invalidateSelf();
-                break;
-            case 7:
-                ((tn0) this.b).b.run();
-                break;
-            case 8:
-                ((vc) this.b).invalidateSelf();
-                break;
-            case 9:
-                ((h21) this.b).invalidateSelf();
-                break;
-            default:
-                ((q0) this.b).b.invalidate();
-                break;
+    public a(org.telegram.ui.Cells.s1 s1Var, TextPaint textPaint, int i10) {
+        this.f = textPaint;
+        n6 n6Var = new n6(false, false, true, false);
+        this.e = n6Var;
+        n6Var.k(0.3f, 250L, jr.h);
+        n6Var.setCallback(s1Var);
+        n6Var.t(AndroidUtilities.dp(11.5f));
+        n6Var.u(AndroidUtilities.bold());
+        n6Var.q("", true, true);
+        n6Var.b = 17;
+        Drawable mutate = s1Var.getContext().getDrawable(R.drawable.mini_boost_profile_badge).mutate();
+        this.a = mutate;
+        Drawable mutate2 = s1Var.getContext().getDrawable(R.drawable.mini_boost_profile_badge2).mutate();
+        this.b = mutate2;
+        mutate.setBounds(0, 0, mutate.getIntrinsicWidth(), mutate.getIntrinsicHeight());
+        mutate2.setBounds(0, 0, mutate2.getIntrinsicWidth(), mutate2.getIntrinsicHeight());
+        this.h = i10;
+        n6Var.q(i10 > 1 ? String.valueOf(i10) : "", false, true);
+    }
+
+    public static Pair a(org.telegram.ui.Cells.s1 s1Var, TextPaint textPaint, int i10) {
+        SpannableString spannableString = new SpannableString("d");
+        a aVar = new a(s1Var, textPaint, i10);
+        spannableString.setSpan(aVar, 0, 1, 33);
+        return new Pair(spannableString, aVar);
+    }
+
+    public final int b() {
+        return (int) (this.e.e() + AndroidUtilities.dp((this.d ? 8 : 0) + 16));
+    }
+
+    @Override // android.text.style.ReplacementSpan
+    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f9, int i12, int i13, int i14, Paint paint) {
+        TextPaint textPaint = this.f;
+        int color = textPaint.getColor();
+        n6 n6Var = this.e;
+        int color2 = n6Var.a.getColor();
+        Drawable drawable = this.b;
+        Drawable drawable2 = this.a;
+        if (color != color2) {
+            n6Var.r(textPaint.getColor());
+            int color3 = n6Var.a.getColor();
+            PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
+            drawable2.setColorFilter(new PorterDuffColorFilter(color3, mode));
+            drawable.setColorFilter(new PorterDuffColorFilter(n6Var.a.getColor(), mode));
         }
-    }
-
-    @Override // android.graphics.drawable.Drawable.Callback
-    public final void scheduleDrawable(Drawable drawable, Runnable runnable, long j10) {
-        switch (this.a) {
-            case 0:
-                ((b) this.b).c.invalidate();
-                break;
-            case 1:
-                ((d) this.b).c.invalidate();
-                break;
-            case 3:
-                View view = ((p0) this.b).W;
-                if (view != null) {
-                    view.scheduleDrawable(drawable, runnable, j10);
-                    break;
-                }
-                break;
-            case 4:
-                Drawable.Callback callback = (Drawable.Callback) this.b;
-                if (callback != null) {
-                    callback.scheduleDrawable(drawable, runnable, j10);
-                    break;
-                }
-                break;
-            case 5:
-                ((k2.d) this.b).scheduleSelf(runnable, j10);
-                break;
-            case 6:
-                ((up) this.b).scheduleSelf(runnable, j10);
-                break;
-            case 8:
-                ((vc) this.b).scheduleSelf(runnable, j10);
-                break;
+        canvas.save();
+        canvas.translate(f9 + ((!this.d || this.c) ? 0 : AndroidUtilities.dp(8.0f)), -AndroidUtilities.dp(0.2f));
+        if (this.h == 1) {
+            canvas.translate(AndroidUtilities.dp(1.5f), 0.0f);
+            drawable2.draw(canvas);
+        } else {
+            drawable.draw(canvas);
         }
+        canvas.translate(AndroidUtilities.dp(16.0f), 0.0f);
+        Rect rect = AndroidUtilities.rectTmp2;
+        rect.set(0, 0, (int) n6Var.d(), (int) n6Var.e);
+        n6Var.setBounds(rect);
+        n6Var.draw(canvas);
+        canvas.restore();
     }
 
-    @Override // android.graphics.drawable.Drawable.Callback
-    public final void unscheduleDrawable(Drawable drawable, Runnable runnable) {
-        switch (this.a) {
-            case 0:
-                ((b) this.b).c.invalidate();
-                break;
-            case 1:
-                ((d) this.b).c.invalidate();
-                break;
-            case 3:
-                View view = ((p0) this.b).W;
-                if (view != null) {
-                    view.unscheduleDrawable(drawable, runnable);
-                    break;
-                }
-                break;
-            case 4:
-                Drawable.Callback callback = (Drawable.Callback) this.b;
-                if (callback != null) {
-                    callback.unscheduleDrawable(drawable, runnable);
-                    break;
-                }
-                break;
-            case 5:
-                ((k2.d) this.b).unscheduleSelf(runnable);
-                break;
-            case 6:
-                ((up) this.b).unscheduleSelf(runnable);
-                break;
-            case 8:
-                ((vc) this.b).unscheduleSelf(runnable);
-                break;
-        }
-    }
-
-    public /* synthetic */ a(Object obj, int i9) {
-        this.a = i9;
-        this.b = obj;
-    }
-
-    private final void a(Drawable drawable) {
-    }
-
-    private final void f(Drawable drawable, Runnable runnable) {
-    }
-
-    private final void g(Drawable drawable, Runnable runnable) {
-    }
-
-    private final void h(Drawable drawable, Runnable runnable) {
-    }
-
-    private final void i(Drawable drawable, Runnable runnable) {
-    }
-
-    private final void b(Drawable drawable, Runnable runnable, long j10) {
-    }
-
-    private final void c(Drawable drawable, Runnable runnable, long j10) {
-    }
-
-    private final void d(Drawable drawable, Runnable runnable, long j10) {
-    }
-
-    private final void e(Drawable drawable, Runnable runnable, long j10) {
+    @Override // android.text.style.ReplacementSpan
+    public final int getSize(Paint paint, CharSequence charSequence, int i10, int i11, Paint.FontMetricsInt fontMetricsInt) {
+        return b();
     }
 }

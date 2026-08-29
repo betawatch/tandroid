@@ -1,40 +1,12 @@
 package mh;
 
-import org.telegram.messenger.FileLog;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes4.dex */
-public final class p extends f7.n {
-    public final /* synthetic */ r a;
-
-    public p(r rVar) {
-        this.a = rVar;
-    }
-
-    @Override // f7.n
-    public final void a(int i9, CharSequence charSequence) {
-        FileLog.d("BotBiometry onAuthenticationError " + i9 + " \"" + ((Object) charSequence) + "\"");
-        r rVar = this.a;
-        bg.y0 y0Var = rVar.j;
-        if (y0Var != null) {
-            rVar.j = null;
-            y0Var.run(Boolean.FALSE, null);
-        }
-    }
-
-    @Override // f7.n
-    public final void b() {
-        FileLog.d("BotBiometry onAuthenticationFailed");
-    }
-
-    @Override // f7.n
-    public final void c(androidx.biometric.t tVar) {
-        FileLog.d("BotBiometry onAuthenticationSucceeded");
-        r rVar = this.a;
-        bg.y0 y0Var = rVar.j;
-        if (y0Var != null) {
-            rVar.j = null;
-            y0Var.run(Boolean.TRUE, tVar);
-        }
+public final class p extends MessageObject {
+    @Override // org.telegram.messenger.MessageObject
+    public final float getProgress() {
+        return this.uploadingStory.h;
     }
 }

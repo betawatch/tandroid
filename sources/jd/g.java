@@ -1,7 +1,19 @@
 package jd;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+import java.util.Iterator;
+import org.telegram.tgnet.TLObject;
+
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public abstract class g {
-    public static final f a = new f();
+public final class g extends uc.c {
+    public Iterator a;
+    public /* synthetic */ Object b;
+    public int c;
+
+    @Override // uc.a
+    public final Object invokeSuspend(Object obj) {
+        this.b = obj;
+        this.c |= TLObject.FLAG_31;
+        return e0.o(null, this);
+    }
 }

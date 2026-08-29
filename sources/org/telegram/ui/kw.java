@@ -1,32 +1,26 @@
 package org.telegram.ui;
 
-import android.text.SpannableStringBuilder;
+import java.util.ArrayList;
+import org.telegram.messenger.MessagesStorage;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class kw extends org.telegram.ui.Components.uh0 {
-    public final /* synthetic */ int f0 = 0;
-    public final /* synthetic */ Object g0;
+public final class kw implements s60 {
+    public final /* synthetic */ fy a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public kw(we1 we1Var, SpannableStringBuilder spannableStringBuilder, SpannableStringBuilder spannableStringBuilder2) {
-        super(spannableStringBuilder, spannableStringBuilder2);
-        this.g0 = we1Var;
+    public kw(fy fyVar) {
+        this.a = fyVar;
     }
 
-    @Override // org.telegram.ui.Components.uh0
-    public final float d() {
-        switch (this.f0) {
-            case 0:
-                return ((cy) this.g0).a.getViewOffset();
-            default:
-                return ((we1) this.g0).J.b3;
+    @Override // org.telegram.ui.s60
+    public final void a(t60 t60Var, long j10) {
+        ArrayList arrayList = new ArrayList();
+        arrayList.add(MessagesStorage.TopicKey.of(-j10, 0L));
+        fy fyVar = this.a;
+        yx yxVar = fyVar.y2;
+        if (fyVar.x2) {
+            fyVar.removeSelfFromStack();
         }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public kw(String str, String str2, cy cyVar) {
-        super(str, str2);
-        this.g0 = cyVar;
+        yxVar.v(fyVar, arrayList, null, true, fyVar.F2, fyVar.G2, fyVar.H2, null);
     }
 }

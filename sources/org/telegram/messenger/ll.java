@@ -1,158 +1,67 @@
 package org.telegram.messenger;
 
 import android.content.Context;
-import android.graphics.drawable.Drawable;
-import android.opengl.GLUtils;
-import android.view.View;
-import android.view.ViewPropertyAnimator;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import java.nio.ByteBuffer;
-import java.nio.ByteOrder;
-import java.nio.FloatBuffer;
-import javax.microedition.khronos.egl.EGL10;
+import java.util.ArrayList;
+import org.telegram.messenger.MessagesStorage;
+import org.telegram.messenger.TranslateController;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.gr;
-import org.telegram.ui.ThemeActivity;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public abstract /* synthetic */ class ll {
-    public static int A(float f10, int i9, int i10) {
-        return i10 - (AndroidUtilities.dp(f10) * i9);
+public final /* synthetic */ class ll implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Object h;
+    public final /* synthetic */ Object n;
+
+    public /* synthetic */ ll(Object obj, Object obj2, Object obj3, Object obj4, Object obj5, Object obj6, Object obj7, int i10) {
+        this.a = i10;
+        this.c = obj;
+        this.d = obj2;
+        this.b = obj3;
+        this.e = obj4;
+        this.f = obj5;
+        this.h = obj6;
+        this.n = obj7;
     }
 
-    public static int B(int i9, int i10, Drawable drawable) {
-        return (drawable.getIntrinsicWidth() / i9) + i10;
-    }
-
-    public static int C(float f10, int i9, int i10) {
-        return View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(f10) + i9, i10);
-    }
-
-    public static int D(float f10, int i9, int i10) {
-        return (i9 - AndroidUtilities.dp(f10)) + i10;
-    }
-
-    public static boolean a(MessageObject messageObject) {
-        return messageObject != null && messageObject.getDialogId() == UserObject.REPLY_BOT;
-    }
-
-    public static int b(org.telegram.ui.h3 h3Var) {
-        int boundLeft = h3Var.getBoundLeft();
-        int boundRight = h3Var.getBoundRight();
-        if (boundLeft < 0 || boundRight < 0 || boundRight < boundLeft) {
-            return -1;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                ((TranslateController) this.c).lambda$translateStory$36((TL_stories.StoryItem) this.d, (String) this.b, (TLRPC.TL_textWithEntities) this.e, (TLRPC.TL_textWithEntities) this.f, (TranslateController.StoryKey) this.h, (Runnable) this.n);
+                break;
+            case 1:
+                AndroidUtilities.lambda$showProxyAlert$19((boolean[]) this.c, (org.telegram.ui.Components.vc[]) this.d, (String) this.b, (String) this.e, (String) this.f, (String) this.h, (String) this.n);
+                break;
+            case 2:
+                ((MediaDataController) this.c).lambda$loadHints$144((ArrayList) this.d, (ArrayList) this.b, (ArrayList) this.e, (ArrayList) this.f, (ArrayList) this.h, (ArrayList) this.n);
+                break;
+            case 3:
+                ((MessagesController) this.c).lambda$convertToGigaGroup$269((MessagesStorage.BooleanCallback) this.d, (Context) this.b, (org.telegram.ui.ActionBar.c2) this.e, (TLRPC.TL_error) this.f, (org.telegram.ui.ActionBar.o2) this.h, (TLRPC.TL_channels_convertToGigagroup) this.n);
+                break;
+            case 4:
+                ((MessagesController) this.c).lambda$convertToMegaGroup$264((MessagesStorage.LongCallback) this.d, (Context) this.b, (org.telegram.ui.ActionBar.c2) this.e, (TLRPC.TL_error) this.f, (org.telegram.ui.ActionBar.o2) this.h, (TLRPC.TL_messages_migrateChat) this.n);
+                break;
+            default:
+                ((SecretChatHelper) this.c).lambda$performSendEncryptedRequest$8((TLRPC.EncryptedChat) this.d, (TLRPC.DecryptedMessage) this.e, (TLRPC.Message) this.f, (TLRPC.InputEncryptedFile) this.h, (MessageObject) this.n, (String) this.b);
+                break;
         }
-        return boundRight - boundLeft;
     }
 
-    public static float c(float f10, float f11, float f12, float f13) {
-        return f13 - ((f10 / f11) * f12);
-    }
-
-    public static int d(float f10, int i9, int i10) {
-        return View.MeasureSpec.makeMeasureSpec(i9 - AndroidUtilities.dp(f10), i10);
-    }
-
-    public static int e(int i9, int i10, Drawable drawable) {
-        return i10 - (drawable.getIntrinsicHeight() / i9);
-    }
-
-    public static LinearLayout f(Context context, int i9) {
-        LinearLayout linearLayout = new LinearLayout(context);
-        linearLayout.setOrientation(i9);
-        return linearLayout;
-    }
-
-    public static String g(StringBuilder sb2, String str, ne.b bVar) {
-        sb2.append(str);
-        return bVar.b(sb2.toString());
-    }
-
-    public static FloatBuffer h(ByteBuffer byteBuffer) {
-        return byteBuffer.order(ByteOrder.nativeOrder()).asFloatBuffer();
-    }
-
-    public static kh.d i(int i9, Context context, org.telegram.ui.ActionBar.b6 b6Var, boolean z10) {
-        kh.d dVar = new kh.d(context, b6Var, z10);
-        dVar.setRoundRadius(i9);
-        return dVar;
-    }
-
-    public static org.telegram.ui.ActionBar.f3 j(Context context, org.telegram.ui.ActionBar.b6 b6Var, boolean z10, boolean z11) {
-        org.telegram.ui.ActionBar.f3 f3Var = new org.telegram.ui.ActionBar.f3(context, b6Var, z10, z11);
-        f3Var.fixNavigationBar();
-        return f3Var;
-    }
-
-    public static void k(float f10, int i9, TextView textView) {
-        textView.setTypeface(AndroidUtilities.bold());
-        textView.setTextSize(i9, f10);
-    }
-
-    public static void l(int i9, TextView textView, int i10) {
-        textView.setText(LocaleController.getString(i9));
-        textView.setGravity(i10);
-    }
-
-    public static void m(int i9, org.telegram.ui.ActionBar.o2 o2Var) {
-        o2Var.presentFragment(new ThemeActivity(i9));
-    }
-
-    public static void n(int i9, org.telegram.ui.ActionBar.b6 b6Var, TextView textView, int i10, float f10) {
-        textView.setTextColor(org.telegram.ui.ActionBar.f6.v0(i9, b6Var));
-        textView.setTextSize(i10, f10);
-    }
-
-    public static void o(int i9, org.telegram.ui.Components.oc ocVar) {
-        ocVar.i(LocaleController.getString(i9)).j();
-    }
-
-    public static void p(int i9, org.telegram.ui.Components.oc ocVar, org.telegram.ui.ActionBar.b6 b6Var) {
-        ocVar.t(LocaleController.getString(i9), b6Var).j();
-    }
-
-    public static void q(int i9, Object[] objArr, TextView textView) {
-        textView.setText(AndroidUtilities.replaceTags(LocaleController.formatString(i9, objArr)));
-    }
-
-    public static void r(ViewPropertyAnimator viewPropertyAnimator, gr grVar, long j10) {
-        viewPropertyAnimator.setInterpolator(grVar).setDuration(j10).start();
-    }
-
-    public static void s(TextView textView, int i9, int i10, float f10, int i11) {
-        textView.setTextColor(i9);
-        textView.setTextSize(i10, f10);
-        textView.setLines(i11);
-    }
-
-    public static void t(EGL10 egl10, StringBuilder sb2) {
-        sb2.append(GLUtils.getEGLErrorString(egl10.eglGetError()));
-        FileLog.e(sb2.toString());
-    }
-
-    public static /* synthetic */ boolean u(TLRPC.TL_game tL_game) {
-        return tL_game != null;
-    }
-
-    public static float v(float f10, float f11, float f12, float f13) {
-        return (f12 - (f10 / f11)) * f13;
-    }
-
-    public static int w(float f10, int i9, int i10) {
-        return i10 - (AndroidUtilities.dp(f10) + i9);
-    }
-
-    public static int x(int i9, int i10, Drawable drawable) {
-        return i10 - (drawable.getIntrinsicWidth() / i9);
-    }
-
-    public static int y(float f10, int i9, int i10) {
-        return (i9 - AndroidUtilities.dp(f10)) / i10;
-    }
-
-    public static int z(int i9, int i10, Drawable drawable) {
-        return (drawable.getIntrinsicHeight() / i9) + i10;
+    public /* synthetic */ ll(SecretChatHelper secretChatHelper, TLRPC.EncryptedChat encryptedChat, TLRPC.DecryptedMessage decryptedMessage, TLRPC.Message message, TLRPC.InputEncryptedFile inputEncryptedFile, MessageObject messageObject, String str) {
+        this.a = 5;
+        this.c = secretChatHelper;
+        this.d = encryptedChat;
+        this.e = decryptedMessage;
+        this.f = message;
+        this.h = inputEncryptedFile;
+        this.n = messageObject;
+        this.b = str;
     }
 }

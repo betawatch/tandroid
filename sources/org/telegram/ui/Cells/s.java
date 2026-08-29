@@ -7,9 +7,9 @@ import android.graphics.RectF;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.xs;
+import org.telegram.ui.Components.ct;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
 public final class s extends LinearLayout {
     public static final /* synthetic */ int f = 0;
@@ -19,30 +19,30 @@ public final class s extends LinearLayout {
     public TextView d;
     public float e;
 
-    public final void a(float f10) {
-        this.e = f10;
+    public final void a(float f9) {
+        this.e = f9;
         TextView textView = this.d;
-        int w02 = org.telegram.ui.ActionBar.f6.w0(null, org.telegram.ui.ActionBar.f6.G6, false);
-        int i9 = org.telegram.ui.ActionBar.f6.I6;
-        textView.setTextColor(i0.a.d(f10, w02, org.telegram.ui.ActionBar.f6.w0(null, i9, false)));
+        int w02 = org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.G6, false);
+        int i10 = org.telegram.ui.ActionBar.g6.I6;
+        textView.setTextColor(i0.a.d(f9, w02, org.telegram.ui.ActionBar.g6.w0(null, i10, false)));
         Paint paint = this.a;
-        paint.setColor(i0.a.d(f10, i0.a.k(org.telegram.ui.ActionBar.f6.w0(null, org.telegram.ui.ActionBar.f6.M6, false), 63), org.telegram.ui.ActionBar.f6.w0(null, i9, false)));
-        paint.setStrokeWidth(Math.max(2, AndroidUtilities.dp(AndroidUtilities.lerp(0.5f, 2.0f, f10))));
+        paint.setColor(i0.a.d(f9, i0.a.k(org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.M6, false), 63), org.telegram.ui.ActionBar.g6.w0(null, i10, false)));
+        paint.setStrokeWidth(Math.max(2, AndroidUtilities.dp(AndroidUtilities.lerp(0.5f, 2.0f, f9))));
         invalidate();
     }
 
     public final void b(boolean z10, boolean z11) {
-        float f10 = z10 ? 1.0f : 0.0f;
-        float f11 = this.e;
-        if (f10 == f11 && z11) {
+        float f9 = z10 ? 1.0f : 0.0f;
+        float f10 = this.e;
+        if (f9 == f10 && z11) {
             return;
         }
         if (!z11) {
-            a(f10);
+            a(f9);
             return;
         }
-        ValueAnimator duration = ValueAnimator.ofFloat(f11, f10).setDuration(250L);
-        duration.setInterpolator(xs.e);
+        ValueAnimator duration = ValueAnimator.ofFloat(f10, f9).setDuration(250L);
+        duration.setInterpolator(ct.e);
         duration.addUpdateListener(new r(this, 0));
         duration.start();
     }

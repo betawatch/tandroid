@@ -3,7 +3,7 @@ package com.google.android.recaptcha.internal;
 import java.util.Iterator;
 import java.util.Map;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 final class zzul implements Iterator {
     final /* synthetic */ zzuo zza;
@@ -22,12 +22,12 @@ final class zzul implements Iterator {
 
     @Override // java.util.Iterator
     public final boolean hasNext() {
-        int i9;
+        int i10;
         Map map;
-        int i10 = this.zzb + 1;
+        int i11 = this.zzb + 1;
         zzuo zzuoVar = this.zza;
-        i9 = zzuoVar.zzb;
-        if (i10 < i9) {
+        i10 = zzuoVar.zzb;
+        if (i11 < i10) {
             return true;
         }
         map = zzuoVar.zzc;
@@ -36,36 +36,36 @@ final class zzul implements Iterator {
 
     @Override // java.util.Iterator
     public final /* bridge */ /* synthetic */ Object next() {
-        int i9;
+        int i10;
         Object[] objArr;
         this.zzc = true;
-        int i10 = this.zzb + 1;
-        this.zzb = i10;
+        int i11 = this.zzb + 1;
+        this.zzb = i11;
         zzuo zzuoVar = this.zza;
-        i9 = zzuoVar.zzb;
-        if (i10 >= i9) {
+        i10 = zzuoVar.zzb;
+        if (i11 >= i10) {
             return (Map.Entry) zza().next();
         }
         objArr = zzuoVar.zza;
-        return (zzuk) objArr[i10];
+        return (zzuk) objArr[i11];
     }
 
     @Override // java.util.Iterator
     public final void remove() {
-        int i9;
+        int i10;
         if (!this.zzc) {
             throw new IllegalStateException("remove() was called before next()");
         }
         this.zzc = false;
         zzuo zzuoVar = this.zza;
         zzuoVar.zzo();
-        int i10 = this.zzb;
-        i9 = zzuoVar.zzb;
-        if (i10 >= i9) {
+        int i11 = this.zzb;
+        i10 = zzuoVar.zzb;
+        if (i11 >= i10) {
             zza().remove();
         } else {
-            this.zzb = i10 - 1;
-            zzuoVar.zzm(i10);
+            this.zzb = i11 - 1;
+            zzuoVar.zzm(i11);
         }
     }
 }

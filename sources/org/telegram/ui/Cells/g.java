@@ -2,20 +2,20 @@ package org.telegram.ui.Cells;
 
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.gc;
-import org.telegram.ui.Components.p80;
-import org.telegram.ui.Components.wk0;
+import org.telegram.ui.Components.c90;
+import org.telegram.ui.Components.jl0;
+import org.telegram.ui.Components.mc;
 import org.telegram.ui.SessionsActivity;
-import org.telegram.ui.dy;
+import org.telegram.ui.fy;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class g implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
-    public /* synthetic */ g(Object obj, int i9) {
-        this.a = i9;
+    public /* synthetic */ g(Object obj, int i10) {
+        this.a = i10;
         this.b = obj;
     }
 
@@ -24,68 +24,68 @@ public final /* synthetic */ class g implements Runnable {
         switch (this.a) {
             case 0:
                 h hVar = (h) this.b;
-                p80 p80Var = hVar.d;
-                if (p80Var != null) {
-                    hVar.h.A.l(p80Var, true);
+                c90 c90Var = hVar.d;
+                if (c90Var != null) {
+                    hVar.h.A.l(c90Var, true);
                     break;
                 }
                 break;
             case 1:
-                k1 k1Var = ((u1) this.b).e;
-                if (k1Var != null) {
-                    k1Var.m();
+                j1 j1Var = ((t1) this.b).e;
+                if (j1Var != null) {
+                    j1Var.k();
                     break;
                 }
                 break;
             case 2:
-                ((a2) this.b).a();
+                ((z1) this.b).a();
                 break;
             case 3:
-                AndroidUtilities.hideKeyboard(((fh.p6) this.b).b.getEditText());
+                AndroidUtilities.hideKeyboard(((ih.z5) this.b).b.getEditText());
                 break;
             case 4:
-                AndroidUtilities.hideKeyboard(((j3) this.b).b);
+                AndroidUtilities.hideKeyboard(((g3) this.b).b);
                 break;
             case 5:
-                h6 h6Var = (h6) this.b;
-                if (!(h6Var.getParent() instanceof wk0)) {
-                    h6Var.callOnClick();
+                f6 f6Var = (f6) this.b;
+                if (!(f6Var.getParent() instanceof jl0)) {
+                    f6Var.callOnClick();
                     break;
                 } else {
-                    ((wk0) h6Var.getParent()).getOnItemClickListener().a(RecyclerView.R(h6Var), h6Var);
+                    ((jl0) f6Var.getParent()).getOnItemClickListener().c(RecyclerView.R(f6Var), f6Var);
                     break;
                 }
             case 6:
-                ((r7) this.b).h();
+                ((p7) this.b).h();
                 break;
             case 7:
-                aa aaVar = (aa) this.b;
-                aaVar.C.invalidate();
-                aaVar.U();
+                x9 x9Var = (x9) this.b;
+                x9Var.C.invalidate();
+                x9Var.U();
                 break;
             case 8:
-                ((k9) this.b).b.U();
+                ((h9) this.b).b.U();
                 break;
             case 9:
-                fa faVar = (fa) this.b;
-                faVar.s = -1;
-                int i9 = 0;
+                ca caVar = (ca) this.b;
+                caVar.s = -1;
+                int i10 = 0;
                 while (true) {
-                    t1[] t1VarArr = faVar.e;
-                    if (i9 >= t1VarArr.length) {
+                    s1[] s1VarArr = caVar.e;
+                    if (i10 >= s1VarArr.length) {
                         break;
                     } else {
-                        t1 t1Var = t1VarArr[i9];
-                        if (t1Var != null) {
-                            t1Var.invalidate();
+                        s1 s1Var = s1VarArr[i10];
+                        if (s1Var != null) {
+                            s1Var.invalidate();
                         }
-                        i9++;
+                        i10++;
                     }
                 }
             case 10:
-                dy dyVar = (dy) this.b;
-                gc.e();
-                dyVar.presentFragment(new SessionsActivity(0));
+                fy fyVar = (fy) this.b;
+                mc.e();
+                fyVar.presentFragment(new SessionsActivity(0));
                 break;
             default:
                 org.telegram.ui.ActionBar.f3 f3Var = (org.telegram.ui.ActionBar.f3) this.b;

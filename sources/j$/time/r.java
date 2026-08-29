@@ -28,9 +28,9 @@ public final class r implements Temporal, j$.time.temporal.m, Comparable, Serial
         pVar.l(Locale.getDefault(), w.SMART, null);
     }
 
-    public static r G(int i9) {
-        j$.time.temporal.a.YEAR.w(i9);
-        return new r(i9);
+    public static r G(int i10) {
+        j$.time.temporal.a.YEAR.w(i10);
+        return new r(i10);
     }
 
     @Override // j$.time.temporal.Temporal
@@ -51,20 +51,20 @@ public final class r implements Temporal, j$.time.temporal.m, Comparable, Serial
         }
         if (qVar instanceof ChronoUnit) {
             long j10 = G.a - this.a;
-            int i9 = q.b[((ChronoUnit) qVar).ordinal()];
-            if (i9 == 1) {
+            int i10 = q.b[((ChronoUnit) qVar).ordinal()];
+            if (i10 == 1) {
                 return j10;
             }
-            if (i9 == 2) {
+            if (i10 == 2) {
                 return j10 / 10;
             }
-            if (i9 == 3) {
+            if (i10 == 3) {
                 return j10 / 100;
             }
-            if (i9 == 4) {
+            if (i10 == 4) {
                 return j10 / 1000;
             }
-            if (i9 == 5) {
+            if (i10 == 5) {
                 j$.time.temporal.a aVar = j$.time.temporal.a.ERA;
                 return G.y(aVar) - y(aVar);
             }
@@ -73,8 +73,8 @@ public final class r implements Temporal, j$.time.temporal.m, Comparable, Serial
         return qVar.between(this, G);
     }
 
-    public r(int i9) {
-        this.a = i9;
+    public r(int i10) {
+        this.a = i10;
     }
 
     @Override // j$.time.temporal.l
@@ -100,18 +100,18 @@ public final class r implements Temporal, j$.time.temporal.m, Comparable, Serial
         if (!(oVar instanceof j$.time.temporal.a)) {
             return oVar.m(this);
         }
-        int i9 = q.a[((j$.time.temporal.a) oVar).ordinal()];
-        if (i9 == 1) {
-            int i10 = this.a;
-            if (i10 < 1) {
-                i10 = 1 - i10;
+        int i10 = q.a[((j$.time.temporal.a) oVar).ordinal()];
+        if (i10 == 1) {
+            int i11 = this.a;
+            if (i11 < 1) {
+                i11 = 1 - i11;
             }
-            return i10;
+            return i11;
         }
-        if (i9 == 2) {
+        if (i10 == 2) {
             return this.a;
         }
-        if (i9 == 3) {
+        if (i10 == 3) {
             return this.a < 1 ? 0 : 1;
         }
         throw new j$.time.temporal.r(c.a("Unsupported field: ", oVar));
@@ -131,17 +131,17 @@ public final class r implements Temporal, j$.time.temporal.m, Comparable, Serial
         }
         j$.time.temporal.a aVar = (j$.time.temporal.a) oVar;
         aVar.w(j10);
-        int i9 = q.a[aVar.ordinal()];
-        if (i9 == 1) {
+        int i10 = q.a[aVar.ordinal()];
+        if (i10 == 1) {
             if (this.a < 1) {
                 j10 = 1 - j10;
             }
             return G((int) j10);
         }
-        if (i9 == 2) {
+        if (i10 == 2) {
             return G((int) j10);
         }
-        if (i9 == 3) {
+        if (i10 == 3) {
             return y(j$.time.temporal.a.ERA) == j10 ? this : G(1 - this.a);
         }
         throw new j$.time.temporal.r(c.a("Unsupported field: ", oVar));
@@ -153,20 +153,20 @@ public final class r implements Temporal, j$.time.temporal.m, Comparable, Serial
         if (!(qVar instanceof ChronoUnit)) {
             return (r) qVar.j(this, j10);
         }
-        int i9 = q.b[((ChronoUnit) qVar).ordinal()];
-        if (i9 == 1) {
+        int i10 = q.b[((ChronoUnit) qVar).ordinal()];
+        if (i10 == 1) {
             return I(j10);
         }
-        if (i9 == 2) {
+        if (i10 == 2) {
             return I(j$.com.android.tools.r8.a.T(j10, 10));
         }
-        if (i9 == 3) {
+        if (i10 == 3) {
             return I(j$.com.android.tools.r8.a.T(j10, 100));
         }
-        if (i9 == 4) {
+        if (i10 == 4) {
             return I(j$.com.android.tools.r8.a.T(j10, MediaDataController.MAX_STYLE_RUNS_COUNT));
         }
-        if (i9 == 5) {
+        if (i10 == 5) {
             j$.time.temporal.a aVar = j$.time.temporal.a.ERA;
             return c(j$.com.android.tools.r8.a.O(y(aVar), j10), aVar);
         }

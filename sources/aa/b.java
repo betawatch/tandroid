@@ -1,70 +1,96 @@
 package aa;
 
-import m1.j;
-import org.telegram.messenger.BuildConfig;
+import java.io.IOException;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class b {
-    public final String a;
-    public final long b;
-    public final int c;
+public final /* synthetic */ class b implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ c b;
 
-    public b(String str, long j10, int i9) {
-        this.a = str;
-        this.b = j10;
-        this.c = i9;
+    public /* synthetic */ b(c cVar, int i10) {
+        this.a = i10;
+        this.b = cVar;
     }
 
-    public static a6.a a() {
-        a6.a aVar = new a6.a((char) 0, 1);
-        aVar.d = 0L;
-        return aVar;
-    }
-
-    public final boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
+    /* JADX WARN: Finally extract failed */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x005c  */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x0065  */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x006e  */
+    @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run() {
+        ba.b R;
+        ba.b i10;
+        int i11;
+        switch (this.a) {
+            case 0:
+                this.b.b();
+                return;
+            case 1:
+                c cVar = this.b;
+                synchronized (c.m) {
+                    try {
+                        u8.g gVar = cVar.a;
+                        gVar.a();
+                        ze.b i12 = ze.b.i(gVar.a);
+                        try {
+                            R = cVar.c.R();
+                            if (i12 != null) {
+                                i12.S();
+                            }
+                        } catch (Throwable th2) {
+                            if (i12 != null) {
+                                i12.S();
+                            }
+                            throw th2;
+                        }
+                    } finally {
+                    }
+                }
+                try {
+                    int i13 = R.b;
+                    if (!(i13 == 5)) {
+                        if (!(i13 == 3)) {
+                            if (cVar.d.a(R)) {
+                                i10 = cVar.c(R);
+                                cVar.f(i10);
+                                cVar.m(R, i10);
+                                if (i10.b == 4) {
+                                    cVar.l(i10.a);
+                                }
+                                i11 = i10.b;
+                                if (i11 != 5) {
+                                    cVar.j(new e());
+                                    return;
+                                } else if (i11 == 2 || i11 == 1) {
+                                    cVar.j(new IOException("Installation ID could not be validated with the Firebase servers (maybe it was deleted). Firebase Installations will need to create a new Installation ID and auth token. Please retry your last request."));
+                                    return;
+                                } else {
+                                    cVar.k(i10);
+                                    return;
+                                }
+                            }
+                            return;
+                        }
+                    }
+                    i10 = cVar.i(R);
+                    cVar.f(i10);
+                    cVar.m(R, i10);
+                    if (i10.b == 4) {
+                    }
+                    i11 = i10.b;
+                    if (i11 != 5) {
+                    }
+                } catch (e e10) {
+                    cVar.j(e10);
+                    return;
+                }
+            default:
+                this.b.b();
+                return;
         }
-        if (!(obj instanceof b)) {
-            return false;
-        }
-        b bVar = (b) obj;
-        int i9 = bVar.c;
-        String str = bVar.a;
-        String str2 = this.a;
-        if (str2 == null) {
-            if (str != null) {
-                return false;
-            }
-        } else if (!str2.equals(str)) {
-            return false;
-        }
-        if (this.b != bVar.b) {
-            return false;
-        }
-        int i10 = this.c;
-        return i10 == 0 ? i9 == 0 : j.a(i10, i9);
-    }
-
-    public final int hashCode() {
-        String str = this.a;
-        int hashCode = str == null ? 0 : str.hashCode();
-        long j10 = this.b;
-        int i9 = (((hashCode ^ 1000003) * 1000003) ^ ((int) (j10 ^ (j10 >>> 32)))) * 1000003;
-        int i10 = this.c;
-        return (i10 != 0 ? j.b(i10) : 0) ^ i9;
-    }
-
-    public final String toString() {
-        StringBuilder sb2 = new StringBuilder("TokenResult{token=");
-        sb2.append(this.a);
-        sb2.append(", tokenExpirationTimestamp=");
-        sb2.append(this.b);
-        sb2.append(", responseCode=");
-        int i9 = this.c;
-        sb2.append(i9 != 1 ? i9 != 2 ? i9 != 3 ? BuildConfig.BETA_URL : "AUTH_ERROR" : "BAD_CONFIG" : "OK");
-        sb2.append("}");
-        return sb2.toString();
     }
 }

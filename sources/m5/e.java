@@ -1,63 +1,93 @@
 package m5;
 
-import android.os.Bundle;
-import com.google.android.gms.cast.CastDevice;
+import android.content.Context;
+import android.content.Intent;
+import android.os.IBinder;
+import android.os.IInterface;
+import android.os.Looper;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.common.api.Scope;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Set;
-import java.util.UUID;
+import m.s3;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class e implements com.google.android.gms.common.api.b {
-    public final CastDevice a;
-    public final n5.f0 b;
-    public final Bundle c;
-    public final String d = UUID.randomUUID().toString();
+public final class e extends z5.g {
+    public final GoogleSignInOptions Q;
 
-    public /* synthetic */ e(j4.c cVar) {
-        this.a = (CastDevice) cVar.b;
-        this.b = (n5.f0) cVar.c;
-        this.c = (Bundle) cVar.d;
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:28:0x0058, code lost:
-    
-        if (r3 == r1) goto L27;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
+    public e(Context context, Looper looper, s3 s3Var, GoogleSignInOptions googleSignInOptions, com.google.android.gms.common.api.k kVar, com.google.android.gms.common.api.l lVar) {
+        super(context, looper, 91, s3Var, kVar, lVar, 0);
+        l5.a aVar;
+        Set<Scope> set = (Set) s3Var.b;
+        if (googleSignInOptions != null) {
+            aVar = new l5.a();
+            aVar.a = new HashSet();
+            aVar.h = new HashMap();
+            aVar.a = new HashSet(googleSignInOptions.b);
+            aVar.b = googleSignInOptions.e;
+            aVar.c = googleSignInOptions.f;
+            aVar.d = googleSignInOptions.d;
+            aVar.e = googleSignInOptions.h;
+            aVar.f = googleSignInOptions.c;
+            aVar.g = googleSignInOptions.n;
+            aVar.h = GoogleSignInOptions.c(googleSignInOptions.r);
+            aVar.i = googleSignInOptions.s;
+        } else {
+            aVar = new l5.a();
+            aVar.a = new HashSet();
+            aVar.h = new HashMap();
         }
-        if (!(obj instanceof e)) {
-            return false;
-        }
-        e eVar = (e) obj;
-        if (x5.l.l(this.a, eVar.a)) {
-            Bundle bundle = eVar.c;
-            Bundle bundle2 = this.c;
-            if (bundle2 != null && bundle != null) {
-                if (bundle2.size() == bundle.size()) {
-                    Set<String> keySet = bundle2.keySet();
-                    if (keySet.containsAll(bundle.keySet())) {
-                        for (String str : keySet) {
-                            if (!x5.l.l(bundle2.get(str), bundle.get(str))) {
-                                break;
-                            }
-                        }
-                        if (x5.l.l(this.d, eVar.d)) {
-                            return true;
-                        }
-                    }
-                }
+        aVar.i = u6.e.a();
+        if (!set.isEmpty()) {
+            for (Scope scope : set) {
+                HashSet hashSet = aVar.a;
+                hashSet.add(scope);
+                hashSet.addAll(Arrays.asList(new Scope[0]));
             }
         }
-        return false;
+        HashSet hashSet2 = aVar.a;
+        if (hashSet2.contains(GoogleSignInOptions.A)) {
+            Scope scope2 = GoogleSignInOptions.y;
+            if (hashSet2.contains(scope2)) {
+                hashSet2.remove(scope2);
+            }
+        }
+        if (aVar.d && (aVar.f == null || !hashSet2.isEmpty())) {
+            hashSet2.add(GoogleSignInOptions.x);
+        }
+        this.Q = new GoogleSignInOptions(3, new ArrayList(hashSet2), aVar.f, aVar.d, aVar.b, aVar.c, aVar.e, aVar.g, aVar.h, aVar.i);
     }
 
-    public final int hashCode() {
-        return Arrays.hashCode(new Object[]{this.a, this.c, 0, this.d});
+    @Override // z5.g, com.google.android.gms.common.api.c
+    public final int k() {
+        return 12451000;
+    }
+
+    @Override // z5.g, com.google.android.gms.common.api.c
+    public final Intent o() {
+        return h.a(this.n, this.Q);
+    }
+
+    @Override // z5.g
+    public final IInterface q(IBinder iBinder) {
+        if (iBinder == null) {
+            return null;
+        }
+        IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.auth.api.signin.internal.ISignInService");
+        return queryLocalInterface instanceof k ? (k) queryLocalInterface : new k(iBinder, "com.google.android.gms.auth.api.signin.internal.ISignInService", 9);
+    }
+
+    @Override // z5.g
+    public final String v() {
+        return "com.google.android.gms.auth.api.signin.internal.ISignInService";
+    }
+
+    @Override // z5.g
+    public final String w() {
+        return "com.google.android.gms.auth.api.signin.service.START";
     }
 }

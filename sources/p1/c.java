@@ -5,7 +5,7 @@ import android.view.View;
 import java.nio.ByteBuffer;
 import r0.j0;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public abstract class c {
     public int a;
@@ -14,14 +14,14 @@ public abstract class c {
     public Object d;
 
     public c() {
-        if (wa.a.b == null) {
-            wa.a.b = new wa.a(20);
+        if (bb.a.c == null) {
+            bb.a.c = new bb.a(19);
         }
     }
 
-    public int a(int i9) {
-        if (i9 < this.c) {
-            return ((ByteBuffer) this.d).getShort(this.b + i9);
+    public int a(int i10) {
+        if (i10 < this.c) {
+            return ((ByteBuffer) this.d).getShort(this.b + i10);
         }
         return 0;
     }

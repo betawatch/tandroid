@@ -1,16 +1,25 @@
 package m3;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+import android.media.MediaCodec;
+import f5.d0;
+
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class d {
-    public static final d d = new d(-3, -9223372036854775807L, -1);
-    public final int a;
-    public final long b;
-    public final long c;
+    public byte[] a;
+    public byte[] b;
+    public int c;
+    public int[] d;
+    public int[] e;
+    public int f;
+    public int g;
+    public int h;
+    public final MediaCodec.CryptoInfo i;
+    public final c j;
 
-    public d(int i9, long j10, long j11) {
-        this.a = i9;
-        this.b = j10;
-        this.c = j11;
+    public d() {
+        MediaCodec.CryptoInfo cryptoInfo = new MediaCodec.CryptoInfo();
+        this.i = cryptoInfo;
+        this.j = d0.a >= 24 ? new c(cryptoInfo) : null;
     }
 }

@@ -6,9 +6,10 @@ import android.graphics.PorterDuffColorFilter;
 import android.graphics.drawable.AnimationDrawable;
 import android.util.AttributeSet;
 import android.view.View;
+import h7.e5;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public class MediaRouteExpandCollapseButton extends m.v {
     public final AnimationDrawable d;
@@ -31,13 +32,13 @@ public class MediaRouteExpandCollapseButton extends m.v {
         this(context, attributeSet, 0);
     }
 
-    public MediaRouteExpandCollapseButton(Context context, AttributeSet attributeSet, int i9) {
-        super(context, attributeSet, i9);
+    public MediaRouteExpandCollapseButton(Context context, AttributeSet attributeSet, int i10) {
+        super(context, attributeSet, i10);
         AnimationDrawable animationDrawable = (AnimationDrawable) context.getDrawable(R.drawable.mr_group_expand);
         this.d = animationDrawable;
         AnimationDrawable animationDrawable2 = (AnimationDrawable) context.getDrawable(R.drawable.mr_group_collapse);
         this.e = animationDrawable2;
-        PorterDuffColorFilter porterDuffColorFilter = new PorterDuffColorFilter(f7.d0.b(context, i9), PorterDuff.Mode.SRC_IN);
+        PorterDuffColorFilter porterDuffColorFilter = new PorterDuffColorFilter(e5.b(context, i10), PorterDuff.Mode.SRC_IN);
         animationDrawable.setColorFilter(porterDuffColorFilter);
         animationDrawable2.setColorFilter(porterDuffColorFilter);
         String string = context.getString(R.string.mr_controller_expand_group);
@@ -45,6 +46,6 @@ public class MediaRouteExpandCollapseButton extends m.v {
         this.h = context.getString(R.string.mr_controller_collapse_group);
         setImageDrawable(animationDrawable.getFrame(0));
         setContentDescription(string);
-        super.setOnClickListener(new y(this, 4));
+        super.setOnClickListener(new v(this, 4));
     }
 }

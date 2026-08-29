@@ -1,48 +1,126 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Typeface;
-import android.widget.LinearLayout;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class bc extends eb {
-    public final o9 a;
-    public final l80 b;
-    public final l80 c;
+public final class bc extends GestureDetector.SimpleOnGestureListener {
+    public final /* synthetic */ rb a;
+    public final /* synthetic */ eb b;
 
-    public bc(Context context, org.telegram.ui.ActionBar.b6 b6Var) {
-        super(context, b6Var);
-        int i9 = org.telegram.ui.ActionBar.f6.Hi;
-        getThemedColor(i9);
-        setBackground(getThemedColor(org.telegram.ui.ActionBar.f6.Fi));
-        o9 o9Var = new o9(context);
-        this.a = o9Var;
-        addView(o9Var, g7.e6.i(32.0f, 32.0f, 8388627, 12.0f, 0.0f, 12.0f, 0.0f));
-        int themedColor = getThemedColor(i9);
-        int themedColor2 = getThemedColor(org.telegram.ui.ActionBar.f6.Gi);
-        LinearLayout f10 = org.telegram.messenger.ll.f(context, 1);
-        addView(f10, g7.e6.i(-2.0f, -2.0f, 8388627, 52.0f, 8.0f, 8.0f, 8.0f));
-        l80 l80Var = new l80(context, null);
-        this.b = l80Var;
-        l80Var.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
-        l80Var.setTextColor(themedColor);
-        l80Var.setTextSize(1, 14.0f);
-        l80Var.setTypeface(AndroidUtilities.bold());
-        f10.addView(l80Var);
-        l80 l80Var2 = new l80(context, null);
-        this.c = l80Var2;
-        l80Var2.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
-        l80Var2.setTextColor(themedColor);
-        l80Var2.setLinkTextColor(themedColor2);
-        l80Var2.setTypeface(Typeface.SANS_SERIF);
-        l80Var2.setTextSize(1, 13.0f);
-        f10.addView(l80Var2);
+    public bc(eb ebVar, rb rbVar) {
+        this.b = ebVar;
+        this.a = rbVar;
     }
 
-    @Override // org.telegram.ui.Components.lb
-    public CharSequence getAccessibilityText() {
-        return ((Object) this.b.getText()) + ".\n" + ((Object) this.c.getText());
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    public final boolean onDown(MotionEvent motionEvent) {
+        eb ebVar = this.b;
+        if (ebVar.s) {
+            return false;
+        }
+        rb rbVar = this.a;
+        ebVar.v = rb.access$1400(rbVar, true);
+        ebVar.w = rb.access$1400(rbVar, false);
+        return true;
+    }
+
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    public final boolean onFling(MotionEvent motionEvent, MotionEvent motionEvent2, float f9, float f10) {
+        boolean z10 = false;
+        if (Math.abs(f9) <= 2000.0f) {
+            return false;
+        }
+        eb ebVar = this.b;
+        if ((f9 < 0.0f && ebVar.v) || (f9 > 0.0f && ebVar.w)) {
+            z10 = true;
+        }
+        float signum = Math.signum(f9);
+        rb rbVar = this.a;
+        o1.k kVar = new o1.k(rbVar, o1.i.m, signum * rbVar.getWidth() * 2.0f);
+        if (!z10) {
+            final int i10 = 0;
+            kVar.a(new o1.g(this) { // from class: org.telegram.ui.Components.zb
+                public final /* synthetic */ bc b;
+
+                {
+                    this.b = this;
+                }
+
+                @Override // o1.g
+                public final void a(o1.i iVar, boolean z11, float f11, float f12) {
+                    switch (i10) {
+                        case 0:
+                            this.b.b.y.b();
+                            break;
+                        default:
+                            this.b.b.y.b();
+                            break;
+                    }
+                }
+            });
+            kVar.b(new j7(rbVar, 2));
+        }
+        kVar.u.a(1.0f);
+        kVar.u.b(100.0f);
+        kVar.a = f9;
+        kVar.f();
+        if (z10) {
+            o1.k kVar2 = new o1.k(rbVar, o1.i.t, 0.0f);
+            final int i11 = 1;
+            kVar2.a(new o1.g(this) { // from class: org.telegram.ui.Components.zb
+                public final /* synthetic */ bc b;
+
+                {
+                    this.b = this;
+                }
+
+                @Override // o1.g
+                public final void a(o1.i iVar, boolean z11, float f11, float f12) {
+                    switch (i11) {
+                        case 0:
+                            this.b.b.y.b();
+                            break;
+                        default:
+                            this.b.b.y.b();
+                            break;
+                    }
+                }
+            });
+            kVar2.b(new ac());
+            kVar.u.a(1.0f);
+            kVar.u.b(10.0f);
+            kVar.a = f9;
+            kVar2.f();
+        }
+        ebVar.s = true;
+        return true;
+    }
+
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    public final boolean onScroll(MotionEvent motionEvent, MotionEvent motionEvent2, float f9, float f10) {
+        eb ebVar = this.b;
+        float f11 = ebVar.h + f9;
+        ebVar.h = f11;
+        float f12 = ebVar.n + f10;
+        ebVar.n = f12;
+        if (Utilities.dist(0.0f, 0.0f, f11, f12) > AndroidUtilities.touchSlop) {
+            ebVar.r = true;
+        }
+        if (!ebVar.d) {
+            return false;
+        }
+        float f13 = ebVar.f - f9;
+        ebVar.f = f13;
+        rb rbVar = this.a;
+        rbVar.setTranslationX(f13);
+        float f14 = ebVar.f;
+        if (f14 == 0.0f || ((f14 < 0.0f && ebVar.v) || (f14 > 0.0f && ebVar.w))) {
+            rbVar.setAlpha(1.0f - (Math.abs(f14) / rbVar.getWidth()));
+        }
+        return true;
     }
 }

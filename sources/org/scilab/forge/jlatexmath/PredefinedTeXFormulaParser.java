@@ -7,7 +7,7 @@ import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 import ru.noties.jlatexmath.JLatexMathAndroid;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public class PredefinedTeXFormulaParser {
     public static final String RESOURCE_NAME = "PredefinedTeXFormulas.xml";
@@ -37,8 +37,8 @@ public class PredefinedTeXFormulaParser {
     public void parse(Map map) {
         if ("true".equals(getAttrValueAndCheckIfNotNull("enabled", this.root))) {
             NodeList elementsByTagName = this.root.getElementsByTagName(this.type);
-            for (int i9 = 0; i9 < elementsByTagName.getLength(); i9++) {
-                Element element = (Element) elementsByTagName.item(i9);
+            for (int i10 = 0; i10 < elementsByTagName.getLength(); i10++) {
+                Element element = (Element) elementsByTagName.item(i10);
                 if ("true".equals(getAttrValueAndCheckIfNotNull("enabled", element))) {
                     String attrValueAndCheckIfNotNull = getAttrValueAndCheckIfNotNull("name", element);
                     if ("TeXFormula".equals(this.type)) {

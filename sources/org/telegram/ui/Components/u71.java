@@ -1,140 +1,147 @@
 package org.telegram.ui.Components;
 
-import android.app.Activity;
-import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.Point;
-import android.os.Build;
-import java.io.File;
-import java.io.FileOutputStream;
+import android.content.Context;
+import android.text.TextPaint;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.ImageLoader;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.WallpapersListActivity;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class u71 {
-    public String a;
-    public final Activity b;
-    public final org.telegram.ui.ActionBar.o2 c;
-    public final t71 d;
-    public File e;
+public final class u71 extends il0 {
+    public final /* synthetic */ int c = 0;
+    public final Context d;
+    public final /* synthetic */ FrameLayout e;
 
-    public u71(Activity activity, WallpapersListActivity wallpapersListActivity, t71 t71Var) {
-        this.b = activity;
-        this.c = wallpapersListActivity;
-        this.d = t71Var;
+    public u71(xf.j jVar, LaunchActivity launchActivity) {
+        this.e = jVar;
+        this.d = launchActivity;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:21:0x006c, code lost:
-    
-        if (r10 == null) goto L24;
-     */
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x0074 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Type inference failed for: r10v1 */
-    /* JADX WARN: Type inference failed for: r10v11, types: [java.io.FileOutputStream] */
-    /* JADX WARN: Type inference failed for: r10v15 */
-    /* JADX WARN: Type inference failed for: r10v16 */
-    /* JADX WARN: Type inference failed for: r10v9 */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void a(int i9, int i10, Intent intent) {
-        FileOutputStream fileOutputStream;
-        if (i10 == -1) {
-            ?? r10 = 10;
-            t71 t71Var = this.d;
-            FileOutputStream fileOutputStream2 = null;
-            if (i9 != 10) {
-                if (i9 != 11 || intent == null || intent.getData() == null) {
-                    return;
+    @Override // org.telegram.ui.Components.il0
+    public final boolean D(f2.n1 n1Var) {
+        switch (this.c) {
+            case 0:
+                break;
+            default:
+                if (m1.j.c(3)[n1Var.f] == 1) {
                 }
-                try {
-                    this.e = new File(FileLoader.getDirectory(4), Utilities.random.nextInt() + ".jpg");
-                    Point realScreenSize = AndroidUtilities.getRealScreenSize();
-                    Bitmap loadBitmap = ImageLoader.loadBitmap(null, intent.getData(), (float) realScreenSize.x, (float) realScreenSize.y, true);
-                    loadBitmap.compress(Bitmap.CompressFormat.JPEG, 87, new FileOutputStream(this.e));
-                    t71Var.b(this.e, loadBitmap, false);
-                    return;
-                } catch (Exception e10) {
-                    FileLog.e(e10);
-                    return;
-                }
-            }
-            AndroidUtilities.addMediaToGallery(this.a);
-            try {
-                try {
-                    this.e = new File(FileLoader.getDirectory(4), Utilities.random.nextInt() + ".jpg");
-                    Point realScreenSize2 = AndroidUtilities.getRealScreenSize();
-                    Bitmap loadBitmap2 = ImageLoader.loadBitmap(this.a, null, (float) realScreenSize2.x, (float) realScreenSize2.y, true);
-                    fileOutputStream = new FileOutputStream(this.e);
-                    try {
-                        loadBitmap2.compress(Bitmap.CompressFormat.JPEG, 87, fileOutputStream);
-                        t71Var.b(this.e, loadBitmap2, false);
-                        r10 = fileOutputStream;
-                    } catch (Exception e11) {
-                        e = e11;
-                        FileLog.e(e);
-                        r10 = fileOutputStream;
-                    }
-                } catch (Throwable th) {
-                    th = th;
-                    fileOutputStream2 = r10;
-                    if (fileOutputStream2 != null) {
-                        try {
-                            fileOutputStream2.close();
-                        } catch (Exception e12) {
-                            FileLog.e(e12);
-                        }
-                    }
-                    throw th;
-                }
-            } catch (Exception e13) {
-                e = e13;
-                fileOutputStream = null;
-            } catch (Throwable th2) {
-                th = th2;
-                if (fileOutputStream2 != null) {
-                }
-                throw th;
-            }
-            try {
-                r10.close();
-            } catch (Exception e14) {
-                FileLog.e(e14);
-            }
-            this.a = null;
+                break;
+        }
+        return true;
+    }
+
+    @Override // f2.p0
+    public final int h() {
+        switch (this.c) {
+            case 0:
+                return ((y71) this.e).h.size();
+            default:
+                return ((xf.j) this.e).A.size();
         }
     }
 
-    public final void b() {
-        org.telegram.ui.ActionBar.o2 o2Var = this.c;
-        if (o2Var == null) {
-            Intent intent = new Intent("android.intent.action.PICK");
-            intent.setType("image/*");
-            this.b.startActivityForResult(intent, 11);
-            return;
+    @Override // f2.p0
+    public long i(int i10) {
+        switch (this.c) {
+            case 0:
+                return ((v71) ((y71) this.e).h.get(i10)).a;
+            default:
+                return super.i(i10);
         }
-        Activity parentActivity = o2Var.getParentActivity();
-        if (parentActivity != null) {
-            int i9 = Build.VERSION.SDK_INT;
-            if (i9 >= 33) {
-                if (parentActivity.checkSelfPermission("android.permission.READ_MEDIA_IMAGES") != 0) {
-                    parentActivity.requestPermissions(new String[]{"android.permission.READ_MEDIA_IMAGES"}, 4);
-                    return;
+    }
+
+    @Override // f2.p0
+    public final int j(int i10) {
+        switch (this.c) {
+            case 0:
+                return 0;
+            default:
+                return m1.j.b(((xf.a) ((xf.j) this.e).A.get(i10)).b);
+        }
+    }
+
+    @Override // f2.p0
+    public final void v(f2.n1 n1Var, int i10) {
+        x71 x71Var;
+        switch (this.c) {
+            case 0:
+                w71 w71Var = (w71) n1Var.a;
+                y71 y71Var = (y71) this.e;
+                v71 v71Var = (v71) y71Var.h.get(i10);
+                w71Var.a = v71Var;
+                w71Var.setContentDescription(v71Var.b);
+                w71Var.setAlpha(1.0f);
+                w71Var.requestLayout();
+                w71Var.setReordering(y71Var.i0 && (x71Var = y71Var.y) != null && ((n) x71Var).f(i10));
+                break;
+            default:
+                View view = n1Var.a;
+                xf.a aVar = (xf.a) ((xf.j) this.e).A.get(i10);
+                int i11 = aVar.b;
+                q6 q6Var = aVar.f;
+                CharSequence charSequence = aVar.a;
+                int b10 = m1.j.b(i11);
+                if (b10 == 0) {
+                    org.telegram.ui.ActionBar.y1 y1Var = (org.telegram.ui.ActionBar.y1) view;
+                    y1Var.setTextColor(org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.j5, false));
+                    y1Var.a(0, charSequence);
+                    break;
+                } else if (b10 == 1) {
+                    org.telegram.ui.Cells.k4 k4Var = (org.telegram.ui.Cells.k4) view;
+                    k4Var.setTextColor(org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.L6, false));
+                    k4Var.setText(charSequence);
+                    break;
+                } else if (b10 == 2) {
+                    xf.i iVar = (xf.i) view;
+                    iVar.f = charSequence.toString();
+                    iVar.d = ((Float) q6Var.get(null)).floatValue();
+                    iVar.b = aVar.d;
+                    iVar.c = aVar.e;
+                    iVar.e = q6Var;
+                    iVar.invalidate();
+                    break;
                 }
-            } else if (i9 >= 23 && parentActivity.checkSelfPermission("android.permission.READ_EXTERNAL_STORAGE") != 0) {
-                parentActivity.requestPermissions(new String[]{"android.permission.READ_EXTERNAL_STORAGE"}, 4);
-                return;
-            }
+                break;
         }
-        org.telegram.ui.ip0 ip0Var = new org.telegram.ui.ip0(2, false, false, null);
-        ip0Var.x = false;
-        ip0Var.R = new s71(this);
-        o2Var.presentFragment(ip0Var);
+    }
+
+    @Override // f2.p0
+    public final f2.n1 x(ViewGroup viewGroup, int i10) {
+        FrameLayout frameLayout;
+        switch (this.c) {
+            case 0:
+                return new vk0(new w71((y71) this.e, this.d));
+            default:
+                int b10 = m1.j.b(m1.j.c(3)[i10]);
+                Context context = this.d;
+                if (b10 == 1) {
+                    frameLayout = new org.telegram.ui.Cells.k4(context);
+                } else if (b10 != 2) {
+                    frameLayout = new org.telegram.ui.ActionBar.y1(context, null);
+                } else {
+                    xf.i iVar = new xf.i(context);
+                    iVar.setWillNotDraw(false);
+                    TextPaint textPaint = new TextPaint(1);
+                    iVar.h = textPaint;
+                    textPaint.setTextSize(AndroidUtilities.dp(16.0f));
+                    ao0 ao0Var = new ao0(context);
+                    iVar.a = ao0Var;
+                    ao0Var.setReportChanges(true);
+                    ao0Var.setDelegate(new xf.h(iVar));
+                    ao0Var.setImportantForAccessibility(2);
+                    iVar.addView(ao0Var, i7.f6.d(-1, 38.0f, 83, 5.0f, 29.0f, 47.0f, 0.0f));
+                    frameLayout = iVar;
+                }
+                frameLayout.setLayoutParams(new f2.x0(-1, -2));
+                return new vk0(frameLayout);
+        }
+    }
+
+    public u71(y71 y71Var, Context context) {
+        this.e = y71Var;
+        this.d = context;
     }
 }

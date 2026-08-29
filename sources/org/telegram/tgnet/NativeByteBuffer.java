@@ -8,7 +8,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
 public class NativeByteBuffer extends AbstractSerializedData {
     private static final ThreadLocal<LinkedList<NativeByteBuffer>> addressWrappers = new ThreadLocal<LinkedList<NativeByteBuffer>>() { // from class: org.telegram.tgnet.NativeByteBuffer.1
@@ -23,10 +23,10 @@ public class NativeByteBuffer extends AbstractSerializedData {
     private int len;
     public boolean reused = true;
 
-    private NativeByteBuffer(int i9, boolean z10) {
+    private NativeByteBuffer(int i10, boolean z10) {
     }
 
-    public static native long native_getFreeBuffer(int i9);
+    public static native long native_getFreeBuffer(int i10);
 
     public static native ByteBuffer native_getJavaByteBuffer(long j10);
 
@@ -148,23 +148,23 @@ public class NativeByteBuffer extends AbstractSerializedData {
 
     @Override // org.telegram.tgnet.AbstractSerializedData, org.telegram.tgnet.InputSerializedData
     public byte[] readByteArray(boolean z10) {
-        int i9;
+        int i10;
         try {
             int intFromByte = getIntFromByte(this.buffer.get());
             if (intFromByte >= 254) {
                 intFromByte = getIntFromByte(this.buffer.get()) | (getIntFromByte(this.buffer.get()) << 8) | (getIntFromByte(this.buffer.get()) << 16);
-                i9 = 4;
+                i10 = 4;
             } else {
-                i9 = 1;
+                i10 = 1;
             }
             if (intFromByte > remaining() || intFromByte < 0) {
                 throw new RuntimeException("byte array size too big");
             }
             byte[] bArr = new byte[intFromByte];
             this.buffer.get(bArr);
-            while ((intFromByte + i9) % 4 != 0) {
+            while ((intFromByte + i10) % 4 != 0) {
                 this.buffer.get();
-                i9++;
+                i10++;
             }
             return bArr;
         } catch (Exception e10) {
@@ -181,14 +181,14 @@ public class NativeByteBuffer extends AbstractSerializedData {
 
     @Override // org.telegram.tgnet.AbstractSerializedData, org.telegram.tgnet.InputSerializedData
     public NativeByteBuffer readByteBuffer(boolean z10) {
-        int i9;
+        int i10;
         try {
             int intFromByte = getIntFromByte(this.buffer.get());
             if (intFromByte >= 254) {
                 intFromByte = getIntFromByte(this.buffer.get()) | (getIntFromByte(this.buffer.get()) << 8) | (getIntFromByte(this.buffer.get()) << 16);
-                i9 = 4;
+                i10 = 4;
             } else {
-                i9 = 1;
+                i10 = 1;
             }
             if (intFromByte > remaining() || intFromByte < 0) {
                 throw new RuntimeException("byte array size too big");
@@ -200,9 +200,9 @@ public class NativeByteBuffer extends AbstractSerializedData {
             nativeByteBuffer.buffer.put(this.buffer);
             this.buffer.limit(limit);
             nativeByteBuffer.buffer.position(0);
-            while ((intFromByte + i9) % 4 != 0) {
+            while ((intFromByte + i10) % 4 != 0) {
                 this.buffer.get();
-                i9++;
+                i10++;
             }
             return nativeByteBuffer;
         } catch (Exception e10) {
@@ -234,8 +234,8 @@ public class NativeByteBuffer extends AbstractSerializedData {
     }
 
     @Override // org.telegram.tgnet.AbstractSerializedData, org.telegram.tgnet.InputSerializedData
-    public byte[] readData(int i9, boolean z10) {
-        byte[] bArr = new byte[i9];
+    public byte[] readData(int i10, boolean z10) {
+        byte[] bArr = new byte[i10];
         readBytes(bArr, z10);
         return bArr;
     }
@@ -310,24 +310,24 @@ public class NativeByteBuffer extends AbstractSerializedData {
 
     @Override // org.telegram.tgnet.AbstractSerializedData, org.telegram.tgnet.InputSerializedData
     public String readString(boolean z10) {
-        int i9;
+        int i10;
         int position = getPosition();
         try {
             int intFromByte = getIntFromByte(this.buffer.get());
             if (intFromByte >= 254) {
                 intFromByte = getIntFromByte(this.buffer.get()) | (getIntFromByte(this.buffer.get()) << 8) | (getIntFromByte(this.buffer.get()) << 16);
-                i9 = 4;
+                i10 = 4;
             } else {
-                i9 = 1;
+                i10 = 1;
             }
             if (intFromByte > remaining() || intFromByte < 0) {
                 throw new RuntimeException("string size too big");
             }
             byte[] bArr = new byte[intFromByte];
             this.buffer.get(bArr);
-            while ((intFromByte + i9) % 4 != 0) {
+            while ((intFromByte + i10) % 4 != 0) {
                 this.buffer.get();
-                i9++;
+                i10++;
             }
             return new String(bArr, "UTF-8");
         } catch (Exception e10) {
@@ -365,15 +365,15 @@ public class NativeByteBuffer extends AbstractSerializedData {
     }
 
     @Override // org.telegram.tgnet.AbstractSerializedData, org.telegram.tgnet.InputSerializedData, org.telegram.tgnet.OutputSerializedData
-    public void skip(int i9) {
-        if (i9 == 0) {
+    public void skip(int i10) {
+        if (i10 == 0) {
             return;
         }
         if (this.justCalc) {
-            this.len += i9;
+            this.len += i10;
         } else {
             ByteBuffer byteBuffer = this.buffer;
-            byteBuffer.position(byteBuffer.position() + i9);
+            byteBuffer.position(byteBuffer.position() + i10);
         }
     }
 
@@ -389,33 +389,33 @@ public class NativeByteBuffer extends AbstractSerializedData {
     }
 
     @Override // org.telegram.tgnet.AbstractSerializedData, org.telegram.tgnet.OutputSerializedData
-    public void writeByte(int i9) {
-        writeByte((byte) i9);
+    public void writeByte(int i10) {
+        writeByte((byte) i10);
     }
 
     @Override // org.telegram.tgnet.AbstractSerializedData, org.telegram.tgnet.OutputSerializedData
-    public void writeByteArray(byte[] bArr, int i9, int i10) {
+    public void writeByteArray(byte[] bArr, int i10, int i11) {
         try {
-            if (i10 <= 253) {
+            if (i11 <= 253) {
                 if (this.justCalc) {
                     this.len++;
                 } else {
-                    this.buffer.put((byte) i10);
+                    this.buffer.put((byte) i11);
                 }
             } else if (this.justCalc) {
                 this.len += 4;
             } else {
                 this.buffer.put((byte) -2);
-                this.buffer.put((byte) i10);
-                this.buffer.put((byte) (i10 >> 8));
-                this.buffer.put((byte) (i10 >> 16));
+                this.buffer.put((byte) i11);
+                this.buffer.put((byte) (i11 >> 8));
+                this.buffer.put((byte) (i11 >> 16));
             }
             if (this.justCalc) {
-                this.len += i10;
+                this.len += i11;
             } else {
-                this.buffer.put(bArr, i9, i10);
+                this.buffer.put(bArr, i10, i11);
             }
-            for (int i11 = i10 <= 253 ? 1 : 4; (i10 + i11) % 4 != 0; i11++) {
+            for (int i12 = i11 <= 253 ? 1 : 4; (i11 + i12) % 4 != 0; i12++) {
                 if (this.justCalc) {
                     this.len++;
                 } else {
@@ -454,7 +454,7 @@ public class NativeByteBuffer extends AbstractSerializedData {
                 nativeByteBuffer.rewind();
                 this.buffer.put(nativeByteBuffer.buffer);
             }
-            for (int i9 = limit <= 253 ? 1 : 4; (limit + i9) % 4 != 0; i9++) {
+            for (int i10 = limit <= 253 ? 1 : 4; (limit + i10) % 4 != 0; i10++) {
                 if (this.justCalc) {
                     this.len++;
                 } else {
@@ -495,12 +495,12 @@ public class NativeByteBuffer extends AbstractSerializedData {
     }
 
     @Override // org.telegram.tgnet.AbstractSerializedData, org.telegram.tgnet.OutputSerializedData
-    public void writeFloat(float f10) {
+    public void writeFloat(float f9) {
         try {
             if (this.justCalc) {
                 this.len += 4;
             } else {
-                this.buffer.putInt(Float.floatToIntBits(f10));
+                this.buffer.putInt(Float.floatToIntBits(f9));
             }
         } catch (Exception e10) {
             if (BuildVars.LOGS_ENABLED) {
@@ -511,12 +511,12 @@ public class NativeByteBuffer extends AbstractSerializedData {
     }
 
     @Override // org.telegram.tgnet.AbstractSerializedData, org.telegram.tgnet.OutputSerializedData
-    public void writeInt32(int i9) {
+    public void writeInt32(int i10) {
         try {
             if (this.justCalc) {
                 this.len += 4;
             } else {
-                this.buffer.putInt(i9);
+                this.buffer.putInt(i10);
             }
         } catch (Exception e10) {
             if (BuildVars.LOGS_ENABLED) {
@@ -561,12 +561,12 @@ public class NativeByteBuffer extends AbstractSerializedData {
         }
     }
 
-    public void limit(int i9) {
-        this.buffer.limit(i9);
+    public void limit(int i10) {
+        this.buffer.limit(i10);
     }
 
-    public void position(int i9) {
-        this.buffer.position(i9);
+    public void position(int i10) {
+        this.buffer.position(i10);
     }
 
     @Override // org.telegram.tgnet.AbstractSerializedData, org.telegram.tgnet.OutputSerializedData
@@ -585,15 +585,15 @@ public class NativeByteBuffer extends AbstractSerializedData {
         }
     }
 
-    public NativeByteBuffer(int i9) {
-        if (i9 >= 0) {
-            long native_getFreeBuffer = native_getFreeBuffer(i9);
+    public NativeByteBuffer(int i10) {
+        if (i10 >= 0) {
+            long native_getFreeBuffer = native_getFreeBuffer(i10);
             this.address = native_getFreeBuffer;
             if (native_getFreeBuffer != 0) {
                 ByteBuffer native_getJavaByteBuffer = native_getJavaByteBuffer(native_getFreeBuffer);
                 this.buffer = native_getJavaByteBuffer;
                 native_getJavaByteBuffer.position(0);
-                this.buffer.limit(i9);
+                this.buffer.limit(i10);
                 this.buffer.order(ByteOrder.LITTLE_ENDIAN);
                 return;
             }
@@ -602,9 +602,9 @@ public class NativeByteBuffer extends AbstractSerializedData {
         throw new Exception("invalid NativeByteBuffer size");
     }
 
-    public void readBytes(byte[] bArr, int i9, int i10, boolean z10) {
+    public void readBytes(byte[] bArr, int i10, int i11, boolean z10) {
         try {
-            this.buffer.get(bArr, i9, i10);
+            this.buffer.get(bArr, i10, i11);
         } catch (Exception e10) {
             if (!z10) {
                 if (BuildVars.LOGS_ENABLED) {
@@ -619,12 +619,12 @@ public class NativeByteBuffer extends AbstractSerializedData {
     }
 
     @Override // org.telegram.tgnet.AbstractSerializedData, org.telegram.tgnet.OutputSerializedData
-    public void writeBytes(byte[] bArr, int i9, int i10) {
+    public void writeBytes(byte[] bArr, int i10, int i11) {
         try {
             if (!this.justCalc) {
-                this.buffer.put(bArr, i9, i10);
+                this.buffer.put(bArr, i10, i11);
             } else {
-                this.len += i10;
+                this.len += i11;
             }
         } catch (Exception e10) {
             if (BuildVars.LOGS_ENABLED) {
@@ -669,7 +669,7 @@ public class NativeByteBuffer extends AbstractSerializedData {
             } else {
                 this.buffer.put(bArr);
             }
-            for (int i9 = bArr.length <= 253 ? 1 : 4; (bArr.length + i9) % 4 != 0; i9++) {
+            for (int i10 = bArr.length <= 253 ? 1 : 4; (bArr.length + i10) % 4 != 0; i10++) {
                 if (this.justCalc) {
                     this.len++;
                 } else {

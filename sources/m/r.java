@@ -9,7 +9,7 @@ import android.graphics.drawable.LayerDrawable;
 import android.os.Build;
 import android.util.Log;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class r {
     public static final PorterDuff.Mode b = PorterDuff.Mode.SRC_IN;
@@ -24,8 +24,8 @@ public final class r {
                     c();
                 }
                 rVar = c;
-            } catch (Throwable th) {
-                throw th;
+            } catch (Throwable th2) {
+                throw th2;
             }
         }
         return rVar;
@@ -37,7 +37,7 @@ public final class r {
                 r rVar = new r();
                 c = rVar;
                 rVar.a = n2.d();
-                c.a.l(new com.google.firebase.messaging.m(6));
+                c.a.l(new bg.c2(7));
             }
         }
     }
@@ -71,7 +71,7 @@ public final class r {
         }
     }
 
-    public final synchronized Drawable b(Context context, int i9) {
-        return this.a.g(context, i9);
+    public final synchronized Drawable b(Context context, int i10) {
+        return this.a.g(context, i10);
     }
 }

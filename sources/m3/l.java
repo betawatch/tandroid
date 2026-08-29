@@ -1,29 +1,46 @@
 package m3;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+import android.text.TextUtils;
+import j3.t0;
+import j7.l1;
+
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public interface l extends com.google.android.exoplayer2.upstream.j {
-    void c(int i9, int i10, byte[] bArr);
+public final class l {
+    public final String a;
+    public final t0 b;
+    public final t0 c;
+    public final int d;
+    public final int e;
 
-    boolean d(byte[] bArr, int i9, int i10, boolean z10);
+    public l(String str, t0 t0Var, t0 t0Var2, int i10, int i11) {
+        f5.a.f(i10 == 0 || i11 == 0);
+        if (TextUtils.isEmpty(str)) {
+            throw new IllegalArgumentException();
+        }
+        this.a = str;
+        t0Var.getClass();
+        this.b = t0Var;
+        t0Var2.getClass();
+        this.c = t0Var2;
+        this.d = i10;
+        this.e = i11;
+    }
 
-    int e(int i9, int i10, byte[] bArr);
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj != null && l.class == obj.getClass()) {
+            l lVar = (l) obj;
+            if (this.d == lVar.d && this.e == lVar.e && this.a.equals(lVar.a) && this.b.equals(lVar.b) && this.c.equals(lVar.c)) {
+                return true;
+            }
+        }
+        return false;
+    }
 
-    boolean g(byte[] bArr, int i9, int i10, boolean z10);
-
-    long getLength();
-
-    long getPosition();
-
-    long k();
-
-    void n(int i9);
-
-    void readFully(byte[] bArr, int i9, int i10);
-
-    int skip(int i9);
-
-    void t();
-
-    void u(int i9);
+    public final int hashCode() {
+        return this.c.hashCode() + ((this.b.hashCode() + l1.f((((527 + this.d) * 31) + this.e) * 31, 31, this.a)) * 31);
+    }
 }

@@ -1,83 +1,89 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.MotionEvent;
-import android.view.WindowManager;
-import org.telegram.messenger.FileLog;
+import android.view.ViewGroup;
+import java.util.LinkedList;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class pb extends uj0 {
-    public final /* synthetic */ int h1 = 0;
-    public final /* synthetic */ Object i1;
+public final /* synthetic */ class pb implements o1.g {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public pb(org.telegram.ui.ht htVar, Context context, int i9, org.telegram.ui.ActionBar.b6 b6Var) {
-        super(4, i9, context, null, b6Var);
-        this.i1 = htVar;
+    public /* synthetic */ pb(int i10, Object obj, Object obj2) {
+        this.a = i10;
+        this.b = obj;
+        this.c = obj2;
     }
 
-    @Override // org.telegram.ui.Components.uj0, android.view.ViewGroup, android.view.View
-    public boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        gc gcVar;
-        switch (this.h1) {
+    @Override // o1.g
+    public final void a(o1.i iVar, boolean z10, float f9, float f10) {
+        ViewGroup viewGroup;
+        switch (this.a) {
             case 0:
-                rb rbVar = (rb) this.i1;
-                if (motionEvent.getAction() == 0) {
-                    gc gcVar2 = rbVar.n;
-                    if (gcVar2 != null) {
-                        gcVar2.i(false);
-                    }
-                } else if (motionEvent.getAction() == 1 && (gcVar = rbVar.n) != null) {
-                    gcVar.i(true);
-                }
-                break;
-        }
-        return super.dispatchTouchEvent(motionEvent);
-    }
-
-    @Override // org.telegram.ui.Components.uj0
-    public void j() {
-        switch (this.h1) {
-            case 1:
-                super.j();
-                org.telegram.ui.ht htVar = (org.telegram.ui.ht) this.i1;
-                if (getReactionsWindow() != null) {
-                    WindowManager.LayoutParams layoutParams = htVar.x;
-                    layoutParams.flags &= -131073;
-                    layoutParams.softInputMode = 16;
-                } else {
-                    htVar.x.flags |= 131072;
-                }
-                try {
-                    ((WindowManager) htVar.w.getSystemService("window")).updateViewLayout(htVar.y, htVar.x);
+                rb rbVar = (rb) this.b;
+                ig igVar = (ig) this.c;
+                rbVar.setInOutOffset(0.0f);
+                if (!z10) {
+                    igVar.run();
                     break;
-                } catch (Exception e10) {
-                    FileLog.e(e10);
-                    return;
                 }
+                break;
+            case 1:
+                ni.r((ni) this.b, (g) this.c);
+                break;
+            case 2:
+                jh.l3 l3Var = (jh.l3) this.b;
+                zg zgVar = (zg) this.c;
+                ni niVar = (ni) l3Var.d;
+                niVar.v0.setTranslationY(0.0f);
+                niVar.v0.k(niVar.h2);
+                viewGroup = ((org.telegram.ui.ActionBar.f3) niVar).containerView;
+                viewGroup.invalidate();
+                zgVar.run();
+                niVar.a2(0);
+                break;
+            case 3:
+                nd0 nd0Var = (nd0) this.b;
+                yb0 yb0Var = (yb0) this.c;
+                LinkedList linkedList = nd0Var.I;
+                nd0Var.H = null;
+                yb0Var.D = null;
+                yb0Var.z();
+                if (!z10) {
+                    yb0Var.h = 1.0f;
+                    yb0Var.z();
+                    if (!linkedList.isEmpty()) {
+                        ((Runnable) linkedList.poll()).run();
+                        nd0Var.J.poll();
+                        break;
+                    }
+                }
+                break;
             default:
-                super.j();
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.uj0
-    public void m() {
-        switch (this.h1) {
-            case 0:
-                gc gcVar = gc.w;
-                if (gcVar != null) {
-                    gcVar.i(false);
+                ph.m3 m3Var = (ph.m3) this.b;
+                Runnable runnable = (Runnable) this.c;
+                if (iVar == m3Var.C) {
+                    m3Var.C = null;
+                    if (runnable != null) {
+                        runnable.run();
+                    }
+                    Runnable runnable2 = m3Var.A;
+                    if (runnable2 != null) {
+                        runnable2.run();
+                    }
+                    float f11 = m3Var.h;
+                    if (f11 != -1.0f) {
+                        boolean z11 = m3Var.s;
+                        m3Var.s = true;
+                        m3Var.setOffsetY(f11);
+                        m3Var.h = -1.0f;
+                        m3Var.s = z11;
+                    }
+                    m3Var.n = -2.14748365E9f;
+                    break;
                 }
-                ((rb) this.i1).d.getReactionsWindow().c.setOnClickListener(new f0(this, 5));
                 break;
         }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public pb(rb rbVar, org.telegram.ui.ActionBar.o2 o2Var, Context context, int i9, org.telegram.ui.ActionBar.b6 b6Var) {
-        super(3, i9, context, o2Var, b6Var);
-        this.i1 = rbVar;
     }
 }

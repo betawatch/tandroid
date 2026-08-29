@@ -1,56 +1,34 @@
 package qh;
 
-import android.graphics.Rect;
-import android.text.Layout;
-import org.telegram.ui.Cells.y9;
+import org.telegram.ui.ActionBar.o2;
+import org.telegram.ui.tn;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes4.dex */
-public final class z implements y9 {
-    public final /* synthetic */ Layout a;
-    public final /* synthetic */ Rect b;
+public final class z implements n0 {
+    public final /* synthetic */ o2 a;
+    public final /* synthetic */ i0 b;
 
-    public z(Layout layout, Rect rect) {
-        this.a = layout;
-        this.b = rect;
+    public z(i0 i0Var, o2 o2Var) {
+        this.b = i0Var;
+        this.a = o2Var;
     }
 
-    @Override // org.telegram.ui.Cells.y9
-    public final Layout getLayout() {
-        return this.a;
+    @Override // qh.n0
+    public final void a(long j10) {
+        this.a.presentFragment(tn.R9(j10));
+        this.b.dismiss();
     }
 
-    @Override // org.telegram.ui.Cells.y9
-    public final /* synthetic */ CharSequence getPrefix() {
-        return null;
+    @Override // qh.n0
+    public final void close() {
+        this.b.d.D(0);
     }
 
-    @Override // org.telegram.ui.Cells.y9
-    public final int getRow() {
-        return 0;
-    }
-
-    @Override // org.telegram.ui.Cells.y9
-    public final Rect getSelectionBounds() {
-        return this.b;
-    }
-
-    @Override // org.telegram.ui.Cells.y9
-    public final CharSequence getText() {
-        Layout layout = getLayout();
-        if (layout == null) {
-            return null;
-        }
-        return layout.getText();
-    }
-
-    @Override // org.telegram.ui.Cells.y9
-    public final int getX() {
-        return 0;
-    }
-
-    @Override // org.telegram.ui.Cells.y9
-    public final int getY() {
-        return 0;
+    @Override // qh.n0
+    public final void k() {
+        i0 i0Var = this.b;
+        i0Var.w.d.U2.N(true);
+        i0Var.v.d.U2.N(true);
     }
 }

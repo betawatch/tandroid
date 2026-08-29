@@ -1,69 +1,124 @@
 package d4;
 
-import g7.b0;
-import g7.y8;
-import java.nio.ByteBuffer;
-import java.nio.charset.CharacterCodingException;
-import java.nio.charset.CharsetDecoder;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-import n8.d;
-import z3.e;
+import android.os.Parcel;
+import android.os.Parcelable;
+import b4.b;
+import f5.d0;
+import j3.g1;
+import j3.s0;
+import j3.t0;
+import java.util.Arrays;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class a extends y8 {
-    public static final Pattern c = Pattern.compile("(.+?)='(.*?)';", 32);
-    public final CharsetDecoder a = d.c.newDecoder();
-    public final CharsetDecoder b = d.b.newDecoder();
+public final class a implements b {
+    public static final Parcelable.Creator<a> CREATOR;
+    public static final t0 h;
+    public static final t0 n;
+    public final String a;
+    public final String b;
+    public final long c;
+    public final long d;
+    public final byte[] e;
+    public int f;
 
-    @Override // g7.y8
-    public final z3.c b(e eVar, ByteBuffer byteBuffer) {
-        String str;
-        CharsetDecoder charsetDecoder = this.b;
-        CharsetDecoder charsetDecoder2 = this.a;
-        String str2 = null;
-        try {
-            str = charsetDecoder2.decode(byteBuffer).toString();
-        } catch (CharacterCodingException unused) {
-            try {
-                String charBuffer = charsetDecoder.decode(byteBuffer).toString();
-                charsetDecoder.reset();
-                byteBuffer.rewind();
-                str = charBuffer;
-            } catch (CharacterCodingException unused2) {
-                charsetDecoder.reset();
-                byteBuffer.rewind();
-                str = null;
-            } catch (Throwable th) {
-                charsetDecoder.reset();
-                byteBuffer.rewind();
-                throw th;
-            }
-        } finally {
-            charsetDecoder2.reset();
-            byteBuffer.rewind();
+    static {
+        s0 s0Var = new s0();
+        s0Var.o = "application/id3";
+        h = new t0(s0Var);
+        s0 s0Var2 = new s0();
+        s0Var2.o = "application/x-scte35";
+        n = new t0(s0Var2);
+        CREATOR = new w.a(27);
+    }
+
+    public a(String str, String str2, long j10, long j11, byte[] bArr) {
+        this.a = str;
+        this.b = str2;
+        this.c = j10;
+        this.d = j11;
+        this.e = bArr;
+    }
+
+    @Override // android.os.Parcelable
+    public final int describeContents() {
+        return 0;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
-        byte[] bArr = new byte[byteBuffer.limit()];
-        byteBuffer.get(bArr);
-        if (str == null) {
-            return new z3.c(new c(null, null, bArr));
-        }
-        Matcher matcher = c.matcher(str);
-        String str3 = null;
-        for (int i9 = 0; matcher.find(i9); i9 = matcher.end()) {
-            String group = matcher.group(1);
-            String group2 = matcher.group(2);
-            if (group != null) {
-                String b10 = b0.b(group);
-                b10.getClass();
-                if (b10.equals("streamurl")) {
-                    str3 = group2;
-                } else if (b10.equals("streamtitle")) {
-                    str2 = group2;
-                }
+        if (obj != null && a.class == obj.getClass()) {
+            a aVar = (a) obj;
+            if (this.c == aVar.c && this.d == aVar.d && d0.a(this.a, aVar.a) && d0.a(this.b, aVar.b) && Arrays.equals(this.e, aVar.e)) {
+                return true;
             }
         }
-        return new z3.c(new c(str2, str3, bArr));
+        return false;
+    }
+
+    @Override // b4.b
+    public final byte[] getWrappedMetadataBytes() {
+        if (getWrappedMetadataFormat() != null) {
+            return this.e;
+        }
+        return null;
+    }
+
+    @Override // b4.b
+    public final t0 getWrappedMetadataFormat() {
+        String str = this.a;
+        str.getClass();
+        switch (str) {
+            case "urn:scte:scte35:2014:bin":
+                return n;
+            case "https://aomedia.org/emsg/ID3":
+            case "https://developer.apple.com/streaming/emsg-id3":
+                return h;
+            default:
+                return null;
+        }
+    }
+
+    public final int hashCode() {
+        if (this.f == 0) {
+            String str = this.a;
+            int hashCode = (527 + (str != null ? str.hashCode() : 0)) * 31;
+            String str2 = this.b;
+            int hashCode2 = (hashCode + (str2 != null ? str2.hashCode() : 0)) * 31;
+            long j10 = this.c;
+            int i10 = (hashCode2 + ((int) (j10 ^ (j10 >>> 32)))) * 31;
+            long j11 = this.d;
+            this.f = Arrays.hashCode(this.e) + ((i10 + ((int) (j11 ^ (j11 >>> 32)))) * 31);
+        }
+        return this.f;
+    }
+
+    public final String toString() {
+        return "EMSG: scheme=" + this.a + ", id=" + this.d + ", durationMs=" + this.c + ", value=" + this.b;
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i10) {
+        parcel.writeString(this.a);
+        parcel.writeString(this.b);
+        parcel.writeLong(this.c);
+        parcel.writeLong(this.d);
+        parcel.writeByteArray(this.e);
+    }
+
+    public a(Parcel parcel) {
+        String readString = parcel.readString();
+        int i10 = d0.a;
+        this.a = readString;
+        this.b = parcel.readString();
+        this.c = parcel.readLong();
+        this.d = parcel.readLong();
+        this.e = parcel.createByteArray();
+    }
+
+    @Override // b4.b
+    public final /* synthetic */ void populateMediaMetadata(g1 g1Var) {
     }
 }

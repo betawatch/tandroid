@@ -1,41 +1,72 @@
 package mh;
 
-import android.content.Context;
+import android.graphics.Rect;
 import android.view.View;
-import org.telegram.ui.ActionBar.b6;
-import org.telegram.ui.Components.i51;
-import org.telegram.ui.Components.k41;
-import org.telegram.ui.Components.l41;
-import org.telegram.ui.Components.wk0;
-import org.telegram.ui.Components.z41;
+import androidx.recyclerview.widget.RecyclerView;
+import f2.k1;
+import f2.v0;
+import org.telegram.ui.Cells.p7;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes4.dex */
-public final class j extends k41 {
-    static {
-        k41.setup(new j());
+public final class j extends v0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ r b;
+
+    public /* synthetic */ j(r rVar, int i10) {
+        this.a = i10;
+        this.b = rVar;
     }
 
-    public static l41 a(int i9, String str, String str2) {
-        l41 J = l41.J(j.class);
-        J.k = i9;
-        J.l = str;
-        J.m = str2;
-        return J;
-    }
-
-    @Override // org.telegram.ui.Components.k41
-    public final void bindView(View view, l41 l41Var, boolean z10, z41 z41Var, i51 i51Var) {
-        ((k) view).a(l41Var.l, l41Var.m, l41Var.k);
-    }
-
-    @Override // org.telegram.ui.Components.k41
-    public final View createView(Context context, wk0 wk0Var, int i9, int i10, b6 b6Var) {
-        return new k(context, b6Var, false);
-    }
-
-    @Override // org.telegram.ui.Components.k41
-    public final boolean isClickable() {
-        return false;
+    @Override // f2.v0
+    public final void a(Rect rect, View view, RecyclerView recyclerView, k1 k1Var) {
+        switch (this.a) {
+            case 0:
+                if (!(view instanceof p7)) {
+                    rect.left = 0;
+                    rect.top = 0;
+                    rect.bottom = 0;
+                    rect.right = 0;
+                    break;
+                } else {
+                    p7 p7Var = (p7) view;
+                    r rVar = this.b;
+                    rVar.f.getClass();
+                    int R = RecyclerView.R(p7Var);
+                    int i10 = rVar.h.J;
+                    p7Var.T = R < i10;
+                    int i11 = R % i10;
+                    p7Var.R = i11 == 0;
+                    p7Var.S = i11 == i10 - 1;
+                    rect.left = 0;
+                    rect.top = 0;
+                    rect.bottom = 0;
+                    rect.right = 0;
+                    break;
+                }
+            default:
+                if (!(view instanceof p7)) {
+                    rect.left = 0;
+                    rect.top = 0;
+                    rect.bottom = 0;
+                    rect.right = 0;
+                    break;
+                } else {
+                    p7 p7Var2 = (p7) view;
+                    r rVar2 = this.b;
+                    rVar2.r.getClass();
+                    int R2 = RecyclerView.R(p7Var2);
+                    int i12 = rVar2.s.J;
+                    p7Var2.T = R2 < i12;
+                    int i13 = R2 % i12;
+                    p7Var2.R = i13 == 0;
+                    p7Var2.S = i13 == i12 - 1;
+                    rect.left = 0;
+                    rect.top = 0;
+                    rect.bottom = 0;
+                    rect.right = 0;
+                    break;
+                }
+        }
     }
 }

@@ -4,7 +4,7 @@ import android.graphics.Canvas;
 import android.graphics.RectF;
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
 public final class h3 extends FrameLayout implements t3 {
     public final t3 a;
@@ -25,7 +25,7 @@ public final class h3 extends FrameLayout implements t3 {
     }
 
     @Override // org.telegram.ui.ActionBar.t3
-    public final float z(Canvas canvas, RectF rectF, float f10, RectF rectF2, float f11) {
-        return this.a.z(canvas, rectF, f10, rectF2, f11);
+    public final float z(Canvas canvas, RectF rectF, float f9, RectF rectF2, float f10) {
+        return this.a.z(canvas, rectF, f9, rectF2, f10);
     }
 }

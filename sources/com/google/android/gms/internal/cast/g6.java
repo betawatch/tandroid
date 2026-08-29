@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.cast;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class g6 {
     public final t4 a;
@@ -17,28 +17,28 @@ public final class g6 {
             this.d = charAt;
             return;
         }
-        int i9 = charAt & 8191;
-        int i10 = 1;
-        int i11 = 13;
+        int i10 = charAt & 8191;
+        int i11 = 1;
+        int i12 = 13;
         while (true) {
-            int i12 = i10 + 1;
-            char charAt2 = str.charAt(i10);
+            int i13 = i11 + 1;
+            char charAt2 = str.charAt(i11);
             if (charAt2 < 55296) {
-                this.d = i9 | (charAt2 << i11);
+                this.d = i10 | (charAt2 << i12);
                 return;
             } else {
-                i9 |= (charAt2 & 8191) << i11;
-                i11 += 13;
-                i10 = i12;
+                i10 |= (charAt2 & 8191) << i12;
+                i12 += 13;
+                i11 = i13;
             }
         }
     }
 
     public final int a() {
-        int i9 = this.d;
-        if ((i9 & 1) != 0) {
+        int i10 = this.d;
+        if ((i10 & 1) != 0) {
             return 1;
         }
-        return (i9 & 4) == 4 ? 3 : 2;
+        return (i10 & 4) == 4 ? 3 : 2;
     }
 }

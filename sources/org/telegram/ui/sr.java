@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
 public abstract class sr extends LinearLayout {
     public final Paint a;
@@ -16,7 +16,7 @@ public abstract class sr extends LinearLayout {
     public float c;
     public boolean d;
     public boolean e;
-    public vr[] f;
+    public ur[] f;
 
     public sr(Context context) {
         super(context);
@@ -29,61 +29,61 @@ public abstract class sr extends LinearLayout {
 
     public abstract void a();
 
-    public final void b(int i9, int i10) {
-        int i11;
+    public final void b(int i10, int i11) {
         int i12;
-        vr[] vrVarArr = this.f;
-        int i13 = 0;
-        if (vrVarArr == null || vrVarArr.length != i9) {
-            if (vrVarArr != null) {
-                for (vr vrVar : vrVarArr) {
-                    removeView(vrVar);
+        int i13;
+        ur[] urVarArr = this.f;
+        int i14 = 0;
+        if (urVarArr == null || urVarArr.length != i10) {
+            if (urVarArr != null) {
+                for (ur urVar : urVarArr) {
+                    removeView(urVar);
                 }
             }
-            this.f = new vr[i9];
-            int i14 = 0;
-            while (i14 < i9) {
-                this.f[i14] = new qr(this, getContext(), i14, i9);
-                this.f[i14].setImeOptions(268435461);
-                this.f[i14].setTextSize(1, 20.0f);
-                this.f[i14].setMaxLines(1);
-                this.f[i14].setTypeface(AndroidUtilities.bold());
-                this.f[i14].setPadding(0, 0, 0, 0);
-                this.f[i14].setGravity(17);
-                if (i10 == 3) {
-                    this.f[i14].setEnabled(false);
-                    this.f[i14].setInputType(0);
-                    this.f[i14].setVisibility(8);
+            this.f = new ur[i10];
+            int i15 = 0;
+            while (i15 < i10) {
+                this.f[i15] = new qr(this, getContext(), i15, i10);
+                this.f[i15].setImeOptions(268435461);
+                this.f[i15].setTextSize(1, 20.0f);
+                this.f[i15].setMaxLines(1);
+                this.f[i15].setTypeface(AndroidUtilities.bold());
+                this.f[i15].setPadding(0, 0, 0, 0);
+                this.f[i15].setGravity(17);
+                if (i11 == 3) {
+                    this.f[i15].setEnabled(false);
+                    this.f[i15].setInputType(0);
+                    this.f[i15].setVisibility(8);
                 } else {
-                    this.f[i14].setInputType(3);
+                    this.f[i15].setInputType(3);
                 }
-                int i15 = 10;
-                if (i10 == 10) {
-                    i11 = 42;
-                    i12 = 47;
-                } else if (i10 == 11) {
-                    i15 = 5;
-                    i11 = 28;
-                    i12 = 34;
-                } else {
-                    i15 = 7;
-                    i11 = 34;
+                int i16 = 10;
+                if (i11 == 10) {
                     i12 = 42;
+                    i13 = 47;
+                } else if (i11 == 11) {
+                    i16 = 5;
+                    i12 = 28;
+                    i13 = 34;
+                } else {
+                    i16 = 7;
+                    i12 = 34;
+                    i13 = 42;
                 }
-                addView(this.f[i14], g7.e6.t(i11, i12, 1, 0, 0, i14 != i9 + (-1) ? i15 : 0, 0));
-                this.f[i14].addTextChangedListener(new rr(this, i14, i9));
-                this.f[i14].setOnEditorActionListener(new ea(this, 3));
-                i14++;
+                addView(this.f[i15], i7.f6.t(i12, i13, 1, 0, 0, i15 != i10 + (-1) ? i16 : 0, 0));
+                this.f[i15].addTextChangedListener(new rr(this, i15, i10));
+                this.f[i15].setOnEditorActionListener(new da(this, 3));
+                i15++;
             }
             return;
         }
         while (true) {
-            vr[] vrVarArr2 = this.f;
-            if (i13 >= vrVarArr2.length) {
+            ur[] urVarArr2 = this.f;
+            if (i14 >= urVarArr2.length) {
                 return;
             }
-            vrVarArr2[i13].setText("");
-            i13++;
+            urVarArr2[i14].setText("");
+            i14++;
         }
     }
 
@@ -91,50 +91,50 @@ public abstract class sr extends LinearLayout {
         if (this.f == null) {
             return;
         }
-        int i9 = 0;
+        int i10 = 0;
         if (z10) {
-            int i10 = 0;
+            int i11 = 0;
             while (true) {
-                vr[] vrVarArr = this.f;
-                if (i10 >= vrVarArr.length) {
+                ur[] urVarArr = this.f;
+                if (i11 >= urVarArr.length) {
                     break;
                 }
-                if (vrVarArr[i10].isFocused()) {
-                    i9 = i10;
+                if (urVarArr[i11].isFocused()) {
+                    i10 = i11;
                     break;
                 }
-                i10++;
+                i11++;
             }
         }
-        for (int i11 = i9; i11 < Math.min(this.f.length, str.length() + i9); i11++) {
-            this.f[i11].setText(Character.toString(str.charAt(i11 - i9)));
+        for (int i12 = i10; i12 < Math.min(this.f.length, str.length() + i10); i12++) {
+            this.f[i12].setText(Character.toString(str.charAt(i12 - i10)));
         }
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
-        for (int i9 = 0; i9 < getChildCount(); i9++) {
-            View childAt = getChildAt(i9);
-            if (childAt instanceof vr) {
-                vr vrVar = (vr) childAt;
+        for (int i10 = 0; i10 < getChildCount(); i10++) {
+            View childAt = getChildAt(i10);
+            if (childAt instanceof ur) {
+                ur urVar = (ur) childAt;
                 if (!this.e) {
                     if (childAt.isFocused()) {
-                        vrVar.j(1.0f);
+                        urVar.j(1.0f);
                     } else if (!childAt.isFocused()) {
-                        vrVar.j(0.0f);
+                        urVar.j(0.0f);
                     }
                 }
-                float successProgress = vrVar.getSuccessProgress();
-                int d = i0.a.d(successProgress, i0.a.d(vrVar.getErrorProgress(), i0.a.d(vrVar.getFocusedProgress(), org.telegram.ui.ActionBar.f6.w0(null, org.telegram.ui.ActionBar.f6.k6, false), org.telegram.ui.ActionBar.f6.w0(null, org.telegram.ui.ActionBar.f6.l6, false)), org.telegram.ui.ActionBar.f6.w0(null, org.telegram.ui.ActionBar.f6.q7, false)), org.telegram.ui.ActionBar.f6.w0(null, org.telegram.ui.ActionBar.f6.i7, false));
+                float successProgress = urVar.getSuccessProgress();
+                int d = i0.a.d(successProgress, i0.a.d(urVar.getErrorProgress(), i0.a.d(urVar.getFocusedProgress(), org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.k6, false), org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.l6, false)), org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.q7, false)), org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.i7, false));
                 Paint paint = this.a;
                 paint.setColor(d);
                 RectF rectF = AndroidUtilities.rectTmp;
                 rectF.set(childAt.getLeft(), childAt.getTop(), childAt.getRight(), childAt.getBottom());
-                float f10 = this.c;
-                rectF.inset(f10, f10);
+                float f9 = this.c;
+                rectF.inset(f9, f9);
                 if (successProgress != 0.0f) {
-                    float f11 = -Math.max(0.0f, (vrVar.getSuccessScaleProgress() - 1.0f) * this.c);
-                    rectF.inset(f11, f11);
+                    float f10 = -Math.max(0.0f, (urVar.getSuccessScaleProgress() - 1.0f) * this.c);
+                    rectF.inset(f10, f10);
                 }
                 canvas.drawRoundRect(rectF, AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), paint);
             }
@@ -144,38 +144,38 @@ public abstract class sr extends LinearLayout {
 
     @Override // android.view.ViewGroup
     public final boolean drawChild(Canvas canvas, View view, long j10) {
-        if (!(view instanceof vr)) {
+        if (!(view instanceof ur)) {
             return super.drawChild(canvas, view, j10);
         }
-        vr vrVar = (vr) view;
+        ur urVar = (ur) view;
         canvas.save();
-        float f10 = vrVar.v;
+        float f9 = urVar.v;
         RectF rectF = AndroidUtilities.rectTmp;
         rectF.set(view.getX(), view.getY(), view.getX() + view.getMeasuredWidth(), view.getY() + view.getMeasuredHeight());
-        float f11 = this.c;
-        rectF.inset(f11, f11);
+        float f10 = this.c;
+        rectF.inset(f10, f10);
         canvas.clipRect(rectF);
-        if (vrVar.x) {
-            float f12 = (f10 * 0.5f) + 0.5f;
-            view.setAlpha(f10);
-            canvas.scale(f12, f12, (vrVar.getMeasuredWidth() / 2.0f) + vrVar.getX(), (vrVar.getMeasuredHeight() / 2.0f) + vrVar.getY());
+        if (urVar.x) {
+            float f11 = (f9 * 0.5f) + 0.5f;
+            view.setAlpha(f9);
+            canvas.scale(f11, f11, (urVar.getMeasuredWidth() / 2.0f) + urVar.getX(), (urVar.getMeasuredHeight() / 2.0f) + urVar.getY());
         } else {
             view.setAlpha(1.0f);
-            canvas.translate(0.0f, (1.0f - f10) * view.getMeasuredHeight());
+            canvas.translate(0.0f, (1.0f - f9) * view.getMeasuredHeight());
         }
         super.drawChild(canvas, view, j10);
         canvas.restore();
-        float f13 = vrVar.w;
-        if (f13 >= 1.0f) {
+        float f12 = urVar.w;
+        if (f12 >= 1.0f) {
             return true;
         }
         canvas.save();
-        float f14 = 1.0f - f13;
-        float f15 = (f14 * 0.5f) + 0.5f;
-        canvas.scale(f15, f15, (vrVar.getMeasuredWidth() / 2.0f) + vrVar.getX(), (vrVar.getMeasuredHeight() / 2.0f) + vrVar.getY());
+        float f13 = 1.0f - f12;
+        float f14 = (f13 * 0.5f) + 0.5f;
+        canvas.scale(f14, f14, (urVar.getMeasuredWidth() / 2.0f) + urVar.getX(), (urVar.getMeasuredHeight() / 2.0f) + urVar.getY());
         Paint paint = this.b;
-        paint.setAlpha((int) (f14 * 255.0f));
-        canvas.drawBitmap(vrVar.y, vrVar.getX(), vrVar.getY(), paint);
+        paint.setAlpha((int) (f13 * 255.0f));
+        canvas.drawBitmap(urVar.y, urVar.getX(), urVar.getY(), paint);
         canvas.restore();
         return true;
     }
@@ -185,20 +185,20 @@ public abstract class sr extends LinearLayout {
             return "";
         }
         StringBuilder sb2 = new StringBuilder();
-        int i9 = 0;
+        int i10 = 0;
         while (true) {
-            vr[] vrVarArr = this.f;
-            if (i9 >= vrVarArr.length) {
+            ur[] urVarArr = this.f;
+            if (i10 >= urVarArr.length) {
                 return sb2.toString();
             }
-            sb2.append(ne.b.d(vrVarArr[i9].getText().toString(), false));
-            i9++;
+            sb2.append(qe.b.d(urVarArr[i10].getText().toString(), false));
+            i10++;
         }
     }
 
     @Override // android.widget.LinearLayout, android.view.View
-    public final void onMeasure(int i9, int i10) {
-        super.onMeasure(i9, i10);
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, i11);
         float dp = AndroidUtilities.dp(1.5f);
         this.c = dp;
         this.a.setStrokeWidth(dp);

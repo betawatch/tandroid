@@ -3,7 +3,7 @@ package org.telegram.messenger;
 import android.os.Build;
 import java.lang.reflect.Field;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public class OneUIUtilities {
     public static final int ONE_UI_4_0 = 40000;
@@ -53,10 +53,10 @@ public class OneUIUtilities {
         if (intValue < 100000) {
             return false;
         }
-        int i9 = intValue - 90000;
-        oneUIEncodedVersion = i9;
-        oneUIMajorVersion = i9 / 10000;
-        oneUIMinorVersion = (i9 % 10000) / 100.0f;
+        int i10 = intValue - 90000;
+        oneUIEncodedVersion = i10;
+        oneUIMajorVersion = i10 / 10000;
+        oneUIMinorVersion = (i10 % 10000) / 100.0f;
         isOneUI = Boolean.TRUE;
         return isOneUI.booleanValue();
     }

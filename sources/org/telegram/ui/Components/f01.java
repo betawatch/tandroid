@@ -1,75 +1,54 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
-import java.io.File;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.ui.Components.ThemeEditorView;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class f01 implements t71 {
-    public final /* synthetic */ ThemeEditorView a;
+public final /* synthetic */ class f01 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ g01 b;
 
-    public f01(ThemeEditorView themeEditorView) {
-        this.a = themeEditorView;
+    public /* synthetic */ f01(g01 g01Var, int i10) {
+        this.a = i10;
+        this.b = g01Var;
     }
 
-    @Override // org.telegram.ui.Components.t71
-    public final void a() {
-        int i9 = 0;
-        while (true) {
-            ThemeEditorView themeEditorView = this.a;
-            if (i9 >= themeEditorView.c.size()) {
-                ThemeEditorView.EditorAlert editorAlert = themeEditorView.l;
-                int i10 = ThemeEditorView.EditorAlert.I;
-                editorAlert.K(true);
-                return;
-            } else {
-                org.telegram.ui.ActionBar.h6 h6Var = (org.telegram.ui.ActionBar.h6) themeEditorView.c.get(i9);
-                int w02 = org.telegram.ui.ActionBar.f6.w0(h6Var.j, h6Var.f, false);
-                h6Var.i = w02;
-                if (i9 == 0) {
-                    themeEditorView.l.b.c(w02);
-                }
-                i9++;
-            }
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                g01 g01Var = this.b;
+                g01Var.getClass();
+                g01Var.B = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                g01Var.invalidate();
+                break;
+            case 1:
+                g01 g01Var2 = this.b;
+                g01Var2.getClass();
+                g01Var2.B = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                g01Var2.invalidate();
+                break;
+            case 2:
+                g01 g01Var3 = this.b;
+                g01Var3.getClass();
+                g01Var3.f = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                g01Var3.invalidate();
+                break;
+            case 3:
+                g01 g01Var4 = this.b;
+                g01Var4.getClass();
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                g01Var4.s = floatValue;
+                g01Var4.w = (int) ((g01Var4.h * floatValue) + 0);
+                g01Var4.invalidate();
+                break;
+            default:
+                g01 g01Var5 = this.b;
+                g01Var5.getClass();
+                g01Var5.v = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                g01Var5.x = g01Var5.r + ((int) Math.ceil((g01Var5.n - r1) * r5));
+                g01Var5.invalidate();
+                break;
         }
-    }
-
-    @Override // org.telegram.ui.Components.t71
-    public final void b(File file, Bitmap bitmap, boolean z10) {
-        org.telegram.ui.ActionBar.e6 e6Var = this.a.m;
-        org.telegram.ui.ActionBar.f6.rl.delete(org.telegram.ui.ActionBar.f6.Nd);
-        org.telegram.ui.ActionBar.f6.rl.delete(org.telegram.ui.ActionBar.f6.Od);
-        org.telegram.ui.ActionBar.f6.rl.delete(org.telegram.ui.ActionBar.f6.Pd);
-        org.telegram.ui.ActionBar.f6.rl.delete(org.telegram.ui.ActionBar.f6.Qd);
-        org.telegram.ui.ActionBar.f6.rl.delete(org.telegram.ui.ActionBar.f6.Rd);
-        org.telegram.ui.ActionBar.f6.h0 = null;
-        e6Var.v(null);
-        if (bitmap == null) {
-            org.telegram.ui.ActionBar.f6.f0 = null;
-            org.telegram.ui.ActionBar.f6.e0 = null;
-            org.telegram.ui.ActionBar.f6.r1(e6Var, false, false, false);
-            org.telegram.ui.ActionBar.f6.o1(true);
-            return;
-        }
-        org.telegram.ui.ActionBar.f6.f0 = new BitmapDrawable(bitmap);
-        org.telegram.ui.ActionBar.f6.r1(e6Var, false, false, false);
-        int[] calcDrawableColor = AndroidUtilities.calcDrawableColor(org.telegram.ui.ActionBar.f6.f0);
-        int i9 = calcDrawableColor[0];
-        org.telegram.ui.ActionBar.f6.c0 = i9;
-        org.telegram.ui.ActionBar.f6.X = i9;
-        int i10 = calcDrawableColor[1];
-        org.telegram.ui.ActionBar.f6.d0 = i10;
-        org.telegram.ui.ActionBar.f6.b0 = i10;
-        Drawable drawable = org.telegram.ui.ActionBar.f6.e0;
-        if (drawable != null) {
-            org.telegram.ui.ActionBar.f6.i(drawable);
-        }
-        org.telegram.ui.ActionBar.f6.h(org.telegram.ui.ActionBar.f6.e0);
-        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.didSetNewWallpapper, new Object[0]);
     }
 }

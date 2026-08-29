@@ -1,72 +1,45 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.widget.LinearLayout;
-import android.widget.ScrollView;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
+import android.content.Context;
+import android.view.View;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class aa1 extends org.telegram.ui.ActionBar.f3 {
-    public static aa1 b;
+public final class aa1 extends org.telegram.ui.Components.v41 {
+    public static final /* synthetic */ int b = 0;
+    public org.telegram.ui.Cells.o7 a;
 
-    public static /* synthetic */ void m(aa1 aa1Var, dy dyVar) {
-        if (dyVar.getParentActivity() == null) {
-            return;
-        }
-        MessagesController.getInstance(aa1Var.currentAccount).clearQueryTime();
-        dyVar.getMessagesStorage().clearLocalDatabase();
+    static {
+        org.telegram.ui.Components.v41.setup(new aa1());
     }
 
-    public static void n(dy dyVar) {
-        if (b == null) {
-            aa1 aa1Var = new aa1(dyVar.getParentActivity(), false);
-            Activity parentActivity = dyVar.getParentActivity();
-            LinearLayout f10 = org.telegram.messenger.l0.f(parentActivity, 1);
-            org.telegram.ui.Components.hw0 hw0Var = new org.telegram.ui.Components.hw0(parentActivity, aa1Var.currentAccount);
-            hw0Var.setStickerNum(7);
-            hw0Var.getImageReceiver().setAutoRepeat(1);
-            f10.addView(hw0Var, g7.e6.t(144, 144, 1, 0, 16, 0, 0));
-            TextView textView = new TextView(parentActivity);
-            textView.setGravity(8388611);
-            int i9 = org.telegram.ui.ActionBar.f6.j5;
-            org.telegram.messenger.l0.q(textView, org.telegram.ui.ActionBar.f6.w0(null, i9, false), 1, 20.0f);
-            textView.setText(LocaleController.getString(R.string.SuggestClearDatabaseTitle));
-            f10.addView(textView, g7.e6.d(-1, -2.0f, 0, 21.0f, 30.0f, 21.0f, 0.0f));
-            TextView textView2 = new TextView(parentActivity);
-            textView2.setGravity(8388611);
-            textView2.setTextSize(1, 15.0f);
-            textView2.setTextColor(org.telegram.ui.ActionBar.f6.w0(null, i9, false));
-            textView2.setText(AndroidUtilities.replaceTags(LocaleController.formatString("SuggestClearDatabaseMessage", R.string.SuggestClearDatabaseMessage, AndroidUtilities.formatFileSize(dyVar.getMessagesStorage().getDatabaseSize()))));
-            f10.addView(textView2, g7.e6.d(-1, -2.0f, 0, 21.0f, 15.0f, 21.0f, 16.0f));
-            TextView textView3 = new TextView(parentActivity);
-            textView3.setPadding(AndroidUtilities.dp(34.0f), 0, AndroidUtilities.dp(34.0f), 0);
-            textView3.setGravity(17);
-            textView3.setTextSize(1, 14.0f);
-            textView3.setTypeface(AndroidUtilities.bold());
-            textView3.setText(LocaleController.getString(R.string.ClearLocalDatabase));
-            textView3.setTextColor(org.telegram.ui.ActionBar.f6.w0(null, org.telegram.ui.ActionBar.f6.Sh, false));
-            int dp = AndroidUtilities.dp(6.0f);
-            int w02 = org.telegram.ui.ActionBar.f6.w0(null, org.telegram.ui.ActionBar.f6.Oh, false);
-            int k10 = i0.a.k(org.telegram.ui.ActionBar.f6.w0(null, org.telegram.ui.ActionBar.f6.d6, false), 120);
-            textView3.setBackgroundDrawable(org.telegram.ui.ActionBar.f6.i0(dp, dp, dp, dp, w02, k10, k10));
-            f10.addView(textView3, g7.e6.d(-1, 48.0f, 0, 16.0f, 15.0f, 16.0f, 16.0f));
-            textView3.setOnClickListener(new v80(25, aa1Var, dyVar));
-            ScrollView scrollView = new ScrollView(parentActivity);
-            scrollView.addView(f10);
-            aa1Var.setCustomView(scrollView);
-            b = aa1Var;
-            aa1Var.show();
-        }
+    @Override // org.telegram.ui.Components.v41
+    public final void attachedView(org.telegram.ui.Components.jl0 jl0Var, View view, org.telegram.ui.Components.w41 w41Var) {
+        ((org.telegram.ui.Cells.p7) view).l(w41Var.h, false);
     }
 
-    @Override // org.telegram.ui.ActionBar.f3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.k2
-    public final void dismiss() {
-        super.dismiss();
-        b = null;
+    @Override // org.telegram.ui.Components.v41
+    public final void bindView(View view, org.telegram.ui.Components.w41 w41Var, boolean z10, org.telegram.ui.Components.k51 k51Var, org.telegram.ui.Components.u51 u51Var) {
+        org.telegram.ui.Cells.p7 p7Var = (org.telegram.ui.Cells.p7) view;
+        p7Var.k((MessageObject) w41Var.G, w41Var.v, false);
+        p7Var.i(w41Var.e, false);
+        p7Var.l(w41Var.h, false);
+    }
+
+    @Override // org.telegram.ui.Components.v41
+    public final View createView(Context context, org.telegram.ui.Components.jl0 jl0Var, int i10, int i11, org.telegram.ui.ActionBar.c6 c6Var) {
+        if (this.a == null) {
+            this.a = new org.telegram.ui.Cells.o7(context, c6Var);
+        }
+        org.telegram.ui.Cells.p7 p7Var = new org.telegram.ui.Cells.p7(context, this.a, i10);
+        p7Var.s0 = true;
+        p7Var.W = true;
+        return p7Var;
+    }
+
+    @Override // org.telegram.ui.Components.v41
+    public final boolean equals(org.telegram.ui.Components.w41 w41Var, org.telegram.ui.Components.w41 w41Var2) {
+        return w41Var.q == w41Var2.q && w41Var.e == w41Var2.e && w41Var.B == w41Var2.B;
     }
 }

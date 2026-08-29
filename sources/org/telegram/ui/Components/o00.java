@@ -1,116 +1,130 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import android.animation.ValueAnimator;
 import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.CornerPathEffect;
+import android.graphics.Color;
 import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.drawable.Drawable;
+import android.graphics.RectF;
+import android.text.TextPaint;
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class o00 extends Drawable {
-    public final Drawable a;
-    public final Path b;
-    public boolean c = true;
-    public final Paint d;
-    public final Paint e;
+public final class o00 extends View {
+    public int A;
+    public RectF B;
+    public float C;
+    public ValueAnimator D;
+    public boolean a;
+    public boolean b;
+    public boolean c;
+    public String d;
+    public TextPaint e;
+    public Paint f;
+    public Paint h;
+    public Paint n;
+    public int r;
+    public int s;
+    public int v;
+    public int w;
+    public int x;
+    public int y;
 
-    public o00(Context context, int i9, int i10) {
-        this.a = context.getResources().getDrawable(i9);
-        if (i10 < 0) {
-            this.b = null;
-            this.d = null;
-            this.e = null;
+    public final void a(boolean z10, boolean z11) {
+        this.b = z10;
+        if (!this.a || !z11) {
+            this.C = z10 ? 1.0f : 0.0f;
             return;
         }
-        this.b = new Path();
-        Paint paint = new Paint(1);
-        this.d = paint;
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setColor(-16777216);
-        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
-        paint.setPathEffect(new CornerPathEffect(AndroidUtilities.dp(1.0f)));
-        paint.setStrokeCap(Paint.Cap.ROUND);
-        paint.setStrokeJoin(Paint.Join.ROUND);
-        Paint paint2 = new Paint(1);
-        this.e = paint2;
-        paint2.setStyle(Paint.Style.FILL);
-        int[] iArr = org.telegram.ui.ActionBar.f6.r8;
-        paint2.setColor(org.telegram.ui.ActionBar.f6.w0(null, iArr[i10 % iArr.length], false));
-        paint2.setPathEffect(new CornerPathEffect(AndroidUtilities.dp(1.0f)));
+        ValueAnimator valueAnimator = this.D;
+        if (valueAnimator != null) {
+            valueAnimator.removeAllListeners();
+            this.D.cancel();
+        }
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.C, z10 ? 1.0f : 0.0f);
+        this.D = ofFloat;
+        ofFloat.addUpdateListener(new j6(this, 24));
+        this.D.setDuration(300L);
+        this.D.start();
     }
 
-    public final int a(float f10) {
-        return AndroidUtilities.lerp(getBounds().left, getBounds().right, f10);
-    }
-
-    public final int b(float f10) {
-        return AndroidUtilities.lerp(getBounds().top, getBounds().bottom, f10);
-    }
-
-    @Override // android.graphics.drawable.Drawable
+    @Override // android.view.View
     public final void draw(Canvas canvas) {
-        Drawable drawable = this.a;
-        Path path = this.b;
-        if (path == null) {
-            drawable.setBounds(getBounds());
-            drawable.draw(canvas);
-            return;
+        float f9;
+        Canvas canvas2;
+        int i10 = this.w;
+        RectF rectF = this.B;
+        Paint paint = this.h;
+        Paint paint2 = this.n;
+        Paint paint3 = this.f;
+        TextPaint textPaint = this.e;
+        super.draw(canvas);
+        float f10 = this.C;
+        if (f10 <= 0.5f) {
+            f9 = f10 / 0.5f;
+            paint3.setColor(Color.rgb(Color.red(this.r) + ((int) ((Color.red(this.s) - Color.red(this.r)) * f9)), Color.green(this.r) + ((int) ((Color.green(this.s) - Color.green(this.r)) * f9)), Color.blue(this.r) + ((int) ((Color.blue(this.s) - Color.blue(this.r)) * f9))));
+            textPaint.setColor(Color.rgb(Color.red(this.s) + ((int) ((Color.red(this.v) - Color.red(this.s)) * f9)), Color.green(this.s) + ((int) ((Color.green(this.v) - Color.green(this.s)) * f9)), Color.blue(this.s) + ((int) ((Color.blue(this.v) - Color.blue(this.s)) * f9))));
+        } else {
+            textPaint.setColor(this.v);
+            paint3.setColor(this.s);
+            f9 = 1.0f;
         }
-        canvas.saveLayerAlpha(getBounds().left, getBounds().top, getBounds().right, getBounds().bottom, 255);
-        drawable.setBounds(getBounds());
-        drawable.draw(canvas);
-        boolean z10 = this.c;
-        Paint paint = this.d;
-        if (z10) {
-            path.rewind();
-            path.moveTo(a(0.4871f), b(0.6025f));
-            path.lineTo(a(0.8974f), b(0.6025f));
-            path.lineTo(a(1.0f), b(0.7564f));
-            path.lineTo(a(0.8974f), b(0.9102f));
-            path.lineTo(a(0.4871f), b(0.9102f));
-            path.close();
-            this.c = false;
-            paint.setStrokeWidth(AndroidUtilities.dp(3.0f));
+        int measuredHeight = getMeasuredHeight() >> 1;
+        paint.setColor(this.s);
+        canvas.drawRoundRect(rectF, i10 / 2.0f, i10 / 2.0f, paint3);
+        canvas.drawRoundRect(rectF, i10 / 2.0f, i10 / 2.0f, paint);
+        String str = this.d;
+        if (str != null) {
+            canvas.drawText(str, (f9 * this.y) + (getMeasuredWidth() >> 1), (textPaint.getTextSize() * 0.35f) + measuredHeight, textPaint);
         }
-        canvas.drawPath(path, paint);
-        canvas.drawPath(path, this.e);
-        canvas.restore();
+        float f11 = 2.0f - (this.C / 0.5f);
+        canvas.save();
+        canvas.scale(0.9f, 0.9f, AndroidUtilities.dpf2(7.0f), measuredHeight);
+        canvas.translate(AndroidUtilities.dp(12.0f), measuredHeight - AndroidUtilities.dp(9.0f));
+        if (this.C > 0.5f) {
+            paint2.setColor(this.v);
+            float f12 = 1.0f - f11;
+            canvas2 = canvas;
+            canvas2.drawLine(AndroidUtilities.dpf2(7.0f), (int) AndroidUtilities.dpf2(13.0f), (int) (AndroidUtilities.dpf2(7.0f) - (AndroidUtilities.dp(4.0f) * f12)), (int) (AndroidUtilities.dpf2(13.0f) - (AndroidUtilities.dp(4.0f) * f12)), paint2);
+            canvas2.drawLine((int) AndroidUtilities.dpf2(7.0f), (int) AndroidUtilities.dpf2(13.0f), (int) ((AndroidUtilities.dp(8.0f) * f12) + AndroidUtilities.dpf2(7.0f)), (int) (AndroidUtilities.dpf2(13.0f) - (AndroidUtilities.dp(8.0f) * f12)), paint2);
+        } else {
+            canvas2 = canvas;
+        }
+        canvas2.restore();
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return this.a.getIntrinsicHeight();
+    @Override // android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.a = true;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return this.a.getIntrinsicWidth();
+    @Override // android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        this.a = false;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return this.a.getOpacity();
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        Paint paint = this.h;
+        RectF rectF = this.B;
+        int i12 = this.A;
+        String str = this.d;
+        setMeasuredDimension((i12 * 2) + (str == null ? 0 : (int) this.e.measureText(str)) + (this.x << 1), AndroidUtilities.dp(4.0f) + this.w);
+        if (getMeasuredWidth() != 0) {
+            rectF.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
+            rectF.inset((paint.getStrokeWidth() / 2.0f) + i12, (paint.getStrokeWidth() / 2.0f) + i12);
+        }
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i9) {
-        this.a.setAlpha(i9);
+    public void setChecked(boolean z10) {
+        a(z10, true);
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void setBounds(int i9, int i10, int i11, int i12) {
-        super.setBounds(i9, i10, i11, i12);
-        this.c = true;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        this.a.setColorFilter(colorFilter);
+    public void setText(String str) {
+        this.d = str;
+        requestLayout();
     }
 }

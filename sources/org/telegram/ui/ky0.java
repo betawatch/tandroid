@@ -6,38 +6,38 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.voip.VoIPService;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ky0 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
-    public /* synthetic */ ky0(Object obj, int i9) {
-        this.a = i9;
+    public /* synthetic */ ky0(Object obj, int i10) {
+        this.a = i10;
         this.b = obj;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        int i9 = this.a;
-        int i10 = 2;
-        int i11 = 0;
+        int i10 = this.a;
+        int i11 = 1;
+        int i12 = 0;
         Object obj = this.b;
-        switch (i9) {
+        switch (i10) {
             case 0:
-                ProfileActivity profileActivity = (ProfileActivity) ((fh.v) obj).b;
+                ProfileActivity profileActivity = (ProfileActivity) ((bg.d1) obj).c;
                 if (profileActivity.j5 != 1.0f) {
                     my0 my0Var = profileActivity.j0;
-                    while (my0Var.z0.k(i11) != my0Var.getRealCount() - 1) {
-                        i11++;
+                    while (my0Var.z0.k(i12) != my0Var.getRealCount() - 1) {
+                        i12++;
                     }
-                    my0Var.x(i11, true);
+                    my0Var.x(i12, true);
                     break;
                 }
                 break;
             case 1:
                 ProfileActivity profileActivity2 = ((dz0) obj).b;
-                profileActivity2.getMessagesController().toggleChatNoForwards(profileActivity2.a1, 0, true, new kh.la(true, profileActivity2, i10));
+                profileActivity2.getMessagesController().toggleChatNoForwards(profileActivity2.a1, 0, true, new nh.w9(true, profileActivity2, i11));
                 break;
             case 2:
                 hz0 hz0Var = (hz0) obj;
@@ -47,12 +47,12 @@ public final /* synthetic */ class ky0 implements Runnable {
                 ((yz0) obj).c();
                 break;
             case 4:
-                ((m01) obj).a();
+                ((n01) obj).a();
                 break;
             case 5:
-                j01 j01Var = (j01) obj;
-                j01Var.f.add(j01Var.c);
-                j01Var.a();
+                k01 k01Var = (k01) obj;
+                k01Var.f.add(k01Var.c);
+                k01Var.a();
                 break;
             case 6:
                 Runnable[] runnableArr = (Runnable[]) obj;
@@ -60,27 +60,27 @@ public final /* synthetic */ class ky0 implements Runnable {
                 runnableArr[0] = null;
                 break;
             case 7:
-                ((ih.j6) obj).e();
+                ((lh.g6) obj).e();
                 break;
             case 8:
-                k11 k11Var = (k11) obj;
-                AndroidUtilities.hideKeyboard(k11Var.d.findFocus());
-                while (i11 < k11Var.y.length) {
-                    int i12 = k11Var.w;
-                    if ((i12 != 0 || i11 == 4) && (i12 != 1 || i11 == 2 || i11 == 3)) {
-                        k11Var.a[i11].setText((CharSequence) null);
+                l11 l11Var = (l11) obj;
+                AndroidUtilities.hideKeyboard(l11Var.d.findFocus());
+                while (i12 < l11Var.y.length) {
+                    int i13 = l11Var.w;
+                    if ((i13 != 0 || i12 == 4) && (i13 != 1 || i12 == 2 || i12 == 3)) {
+                        l11Var.a[i12].setText((CharSequence) null);
                     }
-                    i11++;
+                    i12++;
                 }
                 break;
             case 9:
-                org.telegram.ui.Components.oc ocVar = (org.telegram.ui.Components.oc) obj;
+                org.telegram.ui.Components.tc tcVar = (org.telegram.ui.Components.tc) obj;
                 if (LaunchActivity.U() != null) {
-                    if (ocVar == null) {
-                        ocVar = org.telegram.ui.Components.oc.a0(LaunchActivity.U());
+                    if (tcVar == null) {
+                        tcVar = org.telegram.ui.Components.tc.a0(LaunchActivity.U());
                     }
-                    if (ocVar != null) {
-                        org.telegram.ui.Components.gc M = ocVar.M(LocaleController.getString(R.string.ReportChatSent), LocaleController.getString(R.string.Reported2), R.raw.msg_antispam);
+                    if (tcVar != null) {
+                        org.telegram.ui.Components.mc M = tcVar.M(LocaleController.getString(R.string.ReportChatSent), LocaleController.getString(R.string.Reported2), R.raw.msg_antispam);
                         M.j = 5000;
                         M.j();
                         break;
@@ -94,15 +94,15 @@ public final /* synthetic */ class ky0 implements Runnable {
                 SaveToGallerySettingsActivity saveToGallerySettingsActivity = (SaveToGallerySettingsActivity) obj;
                 saveToGallerySettingsActivity.v.clear();
                 saveToGallerySettingsActivity.getUserConfig().updateSaveGalleryExceptions(saveToGallerySettingsActivity.a, saveToGallerySettingsActivity.v);
-                saveToGallerySettingsActivity.Y();
+                saveToGallerySettingsActivity.Z();
                 break;
             case 12:
-                n31 n31Var = (n31) obj;
-                n31Var.dismiss();
-                ve.e.s(n31Var.getContext(), LocaleController.getString(R.string.PromoteUrl));
+                o31 o31Var = (o31) obj;
+                o31Var.dismiss();
+                ye.d.s(o31Var.getContext(), LocaleController.getString(R.string.PromoteUrl));
                 break;
             case 13:
-                SecretMediaViewer secretMediaViewer = (SecretMediaViewer) ((org.telegram.ui.Components.su0) obj).c;
+                SecretMediaViewer secretMediaViewer = (SecretMediaViewer) ((org.telegram.ui.Components.ok0) obj).c;
                 Runnable runnable = secretMediaViewer.k0;
                 if (runnable != null) {
                     runnable.run();
@@ -111,67 +111,67 @@ public final /* synthetic */ class ky0 implements Runnable {
                 }
                 break;
             case 14:
-                d41 d41Var = ((c41) obj).a;
-                d41Var.M = true;
-                d41Var.J.invalidate();
+                f41 f41Var = ((e41) obj).a;
+                f41Var.M = true;
+                f41Var.J.invalidate();
                 break;
             case 15:
                 ((NotificationCenter) obj).runDelayedNotifications();
                 break;
             case 16:
-                AndroidUtilities.updateViewShow(((q51) obj).c, true);
+                AndroidUtilities.updateViewShow(((s51) obj).c, true);
                 break;
             case 17:
-                org.telegram.ui.Components.z41 z41Var = ((l61) obj).e0;
-                if (z41Var != null) {
-                    z41Var.N(true);
+                org.telegram.ui.Components.k51 k51Var = ((n61) obj).e0;
+                if (k51Var != null) {
+                    k51Var.N(true);
                     break;
                 }
                 break;
             case 18:
-                ((e61) obj).a();
+                ((g61) obj).a();
                 break;
             case 19:
-                pf.g.a(((SessionsActivity) obj).currentAccount).b();
+                sf.g.a(((SessionsActivity) obj).currentAccount).b();
                 break;
             case 20:
-                ((xd1) obj).J.r.l();
+                ((zd1) obj).J.r.l();
                 break;
             case 21:
-                ((fe1) obj).b.B0();
+                ((ie1) obj).b.C0();
                 break;
             case 22:
                 ((VoIPFeedbackActivity) obj).finish();
                 break;
             case 23:
-                ((bh1) obj).a.H();
+                ((dh1) obj).a.H();
                 break;
             case 24:
-                ((ch1) obj).a.H();
+                ((eh1) obj).a.H();
                 break;
             case 25:
-                mh1 mh1Var = ((ah1) obj).b;
-                mh1Var.H0.unlock();
-                org.telegram.ui.Components.voip.l2.k().getClass();
+                oh1 oh1Var = ((ch1) obj).b;
+                oh1Var.H0.unlock();
+                org.telegram.ui.Components.voip.o2.k().getClass();
                 if (VoIPService.getSharedInstance() != null) {
                     VoIPService.getSharedInstance().swapSinks();
                 }
-                mh1Var.U.setCornerRadius(-1.0f);
-                mh1Var.Y.d.release();
-                mh1Var.Z.d.release();
-                mh1Var.X.release();
-                mh1Var.l();
-                mh1Var.q0.d();
-                org.telegram.ui.Components.voip.l2.P = false;
-                mh1Var.A0 = false;
-                mh1.j1 = null;
+                oh1Var.U.setCornerRadius(-1.0f);
+                oh1Var.Y.d.release();
+                oh1Var.Z.d.release();
+                oh1Var.X.release();
+                oh1Var.l();
+                oh1Var.q0.d();
+                org.telegram.ui.Components.voip.o2.P = false;
+                oh1Var.A0 = false;
+                oh1.j1 = null;
                 break;
             case 26:
-                kh1 kh1Var = (kh1) obj;
-                kh1Var.getClass();
+                mh1 mh1Var = (mh1) obj;
+                mh1Var.getClass();
                 if (VoIPService.getSharedState() != null) {
                     VoIPService.getSharedState().acceptIncomingCall();
-                    if (kh1Var.a.j0 && VoIPService.getSharedInstance() != null) {
+                    if (mh1Var.a.j0 && VoIPService.getSharedInstance() != null) {
                         VoIPService.getSharedInstance().requestVideoCall(false);
                         break;
                     }
@@ -182,7 +182,7 @@ public final /* synthetic */ class ky0 implements Runnable {
                 break;
             default:
                 int[][] iArr = WallpapersListActivity.g0;
-                ((WallpapersListActivity) obj).A0(false);
+                ((WallpapersListActivity) obj).B0(false);
                 break;
         }
     }

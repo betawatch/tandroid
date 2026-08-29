@@ -1,30 +1,18 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import android.view.ViewGroup;
+import android.graphics.Paint;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ha0 implements d5.d {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ViewGroup b;
+public interface ha0 {
+    void b(TLRPC.BotInlineResult botInlineResult, boolean z10, int i10);
 
-    public /* synthetic */ ha0(ViewGroup viewGroup, int i9) {
-        this.a = i9;
-        this.b = viewGroup;
-    }
+    Paint.FontMetricsInt n();
 
-    @Override // d5.d
-    public final void accept(Object obj) {
-        switch (this.a) {
-            case 0:
-                wa0 wa0Var = (wa0) this.b;
-                wa0Var.n.y(wa0Var.f.T((View) obj));
-                break;
-            default:
-                i51 i51Var = (i51) this.b;
-                i51Var.U2.Q(i51Var.T((View) obj), i51Var.Y2);
-                break;
-        }
-    }
+    void p(TLRPC.TL_document tL_document, String str, Object obj);
+
+    void r(int i10, int i11, CharSequence charSequence, boolean z10);
+
+    void s(String str);
 }

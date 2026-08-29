@@ -1,60 +1,60 @@
 package com.google.android.recaptcha.internal;
 
-import aa.d;
+import a4.w;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.telegram.messenger.BuildConfig;
-import org.telegram.ui.Cells.j2;
+import org.telegram.ui.th;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class zzmg {
     public static String zza(String str, Object... objArr) {
         int length;
         int length2;
         int indexOf;
-        String h;
-        int i9 = 0;
+        String j10;
         int i10 = 0;
-        while (true) {
-            length = objArr.length;
-            if (i10 >= length) {
-                break;
-            }
-            Object obj = objArr[i10];
-            if (obj == null) {
-                h = BuildConfig.BETA_URL;
-            } else {
-                try {
-                    h = obj.toString();
-                } catch (Exception e10) {
-                    String z10 = d.z(obj.getClass().getName(), "@", Integer.toHexString(System.identityHashCode(obj)));
-                    Logger.getLogger("com.google.common.base.Strings").logp(Level.WARNING, "com.google.common.base.Strings", "lenientToString", "Exception during lenientFormat for ".concat(z10), (Throwable) e10);
-                    h = j2.h("<", z10, " threw ", e10.getClass().getName(), ">");
-                }
-            }
-            objArr[i10] = h;
-            i10++;
-        }
-        StringBuilder sb2 = new StringBuilder(str.length() + (length * 16));
         int i11 = 0;
         while (true) {
-            length2 = objArr.length;
-            if (i9 >= length2 || (indexOf = str.indexOf("%s", i11)) == -1) {
+            length = objArr.length;
+            if (i11 >= length) {
                 break;
             }
-            sb2.append((CharSequence) str, i11, indexOf);
-            sb2.append(objArr[i9]);
-            i9++;
-            i11 = indexOf + 2;
+            Object obj = objArr[i11];
+            if (obj == null) {
+                j10 = BuildConfig.BETA_URL;
+            } else {
+                try {
+                    j10 = obj.toString();
+                } catch (Exception e10) {
+                    String y8 = w.y(obj.getClass().getName(), "@", Integer.toHexString(System.identityHashCode(obj)));
+                    Logger.getLogger("com.google.common.base.Strings").logp(Level.WARNING, "com.google.common.base.Strings", "lenientToString", "Exception during lenientFormat for ".concat(y8), (Throwable) e10);
+                    j10 = th.j("<", y8, " threw ", e10.getClass().getName(), ">");
+                }
+            }
+            objArr[i11] = j10;
+            i11++;
         }
-        sb2.append((CharSequence) str, i11, str.length());
-        if (i9 < length2) {
+        StringBuilder sb2 = new StringBuilder(str.length() + (length * 16));
+        int i12 = 0;
+        while (true) {
+            length2 = objArr.length;
+            if (i10 >= length2 || (indexOf = str.indexOf("%s", i12)) == -1) {
+                break;
+            }
+            sb2.append((CharSequence) str, i12, indexOf);
+            sb2.append(objArr[i10]);
+            i10++;
+            i12 = indexOf + 2;
+        }
+        sb2.append((CharSequence) str, i12, str.length());
+        if (i10 < length2) {
             sb2.append(" [");
-            sb2.append(objArr[i9]);
-            for (int i12 = i9 + 1; i12 < objArr.length; i12++) {
+            sb2.append(objArr[i10]);
+            for (int i13 = i10 + 1; i13 < objArr.length; i13++) {
                 sb2.append(", ");
-                sb2.append(objArr[i12]);
+                sb2.append(objArr[i13]);
             }
             sb2.append(']');
         }

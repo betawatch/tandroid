@@ -4,15 +4,15 @@ import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class a extends b7.a implements c {
-    public final int U0(int i9, String str, String str2, Bundle bundle) {
+public final class a extends com.google.android.gms.internal.cast.a implements c {
+    public final int U0(int i10, String str, String str2, Bundle bundle) {
         Parcel S0 = S0();
-        S0.writeInt(i9);
+        S0.writeInt(i10);
         S0.writeString(str);
         S0.writeString(str2);
-        int i10 = d.a;
+        int i11 = d.a;
         S0.writeInt(1);
         bundle.writeToParcel(S0, 0);
         Parcel T0 = T0(S0, 10);
@@ -26,7 +26,7 @@ public final class a extends b7.a implements c {
         S0.writeInt(9);
         S0.writeString(str);
         S0.writeString(str2);
-        int i9 = d.a;
+        int i10 = d.a;
         S0.writeInt(1);
         bundle.writeToParcel(S0, 0);
         Parcel T0 = T0(S0, 12);
@@ -50,14 +50,14 @@ public final class a extends b7.a implements c {
         return bundle;
     }
 
-    public final Bundle X0(int i9, String str, String str2, String str3, Bundle bundle) {
+    public final Bundle X0(int i10, String str, String str2, String str3, Bundle bundle) {
         Parcel S0 = S0();
-        S0.writeInt(i9);
+        S0.writeInt(i10);
         S0.writeString(str);
         S0.writeString(str2);
         S0.writeString(str3);
         S0.writeString(null);
-        int i10 = d.a;
+        int i11 = d.a;
         S0.writeInt(1);
         bundle.writeToParcel(S0, 0);
         Parcel T0 = T0(S0, 8);
@@ -80,13 +80,13 @@ public final class a extends b7.a implements c {
         return bundle;
     }
 
-    public final Bundle Z0(int i9, String str, String str2, String str3, Bundle bundle) {
+    public final Bundle Z0(int i10, String str, String str2, String str3, Bundle bundle) {
         Parcel S0 = S0();
-        S0.writeInt(i9);
+        S0.writeInt(i10);
         S0.writeString(str);
         S0.writeString(str2);
         S0.writeString(str3);
-        int i10 = d.a;
+        int i11 = d.a;
         S0.writeInt(1);
         bundle.writeToParcel(S0, 0);
         Parcel T0 = T0(S0, 11);
@@ -96,12 +96,12 @@ public final class a extends b7.a implements c {
         return bundle2;
     }
 
-    public final Bundle a1(int i9, String str, String str2, Bundle bundle, Bundle bundle2) {
+    public final Bundle a1(int i10, String str, String str2, Bundle bundle, Bundle bundle2) {
         Parcel S0 = S0();
-        S0.writeInt(i9);
+        S0.writeInt(i10);
         S0.writeString(str);
         S0.writeString(str2);
-        int i10 = d.a;
+        int i11 = d.a;
         S0.writeInt(1);
         bundle.writeToParcel(S0, 0);
         S0.writeInt(1);

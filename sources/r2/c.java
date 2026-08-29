@@ -1,64 +1,21 @@
 package r2;
 
-import java.nio.ByteBuffer;
-import java.nio.channels.WritableByteChannel;
+import com.googlecode.mp4parser.e;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class c extends a {
-    public int h;
-    public int n;
-    public double r;
-    public double s;
-    public int v;
-    public String w;
-    public int x;
-    public final long[] y;
-
-    public c(String str) {
-        super(str);
-        this.r = 72.0d;
-        this.s = 72.0d;
-        this.v = 1;
-        this.w = "";
-        this.x = 24;
-        this.y = new long[3];
+public abstract class c extends e {
+    static {
+        ac.c.a(c.class);
     }
 
-    @Override // com.googlecode.mp4parser.b, q2.b
-    public final void getBox(WritableByteChannel writableByteChannel) {
-        writableByteChannel.write(d());
-        ByteBuffer allocate = ByteBuffer.allocate(78);
-        allocate.position(6);
-        p2.b.p(this.f, allocate);
-        p2.b.p(0, allocate);
-        p2.b.p(0, allocate);
-        long[] jArr = this.y;
-        allocate.putInt((int) jArr[0]);
-        allocate.putInt((int) jArr[1]);
-        allocate.putInt((int) jArr[2]);
-        p2.b.p(this.h, allocate);
-        p2.b.p(this.n, allocate);
-        p2.b.n(allocate, this.r);
-        p2.b.n(allocate, this.s);
-        allocate.putInt((int) 0);
-        p2.b.p(this.v, allocate);
-        allocate.put((byte) (p2.b.l(this.w) & 255));
-        allocate.put(p2.b.b(this.w));
-        int l10 = p2.b.l(this.w);
-        while (l10 < 31) {
-            l10++;
-            allocate.put((byte) 0);
+    public static byte[] d(String str) {
+        byte[] bArr = new byte[4];
+        if (str != null) {
+            for (int i10 = 0; i10 < Math.min(4, str.length()); i10++) {
+                bArr[i10] = (byte) str.charAt(i10);
+            }
         }
-        p2.b.p(this.x, allocate);
-        p2.b.p(65535, allocate);
-        writableByteChannel.write((ByteBuffer) allocate.rewind());
-        c(writableByteChannel);
-    }
-
-    @Override // com.googlecode.mp4parser.b, q2.b
-    public final long getSize() {
-        long b10 = b();
-        return 78 + b10 + (b10 + 86 >= 4294967296L ? 16 : 8);
+        return bArr;
     }
 }

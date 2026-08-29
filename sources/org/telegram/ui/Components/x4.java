@@ -1,7 +1,13 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+import android.widget.TextView;
+import org.telegram.messenger.Emoji;
+
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public interface x4 {
-    void B(int i9, int i10, boolean z10);
+public final class x4 extends TextView {
+    @Override // android.widget.TextView
+    public final void setText(CharSequence charSequence, TextView.BufferType bufferType) {
+        super.setText(Emoji.replaceEmoji(charSequence, getPaint().getFontMetricsInt(), false), bufferType);
+    }
 }

@@ -2,9 +2,9 @@ package org.telegram.ui.ActionBar;
 
 import android.app.Dialog;
 import android.view.View;
-import org.telegram.ui.Components.oc;
+import org.telegram.ui.Components.tc;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
 public interface k2 {
     boolean attachedToParent();
@@ -13,9 +13,9 @@ public interface k2 {
 
     void dismiss(boolean z10);
 
-    oc getBulletinFactory();
+    tc getBulletinFactory();
 
-    int getNavigationBarColor(int i9);
+    int getNavigationBarColor(int i10);
 
     View getWindowView();
 
@@ -27,7 +27,7 @@ public interface k2 {
 
     boolean onAttachedBackPressed();
 
-    void setKeyboardHeightFromParent(int i9);
+    void setKeyboardHeightFromParent(int i10);
 
     void setLastVisible(boolean z10);
 

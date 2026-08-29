@@ -1,94 +1,61 @@
 package ig;
 
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.f6;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.view.View;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class i extends Drawable {
-    public lg.a a;
-    public int b;
-    public int c;
-    public int f;
-    public boolean j;
-    public float k;
-    public float d = 1.0f;
-    public final RectF e = new RectF();
-    public final Paint g = new Paint(1);
-    public final Paint h = new Paint(1);
-    public final Paint i = new Paint(1);
+public final class i extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ArrayList b;
+    public final /* synthetic */ j c;
 
-    public final void a(lg.a aVar) {
-        this.a = aVar;
-        Paint.Style style = Paint.Style.STROKE;
-        this.h.setStyle(style);
-        this.i.setStyle(style);
-        b();
+    public /* synthetic */ i(j jVar, ArrayList arrayList, int i10) {
+        this.a = i10;
+        this.c = jVar;
+        this.b = arrayList;
     }
 
-    public final void b() {
-        lg.a aVar = this.a;
-        if (aVar == null) {
-            return;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                int i10 = 0;
+                while (true) {
+                    ArrayList arrayList = this.b;
+                    int size = arrayList.size();
+                    j jVar = this.c;
+                    if (i10 >= size) {
+                        jVar.getClass();
+                        jVar.h.clear();
+                        jVar.b = null;
+                        jVar.c = false;
+                        ((k) jVar.n).b.setAllowDrawCursor(true);
+                        break;
+                    } else {
+                        jVar.removeView((View) arrayList.get(i10));
+                        i10++;
+                    }
+                }
+            default:
+                int i11 = 0;
+                while (true) {
+                    ArrayList arrayList2 = this.b;
+                    int size2 = arrayList2.size();
+                    j jVar2 = this.c;
+                    if (i11 >= size2) {
+                        jVar2.h.clear();
+                        jVar2.b = null;
+                        jVar2.c = false;
+                        ((k) jVar2.n).b.setAllowDrawCursor(true);
+                        break;
+                    } else {
+                        jVar2.removeView((View) arrayList2.get(i11));
+                        i11++;
+                    }
+                }
         }
-        this.b = f6.l1(this.d, aVar.e());
-        this.c = f6.l1(this.d, this.a.g());
-        int i9 = this.b;
-        Paint paint = this.h;
-        paint.setColor(i9);
-        paint.setStrokeWidth(AndroidUtilities.dpf2(1.0f));
-        int i10 = this.c;
-        Paint paint2 = this.i;
-        paint2.setColor(i10);
-        paint2.setStrokeWidth(AndroidUtilities.dpf2(0.6666667f));
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        Canvas canvas2;
-        float centerX = getBounds().centerX();
-        float centerY = getBounds().centerY();
-        float min = (Math.min(getBounds().width(), getBounds().height()) / 2.0f) - this.f;
-        RectF rectF = this.e;
-        rectF.set(centerX - min, centerY - min, centerX + min, centerY + min);
-        if (this.j) {
-            rectF.set(getBounds());
-            min = this.k;
-        }
-        float f10 = min;
-        Paint paint = this.g;
-        if (Color.alpha(paint.getColor()) > 0) {
-            canvas.drawCircle(centerX, centerY, f10, paint);
-        }
-        if (this.b != 0) {
-            canvas2 = canvas;
-            kg.d.f(canvas2, rectF, f10, AndroidUtilities.dpf2(1.0f), true, this.h);
-        } else {
-            canvas2 = canvas;
-        }
-        if (this.c != 0) {
-            kg.d.f(canvas2, rectF, f10, AndroidUtilities.dpf2(0.6666667f), false, this.i);
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i9) {
-        this.d = i9 / 255.0f;
-        b();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

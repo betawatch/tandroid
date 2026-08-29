@@ -15,7 +15,7 @@ public abstract class c5 implements g5 {
     }
 
     @Override // j$.util.stream.j5, j$.util.stream.h5, java.util.function.IntConsumer
-    public final /* synthetic */ void accept(int i9) {
+    public final /* synthetic */ void accept(int i10) {
         t3.J();
         throw null;
     }

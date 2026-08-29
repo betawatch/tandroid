@@ -2,7 +2,7 @@ package com.google.android.gms.internal.cast;
 
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class t0 extends k0 {
     public static final Object[] r;
@@ -19,12 +19,12 @@ public final class t0 extends k0 {
         s = new t0(0, 0, 0, objArr, objArr);
     }
 
-    public t0(int i9, int i10, int i11, Object[] objArr, Object[] objArr2) {
+    public t0(int i10, int i11, int i12, Object[] objArr, Object[] objArr2) {
         this.d = objArr;
-        this.e = i9;
+        this.e = i10;
         this.f = objArr2;
-        this.h = i10;
-        this.n = i11;
+        this.h = i11;
+        this.n = i12;
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
@@ -32,17 +32,17 @@ public final class t0 extends k0 {
         if (obj != null) {
             Object[] objArr = this.f;
             if (objArr.length != 0) {
-                int a2 = f7.o5.a(obj.hashCode());
+                int a2 = h7.v5.a(obj.hashCode());
                 while (true) {
-                    int i9 = a2 & this.h;
-                    Object obj2 = objArr[i9];
+                    int i10 = a2 & this.h;
+                    Object obj2 = objArr[i10];
                     if (obj2 == null) {
                         return false;
                     }
                     if (obj2.equals(obj)) {
                         return true;
                     }
-                    a2 = i9 + 1;
+                    a2 = i10 + 1;
                 }
             }
         }
@@ -57,9 +57,9 @@ public final class t0 extends k0 {
     @Override // com.google.android.gms.internal.cast.e0
     public final int i(Object[] objArr) {
         Object[] objArr2 = this.d;
-        int i9 = this.n;
-        System.arraycopy(objArr2, 0, objArr, 0, i9);
-        return i9;
+        int i10 = this.n;
+        System.arraycopy(objArr2, 0, objArr, 0, i10);
+        return i10;
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set

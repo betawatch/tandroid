@@ -1,98 +1,85 @@
 package v0;
 
-import android.graphics.Typeface;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.firebase.components.ComponentRegistrar;
-import com.google.firebase.concurrent.ExecutorsRegistrar;
-import com.google.firebase.installations.FirebaseInstallationsRegistrar;
-import java.util.List;
-import java.util.concurrent.ScheduledExecutorService;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.ui.ActionBar.b2;
-import org.telegram.ui.ActionBar.c2;
-import xf.g0;
-import yf.m2;
+import android.content.Context;
+import android.credentials.CreateCredentialRequest;
+import android.credentials.CredentialManager;
+import android.credentials.CredentialOption;
+import android.credentials.GetCredentialRequest;
+import android.graphics.drawable.Icon;
+import android.os.Build;
+import android.os.Bundle;
+import android.os.CancellationSignal;
+import android.text.TextUtils;
+import java.util.concurrent.Executor;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class l implements t2.g, com.google.android.exoplayer2.upstream.l, g0, y8.e, x9.a, y8.d, OnFailureListener, b2 {
-    public final /* synthetic */ int a;
+public final class l implements j {
+    public final CredentialManager a;
 
-    public /* synthetic */ l(int i9) {
-        this.a = i9;
+    public l(Context context) {
+        kotlin.jvm.internal.j.e(context, "context");
+        this.a = (CredentialManager) context.getSystemService("credential");
     }
 
-    @Override // y8.d
-    public Object H1(b3.b bVar) {
-        y9.d lambda$getComponents$0;
-        switch (this.a) {
-            case 12:
-                lambda$getComponents$0 = FirebaseInstallationsRegistrar.lambda$getComponents$0(bVar);
-                return lambda$getComponents$0;
-            case 13:
-            default:
-                y8.n nVar = ExecutorsRegistrar.a;
-                return z8.j.a;
-            case 14:
-                return (ScheduledExecutorService) ExecutorsRegistrar.a.get();
-            case 15:
-                return (ScheduledExecutorService) ExecutorsRegistrar.c.get();
-            case 16:
-                return (ScheduledExecutorService) ExecutorsRegistrar.b.get();
+    @Override // v0.j
+    public final boolean isAvailableOnDevice() {
+        return Build.VERSION.SDK_INT >= 34 && this.a != null;
+    }
+
+    @Override // v0.j
+    public final void onCreateCredential(Context context, b bVar, CancellationSignal cancellationSignal, Executor executor, i iVar) {
+        kotlin.jvm.internal.j.e(context, "context");
+        o4.g gVar = (o4.g) iVar;
+        CredentialManager credentialManager = this.a;
+        if (credentialManager == null) {
+            gVar.onError(new w0.c("Your device doesn't support credential manager", 3));
+            return;
         }
-    }
-
-    @Override // xf.g0
-    public Typeface a() {
-        switch (this.a) {
-            case 4:
-                return AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM);
-            case 5:
-                return AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM_ITALIC);
-            case 6:
-                return Typeface.create("serif", 1);
-            case 7:
-                return AndroidUtilities.getTypeface("fonts/rcondensedbold.ttf");
-            case 8:
-                return AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MONO);
-            default:
-                return AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_MERRIWEATHER_BOLD);
+        k kVar = new k(gVar, (e) bVar, this);
+        kotlin.jvm.internal.j.b(credentialManager);
+        Bundle bundle = bVar.a;
+        oc.i iVar2 = bVar.c;
+        Bundle bundle2 = new Bundle();
+        bundle2.putCharSequence("androidx.credentials.BUNDLE_KEY_USER_ID", (String) iVar2.b);
+        CharSequence charSequence = (CharSequence) iVar2.c;
+        if (!TextUtils.isEmpty(charSequence)) {
+            bundle2.putCharSequence("androidx.credentials.BUNDLE_KEY_USER_DISPLAY_NAME", charSequence);
         }
-    }
-
-    @Override // y8.e
-    public List b(ComponentRegistrar componentRegistrar) {
-        return componentRegistrar.getComponents();
-    }
-
-    @Override // com.google.android.exoplayer2.upstream.l
-    public com.google.android.exoplayer2.upstream.m createDataSource() {
-        return new com.google.android.exoplayer2.upstream.c(ApplicationLoader.applicationContext);
-    }
-
-    @Override // org.telegram.ui.ActionBar.b2
-    public void f(c2 c2Var, int i9) {
-        switch (this.a) {
-            case 18:
-                c2Var.dismiss();
-                break;
-            default:
-                c2Var.dismiss();
-                break;
+        if (!TextUtils.isEmpty(null)) {
+            bundle2.putString("androidx.credentials.BUNDLE_KEY_DEFAULT_PROVIDER", null);
         }
+        bundle2.putParcelable("androidx.credentials.BUNDLE_KEY_CREDENTIAL_TYPE_ICON", Icon.createWithResource(context, R.drawable.adx_ic_passkey));
+        bundle.putBundle("androidx.credentials.BUNDLE_KEY_REQUEST_DISPLAY_INFO", bundle2);
+        CreateCredentialRequest.Builder alwaysSendAppInfoToProvider = new CreateCredentialRequest.Builder("androidx.credentials.TYPE_PUBLIC_KEY_CREDENTIAL", bundle, bVar.b).setIsSystemProviderRequired(false).setAlwaysSendAppInfoToProvider(true);
+        kotlin.jvm.internal.j.d(alwaysSendAppInfoToProvider, "setAlwaysSendAppInfoToProvider(...)");
+        CreateCredentialRequest build = alwaysSendAppInfoToProvider.build();
+        kotlin.jvm.internal.j.d(build, "build(...)");
+        credentialManager.createCredential(context, build, cancellationSignal, executor, kVar);
     }
 
-    @Override // com.google.android.gms.tasks.OnFailureListener
-    public void onFailure(Exception exc) {
-        int i9 = m2.n0;
-    }
-
-    @Override // t2.g
-    public void c(Exception exc) {
-    }
-
-    @Override // x9.a
-    public void e(x9.b bVar) {
+    @Override // v0.j
+    public final void onGetCredential(Context context, n nVar, CancellationSignal cancellationSignal, Executor executor, i iVar) {
+        kotlin.jvm.internal.j.e(executor, "executor");
+        CredentialManager credentialManager = this.a;
+        if (credentialManager == null) {
+            iVar.onError(new w0.h("Your device doesn't support credential manager", 3));
+            return;
+        }
+        k kVar = new k(iVar, this);
+        kotlin.jvm.internal.j.b(credentialManager);
+        Bundle bundle = new Bundle();
+        bundle.putBoolean("androidx.credentials.BUNDLE_KEY_PREFER_IDENTITY_DOC_UI", false);
+        bundle.putBoolean("androidx.credentials.BUNDLE_KEY_PREFER_IMMEDIATELY_AVAILABLE_CREDENTIALS", nVar.b);
+        bundle.putParcelable("androidx.credentials.BUNDLE_KEY_PREFER_UI_BRANDING_COMPONENT_NAME", null);
+        GetCredentialRequest.Builder builder = new GetCredentialRequest.Builder(bundle);
+        for (p pVar : nVar.a) {
+            pVar.getClass();
+            builder.addCredentialOption(new CredentialOption.Builder("androidx.credentials.TYPE_PUBLIC_KEY_CREDENTIAL", pVar.a, pVar.b).setIsSystemProviderRequired(false).setAllowedProviders(pVar.c).build());
+        }
+        GetCredentialRequest build = builder.build();
+        kotlin.jvm.internal.j.d(build, "build(...)");
+        credentialManager.getCredential(context, build, cancellationSignal, executor, kVar);
     }
 }

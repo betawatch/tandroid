@@ -1,428 +1,643 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.text.StaticLayout;
-import android.text.TextPaint;
-import android.util.SparseArray;
-import android.view.View;
-import android.widget.TextView;
-import androidx.recyclerview.widget.RecyclerView;
+import android.text.style.CharacterStyle;
 import java.util.ArrayList;
-import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.BotInlineKeyboard;
 import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.SendMessagesHelper;
+import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_iv;
+import org.telegram.tgnet.tl.TL_keyboard;
+import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public abstract class ut0 extends ws0 {
-    public final HashSet b3;
-    public final ArrayList c3;
-    public final ArrayList d3;
-    public final ArrayList e3;
-    public TextPaint f3;
-    public StaticLayout g3;
-    public float h3;
-    public float i3;
-    public ih.u9 j3;
-    public int k3;
-    public final ArrayList l3;
+public final class ut0 implements org.telegram.ui.Cells.j1 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ org.telegram.ui.ActionBar.c6 b;
+    public final /* synthetic */ wt0 c;
 
-    public ut0(Context context) {
-        super(context, null);
-        this.b3 = new HashSet();
-        this.c3 = new ArrayList();
-        this.d3 = new ArrayList();
-        this.e3 = new ArrayList();
-        this.l3 = new ArrayList();
+    public ut0(wt0 wt0Var, int i10, org.telegram.ui.ActionBar.c6 c6Var) {
+        this.c = wt0Var;
+        this.a = i10;
+        this.b = c6Var;
     }
 
-    public abstract boolean A1();
-
-    public boolean B1() {
-        return true;
+    public static TLRPC.TL_message a(TLRPC.Message message) {
+        TLRPC.TL_message tL_message = new TLRPC.TL_message();
+        tL_message.id = message.id;
+        tL_message.from_id = message.from_id;
+        tL_message.from_boosts_applied = message.from_boosts_applied;
+        tL_message.peer_id = message.peer_id;
+        tL_message.saved_peer_id = message.saved_peer_id;
+        tL_message.date = message.date;
+        tL_message.expire_date = message.expire_date;
+        tL_message.action = message.action;
+        tL_message.message = message.message;
+        tL_message.flags = message.flags;
+        tL_message.flags2 = message.flags2;
+        tL_message.mentioned = message.mentioned;
+        tL_message.media_unread = message.media_unread;
+        tL_message.out = message.out;
+        tL_message.unread = message.unread;
+        tL_message.entities = message.entities;
+        tL_message.via_bot_name = message.via_bot_name;
+        tL_message.reply_markup = message.reply_markup;
+        tL_message.views = message.views;
+        tL_message.forwards = message.forwards;
+        tL_message.replies = message.replies;
+        tL_message.edit_date = message.edit_date;
+        tL_message.silent = message.silent;
+        tL_message.post = message.post;
+        tL_message.from_scheduled = message.from_scheduled;
+        tL_message.legacy = message.legacy;
+        tL_message.edit_hide = message.edit_hide;
+        tL_message.pinned = message.pinned;
+        tL_message.fwd_from = message.fwd_from;
+        tL_message.via_bot_id = message.via_bot_id;
+        tL_message.via_business_bot_id = message.via_business_bot_id;
+        tL_message.reply_to = message.reply_to;
+        tL_message.post_author = message.post_author;
+        tL_message.grouped_id = message.grouped_id;
+        tL_message.reactions = message.reactions;
+        tL_message.restriction_reason = message.restriction_reason;
+        tL_message.ttl_period = message.ttl_period;
+        tL_message.quick_reply_shortcut_id = message.quick_reply_shortcut_id;
+        tL_message.effect = message.effect;
+        tL_message.noforwards = message.noforwards;
+        tL_message.invert_media = message.invert_media;
+        tL_message.offline = message.offline;
+        tL_message.factcheck = message.factcheck;
+        tL_message.send_state = message.send_state;
+        tL_message.fwd_msg_id = message.fwd_msg_id;
+        tL_message.params = message.params;
+        tL_message.random_id = message.random_id;
+        tL_message.local_id = message.local_id;
+        tL_message.dialog_id = message.dialog_id;
+        tL_message.ttl = message.ttl;
+        tL_message.destroyTime = message.destroyTime;
+        tL_message.destroyTimeMillis = message.destroyTimeMillis;
+        tL_message.layer = message.layer;
+        tL_message.seq_in = message.seq_in;
+        tL_message.seq_out = message.seq_out;
+        tL_message.with_my_score = message.with_my_score;
+        tL_message.replyMessage = message.replyMessage;
+        tL_message.reqId = message.reqId;
+        tL_message.realId = message.realId;
+        tL_message.stickerVerified = message.stickerVerified;
+        tL_message.isThreadMessage = message.isThreadMessage;
+        tL_message.voiceTranscription = message.voiceTranscription;
+        tL_message.voiceTranscriptionOpen = message.voiceTranscriptionOpen;
+        tL_message.voiceTranscriptionRated = message.voiceTranscriptionRated;
+        tL_message.voiceTranscriptionFinal = message.voiceTranscriptionFinal;
+        tL_message.voiceTranscriptionForce = message.voiceTranscriptionForce;
+        tL_message.voiceTranscriptionId = message.voiceTranscriptionId;
+        tL_message.premiumEffectWasPlayed = message.premiumEffectWasPlayed;
+        tL_message.originalLanguage = message.originalLanguage;
+        tL_message.translatedToLanguage = message.translatedToLanguage;
+        tL_message.translatedText = message.translatedText;
+        tL_message.replyStory = message.replyStory;
+        tL_message.quick_reply_shortcut = message.quick_reply_shortcut;
+        return tL_message;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:206:0x0114, code lost:
-    
-        if (getAnimateToColumnsCount() > getColumnsCount()) goto L49;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:49:0x00fd, code lost:
-    
-        if (getAnimateToColumnsCount() >= getColumnsCount()) goto L45;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:50:0x0116, code lost:
-    
-        r23 = 0;
-     */
-    /* JADX WARN: Removed duplicated region for block: B:109:0x027d  */
-    /* JADX WARN: Removed duplicated region for block: B:114:0x028a  */
-    /* JADX WARN: Removed duplicated region for block: B:126:0x037e  */
-    /* JADX WARN: Removed duplicated region for block: B:132:0x03c8 A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:222:0x0718  */
-    /* JADX WARN: Removed duplicated region for block: B:225:0x071e  */
-    @Override // org.telegram.ui.Components.aa, org.telegram.ui.Components.wk0, android.view.ViewGroup, android.view.View
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public void dispatchDraw(Canvas canvas) {
-        float f10;
-        float f11;
-        int i9;
-        int i10;
-        int i11;
-        int i12;
-        int i13;
-        float f12;
-        int i14;
-        float f13;
-        float f14;
-        boolean z10;
-        int i15;
-        Float valueOf = Float.valueOf(1.0f);
-        gk0 movingAdapter = getMovingAdapter();
-        gk0 supportingAdapter = getSupportingAdapter();
-        if (!B1() || getAdapter() != movingAdapter) {
-            for (int i16 = 0; i16 < getChildCount(); i16++) {
-                View childAt = getChildAt(i16);
-                int p6 = eu0.p(childAt);
-                if (p6 != 0 && getMessageAlphaEnter() != null) {
-                    if (getMessageAlphaEnter().get(p6, null) != null) {
-                        f10 = getMessageAlphaEnter().get(p6, valueOf).floatValue();
-                        if (!(childAt instanceof org.telegram.ui.Cells.i7)) {
-                            ((org.telegram.ui.Cells.i7) childAt).setEnterAnimationAlpha(f10);
-                        } else if (childAt instanceof org.telegram.ui.Cells.h7) {
-                            ((org.telegram.ui.Cells.h7) childAt).setEnterAnimationAlpha(f10);
-                        }
-                    }
-                }
-                f10 = 1.0f;
-                if (!(childAt instanceof org.telegram.ui.Cells.i7)) {
-                }
-            }
-            super.dispatchDraw(canvas);
-            return;
-        }
-        float measuredHeight = getMeasuredHeight();
-        boolean z12 = z1();
-        HashSet hashSet = this.b3;
-        ArrayList arrayList = this.d3;
-        ArrayList arrayList2 = this.e3;
-        ArrayList arrayList3 = this.c3;
-        ArrayList arrayList4 = this.l3;
-        if (z12) {
-            int i17 = -1;
-            int i18 = -1;
-            int i19 = -1;
-            for (int i20 = 0; i20 < getChildCount(); i20++) {
-                int R = RecyclerView.R(getChildAt(i20));
-                if (R >= 0 && (R > i19 || i19 == -1)) {
-                    i19 = R;
-                }
-                if (R >= 0 && (R < i18 || i18 == -1)) {
-                    i18 = R;
-                }
-            }
-            int i21 = 0;
-            i10 = -1;
-            while (true) {
-                f11 = measuredHeight;
-                if (i21 >= getSupportingListView().getChildCount()) {
-                    break;
-                }
-                ws0 supportingListView = getSupportingListView();
-                View childAt2 = getSupportingListView().getChildAt(i21);
-                supportingListView.getClass();
-                int R2 = RecyclerView.R(childAt2);
-                int i22 = i18;
-                if (R2 >= 0 && (R2 > i17 || i17 == -1)) {
-                    i17 = R2;
-                }
-                if (R2 >= 0 && (R2 < i10 || i10 == -1)) {
-                    i10 = R2;
-                }
-                i21++;
-                i18 = i22;
-                measuredHeight = f11;
-            }
-            i11 = i18;
-            if (i11 < 0 || i10 < 0 || getPinchCenterPosition() < 0) {
-                i15 = 0;
-                i12 = 0;
-            } else {
-                int i23 = i17;
-                int ceil = (int) Math.ceil(movingAdapter.h() / getColumnsCount());
-                int i24 = i19;
-                int ceil2 = (int) Math.ceil(movingAdapter.h() / getAnimateToColumnsCount());
-                int pinchCenterPosition = ((getPinchCenterPosition() / getAnimateToColumnsCount()) - (i10 / getAnimateToColumnsCount())) - ((getPinchCenterPosition() / getColumnsCount()) - (i11 / getColumnsCount()));
-                i12 = (i11 / getColumnsCount()) - pinchCenterPosition < 0 ? pinchCenterPosition : pinchCenterPosition;
-                if ((i10 / getAnimateToColumnsCount()) + i12 < 0) {
-                }
-                if (((i23 / getColumnsCount()) + i12 >= ceil && getAnimateToColumnsCount() > getColumnsCount()) || ((i24 / getAnimateToColumnsCount()) - i12 >= ceil2 && getAnimateToColumnsCount() < getColumnsCount())) {
-                    i12 = 0;
-                }
-                i15 = (int) ((getAnimateToColumnsCount() - getColumnsCount()) * ((getPinchCenterPosition() % getColumnsCount()) / (getColumnsCount() - 1)));
-            }
-            arrayList4.clear();
-            hashSet.clear();
-            arrayList3.clear();
-            arrayList.clear();
-            arrayList2.clear();
-            this.k3 = 0;
-            for (int i25 = 0; i25 < getSupportingListView().getChildCount(); i25++) {
-                View childAt3 = getSupportingListView().getChildAt(i25);
-                if (childAt3.getTop() <= getMeasuredHeight() && childAt3.getBottom() >= 0) {
-                    if (childAt3 instanceof org.telegram.ui.Cells.r7) {
-                        arrayList4.add((org.telegram.ui.Cells.r7) childAt3);
-                    } else if (childAt3 instanceof TextView) {
-                        this.k3++;
-                    }
-                }
-            }
-            arrayList3.addAll(arrayList4);
-            fk0 fastScroll = getFastScroll();
-            if (fastScroll != null && fastScroll.getTag() != null) {
-                float H = movingAdapter.H(this);
-                float H2 = supportingAdapter.H(getSupportingListView());
-                float f15 = movingAdapter.E(this) ? 1.0f : 0.0f;
-                float f16 = supportingAdapter.E(getSupportingListView()) ? 1.0f : 0.0f;
-                fastScroll.setProgress((getChangeColumnsProgress() * H2) + ((1.0f - getChangeColumnsProgress()) * H));
-                fastScroll.setVisibilityAlpha((getChangeColumnsProgress() * f16) + ((1.0f - getChangeColumnsProgress()) * f15));
-            }
-            i9 = i15;
-        } else {
-            f11 = measuredHeight;
-            i9 = 0;
-            i10 = 0;
-            i11 = 0;
-            i12 = 0;
-        }
-        for (int i26 = 0; i26 < getChildCount(); i26++) {
-            View childAt4 = getChildAt(i26);
-            if (childAt4.getTop() > getMeasuredHeight() || childAt4.getBottom() < 0) {
-                if (childAt4 instanceof org.telegram.ui.Cells.r7) {
-                    org.telegram.ui.Cells.r7 r7Var = (org.telegram.ui.Cells.r7) getChildAt(i26);
-                    r7Var.v = null;
-                    r7Var.O = 0.0f;
-                    r7Var.P = 0;
-                    r7Var.setTranslationX(0.0f);
-                    r7Var.setTranslationY(0.0f);
-                    r7Var.j(1.0f, !z1());
-                }
-            } else if (childAt4 instanceof org.telegram.ui.Cells.r7) {
-                org.telegram.ui.Cells.r7 r7Var2 = (org.telegram.ui.Cells.r7) getChildAt(i26);
-                y1(r7Var2);
-                MessageObject messageObject = r7Var2.getMessageObject();
-                if (messageObject == null || getMessageAlphaEnter() == null) {
-                    f13 = 2.0f;
-                } else {
-                    f13 = 2.0f;
-                    if (getMessageAlphaEnter().get(messageObject.getId(), null) != null) {
-                        f14 = getMessageAlphaEnter().get(messageObject.getId(), valueOf).floatValue();
-                        boolean z13 = z1();
-                        if (r7Var2.w != f14) {
-                            r7Var2.w = f14;
-                            if (!z13) {
-                                r7Var2.invalidate();
-                            }
-                        }
-                        if (z1()) {
-                            int a2 = (((f2.w) r7Var2.getLayoutParams()).a() % getColumnsCount()) + i9;
-                            int animateToColumnsCount = (getAnimateToColumnsCount() * (((((f2.w) r7Var2.getLayoutParams()).a() - i11) / getColumnsCount()) + i12)) + a2 + this.k3;
-                            if (a2 >= 0 && a2 < getAnimateToColumnsCount() && animateToColumnsCount >= 0 && animateToColumnsCount < arrayList4.size()) {
-                                float lerp = AndroidUtilities.lerp(1.0f, (((org.telegram.ui.Cells.r7) arrayList4.get(animateToColumnsCount)).getMeasuredWidth() - AndroidUtilities.dpf2(f13)) / (r7Var2.getMeasuredWidth() - AndroidUtilities.dpf2(f13)), getChangeColumnsProgress());
-                                float left = r7Var2.getLeft();
-                                float top = r7Var2.getTop();
-                                float left2 = ((org.telegram.ui.Cells.r7) arrayList4.get(animateToColumnsCount)).getLeft();
-                                float top2 = ((org.telegram.ui.Cells.r7) arrayList4.get(animateToColumnsCount)).getTop();
-                                r7Var2.setPivotX(0.0f);
-                                r7Var2.setPivotY(0.0f);
-                                r7Var2.j(lerp, !z1());
-                                r7Var2.setTranslationX(getChangeColumnsProgress() * (left2 - left));
-                                r7Var2.setTranslationY(getChangeColumnsProgress() * (top2 - top));
-                                org.telegram.ui.Cells.r7 r7Var3 = (org.telegram.ui.Cells.r7) arrayList4.get(animateToColumnsCount);
-                                float changeColumnsProgress = getChangeColumnsProgress();
-                                int animateToColumnsCount2 = getAnimateToColumnsCount();
-                                r7Var2.v = r7Var3;
-                                r7Var2.O = changeColumnsProgress;
-                                r7Var2.P = animateToColumnsCount2;
-                                hashSet.add((org.telegram.ui.Cells.r7) arrayList4.get(animateToColumnsCount));
-                                arrayList2.add(r7Var2);
-                                canvas.save();
-                                canvas.translate(r7Var2.getX(), r7Var2.getY());
-                                r7Var2.draw(canvas);
-                                canvas.restore();
-                                if (r7Var2.getY() < f11) {
-                                    f11 = r7Var2.getY();
-                                }
-                                z10 = true;
-                                if (!z10) {
-                                    if (z1()) {
-                                        arrayList.add(r7Var2);
-                                    }
-                                    r7Var2.v = null;
-                                    r7Var2.O = 0.0f;
-                                    r7Var2.P = 0;
-                                    r7Var2.setTranslationX(0.0f);
-                                    r7Var2.setTranslationY(0.0f);
-                                    r7Var2.j(1.0f, !z1());
-                                }
-                            }
-                        }
-                        z10 = false;
-                        if (!z10) {
-                        }
-                    }
-                }
-                f14 = 1.0f;
-                boolean z132 = z1();
-                if (r7Var2.w != f14) {
-                }
-                if (z1()) {
-                }
-                z10 = false;
-                if (!z10) {
-                }
-            }
-        }
-        float f17 = 255.0f;
-        if (z1() && !arrayList3.isEmpty()) {
-            float changeColumnsProgress2 = getChangeColumnsProgress() + ((1.0f - getChangeColumnsProgress()) * (getAnimateToColumnsCount() / getColumnsCount()));
-            float changeColumnsProgress3 = getChangeColumnsProgress() + ((1.0f - getChangeColumnsProgress()) * (((getMeasuredWidth() / getColumnsCount()) - AndroidUtilities.dpf2(2.0f)) / ((getMeasuredWidth() / getAnimateToColumnsCount()) - AndroidUtilities.dpf2(2.0f))));
-            float measuredWidth = getMeasuredWidth() / getColumnsCount();
-            float measuredWidth2 = getMeasuredWidth() / getAnimateToColumnsCount();
-            float ceil3 = (float) (((Math.ceil(getMeasuredWidth() / getAnimateToColumnsCount()) - AndroidUtilities.dpf2(2.0f)) * changeColumnsProgress3) + AndroidUtilities.dpf2(2.0f));
-            if (A1()) {
-                ceil3 *= 1.25f;
-            }
-            float f18 = ceil3;
-            int i27 = 0;
-            while (i27 < arrayList3.size()) {
-                org.telegram.ui.Cells.r7 r7Var4 = (org.telegram.ui.Cells.r7) arrayList3.get(i27);
-                if (hashSet.contains(r7Var4)) {
-                    f12 = changeColumnsProgress3;
-                    i14 = i27;
-                } else {
-                    r7Var4.v = null;
-                    r7Var4.O = 0.0f;
-                    r7Var4.P = 0;
-                    int a3 = ((f2.w) r7Var4.getLayoutParams()).a() % getAnimateToColumnsCount();
-                    int i28 = a3 - i9;
-                    int a10 = ((((f2.w) r7Var4.getLayoutParams()).a() - i10) / getAnimateToColumnsCount()) - i12;
-                    canvas.save();
-                    canvas.translate((getChangeColumnsProgress() * a3 * measuredWidth2) + ((1.0f - getChangeColumnsProgress()) * i28 * measuredWidth), (a10 * f18) + f11);
-                    r7Var4.j(changeColumnsProgress3, !z1());
-                    if (i28 < getColumnsCount()) {
-                        f12 = changeColumnsProgress3;
-                        i14 = i27;
-                        canvas.saveLayerAlpha(0.0f, 0.0f, r7Var4.getMeasuredWidth() * changeColumnsProgress2, r7Var4.getMeasuredHeight() * changeColumnsProgress2, (int) (getChangeColumnsProgress() * 255.0f), 31);
-                        r7Var4.draw(canvas);
-                        canvas.restore();
-                    } else {
-                        f12 = changeColumnsProgress3;
-                        i14 = i27;
-                        r7Var4.draw(canvas);
-                    }
-                    canvas.restore();
-                }
-                i27 = i14 + 1;
-                changeColumnsProgress3 = f12;
-            }
-        }
-        super.dispatchDraw(canvas);
-        if (z1()) {
-            float changeColumnsProgress4 = (1.0f - getChangeColumnsProgress()) + (getChangeColumnsProgress() * (getColumnsCount() / getAnimateToColumnsCount()));
-            float changeColumnsProgress5 = (1.0f - getChangeColumnsProgress()) + (getChangeColumnsProgress() * (((getMeasuredWidth() / getAnimateToColumnsCount()) - AndroidUtilities.dpf2(2.0f)) / ((getMeasuredWidth() / getColumnsCount()) - AndroidUtilities.dpf2(2.0f))));
-            float ceil4 = (float) (((Math.ceil(getMeasuredWidth() / getColumnsCount()) - AndroidUtilities.dpf2(2.0f)) * changeColumnsProgress5) + AndroidUtilities.dpf2(2.0f));
-            if (A1()) {
-                ceil4 *= 1.25f;
-            }
-            float f19 = ceil4;
-            float measuredWidth3 = getMeasuredWidth() / getColumnsCount();
-            float measuredWidth4 = getMeasuredWidth() / getAnimateToColumnsCount();
-            int i29 = 0;
-            while (i29 < arrayList.size()) {
-                org.telegram.ui.Cells.r7 r7Var5 = (org.telegram.ui.Cells.r7) arrayList.get(i29);
-                int a11 = ((f2.w) r7Var5.getLayoutParams()).a() % getColumnsCount();
-                int a12 = ((((f2.w) r7Var5.getLayoutParams()).a() - i11) / getColumnsCount()) + i12;
-                int i30 = a11 + i9;
-                canvas.save();
-                r7Var5.j(changeColumnsProgress5, !z1());
-                canvas.translate((getChangeColumnsProgress() * i30 * measuredWidth4) + ((1.0f - getChangeColumnsProgress()) * a11 * measuredWidth3), (a12 * f19) + f11);
-                if (i30 < getAnimateToColumnsCount()) {
-                    i13 = i29;
-                    canvas.saveLayerAlpha(0.0f, 0.0f, r7Var5.getMeasuredWidth() * changeColumnsProgress4, r7Var5.getMeasuredHeight() * changeColumnsProgress4, (int) ((1.0f - getChangeColumnsProgress()) * f17), 31);
-                    r7Var5.draw(canvas);
-                    canvas.restore();
-                } else {
-                    i13 = i29;
-                    r7Var5.draw(canvas);
-                }
-                canvas.restore();
-                i29 = i13 + 1;
-                f17 = 255.0f;
-            }
-            if (arrayList2.isEmpty()) {
+    @Override // org.telegram.ui.Cells.j1
+    public final /* synthetic */ boolean A1() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Cells.j1
+    public final /* synthetic */ boolean H1(org.telegram.ui.Cells.s1 s1Var, TLRPC.Chat chat) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Cells.j1
+    public final /* synthetic */ boolean J1() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Cells.j1
+    public final /* synthetic */ boolean M0(long j10) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Cells.j1
+    public final /* synthetic */ boolean O(org.telegram.ui.Cells.s1 s1Var, TLRPC.TodoItem todoItem, boolean z10) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Cells.j1
+    public final void O1(org.telegram.ui.Cells.s1 s1Var, TLRPC.WebPage webPage, String str, boolean z10) {
+        ye.d.s(s1Var.getContext(), str);
+    }
+
+    @Override // org.telegram.ui.Cells.j1
+    public final /* synthetic */ boolean P() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Cells.j1
+    public final void P0(int i10, org.telegram.ui.Cells.s1 s1Var) {
+        if (i10 == 80) {
+            org.telegram.ui.ActionBar.o2 o2Var = this.c.s.r1;
+            MessageObject messageObject = s1Var.getMessageObject();
+            fh.g gVar = lg0.K;
+            if (o2Var == null || o2Var.getParentActivity() == null) {
                 return;
             }
-            canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), (int) (getChangeColumnsProgress() * 255.0f), 31);
-            for (int i31 = 0; i31 < arrayList2.size(); i31++) {
-                org.telegram.ui.Cells.r7 r7Var6 = (org.telegram.ui.Cells.r7) arrayList2.get(i31);
-                if (r7Var6.v != null) {
-                    canvas.save();
-                    canvas.translate(r7Var6.getX(), r7Var6.getY());
-                    r7Var6.v.j(((r7Var6.getMeasuredWidth() - AndroidUtilities.dp(2.0f)) * r7Var6.x) / (r7Var6.v.getMeasuredWidth() - AndroidUtilities.dp(2.0f)), false);
-                    r7Var6.v.draw(canvas);
-                    canvas.restore();
-                }
-            }
-            canvas.restore();
+            o2Var.showDialog(new lg0(o2Var.getContext(), o2Var.getCurrentAccount(), messageObject, o2Var.getResourceProvider()));
         }
     }
 
-    @Override // org.telegram.ui.Components.aa, org.telegram.ui.Components.wk0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j10) {
-        gk0 movingAdapter = getMovingAdapter();
-        if (B1() && getAdapter() == movingAdapter && z1() && (view instanceof org.telegram.ui.Cells.r7)) {
-            return true;
-        }
-        return super.drawChild(canvas, view, j10);
-    }
-
-    public int getAnimateToColumnsCount() {
-        return 3;
-    }
-
-    public float getChangeColumnsProgress() {
-        return 0.0f;
-    }
-
-    public int getColumnsCount() {
-        return 3;
-    }
-
-    public SparseArray<Float> getMessageAlphaEnter() {
+    @Override // org.telegram.ui.Cells.j1
+    public final /* synthetic */ CharacterStyle P1(org.telegram.ui.Cells.s1 s1Var) {
         return null;
     }
 
-    public gk0 getMovingAdapter() {
-        return null;
+    @Override // org.telegram.ui.Cells.j1
+    public final /* synthetic */ boolean Q(org.telegram.ui.Cells.s1 s1Var) {
+        return false;
     }
 
-    public int getPinchCenterPosition() {
+    @Override // org.telegram.ui.Cells.j1
+    public final /* synthetic */ boolean R() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Cells.j1
+    public final /* synthetic */ boolean R1(org.telegram.ui.Cells.s1 s1Var, MessageObject messageObject) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Cells.j1
+    public final /* synthetic */ int V() {
         return 0;
     }
 
-    public gk0 getSupportingAdapter() {
+    @Override // org.telegram.ui.Cells.j1
+    public final /* synthetic */ boolean W0(org.telegram.ui.Cells.s1 s1Var, boolean z10) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Cells.j1
+    public final /* synthetic */ boolean W1(org.telegram.ui.Cells.s1 s1Var, TLRPC.PollAnswer pollAnswer) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Cells.j1
+    public final /* synthetic */ sg.a X() {
         return null;
     }
 
-    public ws0 getSupportingListView() {
+    @Override // org.telegram.ui.Cells.j1
+    public final /* synthetic */ boolean Y(org.telegram.ui.Cells.s1 s1Var) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Cells.j1
+    public final /* synthetic */ org.telegram.ui.lu0 Y1() {
         return null;
     }
 
-    public abstract boolean z1();
+    @Override // org.telegram.ui.Cells.j1
+    public final /* synthetic */ boolean Z(org.telegram.ui.Cells.s1 s1Var, TLRPC.User user) {
+        return false;
+    }
 
-    public void y1(org.telegram.ui.Cells.r7 r7Var) {
+    @Override // org.telegram.ui.Cells.j1
+    public final /* synthetic */ boolean a2(long j10) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Cells.j1
+    public final boolean c() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.Cells.j1
+    public final /* synthetic */ boolean c1(int i10, org.telegram.ui.Cells.s1 s1Var) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Cells.j1
+    public final /* synthetic */ boolean c2(org.telegram.ui.Cells.s1 s1Var, TLRPC.TodoItem todoItem) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Cells.j1
+    public final /* synthetic */ boolean d0() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Cells.j1
+    public final /* synthetic */ boolean f() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.Cells.j1
+    public final /* synthetic */ int f0(org.telegram.ui.Cells.s1 s1Var) {
+        return 0;
+    }
+
+    @Override // org.telegram.ui.Cells.j1
+    public final /* synthetic */ String g(org.telegram.ui.Cells.s1 s1Var) {
+        return null;
+    }
+
+    @Override // org.telegram.ui.Cells.j1
+    public final /* synthetic */ boolean h1(MessageObject messageObject) {
+        return org.telegram.ui.b.a(messageObject);
+    }
+
+    @Override // org.telegram.ui.Cells.j1
+    public final void j(org.telegram.ui.Cells.s1 s1Var, ArrayList arrayList, int i10, int i11, int i12) {
+        SendMessagesHelper.getInstance(this.a).sendVote(s1Var.getMessageObject(), arrayList, null);
+    }
+
+    @Override // org.telegram.ui.Cells.j1
+    public final boolean j0() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.Cells.j1
+    public final /* synthetic */ boolean m2(org.telegram.ui.Cells.s1 s1Var, TL_iv.PageBlock pageBlock) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Cells.j1
+    public final void n(org.telegram.ui.Cells.s1 s1Var, TLRPC.PollAnswer pollAnswer, TLRPC.MessageMedia messageMedia, int i10) {
+        int i11;
+        int i12;
+        TLRPC.Message message;
+        TLRPC.Document document;
+        TLRPC.PollResults pollResults;
+        TLRPC.MessageMedia messageMedia2;
+        TLRPC.Document document2;
+        TLRPC.Document document3;
+        TLRPC.TL_textWithEntities tL_textWithEntities;
+        qu0 qu0Var = this.c.s;
+        MessageObject messageObject = s1Var.getMessageObject();
+        TLRPC.MessageMedia media = MessageObject.getMedia(messageObject);
+        if (messageMedia == null || messageObject == null || !(media instanceof TLRPC.TL_messageMediaPoll)) {
+            return;
+        }
+        TLRPC.TL_messageMediaPoll tL_messageMediaPoll = (TLRPC.TL_messageMediaPoll) media;
+        TLRPC.GeoPoint geoPoint = messageMedia.geo;
+        org.telegram.ui.ActionBar.c6 c6Var = this.b;
+        int i13 = this.a;
+        if (geoPoint != null) {
+            if (AndroidUtilities.isMapsInstalled(qu0Var.r1)) {
+                ot0 ot0Var = new ot0(3);
+                ot0Var.setResourceProvider(c6Var);
+                TLRPC.TL_message tL_message = new TLRPC.TL_message();
+                tL_message.local_id = -1;
+                tL_message.peer_id = MessagesController.getInstance(i13).getPeer(qu0Var.f1);
+                TLRPC.TL_messageMediaGeo tL_messageMediaGeo = new TLRPC.TL_messageMediaGeo();
+                tL_messageMediaGeo.geo = messageMedia.geo;
+                String str = messageMedia.address;
+                if (str == null) {
+                    str = (pollAnswer == null || (tL_textWithEntities = pollAnswer.text) == null) ? "" : tL_textWithEntities.text;
+                }
+                tL_messageMediaGeo.address = str;
+                tL_message.media = tL_messageMediaGeo;
+                ot0Var.K0 = false;
+                ot0Var.u0(new MessageObject(UserConfig.selectedAccount, tL_message, false, false));
+                qu0Var.r1.presentFragment(ot0Var);
+                return;
+            }
+            return;
+        }
+        if (MessageObject.isAnyKindOfStickerOrEmoji(messageMedia.document)) {
+            org.telegram.ui.ht.q().w(qu0Var.r1.getParentActivity());
+            org.telegram.ui.ht.q().v(new pt0(this, tL_messageMediaPoll, pollAnswer, s1Var));
+            org.telegram.ui.ht q6 = org.telegram.ui.ht.q();
+            TLRPC.Document document4 = messageMedia.document;
+            q6.t(document4, null, "", null, null, MessageObject.isAnimatedEmoji(document4) ? 2 : 0, false, s1Var.getMessageObject(), this.b, 200);
+            return;
+        }
+        TLRPC.Message message2 = messageObject.messageOwner;
+        ArrayList<Integer> arrayList = new ArrayList<>();
+        ArrayList arrayList2 = new ArrayList();
+        TLRPC.MessageMedia messageMedia3 = tL_messageMediaPoll.attached_media;
+        if (messageMedia3 != null && messageMedia3.geo == null && ((document3 = messageMedia3.document) == null || MessageObject.isVideoDocument(document3))) {
+            i11 = messageMedia3 == messageMedia ? arrayList2.size() : -1;
+            TLRPC.TL_message a2 = a(message2);
+            a2.media = messageMedia3;
+            arrayList2.add(new qt0(i13, a2, false, true));
+            arrayList.add(-2);
+        } else {
+            i11 = -1;
+        }
+        if (messageObject.expandedExplanation && (pollResults = tL_messageMediaPoll.results) != null && (messageMedia2 = pollResults.solution_media) != null && messageMedia2.geo == null && ((document2 = messageMedia2.document) == null || MessageObject.isVideoDocument(document2))) {
+            if (messageMedia2 == messageMedia) {
+                i11 = arrayList2.size();
+            }
+            TLRPC.TL_message a10 = a(message2);
+            a10.media = messageMedia2;
+            TLRPC.PollResults pollResults2 = tL_messageMediaPoll.results;
+            a10.message = pollResults2.solution;
+            a10.entities = pollResults2.solution_entities;
+            arrayList2.add(new rt0(i13, a10, false, true));
+            arrayList.add(-3);
+        }
+        int i14 = i13;
+        kf.d.b(tL_messageMediaPoll.poll, UserConfig.getInstance(i13).getClientUserId());
+        TLRPC.Poll poll = tL_messageMediaPoll.poll;
+        ArrayList<TLRPC.PollAnswer> arrayList3 = poll.shuffled_answers;
+        if (arrayList3 == null) {
+            arrayList3 = poll.answers;
+        }
+        int i15 = 0;
+        while (i15 < arrayList3.size()) {
+            TLRPC.PollAnswer pollAnswer2 = arrayList3.get(i15);
+            TLRPC.MessageMedia messageMedia4 = pollAnswer2.media;
+            if (messageMedia4 != null && messageMedia4.geo == null && ((document = messageMedia4.document) == null || MessageObject.isVideoDocument(document))) {
+                if (pollAnswer2.unshuffled_index == i10) {
+                    i11 = arrayList2.size();
+                }
+                TLRPC.TL_message a11 = a(message2);
+                a11.media = messageMedia4;
+                TLRPC.TL_textWithEntities tL_textWithEntities2 = pollAnswer2.text;
+                a11.message = tL_textWithEntities2.text;
+                a11.entities = tL_textWithEntities2.entities;
+                i12 = i14;
+                message = message2;
+                arrayList2.add(new st0(i12, a11, false, true));
+                arrayList.add(Integer.valueOf(pollAnswer2.unshuffled_index));
+            } else {
+                i12 = i14;
+                message = message2;
+            }
+            i15++;
+            message2 = message;
+            i14 = i12;
+        }
+        if (i11 <= -1 || arrayList2.isEmpty()) {
+            return;
+        }
+        messageObject.pollMediaMapping = arrayList;
+        PhotoViewer.t1().K2(null, qu0Var.r1, c6Var);
+        PhotoViewer.t1().a2(arrayList2, i11, qu0Var.f1, 0L, 0L, new tt0(this));
+    }
+
+    @Override // org.telegram.ui.Cells.j1
+    public final /* synthetic */ boolean n0(y5 y5Var) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Cells.j1
+    public final /* synthetic */ boolean u2(int i10) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Cells.j1
+    public final /* synthetic */ boolean w0(MessageObject messageObject) {
+        return true;
+    }
+
+    @Override // org.telegram.ui.Cells.j1
+    public final /* synthetic */ String y(long j10) {
+        return null;
+    }
+
+    @Override // org.telegram.ui.Cells.j1
+    public final /* synthetic */ org.telegram.ui.Cells.l9 y2() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.Cells.j1
+    public final /* synthetic */ void A(org.telegram.ui.Cells.s1 s1Var) {
+    }
+
+    @Override // org.telegram.ui.Cells.j1
+    public final /* synthetic */ void C(org.telegram.ui.Cells.s1 s1Var) {
+    }
+
+    @Override // org.telegram.ui.Cells.j1
+    public final /* synthetic */ void C1(org.telegram.ui.Cells.s1 s1Var) {
+    }
+
+    @Override // org.telegram.ui.Cells.j1
+    public final void D0(org.telegram.ui.Cells.s1 s1Var) {
+    }
+
+    @Override // org.telegram.ui.Cells.j1
+    public final /* synthetic */ void F(org.telegram.ui.Cells.s1 s1Var) {
+    }
+
+    @Override // org.telegram.ui.Cells.j1
+    public final /* synthetic */ void F0(org.telegram.ui.Cells.s1 s1Var) {
+    }
+
+    @Override // org.telegram.ui.Cells.j1
+    public final /* synthetic */ void H(MessageObject.TextLayoutBlock textLayoutBlock) {
+    }
+
+    @Override // org.telegram.ui.Cells.j1
+    public final /* synthetic */ void J0(org.telegram.ui.Cells.s1 s1Var) {
+    }
+
+    @Override // org.telegram.ui.Cells.j1
+    public final /* synthetic */ void K(org.telegram.ui.Cells.s1 s1Var) {
+    }
+
+    @Override // org.telegram.ui.Cells.j1
+    public final /* synthetic */ void L1(org.telegram.ui.Cells.s1 s1Var) {
+    }
+
+    @Override // org.telegram.ui.Cells.j1
+    public final /* synthetic */ void N(MessageObject messageObject) {
+    }
+
+    @Override // org.telegram.ui.Cells.j1
+    public final /* synthetic */ void N0(org.telegram.ui.Cells.s1 s1Var) {
+    }
+
+    @Override // org.telegram.ui.Cells.j1
+    public final /* synthetic */ void N1(MessageObject messageObject) {
+    }
+
+    @Override // org.telegram.ui.Cells.j1
+    public final /* synthetic */ void S1() {
+    }
+
+    @Override // org.telegram.ui.Cells.j1
+    public final /* synthetic */ void T(org.telegram.ui.Cells.s1 s1Var) {
+    }
+
+    @Override // org.telegram.ui.Cells.j1
+    public final /* synthetic */ void X0(org.telegram.ui.Cells.s1 s1Var) {
+    }
+
+    @Override // org.telegram.ui.Cells.j1
+    public final /* synthetic */ void Y0(org.telegram.ui.Cells.s1 s1Var) {
+    }
+
+    @Override // org.telegram.ui.Cells.j1
+    public final /* synthetic */ void c0(int i10) {
+    }
+
+    @Override // org.telegram.ui.Cells.j1
+    public final /* synthetic */ void e2(org.telegram.ui.Cells.s1 s1Var) {
+    }
+
+    @Override // org.telegram.ui.Cells.j1
+    public final /* synthetic */ void g0(org.telegram.ui.Cells.s1 s1Var) {
+    }
+
+    @Override // org.telegram.ui.Cells.j1
+    public final /* synthetic */ void k() {
+    }
+
+    @Override // org.telegram.ui.Cells.j1
+    public final /* synthetic */ void k1() {
+    }
+
+    @Override // org.telegram.ui.Cells.j1
+    public final /* synthetic */ void m0(String str) {
+    }
+
+    @Override // org.telegram.ui.Cells.j1
+    public final /* synthetic */ void n2(org.telegram.ui.Cells.s1 s1Var) {
+    }
+
+    @Override // org.telegram.ui.Cells.j1
+    public final /* synthetic */ void o(org.telegram.ui.Cells.s1 s1Var) {
+    }
+
+    @Override // org.telegram.ui.Cells.j1
+    public final /* synthetic */ void p() {
+    }
+
+    @Override // org.telegram.ui.Cells.j1
+    public final /* synthetic */ void q2() {
+    }
+
+    @Override // org.telegram.ui.Cells.j1
+    public final /* synthetic */ void s(org.telegram.ui.Cells.s1 s1Var) {
+    }
+
+    @Override // org.telegram.ui.Cells.j1
+    public final /* synthetic */ void t() {
+    }
+
+    @Override // org.telegram.ui.Cells.j1
+    public final /* synthetic */ void u(org.telegram.ui.Cells.s1 s1Var) {
+    }
+
+    @Override // org.telegram.ui.Cells.j1
+    public final /* synthetic */ void w(org.telegram.ui.Cells.s1 s1Var) {
+    }
+
+    @Override // org.telegram.ui.Cells.j1
+    public final /* synthetic */ void w2() {
+    }
+
+    @Override // org.telegram.ui.Cells.j1
+    public final /* synthetic */ void y0(org.telegram.ui.Cells.s1 s1Var) {
+    }
+
+    @Override // org.telegram.ui.Cells.j1
+    public final /* synthetic */ void z0() {
+    }
+
+    @Override // org.telegram.ui.Cells.j1
+    public final /* synthetic */ void E(org.telegram.ui.Cells.s1 s1Var, BotInlineKeyboard.ButtonCustom buttonCustom) {
+    }
+
+    @Override // org.telegram.ui.Cells.j1
+    public final /* synthetic */ void F1(org.telegram.ui.Cells.s1 s1Var, boolean z10) {
+    }
+
+    @Override // org.telegram.ui.Cells.j1
+    public final /* synthetic */ void I1(org.telegram.ui.Cells.s1 s1Var, TL_keyboard.KeyboardButtonProto keyboardButtonProto) {
+    }
+
+    @Override // org.telegram.ui.Cells.j1
+    public final /* synthetic */ void L(int i10, org.telegram.ui.Cells.s1 s1Var) {
+    }
+
+    @Override // org.telegram.ui.Cells.j1
+    public final /* synthetic */ void R0(org.telegram.ui.Cells.s1 s1Var, TL_keyboard.KeyboardInlineButton keyboardInlineButton) {
+    }
+
+    @Override // org.telegram.ui.Cells.j1
+    public final /* synthetic */ void U1(org.telegram.ui.Cells.s1 s1Var, TLRPC.MessageExtendedMedia messageExtendedMedia) {
+    }
+
+    @Override // org.telegram.ui.Cells.j1
+    public final /* synthetic */ void g2(org.telegram.ui.Cells.s1 s1Var, long j10) {
+    }
+
+    @Override // org.telegram.ui.Cells.j1
+    public final /* synthetic */ void j2(org.telegram.ui.Cells.s1 s1Var, hh.f fVar) {
+    }
+
+    @Override // org.telegram.ui.Cells.j1
+    public final /* synthetic */ void m1(org.telegram.ui.Cells.s1 s1Var, TL_keyboard.KeyboardButtonProto keyboardButtonProto) {
+    }
+
+    @Override // org.telegram.ui.Cells.j1
+    public final /* synthetic */ void p1(org.telegram.ui.Cells.s1 s1Var, TLRPC.Document document) {
+    }
+
+    @Override // org.telegram.ui.Cells.j1
+    public final /* synthetic */ void A0(org.telegram.ui.Cells.s1 s1Var, TLObject tLObject, boolean z10) {
+    }
+
+    @Override // org.telegram.ui.Cells.j1
+    public final /* synthetic */ void B0(org.telegram.ui.Cells.s1 s1Var, float f9, float f10) {
+    }
+
+    @Override // org.telegram.ui.Cells.j1
+    public final /* synthetic */ void V0(org.telegram.ui.Cells.s1 s1Var, CharacterStyle characterStyle, boolean z10) {
+    }
+
+    @Override // org.telegram.ui.Cells.j1
+    public final /* synthetic */ void e0(org.telegram.ui.Cells.s1 s1Var, float f9, float f10) {
+    }
+
+    @Override // org.telegram.ui.Cells.j1
+    public final /* synthetic */ void p0(org.telegram.ui.Cells.s1 s1Var, float f9, float f10) {
+    }
+
+    @Override // org.telegram.ui.Cells.j1
+    public final /* synthetic */ void u1(org.telegram.ui.Cells.s1 s1Var, float f9, float f10) {
+    }
+
+    @Override // org.telegram.ui.Cells.j1
+    public final /* synthetic */ void x2(org.telegram.ui.Cells.s1 s1Var, int i10, int i11) {
+    }
+
+    @Override // org.telegram.ui.Cells.j1
+    public final /* synthetic */ void V1(org.telegram.ui.Cells.s1 s1Var, TLRPC.User user, TLRPC.Document document, String str) {
+    }
+
+    @Override // org.telegram.ui.Cells.j1
+    public final /* synthetic */ void t0(org.telegram.ui.Cells.s1 s1Var, TLRPC.User user, float f9, float f10) {
+    }
+
+    @Override // org.telegram.ui.Cells.j1
+    public final /* synthetic */ void v0(org.telegram.ui.Cells.s1 s1Var, float f9, float f10, boolean z10) {
+    }
+
+    @Override // org.telegram.ui.Cells.j1
+    public final /* synthetic */ void b2(org.telegram.ui.Cells.s1 s1Var, int i10, float f9, float f10, boolean z10) {
+    }
+
+    @Override // org.telegram.ui.Cells.j1
+    public final /* synthetic */ void s2(org.telegram.ui.Cells.s1 s1Var, TLRPC.ReactionCount reactionCount, boolean z10, float f9, float f10) {
+    }
+
+    @Override // org.telegram.ui.Cells.j1
+    public final /* synthetic */ void S(org.telegram.ui.Cells.s1 s1Var, TLRPC.Chat chat, int i10, float f9, float f10, boolean z10) {
+    }
+
+    @Override // org.telegram.ui.Cells.j1
+    public final /* synthetic */ void Q1(MessageObject messageObject, String str, String str2, String str3, String str4, int i10, int i11) {
     }
 }

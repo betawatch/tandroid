@@ -1,103 +1,36 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_communities;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class z9 implements RequestDelegate {
+public final /* synthetic */ class z9 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
     public final /* synthetic */ MessagesController b;
+    public final /* synthetic */ Utilities.Callback2 c;
 
-    public /* synthetic */ z9(MessagesController messagesController, int i9) {
-        this.a = i9;
+    public /* synthetic */ z9(MessagesController messagesController, Utilities.Callback2 callback2, int i10) {
+        this.a = i10;
         this.b = messagesController;
+        this.c = callback2;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // org.telegram.messenger.Utilities.Callback2
+    public final void run(Object obj, Object obj2) {
         switch (this.a) {
             case 0:
-                this.b.lambda$updateTimerProc$152(tLObject, tL_error);
+                this.b.lambda$toggleChatNoForwards$278(this.c, (TLRPC.Updates) obj, (TLRPC.TL_error) obj2);
                 break;
             case 1:
-                this.b.lambda$updateTimerProc$153(tLObject, tL_error);
+                this.b.lambda$fetchCommunityPendingJoinRequests$246(this.c, (TL_communities.PeerLinkRequests) obj, (TLRPC.TL_error) obj2);
                 break;
             case 2:
-                this.b.lambda$loadCurrentState$325(tLObject, tL_error);
-                break;
-            case 3:
-                this.b.lambda$getContentSettings$502(tLObject, tL_error);
-                break;
-            case 4:
-                this.b.lambda$sendBotStart$293(tLObject, tL_error);
-                break;
-            case 5:
-                this.b.lambda$loadSignUpNotificationsSettings$207(tLObject, tL_error);
-                break;
-            case 6:
-                this.b.lambda$reloadDialogsReadValue$64(tLObject, tL_error);
-                break;
-            case 7:
-                this.b.lambda$completeReadTask$238(tLObject, tL_error);
-                break;
-            case 8:
-                this.b.lambda$markMentionMessageAsRead$234(tLObject, tL_error);
-                break;
-            case 9:
-                this.b.lambda$toggleChannelForum$286(tLObject, tL_error);
-                break;
-            case 10:
-                this.b.lambda$setDialogHistoryTTL$137(tLObject, tL_error);
-                break;
-            case 11:
-                this.b.lambda$loadUnreadDialogs$362(tLObject, tL_error);
-                break;
-            case 12:
-                this.b.lambda$checkTosUpdate$163(tLObject, tL_error);
-                break;
-            case 13:
-                this.b.lambda$reloadReactionsNotifySettings$205(tLObject, tL_error);
-                break;
-            case 14:
-                this.b.lambda$loadHintDialogs$196(tLObject, tL_error);
-                break;
-            case 15:
-                this.b.lambda$reloadUser$56(tLObject, tL_error);
-                break;
-            case 16:
-                this.b.lambda$processUpdateArray$414(tLObject, tL_error);
-                break;
-            case 17:
-                this.b.lambda$markMessageContentAsRead$232(tLObject, tL_error);
-                break;
-            case 18:
-                this.b.lambda$loadRemoteFilters$30(tLObject, tL_error);
-                break;
-            case 19:
-                this.b.lambda$didReceivedNotification$43(tLObject, tL_error);
-                break;
-            case 20:
-                this.b.lambda$loadGlobalNotificationsSettings$203(tLObject, tL_error);
-                break;
-            case 21:
-                this.b.lambda$performLogout$322(tLObject, tL_error);
-                break;
-            case 22:
-                this.b.lambda$checkPeerColors$491(tLObject, tL_error);
-                break;
-            case 23:
-                this.b.lambda$checkPeerColors$493(tLObject, tL_error);
-                break;
-            case 24:
-                this.b.lambda$loadSuggestedFilters$25(tLObject, tL_error);
-                break;
-            case 25:
-                this.b.lambda$toggleChannelInvitesHistory$288(tLObject, tL_error);
+                this.b.lambda$fetchCommunityJoinedChats$247(this.c, (TL_communities.ParticipantJoinedChats) obj, (TLRPC.TL_error) obj2);
                 break;
             default:
-                this.b.lambda$toggleChannelSignatures$284(tLObject, tL_error);
+                this.b.lambda$fetchChatsToAddToCommunity$252(this.c, (TLRPC.messages_Chats) obj, (TLRPC.TL_error) obj2);
                 break;
         }
     }

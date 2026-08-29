@@ -4,9 +4,9 @@ import android.util.SparseIntArray;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class yg0 extends f2.s {
+public final class yg0 extends f2.q {
     public int b;
     public int c;
     public int d;
@@ -24,42 +24,42 @@ public final class yg0 extends f2.s {
         this.m = hh0Var;
     }
 
-    public static void g(int i9, int i10, SparseIntArray sparseIntArray) {
-        if (i10 >= 0) {
-            sparseIntArray.put(i10, i9);
+    public static void g(int i10, int i11, SparseIntArray sparseIntArray) {
+        if (i11 >= 0) {
+            sparseIntArray.put(i11, i10);
         }
     }
 
-    @Override // f2.s
-    public final boolean a(int i9, int i10) {
-        return b(i9, i10);
+    @Override // f2.q
+    public final boolean a(int i10, int i11) {
+        return b(i10, i11);
     }
 
-    @Override // f2.s
-    public final boolean b(int i9, int i10) {
-        int i11;
+    @Override // f2.q
+    public final boolean b(int i10, int i11) {
         int i12;
-        int i13 = this.c;
+        int i13;
+        int i14 = this.c;
         hh0 hh0Var = this.m;
-        if (((i9 >= i13 && i9 < this.d) || (i9 >= this.e && i9 < this.f)) && ((i10 >= (i12 = hh0Var.y) && i10 < hh0Var.A) || (i10 >= hh0Var.D && i10 < hh0Var.E))) {
-            TLRPC.TL_chatInviteExported tL_chatInviteExported = (i10 < i12 || i10 >= hh0Var.A) ? (TLRPC.TL_chatInviteExported) hh0Var.f0.get(i10 - hh0Var.D) : (TLRPC.TL_chatInviteExported) hh0Var.e0.get(i10 - i12);
-            int i14 = this.c;
-            return ((i9 < i14 || i9 >= this.d) ? (TLRPC.TL_chatInviteExported) this.l.get(i9 - this.e) : (TLRPC.TL_chatInviteExported) this.k.get(i9 - i14)).link.equals(tL_chatInviteExported.link);
+        if (((i10 >= i14 && i10 < this.d) || (i10 >= this.e && i10 < this.f)) && ((i11 >= (i13 = hh0Var.y) && i11 < hh0Var.A) || (i11 >= hh0Var.D && i11 < hh0Var.E))) {
+            TLRPC.TL_chatInviteExported tL_chatInviteExported = (i11 < i13 || i11 >= hh0Var.A) ? (TLRPC.TL_chatInviteExported) hh0Var.f0.get(i11 - hh0Var.D) : (TLRPC.TL_chatInviteExported) hh0Var.e0.get(i11 - i13);
+            int i15 = this.c;
+            return ((i10 < i15 || i10 >= this.d) ? (TLRPC.TL_chatInviteExported) this.l.get(i10 - this.e) : (TLRPC.TL_chatInviteExported) this.k.get(i10 - i15)).link.equals(tL_chatInviteExported.link);
         }
-        int i15 = this.g;
-        if (i9 >= i15 && i9 < this.h && i10 >= (i11 = hh0Var.Q) && i10 < hh0Var.R) {
-            return i9 - i15 == i10 - i11;
+        int i16 = this.g;
+        if (i10 >= i16 && i10 < this.h && i11 >= (i12 = hh0Var.Q) && i11 < hh0Var.R) {
+            return i10 - i16 == i11 - i12;
         }
-        int i16 = this.i.get(i9, -1);
-        return i16 >= 0 && i16 == this.j.get(i10, -1);
+        int i17 = this.i.get(i10, -1);
+        return i17 >= 0 && i17 == this.j.get(i11, -1);
     }
 
-    @Override // f2.s
+    @Override // f2.q
     public final int d() {
         return this.m.T;
     }
 
-    @Override // f2.s
+    @Override // f2.q
     public final int e() {
         return this.b;
     }

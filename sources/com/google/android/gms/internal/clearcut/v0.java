@@ -12,72 +12,72 @@ public final class v0 extends com.google.android.gms.common.api.j {
     public static int k = 1;
 
     public v0(Context context, com.google.android.gms.common.api.i iVar) {
-        super(context, h8.j.a, h8.i.a, iVar);
+        super(context, j8.j.a, j8.i.a, iVar);
     }
 
     public Intent f() {
         int h = h();
-        int i9 = h - 1;
+        int i10 = h - 1;
         if (h == 0) {
             throw null;
         }
         com.google.android.gms.common.api.b bVar = this.d;
         Context context = this.a;
-        if (i9 == 2) {
-            k5.h.a.e("getFallbackSignInIntent()", new Object[0]);
-            Intent a2 = k5.h.a(context, (GoogleSignInOptions) bVar);
+        if (i10 == 2) {
+            m5.h.a.g("getFallbackSignInIntent()", new Object[0]);
+            Intent a2 = m5.h.a(context, (GoogleSignInOptions) bVar);
             a2.setAction("com.google.android.gms.auth.APPAUTH_SIGN_IN");
             return a2;
         }
-        if (i9 == 3) {
-            return k5.h.a(context, (GoogleSignInOptions) bVar);
+        if (i10 == 3) {
+            return m5.h.a(context, (GoogleSignInOptions) bVar);
         }
-        k5.h.a.e("getNoImplementationSignInIntent()", new Object[0]);
-        Intent a3 = k5.h.a(context, (GoogleSignInOptions) bVar);
-        a3.setAction("com.google.android.gms.auth.NO_IMPL");
-        return a3;
+        m5.h.a.g("getNoImplementationSignInIntent()", new Object[0]);
+        Intent a10 = m5.h.a(context, (GoogleSignInOptions) bVar);
+        a10.setAction("com.google.android.gms.auth.NO_IMPL");
+        return a10;
     }
 
     public Task g() {
         BasePendingResult basePendingResult;
         boolean z10 = h() == 3;
-        k5.h.a.e("Signing out", new Object[0]);
-        k5.h.b(this.a);
+        m5.h.a.g("Signing out", new Object[0]);
+        m5.h.b(this.a);
         com.google.android.gms.common.api.internal.t0 t0Var = this.h;
         if (z10) {
             BasePendingResult uVar = new com.google.android.gms.common.api.internal.u(t0Var, 0);
             uVar.a(Status.e);
             basePendingResult = uVar;
         } else {
-            k5.g gVar = new k5.g(t0Var, 0);
+            m5.g gVar = new m5.g(t0Var, 0);
             t0Var.b.d(1, gVar);
             basePendingResult = gVar;
         }
-        return x5.l.n(basePendingResult, new za.a(25));
+        return z5.l.n(basePendingResult, new ab.b(27));
     }
 
     public synchronized int h() {
-        int i9;
+        int i10;
         try {
-            i9 = k;
-            if (i9 == 1) {
+            i10 = k;
+            if (i10 == 1) {
                 Context context = this.a;
-                u5.d dVar = u5.d.d;
+                w5.d dVar = w5.d.d;
                 int d = dVar.d(context, 12451000);
                 if (d == 0) {
-                    i9 = 4;
+                    i10 = 4;
                     k = 4;
-                } else if (dVar.b(context, null, d) != null || i6.e.a(context, "com.google.android.gms.auth.api.fallback") == 0) {
-                    i9 = 2;
+                } else if (dVar.b(context, null, d) != null || k6.e.a(context, "com.google.android.gms.auth.api.fallback") == 0) {
+                    i10 = 2;
                     k = 2;
                 } else {
-                    i9 = 3;
+                    i10 = 3;
                     k = 3;
                 }
             }
-        } catch (Throwable th) {
-            throw th;
+        } catch (Throwable th2) {
+            throw th2;
         }
-        return i9;
+        return i10;
     }
 }

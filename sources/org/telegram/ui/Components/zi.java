@@ -1,45 +1,26 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
 import android.view.View;
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class zi implements ok0, fj {
-    public final /* synthetic */ pj a;
+public final class zi extends f2.k0 {
+    public final /* synthetic */ mh.k r;
 
-    public /* synthetic */ zi(pj pjVar) {
-        this.a = pjVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public zi(mh.k kVar, Context context) {
+        super(context);
+        this.r = kVar;
     }
 
-    @Override // org.telegram.ui.Components.ok0
-    public boolean a(int i9, View view) {
-        Object O;
-        pj pjVar = this.a;
-        f2.r0 adapter = pjVar.s.getAdapter();
-        lj ljVar = pjVar.B;
-        if (adapter == ljVar) {
-            O = ljVar.E(i9);
-        } else {
-            ij ijVar = pjVar.A;
-            O = ijVar.O(ijVar.S(i9), ijVar.Q(i9));
-        }
-        if (O == null) {
-            return false;
-        }
-        pjVar.K((oj) view, O);
-        return true;
+    @Override // f2.k0
+    public final int k(int i10, View view) {
+        return org.telegram.messenger.x3.z(7.0f, ((bj) this.r.R).n.getPaddingTop(), super.k(i10, view));
     }
 
-    @Override // org.telegram.ui.Components.fj
-    public void b(TLRPC.User user, boolean z10, int i9, long j10) {
-        pj pjVar = this.a;
-        pjVar.b.dismiss(true);
-        pjVar.F.b(user, z10, i9, j10);
-    }
-
-    @Override // org.telegram.ui.Components.fj
-    public /* synthetic */ void c(ArrayList arrayList, String str, boolean z10, int i9, long j10, boolean z11) {
+    @Override // f2.k0
+    public final int m(int i10) {
+        return super.m(i10) * 2;
     }
 }

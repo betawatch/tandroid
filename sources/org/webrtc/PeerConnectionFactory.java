@@ -10,7 +10,7 @@ import org.webrtc.PeerConnection;
 import org.webrtc.audio.AudioDeviceModule;
 import org.webrtc.audio.JavaAudioDeviceModule;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes4.dex */
 public class PeerConnectionFactory {
     private static final String TAG = "PeerConnectionFactory";
@@ -28,7 +28,7 @@ public class PeerConnectionFactory {
     private volatile ThreadInfo signalingThread;
     private volatile ThreadInfo workerThread;
 
-    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
     public static class Builder {
         private AudioDecoderFactoryFactory audioDecoderFactoryFactory;
         private AudioDeviceModule audioDeviceModule;
@@ -136,7 +136,7 @@ public class PeerConnectionFactory {
         }
     }
 
-    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
     public static class InitializationOptions {
         final Context applicationContext;
         final boolean enableInternalTracer;
@@ -146,7 +146,7 @@ public class PeerConnectionFactory {
         final NativeLibraryLoader nativeLibraryLoader;
         final String nativeLibraryName;
 
-        /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+        /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
         public static class Builder {
             private final Context applicationContext;
             private boolean enableInternalTracer;
@@ -206,7 +206,7 @@ public class PeerConnectionFactory {
         }
     }
 
-    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
     public static class Options {
         public static final int ADAPTER_TYPE_ANY = 32;
         public static final int ADAPTER_TYPE_CELLULAR = 4;
@@ -232,14 +232,14 @@ public class PeerConnectionFactory {
         }
     }
 
-    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
     public static class ThreadInfo {
         final Thread thread;
         final int tid;
 
-        private ThreadInfo(Thread thread, int i9) {
+        private ThreadInfo(Thread thread, int i10) {
             this.thread = thread;
-            this.tid = i9;
+            this.tid = i10;
         }
 
         public static ThreadInfo getCurrent() {
@@ -338,13 +338,13 @@ public class PeerConnectionFactory {
 
     private static native void nativeInitializeInternalTracer();
 
-    private static native void nativeInjectLoggable(JNILogging jNILogging, int i9);
+    private static native void nativeInjectLoggable(JNILogging jNILogging, int i10);
 
-    private static native void nativePrintStackTrace(int i9);
+    private static native void nativePrintStackTrace(int i10);
 
     private static native void nativeShutdownInternalTracer();
 
-    private static native boolean nativeStartAecDump(long j10, int i9, int i10);
+    private static native boolean nativeStartAecDump(long j10, int i10, int i11);
 
     private static native boolean nativeStartInternalTracingCapture(String str);
 
@@ -487,9 +487,9 @@ public class PeerConnectionFactory {
         printStackTrace(this.networkThread, z10);
     }
 
-    public boolean startAecDump(int i9, int i10) {
+    public boolean startAecDump(int i10, int i11) {
         checkPeerConnectionFactoryExists();
-        return nativeStartAecDump(this.nativeFactory, i9, i10);
+        return nativeStartAecDump(this.nativeFactory, i10, i11);
     }
 
     public void stopAecDump() {

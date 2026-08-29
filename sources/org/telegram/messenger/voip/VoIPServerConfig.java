@@ -5,7 +5,7 @@ import org.json.JSONObject;
 import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public class VoIPServerConfig {
     private static JSONObject config = new JSONObject();
@@ -18,8 +18,8 @@ public class VoIPServerConfig {
         return config.optDouble(str, d);
     }
 
-    public static int getInt(String str, int i9) {
-        return config.optInt(str, i9);
+    public static int getInt(String str, int i10) {
+        return config.optInt(str, i10);
     }
 
     public static String getString(String str, String str2) {

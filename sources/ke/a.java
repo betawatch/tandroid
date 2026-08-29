@@ -1,34 +1,47 @@
 package ke;
 
-import e4.h;
-import ee.b;
-import fe.e;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import x9.d;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public abstract class a {
-    public boolean b(ie.a aVar) {
-        return this instanceof fe.a;
+    public static final Pattern a = Pattern.compile("[\\\\&]");
+    public static final Pattern b = Pattern.compile("\\\\[!\"#$%&'()*+,./:;<=>?@\\[\\\\\\]^_`{|}~-]|&(?:#x[a-f0-9]{1,6}|#[0-9]{1,7}|[a-z][a-z0-9]{1,31});", 2);
+    public static final Pattern c;
+    public static final d d;
+
+    static {
+        Pattern.compile("(%[a-fA-F0-9]{0,2}|[^:/?#@!$&'()*+,;=a-zA-Z0-9\\-._~])");
+        c = Pattern.compile("[ \t\r\n]+");
+        d = new d(11);
     }
 
-    public boolean c() {
-        return this instanceof b;
-    }
-
-    public abstract ie.a e();
-
-    public boolean f() {
-        return this instanceof fe.a;
-    }
-
-    public abstract h h(e eVar);
-
-    public void d() {
-    }
-
-    public void a(CharSequence charSequence) {
-    }
-
-    public void g(je.a aVar) {
+    public static String a(String str) {
+        if (!a.matcher(str).find()) {
+            return str;
+        }
+        Matcher matcher = b.matcher(str);
+        if (!matcher.find()) {
+            return str;
+        }
+        StringBuilder sb2 = new StringBuilder(str.length() + 16);
+        int i10 = 0;
+        do {
+            sb2.append((CharSequence) str, i10, matcher.start());
+            String group = matcher.group();
+            d.getClass();
+            if (group.charAt(0) == '\\') {
+                sb2.append((CharSequence) group, 1, group.length());
+            } else {
+                sb2.append(b.a(group));
+            }
+            i10 = matcher.end();
+        } while (matcher.find());
+        if (i10 != str.length()) {
+            sb2.append((CharSequence) str, i10, str.length());
+        }
+        return sb2.toString();
     }
 }

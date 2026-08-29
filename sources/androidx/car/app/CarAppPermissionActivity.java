@@ -8,20 +8,20 @@ import android.util.Log;
 import androidx.car.app.IOnRequestPermissionsListener;
 import androidx.fragment.app.e0;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public class CarAppPermissionActivity extends androidx.activity.m {
+public class CarAppPermissionActivity extends androidx.activity.l {
     public static final /* synthetic */ int F = 0;
 
-    @Override // androidx.activity.m, e0.h, android.app.Activity
+    @Override // androidx.activity.l, e0.h, android.app.Activity
     public final void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         try {
             Bundle bundle2 = getPackageManager().getApplicationInfo(getPackageName(), 128).metaData;
-            int i9 = bundle2 != null ? bundle2.getInt("androidx.car.app.theme") : 0;
+            int i10 = bundle2 != null ? bundle2.getInt("androidx.car.app.theme") : 0;
             Context createConfigurationContext = createConfigurationContext(getResources().getConfiguration());
-            if (i9 != 0) {
-                createConfigurationContext.setTheme(i9);
+            if (i10 != 0) {
+                createConfigurationContext.setTheme(i10);
             }
             int identifier = createConfigurationContext.getResources().getIdentifier("carPermissionActivityLayout", "attr", getPackageName());
             if (identifier != 0) {

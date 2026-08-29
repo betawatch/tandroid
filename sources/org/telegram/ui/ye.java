@@ -1,28 +1,26 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ye implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ qn b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ long d;
+    public final /* synthetic */ tn b;
+    public final /* synthetic */ boolean c;
 
-    public /* synthetic */ ye(qn qnVar, long j10, long j11, int i9) {
-        this.a = i9;
-        this.b = qnVar;
-        this.c = j10;
-        this.d = j11;
+    public /* synthetic */ ye(tn tnVar, boolean z10, int i10) {
+        this.a = i10;
+        this.b = tnVar;
+        this.c = z10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                qn.n0(this.b, this.c, this.d);
+                this.b.presentFragment(new PremiumPreviewFragment(0, this.c ? "upload_speed" : "download_speed"));
                 break;
             default:
-                qn.k1(this.b, this.c, this.d);
+                this.b.yc(0, this.c);
                 break;
         }
     }

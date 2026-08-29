@@ -8,19 +8,19 @@ import j$.util.stream.v6;
 
 /* loaded from: classes2.dex */
 public final /* synthetic */ class DesugarArrays {
-    public static j1 a(Object[] objArr, int i9, int i10) {
-        Spliterators.a(((Object[]) Objects.requireNonNull(objArr)).length, i9, i10);
-        return new j1(objArr, i9, i10, 1040);
+    public static j1 a(Object[] objArr, int i10, int i11) {
+        Spliterators.a(((Object[]) Objects.requireNonNull(objArr)).length, i10, i11);
+        return new j1(objArr, i10, i11, 1040);
     }
 
-    public static p1 b(int[] iArr, int i9, int i10) {
-        Spliterators.a(((int[]) Objects.requireNonNull(iArr)).length, i9, i10);
-        return new p1(iArr, i9, i10, 1040);
+    public static p1 b(int[] iArr, int i10, int i11) {
+        Spliterators.a(((int[]) Objects.requireNonNull(iArr)).length, i10, i11);
+        return new p1(iArr, i10, i11, 1040);
     }
 
-    public static r1 c(long[] jArr, int i9, int i10) {
-        Spliterators.a(((long[]) Objects.requireNonNull(jArr)).length, i9, i10);
-        return new r1(jArr, i9, i10, 1040);
+    public static r1 c(long[] jArr, int i10, int i11) {
+        Spliterators.a(((long[]) Objects.requireNonNull(jArr)).length, i10, i11);
+        return new r1(jArr, i10, i11, 1040);
     }
 
     public static <T> Stream<T> stream(T[] tArr) {
@@ -33,7 +33,7 @@ public final /* synthetic */ class DesugarArrays {
     }
 
     public static LongStream stream(long[] jArr) {
-        r1 c10 = c(jArr, 0, jArr.length);
-        return new j$.util.stream.f1(c10, v6.l(c10), false);
+        r1 c3 = c(jArr, 0, jArr.length);
+        return new j$.util.stream.f1(c3, v6.l(c3), false);
     }
 }

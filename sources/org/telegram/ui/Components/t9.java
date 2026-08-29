@@ -1,202 +1,339 @@
 package org.telegram.ui.Components;
 
+import android.animation.ValueAnimator;
+import android.content.Context;
+import android.graphics.Bitmap;
 import android.graphics.Canvas;
-import android.graphics.Matrix;
-import android.graphics.Paint;
+import android.graphics.ColorFilter;
+import android.graphics.ColorMatrix;
+import android.graphics.ColorMatrixColorFilter;
 import android.graphics.Path;
-import java.util.Random;
-import org.telegram.messenger.LiteMode;
+import android.graphics.drawable.Drawable;
+import android.text.TextUtils;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ImageLocation;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public class t9 {
-    public float a;
-    public float b;
-    public final Path c;
-    public final Paint d;
-    public final float[] e;
-    public final float[] f;
-    public final float[] g;
-    public final float[] h;
-    public final float[] i;
-    public final float[] j;
-    public final float[] k;
-    public final float[] l;
-    public final Random m;
-    public final float n;
-    public final float o;
-    public final float p;
-    public final Matrix q;
-    public final int r;
-    public float s;
-    public float t;
-    public float u;
+public class t9 extends View {
+    public Path A;
+    public ColorMatrixColorFilter B;
+    public ImageReceiver a;
+    public ImageReceiver b;
+    public int c;
+    public int d;
+    public p5 e;
+    public ColorFilter f;
+    public e9 h;
+    public boolean n;
+    public boolean r;
+    public boolean s;
+    public boolean v;
+    public boolean w;
+    public ValueAnimator x;
+    public zz0 y;
 
-    public t9(int i9) {
-        this(i9, 512);
+    public t9(Context context) {
+        super(context);
+        this.c = -1;
+        this.d = -1;
+        this.w = true;
+        ImageReceiver c3 = c();
+        this.a = c3;
+        c3.setCrossfadeByScale(0.0f);
+        this.a.setAllowLoadingOnAttachedOnly(true);
+        this.a.setDelegate(new u(this, 14));
     }
 
-    public final void a(float f10, float f11, Canvas canvas, Paint paint) {
-        if (!LiteMode.isEnabled(this.r)) {
+    public final void a() {
+        Bitmap bitmap;
+        if (!this.r || this.b.getBitmap() != null || this.a.getBitmap() == null || (bitmap = this.a.getBitmap()) == null || bitmap.isRecycled()) {
             return;
         }
-        Path path = this.c;
-        path.reset();
-        int i9 = 0;
-        while (true) {
-            float f12 = i9;
-            float f13 = this.n;
-            if (f12 >= f13) {
-                canvas.save();
-                canvas.drawPath(path, paint);
-                canvas.restore();
-                return;
-            }
-            float[] fArr = this.i;
-            float f14 = fArr[i9];
-            int i10 = i9 + 1;
-            int i11 = ((float) i10) < f13 ? i10 : 0;
-            float f15 = fArr[i11];
-            float[] fArr2 = this.e;
-            float f16 = 1.0f - f14;
-            float f17 = fArr2[i9] * f16;
-            float[] fArr3 = this.g;
-            float f18 = (fArr3[i9] * f14) + f17;
-            float f19 = 1.0f - f15;
-            float f20 = (fArr3[i11] * f15) + (fArr2[i11] * f19);
-            float[] fArr4 = this.f;
-            float f21 = fArr4[i9] * f16;
-            float[] fArr5 = this.h;
-            float f22 = (fArr5[i9] * f14) + f21;
-            float f23 = (fArr5[i11] * f15) + (fArr4[i11] * f19);
-            float max = (((Math.max(f18, f20) - Math.min(f18, f20)) / 2.0f) + Math.min(f18, f20)) * this.o * this.p;
-            Matrix matrix = this.q;
-            matrix.reset();
-            matrix.setRotate(f22, f10, f11);
-            float[] fArr6 = this.k;
-            fArr6[0] = f10;
-            float f24 = f11 - f18;
-            fArr6[1] = f24;
-            fArr6[2] = f10 + max;
-            fArr6[3] = f24;
-            matrix.mapPoints(fArr6);
-            float[] fArr7 = this.l;
-            fArr7[0] = f10;
-            float f25 = f11 - f20;
-            fArr7[1] = f25;
-            fArr7[2] = f10 - max;
-            fArr7[3] = f25;
-            matrix.reset();
-            matrix.setRotate(f23, f10, f11);
-            matrix.mapPoints(fArr7);
-            if (i9 == 0) {
-                path.moveTo(fArr6[0], fArr6[1]);
-            }
-            path.cubicTo(fArr6[2], fArr6[3], fArr7[2], fArr7[3], fArr7[0], fArr7[1]);
-            i9 = i10;
-        }
+        this.b.setImageBitmap(Utilities.stackBlurBitmapMax(bitmap));
+        invalidate();
     }
 
     public final void b() {
-        for (int i9 = 0; i9 < this.n; i9++) {
-            c(this.e, this.f, i9);
-            c(this.g, this.h, i9);
-            this.i[i9] = 0.0f;
-        }
+        this.a.clearImage();
     }
 
-    public final void c(float[] fArr, float[] fArr2, int i9) {
-        float f10 = this.n;
-        float f11 = this.b;
-        float f12 = this.a;
-        Random random = this.m;
-        fArr[i9] = (Math.abs((random.nextInt() % 100.0f) / 100.0f) * (f11 - f12)) + f12;
-        fArr2[i9] = (((random.nextInt() % 100.0f) / 100.0f) * (360.0f / f10) * 0.05f) + ((360.0f / f10) * i9);
-        this.j[i9] = (float) (((Math.abs(random.nextInt() % 100.0f) / 100.0f) * 0.003d) + 0.017d);
+    public ImageReceiver c() {
+        return new ImageReceiver(this);
     }
 
-    public final void d(float f10, boolean z10) {
-        this.s = f10;
-        if (LiteMode.isEnabled(this.r)) {
-            if (z10) {
-                float f11 = this.s;
-                float f12 = this.t;
-                if (f11 > f12) {
-                    this.u = (f11 - f12) / 205.0f;
-                    return;
-                } else {
-                    this.u = (f11 - f12) / 275.0f;
-                    return;
-                }
+    public final void d() {
+        if (this.r) {
+            if (this.b.getBitmap() != null && !this.b.getBitmap().isRecycled()) {
+                this.b.getBitmap().recycle();
             }
-            float f13 = this.s;
-            float f14 = this.t;
-            if (f13 > f14) {
-                this.u = (f13 - f14) / 320.0f;
-            } else {
-                this.u = (f13 - f14) / 375.0f;
-            }
+            this.b.setImageBitmap((Bitmap) null);
+            a();
         }
     }
 
-    public final void e(float f10, float f11) {
-        if (LiteMode.isEnabled(this.r)) {
-            for (int i9 = 0; i9 < this.n; i9++) {
-                float[] fArr = this.i;
-                float f12 = fArr[i9];
-                float f13 = this.j[i9];
-                float f14 = (f13 * f10 * 8.2f * f11) + (0.8f * f13) + f12;
-                fArr[i9] = f14;
-                if (f14 >= 1.0f) {
-                    fArr[i9] = 0.0f;
-                    float[] fArr2 = this.g;
-                    this.e[i9] = fArr2[i9];
-                    float[] fArr3 = this.h;
-                    this.f[i9] = fArr3[i9];
-                    c(fArr2, fArr3, i9);
-                }
-            }
+    public final void e(TLObject tLObject, e9 e9Var) {
+        this.a.setForUserOrChat(tLObject, e9Var);
+        d();
+    }
+
+    public final void f(String str, String str2, Drawable drawable) {
+        m(ImageLocation.getForPath(str), str2, null, null, drawable, null, 0, null);
+    }
+
+    public p5 getAnimatedEmojiDrawable() {
+        return this.e;
+    }
+
+    public e9 getAvatarDrawable() {
+        if (this.h == null) {
+            this.h = new e9((org.telegram.ui.ActionBar.c6) null);
+        }
+        return this.h;
+    }
+
+    public ImageReceiver getImageReceiver() {
+        return this.a;
+    }
+
+    public int[] getRoundRadius() {
+        return this.a.getRoundRadius();
+    }
+
+    public final void h(ImageLocation imageLocation, String str, Drawable drawable, Object obj) {
+        m(imageLocation, str, null, null, drawable, null, 0, obj);
+    }
+
+    public final void i(ImageLocation imageLocation, String str, String str2, Drawable drawable, Object obj) {
+        m(imageLocation, str, null, null, drawable, str2, 0, obj);
+    }
+
+    public final void j(ImageLocation imageLocation, String str, ImageLocation imageLocation2, String str2, int i10, Object obj) {
+        m(imageLocation, str, imageLocation2, str2, null, null, i10, obj);
+    }
+
+    public final void k(ImageLocation imageLocation, String str, ImageLocation imageLocation2, String str2, long j10, String str3, Object obj, int i10) {
+        this.a.setImage(imageLocation, str, imageLocation2, str2, null, j10, str3, obj, i10);
+        d();
+    }
+
+    public final void l(ImageLocation imageLocation, String str, ImageLocation imageLocation2, String str2, Drawable drawable, Object obj) {
+        this.a.setImage(imageLocation, str, imageLocation2, str2, null, null, drawable, 0L, null, obj, 1);
+        d();
+    }
+
+    public final void m(ImageLocation imageLocation, String str, ImageLocation imageLocation2, String str2, Drawable drawable, String str3, int i10, Object obj) {
+        this.a.setImage(imageLocation, str, imageLocation2, str2, drawable, i10, str3, obj, 0);
+        d();
+    }
+
+    public final void n(ImageLocation imageLocation, String str, Drawable drawable, Object obj) {
+        m(imageLocation, str, null, null, drawable, null, 0, obj);
+    }
+
+    public final void o(h61 h61Var, ImageLocation imageLocation, String str, ImageLocation imageLocation2, ImageLocation imageLocation3, String str2, int i10, String str3) {
+        if (h61Var != null) {
+            this.a.setImageBitmap(h61Var);
+        } else {
+            this.a.setImage(imageLocation, str, imageLocation2, null, imageLocation3, str2, null, i10, null, str3, 1);
+        }
+        d();
+    }
+
+    @Override // android.view.View
+    public void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.n = true;
+        if (this.w) {
+            this.a.onAttachedToWindow();
+        }
+        if (this.s) {
+            this.b.onAttachedToWindow();
+        }
+        p5 p5Var = this.e;
+        if (p5Var != null) {
+            p5Var.a(this);
         }
     }
 
-    public final void f(long j10) {
-        float f10 = this.s;
-        float f11 = this.t;
-        if (f10 != f11) {
-            float f12 = this.u;
-            float f13 = (j10 * f12) + f11;
-            this.t = f13;
-            if (f12 > 0.0f) {
-                if (f13 > f10) {
-                    this.t = f10;
-                }
-            } else if (f13 < f10) {
-                this.t = f10;
-            }
+    @Override // android.view.View
+    public void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        this.n = false;
+        if (this.w) {
+            this.a.onDetachedFromWindow();
+        }
+        if (this.s) {
+            this.b.onDetachedFromWindow();
+        }
+        p5 p5Var = this.e;
+        if (p5Var != null) {
+            p5Var.o(this);
         }
     }
 
-    public t9(int i9, int i10) {
-        this.c = new Path();
-        this.d = new Paint(1);
-        this.k = new float[4];
-        this.l = new float[4];
-        this.m = new Random();
-        this.p = 1.0f;
-        this.q = new Matrix();
-        this.n = i9;
-        this.o = (float) (Math.tan(3.141592653589793d / (r0 * 2.0f)) * 1.3333333333333333d);
-        this.e = new float[i9];
-        this.f = new float[i9];
-        this.g = new float[i9];
-        this.h = new float[i9];
-        this.i = new float[i9];
-        this.j = new float[i9];
-        for (int i11 = 0; i11 < this.n; i11++) {
-            c(this.e, this.f, i11);
-            c(this.g, this.h, i11);
-            this.i[i11] = 0.0f;
+    @Override // android.view.View
+    public void onDraw(Canvas canvas) {
+        int i10;
+        ColorFilter colorFilter;
+        p5 p5Var = this.e;
+        ImageReceiver imageReceiver = p5Var != null ? p5Var.k : this.a;
+        if (imageReceiver == null) {
+            return;
         }
-        this.r = i10;
+        if (p5Var != null && (colorFilter = this.f) != null) {
+            p5Var.setColorFilter(colorFilter);
+        }
+        int i11 = this.c;
+        if (i11 == -1 || (i10 = this.d) == -1) {
+            imageReceiver.setImageCoords(0.0f, 0.0f, getWidth(), getHeight());
+            if (this.s) {
+                this.b.setImageCoords(0.0f, 0.0f, getWidth(), getHeight());
+            }
+        } else if (this.v) {
+            imageReceiver.setImageCoords(0.0f, 0.0f, i11, i10);
+            if (this.s) {
+                this.b.setImageCoords(0.0f, 0.0f, this.c, this.d);
+            }
+        } else {
+            float width = (getWidth() - this.c) / 2;
+            int height = getHeight();
+            imageReceiver.setImageCoords(width, (height - r3) / 2, this.c, this.d);
+            if (this.s) {
+                ImageReceiver imageReceiver2 = this.b;
+                float width2 = (getWidth() - this.c) / 2;
+                int height2 = getHeight();
+                imageReceiver2.setImageCoords(width2, (height2 - r4) / 2, this.c, this.d);
+            }
+        }
+        imageReceiver.draw(canvas);
+        if (this.s) {
+            this.b.draw(canvas);
+        }
+    }
+
+    public final void p(int i10, int i11, boolean z10) {
+        this.a.setOrientation(i10, i11, true);
+    }
+
+    public final void q(int i10, boolean z10) {
+        this.a.setOrientation(0, true);
+    }
+
+    public final void r(int i10, int i11, int i12, int i13) {
+        this.a.setRoundRadius(i10, i11, i12, i13);
+        if (this.s) {
+            this.b.setRoundRadius(i10, i11, i12, i13);
+        }
+        invalidate();
+    }
+
+    public final void s(int i10, int i11) {
+        this.c = i10;
+        this.d = i11;
+        invalidate();
+    }
+
+    public void setAnimatedEmojiDrawable(p5 p5Var) {
+        p5 p5Var2 = this.e;
+        if (p5Var2 == p5Var) {
+            return;
+        }
+        if (this.n && p5Var2 != null) {
+            p5Var2.o(this);
+        }
+        this.e = p5Var;
+        if (this.n && p5Var != null) {
+            p5Var.a(this);
+        }
+        invalidate();
+    }
+
+    public void setAspectFit(boolean z10) {
+        this.a.setAspectFit(z10);
+    }
+
+    public void setBlurAllowed(boolean z10) {
+        if (this.n) {
+            throw new IllegalStateException("You should call setBlurAllowed(...) only when detached!");
+        }
+        this.s = z10;
+        if (z10) {
+            this.b = new ImageReceiver();
+        }
+    }
+
+    public void setBlurredText(CharSequence charSequence) {
+        if (TextUtils.isEmpty(charSequence)) {
+            this.y = null;
+            return;
+        }
+        this.y = new zz0(charSequence, 16.5f, AndroidUtilities.bold());
+        if (this.B == null) {
+            ColorMatrix colorMatrix = new ColorMatrix();
+            colorMatrix.setSaturation(1.2f);
+            AndroidUtilities.adjustBrightnessColorMatrix(colorMatrix, -0.2f);
+            this.B = new ColorMatrixColorFilter(colorMatrix);
+        }
+    }
+
+    public void setColorFilter(ColorFilter colorFilter) {
+        this.a.setColorFilter(colorFilter);
+    }
+
+    public void setEmojiColorFilter(ColorFilter colorFilter) {
+        this.f = colorFilter;
+        invalidate();
+    }
+
+    public void setHasBlur(boolean z10) {
+        if (z10 && !this.s) {
+            throw new IllegalStateException("You should call setBlurAllowed(...) before calling setHasBlur(true)!");
+        }
+        this.r = z10;
+        if (!z10) {
+            if (this.b.getBitmap() != null && !this.b.getBitmap().isRecycled()) {
+                this.b.getBitmap().recycle();
+            }
+            this.b.setImageBitmap((Bitmap) null);
+        }
+        a();
+    }
+
+    public void setImageBitmap(Bitmap bitmap) {
+        this.a.setImageBitmap(bitmap);
+        d();
+    }
+
+    public void setImageDrawable(Drawable drawable) {
+        this.a.setImageBitmap(drawable);
+        d();
+    }
+
+    public void setImageResource(int i10) {
+        this.a.setImageBitmap(getResources().getDrawable(i10));
+        invalidate();
+        d();
+    }
+
+    public void setLayerNum(int i10) {
+        this.a.setLayerNum(i10);
+    }
+
+    public void setRoundRadius(int i10) {
+        this.a.setRoundRadius(i10);
+        if (this.s) {
+            this.b.setRoundRadius(i10);
+        }
+        invalidate();
+    }
+
+    @Override // android.view.View
+    public boolean verifyDrawable(Drawable drawable) {
+        return drawable == this.a.getDrawable() || drawable == this.a.getImageDrawable() || super.verifyDrawable(drawable);
     }
 }

@@ -1,45 +1,53 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.view.View;
+import android.text.SpannableStringBuilder;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class mq extends View {
-    public final lq a;
+public final class mq extends LinearLayout {
+    public final t9 a;
 
-    public mq(Context context, org.telegram.ui.ActionBar.b6 b6Var) {
+    public mq(Context context) {
         super(context);
-        setVisibility(8);
-        lq lqVar = new lq(this, true, b6Var);
-        this.a = lqVar;
-        lqVar.G = true;
+        setOrientation(1);
+        t9 t9Var = new t9(context);
+        this.a = t9Var;
+        t9Var.setImageDrawable(new e90(t9Var, "m418 282.6c13.4-21.1 20.2-44.9 20.2-70.8 0-88.3-79.8-175.3-178.9-175.3-100.1 0-178.9 88-178.9 175.3 0 46.6 16.9 73.1 29.1 86.1-19.3 23.4-30.9 52.3-34.6 86.1-2.5 22.7 3.2 41.4 17.4 57.3 14.3 16 51.7 35 148.1 35 41.2 0 119.9-5.3 156.7-18.3 49.5-17.4 59.2-41.1 59.2-76.2 0-41.5-12.9-74.8-38.3-99.2z", AndroidUtilities.dp(110.0f), AndroidUtilities.dp(110.0f)));
+        if (!AndroidUtilities.isTablet()) {
+            addView(t9Var, i7.f6.q(110, 110, 49));
+        }
+        TextView h = org.telegram.messenger.x3.h(context, 1, 20.0f);
+        org.telegram.ui.th.s(org.telegram.ui.ActionBar.g6.G6, null, false, h, 1);
+        h.setText(LocaleController.getString(R.string.NoContactsYet3));
+        h.setTypeface(AndroidUtilities.bold());
+        addView(h, i7.f6.t(-2, -2, 49, 0, 15, 0, 7));
+        TextView textView = new TextView(context);
+        textView.setTextSize(1, 14.0f);
+        org.telegram.ui.th.s(org.telegram.ui.ActionBar.g6.c7, null, false, textView, 1);
+        textView.setText(LocaleController.getString(R.string.NoContactsYet3Sub));
+        textView.setMaxWidth(AndroidUtilities.dp(260.0f));
+        textView.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
+        addView(textView, i7.f6.t(-2, -2, 49, 0, 0, 0, 19));
+        nh.d dVar = new nh.d(context, null, true);
+        dVar.setUseWrapContent(true);
+        dVar.e();
+        dVar.setPadding(AndroidUtilities.dp(28.0f), 0, AndroidUtilities.dp(28.0f), 0);
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("c");
+        spannableStringBuilder.setSpan(new iq(R.drawable.filled_new_contact_24, 0), 0, 1, 33);
+        spannableStringBuilder.append((CharSequence) "  ").append((CharSequence) LocaleController.getString(R.string.NewContact));
+        dVar.g(spannableStringBuilder, false, true);
+        addView(dVar, i7.f6.q(-2, 44, 49));
     }
 
-    public float getEnterProgress() {
-        int i9;
-        lq lqVar = this.a;
-        float f10 = lqVar.l;
-        return (f10 == 1.0f || !((i9 = lqVar.c) == 0 || i9 == 1)) ? lqVar.h == 0 ? 0.0f : 1.0f : i9 == 0 ? f10 : 1.0f - f10;
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        this.a.a(canvas);
-    }
-
-    @Override // android.view.View
-    public final void onMeasure(int i9, int i10) {
-        super.onMeasure(i9, i10);
-        this.a.d(getMeasuredHeight(), getMeasuredWidth());
-    }
-
-    public void setGravity(int i9) {
-        this.a.z = i9;
-    }
-
-    public void setReverse(boolean z10) {
-        this.a.D = z10;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.a.setImageDrawable(new xi0(R.raw.utyan_empty, AndroidUtilities.dp(110.0f), "utyan_empty", AndroidUtilities.dp(110.0f)));
     }
 }

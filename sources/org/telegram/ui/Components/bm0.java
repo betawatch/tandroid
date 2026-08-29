@@ -1,79 +1,92 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-import org.telegram.messenger.MessageObject;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.ua1;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class bm0 extends f2.s {
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ int f;
-    public final /* synthetic */ ArrayList g;
-    public final /* synthetic */ int h;
-    public final /* synthetic */ int i;
-    public final /* synthetic */ ArrayList j;
-    public final /* synthetic */ gm0 k;
+public final class bm0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ fm0 b;
 
-    public bm0(gm0 gm0Var, int i9, int i10, int i11, int i12, int i13, ArrayList arrayList, int i14, int i15, ArrayList arrayList2) {
-        this.k = gm0Var;
-        this.b = i9;
-        this.c = i10;
-        this.d = i11;
-        this.e = i12;
-        this.f = i13;
-        this.g = arrayList;
-        this.h = i14;
-        this.i = i15;
-        this.j = arrayList2;
+    public /* synthetic */ bm0(fm0 fm0Var, int i10) {
+        this.a = i10;
+        this.b = fm0Var;
     }
 
-    @Override // f2.s
-    public final boolean a(int i9, int i10) {
-        return b(i9, i10);
-    }
-
-    @Override // f2.s
-    public final boolean b(int i9, int i10) {
-        MessageObject messageObject;
-        gm0 gm0Var = this.k;
-        if (i9 >= 0 && i10 >= 0) {
-            if (i9 == this.c && i10 == gm0Var.s) {
-                return true;
-            }
-            if (i9 == this.d && i10 == gm0Var.x) {
-                return true;
-            }
+    /* JADX WARN: Code restructure failed: missing block: B:15:0x003a, code lost:
+    
+        if (r2.m0 != false) goto L8;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:17:0x0049, code lost:
+    
+        if (r2.m0 != false) goto L8;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:6:0x0022, code lost:
+    
+        if (r2.m0 != false) goto L8;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:7:0x0024, code lost:
+    
+        r5 = 1;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:9:0x004c, code lost:
+    
+        r2.scrollBy(r0 * r5, 0);
+        org.telegram.messenger.AndroidUtilities.runOnUIThread(r2.o0);
+     */
+    @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run() {
+        int tabSize;
+        int max;
+        switch (this.a) {
+            case 0:
+                fm0 fm0Var = this.b;
+                ua1 ua1Var = fm0Var.e;
+                fm0Var.U = false;
+                fm0Var.R = fm0Var.getScrollX() + fm0Var.S;
+                tabSize = fm0Var.getTabSize();
+                int ceil = ((int) Math.ceil(r3 / tabSize)) - 1;
+                fm0Var.Q = ceil;
+                fm0Var.P = ceil;
+                if (fm0Var.e(ceil) && ceil >= 0 && ceil < ua1Var.getChildCount()) {
+                    try {
+                        fm0Var.performHapticFeedback(0);
+                    } catch (Exception unused) {
+                    }
+                    fm0Var.W = 0.0f;
+                    fm0Var.v = 0.0f;
+                    View childAt = ua1Var.getChildAt(ceil);
+                    fm0Var.s = childAt;
+                    fm0Var.V = childAt.getX() - fm0Var.getScrollX();
+                    fm0Var.s.invalidate();
+                    ua1Var.invalidate();
+                    fm0Var.j();
+                    fm0Var.invalidate();
+                    break;
+                }
+                break;
+            default:
+                long currentTimeMillis = System.currentTimeMillis();
+                fm0 fm0Var2 = this.b;
+                long j10 = currentTimeMillis - fm0Var2.n0;
+                int i10 = -1;
+                if (j10 >= 3000) {
+                    if (j10 >= 5000) {
+                        max = Math.max(1, AndroidUtilities.dp(4.0f));
+                        break;
+                    } else {
+                        max = Math.max(1, AndroidUtilities.dp(2.0f));
+                        break;
+                    }
+                } else {
+                    max = Math.max(1, AndroidUtilities.dp(1.0f));
+                    break;
+                }
         }
-        MessageObject messageObject2 = null;
-        int i11 = this.e;
-        if (i9 < i11 || i9 >= this.f) {
-            int i12 = this.h;
-            messageObject = (i9 < i12 || i9 >= this.i) ? null : (MessageObject) this.j.get(i9 - i12);
-        } else {
-            messageObject = (MessageObject) this.g.get(i9 - i11);
-        }
-        int i13 = gm0Var.v;
-        if (i10 < i13 || i10 >= gm0Var.w) {
-            int i14 = gm0Var.y;
-            if (i10 >= i14 && i10 < gm0Var.A) {
-                messageObject2 = (MessageObject) gm0Var.f.get(i10 - i14);
-            }
-        } else {
-            messageObject2 = (MessageObject) gm0Var.e.get(i10 - i13);
-        }
-        return (messageObject2 == null || messageObject == null || messageObject2.getDocument() == null || messageObject.getDocument() == null || messageObject2.getDocument().id != messageObject.getDocument().id) ? false : true;
-    }
-
-    @Override // f2.s
-    public final int d() {
-        return this.k.r;
-    }
-
-    @Override // f2.s
-    public final int e() {
-        return this.b;
     }
 }

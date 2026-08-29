@@ -1,31 +1,26 @@
 package k8;
 
-import android.os.Binder;
-import android.os.IBinder;
-import android.os.IInterface;
 import android.os.Parcel;
+import android.os.Parcelable;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public abstract class p extends Binder implements IInterface {
-    public p(String str) {
-        attachInterface(this, str);
+public final class p extends a6.a {
+    public static final Parcelable.Creator<p> CREATOR = new c(11);
+    public final int a;
+    public final b b;
+
+    public p(int i10, b bVar) {
+        this.a = i10;
+        this.b = bVar;
     }
 
-    public abstract boolean a(int i9, Parcel parcel, Parcel parcel2, int i10);
-
-    @Override // android.os.Binder
-    public final boolean onTransact(int i9, Parcel parcel, Parcel parcel2, int i10) {
-        if (i9 <= 16777215) {
-            parcel.enforceInterface(getInterfaceDescriptor());
-        } else if (super.onTransact(i9, parcel, parcel2, i10)) {
-            return true;
-        }
-        return a(i9, parcel, parcel2, i10);
-    }
-
-    @Override // android.os.IInterface
-    public final IBinder asBinder() {
-        return this;
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i10) {
+        int q6 = com.google.android.gms.internal.cast.o.q(parcel, 20293);
+        com.google.android.gms.internal.cast.o.s(parcel, 2, 4);
+        parcel.writeInt(this.a);
+        com.google.android.gms.internal.cast.o.k(parcel, 3, this.b, i10);
+        com.google.android.gms.internal.cast.o.r(parcel, q6);
     }
 }

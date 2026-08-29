@@ -1,25 +1,15 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+import android.content.Context;
+
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class gg0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ kg0 b;
+public final class gg0 extends jg0 {
+    public final /* synthetic */ hg0 e;
 
-    public /* synthetic */ gg0(kg0 kg0Var, int i9) {
-        this.a = i9;
-        this.b = kg0Var;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.a(true);
-                break;
-            default:
-                this.b.d();
-                break;
-        }
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public gg0(hg0 hg0Var, Context context) {
+        super(hg0Var.s, context);
+        this.e = hg0Var;
     }
 }

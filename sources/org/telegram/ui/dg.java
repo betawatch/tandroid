@@ -1,48 +1,59 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.Utilities;
-
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class dg implements Utilities.Callback2 {
+public final /* synthetic */ class dg implements q0.a {
     public final /* synthetic */ int a;
-    public final /* synthetic */ qn b;
-    public final /* synthetic */ String c;
+    public final /* synthetic */ tn b;
 
-    public /* synthetic */ dg(qn qnVar, String str, int i9) {
-        this.a = i9;
-        this.b = qnVar;
-        this.c = str;
+    public /* synthetic */ dg(tn tnVar, int i10) {
+        this.a = i10;
+        this.b = tnVar;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback2
-    public final void run(Object obj, Object obj2) {
-        Boolean bool = (Boolean) obj;
-        Boolean bool2 = (Boolean) obj2;
+    @Override // q0.a
+    public final void accept(Object obj) {
         switch (this.a) {
             case 0:
-                if (bool.booleanValue()) {
-                    boolean booleanValue = bool2.booleanValue();
-                    qn qnVar = this.b;
-                    String str = this.c;
-                    if (booleanValue) {
-                        qnVar.getMessagesController().addWebBrowserException(str, false);
-                    }
-                    qnVar.getParentActivity();
-                    ve.e.n(str);
+                Integer num = (Integer) obj;
+                tn tnVar = this.b;
+                tnVar.getClass();
+                if (num.intValue() != 0) {
+                    tnVar.Bc(true);
+                    tnVar.j(num.intValue(), 0, false, 0, true, 0);
+                    break;
+                } else {
+                    tnVar.h1 = 0;
+                    tnVar.Bc(true);
+                    tnVar.getMessagesController().markReactionsAsRead(tnVar.P5, tnVar.b());
                     break;
                 }
-                break;
-            default:
-                qn qnVar2 = this.b;
-                qnVar2.getClass();
-                if (bool.booleanValue()) {
-                    boolean booleanValue2 = bool2.booleanValue();
-                    String str2 = this.c;
-                    if (booleanValue2) {
-                        qnVar2.getMessagesController().addWebBrowserException(str2, true);
+            case 1:
+                Integer num2 = (Integer) obj;
+                tn tnVar2 = this.b;
+                tnVar2.getClass();
+                if (num2.intValue() != 0) {
+                    int i10 = tnVar2.i1 - 1;
+                    tnVar2.i1 = i10;
+                    if (i10 <= 0) {
+                        tnVar2.getMessagesController().markPollVotesAsRead(tnVar2.P5, tnVar2.b());
                     }
-                    ve.e.m(qnVar2.getParentActivity(), str2, false, null);
+                    tnVar2.Ac(true);
+                    tnVar2.j(num2.intValue(), 0, false, 0, true, 0);
+                    break;
+                } else {
+                    tnVar2.i1 = 0;
+                    tnVar2.Ac(true);
+                    tnVar2.getMessagesController().markPollVotesAsRead(tnVar2.P5, tnVar2.b());
+                    break;
+                }
+            default:
+                tn tnVar3 = this.b;
+                tnVar3.getClass();
+                boolean booleanValue = ((Boolean) obj).booleanValue();
+                tnVar3.b7 = booleanValue;
+                if (!booleanValue) {
+                    tnVar3.r8();
                     break;
                 }
                 break;

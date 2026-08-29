@@ -27,7 +27,7 @@ import j$.util.d0;
 import j$.util.e0;
 import j$.util.function.b;
 import j$.util.function.d;
-import j$.util.function.e;
+import j$.util.function.f;
 import j$.util.i0;
 import j$.util.m0;
 import j$.util.u0;
@@ -183,17 +183,17 @@ public abstract /* synthetic */ class a {
             }
 
             @Override // java.util.function.IntConsumer
-            public final void accept(int i9) {
-                IntConsumer.this.accept(i9);
-                intConsumer2.accept(i9);
+            public final void accept(int i10) {
+                IntConsumer.this.accept(i10);
+                intConsumer2.accept(i10);
             }
         };
     }
 
-    /* JADX WARN: Type inference failed for: r0v0, types: [j$.util.function.e] */
-    public static e d(final LongConsumer longConsumer, final LongConsumer longConsumer2) {
+    /* JADX WARN: Type inference failed for: r0v0, types: [j$.util.function.f] */
+    public static f d(final LongConsumer longConsumer, final LongConsumer longConsumer2) {
         Objects.requireNonNull(longConsumer2);
-        return new LongConsumer() { // from class: j$.util.function.e
+        return new LongConsumer() { // from class: j$.util.function.f
             public final /* synthetic */ LongConsumer andThen(LongConsumer longConsumer3) {
                 return j$.com.android.tools.r8.a.d(this, longConsumer3);
             }
@@ -344,11 +344,11 @@ public abstract /* synthetic */ class a {
 
     public static int l(ChronoZonedDateTime chronoZonedDateTime, o oVar) {
         if (oVar instanceof j$.time.temporal.a) {
-            int i9 = h.a[((j$.time.temporal.a) oVar).ordinal()];
-            if (i9 == 1) {
+            int i10 = h.a[((j$.time.temporal.a) oVar).ordinal()];
+            if (i10 == 1) {
                 throw new j$.time.temporal.r("Invalid field 'InstantSeconds' for get() method, use getLong() instead");
             }
-            if (i9 == 2) {
+            if (i10 == 2) {
                 return chronoZonedDateTime.h().getTotalSeconds();
             }
             return chronoZonedDateTime.r().j(oVar);
@@ -416,8 +416,8 @@ public abstract /* synthetic */ class a {
                 r rVar = r.c;
                 rVar.getClass();
                 j$.time.chrono.a.j(rVar, "ISO");
-            } catch (Throwable th) {
-                throw new ServiceConfigurationError(th.getMessage(), th);
+            } catch (Throwable th2) {
+                throw new ServiceConfigurationError(th2.getMessage(), th2);
             }
         }
     }
@@ -459,8 +459,8 @@ public abstract /* synthetic */ class a {
         return spliterator.estimateSize();
     }
 
-    public static boolean p(Spliterator spliterator, int i9) {
-        return (spliterator.characteristics() & i9) == i9;
+    public static boolean p(Spliterator spliterator, int i10) {
+        return (spliterator.characteristics() & i10) == i10;
     }
 
     public static Instant y(ChronoLocalDateTime chronoLocalDateTime, ZoneOffset zoneOffset) {

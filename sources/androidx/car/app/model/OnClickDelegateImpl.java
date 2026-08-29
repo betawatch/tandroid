@@ -5,13 +5,13 @@ import androidx.car.app.IOnDoneCallback;
 import androidx.car.app.model.IOnClickListener;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public class OnClickDelegateImpl implements b0 {
     private final boolean mIsParkedOnly;
     private final IOnClickListener mListener;
 
-    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
     public static class OnClickListenerStub extends IOnClickListener.Stub {
         private final c0 mOnClickListener;
 
@@ -45,7 +45,7 @@ public class OnClickDelegateImpl implements b0 {
         return this.mIsParkedOnly;
     }
 
-    public void sendClick(androidx.car.app.k kVar) {
+    public void sendClick(androidx.car.app.j jVar) {
         try {
             IOnClickListener iOnClickListener = this.mListener;
             Objects.requireNonNull(iOnClickListener);

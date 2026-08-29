@@ -1,112 +1,42 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.drawable.Drawable;
-import android.view.accessibility.AccessibilityNodeInfo;
-import android.widget.Button;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.ui.PhotoViewer;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class wo0 extends lg {
-    public final /* synthetic */ int h0;
-    public final /* synthetic */ Object i0;
+public final /* synthetic */ class wo0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ dq0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ wo0(Object obj, Context context, int i9, org.telegram.ui.ActionBar.b6 b6Var, int i10) {
-        super(i9, context, b6Var, true);
-        this.h0 = i10;
-        this.i0 = obj;
+    public /* synthetic */ wo0(dq0 dq0Var, int i10) {
+        this.a = i10;
+        this.b = dq0Var;
     }
 
-    @Override // org.telegram.ui.Components.lg
-    public boolean d() {
-        switch (this.h0) {
-            case 1:
-                return false;
-            case 2:
-                return false;
-            case 3:
-                return ((qh.x1) this.i0).k0();
-            default:
-                return super.d();
-        }
-    }
-
-    @Override // org.telegram.ui.Components.lg
-    public final boolean f() {
-        switch (this.h0) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
             case 0:
+                dq0 dq0Var = this.b;
+                dq0Var.w0 = true;
+                x10 x10Var = dq0Var.u0;
+                x10Var.r.setText("");
+                AndroidUtilities.showKeyboard(x10Var.r);
                 break;
-            case 1:
-                break;
-            case 2:
-                break;
-            case 3:
-                if (((qh.x1) this.i0).H0 || this.r > 0) {
+            default:
+                g5 g5Var = new g5(14);
+                dq0 dq0Var2 = this.b;
+                if (!dq0Var2.isKeyboardVisible()) {
+                    g5Var.run();
+                    break;
+                } else {
+                    x10 x10Var2 = dq0Var2.u0;
+                    if (x10Var2 != null) {
+                        AndroidUtilities.hideKeyboard(x10Var2.r);
+                    }
+                    AndroidUtilities.runOnUIThread(g5Var, 300L);
+                    break;
                 }
-                break;
-            default:
-                if (((qh.s3) this.i0).S || this.r > 0) {
-                }
-                break;
         }
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.lg
-    public int getFillColor() {
-        int i9 = this.h0;
-        Object obj = this.i0;
-        switch (i9) {
-            case 0:
-                return ((rp0) obj).getThemedColor(org.telegram.ui.ActionBar.f6.S5);
-            case 1:
-            default:
-                return super.getFillColor();
-            case 2:
-                int i10 = org.telegram.ui.ActionBar.f6.zf;
-                Drawable[] drawableArr = PhotoViewer.P8;
-                return ((PhotoViewer) obj).z1(i10);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.lg
-    public boolean j() {
-        switch (this.h0) {
-            case 0:
-                return true;
-            case 1:
-                return true;
-            case 2:
-                return true;
-            default:
-                return super.j();
-        }
-    }
-
-    @Override // android.view.View
-    public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        switch (this.h0) {
-            case 1:
-                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                accessibilityNodeInfo.setText(LocaleController.formatPluralString("AccDescrShareInChats", ((org.telegram.ui.dy) this.i0).E2.size(), new Object[0]));
-                accessibilityNodeInfo.setClassName(Button.class.getName());
-                accessibilityNodeInfo.setLongClickable(true);
-                accessibilityNodeInfo.setClickable(true);
-                break;
-            default:
-                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                break;
-        }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ wo0(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, Context context, int i9, org.telegram.ui.ActionBar.b6 b6Var, int i10) {
-        super(i9, context, b6Var, false);
-        this.h0 = i10;
-        this.i0 = notificationCenterDelegate;
     }
 }

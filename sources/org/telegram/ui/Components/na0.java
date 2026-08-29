@@ -1,45 +1,24 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.MotionEvent;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class na0 extends org.telegram.ui.ActionBar.g1 {
-    public final /* synthetic */ int H;
+public final class na0 extends y5 {
+    public final /* synthetic */ qa0 a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ na0(int i9, int i10, Context context, org.telegram.ui.ActionBar.b6 b6Var, boolean z10, boolean z11) {
-        super(i9, context, b6Var, z10, z11);
-        this.H = i10;
+    public na0(qa0 qa0Var, TLRPC.Document document, Paint.FontMetricsInt fontMetricsInt) {
+        super(document, fontMetricsInt);
+        this.a = qa0Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.g1
-    public final void i() {
-        switch (this.H) {
-            case 0:
-                setBackground(null);
-                break;
-            default:
-                setBackground(null);
-                break;
-        }
-    }
-
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        switch (this.H) {
-            case 0:
-                if (getVisibility() == 0 && getAlpha() >= 0.5f) {
-                    break;
-                }
-                break;
-            default:
-                if (getVisibility() == 0 && getAlpha() >= 0.5f) {
-                    break;
-                }
-                break;
-        }
-        return super.onTouchEvent(motionEvent);
+    @Override // org.telegram.ui.Components.y5, android.text.style.ReplacementSpan
+    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f9, int i12, int i13, int i14, Paint paint) {
+        int i15 = i14 + i12;
+        int i16 = this.measuredSize;
+        this.a.c.set((int) f9, (i15 - i16) / 2, (int) (f9 + i16), (i15 + i16) / 2);
     }
 }

@@ -3,14 +3,14 @@ package org.telegram.ui;
 import android.animation.ValueAnimator;
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class pf0 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
     public final /* synthetic */ tf0 b;
 
-    public /* synthetic */ pf0(tf0 tf0Var, int i9) {
-        this.a = i9;
+    public /* synthetic */ pf0(tf0 tf0Var, int i10) {
+        this.a = i10;
         this.b = tf0Var;
     }
 
@@ -26,9 +26,9 @@ public final /* synthetic */ class pf0 implements ValueAnimator.AnimatorUpdateLi
                 tf0Var.f.setProgress(floatValue);
                 FrameLayout frameLayout = tf0Var.w;
                 frameLayout.setAlpha(floatValue);
-                float f10 = (floatValue * 0.5f) + 0.5f;
-                frameLayout.setScaleX(f10);
-                frameLayout.setScaleY(f10);
+                float f9 = (floatValue * 0.5f) + 0.5f;
+                frameLayout.setScaleX(f9);
+                frameLayout.setScaleY(f9);
                 break;
             default:
                 tf0 tf0Var2 = this.b;
@@ -39,9 +39,9 @@ public final /* synthetic */ class pf0 implements ValueAnimator.AnimatorUpdateLi
                 tf0Var2.e.setAlpha(floatValue2);
                 FrameLayout frameLayout2 = tf0Var2.w;
                 frameLayout2.setAlpha(floatValue2);
-                float f11 = (floatValue2 * 0.5f) + 0.5f;
-                frameLayout2.setScaleX(f11);
-                frameLayout2.setScaleY(f11);
+                float f10 = (floatValue2 * 0.5f) + 0.5f;
+                frameLayout2.setScaleX(f10);
+                frameLayout2.setScaleY(f10);
                 break;
         }
     }

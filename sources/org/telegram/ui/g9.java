@@ -1,35 +1,42 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.view.View;
-import org.telegram.messenger.ChatObject;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class g9 extends org.telegram.ui.Components.k41 {
-    public static final /* synthetic */ int a = 0;
+public final class g9 extends FrameLayout {
+    public final org.telegram.ui.Cells.f6 a;
+    public final org.telegram.ui.Components.th0 b;
+    public TLRPC.Chat c;
 
-    static {
-        org.telegram.ui.Components.k41.setup(new g9());
-    }
-
-    @Override // org.telegram.ui.Components.k41
-    public final void bindView(View view, org.telegram.ui.Components.l41 l41Var, boolean z10, org.telegram.ui.Components.z41 z41Var, org.telegram.ui.Components.i51 i51Var) {
-        h9 h9Var = (h9) view;
-        TLRPC.Chat chat = (TLRPC.Chat) l41Var.G;
-        View.OnClickListener onClickListener = l41Var.D;
-        h9Var.c = chat;
-        org.telegram.ui.Components.jh0 jh0Var = h9Var.b;
-        jh0Var.setTag(Long.valueOf(chat.id));
-        h9Var.a.t(chat, null, null, (!ChatObject.isChannel(chat) || chat.megagroup) ? chat.has_geo ? LocaleController.getString(R.string.MegaLocation) : !ChatObject.isPublic(chat) ? LocaleController.getString(R.string.MegaPrivate).toLowerCase() : LocaleController.getString(R.string.MegaPublic).toLowerCase() : !ChatObject.isPublic(chat) ? LocaleController.getString(R.string.ChannelPrivate).toLowerCase() : LocaleController.getString(R.string.ChannelPublic).toLowerCase(), false, false);
-        jh0Var.setOnClickListener(onClickListener);
-    }
-
-    @Override // org.telegram.ui.Components.k41
-    public final View createView(Context context, org.telegram.ui.Components.wk0 wk0Var, int i9, int i10, org.telegram.ui.ActionBar.b6 b6Var) {
-        return new h9(context);
+    public g9(Context context) {
+        super(context);
+        String string = LocaleController.getString(R.string.VoipChatJoin);
+        org.telegram.ui.Components.th0 th0Var = new org.telegram.ui.Components.th0(context);
+        this.b = th0Var;
+        int ceil = (int) Math.ceil(th0Var.getPaint().measureText(string));
+        org.telegram.ui.Cells.f6 f6Var = new org.telegram.ui.Cells.f6(context, null);
+        this.a = f6Var;
+        f6Var.I0 = true;
+        f6Var.A0 = true;
+        f6Var.setPadding(LocaleController.isRTL ? AndroidUtilities.dp(44.0f) + ceil : 0, 0, LocaleController.isRTL ? 0 : AndroidUtilities.dp(44.0f) + ceil, 0);
+        int i10 = -AndroidUtilities.dp(4.0f);
+        f6Var.U = 0;
+        f6Var.V = i10;
+        addView(f6Var, i7.f6.c(-1.0f, -1));
+        th0Var.setText(string);
+        th0Var.setTextSize(1, 14.0f);
+        th0Var.setTextColor(org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.Sh, false));
+        th0Var.setProgressColor(org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.Nh, false));
+        int w02 = org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.hl, false);
+        org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.Qh, false);
+        th0Var.setBackground(org.telegram.ui.ActionBar.w5.e(new float[]{16.0f}, w02));
+        th0Var.setPadding(AndroidUtilities.dp(14.0f), 0, AndroidUtilities.dp(14.0f), 0);
+        addView(th0Var, i7.f6.i(-2.0f, 28.0f, 8388661, 0.0f, 16.0f, 14.0f, 0.0f));
     }
 }

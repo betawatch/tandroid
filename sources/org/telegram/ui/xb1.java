@@ -1,22 +1,39 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
-/* loaded from: classes3.dex */
-public final class xb1 extends oc1 {
-    public final /* synthetic */ qn g2;
-    public final /* synthetic */ boolean h2;
+import android.graphics.Point;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.NotificationCenter;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public xb1(Object obj, qn qnVar, boolean z10) {
-        super(obj, null, true);
-        this.g2 = qnVar;
-        this.h2 = z10;
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* loaded from: classes3.dex */
+public final class xb1 extends i7.c6 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate b;
+
+    public /* synthetic */ xb1(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, int i10) {
+        this.a = i10;
+        this.b = notificationCenterDelegate;
     }
 
-    @Override // org.telegram.ui.ActionBar.o2
-    public final void onFragmentClosed() {
-        super.onFragmentClosed();
-        on onVar = this.g2.aa;
-        onVar.i(onVar.f, onVar.h, false, Boolean.valueOf(this.h2), false);
+    @Override // i7.c6
+    public void a() {
+        switch (this.a) {
+            case 1:
+                ((oh1) this.b).v.invalidate();
+                break;
+        }
+    }
+
+    @Override // i7.c6
+    public void b(int i10, int i11) {
+        switch (this.a) {
+            case 0:
+                Point point = AndroidUtilities.displaySize;
+                if ((point.x <= point.y) == (i10 <= i11)) {
+                    ((qc1) this.b).t0.invalidate();
+                    break;
+                }
+                break;
+        }
     }
 }

@@ -4,7 +4,7 @@ import android.os.SystemClock;
 import android.util.SparseIntArray;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public class DispatchQueuePoolBackground {
     public static final String THREAD_PREFIX = "DispatchQueuePoolThreadSafety_";
@@ -29,16 +29,16 @@ public class DispatchQueuePoolBackground {
         public void run() {
             if (!DispatchQueuePoolBackground.this.queues.isEmpty()) {
                 long elapsedRealtime = SystemClock.elapsedRealtime();
-                int i9 = 0;
-                while (i9 < DispatchQueuePoolBackground.this.queues.size()) {
-                    DispatchQueue dispatchQueue = (DispatchQueue) DispatchQueuePoolBackground.this.queues.get(i9);
+                int i10 = 0;
+                while (i10 < DispatchQueuePoolBackground.this.queues.size()) {
+                    DispatchQueue dispatchQueue = (DispatchQueue) DispatchQueuePoolBackground.this.queues.get(i10);
                     if (dispatchQueue.getLastTaskTime() < elapsedRealtime - 30000) {
                         dispatchQueue.recycle();
-                        DispatchQueuePoolBackground.this.queues.remove(i9);
+                        DispatchQueuePoolBackground.this.queues.remove(i10);
                         DispatchQueuePoolBackground.access$110(DispatchQueuePoolBackground.this);
-                        i9--;
+                        i10--;
                     }
-                    i9++;
+                    i10++;
                 }
             }
             if (DispatchQueuePoolBackground.this.queues.isEmpty() && DispatchQueuePoolBackground.this.busyQueues.isEmpty()) {
@@ -51,20 +51,20 @@ public class DispatchQueuePoolBackground {
     };
     private int guid = Utilities.random.nextInt();
 
-    private DispatchQueuePoolBackground(int i9) {
-        this.maxCount = i9;
+    private DispatchQueuePoolBackground(int i10) {
+        this.maxCount = i10;
     }
 
     public static /* synthetic */ int access$110(DispatchQueuePoolBackground dispatchQueuePoolBackground) {
-        int i9 = dispatchQueuePoolBackground.createdCount;
-        dispatchQueuePoolBackground.createdCount = i9 - 1;
-        return i9;
+        int i10 = dispatchQueuePoolBackground.createdCount;
+        dispatchQueuePoolBackground.createdCount = i10 - 1;
+        return i10;
     }
 
     private void execute(ArrayList<Runnable> arrayList) {
         DispatchQueue remove;
-        for (int i9 = 0; i9 < arrayList.size(); i9++) {
-            Runnable runnable = arrayList.get(i9);
+        for (int i10 = 0; i10 < arrayList.size(); i10++) {
+            Runnable runnable = arrayList.get(i10);
             if (runnable != null) {
                 if (!this.busyQueues.isEmpty() && (this.totalTasksCount / 2 <= this.busyQueues.size() || (this.queues.isEmpty() && this.createdCount >= this.maxCount))) {
                     remove = this.busyQueues.remove(0);
@@ -82,7 +82,7 @@ public class DispatchQueuePoolBackground {
                 this.totalTasksCount++;
                 this.busyQueues.add(remove);
                 this.busyQueuesMap.put(remove.index, this.busyQueuesMap.get(remove.index, 0) + 1);
-                if (hg.h0.b) {
+                if (kg.g0.b) {
                     remove.setPriority(1);
                 } else if (remove.getPriority() != 10) {
                     remove.setPriority(10);
@@ -110,9 +110,9 @@ public class DispatchQueuePoolBackground {
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$execute$0(DispatchQueue dispatchQueue) {
         this.totalTasksCount--;
-        int i9 = this.busyQueuesMap.get(dispatchQueue.index) - 1;
-        if (i9 != 0) {
-            this.busyQueuesMap.put(dispatchQueue.index, i9);
+        int i10 = this.busyQueuesMap.get(dispatchQueue.index) - 1;
+        if (i10 != 0) {
+            this.busyQueuesMap.put(dispatchQueue.index, i10);
             return;
         }
         this.busyQueuesMap.delete(dispatchQueue.index);
@@ -123,7 +123,7 @@ public class DispatchQueuePoolBackground {
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$execute$1(Runnable runnable, DispatchQueue dispatchQueue) {
         runnable.run();
-        Utilities.globalQueue.postRunnable(new c3(28, this, dispatchQueue));
+        Utilities.globalQueue.postRunnable(new d3(29, this, dispatchQueue));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -153,7 +153,7 @@ public class DispatchQueuePoolBackground {
         if (updateTaskCollection == null) {
             ArrayList<ArrayList<Runnable>> arrayList = freeCollections;
             if (!arrayList.isEmpty()) {
-                updateTaskCollection = (ArrayList) e2.c.k(1, arrayList);
+                updateTaskCollection = (ArrayList) com.google.android.recaptcha.internal.a.j(1, arrayList);
             } else {
                 updateTaskCollection = new ArrayList<>(100);
             }

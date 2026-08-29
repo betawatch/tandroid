@@ -1,40 +1,83 @@
 package org.telegram.ui.Cells;
 
-import android.graphics.Path;
-import android.graphics.RectF;
-import java.util.ArrayList;
+import android.graphics.Canvas;
+import android.text.Layout;
+import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class u9 extends Path {
-    public static ArrayList d;
-    public float a;
-    public ArrayList b;
-    public int c;
+public class u9 extends x9 {
+    public final t9 u0;
 
-    @Override // android.graphics.Path
-    public final void addRect(float f10, float f11, float f12, float f13, Path.Direction direction) {
-        ArrayList arrayList = d;
-        RectF rectF = (arrayList == null || arrayList.size() <= 0) ? new RectF() : (RectF) d.remove(0);
-        rectF.set(f10, f11, f12, f13);
-        this.b.add(rectF);
-        this.c++;
-        super.addRect(f10, f11, f12, f13, direction);
-        if (f13 > this.a) {
-            this.a = f13;
-        }
+    public u9(lh.z7 z7Var, org.telegram.ui.ActionBar.c6 c6Var) {
+        this.u0 = z7Var;
+        this.h0 = c6Var;
     }
 
-    @Override // android.graphics.Path
-    public final void reset() {
-        ArrayList arrayList = this.b;
-        super.reset();
-        if (d == null) {
-            d = new ArrayList(arrayList.size());
+    @Override // org.telegram.ui.Cells.x9
+    public final /* bridge */ /* synthetic */ void M(s9 s9Var, s9 s9Var2) {
+    }
+
+    public final void X(Canvas canvas) {
+        Layout staticTextLayout = this.u0.getStaticTextLayout();
+        int v02 = org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.Md, this.h0);
+        this.o.setColor(v02);
+        this.p.setColor(v02);
+        i(canvas, staticTextLayout, this.u, this.v, true, true, 0.0f);
+    }
+
+    @Override // org.telegram.ui.Cells.x9
+    public final void j(int i10, n9 n9Var, boolean z10) {
+        n9Var.b = this.u0.getStaticTextLayout();
+        n9Var.c = 0.0f;
+        n9Var.d = 0.0f;
+        n9Var.a = 0;
+    }
+
+    @Override // org.telegram.ui.Cells.x9
+    public final int l(int i10, int i11, int i12, int i13, s9 s9Var, boolean z10) {
+        t9 t9Var = (t9) s9Var;
+        if (i11 < 0) {
+            i11 = 1;
         }
-        d.addAll(arrayList);
-        arrayList.clear();
-        this.c = 0;
-        this.a = 0.0f;
+        Layout staticTextLayout = t9Var.getStaticTextLayout();
+        if (i11 > staticTextLayout.getLineBottom(staticTextLayout.getLineCount() - 1) + 0.0f) {
+            i11 = (int) ((staticTextLayout.getLineBottom(staticTextLayout.getLineCount() - 1) + 0.0f) - 1.0f);
+        }
+        n9 n9Var = this.a0;
+        Layout layout = n9Var.b;
+        if (layout != null) {
+            int i14 = (int) (i10 - n9Var.d);
+            int i15 = 0;
+            while (true) {
+                if (i15 >= layout.getLineCount()) {
+                    i15 = -1;
+                    break;
+                }
+                if (i11 > layout.getLineTop(i15) + i13 && i11 < layout.getLineBottom(i15) + i13) {
+                    break;
+                }
+                i15++;
+            }
+            if (i15 >= 0) {
+                try {
+                    return n9Var.a + layout.getOffsetForHorizontal(i15, i14);
+                } catch (Exception e10) {
+                    FileLog.e(e10);
+                }
+            }
+        }
+        return -1;
+    }
+
+    @Override // org.telegram.ui.Cells.x9
+    public final int n() {
+        Layout staticTextLayout = this.u0.getStaticTextLayout();
+        return staticTextLayout.getLineBottom(0) - staticTextLayout.getLineTop(0);
+    }
+
+    @Override // org.telegram.ui.Cells.x9
+    public final CharSequence t(s9 s9Var, boolean z10) {
+        return ((t9) s9Var).getText();
     }
 }

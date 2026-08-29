@@ -1,6 +1,7 @@
 package c0;
 
-import f7.k0;
+import a4.w;
+import h7.i5;
 import java.util.Locale;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutionException;
@@ -13,24 +14,24 @@ import java.util.concurrent.locks.LockSupport;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public abstract class h implements r8.a {
+public abstract class h implements t8.a {
     public static final boolean d = Boolean.parseBoolean(System.getProperty("guava.concurrent.generate_cancellation_cause", "false"));
     public static final Logger e = Logger.getLogger(h.class.getName());
-    public static final k0 f;
+    public static final i5 f;
     public static final Object h;
     public volatile Object a;
     public volatile d b;
     public volatile g c;
 
     static {
-        k0 fVar;
+        i5 fVar;
         try {
             fVar = new e(AtomicReferenceFieldUpdater.newUpdater(g.class, Thread.class, "a"), AtomicReferenceFieldUpdater.newUpdater(g.class, g.class, "b"), AtomicReferenceFieldUpdater.newUpdater(h.class, g.class, "c"), AtomicReferenceFieldUpdater.newUpdater(h.class, d.class, "b"), AtomicReferenceFieldUpdater.newUpdater(h.class, Object.class, "a"));
             th = null;
-        } catch (Throwable th) {
-            th = th;
+        } catch (Throwable th2) {
+            th = th2;
             fVar = new f();
         }
         f = fVar;
@@ -90,9 +91,9 @@ public abstract class h implements r8.a {
 
     public static Object g(Object obj) {
         if (obj instanceof a) {
-            Throwable th = ((a) obj).b;
+            Throwable th2 = ((a) obj).b;
             CancellationException cancellationException = new CancellationException("Task was cancelled.");
-            cancellationException.initCause(th);
+            cancellationException.initCause(th2);
             throw cancellationException;
         }
         if (obj instanceof c) {
@@ -113,11 +114,11 @@ public abstract class h implements r8.a {
                 break;
             } catch (InterruptedException unused) {
                 z10 = true;
-            } catch (Throwable th) {
+            } catch (Throwable th2) {
                 if (z10) {
                     Thread.currentThread().interrupt();
                 }
-                throw th;
+                throw th2;
             }
         }
         if (z10) {
@@ -192,9 +193,9 @@ public abstract class h implements r8.a {
             if (gVar2 != gVar) {
                 g gVar3 = new g();
                 do {
-                    k0 k0Var = f;
-                    k0Var.d(gVar3, gVar2);
-                    if (k0Var.c(this, gVar2, gVar3)) {
+                    i5 i5Var = f;
+                    i5Var.d(gVar3, gVar2);
+                    if (i5Var.c(this, gVar2, gVar3)) {
                         while (true) {
                             LockSupport.parkNanos(this, nanos);
                             if (Thread.interrupted()) {
@@ -234,31 +235,31 @@ public abstract class h implements r8.a {
         String obj4 = timeUnit.toString();
         Locale locale = Locale.ROOT;
         String lowerCase = obj4.toLowerCase(locale);
-        StringBuilder s10 = aa.d.s(j10, "Waited ", " ");
-        s10.append(timeUnit.toString().toLowerCase(locale));
-        String sb2 = s10.toString();
+        StringBuilder r6 = w.r(j10, "Waited ", " ");
+        r6.append(timeUnit.toString().toLowerCase(locale));
+        String sb2 = r6.toString();
         if (nanos + 1000 < 0) {
-            String j11 = ta.b.j(sb2, " (plus ");
-            long j12 = -nanos;
-            long convert = timeUnit.convert(j12, TimeUnit.NANOSECONDS);
-            long nanos2 = j12 - timeUnit.toNanos(convert);
+            String k9 = u3.c.k(sb2, " (plus ");
+            long j11 = -nanos;
+            long convert = timeUnit.convert(j11, TimeUnit.NANOSECONDS);
+            long nanos2 = j11 - timeUnit.toNanos(convert);
             boolean z10 = convert == 0 || nanos2 > 1000;
             if (convert > 0) {
-                String str = j11 + convert + " " + lowerCase;
+                String str = k9 + convert + " " + lowerCase;
                 if (z10) {
-                    str = ta.b.j(str, ",");
+                    str = u3.c.k(str, ",");
                 }
-                j11 = ta.b.j(str, " ");
+                k9 = u3.c.k(str, " ");
             }
             if (z10) {
-                j11 = j11 + nanos2 + " nanoseconds ";
+                k9 = k9 + nanos2 + " nanoseconds ";
             }
-            sb2 = ta.b.j(j11, "delay)");
+            sb2 = u3.c.k(k9, "delay)");
         }
         if (isDone()) {
-            throw new TimeoutException(ta.b.j(sb2, " but future completed as timeout expired"));
+            throw new TimeoutException(u3.c.k(sb2, " but future completed as timeout expired"));
         }
-        throw new TimeoutException(aa.d.z(sb2, " for ", hVar));
+        throw new TimeoutException(w.y(sb2, " for ", hVar));
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -316,8 +317,8 @@ public abstract class h implements r8.a {
         return true;
     }
 
-    public boolean l(Throwable th) {
-        if (!f.b(this, null, new c(th))) {
+    public boolean l(Throwable th2) {
+        if (!f.b(this, null, new c(th2))) {
             return false;
         }
         e(this);
@@ -369,9 +370,9 @@ public abstract class h implements r8.a {
             if (gVar2 != gVar) {
                 g gVar3 = new g();
                 do {
-                    k0 k0Var = f;
-                    k0Var.d(gVar3, gVar2);
-                    if (k0Var.c(this, gVar2, gVar3)) {
+                    i5 i5Var = f;
+                    i5Var.d(gVar3, gVar2);
+                    if (i5Var.c(this, gVar2, gVar3)) {
                         do {
                             LockSupport.park(this);
                             if (!Thread.interrupted()) {

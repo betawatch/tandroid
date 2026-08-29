@@ -1,173 +1,80 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SharedConfig;
+import android.content.Context;
+import android.view.View;
+import android.view.ViewGroup;
+import java.util.ArrayList;
+import org.telegram.ui.ThemeActivity;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ab1 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ oc1 b;
+public final class ab1 extends org.telegram.ui.Components.il0 {
+    public final Context c;
+    public org.telegram.ui.ActionBar.f6 d;
+    public ArrayList e;
+    public final /* synthetic */ ThemeActivity f;
 
-    public /* synthetic */ ab1(oc1 oc1Var, int i9) {
-        this.a = i9;
-        this.b = oc1Var;
+    public ab1(ThemeActivity themeActivity, Context context) {
+        this.f = themeActivity;
+        this.c = context;
+        l();
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i9 = this.a;
-        oc1 oc1Var = this.b;
-        switch (i9) {
-            case 0:
-                oc1Var.V = false;
-                int i10 = oc1Var.S;
-                int i11 = oc1Var.T;
-                org.telegram.ui.ActionBar.d6 d6Var = oc1Var.s;
-                int i12 = oc1Var.n;
-                if (i12 == 1) {
-                    if (i11 == 0) {
-                        d6Var.c = i10;
-                        org.telegram.ui.ActionBar.f6.n1(false, false);
-                    } else if (i11 == 1) {
-                        d6Var.d = i10;
-                        org.telegram.ui.ActionBar.f6.n1(true, true);
-                        oc1Var.q0.f1();
-                        oc1Var.R.setHasChanges(oc1Var.T0(oc1Var.n));
-                        oc1Var.m1(true);
-                    }
-                } else if (i12 == 2) {
-                    if (i11 == 0) {
-                        d6Var.j = i10;
-                    } else if (i11 == 1) {
-                        int B0 = org.telegram.ui.ActionBar.f6.B0(org.telegram.ui.ActionBar.f6.Od);
-                        if (i10 != 0 || B0 == 0) {
-                            d6Var.k = i10;
-                        } else {
-                            d6Var.k = 4294967296L;
-                        }
-                    } else if (i11 == 2) {
-                        int B02 = org.telegram.ui.ActionBar.f6.B0(org.telegram.ui.ActionBar.f6.Pd);
-                        if (i10 != 0 || B02 == 0) {
-                            d6Var.l = i10;
-                        } else {
-                            d6Var.l = 4294967296L;
-                        }
-                    } else if (i11 == 3) {
-                        int B03 = org.telegram.ui.ActionBar.f6.B0(org.telegram.ui.ActionBar.f6.Qd);
-                        if (i10 != 0 || B03 == 0) {
-                            d6Var.m = i10;
-                        } else {
-                            d6Var.m = 4294967296L;
-                        }
-                    }
-                    org.telegram.ui.ActionBar.f6.n1(true, false);
-                    oc1Var.R.setHasChanges(oc1Var.T0(oc1Var.n));
-                    oc1Var.m1(true);
-                } else if (i12 == 3) {
-                    if (i11 == 0) {
-                        d6Var.e = i10;
-                    } else if (i11 == 1) {
-                        d6Var.f = i10;
-                    } else if (i11 == 2) {
-                        int i13 = d6Var.g;
-                        d6Var.g = i10;
-                        if (i13 != 0 && i10 == 0) {
-                            oc1Var.r0.u(0);
-                        } else if (i13 == 0 && i10 != 0) {
-                            oc1Var.r0.o(0);
-                            oc1Var.e1();
-                        }
-                    } else {
-                        d6Var.h = i10;
-                    }
-                    int i14 = oc1Var.T;
-                    if (i14 >= 0) {
-                        oc1Var.G0[1].b(i14, i10);
-                    }
-                    org.telegram.ui.ActionBar.f6.n1(true, true);
-                    oc1Var.q0.f1();
-                    oc1Var.R.setHasChanges(oc1Var.T0(oc1Var.n));
-                    oc1Var.m1(true);
-                }
-                int size = oc1Var.e0.size();
-                for (int i15 = 0; i15 < size; i15++) {
-                    org.telegram.ui.ActionBar.h6 h6Var = (org.telegram.ui.ActionBar.h6) oc1Var.e0.get(i15);
-                    h6Var.d(oc1Var.getThemedColor(h6Var.f), false, false);
-                }
-                oc1Var.j0.f1();
-                oc1Var.q0.f1();
-                kh.h6 h6Var2 = oc1Var.W;
-                if (h6Var2 != null) {
-                    h6Var2.invalidate();
-                }
-                oc1Var.T = -1;
-                break;
-            case 1:
-                oc1Var.presentFragment(s91.c0(oc1Var.getMessagesController().getChat(Long.valueOf(-oc1Var.F1)), true));
-                break;
-            case 2:
-                oc1Var.l1.m1(false);
-                boolean a2 = oc1Var.a.a();
-                org.telegram.ui.Components.mi0 mi0Var = oc1Var.J1;
-                mi0Var.N(a2 ? mi0Var.e[0] : 0);
-                org.telegram.ui.Components.mi0 mi0Var2 = oc1Var.J1;
-                if (mi0Var2 != null) {
-                    mi0Var2.start();
-                }
-                oc1Var.b1(false);
-                oc1Var.V0();
-                oc1Var.i1();
-                if (oc1Var.e0 != null) {
-                    for (int i16 = 0; i16 < oc1Var.e0.size(); i16++) {
-                        ((org.telegram.ui.ActionBar.h6) oc1Var.e0.get(i16)).d(oc1Var.getThemedColor(((org.telegram.ui.ActionBar.h6) oc1Var.e0.get(i16)).f), false, false);
-                    }
-                }
-                if (oc1Var.I1) {
-                    fc1 fc1Var = oc1Var.l1;
-                    if (fc1Var == null || !fc1Var.a()) {
-                        oc1Var.N1.a(0.0f);
-                    } else {
-                        oc1Var.N1.setVisibility(0);
-                        oc1Var.N1.a(oc1Var.j1);
-                    }
-                    ValueAnimator valueAnimator = oc1Var.L1;
-                    if (valueAnimator != null) {
-                        valueAnimator.removeAllListeners();
-                        oc1Var.L1.cancel();
-                    }
-                    ValueAnimator ofFloat = ValueAnimator.ofFloat(oc1Var.k1, oc1Var.l1.a() ? 1.0f : 0.0f);
-                    oc1Var.L1 = ofFloat;
-                    ofFloat.addUpdateListener(new v01(oc1Var, 13));
-                    oc1Var.L1.addListener(new sb1(oc1Var, 5));
-                    oc1Var.L1.setDuration(250L);
-                    oc1Var.L1.setInterpolator(org.telegram.ui.Components.gr.f);
-                    oc1Var.L1.start();
-                    break;
-                }
-                break;
-            default:
-                if (oc1Var.getParentActivity() != null && oc1Var.getParentActivity() != null) {
-                    SharedConfig.increaseDayNightWallpaperSiwtchHint();
-                    org.telegram.ui.Components.s30 s30Var = new org.telegram.ui.Components.s30(7, oc1Var.getParentActivity(), null, true);
-                    s30Var.setAlpha(0.0f);
-                    s30Var.setVisibility(4);
-                    s30Var.setShowingDuration(4000L);
-                    oc1Var.g0.addView(s30Var, g7.e6.d(-2, -2.0f, 51, 4.0f, 0.0f, 4.0f, 0.0f));
-                    if (oc1Var.l1.a()) {
-                        s30Var.setText(LocaleController.getString(R.string.PreviewWallpaperDay));
-                    } else {
-                        s30Var.setText(LocaleController.getString(R.string.PreviewWallpaperNight));
-                    }
-                    s30Var.d();
-                    s30Var.f(oc1Var.K1, true);
-                    s30Var.setExtraTranslationY(-AndroidUtilities.dp(14.0f));
-                    break;
-                }
-                break;
+    @Override // org.telegram.ui.Components.il0
+    public final boolean D(f2.n1 n1Var) {
+        return false;
+    }
+
+    @Override // f2.p0
+    public final int h() {
+        if (this.e.isEmpty()) {
+            return 0;
         }
+        return this.e.size() + 1;
+    }
+
+    @Override // f2.p0
+    public final int j(int i10) {
+        return i10 == h() - 1 ? 1 : 0;
+    }
+
+    @Override // f2.p0
+    public final void l() {
+        this.d = this.f.f == 1 ? org.telegram.ui.ActionBar.g6.J : org.telegram.ui.ActionBar.g6.A0();
+        this.e = new ArrayList(this.d.X);
+        super.l();
+    }
+
+    @Override // f2.p0
+    public final void v(f2.n1 n1Var, int i10) {
+        View view = n1Var.a;
+        int j10 = j(i10);
+        if (j10 == 0) {
+            ThemeActivity.InnerAccentView innerAccentView = (ThemeActivity.InnerAccentView) view;
+            org.telegram.ui.ActionBar.f6 f6Var = this.d;
+            org.telegram.ui.ActionBar.e6 e6Var = (org.telegram.ui.ActionBar.e6) this.e.get(i10);
+            innerAccentView.d = f6Var;
+            innerAccentView.e = e6Var;
+            innerAccentView.a(false);
+            return;
+        }
+        if (j10 != 1) {
+            return;
+        }
+        qa1 qa1Var = (qa1) view;
+        org.telegram.ui.ActionBar.f6 f6Var2 = this.d;
+        int i11 = qa1.c;
+        qa1Var.getClass();
+        if (f6Var2.S >= 8) {
+            qa1Var.b = new int[]{f6Var2.l(6), f6Var2.l(4), f6Var2.l(7), f6Var2.l(2), f6Var2.l(0), f6Var2.l(5), f6Var2.l(3)};
+        } else {
+            qa1Var.b = new int[7];
+        }
+    }
+
+    @Override // f2.p0
+    public final f2.n1 x(ViewGroup viewGroup, int i10) {
+        Context context = this.c;
+        return i10 != 0 ? new org.telegram.ui.Components.vk0(new qa1(context)) : new org.telegram.ui.Components.vk0(new ThemeActivity.InnerAccentView(context));
     }
 }

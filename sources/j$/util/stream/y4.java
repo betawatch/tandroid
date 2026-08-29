@@ -33,7 +33,7 @@ public final class y4 extends b5 {
     }
 
     @Override // j$.util.stream.a
-    public final j5 Q0(int i9, j5 j5Var) {
+    public final j5 Q0(int i10, j5 j5Var) {
         throw new UnsupportedOperationException();
     }
 }

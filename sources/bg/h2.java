@@ -1,46 +1,139 @@
 package bg;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class h2 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ q2 b;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.jl0;
+import org.telegram.ui.Components.jr;
 
-    public /* synthetic */ h2(q2 q2Var, int i9) {
-        this.a = i9;
-        this.b = q2Var;
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* loaded from: classes3.dex */
+public abstract class h2 extends jl0 {
+    public static final Paint Y2;
+    public static final Paint Z2;
+    public static final Path a3;
+    public static final Paint b3;
+    public final Paint T2;
+    public final Paint U2;
+    public int V2;
+    public ag.h1 W2;
+    public q0.a X2;
+
+    static {
+        Paint paint = new Paint(1);
+        Y2 = paint;
+        Paint paint2 = new Paint(1);
+        Z2 = paint2;
+        paint.setColor(-2013265920);
+        paint2.setColor(-1996488705);
+        a3 = new Path();
+        b3 = new Paint(1);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.V(true);
-                break;
-            case 1:
-                this.b.a0(true, false);
-                break;
-            case 2:
-                this.b.Q();
-                break;
-            case 3:
-                this.b.a0(true, false);
-                break;
-            case 4:
-                this.b.a0(true, false);
-                break;
-            case 5:
-                this.b.a0(true, false);
-                break;
-            case 6:
-                q2 q2Var = this.b;
-                q2Var.a0.clear();
-                q2Var.b0.clear();
-                q2Var.dismiss();
-                break;
-            default:
-                this.b.dismiss();
-                break;
+    public h2(Context context) {
+        super(context, null);
+        this.T2 = new Paint(1);
+        Paint paint = new Paint(1);
+        this.U2 = paint;
+        this.V2 = -1;
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeWidth(AndroidUtilities.dp(2.0f));
+        setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
+        setLayoutManager(new f2.w(7));
+        setAdapter(new f2(this, context));
+        setOverScrollMode(2);
+        setOnItemClickListener(new o(this, 1));
+    }
+
+    public static void w1(Canvas canvas, RectF rectF, int i10) {
+        float f9 = rectF.left;
+        while (f9 <= rectF.right) {
+            float f10 = rectF.top;
+            while (f10 <= rectF.bottom) {
+                float f11 = i10;
+                float f12 = f9 + f11;
+                float f13 = f10 + f11;
+                Paint paint = Y2;
+                Canvas canvas2 = canvas;
+                canvas2.drawRect(f9, f10, f12, f13, paint);
+                float f14 = i10 * 2;
+                float f15 = f9 + f14;
+                Paint paint2 = Z2;
+                float f16 = f10;
+                canvas2.drawRect(f12, f16, f15, f13, paint2);
+                float f17 = f16 + f14;
+                canvas2.drawRect(f12, f13, f15, f17, paint);
+                canvas2.drawRect(f9, f13, f12, f17, paint2);
+                canvas = canvas2;
+                f10 = f17;
+            }
+            f9 += i10 * 2;
+            canvas = canvas;
         }
+    }
+
+    public static void x1(float f9, float f10, float f11, int i10, Canvas canvas) {
+        Paint paint = b3;
+        paint.setColor(i10);
+        if (paint.getAlpha() == 255) {
+            canvas.drawCircle(f9, f10, f11, paint);
+            return;
+        }
+        RectF rectF = AndroidUtilities.rectTmp;
+        rectF.set(f9 - f11, f10 - f11, f9 + f11, f10 + f11);
+        paint.setAlpha(255);
+        canvas.drawArc(rectF, -45.0f, -180.0f, true, paint);
+        Path path = a3;
+        path.rewind();
+        path.moveTo(rectF.centerX(), rectF.centerY());
+        path.lineTo((float) j7.l1.b(-1.5707963267948966d, rectF.width() / 2.0f, rectF.centerX()), (float) ((Math.sin(-1.5707963267948966d) * (rectF.height() / 2.0f)) + rectF.centerY()));
+        path.moveTo(rectF.centerX(), rectF.centerY());
+        path.lineTo((float) j7.l1.b(4.71238898038469d, rectF.width() / 2.0f, rectF.centerX()), (float) ((Math.sin(4.71238898038469d) * (rectF.height() / 2.0f)) + rectF.centerY()));
+        path.addArc(rectF, -45.0f, 180.0f);
+        canvas.save();
+        canvas.clipPath(path);
+        w1(canvas, rectF, AndroidUtilities.dp(4.0f));
+        canvas.restore();
+        paint.setColor(i10);
+        canvas.drawArc(rectF, -45.0f, 180.0f, true, paint);
+    }
+
+    public int getSelectedColorIndex() {
+        return this.V2;
+    }
+
+    public void setColorListener(q0.a aVar) {
+        this.X2 = aVar;
+    }
+
+    public void setColorPalette(ag.h1 h1Var) {
+        this.W2 = h1Var;
+        getAdapter().l();
+    }
+
+    public void setSelectedColorIndex(int i10) {
+        this.V2 = i10;
+        getAdapter().l();
+    }
+
+    public final void y1(float f9, boolean z10) {
+        float interpolation = z10 ? jr.g.getInterpolation(f9) : jr.i.getInterpolation(f9);
+        float childCount = 1.0f / (getChildCount() - 1);
+        for (int i10 = 0; i10 < getChildCount(); i10++) {
+            View childAt = getChildAt(i10);
+            if (i10 == 0) {
+                childAt.setAlpha(interpolation == 1.0f ? 1.0f : 0.0f);
+            } else {
+                float f10 = i10 * childCount;
+                float min = Math.min(interpolation, f10) / f10;
+                childAt.setScaleX(min);
+                childAt.setScaleY(min);
+            }
+        }
+        invalidate();
     }
 }

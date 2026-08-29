@@ -1,21 +1,24 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import android.view.View;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public interface tj0 {
-    void d(View view, hg.r0 r0Var, boolean z10, boolean z11);
+public final class tj0 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ float a;
+    public final /* synthetic */ fk0 b;
 
-    boolean n();
+    public tj0(fk0 fk0Var, float f9) {
+        this.b = fk0Var;
+        this.a = f9;
+    }
 
-    boolean p();
-
-    void s(Canvas canvas, RectF rectF, float f10, float f11, float f12, int i9, boolean z10);
-
-    void t();
-
-    boolean u();
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        fk0 fk0Var = this.b;
+        fk0Var.k0 = floatValue;
+        fk0Var.j0 = (1.0f - fk0Var.k0) * this.a;
+        fk0Var.invalidate();
+    }
 }

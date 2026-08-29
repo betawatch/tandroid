@@ -8,7 +8,7 @@ import java.nio.charset.Charset;
 import l2.b;
 import l2.c;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public class IconCompatParcelizer {
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
@@ -104,9 +104,9 @@ public class IconCompatParcelizer {
                 iconCompat.c = iconCompat.b.toString().getBytes(Charset.forName("UTF-16"));
                 break;
         }
-        int i9 = iconCompat.a;
-        if (-1 != i9) {
-            bVar.j(i9, 1);
+        int i10 = iconCompat.a;
+        if (-1 != i10) {
+            bVar.j(i10, 1);
         }
         byte[] bArr = iconCompat.c;
         if (bArr != null) {
@@ -119,13 +119,13 @@ public class IconCompatParcelizer {
         if (parcelable != null) {
             bVar.k(parcelable, 3);
         }
-        int i10 = iconCompat.e;
-        if (i10 != 0) {
-            bVar.j(i10, 4);
-        }
-        int i11 = iconCompat.f;
+        int i11 = iconCompat.e;
         if (i11 != 0) {
-            bVar.j(i11, 5);
+            bVar.j(i11, 4);
+        }
+        int i12 = iconCompat.f;
+        if (i12 != 0) {
+            bVar.j(i12, 5);
         }
         ColorStateList colorStateList = iconCompat.g;
         if (colorStateList != null) {

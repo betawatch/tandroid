@@ -1,30 +1,46 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class aj implements MessagesStorage.BooleanCallback {
-    public final /* synthetic */ boolean a;
-    public final /* synthetic */ bj b;
+public final class aj extends og.b {
+    public final /* synthetic */ int n;
+    public final /* synthetic */ tn r;
 
-    public aj(bj bjVar, boolean z10) {
-        this.b = bjVar;
-        this.a = z10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ aj(tn tnVar, org.telegram.ui.ActionBar.c6 c6Var, int i10, int i11) {
+        super(i10, c6Var);
+        this.n = i11;
+        this.r = tnVar;
     }
 
-    @Override // org.telegram.messenger.MessagesStorage.BooleanCallback
-    public final void run(boolean z10) {
-        qn qnVar = this.b.b;
-        if (z10) {
-            TLRPC.User user = qnVar.f;
-            boolean z11 = this.a;
-            if (user != null || z11) {
-                qnVar.getMessagesStorage().getMessagesCount(qnVar.P5, new zi(1, this, z11));
-                return;
-            }
+    @Override // og.b, og.a
+    public final int z() {
+        int i10;
+        int i11;
+        switch (this.n) {
+            case 0:
+                tn tnVar = this.r;
+                i10 = ((org.telegram.ui.ActionBar.o2) tnVar).currentAccount;
+                if (!pg.a.c(i10, tnVar.aa)) {
+                    break;
+                } else if (tnVar.aa != null && !org.telegram.ui.ActionBar.g6.I.q()) {
+                    break;
+                } else {
+                    break;
+                }
+                break;
+            default:
+                tn tnVar2 = this.r;
+                i11 = ((org.telegram.ui.ActionBar.o2) tnVar2).currentAccount;
+                if (!pg.a.c(i11, tnVar2.aa)) {
+                    break;
+                } else if (tnVar2.aa != null && !org.telegram.ui.ActionBar.g6.I.q()) {
+                    break;
+                } else {
+                    break;
+                }
+                break;
         }
-        qnVar.qa(qnVar.Z3, z10);
+        return this.d;
     }
 }

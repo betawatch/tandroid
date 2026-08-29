@@ -3,18 +3,18 @@ package m;
 import android.os.Handler;
 import android.view.MotionEvent;
 import android.view.View;
-import org.telegram.ui.Components.jy;
+import org.telegram.ui.Components.az;
+import org.telegram.ui.Components.ey;
 import org.telegram.ui.Components.ry;
-import org.telegram.ui.Components.vx;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class d2 implements View.OnTouchListener {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
-    public /* synthetic */ d2(Object obj, int i9) {
-        this.a = i9;
+    public /* synthetic */ d2(Object obj, int i10) {
+        this.a = i10;
         this.b = obj;
     }
 
@@ -27,9 +27,9 @@ public final class d2 implements View.OnTouchListener {
                 Handler handler = e2Var.G;
                 y yVar = e2Var.K;
                 int action = motionEvent.getAction();
-                int x10 = (int) motionEvent.getX();
-                int y10 = (int) motionEvent.getY();
-                if (action == 0 && yVar != null && yVar.isShowing() && x10 >= 0 && x10 < yVar.getWidth() && y10 >= 0 && y10 < yVar.getHeight()) {
+                int x4 = (int) motionEvent.getX();
+                int y8 = (int) motionEvent.getY();
+                if (action == 0 && yVar != null && yVar.isShowing() && x4 >= 0 && x4 < yVar.getWidth() && y8 >= 0 && y8 < yVar.getHeight()) {
                     handler.postDelayed(b2Var, 250L);
                     break;
                 } else if (action == 1) {
@@ -38,38 +38,38 @@ public final class d2 implements View.OnTouchListener {
                 }
                 break;
             case 1:
-                vx vxVar = (vx) this.b;
+                ey eyVar = (ey) this.b;
                 if (motionEvent.getAction() != 0) {
                     if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-                        vxVar.B.f = false;
+                        eyVar.B.f = false;
                         break;
                     }
                 } else {
-                    vxVar.B.f = true;
+                    eyVar.B.f = true;
                     break;
                 }
                 break;
             case 2:
-                jy jyVar = (jy) this.b;
+                ry ryVar = (ry) this.b;
                 if (motionEvent.getAction() != 0) {
                     if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-                        jyVar.C.f = false;
+                        ryVar.C.f = false;
                         break;
                     }
                 } else {
-                    jyVar.C.f = true;
+                    ryVar.C.f = true;
                     break;
                 }
                 break;
             default:
-                ry ryVar = (ry) this.b;
+                az azVar = (az) this.b;
                 if (motionEvent.getAction() != 0) {
                     if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-                        ryVar.M.f = false;
+                        azVar.M.f = false;
                         break;
                     }
                 } else {
-                    ryVar.M.f = true;
+                    azVar.M.f = true;
                     break;
                 }
                 break;

@@ -1,35 +1,26 @@
 package androidx.activity;
 
-import androidx.fragment.app.a0;
-
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class v implements c {
-    public final a0 a;
-    public final /* synthetic */ x b;
+public final /* synthetic */ class v extends kotlin.jvm.internal.i implements bd.a {
+    public final /* synthetic */ int a;
 
-    public v(x xVar, a0 onBackPressedCallback) {
-        kotlin.jvm.internal.i.e(onBackPressedCallback, "onBackPressedCallback");
-        this.b = xVar;
-        this.a = onBackPressedCallback;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ v(int i10, Object obj, Class cls, String str, String str2, int i11, int i12) {
+        super(i10, obj, cls, str, str2, i11);
+        this.a = i12;
     }
 
-    /* JADX WARN: Type inference failed for: r0v2, types: [kotlin.jvm.internal.h, zc.a] */
-    @Override // androidx.activity.c
-    public final void cancel() {
-        x xVar = this.b;
-        pc.e eVar = xVar.b;
-        a0 a0Var = this.a;
-        eVar.remove(a0Var);
-        if (kotlin.jvm.internal.i.a(xVar.c, a0Var)) {
-            a0Var.a();
-            xVar.c = null;
+    @Override // bd.a
+    public final Object invoke() {
+        switch (this.a) {
+            case 0:
+                ((w) this.receiver).d();
+                break;
+            default:
+                ((w) this.receiver).d();
+                break;
         }
-        a0Var.b.remove(this);
-        ?? r02 = a0Var.c;
-        if (r02 != 0) {
-            r02.invoke();
-        }
-        a0Var.c = null;
+        return qc.i.a;
     }
 }

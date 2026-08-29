@@ -1,51 +1,46 @@
 package org.telegram.messenger;
 
-import java.util.Comparator;
-import org.telegram.messenger.MessagesController;
+import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class q9 implements Comparator {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ MessagesController b;
+public final /* synthetic */ class q9 implements Runnable {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ boolean d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ BaseController f;
+    public final /* synthetic */ Object h;
 
-    public /* synthetic */ q9(MessagesController messagesController, int i9) {
-        this.a = i9;
-        this.b = messagesController;
+    public /* synthetic */ q9(MediaDataController mediaDataController, boolean z10, int i10, ArrayList arrayList, boolean z11, int i11) {
+        this.f = mediaDataController;
+        this.c = z10;
+        this.b = i10;
+        this.h = arrayList;
+        this.d = z11;
+        this.e = i11;
     }
 
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
-        int lambda$new$9;
-        int lambda$new$10;
-        int lambda$new$11;
-        int lambda$new$12;
-        int lambda$processUpdatesQueue$327;
-        int lambda$renameSavedReactionTag$484;
-        int lambda$updateSavedReactionTags$483;
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                lambda$new$9 = this.b.lambda$new$9((TLRPC.Dialog) obj, (TLRPC.Dialog) obj2);
-                return lambda$new$9;
-            case 1:
-                lambda$new$10 = this.b.lambda$new$10((TLRPC.Dialog) obj, (TLRPC.Dialog) obj2);
-                return lambda$new$10;
-            case 2:
-                lambda$new$11 = this.b.lambda$new$11((MessagesController.CommunityPeerDialog) obj, (MessagesController.CommunityPeerDialog) obj2);
-                return lambda$new$11;
-            case 3:
-                lambda$new$12 = this.b.lambda$new$12((TLRPC.Update) obj, (TLRPC.Update) obj2);
-                return lambda$new$12;
-            case 4:
-                lambda$processUpdatesQueue$327 = this.b.lambda$processUpdatesQueue$327((TLRPC.Updates) obj, (TLRPC.Updates) obj2);
-                return lambda$processUpdatesQueue$327;
-            case 5:
-                lambda$renameSavedReactionTag$484 = this.b.lambda$renameSavedReactionTag$484((TLRPC.TL_savedReactionTag) obj, (TLRPC.TL_savedReactionTag) obj2);
-                return lambda$renameSavedReactionTag$484;
+                ((MediaDataController) this.f).lambda$processLoadedRecentDocuments$52(this.c, this.b, (ArrayList) this.h, this.d, this.e);
+                break;
             default:
-                lambda$updateSavedReactionTags$483 = this.b.lambda$updateSavedReactionTags$483((TLRPC.TL_savedReactionTag) obj, (TLRPC.TL_savedReactionTag) obj2);
-                return lambda$updateSavedReactionTags$483;
+                ((MessagesController) this.f).lambda$processLoadedMessages$189(this.b, (TLRPC.messages_Messages) this.h, this.c, this.d, this.e);
+                break;
         }
+    }
+
+    public /* synthetic */ q9(MessagesController messagesController, int i10, TLRPC.messages_Messages messages_messages, boolean z10, boolean z11, int i11) {
+        this.f = messagesController;
+        this.b = i10;
+        this.h = messages_messages;
+        this.c = z10;
+        this.d = z11;
+        this.e = i11;
     }
 }

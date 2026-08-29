@@ -4,7 +4,7 @@ import android.os.Build;
 import androidx.emoji2.text.v;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class c {
     public static final c b = a(new Locale[0]);
@@ -25,10 +25,10 @@ public final class c {
         String[] split = str.split(",", -1);
         int length = split.length;
         Locale[] localeArr = new Locale[length];
-        for (int i9 = 0; i9 < length; i9++) {
-            String str2 = split[i9];
-            int i10 = b.a;
-            localeArr[i9] = Locale.forLanguageTag(str2);
+        for (int i10 = 0; i10 < length; i10++) {
+            String str2 = split[i10];
+            int i11 = b.a;
+            localeArr[i10] = Locale.forLanguageTag(str2);
         }
         return a(localeArr);
     }

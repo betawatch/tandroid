@@ -1,8 +1,8 @@
 package com.google.android.gms.internal.cast;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class p4 extends f4 implements Runnable {
+public final class p4 extends g4 implements Runnable {
     public final Runnable n;
 
     public p4(Runnable runnable) {
@@ -10,9 +10,9 @@ public final class p4 extends f4 implements Runnable {
         this.n = runnable;
     }
 
-    @Override // com.google.android.gms.internal.cast.f4
+    @Override // com.google.android.gms.internal.cast.g4
     public final String b() {
-        return aa.d.o("task=[", this.n.toString(), "]");
+        return a4.w.n("task=[", this.n.toString(), "]");
     }
 
     @Override // java.lang.Runnable
@@ -20,8 +20,8 @@ public final class p4 extends f4 implements Runnable {
         try {
             this.n.run();
         } catch (Error | RuntimeException e10) {
-            if (f4.f.e(this, null, new y3(e10))) {
-                f4.g(this);
+            if (g4.f.e(this, null, new z3(e10))) {
+                g4.g(this);
             }
             throw e10;
         }

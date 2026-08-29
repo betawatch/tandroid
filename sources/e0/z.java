@@ -7,7 +7,7 @@ import android.os.Bundle;
 import java.util.ArrayList;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class z {
     public final CharSequence a;
@@ -26,8 +26,8 @@ public final class z {
     public static Bundle[] a(ArrayList arrayList) {
         Bundle[] bundleArr = new Bundle[arrayList.size()];
         int size = arrayList.size();
-        for (int i9 = 0; i9 < size; i9++) {
-            z zVar = (z) arrayList.get(i9);
+        for (int i10 = 0; i10 < size; i10++) {
+            z zVar = (z) arrayList.get(i10);
             p0 p0Var = zVar.c;
             Bundle bundle = new Bundle();
             CharSequence charSequence = zVar.a;
@@ -38,7 +38,7 @@ public final class z {
             if (p0Var != null) {
                 bundle.putCharSequence("sender", p0Var.a);
                 if (Build.VERSION.SDK_INT >= 28) {
-                    bundle.putParcelable("sender_person", y.a(d1.f.D(p0Var)));
+                    bundle.putParcelable("sender_person", y.a(d1.f.E(p0Var)));
                 } else {
                     bundle.putBundle("person", p0Var.c());
                 }
@@ -55,19 +55,19 @@ public final class z {
             if (bundle2 != null) {
                 bundle.putBundle("extras", bundle2);
             }
-            bundleArr[i9] = bundle;
+            bundleArr[i10] = bundle;
         }
         return bundleArr;
     }
 
     public final Notification.MessagingStyle.Message b() {
         Notification.MessagingStyle.Message a2;
-        int i9 = Build.VERSION.SDK_INT;
+        int i10 = Build.VERSION.SDK_INT;
         long j10 = this.b;
         CharSequence charSequence = this.a;
         p0 p0Var = this.c;
-        if (i9 >= 28) {
-            a2 = y.b(charSequence, j10, p0Var != null ? d1.f.D(p0Var) : null);
+        if (i10 >= 28) {
+            a2 = y.b(charSequence, j10, p0Var != null ? d1.f.E(p0Var) : null);
         } else {
             a2 = x.a(charSequence, j10, p0Var != null ? p0Var.a : null);
         }

@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
-import kotlin.jvm.internal.i;
-import pc.f;
-import pc.m;
-import pc.o;
+import kotlin.jvm.internal.j;
+import rc.f;
+import rc.m;
+import rc.o;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class zzku {
     private List zza = o.a;
@@ -18,7 +18,7 @@ public final class zzku {
         ArrayList arrayList;
         List list = this.zza;
         List g10 = f.g(jArr);
-        i.e(list, "<this>");
+        j.e(list, "<this>");
         if (g10 instanceof Collection) {
             List list2 = g10;
             arrayList = new ArrayList(list2.size() + list.size());

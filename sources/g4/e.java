@@ -2,88 +2,63 @@ package g4;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import f8.r;
-import j$.util.DesugarCollections;
-import java.util.ArrayList;
-import java.util.List;
+import f5.d0;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class e extends b {
-    public static final Parcelable.Creator<e> CREATOR = new r(16);
-    public final long a;
-    public final boolean b;
-    public final boolean c;
-    public final boolean d;
-    public final boolean e;
-    public final long f;
-    public final long h;
-    public final List n;
-    public final boolean r;
-    public final long s;
-    public final int v;
-    public final int w;
-    public final int x;
+public final class e extends j {
+    public static final Parcelable.Creator<e> CREATOR = new d6.d(23);
+    public final String b;
+    public final String c;
+    public final String d;
 
-    public e(long j10, boolean z10, boolean z11, boolean z12, boolean z13, long j11, long j12, List list, boolean z14, long j13, int i9, int i10, int i11) {
-        this.a = j10;
-        this.b = z10;
-        this.c = z11;
-        this.d = z12;
-        this.e = z13;
-        this.f = j11;
-        this.h = j12;
-        this.n = DesugarCollections.unmodifiableList(list);
-        this.r = z14;
-        this.s = j13;
-        this.v = i9;
-        this.w = i10;
-        this.x = i11;
+    public e(String str, String str2, String str3) {
+        super("COMM");
+        this.b = str;
+        this.c = str2;
+        this.d = str3;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj != null && e.class == obj.getClass()) {
+            e eVar = (e) obj;
+            if (d0.a(this.c, eVar.c) && d0.a(this.b, eVar.b) && d0.a(this.d, eVar.d)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public final int hashCode() {
+        String str = this.b;
+        int hashCode = (527 + (str != null ? str.hashCode() : 0)) * 31;
+        String str2 = this.c;
+        int hashCode2 = (hashCode + (str2 != null ? str2.hashCode() : 0)) * 31;
+        String str3 = this.d;
+        return hashCode2 + (str3 != null ? str3.hashCode() : 0);
+    }
+
+    @Override // g4.j
+    public final String toString() {
+        return this.a + ": language=" + this.b + ", description=" + this.c;
     }
 
     @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i9) {
-        parcel.writeLong(this.a);
-        parcel.writeByte(this.b ? (byte) 1 : (byte) 0);
-        parcel.writeByte(this.c ? (byte) 1 : (byte) 0);
-        parcel.writeByte(this.d ? (byte) 1 : (byte) 0);
-        parcel.writeByte(this.e ? (byte) 1 : (byte) 0);
-        parcel.writeLong(this.f);
-        parcel.writeLong(this.h);
-        List list = this.n;
-        int size = list.size();
-        parcel.writeInt(size);
-        for (int i10 = 0; i10 < size; i10++) {
-            d dVar = (d) list.get(i10);
-            parcel.writeInt(dVar.a);
-            parcel.writeLong(dVar.b);
-            parcel.writeLong(dVar.c);
-        }
-        parcel.writeByte(this.r ? (byte) 1 : (byte) 0);
-        parcel.writeLong(this.s);
-        parcel.writeInt(this.v);
-        parcel.writeInt(this.w);
-        parcel.writeInt(this.x);
+    public final void writeToParcel(Parcel parcel, int i10) {
+        parcel.writeString(this.a);
+        parcel.writeString(this.b);
+        parcel.writeString(this.d);
     }
 
     public e(Parcel parcel) {
-        this.a = parcel.readLong();
-        this.b = parcel.readByte() == 1;
-        this.c = parcel.readByte() == 1;
-        this.d = parcel.readByte() == 1;
-        this.e = parcel.readByte() == 1;
-        this.f = parcel.readLong();
-        this.h = parcel.readLong();
-        int readInt = parcel.readInt();
-        ArrayList arrayList = new ArrayList(readInt);
-        for (int i9 = 0; i9 < readInt; i9++) {
-            arrayList.add(new d(parcel.readInt(), parcel.readLong(), parcel.readLong()));
-        }
-        this.n = DesugarCollections.unmodifiableList(arrayList);
-        this.r = parcel.readByte() == 1;
-        this.s = parcel.readLong();
-        this.v = parcel.readInt();
-        this.w = parcel.readInt();
-        this.x = parcel.readInt();
+        super("COMM");
+        String readString = parcel.readString();
+        int i10 = d0.a;
+        this.b = readString;
+        this.c = parcel.readString();
+        this.d = parcel.readString();
     }
 }

@@ -1,20 +1,26 @@
 package j3;
 
-import android.media.AudioTrack;
-import android.media.metrics.LogSessionId;
+import java.util.List;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public abstract class c0 {
-    public static void a(AudioTrack audioTrack, i3.l lVar) {
-        LogSessionId logSessionId;
-        i3.k kVar = lVar.a;
-        kVar.getClass();
-        LogSessionId logSessionId2 = kVar.a;
-        logSessionId = LogSessionId.LOG_SESSION_ID_NONE;
-        if (logSessionId2.equals(logSessionId)) {
-            return;
+public final /* synthetic */ class c0 implements f5.j {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ List b;
+
+    @Override // f5.j
+    public final void invoke(Object obj) {
+        switch (this.a) {
+            case 0:
+                ((a2) obj).onCues(this.b);
+                break;
+            default:
+                ((k3.b) obj).getClass();
+                break;
         }
-        audioTrack.setLogSessionId(logSessionId2);
+    }
+
+    public /* synthetic */ c0(k3.a aVar, List list) {
+        this.b = list;
     }
 }

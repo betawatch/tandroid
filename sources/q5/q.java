@@ -1,69 +1,26 @@
 package q5;
 
-import android.text.TextUtils;
-import android.util.Log;
-import j$.util.DesugarCollections;
+import android.util.LruCache;
 import java.util.ArrayList;
-import java.util.List;
-import java.util.concurrent.atomic.AtomicLong;
-import m5.b0;
-import m5.f0;
-import m5.g0;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public abstract class q {
-    public final b a;
-    public final String b;
-    public j4.c c;
-    public final List d;
+public final class q extends LruCache {
+    public final /* synthetic */ c a;
 
-    public q(String str) {
-        a.b(str);
-        this.b = str;
-        this.a = new b("MediaControlChannel", null);
-        this.d = DesugarCollections.synchronizedList(new ArrayList());
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public q(c cVar) {
+        super(20);
+        this.a = cVar;
     }
 
-    public final void a(p pVar) {
-        this.d.add(pVar);
-    }
-
-    public final long b() {
-        j4.c cVar = this.c;
-        if (cVar != null) {
-            return ((AtomicLong) cVar.c).getAndIncrement();
+    @Override // android.util.LruCache
+    public final /* bridge */ /* synthetic */ void entryRemoved(boolean z10, Object obj, Object obj2, Object obj3) {
+        ArrayList arrayList = this.a.g;
+        Integer num = (Integer) obj;
+        if (z10) {
+            z5.l.h(arrayList);
+            arrayList.add(num);
         }
-        b bVar = this.a;
-        Log.e(bVar.a, bVar.d("Attempt to generate requestId without a sink", new Object[0]));
-        return 0L;
-    }
-
-    public final void c(long j10, String str) {
-        j4.c cVar = this.c;
-        if (cVar == null) {
-            b bVar = this.a;
-            Log.e(bVar.a, bVar.d("Attempt to send text message without a sink", new Object[0]));
-            return;
-        }
-        g0 g0Var = (g0) cVar.b;
-        if (g0Var == null) {
-            throw new IllegalStateException("Device is not connected");
-        }
-        f0 f0Var = (f0) g0Var;
-        String str2 = this.b;
-        a.b(str2);
-        if (TextUtils.isEmpty(str)) {
-            throw new IllegalArgumentException("The message payload cannot be null or empty");
-        }
-        if (str.length() > 524288) {
-            b bVar2 = f0.G;
-            Log.w(bVar2.a, bVar2.d("Message send failed. Message exceeds maximum size", new Object[0]));
-            throw new IllegalArgumentException("Message exceeds maximum size524288");
-        }
-        com.google.android.gms.common.api.internal.v b10 = com.google.android.gms.common.api.internal.w.b();
-        b10.c = new b0(f0Var, str2, str, 1);
-        b10.a = 8405;
-        f0Var.e(1, b10.b()).addOnFailureListener(new f2.d(cVar, j10, 7));
     }
 }

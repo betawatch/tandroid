@@ -1,33 +1,43 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Paint;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.ui.ProfileActivity;
+import java.util.ArrayList;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.VideoEditedInfo;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class p40 extends Paint {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate b;
+public final class p40 extends org.telegram.ui.pt0 {
+    public final /* synthetic */ ArrayList a;
+    public final /* synthetic */ s40 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ p40(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, int i9) {
-        super(1);
-        this.a = i9;
-        this.b = notificationCenterDelegate;
+    public p40(s40 s40Var, ArrayList arrayList) {
+        this.b = s40Var;
+        this.a = arrayList;
     }
 
-    @Override // android.graphics.Paint
-    public final void setAlpha(int i9) {
-        switch (this.a) {
-            case 0:
-                super.setAlpha(i9);
-                ((f50) this.b).invalidate();
-                break;
-            default:
-                super.setAlpha(i9);
-                ((ProfileActivity) this.b).fragmentView.invalidate();
-                break;
+    @Override // org.telegram.ui.pt0, org.telegram.ui.xt0
+    public final org.telegram.ui.zt0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
+        r40 r40Var = this.b.b;
+        if (r40Var == null) {
+            return null;
         }
+        return r40Var.getCloseIntoObject();
+    }
+
+    @Override // org.telegram.ui.pt0, org.telegram.ui.xt0
+    public final boolean S() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.pt0, org.telegram.ui.xt0
+    public final void o(int i10, VideoEditedInfo videoEditedInfo, boolean z10, int i11, int i12, boolean z11) {
+        this.b.t((MediaController.PhotoEntry) this.a.get(0));
+    }
+
+    @Override // org.telegram.ui.pt0, org.telegram.ui.xt0
+    public final boolean z() {
+        return false;
     }
 }

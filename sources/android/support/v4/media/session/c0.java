@@ -4,7 +4,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.os.ResultReceiver;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class c0 implements Parcelable.Creator {
     public final /* synthetic */ int a;
@@ -34,18 +34,18 @@ public final class c0 implements Parcelable.Creator {
     }
 
     @Override // android.os.Parcelable.Creator
-    public final Object[] newArray(int i9) {
+    public final Object[] newArray(int i10) {
         switch (this.a) {
             case 0:
-                return new MediaSessionCompat$ResultReceiverWrapper[i9];
+                return new MediaSessionCompat$ResultReceiverWrapper[i10];
             case 1:
-                return new MediaSessionCompat$QueueItem[i9];
+                return new MediaSessionCompat$QueueItem[i10];
             case 2:
-                return new MediaSessionCompat$Token[i9];
+                return new MediaSessionCompat$Token[i10];
             case 3:
-                return new ParcelableVolumeInfo[i9];
+                return new ParcelableVolumeInfo[i10];
             default:
-                return new PlaybackStateCompat[i9];
+                return new PlaybackStateCompat[i10];
         }
     }
 }

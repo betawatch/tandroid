@@ -5,7 +5,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Map;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public abstract class x extends a {
     private static Map<Object, x> defaultInstanceMap = new ConcurrentHashMap();
@@ -82,7 +82,7 @@ public abstract class x extends a {
         a2.b(this, l0Var);
     }
 
-    public abstract Object d(int i9);
+    public abstract Object d(int i10);
 
     public final boolean equals(Object obj) {
         if (this == obj) {
@@ -112,9 +112,9 @@ public abstract class x extends a {
     }
 
     public final int hashCode() {
-        int i9 = this.memoizedHashCode;
-        if (i9 != 0) {
-            return i9;
+        int i10 = this.memoizedHashCode;
+        if (i10 != 0) {
+            return i10;
         }
         z0 z0Var = z0.c;
         z0Var.getClass();

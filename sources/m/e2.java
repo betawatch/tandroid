@@ -12,14 +12,14 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListAdapter;
 import android.widget.PopupWindow;
-import f7.t7;
-import g7.q7;
+import h7.s7;
+import i7.c8;
 import java.lang.reflect.Method;
 import java.util.WeakHashMap;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public abstract class e2 implements l.b0 {
     public static final Method L;
@@ -52,9 +52,9 @@ public abstract class e2 implements l.b0 {
     public final Rect H = new Rect();
 
     static {
-        int i9 = Build.VERSION.SDK_INT;
+        int i10 = Build.VERSION.SDK_INT;
         Class cls = Boolean.TYPE;
-        if (i9 <= 28) {
+        if (i10 <= 28) {
             try {
                 L = PopupWindow.class.getDeclaredMethod("setClipToScreenEnabled", cls);
             } catch (NoSuchMethodException unused) {
@@ -75,14 +75,14 @@ public abstract class e2 implements l.b0 {
         }
     }
 
-    public e2(Context context, AttributeSet attributeSet, int i9) {
+    public e2(Context context, AttributeSet attributeSet, int i10) {
         int resourceId;
-        int i10 = 0;
-        this.D = new d2(this, i10);
-        this.F = new b2(this, i10);
+        int i11 = 0;
+        this.D = new d2(this, i11);
+        this.F = new b2(this, i11);
         this.a = context;
         this.G = new Handler(context.getMainLooper());
-        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, f.a.o, i9, 0);
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, f.a.o, i10, 0);
         this.f = obtainStyledAttributes.getDimensionPixelOffset(0, 0);
         int dimensionPixelOffset = obtainStyledAttributes.getDimensionPixelOffset(1, 0);
         this.h = dimensionPixelOffset;
@@ -90,12 +90,12 @@ public abstract class e2 implements l.b0 {
             this.r = true;
         }
         obtainStyledAttributes.recycle();
-        y yVar = new y(context, attributeSet, i9, 0);
-        TypedArray obtainStyledAttributes2 = context.obtainStyledAttributes(attributeSet, f.a.s, i9, 0);
+        y yVar = new y(context, attributeSet, i10, 0);
+        TypedArray obtainStyledAttributes2 = context.obtainStyledAttributes(attributeSet, f.a.s, i10, 0);
         if (obtainStyledAttributes2.hasValue(2)) {
-            q7.a(yVar, obtainStyledAttributes2.getBoolean(2, false));
+            c8.a(yVar, obtainStyledAttributes2.getBoolean(2, false));
         }
-        yVar.setBackgroundDrawable((!obtainStyledAttributes2.hasValue(0) || (resourceId = obtainStyledAttributes2.getResourceId(0, 0)) == 0) ? obtainStyledAttributes2.getDrawable(0) : t7.b(context, resourceId));
+        yVar.setBackgroundDrawable((!obtainStyledAttributes2.hasValue(0) || (resourceId = obtainStyledAttributes2.getResourceId(0, 0)) == 0) ? obtainStyledAttributes2.getDrawable(0) : s7.b(context, resourceId));
         obtainStyledAttributes2.recycle();
         this.K = yVar;
         yVar.setInputMethodMode(1);
@@ -110,8 +110,8 @@ public abstract class e2 implements l.b0 {
         return this.f;
     }
 
-    public final void c(int i9) {
-        this.f = i9;
+    public final void c(int i10) {
+        this.f = i10;
     }
 
     @Override // l.b0
@@ -133,8 +133,8 @@ public abstract class e2 implements l.b0 {
     }
 
     @Override // l.b0
-    public final void g() {
-        int i9;
+    public final void h() {
+        int i10;
         int a2;
         int paddingBottom;
         s1 s1Var;
@@ -142,9 +142,9 @@ public abstract class e2 implements l.b0 {
         Context context = this.a;
         y yVar = this.K;
         if (s1Var2 == null) {
-            s1 p6 = p(context, !this.J);
-            this.c = p6;
-            p6.setAdapter(this.b);
+            s1 q6 = q(context, !this.J);
+            this.c = q6;
+            q6.setAdapter(this.b);
             this.c.setOnItemClickListener(this.B);
             this.c.setFocusable(true);
             this.c.setFocusableInTouchMode(true);
@@ -156,53 +156,53 @@ public abstract class e2 implements l.b0 {
         Rect rect = this.H;
         if (background != null) {
             background.getPadding(rect);
-            int i10 = rect.top;
-            i9 = rect.bottom + i10;
+            int i11 = rect.top;
+            i10 = rect.bottom + i11;
             if (!this.r) {
-                this.h = -i10;
+                this.h = -i11;
             }
         } else {
             rect.setEmpty();
-            i9 = 0;
+            i10 = 0;
         }
         boolean z10 = yVar.getInputMethodMode() == 2;
         View view = this.A;
-        int i11 = this.h;
+        int i12 = this.h;
         if (Build.VERSION.SDK_INT <= 23) {
             Method method = M;
             if (method != null) {
                 try {
-                    a2 = ((Integer) method.invoke(yVar, view, Integer.valueOf(i11), Boolean.valueOf(z10))).intValue();
+                    a2 = ((Integer) method.invoke(yVar, view, Integer.valueOf(i12), Boolean.valueOf(z10))).intValue();
                 } catch (Exception unused) {
                     Log.i("ListPopupWindow", "Could not call getMaxAvailableHeightMethod(View, int, boolean) on PopupWindow. Using the public version.");
                 }
             }
-            a2 = yVar.getMaxAvailableHeight(view, i11);
+            a2 = yVar.getMaxAvailableHeight(view, i12);
         } else {
-            a2 = z1.a(yVar, view, i11, z10);
+            a2 = z1.a(yVar, view, i12, z10);
         }
-        int i12 = this.d;
-        if (i12 == -1) {
-            paddingBottom = a2 + i9;
+        int i13 = this.d;
+        if (i13 == -1) {
+            paddingBottom = a2 + i10;
         } else {
-            int i13 = this.e;
-            int a3 = this.c.a(i13 != -2 ? i13 != -1 ? View.MeasureSpec.makeMeasureSpec(i13, TLObject.FLAG_30) : View.MeasureSpec.makeMeasureSpec(context.getResources().getDisplayMetrics().widthPixels - (rect.left + rect.right), TLObject.FLAG_30) : View.MeasureSpec.makeMeasureSpec(context.getResources().getDisplayMetrics().widthPixels - (rect.left + rect.right), TLObject.FLAG_31), a2);
-            paddingBottom = a3 + (a3 > 0 ? this.c.getPaddingBottom() + this.c.getPaddingTop() + i9 : 0);
+            int i14 = this.e;
+            int a10 = this.c.a(i14 != -2 ? i14 != -1 ? View.MeasureSpec.makeMeasureSpec(i14, TLObject.FLAG_30) : View.MeasureSpec.makeMeasureSpec(context.getResources().getDisplayMetrics().widthPixels - (rect.left + rect.right), TLObject.FLAG_30) : View.MeasureSpec.makeMeasureSpec(context.getResources().getDisplayMetrics().widthPixels - (rect.left + rect.right), TLObject.FLAG_31), a2);
+            paddingBottom = a10 + (a10 > 0 ? this.c.getPaddingBottom() + this.c.getPaddingTop() + i10 : 0);
         }
         boolean z11 = yVar.getInputMethodMode() == 2;
-        q7.b(yVar, this.n);
+        c8.b(yVar, this.n);
         if (yVar.isShowing()) {
             View view2 = this.A;
             WeakHashMap weakHashMap = r0.j0.a;
             if (view2.isAttachedToWindow()) {
-                int i14 = this.e;
-                if (i14 == -1) {
-                    i14 = -1;
-                } else if (i14 == -2) {
-                    i14 = this.A.getWidth();
+                int i15 = this.e;
+                if (i15 == -1) {
+                    i15 = -1;
+                } else if (i15 == -2) {
+                    i15 = this.A.getWidth();
                 }
-                if (i12 == -1) {
-                    i12 = z11 ? paddingBottom : -1;
+                if (i13 == -1) {
+                    i13 = z11 ? paddingBottom : -1;
                     if (z11) {
                         yVar.setWidth(this.e == -1 ? -1 : 0);
                         yVar.setHeight(0);
@@ -210,36 +210,36 @@ public abstract class e2 implements l.b0 {
                         yVar.setWidth(this.e == -1 ? -1 : 0);
                         yVar.setHeight(-1);
                     }
-                } else if (i12 == -2) {
-                    i12 = paddingBottom;
+                } else if (i13 == -2) {
+                    i13 = paddingBottom;
                 }
                 yVar.setOutsideTouchable(true);
                 View view3 = this.A;
-                int i15 = i14;
-                int i16 = this.f;
-                int i17 = this.h;
-                int i18 = i15 < 0 ? -1 : i15;
-                if (i12 < 0) {
-                    i12 = -1;
+                int i16 = i15;
+                int i17 = this.f;
+                int i18 = this.h;
+                int i19 = i16 < 0 ? -1 : i16;
+                if (i13 < 0) {
+                    i13 = -1;
                 }
-                yVar.update(view3, i16, i17, i18, i12);
+                yVar.update(view3, i17, i18, i19, i13);
                 return;
             }
             return;
         }
-        int i19 = this.e;
-        if (i19 == -1) {
-            i19 = -1;
-        } else if (i19 == -2) {
-            i19 = this.A.getWidth();
+        int i20 = this.e;
+        if (i20 == -1) {
+            i20 = -1;
+        } else if (i20 == -2) {
+            i20 = this.A.getWidth();
         }
-        if (i12 == -1) {
-            i12 = -1;
-        } else if (i12 == -2) {
-            i12 = paddingBottom;
+        if (i13 == -1) {
+            i13 = -1;
+        } else if (i13 == -2) {
+            i13 = paddingBottom;
         }
-        yVar.setWidth(i19);
-        yVar.setHeight(i12);
+        yVar.setWidth(i20);
+        yVar.setHeight(i13);
         if (Build.VERSION.SDK_INT <= 28) {
             Method method2 = L;
             if (method2 != null) {
@@ -255,7 +255,7 @@ public abstract class e2 implements l.b0 {
         yVar.setOutsideTouchable(true);
         yVar.setTouchInterceptor(this.D);
         if (this.v) {
-            q7.a(yVar, this.s);
+            c8.a(yVar, this.s);
         }
         if (Build.VERSION.SDK_INT <= 28) {
             Method method3 = N;
@@ -281,12 +281,12 @@ public abstract class e2 implements l.b0 {
         this.G.post(this.F);
     }
 
-    public final void i(Drawable drawable) {
+    public final void j(Drawable drawable) {
         this.K.setBackgroundDrawable(drawable);
     }
 
-    public final void j(int i9) {
-        this.h = i9;
+    public final void k(int i10) {
+        this.h = i10;
         this.r = true;
     }
 
@@ -297,7 +297,7 @@ public abstract class e2 implements l.b0 {
         return 0;
     }
 
-    public void o(ListAdapter listAdapter) {
+    public void p(ListAdapter listAdapter) {
         h1.a aVar = this.y;
         if (aVar == null) {
             this.y = new h1.a(this, 1);
@@ -317,18 +317,18 @@ public abstract class e2 implements l.b0 {
         }
     }
 
-    public s1 p(Context context, boolean z10) {
+    public s1 q(Context context, boolean z10) {
         return new s1(context, z10);
     }
 
-    public final void q(int i9) {
+    public final void r(int i10) {
         Drawable background = this.K.getBackground();
         if (background == null) {
-            this.e = i9;
+            this.e = i10;
             return;
         }
         Rect rect = this.H;
         background.getPadding(rect);
-        this.e = rect.left + rect.right + i9;
+        this.e = rect.left + rect.right + i10;
     }
 }

@@ -19,7 +19,7 @@ import m.s1;
 import org.telegram.messenger.beta.R;
 import r0.j0;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class c0 extends s implements PopupWindow.OnDismissListener, View.OnKeyListener {
     public ViewTreeObserver A;
@@ -38,20 +38,20 @@ public final class c0 extends s implements PopupWindow.OnDismissListener, View.O
     public View w;
     public View x;
     public w y;
-    public final androidx.mediarouter.app.k r = new androidx.mediarouter.app.k(this, 2);
-    public final af.b s = new af.b(this, 7);
+    public final androidx.mediarouter.app.h r = new androidx.mediarouter.app.h(this, 2);
+    public final df.b s = new df.b(this, 6);
     public int E = 0;
 
-    public c0(Context context, k kVar, View view, int i9, boolean z10) {
+    public c0(Context context, k kVar, View view, int i10, boolean z10) {
         this.b = context;
         this.c = kVar;
         this.e = z10;
         this.d = new h(kVar, LayoutInflater.from(context), z10, R.layout.abc_popup_menu_item_layout);
-        this.h = i9;
+        this.h = i10;
         Resources resources = context.getResources();
         this.f = Math.max(resources.getDisplayMetrics().widthPixels / 2, resources.getDimensionPixelSize(R.dimen.abc_config_prefDialogWidth));
         this.w = view;
-        this.n = new k2(context, null, i9);
+        this.n = new k2(context, null, i10);
         kVar.b(this, context);
     }
 
@@ -61,14 +61,14 @@ public final class c0 extends s implements PopupWindow.OnDismissListener, View.O
     }
 
     @Override // l.x
-    public final void c(k kVar, boolean z10) {
+    public final void b(k kVar, boolean z10) {
         if (kVar != this.c) {
             return;
         }
         dismiss();
         w wVar = this.y;
         if (wVar != null) {
-            wVar.c(kVar, z10);
+            wVar.b(kVar, z10);
         }
     }
 
@@ -98,8 +98,13 @@ public final class c0 extends s implements PopupWindow.OnDismissListener, View.O
         return this.n.c;
     }
 
+    @Override // l.x
+    public final void g(w wVar) {
+        this.y = wVar;
+    }
+
     @Override // l.b0
-    public final void g() {
+    public final void h() {
         View view;
         if (a()) {
             return;
@@ -132,11 +137,11 @@ public final class c0 extends s implements PopupWindow.OnDismissListener, View.O
             this.D = s.m(hVar, context, this.f);
             this.C = true;
         }
-        k2Var.q(this.D);
+        k2Var.r(this.D);
         yVar2.setInputMethodMode(2);
         Rect rect = this.a;
         k2Var.I = rect != null ? new Rect(rect) : null;
-        k2Var.g();
+        k2Var.h();
         s1 s1Var = k2Var.c;
         s1Var.setOnKeyListener(this);
         if (this.F) {
@@ -151,13 +156,8 @@ public final class c0 extends s implements PopupWindow.OnDismissListener, View.O
                 s1Var.addHeaderView(frameLayout, null, false);
             }
         }
-        k2Var.o(hVar);
-        k2Var.g();
-    }
-
-    @Override // l.x
-    public final void h(w wVar) {
-        this.y = wVar;
+        k2Var.p(hVar);
+        k2Var.h();
     }
 
     @Override // l.x
@@ -169,21 +169,21 @@ public final class c0 extends s implements PopupWindow.OnDismissListener, View.O
             vVar.h = wVar;
             s sVar = vVar.i;
             if (sVar != null) {
-                sVar.h(wVar);
+                sVar.g(wVar);
             }
             int size = d0Var.f.size();
-            int i9 = 0;
+            int i10 = 0;
             while (true) {
-                if (i9 >= size) {
+                if (i10 >= size) {
                     z10 = false;
                     break;
                 }
-                MenuItem item = d0Var.getItem(i9);
+                MenuItem item = d0Var.getItem(i10);
                 if (item.isVisible() && item.getIcon() != null) {
                     z10 = true;
                     break;
                 }
-                i9++;
+                i10++;
             }
             vVar.g = z10;
             s sVar2 = vVar.i;
@@ -194,22 +194,22 @@ public final class c0 extends s implements PopupWindow.OnDismissListener, View.O
             this.v = null;
             this.c.c(false);
             k2 k2Var = this.n;
-            int i10 = k2Var.f;
+            int i11 = k2Var.f;
             int n10 = k2Var.n();
-            int i11 = this.E;
+            int i12 = this.E;
             View view = this.w;
             WeakHashMap weakHashMap = j0.a;
-            if ((Gravity.getAbsoluteGravity(i11, view.getLayoutDirection()) & 7) == 5) {
-                i10 += this.w.getWidth();
+            if ((Gravity.getAbsoluteGravity(i12, view.getLayoutDirection()) & 7) == 5) {
+                i11 += this.w.getWidth();
             }
             if (!vVar.b()) {
                 if (vVar.e != null) {
-                    vVar.d(i10, n10, true, true);
+                    vVar.d(i11, n10, true, true);
                 }
             }
             w wVar2 = this.y;
             if (wVar2 != null) {
-                wVar2.j(d0Var);
+                wVar2.h(d0Var);
             }
             return true;
         }
@@ -246,8 +246,8 @@ public final class c0 extends s implements PopupWindow.OnDismissListener, View.O
     }
 
     @Override // android.view.View.OnKeyListener
-    public final boolean onKey(View view, int i9, KeyEvent keyEvent) {
-        if (keyEvent.getAction() != 1 || i9 != 82) {
+    public final boolean onKey(View view, int i10, KeyEvent keyEvent) {
+        if (keyEvent.getAction() != 1 || i10 != 82) {
             return false;
         }
         dismiss();
@@ -255,13 +255,13 @@ public final class c0 extends s implements PopupWindow.OnDismissListener, View.O
     }
 
     @Override // l.s
-    public final void p(int i9) {
-        this.E = i9;
+    public final void p(int i10) {
+        this.E = i10;
     }
 
     @Override // l.s
-    public final void q(int i9) {
-        this.n.f = i9;
+    public final void q(int i10) {
+        this.n.f = i10;
     }
 
     @Override // l.s
@@ -275,8 +275,8 @@ public final class c0 extends s implements PopupWindow.OnDismissListener, View.O
     }
 
     @Override // l.s
-    public final void t(int i9) {
-        this.n.j(i9);
+    public final void t(int i10) {
+        this.n.k(i10);
     }
 
     @Override // l.s

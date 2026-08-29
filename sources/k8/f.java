@@ -1,133 +1,61 @@
 package k8;
 
-import j$.lang.Iterable$-CC;
-import j$.util.Collection;
-import j$.util.Spliterator;
-import j$.util.Spliterators;
-import j$.util.stream.Stream;
-import java.io.Serializable;
-import java.util.AbstractCollection;
-import java.util.Arrays;
-import java.util.Spliterator;
-import java.util.function.Consumer;
-import java.util.function.IntFunction;
-import java.util.function.Predicate;
-import java.util.stream.Stream;
+import android.os.Parcel;
+import android.os.Parcelable;
+import org.telegram.ui.th;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public abstract class f extends AbstractCollection implements Serializable, Collection {
-    public static final Object[] a = new Object[0];
+public final class f extends a6.a implements j8.b, j8.d {
+    public static final Parcelable.Creator<f> CREATOR = new c(2);
+    public final String a;
+    public final String b;
+    public final String c;
 
-    @Override // java.util.AbstractCollection, java.util.Collection
-    public final boolean add(Object obj) {
-        throw new UnsupportedOperationException();
+    public f(String str, String str2, String str3) {
+        z5.l.h(str);
+        this.a = str;
+        z5.l.h(str2);
+        this.b = str2;
+        z5.l.h(str3);
+        this.c = str3;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection
-    public final boolean addAll(java.util.Collection collection) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection
-    public final void clear() {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.lang.Iterable, j$.util.Collection
-    public /* synthetic */ void forEach(Consumer consumer) {
-        Iterable$-CC.$default$forEach(this, consumer);
-    }
-
-    public abstract int i(Object[] objArr);
-
-    public abstract int n();
-
-    public abstract int o();
-
-    public abstract Object[] p();
-
-    @Override // java.util.Collection
-    public /* synthetic */ Stream parallelStream() {
-        return Stream.Wrapper.convert(parallelStream());
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection
-    public final boolean remove(Object obj) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection
-    public final boolean removeAll(java.util.Collection collection) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.Collection, j$.util.Collection
-    public /* synthetic */ boolean removeIf(Predicate predicate) {
-        return Collection.-CC.$default$removeIf(this, predicate);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection
-    public final boolean retainAll(java.util.Collection collection) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.Collection, java.lang.Iterable
-    public /* synthetic */ Spliterator spliterator() {
-        return Spliterator.Wrapper.convert(spliterator());
-    }
-
-    @Override // java.util.Collection
-    public /* synthetic */ java.util.stream.Stream stream() {
-        return Stream.Wrapper.convert(stream());
-    }
-
-    @Override // java.util.Collection, j$.util.Collection
-    public /* synthetic */ Object[] toArray(IntFunction intFunction) {
-        Object[] array;
-        array = toArray((Object[]) intFunction.apply(0));
-        return array;
-    }
-
-    @Override // java.util.Collection, j$.util.Collection
-    public /* synthetic */ j$.util.stream.Stream parallelStream() {
-        return Collection.-CC.$default$parallelStream(this);
-    }
-
-    @Override // java.util.Collection, java.lang.Iterable, j$.util.Collection
-    public final j$.util.Spliterator spliterator() {
-        return Spliterators.spliterator(this, 1296);
-    }
-
-    @Override // java.util.Collection, j$.util.Collection
-    public /* synthetic */ j$.util.stream.Stream stream() {
-        return Collection.-CC.$default$stream(this);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection
-    public final Object[] toArray() {
-        return toArray(a);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection
-    public final Object[] toArray(Object[] objArr) {
-        objArr.getClass();
-        int size = size();
-        int length = objArr.length;
-        if (length < size) {
-            Object[] p6 = p();
-            if (p6 == null) {
-                if (length != 0) {
-                    objArr = Arrays.copyOf(objArr, 0);
-                }
-                objArr = Arrays.copyOf(objArr, size);
-            } else {
-                return Arrays.copyOfRange(p6, o(), n(), objArr.getClass());
-            }
-        } else if (length > size) {
-            objArr[size] = null;
+    public final boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
         }
-        i(objArr);
-        return objArr;
+        if (!(obj instanceof f)) {
+            return false;
+        }
+        f fVar = (f) obj;
+        return this.a.equals(fVar.a) && z5.l.l(fVar.b, this.b) && z5.l.l(fVar.c, this.c);
+    }
+
+    public final int hashCode() {
+        return this.a.hashCode();
+    }
+
+    public final String toString() {
+        String str = this.a;
+        int i10 = 0;
+        for (char c3 : str.toCharArray()) {
+            i10 += c3;
+        }
+        String trim = str.trim();
+        int length = trim.length();
+        if (length > 25) {
+            trim = trim.substring(0, 10) + "..." + trim.substring(length - 10, length) + "::" + i10;
+        }
+        return a4.w.q(th.k("Channel{token=", trim, ", nodeId=", this.b, ", path="), this.c, "}");
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i10) {
+        int q6 = com.google.android.gms.internal.cast.o.q(parcel, 20293);
+        com.google.android.gms.internal.cast.o.l(parcel, 2, this.a);
+        com.google.android.gms.internal.cast.o.l(parcel, 3, this.b);
+        com.google.android.gms.internal.cast.o.l(parcel, 4, this.c);
+        com.google.android.gms.internal.cast.o.r(parcel, q6);
     }
 }

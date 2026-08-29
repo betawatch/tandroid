@@ -1,51 +1,19 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
-
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class n50 extends wk0 {
-    public int T2;
-    public final /* synthetic */ a60 U2;
+public final class n50 {
+    public final boolean a;
+    public final int b;
+    public final int c;
+    public final long d;
+    public final long e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public n50(a60 a60Var, Context context) {
-        super(context, null);
-        this.U2 = a60Var;
-    }
-
-    @Override // org.telegram.ui.Components.wk0, androidx.recyclerview.widget.RecyclerView, android.view.View
-    public final void onMeasure(int i9, int i10) {
-        a60 a60Var = this.U2;
-        n50 n50Var = a60Var.R;
-        if (this.T2 != View.MeasureSpec.getSize(i10)) {
-            this.T2 = View.MeasureSpec.getSize(i10);
-            a60Var.W = true;
-            n50Var.setPadding(0, 0, 0, 0);
-            a60Var.W = false;
-            measure(i9, View.MeasureSpec.makeMeasureSpec(i10, TLObject.FLAG_31));
-            int measuredHeight = getMeasuredHeight();
-            int i11 = this.T2;
-            int i12 = (int) ((i11 / 5.0f) * 2.0f);
-            if (i12 < AndroidUtilities.dp(60.0f) + (i11 - measuredHeight)) {
-                i12 = this.T2 - measuredHeight;
-            }
-            a60Var.W = true;
-            n50Var.setPadding(0, i12, 0, 0);
-            a60Var.W = false;
-            measure(i9, View.MeasureSpec.makeMeasureSpec(i10, TLObject.FLAG_31));
-        }
-        super.onMeasure(i9, i10);
-    }
-
-    @Override // org.telegram.ui.Components.wk0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
-    public final void requestLayout() {
-        if (this.U2.W) {
-            return;
-        }
-        super.requestLayout();
+    public n50(long j10, int i10, int i11, boolean z10, long j11) {
+        this.a = z10;
+        this.b = i10;
+        this.c = i11;
+        this.d = j10;
+        this.e = j11;
     }
 }

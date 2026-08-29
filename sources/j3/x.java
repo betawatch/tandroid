@@ -1,100 +1,71 @@
 package j3;
 
-import java.nio.ByteBuffer;
-import java.nio.ByteOrder;
+import j$.time.LocalDate;
+import j$.time.ZoneOffset;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
+import org.telegram.ui.Components.mc0;
+import org.telegram.ui.Components.wk0;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public abstract class x implements j {
-    public h b;
-    public h c;
-    public h d;
-    public h e;
-    public ByteBuffer f;
-    public ByteBuffer g;
-    public boolean h;
+public final /* synthetic */ class x implements f5.j, wk0, mc0, org.telegram.ui.ActionBar.b2 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
 
-    public x() {
-        ByteBuffer byteBuffer = j.a;
-        this.f = byteBuffer;
-        this.g = byteBuffer;
-        h hVar = h.e;
-        this.d = hVar;
-        this.e = hVar;
-        this.b = hVar;
-        this.c = hVar;
+    public /* synthetic */ x(int i10, int i11) {
+        this.a = i11;
+        this.b = i10;
     }
 
-    @Override // j3.j
-    public ByteBuffer a() {
-        ByteBuffer byteBuffer = this.g;
-        this.g = j.a;
-        return byteBuffer;
-    }
-
-    @Override // j3.j
-    public final void c() {
-        this.h = true;
-        h();
-    }
-
-    @Override // j3.j
-    public boolean d() {
-        return this.h && this.g == j.a;
-    }
-
-    @Override // j3.j
-    public final h e(h hVar) {
-        this.d = hVar;
-        this.e = f(hVar);
-        return isActive() ? this.e : h.e;
-    }
-
-    public abstract h f(h hVar);
-
-    @Override // j3.j
-    public final void flush() {
-        this.g = j.a;
-        this.h = false;
-        this.b = this.d;
-        this.c = this.e;
-        g();
-    }
-
-    @Override // j3.j
-    public boolean isActive() {
-        return this.e != h.e;
-    }
-
-    public final ByteBuffer j(int i9) {
-        if (this.f.capacity() < i9) {
-            this.f = ByteBuffer.allocateDirect(i9).order(ByteOrder.nativeOrder());
-        } else {
-            this.f.clear();
+    @Override // org.telegram.ui.Components.mc0
+    public String e(int i10) {
+        int i11 = this.a;
+        int i12 = this.b;
+        switch (i11) {
+            case 3:
+                if (i10 == 0) {
+                    return LocaleController.getString(R.string.MessageScheduleToday);
+                }
+                LocalDate plusDays = LocalDate.now().plusDays(i10);
+                int year = plusDays.getYear();
+                long epochMilli = plusDays.atStartOfDay().toInstant(ZoneOffset.UTC).toEpochMilli();
+                if (year != i12) {
+                    return LocaleController.getInstance().getFormatterScheduleYear().format(epochMilli);
+                }
+                return LocaleController.getInstance().getFormatterWeek().format(epochMilli) + ", " + LocaleController.getInstance().getFormatterScheduleDay().format(epochMilli);
+            default:
+                return i10 == i12 ? "—" : String.format("%02d", Integer.valueOf(i10));
         }
-        ByteBuffer byteBuffer = this.f;
-        this.g = byteBuffer;
-        return byteBuffer;
     }
 
-    @Override // j3.j
-    public final void reset() {
-        flush();
-        this.f = j.a;
-        h hVar = h.e;
-        this.d = hVar;
-        this.e = hVar;
-        this.b = hVar;
-        this.c = hVar;
-        i();
+    @Override // org.telegram.ui.ActionBar.b2
+    public void g(org.telegram.ui.ActionBar.c2 c2Var, int i10) {
+        MessagesController.getInstance(this.b).performLogout(1);
     }
 
-    public void g() {
+    @Override // f5.j
+    public void invoke(Object obj) {
+        switch (this.a) {
+            case 0:
+                ((a2) obj).onRepeatModeChanged(this.b);
+                break;
+            default:
+                k3.b bVar = (k3.b) obj;
+                bVar.getClass();
+                bVar.e(this.b);
+                break;
+        }
     }
 
-    public void h() {
+    @Override // org.telegram.ui.Components.wk0
+    public int run() {
+        return this.b;
     }
 
-    public void i() {
+    public /* synthetic */ x(k3.a aVar, int i10, b2 b2Var, b2 b2Var2) {
+        this.a = 1;
+        this.b = i10;
     }
 }

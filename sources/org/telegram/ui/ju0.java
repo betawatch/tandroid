@@ -1,14 +1,28 @@
 package org.telegram.ui;
 
-import android.view.TextureView;
-import org.telegram.messenger.MessageObject;
+import android.graphics.Outline;
+import android.view.View;
+import android.view.ViewOutlineProvider;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public interface ju0 {
-    TextureView G();
-
-    void x0(MessageObject messageObject);
-
-    void y(MessageObject messageObject);
+public final class ju0 extends ViewOutlineProvider {
+    @Override // android.view.ViewOutlineProvider
+    public final void getOutline(View view, Outline outline) {
+        ImageReceiver imageReceiver = (ImageReceiver) view.getTag(R.id.parent_tag);
+        if (imageReceiver == null) {
+            int i10 = AndroidUtilities.roundMessageSize;
+            outline.setOval(0, 0, i10, i10);
+            return;
+        }
+        int[] roundRadius = imageReceiver.getRoundRadius(true);
+        int i11 = 0;
+        for (int i12 = 0; i12 < 4; i12++) {
+            i11 = Math.max(i11, roundRadius[i12]);
+        }
+        outline.setRoundRect(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight(), i11);
+    }
 }

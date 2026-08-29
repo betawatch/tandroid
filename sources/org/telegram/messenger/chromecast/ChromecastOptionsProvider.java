@@ -4,12 +4,12 @@ import android.content.Context;
 import com.google.android.gms.internal.cast.f;
 import java.util.ArrayList;
 import java.util.List;
-import m5.i;
-import n5.b;
-import n5.e;
-import o5.a;
+import o5.i;
+import p5.b;
+import p5.e;
+import q5.a;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public class ChromecastOptionsProvider implements e {
     public static final b a;
@@ -25,12 +25,12 @@ public class ChromecastOptionsProvider implements e {
         a = new b("CC1AD845", arrayList, false, iVar, true, aVar, true, 0.05000000074505806d, false, false, false, arrayList2, true, false, b.C, b.D);
     }
 
-    @Override // n5.e
+    @Override // p5.e
     public List<f> getAdditionalSessionProviders(Context context) {
         return null;
     }
 
-    @Override // n5.e
+    @Override // p5.e
     public b getCastOptions(Context context) {
         return a;
     }

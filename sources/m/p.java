@@ -7,11 +7,11 @@ import android.graphics.drawable.Drawable;
 import android.text.InputFilter;
 import android.util.AttributeSet;
 import android.widget.CheckBox;
-import f7.t7;
-import g7.q6;
+import h7.s7;
+import i7.v6;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class p extends CheckBox implements u0.k {
     public final g2.e a;
@@ -122,11 +122,11 @@ public final class p extends CheckBox implements u0.k {
     }
 
     @Override // android.view.View
-    public void setBackgroundResource(int i9) {
-        super.setBackgroundResource(i9);
+    public void setBackgroundResource(int i10) {
+        super.setBackgroundResource(i10);
         n nVar = this.b;
         if (nVar != null) {
-            nVar.f(i9);
+            nVar.f(i10);
         }
     }
 
@@ -168,7 +168,7 @@ public final class p extends CheckBox implements u0.k {
 
     @Override // android.widget.TextView
     public void setFilters(InputFilter[] inputFilterArr) {
-        super.setFilters(((q6) getEmojiTextViewHelper().b.b).a(inputFilterArr));
+        super.setFilters(((v6) getEmojiTextViewHelper().b.b).a(inputFilterArr));
     }
 
     public void setSupportBackgroundTintList(ColorStateList colorStateList) {
@@ -218,7 +218,7 @@ public final class p extends CheckBox implements u0.k {
     }
 
     @Override // android.widget.CompoundButton
-    public void setButtonDrawable(int i9) {
-        setButtonDrawable(t7.b(getContext(), i9));
+    public void setButtonDrawable(int i10) {
+        setButtonDrawable(s7.b(getContext(), i10));
     }
 }

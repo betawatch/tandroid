@@ -1,6 +1,6 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class zzrk extends zzsk implements zztt {
     private static final zzrk zzd;
@@ -26,26 +26,26 @@ public final class zzrk extends zzsk implements zztt {
     }
 
     @Override // com.google.android.recaptcha.internal.zzsn
-    public final Object zzh(int i9, Object obj, Object obj2) {
+    public final Object zzh(int i10, Object obj, Object obj2) {
         zzua zzuaVar;
-        int i10 = i9 - 1;
-        if (i10 == 0) {
+        int i11 = i10 - 1;
+        if (i11 == 0) {
             return Byte.valueOf(this.zzo);
         }
-        if (i10 == 2) {
+        if (i11 == 2) {
             return new zzue(zzd, "\u0001\b\u0000\u0001\u0001\b\b\u0000\u0000\u0000\u0001᠌\u0000\u0002᠌\u0001\u0003᠌\u0002\u0004᠌\u0003\u0005᠌\u0004\u0006᠌\u0005\u0007᠌\u0006\b᠌\u0007", new Object[]{"zzf", "zzg", zzre.zza, "zzh", zzrd.zza, "zzi", zzrh.zza, "zzj", zzri.zza, "zzk", zzrg.zza, "zzl", zzrf.zza, "zzm", zzrc.zza, "zzn", zzrj.zza});
         }
-        if (i10 == 3) {
+        if (i11 == 3) {
             return new zzrk();
         }
         zzrr zzrrVar = null;
-        if (i10 == 4) {
+        if (i11 == 4) {
             return new zzrb(zzrrVar);
         }
-        if (i10 == 5) {
+        if (i11 == 5) {
             return zzd;
         }
-        if (i10 != 6) {
+        if (i11 != 6) {
             this.zzo = obj == null ? (byte) 0 : (byte) 1;
             return null;
         }
@@ -60,8 +60,8 @@ public final class zzrk extends zzsk implements zztt {
                     zzuaVar = new zzsi(zzd);
                     zze = zzuaVar;
                 }
-            } catch (Throwable th) {
-                throw th;
+            } catch (Throwable th2) {
+                throw th2;
             }
         }
         return zzuaVar;

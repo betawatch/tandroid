@@ -1,57 +1,47 @@
 package org.telegram.ui.Components;
 
-import java.nio.ByteBuffer;
-import java.nio.ByteOrder;
-
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class me0 {
-    public final ne0 a = new ne0();
-    public final ne0 b = new ne0();
-    public final ne0 c = new ne0();
-    public final ne0 d = new ne0();
-    public final ByteBuffer e;
-    public int f;
+public final class me0 extends q6 {
+    public final /* synthetic */ int b;
+    public final /* synthetic */ pe0 c;
 
-    public me0() {
-        ByteBuffer allocateDirect = ByteBuffer.allocateDirect(800);
-        this.e = allocateDirect;
-        allocateDirect.order(ByteOrder.LITTLE_ENDIAN);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public me0(pe0 pe0Var, int i10) {
+        super("thumbAnimationProgress", 0);
+        this.b = i10;
+        switch (i10) {
+            case 1:
+                this.c = pe0Var;
+                super("thumbImageVisibleProgress", 0);
+                break;
+            default:
+                this.c = pe0Var;
+                break;
+        }
     }
 
-    public final void a() {
-        ByteBuffer byteBuffer = this.e;
-        byteBuffer.position(0);
-        ne0 ne0Var = this.a;
-        if (ne0Var.f == null) {
-            ne0Var.a();
+    @Override // org.telegram.ui.Components.q6
+    public final void b(Object obj, float f9) {
+        switch (this.b) {
+            case 0:
+                this.c.r = f9;
+                ((pe0) obj).invalidate();
+                break;
+            default:
+                this.c.n = f9;
+                ((pe0) obj).invalidate();
+                break;
         }
-        float[] fArr = ne0Var.f;
-        ne0 ne0Var2 = this.b;
-        if (ne0Var2.f == null) {
-            ne0Var2.a();
-        }
-        float[] fArr2 = ne0Var2.f;
-        ne0 ne0Var3 = this.c;
-        if (ne0Var3.f == null) {
-            ne0Var3.a();
-        }
-        float[] fArr3 = ne0Var3.f;
-        ne0 ne0Var4 = this.d;
-        if (ne0Var4.f == null) {
-            ne0Var4.a();
-        }
-        float[] fArr4 = ne0Var4.f;
-        for (int i9 = 0; i9 < 200; i9++) {
-            byteBuffer.put((byte) (fArr2[i9] * 255.0f));
-            byteBuffer.put((byte) (fArr3[i9] * 255.0f));
-            byteBuffer.put((byte) (fArr4[i9] * 255.0f));
-            byteBuffer.put((byte) (fArr[i9] * 255.0f));
-        }
-        byteBuffer.position(0);
     }
 
-    public final boolean b() {
-        return this.a.b() && this.b.b() && this.c.b() && this.d.b();
+    @Override // android.util.Property
+    public final Object get(Object obj) {
+        switch (this.b) {
+            case 0:
+                return Float.valueOf(this.c.r);
+            default:
+                return Float.valueOf(this.c.n);
+        }
     }
 }

@@ -1,35 +1,36 @@
 package org.telegram.messenger;
 
-import j$.util.concurrent.ConcurrentHashMap;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class ia implements Runnable {
+public final /* synthetic */ class ia implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ MessagesController b;
-    public final /* synthetic */ ff.u c;
-    public final /* synthetic */ ConcurrentHashMap d;
-    public final /* synthetic */ ConcurrentHashMap e;
+    public final /* synthetic */ BaseController b;
+    public final /* synthetic */ int c;
 
-    public /* synthetic */ ia(MessagesController messagesController, ff.u uVar, ConcurrentHashMap concurrentHashMap, ConcurrentHashMap concurrentHashMap2, int i9) {
-        this.a = i9;
-        this.b = messagesController;
-        this.c = uVar;
-        this.d = concurrentHashMap;
-        this.e = concurrentHashMap2;
+    public /* synthetic */ ia(BaseController baseController, int i10, int i11) {
+        this.a = i11;
+        this.b = baseController;
+        this.c = i10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                this.b.lambda$processUpdateArray$400(this.c, this.d, this.e);
+                ((MessagesController) this.b).lambda$migrateDialogs$216(this.c, tLObject, tL_error);
                 break;
             case 1:
-                this.b.lambda$processUpdateArray$401(this.c, this.d, this.e);
+                ((MessagesController) this.b).lambda$loadPinnedDialogs$367(this.c, tLObject, tL_error);
+                break;
+            case 2:
+                ((MessagesController) this.b).lambda$loadGlobalNotificationsSettings$201(this.c, tLObject, tL_error);
                 break;
             default:
-                this.b.lambda$processUpdateArray$405(this.c, this.d, this.e);
+                ((ContactsController) this.b).lambda$loadPrivacySettings$65(this.c, tLObject, tL_error);
                 break;
         }
     }

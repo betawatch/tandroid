@@ -1,79 +1,96 @@
 package v3;
 
-import d5.y;
-import g7.t;
-import h3.s0;
-import h3.t0;
-import java.util.ArrayList;
-import java.util.Arrays;
-import o8.z;
-import org.telegram.ui.Cells.e3;
+import f5.d0;
+import o3.s;
+import o3.u;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class h extends i {
-    public static final byte[] o = {79, 112, 117, 115, 72, 101, 97, 100};
-    public static final byte[] p = {79, 112, 117, 115, 84, 97, 103, 115};
-    public boolean n;
+public final class h implements f {
+    public final long a;
+    public final int b;
+    public final long c;
+    public final long d;
+    public final long e;
+    public final long[] f;
 
-    public static boolean e(y yVar, byte[] bArr) {
-        if (yVar.a() < bArr.length) {
-            return false;
+    public h(long j10, int i10, long j11, long j12, long[] jArr) {
+        this.a = j10;
+        this.b = i10;
+        this.c = j11;
+        this.f = jArr;
+        this.d = j12;
+        this.e = j12 != -1 ? j10 + j12 : -1L;
+    }
+
+    @Override // v3.f
+    public final long a() {
+        return this.e;
+    }
+
+    @Override // v3.f
+    public final long b(long j10) {
+        long j11 = j10 - this.a;
+        if (!c() || j11 <= this.b) {
+            return 0L;
         }
-        int i9 = yVar.b;
-        byte[] bArr2 = new byte[bArr.length];
-        yVar.c(0, bArr.length, bArr2);
-        yVar.C(i9);
-        return Arrays.equals(bArr2, bArr);
+        long[] jArr = this.f;
+        f5.a.j(jArr);
+        double d = (j11 * 256.0d) / this.d;
+        int e10 = d0.e(jArr, (long) d, true);
+        long j12 = this.c;
+        long j13 = (e10 * j12) / 100;
+        long j14 = jArr[e10];
+        int i10 = e10 + 1;
+        long j15 = (j12 * i10) / 100;
+        return Math.round((j14 == (e10 == 99 ? 256L : jArr[i10]) ? 0.0d : (d - j14) / (r0 - j14)) * (j15 - j13)) + j13;
     }
 
-    @Override // v3.i
-    public final long b(y yVar) {
-        byte[] bArr = yVar.a;
-        return (this.i * j3.b.e(bArr[0], bArr.length > 1 ? bArr[1] : (byte) 0)) / 1000000;
+    @Override // o3.t
+    public final boolean c() {
+        return this.f != null;
     }
 
-    @Override // v3.i
-    public final boolean c(y yVar, long j10, e3 e3Var) {
-        if (e(yVar, o)) {
-            byte[] copyOf = Arrays.copyOf(yVar.a, yVar.c);
-            int i9 = copyOf[9] & 255;
-            ArrayList a2 = j3.b.a(copyOf);
-            if (((t0) e3Var.b) == null) {
-                s0 s0Var = new s0();
-                s0Var.o = "audio/opus";
-                s0Var.B = i9;
-                s0Var.C = 48000;
-                s0Var.q = a2;
-                e3Var.b = new t0(s0Var);
-                return true;
-            }
+    @Override // o3.t
+    public final s g(long j10) {
+        double d;
+        double d10;
+        boolean c3 = c();
+        int i10 = this.b;
+        long j11 = this.a;
+        if (!c3) {
+            u uVar = new u(0L, j11 + i10);
+            return new s(uVar, uVar);
+        }
+        long i11 = d0.i(j10, 0L, this.c);
+        double d11 = (i11 * 100.0d) / this.c;
+        double d12 = 0.0d;
+        if (d11 <= 0.0d) {
+            d = 256.0d;
+        } else if (d11 >= 100.0d) {
+            d = 256.0d;
+            d12 = 256.0d;
         } else {
-            if (!e(yVar, p)) {
-                d5.a.j((t0) e3Var.b);
-                return false;
+            int i12 = (int) d11;
+            long[] jArr = this.f;
+            f5.a.j(jArr);
+            double d13 = jArr[i12];
+            if (i12 == 99) {
+                d = 256.0d;
+                d10 = 256.0d;
+            } else {
+                d = 256.0d;
+                d10 = jArr[i12 + 1];
             }
-            d5.a.j((t0) e3Var.b);
-            if (!this.n) {
-                this.n = true;
-                yVar.D(8);
-                z3.c a3 = t.a(z.v(t.b(yVar, false, false).a));
-                if (a3 != null) {
-                    s0 a10 = ((t0) e3Var.b).a();
-                    a10.i = a3.a(((t0) e3Var.b).s);
-                    e3Var.b = new t0(a10);
-                    return true;
-                }
-            }
+            d12 = ((d10 - d13) * (d11 - i12)) + d13;
         }
-        return true;
+        long j12 = this.d;
+        u uVar2 = new u(i11, j11 + d0.i(Math.round((d12 / d) * j12), i10, j12 - 1));
+        return new s(uVar2, uVar2);
     }
 
-    @Override // v3.i
-    public final void d(boolean z10) {
-        super.d(z10);
-        if (z10) {
-            this.n = false;
-        }
+    @Override // o3.t
+    public final long h() {
+        return this.c;
     }
 }

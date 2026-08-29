@@ -1,6 +1,6 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public class AnimationNotificationsLocker {
     final int[] allowedNotifications;
@@ -21,13 +21,13 @@ public class AnimationNotificationsLocker {
         if (this.disabled) {
             return;
         }
-        int i9 = UserConfig.selectedAccount;
-        if (this.currentAccount != i9) {
-            NotificationCenter.getInstance(i9).onAnimationFinish(this.notificationsIndex);
+        int i10 = UserConfig.selectedAccount;
+        if (this.currentAccount != i10) {
+            NotificationCenter.getInstance(i10).onAnimationFinish(this.notificationsIndex);
             this.notificationsIndex = -1;
-            this.currentAccount = i9;
+            this.currentAccount = i10;
         }
-        this.notificationsIndex = NotificationCenter.getInstance(i9).setAnimationInProgress(this.notificationsIndex, this.allowedNotifications);
+        this.notificationsIndex = NotificationCenter.getInstance(i10).setAnimationInProgress(this.notificationsIndex, this.allowedNotifications);
         this.globalNotificationsIndex = NotificationCenter.getGlobalInstance().setAnimationInProgress(this.globalNotificationsIndex, this.allowedNotifications);
     }
 

@@ -1,64 +1,34 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
 import java.util.ArrayList;
-import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public interface wx {
-    boolean A();
+public final class wx {
+    public final TLRPC.StickerSetCovered a;
+    public final TLRPC.TL_messages_stickerSet b;
+    public final TLRPC.StickerSet c;
+    public final ArrayList d;
+    public final TLRPC.Document e;
 
-    long a();
+    public wx(TLRPC.TL_messages_stickerSet tL_messages_stickerSet, ArrayList arrayList) {
+        TLRPC.Document document = null;
+        this.a = null;
+        this.b = tL_messages_stickerSet;
+        this.c = tL_messages_stickerSet.set;
+        this.d = arrayList;
+        if (arrayList != null && !arrayList.isEmpty()) {
+            document = (TLRPC.Document) arrayList.get(0);
+        }
+        this.e = document;
+    }
 
-    boolean b();
-
-    boolean c();
-
-    void d(TLRPC.StickerSet stickerSet, TLRPC.InputStickerSet inputStickerSet, boolean z10);
-
-    void e(Object obj, Object obj2);
-
-    int f();
-
-    boolean g();
-
-    void h(TLRPC.StickerSetCovered stickerSetCovered);
-
-    void i(int i9);
-
-    boolean j();
-
-    boolean k();
-
-    void l(String str);
-
-    void m(View view, TLRPC.Document document, String str, Object obj, MessageObject.SendAnimationData sendAnimationData, boolean z10, int i9);
-
-    void n();
-
-    void o(h41 h41Var);
-
-    float p();
-
-    void q();
-
-    void r(TLRPC.StickerSetCovered stickerSetCovered);
-
-    void s(int i9);
-
-    void t(ArrayList arrayList);
-
-    void u();
-
-    void v(View view, Object obj, String str, Object obj2, boolean z10, int i9, int i10);
-
-    void w();
-
-    void x(long j10, TLRPC.Document document, String str, boolean z10);
-
-    void y(long j10);
-
-    boolean z();
+    public wx(TLRPC.StickerSetCovered stickerSetCovered, ArrayList arrayList) {
+        this.a = stickerSetCovered;
+        this.b = null;
+        this.c = stickerSetCovered.set;
+        this.d = arrayList;
+        this.e = arrayList.isEmpty() ? null : (TLRPC.Document) arrayList.get(0);
+    }
 }

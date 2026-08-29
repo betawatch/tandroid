@@ -1,195 +1,181 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.text.TextPaint;
-import android.view.MotionEvent;
-import android.view.View;
-import java.util.Locale;
+import android.content.Context;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.text.TextUtils;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ContactsController;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class he0 extends View {
-    public int a;
-    public boolean b;
-    public boolean c;
-    public float d;
-    public wj0 e;
-    public Paint f;
-    public Paint h;
-    public Paint n;
-    public TextPaint r;
-    public Path s;
-    public ge0 v;
-    public me0 w;
+public final class he0 {
+    public final /* synthetic */ ke0 a;
 
-    public final void a(int i9, MotionEvent motionEvent) {
-        float x10 = motionEvent.getX();
-        float y10 = motionEvent.getY();
-        if (i9 == 1) {
-            if (this.a != 0) {
-                return;
-            }
-            wj0 wj0Var = this.e;
-            this.a = (int) Math.floor(e2.c.A(x10, wj0Var.a, wj0Var.c / 5.0f, 1.0f));
-            return;
-        }
-        if (i9 != 2) {
-            if ((i9 == 3 || i9 == 4 || i9 == 5) && this.a != 0) {
-                this.a = 0;
-                return;
-            }
-            return;
-        }
-        float min = Math.min(2.0f, (this.d - y10) / 8.0f);
-        me0 me0Var = this.w;
-        int i10 = me0Var.f;
-        ne0 ne0Var = i10 != 0 ? i10 != 1 ? i10 != 2 ? i10 != 3 ? null : me0Var.d : me0Var.c : me0Var.b : me0Var.a;
-        int i11 = this.a;
-        if (i11 == 1) {
-            ne0Var.a = Math.max(0.0f, Math.min(100.0f, ne0Var.a + min));
-        } else if (i11 == 2) {
-            ne0Var.b = Math.max(0.0f, Math.min(100.0f, ne0Var.b + min));
-        } else if (i11 == 3) {
-            ne0Var.c = Math.max(0.0f, Math.min(100.0f, ne0Var.c + min));
-        } else if (i11 == 4) {
-            ne0Var.d = Math.max(0.0f, Math.min(100.0f, ne0Var.d + min));
-        } else if (i11 == 5) {
-            ne0Var.e = Math.max(0.0f, Math.min(100.0f, ne0Var.e + min));
-        }
-        invalidate();
-        ge0 ge0Var = this.v;
-        if (ge0Var != null) {
-            qe0 qe0Var = ((ie0) ge0Var).a;
-            qe0Var.g();
-            hz hzVar = qe0Var.h0;
-            if (hzVar != null) {
-                hzVar.e(false, false, false);
-            }
-        }
-        this.d = y10;
+    public he0(ke0 ke0Var) {
+        this.a = ke0Var;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        ne0 ne0Var;
-        TextPaint textPaint = this.r;
-        Path path = this.s;
-        Paint paint = this.n;
-        me0 me0Var = this.w;
-        wj0 wj0Var = this.e;
-        float f10 = wj0Var.c / 5.0f;
-        for (int i9 = 0; i9 < 4; i9++) {
-            float f11 = wj0Var.a;
-            float f12 = i9 * f10;
-            float f13 = f11 + f10 + f12;
-            float f14 = wj0Var.b;
-            canvas.drawLine(f13, f14, f12 + f11 + f10, f14 + wj0Var.d, this.f);
-        }
-        float f15 = wj0Var.a;
-        float f16 = wj0Var.b;
-        canvas.drawLine(f15, f16 + wj0Var.d, f15 + wj0Var.c, f16, this.h);
-        int i10 = me0Var.f;
-        int i11 = 3;
-        int i12 = 2;
-        if (i10 == 0) {
-            paint.setColor(-1);
-            ne0Var = me0Var.a;
-        } else if (i10 == 1) {
-            paint.setColor(-1229492);
-            ne0Var = me0Var.b;
-        } else if (i10 == 2) {
-            paint.setColor(-15667555);
-            ne0Var = me0Var.c;
-        } else if (i10 != 3) {
-            ne0Var = null;
-        } else {
-            paint.setColor(-13404165);
-            ne0Var = me0Var.d;
-        }
-        int i13 = 0;
-        while (i13 < 5) {
-            String format = i13 != 0 ? i13 != 1 ? i13 != i12 ? i13 != i11 ? i13 != 4 ? "" : String.format(Locale.US, "%.2f", Float.valueOf(ne0Var.e / 100.0f)) : String.format(Locale.US, "%.2f", Float.valueOf(ne0Var.d / 100.0f)) : String.format(Locale.US, "%.2f", Float.valueOf(ne0Var.c / 100.0f)) : String.format(Locale.US, "%.2f", Float.valueOf(ne0Var.b / 100.0f)) : String.format(Locale.US, "%.2f", Float.valueOf(ne0Var.a / 100.0f));
-            canvas.drawText(format, (i13 * f10) + e2.c.A(f10, textPaint.measureText(format), 2.0f, wj0Var.a), (wj0Var.b + wj0Var.d) - AndroidUtilities.dp(4.0f), textPaint);
-            i13++;
-            i11 = 3;
-            i12 = 2;
-        }
-        float[] a2 = ne0Var.a();
-        invalidate();
-        path.reset();
-        for (int i14 = 0; i14 < a2.length / 2; i14++) {
-            if (i14 == 0) {
-                int i15 = i14 * 2;
-                path.moveTo((a2[i15] * wj0Var.c) + wj0Var.a, ((1.0f - a2[i15 + 1]) * wj0Var.d) + wj0Var.b);
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r12v0, types: [android.view.ViewGroup, android.widget.LinearLayout] */
+    public final ViewGroup a(Context context, int i10) {
+        String str;
+        boolean z10;
+        int i11;
+        int i12;
+        ie0 ie0Var;
+        AndroidUtilities.VcardItem vcardItem;
+        int i13;
+        float f9;
+        float f10;
+        float f11;
+        float f12;
+        ke0 ke0Var = this.a;
+        ArrayList arrayList = ke0Var.H;
+        ArrayList arrayList2 = ke0Var.I;
+        boolean z11 = i10 != 0;
+        if (z11) {
+            ie0 ie0Var2 = new ie0(context);
+            TextView textView = new TextView(context);
+            ie0Var2.a = textView;
+            int i14 = org.telegram.ui.ActionBar.g6.G6;
+            int i15 = ke0.K;
+            int themedColor = ke0Var.getThemedColor(i14);
+            boolean z12 = ke0Var.F;
+            textView.setTextColor(themedColor);
+            textView.setTextSize(1, 16.0f);
+            textView.setSingleLine(false);
+            textView.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
+            textView.setEllipsize(TextUtils.TruncateAt.END);
+            boolean z13 = LocaleController.isRTL;
+            int i16 = (z13 ? 5 : 3) | 48;
+            if (z13) {
+                f9 = z12 ? 17 : 64;
             } else {
-                int i16 = i14 * 2;
-                path.lineTo((a2[i16] * wj0Var.c) + wj0Var.a, ((1.0f - a2[i16 + 1]) * wj0Var.d) + wj0Var.b);
+                f9 = 72.0f;
+            }
+            if (z13) {
+                f10 = 72.0f;
+            } else {
+                f10 = z12 ? 17 : 64;
+            }
+            ie0Var2.addView(textView, i7.f6.d(-1, -1.0f, i16, f9, 10.0f, f10, 0.0f));
+            TextView textView2 = new TextView(context);
+            ie0Var2.b = textView2;
+            textView2.setTextColor(ke0Var.getThemedColor(org.telegram.ui.ActionBar.g6.z6));
+            textView2.setTextSize(1, 13.0f);
+            textView2.setLines(1);
+            textView2.setMaxLines(1);
+            textView2.setSingleLine(true);
+            textView2.setGravity(LocaleController.isRTL ? 5 : 3);
+            boolean z14 = LocaleController.isRTL;
+            int i17 = z14 ? 5 : 3;
+            if (z14) {
+                f11 = z12 ? 17 : 64;
+            } else {
+                f11 = 72.0f;
+            }
+            if (z14) {
+                f12 = 72.0f;
+            } else {
+                f12 = z12 ? 17 : 64;
+            }
+            ie0Var2.addView(textView2, i7.f6.d(-2, -2.0f, i17, f11, 35.0f, f12, 0.0f));
+            ImageView imageView = new ImageView(context);
+            ie0Var2.c = imageView;
+            imageView.setScaleType(ImageView.ScaleType.CENTER);
+            imageView.setColorFilter(new PorterDuffColorFilter(ke0Var.getThemedColor(org.telegram.ui.ActionBar.g6.m6), PorterDuff.Mode.MULTIPLY));
+            boolean z15 = LocaleController.isRTL;
+            ie0Var2.addView(imageView, i7.f6.d(-2, -2.0f, (z15 ? 5 : 3) | 48, z15 ? 0.0f : 20.0f, 20.0f, z15 ? 20.0f : 0.0f, 0.0f));
+            ie0Var = ie0Var2;
+            if (!z12) {
+                Switch r9 = new Switch(context, null);
+                ie0Var2.d = r9;
+                int i18 = org.telegram.ui.ActionBar.g6.M6;
+                int i19 = org.telegram.ui.ActionBar.g6.N6;
+                int i20 = org.telegram.ui.ActionBar.g6.d6;
+                r9.d(i18, i19, i20, i20);
+                ie0Var2.addView(r9, i7.f6.d(37, 40.0f, (LocaleController.isRTL ? 3 : 5) | 16, 22.0f, 0.0f, 22.0f, 0.0f));
+                ie0Var = ie0Var2;
+            }
+        } else {
+            ?? je0Var = new je0(context);
+            je0Var.setOrientation(1);
+            TLRPC.TL_userContact_old2 tL_userContact_old2 = ke0Var.J;
+            if (arrayList2.size() == 1 && arrayList.size() == 0) {
+                str = ((AndroidUtilities.VcardItem) arrayList2.get(0)).getValue(true);
+                z10 = false;
+            } else {
+                TLRPC.UserStatus userStatus = tL_userContact_old2.status;
+                if (userStatus == null || userStatus.expires == 0) {
+                    str = null;
+                } else {
+                    i11 = ((org.telegram.ui.ActionBar.f3) ke0Var).currentAccount;
+                    str = LocaleController.formatUserStatus(i11, tL_userContact_old2);
+                }
+                z10 = true;
+            }
+            e9 e9Var = new e9((org.telegram.ui.ActionBar.c6) null);
+            e9Var.u(AndroidUtilities.dp(30.0f));
+            i12 = ((org.telegram.ui.ActionBar.f3) ke0Var).currentAccount;
+            e9Var.m(i12, tL_userContact_old2);
+            t9 t9Var = new t9(context);
+            t9Var.setRoundRadius(AndroidUtilities.dp(40.0f));
+            t9Var.e(tL_userContact_old2, e9Var);
+            je0Var.addView(t9Var, i7.f6.t(80, 80, 49, 0, 32, 0, 0));
+            TextView textView3 = new TextView(context);
+            org.telegram.ui.b.g(17.0f, 1, textView3);
+            textView3.setTextColor(ke0Var.getThemedColor(org.telegram.ui.ActionBar.g6.j5));
+            textView3.setSingleLine(true);
+            TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
+            textView3.setEllipsize(truncateAt);
+            textView3.setText(ContactsController.formatName(tL_userContact_old2.first_name, tL_userContact_old2.last_name));
+            je0Var.addView(textView3, i7.f6.t(-2, -2, 49, 10, 10, 10, str != null ? 0 : 27));
+            ie0Var = je0Var;
+            if (str != null) {
+                TextView h = org.telegram.messenger.x3.h(context, 1, 14.0f);
+                h.setTextColor(ke0Var.getThemedColor(org.telegram.ui.ActionBar.g6.r5));
+                h.setSingleLine(true);
+                h.setEllipsize(truncateAt);
+                h.setText(str);
+                je0Var.addView(h, i7.f6.t(-2, -2, 49, 10, 3, 10, z10 ? 27 : 11));
+                ie0Var = je0Var;
             }
         }
-        canvas.drawPath(path, paint);
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:10:0x0014, code lost:
-    
-        if (r0 != 6) goto L44;
-     */
-    @Override // android.view.View
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        int actionMasked = motionEvent.getActionMasked();
-        if (actionMasked != 0) {
-            if (actionMasked != 1) {
-                if (actionMasked != 2) {
-                    if (actionMasked != 3) {
-                        if (actionMasked != 5) {
-                        }
-                    }
-                } else if (this.b) {
-                    a(2, motionEvent);
-                    return true;
-                }
-                return true;
+        if (z11) {
+            ie0 ie0Var3 = ie0Var;
+            int i21 = ke0Var.B;
+            if (i10 < i21 || i10 >= ke0Var.C) {
+                vcardItem = (AndroidUtilities.VcardItem) arrayList.get(i10 - ke0Var.D);
+                int i22 = vcardItem.type;
+                i13 = i22 == 1 ? R.drawable.msg_mention : i22 == 2 ? R.drawable.msg_location : i22 == 3 ? R.drawable.msg_link : i22 == 4 ? R.drawable.msg_info : i22 == 5 ? R.drawable.msg_calendar2 : i22 == 6 ? "ORG".equalsIgnoreCase(vcardItem.getRawType(true)) ? R.drawable.msg_work : R.drawable.msg_jobtitle : i22 == 20 ? R.drawable.msg_info : R.drawable.msg_info;
+            } else {
+                vcardItem = (AndroidUtilities.VcardItem) arrayList2.get(i10 - i21);
+                i13 = R.drawable.msg_calls;
             }
-            if (this.b) {
-                a(3, motionEvent);
-                this.b = false;
+            boolean z16 = i10 != ke0Var.A - 1;
+            ImageView imageView2 = ie0Var3.c;
+            ie0Var3.a.setText(vcardItem.getValue(true));
+            ie0Var3.b.setText(vcardItem.getType());
+            Switch r82 = ie0Var3.d;
+            if (r82 != null) {
+                r82.c(vcardItem.checked, false);
             }
-            this.c = true;
-            return true;
+            if (i13 != 0) {
+                imageView2.setImageResource(i13);
+            } else {
+                imageView2.setImageDrawable(null);
+            }
+            ie0Var3.e = z16;
+            ie0Var3.setWillNotDraw(!z16);
         }
-        if (motionEvent.getPointerCount() == 1) {
-            if (this.c && !this.b) {
-                float x10 = motionEvent.getX();
-                float y10 = motionEvent.getY();
-                this.d = y10;
-                wj0 wj0Var = this.e;
-                float f10 = wj0Var.a;
-                if (x10 >= f10 && x10 <= f10 + wj0Var.c) {
-                    float f11 = wj0Var.b;
-                    if (y10 >= f11 && y10 <= f11 + wj0Var.d) {
-                        this.b = true;
-                    }
-                }
-                this.c = false;
-                if (this.b) {
-                    a(1, motionEvent);
-                    return true;
-                }
-            }
-        } else if (this.b) {
-            a(3, motionEvent);
-            this.c = true;
-            this.b = false;
-        }
-        return true;
-    }
-
-    public void setDelegate(ge0 ge0Var) {
-        this.v = ge0Var;
+        return ie0Var;
     }
 }

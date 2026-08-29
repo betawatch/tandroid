@@ -1,28 +1,32 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class f8 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ MediaDataController b;
-    public final /* synthetic */ String c;
-    public final /* synthetic */ boolean d;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-    public /* synthetic */ f8(MediaDataController mediaDataController, String str, boolean z10, int i9) {
-        this.a = i9;
-        this.b = mediaDataController;
-        this.c = str;
-        this.d = z10;
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class f8 implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ BaseController d;
+
+    public /* synthetic */ f8(BaseController baseController, boolean z10, long j10, int i10) {
+        this.a = i10;
+        this.d = baseController;
+        this.b = z10;
+        this.c = j10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                this.b.lambda$processLoadedDiceStickers$87(this.c, this.d);
+                ((MediaDataController) this.d).lambda$loadFeaturedStickers$58(this.b, this.c, tLObject, tL_error);
                 break;
             default:
-                this.b.lambda$loadStickersByEmojiOrName$83(this.c, this.d);
+                ((MessagesController) this.d).lambda$getChannelRecommendations$482(this.b, this.c, tLObject, tL_error);
                 break;
         }
     }

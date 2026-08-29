@@ -1,23 +1,11 @@
 package c2;
 
-import android.media.MediaRouter;
-
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class m0 extends r {
-    public final MediaRouter.RouteInfo a;
-
-    public m0(MediaRouter.RouteInfo routeInfo) {
-        this.a = routeInfo;
-    }
-
-    @Override // c2.r
-    public final void f(int i9) {
-        this.a.requestSetVolume(i9);
-    }
-
-    @Override // c2.r
-    public final void i(int i9) {
-        this.a.requestUpdateVolume(i9);
+public final class m0 extends q0 {
+    @Override // c2.q0
+    public void u(o0 o0Var, m mVar) {
+        super.u(o0Var, mVar);
+        mVar.a.putInt("deviceType", o0Var.a.getDeviceType());
     }
 }

@@ -4,15 +4,15 @@ import android.content.Intent;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class a implements Parcelable {
-    public static final Parcelable.Creator<a> CREATOR = new w.a(6);
+    public static final Parcelable.Creator<a> CREATOR = new w.a(9);
     public final int a;
     public final Intent b;
 
-    public a(Intent intent, int i9) {
-        this.a = i9;
+    public a(Intent intent, int i10) {
+        this.a = i10;
         this.b = intent;
     }
 
@@ -23,8 +23,8 @@ public final class a implements Parcelable {
 
     public final String toString() {
         StringBuilder sb2 = new StringBuilder("ActivityResult{resultCode=");
-        int i9 = this.a;
-        sb2.append(i9 != -1 ? i9 != 0 ? String.valueOf(i9) : "RESULT_CANCELED" : "RESULT_OK");
+        int i10 = this.a;
+        sb2.append(i10 != -1 ? i10 != 0 ? String.valueOf(i10) : "RESULT_CANCELED" : "RESULT_OK");
         sb2.append(", data=");
         sb2.append(this.b);
         sb2.append('}');
@@ -32,12 +32,12 @@ public final class a implements Parcelable {
     }
 
     @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i9) {
+    public final void writeToParcel(Parcel parcel, int i10) {
         parcel.writeInt(this.a);
         Intent intent = this.b;
         parcel.writeInt(intent == null ? 0 : 1);
         if (intent != null) {
-            intent.writeToParcel(parcel, i9);
+            intent.writeToParcel(parcel, i10);
         }
     }
 

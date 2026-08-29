@@ -1,40 +1,34 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Path;
-import android.graphics.RectF;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class xd0 extends Path {
-    public int a;
-    public int b;
-    public int c;
+public final class xd0 implements NotificationCenter.NotificationCenterDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Utilities.Callback b;
+    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate[] c;
 
-    public final void a(int i9, int i10, int i11) {
-        if (this.a == i9 && this.b == i10 && this.c == i11) {
-            return;
+    public xd0(int i10, Utilities.Callback callback, NotificationCenter.NotificationCenterDelegate[] notificationCenterDelegateArr) {
+        this.a = i10;
+        this.b = callback;
+        this.c = notificationCenterDelegateArr;
+    }
+
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+        int i12 = NotificationCenter.activityPermissionsGranted;
+        if (i10 == i12) {
+            int intValue = ((Integer) objArr[0]).intValue();
+            int[] iArr = (int[]) objArr[2];
+            if (intValue == this.a) {
+                Utilities.Callback callback = this.b;
+                if (callback != null) {
+                    callback.run(iArr);
+                }
+                NotificationCenter.getGlobalInstance().removeObserver(this.c[0], i12);
+            }
         }
-        rewind();
-        RectF rectF = AndroidUtilities.rectTmp;
-        float f10 = i9 - i11;
-        float f11 = i10 + i11;
-        rectF.set(f10, i10 - i11, i9 + i11, f11);
-        arcTo(rectF, -180.0f, 270.0f, false);
-        float f12 = i11 / 81.0f;
-        float f13 = i9;
-        float f14 = f11 - (3.0f * f12);
-        cubicTo(f13 - (13.0f * f12), f11, f13 - (25.0f * f12), f14, f13 - (36.0f * f12), f11 - (8.42f * f12));
-        float f15 = f11 - f12;
-        cubicTo(f13 - (52.0f * f12), f15, f13 - (56.5f * f12), f15, f13 - (78.02f * f12), f15);
-        cubicTo(f13 - (80.0f * f12), f15, f13 - (81.0f * f12), f14, f13 - (79.52f * f12), f11 - (4.5f * f12));
-        float f16 = f13 - (63.73f * f12);
-        cubicTo(f13 - (78.0f * f12), f11 - (6.0f * f12), f16, f11 - (15.0f * f12), f16, f11 - (31.0f * f12));
-        float f17 = i10;
-        cubicTo(f13 - (74.5f * f12), f11 - (44.75f * f12), f10, (f12 * 18.87f) + f17, f10, f17);
-        close();
-        this.a = i9;
-        this.b = i10;
-        this.c = i11;
     }
 }

@@ -1,10 +1,10 @@
 package com.google.android.recaptcha.internal;
 
-import kotlin.jvm.internal.o;
+import kotlin.jvm.internal.p;
 import org.telegram.tgnet.TLObject;
-import sc.c;
+import uc.c;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 final class zzcu extends c {
     long zza;
@@ -15,15 +15,15 @@ final class zzcu extends c {
     /* synthetic */ Object zzf;
     final /* synthetic */ zzcx zzg;
     int zzh;
-    o zzi;
+    p zzi;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzcu(zzcx zzcxVar, qc.c cVar) {
+    public zzcu(zzcx zzcxVar, sc.c cVar) {
         super(cVar);
         this.zzg = zzcxVar;
     }
 
-    @Override // sc.a
+    @Override // uc.a
     public final Object invokeSuspend(Object obj) {
         this.zzf = obj;
         this.zzh |= TLObject.FLAG_31;

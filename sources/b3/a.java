@@ -1,26 +1,26 @@
 package b3;
 
-import a5.m;
-import java.util.concurrent.Executor;
-import java.util.logging.Logger;
-import w2.q;
-import x2.d;
+import j$.util.DesugarCollections;
+import java.util.ArrayList;
+import java.util.List;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class a implements c {
-    public static final Logger f = Logger.getLogger(q.class.getName());
-    public final m a;
-    public final Executor b;
-    public final d c;
-    public final d3.d d;
-    public final e3.c e;
+public final class a {
+    public static final /* synthetic */ int e = 0;
+    public final g a;
+    public final List b;
+    public final b c;
+    public final String d;
 
-    public a(Executor executor, d dVar, m mVar, d3.d dVar2, e3.c cVar) {
-        this.b = executor;
-        this.c = dVar;
-        this.a = mVar;
-        this.d = dVar2;
-        this.e = cVar;
+    static {
+        DesugarCollections.unmodifiableList(new ArrayList());
+    }
+
+    public a(g gVar, List list, b bVar, String str) {
+        this.a = gVar;
+        this.b = list;
+        this.c = bVar;
+        this.d = str;
     }
 }

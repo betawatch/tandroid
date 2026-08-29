@@ -1,31 +1,15 @@
 package sc;
 
-import kotlin.jvm.internal.q;
-import kotlin.jvm.internal.r;
+import bd.p;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public abstract class h extends g implements kotlin.jvm.internal.f {
-    public final int a;
+public interface h {
+    Object fold(Object obj, p pVar);
 
-    public h(qc.c cVar) {
-        super(cVar);
-        this.a = 2;
-    }
+    f get(g gVar);
 
-    @Override // kotlin.jvm.internal.f
-    public final int getArity() {
-        return this.a;
-    }
+    h minusKey(g gVar);
 
-    @Override // sc.a
-    public final String toString() {
-        if (getCompletion() != null) {
-            return super.toString();
-        }
-        q.a.getClass();
-        String a2 = r.a(this);
-        kotlin.jvm.internal.i.d(a2, "renderLambdaToString(...)");
-        return a2;
-    }
+    h plus(h hVar);
 }

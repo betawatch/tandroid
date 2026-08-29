@@ -1,25 +1,31 @@
 package org.telegram.ui;
 
-import java.util.concurrent.Executor;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class gb0 implements Executor {
+public final /* synthetic */ class gb0 implements Runnable {
     public final /* synthetic */ int a;
+    public final /* synthetic */ mb0 b;
 
-    public /* synthetic */ gb0(int i9) {
-        this.a = i9;
+    public /* synthetic */ gb0(mb0 mb0Var, int i10) {
+        this.a = i10;
+        this.b = mb0Var;
     }
 
-    @Override // java.util.concurrent.Executor
-    public final void execute(Runnable runnable) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                AndroidUtilities.runOnUIThread(runnable);
+                mb0 mb0Var = this.b;
+                if (mb0Var.h >= 0) {
+                    ConnectionsManager.getInstance(mb0Var.b).cancelRequest(mb0Var.h, true);
+                    mb0Var.h = -1;
+                    break;
+                }
                 break;
             default:
-                runnable.run();
+                this.b.a();
                 break;
         }
     }

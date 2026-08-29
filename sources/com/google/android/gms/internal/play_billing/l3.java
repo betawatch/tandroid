@@ -1,38 +1,21 @@
 package com.google.android.gms.internal.play_billing;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class l3 extends v1 {
-    private static final l3 zzb;
+public enum l3 {
+    b(0),
+    c(1),
+    d(2),
+    e(3);
 
-    static {
-        l3 l3Var = new l3();
-        zzb = l3Var;
-        v1.k(l3.class, l3Var);
+    public final int a;
+
+    l3(int i10) {
+        this.a = i10;
     }
 
-    public static l3 n() {
-        return zzb;
-    }
-
-    @Override // com.google.android.gms.internal.play_billing.v1
-    public final Object d(int i9) {
-        int i10 = i9 - 1;
-        if (i10 == 0) {
-            return (byte) 1;
-        }
-        if (i10 == 2) {
-            return new s2(zzb, "\u0004\u0000", null);
-        }
-        if (i10 == 3) {
-            return new l3();
-        }
-        if (i10 == 4) {
-            return new y0(zzb);
-        }
-        if (i10 == 5) {
-            return zzb;
-        }
-        throw null;
+    @Override // java.lang.Enum
+    public final String toString() {
+        return Integer.toString(this.a);
     }
 }

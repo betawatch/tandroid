@@ -7,19 +7,18 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.ll;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
 public final class t2 extends FrameLayout {
     public final /* synthetic */ int a;
     public final /* synthetic */ Dialog b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ t2(Dialog dialog, Context context, int i9) {
+    public /* synthetic */ t2(Dialog dialog, Context context, int i10) {
         super(context);
-        this.a = i9;
+        this.a = i10;
         this.b = dialog;
     }
 
@@ -34,51 +33,51 @@ public final class t2 extends FrameLayout {
     }
 
     @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public void onLayout(boolean z10, int i9, int i10, int i11, int i12) {
-        int i13;
+    public void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         int i14;
+        int i15;
         int left;
         int measuredWidth;
         switch (this.a) {
             case 1:
                 int childCount = getChildCount();
-                int i15 = i11 - i9;
-                int i16 = -1;
+                int i16 = i12 - i10;
+                int i17 = -1;
                 if (!((c2) this.b).G0) {
                     View view = null;
-                    int i17 = 0;
-                    while (i17 < childCount) {
-                        View childAt = getChildAt(i17);
+                    int i18 = 0;
+                    while (i18 < childCount) {
+                        View childAt = getChildAt(i18);
                         Integer num = (Integer) childAt.getTag();
                         if (num == null) {
                             int measuredWidth2 = childAt.getMeasuredWidth();
                             int measuredHeight = childAt.getMeasuredHeight();
                             if (view != null) {
-                                i14 = ((view.getMeasuredWidth() - measuredWidth2) / 2) + view.getLeft();
-                                i13 = ((view.getMeasuredHeight() - measuredHeight) / 2) + view.getTop();
+                                i15 = ((view.getMeasuredWidth() - measuredWidth2) / 2) + view.getLeft();
+                                i14 = ((view.getMeasuredHeight() - measuredHeight) / 2) + view.getTop();
                             } else {
-                                i13 = 0;
                                 i14 = 0;
+                                i15 = 0;
                             }
-                            childAt.layout(i14, i13, measuredWidth2 + i14, measuredHeight + i13);
-                        } else if (num.intValue() == i16) {
+                            childAt.layout(i15, i14, measuredWidth2 + i15, measuredHeight + i14);
+                        } else if (num.intValue() == i17) {
                             if (LocaleController.isRTL) {
                                 childAt.layout(getPaddingLeft(), getPaddingTop(), childAt.getMeasuredWidth() + getPaddingLeft(), childAt.getMeasuredHeight() + getPaddingTop());
                             } else {
-                                childAt.layout((i15 - getPaddingRight()) - childAt.getMeasuredWidth(), getPaddingTop(), i15 - getPaddingRight(), childAt.getMeasuredHeight() + getPaddingTop());
+                                childAt.layout((i16 - getPaddingRight()) - childAt.getMeasuredWidth(), getPaddingTop(), i16 - getPaddingRight(), childAt.getMeasuredHeight() + getPaddingTop());
                             }
                             view = childAt;
                         } else if (num.intValue() == -2) {
                             if (LocaleController.isRTL) {
                                 int paddingLeft = getPaddingLeft();
                                 if (view != null) {
-                                    paddingLeft = org.telegram.messenger.l0.C(8.0f, view.getMeasuredWidth(), paddingLeft);
+                                    paddingLeft = org.telegram.messenger.x3.C(8.0f, view.getMeasuredWidth(), paddingLeft);
                                 }
                                 childAt.layout(paddingLeft, getPaddingTop(), childAt.getMeasuredWidth() + paddingLeft, childAt.getMeasuredHeight() + getPaddingTop());
                             } else {
-                                int paddingRight = (i15 - getPaddingRight()) - childAt.getMeasuredWidth();
+                                int paddingRight = (i16 - getPaddingRight()) - childAt.getMeasuredWidth();
                                 if (view != null) {
-                                    paddingRight = ll.w(8.0f, view.getMeasuredWidth(), paddingRight);
+                                    paddingRight = org.telegram.ui.b.u(8.0f, view.getMeasuredWidth(), paddingRight);
                                 }
                                 childAt.layout(paddingRight, getPaddingTop(), childAt.getMeasuredWidth() + paddingRight, childAt.getMeasuredHeight() + getPaddingTop());
                             }
@@ -86,27 +85,27 @@ public final class t2 extends FrameLayout {
                             View findViewWithTag = findViewWithTag(-3);
                             if (LocaleController.isRTL) {
                                 if (findViewWithTag == null) {
-                                    left = i15 - getPaddingRight();
+                                    left = i16 - getPaddingRight();
                                     measuredWidth = childAt.getMeasuredWidth();
                                 } else {
                                     left = findViewWithTag.getLeft() - AndroidUtilities.dp(8.0f);
                                     measuredWidth = childAt.getMeasuredWidth();
                                 }
-                                int i18 = left - measuredWidth;
-                                childAt.layout(i18, getPaddingTop(), childAt.getMeasuredWidth() + i18, childAt.getMeasuredHeight() + getPaddingTop());
+                                int i19 = left - measuredWidth;
+                                childAt.layout(i19, getPaddingTop(), childAt.getMeasuredWidth() + i19, childAt.getMeasuredHeight() + getPaddingTop());
                             } else {
                                 int paddingLeft2 = findViewWithTag == null ? getPaddingLeft() : findViewWithTag.getRight() + AndroidUtilities.dp(8.0f);
                                 childAt.layout(paddingLeft2, getPaddingTop(), childAt.getMeasuredWidth() + paddingLeft2, childAt.getMeasuredHeight() + getPaddingTop());
                             }
                         } else if (num.intValue() == -3) {
                             if (LocaleController.isRTL) {
-                                childAt.layout((i15 - getPaddingRight()) - childAt.getMeasuredWidth(), getPaddingTop(), i15 - getPaddingRight(), childAt.getMeasuredHeight() + getPaddingTop());
+                                childAt.layout((i16 - getPaddingRight()) - childAt.getMeasuredWidth(), getPaddingTop(), i16 - getPaddingRight(), childAt.getMeasuredHeight() + getPaddingTop());
                             } else {
                                 childAt.layout(getPaddingLeft(), getPaddingTop(), childAt.getMeasuredWidth() + getPaddingLeft(), childAt.getMeasuredHeight() + getPaddingTop());
                             }
                         }
-                        i17++;
-                        i16 = -1;
+                        i18++;
+                        i17 = -1;
                     }
                     break;
                 } else {
@@ -115,23 +114,23 @@ public final class t2 extends FrameLayout {
                     View findViewWithTag4 = findViewWithTag(-2);
                     View findViewWithTag5 = findViewWithTag(-1);
                     int paddingLeft3 = getPaddingLeft();
-                    int paddingRight2 = i15 - getPaddingRight();
+                    int paddingRight2 = i16 - getPaddingRight();
                     int max = Math.max(0, ((paddingRight2 - paddingLeft3) - AndroidUtilities.dp(8.0f)) / 2);
                     boolean z11 = LocaleController.isRTL;
-                    int i19 = z11 ? paddingRight2 - max : paddingLeft3;
+                    int i20 = z11 ? paddingRight2 - max : paddingLeft3;
                     if (!z11) {
                         paddingLeft3 = paddingRight2 - max;
                     }
                     int paddingTop = getPaddingTop();
                     int dp = AndroidUtilities.dp(44.0f) + paddingTop;
                     if (findViewWithTag2 != null) {
-                        findViewWithTag2.layout(i19, paddingTop, i19 + max, AndroidUtilities.dp(40.0f) + paddingTop);
+                        findViewWithTag2.layout(i20, paddingTop, i20 + max, AndroidUtilities.dp(40.0f) + paddingTop);
                     }
                     if (findViewWithTag3 != null) {
                         findViewWithTag3.layout(paddingLeft3, paddingTop, paddingLeft3 + max, AndroidUtilities.dp(40.0f) + paddingTop);
                     }
                     if (findViewWithTag4 != null) {
-                        findViewWithTag4.layout(i19, dp, i19 + max, AndroidUtilities.dp(40.0f) + dp);
+                        findViewWithTag4.layout(i20, dp, i20 + max, AndroidUtilities.dp(40.0f) + dp);
                     }
                     if (findViewWithTag5 != null) {
                         findViewWithTag5.layout(paddingLeft3, dp, max + paddingLeft3, AndroidUtilities.dp(40.0f) + dp);
@@ -140,82 +139,82 @@ public final class t2 extends FrameLayout {
                 }
                 break;
             default:
-                super.onLayout(z10, i9, i10, i11, i12);
+                super.onLayout(z10, i10, i11, i12, i13);
                 break;
         }
     }
 
     @Override // android.widget.FrameLayout, android.view.View
-    public void onMeasure(int i9, int i10) {
+    public void onMeasure(int i10, int i11) {
         switch (this.a) {
             case 1:
-                super.onMeasure(i9, i10);
+                super.onMeasure(i10, i11);
                 int measuredWidth = (getMeasuredWidth() - getPaddingLeft()) - getPaddingRight();
                 int childCount = getChildCount();
-                int i11 = 0;
+                int i12 = 0;
                 if (!((c2) this.b).G0) {
-                    int i12 = 0;
-                    while (i11 < childCount) {
-                        View childAt = getChildAt(i11);
+                    int i13 = 0;
+                    while (i12 < childCount) {
+                        View childAt = getChildAt(i12);
                         if ((childAt instanceof TextView) && childAt.getTag() != null) {
-                            i12 = childAt.getMeasuredWidth() + i12;
+                            i13 = childAt.getMeasuredWidth() + i13;
                         }
-                        i11++;
+                        i12++;
                     }
-                    if (i12 > measuredWidth) {
+                    if (i13 > measuredWidth) {
                         View findViewWithTag = findViewWithTag(-2);
                         View findViewWithTag2 = findViewWithTag(-4);
                         View findViewWithTag3 = findViewWithTag(-3);
                         if (findViewWithTag != null && findViewWithTag3 != null) {
                             if (findViewWithTag.getMeasuredWidth() >= findViewWithTag3.getMeasuredWidth()) {
-                                findViewWithTag.measure(View.MeasureSpec.makeMeasureSpec(findViewWithTag.getMeasuredWidth() - (i12 - measuredWidth), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(findViewWithTag.getMeasuredHeight(), TLObject.FLAG_30));
+                                findViewWithTag.measure(View.MeasureSpec.makeMeasureSpec(findViewWithTag.getMeasuredWidth() - (i13 - measuredWidth), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(findViewWithTag.getMeasuredHeight(), TLObject.FLAG_30));
                                 break;
                             } else {
-                                findViewWithTag3.measure(View.MeasureSpec.makeMeasureSpec(findViewWithTag3.getMeasuredWidth() - (i12 - measuredWidth), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(findViewWithTag3.getMeasuredHeight(), TLObject.FLAG_30));
+                                findViewWithTag3.measure(View.MeasureSpec.makeMeasureSpec(findViewWithTag3.getMeasuredWidth() - (i13 - measuredWidth), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(findViewWithTag3.getMeasuredHeight(), TLObject.FLAG_30));
                                 break;
                             }
                         } else if (findViewWithTag2 != null && findViewWithTag3 != null) {
                             if (findViewWithTag2.getMeasuredWidth() >= findViewWithTag3.getMeasuredWidth()) {
-                                findViewWithTag2.measure(View.MeasureSpec.makeMeasureSpec(findViewWithTag2.getMeasuredWidth() - (i12 - measuredWidth), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(findViewWithTag2.getMeasuredHeight(), TLObject.FLAG_30));
+                                findViewWithTag2.measure(View.MeasureSpec.makeMeasureSpec(findViewWithTag2.getMeasuredWidth() - (i13 - measuredWidth), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(findViewWithTag2.getMeasuredHeight(), TLObject.FLAG_30));
                                 break;
                             } else {
-                                findViewWithTag3.measure(View.MeasureSpec.makeMeasureSpec(findViewWithTag3.getMeasuredWidth() - (i12 - measuredWidth), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(findViewWithTag3.getMeasuredHeight(), TLObject.FLAG_30));
+                                findViewWithTag3.measure(View.MeasureSpec.makeMeasureSpec(findViewWithTag3.getMeasuredWidth() - (i13 - measuredWidth), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(findViewWithTag3.getMeasuredHeight(), TLObject.FLAG_30));
                                 break;
                             }
                         }
                     }
                 } else {
                     int max = Math.max(0, (measuredWidth - AndroidUtilities.dp(8.0f)) / 2);
-                    while (i11 < childCount) {
-                        View childAt2 = getChildAt(i11);
+                    while (i12 < childCount) {
+                        View childAt2 = getChildAt(i12);
                         if (childAt2.getTag() != null) {
                             childAt2.measure(View.MeasureSpec.makeMeasureSpec(max, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(40.0f), TLObject.FLAG_30));
                         }
-                        i11++;
+                        i12++;
                     }
                     break;
                 }
                 break;
             default:
-                super.onMeasure(i9, i10);
+                super.onMeasure(i10, i11);
                 break;
         }
     }
 
     @Override // android.view.View
-    public void setTranslationY(float f10) {
+    public void setTranslationY(float f9) {
         switch (this.a) {
             case 0:
-                super.setTranslationY(f10);
+                super.setTranslationY(f9);
                 f3 f3Var = (f3) this.b;
                 FrameLayout frameLayout = f3Var.topBulletinContainer;
                 if (frameLayout != null) {
                     frameLayout.setTranslationY((-(f3Var.container.getHeight() - f3Var.containerView.getY())) + f3Var.backgroundPaddingTop);
                 }
-                f3Var.onContainerTranslationYChanged(f10);
+                f3Var.onContainerTranslationYChanged(f9);
                 break;
             default:
-                super.setTranslationY(f10);
+                super.setTranslationY(f9);
                 break;
         }
     }

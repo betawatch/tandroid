@@ -1,5 +1,6 @@
 package k;
 
+import a4.w;
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.graphics.PorterDuff;
@@ -10,11 +11,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import java.lang.reflect.Constructor;
-import l.m;
 import l.n;
 import l.r;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class g {
     public CharSequence A;
@@ -70,9 +70,9 @@ public final class g {
         Context context = hVar.c;
         boolean z10 = false;
         menuItem.setChecked(this.s).setVisible(this.t).setEnabled(this.u).setCheckable(this.r >= 1).setTitleCondensed(this.l).setIcon(this.m);
-        int i9 = this.v;
-        if (i9 >= 0) {
-            menuItem.setShowAsAction(i9);
+        int i10 = this.v;
+        if (i10 >= 0) {
+            menuItem.setShowAsAction(i10);
         }
         if (this.y != null) {
             if (context.isRestricted()) {
@@ -90,16 +90,16 @@ public final class g {
                 fVar.b = cls.getMethod(str, f.c);
                 menuItem.setOnMenuItemClickListener(fVar);
             } catch (Exception e10) {
-                StringBuilder t10 = aa.d.t("Couldn't resolve menu item onClick handler ", str, " in class ");
-                t10.append(cls.getName());
-                InflateException inflateException = new InflateException(t10.toString());
+                StringBuilder s10 = w.s("Couldn't resolve menu item onClick handler ", str, " in class ");
+                s10.append(cls.getName());
+                InflateException inflateException = new InflateException(s10.toString());
                 inflateException.initCause(e10);
                 throw inflateException;
             }
         }
         if (this.r >= 2) {
-            if (menuItem instanceof m) {
-                m mVar = (m) menuItem;
+            if (menuItem instanceof l.m) {
+                l.m mVar = (l.m) menuItem;
                 mVar.x = (mVar.x & (-5)) | 4;
             } else if (menuItem instanceof r) {
                 r rVar = (r) menuItem;
@@ -119,12 +119,12 @@ public final class g {
             menuItem.setActionView((View) a(str2, h.e, hVar.a));
             z10 = true;
         }
-        int i10 = this.w;
-        if (i10 > 0) {
+        int i11 = this.w;
+        if (i11 > 0) {
             if (z10) {
                 Log.w("SupportMenuInflater", "Ignoring attribute 'itemActionViewLayout'. Action view already specified.");
             } else {
-                menuItem.setActionView(i10);
+                menuItem.setActionView(i11);
             }
         }
         n nVar = this.z;
@@ -140,34 +140,34 @@ public final class g {
         if (z11) {
             ((l0.a) menuItem).setContentDescription(charSequence);
         } else if (Build.VERSION.SDK_INT >= 26) {
-            g6.a.i(menuItem, charSequence);
+            i6.a.j(menuItem, charSequence);
         }
         CharSequence charSequence2 = this.B;
         if (z11) {
             ((l0.a) menuItem).setTooltipText(charSequence2);
         } else if (Build.VERSION.SDK_INT >= 26) {
-            g6.a.q(menuItem, charSequence2);
+            i6.a.r(menuItem, charSequence2);
         }
-        char c10 = this.n;
-        int i11 = this.o;
+        char c3 = this.n;
+        int i12 = this.o;
         if (z11) {
-            ((l0.a) menuItem).setAlphabeticShortcut(c10, i11);
+            ((l0.a) menuItem).setAlphabeticShortcut(c3, i12);
         } else if (Build.VERSION.SDK_INT >= 26) {
-            g6.a.g(menuItem, c10, i11);
+            i6.a.h(menuItem, c3, i12);
         }
-        char c11 = this.p;
-        int i12 = this.q;
+        char c6 = this.p;
+        int i13 = this.q;
         if (z11) {
-            ((l0.a) menuItem).setNumericShortcut(c11, i12);
+            ((l0.a) menuItem).setNumericShortcut(c6, i13);
         } else if (Build.VERSION.SDK_INT >= 26) {
-            g6.a.m(menuItem, c11, i12);
+            i6.a.n(menuItem, c6, i13);
         }
         PorterDuff.Mode mode = this.D;
         if (mode != null) {
             if (z11) {
                 ((l0.a) menuItem).setIconTintMode(mode);
             } else if (Build.VERSION.SDK_INT >= 26) {
-                g6.a.l(menuItem, mode);
+                i6.a.m(menuItem, mode);
             }
         }
         ColorStateList colorStateList = this.C;
@@ -175,7 +175,7 @@ public final class g {
             if (z11) {
                 ((l0.a) menuItem).setIconTintList(colorStateList);
             } else if (Build.VERSION.SDK_INT >= 26) {
-                g6.a.k(menuItem, colorStateList);
+                i6.a.l(menuItem, colorStateList);
             }
         }
     }

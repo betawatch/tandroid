@@ -1,96 +1,50 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public class c9 extends View {
-    public final b9 a;
-    public zf.z0 b;
-    public nz0 c;
-    public Paint d;
+public final class c9 implements Runnable {
+    public final /* synthetic */ bm a;
 
-    public c9(Context context, boolean z10) {
-        super(context);
-        this.a = new b9(this, z10);
+    public c9(bm bmVar) {
+        this.a = bmVar;
     }
 
-    public final void a(boolean z10) {
-        this.a.b(z10, true);
-    }
-
-    public final void b(int i9, TLObject tLObject, int i10) {
-        this.a.l(i9, tLObject, i10);
-    }
-
-    @Override // android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.a.g();
-    }
-
-    @Override // android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.a.h();
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        this.a.i(canvas);
-        if (this.c != null) {
-            RectF rectF = AndroidUtilities.rectTmp;
-            rectF.set(getWidth() - AndroidUtilities.dp(22.0f), getHeight() - AndroidUtilities.dp(22.0f), getWidth() - AndroidUtilities.dp(0.0f), getHeight() - AndroidUtilities.dp(0.0f));
-            this.b.e(rectF);
-            canvas.drawCircle(rectF.centerX(), rectF.centerY(), (rectF.width() / 2.0f) + AndroidUtilities.dp(1.33f), this.d);
-            canvas.drawCircle(rectF.centerX(), rectF.centerY(), rectF.width() / 2.0f, this.b.f);
-            this.c.c(rectF.centerX() - (this.c.c / 2.0f), rectF.centerY(), 1.0f, -1, canvas);
+    @Override // java.lang.Runnable
+    public final void run() {
+        lh.x2 x2Var;
+        bm bmVar = this.a;
+        AndroidUtilities.runOnUIThread(bmVar.y, 1000L);
+        TLRPC.TL_emojiList tL_emojiList = bmVar.n;
+        if (tL_emojiList == null || tL_emojiList.document_id.isEmpty() || bmVar.w != 1.0f) {
+            return;
         }
-    }
-
-    @Override // android.view.View
-    public void onMeasure(int i9, int i10) {
-        super.onMeasure(i9, i10);
-        int measuredWidth = getMeasuredWidth();
-        b9 b9Var = this.a;
-        b9Var.p = measuredWidth;
-        b9Var.o = getMeasuredHeight();
-    }
-
-    public void setAvatarsTextSize(int i9) {
-        this.a.j(i9);
-    }
-
-    public void setCentered(boolean z10) {
-        this.a.l = z10;
-    }
-
-    public void setCount(int i9) {
-        this.a.k(i9);
-    }
-
-    public void setDelegate(Runnable runnable) {
-        this.a.j = runnable;
-    }
-
-    public void setSize(int i9) {
-        this.a.s = i9;
-    }
-
-    public void setStepFactor(float f10) {
-        this.a.t = f10;
-    }
-
-    public void setStyle(int i9) {
-        b9 b9Var = this.a;
-        b9Var.k = i9;
-        b9Var.f();
+        if (bmVar.x || ((x2Var = bmVar.b.k) != null && x2Var.hasImageLoaded())) {
+            int i10 = bmVar.v + 1;
+            bmVar.v = i10;
+            bmVar.s++;
+            if (i10 > tL_emojiList.document_id.size() - 1) {
+                bmVar.v = 0;
+            }
+            if (bmVar.s > 6) {
+                bmVar.s = 0;
+            }
+            p5 p5Var = new p5(4, bmVar.r, tL_emojiList.document_id.get(bmVar.v).longValue());
+            bmVar.a = p5Var;
+            bmVar.d.setAnimatedEmojiDrawable(p5Var);
+            int[] iArr = b9.Y[bmVar.s];
+            int i11 = iArr[0];
+            int i12 = iArr[1];
+            int i13 = iArr[2];
+            int i14 = iArr[3];
+            k20 k20Var = new k20();
+            bmVar.f = k20Var;
+            k20Var.d(i11, i12, i13, i14);
+            bmVar.w = 0.0f;
+            bmVar.b();
+            bmVar.invalidate();
+        }
     }
 }

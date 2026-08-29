@@ -6,14 +6,14 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.gy0;
+import org.telegram.ui.Components.ry0;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
 public class TLJsonParser {
     private final JSONObject jsonObject;
 
-    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
     public interface Deserializable {
         void deserializeFromJson(TLJsonParser tLJsonParser);
     }
@@ -40,12 +40,12 @@ public class TLJsonParser {
         }
     }
 
-    private int parseInt32(Object obj, int i9) {
+    private int parseInt32(Object obj, int i10) {
         try {
-            return obj instanceof Number ? ((Number) obj).intValue() : obj instanceof String ? Integer.parseInt((String) obj, 10) : i9;
+            return obj instanceof Number ? ((Number) obj).intValue() : obj instanceof String ? Integer.parseInt((String) obj, 10) : i10;
         } catch (Exception e10) {
             FileLog.e(e10);
-            return i9;
+            return i10;
         }
     }
 
@@ -66,12 +66,12 @@ public class TLJsonParser {
         return parseBoolean(this.jsonObject.opt(str), z10);
     }
 
-    public int readInt32(String str, int i9) {
-        return parseInt32(this.jsonObject.opt(str), i9);
+    public int readInt32(String str, int i10) {
+        return parseInt32(this.jsonObject.opt(str), i10);
     }
 
-    public long readInt64(String str, int i9) {
-        return parseInt64(this.jsonObject.opt(str), i9);
+    public long readInt64(String str, int i10) {
+        return parseInt64(this.jsonObject.opt(str), i10);
     }
 
     public <T extends Deserializable> T readObject(String str, Utilities.CallbackReturn<TLJsonParser, T> callbackReturn) {
@@ -87,22 +87,22 @@ public class TLJsonParser {
     }
 
     public <T extends Deserializable> ArrayList<T> readVector(String str, Utilities.CallbackReturn<TLJsonParser, T> callbackReturn) {
-        gy0 gy0Var = (ArrayList<T>) new ArrayList();
+        ry0 ry0Var = (ArrayList<T>) new ArrayList();
         JSONArray optJSONArray = this.jsonObject.optJSONArray(str);
         if (optJSONArray != null) {
             int length = optJSONArray.length();
-            for (int i9 = 0; i9 < length; i9++) {
+            for (int i10 = 0; i10 < length; i10++) {
                 try {
-                    Deserializable parse = parse(new TLJsonParser(optJSONArray.getJSONObject(i9)), callbackReturn);
+                    Deserializable parse = parse(new TLJsonParser(optJSONArray.getJSONObject(i10)), callbackReturn);
                     if (parse != null) {
-                        gy0Var.add(parse);
+                        ry0Var.add(parse);
                     }
                 } catch (JSONException e10) {
                     FileLog.e(e10);
                 }
             }
         }
-        return gy0Var;
+        return ry0Var;
     }
 
     public String readString(String str, String str2) {

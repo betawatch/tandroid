@@ -4,7 +4,7 @@ import org.webrtc.VideoFrame;
 import org.webrtc.VideoProcessor;
 import org.webrtc.VideoSource;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes4.dex */
 class NativeAndroidVideoTrackSource {
     private final long nativeAndroidVideoTrackSource;
@@ -13,15 +13,15 @@ class NativeAndroidVideoTrackSource {
         this.nativeAndroidVideoTrackSource = j10;
     }
 
-    public static VideoProcessor.FrameAdaptationParameters createFrameAdaptationParameters(int i9, int i10, int i11, int i12, int i13, int i14, long j10, boolean z10) {
-        return new VideoProcessor.FrameAdaptationParameters(i9, i10, i11, i12, i13, i14, j10, z10);
+    public static VideoProcessor.FrameAdaptationParameters createFrameAdaptationParameters(int i10, int i11, int i12, int i13, int i14, int i15, long j10, boolean z10) {
+        return new VideoProcessor.FrameAdaptationParameters(i10, i11, i12, i13, i14, i15, j10, z10);
     }
 
-    private static native VideoProcessor.FrameAdaptationParameters nativeAdaptFrame(long j10, int i9, int i10, int i11, long j11);
+    private static native VideoProcessor.FrameAdaptationParameters nativeAdaptFrame(long j10, int i10, int i11, int i12, long j11);
 
-    private static native void nativeAdaptOutputFormat(long j10, int i9, int i10, Integer num, int i11, int i12, Integer num2, Integer num3);
+    private static native void nativeAdaptOutputFormat(long j10, int i10, int i11, Integer num, int i12, int i13, Integer num2, Integer num3);
 
-    private static native void nativeOnFrameCaptured(long j10, int i9, long j11, VideoFrame.Buffer buffer);
+    private static native void nativeOnFrameCaptured(long j10, int i10, long j11, VideoFrame.Buffer buffer);
 
     private static native void nativeSetIsScreencast(long j10, boolean z10);
 

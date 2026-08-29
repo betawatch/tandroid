@@ -8,7 +8,7 @@ import java.util.function.Predicate;
 public final /* synthetic */ class Predicate$-CC {
     public static Predicate $default$and(Predicate predicate, Predicate predicate2) {
         Objects.requireNonNull(predicate2);
-        return new f(predicate, predicate2, 0);
+        return new g(predicate, predicate2, 0);
     }
 
     public static Predicate $default$negate(Predicate predicate) {
@@ -17,6 +17,6 @@ public final /* synthetic */ class Predicate$-CC {
 
     public static Predicate $default$or(Predicate predicate, Predicate predicate2) {
         Objects.requireNonNull(predicate2);
-        return new f(predicate, predicate2, 1);
+        return new g(predicate, predicate2, 1);
     }
 }

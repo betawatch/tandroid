@@ -1,10 +1,10 @@
 package com.google.android.recaptcha.internal;
 
-import j3.r0;
+import j7.l1;
 import java.math.RoundingMode;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 final class zzpk {
     final int zza;
@@ -25,15 +25,15 @@ final class zzpk {
         this(str, cArr, r1, false);
         byte[] bArr = new byte[128];
         Arrays.fill(bArr, (byte) -1);
-        for (int i9 = 0; i9 < cArr.length; i9++) {
-            char c10 = cArr[i9];
+        for (int i10 = 0; i10 < cArr.length; i10++) {
+            char c3 = cArr[i10];
             boolean z10 = true;
-            zzmd.zzc(c10 < 128, "Non-ASCII character: %s", c10);
-            if (bArr[c10] != -1) {
+            zzmd.zzc(c3 < 128, "Non-ASCII character: %s", c3);
+            if (bArr[c3] != -1) {
                 z10 = false;
             }
-            zzmd.zzc(z10, "Duplicate character: %s", c10);
-            bArr[c10] = (byte) i9;
+            zzmd.zzc(z10, "Duplicate character: %s", c3);
+            bArr[c3] = (byte) i10;
         }
     }
 
@@ -49,29 +49,29 @@ final class zzpk {
         return this.zze;
     }
 
-    public final char zza(int i9) {
-        return this.zzf[i9];
+    public final char zza(int i10) {
+        return this.zzf[i10];
     }
 
-    public final int zzb(char c10) {
-        if (c10 > 127) {
-            throw new zzpn("Unrecognized character: 0x".concat(String.valueOf(Integer.toHexString(c10))));
+    public final int zzb(char c3) {
+        if (c3 > 127) {
+            throw new zzpn("Unrecognized character: 0x".concat(String.valueOf(Integer.toHexString(c3))));
         }
-        byte b10 = this.zzg[c10];
+        byte b10 = this.zzg[c3];
         if (b10 != -1) {
             return b10;
         }
-        if (c10 <= ' ' || c10 == 127) {
-            throw new zzpn("Unrecognized character: 0x".concat(String.valueOf(Integer.toHexString(c10))));
+        if (c3 <= ' ' || c3 == 127) {
+            throw new zzpn("Unrecognized character: 0x".concat(String.valueOf(Integer.toHexString(c3))));
         }
-        throw new zzpn("Unrecognized character: " + c10);
+        throw new zzpn("Unrecognized character: " + c3);
     }
 
-    public final boolean zzc(int i9) {
-        return this.zzh[i9 % this.zzc];
+    public final boolean zzc(int i10) {
+        return this.zzh[i10 % this.zzc];
     }
 
-    public final boolean zzd(char c10) {
+    public final boolean zzd(char c3) {
         return this.zzg[61] != -1;
     }
 
@@ -84,19 +84,19 @@ final class zzpk {
             int zzb = zzpr.zzb(length, RoundingMode.UNNECESSARY);
             this.zzb = zzb;
             int numberOfTrailingZeros = Integer.numberOfTrailingZeros(zzb);
-            int i9 = 1 << (3 - numberOfTrailingZeros);
-            this.zzc = i9;
+            int i10 = 1 << (3 - numberOfTrailingZeros);
+            this.zzc = i10;
             this.zzd = zzb >> numberOfTrailingZeros;
             this.zza = length - 1;
             this.zzg = bArr;
-            boolean[] zArr = new boolean[i9];
-            for (int i10 = 0; i10 < this.zzd; i10++) {
-                zArr[zzpr.zza(i10 * 8, this.zzb, RoundingMode.CEILING)] = true;
+            boolean[] zArr = new boolean[i10];
+            for (int i11 = 0; i11 < this.zzd; i11++) {
+                zArr[zzpr.zza(i11 * 8, this.zzb, RoundingMode.CEILING)] = true;
             }
             this.zzh = zArr;
             this.zzi = false;
         } catch (ArithmeticException e10) {
-            throw new IllegalArgumentException(r0.l(cArr.length, "Illegal alphabet length "), e10);
+            throw new IllegalArgumentException(l1.k(cArr.length, "Illegal alphabet length "), e10);
         }
     }
 }

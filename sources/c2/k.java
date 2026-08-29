@@ -7,7 +7,7 @@ import android.util.Log;
 import java.util.ArrayList;
 import java.util.List;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class k extends MediaRouter2.TransferCallback {
     public final /* synthetic */ l a;
@@ -18,31 +18,31 @@ public final class k extends MediaRouter2.TransferCallback {
 
     @Override // android.media.MediaRouter2.TransferCallback
     public final void onStop(MediaRouter2.RoutingController routingController) {
-        r rVar = (r) this.a.v.remove(routingController);
-        if (rVar == null) {
+        s sVar = (s) this.a.v.remove(routingController);
+        if (sVar == null) {
             Log.w("MR2Provider", "onStop: No matching routeController found. routingController=" + routingController);
             return;
         }
         e eVar = (e) this.a.s.b;
-        if (rVar != eVar.e) {
-            int i9 = e.F;
+        if (sVar != eVar.e) {
+            int i10 = e.F;
             return;
         }
-        a0 c10 = eVar.c();
-        if (eVar.e() != c10) {
-            eVar.j(c10, 2);
+        b0 c3 = eVar.c();
+        if (eVar.e() != c3) {
+            eVar.j(c3, 2);
         }
     }
 
     @Override // android.media.MediaRouter2.TransferCallback
     public final void onTransfer(MediaRouter2.RoutingController routingController, MediaRouter2.RoutingController routingController2) {
-        a0 a0Var;
+        b0 b0Var;
         this.a.v.remove(routingController);
         if (routingController2 == this.a.r.getSystemController()) {
             e eVar = (e) this.a.s.b;
-            a0 c10 = eVar.c();
-            if (eVar.e() != c10) {
-                eVar.j(c10, 3);
+            b0 c3 = eVar.c();
+            if (eVar.e() != c3) {
+                eVar.j(c3, 3);
                 return;
             }
             return;
@@ -52,28 +52,28 @@ public final class k extends MediaRouter2.TransferCallback {
             Log.w("MR2Provider", "Selected routes are empty. This shouldn't happen.");
             return;
         }
-        int i9 = 0;
-        String id2 = a9.b.h(selectedRoutes.get(0)).getId();
+        int i10 = 0;
+        String id2 = a9.f.d(selectedRoutes.get(0)).getId();
         this.a.v.put(routingController2, new h(this.a, routingController2, id2));
         e eVar2 = (e) this.a.s.b;
         ArrayList arrayList = eVar2.j;
         int size = arrayList.size();
         while (true) {
-            if (i9 >= size) {
-                a0Var = null;
+            if (i10 >= size) {
+                b0Var = null;
                 break;
             }
-            Object obj = arrayList.get(i9);
-            i9++;
-            a0Var = (a0) obj;
-            if (a0Var.c() == eVar2.r && TextUtils.equals(id2, a0Var.b)) {
+            Object obj = arrayList.get(i10);
+            i10++;
+            b0Var = (b0) obj;
+            if (b0Var.c() == eVar2.r && TextUtils.equals(id2, b0Var.b)) {
                 break;
             }
         }
-        if (a0Var == null) {
+        if (b0Var == null) {
             Log.w("GlobalMediaRouter", "onSelectRoute: The target RouteInfo is not found for descriptorId=" + id2);
         } else {
-            eVar2.j(a0Var, 3);
+            eVar2.j(b0Var, 3);
         }
         this.a.r(routingController2);
     }

@@ -1,55 +1,33 @@
 package org.telegram.ui.Components.voip;
 
-import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.text.TextPaint;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLObject;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
-/* loaded from: classes3.dex */
-public final class w2 extends View {
-    public final TextPaint a;
-    public final Paint b;
-    public final float c;
-    public final String d;
-    public volatile Bitmap e;
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class w2 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ x2 b;
 
-    public w2(Context context, String str) {
-        super(context);
-        TextPaint textPaint = new TextPaint(1);
-        this.a = textPaint;
-        this.b = new Paint(1);
-        textPaint.setTextAlign(Paint.Align.CENTER);
-        textPaint.setTextSize(AndroidUtilities.dp(13.0f));
-        textPaint.setColor(-1);
-        textPaint.setTypeface(AndroidUtilities.bold());
-        this.c = textPaint.measureText(str);
-        this.d = str;
+    public /* synthetic */ w2(x2 x2Var, int i10) {
+        this.a = i10;
+        this.b = x2Var;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        if (this.e != null) {
-            canvas.drawBitmap(this.e, 0.0f, 0.0f, this.b);
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                x2 x2Var = this.b;
+                x2Var.getClass();
+                x2Var.M = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                x2Var.a(x2Var.N, x2Var.O);
+                break;
+            default:
+                x2 x2Var2 = this.b;
+                x2Var2.getClass();
+                x2Var2.S = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                x2Var2.invalidate();
+                break;
         }
-    }
-
-    @Override // android.view.View
-    public final void onLayout(boolean z10, int i9, int i10, int i11, int i12) {
-        super.onLayout(z10, i9, i10, i11, i12);
-        if (z10) {
-            Utilities.globalQueue.postRunnable(new mh.m2(this, 13));
-        }
-    }
-
-    @Override // android.view.View
-    public final void onMeasure(int i9, int i10) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(getPaddingRight() + getPaddingLeft() + ((int) this.c), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30));
     }
 }

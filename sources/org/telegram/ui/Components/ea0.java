@@ -1,66 +1,36 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.MotionEvent;
-import android.view.View;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class ea0 extends n71 {
-    public final /* synthetic */ cb0 P;
+public final class ea0 extends f2.v {
+    public final /* synthetic */ ka0 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ea0(cb0 cb0Var, Context context, ya0 ya0Var) {
-        super(context, ya0Var);
-        this.P = cb0Var;
+    public ea0(ka0 ka0Var) {
+        this.c = ka0Var;
     }
 
-    @Override // org.telegram.ui.Components.n71, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        boolean z10;
-        int i9 = 0;
-        while (true) {
-            View[] viewArr = this.P.f.e;
-            if (i9 >= viewArr.length) {
-                z10 = false;
-                break;
-            }
-            View view = viewArr[i9];
-            if (view != null) {
-                wa0 wa0Var = (wa0) view;
-                if (wa0Var.a == 0) {
-                    z10 = wa0Var.e.i;
-                    break;
-                }
-            }
-            i9++;
+    @Override // f2.v
+    public final int i(int i10) {
+        ka0 ka0Var = this.c;
+        rf.v0 v0Var = ka0Var.f;
+        if (i10 == 0) {
+            return 100;
         }
-        if (z10) {
-            return false;
+        int i11 = i10 - 1;
+        Object J = v0Var.J(i11);
+        if (J instanceof TLRPC.TL_inlineBotSwitchPM) {
+            return 100;
         }
-        return A(motionEvent);
-    }
-
-    @Override // org.telegram.ui.Components.n71
-    public final void u() {
-        View view = this.e[0];
-        if (view instanceof wa0) {
-            ((wa0) view).e.W();
+        if (J instanceof TLRPC.Document) {
+            return 20;
         }
-    }
-
-    @Override // org.telegram.ui.Components.n71
-    public final void w(boolean z10) {
-        cb0 cb0Var = this.P;
-        cb0Var.e.setSelectedTab(cb0Var.f.getPositionAnimated());
-        View[] viewArr = this.e;
-        View view = viewArr[0];
-        if (view instanceof wa0) {
-            ((wa0) view).e.H();
+        if (v0Var.I() != null || v0Var.Q != null) {
+            i10 = i11;
         }
-        View view2 = viewArr[1];
-        if (view2 instanceof wa0) {
-            ((wa0) view2).e.H();
-        }
+        da0 da0Var = ka0Var.d;
+        da0Var.B1();
+        return da0Var.R.get(i10);
     }
 }

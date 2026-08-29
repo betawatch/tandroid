@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class t implements Runnable {
     public final /* synthetic */ int a;
@@ -14,13 +14,13 @@ public final /* synthetic */ class t implements Runnable {
     public final /* synthetic */ int e;
     public final /* synthetic */ Object f;
 
-    public /* synthetic */ t(int i9, int i10, long j10, ArrayList arrayList, MessagesStorage messagesStorage) {
+    public /* synthetic */ t(int i10, int i11, long j10, ArrayList arrayList, MessagesStorage messagesStorage) {
         this.a = 4;
         this.b = messagesStorage;
         this.d = j10;
         this.f = arrayList;
-        this.c = i9;
-        this.e = i10;
+        this.c = i10;
+        this.e = i11;
     }
 
     @Override // java.lang.Runnable
@@ -44,30 +44,30 @@ public final /* synthetic */ class t implements Runnable {
         }
     }
 
-    public /* synthetic */ t(AccountInstance accountInstance, TLObject tLObject, int i9, long j10, int i10, int i11) {
-        this.a = i11;
+    public /* synthetic */ t(AccountInstance accountInstance, TLObject tLObject, int i10, long j10, int i11, int i12) {
+        this.a = i12;
         this.b = accountInstance;
         this.f = tLObject;
-        this.c = i9;
+        this.c = i10;
         this.d = j10;
-        this.e = i10;
+        this.e = i11;
     }
 
-    public /* synthetic */ t(MediaDataController mediaDataController, ArrayList arrayList, int i9, int i10, long j10) {
+    public /* synthetic */ t(MediaDataController mediaDataController, ArrayList arrayList, int i10, int i11, long j10) {
         this.a = 2;
         this.b = mediaDataController;
         this.f = arrayList;
-        this.c = i9;
-        this.e = i10;
+        this.c = i10;
+        this.e = i11;
         this.d = j10;
     }
 
-    public /* synthetic */ t(MessagesStorage messagesStorage, int i9, TLRPC.TL_forumTopic tL_forumTopic, long j10, int i10) {
+    public /* synthetic */ t(MessagesStorage messagesStorage, int i10, TLRPC.TL_forumTopic tL_forumTopic, long j10, int i11) {
         this.a = 3;
         this.b = messagesStorage;
-        this.c = i9;
+        this.c = i10;
         this.f = tL_forumTopic;
         this.d = j10;
-        this.e = i10;
+        this.e = i11;
     }
 }

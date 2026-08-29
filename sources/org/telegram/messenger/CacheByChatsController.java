@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public class CacheByChatsController {
     public static int KEEP_MEDIA_DELETE = 4;
@@ -26,18 +26,18 @@ public class CacheByChatsController {
     private boolean gotKeepMediaByTypes = false;
     private final int[] keepMediaByTypes = {-1, -1, -1, -1};
 
-    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
     public static class KeepMediaException {
         public final long dialogId;
         public int keepMedia;
 
-        public KeepMediaException(long j10, int i9) {
+        public KeepMediaException(long j10, int i10) {
             this.dialogId = j10;
-            this.keepMedia = i9;
+            this.keepMedia = i10;
         }
     }
 
-    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
     public static class KeepMediaFile {
         final File file;
         boolean isStory;
@@ -49,55 +49,55 @@ public class CacheByChatsController {
         }
     }
 
-    public CacheByChatsController(int i9) {
-        this.currentAccount = i9;
+    public CacheByChatsController(int i10) {
+        this.currentAccount = i10;
     }
 
-    public static long getDaysInSeconds(int i9) {
-        if (i9 == KEEP_MEDIA_ONE_WEEK) {
+    public static long getDaysInSeconds(int i10) {
+        if (i10 == KEEP_MEDIA_ONE_WEEK) {
             return 604800L;
         }
-        if (i9 == KEEP_MEDIA_ONE_MONTH) {
+        if (i10 == KEEP_MEDIA_ONE_MONTH) {
             return 2592000L;
         }
-        if (i9 == KEEP_MEDIA_ONE_DAY) {
+        if (i10 == KEEP_MEDIA_ONE_DAY) {
             return 86400L;
         }
-        if (i9 == KEEP_MEDIA_TWO_DAY) {
+        if (i10 == KEEP_MEDIA_TWO_DAY) {
             return 172800L;
         }
-        return (i9 == KEEP_MEDIA_ONE_MINUTE && BuildVars.DEBUG_PRIVATE_VERSION) ? 60L : Long.MAX_VALUE;
+        return (i10 == KEEP_MEDIA_ONE_MINUTE && BuildVars.DEBUG_PRIVATE_VERSION) ? 60L : Long.MAX_VALUE;
     }
 
-    public static int getDefault(int i9) {
-        return i9 == 0 ? KEEP_MEDIA_FOREVER : i9 == 1 ? KEEP_MEDIA_ONE_MONTH : i9 == 2 ? KEEP_MEDIA_ONE_WEEK : i9 == 3 ? KEEP_MEDIA_TWO_DAY : SharedConfig.keepMedia;
+    public static int getDefault(int i10) {
+        return i10 == 0 ? KEEP_MEDIA_FOREVER : i10 == 1 ? KEEP_MEDIA_ONE_MONTH : i10 == 2 ? KEEP_MEDIA_ONE_WEEK : i10 == 3 ? KEEP_MEDIA_TWO_DAY : SharedConfig.keepMedia;
     }
 
-    public static String getKeepMediaString(int i9) {
-        return i9 == KEEP_MEDIA_ONE_MINUTE ? LocaleController.formatPluralString("Minutes", 1, new Object[0]) : i9 == KEEP_MEDIA_ONE_DAY ? LocaleController.formatPluralString("Days", 1, new Object[0]) : i9 == KEEP_MEDIA_TWO_DAY ? LocaleController.formatPluralString("Days", 2, new Object[0]) : i9 == KEEP_MEDIA_ONE_WEEK ? LocaleController.formatPluralString("Weeks", 1, new Object[0]) : i9 == KEEP_MEDIA_ONE_MONTH ? LocaleController.formatPluralString("Months", 1, new Object[0]) : LocaleController.getString(R.string.AutoDeleteMediaNever);
+    public static String getKeepMediaString(int i10) {
+        return i10 == KEEP_MEDIA_ONE_MINUTE ? LocaleController.formatPluralString("Minutes", 1, new Object[0]) : i10 == KEEP_MEDIA_ONE_DAY ? LocaleController.formatPluralString("Days", 1, new Object[0]) : i10 == KEEP_MEDIA_TWO_DAY ? LocaleController.formatPluralString("Days", 2, new Object[0]) : i10 == KEEP_MEDIA_ONE_WEEK ? LocaleController.formatPluralString("Weeks", 1, new Object[0]) : i10 == KEEP_MEDIA_ONE_MONTH ? LocaleController.formatPluralString("Months", 1, new Object[0]) : LocaleController.getString(R.string.AutoDeleteMediaNever);
     }
 
-    public int getKeepMedia(int i9) {
+    public int getKeepMedia(int i10) {
         if (!this.gotKeepMediaByTypes) {
             this.gotKeepMediaByTypes = true;
-            for (int i10 = 0; i10 < 4; i10++) {
-                this.keepMediaByTypes[i10] = SharedConfig.getPreferences().getInt(j3.r0.l(i10, "keep_media_type_"), getDefault(i10));
+            for (int i11 = 0; i11 < 4; i11++) {
+                this.keepMediaByTypes[i11] = SharedConfig.getPreferences().getInt(j7.l1.k(i11, "keep_media_type_"), getDefault(i11));
             }
         }
-        int i11 = this.keepMediaByTypes[i9];
-        return i11 == -1 ? SharedConfig.keepMedia : i11;
+        int i12 = this.keepMediaByTypes[i10];
+        return i12 == -1 ? SharedConfig.keepMedia : i12;
     }
 
-    public ArrayList<KeepMediaException> getKeepMediaExceptions(int i9) {
+    public ArrayList<KeepMediaException> getKeepMediaExceptions(int i10) {
         ArrayList<KeepMediaException> arrayList = new ArrayList<>();
         HashSet hashSet = new HashSet();
-        String string = UserConfig.getInstance(this.currentAccount).getPreferences().getString("keep_media_exceptions_" + i9, "");
+        String string = UserConfig.getInstance(this.currentAccount).getPreferences().getString("keep_media_exceptions_" + i10, "");
         if (TextUtils.isEmpty(string)) {
             return arrayList;
         }
         ByteBuffer wrap = ByteBuffer.wrap(Utilities.hexToBytes(string));
-        int i10 = wrap.getInt();
-        for (int i11 = 0; i11 < i10; i11++) {
+        int i11 = wrap.getInt();
+        for (int i12 = 0; i12 < i11; i12++) {
             KeepMediaException keepMediaException = new KeepMediaException(wrap.getLong(), wrap.getInt());
             if (!hashSet.contains(Long.valueOf(keepMediaException.dialogId))) {
                 hashSet.add(Long.valueOf(keepMediaException.dialogId));
@@ -110,11 +110,11 @@ public class CacheByChatsController {
 
     public LongSparseArray<KeepMediaException> getKeepMediaExceptionsByDialogs() {
         LongSparseArray<KeepMediaException> longSparseArray = new LongSparseArray<>();
-        for (int i9 = 0; i9 < 3; i9++) {
-            ArrayList<KeepMediaException> keepMediaExceptions = getKeepMediaExceptions(i9);
+        for (int i10 = 0; i10 < 3; i10++) {
+            ArrayList<KeepMediaException> keepMediaExceptions = getKeepMediaExceptions(i10);
             if (keepMediaExceptions != null) {
-                for (int i10 = 0; i10 < keepMediaExceptions.size(); i10++) {
-                    longSparseArray.put(keepMediaExceptions.get(i10).dialogId, keepMediaExceptions.get(i10));
+                for (int i11 = 0; i11 < keepMediaExceptions.size(); i11++) {
+                    longSparseArray.put(keepMediaExceptions.get(i11).dialogId, keepMediaExceptions.get(i11));
                 }
             }
         }
@@ -122,27 +122,27 @@ public class CacheByChatsController {
     }
 
     public void lookupFiles(ArrayList<? extends KeepMediaFile> arrayList) {
-        int i9;
+        int i10;
         LongSparseArray<ArrayList<KeepMediaFile>> lookupFiles = FileLoader.getInstance(this.currentAccount).getFileDatabase().lookupFiles(arrayList);
         LongSparseArray<KeepMediaException> keepMediaExceptionsByDialogs = getKeepMediaExceptionsByDialogs();
-        for (int i10 = 0; i10 < lookupFiles.size(); i10++) {
-            long keyAt = lookupFiles.keyAt(i10);
-            ArrayList<KeepMediaFile> valueAt = lookupFiles.valueAt(i10);
+        for (int i11 = 0; i11 < lookupFiles.size(); i11++) {
+            long keyAt = lookupFiles.keyAt(i11);
+            ArrayList<KeepMediaFile> valueAt = lookupFiles.valueAt(i11);
             if (keyAt >= 0) {
-                i9 = 0;
+                i10 = 0;
             } else {
                 long j10 = -keyAt;
                 TLRPC.Chat chat = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(j10));
                 if (chat == null) {
                     chat = MessagesStorage.getInstance(this.currentAccount).getChatSync(j10);
                 }
-                i9 = chat == null ? -1 : ChatObject.isChannel(chat) ? 2 : 1;
+                i10 = chat == null ? -1 : ChatObject.isChannel(chat) ? 2 : 1;
             }
             KeepMediaException keepMediaException = keepMediaExceptionsByDialogs.get(keyAt);
-            for (int i11 = 0; i11 < valueAt.size(); i11++) {
-                KeepMediaFile keepMediaFile = valueAt.get(i11);
-                if (i9 >= 0) {
-                    keepMediaFile.dialogType = i9;
+            for (int i12 = 0; i12 < valueAt.size(); i12++) {
+                KeepMediaFile keepMediaFile = valueAt.get(i12);
+                if (i10 >= 0) {
+                    keepMediaFile.dialogType = i10;
                 }
                 if (keepMediaException != null) {
                     keepMediaFile.keepMedia = keepMediaException.keepMedia;
@@ -151,31 +151,31 @@ public class CacheByChatsController {
         }
     }
 
-    public void saveKeepMediaExceptions(int i9, ArrayList<KeepMediaException> arrayList) {
-        String l10 = j3.r0.l(i9, "keep_media_exceptions_");
+    public void saveKeepMediaExceptions(int i10, ArrayList<KeepMediaException> arrayList) {
+        String k9 = j7.l1.k(i10, "keep_media_exceptions_");
         if (arrayList.isEmpty()) {
-            UserConfig.getInstance(this.currentAccount).getPreferences().edit().remove(l10).apply();
+            UserConfig.getInstance(this.currentAccount).getPreferences().edit().remove(k9).apply();
             return;
         }
         int size = arrayList.size();
         ByteBuffer allocate = ByteBuffer.allocate((size * 12) + 4);
         allocate.putInt(size);
-        for (int i10 = 0; i10 < size; i10++) {
-            allocate.putLong(arrayList.get(i10).dialogId);
-            allocate.putInt(arrayList.get(i10).keepMedia);
+        for (int i11 = 0; i11 < size; i11++) {
+            allocate.putLong(arrayList.get(i11).dialogId);
+            allocate.putInt(arrayList.get(i11).keepMedia);
         }
-        UserConfig.getInstance(this.currentAccount).getPreferences().edit().putString(l10, Utilities.bytesToHex(allocate.array())).apply();
+        UserConfig.getInstance(this.currentAccount).getPreferences().edit().putString(k9, Utilities.bytesToHex(allocate.array())).apply();
         allocate.clear();
     }
 
-    public void setKeepMedia(int i9, int i10) {
+    public void setKeepMedia(int i10, int i11) {
         if (!this.gotKeepMediaByTypes) {
             this.gotKeepMediaByTypes = true;
-            for (int i11 = 0; i11 < 4; i11++) {
-                this.keepMediaByTypes[i11] = SharedConfig.getPreferences().getInt(j3.r0.l(i11, "keep_media_type_"), getDefault(i11));
+            for (int i12 = 0; i12 < 4; i12++) {
+                this.keepMediaByTypes[i12] = SharedConfig.getPreferences().getInt(j7.l1.k(i12, "keep_media_type_"), getDefault(i12));
             }
         }
-        this.keepMediaByTypes[i9] = i10;
-        SharedConfig.getPreferences().edit().putInt("keep_media_type_" + i9, i10).apply();
+        this.keepMediaByTypes[i10] = i11;
+        SharedConfig.getPreferences().edit().putInt("keep_media_type_" + i10, i11).apply();
     }
 }

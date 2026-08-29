@@ -14,11 +14,11 @@ import android.view.SubMenu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
-import f7.q8;
-import f7.t7;
+import h7.l8;
+import h7.s7;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class m implements l0.a {
     public n A;
@@ -51,18 +51,18 @@ public final class m implements l0.a {
     public int x = 16;
     public boolean C = false;
 
-    public m(k kVar, int i9, int i10, int i11, int i12, CharSequence charSequence, int i13) {
+    public m(k kVar, int i10, int i11, int i12, int i13, CharSequence charSequence, int i14) {
         this.n = kVar;
-        this.a = i10;
-        this.b = i9;
-        this.c = i11;
-        this.d = i12;
+        this.a = i11;
+        this.b = i10;
+        this.c = i12;
+        this.d = i13;
         this.e = charSequence;
-        this.y = i13;
+        this.y = i14;
     }
 
-    public static void c(StringBuilder sb2, int i9, int i10, String str) {
-        if ((i9 & i10) == i10) {
+    public static void c(StringBuilder sb2, int i10, int i11, String str) {
+        if ((i10 & i11) == i11) {
             sb2.append(str);
         }
     }
@@ -74,7 +74,7 @@ public final class m implements l0.a {
         this.n.p(true);
         n nVar2 = this.A;
         if (nVar2 != null) {
-            nVar2.b = new android.support.v4.media.c(this, 23);
+            nVar2.b = new za.c(this, 22);
             nVar2.a.setVisibilityListener(nVar2);
         }
         return this;
@@ -102,7 +102,7 @@ public final class m implements l0.a {
 
     public final Drawable d(Drawable drawable) {
         if (drawable != null && this.w && (this.u || this.v)) {
-            drawable = q8.d(drawable).mutate();
+            drawable = l8.d(drawable).mutate();
             if (this.u) {
                 drawable.setTintList(this.s);
             }
@@ -191,11 +191,11 @@ public final class m implements l0.a {
         if (drawable != null) {
             return d(drawable);
         }
-        int i9 = this.m;
-        if (i9 == 0) {
+        int i10 = this.m;
+        if (i10 == 0) {
             return null;
         }
-        Drawable b10 = t7.b(this.n.a, i9);
+        Drawable b10 = s7.b(this.n.a, i10);
         this.m = 0;
         this.l = b10;
         return d(b10);
@@ -300,11 +300,11 @@ public final class m implements l0.a {
 
     @Override // android.view.MenuItem
     public final MenuItem setActionView(View view) {
-        int i9;
+        int i10;
         this.z = view;
         this.A = null;
-        if (view != null && view.getId() == -1 && (i9 = this.a) > 0) {
-            view.setId(i9);
+        if (view != null && view.getId() == -1 && (i10 = this.a) > 0) {
+            view.setId(i10);
         }
         k kVar = this.n;
         kVar.k = true;
@@ -313,21 +313,21 @@ public final class m implements l0.a {
     }
 
     @Override // android.view.MenuItem
-    public final MenuItem setAlphabeticShortcut(char c10) {
-        if (this.j == c10) {
+    public final MenuItem setAlphabeticShortcut(char c3) {
+        if (this.j == c3) {
             return this;
         }
-        this.j = Character.toLowerCase(c10);
+        this.j = Character.toLowerCase(c3);
         this.n.p(false);
         return this;
     }
 
     @Override // android.view.MenuItem
     public final MenuItem setCheckable(boolean z10) {
-        int i9 = this.x;
-        int i10 = (z10 ? 1 : 0) | (i9 & (-2));
-        this.x = i10;
-        if (i9 != i10) {
+        int i10 = this.x;
+        int i11 = (z10 ? 1 : 0) | (i10 & (-2));
+        this.x = i11;
+        if (i10 != i11) {
             this.n.p(false);
         }
         return this;
@@ -335,13 +335,13 @@ public final class m implements l0.a {
 
     @Override // android.view.MenuItem
     public final MenuItem setChecked(boolean z10) {
-        int i9 = this.x;
-        int i10 = i9 & 4;
+        int i10 = this.x;
+        int i11 = i10 & 4;
         k kVar = this.n;
-        if (i10 == 0) {
-            int i11 = (i9 & (-3)) | (z10 ? 2 : 0);
-            this.x = i11;
-            if (i9 != i11) {
+        if (i11 == 0) {
+            int i12 = (i10 & (-3)) | (z10 ? 2 : 0);
+            this.x = i12;
+            if (i10 != i12) {
                 kVar.p(false);
             }
             return this;
@@ -349,14 +349,14 @@ public final class m implements l0.a {
         ArrayList arrayList = kVar.f;
         int size = arrayList.size();
         kVar.w();
-        for (int i12 = 0; i12 < size; i12++) {
-            m mVar = (m) arrayList.get(i12);
+        for (int i13 = 0; i13 < size; i13++) {
+            m mVar = (m) arrayList.get(i13);
             if (mVar.b == this.b && (mVar.x & 4) != 0 && mVar.isCheckable()) {
                 boolean z11 = mVar == this;
-                int i13 = mVar.x;
-                int i14 = (z11 ? 2 : 0) | (i13 & (-3));
-                mVar.x = i14;
-                if (i13 != i14) {
+                int i14 = mVar.x;
+                int i15 = (z11 ? 2 : 0) | (i14 & (-3));
+                mVar.x = i15;
+                if (i14 != i15) {
                     mVar.n.p(false);
                 }
             }
@@ -416,11 +416,11 @@ public final class m implements l0.a {
     }
 
     @Override // android.view.MenuItem
-    public final MenuItem setNumericShortcut(char c10) {
-        if (this.h == c10) {
+    public final MenuItem setNumericShortcut(char c3) {
+        if (this.h == c3) {
             return this;
         }
-        this.h = c10;
+        this.h = c3;
         this.n.p(false);
         return this;
     }
@@ -438,28 +438,28 @@ public final class m implements l0.a {
     }
 
     @Override // android.view.MenuItem
-    public final MenuItem setShortcut(char c10, char c11) {
-        this.h = c10;
-        this.j = Character.toLowerCase(c11);
+    public final MenuItem setShortcut(char c3, char c6) {
+        this.h = c3;
+        this.j = Character.toLowerCase(c6);
         this.n.p(false);
         return this;
     }
 
     @Override // android.view.MenuItem
-    public final void setShowAsAction(int i9) {
-        int i10 = i9 & 3;
-        if (i10 != 0 && i10 != 1 && i10 != 2) {
+    public final void setShowAsAction(int i10) {
+        int i11 = i10 & 3;
+        if (i11 != 0 && i11 != 1 && i11 != 2) {
             throw new IllegalArgumentException("SHOW_AS_ACTION_ALWAYS, SHOW_AS_ACTION_IF_ROOM, and SHOW_AS_ACTION_NEVER are mutually exclusive.");
         }
-        this.y = i9;
+        this.y = i10;
         k kVar = this.n;
         kVar.k = true;
         kVar.p(true);
     }
 
     @Override // android.view.MenuItem
-    public final MenuItem setShowAsActionFlags(int i9) {
-        setShowAsAction(i9);
+    public final MenuItem setShowAsActionFlags(int i10) {
+        setShowAsAction(i10);
         return this;
     }
 
@@ -489,10 +489,10 @@ public final class m implements l0.a {
 
     @Override // android.view.MenuItem
     public final MenuItem setVisible(boolean z10) {
-        int i9 = this.x;
-        int i10 = (z10 ? 0 : 8) | (i9 & (-9));
-        this.x = i10;
-        if (i9 != i10) {
+        int i10 = this.x;
+        int i11 = (z10 ? 0 : 8) | (i10 & (-9));
+        this.x = i11;
+        if (i10 != i11) {
             k kVar = this.n;
             kVar.h = true;
             kVar.p(true);
@@ -523,62 +523,62 @@ public final class m implements l0.a {
     }
 
     @Override // l0.a, android.view.MenuItem
-    public final MenuItem setAlphabeticShortcut(char c10, int i9) {
-        if (this.j == c10 && this.k == i9) {
+    public final MenuItem setAlphabeticShortcut(char c3, int i10) {
+        if (this.j == c3 && this.k == i10) {
             return this;
         }
-        this.j = Character.toLowerCase(c10);
-        this.k = KeyEvent.normalizeMetaState(i9);
-        this.n.p(false);
-        return this;
-    }
-
-    @Override // l0.a, android.view.MenuItem
-    public final MenuItem setNumericShortcut(char c10, int i9) {
-        if (this.h == c10 && this.i == i9) {
-            return this;
-        }
-        this.h = c10;
-        this.i = KeyEvent.normalizeMetaState(i9);
-        this.n.p(false);
-        return this;
-    }
-
-    @Override // l0.a, android.view.MenuItem
-    public final MenuItem setShortcut(char c10, char c11, int i9, int i10) {
-        this.h = c10;
-        this.i = KeyEvent.normalizeMetaState(i9);
-        this.j = Character.toLowerCase(c11);
+        this.j = Character.toLowerCase(c3);
         this.k = KeyEvent.normalizeMetaState(i10);
         this.n.p(false);
         return this;
     }
 
+    @Override // l0.a, android.view.MenuItem
+    public final MenuItem setNumericShortcut(char c3, int i10) {
+        if (this.h == c3 && this.i == i10) {
+            return this;
+        }
+        this.h = c3;
+        this.i = KeyEvent.normalizeMetaState(i10);
+        this.n.p(false);
+        return this;
+    }
+
+    @Override // l0.a, android.view.MenuItem
+    public final MenuItem setShortcut(char c3, char c6, int i10, int i11) {
+        this.h = c3;
+        this.i = KeyEvent.normalizeMetaState(i10);
+        this.j = Character.toLowerCase(c6);
+        this.k = KeyEvent.normalizeMetaState(i11);
+        this.n.p(false);
+        return this;
+    }
+
     @Override // android.view.MenuItem
-    public final MenuItem setIcon(int i9) {
+    public final MenuItem setIcon(int i10) {
         this.l = null;
-        this.m = i9;
+        this.m = i10;
         this.w = true;
         this.n.p(false);
         return this;
     }
 
     @Override // android.view.MenuItem
-    public final MenuItem setTitle(int i9) {
-        setTitle(this.n.a.getString(i9));
+    public final MenuItem setTitle(int i10) {
+        setTitle(this.n.a.getString(i10));
         return this;
     }
 
     @Override // android.view.MenuItem
-    public final MenuItem setActionView(int i9) {
-        int i10;
+    public final MenuItem setActionView(int i10) {
+        int i11;
         k kVar = this.n;
         Context context = kVar.a;
-        View inflate = LayoutInflater.from(context).inflate(i9, (ViewGroup) new LinearLayout(context), false);
+        View inflate = LayoutInflater.from(context).inflate(i10, (ViewGroup) new LinearLayout(context), false);
         this.z = inflate;
         this.A = null;
-        if (inflate != null && inflate.getId() == -1 && (i10 = this.a) > 0) {
-            inflate.setId(i10);
+        if (inflate != null && inflate.getId() == -1 && (i11 = this.a) > 0) {
+            inflate.setId(i11);
         }
         kVar.k = true;
         kVar.p(true);

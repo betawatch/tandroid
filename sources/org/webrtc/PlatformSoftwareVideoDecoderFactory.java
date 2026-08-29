@@ -4,7 +4,7 @@ import android.media.MediaCodecInfo;
 import org.webrtc.EglBase;
 import org.webrtc.Predicate;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes4.dex */
 public class PlatformSoftwareVideoDecoderFactory extends MediaCodecVideoDecoderFactory {
     private static final Predicate<MediaCodecInfo> defaultAllowedPredicate = new Predicate<MediaCodecInfo>() { // from class: org.webrtc.PlatformSoftwareVideoDecoderFactory.1

@@ -1,31 +1,86 @@
 package org.telegram.messenger;
 
-import android.content.DialogInterface;
-
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class ra implements DialogInterface.OnCancelListener {
+public final /* synthetic */ class ra implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ BaseController b;
-    public final /* synthetic */ int c;
+    public final /* synthetic */ MessagesController b;
+    public final /* synthetic */ long c;
 
-    public /* synthetic */ ra(BaseController baseController, int i9, int i10) {
+    public /* synthetic */ ra(MessagesController messagesController, long j10, int i10) {
         this.a = i10;
-        this.b = baseController;
-        this.c = i9;
+        this.b = messagesController;
+        this.c = j10;
     }
 
-    @Override // android.content.DialogInterface.OnCancelListener
-    public final void onCancel(DialogInterface dialogInterface) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                ((MessagesController) this.b).lambda$convertToGigaGroup$271(this.c, dialogInterface);
+                this.b.lambda$setChannelSlowMode$93(this.c);
                 break;
             case 1:
-                ((MessagesController) this.b).lambda$convertToMegaGroup$266(this.c, dialogInterface);
+                this.b.lambda$setChatReactions$470(this.c);
+                break;
+            case 2:
+                this.b.lambda$getChannelDifference$343(this.c);
+                break;
+            case 3:
+                this.b.lambda$deleteDialog$140(this.c);
+                break;
+            case 4:
+                this.b.lambda$setDefaultBannedRole$97(this.c);
+                break;
+            case 5:
+                this.b.lambda$processUpdateArray$383(this.c);
+                break;
+            case 6:
+                this.b.lambda$getSavedReactionTags$488(this.c);
+                break;
+            case 7:
+                this.b.lambda$getChannelDifference$334(this.c);
+                break;
+            case 8:
+                this.b.lambda$getChannelDifference$335(this.c);
+                break;
+            case 9:
+                this.b.lambda$getChannelDifference$336(this.c);
+                break;
+            case 10:
+                this.b.lambda$getChannelDifference$337(this.c);
+                break;
+            case 11:
+                this.b.lambda$removeDialog$134(this.c);
+                break;
+            case 12:
+                this.b.lambda$deleteParticipantFromChat$312(this.c);
+                break;
+            case 13:
+                this.b.lambda$setParticipantBannedRole$90(this.c);
+                break;
+            case 14:
+                this.b.lambda$deleteDialog$139(this.c);
+                break;
+            case 15:
+                this.b.lambda$setBoostsToUnblockRestrictions$95(this.c);
+                break;
+            case 16:
+                this.b.lambda$deleteParticipantFromChat$315(this.c);
+                break;
+            case 17:
+                this.b.lambda$addUserToChat$298(this.c);
+                break;
+            case 18:
+                this.b.lambda$addUserToChat$309(this.c);
+                break;
+            case 19:
+                this.b.lambda$addUserToChat$307(this.c);
+                break;
+            case 20:
+                this.b.lambda$getChannelDifference$344(this.c);
                 break;
             default:
-                ((SecretChatHelper) this.b).lambda$startSecretChat$31(this.c, dialogInterface);
+                this.b.lambda$getChannelDifference$345(this.c);
                 break;
         }
     }

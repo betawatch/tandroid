@@ -4,9 +4,9 @@ import android.util.SparseIntArray;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class jz0 extends f2.s {
+public final class jz0 extends f2.q {
     public int b;
     public final SparseIntArray c = new SparseIntArray();
     public final SparseIntArray d = new SparseIntArray();
@@ -20,44 +20,44 @@ public final class jz0 extends f2.s {
         this.i = profileActivity;
     }
 
-    public static void g(int i9, int i10, SparseIntArray sparseIntArray) {
-        if (i10 >= 0) {
-            sparseIntArray.put(i10, i9);
+    public static void g(int i10, int i11, SparseIntArray sparseIntArray) {
+        if (i11 >= 0) {
+            sparseIntArray.put(i11, i10);
         }
     }
 
-    @Override // f2.s
-    public final boolean a(int i9, int i10) {
-        return b(i9, i10);
+    @Override // f2.q
+    public final boolean a(int i10, int i11) {
+        return b(i10, i11);
     }
 
-    @Override // f2.s
-    public final boolean b(int i9, int i10) {
+    @Override // f2.q
+    public final boolean b(int i10, int i11) {
         ProfileActivity profileActivity = this.i;
-        if (i10 < profileActivity.q4 || i10 >= profileActivity.r4 || i9 < this.g || i9 >= this.h) {
-            int i11 = this.c.get(i9, -1);
-            return i11 == this.d.get(i10, -1) && i11 >= 0;
+        if (i11 < profileActivity.q4 || i11 >= profileActivity.r4 || i10 < this.g || i10 >= this.h) {
+            int i12 = this.c.get(i10, -1);
+            return i12 == this.d.get(i11, -1) && i12 >= 0;
         }
         ArrayList arrayList = this.f;
         boolean isEmpty = arrayList.isEmpty();
         ArrayList arrayList2 = this.e;
-        return (!isEmpty ? (TLRPC.ChatParticipant) arrayList2.get(((Integer) arrayList.get(i9 - this.g)).intValue()) : (TLRPC.ChatParticipant) arrayList2.get(i9 - this.g)).user_id == (!profileActivity.y2.isEmpty() ? (TLRPC.ChatParticipant) profileActivity.M4.get(((Integer) profileActivity.N4.get(i10 - profileActivity.q4)).intValue()) : (TLRPC.ChatParticipant) profileActivity.M4.get(i10 - profileActivity.q4)).user_id;
+        return (!isEmpty ? (TLRPC.ChatParticipant) arrayList2.get(((Integer) arrayList.get(i10 - this.g)).intValue()) : (TLRPC.ChatParticipant) arrayList2.get(i10 - this.g)).user_id == (!profileActivity.y2.isEmpty() ? (TLRPC.ChatParticipant) profileActivity.M4.get(((Integer) profileActivity.N4.get(i11 - profileActivity.q4)).intValue()) : (TLRPC.ChatParticipant) profileActivity.M4.get(i11 - profileActivity.q4)).user_id;
     }
 
-    @Override // f2.s
+    @Override // f2.q
     public final int d() {
         return this.i.J2;
     }
 
-    @Override // f2.s
+    @Override // f2.q
     public final int e() {
         return this.b;
     }
 
     public final void f(SparseIntArray sparseIntArray) {
-        int i9;
         int i10;
         int i11;
+        int i12;
         sparseIntArray.clear();
         ProfileActivity profileActivity = this.i;
         g(1, profileActivity.K2, sparseIntArray);
@@ -153,12 +153,12 @@ public final class jz0 extends f2.s {
         g(91, profileActivity.B4, sparseIntArray);
         g(92, profileActivity.e4, sparseIntArray);
         g(93, profileActivity.j4, sparseIntArray);
-        i9 = profileActivity.botPermissionLocation;
-        g(94, i9, sparseIntArray);
-        i10 = profileActivity.botPermissionEmojiStatus;
-        g(95, i10, sparseIntArray);
-        i11 = profileActivity.botPermissionBiometry;
-        g(96, i11, sparseIntArray);
+        i10 = profileActivity.botPermissionLocation;
+        g(94, i10, sparseIntArray);
+        i11 = profileActivity.botPermissionEmojiStatus;
+        g(95, i11, sparseIntArray);
+        i12 = profileActivity.botPermissionBiometry;
+        g(96, i12, sparseIntArray);
         g(97, profileActivity.l4, sparseIntArray);
         g(98, profileActivity.N2, sparseIntArray);
         g(99, profileActivity.g4, sparseIntArray);

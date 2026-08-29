@@ -1,39 +1,33 @@
 package ih;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.ConnectionsManager;
+import android.view.View;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
-/* loaded from: classes4.dex */
-public final /* synthetic */ class e2 implements Runnable {
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class e2 implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Runnable b;
+    public final /* synthetic */ Utilities.Callback b;
+    public final /* synthetic */ int c;
 
-    public /* synthetic */ e2(int i9, Runnable runnable) {
-        this.a = i9;
-        this.b = runnable;
+    public /* synthetic */ e2(int i10, int i11, Utilities.Callback callback) {
+        this.a = i11;
+        this.b = callback;
+        this.c = i10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                Runnable runnable = this.b;
-                AndroidUtilities.cancelRunOnUIThread(runnable);
-                AndroidUtilities.runOnUIThread(runnable);
-                break;
-            case 1:
-                Runnable runnable2 = this.b;
-                AndroidUtilities.cancelRunOnUIThread(runnable2);
-                AndroidUtilities.runOnUIThread(runnable2);
-                break;
-            case 2:
-                Runnable runnable3 = this.b;
-                AndroidUtilities.cancelRunOnUIThread(runnable3);
-                AndroidUtilities.runOnUIThread(runnable3);
+                Utilities.Callback callback = this.b;
+                if (callback != null) {
+                    callback.run(Integer.valueOf(this.c));
+                    break;
+                }
                 break;
             default:
-                ConnectionsManager.lambda$cancelRequest$9(this.b);
+                this.b.run(Integer.valueOf(this.c));
                 break;
         }
     }

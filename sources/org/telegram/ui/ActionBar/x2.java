@@ -8,17 +8,17 @@ import android.content.DialogInterface;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
 public final class x2 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
     public final /* synthetic */ int b;
     public final /* synthetic */ Dialog c;
 
-    public /* synthetic */ x2(Dialog dialog, int i9, int i10) {
-        this.a = i10;
+    public /* synthetic */ x2(Dialog dialog, int i10, int i11) {
+        this.a = i11;
         this.c = dialog;
-        this.b = i9;
+        this.b = i10;
     }
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
@@ -35,10 +35,10 @@ public final class x2 extends AnimatorListenerAdapter {
                 break;
             default:
                 AnimatorSet[] animatorSetArr = ((c2) this.c).B;
-                int i9 = this.b;
-                AnimatorSet animatorSet2 = animatorSetArr[i9];
+                int i10 = this.b;
+                AnimatorSet animatorSet2 = animatorSetArr[i10];
                 if (animatorSet2 != null && animatorSet2.equals(animator)) {
-                    animatorSetArr[i9] = null;
+                    animatorSetArr[i10] = null;
                     break;
                 }
                 break;
@@ -49,10 +49,10 @@ public final class x2 extends AnimatorListenerAdapter {
     public final void onAnimationEnd(Animator animator) {
         DialogInterface.OnClickListener onClickListener;
         DialogInterface.OnClickListener onClickListener2;
-        int i9 = this.a;
-        int i10 = this.b;
+        int i10 = this.a;
+        int i11 = this.b;
         Dialog dialog = this.c;
-        switch (i9) {
+        switch (i10) {
             case 0:
                 f3 f3Var = (f3) dialog;
                 AnimatorSet animatorSet = f3Var.currentSheetAnimation;
@@ -62,17 +62,17 @@ public final class x2 extends AnimatorListenerAdapter {
                     onClickListener = f3Var.onClickListener;
                     if (onClickListener != null) {
                         onClickListener2 = f3Var.onClickListener;
-                        onClickListener2.onClick(f3Var, i10);
+                        onClickListener2.onClick(f3Var, i11);
                     }
-                    AndroidUtilities.runOnUIThread(new p(this, 8));
+                    AndroidUtilities.runOnUIThread(new q(this, 8));
                 }
                 NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.startAllHeavyOperations, 512);
                 break;
             default:
                 AnimatorSet[] animatorSetArr = ((c2) dialog).B;
-                AnimatorSet animatorSet2 = animatorSetArr[i10];
+                AnimatorSet animatorSet2 = animatorSetArr[i11];
                 if (animatorSet2 != null && animatorSet2.equals(animator)) {
-                    animatorSetArr[i10] = null;
+                    animatorSetArr[i11] = null;
                     break;
                 }
                 break;

@@ -1,48 +1,48 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class dd0 extends AnimatorListenerAdapter {
+public final /* synthetic */ class dd0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ fg0 b;
+    public final /* synthetic */ pe0 b;
 
-    public /* synthetic */ dd0(fg0 fg0Var, int i9) {
-        this.a = i9;
-        this.b = fg0Var;
+    public /* synthetic */ dd0(pe0 pe0Var, int i10) {
+        this.a = i10;
+        this.b = pe0Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                fg0 fg0Var = this.b;
-                if (fg0Var.d == animator) {
-                    fg0Var.d = null;
-                    break;
-                }
+                this.b.H.n();
+                break;
+            case 1:
+                pe0 pe0Var = this.b;
+                pe0Var.I = null;
+                pe0Var.J = null;
+                pe0Var.p(true);
+                pe0Var.e.h(null, null, pe0Var.f, null);
+                ed edVar = pe0Var.n;
+                org.telegram.ui.Components.xi0 xi0Var = pe0Var.E;
+                edVar.setAnimation(xi0Var);
+                xi0Var.K(0);
+                pe0Var.G = true;
+                break;
+            case 2:
+                this.b.G = true;
                 break;
             default:
-                fg0 fg0Var2 = this.b;
-                fg0Var2.c.setVisibility(8);
-                if (fg0Var2.d == animator) {
-                    fg0Var2.d = null;
+                EditTextBoldCursor editTextBoldCursor = this.b.c;
+                if (editTextBoldCursor != null) {
+                    editTextBoldCursor.requestFocus();
+                    editTextBoldCursor.setSelection(editTextBoldCursor.length());
+                    AndroidUtilities.showKeyboard(editTextBoldCursor);
                     break;
                 }
-                break;
-        }
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationStart(Animator animator) {
-        switch (this.a) {
-            case 0:
-                this.b.c.setVisibility(0);
-                break;
-            default:
-                super.onAnimationStart(animator);
                 break;
         }
     }

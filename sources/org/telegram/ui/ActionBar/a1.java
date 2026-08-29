@@ -5,22 +5,22 @@ import android.animation.AnimatorListenerAdapter;
 import android.graphics.ColorMatrix;
 import android.graphics.ColorMatrixColorFilter;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Cells.n6;
-import org.telegram.ui.Cells.x7;
-import org.telegram.ui.Components.fg0;
-import org.telegram.ui.Components.q9;
+import org.telegram.ui.Cells.l6;
+import org.telegram.ui.Cells.v7;
+import org.telegram.ui.Components.qg0;
+import org.telegram.ui.Components.v9;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
 public final class a1 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
     public final /* synthetic */ float b;
     public final /* synthetic */ Object c;
 
-    public /* synthetic */ a1(Object obj, float f10, int i9) {
-        this.a = i9;
+    public /* synthetic */ a1(Object obj, float f9, int i10) {
+        this.a = i10;
         this.c = obj;
-        this.b = f10;
+        this.b = f9;
     }
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
@@ -42,38 +42,38 @@ public final class a1 extends AnimatorListenerAdapter {
                 }
                 break;
             case 2:
-                n6 n6Var = (n6) this.c;
-                n6Var.A = this.b;
-                n6Var.invalidate();
+                l6 l6Var = (l6) this.c;
+                l6Var.A = this.b;
+                l6Var.invalidate();
                 break;
             case 3:
                 ColorMatrix colorMatrix = new ColorMatrix();
-                x7 x7Var = (x7) this.c;
-                float f10 = this.b;
-                x7Var.v = f10;
-                colorMatrix.setSaturation(f10);
-                if (f6.I.q()) {
-                    AndroidUtilities.adjustBrightnessColorMatrix(colorMatrix, (1.0f - x7Var.v) * (-0.3f));
+                v7 v7Var = (v7) this.c;
+                float f9 = this.b;
+                v7Var.v = f9;
+                colorMatrix.setSaturation(f9);
+                if (g6.I.q()) {
+                    AndroidUtilities.adjustBrightnessColorMatrix(colorMatrix, (1.0f - v7Var.v) * (-0.3f));
                 }
-                x7Var.d.setEmojiColorFilter(new ColorMatrixColorFilter(colorMatrix));
+                v7Var.d.setEmojiColorFilter(new ColorMatrixColorFilter(colorMatrix));
                 break;
             case 4:
-                q9 q9Var = (q9) this.c;
-                q9Var.g = this.b;
-                q9Var.invalidateSelf();
+                v9 v9Var = (v9) this.c;
+                v9Var.g = this.b;
+                v9Var.invalidateSelf();
                 break;
             default:
-                fg0 fg0Var = (fg0) this.c;
-                fg0Var.D.unlock();
-                float f11 = this.b;
-                fg0Var.b = f11;
-                if (f11 <= 0.0f) {
-                    fg0Var.C = -1;
+                qg0 qg0Var = (qg0) this.c;
+                qg0Var.D.unlock();
+                float f10 = this.b;
+                qg0Var.b = f10;
+                if (f10 <= 0.0f) {
+                    qg0Var.C = -1;
                 }
-                fg0Var.c(true);
-                fg0Var.f = false;
-                if (fg0Var.K != null && Math.abs(f11 - 1.0f) < 0.01f) {
-                    fg0Var.K.run();
+                qg0Var.c(true);
+                qg0Var.f = false;
+                if (qg0Var.K != null && Math.abs(f10 - 1.0f) < 0.01f) {
+                    qg0Var.K.run();
                     break;
                 }
                 break;
@@ -84,9 +84,9 @@ public final class a1 extends AnimatorListenerAdapter {
     public void onAnimationStart(Animator animator) {
         switch (this.a) {
             case 5:
-                fg0 fg0Var = (fg0) this.c;
-                fg0Var.f = true;
-                fg0Var.c = this.b;
+                qg0 qg0Var = (qg0) this.c;
+                qg0Var.f = true;
+                qg0Var.c = this.b;
                 break;
             default:
                 super.onAnimationStart(animator);

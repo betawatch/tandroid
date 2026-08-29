@@ -1,50 +1,52 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import org.telegram.messenger.ChatObject;
+import android.widget.LinearLayout;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ImageLocation;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class dp extends org.telegram.ui.Components.t70 {
-    public final /* synthetic */ TLRPC.Chat w;
-    public final /* synthetic */ ep x;
+public final class dp extends LinearLayout implements NotificationCenter.NotificationCenterDelegate {
+    public org.telegram.ui.Components.t9 a;
+    public org.telegram.ui.Components.e90 b;
+    public int c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public dp(ep epVar, Context context, TLRPC.Chat chat, TLRPC.Chat chat2) {
-        super(context, chat);
-        this.x = epVar;
-        this.w = chat2;
-    }
-
-    @Override // org.telegram.ui.Components.t70
-    public final boolean a(boolean z10, org.telegram.ui.Components.r70 r70Var) {
-        hp hpVar = this.x.d;
-        if (hpVar.L) {
-            return false;
+    public final void a() {
+        org.telegram.ui.Components.t9 t9Var = this.a;
+        int i10 = this.c;
+        TLRPC.TL_messages_stickerSet stickerSetByName = MediaDataController.getInstance(i10).getStickerSetByName(AndroidUtilities.STICKERS_PLACEHOLDER_PACK_NAME);
+        if (stickerSetByName == null) {
+            stickerSetByName = MediaDataController.getInstance(i10).getStickerSetByEmojiOrName(AndroidUtilities.STICKERS_PLACEHOLDER_PACK_NAME);
         }
-        hpVar.L = true;
-        e(new rd(27, this, r70Var), new bg.d(this, this.w, z10, r70Var, 13));
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.t70
-    public final boolean b(boolean z10, org.telegram.ui.Components.s70 s70Var) {
-        hp hpVar = this.x.d;
-        if (hpVar.K) {
-            return false;
-        }
-        hpVar.K = true;
-        e(new rd(27, this, s70Var), new bg.d(this, this.w, z10, s70Var, 12));
-        return true;
-    }
-
-    public final void e(rd rdVar, Runnable runnable) {
-        hp hpVar = this.x.d;
-        if (ChatObject.isChannel(hpVar.f)) {
-            runnable.run();
+        TLRPC.TL_messages_stickerSet tL_messages_stickerSet = stickerSetByName;
+        if (tL_messages_stickerSet != null && tL_messages_stickerSet.documents.size() >= 3) {
+            t9Var.i(ImageLocation.getForDocument(tL_messages_stickerSet.documents.get(2)), "104_104", "tgs", this.b, tL_messages_stickerSet);
         } else {
-            hpVar.getMessagesController().convertToMegaGroup(hpVar.getParentActivity(), this.w.id, hpVar, new ih.v3(25, this, runnable), rdVar);
+            MediaDataController.getInstance(i10).loadStickersByEmojiOrName(AndroidUtilities.STICKERS_PLACEHOLDER_PACK_NAME, false, tL_messages_stickerSet == null);
+            t9Var.setImageDrawable(this.b);
         }
+    }
+
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+        if (i10 == NotificationCenter.diceStickersDidLoad && AndroidUtilities.STICKERS_PLACEHOLDER_PACK_NAME.equals((String) objArr[0])) {
+            a();
+        }
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        a();
+        NotificationCenter.getInstance(this.c).addObserver(this, NotificationCenter.diceStickersDidLoad);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        NotificationCenter.getInstance(this.c).removeObserver(this, NotificationCenter.diceStickersDidLoad);
     }
 }

@@ -1,22 +1,47 @@
 package j5;
 
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
-import com.google.android.gms.common.api.Status;
-import com.google.android.gms.common.api.q;
+import android.os.Parcel;
+import android.os.Parcelable;
+import com.google.android.gms.internal.cast.o;
+import java.util.Arrays;
+import z5.l;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class b implements q {
-    public final Status a;
-    public final GoogleSignInAccount b;
+public final class b extends a6.a {
+    public static final Parcelable.Creator<b> CREATOR = new i4.g(15);
+    public final boolean a;
+    public final String b;
 
-    public b(GoogleSignInAccount googleSignInAccount, Status status) {
-        this.b = googleSignInAccount;
-        this.a = status;
+    public b(String str, boolean z10) {
+        if (z10) {
+            l.h(str);
+        }
+        this.a = z10;
+        this.b = str;
     }
 
-    @Override // com.google.android.gms.common.api.q
-    public final Status i() {
-        return this.a;
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof b)) {
+            return false;
+        }
+        b bVar = (b) obj;
+        return this.a == bVar.a && l.l(this.b, bVar.b);
+    }
+
+    public final int hashCode() {
+        return Arrays.hashCode(new Object[]{Boolean.valueOf(this.a), this.b});
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i10) {
+        int q6 = o.q(parcel, 20293);
+        o.s(parcel, 1, 4);
+        parcel.writeInt(this.a ? 1 : 0);
+        o.l(parcel, 2, this.b);
+        o.r(parcel, q6);
     }
 }

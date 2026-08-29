@@ -1,13 +1,26 @@
 package d5;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
-/* loaded from: classes.dex */
-public final class s {
-    public final int a;
-    public final boolean b;
+import java.util.List;
 
-    public s(int i9, int i10, boolean z10) {
-        this.a = i10;
-        this.b = z10;
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* loaded from: classes.dex */
+public final class s extends c {
+    @Override // d5.r
+    public final int c() {
+        return 0;
+    }
+
+    @Override // d5.r
+    public final int o() {
+        return 0;
+    }
+
+    @Override // d5.r
+    public final Object r() {
+        return null;
+    }
+
+    @Override // d5.r
+    public final void b(long j10, long j11, long j12, List list, n4.l[] lVarArr) {
     }
 }

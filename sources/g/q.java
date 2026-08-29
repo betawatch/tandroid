@@ -1,5 +1,6 @@
 package g;
 
+import ag.o1;
 import android.R;
 import android.app.UiModeManager;
 import android.content.Context;
@@ -41,24 +42,24 @@ import androidx.appcompat.widget.ActionBarOverlayLayout;
 import androidx.appcompat.widget.ActionMenuView;
 import androidx.appcompat.widget.ContentFrameLayout;
 import androidx.appcompat.widget.Toolbar;
-import f7.o7;
-import g7.z6;
+import h7.n7;
+import i7.f7;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Map;
 import java.util.WeakHashMap;
+import m.j3;
 import m.k1;
-import m.k3;
 import m.l1;
-import m.p3;
-import m.w3;
+import m.o3;
+import m.v3;
 import org.webrtc.MediaStreamTrack;
 import r0.b0;
 import r0.j0;
 import r0.m0;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class q extends g implements l.i, LayoutInflater.Factory2 {
     public static final a0.k m0 = new a0.k(0);
@@ -109,8 +110,8 @@ public final class q extends g implements l.i, LayoutInflater.Factory2 {
     public a0 n;
     public CharSequence r;
     public k1 s;
-    public android.support.v4.media.c v;
-    public xa.c w;
+    public m5.i v;
+    public o1 w;
     public k.a x;
     public ActionBarContextView y;
 
@@ -151,47 +152,47 @@ public final class q extends g implements l.i, LayoutInflater.Factory2 {
     }
 
     @Override // g.g
-    public final boolean c(int i9) {
-        if (i9 == 8) {
+    public final boolean c(int i10) {
+        if (i10 == 8) {
             Log.i("AppCompatDelegate", "You should now use the AppCompatDelegate.FEATURE_SUPPORT_ACTION_BAR id when requesting this feature.");
-            i9 = 108;
-        } else if (i9 == 9) {
+            i10 = 108;
+        } else if (i10 == 9) {
             Log.i("AppCompatDelegate", "You should now use the AppCompatDelegate.FEATURE_SUPPORT_ACTION_BAR_OVERLAY id when requesting this feature.");
-            i9 = 109;
+            i10 = 109;
         }
-        if (this.O && i9 == 108) {
+        if (this.O && i10 == 108) {
             return false;
         }
-        if (this.K && i9 == 1) {
+        if (this.K && i10 == 1) {
             this.K = false;
         }
-        if (i9 == 1) {
+        if (i10 == 1) {
             x();
             this.O = true;
             return true;
         }
-        if (i9 == 2) {
+        if (i10 == 2) {
             x();
             this.I = true;
             return true;
         }
-        if (i9 == 5) {
+        if (i10 == 5) {
             x();
             this.J = true;
             return true;
         }
-        if (i9 == 10) {
+        if (i10 == 10) {
             x();
             this.M = true;
             return true;
         }
-        if (i9 == 108) {
+        if (i10 == 108) {
             x();
             this.K = true;
             return true;
         }
-        if (i9 != 109) {
-            return this.f.requestFeature(i9);
+        if (i10 != 109) {
+            return this.f.requestFeature(i10);
         }
         x();
         this.L = true;
@@ -204,75 +205,75 @@ public final class q extends g implements l.i, LayoutInflater.Factory2 {
         if (this.V) {
             return false;
         }
-        int i9 = this.X;
-        if (i9 == -100) {
-            i9 = g.a;
+        int i10 = this.X;
+        if (i10 == -100) {
+            i10 = g.a;
         }
         Context context = this.e;
-        int i10 = -1;
-        if (i9 != -100) {
-            if (i9 != -1) {
-                if (i9 != 0) {
-                    if (i9 != 1 && i9 != 2) {
-                        if (i9 != 3) {
+        int i11 = -1;
+        if (i10 != -100) {
+            if (i10 != -1) {
+                if (i10 != 0) {
+                    if (i10 != 1 && i10 != 2) {
+                        if (i10 != 3) {
                             throw new IllegalStateException("Unknown value set for night mode. Please use one of the MODE_NIGHT values from AppCompatDelegate.");
                         }
                         if (this.c0 == null) {
                             this.c0 = new n(this, context);
                         }
-                        i10 = this.c0.e();
+                        i11 = this.c0.e();
                     }
                 } else if (Build.VERSION.SDK_INT < 23 || ((UiModeManager) context.getApplicationContext().getSystemService("uimode")).getNightMode() != 0) {
-                    i10 = o(context).e();
+                    i11 = o(context).e();
                 }
             }
-            i10 = i9;
+            i11 = i10;
         }
-        int i11 = i10 != 1 ? i10 != 2 ? context.getApplicationContext().getResources().getConfiguration().uiMode & 48 : 32 : 16;
+        int i12 = i11 != 1 ? i11 != 2 ? context.getApplicationContext().getResources().getConfiguration().uiMode & 48 : 32 : 16;
         Configuration configuration = new Configuration();
         configuration.fontScale = 0.0f;
-        configuration.uiMode = i11 | (configuration.uiMode & (-49));
+        configuration.uiMode = i12 | (configuration.uiMode & (-49));
         this.a0 = true;
-        int i12 = this.Z;
+        int i13 = this.Z;
         Configuration configuration2 = this.W;
         if (configuration2 == null) {
             configuration2 = context.getResources().getConfiguration();
         }
-        int i13 = configuration2.uiMode & 48;
-        int i14 = configuration.uiMode & 48;
-        int i15 = Build.VERSION.SDK_INT;
-        if (i15 >= 24) {
+        int i14 = configuration2.uiMode & 48;
+        int i15 = configuration.uiMode & 48;
+        int i16 = Build.VERSION.SDK_INT;
+        if (i16 >= 24) {
             k.b(configuration2);
         } else {
             n0.c.b(j.a(configuration2.locale));
         }
-        int i16 = i13 != i14 ? 512 : 0;
-        if (((~i12) & i16) != 0 && z10 && this.T && !o0) {
+        int i17 = i14 != i15 ? 512 : 0;
+        if (((~i13) & i17) != 0 && z10 && this.T && !o0) {
             boolean z12 = this.U;
         }
-        if (i16 != 0) {
+        if (i17 != 0) {
             Resources resources = context.getResources();
             Configuration configuration3 = new Configuration(resources.getConfiguration());
-            configuration3.uiMode = i14 | (resources.getConfiguration().uiMode & (-49));
+            configuration3.uiMode = i15 | (resources.getConfiguration().uiMode & (-49));
             Map map = null;
             r5 = null;
             r5 = null;
             Object obj2 = null;
             Object obj3 = null;
             resources.updateConfiguration(configuration3, null);
-            if (i15 < 26 && i15 < 28) {
-                if (i15 >= 24) {
-                    if (!o7.h) {
+            if (i16 < 26 && i16 < 28) {
+                if (i16 >= 24) {
+                    if (!n7.h) {
                         try {
                             Field declaredField = Resources.class.getDeclaredField("mResourcesImpl");
-                            o7.g = declaredField;
+                            n7.g = declaredField;
                             declaredField.setAccessible(true);
                         } catch (NoSuchFieldException e10) {
                             Log.e("ResourcesFlusher", "Could not retrieve Resources#mResourcesImpl field", e10);
                         }
-                        o7.h = true;
+                        n7.h = true;
                     }
-                    Field field = o7.g;
+                    Field field = n7.g;
                     if (field != null) {
                         try {
                             obj = field.get(resources);
@@ -281,17 +282,17 @@ public final class q extends g implements l.i, LayoutInflater.Factory2 {
                             obj = null;
                         }
                         if (obj != null) {
-                            if (!o7.b) {
+                            if (!n7.b) {
                                 try {
                                     Field declaredField2 = obj.getClass().getDeclaredField("mDrawableCache");
-                                    o7.a = declaredField2;
+                                    n7.a = declaredField2;
                                     declaredField2.setAccessible(true);
                                 } catch (NoSuchFieldException e12) {
                                     Log.e("ResourcesFlusher", "Could not retrieve ResourcesImpl#mDrawableCache field", e12);
                                 }
-                                o7.b = true;
+                                n7.b = true;
                             }
-                            Field field2 = o7.a;
+                            Field field2 = n7.a;
                             if (field2 != null) {
                                 try {
                                     obj2 = field2.get(obj);
@@ -300,22 +301,22 @@ public final class q extends g implements l.i, LayoutInflater.Factory2 {
                                 }
                             }
                             if (obj2 != null) {
-                                o7.a(obj2);
+                                n7.a(obj2);
                             }
                         }
                     }
-                } else if (i15 >= 23) {
-                    if (!o7.b) {
+                } else if (i16 >= 23) {
+                    if (!n7.b) {
                         try {
                             Field declaredField3 = Resources.class.getDeclaredField("mDrawableCache");
-                            o7.a = declaredField3;
+                            n7.a = declaredField3;
                             declaredField3.setAccessible(true);
                         } catch (NoSuchFieldException e14) {
                             Log.e("ResourcesFlusher", "Could not retrieve Resources#mDrawableCache field", e14);
                         }
-                        o7.b = true;
+                        n7.b = true;
                     }
-                    Field field3 = o7.a;
+                    Field field3 = n7.a;
                     if (field3 != null) {
                         try {
                             obj3 = field3.get(resources);
@@ -324,20 +325,20 @@ public final class q extends g implements l.i, LayoutInflater.Factory2 {
                         }
                     }
                     if (obj3 != null) {
-                        o7.a(obj3);
+                        n7.a(obj3);
                     }
                 } else {
-                    if (!o7.b) {
+                    if (!n7.b) {
                         try {
                             Field declaredField4 = Resources.class.getDeclaredField("mDrawableCache");
-                            o7.a = declaredField4;
+                            n7.a = declaredField4;
                             declaredField4.setAccessible(true);
                         } catch (NoSuchFieldException e16) {
                             Log.e("ResourcesFlusher", "Could not retrieve Resources#mDrawableCache field", e16);
                         }
-                        o7.b = true;
+                        n7.b = true;
                     }
-                    Field field4 = o7.a;
+                    Field field4 = n7.a;
                     if (field4 != null) {
                         try {
                             map = (Map) field4.get(resources);
@@ -350,16 +351,16 @@ public final class q extends g implements l.i, LayoutInflater.Factory2 {
                     }
                 }
             }
-            int i17 = this.Y;
-            if (i17 != 0) {
-                context.setTheme(i17);
+            int i18 = this.Y;
+            if (i18 != 0) {
+                context.setTheme(i18);
                 if (Build.VERSION.SDK_INT >= 23) {
                     context.getTheme().applyStyle(this.Y, true);
                 }
             }
             z11 = true;
         }
-        if (i9 == 0) {
+        if (i10 == 0) {
             o(context).l();
         } else {
             n nVar = this.b0;
@@ -367,7 +368,7 @@ public final class q extends g implements l.i, LayoutInflater.Factory2 {
                 nVar.c();
             }
         }
-        if (i9 == 3) {
+        if (i10 == 3) {
             if (this.c0 == null) {
                 this.c0 = new n(this, context);
             }
@@ -422,12 +423,12 @@ public final class q extends g implements l.i, LayoutInflater.Factory2 {
         y();
     }
 
-    public final void f(int i9, p pVar, l.k kVar) {
+    public final void f(int i10, p pVar, l.k kVar) {
         if (kVar == null) {
-            if (pVar == null && i9 >= 0) {
+            if (pVar == null && i10 >= 0) {
                 p[] pVarArr = this.Q;
-                if (i9 < pVarArr.length) {
-                    pVar = pVarArr[i9];
+                if (i10 < pVarArr.length) {
+                    pVar = pVarArr[i10];
                 }
             }
             if (pVar != null) {
@@ -440,7 +441,7 @@ public final class q extends g implements l.i, LayoutInflater.Factory2 {
             mVar.getClass();
             try {
                 mVar.d = true;
-                callback.onPanelClosed(i9, kVar);
+                callback.onPanelClosed(i10, kVar);
             } finally {
                 mVar.d = false;
             }
@@ -455,7 +456,7 @@ public final class q extends g implements l.i, LayoutInflater.Factory2 {
         this.P = true;
         ActionBarOverlayLayout actionBarOverlayLayout = (ActionBarOverlayLayout) this.s;
         actionBarOverlayLayout.f();
-        ActionMenuView actionMenuView = ((p3) actionBarOverlayLayout.e).a.a;
+        ActionMenuView actionMenuView = ((o3) actionBarOverlayLayout.e).a.a;
         if (actionMenuView != null && (iVar = actionMenuView.F) != null) {
             iVar.f();
             m.e eVar = iVar.F;
@@ -477,8 +478,8 @@ public final class q extends g implements l.i, LayoutInflater.Factory2 {
         if (z10 && pVar.a == 0 && (k1Var = this.s) != null) {
             ActionBarOverlayLayout actionBarOverlayLayout = (ActionBarOverlayLayout) k1Var;
             actionBarOverlayLayout.f();
-            ActionMenuView actionMenuView = ((p3) actionBarOverlayLayout.e).a.a;
-            if (actionMenuView != null && (iVar = actionMenuView.F) != null && iVar.g()) {
+            ActionMenuView actionMenuView = ((o3) actionBarOverlayLayout.e).a.a;
+            if (actionMenuView != null && (iVar = actionMenuView.F) != null && iVar.h()) {
                 g(pVar.h);
                 return;
             }
@@ -503,6 +504,85 @@ public final class q extends g implements l.i, LayoutInflater.Factory2 {
         }
     }
 
+    /* JADX WARN: Code restructure failed: missing block: B:18:0x0048, code lost:
+    
+        if (r6.h() != false) goto L20;
+     */
+    @Override // l.i
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void i(l.k kVar) {
+        ActionMenuView actionMenuView;
+        m.i iVar;
+        m.i iVar2;
+        m.i iVar3;
+        k1 k1Var = this.s;
+        if (k1Var != null) {
+            ActionBarOverlayLayout actionBarOverlayLayout = (ActionBarOverlayLayout) k1Var;
+            actionBarOverlayLayout.f();
+            Toolbar toolbar = ((o3) actionBarOverlayLayout.e).a;
+            if (toolbar.getVisibility() == 0 && (actionMenuView = toolbar.a) != null && actionMenuView.E) {
+                if (ViewConfiguration.get(this.e).hasPermanentMenuKey()) {
+                    ActionBarOverlayLayout actionBarOverlayLayout2 = (ActionBarOverlayLayout) this.s;
+                    actionBarOverlayLayout2.f();
+                    ActionMenuView actionMenuView2 = ((o3) actionBarOverlayLayout2.e).a.a;
+                    if (actionMenuView2 != null) {
+                        m.i iVar4 = actionMenuView2.F;
+                        if (iVar4 != null) {
+                            if (iVar4.G == null) {
+                            }
+                        }
+                    }
+                }
+                Window.Callback callback = this.f.getCallback();
+                ActionBarOverlayLayout actionBarOverlayLayout3 = (ActionBarOverlayLayout) this.s;
+                actionBarOverlayLayout3.f();
+                ActionMenuView actionMenuView3 = ((o3) actionBarOverlayLayout3.e).a.a;
+                if (actionMenuView3 != null && (iVar2 = actionMenuView3.F) != null && iVar2.h()) {
+                    ActionBarOverlayLayout actionBarOverlayLayout4 = (ActionBarOverlayLayout) this.s;
+                    actionBarOverlayLayout4.f();
+                    ActionMenuView actionMenuView4 = ((o3) actionBarOverlayLayout4.e).a.a;
+                    if (actionMenuView4 != null && (iVar3 = actionMenuView4.F) != null) {
+                        iVar3.f();
+                    }
+                    if (this.V) {
+                        return;
+                    }
+                    callback.onPanelClosed(108, p(0).h);
+                    return;
+                }
+                if (callback == null || this.V) {
+                    return;
+                }
+                if (this.d0 && (1 & this.e0) != 0) {
+                    View decorView = this.f.getDecorView();
+                    h hVar = this.f0;
+                    decorView.removeCallbacks(hVar);
+                    hVar.run();
+                }
+                p p10 = p(0);
+                l.k kVar2 = p10.h;
+                if (kVar2 == null || p10.o || !callback.onPreparePanel(0, p10.g, kVar2)) {
+                    return;
+                }
+                callback.onMenuOpened(108, p10.h);
+                ActionBarOverlayLayout actionBarOverlayLayout5 = (ActionBarOverlayLayout) this.s;
+                actionBarOverlayLayout5.f();
+                ActionMenuView actionMenuView5 = ((o3) actionBarOverlayLayout5.e).a.a;
+                if (actionMenuView5 == null || (iVar = actionMenuView5.F) == null) {
+                    return;
+                }
+                iVar.l();
+                return;
+            }
+        }
+        p p11 = p(0);
+        p11.n = true;
+        h(p11, false);
+        u(p11, null);
+    }
+
     /* JADX WARN: Code restructure failed: missing block: B:11:0x0039, code lost:
     
         if (r4.dispatchKeyEvent(r7) != false) goto L103;
@@ -519,14 +599,14 @@ public final class q extends g implements l.i, LayoutInflater.Factory2 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final boolean i(KeyEvent keyEvent) {
+    public final boolean j(KeyEvent keyEvent) {
         View decorView;
         boolean z10;
         boolean z11;
         ActionMenuView actionMenuView;
         m.i iVar;
         s sVar = this.d;
-        if ((!(sVar instanceof r0.k) && !e2.c.v(sVar)) || (decorView = this.f.getDecorView()) == null || !z6.a(decorView, keyEvent)) {
+        if ((!(sVar instanceof r0.k) && !com.google.android.recaptcha.internal.a.u(sVar)) || (decorView = this.f.getDecorView()) == null || !f7.a(decorView, keyEvent)) {
             if (keyEvent.getKeyCode() == 82) {
                 m mVar = this.h;
                 Window.Callback callback = this.f.getCallback();
@@ -545,9 +625,9 @@ public final class q extends g implements l.i, LayoutInflater.Factory2 {
                 }
                 if (keyCode == 82) {
                     if (keyEvent.getRepeatCount() == 0) {
-                        p p6 = p(0);
-                        if (!p6.m) {
-                            w(p6, keyEvent);
+                        p p10 = p(0);
+                        if (!p10.m) {
+                            w(p10, keyEvent);
                             return true;
                         }
                     }
@@ -557,22 +637,22 @@ public final class q extends g implements l.i, LayoutInflater.Factory2 {
             if (keyCode != 4) {
                 if (keyCode == 82) {
                     if (this.x == null) {
-                        p p9 = p(0);
+                        p p11 = p(0);
                         k1 k1Var = this.s;
                         Context context = this.e;
                         if (k1Var != null) {
                             ActionBarOverlayLayout actionBarOverlayLayout = (ActionBarOverlayLayout) k1Var;
                             actionBarOverlayLayout.f();
-                            Toolbar toolbar = ((p3) actionBarOverlayLayout.e).a;
+                            Toolbar toolbar = ((o3) actionBarOverlayLayout.e).a;
                             if (toolbar.getVisibility() == 0 && (actionMenuView = toolbar.a) != null && actionMenuView.E && !ViewConfiguration.get(context).hasPermanentMenuKey()) {
                                 ActionBarOverlayLayout actionBarOverlayLayout2 = (ActionBarOverlayLayout) this.s;
                                 actionBarOverlayLayout2.f();
-                                ActionMenuView actionMenuView2 = ((p3) actionBarOverlayLayout2.e).a.a;
-                                if (actionMenuView2 == null || (iVar = actionMenuView2.F) == null || !iVar.g()) {
-                                    if (!this.V && w(p9, keyEvent)) {
+                                ActionMenuView actionMenuView2 = ((o3) actionBarOverlayLayout2.e).a.a;
+                                if (actionMenuView2 == null || (iVar = actionMenuView2.F) == null || !iVar.h()) {
+                                    if (!this.V && w(p11, keyEvent)) {
                                         ActionBarOverlayLayout actionBarOverlayLayout3 = (ActionBarOverlayLayout) this.s;
                                         actionBarOverlayLayout3.f();
-                                        ActionMenuView actionMenuView3 = ((p3) actionBarOverlayLayout3.e).a.a;
+                                        ActionMenuView actionMenuView3 = ((o3) actionBarOverlayLayout3.e).a.a;
                                         if (actionMenuView3 != null) {
                                             m.i iVar2 = actionMenuView3.F;
                                             if (iVar2 != null) {
@@ -583,7 +663,7 @@ public final class q extends g implements l.i, LayoutInflater.Factory2 {
                                 } else {
                                     ActionBarOverlayLayout actionBarOverlayLayout4 = (ActionBarOverlayLayout) this.s;
                                     actionBarOverlayLayout4.f();
-                                    ActionMenuView actionMenuView4 = ((p3) actionBarOverlayLayout4.e).a.a;
+                                    ActionMenuView actionMenuView4 = ((o3) actionBarOverlayLayout4.e).a.a;
                                     if (actionMenuView4 != null) {
                                         m.i iVar3 = actionMenuView4.F;
                                         if (iVar3 != null) {
@@ -602,22 +682,22 @@ public final class q extends g implements l.i, LayoutInflater.Factory2 {
                                 }
                             }
                         }
-                        boolean z12 = p9.m;
-                        if (z12 || p9.l) {
-                            h(p9, true);
+                        boolean z12 = p11.m;
+                        if (z12 || p11.l) {
+                            h(p11, true);
                             z10 = z12;
                             if (z10) {
                             }
                         } else {
-                            if (p9.k) {
-                                if (p9.o) {
-                                    p9.k = false;
-                                    z11 = w(p9, keyEvent);
+                            if (p11.k) {
+                                if (p11.o) {
+                                    p11.k = false;
+                                    z11 = w(p11, keyEvent);
                                 } else {
                                     z11 = true;
                                 }
                                 if (z11) {
-                                    u(p9, keyEvent);
+                                    u(p11, keyEvent);
                                     z10 = true;
                                     if (z10) {
                                     }
@@ -638,27 +718,27 @@ public final class q extends g implements l.i, LayoutInflater.Factory2 {
         return true;
     }
 
-    public final void j(int i9) {
-        p p6 = p(i9);
-        if (p6.h != null) {
+    public final void k(int i10) {
+        p p10 = p(i10);
+        if (p10.h != null) {
             Bundle bundle = new Bundle();
-            p6.h.t(bundle);
+            p10.h.t(bundle);
             if (bundle.size() > 0) {
-                p6.p = bundle;
+                p10.p = bundle;
             }
-            p6.h.w();
-            p6.h.clear();
+            p10.h.w();
+            p10.h.clear();
         }
-        p6.o = true;
-        p6.n = true;
-        if ((i9 == 108 || i9 == 0) && this.s != null) {
-            p p9 = p(0);
-            p9.k = false;
-            w(p9, null);
+        p10.o = true;
+        p10.n = true;
+        if ((i10 == 108 || i10 == 0) && this.s != null) {
+            p p11 = p(0);
+            p11.k = false;
+            w(p11, null);
         }
     }
 
-    public final void k() {
+    public final void l() {
         ViewGroup viewGroup;
         if (this.E) {
             return;
@@ -714,13 +794,13 @@ public final class q extends g implements l.i, LayoutInflater.Factory2 {
         if (viewGroup == null) {
             throw new IllegalArgumentException("AppCompat does not support the current theme features: { windowActionBar: " + this.K + ", windowActionBarOverlay: " + this.L + ", android:windowIsFloating: " + this.N + ", windowActionModeOverlay: " + this.M + ", windowNoTitle: " + this.O + " }");
         }
-        fa.c cVar = new fa.c(this, 17);
+        za.c cVar = new za.c(this, 15);
         WeakHashMap weakHashMap = j0.a;
         b0.j(viewGroup, cVar);
         if (this.s == null) {
             this.G = (TextView) viewGroup.findViewById(org.telegram.messenger.beta.R.id.title);
         }
-        Method method = w3.a;
+        Method method = v3.a;
         try {
             Method method2 = viewGroup.getClass().getMethod("makeOptionalFitsSystemWindows", null);
             if (!method2.isAccessible()) {
@@ -749,7 +829,7 @@ public final class q extends g implements l.i, LayoutInflater.Factory2 {
             }
         }
         this.f.setContentView(viewGroup);
-        contentFrameLayout.setAttachListener(new k5.i(this, 15));
+        contentFrameLayout.setAttachListener(new ha.c(this, 18));
         this.F = viewGroup;
         CharSequence charSequence = this.r;
         if (!TextUtils.isEmpty(charSequence)) {
@@ -759,13 +839,13 @@ public final class q extends g implements l.i, LayoutInflater.Factory2 {
             } else {
                 a0 a0Var = this.n;
                 if (a0Var != null) {
-                    p3 p3Var = (p3) a0Var.e;
-                    if (!p3Var.g) {
-                        Toolbar toolbar = p3Var.a;
-                        p3Var.h = charSequence;
-                        if ((p3Var.b & 8) != 0) {
+                    o3 o3Var = (o3) a0Var.e;
+                    if (!o3Var.g) {
+                        Toolbar toolbar = o3Var.a;
+                        o3Var.h = charSequence;
+                        if ((o3Var.b & 8) != 0) {
                             toolbar.setTitle(charSequence);
-                            if (p3Var.g) {
+                            if (o3Var.g) {
                                 j0.l(toolbar.getRootView(), charSequence);
                             }
                         }
@@ -803,90 +883,11 @@ public final class q extends g implements l.i, LayoutInflater.Factory2 {
         obtainStyledAttributes2.recycle();
         contentFrameLayout2.requestLayout();
         this.E = true;
-        p p6 = p(0);
-        if (this.V || p6.h != null) {
+        p p10 = p(0);
+        if (this.V || p10.h != null) {
             return;
         }
         s(108);
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:18:0x0048, code lost:
-    
-        if (r6.g() != false) goto L20;
-     */
-    @Override // l.i
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void l(l.k kVar) {
-        ActionMenuView actionMenuView;
-        m.i iVar;
-        m.i iVar2;
-        m.i iVar3;
-        k1 k1Var = this.s;
-        if (k1Var != null) {
-            ActionBarOverlayLayout actionBarOverlayLayout = (ActionBarOverlayLayout) k1Var;
-            actionBarOverlayLayout.f();
-            Toolbar toolbar = ((p3) actionBarOverlayLayout.e).a;
-            if (toolbar.getVisibility() == 0 && (actionMenuView = toolbar.a) != null && actionMenuView.E) {
-                if (ViewConfiguration.get(this.e).hasPermanentMenuKey()) {
-                    ActionBarOverlayLayout actionBarOverlayLayout2 = (ActionBarOverlayLayout) this.s;
-                    actionBarOverlayLayout2.f();
-                    ActionMenuView actionMenuView2 = ((p3) actionBarOverlayLayout2.e).a.a;
-                    if (actionMenuView2 != null) {
-                        m.i iVar4 = actionMenuView2.F;
-                        if (iVar4 != null) {
-                            if (iVar4.G == null) {
-                            }
-                        }
-                    }
-                }
-                Window.Callback callback = this.f.getCallback();
-                ActionBarOverlayLayout actionBarOverlayLayout3 = (ActionBarOverlayLayout) this.s;
-                actionBarOverlayLayout3.f();
-                ActionMenuView actionMenuView3 = ((p3) actionBarOverlayLayout3.e).a.a;
-                if (actionMenuView3 != null && (iVar2 = actionMenuView3.F) != null && iVar2.g()) {
-                    ActionBarOverlayLayout actionBarOverlayLayout4 = (ActionBarOverlayLayout) this.s;
-                    actionBarOverlayLayout4.f();
-                    ActionMenuView actionMenuView4 = ((p3) actionBarOverlayLayout4.e).a.a;
-                    if (actionMenuView4 != null && (iVar3 = actionMenuView4.F) != null) {
-                        iVar3.f();
-                    }
-                    if (this.V) {
-                        return;
-                    }
-                    callback.onPanelClosed(108, p(0).h);
-                    return;
-                }
-                if (callback == null || this.V) {
-                    return;
-                }
-                if (this.d0 && (1 & this.e0) != 0) {
-                    View decorView = this.f.getDecorView();
-                    h hVar = this.f0;
-                    decorView.removeCallbacks(hVar);
-                    hVar.run();
-                }
-                p p6 = p(0);
-                l.k kVar2 = p6.h;
-                if (kVar2 == null || p6.o || !callback.onPreparePanel(0, p6.g, kVar2)) {
-                    return;
-                }
-                callback.onMenuOpened(108, p6.h);
-                ActionBarOverlayLayout actionBarOverlayLayout5 = (ActionBarOverlayLayout) this.s;
-                actionBarOverlayLayout5.f();
-                ActionMenuView actionMenuView5 = ((p3) actionBarOverlayLayout5.e).a.a;
-                if (actionMenuView5 == null || (iVar = actionMenuView5.F) == null) {
-                    return;
-                }
-                iVar.l();
-                return;
-            }
-        }
-        p p9 = p(0);
-        p9.n = true;
-        h(p9, false);
-        u(p9, null);
     }
 
     public final void m() {
@@ -897,32 +898,32 @@ public final class q extends g implements l.i, LayoutInflater.Factory2 {
 
     public final Context n() {
         Context context;
-        a0 q10 = q();
-        if (q10 != null) {
-            if (q10.b == null) {
+        a0 r6 = r();
+        if (r6 != null) {
+            if (r6.b == null) {
                 TypedValue typedValue = new TypedValue();
-                q10.a.getTheme().resolveAttribute(org.telegram.messenger.beta.R.attr.actionBarWidgetTheme, typedValue, true);
-                int i9 = typedValue.resourceId;
-                if (i9 != 0) {
-                    q10.b = new ContextThemeWrapper(q10.a, i9);
+                r6.a.getTheme().resolveAttribute(org.telegram.messenger.beta.R.attr.actionBarWidgetTheme, typedValue, true);
+                int i10 = typedValue.resourceId;
+                if (i10 != 0) {
+                    r6.b = new ContextThemeWrapper(r6.a, i10);
                 } else {
-                    q10.b = q10.a;
+                    r6.b = r6.a;
                 }
             }
-            context = q10.b;
+            context = r6.b;
         } else {
             context = null;
         }
         return context == null ? this.e : context;
     }
 
-    public final f2.x o(Context context) {
+    public final f2.v o(Context context) {
         if (this.b0 == null) {
-            if (a5.m.e == null) {
+            if (androidx.biometric.e.e == null) {
                 Context applicationContext = context.getApplicationContext();
-                a5.m.e = new a5.m(applicationContext, (LocationManager) applicationContext.getSystemService("location"));
+                androidx.biometric.e.e = new androidx.biometric.e(applicationContext, (LocationManager) applicationContext.getSystemService("location"));
             }
-            this.b0 = new n(this, a5.m.e);
+            this.b0 = new n(this, androidx.biometric.e.e);
         }
         return this.b0;
     }
@@ -944,58 +945,43 @@ public final class q extends g implements l.i, LayoutInflater.Factory2 {
         throw new UnsupportedOperationException("Method not decompiled: g.q.onCreateView(android.view.View, java.lang.String, android.content.Context, android.util.AttributeSet):android.view.View");
     }
 
-    public final p p(int i9) {
+    public final p p(int i10) {
         p[] pVarArr = this.Q;
-        if (pVarArr == null || pVarArr.length <= i9) {
-            p[] pVarArr2 = new p[i9 + 1];
+        if (pVarArr == null || pVarArr.length <= i10) {
+            p[] pVarArr2 = new p[i10 + 1];
             if (pVarArr != null) {
                 System.arraycopy(pVarArr, 0, pVarArr2, 0, pVarArr.length);
             }
             this.Q = pVarArr2;
             pVarArr = pVarArr2;
         }
-        p pVar = pVarArr[i9];
+        p pVar = pVarArr[i10];
         if (pVar != null) {
             return pVar;
         }
         p pVar2 = new p();
-        pVar2.a = i9;
+        pVar2.a = i10;
         pVar2.n = false;
-        pVarArr[i9] = pVar2;
+        pVarArr[i10] = pVar2;
         return pVar2;
     }
 
-    public final a0 q() {
-        k();
-        if (this.K && this.n == null) {
-            s sVar = this.d;
-            if (e2.c.v(sVar)) {
-                this.n = new a0(sVar);
-            }
-            a0 a0Var = this.n;
-            if (a0Var != null) {
-                a0Var.c(this.g0);
-            }
-        }
-        return this.n;
-    }
-
     @Override // l.i
-    public final boolean r(l.k kVar, MenuItem menuItem) {
+    public final boolean q(l.k kVar, MenuItem menuItem) {
         p pVar;
         Window.Callback callback = this.f.getCallback();
         if (callback != null && !this.V) {
-            l.k k10 = kVar.k();
+            l.k k9 = kVar.k();
             p[] pVarArr = this.Q;
             int length = pVarArr != null ? pVarArr.length : 0;
-            int i9 = 0;
+            int i10 = 0;
             while (true) {
-                if (i9 < length) {
-                    pVar = pVarArr[i9];
-                    if (pVar != null && pVar.h == k10) {
+                if (i10 < length) {
+                    pVar = pVarArr[i10];
+                    if (pVar != null && pVar.h == k9) {
                         break;
                     }
-                    i9++;
+                    i10++;
                 } else {
                     pVar = null;
                     break;
@@ -1008,8 +994,23 @@ public final class q extends g implements l.i, LayoutInflater.Factory2 {
         return false;
     }
 
-    public final void s(int i9) {
-        this.e0 = (1 << i9) | this.e0;
+    public final a0 r() {
+        l();
+        if (this.K && this.n == null) {
+            s sVar = this.d;
+            if (com.google.android.recaptcha.internal.a.u(sVar)) {
+                this.n = new a0(sVar);
+            }
+            a0 a0Var = this.n;
+            if (a0Var != null) {
+                a0Var.c(this.g0);
+            }
+        }
+        return this.n;
+    }
+
+    public final void s(int i10) {
+        this.e0 = (1 << i10) | this.e0;
         if (this.d0) {
             return;
         }
@@ -1021,60 +1022,59 @@ public final class q extends g implements l.i, LayoutInflater.Factory2 {
 
     public final boolean t() {
         l1 l1Var;
-        k3 k3Var;
+        j3 j3Var;
         boolean z10 = this.S;
         this.S = false;
-        p p6 = p(0);
-        if (!p6.m) {
+        p p10 = p(0);
+        if (!p10.m) {
             k.a aVar = this.x;
             if (aVar != null) {
                 aVar.a();
                 return true;
             }
-            a0 q10 = q();
-            if (q10 == null || (l1Var = q10.e) == null || (k3Var = ((p3) l1Var).a.a0) == null || k3Var.b == null) {
+            a0 r6 = r();
+            if (r6 == null || (l1Var = r6.e) == null || (j3Var = ((o3) l1Var).a.a0) == null || j3Var.b == null) {
                 return false;
             }
-            k3 k3Var2 = ((p3) l1Var).a.a0;
-            l.m mVar = k3Var2 == null ? null : k3Var2.b;
+            j3 j3Var2 = ((o3) l1Var).a.a0;
+            l.m mVar = j3Var2 == null ? null : j3Var2.b;
             if (mVar != null) {
                 mVar.collapseActionView();
             }
         } else if (!z10) {
-            h(p6, true);
+            h(p10, true);
             return true;
         }
         return true;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:57:0x016a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:57:0x0167, code lost:
     
-        if (r2.f.getCount() > 0) goto L81;
+        if (r15.f.getCount() > 0) goto L81;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:84:0x014a, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:84:0x0147, code lost:
     
-        if (r2 != null) goto L70;
+        if (r15 != null) goto L70;
      */
-    /* JADX WARN: Removed duplicated region for block: B:34:0x01c7  */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x01c3  */
     /* JADX WARN: Removed duplicated region for block: B:36:? A[RETURN, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void u(p pVar, KeyEvent keyEvent) {
-        int i9;
+        int i10;
         ViewGroup.LayoutParams layoutParams;
         boolean z10 = pVar.m;
-        int i10 = pVar.a;
+        int i11 = pVar.a;
         if (z10 || this.V) {
             return;
         }
-        int i11 = 15;
         Context context = this.e;
-        if (i10 == 0 && (context.getResources().getConfiguration().screenLayout & 15) == 4) {
+        if (i11 == 0 && (context.getResources().getConfiguration().screenLayout & 15) == 4) {
             return;
         }
         Window.Callback callback = this.f.getCallback();
-        if (callback != null && !callback.onMenuOpened(i10, pVar.h)) {
+        if (callback != null && !callback.onMenuOpened(i11, pVar.h)) {
             h(pVar, true);
             return;
         }
@@ -1117,13 +1117,13 @@ public final class q extends g implements l.i, LayoutInflater.Factory2 {
             if (view == null) {
                 if (pVar.h != null) {
                     if (this.w == null) {
-                        this.w = new xa.c(this, i11);
+                        this.w = new o1(this, 14);
                     }
-                    xa.c cVar2 = this.w;
+                    o1 o1Var = this.w;
                     if (pVar.i == null) {
                         l.g gVar = new l.g(pVar.j);
                         pVar.i = gVar;
-                        gVar.e = cVar2;
+                        gVar.e = o1Var;
                         l.k kVar = pVar.h;
                         kVar.b(gVar, kVar.a);
                     }
@@ -1170,37 +1170,37 @@ public final class q extends g implements l.i, LayoutInflater.Factory2 {
         }
         View view2 = pVar.g;
         if (view2 != null && (layoutParams = view2.getLayoutParams()) != null && layoutParams.width == -1) {
-            i9 = -1;
+            i10 = -1;
             pVar.l = false;
-            WindowManager.LayoutParams layoutParams3 = new WindowManager.LayoutParams(i9, -2, 0, 0, 1002, 8519680, -3);
+            WindowManager.LayoutParams layoutParams3 = new WindowManager.LayoutParams(i10, -2, 0, 0, 1002, 8519680, -3);
             layoutParams3.gravity = pVar.c;
             layoutParams3.windowAnimations = pVar.d;
             windowManager.addView(pVar.e, layoutParams3);
             pVar.m = true;
-            if (i10 != 0) {
+            if (i11 != 0) {
                 y();
                 return;
             }
             return;
         }
-        i9 = -2;
+        i10 = -2;
         pVar.l = false;
-        WindowManager.LayoutParams layoutParams32 = new WindowManager.LayoutParams(i9, -2, 0, 0, 1002, 8519680, -3);
+        WindowManager.LayoutParams layoutParams32 = new WindowManager.LayoutParams(i10, -2, 0, 0, 1002, 8519680, -3);
         layoutParams32.gravity = pVar.c;
         layoutParams32.windowAnimations = pVar.d;
         windowManager.addView(pVar.e, layoutParams32);
         pVar.m = true;
-        if (i10 != 0) {
+        if (i11 != 0) {
         }
     }
 
-    public final boolean v(p pVar, int i9, KeyEvent keyEvent) {
+    public final boolean v(p pVar, int i10, KeyEvent keyEvent) {
         l.k kVar;
         if (keyEvent.isSystem()) {
             return false;
         }
         if ((pVar.k || w(pVar, keyEvent)) && (kVar = pVar.h) != null) {
-            return kVar.performShortcut(i9, keyEvent, 1);
+            return kVar.performShortcut(i10, keyEvent, 1);
         }
         return false;
     }
@@ -1220,7 +1220,7 @@ public final class q extends g implements l.i, LayoutInflater.Factory2 {
         k1 k1Var4;
         if (!this.V) {
             boolean z10 = pVar.k;
-            int i9 = pVar.a;
+            int i10 = pVar.a;
             if (z10) {
                 return true;
             }
@@ -1230,20 +1230,20 @@ public final class q extends g implements l.i, LayoutInflater.Factory2 {
             }
             Window.Callback callback = this.f.getCallback();
             if (callback != null) {
-                pVar.g = callback.onCreatePanelView(i9);
+                pVar.g = callback.onCreatePanelView(i10);
             }
-            boolean z11 = i9 == 0 || i9 == 108;
+            boolean z11 = i10 == 0 || i10 == 108;
             if (z11 && (k1Var4 = this.s) != null) {
                 ActionBarOverlayLayout actionBarOverlayLayout = (ActionBarOverlayLayout) k1Var4;
                 actionBarOverlayLayout.f();
-                ((p3) actionBarOverlayLayout.e).l = true;
+                ((o3) actionBarOverlayLayout.e).l = true;
             }
             if (pVar.g == null) {
                 l.k kVar = pVar.h;
                 if (kVar == null || pVar.o) {
                     if (kVar == null) {
                         Context context = this.e;
-                        if ((i9 == 0 || i9 == 108) && this.s != null) {
+                        if ((i10 == 0 || i10 == 108) && this.s != null) {
                             TypedValue typedValue = new TypedValue();
                             Resources.Theme theme2 = context.getTheme();
                             theme2.resolveAttribute(org.telegram.messenger.beta.R.attr.actionBarTheme, typedValue, true);
@@ -1285,12 +1285,12 @@ public final class q extends g implements l.i, LayoutInflater.Factory2 {
                     }
                     if (z11 && (k1Var2 = this.s) != null) {
                         if (this.v == null) {
-                            this.v = new android.support.v4.media.c(this, 14);
+                            this.v = new m5.i(this, 14);
                         }
                         ((ActionBarOverlayLayout) k1Var2).g(pVar.h, this.v);
                     }
                     pVar.h.w();
-                    if (callback.onCreatePanelMenu(i9, pVar.h)) {
+                    if (callback.onCreatePanelMenu(i10, pVar.h)) {
                         pVar.o = false;
                     } else {
                         l.k kVar4 = pVar.h;

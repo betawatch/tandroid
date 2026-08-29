@@ -1,39 +1,31 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+import org.telegram.messenger.LocationController;
+
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class p5 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ LocationController b;
+    public final /* synthetic */ LocationController.SharingLocationInfo c;
 
-    public /* synthetic */ p5(LocationController locationController, int i9) {
-        this.a = i9;
+    public /* synthetic */ p5(int i10, LocationController.SharingLocationInfo sharingLocationInfo, LocationController locationController) {
+        this.a = i10;
         this.b = locationController;
+        this.c = sharingLocationInfo;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$onConnected$3();
+                this.b.lambda$broadcastLastKnownLocation$6(this.c);
                 break;
             case 1:
-                this.b.lambda$setProximityLocation$13();
-                break;
-            case 2:
-                this.b.lambda$new$0();
-                break;
-            case 3:
-                this.b.lambda$removeAllLocationSharings$23();
-                break;
-            case 4:
-                this.b.lambda$removeAllLocationSharings$24();
-                break;
-            case 5:
-                this.b.lambda$cleanup$9();
+                this.b.lambda$removeSharingLocation$20(this.c);
                 break;
             default:
-                this.b.lambda$loadSharingLocations$17();
+                this.b.lambda$update$8(this.c);
                 break;
         }
     }

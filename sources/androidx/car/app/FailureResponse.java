@@ -5,7 +5,7 @@ import android.util.Log;
 import j$.util.Objects;
 import java.security.InvalidParameterException;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class FailureResponse {
     public static final int BUNDLER_EXCEPTION = 1;
@@ -18,28 +18,28 @@ public final class FailureResponse {
     private final int mErrorType;
     private final String mStackTrace;
 
-    public FailureResponse(Throwable th) {
-        Objects.requireNonNull(th);
-        this.mStackTrace = Log.getStackTraceString(th);
-        if (th instanceof w.f) {
+    public FailureResponse(Throwable th2) {
+        Objects.requireNonNull(th2);
+        this.mStackTrace = Log.getStackTraceString(th2);
+        if (th2 instanceof w.f) {
             this.mErrorType = 1;
             return;
         }
-        if (th instanceof IllegalStateException) {
+        if (th2 instanceof IllegalStateException) {
             this.mErrorType = 2;
             return;
         }
-        if (th instanceof InvalidParameterException) {
+        if (th2 instanceof InvalidParameterException) {
             this.mErrorType = 3;
             return;
         }
-        if (th instanceof SecurityException) {
+        if (th2 instanceof SecurityException) {
             this.mErrorType = 4;
             return;
         }
-        if (th instanceof RuntimeException) {
+        if (th2 instanceof RuntimeException) {
             this.mErrorType = 5;
-        } else if (th instanceof RemoteException) {
+        } else if (th2 instanceof RemoteException) {
             this.mErrorType = 6;
         } else {
             this.mErrorType = 0;

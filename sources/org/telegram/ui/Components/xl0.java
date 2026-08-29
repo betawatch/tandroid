@@ -1,128 +1,99 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-import android.content.Context;
-import android.view.MotionEvent;
-import android.view.View;
-import android.widget.HorizontalScrollView;
-import android.widget.LinearLayout;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.CornerPathEffect;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import android.text.StaticLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public abstract class xl0 extends HorizontalScrollView {
-    public boolean a;
-    public LinearLayout b;
-    public ValueAnimator c;
-    public boolean d;
-    public int e;
-    public ValueAnimator f;
+public final class xl0 extends Drawable {
+    public int a = 255;
+    public final /* synthetic */ s80 b;
+    public final /* synthetic */ int[] c;
+    public final /* synthetic */ org.telegram.ui.Cells.s1 d;
+    public final /* synthetic */ int[] e;
+    public final /* synthetic */ Bitmap f;
+    public final /* synthetic */ RectF g;
+    public final /* synthetic */ Paint h;
+    public final /* synthetic */ Paint i;
+    public final /* synthetic */ StaticLayout j;
 
-    public xl0(Context context) {
-        super(context);
-        this.e = -1;
+    public xl0(s80 s80Var, int[] iArr, org.telegram.ui.Cells.s1 s1Var, int[] iArr2, Bitmap bitmap, RectF rectF, Paint paint, Paint paint2, StaticLayout staticLayout) {
+        this.b = s80Var;
+        this.c = iArr;
+        this.d = s1Var;
+        this.e = iArr2;
+        this.f = bitmap;
+        this.g = rectF;
+        this.h = paint;
+        this.i = paint2;
+        this.j = staticLayout;
     }
 
-    public final void a(int i9) {
-        if (this.e == i9) {
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        if (this.a <= 0) {
             return;
         }
-        this.e = i9;
-        ValueAnimator valueAnimator = this.f;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
-        }
-        if (getScrollX() == i9) {
-            return;
-        }
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(getScrollX(), i9);
-        this.f = ofFloat;
-        ofFloat.addUpdateListener(new q60(this, 14));
-        this.f.setInterpolator(gr.h);
-        this.f.setDuration(250L);
-        this.f.addListener(new r60(this, 15));
-        this.f.start();
-    }
-
-    public final void b(int i9, int i10) {
-        int measuredWidth;
-        if (getChildCount() <= 0) {
-            return;
-        }
-        int dp = AndroidUtilities.dp(50.0f);
-        if (i9 < getScrollX() + dp) {
-            measuredWidth = i9 - dp;
+        RectF rectF = AndroidUtilities.rectTmp;
+        rectF.set(getBounds());
+        float f9 = rectF.left;
+        CornerPathEffect cornerPathEffect = s80.w;
+        rectF.left = f9 - (AndroidUtilities.dp(5.0f) / 2.0f);
+        canvas.save();
+        canvas.saveLayerAlpha(rectF, this.a, 31);
+        int[] iArr = this.c;
+        canvas.translate(iArr[0], iArr[1]);
+        s80 s80Var = this.b;
+        org.telegram.ui.Cells.s1 s1Var = this.d;
+        if (s1Var == null || !s1Var.C1()) {
+            canvas.drawPath(s80Var, this.i);
         } else {
-            if (i10 <= (getMeasuredWidth() - dp) + getScrollX()) {
-                return;
+            org.telegram.ui.ActionBar.d5 d5Var = s1Var.p8;
+            if (d5Var == null || d5Var.c == null) {
+                canvas.translate(-iArr[0], -iArr[1]);
+                int[] iArr2 = this.e;
+                canvas.translate(iArr2[0], s1Var.getPaddingTop() + iArr2[1]);
+                s1Var.D1(canvas, true, false);
+                canvas.translate(-iArr2[0], (-iArr2[1]) - s1Var.getPaddingTop());
+                canvas.translate(iArr[0], iArr[1]);
             } else {
-                measuredWidth = (i10 - getMeasuredWidth()) + dp;
+                canvas.save();
+                s1Var.setBackgroundTopY(true);
+                canvas.translate(0.0f, -s1Var.p8.r);
+                canvas.drawPaint(s1Var.p8.c);
+                canvas.restore();
+            }
+            Bitmap bitmap = this.f;
+            if (bitmap != null) {
+                canvas.save();
+                RectF rectF2 = this.g;
+                canvas.drawBitmap(bitmap, rectF2.left, rectF2.top, this.h);
+                canvas.restore();
             }
         }
-        a(g7.n.b(measuredWidth, 0, getChildAt(0).getMeasuredWidth() - getMeasuredWidth()));
+        canvas.clipPath(s80Var);
+        this.j.draw(canvas);
+        canvas.restore();
     }
 
-    public final void c() {
-        k5 k5Var;
-        ih.z2 z2Var;
-        mi0 mi0Var;
-        ValueAnimator valueAnimator;
-        int childCount = this.b.getChildCount();
-        for (int i9 = 0; i9 < childCount; i9++) {
-            View childAt = this.b.getChildAt(i9);
-            if (childAt instanceof jv) {
-                jv jvVar = (jv) childAt;
-                boolean z10 = childAt.getRight() - getScrollX() > 0 && childAt.getLeft() - getScrollX() < getMeasuredWidth();
-                boolean z11 = this.d && ((valueAnimator = this.c) == null || !valueAnimator.isRunning());
-                if (!jvVar.y && z10 && (mi0Var = jvVar.e) != null && !mi0Var.h0 && !z11) {
-                    jvVar.e.Q(0.0f, true);
-                    jvVar.e.start();
-                }
-                if (jvVar.y != z10) {
-                    jvVar.y = z10;
-                    if (z10) {
-                        jvVar.invalidate();
-                        zf.b1 b1Var = jvVar.f;
-                        if (b1Var != null) {
-                            b1Var.invalidate();
-                        }
-                        zf.b1 b1Var2 = jvVar.f;
-                        if (b1Var2 != null && (k5Var = jvVar.w) != null && (z2Var = k5Var.k) != null) {
-                            b1Var2.setImageReceiver(z2Var);
-                        }
-                        o9 o9Var = jvVar.d;
-                        if (o9Var != null) {
-                            o9Var.invalidate();
-                        }
-                    } else {
-                        jvVar.b();
-                    }
-                    jvVar.c();
-                }
-            }
-        }
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
     }
 
-    @Override // android.widget.HorizontalScrollView, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i9, int i10, int i11, int i12) {
-        super.onLayout(z10, i9, i10, i11, i12);
-        c();
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+        this.a = i10;
     }
 
-    @Override // android.view.View
-    public final void onScrollChanged(int i9, int i10, int i11, int i12) {
-        super.onScrollChanged(i9, i10, i11, i12);
-        if ((Math.abs(i10 - i12) < 2 || i10 >= getMeasuredHeight() || i10 == 0) && !this.a) {
-            requestDisallowInterceptTouchEvent(false);
-        }
-        c();
-    }
-
-    @Override // android.widget.HorizontalScrollView, android.view.View
-    public boolean onTouchEvent(MotionEvent motionEvent) {
-        if (motionEvent.getAction() != 0 && motionEvent.getAction() != 1) {
-            motionEvent.getAction();
-        }
-        return super.onTouchEvent(motionEvent);
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

@@ -1,39 +1,69 @@
 package ih;
 
-import org.telegram.messenger.support.LongSparseIntArray;
-import org.telegram.tgnet.tl.TL_stories;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.view.View;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.hv0;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
-/* loaded from: classes4.dex */
-public final /* synthetic */ class y5 implements d5.d {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ v6 b;
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* loaded from: classes.dex */
+public final class y5 extends hv0 {
+    public int s0;
+    public final /* synthetic */ e6 t0;
 
-    public /* synthetic */ y5(v6 v6Var, int i9) {
-        this.a = i9;
-        this.b = v6Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public y5(e6 e6Var, Context context) {
+        super(context, null);
+        this.t0 = e6Var;
+        this.s0 = -1;
     }
 
-    @Override // d5.d
-    public final void accept(Object obj) {
-        switch (this.a) {
-            case 0:
-                this.b.f = (LongSparseIntArray) obj;
-                break;
-            default:
-                TL_stories.TL_stories_allStories tL_stories_allStories = (TL_stories.TL_stories_allStories) obj;
-                v6 v6Var = this.b;
-                v6Var.n = false;
-                if (tL_stories_allStories == null) {
-                    v6Var.q();
-                    v6Var.T();
-                    break;
-                } else {
-                    v6Var.Y(tL_stories_allStories, false, true, false);
-                    v6Var.Q(false);
-                    v6Var.Q(true);
-                    break;
-                }
+    @Override // org.telegram.ui.Components.hv0
+    public final boolean P() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.hv0
+    public final boolean Q() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.hv0
+    public final void T() {
+        this.t0.d.invalidate();
+    }
+
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j10) {
+        if (view == this.H) {
+            return true;
+        }
+        return super.drawChild(canvas, view, j10);
+    }
+
+    @Override // org.telegram.ui.Components.hv0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        e6 e6Var = this.t0;
+        e6Var.e0.setTranslationY(((i13 - i11) - r4.getMeasuredHeight()) / 2.0f);
+        e6Var.g0.W(e6Var.g0.getY() + e6Var.e0.getY(), getBackgroundSizeY());
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        if (this.s0 != -1) {
+            super.onMeasure(i10, i11);
+            int measuredHeight = getMeasuredHeight();
+            int i12 = this.s0;
+            if (measuredHeight < i12) {
+                i11 = View.MeasureSpec.makeMeasureSpec(Math.max(i12, getMeasuredHeight()), TLObject.FLAG_31);
+            }
+        }
+        super.onMeasure(i10, i11);
+        int i13 = this.s0;
+        if (i13 == -1) {
+            this.s0 = Math.max(i13, getMeasuredHeight());
         }
     }
 }

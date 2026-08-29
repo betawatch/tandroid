@@ -1,6 +1,13 @@
 package y2;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public interface b extends nc.a {
+public final class b implements s9.d {
+    public static final b a = new b();
+    public static final s9.c b = new s9.c("storageMetrics", u3.c.h(u3.c.g(v9.d.class, new v9.a(1))));
+
+    @Override // s9.a
+    public final void a(Object obj, Object obj2) {
+        ((s9.e) obj2).e(b, ((b3.b) obj).a);
+    }
 }

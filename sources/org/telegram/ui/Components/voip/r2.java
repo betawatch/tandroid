@@ -1,533 +1,156 @@
 package org.telegram.ui.Components.voip;
 
-import android.animation.Animator;
 import android.animation.ValueAnimator;
-import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.view.TextureView;
+import android.text.SpannableString;
+import android.text.SpannableStringBuilder;
+import android.text.TextUtils;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.WindowManager;
 import android.widget.FrameLayout;
-import android.widget.ImageView;
 import android.widget.TextView;
-import g7.e6;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.util.ArrayList;
+import nh.m6;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.ll;
-import org.telegram.ui.Components.gr;
-import org.telegram.ui.Components.jb0;
-import org.telegram.ui.Components.y11;
-import org.webrtc.RendererCommon;
+import org.telegram.ui.Components.jr;
+import org.telegram.ui.Components.rs;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
-/* loaded from: classes3.dex */
-public class r2 extends FrameLayout {
-    public boolean A;
-    public long B;
-    public final ArrayList C;
-    public int D;
-    public int E;
-    public float F;
-    public float G;
-    public float H;
-    public float I;
-    public float J;
-    public float K;
-    public float L;
-    public float M;
-    public float N;
-    public float O;
-    public float P;
-    public float Q;
-    public float R;
-    public float S;
-    public int T;
-    public ValueAnimator U;
-    public boolean V;
-    public float W;
-    public final boolean a;
-    public boolean a0;
-    public float b;
-    public boolean b0;
-    public boolean c;
-    public final q2 d;
-    public final TextureView e;
-    public final ImageView f;
-    public final View h;
-    public View n;
-    public final FrameLayout r;
-    public final ImageView s;
-    public final TextView v;
-    public Bitmap w;
-    public final Bitmap x;
-    public float y;
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* loaded from: classes.dex */
+public final class r2 extends FrameLayout {
+    public TextView[] a;
+    public TextView b;
+    public FrameLayout c;
+    public v2 d;
+    public CharSequence e;
+    public boolean f;
+    public ValueAnimator h;
+    public boolean n;
 
-    public r2(Context context, boolean z10, boolean z11) {
-        this(context, z10, z11, true, false);
+    public final void a(View view, View view2, Runnable runnable) {
+        view.setVisibility(0);
+        view2.setVisibility(0);
+        view2.setTranslationY(AndroidUtilities.dp(15.0f));
+        view2.setAlpha(0.0f);
+        this.f = true;
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+        this.h = ofFloat;
+        ofFloat.addUpdateListener(new bg.b3(16, view2, view));
+        this.h.addListener(new rs(this, view, view2, runnable, 2));
+        this.h.setDuration(250L).setInterpolator(jr.f);
+        this.h.start();
     }
 
-    public void a() {
-        if (this.A || getMeasuredHeight() == 0 || getMeasuredWidth() == 0) {
-            return;
-        }
-        this.D = getMeasuredHeight();
-        this.E = getMeasuredWidth();
-        if (!this.b0 || getParent() == null) {
-            this.F = getY();
-            this.G = getX();
-        } else {
-            View view = (View) getParent();
-            this.F = view.getY();
-            this.G = view.getX();
-        }
-        this.L = this.P;
-        this.M = this.Q;
-        this.N = this.R;
-        q2 q2Var = this.d;
-        this.O = q2Var.getMeasuredWidth();
-        q2Var.getMeasuredHeight();
-        this.A = true;
-        requestLayout();
-    }
-
-    public void b() {
-        invalidate();
-        q2 q2Var = this.d;
-        if (q2Var.getAlpha() != 1.0f) {
-            q2Var.animate().setDuration(300L).alpha(1.0f);
-        }
-        TextureView textureView = this.e;
-        if (textureView == null || textureView.getAlpha() == 1.0f) {
-            return;
-        }
-        textureView.animate().setDuration(300L).alpha(1.0f);
-    }
-
-    public final void c() {
-        Bitmap bitmap = this.d.getBitmap(ImageReceiver.DEFAULT_CROSSFADE_DURATION, ImageReceiver.DEFAULT_CROSSFADE_DURATION);
-        if (bitmap == null || bitmap.getPixel(0, 0) == 0) {
-            return;
-        }
-        Utilities.blurBitmap(bitmap, 3);
-        try {
-            FileOutputStream fileOutputStream = new FileOutputStream(new File(ApplicationLoader.getFilesDirFixed(), "voip_icthumb.jpg"));
-            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, fileOutputStream);
-            fileOutputStream.close();
-        } catch (Throwable unused) {
-        }
-    }
-
-    public final void d(float f10, boolean z10) {
-        if (this.c) {
-            float scaleX = ((View) getParent()).getScaleX();
-            this.v.setAlpha(1.0f - f10);
-            float c10 = !z10 ? ll.c(0.4f, scaleX, f10, 1.0f / scaleX) : 1.0f - (0.4f * f10);
-            ImageView imageView = this.s;
-            imageView.setScaleX(c10);
-            imageView.setScaleY(c10);
-            imageView.setTranslationY(AndroidUtilities.dp(60.0f) * f10);
-        }
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        boolean z10 = AndroidUtilities.makingGlobalBlurBitmap;
-        q2 q2Var = this.d;
+    /* JADX WARN: Multi-variable type inference failed */
+    public final void b(String str, boolean z10, boolean z11) {
+        View view = this.d;
+        TextView[] textViewArr = this.a;
         if (z10) {
-            TextureView textureView = this.e;
-            if (textureView != null) {
-                canvas.save();
-                canvas.translate(textureView.getX(), textureView.getY());
-                Bitmap bitmap = textureView.getBitmap();
-                if (bitmap != null) {
-                    canvas.scale(textureView.getWidth() / bitmap.getWidth(), textureView.getHeight() / bitmap.getHeight());
-                    canvas.drawBitmap(bitmap, 0.0f, 0.0f, (Paint) null);
-                }
-                canvas.restore();
-            }
-            if (q2Var != null) {
-                canvas.save();
-                canvas.translate(q2Var.getX(), q2Var.getY());
-                Bitmap bitmap2 = q2Var.getBitmap();
-                if (bitmap2 != null) {
-                    canvas.scale(q2Var.getWidth() / bitmap2.getWidth(), q2Var.getHeight() / bitmap2.getHeight());
-                    canvas.drawBitmap(bitmap2, 0.0f, 0.0f, (Paint) null);
-                }
-                canvas.restore();
-            }
+            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(str);
+            SpannableString spannableString = new SpannableString(".");
+            spannableString.setSpan(new org.telegram.ui.Components.b0(textViewArr), 0, 1, 33);
+            spannableStringBuilder.append((CharSequence) spannableString);
+            str = spannableStringBuilder;
         }
-        ImageView imageView = this.f;
-        if (imageView.getVisibility() == 0 && q2Var.isFirstFrameRendered()) {
-            float f10 = this.y - 0.10666667f;
-            this.y = f10;
-            if (f10 <= 0.0f) {
-                this.y = 0.0f;
-                imageView.setVisibility(8);
-            } else {
-                invalidate();
-                imageView.setAlpha(this.y);
-            }
+        if (TextUtils.isEmpty(textViewArr[0].getText())) {
+            z11 = false;
         }
-    }
-
-    @Override // android.view.ViewGroup
-    public boolean drawChild(Canvas canvas, View view, long j10) {
-        if (AndroidUtilities.makingGlobalBlurBitmap && (view == this.d || view == this.e)) {
-            return false;
-        }
-        return super.drawChild(canvas, view, j10);
-    }
-
-    public void e() {
-        TextureView textureView = this.e;
-        if (textureView != null) {
-            ViewGroup.LayoutParams layoutParams = textureView.getLayoutParams();
-            q2 q2Var = this.d;
-            layoutParams.width = q2Var.getMeasuredWidth();
-            textureView.getLayoutParams().height = q2Var.getMeasuredHeight();
-        }
-    }
-
-    public View getPlaceholderView() {
-        if (this.n == null) {
-            View view = new View(getContext());
-            this.n = view;
-            addView(view, e6.g());
-        }
-        return this.n;
-    }
-
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public void onLayout(boolean z10, int i9, int i10, int i11, int i12) {
-        float top;
-        final float left;
-        super.onLayout(z10, i9, i10, i11, i12);
-        TextureView textureView = this.e;
-        if (textureView != null) {
-            this.Q = Math.max(getMeasuredHeight() / textureView.getMeasuredHeight(), getMeasuredWidth() / textureView.getMeasuredWidth());
-        }
-        boolean z11 = this.a;
-        q2 q2Var = this.d;
         if (!z11) {
-            q2Var.updateRotation();
-        }
-        if (this.T == 3) {
-            if (textureView != null) {
-                textureView.setScaleX(this.Q);
-                textureView.setScaleY(this.Q);
-                return;
+            ValueAnimator valueAnimator = this.h;
+            if (valueAnimator != null) {
+                valueAnimator.cancel();
             }
+            this.f = false;
+            textViewArr[0].setText(str);
+            textViewArr[0].setVisibility(0);
+            textViewArr[1].setVisibility(8);
+            view.setVisibility(8);
             return;
         }
-        if (q2Var.getMeasuredHeight() == 0 || q2Var.getMeasuredWidth() == 0 || getMeasuredHeight() == 0 || getMeasuredWidth() == 0) {
-            this.P = 1.0f;
-            if (this.U == null && !this.A) {
-                this.K = 0.0f;
-                this.J = 0.0f;
-            }
-        } else {
-            int i13 = this.T;
-            if (i13 == 0) {
-                this.P = Math.max(getMeasuredHeight() / q2Var.getMeasuredHeight(), getMeasuredWidth() / q2Var.getMeasuredWidth());
-            } else if (i13 == 2) {
-                if (Math.abs((getMeasuredHeight() / getMeasuredWidth()) - 1.0f) < 0.02f) {
-                    this.P = Math.max(getMeasuredHeight() / q2Var.getMeasuredHeight(), getMeasuredWidth() / q2Var.getMeasuredWidth());
-                } else if (getMeasuredWidth() <= getMeasuredHeight() || q2Var.getMeasuredHeight() <= q2Var.getMeasuredWidth()) {
-                    this.P = Math.min(getMeasuredHeight() / q2Var.getMeasuredHeight(), getMeasuredWidth() / q2Var.getMeasuredWidth());
-                } else {
-                    this.P = Math.max(getMeasuredHeight() / q2Var.getMeasuredHeight(), (getMeasuredWidth() / 2.0f) / q2Var.getMeasuredWidth());
-                }
-            } else if (i13 == 1) {
-                this.P = Math.min(getMeasuredHeight() / q2Var.getMeasuredHeight(), getMeasuredWidth() / q2Var.getMeasuredWidth());
-                if (this.V && !this.b0 && this.U == null && !this.A) {
-                    this.K = (getMeasuredWidth() - q2Var.getMeasuredWidth()) / 2.0f;
-                    this.J = (getMeasuredHeight() - q2Var.getMeasuredHeight()) / 2.0f;
-                    invalidateOutline();
-                }
-            }
-        }
-        if (this.w != null) {
-            this.R = Math.max(getMeasuredWidth() / this.w.getWidth(), getMeasuredHeight() / this.w.getHeight());
-        }
-        if (!this.A) {
-            if (this.U == null) {
-                q2Var.setScaleX(this.P);
-                q2Var.setScaleY(this.P);
-                if (textureView != null) {
-                    textureView.setScaleX(this.Q);
-                    textureView.setScaleY(this.Q);
-                }
-                this.S = this.R;
-                return;
-            }
+        if (this.f) {
+            this.e = str;
             return;
         }
-        this.L /= q2Var.getMeasuredWidth() / this.O;
-        this.M /= q2Var.getMeasuredWidth() / this.O;
-        this.A = false;
-        if (!this.b0 || getParent() == null) {
-            top = this.F - getTop();
-            left = this.G - getLeft();
+        if (this.n) {
+            textViewArr[0].setText(str);
+            a(view, textViewArr[0], null);
         } else {
-            View view = (View) getParent();
-            top = this.F - view.getTop();
-            left = this.G - view.getLeft();
-        }
-        this.H = 0.0f;
-        this.I = 0.0f;
-        if (this.D != getMeasuredHeight()) {
-            float measuredHeight = (getMeasuredHeight() - this.D) / 2.0f;
-            this.H = measuredHeight;
-            top -= measuredHeight;
-        }
-        final float f10 = top;
-        if (this.E != getMeasuredWidth()) {
-            float measuredWidth = (getMeasuredWidth() - this.E) / 2.0f;
-            this.I = measuredWidth;
-            left -= measuredWidth;
-        }
-        setTranslationY(f10);
-        setTranslationX(left);
-        ValueAnimator valueAnimator = this.U;
-        if (valueAnimator != null) {
-            valueAnimator.removeAllListeners();
-            this.U.cancel();
-        }
-        q2Var.setScaleX(this.L);
-        q2Var.setScaleY(this.L);
-        if (textureView != null) {
-            textureView.setScaleX(this.M);
-            textureView.setScaleY(this.M);
-        }
-        this.J = this.H;
-        this.K = this.I;
-        invalidateOutline();
-        invalidate();
-        final float f11 = this.L;
-        final float f12 = this.M;
-        final float f13 = this.N;
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(1.0f, 0.0f);
-        this.U = ofFloat;
-        ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.voip.p2
-            @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-            public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                float floatValue = ((Float) valueAnimator2.getAnimatedValue()).floatValue();
-                float f14 = 1.0f - floatValue;
-                r2 r2Var = r2.this;
-                r2Var.W = f14;
-                r2Var.J = r2Var.H * floatValue;
-                r2Var.K = r2Var.I * floatValue;
-                r2Var.invalidateOutline();
-                r2Var.invalidate();
-                float f15 = (r2Var.P * f14) + (f11 * floatValue);
-                q2 q2Var2 = r2Var.d;
-                q2Var2.setScaleX(f15);
-                q2Var2.setScaleY(f15);
-                float f16 = (r2Var.Q * f14) + (f12 * floatValue);
-                TextureView textureView2 = r2Var.e;
-                if (textureView2 != null) {
-                    textureView2.setScaleX(f16);
-                    textureView2.setScaleY(f16);
-                }
-                r2Var.setTranslationX(left * floatValue);
-                r2Var.setTranslationY(f10 * floatValue);
-                r2Var.S = (r2Var.R * f14) + (f13 * floatValue);
+            if (textViewArr[0].getText().equals(str)) {
+                return;
             }
-        });
-        long j10 = this.B;
-        if (j10 != 0) {
-            this.U.setDuration(j10);
-        } else {
-            this.U.setDuration(350L);
+            textViewArr[1].setText(str);
+            a(textViewArr[0], textViewArr[1], new m6(this, 19));
         }
-        this.U.setInterpolator(gr.f);
-        this.U.addListener(new y11(this, 14));
-        this.U.start();
-        ArrayList arrayList = this.C;
-        if (!arrayList.isEmpty()) {
-            for (int i14 = 0; i14 < arrayList.size(); i14++) {
-                ((Animator) arrayList.get(i14)).start();
-            }
-        }
-        arrayList.clear();
-        this.B = 0L;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i9, int i10) {
-        boolean z10 = this.a;
-        q2 q2Var = this.d;
+    public final void c(boolean z10) {
+        FrameLayout frameLayout = this.c;
         if (!z10) {
-            this.a0 = true;
-            q2Var.setScreenRotation(((WindowManager) getContext().getSystemService("window")).getDefaultDisplay().getRotation());
-            this.a0 = false;
-        }
-        super.onMeasure(i9, i10);
-        e();
-        super.onMeasure(i9, i10);
-        q2Var.updateRotation();
-    }
-
-    @Override // android.view.View, android.view.ViewParent
-    public void requestLayout() {
-        if (this.a0) {
-            return;
-        }
-        super.requestLayout();
-    }
-
-    public void setAnimateNextDuration(long j10) {
-        this.B = j10;
-    }
-
-    public void setAnimateWithParent(boolean z10) {
-        this.b0 = z10;
-    }
-
-    public void setIsScreencast(boolean z10) {
-        this.c = z10;
-        this.r.setVisibility(z10 ? 0 : 8);
-        boolean z11 = this.c;
-        TextureView textureView = this.e;
-        q2 q2Var = this.d;
-        if (z11) {
-            q2Var.setVisibility(8);
-            if (textureView != null) {
-                textureView.setVisibility(8);
+            if (frameLayout.getVisibility() == 8) {
+                return;
             }
-            this.f.setVisibility(8);
-            return;
-        }
-        q2Var.setVisibility(0);
-        if (textureView != null) {
-            textureView.setVisibility(0);
-        }
-    }
-
-    public void setRoundCorners(float f10) {
-        if (this.b != f10) {
-            this.b = f10;
-            invalidateOutline();
-        }
-    }
-
-    public void setStub(r2 r2Var) {
-        if (this.c) {
-            return;
-        }
-        Bitmap bitmap = r2Var.d.getBitmap();
-        ImageView imageView = this.f;
-        if (bitmap == null || bitmap.getPixel(0, 0) == 0) {
-            imageView.setImageDrawable(r2Var.f.getDrawable());
+            frameLayout.animate().alpha(0.0f).scaleX(0.6f).scaleY(0.6f).setInterpolator(jr.f).setListener(new q2(this, 1)).setDuration(300L).start();
         } else {
-            imageView.setImageBitmap(bitmap);
-            imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+            if (frameLayout.getVisibility() == 0) {
+                return;
+            }
+            frameLayout.setVisibility(0);
+            frameLayout.setAlpha(0.0f);
+            frameLayout.setScaleY(0.6f);
+            frameLayout.setScaleX(0.6f);
+            frameLayout.animate().setListener(null).cancel();
+            org.telegram.ui.b.q(frameLayout.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f), jr.k, 300L);
         }
-        this.y = 1.0f;
-        imageView.setVisibility(0);
-        imageView.setAlpha(1.0f);
     }
 
-    public void setThumb(Bitmap bitmap) {
-        this.w = bitmap;
-    }
-
-    public r2(Context context, boolean z10, boolean z11, boolean z12, boolean z13) {
-        super(context);
-        this.y = 1.0f;
-        this.C = new ArrayList();
-        this.L = 1.0f;
-        this.M = 1.0f;
-        this.N = 1.0f;
-        this.a = z11;
-        ImageView imageView = new ImageView(context);
-        this.f = imageView;
-        q2 q2Var = new q2(this, context);
-        this.d = q2Var;
-        q2Var.setFpsReduction(30.0f);
-        q2Var.setOpaque(false);
-        q2Var.setEnableHardwareScaler(true);
-        q2Var.setIsCamera(!z11);
-        if (!z10 && z11) {
-            View view = new View(context);
-            this.h = view;
-            view.setBackgroundColor(-14999773);
-            addView(view, e6.c(-1.0f, -1));
-            if (z13) {
-                TextureView textureView = new TextureView(context);
-                this.e = textureView;
-                addView(textureView, e6.e(-1, -2, 17));
-            }
-            q2Var.setScalingType(RendererCommon.ScalingType.SCALE_ASPECT_FIT);
-            addView(q2Var, e6.e(-1, -2, 17));
-        } else if (z10) {
-            if (z13) {
-                TextureView textureView2 = new TextureView(context);
-                this.e = textureView2;
-                addView(textureView2, e6.e(-1, -2, 17));
-            }
-            addView(q2Var);
+    public final void d(boolean z10, boolean z11) {
+        TextView textView = this.b;
+        if (!z11) {
+            textView.animate().setListener(null).cancel();
+            textView.setVisibility(z10 ? 0 : 8);
         } else {
-            if (z13) {
-                TextureView textureView3 = new TextureView(context);
-                this.e = textureView3;
-                addView(textureView3, e6.e(-1, -2, 17));
+            if (!z10) {
+                textView.animate().alpha(0.0f).setListener(new q2(this, 0)).setDuration(150L).start();
+                return;
             }
-            addView(q2Var, e6.e(-1, -2, 17));
-        }
-        addView(imageView);
-        TextureView textureView4 = this.e;
-        if (textureView4 != null) {
-            textureView4.setOpaque(false);
-        }
-        FrameLayout frameLayout = new FrameLayout(getContext());
-        this.r = frameLayout;
-        frameLayout.setBackground(new jb0(true, -14602694, -13935795, -14395293, -14203560));
-        addView(frameLayout, e6.c(-1.0f, -1));
-        frameLayout.setVisibility(8);
-        ImageView imageView2 = new ImageView(getContext());
-        this.s = imageView2;
-        imageView2.setScaleType(ImageView.ScaleType.CENTER);
-        imageView2.setImageResource(R.drawable.screencast_big);
-        frameLayout.addView(imageView2, e6.d(82, 82.0f, 17, 0.0f, 0.0f, 0.0f, 60.0f));
-        TextView textView = new TextView(getContext());
-        this.v = textView;
-        textView.setText(LocaleController.getString(R.string.VoipVideoScreenSharing));
-        textView.setGravity(17);
-        textView.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
-        org.telegram.messenger.l0.q(textView, -1, 1, 15.0f);
-        frameLayout.addView(textView, e6.d(-1, -2.0f, 17, 21.0f, 28.0f, 21.0f, 0.0f));
-        if (z12) {
-            setOutlineProvider(new kg.b(this, 5));
-            setClipToOutline(true);
-        }
-        if (z10 && this.x == null) {
-            try {
-                Bitmap decodeFile = BitmapFactory.decodeFile(new File(ApplicationLoader.getFilesDirFixed(), "voip_icthumb.jpg").getAbsolutePath());
-                this.x = decodeFile;
-                if (decodeFile == null) {
-                    this.x = BitmapFactory.decodeFile(new File(ApplicationLoader.getFilesDirFixed(), "icthumb.jpg").getAbsolutePath());
-                }
-                imageView.setImageBitmap(this.x);
-                imageView.setScaleType(ImageView.ScaleType.FIT_XY);
-            } catch (Throwable unused) {
+            if (textView.getVisibility() != 0) {
+                textView.setVisibility(0);
+                textView.setAlpha(0.0f);
             }
+            textView.animate().setListener(null).cancel();
+            textView.animate().alpha(1.0f).setDuration(150L).start();
         }
-        if (z11) {
+    }
+
+    public final void e(boolean z10) {
+        v2 v2Var = this.d;
+        TextView[] textViewArr = this.a;
+        if (TextUtils.isEmpty(textViewArr[0].getText())) {
+            z10 = false;
+        }
+        if (this.n) {
             return;
         }
-        this.d.setScreenRotation(((WindowManager) getContext().getSystemService("window")).getDefaultDisplay().getRotation());
+        v2Var.a();
+        if (z10) {
+            if (this.f) {
+                this.e = "timer";
+                return;
+            } else {
+                this.n = true;
+                a(textViewArr[0], v2Var, null);
+                return;
+            }
+        }
+        ValueAnimator valueAnimator = this.h;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
+        }
+        this.n = true;
+        this.f = false;
+        textViewArr[0].setVisibility(8);
+        textViewArr[1].setVisibility(8);
+        v2Var.setVisibility(0);
+    }
+
+    public void setSignalBarCount(int i10) {
+        this.d.setSignalBarCount(i10);
     }
 }

@@ -6,12 +6,13 @@ import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.IBinder;
 import android.util.Log;
+import cg.m2;
 import com.google.android.gms.tasks.Task;
 import java.util.ArrayDeque;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class f0 implements ServiceConnection {
     public final Context a;
@@ -22,7 +23,7 @@ public final class f0 implements ServiceConnection {
     public boolean f;
 
     public f0(Context context) {
-        ScheduledThreadPoolExecutor scheduledThreadPoolExecutor = new ScheduledThreadPoolExecutor(0, new e9.v("Firebase-FirebaseInstanceIdServiceConnection"));
+        ScheduledThreadPoolExecutor scheduledThreadPoolExecutor = new ScheduledThreadPoolExecutor(0, new g9.w("Firebase-FirebaseInstanceIdServiceConnection"));
         this.d = new ArrayDeque();
         this.f = false;
         Context applicationContext = context.getApplicationContext();
@@ -50,8 +51,8 @@ public final class f0 implements ServiceConnection {
                 }
                 this.e.a((e0) this.d.poll());
             }
-        } catch (Throwable th) {
-            throw th;
+        } catch (Throwable th2) {
+            throw th2;
         }
     }
 
@@ -63,11 +64,11 @@ public final class f0 implements ServiceConnection {
             }
             e0Var = new e0(intent);
             ScheduledThreadPoolExecutor scheduledThreadPoolExecutor = this.c;
-            e0Var.b.getTask().addOnCompleteListener(scheduledThreadPoolExecutor, new a1.c(scheduledThreadPoolExecutor.schedule(new af.e(e0Var, 22), 20L, TimeUnit.SECONDS), 18));
+            e0Var.b.getTask().addOnCompleteListener(scheduledThreadPoolExecutor, new a1.c(scheduledThreadPoolExecutor.schedule(new m2(e0Var, 4), 20L, TimeUnit.SECONDS), 19));
             this.d.add(e0Var);
             a();
-        } catch (Throwable th) {
-            throw th;
+        } catch (Throwable th2) {
+            throw th2;
         }
         return e0Var.b.getTask();
     }
@@ -80,7 +81,7 @@ public final class f0 implements ServiceConnection {
     public final void c() {
         f0 f0Var;
         ArrayDeque arrayDeque;
-        d6.a a2;
+        f6.a a2;
         Context context;
         if (Log.isLoggable("FirebaseMessaging", 3)) {
             StringBuilder sb2 = new StringBuilder("binder is dead. start connection? ");
@@ -92,7 +93,7 @@ public final class f0 implements ServiceConnection {
         }
         this.f = true;
         try {
-            a2 = d6.a.a();
+            a2 = f6.a.a();
             context = this.a;
             f0Var = this;
             try {
@@ -143,8 +144,8 @@ public final class f0 implements ServiceConnection {
             while (!arrayDeque.isEmpty()) {
                 ((e0) arrayDeque.poll()).b.trySetResult(null);
             }
-        } catch (Throwable th) {
-            throw th;
+        } catch (Throwable th2) {
+            throw th2;
         }
     }
 

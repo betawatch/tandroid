@@ -1,15 +1,11 @@
 package h7;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class k8 {
-    public final l7 a;
-    public final m8 b;
-    public final j7 c;
-
-    public /* synthetic */ k8(a5.m mVar) {
-        this.a = (l7) mVar.b;
-        this.b = (m8) mVar.c;
-        this.c = (j7) mVar.d;
+public abstract class k8 {
+    public static final long a(long j10, id.c sourceUnit, id.c targetUnit) {
+        kotlin.jvm.internal.j.e(sourceUnit, "sourceUnit");
+        kotlin.jvm.internal.j.e(targetUnit, "targetUnit");
+        return targetUnit.a.convert(j10, sourceUnit.a);
     }
 }

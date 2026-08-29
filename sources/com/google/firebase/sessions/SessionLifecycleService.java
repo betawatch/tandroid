@@ -9,10 +9,10 @@ import android.os.Looper;
 import android.os.Message;
 import android.os.Messenger;
 import android.util.Log;
-import ha.p0;
-import kotlin.jvm.internal.i;
+import ja.p0;
+import kotlin.jvm.internal.j;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class SessionLifecycleService extends Service {
     public final HandlerThread a = new HandlerThread("FirebaseSessions_HandlerThread");
@@ -48,7 +48,7 @@ public final class SessionLifecycleService extends Service {
         HandlerThread handlerThread = this.a;
         handlerThread.start();
         Looper looper = handlerThread.getLooper();
-        i.d(looper, "handlerThread.looper");
+        j.d(looper, "handlerThread.looper");
         this.b = new p0(looper);
         this.c = new Messenger(this.b);
     }

@@ -1,36 +1,40 @@
 package cg;
 
-import bg.k1;
-import org.telegram.messenger.l0;
-import org.telegram.ui.dy;
+import android.content.Context;
+import android.view.View;
+import java.util.ArrayList;
+import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class c implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ e b;
+public final class c extends b {
+    public d d;
 
-    public /* synthetic */ c(e eVar, int i9) {
-        this.a = i9;
-        this.b = eVar;
+    @Override // cg.b
+    public final f2.p0 a() {
+        d dVar = new d(UserConfig.selectedAccount, this.a);
+        this.d = dVar;
+        dVar.r = this;
+        return dVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.E();
-                break;
-            default:
-                StringBuilder sb2 = new StringBuilder("https://t.me/giftcode/");
-                e eVar = this.b;
-                sb2.append(eVar.h);
-                String sb3 = sb2.toString();
-                dy dyVar = new dy(l0.e(3, "onlySelect", "dialogsType", true));
-                dyVar.y2 = new b5.d(10, eVar, sb3);
-                eVar.e.presentFragment(dyVar);
-                ((k1) eVar).r.dismiss();
-                break;
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, i11);
+        d dVar = this.d;
+        Context context = getContext();
+        int measuredWidth = getMeasuredWidth();
+        int measuredHeight = getMeasuredHeight();
+        ArrayList arrayList = dVar.f;
+        f fVar = new f(context, dVar.c);
+        int i12 = 0;
+        for (int i13 = 0; i13 < arrayList.size(); i13++) {
+            fVar.a((e) arrayList.get(i13));
+            fVar.measure(View.MeasureSpec.makeMeasureSpec(measuredWidth, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(measuredHeight, TLObject.FLAG_31));
+            ((e) arrayList.get(i13)).e = i12;
+            i12 += fVar.getMeasuredHeight();
         }
+        dVar.n = i12;
     }
 }

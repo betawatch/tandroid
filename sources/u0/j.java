@@ -9,7 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class j {
     public static r0.h a(View view, r0.h hVar) {
@@ -22,14 +22,14 @@ public final class j {
             return hVar;
         }
         ClipData a2 = gVar.a();
-        int f10 = gVar.f();
+        int f9 = gVar.f();
         TextView textView = (TextView) view;
         Editable editable = (Editable) textView.getText();
         Context context = textView.getContext();
         boolean z10 = false;
-        for (int i9 = 0; i9 < a2.getItemCount(); i9++) {
-            ClipData.Item itemAt = a2.getItemAt(i9);
-            if ((f10 & 1) != 0) {
+        for (int i10 = 0; i10 < a2.getItemCount(); i10++) {
+            ClipData.Item itemAt = a2.getItemAt(i10);
+            if ((f9 & 1) != 0) {
                 coerceToStyledText = itemAt.coerceToText(context);
                 if (coerceToStyledText instanceof Spanned) {
                     coerceToStyledText = coerceToStyledText.toString();

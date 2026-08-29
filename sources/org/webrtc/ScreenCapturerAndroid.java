@@ -8,7 +8,7 @@ import android.media.projection.MediaProjectionManager;
 import android.view.Surface;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes4.dex */
 public class ScreenCapturerAndroid implements VideoCapturer, VideoSink {
     private static final int DISPLAY_FLAGS = 3;
@@ -40,8 +40,8 @@ public class ScreenCapturerAndroid implements VideoCapturer, VideoSink {
         this.surfaceTextureHelper.setTextureSize(this.width, this.height);
         try {
             this.virtualDisplay = this.mediaProjection.createVirtualDisplay("WebRTC_ScreenCapture", this.width, this.height, VIRTUAL_DISPLAY_DPI, 3, new Surface(this.surfaceTextureHelper.getSurfaceTexture()), null, null);
-        } catch (Throwable th) {
-            FileLog.e(th);
+        } catch (Throwable th2) {
+            FileLog.e(th2);
         }
     }
 
@@ -69,10 +69,10 @@ public class ScreenCapturerAndroid implements VideoCapturer, VideoSink {
     }
 
     @Override // org.webrtc.VideoCapturer
-    public synchronized void changeCaptureFormat(int i9, int i10, int i11) {
+    public synchronized void changeCaptureFormat(int i10, int i11, int i12) {
         checkNotDisposed();
-        this.width = i9;
-        this.height = i10;
+        this.width = i10;
+        this.height = i11;
         if (this.virtualDisplay == null) {
             return;
         }
@@ -123,23 +123,23 @@ public class ScreenCapturerAndroid implements VideoCapturer, VideoSink {
     }
 
     @Override // org.webrtc.VideoCapturer
-    public synchronized void startCapture(int i9, int i10, int i11) {
+    public synchronized void startCapture(int i10, int i11, int i12) {
         if (this.mediaProjection != null || this.mediaProjectionManager == null) {
             return;
         }
         try {
             checkNotDisposed();
-            this.width = i9;
-            this.height = i10;
+            this.width = i10;
+            this.height = i11;
             MediaProjection mediaProjection = this.mediaProjectionManager.getMediaProjection(-1, this.mediaProjectionPermissionResultData);
             this.mediaProjection = mediaProjection;
             mediaProjection.registerCallback(this.mediaProjectionCallback, this.surfaceTextureHelper.getHandler());
             createVirtualDisplay();
             this.capturerObserver.onCapturerStarted(true);
             this.surfaceTextureHelper.startListening(this);
-        } catch (Throwable th) {
+        } catch (Throwable th2) {
             this.mediaProjectionCallback.onStop();
-            FileLog.e(th);
+            FileLog.e(th2);
         }
     }
 

@@ -1,27 +1,51 @@
 package g9;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
-/* loaded from: classes.dex */
-public final class k implements q9.d {
-    public static final k a = new k();
-    public static final q9.c b = q9.c.c("execution");
-    public static final q9.c c = q9.c.c("customAttributes");
-    public static final q9.c d = q9.c.c("internalKeys");
-    public static final q9.c e = q9.c.c("background");
-    public static final q9.c f = q9.c.c("currentProcessDetails");
-    public static final q9.c g = q9.c.c("appProcessDetails");
-    public static final q9.c h = q9.c.c("uiOrientation");
+import android.util.Log;
+import j$.util.Objects;
+import java.io.File;
+import java.util.Collections;
+import java.util.List;
 
-    @Override // q9.a
-    public final void a(Object obj, Object obj2) {
-        q9.e eVar = (q9.e) obj2;
-        m0 m0Var = (m0) ((u1) obj);
-        eVar.g(b, m0Var.a);
-        eVar.g(c, m0Var.b);
-        eVar.g(d, m0Var.c);
-        eVar.g(e, m0Var.d);
-        eVar.g(f, m0Var.e);
-        eVar.g(g, m0Var.f);
-        eVar.c(h, m0Var.g);
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* loaded from: classes.dex */
+public final class k {
+    public final u a;
+    public final j b;
+
+    public k(u uVar, l9.b bVar) {
+        this.a = uVar;
+        this.b = new j(bVar);
+    }
+
+    public final String a(String str) {
+        String substring;
+        j jVar = this.b;
+        synchronized (jVar) {
+            if (Objects.equals(jVar.b, str)) {
+                return jVar.c;
+            }
+            l9.b bVar = jVar.a;
+            i iVar = j.d;
+            File file = new File(bVar.c, str);
+            file.mkdirs();
+            List e10 = l9.b.e(file.listFiles(iVar));
+            if (e10.isEmpty()) {
+                substring = null;
+                Log.w("FirebaseCrashlytics", "Unable to read App Quality Sessions session id.", null);
+            } else {
+                substring = ((File) Collections.min(e10, j.e)).getName().substring(4);
+            }
+            return substring;
+        }
+    }
+
+    public final void b(String str) {
+        j jVar = this.b;
+        synchronized (jVar) {
+            if (!Objects.equals(jVar.b, str)) {
+                j.a(jVar.a, str, jVar.c);
+                jVar.b = str;
+            }
+        }
     }
 }

@@ -18,7 +18,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.GenericProvider;
 import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
 public class CheckBoxBase {
     public static Paint I;
@@ -26,9 +26,9 @@ public class CheckBoxBase {
     public int A;
     public float B;
     public String C;
-    public ep D;
+    public ip D;
     public org.telegram.ui.ActionBar.d5 E;
-    public org.telegram.ui.ActionBar.b6 F;
+    public org.telegram.ui.ActionBar.c6 F;
     public GenericProvider G;
     public long H;
     public View a;
@@ -56,21 +56,21 @@ public class CheckBoxBase {
     public final Path j = new Path();
     public boolean k = true;
     public float m = 1.0f;
-    public int r = org.telegram.ui.ActionBar.f6.k7;
+    public int r = org.telegram.ui.ActionBar.g6.k7;
 
-    public CheckBoxBase(int i9, View view, org.telegram.ui.ActionBar.b6 b6Var) {
-        int i10 = org.telegram.ui.ActionBar.f6.lc;
-        this.s = i10;
-        this.t = i10;
-        this.u = org.telegram.ui.ActionBar.f6.h5;
+    public CheckBoxBase(int i10, View view, org.telegram.ui.ActionBar.c6 c6Var) {
+        int i11 = org.telegram.ui.ActionBar.g6.lc;
+        this.s = i11;
+        this.t = i11;
+        this.u = org.telegram.ui.ActionBar.g6.h5;
         this.v = 0.0f;
         this.w = 1.0f;
         this.z = true;
-        this.G = new g2(13);
+        this.G = new r2(7);
         this.H = 200L;
-        this.F = b6Var;
+        this.F = c6Var;
         this.a = view;
-        this.B = i9;
+        this.B = i10;
         if (I == null) {
             I = new Paint(1);
         }
@@ -104,240 +104,240 @@ public class CheckBoxBase {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void a(Canvas canvas) {
+        float f9;
         float f10;
         float f11;
-        float f12;
         boolean z10;
-        float f13;
+        float f12;
         Rect rect;
-        int i9;
         int i10;
-        float f14;
-        Canvas canvas2;
         int i11;
-        Paint paint;
+        float f13;
+        Canvas canvas2;
         int i12;
+        Paint paint;
         int i13;
         int i14;
-        float f15;
-        float f16;
         int i15;
+        float f14;
+        float f15;
         int i16;
-        boolean z11;
         int i17;
-        float f17;
-        float f18;
+        boolean z11;
         int i18;
+        float f16;
+        float f17;
         int i19;
         int i20;
         int i21;
-        RectF rectF;
         int i22;
+        RectF rectF;
         int i23;
+        int i24;
         float dp = AndroidUtilities.dp(this.B / 2.0f);
-        int i24 = this.A;
-        if (i24 == 12 || i24 == 13) {
+        int i25 = this.A;
+        if (i25 == 12 || i25 == 13) {
             dp = AndroidUtilities.dp(10.0f);
-        } else if (i24 != 0 && i24 != 11) {
-            f10 = dp;
-            f11 = dp - AndroidUtilities.dp(0.2f);
-            float f19 = !this.n ? 1.0f : this.o;
-            f12 = f19 < 0.5f ? 1.0f : f19 / 0.5f;
+        } else if (i25 != 0 && i25 != 11) {
+            f9 = dp;
+            f10 = dp - AndroidUtilities.dp(0.2f);
+            float f18 = !this.n ? 1.0f : this.o;
+            f11 = f18 < 0.5f ? 1.0f : f18 / 0.5f;
             Rect rect2 = this.b;
             int centerX = rect2.centerX();
             int centerY = rect2.centerY();
-            z10 = !this.i && f12 > 0.0f && f19 >= 0.5f && !this.n && this.C == null;
+            z10 = !this.i && f11 > 0.0f && f18 >= 0.5f && !this.n && this.C == null;
             if (z10) {
-                f13 = f19;
+                f12 = f18;
                 rect = rect2;
-                i9 = centerX;
-                i10 = centerY;
-                f14 = 0.0f;
+                i10 = centerX;
+                i11 = centerY;
+                f13 = 0.0f;
                 canvas2 = canvas;
             } else {
-                float f20 = centerX;
-                float f21 = centerY;
-                f13 = f19;
+                float f19 = centerX;
+                float f20 = centerY;
+                f12 = f18;
                 rect = rect2;
-                i9 = centerX;
-                i10 = centerY;
-                f14 = 0.0f;
+                i10 = centerX;
+                i11 = centerY;
+                f13 = 0.0f;
                 canvas2 = canvas;
-                canvas2.saveLayerAlpha(f20 - f10, f21 - f10, f20 + f10, f21 + f10, 255, 31);
+                canvas2.saveLayerAlpha(f19 - f9, f20 - f9, f19 + f9, f20 + f9, 255, 31);
             }
-            i11 = this.s;
+            i12 = this.s;
             Paint paint2 = this.f;
-            if (i11 >= 0) {
+            if (i12 >= 0) {
                 if (this.z) {
                     I.setColor(Color.argb((int) (this.m * 25.0f), 0, 0, 0));
                     if (this.A == 8) {
-                        paint2.setColor(org.telegram.ui.ActionBar.f6.v0(this.t, this.F));
+                        paint2.setColor(org.telegram.ui.ActionBar.g6.v0(this.t, this.F));
                     } else {
-                        paint2.setColor(AndroidUtilities.getOffsetColor(-1, org.telegram.ui.ActionBar.f6.v0(this.r, this.F), f13, this.m));
+                        paint2.setColor(AndroidUtilities.getOffsetColor(-1, org.telegram.ui.ActionBar.g6.v0(this.r, this.F), f12, this.m));
                     }
                 } else if (this.x != 0) {
                     paint2.setColor(0);
                 } else {
-                    int i25 = this.t;
-                    if (i25 < 0) {
-                        i25 = this.r;
+                    int i26 = this.t;
+                    if (i26 < 0) {
+                        i26 = this.r;
                     }
-                    paint2.setColor(AndroidUtilities.getOffsetColor(16777215, org.telegram.ui.ActionBar.f6.v0(i25, this.F), f13, this.m));
+                    paint2.setColor(AndroidUtilities.getOffsetColor(16777215, org.telegram.ui.ActionBar.g6.v0(i26, this.F), f12, this.m));
                 }
-                if (this.z || (i23 = this.A) < 0 || i23 == 12 || i23 == 13) {
+                if (this.z || (i24 = this.A) < 0 || i24 == 12 || i24 == 13) {
                     paint = paint2;
-                    i12 = i10;
-                    i13 = 7;
-                    i14 = -1;
-                    f15 = 1.5f;
-                } else if (i23 == 8 || i23 == 10 || i23 == 14) {
-                    i12 = i10;
-                    f15 = 1.5f;
-                    if (this.v > f14) {
-                        float dp2 = f10 - AndroidUtilities.dp(1.5f);
+                    i13 = i11;
+                    i14 = 7;
+                    i15 = -1;
+                    f14 = 1.5f;
+                } else if (i24 == 8 || i24 == 10 || i24 == 14) {
+                    i13 = i11;
+                    f14 = 1.5f;
+                    if (this.v > f13) {
+                        float dp2 = f9 - AndroidUtilities.dp(1.5f);
                         float lerp = AndroidUtilities.lerp(dp2, this.v, this.w);
-                        float f22 = i9;
-                        float f23 = i12;
-                        i13 = 7;
-                        i14 = -1;
-                        f16 = 1.0f;
-                        canvas2.drawRoundRect(f22 - dp2, f23 - dp2, f22 + dp2, f23 + dp2, lerp, lerp, paint2);
+                        float f21 = i10;
+                        float f22 = i13;
+                        i14 = 7;
+                        i15 = -1;
+                        f15 = 1.0f;
+                        canvas2.drawRoundRect(f21 - dp2, f22 - dp2, f21 + dp2, f22 + dp2, lerp, lerp, paint2);
                         paint = paint2;
                     } else {
                         paint = paint2;
-                        i13 = 7;
-                        i14 = -1;
-                        f16 = 1.0f;
-                        canvas2.drawCircle(i9, i12, f10 - AndroidUtilities.dp(1.5f), paint);
+                        i14 = 7;
+                        i15 = -1;
+                        f15 = 1.0f;
+                        canvas2.drawCircle(i10, i13, f9 - AndroidUtilities.dp(1.5f), paint);
                     }
-                    I.setColor(org.telegram.ui.ActionBar.f6.v0(this.r, this.F));
-                    i15 = this.A;
-                    if (i15 != i14 || i15 == i13 || i15 == 8 || i15 == 9 || i15 == 10 || i15 == 14) {
-                        i16 = 6;
+                    I.setColor(org.telegram.ui.ActionBar.g6.v0(this.r, this.F));
+                    i16 = this.A;
+                    if (i16 != i15 || i16 == i14 || i16 == 8 || i16 == 9 || i16 == 10 || i16 == 14) {
+                        i17 = 6;
                     } else {
-                        if (i15 != 12 && i15 != 13) {
-                            if (i15 == 0 || i15 == 11) {
-                                i16 = 6;
-                                canvas2.drawCircle(i9, i12, f10, paint);
+                        if (i16 != 12 && i16 != 13) {
+                            if (i16 == 0 || i16 == 11) {
+                                i17 = 6;
+                                canvas2.drawCircle(i10, i13, f9, paint);
                             } else {
-                                float f24 = i9;
-                                float f25 = f24 - f11;
-                                float f26 = i12;
-                                float f27 = f26 - f11;
-                                float f28 = f24 + f11;
-                                float f29 = f26 + f11;
+                                float f23 = i10;
+                                float f24 = f23 - f10;
+                                float f25 = i13;
+                                float f26 = f25 - f10;
+                                float f27 = f23 + f10;
+                                float f28 = f25 + f10;
                                 RectF rectF2 = this.c;
-                                rectF2.set(f25, f27, f28, f29);
-                                int i26 = this.A;
-                                if (i26 == 6) {
-                                    i19 = (int) ((-360.0f) * f13);
-                                    i20 = 0;
-                                } else if (i26 == 1) {
-                                    i19 = (int) ((-270.0f) * f13);
-                                    i20 = -90;
+                                rectF2.set(f24, f26, f27, f28);
+                                int i27 = this.A;
+                                if (i27 == 6) {
+                                    i20 = (int) ((-360.0f) * f12);
+                                    i21 = 0;
+                                } else if (i27 == 1) {
+                                    i20 = (int) ((-270.0f) * f12);
+                                    i21 = -90;
                                 } else {
-                                    i19 = (int) (270.0f * f13);
+                                    i20 = (int) (270.0f * f12);
                                     if (LocaleController.isRTL) {
-                                        i19 = -i19;
+                                        i20 = -i20;
                                     }
-                                    i20 = 90;
+                                    i21 = 90;
                                 }
-                                if (i26 == 6) {
-                                    int v02 = org.telegram.ui.ActionBar.f6.v0(this.u, this.F);
+                                if (i27 == 6) {
+                                    int v02 = org.telegram.ui.ActionBar.g6.v0(this.u, this.F);
                                     int alpha = Color.alpha(v02);
                                     paint.setColor(v02);
-                                    paint.setAlpha((int) (alpha * f13));
-                                    int i27 = i19;
-                                    float f30 = i27;
-                                    i21 = i27;
+                                    paint.setAlpha((int) (alpha * f12));
+                                    int i28 = i20;
+                                    float f29 = i28;
+                                    i22 = i28;
                                     rectF = rectF2;
-                                    i22 = i20;
-                                    i16 = 6;
-                                    canvas2.drawArc(rectF, i20, f30, false, paint);
-                                    int v03 = org.telegram.ui.ActionBar.f6.v0(org.telegram.ui.ActionBar.f6.X9, this.F);
+                                    i23 = i21;
+                                    i17 = 6;
+                                    canvas2.drawArc(rectF, i21, f29, false, paint);
+                                    int v03 = org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.X9, this.F);
                                     int alpha2 = Color.alpha(v03);
                                     paint.setColor(v03);
-                                    paint.setAlpha((int) (alpha2 * f13));
+                                    paint.setAlpha((int) (alpha2 * f12));
                                 } else {
-                                    i21 = i19;
-                                    rectF = rectF2;
-                                    i16 = 6;
                                     i22 = i20;
+                                    rectF = rectF2;
+                                    i17 = 6;
+                                    i23 = i21;
                                 }
                                 canvas2 = canvas;
-                                canvas2.drawArc(rectF, i22, i21, false, paint);
+                                canvas2.drawArc(rectF, i23, i22, false, paint);
                             }
-                            if (f12 > f14) {
-                                float f31 = f13 < 0.5f ? 0.0f : (f13 - 0.5f) / 0.5f;
-                                int i28 = this.A;
-                                if (i28 == 9) {
-                                    I.setColor(org.telegram.ui.ActionBar.f6.v0(this.t, this.F));
-                                } else if (i28 == 11 || i28 == i16 || i28 == 7 || i28 == 10 || ((!this.z && this.s >= 0) || i28 == 14)) {
-                                    I.setColor(org.telegram.ui.ActionBar.f6.v0(this.s, this.F));
+                            if (f11 > f13) {
+                                float f30 = f12 < 0.5f ? 0.0f : (f12 - 0.5f) / 0.5f;
+                                int i29 = this.A;
+                                if (i29 == 9) {
+                                    I.setColor(org.telegram.ui.ActionBar.g6.v0(this.t, this.F));
+                                } else if (i29 == 11 || i29 == i17 || i29 == 7 || i29 == 10 || ((!this.z && this.s >= 0) || i29 == 14)) {
+                                    I.setColor(org.telegram.ui.ActionBar.g6.v0(this.s, this.F));
                                 } else {
-                                    int i29 = this.x;
-                                    if (i29 != 0) {
-                                        I.setColor(i29);
+                                    int i30 = this.x;
+                                    if (i30 != 0) {
+                                        I.setColor(i30);
                                     } else {
-                                        I.setColor(org.telegram.ui.ActionBar.f6.v0(this.k ? org.telegram.ui.ActionBar.f6.i7 : org.telegram.ui.ActionBar.f6.j7, this.F));
+                                        I.setColor(org.telegram.ui.ActionBar.g6.v0(this.k ? org.telegram.ui.ActionBar.g6.i7 : org.telegram.ui.ActionBar.g6.j7, this.F));
                                     }
                                 }
                                 if (this.n) {
                                     I.setColor(paint.getColor());
-                                } else if (this.h < f16) {
+                                } else if (this.h < f15) {
                                     I.setColor(i0.a.d(this.h, paint.getColor(), I.getColor()));
                                 }
                                 boolean z12 = this.y;
                                 Paint paint3 = this.d;
-                                if (z12 || (i18 = this.r) < 0) {
-                                    paint3.setColor(org.telegram.ui.ActionBar.f6.v0(org.telegram.ui.ActionBar.f6.k7, this.F));
+                                if (z12 || (i19 = this.r) < 0) {
+                                    paint3.setColor(org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.k7, this.F));
                                 } else {
-                                    paint3.setColor(org.telegram.ui.ActionBar.f6.v0(i18, this.F));
+                                    paint3.setColor(org.telegram.ui.ActionBar.g6.v0(i19, this.F));
                                 }
-                                if (this.h < f16 && org.telegram.ui.ActionBar.f6.I.q()) {
+                                if (this.h < f15 && org.telegram.ui.ActionBar.g6.I.q()) {
                                     paint3.setColor(i0.a.d(this.h, I.getColor(), paint3.getColor()));
                                 }
                                 if (this.A != -1) {
                                     float dp3 = AndroidUtilities.dp(this.B) / 2.0f;
                                     int save = canvas2.save();
-                                    canvas2.translate(i9 - dp3, i12 - dp3);
-                                    boolean z13 = f12 < f16;
+                                    canvas2.translate(i10 - dp3, i13 - dp3);
+                                    boolean z13 = f11 < f15;
                                     if (z13) {
                                         canvas2.saveLayerAlpha(0.0f, 0.0f, AndroidUtilities.dp(this.B), AndroidUtilities.dp(this.B), 255, 31);
                                     }
                                     Paint paint4 = (Paint) this.G.provide(null);
-                                    int i30 = this.A;
-                                    if (i30 == 12 || i30 == 13) {
+                                    int i31 = this.A;
+                                    if (i31 == 12 || i31 == 13) {
                                         canvas2 = canvas;
                                         int alpha3 = paint4.getAlpha();
-                                        paint4.setAlpha((int) (f12 * 255.0f));
-                                        canvas2.drawCircle(dp3, dp3, f10 * f12, paint4);
+                                        paint4.setAlpha((int) (f11 * 255.0f));
+                                        canvas2.drawCircle(dp3, dp3, f9 * f11, paint4);
                                         if (paint4 != I) {
                                             paint4.setAlpha(alpha3);
                                         }
                                     } else if (this.v > 0.0f) {
-                                        float dp4 = f10 - AndroidUtilities.dp(0.5f);
+                                        float dp4 = f9 - AndroidUtilities.dp(0.5f);
                                         float lerp2 = AndroidUtilities.lerp(dp4, this.v, this.w);
-                                        float f32 = dp3 - dp4;
-                                        float f33 = dp3 + dp4;
-                                        canvas.drawRoundRect(f32, f32, f33, f33, lerp2, lerp2, paint4);
-                                        float f34 = (f16 - f12) * dp4;
-                                        float lerp3 = AndroidUtilities.lerp(f34, this.v, this.w);
-                                        if (!z13 || f34 <= 0.0f) {
+                                        float f31 = dp3 - dp4;
+                                        float f32 = dp3 + dp4;
+                                        canvas.drawRoundRect(f31, f31, f32, f32, lerp2, lerp2, paint4);
+                                        float f33 = (f15 - f11) * dp4;
+                                        float lerp3 = AndroidUtilities.lerp(f33, this.v, this.w);
+                                        if (!z13 || f33 <= 0.0f) {
                                             canvas2 = canvas;
                                         } else {
-                                            float f35 = dp3 - f34;
-                                            float f36 = dp3 + f34;
+                                            float f34 = dp3 - f33;
+                                            float f35 = dp3 + f33;
                                             canvas2 = canvas;
-                                            canvas2.drawRoundRect(f35, f35, f36, f36, lerp3, lerp3, org.telegram.ui.ActionBar.f6.Il);
+                                            canvas2.drawRoundRect(f34, f34, f35, f35, lerp3, lerp3, org.telegram.ui.ActionBar.g6.Il);
                                         }
                                     } else {
                                         canvas2 = canvas;
-                                        float dp5 = f10 - AndroidUtilities.dp(0.5f);
+                                        float dp5 = f9 - AndroidUtilities.dp(0.5f);
                                         canvas2.drawCircle(dp3, dp3, dp5, paint4);
-                                        float f37 = (f16 - f12) * dp5;
-                                        if (z13 && f37 > 0.0f) {
-                                            canvas2.drawCircle(dp3, dp3, f37, org.telegram.ui.ActionBar.f6.Il);
+                                        float f36 = (f15 - f11) * dp5;
+                                        if (z13 && f36 > 0.0f) {
+                                            canvas2.drawCircle(dp3, dp3, f36, org.telegram.ui.ActionBar.g6.Il);
                                         }
                                     }
                                     canvas2.restoreToCount(save);
@@ -352,57 +352,57 @@ public class CheckBoxBase {
                                         J.setPathEffect(new DashPathEffect(new float[]{AndroidUtilities.dp(0.66f), AndroidUtilities.dp(4.0f)}, 0.0f));
                                     }
                                     J.setStrokeWidth(AndroidUtilities.dp(1.66f));
-                                    J.setColor(org.telegram.ui.ActionBar.f6.v0(org.telegram.ui.ActionBar.f6.M6, this.F));
-                                    canvas2.drawCircle(i9, i12, AndroidUtilities.dp(9.0f), J);
-                                } else if (f31 != 0.0f) {
+                                    J.setColor(org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.M6, this.F));
+                                    canvas2.drawCircle(i10, i13, AndroidUtilities.dp(9.0f), J);
+                                } else if (f30 != 0.0f) {
                                     if (this.C != null) {
                                         if (this.g == null) {
-                                            i17 = 1;
+                                            i18 = 1;
                                             TextPaint textPaint = new TextPaint(1);
                                             this.g = textPaint;
                                             textPaint.setTypeface(AndroidUtilities.bold());
                                         } else {
-                                            i17 = 1;
+                                            i18 = 1;
                                         }
                                         int length = this.C.length();
-                                        if (length == 0 || length == i17 || length == 2) {
-                                            f17 = 14.0f;
-                                            f18 = 18.0f;
+                                        if (length == 0 || length == i18 || length == 2) {
+                                            f16 = 14.0f;
+                                            f17 = 18.0f;
                                         } else if (length != 3) {
-                                            f17 = 8.0f;
-                                            f18 = 15.75f;
+                                            f16 = 8.0f;
+                                            f17 = 15.75f;
                                         } else {
-                                            f18 = 16.5f;
-                                            f17 = 10.0f;
+                                            f17 = 16.5f;
+                                            f16 = 10.0f;
                                         }
-                                        this.g.setTextSize(AndroidUtilities.dp(f17));
-                                        this.g.setColor(org.telegram.ui.ActionBar.f6.v0(this.r, this.F));
+                                        this.g.setTextSize(AndroidUtilities.dp(f16));
+                                        this.g.setColor(org.telegram.ui.ActionBar.g6.v0(this.r, this.F));
                                         canvas2.save();
-                                        float f38 = i9;
-                                        canvas2.scale(f31, 1.0f, f38, i12);
+                                        float f37 = i10;
+                                        canvas2.scale(f30, 1.0f, f37, i13);
                                         String str = this.C;
-                                        canvas2.drawText(str, f38 - (this.g.measureText(str) / 2.0f), AndroidUtilities.dp(f18), this.g);
+                                        canvas2.drawText(str, f37 - (this.g.measureText(str) / 2.0f), AndroidUtilities.dp(f17), this.g);
                                         canvas2.restore();
                                     } else {
                                         Path path = this.j;
                                         path.reset();
-                                        int i31 = this.A;
-                                        float f39 = i31 == -1 ? 1.4f : i31 == 5 ? 0.8f : 1.0f;
-                                        float dp6 = AndroidUtilities.dp(9.0f * f39) * f31;
-                                        float dp7 = AndroidUtilities.dp(f39 * 4.0f) * f31;
-                                        int dp8 = i9 - AndroidUtilities.dp(f15);
-                                        int dp9 = AndroidUtilities.dp(4.0f) + i12;
+                                        int i32 = this.A;
+                                        float f38 = i32 == -1 ? 1.4f : i32 == 5 ? 0.8f : 1.0f;
+                                        float dp6 = AndroidUtilities.dp(9.0f * f38) * f30;
+                                        float dp7 = AndroidUtilities.dp(f38 * 4.0f) * f30;
+                                        int dp8 = i10 - AndroidUtilities.dp(f14);
+                                        int dp9 = AndroidUtilities.dp(4.0f) + i13;
                                         float sqrt = (float) Math.sqrt((dp7 * dp7) / 2.0f);
-                                        float f40 = dp8;
-                                        float f41 = dp9;
-                                        path.moveTo(f40 - sqrt, f41 - sqrt);
-                                        path.lineTo(f40, f41);
+                                        float f39 = dp8;
+                                        float f40 = dp9;
+                                        path.moveTo(f39 - sqrt, f40 - sqrt);
+                                        path.lineTo(f39, f40);
                                         float sqrt2 = (float) Math.sqrt((dp6 * dp6) / 2.0f);
-                                        path.lineTo(f40 + sqrt2, f41 - sqrt2);
+                                        path.lineTo(f39 + sqrt2, f40 - sqrt2);
                                         if (z10 || this.e != 1.0f) {
                                             canvas2.save();
-                                            float f42 = this.e;
-                                            canvas2.scale(f42, f42, i9, i12);
+                                            float f41 = this.e;
+                                            canvas2.scale(f41, f41, i10, i13);
                                             z11 = true;
                                         } else {
                                             z11 = false;
@@ -420,7 +420,7 @@ public class CheckBoxBase {
                             }
                             return;
                         }
-                        i16 = 6;
+                        i17 = 6;
                         paint.setStyle(Paint.Style.FILL);
                         org.telegram.ui.ActionBar.d5 d5Var = this.E;
                         if (d5Var == null || !d5Var.l()) {
@@ -435,90 +435,90 @@ public class CheckBoxBase {
                             shader.setLocalMatrix(matrix);
                             paint.setShader(shader);
                         }
-                        canvas2.drawCircle(i9, i12, (f10 - AndroidUtilities.dp(f16)) * this.m, paint);
+                        canvas2.drawCircle(i10, i13, (f9 - AndroidUtilities.dp(f15)) * this.m, paint);
                         paint.setStyle(Paint.Style.STROKE);
                     }
-                    f14 = 0.0f;
-                    if (f12 > f14) {
+                    f13 = 0.0f;
+                    if (f11 > f13) {
                     }
                     if (z10) {
                     }
                 } else {
-                    if (i23 == 6 || i23 == 7) {
-                        i12 = i10;
-                        f15 = 1.5f;
-                        float f43 = i9;
-                        float f44 = i12;
-                        canvas2.drawCircle(f43, f44, f10 - AndroidUtilities.dp(1.0f), I);
-                        canvas2.drawCircle(f43, f44, f10 - AndroidUtilities.dp(1.5f), paint2);
+                    if (i24 == 6 || i24 == 7) {
+                        i13 = i11;
+                        f14 = 1.5f;
+                        float f42 = i10;
+                        float f43 = i13;
+                        canvas2.drawCircle(f42, f43, f9 - AndroidUtilities.dp(1.0f), I);
+                        canvas2.drawCircle(f42, f43, f9 - AndroidUtilities.dp(1.5f), paint2);
                     } else {
-                        i12 = i10;
-                        f15 = 1.5f;
-                        canvas2.drawCircle(i9, i12, f10, I);
+                        i13 = i11;
+                        f14 = 1.5f;
+                        canvas2.drawCircle(i10, i13, f9, I);
                     }
                     paint = paint2;
-                    i13 = 7;
-                    i14 = -1;
+                    i14 = 7;
+                    i15 = -1;
                 }
-                f16 = 1.0f;
-                I.setColor(org.telegram.ui.ActionBar.f6.v0(this.r, this.F));
-                i15 = this.A;
-                if (i15 != i14) {
+                f15 = 1.0f;
+                I.setColor(org.telegram.ui.ActionBar.g6.v0(this.r, this.F));
+                i16 = this.A;
+                if (i16 != i15) {
                 }
-                i16 = 6;
-                f14 = 0.0f;
-                if (f12 > f14) {
+                i17 = 6;
+                f13 = 0.0f;
+                if (f11 > f13) {
                 }
                 if (z10) {
                 }
             } else if (this.z) {
-                int i32 = this.A;
-                if (i32 == 12 || i32 == 13) {
-                    I.setColor(org.telegram.ui.ActionBar.f6.v0(i11, this.F));
+                int i33 = this.A;
+                if (i33 == 12 || i33 == 13) {
+                    I.setColor(org.telegram.ui.ActionBar.g6.v0(i12, this.F));
                     I.setAlpha((int) (this.m * 255.0f));
-                    paint2.setColor(org.telegram.ui.ActionBar.f6.v0(this.r, this.F));
-                } else if (i32 == 6 || i32 == 7) {
-                    I.setColor(org.telegram.ui.ActionBar.f6.v0(this.t, this.F));
-                    paint2.setColor(org.telegram.ui.ActionBar.f6.v0(this.r, this.F));
-                } else if (i32 == 10 || i32 == 14) {
-                    paint2.setColor(org.telegram.ui.ActionBar.f6.v0(this.t, this.F));
+                    paint2.setColor(org.telegram.ui.ActionBar.g6.v0(this.r, this.F));
+                } else if (i33 == 6 || i33 == 7) {
+                    I.setColor(org.telegram.ui.ActionBar.g6.v0(this.t, this.F));
+                    paint2.setColor(org.telegram.ui.ActionBar.g6.v0(this.r, this.F));
+                } else if (i33 == 10 || i33 == 14) {
+                    paint2.setColor(org.telegram.ui.ActionBar.g6.v0(this.t, this.F));
                 } else {
                     Paint paint6 = I;
-                    int indexOfKey = org.telegram.ui.ActionBar.f6.rl.indexOfKey(org.telegram.ui.ActionBar.f6.lc);
-                    paint6.setColor((16777215 & (indexOfKey >= 0 ? org.telegram.ui.ActionBar.f6.rl.valueAt(indexOfKey) : org.telegram.ui.ActionBar.f6.X)) | 671088640);
-                    paint2.setColor(org.telegram.ui.ActionBar.f6.v0(this.r, this.F));
+                    int indexOfKey = org.telegram.ui.ActionBar.g6.rl.indexOfKey(org.telegram.ui.ActionBar.g6.lc);
+                    paint6.setColor((16777215 & (indexOfKey >= 0 ? org.telegram.ui.ActionBar.g6.rl.valueAt(indexOfKey) : org.telegram.ui.ActionBar.g6.X)) | 671088640);
+                    paint2.setColor(org.telegram.ui.ActionBar.g6.v0(this.r, this.F));
                 }
             } else {
-                int i33 = this.t;
-                if (i33 < 0) {
-                    i33 = this.r;
+                int i34 = this.t;
+                if (i34 < 0) {
+                    i34 = this.r;
                 }
-                paint2.setColor(AndroidUtilities.getOffsetColor(16777215, org.telegram.ui.ActionBar.f6.v0(i33, this.F), f13, this.m));
+                paint2.setColor(AndroidUtilities.getOffsetColor(16777215, org.telegram.ui.ActionBar.g6.v0(i34, this.F), f12, this.m));
             }
             if (this.z) {
             }
             paint = paint2;
-            i12 = i10;
-            i13 = 7;
-            i14 = -1;
-            f15 = 1.5f;
-            f16 = 1.0f;
-            I.setColor(org.telegram.ui.ActionBar.f6.v0(this.r, this.F));
-            i15 = this.A;
-            if (i15 != i14) {
+            i13 = i11;
+            i14 = 7;
+            i15 = -1;
+            f14 = 1.5f;
+            f15 = 1.0f;
+            I.setColor(org.telegram.ui.ActionBar.g6.v0(this.r, this.F));
+            i16 = this.A;
+            if (i16 != i15) {
             }
-            i16 = 6;
-            f14 = 0.0f;
-            if (f12 > f14) {
+            i17 = 6;
+            f13 = 0.0f;
+            if (f11 > f13) {
             }
             if (z10) {
             }
         }
-        f10 = dp;
-        f11 = f10;
+        f9 = dp;
+        f10 = f9;
         if (!this.n) {
         }
-        if (f19 < 0.5f) {
+        if (f18 < 0.5f) {
         }
         Rect rect22 = this.b;
         int centerX2 = rect22.centerX();
@@ -527,25 +527,25 @@ public class CheckBoxBase {
         }
         if (z10) {
         }
-        i11 = this.s;
+        i12 = this.s;
         Paint paint22 = this.f;
-        if (i11 >= 0) {
+        if (i12 >= 0) {
         }
         if (this.z) {
         }
         paint = paint22;
-        i12 = i10;
-        i13 = 7;
-        i14 = -1;
-        f15 = 1.5f;
-        f16 = 1.0f;
-        I.setColor(org.telegram.ui.ActionBar.f6.v0(this.r, this.F));
-        i15 = this.A;
-        if (i15 != i14) {
+        i13 = i11;
+        i14 = 7;
+        i15 = -1;
+        f14 = 1.5f;
+        f15 = 1.0f;
+        I.setColor(org.telegram.ui.ActionBar.g6.v0(this.r, this.F));
+        i16 = this.A;
+        if (i16 != i15) {
         }
-        i16 = 6;
-        f14 = 0.0f;
-        if (f12 > f14) {
+        i17 = 6;
+        f13 = 0.0f;
+        if (f11 > f13) {
         }
         if (z10) {
         }
@@ -562,52 +562,52 @@ public class CheckBoxBase {
         this.a.invalidate();
     }
 
-    public final void c(float f10) {
-        if (this.m == f10) {
+    public final void c(float f9) {
+        if (this.m == f9) {
             return;
         }
-        this.m = f10;
+        this.m = f9;
         b();
     }
 
-    public final void d(int i9) {
-        if (this.A == i9) {
+    public final void d(int i10) {
+        if (this.A == i10) {
             return;
         }
-        this.A = i9;
+        this.A = i10;
         Paint paint = this.f;
-        if (i9 == 12 || i9 == 13) {
+        if (i10 == 12 || i10 == 13) {
             paint.setStrokeWidth(AndroidUtilities.dp(1.0f));
-        } else if (i9 == 4 || i9 == 5) {
+        } else if (i10 == 4 || i10 == 5) {
             paint.setStrokeWidth(AndroidUtilities.dp(1.9f));
-            if (i9 == 5) {
+            if (i10 == 5) {
                 this.d.setStrokeWidth(AndroidUtilities.dp(1.5f));
             }
-        } else if (i9 == 3) {
+        } else if (i10 == 3) {
             paint.setStrokeWidth(AndroidUtilities.dp(3.0f));
-        } else if (i9 != 0) {
+        } else if (i10 != 0) {
             paint.setStrokeWidth(AndroidUtilities.dp(1.5f));
         }
         b();
     }
 
-    public final void e(int i9, int i10, int i11, int i12) {
-        int i13 = i11 + i9;
+    public final void e(int i10, int i11, int i12, int i13) {
         int i14 = i12 + i10;
+        int i15 = i13 + i11;
         Rect rect = this.b;
-        if (rect.left == i9 && rect.top == i10 && rect.right == i13 && rect.bottom == i14) {
+        if (rect.left == i10 && rect.top == i11 && rect.right == i14 && rect.bottom == i15) {
             return;
         }
-        rect.left = i9;
-        rect.top = i10;
-        rect.right = i13;
-        rect.bottom = i14;
+        rect.left = i10;
+        rect.top = i11;
+        rect.right = i14;
+        rect.bottom = i15;
         b();
     }
 
-    public final void f(int i9, boolean z10, boolean z11) {
-        if (i9 >= 0) {
-            String str = "" + (i9 + 1);
+    public final void f(int i10, boolean z10, boolean z11) {
+        if (i10 >= 0) {
+            String str = "" + (i10 + 1);
             String str2 = this.C;
             if (str2 == null || !str2.equals(str)) {
                 this.C = str;
@@ -629,8 +629,8 @@ public class CheckBoxBase {
         }
         ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this, "progress", z10 ? 1.0f : 0.0f);
         this.p = ofFloat;
-        ofFloat.addListener(new org.telegram.ui.xp(this, 19));
-        this.p.setInterpolator(gr.g);
+        ofFloat.addListener(new org.telegram.ui.bm(this, 21));
+        this.p.setInterpolator(jr.g);
         this.p.setDuration(this.H);
         this.p.start();
     }
@@ -643,21 +643,21 @@ public class CheckBoxBase {
         return this.o;
     }
 
-    public final void h(int i9, int i10, int i11) {
-        if (this.s == i9 && this.t == i10 && this.r == i11) {
+    public final void h(int i10, int i11, int i12) {
+        if (this.s == i10 && this.t == i11 && this.r == i12) {
             return;
         }
-        this.s = i9;
-        this.t = i10;
-        this.r = i11;
+        this.s = i10;
+        this.t = i11;
+        this.r = i12;
         b();
     }
 
-    public final void i(float f10) {
-        if (this.v == f10) {
+    public final void i(float f9) {
+        if (this.v == f9) {
             return;
         }
-        this.v = f10;
+        this.v = f9;
         b();
     }
 
@@ -678,23 +678,23 @@ public class CheckBoxBase {
         b();
     }
 
-    public final void l(float f10) {
-        if (this.B == f10) {
+    public final void l(float f9) {
+        if (this.B == f9) {
             return;
         }
-        this.B = f10;
+        this.B = f9;
         b();
     }
 
-    public void setProgress(float f10) {
-        if (this.o == f10) {
+    public void setProgress(float f9) {
+        if (this.o == f9) {
             return;
         }
-        this.o = f10;
+        this.o = f9;
         b();
-        ep epVar = this.D;
-        if (epVar != null) {
-            epVar.b();
+        ip ipVar = this.D;
+        if (ipVar != null) {
+            ipVar.a();
         }
     }
 }

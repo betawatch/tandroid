@@ -48,11 +48,11 @@ public final class DayOfWeek implements j$.time.temporal.l, j$.time.temporal.m {
         a = values();
     }
 
-    public static DayOfWeek G(int i9) {
-        if (i9 < 1 || i9 > 7) {
-            throw new b("Invalid value for DayOfWeek: " + i9);
+    public static DayOfWeek G(int i10) {
+        if (i10 < 1 || i10 > 7) {
+            throw new b("Invalid value for DayOfWeek: " + i10);
         }
-        return a[i9 - 1];
+        return a[i10 - 1];
     }
 
     public final int getValue() {

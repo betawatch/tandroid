@@ -1,20 +1,20 @@
 package com.google.android.recaptcha.internal;
 
 import android.app.Application;
+import bd.p;
 import com.google.android.gms.common.api.internal.v;
 import com.google.android.gms.common.api.internal.w;
 import com.google.android.gms.tasks.Task;
-import g7.y5;
-import hd.i0;
-import k7.e;
-import oc.f;
-import qc.c;
-import rc.a;
-import sc.i;
-import v7.b;
-import zc.p;
+import i7.c7;
+import jd.h0;
+import kotlin.jvm.internal.j;
+import m7.e;
+import qc.f;
+import sc.c;
+import uc.i;
+import x7.b;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 final class zzr extends i implements p {
     int zza;
@@ -28,44 +28,44 @@ final class zzr extends i implements p {
         this.zzc = str;
     }
 
-    @Override // sc.a
+    @Override // uc.a
     public final c create(Object obj, c cVar) {
         return new zzr(this.zzb, this.zzc, cVar);
     }
 
-    @Override // zc.p
+    @Override // bd.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzr) create((zzhk) obj, (c) obj2)).invokeSuspend(oc.i.a);
+        return ((zzr) create((zzhk) obj, (c) obj2)).invokeSuspend(qc.i.a);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:12:0x00b3  */
     /* JADX WARN: Removed duplicated region for block: B:9:0x008e  */
-    @Override // sc.a
+    @Override // uc.a
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
-        i0 i0Var;
+        h0 h0Var;
         String str;
         String str2;
-        a aVar = a.a;
-        int i9 = this.zza;
+        tc.a aVar = tc.a.a;
+        int i10 = this.zza;
         try {
             try {
-                if (i9 == 0) {
-                    y5.b(obj);
-                    i0Var = this.zzb.zzc;
-                    if (i0Var == null) {
-                        i0Var = null;
+                if (i10 == 0) {
+                    c7.b(obj);
+                    h0Var = this.zzb.zzc;
+                    if (h0Var == null) {
+                        h0Var = null;
                     }
                     this.zza = 1;
-                    obj = i0Var.await(this);
+                    obj = h0Var.await(this);
                     if (obj == aVar) {
                         return aVar;
                     }
                 } else {
-                    if (i9 != 1) {
-                        y5.b(obj);
+                    if (i10 != 1) {
+                        c7.b(obj);
                         str2 = ((b) obj).a;
                         if (str2 != null) {
                             throw new IllegalStateException("Required value was null.");
@@ -78,23 +78,23 @@ final class zzr extends i implements p {
                         zzf.zzf((zzxj) zzf2.zzk());
                         return new f((zzxx) zzf.zzk());
                     }
-                    y5.b(obj);
+                    c7.b(obj);
                 }
-                v7.a aVar2 = new v7.a();
+                x7.a aVar2 = new x7.a();
                 zzu zzuVar = this.zzb;
                 str = zzuVar.zzb;
                 aVar2.a = str != null ? str : null;
                 aVar2.b = this.zzc;
                 Application context = zzu.zzl(zzuVar);
-                kotlin.jvm.internal.i.e(context, "context");
-                e eVar = new e(context, e.k, com.google.android.gms.common.api.b.g, com.google.android.gms.common.api.i.c);
+                j.e(context, "context");
+                e eVar = new e(context, e.k, com.google.android.gms.common.api.b.i, com.google.android.gms.common.api.i.c);
                 v b10 = w.b();
-                b10.d = new u5.c[]{v7.f.a};
-                b10.c = new android.support.v4.media.c(aVar2, 20);
+                b10.d = new w5.c[]{x7.f.a};
+                b10.c = new za.c(aVar2, 26);
                 b10.a = 34002;
                 Task e10 = eVar.e(0, b10.b());
-                kotlin.jvm.internal.i.d(e10, "doRead(...)");
-                i0 zza = zzdf.zza(e10);
+                j.d(e10, "doRead(...)");
+                h0 zza = zzdf.zza(e10);
                 this.zza = 2;
                 obj = zza.await(this);
                 if (obj == aVar) {
@@ -104,10 +104,10 @@ final class zzr extends i implements p {
                 if (str2 != null) {
                 }
             } catch (Exception unused) {
-                return new f(y5.a(new zzcg(zzce.zzb, zzcd.zzau, null, null, 12, null)));
+                return new f(c7.a(new zzcg(zzce.zzb, zzcd.zzau, null, null, 12, null)));
             }
         } catch (Exception unused2) {
-            return new f(y5.a(new zzcg(zzce.zzb, zzcd.zzat, null, null, 12, null)));
+            return new f(c7.a(new zzcg(zzce.zzb, zzcd.zzat, null, null, 12, null)));
         }
     }
 }

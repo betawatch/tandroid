@@ -18,14 +18,14 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class yf0 implements RequestDelegate {
     public final /* synthetic */ int a;
     public final /* synthetic */ eg0 b;
 
-    public /* synthetic */ yf0(eg0 eg0Var, int i9) {
-        this.a = i9;
+    public /* synthetic */ yf0(eg0 eg0Var, int i10) {
+        this.a = i10;
         this.b = eg0Var;
     }
 
@@ -33,17 +33,17 @@ public final /* synthetic */ class yf0 implements RequestDelegate {
     public final void run(final TLObject tLObject, final TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                final int i9 = 0;
+                final int i10 = 0;
                 final eg0 eg0Var = this.b;
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.zf0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        int i10;
+                        int i11;
                         lt ltVar;
-                        switch (i9) {
+                        switch (i10) {
                             case 0:
                                 eg0 eg0Var2 = eg0Var;
-                                kj0 kj0Var = eg0Var2.a;
+                                ij0 ij0Var = eg0Var2.a;
                                 HashMap hashMap = eg0Var2.C;
                                 ArrayList arrayList = eg0Var2.A;
                                 HashMap hashMap2 = eg0Var2.B;
@@ -52,10 +52,10 @@ public final /* synthetic */ class yf0 implements RequestDelegate {
                                     hashMap2.clear();
                                     hashMap.clear();
                                     TLRPC.TL_help_countriesList tL_help_countriesList = (TLRPC.TL_help_countriesList) tLObject;
-                                    for (int i11 = 0; i11 < tL_help_countriesList.countries.size(); i11++) {
-                                        TLRPC.TL_help_country tL_help_country = tL_help_countriesList.countries.get(i11);
-                                        for (int i12 = 0; i12 < tL_help_country.country_codes.size(); i12++) {
-                                            TLRPC.TL_help_countryCode tL_help_countryCode = tL_help_country.country_codes.get(i12);
+                                    for (int i12 = 0; i12 < tL_help_countriesList.countries.size(); i12++) {
+                                        TLRPC.TL_help_country tL_help_country = tL_help_countriesList.countries.get(i12);
+                                        for (int i13 = 0; i13 < tL_help_country.country_codes.size(); i13++) {
+                                            TLRPC.TL_help_countryCode tL_help_countryCode = tL_help_country.country_codes.get(i13);
                                             if (tL_help_countryCode != null) {
                                                 lt ltVar2 = new lt();
                                                 String str = tL_help_country.name;
@@ -84,25 +84,25 @@ public final /* synthetic */ class yf0 implements RequestDelegate {
                                     }
                                     fg0 fg0Var = eg0Var2.R;
                                     if (fg0Var.B == 2) {
-                                        i10 = ((org.telegram.ui.ActionBar.o2) fg0Var).currentAccount;
-                                        String d = ne.b.d(UserConfig.getInstance(i10).getClientPhone(), false);
+                                        i11 = ((org.telegram.ui.ActionBar.o2) fg0Var).currentAccount;
+                                        String d = qe.b.d(UserConfig.getInstance(i11).getClientPhone(), false);
                                         if (!TextUtils.isEmpty(d)) {
                                             if (d.length() > 4) {
-                                                for (int i13 = 4; i13 >= 1; i13--) {
-                                                    String substring = d.substring(0, i13);
+                                                for (int i14 = 4; i14 >= 1; i14--) {
+                                                    String substring = d.substring(0, i14);
                                                     List list2 = (List) hashMap2.get(substring);
                                                     lt ltVar3 = null;
                                                     if (list2 != null) {
                                                         if (list2.size() > 1) {
                                                             String string = MessagesController.getGlobalMainSettings().getString("phone_code_last_matched_" + substring, null);
                                                             if (string != null) {
-                                                                ltVar = (lt) j3.r0.k(1, list2);
+                                                                ltVar = (lt) j7.l1.j(1, list2);
                                                                 int size = arrayList.size();
-                                                                int i14 = 0;
+                                                                int i15 = 0;
                                                                 while (true) {
-                                                                    if (i14 < size) {
-                                                                        Object obj = arrayList.get(i14);
-                                                                        i14++;
+                                                                    if (i15 < size) {
+                                                                        Object obj = arrayList.get(i15);
+                                                                        i15++;
                                                                         lt ltVar4 = (lt) obj;
                                                                         if (Objects.equals(ltVar4.d, string)) {
                                                                             ltVar = ltVar4;
@@ -110,7 +110,7 @@ public final /* synthetic */ class yf0 implements RequestDelegate {
                                                                     }
                                                                 }
                                                             } else {
-                                                                ltVar = (lt) j3.r0.k(1, list2);
+                                                                ltVar = (lt) j7.l1.j(1, list2);
                                                             }
                                                             ltVar3 = ltVar;
                                                         } else {
@@ -118,11 +118,11 @@ public final /* synthetic */ class yf0 implements RequestDelegate {
                                                         }
                                                     }
                                                     if (ltVar3 != null) {
-                                                        kj0Var.setText(substring);
+                                                        ij0Var.setText(substring);
                                                         break;
                                                     }
                                                 }
-                                                kj0Var.setText(d.substring(0, 1));
+                                                ij0Var.setText(d.substring(0, 1));
                                                 break;
                                             }
                                         }
@@ -137,7 +137,7 @@ public final /* synthetic */ class yf0 implements RequestDelegate {
                                 TLRPC.TL_error tL_error2 = tL_error;
                                 if (tL_error2 == null) {
                                     TL_account.Password password = (TL_account.Password) tLObject;
-                                    if (TwoStepVerificationActivity.h0(password, true)) {
+                                    if (TwoStepVerificationActivity.i0(password, true)) {
                                         Bundle bundle = new Bundle();
                                         SerializedData serializedData = new SerializedData(password.getObjectSize());
                                         password.serializeToStream(serializedData);
@@ -145,7 +145,7 @@ public final /* synthetic */ class yf0 implements RequestDelegate {
                                         fg0Var2.u1(6, true, bundle, false);
                                         break;
                                     } else {
-                                        org.telegram.ui.Components.y4.x0(fg0Var2.getParentActivity(), LocaleController.getString("UpdateAppAlert", R.string.UpdateAppAlert), true);
+                                        org.telegram.ui.Components.c5.x0(fg0Var2.getParentActivity(), LocaleController.getString("UpdateAppAlert", R.string.UpdateAppAlert), true);
                                         break;
                                     }
                                 } else {
@@ -157,17 +157,17 @@ public final /* synthetic */ class yf0 implements RequestDelegate {
                 });
                 break;
             default:
-                final int i10 = 1;
+                final int i11 = 1;
                 final eg0 eg0Var2 = this.b;
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.zf0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        int i102;
+                        int i112;
                         lt ltVar;
-                        switch (i10) {
+                        switch (i11) {
                             case 0:
                                 eg0 eg0Var22 = eg0Var2;
-                                kj0 kj0Var = eg0Var22.a;
+                                ij0 ij0Var = eg0Var22.a;
                                 HashMap hashMap = eg0Var22.C;
                                 ArrayList arrayList = eg0Var22.A;
                                 HashMap hashMap2 = eg0Var22.B;
@@ -176,10 +176,10 @@ public final /* synthetic */ class yf0 implements RequestDelegate {
                                     hashMap2.clear();
                                     hashMap.clear();
                                     TLRPC.TL_help_countriesList tL_help_countriesList = (TLRPC.TL_help_countriesList) tLObject;
-                                    for (int i11 = 0; i11 < tL_help_countriesList.countries.size(); i11++) {
-                                        TLRPC.TL_help_country tL_help_country = tL_help_countriesList.countries.get(i11);
-                                        for (int i12 = 0; i12 < tL_help_country.country_codes.size(); i12++) {
-                                            TLRPC.TL_help_countryCode tL_help_countryCode = tL_help_country.country_codes.get(i12);
+                                    for (int i12 = 0; i12 < tL_help_countriesList.countries.size(); i12++) {
+                                        TLRPC.TL_help_country tL_help_country = tL_help_countriesList.countries.get(i12);
+                                        for (int i13 = 0; i13 < tL_help_country.country_codes.size(); i13++) {
+                                            TLRPC.TL_help_countryCode tL_help_countryCode = tL_help_country.country_codes.get(i13);
                                             if (tL_help_countryCode != null) {
                                                 lt ltVar2 = new lt();
                                                 String str = tL_help_country.name;
@@ -208,25 +208,25 @@ public final /* synthetic */ class yf0 implements RequestDelegate {
                                     }
                                     fg0 fg0Var = eg0Var22.R;
                                     if (fg0Var.B == 2) {
-                                        i102 = ((org.telegram.ui.ActionBar.o2) fg0Var).currentAccount;
-                                        String d = ne.b.d(UserConfig.getInstance(i102).getClientPhone(), false);
+                                        i112 = ((org.telegram.ui.ActionBar.o2) fg0Var).currentAccount;
+                                        String d = qe.b.d(UserConfig.getInstance(i112).getClientPhone(), false);
                                         if (!TextUtils.isEmpty(d)) {
                                             if (d.length() > 4) {
-                                                for (int i13 = 4; i13 >= 1; i13--) {
-                                                    String substring = d.substring(0, i13);
+                                                for (int i14 = 4; i14 >= 1; i14--) {
+                                                    String substring = d.substring(0, i14);
                                                     List list2 = (List) hashMap2.get(substring);
                                                     lt ltVar3 = null;
                                                     if (list2 != null) {
                                                         if (list2.size() > 1) {
                                                             String string = MessagesController.getGlobalMainSettings().getString("phone_code_last_matched_" + substring, null);
                                                             if (string != null) {
-                                                                ltVar = (lt) j3.r0.k(1, list2);
+                                                                ltVar = (lt) j7.l1.j(1, list2);
                                                                 int size = arrayList.size();
-                                                                int i14 = 0;
+                                                                int i15 = 0;
                                                                 while (true) {
-                                                                    if (i14 < size) {
-                                                                        Object obj = arrayList.get(i14);
-                                                                        i14++;
+                                                                    if (i15 < size) {
+                                                                        Object obj = arrayList.get(i15);
+                                                                        i15++;
                                                                         lt ltVar4 = (lt) obj;
                                                                         if (Objects.equals(ltVar4.d, string)) {
                                                                             ltVar = ltVar4;
@@ -234,7 +234,7 @@ public final /* synthetic */ class yf0 implements RequestDelegate {
                                                                     }
                                                                 }
                                                             } else {
-                                                                ltVar = (lt) j3.r0.k(1, list2);
+                                                                ltVar = (lt) j7.l1.j(1, list2);
                                                             }
                                                             ltVar3 = ltVar;
                                                         } else {
@@ -242,11 +242,11 @@ public final /* synthetic */ class yf0 implements RequestDelegate {
                                                         }
                                                     }
                                                     if (ltVar3 != null) {
-                                                        kj0Var.setText(substring);
+                                                        ij0Var.setText(substring);
                                                         break;
                                                     }
                                                 }
-                                                kj0Var.setText(d.substring(0, 1));
+                                                ij0Var.setText(d.substring(0, 1));
                                                 break;
                                             }
                                         }
@@ -261,7 +261,7 @@ public final /* synthetic */ class yf0 implements RequestDelegate {
                                 TLRPC.TL_error tL_error2 = tL_error;
                                 if (tL_error2 == null) {
                                     TL_account.Password password = (TL_account.Password) tLObject;
-                                    if (TwoStepVerificationActivity.h0(password, true)) {
+                                    if (TwoStepVerificationActivity.i0(password, true)) {
                                         Bundle bundle = new Bundle();
                                         SerializedData serializedData = new SerializedData(password.getObjectSize());
                                         password.serializeToStream(serializedData);
@@ -269,7 +269,7 @@ public final /* synthetic */ class yf0 implements RequestDelegate {
                                         fg0Var2.u1(6, true, bundle, false);
                                         break;
                                     } else {
-                                        org.telegram.ui.Components.y4.x0(fg0Var2.getParentActivity(), LocaleController.getString("UpdateAppAlert", R.string.UpdateAppAlert), true);
+                                        org.telegram.ui.Components.c5.x0(fg0Var2.getParentActivity(), LocaleController.getString("UpdateAppAlert", R.string.UpdateAppAlert), true);
                                         break;
                                     }
                                 } else {

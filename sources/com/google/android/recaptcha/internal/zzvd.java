@@ -1,21 +1,21 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 final class zzvd {
-    public static /* bridge */ /* synthetic */ void zza(byte b10, byte b11, byte b12, byte b13, char[] cArr, int i9) {
+    public static /* bridge */ /* synthetic */ void zza(byte b10, byte b11, byte b12, byte b13, char[] cArr, int i10) {
         if (!zze(b11)) {
             if ((((b11 + 112) + (b10 << 28)) >> 30) == 0 && !zze(b12) && !zze(b13)) {
-                int i10 = ((b10 & 7) << 18) | ((b11 & 63) << 12) | ((b12 & 63) << 6) | (b13 & 63);
-                cArr[i9] = (char) ((i10 >>> 10) + 55232);
-                cArr[i9 + 1] = (char) ((i10 & 1023) + 56320);
+                int i11 = ((b10 & 7) << 18) | ((b11 & 63) << 12) | ((b12 & 63) << 6) | (b13 & 63);
+                cArr[i10] = (char) ((i11 >>> 10) + 55232);
+                cArr[i10 + 1] = (char) ((i11 & 1023) + 56320);
                 return;
             }
         }
         throw new zzsx("Protocol message had invalid UTF-8.");
     }
 
-    public static /* bridge */ /* synthetic */ void zzb(byte b10, byte b11, byte b12, char[] cArr, int i9) {
+    public static /* bridge */ /* synthetic */ void zzb(byte b10, byte b11, byte b12, char[] cArr, int i10) {
         if (!zze(b11)) {
             if (b10 == -32) {
                 if (b11 >= -96) {
@@ -28,18 +28,18 @@ final class zzvd {
                 }
             }
             if (!zze(b12)) {
-                cArr[i9] = (char) (((b10 & 15) << 12) | ((b11 & 63) << 6) | (b12 & 63));
+                cArr[i10] = (char) (((b10 & 15) << 12) | ((b11 & 63) << 6) | (b12 & 63));
                 return;
             }
         }
         throw new zzsx("Protocol message had invalid UTF-8.");
     }
 
-    public static /* bridge */ /* synthetic */ void zzc(byte b10, byte b11, char[] cArr, int i9) {
+    public static /* bridge */ /* synthetic */ void zzc(byte b10, byte b11, char[] cArr, int i10) {
         if (b10 < -62 || zze(b11)) {
             throw new zzsx("Protocol message had invalid UTF-8.");
         }
-        cArr[i9] = (char) (((b10 & 31) << 6) | (b11 & 63));
+        cArr[i10] = (char) (((b10 & 31) << 6) | (b11 & 63));
     }
 
     public static /* bridge */ /* synthetic */ boolean zzd(byte b10) {

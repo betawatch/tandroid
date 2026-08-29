@@ -1,49 +1,75 @@
 package h7;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+import android.graphics.Matrix;
+
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class r extends s {
-    public final transient int c;
-    public final transient int d;
-    public final /* synthetic */ s e;
-
-    public r(s sVar, int i9, int i10) {
-        this.e = sVar;
-        this.c = i9;
-        this.d = i10;
+public abstract class r {
+    public static float[] a(Matrix matrix) {
+        float[] fArr = new float[9];
+        matrix.getValues(fArr);
+        return new float[]{fArr[0], fArr[1], 0.0f, 0.0f, fArr[3], fArr[4], 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, fArr[2], fArr[5], 0.0f, 1.0f};
     }
 
-    @Override // java.util.List
-    public final Object get(int i9) {
-        f7.b8.a(i9, this.d);
-        return this.e.get(i9 + this.c);
+    public static float[] b(float f9, float f10) {
+        float f11 = f9 - 0.0f;
+        float f12 = f10 - 0.0f;
+        return new float[]{2.0f / f11, 0.0f, 0.0f, 0.0f, 0.0f, 2.0f / f12, 0.0f, 0.0f, 0.0f, 0.0f, -1.0f, 0.0f, (-(f9 + 0.0f)) / f11, (-(f10 + 0.0f)) / f12, -0.0f, 1.0f};
     }
 
-    @Override // h7.o
-    public final int n() {
-        return this.e.o() + this.c + this.d;
-    }
-
-    @Override // h7.o
-    public final int o() {
-        return this.e.o() + this.c;
-    }
-
-    @Override // h7.o
-    public final Object[] p() {
-        return this.e.p();
-    }
-
-    @Override // h7.s, java.util.List
-    /* renamed from: q, reason: merged with bridge method [inline-methods] */
-    public final s subList(int i9, int i10) {
-        f7.b8.b(i9, i10, this.d);
-        int i11 = this.c;
-        return this.e.subList(i9 + i11, i10 + i11);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final int size() {
-        return this.d;
+    public static float[] c(float[] fArr, float[] fArr2) {
+        float f9 = fArr[0];
+        float f10 = fArr2[0];
+        float f11 = fArr[4];
+        float f12 = fArr2[1];
+        float f13 = fArr[8];
+        float f14 = fArr2[2];
+        float f15 = fArr[12];
+        float f16 = fArr2[3];
+        float f17 = f15 * f16;
+        float f18 = f17 + (f13 * f14) + (f11 * f12) + (f9 * f10);
+        float f19 = fArr[1];
+        float f20 = fArr[5];
+        float f21 = fArr[9];
+        float f22 = fArr[13];
+        float f23 = f22 * f16;
+        float f24 = f23 + (f21 * f14) + (f20 * f12) + (f19 * f10);
+        float f25 = fArr[2];
+        float f26 = fArr[6];
+        float f27 = fArr[10];
+        float f28 = fArr[14];
+        float f29 = f28 * f16;
+        float f30 = f29 + (f27 * f14) + (f26 * f12) + (f25 * f10);
+        float f31 = fArr[3];
+        float f32 = fArr[7];
+        float f33 = fArr[11];
+        float f34 = fArr[15];
+        float f35 = f16 * f34;
+        float f36 = f35 + (f14 * f33) + (f12 * f32) + (f10 * f31);
+        float f37 = fArr2[4];
+        float f38 = fArr2[5];
+        float f39 = fArr2[6];
+        float f40 = fArr2[7];
+        float f41 = (f15 * f40) + (f13 * f39) + (f11 * f38) + (f9 * f37);
+        float f42 = (f22 * f40) + (f21 * f39) + (f20 * f38) + (f19 * f37);
+        float f43 = (f28 * f40) + (f27 * f39) + (f26 * f38) + (f25 * f37);
+        float f44 = f40 * f34;
+        float f45 = f44 + (f39 * f33) + (f38 * f32) + (f37 * f31);
+        float f46 = fArr2[8];
+        float f47 = fArr2[9];
+        float f48 = fArr2[10];
+        float f49 = fArr2[11];
+        float f50 = (f15 * f49) + (f13 * f48) + (f11 * f47) + (f9 * f46);
+        float f51 = (f22 * f49) + (f21 * f48) + (f20 * f47) + (f19 * f46);
+        float f52 = (f28 * f49) + (f27 * f48) + (f26 * f47) + (f25 * f46);
+        float f53 = f49 * f34;
+        float f54 = f53 + (f48 * f33) + (f47 * f32) + (f46 * f31);
+        float f55 = fArr2[12];
+        float f56 = fArr2[13];
+        float f57 = (f11 * f56) + (f9 * f55);
+        float f58 = fArr2[14];
+        float f59 = (f13 * f58) + f57;
+        float f60 = fArr2[15];
+        return new float[]{f18, f24, f30, f36, f41, f42, f43, f45, f50, f51, f52, f54, (f15 * f60) + f59, (f22 * f60) + (f21 * f58) + (f20 * f56) + (f19 * f55), (f28 * f60) + (f27 * f58) + (f26 * f56) + (f25 * f55), (f34 * f60) + (f33 * f58) + (f32 * f56) + (f31 * f55)};
     }
 }

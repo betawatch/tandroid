@@ -51,9 +51,9 @@ public final class g1 implements l0, IntConsumer, y {
     }
 
     @Override // java.util.function.IntConsumer
-    public final void accept(int i9) {
+    public final void accept(int i10) {
         this.a = true;
-        this.b = i9;
+        this.b = i10;
     }
 
     @Override // java.util.Iterator

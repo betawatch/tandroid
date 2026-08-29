@@ -1,293 +1,91 @@
 package h7;
 
-import j7.lg;
-import java.io.Serializable;
-import java.util.AbstractCollection;
-import java.util.AbstractMap;
-import java.util.Collection;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
-import java.util.Map;
+import java.util.Set;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class m extends AbstractCollection {
-    public final /* synthetic */ int a;
-    public final Object b;
-
-    public /* synthetic */ m(int i9, Serializable serializable) {
-        this.a = i9;
-        this.b = serializable;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection
-    public final void clear() {
-        switch (this.a) {
-            case 0:
-                ((n) this.b).clear();
-                break;
-            case 1:
-                ((wa) this.b).clear();
-                break;
-            case 2:
-                ((j7.d) this.b).clear();
-                break;
-            case 3:
-                ((wa) this.b).clear();
-                break;
-            case 4:
-                ((o8.h0) this.b).b();
-                break;
-            case 5:
-                ((o8.p) this.b).clear();
-                break;
-            default:
-                ((wa) this.b).clear();
-                break;
+public abstract class m {
+    public static void a(ArrayList arrayList) {
+        HashMap hashMap = new HashMap(arrayList.size());
+        int size = arrayList.size();
+        int i10 = 0;
+        int i11 = 0;
+        while (i11 < size) {
+            Object obj = arrayList.get(i11);
+            i11++;
+            a9.b bVar = (a9.b) obj;
+            a9.k kVar = new a9.k(bVar);
+            for (a9.v vVar : bVar.b) {
+                boolean z10 = bVar.e == 0;
+                a9.l lVar = new a9.l(vVar, !z10);
+                if (!hashMap.containsKey(lVar)) {
+                    hashMap.put(lVar, new HashSet());
+                }
+                Set set = (Set) hashMap.get(lVar);
+                if (!set.isEmpty() && z10) {
+                    throw new IllegalArgumentException("Multiple components provide " + vVar + ".");
+                }
+                set.add(kVar);
+            }
         }
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection
-    public boolean contains(Object obj) {
-        switch (this.a) {
-            case 1:
-                return ((wa) this.b).containsValue(obj);
-            case 2:
-            case 5:
-            default:
-                return super.contains(obj);
-            case 3:
-                return ((wa) this.b).containsValue(obj);
-            case 4:
-                Iterator it = ((m) ((o8.h0) this.b).a().values()).iterator();
-                while (it.hasNext()) {
-                    if (((Collection) it.next()).contains(obj)) {
-                        return true;
+        Iterator it = hashMap.values().iterator();
+        while (it.hasNext()) {
+            for (a9.k kVar2 : (Set) it.next()) {
+                for (a9.m mVar : kVar2.a.c) {
+                    if (mVar.c == 0) {
+                        Set<a9.k> set2 = (Set) hashMap.get(new a9.l(mVar.a, mVar.b == 2));
+                        if (set2 != null) {
+                            for (a9.k kVar3 : set2) {
+                                kVar2.b.add(kVar3);
+                                kVar3.c.add(kVar2);
+                            }
+                        }
                     }
                 }
-                return false;
-            case 6:
-                return ((wa) this.b).containsValue(obj);
+            }
         }
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection
-    public boolean isEmpty() {
-        switch (this.a) {
-            case 1:
-                return ((wa) this.b).isEmpty();
-            case 3:
-                return ((wa) this.b).isEmpty();
-            case 6:
-                return ((wa) this.b).isEmpty();
-            default:
-                return super.isEmpty();
+        HashSet hashSet = new HashSet();
+        Iterator it2 = hashMap.values().iterator();
+        while (it2.hasNext()) {
+            hashSet.addAll((Set) it2.next());
         }
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable
-    public final Iterator iterator() {
-        switch (this.a) {
-            case 0:
-                n nVar = (n) this.b;
-                Map a2 = nVar.a();
-                return a2 != null ? a2.values().iterator() : new i(nVar, 2);
-            case 1:
-                return new com.google.android.gms.internal.clearcut.h1(((wa) this.b).entrySet().iterator(), 1);
-            case 2:
-                j7.d dVar = (j7.d) this.b;
-                Map a3 = dVar.a();
-                return a3 != null ? a3.values().iterator() : new j7.a(dVar, 2);
-            case 3:
-                return new com.google.android.gms.internal.clearcut.h1(((wa) this.b).entrySet().iterator(), 2);
-            case 4:
-                return new o8.a((o8.h0) this.b);
-            case 5:
-                o8.p pVar = (o8.p) this.b;
-                Map b10 = pVar.b();
-                return b10 != null ? b10.values().iterator() : new o8.m(pVar, 2);
-            default:
-                return new com.google.android.gms.internal.clearcut.h1(((wa) this.b).entrySet().iterator(), 3);
+        HashSet hashSet2 = new HashSet();
+        Iterator it3 = hashSet.iterator();
+        while (it3.hasNext()) {
+            a9.k kVar4 = (a9.k) it3.next();
+            if (kVar4.c.isEmpty()) {
+                hashSet2.add(kVar4);
+            }
         }
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection
-    public boolean remove(Object obj) {
-        switch (this.a) {
-            case 1:
-                wa waVar = (wa) this.b;
-                try {
-                    return super.remove(obj);
-                } catch (UnsupportedOperationException unused) {
-                    for (Map.Entry entry : waVar.entrySet()) {
-                        if (f7.a8.a(obj, entry.getValue())) {
-                            waVar.remove(entry.getKey());
-                            return true;
-                        }
-                    }
-                    return false;
+        while (!hashSet2.isEmpty()) {
+            a9.k kVar5 = (a9.k) hashSet2.iterator().next();
+            hashSet2.remove(kVar5);
+            i10++;
+            Iterator it4 = kVar5.b.iterator();
+            while (it4.hasNext()) {
+                a9.k kVar6 = (a9.k) it4.next();
+                kVar6.c.remove(kVar5);
+                if (kVar6.c.isEmpty()) {
+                    hashSet2.add(kVar6);
                 }
-            case 3:
-                wa waVar2 = (wa) this.b;
-                try {
-                    return super.remove(obj);
-                } catch (UnsupportedOperationException unused2) {
-                    for (Map.Entry entry2 : waVar2.entrySet()) {
-                        if (f7.x8.a(obj, entry2.getValue())) {
-                            waVar2.remove(entry2.getKey());
-                            return true;
-                        }
-                    }
-                    return false;
-                }
-            case 6:
-                wa waVar3 = (wa) this.b;
-                try {
-                    return super.remove(obj);
-                } catch (UnsupportedOperationException unused3) {
-                    for (Map.Entry entry3 : waVar3.entrySet()) {
-                        if (g7.c0.a(obj, entry3.getValue())) {
-                            waVar3.remove(entry3.getKey());
-                            return true;
-                        }
-                    }
-                    return false;
-                }
-            default:
-                return super.remove(obj);
+            }
         }
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection
-    public boolean removeAll(Collection collection) {
-        switch (this.a) {
-            case 1:
-                wa waVar = (wa) this.b;
-                try {
-                    if (collection != null) {
-                        return super.removeAll(collection);
-                    }
-                    throw null;
-                } catch (UnsupportedOperationException unused) {
-                    HashSet hashSet = new HashSet();
-                    for (Map.Entry entry : waVar.entrySet()) {
-                        if (collection.contains(entry.getValue())) {
-                            hashSet.add(entry.getKey());
-                        }
-                    }
-                    return ((h) waVar.e).b().removeAll(hashSet);
-                }
-            case 3:
-                wa waVar2 = (wa) this.b;
-                try {
-                    if (collection != null) {
-                        return super.removeAll(collection);
-                    }
-                    throw null;
-                } catch (UnsupportedOperationException unused2) {
-                    HashSet hashSet2 = new HashSet();
-                    for (Map.Entry entry2 : waVar2.entrySet()) {
-                        if (collection.contains(entry2.getValue())) {
-                            hashSet2.add(entry2.getKey());
-                        }
-                    }
-                    return ((lg) waVar2.e).b().removeAll(hashSet2);
-                }
-            case 6:
-                wa waVar3 = (wa) this.b;
-                try {
-                    collection.getClass();
-                    return super.removeAll(collection);
-                } catch (UnsupportedOperationException unused3) {
-                    HashSet hashSet3 = new HashSet();
-                    for (Map.Entry entry3 : waVar3.entrySet()) {
-                        if (collection.contains(entry3.getValue())) {
-                            hashSet3.add(entry3.getKey());
-                        }
-                    }
-                    return waVar3.keySet().removeAll(hashSet3);
-                }
-            default:
-                return super.removeAll(collection);
+        if (i10 == arrayList.size()) {
+            return;
         }
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection
-    public boolean retainAll(Collection collection) {
-        switch (this.a) {
-            case 1:
-                wa waVar = (wa) this.b;
-                try {
-                    if (collection != null) {
-                        return super.retainAll(collection);
-                    }
-                    throw null;
-                } catch (UnsupportedOperationException unused) {
-                    HashSet hashSet = new HashSet();
-                    for (Map.Entry entry : waVar.entrySet()) {
-                        if (collection.contains(entry.getValue())) {
-                            hashSet.add(entry.getKey());
-                        }
-                    }
-                    return ((h) waVar.e).b().retainAll(hashSet);
-                }
-            case 3:
-                wa waVar2 = (wa) this.b;
-                try {
-                    if (collection != null) {
-                        return super.retainAll(collection);
-                    }
-                    throw null;
-                } catch (UnsupportedOperationException unused2) {
-                    HashSet hashSet2 = new HashSet();
-                    for (Map.Entry entry2 : waVar2.entrySet()) {
-                        if (collection.contains(entry2.getValue())) {
-                            hashSet2.add(entry2.getKey());
-                        }
-                    }
-                    return ((lg) waVar2.e).b().retainAll(hashSet2);
-                }
-            case 6:
-                wa waVar3 = (wa) this.b;
-                try {
-                    collection.getClass();
-                    return super.retainAll(collection);
-                } catch (UnsupportedOperationException unused3) {
-                    HashSet hashSet3 = new HashSet();
-                    for (Map.Entry entry3 : waVar3.entrySet()) {
-                        if (collection.contains(entry3.getValue())) {
-                            hashSet3.add(entry3.getKey());
-                        }
-                    }
-                    return waVar3.keySet().retainAll(hashSet3);
-                }
-            default:
-                return super.retainAll(collection);
+        ArrayList arrayList2 = new ArrayList();
+        Iterator it5 = hashSet.iterator();
+        while (it5.hasNext()) {
+            a9.k kVar7 = (a9.k) it5.next();
+            if (!kVar7.c.isEmpty() && !kVar7.b.isEmpty()) {
+                arrayList2.add(kVar7.a);
+            }
         }
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection
-    public final int size() {
-        switch (this.a) {
-            case 0:
-                return ((n) this.b).size();
-            case 1:
-                return ((wa) this.b).b.size();
-            case 2:
-                return ((j7.d) this.b).size();
-            case 3:
-                return ((wa) this.b).b.size();
-            case 4:
-                return ((o8.h0) this.b).e;
-            case 5:
-                return ((o8.p) this.b).size();
-            default:
-                return ((wa) this.b).b.size();
-        }
-    }
-
-    public /* synthetic */ m(AbstractMap abstractMap, int i9) {
-        this.a = i9;
-        this.b = abstractMap;
+        throw new a9.n("Dependency cycle detected: " + Arrays.toString(arrayList2.toArray()));
     }
 }

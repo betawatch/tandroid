@@ -21,13 +21,13 @@ public final class m5 extends d5 {
     }
 
     @Override // j$.util.stream.h5, java.util.function.IntConsumer
-    public final void accept(int i9) {
+    public final void accept(int i10) {
         long j10 = this.b;
         if (j10 == 0) {
             long j11 = this.c;
             if (j11 > 0) {
                 this.c = j11 - 1;
-                this.a.accept(i9);
+                this.a.accept(i10);
                 return;
             }
             return;

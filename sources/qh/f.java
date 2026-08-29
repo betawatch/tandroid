@@ -1,73 +1,79 @@
 package qh;
 
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
 import android.view.View;
-import java.util.ArrayList;
-import org.telegram.tgnet.tl.TL_iv;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import i7.f6;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.ActionBar.c6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.x5;
+import org.telegram.ui.Components.t9;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class f implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ p b;
-    public final /* synthetic */ a c;
+public final class f extends FrameLayout implements x5 {
+    public final t9 a;
+    public final c6 b;
+    public final TextView c;
+    public final TextView d;
 
-    public /* synthetic */ f(p pVar, a aVar, int i9) {
-        this.a = i9;
-        this.b = pVar;
-        this.c = aVar;
+    public f(Context context, c6 c6Var) {
+        super(context);
+        this.b = c6Var;
+        t9 t9Var = new t9(context);
+        this.a = t9Var;
+        t9Var.setRoundRadius(AndroidUtilities.dp(20.0f));
+        addView(t9Var, f6.d(72, 72.0f, 49, 0.0f, 36.0f, 0.0f, 0.0f));
+        TextView textView = new TextView(context);
+        this.c = textView;
+        textView.setTypeface(AndroidUtilities.bold());
+        textView.setTextSize(1, 20.0f);
+        textView.setGravity(17);
+        addView(textView, f6.d(-1, -2.0f, 49, 24.0f, 123.0f, 24.0f, 0.0f));
+        TextView textView2 = new TextView(context);
+        this.d = textView2;
+        textView2.setTextSize(1, 14.0f);
+        textView2.setGravity(17);
+        textView2.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
+        addView(textView2, f6.d(-1, -2.0f, 49, 32.0f, 157.0f, 32.0f, 0.0f));
+        e();
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i9 = this.a;
-        a aVar = this.c;
-        p pVar = this.b;
-        switch (i9) {
-            case 0:
-                o3 o3Var = pVar.r;
-                View z12 = o3Var.z1(aVar);
-                if (!(z12 instanceof f4)) {
-                    o3Var.U2.N(false);
-                    break;
-                } else {
-                    ((f4) z12).h(aVar, o3Var.getMapDelegate());
-                    break;
-                }
-            case 1:
-                pVar.r.W4(aVar, 0);
-                break;
-            case 2:
-                pVar.r.W4(aVar, 1);
-                break;
-            case 3:
-                pVar.r.W4(aVar, 2);
-                break;
-            case 4:
-                pVar.r.W4(aVar, 3);
-                break;
-            case 5:
-                pVar.r.V4(aVar, new TL_iv.pageBlockParagraph());
-                break;
-            case 6:
-                o3 o3Var2 = pVar.r;
-                ArrayList arrayList = o3.o4;
-                TL_iv.pageBlockBlockquote pageblockblockquote = new TL_iv.pageBlockBlockquote();
-                pageblockblockquote.caption = new TL_iv.textEmpty();
-                o3Var2.U4(this.c, pageblockblockquote, 0, 0, false, false);
-                break;
-            case 7:
-                o3 o3Var3 = pVar.r;
-                ArrayList arrayList2 = o3.o4;
-                TL_iv.pageBlockPullquote pageblockpullquote = new TL_iv.pageBlockPullquote();
-                pageblockpullquote.caption = new TL_iv.textEmpty();
-                o3Var3.U4(this.c, pageblockpullquote, 0, 0, false, false);
-                break;
-            case 8:
-                pVar.r.V4(aVar, new TL_iv.pageBlockPreformatted());
-                break;
-            default:
-                pVar.r.V4(aVar, new TL_iv.pageBlockFooter());
-                break;
-        }
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        Drawable drawable = g6.S0;
+        t9 t9Var = this.a;
+        jf.r.a(canvas, drawable, (t9Var.getWidth() / 2.0f) + t9Var.getLeft(), (t9Var.getHeight() / 2.0f) + t9Var.getTop(), t9Var.getHeight());
+    }
+
+    @Override // org.telegram.ui.ActionBar.x5
+    public final void e() {
+        int i10 = g6.G6;
+        c6 c6Var = this.b;
+        this.c.setTextColor(g6.v0(i10, c6Var));
+        this.d.setTextColor(g6.v0(g6.z6, c6Var));
+    }
+
+    public /* bridge */ /* synthetic */ int[] getColorKeys() {
+        return null;
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(218.0f), TLObject.FLAG_30));
+    }
+
+    public void setSubtitle(CharSequence charSequence) {
+        this.d.setText(charSequence);
+    }
+
+    public void setTitle(CharSequence charSequence) {
+        this.c.setText(charSequence);
     }
 }

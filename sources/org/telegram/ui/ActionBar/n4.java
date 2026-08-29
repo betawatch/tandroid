@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
 public final class n4 extends ArrayAdapter {
     public final /* synthetic */ t4 a;
@@ -18,18 +18,18 @@ public final class n4 extends ArrayAdapter {
     }
 
     @Override // android.widget.ArrayAdapter, android.widget.Adapter
-    public final View getView(int i9, View view, ViewGroup viewGroup) {
+    public final View getView(int i10, View view, ViewGroup viewGroup) {
         t4 t4Var = this.a;
-        com.google.firebase.messaging.o oVar = t4Var.q;
-        MenuItem menuItem = (MenuItem) getItem(i9);
+        com.google.firebase.messaging.n nVar = t4Var.q;
+        MenuItem menuItem = (MenuItem) getItem(i10);
         int width = t4Var.I.getWidth();
         if (view != null) {
-            int i10 = oVar.a;
-            v4.e(view, menuItem, ((t4) oVar.e).Q.j != null);
+            int i11 = nVar.a;
+            v4.e(view, menuItem, ((t4) nVar.e).Q.j != null);
         } else {
-            view = v4.b(((t4) oVar.e).Q, oVar.c, menuItem, true, false, false);
-            int i11 = oVar.b;
-            view.setPadding(i11, 0, i11, 0);
+            view = v4.b(((t4) nVar.e).Q, nVar.c, menuItem, true, false, false);
+            int i12 = nVar.b;
+            view.setPadding(i12, 0, i12, 0);
         }
         view.setMinimumWidth(width);
         return view;

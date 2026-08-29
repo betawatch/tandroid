@@ -1,42 +1,27 @@
 package bg;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.UserConfig;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.view.View;
+import org.telegram.ui.ws0;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class v0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ h1 b;
+public final class v0 extends View {
+    public final /* synthetic */ ws0 a;
 
-    public /* synthetic */ v0(h1 h1Var, int i9) {
-        this.a = i9;
-        this.b = h1Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public v0(ws0 ws0Var, Context context) {
+        super(context);
+        this.a = ws0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i9 = this.a;
-        h1 h1Var = this.b;
-        switch (i9) {
-            case 0:
-                AndroidUtilities.hideKeyboard(h1Var.d);
-                break;
-            case 1:
-                h1Var.getClass();
-                NotificationCenter.getInstance(UserConfig.selectedAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.boostByChannelCreated, h1Var.X, Boolean.TRUE);
-                break;
-            case 2:
-                h1Var.getClass();
-                NotificationCenter.getInstance(UserConfig.selectedAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.boostByChannelCreated, h1Var.X, Boolean.FALSE);
-                break;
-            case 3:
-                h1.Q(h1Var);
-                break;
-            default:
-                h1.R(h1Var);
-                break;
+    @Override // android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        t0 t0Var = this.a.S0;
+        if (t0Var != null) {
+            t0Var.d(canvas);
         }
     }
 }

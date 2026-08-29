@@ -1,39 +1,13 @@
 package j3;
 
-import java.util.Arrays;
+import java.util.UUID;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class h {
-    public static final h e = new h(-1, -1, -1);
-    public final int a;
-    public final int b;
-    public final int c;
-    public final int d;
-
-    public h(int i9, int i10, int i11) {
-        this.a = i9;
-        this.b = i10;
-        this.c = i11;
-        this.d = d5.f0.D(i11) ? d5.f0.w(i11, i10) : -1;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (!(obj instanceof h)) {
-            return false;
-        }
-        h hVar = (h) obj;
-        return this.a == hVar.a && this.b == hVar.b && this.c == hVar.c;
-    }
-
-    public final int hashCode() {
-        return Arrays.hashCode(new Object[]{Integer.valueOf(this.a), Integer.valueOf(this.b), Integer.valueOf(this.c)});
-    }
-
-    public final String toString() {
-        return "AudioFormat[sampleRate=" + this.a + ", channelCount=" + this.b + ", encoding=" + this.c + ']';
-    }
+public abstract class h {
+    public static final UUID a = new UUID(0, 0);
+    public static final UUID b = new UUID(1186680826959645954L, -5988876978535335093L);
+    public static final UUID c = new UUID(-2129748144642739255L, 8654423357094679310L);
+    public static final UUID d = new UUID(-1301668207276963122L, -6645017420763422227L);
+    public static final UUID e = new UUID(-7348484286925749626L, -6083546864340672619L);
 }

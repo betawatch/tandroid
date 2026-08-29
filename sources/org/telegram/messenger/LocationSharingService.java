@@ -11,7 +11,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public class LocationSharingService extends Service implements NotificationCenter.NotificationCenterDelegate {
     private e0.t builder;
@@ -24,8 +24,8 @@ public class LocationSharingService extends Service implements NotificationCente
 
     private ArrayList<LocationController.SharingLocationInfo> getInfos() {
         ArrayList<LocationController.SharingLocationInfo> arrayList = new ArrayList<>();
-        for (int i9 = 0; i9 < 4; i9++) {
-            ArrayList<LocationController.SharingLocationInfo> arrayList2 = LocationController.getInstance(i9).sharingLocationsUI;
+        for (int i10 = 0; i10 < 4; i10++) {
+            ArrayList<LocationController.SharingLocationInfo> arrayList2 = LocationController.getInstance(i10).sharingLocationsUI;
             if (!arrayList2.isEmpty()) {
                 arrayList.addAll(arrayList2);
             }
@@ -44,8 +44,8 @@ public class LocationSharingService extends Service implements NotificationCente
 
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$onCreate$0() {
-        for (int i9 = 0; i9 < 4; i9++) {
-            LocationController.getInstance(i9).update();
+        for (int i10 = 0; i10 < 4; i10++) {
+            LocationController.getInstance(i10).update();
         }
     }
 
@@ -65,12 +65,12 @@ public class LocationSharingService extends Service implements NotificationCente
         if (infos.size() == 1) {
             LocationController.SharingLocationInfo sharingLocationInfo = infos.get(0);
             long dialogId = sharingLocationInfo.messageObject.getDialogId();
-            int i9 = sharingLocationInfo.messageObject.currentAccount;
+            int i10 = sharingLocationInfo.messageObject.currentAccount;
             if (DialogObject.isUserDialog(dialogId)) {
-                formatPluralString = UserObject.getFirstName(MessagesController.getInstance(i9).getUser(Long.valueOf(dialogId)));
+                formatPluralString = UserObject.getFirstName(MessagesController.getInstance(i10).getUser(Long.valueOf(dialogId)));
                 string = LocaleController.getString(R.string.AttachLiveLocationIsSharing);
             } else {
-                TLRPC.Chat chat = MessagesController.getInstance(i9).getChat(Long.valueOf(-dialogId));
+                TLRPC.Chat chat = MessagesController.getInstance(i10).getChat(Long.valueOf(-dialogId));
                 formatPluralString = chat != null ? chat.title : "";
                 string = LocaleController.getString(R.string.AttachLiveLocationIsSharingChat);
             }
@@ -87,12 +87,12 @@ public class LocationSharingService extends Service implements NotificationCente
     }
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public void didReceivedNotification(int i9, int i10, Object... objArr) {
+    public void didReceivedNotification(int i10, int i11, Object... objArr) {
         Handler handler;
-        if (i9 != NotificationCenter.liveLocationsChanged || (handler = this.handler) == null) {
+        if (i10 != NotificationCenter.liveLocationsChanged || (handler = this.handler) == null) {
             return;
         }
-        handler.post(new t5(this, 1));
+        handler.post(new v5(this, 1));
     }
 
     @Override // android.app.Service
@@ -105,9 +105,9 @@ public class LocationSharingService extends Service implements NotificationCente
         super.onCreate();
         Handler handler = new Handler();
         this.handler = handler;
-        t5 t5Var = new t5(this, 0);
-        this.runnable = t5Var;
-        handler.postDelayed(t5Var, 1000L);
+        v5 v5Var = new v5(this, 0);
+        this.runnable = v5Var;
+        handler.postDelayed(v5Var, 1000L);
     }
 
     @Override // android.app.Service
@@ -123,7 +123,7 @@ public class LocationSharingService extends Service implements NotificationCente
     }
 
     @Override // android.app.Service
-    public int onStartCommand(Intent intent, int i9, int i10) {
+    public int onStartCommand(Intent intent, int i10, int i11) {
         if (getInfos().isEmpty()) {
             stopSelf();
         }
@@ -148,8 +148,8 @@ public class LocationSharingService extends Service implements NotificationCente
             updateNotification(false);
             startForeground(6, this.builder.b());
             return 2;
-        } catch (Throwable th) {
-            FileLog.e(th);
+        } catch (Throwable th2) {
+            FileLog.e(th2);
             return 2;
         }
     }

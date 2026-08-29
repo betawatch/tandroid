@@ -1,141 +1,67 @@
 package org.telegram.ui.Cells;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.text.style.ForegroundColorSpan;
-import android.widget.TextView;
-import kh.lb;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.drawable.Drawable;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Emoji;
-import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.UndoView;
-import org.telegram.ui.Components.i41;
-import org.telegram.ui.Components.i80;
-import org.telegram.ui.Components.l80;
-import org.telegram.ui.id;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class x1 extends l80 {
-    public final /* synthetic */ int H;
-    public final /* synthetic */ Object I;
+public final class x1 extends LinearLayout {
+    public final ImageView a;
+    public final org.telegram.ui.Components.o6 b;
+    public final View c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ x1(Object obj, Context context, int i9) {
-        super(context, null);
-        this.H = i9;
-        this.I = obj;
-    }
-
-    @Override // org.telegram.ui.Components.l80
-    public int a() {
-        switch (this.H) {
-            case 4:
-                return ((UndoView) this.I).a;
-            default:
-                return super.a();
+    public x1(y1 y1Var, Context context, int i10) {
+        super(context);
+        int i11 = org.telegram.ui.ActionBar.g6.G6;
+        org.telegram.ui.ActionBar.c6 c6Var = y1Var.b;
+        int v02 = org.telegram.ui.ActionBar.g6.v0(i11, c6Var);
+        if (i10 != 0) {
+            ImageView imageView = new ImageView(context);
+            this.a = imageView;
+            imageView.setColorFilter(new PorterDuffColorFilter(v02, PorterDuff.Mode.MULTIPLY));
+            imageView.setImageResource(i10);
         }
-    }
-
-    @Override // org.telegram.ui.Components.l80
-    public int c() {
-        switch (this.H) {
-            case 1:
-                Integer num = ((b9) this.I).d;
-                if (num == null) {
-                    break;
-                } else {
-                    break;
-                }
+        org.telegram.ui.Components.o6 o6Var = new org.telegram.ui.Components.o6(context, false, true, false);
+        this.b = o6Var;
+        o6Var.setTextSize(AndroidUtilities.dp(13.0f));
+        o6Var.setTextColor(v02);
+        o6Var.setIncludeFontPadding(false);
+        o6Var.setTypeface(AndroidUtilities.bold());
+        View view = new View(context);
+        this.c = view;
+        Drawable mutate = getContext().getResources().getDrawable(R.drawable.arrow_more).mutate();
+        mutate.setColorFilter(new PorterDuffColorFilter(v02, PorterDuff.Mode.MULTIPLY));
+        view.setBackground(mutate);
+        if (LocaleController.isRTL) {
+            addView(view, i7.f6.t(16, 16, 16, 11, 0, 3, 0));
+            addView(o6Var, i7.f6.t(-2, 16, 16, 0, 0, this.a == null ? 11 : 3, 0));
+            View view2 = this.a;
+            if (view2 != null) {
+                addView(view2, i7.f6.t(16, 16, 16, 0, 0, 11, 0));
+            }
+        } else {
+            View view3 = this.a;
+            if (view3 != null) {
+                addView(view3, i7.f6.t(16, 16, 16, 11, 0, 3, 0));
+            }
+            addView(o6Var, i7.f6.t(-2, 16, 16, this.a == null ? 11 : 0, 0, 3, 0));
+            addView(view, i7.f6.t(16, 16, 16, 0, 0, 11, 0));
         }
-        return super.c();
+        setBackground(org.telegram.ui.ActionBar.g6.Y(org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.i6, c6Var), 16, 16));
+        setClickable(true);
     }
 
-    @Override // org.telegram.ui.Components.l80, android.widget.TextView, android.view.View
-    public void onDraw(Canvas canvas) {
-        switch (this.H) {
-            case 0:
-                super.onDraw(canvas);
-                ((z1) this.I).f();
-                break;
-            case 1:
-                b9 b9Var = (b9) this.I;
-                b9Var.b();
-                super.onDraw(canvas);
-                b9Var.a();
-                break;
-            default:
-                super.onDraw(canvas);
-                break;
-        }
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r7v0, types: [android.widget.TextView, java.lang.Object, org.telegram.ui.Cells.x1, org.telegram.ui.Components.l80] */
-    /* JADX WARN: Type inference failed for: r8v0, types: [java.lang.CharSequence] */
-    /* JADX WARN: Type inference failed for: r8v2, types: [java.lang.CharSequence] */
-    /* JADX WARN: Type inference failed for: r8v4, types: [android.text.SpannableStringBuilder] */
-    /* JADX WARN: Type inference failed for: r8v5, types: [java.lang.CharSequence] */
-    /* JADX WARN: Type inference failed for: r8v7, types: [android.text.SpannableStringBuilder] */
-    @Override // org.telegram.ui.Components.l80, android.widget.TextView
-    public void setText(CharSequence charSequence, TextView.BufferType bufferType) {
-        switch (this.H) {
-            case 0:
-                super.setText(Emoji.replaceEmoji(charSequence, getPaint().getFontMetricsInt(), false), bufferType);
-                break;
-            case 1:
-            default:
-                super.setText(charSequence, bufferType);
-                break;
-            case 2:
-                if (charSequence != 0) {
-                    charSequence = AndroidUtilities.replaceTags(charSequence.toString());
-                    int indexOf = charSequence.toString().indexOf(10);
-                    if (indexOf >= 0) {
-                        charSequence.replace(indexOf, indexOf + 1, " ");
-                        charSequence.setSpan(new ForegroundColorSpan(((org.telegram.ui.la) this.I).e.getThemedColor(org.telegram.ui.ActionBar.f6.p7)), 0, indexOf, 33);
-                    }
-                    i41[] i41VarArr = (i41[]) charSequence.getSpans(0, charSequence.length(), i41.class);
-                    for (int i9 = 0; i9 < i41VarArr.length; i9++) {
-                        charSequence.setSpan(new lb(this, 1), charSequence.getSpanStart(i41VarArr[i9]), charSequence.getSpanEnd(i41VarArr[i9]), 33);
-                        charSequence.removeSpan(i41VarArr[i9]);
-                    }
-                }
-                super.setText(charSequence, bufferType);
-                break;
-            case 3:
-                id idVar = (id) this.I;
-                if (charSequence != 0) {
-                    charSequence = AndroidUtilities.replaceTags(charSequence.toString());
-                    int indexOf2 = charSequence.toString().indexOf(10);
-                    if (indexOf2 >= 0) {
-                        charSequence.replace(indexOf2, indexOf2 + 1, " ");
-                        charSequence.setSpan(new ForegroundColorSpan(idVar.getThemedColor(org.telegram.ui.ActionBar.f6.p7)), 0, indexOf2, 33);
-                    }
-                    i41[] i41VarArr2 = (i41[]) charSequence.getSpans(0, charSequence.length(), i41.class);
-                    EditTextBoldCursor editTextBoldCursor = idVar.w;
-                    String obj = (editTextBoldCursor == null || editTextBoldCursor.getText() == null) ? "" : idVar.w.getText().toString();
-                    for (int i10 = 0; i10 < i41VarArr2.length; i10++) {
-                        charSequence.setSpan(new i(4, (Object) this, obj), charSequence.getSpanStart(i41VarArr2[i10]), charSequence.getSpanEnd(i41VarArr2[i10]), 33);
-                        charSequence.removeSpan(i41VarArr2[i10]);
-                    }
-                }
-                super.setText(charSequence, bufferType);
-                break;
-        }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public x1(b9 b9Var, Context context, i80 i80Var, org.telegram.ui.ActionBar.b6 b6Var) {
-        super(context, i80Var, b6Var);
-        this.H = 1;
-        this.I = b9Var;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public x1(UndoView undoView, Context context, org.telegram.ui.ActionBar.b6 b6Var) {
-        super(context, b6Var);
-        this.H = 4;
-        this.I = undoView;
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(32.0f), TLObject.FLAG_30));
     }
 }

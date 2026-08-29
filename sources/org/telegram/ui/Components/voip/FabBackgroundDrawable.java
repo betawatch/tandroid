@@ -8,8 +8,8 @@ import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* loaded from: classes.dex */
 public class FabBackgroundDrawable extends Drawable {
     public final Paint a = new Paint(1);
     public final Paint b;
@@ -31,8 +31,8 @@ public class FabBackgroundDrawable extends Drawable {
         if (bitmap != null) {
             canvas.drawBitmap(bitmap, getBounds().centerX() - (this.c.getWidth() / 2), getBounds().centerY() - (this.c.getHeight() / 2), this.b);
         }
-        float f10 = min / 2;
-        canvas.drawCircle(f10, f10, r0 - AndroidUtilities.dp(4.0f), this.a);
+        float f9 = min / 2;
+        canvas.drawCircle(f9, f9, r0 - AndroidUtilities.dp(4.0f), this.a);
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -55,17 +55,17 @@ public class FabBackgroundDrawable extends Drawable {
             return;
         }
         this.c = Bitmap.createBitmap(min, min, Bitmap.Config.ALPHA_8);
-        float f10 = min / 2;
-        new Canvas(this.c).drawCircle(f10, f10, r5 - AndroidUtilities.dp(4.0f), new Paint(1));
+        float f9 = min / 2;
+        new Canvas(this.c).drawCircle(f9, f9, r5 - AndroidUtilities.dp(4.0f), new Paint(1));
     }
 
-    public void setColor(int i9) {
-        this.a.setColor(i9);
+    public void setColor(int i10) {
+        this.a.setColor(i10);
         invalidateSelf();
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i9) {
+    public final void setAlpha(int i10) {
     }
 
     @Override // android.graphics.drawable.Drawable

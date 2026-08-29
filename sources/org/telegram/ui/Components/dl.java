@@ -1,65 +1,69 @@
 package org.telegram.ui.Components;
 
 import android.view.View;
-import java.util.ArrayList;
-import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class dl implements q0.a {
+public final /* synthetic */ class dl implements t81, b5, bl0 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ boolean c;
+    public final /* synthetic */ ChatAttachAlertPhotoLayout b;
 
-    public /* synthetic */ dl(int i9, Object obj, boolean z10) {
-        this.a = i9;
-        this.b = obj;
-        this.c = z10;
+    public /* synthetic */ dl(ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout, int i10) {
+        this.a = i10;
+        this.b = chatAttachAlertPhotoLayout;
     }
 
-    @Override // q0.a
-    public final void accept(Object obj) {
-        int i9 = this.a;
-        boolean z10 = false;
-        boolean z11 = this.c;
-        Object obj2 = this.b;
-        switch (i9) {
-            case 0:
-                ArrayList arrayList = (ArrayList) obj2;
-                View view = (View) obj;
-                boolean z12 = ChatAttachAlertPhotoLayout.m1;
-                if (view instanceof org.telegram.ui.Cells.t5) {
-                    org.telegram.ui.Cells.t5 t5Var = (org.telegram.ui.Cells.t5) view;
-                    MediaController.PhotoEntry photoEntry = t5Var.getPhotoEntry();
-                    if (photoEntry != null && arrayList.contains(Integer.valueOf(photoEntry.imageId)) && z11) {
-                        z10 = true;
-                    }
-                    t5Var.setHasSpoiler(z10);
-                    break;
-                }
-                break;
+    @Override // org.telegram.ui.Components.b5
+    public void I(int i10, int i11, boolean z10) {
+        int i12 = this.a;
+        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.b;
+        switch (i12) {
             case 1:
-                ArrayList arrayList2 = (ArrayList) obj2;
-                View view2 = (View) obj;
-                boolean z13 = ChatAttachAlertPhotoLayout.m1;
-                if (view2 instanceof org.telegram.ui.Cells.t5) {
-                    org.telegram.ui.Cells.t5 t5Var2 = (org.telegram.ui.Cells.t5) view2;
-                    MediaController.PhotoEntry photoEntry2 = t5Var2.getPhotoEntry();
-                    if (photoEntry2 != null && arrayList2.contains(Integer.valueOf(photoEntry2.imageId)) && z11) {
-                        z10 = true;
-                    }
-                    t5Var2.setHighQuality(z10);
-                    break;
-                }
+                boolean z11 = ChatAttachAlertPhotoLayout.m1;
+                ni niVar = chatAttachAlertPhotoLayout.b;
+                niVar.Y0();
+                niVar.V1.B1(7, false, z10, i10, 0, 0L, niVar.s1(), false, 0L);
                 break;
             default:
-                Float f10 = (Float) obj;
-                fb fbVar = ((ab) obj2).b.p;
-                if (fbVar != null && !z11) {
-                    fbVar.c(r0.e.getHeight() - f10.floatValue());
-                    break;
-                }
+                boolean z12 = ChatAttachAlertPhotoLayout.m1;
+                ni niVar2 = chatAttachAlertPhotoLayout.b;
+                niVar2.Y0();
+                niVar2.V1.B1(4, true, z10, i10, 0, 0L, niVar2.s1(), false, 0L);
                 break;
         }
+    }
+
+    @Override // org.telegram.ui.Components.t81
+    public void a(float f9) {
+        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.b;
+        yl ylVar = chatAttachAlertPhotoLayout.L;
+        if (ylVar != null) {
+            chatAttachAlertPhotoLayout.x0 = f9;
+            ylVar.setZoom(f9);
+        }
+        chatAttachAlertPhotoLayout.t0(true);
+    }
+
+    @Override // org.telegram.ui.Components.bl0
+    public boolean c(int i10, View view) {
+        boolean z10 = ChatAttachAlertPhotoLayout.m1;
+        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.b;
+        ni niVar = chatAttachAlertPhotoLayout.b;
+        if (!niVar.P0) {
+            if (i10 == 0 && chatAttachAlertPhotoLayout.P0 == chatAttachAlertPhotoLayout.Q0) {
+                li liVar = niVar.V1;
+                if (liVar != null) {
+                    liVar.B1(0, false, true, 0, 0, 0L, niVar.s1(), false, 0L);
+                }
+                return true;
+            }
+            if (view instanceof org.telegram.ui.Cells.r5) {
+                ll0 ll0Var = chatAttachAlertPhotoLayout.E;
+                boolean z11 = !((org.telegram.ui.Cells.r5) view).a();
+                chatAttachAlertPhotoLayout.G = z11;
+                ll0Var.d(view, i10, z11);
+            }
+        }
+        return false;
     }
 }

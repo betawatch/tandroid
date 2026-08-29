@@ -3,18 +3,18 @@ package org.telegram.messenger;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public class SharedPrefsHelper {
     private static String WEB_VIEW_SHOWN_DIALOG_FORMAT = "confirm_shown_%d_%d";
     private static SharedPreferences webViewBotsPrefs;
 
-    public static void cleanupAccount(int i9) {
+    public static void cleanupAccount(int i10) {
         SharedPreferences sharedPreferences = webViewBotsPrefs;
         if (sharedPreferences != null) {
             SharedPreferences.Editor edit = sharedPreferences.edit();
             for (String str : webViewBotsPrefs.getAll().keySet()) {
-                if (str.startsWith("confirm_shown_" + i9 + "_")) {
+                if (str.startsWith("confirm_shown_" + i10 + "_")) {
                     edit.remove(str);
                 }
             }
@@ -30,11 +30,11 @@ public class SharedPrefsHelper {
         webViewBotsPrefs = context.getSharedPreferences("webview_bots", 0);
     }
 
-    public static boolean isWebViewConfirmShown(int i9, long j10) {
-        return webViewBotsPrefs.getBoolean(String.format(WEB_VIEW_SHOWN_DIALOG_FORMAT, Integer.valueOf(i9), Long.valueOf(j10)), false);
+    public static boolean isWebViewConfirmShown(int i10, long j10) {
+        return webViewBotsPrefs.getBoolean(String.format(WEB_VIEW_SHOWN_DIALOG_FORMAT, Integer.valueOf(i10), Long.valueOf(j10)), false);
     }
 
-    public static void setWebViewConfirmShown(int i9, long j10, boolean z10) {
-        webViewBotsPrefs.edit().putBoolean(String.format(WEB_VIEW_SHOWN_DIALOG_FORMAT, Integer.valueOf(i9), Long.valueOf(j10)), z10).apply();
+    public static void setWebViewConfirmShown(int i10, long j10, boolean z10) {
+        webViewBotsPrefs.edit().putBoolean(String.format(WEB_VIEW_SHOWN_DIALOG_FORMAT, Integer.valueOf(i10), Long.valueOf(j10)), z10).apply();
     }
 }

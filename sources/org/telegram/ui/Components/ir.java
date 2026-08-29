@@ -1,46 +1,93 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.GestureDetector;
-import android.view.MotionEvent;
-import android.view.ViewGroup;
-import android.widget.ImageView;
+import android.animation.ValueAnimator;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class ir extends ImageView {
-    public final /* synthetic */ int a = 0;
-    public Object b;
-    public final /* synthetic */ ViewGroup c;
+public final class ir extends Drawable {
+    public final Drawable a;
+    public final Drawable b;
+    public float c;
+    public float d = 255.0f;
+    public ValueAnimator e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ir(kr krVar, Context context, m5.c0 c0Var) {
-        super(context);
-        this.c = krVar;
-        this.b = c0Var;
-    }
-
-    @Override // android.view.View
-    public boolean onTouchEvent(MotionEvent motionEvent) {
-        switch (this.a) {
-            case 0:
-                kr krVar = (kr) this.c;
-                if ((motionEvent.getAction() == 1 || motionEvent.getAction() == 3) && (krVar.n || krVar.f)) {
-                    krVar.n = false;
-                    krVar.f = false;
-                    removeCallbacks(krVar.r);
-                    removeCallbacks(krVar.h);
-                }
-                super.onTouchEvent(motionEvent);
-                return ((GestureDetector) ((m5.c0) this.b).b).onTouchEvent(motionEvent);
-            default:
-                return super.onTouchEvent(motionEvent);
+    public ir(Drawable drawable, Drawable drawable2) {
+        this.a = drawable;
+        this.b = drawable2;
+        if (drawable != null) {
+            drawable.setCallback(new hr(this, 0));
+        }
+        if (drawable2 != null) {
+            drawable2.setCallback(new hr(this, 1));
         }
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ir(uj0 uj0Var, Context context) {
-        super(context);
-        this.c = uj0Var;
+    public final void a(float f9) {
+        ValueAnimator valueAnimator = this.e;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
+        }
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.c, f9);
+        this.e = ofFloat;
+        ofFloat.addUpdateListener(new j6(this, 15));
+        this.e.setDuration((long) (Math.abs(this.c - f9) * 200.0f));
+        this.e.setInterpolator(jr.f);
+        this.e.start();
+    }
+
+    public final void b(float f9) {
+        this.c = f9;
+        invalidateSelf();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        int i10 = (int) ((1.0f - this.c) * this.d);
+        Drawable drawable = this.a;
+        drawable.setAlpha(i10);
+        int i11 = (int) (this.d * this.c);
+        Drawable drawable2 = this.b;
+        drawable2.setAlpha(i11);
+        if (i10 > 0) {
+            drawable.draw(canvas);
+        }
+        if (i11 > 0) {
+            drawable2.draw(canvas);
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        return this.a.getIntrinsicHeight();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        return this.a.getIntrinsicWidth();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -3;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void onBoundsChange(Rect rect) {
+        this.a.setBounds(rect);
+        this.b.setBounds(rect);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+        this.d = i10;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+        this.a.setColorFilter(colorFilter);
     }
 }

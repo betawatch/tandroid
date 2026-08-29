@@ -1,46 +1,47 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LiteMode;
-import org.telegram.messenger.Utilities;
+import org.telegram.messenger.MessagesStorage;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class qg implements Utilities.Callback0Return {
+public final /* synthetic */ class qg implements MessagesStorage.IntCallback {
     public final /* synthetic */ int a;
-    public final /* synthetic */ qn b;
+    public final /* synthetic */ tn b;
 
-    public /* synthetic */ qg(qn qnVar, int i9) {
-        this.a = i9;
-        this.b = qnVar;
+    public /* synthetic */ qg(tn tnVar, int i10) {
+        this.a = i10;
+        this.b = tnVar;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback0Return
-    public final Object run() {
+    @Override // org.telegram.messenger.MessagesStorage.IntCallback
+    public final void run(int i10) {
         switch (this.a) {
             case 0:
-                if (LiteMode.isEnabled(65536) && org.telegram.ui.Components.d01.c()) {
-                    qn qnVar = this.b;
-                    org.telegram.ui.Components.d01 d01Var = qnVar.r0;
-                    if (d01Var == null || d01Var.e) {
-                        if (qnVar.getParentActivity() != null && org.telegram.ui.Components.d01.c() && qnVar.t0 != null && qnVar.T0 != null) {
-                            org.telegram.ui.Components.d01 d01Var2 = qnVar.r0;
-                            if (d01Var2 != null) {
-                                AndroidUtilities.removeFromParent(d01Var2);
-                            }
-                            org.telegram.ui.Components.d01 d01Var3 = new org.telegram.ui.Components.d01(qnVar.getParentActivity(), new rd(2, qnVar, r2));
-                            qnVar.r0 = d01Var3;
-                            org.telegram.ui.Components.d01[] d01VarArr = {d01Var3};
-                            im imVar = qnVar.T0;
-                            imVar.addView(d01Var3, imVar.indexOfChild(qnVar.t0) + 1, g7.e6.c(-1.0f, -1));
-                        }
-                    }
-                    return qnVar.r0;
+                tn tnVar = this.b;
+                if (tnVar.getParentActivity() != null && tnVar.fragmentView != null && i10 > 0) {
+                    org.telegram.ui.Components.tc.a0(tnVar).m(org.telegram.ui.Components.sc.r, i10, 0, 0, tnVar.aa).j();
+                    break;
                 }
-                return null;
+                break;
+            case 1:
+                tn tnVar2 = this.b;
+                if (i10 != 0) {
+                    tnVar2.j(i10, 0, false, 0, true, 0);
+                    break;
+                } else {
+                    tnVar2.i6 = false;
+                    tnVar2.H9();
+                    break;
+                }
             default:
-                this.b.getClass();
-                return Boolean.valueOf(org.telegram.ui.Components.d01.c() && LiteMode.isEnabled(65536));
+                tn tnVar3 = this.b;
+                if (i10 != 0) {
+                    tnVar3.finishFragment();
+                    break;
+                } else {
+                    tnVar3.Qc(true);
+                    break;
+                }
         }
     }
 }

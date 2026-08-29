@@ -1,22 +1,85 @@
 package org.telegram.ui.Components;
 
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.Path;
 import android.graphics.drawable.Drawable;
-import org.telegram.messenger.ImageReceiver;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class ni0 extends ImageReceiver {
-    public final /* synthetic */ pi0 a;
+public final class ni0 extends Drawable {
+    public final View a;
+    public final Paint b;
+    public final Path c;
+    public int d;
+    public boolean e;
+    public final d6 f;
 
-    public ni0(pi0 pi0Var) {
-        this.a = pi0Var;
+    public ni0(View view) {
+        Paint paint = new Paint(1);
+        this.b = paint;
+        Path path = new Path();
+        this.c = path;
+        this.d = 255;
+        this.a = view;
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeCap(Paint.Cap.ROUND);
+        paint.setStrokeJoin(Paint.Join.ROUND);
+        paint.setStrokeWidth(AndroidUtilities.dp(1.0f));
+        this.f = new d6(view, 0L, 350L, jr.h);
+        float dpf2 = AndroidUtilities.dpf2(4.66f);
+        float dpf22 = AndroidUtilities.dpf2(2.16f);
+        path.rewind();
+        path.moveTo(dpf2 / 2.0f, 0.0f);
+        float f9 = (-dpf2) / 2.0f;
+        path.lineTo(f9, 0.0f);
+        float f10 = f9 + dpf22;
+        path.lineTo(f10, -dpf22);
+        path.moveTo(f9, 0.0f);
+        path.lineTo(f10, dpf22);
     }
 
-    @Override // org.telegram.messenger.ImageReceiver
-    public final boolean setImageBitmapByKey(Drawable drawable, String str, int i9, boolean z10, int i10) {
-        if (drawable != null) {
-            this.a.c();
-        }
-        return super.setImageBitmapByKey(drawable, str, i9, z10, i10);
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        int centerX = getBounds().centerX();
+        int centerY = getBounds().centerY();
+        float e10 = this.f.e(this.e);
+        float dpf2 = AndroidUtilities.dpf2(2.51f);
+        canvas.save();
+        canvas.translate(centerX, centerY);
+        canvas.save();
+        canvas.translate(dpf2, dpf2);
+        canvas.rotate(45.0f);
+        canvas.scale(AndroidUtilities.lerp(-1.0f, 1.0f, e10), 1.0f);
+        Path path = this.c;
+        Paint paint = this.b;
+        canvas.drawPath(path, paint);
+        canvas.restore();
+        canvas.save();
+        float f9 = -dpf2;
+        canvas.translate(f9, f9);
+        canvas.rotate(225.0f);
+        canvas.scale(AndroidUtilities.lerp(-1.0f, 1.0f, e10), 1.0f);
+        canvas.drawPath(path, paint);
+        canvas.restore();
+        canvas.restore();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+        this.d = i10;
+        this.b.setAlpha(i10);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

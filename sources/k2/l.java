@@ -1,8 +1,8 @@
 package k2;
 
-import f7.i8;
+import h7.c8;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public abstract class l extends k {
     public i0.d[] a;
@@ -23,19 +23,19 @@ public abstract class l extends k {
     }
 
     public void setPathData(i0.d[] dVarArr) {
-        if (!i8.a(this.a, dVarArr)) {
-            this.a = i8.e(dVarArr);
+        if (!c8.a(this.a, dVarArr)) {
+            this.a = c8.e(dVarArr);
             return;
         }
         i0.d[] dVarArr2 = this.a;
-        for (int i9 = 0; i9 < dVarArr.length; i9++) {
-            dVarArr2[i9].a = dVarArr[i9].a;
-            int i10 = 0;
+        for (int i10 = 0; i10 < dVarArr.length; i10++) {
+            dVarArr2[i10].a = dVarArr[i10].a;
+            int i11 = 0;
             while (true) {
-                float[] fArr = dVarArr[i9].b;
-                if (i10 < fArr.length) {
-                    dVarArr2[i9].b[i10] = fArr[i10];
-                    i10++;
+                float[] fArr = dVarArr[i10].b;
+                if (i11 < fArr.length) {
+                    dVarArr2[i10].b[i11] = fArr[i11];
+                    i11++;
                 }
             }
         }
@@ -45,6 +45,6 @@ public abstract class l extends k {
         this.a = null;
         this.c = 0;
         this.b = lVar.b;
-        this.a = i8.e(lVar.a);
+        this.a = c8.e(lVar.a);
     }
 }

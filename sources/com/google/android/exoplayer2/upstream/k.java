@@ -2,10 +2,10 @@ package com.google.android.exoplayer2.upstream;
 
 import android.net.Uri;
 import android.util.Base64;
-import h3.t1;
+import j3.t1;
 import java.net.URLDecoder;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class k extends g {
     public q a;
@@ -38,9 +38,9 @@ public final class k extends g {
         Uri uri = qVar.a;
         long j10 = qVar.f;
         String scheme = uri.getScheme();
-        d5.a.e("Unsupported scheme: " + scheme, "data".equals(scheme));
+        f5.a.e("Unsupported scheme: " + scheme, "data".equals(scheme));
         String schemeSpecificPart = uri.getSchemeSpecificPart();
-        int i9 = d5.f0.a;
+        int i10 = f5.d0.a;
         String[] split = schemeSpecificPart.split(",", -1);
         if (split.length != 2) {
             throw new t1("Unexpected URI format: " + uri, null, true, 0);
@@ -50,10 +50,10 @@ public final class k extends g {
             try {
                 this.b = Base64.decode(str, 0);
             } catch (IllegalArgumentException e10) {
-                throw new t1(ta.b.d("Error while parsing Base64 encoded string: ", str), e10, true, 0);
+                throw new t1(u3.c.e("Error while parsing Base64 encoded string: ", str), e10, true, 0);
             }
         } else {
-            this.b = URLDecoder.decode(str, n8.d.a.name()).getBytes(n8.d.c);
+            this.b = URLDecoder.decode(str, p8.d.a.name()).getBytes(p8.d.c);
         }
         long j11 = qVar.e;
         byte[] bArr = this.b;
@@ -61,9 +61,9 @@ public final class k extends g {
             this.b = null;
             throw new n(2008);
         }
-        int i10 = (int) j11;
-        this.c = i10;
-        int length = bArr.length - i10;
+        int i11 = (int) j11;
+        this.c = i11;
+        int length = bArr.length - i11;
         this.d = length;
         if (j10 != -1) {
             this.d = (int) Math.min(length, j10);
@@ -73,18 +73,18 @@ public final class k extends g {
     }
 
     @Override // com.google.android.exoplayer2.upstream.j
-    public final int read(byte[] bArr, int i9, int i10) {
-        if (i10 == 0) {
+    public final int read(byte[] bArr, int i10, int i11) {
+        if (i11 == 0) {
             return 0;
         }
-        int i11 = this.d;
-        if (i11 == 0) {
+        int i12 = this.d;
+        if (i12 == 0) {
             return -1;
         }
-        int min = Math.min(i10, i11);
+        int min = Math.min(i11, i12);
         byte[] bArr2 = this.b;
-        int i12 = d5.f0.a;
-        System.arraycopy(bArr2, this.c, bArr, i9, min);
+        int i13 = f5.d0.a;
+        System.arraycopy(bArr2, this.c, bArr, i10, min);
         this.c += min;
         this.d -= min;
         bytesTransferred(min);

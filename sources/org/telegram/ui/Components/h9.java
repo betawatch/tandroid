@@ -1,63 +1,96 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Bitmap;
-import android.graphics.Rect;
-import android.graphics.drawable.GradientDrawable;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class h9 implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ n9 b;
-    public final /* synthetic */ Runnable[] c;
-    public final /* synthetic */ h50 d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ g7.b6[] f;
+public class h9 extends View {
+    public final g9 a;
+    public cg.r1 b;
+    public zz0 c;
+    public Paint d;
 
-    public /* synthetic */ h9(n9 n9Var, h50 h50Var, Runnable[] runnableArr, int i9, g7.b6[] b6VarArr) {
-        this.b = n9Var;
-        this.d = h50Var;
-        this.c = runnableArr;
-        this.e = i9;
-        this.f = b6VarArr;
+    public h9(Context context, boolean z10) {
+        super(context);
+        this.a = new g9(this, z10);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                n9 n9Var = this.b;
-                h50 h50Var = this.d;
-                Runnable[] runnableArr = this.c;
-                int i9 = this.e;
-                g7.b6[] b6VarArr = this.f;
-                try {
-                    GradientDrawable.Orientation orientation = n9Var.getOrientation();
-                    int[] iArr = n9Var.a;
-                    int i10 = h50Var.a;
-                    int i11 = h50Var.b;
-                    Rect e10 = n9.e(orientation, i10, i11);
-                    Bitmap createBitmap = Bitmap.createBitmap(i10, i11, Bitmap.Config.ARGB_8888);
-                    Utilities.drawDitheredGradient(createBitmap, iArr, e10.left, e10.top, e10.right, e10.bottom);
-                    AndroidUtilities.runOnUIThread(new ff.k0(n9Var, runnableArr, createBitmap, h50Var, i9, b6VarArr));
-                    return;
-                } catch (Throwable th) {
-                    AndroidUtilities.runOnUIThread(new h9(n9Var, runnableArr, h50Var, i9, b6VarArr));
-                    throw th;
-                }
-            default:
-                n9.a(this.b, this.c, null, this.d, this.e, this.f);
-                return;
+    public final void a(boolean z10) {
+        this.a.b(z10, true);
+    }
+
+    public final void b(int i10, TLObject tLObject, int i11) {
+        this.a.l(i10, tLObject, i11);
+    }
+
+    @Override // android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.a.g();
+    }
+
+    @Override // android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        this.a.h();
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        this.a.i(canvas);
+        if (this.c != null) {
+            RectF rectF = AndroidUtilities.rectTmp;
+            rectF.set(getWidth() - AndroidUtilities.dp(22.0f), getHeight() - AndroidUtilities.dp(22.0f), getWidth() - AndroidUtilities.dp(0.0f), getHeight() - AndroidUtilities.dp(0.0f));
+            this.b.e(rectF);
+            canvas.drawCircle(rectF.centerX(), rectF.centerY(), (rectF.width() / 2.0f) + AndroidUtilities.dp(1.33f), this.d);
+            canvas.drawCircle(rectF.centerX(), rectF.centerY(), rectF.width() / 2.0f, this.b.f);
+            this.c.c(rectF.centerX() - (this.c.c / 2.0f), rectF.centerY(), 1.0f, -1, canvas);
         }
     }
 
-    public /* synthetic */ h9(n9 n9Var, Runnable[] runnableArr, h50 h50Var, int i9, g7.b6[] b6VarArr) {
-        this.b = n9Var;
-        this.c = runnableArr;
-        this.d = h50Var;
-        this.e = i9;
-        this.f = b6VarArr;
+    @Override // android.view.View
+    public void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, i11);
+        int measuredWidth = getMeasuredWidth();
+        g9 g9Var = this.a;
+        g9Var.p = measuredWidth;
+        g9Var.o = getMeasuredHeight();
+    }
+
+    public void setAvatarsTextSize(int i10) {
+        this.a.j(i10);
+    }
+
+    public void setCentered(boolean z10) {
+        this.a.l = z10;
+    }
+
+    public void setCount(int i10) {
+        this.a.k(i10);
+    }
+
+    public void setDelegate(Runnable runnable) {
+        this.a.j = runnable;
+    }
+
+    public void setSize(int i10) {
+        this.a.s = i10;
+    }
+
+    public void setStepFactor(float f9) {
+        this.a.t = f9;
+    }
+
+    public void setStyle(int i10) {
+        g9 g9Var = this.a;
+        g9Var.k = i10;
+        g9Var.f();
     }
 }

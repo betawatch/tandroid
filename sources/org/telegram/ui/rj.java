@@ -1,77 +1,59 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.MotionEvent;
-import org.telegram.messenger.AndroidUtilities;
-
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class rj extends org.telegram.ui.Cells.w0 {
-    public final /* synthetic */ qn g2;
+public final /* synthetic */ class rj implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ tn b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public rj(Context context, org.telegram.ui.ActionBar.b6 b6Var, qn qnVar) {
-        super(context, b6Var, false);
-        this.g2 = qnVar;
+    public /* synthetic */ rj(tn tnVar, int i10) {
+        this.a = i10;
+        this.b = tnVar;
     }
 
-    @Override // org.telegram.ui.Cells.w0, android.view.View
-    public final void onDraw(Canvas canvas) {
-        qn qnVar = this.g2;
-        if (qnVar.x8 != null) {
-            return;
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10 = this.a;
+        tn tnVar = this.b;
+        switch (i10) {
+            case 0:
+                tn.i2(tnVar);
+                break;
+            case 1:
+                tn.i2(tnVar);
+                break;
+            case 2:
+                int i11 = tn.Dc;
+                tnVar.Ma();
+                break;
+            case 3:
+                int i12 = tn.Dc;
+                tnVar.Ma();
+                break;
+            case 4:
+                int i13 = tn.Dc;
+                tnVar.Ma();
+                break;
+            case 5:
+                int i14 = tn.Dc;
+                tnVar.Ma();
+                break;
+            case 6:
+                int i15 = tn.Dc;
+                tnVar.Ma();
+                break;
+            case 7:
+                int i16 = tn.Dc;
+                tnVar.Ma();
+                break;
+            case 8:
+                int i17 = tn.Dc;
+                tnVar.Ma();
+                break;
+            default:
+                int i18 = tn.Dc;
+                tnVar.Ma();
+                break;
         }
-        float y10 = ((qnVar.t0.getY() + qnVar.o9) - getY()) - AndroidUtilities.dp(4.0f);
-        if (y10 <= 0.0f) {
-            super.onDraw(canvas);
-        } else if (y10 < getMeasuredHeight()) {
-            canvas.save();
-            canvas.clipRect(0.0f, y10, getMeasuredWidth(), getMeasuredHeight());
-            super.onDraw(canvas);
-            canvas.restore();
-        }
-    }
-
-    @Override // android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        org.telegram.ui.ActionBar.k kVar;
-        if (getAlpha() == 0.0f) {
-            return false;
-        }
-        qn qnVar = this.g2;
-        kVar = ((org.telegram.ui.ActionBar.o2) qnVar).actionBar;
-        if (kVar.s() || qnVar.A9()) {
-            return false;
-        }
-        return super.onInterceptTouchEvent(motionEvent);
-    }
-
-    @Override // org.telegram.ui.Cells.w0, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        org.telegram.ui.ActionBar.k kVar;
-        if (getAlpha() == 0.0f) {
-            return false;
-        }
-        qn qnVar = this.g2;
-        kVar = ((org.telegram.ui.ActionBar.o2) qnVar).actionBar;
-        if (kVar.s() || qnVar.A9()) {
-            return false;
-        }
-        return super.onTouchEvent(motionEvent);
-    }
-
-    @Override // android.view.View
-    public final void setAlpha(float f10) {
-        super.setAlpha(f10);
-        setVisibility(f10 > 0.0f ? 0 : 4);
-    }
-
-    @Override // android.view.View
-    public final void setTranslationY(float f10) {
-        if (getTranslationY() != f10) {
-            invalidate();
-        }
-        super.setTranslationY(f10);
     }
 }

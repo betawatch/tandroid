@@ -1,44 +1,30 @@
 package org.telegram.ui.Components;
 
-import android.content.DialogInterface;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class r0 implements DialogInterface.OnDismissListener {
+public final /* synthetic */ class r0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Runnable b;
+    public final /* synthetic */ EditTextBoldCursor b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.c2 c;
+    public final /* synthetic */ org.telegram.ui.ActionBar.o2 d;
 
-    public /* synthetic */ r0(int i9, Runnable runnable) {
-        this.a = i9;
-        this.b = runnable;
+    public /* synthetic */ r0(EditTextBoldCursor editTextBoldCursor, org.telegram.ui.ActionBar.c2 c2Var, org.telegram.ui.ActionBar.o2 o2Var, int i10) {
+        this.a = i10;
+        this.b = editTextBoldCursor;
+        this.c = c2Var;
+        this.d = o2Var;
     }
 
-    @Override // android.content.DialogInterface.OnDismissListener
-    public final void onDismiss(DialogInterface dialogInterface) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                this.b.run();
-                break;
-            case 1:
-                Runnable runnable = this.b;
-                if (runnable != null) {
-                    runnable.run();
-                    break;
-                }
-                break;
-            case 2:
-                Runnable runnable2 = this.b;
-                if (runnable2 != null) {
-                    runnable2.run();
-                    break;
-                }
+                AndroidUtilities.runOnUIThread(new r0(this.b, this.c, this.d, 1));
                 break;
             default:
-                Runnable runnable3 = this.b;
-                if (runnable3 != null) {
-                    runnable3.run();
-                    break;
-                }
+                c5.e0(this.b, this.c, this.d);
                 break;
         }
     }

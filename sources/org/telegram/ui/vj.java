@@ -1,40 +1,28 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import org.telegram.ui.Components.FragmentContextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class vj extends FragmentContextView {
-    public final /* synthetic */ int J0;
-    public final /* synthetic */ qn K0;
+public final class vj implements Runnable {
+    public final /* synthetic */ tn a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public vj(qn qnVar, Context context, qn qnVar2, org.telegram.ui.ActionBar.b6 b6Var, int i9) {
-        super(context, qnVar2, null, true, b6Var);
-        this.J0 = i9;
-        switch (i9) {
-            case 1:
-                this.K0 = qnVar;
-                super(context, qnVar2, null, false, b6Var);
-                break;
-            default:
-                this.K0 = qnVar;
-                break;
-        }
+    public vj(tn tnVar) {
+        this.a = tnVar;
     }
 
-    @Override // org.telegram.ui.Components.FragmentContextView, android.view.View
-    public final void setVisibility(int i9) {
-        switch (this.J0) {
-            case 0:
-                qn qnVar = this.K0;
-                qnVar.I0.i(qnVar.W1, i9 == 0, true);
-                break;
-            default:
-                qn qnVar2 = this.K0;
-                qnVar2.I0.i(qnVar2.U1, i9 == 0, true);
-                break;
+    @Override // java.lang.Runnable
+    public final void run() {
+        tn tnVar = this.a;
+        MessageObject messageObject = tnVar.Z4;
+        if (messageObject == null || tnVar.P8 == null) {
+            return;
         }
+        int max = Math.max(0, messageObject.messageOwner.ttl_period - (tnVar.getConnectionsManager().getCurrentTime() - tnVar.Z4.messageOwner.date));
+        tnVar.P8.setSubtext(LocaleController.formatString(R.string.AutoDeleteIn, max < 86400 ? AndroidUtilities.formatDuration(max, false, true) : LocaleController.formatPluralString("Days", Math.round(max / 86400.0f), new Object[0])));
+        AndroidUtilities.runOnUIThread(tnVar.Q8, 1000L);
     }
 }

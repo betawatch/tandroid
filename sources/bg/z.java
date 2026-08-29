@@ -1,291 +1,60 @@
 package bg;
 
+import android.widget.FrameLayout;
+import lh.a8;
+import nh.t5;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.fb;
-import org.telegram.ui.Components.gc;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class z implements fb {
+public final /* synthetic */ class z implements o1.h {
     public final /* synthetic */ int a;
+    public final /* synthetic */ FrameLayout b;
 
-    public /* synthetic */ z(int i9) {
-        this.a = i9;
+    public /* synthetic */ z(int i10, FrameLayout frameLayout) {
+        this.a = i10;
+        this.b = frameLayout;
     }
 
-    @Override // org.telegram.ui.Components.fb
-    public final /* synthetic */ boolean a() {
-        switch (this.a) {
-        }
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.fb
-    public final /* synthetic */ void b(gc gcVar) {
-        int i9 = this.a;
-    }
-
-    @Override // org.telegram.ui.Components.fb
-    public final /* synthetic */ void c(float f10) {
-        int i9 = this.a;
-    }
-
-    @Override // org.telegram.ui.Components.fb
-    public final /* synthetic */ void d(gc gcVar) {
-        int i9 = this.a;
-    }
-
-    @Override // org.telegram.ui.Components.fb
-    public final /* synthetic */ boolean e() {
-        switch (this.a) {
-        }
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.fb
-    public final int f(int i9) {
-        int i10;
-        int dp;
+    @Override // o1.h
+    public final void a(o1.i iVar, float f9, float f10) {
         switch (this.a) {
             case 0:
-                return 0;
-            case 1:
-                return 0;
-            case 2:
-                return AndroidUtilities.dp(68.0f);
-            case 3:
-                return AndroidUtilities.dp(64.0f);
-            case 4:
-                return 0;
-            case 5:
-                return 0;
-            case 6:
-                return 0;
-            case 7:
-                return 0;
-            case 8:
-                i10 = AndroidUtilities.navigationBarHeight;
-                dp = AndroidUtilities.dp(64.0f);
+                g1 g1Var = (g1) this.b;
+                float f11 = f9 / 1000.0f;
+                g1Var.z1 = f11;
+                t2 t2Var = g1Var.r1;
+                t2Var.setAlpha(f11);
+                t2Var.invalidate();
+                g1Var.Z0.invalidate();
+                g1Var.q1.getTypefaceCell().setAlpha(1.0f - g1Var.z1);
                 break;
-            case 9:
-                return 0;
-            case 10:
-                return AndroidUtilities.dp(51.0f);
-            case 11:
-                return AndroidUtilities.dp(64.0f);
-            case 12:
-                return AndroidUtilities.dp(74.0f);
-            case 13:
-                return AndroidUtilities.dp(80.0f);
-            case 14:
-                i10 = AndroidUtilities.navigationBarHeight;
-                dp = AndroidUtilities.dp(16.0f);
-                break;
-            case 15:
-                return AndroidUtilities.dp(62.0f);
-            default:
-                return AndroidUtilities.dp(64.0f);
-        }
-        return dp + i10;
-    }
-
-    @Override // org.telegram.ui.Components.fb
-    public final boolean g(int i9) {
-        switch (this.a) {
-            case 0:
-                return false;
             case 1:
-                return false;
+                a8 a8Var = (a8) this.b;
+                a8Var.W = f9;
+                a8Var.b0 = f10;
+                break;
             case 2:
-                return false;
-            case 3:
-                return false;
-            case 4:
-                return false;
-            case 5:
-                return true;
-            case 6:
-                return true;
-            case 7:
-                return false;
-            case 8:
-                return false;
-            case 9:
-                return false;
-            case 10:
-                return false;
-            case 11:
-                return false;
-            case 12:
-                return false;
-            case 13:
-                return false;
-            case 14:
-                return false;
-            case 15:
-                return true;
+                t5 t5Var = (t5) this.b;
+                float f12 = f9 / 1000.0f;
+                t5Var.p1 = f12;
+                t2 t2Var2 = t5Var.i1;
+                t2Var2.setAlpha(f12);
+                t2Var2.invalidate();
+                t5Var.Q0.invalidate();
+                t5Var.h1.getTypefaceCell().setAlpha(1.0f - t5Var.p1);
+                break;
             default:
-                return false;
+                xf.j jVar = (xf.j) this.b;
+                float f13 = f9 / 1000.0f;
+                rf.d dVar = jVar.a;
+                dVar.setPivotX(AndroidUtilities.dp(28.0f));
+                dVar.setPivotY(AndroidUtilities.dp(28.0f));
+                dVar.setScaleX(f13);
+                dVar.setScaleY(f13);
+                dVar.setAlpha(i7.w.a(f13, 0.0f, 1.0f));
+                jVar.invalidate();
+                break;
         }
-    }
-
-    @Override // org.telegram.ui.Components.fb
-    public final int h(int i9) {
-        switch (this.a) {
-        }
-        return AndroidUtilities.statusBarHeight;
-    }
-
-    private final /* synthetic */ void A(gc gcVar) {
-    }
-
-    private final /* synthetic */ void B(gc gcVar) {
-    }
-
-    private final /* synthetic */ void C(gc gcVar) {
-    }
-
-    private final /* synthetic */ void D(gc gcVar) {
-    }
-
-    private final /* synthetic */ void E(gc gcVar) {
-    }
-
-    private final /* synthetic */ void F(gc gcVar) {
-    }
-
-    private final /* synthetic */ void G(gc gcVar) {
-    }
-
-    private final /* synthetic */ void H(gc gcVar) {
-    }
-
-    private final /* synthetic */ void I(gc gcVar) {
-    }
-
-    private final /* synthetic */ void J(gc gcVar) {
-    }
-
-    private final /* synthetic */ void K(gc gcVar) {
-    }
-
-    private final /* synthetic */ void L(gc gcVar) {
-    }
-
-    private final /* synthetic */ void M(gc gcVar) {
-    }
-
-    private final /* synthetic */ void N(gc gcVar) {
-    }
-
-    private final /* synthetic */ void O(gc gcVar) {
-    }
-
-    private final /* synthetic */ void P(gc gcVar) {
-    }
-
-    private final /* synthetic */ void Q(gc gcVar) {
-    }
-
-    private final /* synthetic */ void R(gc gcVar) {
-    }
-
-    private final /* synthetic */ void S(gc gcVar) {
-    }
-
-    private final /* synthetic */ void T(gc gcVar) {
-    }
-
-    private final /* synthetic */ void U(gc gcVar) {
-    }
-
-    private final /* synthetic */ void V(gc gcVar) {
-    }
-
-    private final /* synthetic */ void W(gc gcVar) {
-    }
-
-    private final /* synthetic */ void X(gc gcVar) {
-    }
-
-    private final /* synthetic */ void Y(gc gcVar) {
-    }
-
-    private final /* synthetic */ void Z(gc gcVar) {
-    }
-
-    private final /* synthetic */ void a0(gc gcVar) {
-    }
-
-    private final /* synthetic */ void b0(gc gcVar) {
-    }
-
-    private final /* synthetic */ void c0(gc gcVar) {
-    }
-
-    private final /* synthetic */ void d0(gc gcVar) {
-    }
-
-    private final /* synthetic */ void e0(gc gcVar) {
-    }
-
-    private final /* synthetic */ void f0(gc gcVar) {
-    }
-
-    private final /* synthetic */ void g0(gc gcVar) {
-    }
-
-    private final /* synthetic */ void i(float f10) {
-    }
-
-    private final /* synthetic */ void j(float f10) {
-    }
-
-    private final /* synthetic */ void k(float f10) {
-    }
-
-    private final /* synthetic */ void l(float f10) {
-    }
-
-    private final /* synthetic */ void m(float f10) {
-    }
-
-    private final /* synthetic */ void n(float f10) {
-    }
-
-    private final /* synthetic */ void o(float f10) {
-    }
-
-    private final /* synthetic */ void p(float f10) {
-    }
-
-    private final /* synthetic */ void q(float f10) {
-    }
-
-    private final /* synthetic */ void r(float f10) {
-    }
-
-    private final /* synthetic */ void s(float f10) {
-    }
-
-    private final /* synthetic */ void t(float f10) {
-    }
-
-    private final /* synthetic */ void u(float f10) {
-    }
-
-    private final /* synthetic */ void v(float f10) {
-    }
-
-    private final /* synthetic */ void w(float f10) {
-    }
-
-    private final /* synthetic */ void x(float f10) {
-    }
-
-    private final /* synthetic */ void y(float f10) {
-    }
-
-    private final /* synthetic */ void z(gc gcVar) {
     }
 }

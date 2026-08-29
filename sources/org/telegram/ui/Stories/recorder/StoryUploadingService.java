@@ -14,7 +14,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.NotificationsController;
 import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes4.dex */
 public class StoryUploadingService extends Service implements NotificationCenter.NotificationCenterDelegate {
     public t a;
@@ -27,10 +27,10 @@ public class StoryUploadingService extends Service implements NotificationCenter
     }
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public final void didReceivedNotification(int i9, int i10, Object... objArr) {
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
         String str;
-        if (i9 != NotificationCenter.uploadStoryProgress) {
-            if (i9 == NotificationCenter.uploadStoryEnd && (str = this.b) != null && str.equals((String) objArr[0])) {
+        if (i10 != NotificationCenter.uploadStoryProgress) {
+            if (i10 == NotificationCenter.uploadStoryEnd && (str = this.b) != null && str.equals((String) objArr[0])) {
                 stopSelf();
                 return;
             }
@@ -50,8 +50,8 @@ public class StoryUploadingService extends Service implements NotificationCenter
         tVar.p = z10;
         try {
             new n0(ApplicationLoader.applicationContext).d(33, this.a.b());
-        } catch (Throwable th) {
-            FileLog.e(th);
+        } catch (Throwable th2) {
+            FileLog.e(th2);
         }
     }
 
@@ -76,22 +76,22 @@ public class StoryUploadingService extends Service implements NotificationCenter
     }
 
     @Override // android.app.Service
-    public final int onStartCommand(Intent intent, int i9, int i10) {
+    public final int onStartCommand(Intent intent, int i10, int i11) {
         this.b = intent.getStringExtra("path");
-        int i11 = this.d;
+        int i12 = this.d;
         int intExtra = intent.getIntExtra("currentAccount", UserConfig.selectedAccount);
         this.d = intExtra;
         if (!UserConfig.isValidAccount(intExtra)) {
             stopSelf();
             return 2;
         }
-        if (i11 != this.d) {
-            if (i11 != -1) {
-                NotificationCenter.getInstance(i11).removeObserver(this, NotificationCenter.uploadStoryProgress);
-            }
-            int i12 = this.d;
+        if (i12 != this.d) {
             if (i12 != -1) {
-                NotificationCenter.getInstance(i12).addObserver(this, NotificationCenter.uploadStoryProgress);
+                NotificationCenter.getInstance(i12).removeObserver(this, NotificationCenter.uploadStoryProgress);
+            }
+            int i13 = this.d;
+            if (i13 != -1) {
+                NotificationCenter.getInstance(i13).addObserver(this, NotificationCenter.uploadStoryProgress);
             }
         }
         if (this.b == null) {
@@ -123,8 +123,8 @@ public class StoryUploadingService extends Service implements NotificationCenter
         try {
             new n0(ApplicationLoader.applicationContext).d(33, this.a.b());
             return 2;
-        } catch (Throwable th) {
-            FileLog.e(th);
+        } catch (Throwable th2) {
+            FileLog.e(th2);
             return 2;
         }
     }

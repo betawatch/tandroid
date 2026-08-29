@@ -1,42 +1,19 @@
 package org.telegram.ui.Components;
 
-import android.view.KeyEvent;
-import android.view.View;
-import android.widget.ImageView;
-
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class cn implements View.OnKeyListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class cn extends f2.l {
+    public final /* synthetic */ on F;
 
-    public /* synthetic */ cn(Object obj, int i9) {
-        this.a = i9;
-        this.b = obj;
+    public cn(on onVar) {
+        this.F = onVar;
     }
 
-    @Override // android.view.View.OnKeyListener
-    public final boolean onKey(View view, int i9, KeyEvent keyEvent) {
-        switch (this.a) {
-            case 0:
-                gn gnVar = (gn) this.b;
-                EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) view;
-                if (i9 != 67 || keyEvent.getAction() != 0 || editTextBoldCursor.length() != 0) {
-                    return false;
-                }
-                ImageView imageView = gnVar.f;
-                if (imageView != null) {
-                    imageView.callOnClick();
-                }
-                return true;
-            default:
-                iu iuVar = (iu) this.b;
-                iuVar.getClass();
-                if (i9 != 82 || keyEvent.getRepeatCount() != 0 || keyEvent.getAction() != 1 || !iuVar.isShowing()) {
-                    return false;
-                }
-                iuVar.dismiss();
-                return true;
+    @Override // f2.l
+    public final void P(f2.n1 n1Var) {
+        if (n1Var.b() == 0) {
+            on onVar = this.F;
+            onVar.b.X1(onVar, 0);
         }
     }
 }

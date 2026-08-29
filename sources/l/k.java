@@ -29,7 +29,7 @@ import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 import r0.k0;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public class k implements Menu {
     public static final int[] y = {1, 4, 5, 3, 2, 0};
@@ -74,7 +74,7 @@ public class k implements Menu {
             ViewConfiguration viewConfiguration = ViewConfiguration.get(context);
             Method method = k0.a;
             if (Build.VERSION.SDK_INT >= 28) {
-                z10 = d1.f.A(viewConfiguration);
+                z10 = d1.f.B(viewConfiguration);
             } else {
                 Resources resources2 = context.getResources();
                 int identifier = resources2.getIdentifier("config_showMenuShortcutsWhenKeyboardPresent", "bool", "android");
@@ -87,28 +87,28 @@ public class k implements Menu {
         this.d = z11;
     }
 
-    public final m a(int i9, int i10, int i11, CharSequence charSequence) {
-        int i12;
-        int i13 = ((-65536) & i11) >> 16;
-        if (i13 < 0 || i13 >= 6) {
+    public final m a(int i10, int i11, int i12, CharSequence charSequence) {
+        int i13;
+        int i14 = ((-65536) & i12) >> 16;
+        if (i14 < 0 || i14 >= 6) {
             throw new IllegalArgumentException("order does not contain a valid category.");
         }
-        int i14 = (y[i13] << 16) | (65535 & i11);
-        m mVar = new m(this, i9, i10, i11, i14, charSequence, this.l);
+        int i15 = (y[i14] << 16) | (65535 & i12);
+        m mVar = new m(this, i10, i11, i12, i15, charSequence, this.l);
         ArrayList arrayList = this.f;
         int size = arrayList.size() - 1;
         while (true) {
             if (size < 0) {
-                i12 = 0;
+                i13 = 0;
                 break;
             }
-            if (((m) arrayList.get(size)).d <= i14) {
-                i12 = size + 1;
+            if (((m) arrayList.get(size)).d <= i15) {
+                i13 = size + 1;
                 break;
             }
             size--;
         }
-        arrayList.add(i12, mVar);
+        arrayList.add(i13, mVar);
         p(true);
         return mVar;
     }
@@ -119,25 +119,25 @@ public class k implements Menu {
     }
 
     @Override // android.view.Menu
-    public final int addIntentOptions(int i9, int i10, int i11, ComponentName componentName, Intent[] intentArr, Intent intent, int i12, MenuItem[] menuItemArr) {
-        int i13;
+    public final int addIntentOptions(int i10, int i11, int i12, ComponentName componentName, Intent[] intentArr, Intent intent, int i13, MenuItem[] menuItemArr) {
+        int i14;
         PackageManager packageManager = this.a.getPackageManager();
         List<ResolveInfo> queryIntentActivityOptions = packageManager.queryIntentActivityOptions(componentName, intentArr, intent, 0);
         int size = queryIntentActivityOptions != null ? queryIntentActivityOptions.size() : 0;
-        if ((i12 & 1) == 0) {
-            removeGroup(i9);
+        if ((i13 & 1) == 0) {
+            removeGroup(i10);
         }
-        for (int i14 = 0; i14 < size; i14++) {
-            ResolveInfo resolveInfo = queryIntentActivityOptions.get(i14);
-            int i15 = resolveInfo.specificIndex;
-            Intent intent2 = new Intent(i15 < 0 ? intent : intentArr[i15]);
+        for (int i15 = 0; i15 < size; i15++) {
+            ResolveInfo resolveInfo = queryIntentActivityOptions.get(i15);
+            int i16 = resolveInfo.specificIndex;
+            Intent intent2 = new Intent(i16 < 0 ? intent : intentArr[i16]);
             ActivityInfo activityInfo = resolveInfo.activityInfo;
             intent2.setComponent(new ComponentName(activityInfo.applicationInfo.packageName, activityInfo.name));
-            m a2 = a(i9, i10, i11, resolveInfo.loadLabel(packageManager));
+            m a2 = a(i10, i11, i12, resolveInfo.loadLabel(packageManager));
             a2.setIcon(resolveInfo.loadIcon(packageManager));
             a2.g = intent2;
-            if (menuItemArr != null && (i13 = resolveInfo.specificIndex) >= 0) {
-                menuItemArr[i13] = a2;
+            if (menuItemArr != null && (i14 = resolveInfo.specificIndex) >= 0) {
+                menuItemArr[i14] = a2;
             }
         }
         return size;
@@ -167,7 +167,7 @@ public class k implements Menu {
             if (xVar == null) {
                 copyOnWriteArrayList.remove(weakReference);
             } else {
-                xVar.c(this, z10);
+                xVar.b(this, z10);
             }
         }
         this.s = false;
@@ -223,7 +223,7 @@ public class k implements Menu {
 
     public boolean e(k kVar, MenuItem menuItem) {
         i iVar = this.e;
-        return iVar != null && iVar.r(kVar, menuItem);
+        return iVar != null && iVar.q(kVar, menuItem);
     }
 
     public boolean f(m mVar) {
@@ -240,7 +240,7 @@ public class k implements Menu {
             if (xVar == null) {
                 copyOnWriteArrayList.remove(weakReference);
             } else {
-                z10 = xVar.b(mVar);
+                z10 = xVar.c(mVar);
                 if (z10) {
                     break;
                 }
@@ -254,26 +254,26 @@ public class k implements Menu {
     }
 
     @Override // android.view.Menu
-    public final MenuItem findItem(int i9) {
+    public final MenuItem findItem(int i10) {
         MenuItem findItem;
         ArrayList arrayList = this.f;
         int size = arrayList.size();
-        for (int i10 = 0; i10 < size; i10++) {
-            m mVar = (m) arrayList.get(i10);
-            if (mVar.a == i9) {
+        for (int i11 = 0; i11 < size; i11++) {
+            m mVar = (m) arrayList.get(i11);
+            if (mVar.a == i10) {
                 return mVar;
             }
-            if (mVar.hasSubMenu() && (findItem = mVar.o.findItem(i9)) != null) {
+            if (mVar.hasSubMenu() && (findItem = mVar.o.findItem(i10)) != null) {
                 return findItem;
             }
         }
         return null;
     }
 
-    public final m g(int i9, KeyEvent keyEvent) {
+    public final m g(int i10, KeyEvent keyEvent) {
         ArrayList arrayList = this.t;
         arrayList.clear();
-        h(arrayList, i9, keyEvent);
+        h(arrayList, i10, keyEvent);
         if (arrayList.isEmpty()) {
             return null;
         }
@@ -285,11 +285,11 @@ public class k implements Menu {
             return (m) arrayList.get(0);
         }
         boolean n10 = n();
-        for (int i10 = 0; i10 < size; i10++) {
-            m mVar = (m) arrayList.get(i10);
-            char c10 = n10 ? mVar.j : mVar.h;
+        for (int i11 = 0; i11 < size; i11++) {
+            m mVar = (m) arrayList.get(i11);
+            char c3 = n10 ? mVar.j : mVar.h;
             char[] cArr = keyData.meta;
-            if ((c10 == cArr[0] && (metaState & 2) == 0) || ((c10 == cArr[2] && (metaState & 2) != 0) || (n10 && c10 == '\b' && i9 == 67))) {
+            if ((c3 == cArr[0] && (metaState & 2) == 0) || ((c3 == cArr[2] && (metaState & 2) != 0) || (n10 && c3 == '\b' && i10 == 67))) {
                 return mVar;
             }
         }
@@ -297,26 +297,26 @@ public class k implements Menu {
     }
 
     @Override // android.view.Menu
-    public final MenuItem getItem(int i9) {
-        return (MenuItem) this.f.get(i9);
+    public final MenuItem getItem(int i10) {
+        return (MenuItem) this.f.get(i10);
     }
 
-    public final void h(List list, int i9, KeyEvent keyEvent) {
+    public final void h(List list, int i10, KeyEvent keyEvent) {
         boolean n10 = n();
         int modifiers = keyEvent.getModifiers();
         KeyCharacterMap.KeyData keyData = new KeyCharacterMap.KeyData();
-        if (keyEvent.getKeyData(keyData) || i9 == 67) {
+        if (keyEvent.getKeyData(keyData) || i10 == 67) {
             ArrayList arrayList = this.f;
             int size = arrayList.size();
-            for (int i10 = 0; i10 < size; i10++) {
-                m mVar = (m) arrayList.get(i10);
+            for (int i11 = 0; i11 < size; i11++) {
+                m mVar = (m) arrayList.get(i11);
                 if (mVar.hasSubMenu()) {
-                    mVar.o.h(list, i9, keyEvent);
+                    mVar.o.h(list, i10, keyEvent);
                 }
-                char c10 = n10 ? mVar.j : mVar.h;
-                if ((modifiers & 69647) == ((n10 ? mVar.k : mVar.i) & 69647) && c10 != 0) {
+                char c3 = n10 ? mVar.j : mVar.h;
+                if ((modifiers & 69647) == ((n10 ? mVar.k : mVar.i) & 69647) && c3 != 0) {
                     char[] cArr = keyData.meta;
-                    if ((c10 == cArr[0] || c10 == cArr[2] || (n10 && c10 == '\b' && i9 == 67)) && mVar.isEnabled()) {
+                    if ((c3 == cArr[0] || c3 == cArr[2] || (n10 && c3 == '\b' && i10 == 67)) && mVar.isEnabled()) {
                         list.add(mVar);
                     }
                 }
@@ -331,8 +331,8 @@ public class k implements Menu {
         }
         ArrayList arrayList = this.f;
         int size = arrayList.size();
-        for (int i9 = 0; i9 < size; i9++) {
-            if (((m) arrayList.get(i9)).isVisible()) {
+        for (int i10 = 0; i10 < size; i10++) {
+            if (((m) arrayList.get(i10)).isVisible()) {
                 return true;
             }
         }
@@ -360,8 +360,8 @@ public class k implements Menu {
                 arrayList.clear();
                 arrayList2.clear();
                 int size = l10.size();
-                for (int i9 = 0; i9 < size; i9++) {
-                    m mVar = (m) l10.get(i9);
+                for (int i10 = 0; i10 < size; i10++) {
+                    m mVar = (m) l10.get(i10);
                     if ((mVar.x & 32) == 32) {
                         arrayList.add(mVar);
                     } else {
@@ -378,8 +378,8 @@ public class k implements Menu {
     }
 
     @Override // android.view.Menu
-    public final boolean isShortcutKey(int i9, KeyEvent keyEvent) {
-        return g(i9, keyEvent) != null;
+    public final boolean isShortcutKey(int i10, KeyEvent keyEvent) {
+        return g(i10, keyEvent) != null;
     }
 
     public String j() {
@@ -395,8 +395,8 @@ public class k implements Menu {
         arrayList.clear();
         ArrayList arrayList2 = this.f;
         int size = arrayList2.size();
-        for (int i9 = 0; i9 < size; i9++) {
-            m mVar = (m) arrayList2.get(i9);
+        for (int i10 = 0; i10 < size; i10++) {
+            m mVar = (m) arrayList2.get(i10);
             if (mVar.isVisible()) {
                 arrayList.add(mVar);
             }
@@ -450,18 +450,18 @@ public class k implements Menu {
     }
 
     @Override // android.view.Menu
-    public final boolean performIdentifierAction(int i9, int i10) {
-        return q(findItem(i9), null, i10);
+    public final boolean performIdentifierAction(int i10, int i11) {
+        return q(findItem(i10), null, i11);
     }
 
     @Override // android.view.Menu
-    public final boolean performShortcut(int i9, KeyEvent keyEvent, int i10) {
-        m g10 = g(i9, keyEvent);
-        boolean q10 = g10 != null ? q(g10, null, i10) : false;
-        if ((i10 & 2) != 0) {
+    public final boolean performShortcut(int i10, KeyEvent keyEvent, int i11) {
+        m g10 = g(i10, keyEvent);
+        boolean q6 = g10 != null ? q(g10, null, i11) : false;
+        if ((i11 & 2) != 0) {
             c(true);
         }
-        return q10;
+        return q6;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:17:0x0058  */
@@ -469,7 +469,7 @@ public class k implements Menu {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final boolean q(MenuItem menuItem, x xVar, int i9) {
+    public final boolean q(MenuItem menuItem, x xVar, int i10) {
         boolean z10;
         m mVar = (m) menuItem;
         if (mVar == null || !mVar.isEnabled()) {
@@ -497,7 +497,7 @@ public class k implements Menu {
                         c(true);
                     }
                 } else if (mVar.hasSubMenu() || z11) {
-                    if ((i9 & 4) == 0) {
+                    if ((i10 & 4) == 0) {
                         c(false);
                     }
                     if (!mVar.hasSubMenu()) {
@@ -527,7 +527,7 @@ public class k implements Menu {
                     if (!z10) {
                         c(true);
                     }
-                } else if ((i9 & 1) == 0) {
+                } else if ((i10 & 1) == 0) {
                     c(true);
                 }
                 return z10;
@@ -555,56 +555,56 @@ public class k implements Menu {
     }
 
     @Override // android.view.Menu
-    public final void removeGroup(int i9) {
+    public final void removeGroup(int i10) {
         ArrayList arrayList = this.f;
         int size = arrayList.size();
-        int i10 = 0;
         int i11 = 0;
+        int i12 = 0;
         while (true) {
-            if (i11 >= size) {
-                i11 = -1;
+            if (i12 >= size) {
+                i12 = -1;
                 break;
-            } else if (((m) arrayList.get(i11)).b == i9) {
+            } else if (((m) arrayList.get(i12)).b == i10) {
                 break;
             } else {
-                i11++;
+                i12++;
             }
         }
-        if (i11 >= 0) {
-            int size2 = arrayList.size() - i11;
+        if (i12 >= 0) {
+            int size2 = arrayList.size() - i12;
             while (true) {
-                int i12 = i10 + 1;
-                if (i10 >= size2 || ((m) arrayList.get(i11)).b != i9) {
+                int i13 = i11 + 1;
+                if (i11 >= size2 || ((m) arrayList.get(i12)).b != i10) {
                     break;
                 }
-                if (i11 >= 0 && i11 < arrayList.size()) {
-                    arrayList.remove(i11);
+                if (i12 >= 0 && i12 < arrayList.size()) {
+                    arrayList.remove(i12);
                 }
-                i10 = i12;
+                i11 = i13;
             }
             p(true);
         }
     }
 
     @Override // android.view.Menu
-    public final void removeItem(int i9) {
+    public final void removeItem(int i10) {
         ArrayList arrayList = this.f;
         int size = arrayList.size();
-        int i10 = 0;
+        int i11 = 0;
         while (true) {
-            if (i10 >= size) {
-                i10 = -1;
+            if (i11 >= size) {
+                i11 = -1;
                 break;
-            } else if (((m) arrayList.get(i10)).a == i9) {
+            } else if (((m) arrayList.get(i11)).a == i10) {
                 break;
             } else {
-                i10++;
+                i11++;
             }
         }
-        if (i10 < 0 || i10 >= arrayList.size()) {
+        if (i11 < 0 || i11 >= arrayList.size()) {
             return;
         }
-        arrayList.remove(i10);
+        arrayList.remove(i11);
         p(true);
     }
 
@@ -615,8 +615,8 @@ public class k implements Menu {
         }
         SparseArray<Parcelable> sparseParcelableArray = bundle.getSparseParcelableArray(j());
         int size = this.f.size();
-        for (int i9 = 0; i9 < size; i9++) {
-            MenuItem item = getItem(i9);
+        for (int i10 = 0; i10 < size; i10++) {
+            MenuItem item = getItem(i10);
             View actionView = item.getActionView();
             if (actionView != null && actionView.getId() != -1) {
                 actionView.restoreHierarchyState(sparseParcelableArray);
@@ -625,20 +625,20 @@ public class k implements Menu {
                 ((d0) item.getSubMenu()).s(bundle);
             }
         }
-        int i10 = bundle.getInt("android:menu:expandedactionview");
-        if (i10 <= 0 || (findItem = findItem(i10)) == null) {
+        int i11 = bundle.getInt("android:menu:expandedactionview");
+        if (i11 <= 0 || (findItem = findItem(i11)) == null) {
             return;
         }
         findItem.expandActionView();
     }
 
     @Override // android.view.Menu
-    public final void setGroupCheckable(int i9, boolean z10, boolean z11) {
+    public final void setGroupCheckable(int i10, boolean z10, boolean z11) {
         ArrayList arrayList = this.f;
         int size = arrayList.size();
-        for (int i10 = 0; i10 < size; i10++) {
-            m mVar = (m) arrayList.get(i10);
-            if (mVar.b == i9) {
+        for (int i11 = 0; i11 < size; i11++) {
+            m mVar = (m) arrayList.get(i11);
+            if (mVar.b == i10) {
                 mVar.x = (mVar.x & (-5)) | (z11 ? 4 : 0);
                 mVar.setCheckable(z10);
             }
@@ -651,29 +651,29 @@ public class k implements Menu {
     }
 
     @Override // android.view.Menu
-    public final void setGroupEnabled(int i9, boolean z10) {
+    public final void setGroupEnabled(int i10, boolean z10) {
         ArrayList arrayList = this.f;
         int size = arrayList.size();
-        for (int i10 = 0; i10 < size; i10++) {
-            m mVar = (m) arrayList.get(i10);
-            if (mVar.b == i9) {
+        for (int i11 = 0; i11 < size; i11++) {
+            m mVar = (m) arrayList.get(i11);
+            if (mVar.b == i10) {
                 mVar.setEnabled(z10);
             }
         }
     }
 
     @Override // android.view.Menu
-    public final void setGroupVisible(int i9, boolean z10) {
+    public final void setGroupVisible(int i10, boolean z10) {
         ArrayList arrayList = this.f;
         int size = arrayList.size();
         boolean z11 = false;
-        for (int i10 = 0; i10 < size; i10++) {
-            m mVar = (m) arrayList.get(i10);
-            if (mVar.b == i9) {
-                int i11 = mVar.x;
-                int i12 = (i11 & (-9)) | (z10 ? 0 : 8);
-                mVar.x = i12;
-                if (i11 != i12) {
+        for (int i11 = 0; i11 < size; i11++) {
+            m mVar = (m) arrayList.get(i11);
+            if (mVar.b == i10) {
+                int i12 = mVar.x;
+                int i13 = (i12 & (-9)) | (z10 ? 0 : 8);
+                mVar.x = i13;
+                if (i12 != i13) {
                     z11 = true;
                 }
             }
@@ -697,8 +697,8 @@ public class k implements Menu {
     public final void t(Bundle bundle) {
         int size = this.f.size();
         SparseArray<? extends Parcelable> sparseArray = null;
-        for (int i9 = 0; i9 < size; i9++) {
-            MenuItem item = getItem(i9);
+        for (int i10 = 0; i10 < size; i10++) {
+            MenuItem item = getItem(i10);
             View actionView = item.getActionView();
             if (actionView != null && actionView.getId() != -1) {
                 if (sparseArray == null) {
@@ -718,19 +718,19 @@ public class k implements Menu {
         }
     }
 
-    public final void u(int i9, CharSequence charSequence, int i10, Drawable drawable, View view) {
+    public final void u(int i10, CharSequence charSequence, int i11, Drawable drawable, View view) {
         if (view != null) {
             this.o = view;
             this.m = null;
             this.n = null;
         } else {
-            if (i9 > 0) {
-                this.m = this.b.getText(i9);
+            if (i10 > 0) {
+                this.m = this.b.getText(i10);
             } else if (charSequence != null) {
                 this.m = charSequence;
             }
-            if (i10 > 0) {
-                this.n = this.a.getDrawable(i10);
+            if (i11 > 0) {
+                this.n = this.a.getDrawable(i11);
             } else if (drawable != null) {
                 this.n = drawable;
             }
@@ -757,23 +757,23 @@ public class k implements Menu {
     }
 
     @Override // android.view.Menu
-    public final MenuItem add(int i9) {
-        return a(0, 0, 0, this.b.getString(i9));
+    public final MenuItem add(int i10) {
+        return a(0, 0, 0, this.b.getString(i10));
     }
 
     @Override // android.view.Menu
-    public final SubMenu addSubMenu(int i9) {
-        return addSubMenu(0, 0, 0, this.b.getString(i9));
+    public final SubMenu addSubMenu(int i10) {
+        return addSubMenu(0, 0, 0, this.b.getString(i10));
     }
 
     @Override // android.view.Menu
-    public final MenuItem add(int i9, int i10, int i11, CharSequence charSequence) {
-        return a(i9, i10, i11, charSequence);
+    public final MenuItem add(int i10, int i11, int i12, CharSequence charSequence) {
+        return a(i10, i11, i12, charSequence);
     }
 
     @Override // android.view.Menu
-    public final SubMenu addSubMenu(int i9, int i10, int i11, CharSequence charSequence) {
-        m a2 = a(i9, i10, i11, charSequence);
+    public final SubMenu addSubMenu(int i10, int i11, int i12, CharSequence charSequence) {
+        m a2 = a(i10, i11, i12, charSequence);
         d0 d0Var = new d0(this.a, this, a2);
         a2.o = d0Var;
         d0Var.setHeaderTitle(a2.e);
@@ -781,13 +781,13 @@ public class k implements Menu {
     }
 
     @Override // android.view.Menu
-    public final MenuItem add(int i9, int i10, int i11, int i12) {
-        return a(i9, i10, i11, this.b.getString(i12));
+    public final MenuItem add(int i10, int i11, int i12, int i13) {
+        return a(i10, i11, i12, this.b.getString(i13));
     }
 
     @Override // android.view.Menu
-    public final SubMenu addSubMenu(int i9, int i10, int i11, int i12) {
-        return addSubMenu(i9, i10, i11, this.b.getString(i12));
+    public final SubMenu addSubMenu(int i10, int i11, int i12, int i13) {
+        return addSubMenu(i10, i11, i12, this.b.getString(i13));
     }
 
     public k k() {

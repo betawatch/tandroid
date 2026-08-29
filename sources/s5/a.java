@@ -1,47 +1,68 @@
 package s5;
 
-import android.content.Context;
-import android.content.pm.PackageManager;
-import android.util.Log;
-import b7.d;
-import com.google.android.gms.common.api.e;
-import com.google.android.gms.internal.clearcut.d2;
-import com.google.android.gms.internal.clearcut.r1;
-import com.google.android.gms.internal.clearcut.v0;
+import android.os.SystemClock;
+import android.text.TextUtils;
+import java.util.AbstractCollection;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.Random;
+import java.util.regex.Pattern;
+import org.json.JSONObject;
+import org.telegram.ui.th;
 
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class a {
-    public static final e j = new e("ClearcutLogger.API", new d(12), new com.google.android.gms.common.api.d());
-    public final Context a;
-    public final String b;
-    public final int c;
-    public final String d;
-    public final int e;
-    public final r1 f;
-    public final v0 g;
-    public final e6.a h;
-    public final d2 i;
+public abstract class a {
+    public static final Pattern a = Pattern.compile("urn:x-cast:[-A-Za-z0-9_]+(\\.[-A-Za-z0-9_]+)*");
+    public static final Random b = new Random(SystemClock.elapsedRealtime());
 
-    public a(Context context) {
-        v0 v0Var = new v0(context, j, null, new com.google.android.gms.common.api.internal.a());
-        d2 d2Var = new d2(context);
-        this.e = -1;
-        r1 r1Var = r1.b;
-        this.f = r1Var;
-        this.a = context;
-        this.b = context.getPackageName();
-        int i9 = 0;
-        try {
-            i9 = context.getPackageManager().getPackageInfo(context.getPackageName(), 0).versionCode;
-        } catch (PackageManager.NameNotFoundException e10) {
-            Log.wtf("ClearcutLogger", "This can't happen.", e10);
+    public static String a(String str, JSONObject jSONObject) {
+        if (jSONObject == null || !jSONObject.has(str)) {
+            return null;
         }
-        this.c = i9;
-        this.e = -1;
-        this.d = "VISION";
-        this.g = v0Var;
-        this.h = e6.a.a;
-        this.f = r1Var;
-        this.i = d2Var;
+        return jSONObject.optString(str);
+    }
+
+    public static void b(String str) {
+        if (TextUtils.isEmpty(str)) {
+            throw new IllegalArgumentException("Namespace cannot be null or empty");
+        }
+        if (str.length() > 128) {
+            throw new IllegalArgumentException("Invalid namespace length");
+        }
+        if (!str.startsWith("urn:x-cast:")) {
+            throw new IllegalArgumentException("Namespace must begin with the prefix \"urn:x-cast:\"");
+        }
+        if (str.length() == 11) {
+            throw new IllegalArgumentException("Namespace must begin with the prefix \"urn:x-cast:\" and have non-empty suffix");
+        }
+    }
+
+    public static ArrayList c(int[] iArr) {
+        ArrayList arrayList = new ArrayList();
+        int length = iArr.length;
+        int i10 = 0;
+        while (i10 < length) {
+            i10 = th.d(iArr[i10], i10, 1, arrayList);
+        }
+        return arrayList;
+    }
+
+    public static boolean d(Object obj, Object obj2) {
+        if (obj == null && obj2 == null) {
+            return true;
+        }
+        return (obj == null || obj2 == null || !obj.equals(obj2)) ? false : true;
+    }
+
+    public static int[] e(AbstractCollection abstractCollection) {
+        int[] iArr = new int[abstractCollection.size()];
+        Iterator it = abstractCollection.iterator();
+        int i10 = 0;
+        while (it.hasNext()) {
+            iArr[i10] = ((Integer) it.next()).intValue();
+            i10++;
+        }
+        return iArr;
     }
 }

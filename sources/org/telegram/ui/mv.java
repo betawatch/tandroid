@@ -1,35 +1,29 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.MessagesStorage;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class mv implements MessagesStorage.IntCallback {
+public final /* synthetic */ class mv implements Utilities.Callback {
     public final /* synthetic */ int a;
-    public final /* synthetic */ dy b;
+    public final /* synthetic */ fy b;
 
-    public /* synthetic */ mv(dy dyVar, int i9) {
-        this.a = i9;
-        this.b = dyVar;
+    public /* synthetic */ mv(fy fyVar, int i10) {
+        this.a = i10;
+        this.b = fyVar;
     }
 
-    @Override // org.telegram.messenger.MessagesStorage.IntCallback
-    public final void run(int i9) {
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
         switch (this.a) {
             case 0:
-                dy dyVar = this.b;
-                dyVar.getClass();
-                dyVar.Q1 = i9 != 0;
-                MessagesController.getGlobalNotificationsSettings().edit().putBoolean("askAboutContacts", dyVar.Q1).apply();
-                dyVar.k3(false);
+                fy fyVar = this.b;
+                fyVar.K1 = (Long) obj;
+                fyVar.U4();
                 break;
             default:
-                dy dyVar2 = this.b;
-                dyVar2.getClass();
-                dyVar2.Q1 = i9 != 0;
-                MessagesController.getGlobalNotificationsSettings().edit().putBoolean("askAboutContacts", dyVar2.Q1).commit();
-                dyVar2.k3(false);
+                fy.c0(this.b, (TL_account.TL_birthday) obj);
                 break;
         }
     }

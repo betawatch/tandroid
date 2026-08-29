@@ -1,65 +1,96 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
-import android.view.View;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class mm0 extends EditTextBoldCursor {
-    public final b5 b;
-    public int c;
-    public final i6 d;
-    public final /* synthetic */ org.telegram.ui.ActionBar.b6 e;
+public final /* synthetic */ class mm0 implements Runnable {
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ tm0 b;
+    public final /* synthetic */ String c;
+    public final /* synthetic */ ArrayList d;
+    public final /* synthetic */ ArrayList e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public mm0(Context context, org.telegram.ui.ActionBar.b6 b6Var) {
-        super(context);
-        this.e = b6Var;
-        this.b = new b5(this);
-        i6 i6Var = new i6(false, true, true, false);
-        this.d = i6Var;
-        i6Var.k(0.2f, 160L, gr.h);
-        i6Var.t(AndroidUtilities.dp(15.33f));
-        i6Var.setCallback(this);
-        i6Var.b = 5;
+    public /* synthetic */ mm0(tm0 tm0Var, String str, ArrayList arrayList, ArrayList arrayList2) {
+        this.b = tm0Var;
+        this.c = str;
+        this.d = arrayList;
+        this.e = arrayList2;
     }
 
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        int a2 = this.b.a(org.telegram.ui.ActionBar.f6.v0(this.c < 0 ? org.telegram.ui.ActionBar.f6.p7 : org.telegram.ui.ActionBar.f6.P5, this.e), false);
-        i6 i6Var = this.d;
-        i6Var.r(a2);
-        i6Var.setBounds(getScrollX(), 0, getWidth() + getScrollX(), getHeight());
-        i6Var.draw(canvas);
-    }
-
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
-    public final void onMeasure(int i9, int i10) {
-        super.onMeasure(i9, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(36.0f), TLObject.FLAG_30));
-    }
-
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.ot, android.widget.TextView
-    public final void onTextChanged(CharSequence charSequence, int i9, int i10, int i11) {
-        super.onTextChanged(charSequence, i9, i10, i11);
-        i6 i6Var = this.d;
-        if (i6Var != null) {
-            this.c = 12 - charSequence.length();
-            i6Var.b();
-            String str = "";
-            if (this.c <= 4) {
-                str = "" + this.c;
-            }
-            i6Var.q(str, true, true);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                tm0 tm0Var = this.b;
+                int i10 = tm0Var.d;
+                ArrayList arrayList = new ArrayList();
+                ArrayList arrayList2 = new ArrayList();
+                int i11 = 0;
+                while (true) {
+                    ArrayList arrayList3 = this.d;
+                    int size = arrayList3.size();
+                    String str = this.c;
+                    if (i11 >= size) {
+                        int i12 = 0;
+                        while (true) {
+                            ArrayList arrayList4 = this.e;
+                            if (i12 >= arrayList4.size()) {
+                                AndroidUtilities.runOnUIThread(new mm0(tm0Var, str, arrayList, arrayList2));
+                                break;
+                            } else {
+                                String documentFileName = FileLoader.getDocumentFileName(((MessageObject) arrayList4.get(i12)).getDocument());
+                                if (documentFileName != null && documentFileName.toLowerCase().contains(str)) {
+                                    MessageObject messageObject = new MessageObject(i10, ((MessageObject) arrayList4.get(i12)).messageOwner, false, false);
+                                    messageObject.mediaExists = ((MessageObject) arrayList4.get(i12)).mediaExists;
+                                    messageObject.setQuery(tm0Var.G);
+                                    arrayList2.add(messageObject);
+                                }
+                                i12++;
+                            }
+                        }
+                    } else {
+                        String documentFileName2 = FileLoader.getDocumentFileName(((MessageObject) arrayList3.get(i11)).getDocument());
+                        if (documentFileName2 != null && documentFileName2.toLowerCase().contains(str)) {
+                            MessageObject messageObject2 = new MessageObject(i10, ((MessageObject) arrayList3.get(i11)).messageOwner, false, false);
+                            messageObject2.mediaExists = ((MessageObject) arrayList3.get(i11)).mediaExists;
+                            messageObject2.setQuery(tm0Var.G);
+                            arrayList.add(messageObject2);
+                        }
+                        i11++;
+                    }
+                }
+                break;
+            default:
+                tm0 tm0Var2 = this.b;
+                qw0 qw0Var = tm0Var2.a;
+                if (this.c.equals(tm0Var2.H)) {
+                    if (tm0Var2.r == 0) {
+                        tm0Var2.J.b(0);
+                    }
+                    tm0Var2.e(this.d, this.e, true);
+                    if (tm0Var2.r == 0) {
+                        qw0Var.e(false, true);
+                        y80 y80Var = qw0Var.e;
+                        qw0Var.d.setText(LocaleController.getString(R.string.SearchEmptyViewTitle2));
+                        y80Var.setVisibility(0);
+                        y80Var.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitle2));
+                        break;
+                    }
+                }
+                break;
         }
     }
 
-    @Override // android.widget.TextView, android.view.View
-    public final boolean verifyDrawable(Drawable drawable) {
-        return drawable == this.d || super.verifyDrawable(drawable);
+    public /* synthetic */ mm0(tm0 tm0Var, ArrayList arrayList, String str, ArrayList arrayList2) {
+        this.b = tm0Var;
+        this.d = arrayList;
+        this.c = str;
+        this.e = arrayList2;
     }
 }

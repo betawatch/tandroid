@@ -2,14 +2,14 @@ package org.webrtc;
 
 import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class j implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ ByteBuffer b;
 
-    public /* synthetic */ j(int i9, ByteBuffer byteBuffer) {
-        this.a = i9;
+    public /* synthetic */ j(int i10, ByteBuffer byteBuffer) {
+        this.a = i10;
         this.b = byteBuffer;
     }
 

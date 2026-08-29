@@ -1,52 +1,52 @@
 package com.google.android.exoplayer2.ext.ffmpeg;
 
-import a5.m;
 import android.os.Handler;
-import d5.f0;
-import d5.q;
-import h3.s0;
-import h3.t0;
-import j3.a0;
-import j3.j;
-import j3.n;
-import j3.s;
-import k3.b;
+import androidx.biometric.e;
+import f5.d0;
+import j3.s0;
+import j3.t0;
+import l3.b0;
+import l3.g0;
+import l3.j;
+import l3.o;
+import l3.t;
+import m3.b;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class FfmpegAudioRenderer extends a0 {
+public final class FfmpegAudioRenderer extends b0 {
     private static final int DEFAULT_INPUT_BUFFER_SIZE = 5760;
     private static final int NUM_BUFFERS = 16;
     private static final String TAG = "FfmpegAudioRenderer";
 
     public FfmpegAudioRenderer() {
-        this((Handler) null, (n) null, new j[0]);
+        this((Handler) null, (o) null, new j[0]);
     }
 
     private boolean shouldOutputFloat(t0 t0Var) {
         if (!sinkSupportsFormat(t0Var, 2)) {
             return true;
         }
-        if (getSinkFormatSupport(f0.v(4, t0Var.O, t0Var.P)) != 2) {
+        if (getSinkFormatSupport(d0.v(4, t0Var.O, t0Var.P)) != 2) {
             return false;
         }
         return !"audio/ac3".equals(t0Var.B);
     }
 
-    private boolean sinkSupportsFormat(t0 t0Var, int i9) {
-        return sinkSupportsFormat(f0.v(i9, t0Var.O, t0Var.P));
+    private boolean sinkSupportsFormat(t0 t0Var, int i10) {
+        return sinkSupportsFormat(d0.v(i10, t0Var.O, t0Var.P));
     }
 
-    @Override // h3.e, h3.h2
+    @Override // j3.e, j3.h2
     public String getName() {
         return TAG;
     }
 
-    @Override // j3.a0
+    @Override // l3.b0
     public int supportsFormatInternal(t0 t0Var) {
         String str = t0Var.B;
         str.getClass();
-        if (!FfmpegLibrary.isAvailable() || !q.h(str)) {
+        if (!FfmpegLibrary.isAvailable() || !f5.o.h(str)) {
             return 0;
         }
         if (!FfmpegLibrary.supportsFormat(str)) {
@@ -58,7 +58,7 @@ public final class FfmpegAudioRenderer extends a0 {
         return 1;
     }
 
-    @Override // h3.e, h3.h2
+    @Override // j3.e, j3.h2
     public int supportsMixedMimeTypeAdaptation() {
         return 8;
     }
@@ -67,23 +67,23 @@ public final class FfmpegAudioRenderer extends a0 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public FfmpegAudioRenderer(Handler handler, n nVar, j... jVarArr) {
-        this(handler, nVar, r0.d());
-        m mVar = new m(28);
+    public FfmpegAudioRenderer(Handler handler, o oVar, j... jVarArr) {
+        this(handler, oVar, r0.c());
+        e eVar = new e(29);
         jVarArr.getClass();
-        mVar.c = new m(jVarArr);
+        eVar.c = new g0(jVarArr);
     }
 
-    @Override // j3.a0
+    @Override // l3.b0
     public FfmpegAudioDecoder createDecoder(t0 t0Var, b bVar) {
-        d5.a.c("createFfmpegAudioDecoder");
-        int i9 = t0Var.C;
-        FfmpegAudioDecoder ffmpegAudioDecoder = new FfmpegAudioDecoder(t0Var, 16, 16, i9 != -1 ? i9 : DEFAULT_INPUT_BUFFER_SIZE, shouldOutputFloat(t0Var));
-        d5.a.q();
+        f5.a.c("createFfmpegAudioDecoder");
+        int i10 = t0Var.C;
+        FfmpegAudioDecoder ffmpegAudioDecoder = new FfmpegAudioDecoder(t0Var, 16, 16, i10 != -1 ? i10 : DEFAULT_INPUT_BUFFER_SIZE, shouldOutputFloat(t0Var));
+        f5.a.q();
         return ffmpegAudioDecoder;
     }
 
-    @Override // j3.a0
+    @Override // l3.b0
     public t0 getOutputFormat(FfmpegAudioDecoder ffmpegAudioDecoder) {
         ffmpegAudioDecoder.getClass();
         s0 s0Var = new s0();
@@ -94,11 +94,11 @@ public final class FfmpegAudioRenderer extends a0 {
         return new t0(s0Var);
     }
 
-    public FfmpegAudioRenderer(Handler handler, n nVar, s sVar) {
-        super(handler, nVar, sVar);
+    public FfmpegAudioRenderer(Handler handler, o oVar, t tVar) {
+        super(handler, oVar, tVar);
     }
 
-    @Override // h3.e
-    public /* bridge */ /* synthetic */ void setPlaybackSpeed(float f10, float f11) {
+    @Override // j3.e
+    public /* bridge */ /* synthetic */ void setPlaybackSpeed(float f9, float f10) {
     }
 }

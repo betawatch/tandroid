@@ -150,25 +150,25 @@ public final class p implements Externalizable {
                 }
                 throw new IllegalArgumentException("ZoneId must match ZoneOffset");
             case 7:
-                int i9 = u.d;
+                int i10 = u.d;
                 return ZoneId.H(objectInput.readUTF(), false);
             case 8:
                 return ZoneOffset.Q(objectInput);
             case 9:
-                int i10 = o.c;
+                int i11 = o.c;
                 return new o(h.Q(objectInput), ZoneOffset.Q(objectInput));
             case 10:
-                int i11 = OffsetDateTime.c;
+                int i12 = OffsetDateTime.c;
                 LocalDate localDate4 = LocalDate.d;
                 return new OffsetDateTime(LocalDateTime.J(LocalDate.of(objectInput.readInt(), objectInput.readByte(), objectInput.readByte()), h.Q(objectInput)), ZoneOffset.Q(objectInput));
             case 11:
-                int i12 = r.b;
+                int i13 = r.b;
                 return r.G(objectInput.readInt());
             case 12:
-                int i13 = YearMonth.c;
+                int i14 = YearMonth.c;
                 return YearMonth.of(objectInput.readInt(), objectInput.readByte());
             case 13:
-                int i14 = l.c;
+                int i15 = l.c;
                 byte readByte = objectInput.readByte();
                 byte readByte2 = objectInput.readByte();
                 j J2 = j.J(readByte);

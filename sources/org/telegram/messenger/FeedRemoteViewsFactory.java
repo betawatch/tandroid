@@ -18,7 +18,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 class FeedRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory, NotificationCenter.NotificationCenterDelegate {
     private AccountInstance accountInstance;
@@ -32,10 +32,10 @@ class FeedRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory, N
         this.mContext = context;
         int intExtra = intent.getIntExtra("appWidgetId", 0);
         SharedPreferences sharedPreferences = context.getSharedPreferences("shortcut_widget", 0);
-        int i9 = sharedPreferences.getInt("account" + intExtra, -1);
-        if (i9 >= 0) {
+        int i10 = sharedPreferences.getInt("account" + intExtra, -1);
+        if (i10 >= 0) {
             this.dialogId = sharedPreferences.getLong("dialogId" + intExtra, 0L);
-            this.accountInstance = AccountInstance.getInstance(i9);
+            this.accountInstance = AccountInstance.getInstance(i10);
         }
     }
 
@@ -49,8 +49,8 @@ class FeedRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory, N
     }
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public void didReceivedNotification(int i9, int i10, Object... objArr) {
-        if (i9 == NotificationCenter.messagesDidLoad && ((Integer) objArr[10]).intValue() == this.classGuid) {
+    public void didReceivedNotification(int i10, int i11, Object... objArr) {
+        if (i10 == NotificationCenter.messagesDidLoad && ((Integer) objArr[10]).intValue() == this.classGuid) {
             this.messages.clear();
             this.messages.addAll((ArrayList) objArr[2]);
             this.countDownLatch.countDown();
@@ -63,8 +63,8 @@ class FeedRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory, N
     }
 
     @Override // android.widget.RemoteViewsService.RemoteViewsFactory
-    public long getItemId(int i9) {
-        return i9;
+    public long getItemId(int i10) {
+        return i10;
     }
 
     @Override // android.widget.RemoteViewsService.RemoteViewsFactory
@@ -73,8 +73,8 @@ class FeedRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory, N
     }
 
     @Override // android.widget.RemoteViewsService.RemoteViewsFactory
-    public RemoteViews getViewAt(int i9) {
-        MessageObject messageObject = this.messages.get(i9);
+    public RemoteViews getViewAt(int i10) {
+        MessageObject messageObject = this.messages.get(i10);
         RemoteViews remoteViews = new RemoteViews(this.mContext.getPackageName(), R.layout.feed_widget_item);
         if (messageObject.type == 0) {
             remoteViews.setTextViewText(R.id.feed_widget_item_text, messageObject.messageText);
@@ -140,7 +140,7 @@ class FeedRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory, N
             this.messages.clear();
             return;
         }
-        AndroidUtilities.runOnUIThread(new e1(this, 1));
+        AndroidUtilities.runOnUIThread(new d1(this, 1));
         try {
             this.countDownLatch.await();
         } catch (Exception e10) {

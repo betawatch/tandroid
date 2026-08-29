@@ -20,7 +20,7 @@ import org.telegram.messenger.MediaDataController;
 import org.webrtc.CameraEnumerationAndroid;
 import org.webrtc.CameraVideoCapturer;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes4.dex */
 public class Camera2Enumerator implements CameraEnumerator {
     private static final double NANO_SECONDS_PER_SECOND = 1.0E9d;
@@ -34,10 +34,10 @@ public class Camera2Enumerator implements CameraEnumerator {
         this.cameraManager = (CameraManager) context.getSystemService("camera");
     }
 
-    public static List<CameraEnumerationAndroid.CaptureFormat.FramerateRange> convertFramerates(Range<Integer>[] rangeArr, int i9) {
+    public static List<CameraEnumerationAndroid.CaptureFormat.FramerateRange> convertFramerates(Range<Integer>[] rangeArr, int i10) {
         ArrayList arrayList = new ArrayList();
         for (Range<Integer> range : rangeArr) {
-            arrayList.add(new CameraEnumerationAndroid.CaptureFormat.FramerateRange(range.getLower().intValue() * i9, range.getUpper().intValue() * i9));
+            arrayList.add(new CameraEnumerationAndroid.CaptureFormat.FramerateRange(range.getLower().intValue() * i10, range.getUpper().intValue() * i10));
         }
         return arrayList;
     }
@@ -95,8 +95,8 @@ public class Camera2Enumerator implements CameraEnumerator {
                 }
             }
             return true;
-        } catch (Throwable th) {
-            Logging.e(TAG, "Camera access exception: " + th);
+        } catch (Throwable th2) {
+            Logging.e(TAG, "Camera access exception: " + th2);
             return false;
         }
     }
@@ -152,9 +152,9 @@ public class Camera2Enumerator implements CameraEnumerator {
                         List<CameraEnumerationAndroid.CaptureFormat.FramerateRange> convertFramerates = convertFramerates(rangeArr, getFpsUnitFactor(rangeArr));
                         List<Size> supportedSizes = getSupportedSizes(cameraCharacteristics);
                         Iterator<CameraEnumerationAndroid.CaptureFormat.FramerateRange> it = convertFramerates.iterator();
-                        int i9 = 0;
+                        int i10 = 0;
                         while (it.hasNext()) {
-                            i9 = Math.max(i9, it.next().max);
+                            i10 = Math.max(i10, it.next().max);
                         }
                         ArrayList arrayList = new ArrayList();
                         for (Size size : supportedSizes) {
@@ -163,7 +163,7 @@ public class Camera2Enumerator implements CameraEnumerator {
                             } catch (Exception unused) {
                                 j10 = 0;
                             }
-                            int round = j10 == 0 ? i9 : ((int) Math.round(NANO_SECONDS_PER_SECOND / j10)) * MediaDataController.MAX_STYLE_RUNS_COUNT;
+                            int round = j10 == 0 ? i10 : ((int) Math.round(NANO_SECONDS_PER_SECOND / j10)) * MediaDataController.MAX_STYLE_RUNS_COUNT;
                             arrayList.add(new CameraEnumerationAndroid.CaptureFormat(size.width, size.height, 0, round));
                             Logging.d(TAG, "Format: " + size.width + "x" + size.height + "@" + round);
                         }
@@ -176,8 +176,8 @@ public class Camera2Enumerator implements CameraEnumerator {
                     }
                 }
                 return map.get(str);
-            } catch (Throwable th) {
-                throw th;
+            } catch (Throwable th2) {
+                throw th2;
             }
         }
     }

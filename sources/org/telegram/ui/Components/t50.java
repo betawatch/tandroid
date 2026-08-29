@@ -1,48 +1,34 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import org.telegram.messenger.MessageObject;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class t50 implements org.telegram.ui.ab0 {
-    public final /* synthetic */ u50 a;
-
-    public t50(u50 u50Var) {
-        this.a = u50Var;
+public abstract class t50 extends xn0 {
+    @Override // org.telegram.ui.Components.xn0
+    public final boolean a() {
+        return j() > 0;
     }
 
-    @Override // org.telegram.ui.ab0
-    public final void b(TLRPC.TL_chatInviteExported tL_chatInviteExported, TLObject tLObject) {
-        int i9;
-        org.telegram.ui.bb bbVar = this.a.a.c.f0;
-        if (bbVar != null) {
-            TLRPC.TL_channelAdminLogEvent tL_channelAdminLogEvent = new TLRPC.TL_channelAdminLogEvent();
-            TLRPC.TL_channelAdminLogEventActionExportedInviteEdit tL_channelAdminLogEventActionExportedInviteEdit = new TLRPC.TL_channelAdminLogEventActionExportedInviteEdit();
-            tL_channelAdminLogEventActionExportedInviteEdit.new_invite = tL_chatInviteExported;
-            tL_channelAdminLogEventActionExportedInviteEdit.prev_invite = tL_chatInviteExported;
-            tL_channelAdminLogEvent.action = tL_channelAdminLogEventActionExportedInviteEdit;
-            tL_channelAdminLogEvent.date = (int) (System.currentTimeMillis() / 1000);
-            org.telegram.ui.pb pbVar = bbVar.a;
-            tL_channelAdminLogEvent.user_id = pbVar.getAccountInstance().getUserConfig().clientUserId;
-            i9 = ((org.telegram.ui.ActionBar.o2) pbVar).currentAccount;
-            if (new MessageObject(i9, tL_channelAdminLogEvent, (ArrayList<MessageObject>) pbVar.n0, (HashMap<String, ArrayList<MessageObject>>) pbVar.m0, pbVar.s, pbVar.T, true).contentType < 0) {
-                return;
-            }
-            pbVar.R0();
-            pbVar.E.l();
-            org.telegram.ui.pb.K0(pbVar);
+    @Override // org.telegram.ui.Components.xn0
+    public final boolean b() {
+        return j() < i();
+    }
+
+    @Override // org.telegram.ui.Components.xn0
+    public final void c(boolean z10) {
+        int h = h();
+        if (z10) {
+            h *= -1;
         }
+        k(Math.min(i(), Math.max(0, j() + h)));
     }
 
-    @Override // org.telegram.ui.ab0
-    public final void a(TLRPC.TL_chatInviteExported tL_chatInviteExported) {
+    public int h() {
+        return 1;
     }
 
-    @Override // org.telegram.ui.ab0
-    public final void c(TLObject tLObject) {
-    }
+    public abstract int i();
+
+    public abstract int j();
+
+    public abstract void k(int i10);
 }

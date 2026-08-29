@@ -8,13 +8,13 @@ import android.os.ResultReceiver;
 import androidx.versionedparcelable.ParcelImpl;
 import java.lang.ref.WeakReference;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 class MediaControllerCompat$MediaControllerImplApi21$ExtraBinderRequestResultReceiver extends ResultReceiver {
     public WeakReference a;
 
     @Override // android.os.ResultReceiver
-    public final void onReceiveResult(int i9, Bundle bundle) {
+    public final void onReceiveResult(int i10, Bundle bundle) {
         d dVar;
         h hVar = (h) this.a.get();
         if (hVar == null || bundle == null) {
@@ -23,7 +23,7 @@ class MediaControllerCompat$MediaControllerImplApi21$ExtraBinderRequestResultRec
         synchronized (hVar.b) {
             MediaSessionCompat$Token mediaSessionCompat$Token = hVar.e;
             IBinder binder = bundle.getBinder("android.support.v4.media.session.EXTRA_BINDER");
-            int i10 = v.b;
+            int i11 = v.b;
             l2.d dVar2 = null;
             if (binder == null) {
                 dVar = null;

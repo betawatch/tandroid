@@ -1,34 +1,18 @@
 package x2;
 
-import android.content.Context;
-import com.google.android.datatransport.cct.CctBackendFactory;
-import java.util.HashMap;
-
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class d {
-    public final w4.e a;
-    public final t5.c b;
-    public final HashMap c;
+public final class d implements s9.d {
+    public static final d a = new d();
+    public static final s9.c b = s9.c.c("clientType");
+    public static final s9.c c = s9.c.c("androidClientInfo");
 
-    public d(Context context, t5.c cVar) {
-        w4.e eVar = new w4.e(context, 1);
-        this.c = new HashMap();
-        this.a = eVar;
-        this.b = cVar;
-    }
-
-    public final synchronized e a(String str) {
-        if (this.c.containsKey(str)) {
-            return (e) this.c.get(str);
-        }
-        CctBackendFactory f10 = this.a.f(str);
-        if (f10 == null) {
-            return null;
-        }
-        t5.c cVar = this.b;
-        e create = f10.create(new b((Context) cVar.b, (f3.a) cVar.c, (f3.a) cVar.d, str));
-        this.c.put(str, create);
-        return create;
+    @Override // s9.a
+    public final void a(Object obj, Object obj2) {
+        s9.e eVar = (s9.e) obj2;
+        j jVar = (j) ((q) obj);
+        jVar.getClass();
+        eVar.e(b, p.a);
+        eVar.e(c, jVar.a);
     }
 }

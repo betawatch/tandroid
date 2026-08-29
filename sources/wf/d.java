@@ -1,38 +1,17 @@
 package wf;
 
-import android.graphics.Canvas;
-import org.telegram.ui.Cells.d8;
-import org.telegram.ui.Components.wk0;
-
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public abstract class d extends wk0 {
-    public boolean T2;
+public interface d {
+    boolean a();
 
-    @Override // org.telegram.ui.Components.wk0, android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        this.T2 = false;
-        for (int i9 = 0; i9 < getChildCount(); i9++) {
-            if (getChildAt(i9) instanceof c) {
-                c cVar = (c) getChildAt(i9);
-                canvas.save();
-                canvas.translate(cVar.getX(), cVar.getY());
-                d8 d8Var = (d8) cVar;
-                if (d8Var.H) {
-                    d8Var.b(canvas, this);
-                }
-                canvas.restore();
-            }
-        }
-        super.dispatchDraw(canvas);
-    }
+    void b();
 
-    @Override // android.view.View
-    public final void invalidate() {
-        if (this.T2) {
-            return;
-        }
-        super.invalidate();
-        this.T2 = true;
-    }
+    void c();
+
+    boolean d();
+
+    void e();
+
+    void f(float f9);
 }

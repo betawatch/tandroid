@@ -1,58 +1,40 @@
 package e6;
 
-import java.util.Iterator;
-import java.util.regex.Pattern;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-import x5.l;
+import android.os.Parcel;
+import android.os.Parcelable;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public abstract class c {
-    static {
-        Pattern.compile("\\\\.");
-        Pattern.compile("[\\\\\"/\b\f\n\r\t]");
-    }
-
-    public static boolean a(Object obj, Object obj2) {
-        int i9;
-        if (obj == null && obj2 == null) {
-            return true;
-        }
-        if (obj != null && obj2 != null) {
-            try {
-                if ((obj instanceof JSONObject) && (obj2 instanceof JSONObject)) {
-                    JSONObject jSONObject = (JSONObject) obj;
-                    JSONObject jSONObject2 = (JSONObject) obj2;
-                    if (jSONObject.length() == jSONObject2.length()) {
-                        Iterator<String> keys = jSONObject.keys();
-                        while (keys.hasNext()) {
-                            String next = keys.next();
-                            if (jSONObject2.has(next)) {
-                                l.h(next);
-                                if (a(jSONObject.get(next), jSONObject2.get(next))) {
-                                }
-                            }
-                        }
-                        return true;
-                    }
-                } else {
-                    if (!(obj instanceof JSONArray) || !(obj2 instanceof JSONArray)) {
-                        return obj.equals(obj2);
-                    }
-                    JSONArray jSONArray = (JSONArray) obj;
-                    JSONArray jSONArray2 = (JSONArray) obj2;
-                    if (jSONArray.length() == jSONArray2.length()) {
-                        while (i9 < jSONArray.length()) {
-                            i9 = a(jSONArray.get(i9), jSONArray2.get(i9)) ? i9 + 1 : 0;
-                        }
-                        return true;
-                    }
-                }
-            } catch (JSONException unused) {
+public final class c implements Parcelable.Creator {
+    @Override // android.os.Parcelable.Creator
+    public final Object createFromParcel(Parcel parcel) {
+        int A = ce.b.A(parcel);
+        ArrayList arrayList = null;
+        String str = null;
+        String str2 = null;
+        boolean z10 = false;
+        while (parcel.dataPosition() < A) {
+            int readInt = parcel.readInt();
+            char c3 = (char) readInt;
+            if (c3 == 1) {
+                arrayList = ce.b.m(parcel, readInt, w5.c.CREATOR);
+            } else if (c3 == 2) {
+                z10 = ce.b.o(parcel, readInt);
+            } else if (c3 == 3) {
+                str = ce.b.i(parcel, readInt);
+            } else if (c3 != 4) {
+                ce.b.z(parcel, readInt);
+            } else {
+                str2 = ce.b.i(parcel, readInt);
             }
         }
-        return false;
+        ce.b.n(parcel, A);
+        return new a(arrayList, z10, str, str2);
+    }
+
+    @Override // android.os.Parcelable.Creator
+    public final /* synthetic */ Object[] newArray(int i10) {
+        return new a[i10];
     }
 }

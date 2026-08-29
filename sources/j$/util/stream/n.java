@@ -43,19 +43,19 @@ public final /* synthetic */ class n implements ObjDoubleConsumer, BiConsumer, D
     }
 
     @Override // java.util.function.DoubleBinaryOperator
-    public double applyAsDouble(double d, double d9) {
-        return Math.max(d, d9);
+    public double applyAsDouble(double d, double d10) {
+        return Math.max(d, d10);
     }
 
     @Override // java.util.function.IntBinaryOperator
-    public int applyAsInt(int i9, int i10) {
+    public int applyAsInt(int i10, int i11) {
         switch (this.a) {
             case 22:
-                return Math.min(i9, i10);
+                return Math.min(i10, i11);
             case 25:
-                return i9 + i10;
+                return i10 + i11;
             default:
-                return Math.max(i9, i10);
+                return Math.max(i10, i11);
         }
     }
 
@@ -137,15 +137,15 @@ public final /* synthetic */ class n implements ObjDoubleConsumer, BiConsumer, D
     }
 
     @Override // java.util.function.ObjIntConsumer
-    public void accept(Object obj, int i9) {
+    public void accept(Object obj, int i10) {
         switch (this.a) {
             case 23:
-                ((j$.util.x) obj).accept(i9);
+                ((j$.util.x) obj).accept(i10);
                 break;
             default:
                 long[] jArr = (long[]) obj;
                 jArr[0] = jArr[0] + 1;
-                jArr[1] = jArr[1] + i9;
+                jArr[1] = jArr[1] + i10;
                 break;
         }
     }
@@ -177,16 +177,16 @@ public final /* synthetic */ class n implements ObjDoubleConsumer, BiConsumer, D
     }
 
     @Override // java.util.function.IntFunction
-    public Object apply(int i9) {
+    public Object apply(int i10) {
         switch (this.a) {
             case 6:
-                return new Double[i9];
+                return new Double[i10];
             case 18:
-                return new Object[i9];
+                return new Object[i10];
             case 19:
-                return new Integer[i9];
+                return new Integer[i10];
             default:
-                return Integer.valueOf(i9);
+                return Integer.valueOf(i10);
         }
     }
 }

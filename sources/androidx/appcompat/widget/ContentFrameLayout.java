@@ -13,11 +13,11 @@ import m.e;
 import m.i;
 import m.j1;
 import m.k1;
-import m.p3;
+import m.o3;
 import org.telegram.tgnet.TLObject;
 import r0.m0;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public class ContentFrameLayout extends FrameLayout {
     public TypedValue a;
@@ -90,12 +90,12 @@ public class ContentFrameLayout extends FrameLayout {
         super.onDetachedFromWindow();
         j1 j1Var = this.n;
         if (j1Var != null) {
-            q qVar = (q) ((k5.i) j1Var).b;
+            q qVar = (q) ((ha.c) j1Var).b;
             k1 k1Var = qVar.s;
             if (k1Var != null) {
                 ActionBarOverlayLayout actionBarOverlayLayout = (ActionBarOverlayLayout) k1Var;
                 actionBarOverlayLayout.f();
-                ActionMenuView actionMenuView = ((p3) actionBarOverlayLayout.e).a.a;
+                ActionMenuView actionMenuView = ((o3) actionBarOverlayLayout.e).a.a;
                 if (actionMenuView != null && (iVar = actionMenuView.F) != null) {
                     iVar.f();
                     e eVar = iVar.F;
@@ -141,81 +141,81 @@ public class ContentFrameLayout extends FrameLayout {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void onMeasure(int i9, int i10) {
-        int i11;
-        boolean z10;
+    public final void onMeasure(int i10, int i11) {
         int i12;
+        boolean z10;
+        int i13;
         int measuredWidth;
         TypedValue typedValue;
-        int i13;
         int i14;
-        float fraction;
         int i15;
+        float fraction;
         int i16;
-        float fraction2;
         int i17;
+        float fraction2;
         int i18;
+        int i19;
         float fraction3;
         DisplayMetrics displayMetrics = getContext().getResources().getDisplayMetrics();
         boolean z11 = true;
         boolean z12 = displayMetrics.widthPixels < displayMetrics.heightPixels;
-        int mode = View.MeasureSpec.getMode(i9);
-        int mode2 = View.MeasureSpec.getMode(i10);
+        int mode = View.MeasureSpec.getMode(i10);
+        int mode2 = View.MeasureSpec.getMode(i11);
         Rect rect = this.h;
         if (mode == Integer.MIN_VALUE) {
             TypedValue typedValue2 = z12 ? this.d : this.c;
-            if (typedValue2 != null && (i17 = typedValue2.type) != 0) {
-                if (i17 == 5) {
+            if (typedValue2 != null && (i18 = typedValue2.type) != 0) {
+                if (i18 == 5) {
                     fraction3 = typedValue2.getDimension(displayMetrics);
-                } else if (i17 == 6) {
-                    int i19 = displayMetrics.widthPixels;
-                    fraction3 = typedValue2.getFraction(i19, i19);
+                } else if (i18 == 6) {
+                    int i20 = displayMetrics.widthPixels;
+                    fraction3 = typedValue2.getFraction(i20, i20);
                 } else {
-                    i18 = 0;
-                    if (i18 > 0) {
-                        i11 = View.MeasureSpec.makeMeasureSpec(Math.min(i18 - (rect.left + rect.right), View.MeasureSpec.getSize(i9)), TLObject.FLAG_30);
+                    i19 = 0;
+                    if (i19 > 0) {
+                        i12 = View.MeasureSpec.makeMeasureSpec(Math.min(i19 - (rect.left + rect.right), View.MeasureSpec.getSize(i10)), TLObject.FLAG_30);
                         z10 = true;
                         if (mode2 == Integer.MIN_VALUE) {
                             TypedValue typedValue3 = z12 ? this.e : this.f;
-                            if (typedValue3 != null && (i15 = typedValue3.type) != 0) {
-                                if (i15 == 5) {
+                            if (typedValue3 != null && (i16 = typedValue3.type) != 0) {
+                                if (i16 == 5) {
                                     fraction2 = typedValue3.getDimension(displayMetrics);
-                                } else if (i15 == 6) {
-                                    int i20 = displayMetrics.heightPixels;
-                                    fraction2 = typedValue3.getFraction(i20, i20);
+                                } else if (i16 == 6) {
+                                    int i21 = displayMetrics.heightPixels;
+                                    fraction2 = typedValue3.getFraction(i21, i21);
                                 } else {
-                                    i16 = 0;
-                                    if (i16 > 0) {
-                                        i12 = View.MeasureSpec.makeMeasureSpec(Math.min(i16 - (rect.top + rect.bottom), View.MeasureSpec.getSize(i10)), TLObject.FLAG_30);
-                                        super.onMeasure(i11, i12);
+                                    i17 = 0;
+                                    if (i17 > 0) {
+                                        i13 = View.MeasureSpec.makeMeasureSpec(Math.min(i17 - (rect.top + rect.bottom), View.MeasureSpec.getSize(i11)), TLObject.FLAG_30);
+                                        super.onMeasure(i12, i13);
                                         measuredWidth = getMeasuredWidth();
                                         int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(measuredWidth, TLObject.FLAG_30);
                                         if (!z10 && mode == Integer.MIN_VALUE) {
                                             typedValue = !z12 ? this.b : this.a;
-                                            if (typedValue != null && (i13 = typedValue.type) != 0) {
-                                                if (i13 != 5) {
+                                            if (typedValue != null && (i14 = typedValue.type) != 0) {
+                                                if (i14 != 5) {
                                                     fraction = typedValue.getDimension(displayMetrics);
-                                                } else if (i13 == 6) {
-                                                    int i21 = displayMetrics.widthPixels;
-                                                    fraction = typedValue.getFraction(i21, i21);
+                                                } else if (i14 == 6) {
+                                                    int i22 = displayMetrics.widthPixels;
+                                                    fraction = typedValue.getFraction(i22, i22);
                                                 } else {
-                                                    i14 = 0;
-                                                    if (i14 > 0) {
-                                                        i14 -= rect.left + rect.right;
+                                                    i15 = 0;
+                                                    if (i15 > 0) {
+                                                        i15 -= rect.left + rect.right;
                                                     }
-                                                    if (measuredWidth < i14) {
-                                                        makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(i14, TLObject.FLAG_30);
+                                                    if (measuredWidth < i15) {
+                                                        makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(i15, TLObject.FLAG_30);
                                                         if (z11) {
                                                             return;
                                                         }
-                                                        super.onMeasure(makeMeasureSpec, i12);
+                                                        super.onMeasure(makeMeasureSpec, i13);
                                                         return;
                                                     }
                                                 }
-                                                i14 = (int) fraction;
-                                                if (i14 > 0) {
+                                                i15 = (int) fraction;
+                                                if (i15 > 0) {
                                                 }
-                                                if (measuredWidth < i14) {
+                                                if (measuredWidth < i15) {
                                                 }
                                             }
                                         }
@@ -224,25 +224,25 @@ public class ContentFrameLayout extends FrameLayout {
                                         }
                                     }
                                 }
-                                i16 = (int) fraction2;
-                                if (i16 > 0) {
+                                i17 = (int) fraction2;
+                                if (i17 > 0) {
                                 }
                             }
                         }
-                        i12 = i10;
-                        super.onMeasure(i11, i12);
+                        i13 = i11;
+                        super.onMeasure(i12, i13);
                         measuredWidth = getMeasuredWidth();
                         int makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(measuredWidth, TLObject.FLAG_30);
                         if (!z10) {
                             if (!z12) {
                             }
                             if (typedValue != null) {
-                                if (i13 != 5) {
+                                if (i14 != 5) {
                                 }
-                                i14 = (int) fraction;
-                                if (i14 > 0) {
+                                i15 = (int) fraction;
+                                if (i15 > 0) {
                                 }
-                                if (measuredWidth < i14) {
+                                if (measuredWidth < i15) {
                                 }
                             }
                         }
@@ -251,17 +251,17 @@ public class ContentFrameLayout extends FrameLayout {
                         }
                     }
                 }
-                i18 = (int) fraction3;
-                if (i18 > 0) {
+                i19 = (int) fraction3;
+                if (i19 > 0) {
                 }
             }
         }
-        i11 = i9;
+        i12 = i10;
         z10 = false;
         if (mode2 == Integer.MIN_VALUE) {
         }
-        i12 = i10;
-        super.onMeasure(i11, i12);
+        i13 = i11;
+        super.onMeasure(i12, i13);
         measuredWidth = getMeasuredWidth();
         int makeMeasureSpec22 = View.MeasureSpec.makeMeasureSpec(measuredWidth, TLObject.FLAG_30);
         if (!z10) {
@@ -279,8 +279,8 @@ public class ContentFrameLayout extends FrameLayout {
         this(context, attributeSet, 0);
     }
 
-    public ContentFrameLayout(Context context, AttributeSet attributeSet, int i9) {
-        super(context, attributeSet, i9);
+    public ContentFrameLayout(Context context, AttributeSet attributeSet, int i10) {
+        super(context, attributeSet, i10);
         this.h = new Rect();
     }
 }

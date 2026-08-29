@@ -1,100 +1,64 @@
 package yg;
 
 import android.content.Context;
-import android.graphics.Canvas;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
-import android.graphics.drawable.Drawable;
+import android.text.TextUtils;
 import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
+import i7.f6;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.Components.gr;
+import org.telegram.ui.ActionBar.c6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.x5;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class d extends View {
-    public final Drawable a;
-    public final td.a b;
-    public final int c;
-    public e d;
+public final class d extends FrameLayout implements x5 {
+    public final c6 a;
+    public final ImageView b;
+    public final TextView c;
 
-    public d(Context context, int i9) {
+    public d(Context context, c6 c6Var) {
         super(context);
-        this.b = new td.a(this, gr.h, 380L);
-        this.c = i9;
-        Drawable mutate = context.getResources().getDrawable(R.drawable.outline_poll_attach_24).mutate();
-        this.a = mutate;
-        mutate.setColorFilter(new PorterDuffColorFilter(f6.w0(null, f6.o7, false), PorterDuff.Mode.SRC_IN));
+        this.a = c6Var;
+        ImageView imageView = new ImageView(context);
+        this.b = imageView;
+        imageView.setScaleType(ImageView.ScaleType.CENTER);
+        imageView.setImageResource(R.drawable.msg_arrow_back);
+        addView(imageView, f6.d(48, 48.0f, 8388627, 6.0f, 0.0f, 0.0f, 0.0f));
+        TextView textView = new TextView(context);
+        this.c = textView;
+        textView.setText(LocaleController.getString(R.string.EmojiSearchBackToSearch));
+        textView.setTextSize(1, 15.0f);
+        textView.setTypeface(AndroidUtilities.bold());
+        textView.setSingleLine(true);
+        textView.setEllipsize(TextUtils.TruncateAt.END);
+        addView(textView, f6.d(-2, -2.0f, 8388627, 50.0f, 0.0f, 16.0f, 0.0f));
+        e();
     }
 
-    public final void a(e eVar, boolean z10) {
-        e eVar2;
-        e eVar3;
-        this.b.a(eVar != null, z10);
-        if (isAttachedToWindow() && (eVar3 = this.d) != null) {
-            eVar3.b();
-        }
-        this.d = eVar;
-        if (!isAttachedToWindow() || (eVar2 = this.d) == null) {
-            return;
-        }
-        eVar2.a(this);
+    @Override // org.telegram.ui.ActionBar.x5
+    public final void e() {
+        int i10 = g6.Wk;
+        c6 c6Var = this.a;
+        int i11 = (int) 153.0f;
+        this.c.setTextColor(i0.a.k(g6.v0(i10, c6Var), i11));
+        PorterDuffColorFilter porterDuffColorFilter = new PorterDuffColorFilter(i0.a.k(g6.v0(i10, c6Var), i11), PorterDuff.Mode.MULTIPLY);
+        ImageView imageView = this.b;
+        imageView.setColorFilter(porterDuffColorFilter);
+        imageView.setBackground(g6.f0(i0.a.k(g6.v0(i10, c6Var), (int) 25.5f), 1, -1));
     }
 
-    @Override // android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        e eVar = this.d;
-        if (eVar != null) {
-            eVar.a(this);
-        }
+    public /* bridge */ /* synthetic */ int[] getColorKeys() {
+        return null;
     }
 
-    @Override // android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        e eVar = this.d;
-        if (eVar != null) {
-            eVar.b();
-        }
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        float width = getWidth() / 2.0f;
-        float height = getHeight() / 2.0f;
-        float f10 = this.b.e;
-        if (f10 < 1.0f) {
-            canvas.save();
-            float f11 = 1.0f - f10;
-            canvas.scale(f11, f11, width, height);
-            this.a.draw(canvas);
-            canvas.restore();
-        }
-        if (f10 > 0.0f) {
-            float f12 = this.c;
-            int dp = AndroidUtilities.dp(f12);
-            int width2 = (getWidth() - dp) / 2;
-            int height2 = (getHeight() - dp) / 2;
-            canvas.save();
-            canvas.translate(width2, height2);
-            canvas.scale(f10, f10, AndroidUtilities.dp(f12) / 2.0f, AndroidUtilities.dp(f12) / 2.0f);
-            e eVar = this.d;
-            if (eVar != null) {
-                eVar.c(canvas, AndroidUtilities.dp(f12), AndroidUtilities.dp(f12));
-            }
-            canvas.restore();
-        }
-    }
-
-    @Override // android.view.View
-    public final void onSizeChanged(int i9, int i10, int i11, int i12) {
-        super.onSizeChanged(i9, i10, i11, i12);
-        int dp = AndroidUtilities.dp(24.0f);
-        int i13 = (i9 - dp) / 2;
-        int i14 = (i10 - dp) / 2;
-        this.a.setBounds(i13, i14, i13 + dp, dp + i14);
+    public void setOnBackClickListener(View.OnClickListener onClickListener) {
+        this.b.setOnClickListener(onClickListener);
     }
 }

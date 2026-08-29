@@ -1,44 +1,47 @@
 package nh;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
-import android.view.View;
-import android.widget.FrameLayout;
-import g7.e6;
-import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.w5;
-import org.telegram.ui.Components.o9;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes4.dex */
-public final class n extends FrameLayout implements w5 {
-    public final o9 a;
+public final /* synthetic */ class n implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ wa b;
 
-    public n(Context context) {
-        super(context);
-        o9 o9Var = new o9(context);
-        this.a = o9Var;
-        o9Var.setRoundRadius(AndroidUtilities.dp(20.0f));
-        addView(o9Var, e6.d(72, 72.0f, 81, 0.0f, 0.0f, 0.0f, 28.0f));
+    public /* synthetic */ n(wa waVar, int i10) {
+        this.a = i10;
+        this.b = waVar;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        Drawable drawable = f6.S0;
-        o9 o9Var = this.a;
-        ff.s.a(canvas, drawable, (o9Var.getWidth() / 2.0f) + o9Var.getLeft(), (o9Var.getHeight() / 2.0f) + o9Var.getTop(), o9Var.getHeight());
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i9, int i10) {
-        super.onMeasure(i9, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(136.0f), TLObject.FLAG_30));
-    }
-
-    @Override // org.telegram.ui.ActionBar.w5
-    public final void d() {
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.n();
+                break;
+            case 1:
+                wa waVar = this.b;
+                waVar.G0 = false;
+                waVar.H0 = TLObject.FLAG_31;
+                waVar.invalidate();
+                waVar.O0.setVisibility(0);
+                waVar.P0.setVisibility(0);
+                break;
+            default:
+                gb gbVar = this.b.O1;
+                va vaVar = gbVar.T0;
+                if (vaVar != null) {
+                    vaVar.K = false;
+                    vaVar.c();
+                    va vaVar2 = gbVar.T0;
+                    vaVar2.m(0L);
+                    qb qbVar = vaVar2.B;
+                    if (qbVar != null) {
+                        qbVar.setProgress(0L);
+                        break;
+                    }
+                }
+                break;
+        }
     }
 }

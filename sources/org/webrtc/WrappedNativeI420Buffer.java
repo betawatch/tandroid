@@ -3,7 +3,7 @@ package org.webrtc;
 import java.nio.ByteBuffer;
 import org.webrtc.VideoFrame;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes4.dex */
 class WrappedNativeI420Buffer implements VideoFrame.I420Buffer {
     private final ByteBuffer dataU;
@@ -16,22 +16,22 @@ class WrappedNativeI420Buffer implements VideoFrame.I420Buffer {
     private final int strideY;
     private final int width;
 
-    public WrappedNativeI420Buffer(int i9, int i10, ByteBuffer byteBuffer, int i11, ByteBuffer byteBuffer2, int i12, ByteBuffer byteBuffer3, int i13, long j10) {
-        this.width = i9;
-        this.height = i10;
+    public WrappedNativeI420Buffer(int i10, int i11, ByteBuffer byteBuffer, int i12, ByteBuffer byteBuffer2, int i13, ByteBuffer byteBuffer3, int i14, long j10) {
+        this.width = i10;
+        this.height = i11;
         this.dataY = byteBuffer;
-        this.strideY = i11;
+        this.strideY = i12;
         this.dataU = byteBuffer2;
-        this.strideU = i12;
+        this.strideU = i13;
         this.dataV = byteBuffer3;
-        this.strideV = i13;
+        this.strideV = i14;
         this.nativeBuffer = j10;
         retain();
     }
 
     @Override // org.webrtc.VideoFrame.Buffer
-    public VideoFrame.Buffer cropAndScale(int i9, int i10, int i11, int i12, int i13, int i14) {
-        return JavaI420Buffer.cropAndScaleI420(this, i9, i10, i11, i12, i13, i14);
+    public VideoFrame.Buffer cropAndScale(int i10, int i11, int i12, int i13, int i14, int i15) {
+        return JavaI420Buffer.cropAndScaleI420(this, i10, i11, i12, i13, i14, i15);
     }
 
     @Override // org.webrtc.VideoFrame.I420Buffer, org.webrtc.VideoFrame.Buffer

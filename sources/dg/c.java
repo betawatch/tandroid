@@ -1,57 +1,54 @@
 package dg;
 
-import android.content.Context;
-import org.telegram.messenger.Emoji;
-import org.telegram.ui.ActionBar.h5;
+import android.animation.ValueAnimator;
+import org.telegram.ui.Components.voip.l0;
+import org.telegram.ui.oh1;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class c extends h5 {
-    public final /* synthetic */ int I0;
+public final /* synthetic */ class c implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ float b;
+    public final /* synthetic */ float c;
+    public final /* synthetic */ float d;
+    public final /* synthetic */ Object e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ c(Context context, int i9) {
-        super(context);
-        this.I0 = i9;
+    public /* synthetic */ c(Object obj, float f9, float f10, float f11, int i10) {
+        this.a = i10;
+        this.e = obj;
+        this.b = f9;
+        this.c = f10;
+        this.d = f11;
     }
 
-    @Override // org.telegram.ui.ActionBar.h5
-    public boolean k(CharSequence charSequence) {
-        switch (this.I0) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
             case 0:
-                return l(Emoji.replaceEmoji(charSequence, getPaint().getFontMetricsInt(), false), false);
+                i iVar = (i) this.e;
+                iVar.getClass();
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                a aVar = iVar.b;
+                aVar.d = this.b * floatValue;
+                aVar.e = this.c * floatValue;
+                aVar.g = floatValue * this.d;
+                break;
             case 1:
-            case 2:
-            default:
-                return super.k(charSequence);
-            case 3:
-                return l(Emoji.replaceEmoji(charSequence, getPaint().getFontMetricsInt(), false), false);
-            case 4:
-                return l(Emoji.replaceEmoji(charSequence, getPaint().getFontMetricsInt(), false), false);
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.h5
-    public boolean l(CharSequence charSequence, boolean z10) {
-        switch (this.I0) {
-            case 2:
-                return super.l(Emoji.replaceEmoji(charSequence, getPaint().getFontMetricsInt(), false), z10);
-            case 5:
-                return super.l(Emoji.replaceEmoji(charSequence, getPaint().getFontMetricsInt(), false), false);
-            default:
-                return super.l(charSequence, z10);
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.h5, android.view.View
-    public void onMeasure(int i9, int i10) {
-        switch (this.I0) {
-            case 1:
-                super.onMeasure(i9, i10);
-                setPivotY(getMeasuredHeight() / 2.0f);
+                l0 l0Var = (l0) this.e;
+                l0Var.getClass();
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                l0Var.u0 = com.google.android.recaptcha.internal.a.z(1.0f, floatValue2, 1.0f, this.b * floatValue2);
+                l0Var.n0 = this.c * floatValue2;
+                l0Var.o0 = this.d * floatValue2;
+                l0Var.invalidate();
                 break;
             default:
-                super.onMeasure(i9, i10);
+                oh1 oh1Var = (oh1) this.e;
+                float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                oh1Var.b1 = com.google.android.recaptcha.internal.a.z(1.0f, floatValue3, 1.0f, this.b * floatValue3);
+                oh1Var.U0 = this.c * floatValue3;
+                oh1Var.V0 = this.d * floatValue3;
+                oh1Var.s.invalidate();
                 break;
         }
     }

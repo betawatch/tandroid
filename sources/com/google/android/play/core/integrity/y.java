@@ -5,9 +5,9 @@ import android.os.Bundle;
 import android.util.Log;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.Tasks;
-import k8.g0;
+import m8.g0;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 abstract class y {
     private final String b;
@@ -21,7 +21,7 @@ abstract class y {
         this.c = j10;
     }
 
-    public final Task a(Activity activity, int i9) {
+    public final Task a(Activity activity, int i10) {
         synchronized (this.d) {
             try {
                 if (this.e) {
@@ -29,20 +29,20 @@ abstract class y {
                 }
                 this.e = true;
                 g0 g0Var = this.a;
-                Object[] objArr = {Integer.valueOf(i9)};
+                Object[] objArr = {Integer.valueOf(i10)};
                 g0Var.getClass();
                 if (Log.isLoggable("PlayCore", 3)) {
                     Log.d("PlayCore", g0.d(g0Var.a, "checkAndShowDialog(%s)", objArr));
                 }
-                Bundle h = aa.d.h(i9, "dialog.intent.type");
+                Bundle h = a4.w.h(i10, "dialog.intent.type");
                 h.putString("package.name", this.b);
                 h.putInt("playcore.integrity.version.major", 1);
                 h.putInt("playcore.integrity.version.minor", 4);
                 h.putInt("playcore.integrity.version.patch", 0);
                 h.putLong("request.token.sid", this.c);
                 return b(activity, h);
-            } catch (Throwable th) {
-                throw th;
+            } catch (Throwable th2) {
+                throw th2;
             }
         }
     }

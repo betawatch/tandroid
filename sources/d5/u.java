@@ -1,20 +1,15 @@
 package d5;
 
-import android.telephony.TelephonyCallback;
-import android.telephony.TelephonyDisplayInfo;
+import j3.q0;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class u extends TelephonyCallback implements TelephonyCallback.DisplayInfoListener {
-    public final w a;
+public abstract class u {
+    public q0 a;
+    public com.google.android.exoplayer2.upstream.f b;
+    public t c;
 
-    public u(w wVar) {
-        this.a = wVar;
-    }
+    public abstract void a();
 
-    @Override // android.telephony.TelephonyCallback.DisplayInfoListener
-    public final void onDisplayInfoChanged(TelephonyDisplayInfo telephonyDisplayInfo) {
-        int overrideNetworkType = telephonyDisplayInfo.getOverrideNetworkType();
-        w.a(this.a, overrideNetworkType == 3 || overrideNetworkType == 4 || overrideNetworkType == 5 ? 10 : 5);
-    }
+    public abstract void b(l3.e eVar);
 }

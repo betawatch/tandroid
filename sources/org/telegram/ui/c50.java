@@ -1,55 +1,36 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-import java.util.HashSet;
+import android.view.View;
+import java.util.Iterator;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class c50 extends f2.n {
-    public float F;
-    public ValueAnimator G;
-    public final HashSet H = new HashSet();
-    public final HashSet I = new HashSet();
-    public float J;
-    public float K;
-    public final /* synthetic */ o50 L;
+public final /* synthetic */ class c50 implements org.telegram.ui.Components.v5 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public c50(o50 o50Var) {
-        this.L = o50Var;
+    public /* synthetic */ c50(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // f2.n, f2.w0
-    public final void g() {
-        super.g();
-        this.I.clear();
-        this.H.clear();
-        this.K = Float.MAX_VALUE;
-        this.L.M.invalidate();
-    }
-
-    @Override // f2.n, f2.w0
-    public final void m() {
-        boolean isEmpty = this.p.isEmpty();
-        boolean isEmpty2 = this.r.isEmpty();
-        boolean isEmpty3 = this.q.isEmpty();
-        ValueAnimator valueAnimator = this.G;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
-            this.G = null;
+    @Override // org.telegram.ui.Components.v5
+    public final void invalidate() {
+        switch (this.a) {
+            case 0:
+                Iterator it = ((d50) this.b).i.iterator();
+                while (it.hasNext()) {
+                    ((View) it.next()).invalidate();
+                }
+                break;
+            default:
+                m51 m51Var = (m51) this.b;
+                m51Var.getClass();
+                if (!kg.g0.b && m51Var.getParent() != null) {
+                    ((View) m51Var.getParent()).invalidate();
+                    break;
+                }
+                break;
         }
-        if (!isEmpty || !isEmpty2 || !isEmpty3) {
-            this.F = 0.0f;
-            ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-            this.G = ofFloat;
-            ofFloat.addUpdateListener(new f3(this, 17));
-            this.G.addListener(new org.telegram.ui.Components.y11(this, 28));
-            this.G.setDuration(350L);
-            this.G.setInterpolator(org.telegram.ui.Components.gr.f);
-            this.G.start();
-            o50 o50Var = this.L;
-            o50Var.M.invalidate();
-            o50Var.W1.invalidate();
-        }
-        super.m();
     }
 }

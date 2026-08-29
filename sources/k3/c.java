@@ -1,20 +1,25 @@
 package k3;
 
-import android.media.MediaCodec;
-import com.google.android.gms.internal.cast.i4;
-
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class c {
-    public final MediaCodec.CryptoInfo a;
-    public final MediaCodec.CryptoInfo.Pattern b = i4.a();
+public final /* synthetic */ class c implements f5.j {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ a b;
 
-    public c(MediaCodec.CryptoInfo cryptoInfo) {
-        this.a = cryptoInfo;
+    public /* synthetic */ c(a aVar, int i10) {
+        this.a = i10;
+        this.b = aVar;
     }
 
-    public static void a(c cVar, int i9, int i10) {
-        cVar.b.set(i9, i10);
-        cVar.a.setPattern(cVar.b);
+    @Override // f5.j
+    public final void invoke(Object obj) {
+        switch (this.a) {
+            case 0:
+                ((b) obj).onSeekStarted(this.b);
+                break;
+            default:
+                ((b) obj).c(this.b);
+                break;
+        }
     }
 }

@@ -1,36 +1,27 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.view.View;
+import android.content.Context;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class v00 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ nq b;
+public final class v00 extends org.telegram.ui.Components.p00 {
+    public final /* synthetic */ int Q;
+    public final /* synthetic */ Object R;
 
-    public v00(nq nqVar) {
-        this.b = nqVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ v00(Object obj, Context context, int i10) {
+        super(context, null);
+        this.Q = i10;
+        this.R = obj;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
+    @Override // org.telegram.ui.Components.p00
+    public final int getColumnsCount() {
+        switch (this.Q) {
             case 0:
-                ((f10) this.b.d).h0.unlock();
-                break;
+                return ((h10) this.R).s;
             default:
-                nq nqVar = this.b;
-                View view = nqVar.b;
-                view.setAlpha(1.0f);
-                f2.z0.x0(view);
-                ((f10) nqVar.d).b.removeView(view);
-                break;
+                return ((f10) this.R).d.s;
         }
-    }
-
-    public v00(nq nqVar, f2.z0 z0Var) {
-        this.b = nqVar;
     }
 }

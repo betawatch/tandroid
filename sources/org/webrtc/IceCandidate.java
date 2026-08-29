@@ -3,7 +3,7 @@ package org.webrtc;
 import java.util.Arrays;
 import org.webrtc.PeerConnection;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes4.dex */
 public class IceCandidate {
     public final PeerConnection.AdapterType adapterType;
@@ -12,9 +12,9 @@ public class IceCandidate {
     public final String sdpMid;
     public final String serverUrl;
 
-    public IceCandidate(String str, int i9, String str2) {
+    public IceCandidate(String str, int i10, String str2) {
         this.sdpMid = str;
-        this.sdpMLineIndex = i9;
+        this.sdpMLineIndex = i10;
         this.sdp = str2;
         this.serverUrl = "";
         this.adapterType = PeerConnection.AdapterType.UNKNOWN;
@@ -48,9 +48,9 @@ public class IceCandidate {
         return this.sdpMid + ":" + this.sdpMLineIndex + ":" + this.sdp + ":" + this.serverUrl + ":" + this.adapterType.toString();
     }
 
-    public IceCandidate(String str, int i9, String str2, String str3, PeerConnection.AdapterType adapterType) {
+    public IceCandidate(String str, int i10, String str2, String str3, PeerConnection.AdapterType adapterType) {
         this.sdpMid = str;
-        this.sdpMLineIndex = i9;
+        this.sdpMLineIndex = i10;
         this.sdp = str2;
         this.serverUrl = str3;
         this.adapterType = adapterType;

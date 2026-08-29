@@ -2,33 +2,23 @@ package q7;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import g7.p8;
-import j$.util.DesugarCollections;
-import java.util.ArrayList;
-import java.util.List;
+import com.google.android.gms.internal.cast.o;
+import o6.w0;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class e extends y5.a {
-    public static final Parcelable.Creator<e> CREATOR = new j(6);
-    public final List a;
-    public final boolean b;
-    public final boolean c;
+public final class e extends a6.a {
+    public static final Parcelable.Creator<e> CREATOR = new w0(15);
+    public final byte[] a;
 
-    public e(ArrayList arrayList, boolean z10, boolean z11) {
-        this.a = arrayList;
-        this.b = z10;
-        this.c = z11;
+    public e(byte[] bArr) {
+        this.a = bArr;
     }
 
     @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i9) {
-        int q10 = p8.q(parcel, 20293);
-        p8.p(parcel, 1, DesugarCollections.unmodifiableList(this.a));
-        p8.s(parcel, 2, 4);
-        parcel.writeInt(this.b ? 1 : 0);
-        p8.s(parcel, 3, 4);
-        parcel.writeInt(this.c ? 1 : 0);
-        p8.r(parcel, q10);
+    public final void writeToParcel(Parcel parcel, int i10) {
+        int q6 = o.q(parcel, 20293);
+        o.c(parcel, 2, this.a);
+        o.r(parcel, q6);
     }
 }

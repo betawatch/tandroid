@@ -1,10 +1,10 @@
 package com.google.android.recaptcha.internal;
 
 import java.util.Arrays;
-import kotlin.jvm.internal.i;
-import pc.f;
+import kotlin.jvm.internal.j;
+import rc.f;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class zzjy implements zzjt {
     public static final zzjy zza = new zzjy();
@@ -13,7 +13,7 @@ public final class zzjy implements zzjt {
     }
 
     @Override // com.google.android.recaptcha.internal.zzjt
-    public final void zza(int i9, zziz zzizVar, zzzt... zzztVarArr) {
+    public final void zza(int i10, zziz zzizVar, zzzt... zzztVarArr) {
         int length = zzztVarArr.length;
         if (length < 2) {
             throw new zzdm(4, 3, null);
@@ -35,12 +35,12 @@ public final class zzjy implements zzjt {
             throw new zzdm(4, 5, null);
         }
         String zza4 = zzizVar.zzh().zza(str);
-        if (i.a(zza4, "forName")) {
+        if (j.a(zza4, "forName")) {
             throw new zzdm(6, 48, null);
         }
         Class[] zzf = zzizVar.zzc().zzf(f.h(zzztVarArr).subList(2, length));
         try {
-            zzizVar.zzc().zze(i9, cls.getMethod(zza4, (Class[]) Arrays.copyOf(zzf, zzf.length)));
+            zzizVar.zzc().zze(i10, cls.getMethod(zza4, (Class[]) Arrays.copyOf(zzf, zzf.length)));
         } catch (Exception e10) {
             throw new zzdm(6, 13, e10);
         }

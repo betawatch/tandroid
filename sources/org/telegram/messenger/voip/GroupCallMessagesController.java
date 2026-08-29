@@ -1,7 +1,7 @@
 package org.telegram.messenger.voip;
 
 import android.util.LongSparseArray;
-import bg.i2;
+import eg.z1;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -24,21 +24,21 @@ import org.telegram.tgnet.json.TLJsonParser;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public class GroupCallMessagesController extends BaseController {
     private static volatile GroupCallMessagesController[] Instance = new GroupCallMessagesController[4];
     private final LongSparseArray<MessagesList> callMessagesList;
     private final LongSparseArray<List<CallMessageListener>> callMessagesListeners;
 
-    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
     public interface CallMessageListener {
         void onNewGroupCallMessage(long j10, GroupCallMessage groupCallMessage);
 
         void onPopGroupCallMessage();
     }
 
-    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
     public static class MessagesList {
         private final List<GroupCallMessage> messages;
         private final Set<Long> randomIds;
@@ -72,29 +72,29 @@ public class GroupCallMessagesController extends BaseController {
         }
     }
 
-    private GroupCallMessagesController(int i9) {
-        super(i9);
+    private GroupCallMessagesController(int i10) {
+        super(i10);
         this.callMessagesListeners = new LongSparseArray<>();
         this.callMessagesList = new LongSparseArray<>();
     }
 
-    public static GroupCallMessagesController getInstance(int i9) {
+    public static GroupCallMessagesController getInstance(int i10) {
         GroupCallMessagesController groupCallMessagesController;
-        GroupCallMessagesController groupCallMessagesController2 = Instance[i9];
+        GroupCallMessagesController groupCallMessagesController2 = Instance[i10];
         if (groupCallMessagesController2 != null) {
             return groupCallMessagesController2;
         }
         synchronized (GroupCallMessagesController.class) {
             try {
-                groupCallMessagesController = Instance[i9];
+                groupCallMessagesController = Instance[i10];
                 if (groupCallMessagesController == null) {
                     GroupCallMessagesController[] groupCallMessagesControllerArr = Instance;
-                    GroupCallMessagesController groupCallMessagesController3 = new GroupCallMessagesController(i9);
-                    groupCallMessagesControllerArr[i9] = groupCallMessagesController3;
+                    GroupCallMessagesController groupCallMessagesController3 = new GroupCallMessagesController(i10);
+                    groupCallMessagesControllerArr[i10] = groupCallMessagesController3;
                     groupCallMessagesController = groupCallMessagesController3;
                 }
-            } catch (Throwable th) {
-                throw th;
+            } catch (Throwable th2) {
+                throw th2;
             }
         }
         return groupCallMessagesController;
@@ -213,7 +213,7 @@ public class GroupCallMessagesController extends BaseController {
                     it2.next().onNewGroupCallMessage(j10, groupCallMessage);
                 }
             }
-            AndroidUtilities.runOnUIThread(new i2(this, j10, 17), getAppGlobalConfig().groupCallMessageTtl.get(TimeUnit.MILLISECONDS));
+            AndroidUtilities.runOnUIThread(new z1(this, j10, 15), getAppGlobalConfig().groupCallMessageTtl.get(TimeUnit.MILLISECONDS));
         }
     }
 
@@ -305,6 +305,6 @@ public class GroupCallMessagesController extends BaseController {
         if (getUserConfig().clientUserId == peerDialogId) {
             return;
         }
-        Utilities.globalQueue.postRunnable(new e5.y(this, j10, peerDialogId, bArr, 11));
+        Utilities.globalQueue.postRunnable(new g5.x(this, j10, peerDialogId, bArr, 11));
     }
 }

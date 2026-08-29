@@ -1,21 +1,30 @@
 package org.telegram.ui.Components;
 
 import android.text.Editable;
+import android.text.TextWatcher;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public interface sx0 {
-    void e(bh.f fVar);
+public final class sx0 implements TextWatcher {
+    public final /* synthetic */ NumberTextView a;
+    public final /* synthetic */ rx0 b;
 
-    EditTextBoldCursor getEditField();
+    public sx0(NumberTextView numberTextView, rx0 rx0Var) {
+        this.a = numberTextView;
+        this.b = rx0Var;
+    }
 
-    Editable getEditText();
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        this.a.a(50 - Character.codePointCount(editable, 0, editable.length()), true);
+        this.b.setErrorText(null);
+    }
 
-    CharSequence getFieldText();
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    }
 
-    org.telegram.ui.ActionBar.o2 getParentFragment();
-
-    int getVisibility();
-
-    void setFieldText(CharSequence charSequence);
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    }
 }

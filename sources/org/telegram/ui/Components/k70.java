@@ -1,31 +1,80 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
+import org.telegram.messenger.AccountInstance;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class k70 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ p70 b;
-    public final /* synthetic */ TLRPC.TL_chatInviteJoinResultWebView c;
-    public final /* synthetic */ long d;
+public final /* synthetic */ class k70 implements RequestDelegate {
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ Context b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Object g;
+    public final /* synthetic */ Object h;
+    public final /* synthetic */ Object i;
 
-    public /* synthetic */ k70(p70 p70Var, TLRPC.TL_chatInviteJoinResultWebView tL_chatInviteJoinResultWebView, long j10, int i9) {
-        this.a = i9;
-        this.b = p70Var;
-        this.c = tL_chatInviteJoinResultWebView;
-        this.d = j10;
+    public /* synthetic */ k70(Context context, lh.h0 h0Var, long j10, byte[] bArr, org.telegram.messenger.video.a aVar, tc tcVar, org.telegram.messenger.video.d dVar, int i10) {
+        this.b = context;
+        this.e = h0Var;
+        this.c = j10;
+        this.f = bArr;
+        this.g = aVar;
+        this.h = tcVar;
+        this.i = dVar;
+        this.d = i10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                p70.p(this.b, this.c, this.d);
+                AndroidUtilities.runOnUIThread(new m70((org.telegram.ui.ActionBar.c2) this.e, tLObject, (AccountInstance) this.f, (r70) this.g, this.c, this.b, (org.telegram.ui.ActionBar.o2) this.h, this.d, (TLRPC.Peer) this.i));
                 break;
             default:
-                p70.o(this.b, this.c, this.d);
+                lh.h0 h0Var = (lh.h0) this.e;
+                byte[] bArr = (byte[]) this.f;
+                org.telegram.messenger.video.a aVar = (org.telegram.messenger.video.a) this.g;
+                tc tcVar = (tc) this.h;
+                org.telegram.messenger.video.d dVar = (org.telegram.messenger.video.d) this.i;
+                Context context = this.b;
+                if (tLObject == null) {
+                    if (tL_error != null && "AD_EXPIRED".equalsIgnoreCase(tL_error.text)) {
+                        AndroidUtilities.runOnUIThread(new org.telegram.ui.m21(aVar, tcVar, context, h0Var, 1), 200L);
+                        break;
+                    }
+                } else if (!(tLObject instanceof TLRPC.TL_channels_sponsoredMessageReportResultChooseOption)) {
+                    if (!(tLObject instanceof TLRPC.TL_channels_sponsoredMessageReportResultReported)) {
+                        if (tLObject instanceof TLRPC.TL_channels_sponsoredMessageReportResultAdsHidden) {
+                            AndroidUtilities.runOnUIThread(new org.telegram.ui.ll0(aVar, tcVar, this.d, 8), 200L);
+                            break;
+                        }
+                    } else {
+                        AndroidUtilities.runOnUIThread(new org.telegram.ui.m21(aVar, tcVar, context, h0Var, 0), 200L);
+                        break;
+                    }
+                } else {
+                    AndroidUtilities.runOnUIThread(new jh.a3(tLObject, context, h0Var, this.c, bArr, aVar, tcVar, dVar));
+                    break;
+                }
                 break;
         }
+    }
+
+    public /* synthetic */ k70(org.telegram.ui.ActionBar.c2 c2Var, AccountInstance accountInstance, r70 r70Var, long j10, Context context, org.telegram.ui.ActionBar.o2 o2Var, int i10, TLRPC.Peer peer) {
+        this.e = c2Var;
+        this.f = accountInstance;
+        this.g = r70Var;
+        this.c = j10;
+        this.b = context;
+        this.h = o2Var;
+        this.d = i10;
+        this.i = peer;
     }
 }

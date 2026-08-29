@@ -1,129 +1,73 @@
 package androidx.mediarouter.app;
 
 import android.content.Context;
-import android.os.Bundle;
-import android.os.SystemClock;
-import android.view.ContextThemeWrapper;
+import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.widget.ImageButton;
-import androidx.recyclerview.widget.RecyclerView;
-import java.util.ArrayList;
-import java.util.Collections;
+import f2.n1;
+import h7.e5;
+import h7.l8;
+import h7.s7;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class e0 extends g.s {
-    public final long A;
-    public long B;
-    public final d C;
-    public final c2.c0 f;
-    public final e h;
-    public final Context n;
-    public c2.v r;
-    public ArrayList s;
-    public d0 v;
-    public RecyclerView w;
-    public boolean x;
-    public c2.a0 y;
+public abstract class e0 extends n1 {
+    public c2.b0 v;
+    public final ImageButton w;
+    public final MediaRouteVolumeSlider x;
+    public final /* synthetic */ m0 y;
 
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public e0(Context context) {
-        super(r3, r0 == 0 ? f7.d0.e(r3) : r0);
-        ContextThemeWrapper a2 = f7.d0.a(context, false);
-        int g10 = f7.d0.g(a2, R.attr.mediaRouteTheme);
-        this.r = c2.v.c;
-        this.C = new d(this, 1);
-        Context context2 = getContext();
-        this.f = c2.c0.d(context2);
-        this.h = new e(this, 2);
-        this.n = context2;
-        this.A = context2.getResources().getInteger(R.integer.mr_update_routes_delay_ms);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public e0(m0 m0Var, View view, ImageButton imageButton, MediaRouteVolumeSlider mediaRouteVolumeSlider) {
+        super(view);
+        int c3;
+        int c6;
+        this.y = m0Var;
+        this.w = imageButton;
+        this.x = mediaRouteVolumeSlider;
+        Context context = m0Var.y;
+        Drawable d = l8.d(s7.b(context, R.drawable.mr_cast_mute_button));
+        if (e5.h(context)) {
+            d.setTint(f0.e.c(context, R.color.mr_dynamic_dialog_icon_light));
+        }
+        imageButton.setImageDrawable(d);
+        if (e5.h(context)) {
+            c3 = f0.e.c(context, R.color.mr_cast_progressbar_progress_and_thumb_light);
+            c6 = f0.e.c(context, R.color.mr_cast_progressbar_background_light);
+        } else {
+            c3 = f0.e.c(context, R.color.mr_cast_progressbar_progress_and_thumb_dark);
+            c6 = f0.e.c(context, R.color.mr_cast_progressbar_background_dark);
+        }
+        mediaRouteVolumeSlider.a(c3, c6);
     }
 
-    public final void e() {
-        if (this.y == null && this.x) {
-            this.f.getClass();
-            c2.c0.b();
-            ArrayList arrayList = new ArrayList(c2.c0.c().j);
-            int size = arrayList.size();
-            while (true) {
-                int i9 = size - 1;
-                if (size <= 0) {
-                    break;
-                }
-                c2.a0 a0Var = (c2.a0) arrayList.get(i9);
-                if (a0Var.d() || !a0Var.g || !a0Var.h(this.r)) {
-                    arrayList.remove(i9);
-                }
-                size = i9;
-            }
-            Collections.sort(arrayList, g.c);
-            long uptimeMillis = SystemClock.uptimeMillis() - this.B;
-            long j10 = this.A;
-            if (uptimeMillis < j10) {
-                d dVar = this.C;
-                dVar.removeMessages(1);
-                dVar.sendMessageAtTime(dVar.obtainMessage(1, arrayList), this.B + j10);
-            } else {
-                this.B = SystemClock.uptimeMillis();
-                this.s.clear();
-                this.s.addAll(arrayList);
-                this.v.D();
-            }
-        }
+    public final void t(c2.b0 b0Var) {
+        this.v = b0Var;
+        int i10 = b0Var.p;
+        boolean z10 = i10 == 0;
+        ImageButton imageButton = this.w;
+        imageButton.setActivated(z10);
+        imageButton.setOnClickListener(new v(this, 1));
+        c2.b0 b0Var2 = this.v;
+        MediaRouteVolumeSlider mediaRouteVolumeSlider = this.x;
+        mediaRouteVolumeSlider.setTag(b0Var2);
+        mediaRouteVolumeSlider.setMax(b0Var.q);
+        mediaRouteVolumeSlider.setProgress(i10);
+        mediaRouteVolumeSlider.setOnSeekBarChangeListener(this.y.G);
     }
 
-    public final void f(c2.v vVar) {
-        if (vVar == null) {
-            throw new IllegalArgumentException("selector must not be null");
-        }
-        if (this.r.equals(vVar)) {
+    public final void u(boolean z10) {
+        ImageButton imageButton = this.w;
+        if (imageButton.isActivated() == z10) {
             return;
         }
-        this.r = vVar;
-        if (this.x) {
-            c2.c0 c0Var = this.f;
-            e eVar = this.h;
-            c0Var.h(eVar);
-            c0Var.a(vVar, eVar, 1);
+        imageButton.setActivated(z10);
+        m0 m0Var = this.y;
+        if (z10) {
+            m0Var.J.put(this.v.c, Integer.valueOf(this.x.getProgress()));
+        } else {
+            m0Var.J.remove(this.v.c);
         }
-        e();
-    }
-
-    @Override // android.app.Dialog, android.view.Window.Callback
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.x = true;
-        this.f.a(this.r, this.h, 1);
-        e();
-    }
-
-    @Override // g.s, androidx.activity.n, android.app.Dialog
-    public final void onCreate(Bundle bundle) {
-        super.onCreate(bundle);
-        setContentView(R.layout.mr_picker_dialog);
-        View decorView = getWindow().getDecorView();
-        Context context = this.n;
-        decorView.setBackgroundColor(f0.e.c(context, f7.d0.h(context) ? R.color.mr_dynamic_dialog_background_light : R.color.mr_dynamic_dialog_background_dark));
-        this.s = new ArrayList();
-        ((ImageButton) findViewById(R.id.mr_picker_close_button)).setOnClickListener(new y(this, 0));
-        this.v = new d0(this);
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.mr_picker_list);
-        this.w = recyclerView;
-        recyclerView.setAdapter(this.v);
-        this.w.setLayoutManager(new f2.m0());
-        getWindow().setLayout(!context.getResources().getBoolean(R.bool.is_tablet) ? -1 : f7.c0.a(context), context.getResources().getBoolean(R.bool.is_tablet) ? -2 : -1);
-    }
-
-    @Override // android.app.Dialog, android.view.Window.Callback
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.x = false;
-        this.f.h(this.h);
-        this.C.removeMessages(1);
     }
 }

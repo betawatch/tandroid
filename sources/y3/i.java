@@ -1,24 +1,27 @@
 package y3;
 
-import android.media.MediaCrypto;
-import android.media.MediaFormat;
-import android.view.Surface;
-import h3.t0;
+import java.util.Arrays;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class i {
-    public final n a;
-    public final MediaFormat b;
-    public final t0 c;
-    public final Surface d;
-    public final MediaCrypto e;
+    public static final byte[] e = {0, 0, 1};
+    public boolean a;
+    public int b;
+    public int c;
+    public byte[] d;
 
-    public i(n nVar, MediaFormat mediaFormat, t0 t0Var, Surface surface, MediaCrypto mediaCrypto) {
-        this.a = nVar;
-        this.b = mediaFormat;
-        this.c = t0Var;
-        this.d = surface;
-        this.e = mediaCrypto;
+    public final void a(int i10, int i11, byte[] bArr) {
+        if (this.a) {
+            int i12 = i11 - i10;
+            byte[] bArr2 = this.d;
+            int length = bArr2.length;
+            int i13 = this.b + i12;
+            if (length < i13) {
+                this.d = Arrays.copyOf(bArr2, i13 * 2);
+            }
+            System.arraycopy(bArr, i10, this.d, this.b, i12);
+            this.b += i12;
+        }
     }
 }

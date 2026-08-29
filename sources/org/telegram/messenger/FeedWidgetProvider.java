@@ -10,12 +10,12 @@ import android.widget.RemoteViews;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public class FeedWidgetProvider extends AppWidgetProvider {
-    public static void updateWidget(Context context, AppWidgetManager appWidgetManager, int i9) {
+    public static void updateWidget(Context context, AppWidgetManager appWidgetManager, int i10) {
         Intent intent = new Intent(context, (Class<?>) FeedWidgetService.class);
-        intent.putExtra("appWidgetId", i9);
+        intent.putExtra("appWidgetId", i10);
         intent.setData(Uri.parse(intent.toUri(1)));
         RemoteViews remoteViews = new RemoteViews(context.getPackageName(), R.layout.feed_widget_layout);
         remoteViews.setRemoteAdapter(R.id.list_view, intent);
@@ -25,14 +25,14 @@ public class FeedWidgetProvider extends AppWidgetProvider {
         intent2.addFlags(67108864);
         intent2.addCategory("android.intent.category.LAUNCHER");
         remoteViews.setPendingIntentTemplate(R.id.list_view, PendingIntent.getActivity(ApplicationLoader.applicationContext, 0, intent2, 167772160));
-        appWidgetManager.updateAppWidget(i9, remoteViews);
+        appWidgetManager.updateAppWidget(i10, remoteViews);
     }
 
     @Override // android.appwidget.AppWidgetProvider
     public void onDeleted(Context context, int[] iArr) {
         super.onDeleted(context, iArr);
-        for (int i9 = 0; i9 < iArr.length; i9++) {
-            context.getSharedPreferences("shortcut_widget", 0).edit().remove("account" + iArr[i9]).remove("dialogId" + iArr[i9]).commit();
+        for (int i10 = 0; i10 < iArr.length; i10++) {
+            context.getSharedPreferences("shortcut_widget", 0).edit().remove("account" + iArr[i10]).remove("dialogId" + iArr[i10]).commit();
         }
     }
 
@@ -44,8 +44,8 @@ public class FeedWidgetProvider extends AppWidgetProvider {
     @Override // android.appwidget.AppWidgetProvider
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] iArr) {
         super.onUpdate(context, appWidgetManager, iArr);
-        for (int i9 : iArr) {
-            updateWidget(context, appWidgetManager, i9);
+        for (int i10 : iArr) {
+            updateWidget(context, appWidgetManager, i10);
         }
     }
 }

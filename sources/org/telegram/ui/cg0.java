@@ -3,27 +3,27 @@ package org.telegram.ui;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class cg0 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ dg0 b;
     public final /* synthetic */ tf0 c;
 
-    public /* synthetic */ cg0(int i9, tf0 tf0Var, dg0 dg0Var) {
-        this.a = i9;
+    public /* synthetic */ cg0(int i10, tf0 tf0Var, dg0 dg0Var) {
+        this.a = i10;
         this.b = dg0Var;
         this.c = tf0Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        int i9 = this.a;
+        int i10 = this.a;
         tf0 tf0Var = this.c;
         dg0 dg0Var = this.b;
-        switch (i9) {
+        switch (i10) {
             case 0:
-                int i10 = tf0.A;
+                int i11 = tf0.A;
                 tf0Var.a();
                 AndroidUtilities.runOnUIThread(new cg0(1, tf0Var, dg0Var), 150L);
                 break;

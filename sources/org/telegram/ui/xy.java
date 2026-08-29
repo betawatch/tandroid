@@ -1,37 +1,56 @@
 package org.telegram.ui;
 
-import android.content.DialogInterface;
-import java.util.ArrayList;
-import java.util.regex.Pattern;
-import org.telegram.tgnet.ConnectionsManager;
+import android.content.Context;
+import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class xy implements DialogInterface.OnCancelListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int[] c;
+public final class xy extends org.telegram.ui.ActionBar.o2 {
+    public long a;
+    public TLRPC.Chat b;
+    public boolean c;
+    public boolean d;
+    public uy e;
+    public bh.v f;
 
-    public /* synthetic */ xy(int i9, int i10, int[] iArr) {
-        this.a = i10;
-        this.b = i9;
-        this.c = iArr;
+    public final void U() {
+        if (!this.d || getParentLayout() == null) {
+            return;
+        }
+        for (org.telegram.ui.ActionBar.o2 o2Var : getParentLayout().getFragmentStack()) {
+            if (o2Var instanceof fy) {
+                ax axVar = ((fy) o2Var).B3;
+                if (axVar.c()) {
+                    axVar.a();
+                }
+            }
+        }
     }
 
-    @Override // android.content.DialogInterface.OnCancelListener
-    public final void onCancel(DialogInterface dialogInterface) {
-        int i9 = this.a;
-        int[] iArr = this.c;
-        int i10 = this.b;
-        switch (i9) {
-            case 0:
-                ArrayList arrayList = ExternalActionActivity.x;
-                ConnectionsManager.getInstance(i10).cancelRequest(iArr[0], true);
-                break;
-            default:
-                Pattern pattern = LaunchActivity.x1;
-                ConnectionsManager.getInstance(i10).cancelRequest(iArr[0], true);
-                break;
-        }
+    @Override // org.telegram.ui.ActionBar.o2
+    public final View createView(Context context) {
+        this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
+        this.actionBar.setAllowOverlayTitle(true);
+        this.actionBar.setActionBarMenuOnItemClick(new org.telegram.ui.Components.m51(this, 8));
+        this.actionBar.setTitle(LocaleController.getString(R.string.TopicsTitle));
+        FrameLayout frameLayout = new FrameLayout(context);
+        uy uyVar = new uy(this, new b5(this, 13), new xt(this, 6), null);
+        this.e = uyVar;
+        uyVar.p1();
+        this.e.setBackgroundColor(org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.a7, this.resourceProvider));
+        frameLayout.addView(this.e, i7.f6.e(-1, -1, 119));
+        this.actionBar.setAdaptiveBackground(this.e);
+        this.fragmentView = frameLayout;
+        return frameLayout;
+    }
+
+    @Override // org.telegram.ui.ActionBar.o2
+    public final boolean onFragmentCreate() {
+        this.b = getMessagesController().getChat(Long.valueOf(-this.a));
+        return super.onFragmentCreate();
     }
 }

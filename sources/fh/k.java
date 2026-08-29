@@ -1,44 +1,103 @@
 package fh;
 
-import android.content.DialogInterface;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import android.app.Activity;
+import android.content.res.Configuration;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
+import android.view.View;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.UserConfig;
+import org.telegram.ui.Cells.s1;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class k implements DialogInterface.OnShowListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ EditTextBoldCursor b;
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* loaded from: classes3.dex */
+public final class k extends View {
+    public final HashMap a;
+    public final ArrayList b;
+    public final ArrayList c;
+    public final int d;
 
-    public /* synthetic */ k(int i9, EditTextBoldCursor editTextBoldCursor) {
-        this.a = i9;
-        this.b = editTextBoldCursor;
+    public k(Activity activity) {
+        super(activity);
+        this.a = new HashMap();
+        this.b = new ArrayList();
+        this.c = new ArrayList();
+        this.d = UserConfig.selectedAccount;
     }
 
-    @Override // android.content.DialogInterface.OnShowListener
-    public final void onShow(DialogInterface dialogInterface) {
-        switch (this.a) {
-            case 0:
-                s sVar = (s) this.b;
-                sVar.requestFocus();
-                AndroidUtilities.showKeyboard(sVar);
-                break;
-            case 1:
-                g3 g3Var = (g3) this.b;
-                g3Var.requestFocus();
-                AndroidUtilities.showKeyboard(g3Var);
-                break;
-            case 2:
-                pf.o oVar = (pf.o) this.b;
-                oVar.requestFocus();
-                AndroidUtilities.showKeyboard(oVar);
-                break;
-            default:
-                EditTextBoldCursor editTextBoldCursor = this.b;
-                editTextBoldCursor.requestFocus();
-                AndroidUtilities.showKeyboard(editTextBoldCursor);
-                editTextBoldCursor.setSelection(0, editTextBoldCursor.length());
-                break;
+    public static String b(s1 s1Var) {
+        MessageObject messageObject = s1Var.getMessageObject();
+        if (messageObject == null) {
+            return null;
+        }
+        return messageObject.getChatId() + "_" + messageObject.getId();
+    }
+
+    public final boolean a() {
+        Iterator it = this.a.entrySet().iterator();
+        while (it.hasNext()) {
+            if (!((j) ((Map.Entry) it.next()).getValue()).K) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    @Override // android.view.View, android.graphics.drawable.Drawable.Callback
+    public final void invalidateDrawable(Drawable drawable) {
+        super.invalidateDrawable(drawable);
+        if (drawable instanceof j) {
+            invalidate();
+        }
+    }
+
+    @Override // android.view.View
+    public final void onConfigurationChanged(Configuration configuration) {
+        super.onConfigurationChanged(configuration);
+        HashMap hashMap = this.a;
+        Iterator it = hashMap.entrySet().iterator();
+        while (it.hasNext()) {
+            ((j) ((Map.Entry) it.next()).getValue()).d();
+        }
+        hashMap.clear();
+        this.b.clear();
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        HashMap hashMap = this.a;
+        Iterator it = hashMap.entrySet().iterator();
+        while (it.hasNext()) {
+            ((j) ((Map.Entry) it.next()).getValue()).draw(canvas);
+        }
+        ArrayList arrayList = this.b;
+        if (arrayList.isEmpty()) {
+            return;
+        }
+        int size = arrayList.size();
+        int i10 = 0;
+        while (i10 < size) {
+            Object obj = arrayList.get(i10);
+            i10++;
+            j jVar = (j) hashMap.remove((String) obj);
+            if (jVar != null) {
+                jVar.d();
+            }
+        }
+        arrayList.clear();
+    }
+
+    @Override // android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        Iterator it = this.a.entrySet().iterator();
+        while (it.hasNext()) {
+            ((j) ((Map.Entry) it.next()).getValue()).setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
         }
     }
 }

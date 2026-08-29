@@ -1,51 +1,17 @@
 package vf;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
-
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class b extends Drawable {
-    public Drawable a;
-    public float b;
-    public int c;
+public final class b {
+    public final int a;
+    public final int b;
+    public final int c;
+    public int d;
+    public int e = 255;
 
-    public final void a(int i9) {
-        if (this.c != i9) {
-            this.c = i9;
-            setColorFilter(new PorterDuffColorFilter(i9, PorterDuff.Mode.MULTIPLY));
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        Drawable drawable = this.a;
-        Rect bounds = getBounds();
-        float f10 = this.b;
-        if (f10 == 1.0f) {
-            drawable.setBounds(bounds);
-        } else {
-            drawable.setBounds((int) (bounds.centerX() - ((bounds.width() / 2.0f) * f10)), (int) (bounds.centerY() - ((bounds.height() / 2.0f) * f10)), (int) (((bounds.width() / 2.0f) * f10) + bounds.centerX()), (int) (((bounds.height() / 2.0f) * f10) + bounds.centerY()));
-        }
-        drawable.draw(canvas);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i9) {
-        this.a.setAlpha(i9);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        this.a.setColorFilter(colorFilter);
+    public b(int i10, int i11, int i12) {
+        this.a = i10;
+        this.b = i11;
+        this.c = i12;
     }
 }

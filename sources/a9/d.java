@@ -1,38 +1,47 @@
 package a9;
 
-import c3.h;
-import com.google.android.gms.tasks.TaskCompletionSource;
-import e9.m;
-import e9.q;
-import e9.z;
-import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutorService;
+import android.util.Log;
+import com.google.firebase.components.ComponentRegistrar;
+import java.lang.reflect.InvocationTargetException;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class d implements Callable {
-    public final /* synthetic */ boolean a;
-    public final /* synthetic */ q b;
-    public final /* synthetic */ h c;
+public final /* synthetic */ class d implements z9.b {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public d(boolean z10, q qVar, h hVar) {
-        this.a = z10;
-        this.b = qVar;
-        this.c = hVar;
+    public /* synthetic */ d(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // java.util.concurrent.Callable
-    public final Object call() {
-        if (!this.a) {
-            return null;
+    @Override // z9.b
+    public final Object get() {
+        switch (this.a) {
+            case 0:
+                String str = (String) this.b;
+                try {
+                    Class<?> cls = Class.forName(str);
+                    if (ComponentRegistrar.class.isAssignableFrom(cls)) {
+                        return (ComponentRegistrar) cls.getDeclaredConstructor(null).newInstance(null);
+                    }
+                    throw new p("Class " + str + " is not an instance of com.google.firebase.components.ComponentRegistrar");
+                } catch (ClassNotFoundException unused) {
+                    Log.w("ComponentDiscovery", "Class " + str + " is not an found.");
+                    return null;
+                } catch (IllegalAccessException e10) {
+                    throw new p(a4.w.n("Could not instantiate ", str, "."), e10);
+                } catch (InstantiationException e11) {
+                    throw new p(a4.w.n("Could not instantiate ", str, "."), e11);
+                } catch (NoSuchMethodException e12) {
+                    throw new p(u3.c.e("Could not instantiate ", str), e12);
+                } catch (InvocationTargetException e13) {
+                    throw new p(u3.c.e("Could not instantiate ", str), e13);
+                }
+            case 1:
+                return (ComponentRegistrar) this.b;
+            default:
+                return new ba.c((u8.g) this.b);
         }
-        q qVar = this.b;
-        ExecutorService executorService = qVar.k;
-        m mVar = new m(2, qVar, this.c);
-        ExecutorService executorService2 = z.a;
-        TaskCompletionSource taskCompletionSource = new TaskCompletionSource();
-        executorService.execute(new androidx.car.app.utils.b(mVar, executorService, taskCompletionSource, 11));
-        taskCompletionSource.getTask();
-        return null;
     }
 }

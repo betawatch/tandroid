@@ -1,81 +1,66 @@
 package tg;
 
-import android.graphics.Path;
-import android.graphics.PointF;
-import android.graphics.RectF;
-import g7.t8;
-import java.util.Collections;
-import java.util.HashSet;
-import y8.j;
-import y8.r;
+import android.content.Context;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import i7.f6;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.ActionBar.c6;
+import org.telegram.ui.Components.np;
+import org.telegram.ui.Components.qq;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class b {
-    public int a;
-    public int b;
-    public Object c;
-    public final Object d;
-    public final Object e;
-    public Object f;
-    public final Object g;
+public final class b extends FrameLayout {
+    public final c6 a;
+    public a b;
+    public qq c;
+    public boolean d;
 
-    public b(Class cls, Class[] clsArr) {
-        this.c = null;
-        HashSet hashSet = new HashSet();
-        this.d = hashSet;
-        this.e = new HashSet();
-        this.a = 0;
-        this.b = 0;
-        this.g = new HashSet();
-        hashSet.add(r.a(cls));
-        for (Class cls2 : clsArr) {
-            t8.a(cls2, "Null interface");
-            ((HashSet) this.d).add(r.a(cls2));
-        }
+    public b(Context context, c6 c6Var) {
+        super(context);
+        this.a = c6Var;
     }
 
-    public void a(j jVar) {
-        if (((HashSet) this.d).contains(jVar.a)) {
-            throw new IllegalArgumentException("Components are not allowed to depend on interfaces they themselves provide.");
+    public final void a(int i10, boolean z10) {
+        if (this.c == null) {
+            qq qqVar = new qq(getContext(), this.a);
+            this.c = qqVar;
+            qqVar.setReverse(this.d);
+            addView(this.c, f6.e(-1, 28, 48));
         }
-        ((HashSet) this.e).add(jVar);
+        this.c.a.c(i10, z10);
     }
 
-    public y8.a b() {
-        if (((y8.d) this.f) != null) {
-            return new y8.a((String) this.c, new HashSet((HashSet) this.d), new HashSet((HashSet) this.e), this.a, this.b, (y8.d) this.f, (HashSet) this.g);
-        }
-        throw new IllegalStateException("Missing required property: factory.");
+    public final void b(boolean z10, boolean z11) {
+        super.setEnabled(z10);
+        this.b.e(z10, z11);
     }
 
-    public void c(int i9) {
-        if (!(this.a == 0)) {
-            throw new IllegalStateException("Instantiation type has already been set.");
+    public final void c(boolean z10, boolean z11) {
+        a aVar = this.b;
+        if (aVar.d == null) {
+            if (!z10) {
+                return;
+            }
+            np npVar = new np(AndroidUtilities.dp(18.0f), AndroidUtilities.dp(1.7f), -9079435);
+            aVar.e = npVar;
+            npVar.f = 90.0f;
+            ImageView imageView = new ImageView(aVar.getContext());
+            aVar.d = imageView;
+            imageView.setBackground(aVar.e);
+            aVar.d.setVisibility(8);
+            aVar.addView(aVar.d, f6.e(46, 46, 17));
         }
-        this.a = i9;
+        vd.a aVar2 = aVar.a;
+        if (!aVar2.f && aVar2.e == 0.0f) {
+            aVar.e.c = -1L;
+        }
+        aVar2.a(z10, z11);
     }
 
-    public b(r rVar, r[] rVarArr) {
-        this.c = null;
-        HashSet hashSet = new HashSet();
-        this.d = hashSet;
-        this.e = new HashSet();
-        this.a = 0;
-        this.b = 0;
-        this.g = new HashSet();
-        hashSet.add(rVar);
-        for (r rVar2 : rVarArr) {
-            t8.a(rVar2, "Null interface");
-        }
-        Collections.addAll((HashSet) this.d, rVarArr);
-    }
-
-    public b() {
-        this.c = new RectF();
-        this.f = new Path();
-        this.d = new RectF();
-        this.e = new RectF();
-        this.g = new PointF();
+    @Override // android.view.View
+    public void setEnabled(boolean z10) {
+        b(z10, false);
     }
 }

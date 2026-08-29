@@ -2,18 +2,17 @@ package androidx.car.app.messaging.model;
 
 import android.os.RemoteException;
 import androidx.car.app.IOnDoneCallback;
-import androidx.car.app.k;
 import androidx.car.app.messaging.model.ConversationCallbackDelegateImpl;
 import androidx.car.app.messaging.model.IConversationCallback;
 import androidx.car.app.utils.j;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 class ConversationCallbackDelegateImpl implements c {
     private final IConversationCallback mConversationCallbackBinder;
 
-    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
     public static class ConversationCallbackStub extends IConversationCallback.Stub {
         private final b mConversationCallback;
 
@@ -62,7 +61,7 @@ class ConversationCallbackDelegateImpl implements c {
         this.mConversationCallbackBinder = new ConversationCallbackStub(bVar);
     }
 
-    public void sendMarkAsRead(k kVar) {
+    public void sendMarkAsRead(androidx.car.app.j jVar) {
         try {
             IConversationCallback iConversationCallback = this.mConversationCallbackBinder;
             Objects.requireNonNull(iConversationCallback);
@@ -72,7 +71,7 @@ class ConversationCallbackDelegateImpl implements c {
         }
     }
 
-    public void sendTextReply(String str, k kVar) {
+    public void sendTextReply(String str, androidx.car.app.j jVar) {
         try {
             IConversationCallback iConversationCallback = this.mConversationCallbackBinder;
             Objects.requireNonNull(iConversationCallback);

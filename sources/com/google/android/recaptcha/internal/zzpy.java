@@ -1,17 +1,17 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public class zzpy implements zzua {
     private static final zzry zza;
 
     static {
-        int i9 = zzry.zzb;
-        int i10 = zzuc.zza;
+        int i10 = zzry.zzb;
+        int i11 = zzuc.zza;
         zza = zzry.zza;
     }
 
-    public zzts zza(byte[] bArr, int i9, int i10, zzry zzryVar) {
+    public zzts zza(byte[] bArr, int i10, int i11, zzry zzryVar) {
         throw null;
     }
 

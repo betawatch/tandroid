@@ -5,7 +5,7 @@ import java.nio.charset.Charset;
 import java.util.Iterator;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public class x4 implements Iterable, Serializable {
     public static final x4 c = new x4(l5.b);
@@ -13,7 +13,7 @@ public class x4 implements Iterable, Serializable {
     public final byte[] b;
 
     static {
-        int i9 = v4.a;
+        int i10 = v4.a;
     }
 
     public x4(byte[] bArr) {
@@ -21,9 +21,9 @@ public class x4 implements Iterable, Serializable {
         this.b = bArr;
     }
 
-    public static void p(int i9) {
-        if (((i9 - 47) | 47) < 0) {
-            throw new IndexOutOfBoundsException(j3.r0.l(i9, "End index: 47 >= "));
+    public static void p(int i10) {
+        if (((i10 - 47) | 47) < 0) {
+            throw new IndexOutOfBoundsException(j7.l1.k(i10, "End index: 47 >= "));
         }
     }
 
@@ -39,23 +39,23 @@ public class x4 implements Iterable, Serializable {
                 return obj.equals(this);
             }
             x4 x4Var = (x4) obj;
-            int i9 = this.a;
-            int i10 = x4Var.a;
-            if (i9 == 0 || i10 == 0 || i9 == i10) {
-                int o6 = o();
-                if (o6 > x4Var.o()) {
-                    throw new IllegalArgumentException("Length too large: " + o6 + o());
+            int i10 = this.a;
+            int i11 = x4Var.a;
+            if (i10 == 0 || i11 == 0 || i10 == i11) {
+                int o10 = o();
+                if (o10 > x4Var.o()) {
+                    throw new IllegalArgumentException("Length too large: " + o10 + o());
                 }
-                if (o6 > x4Var.o()) {
-                    throw new IllegalArgumentException(aa.d.k(o6, x4Var.o(), "Ran off end of other: 0, ", ", "));
+                if (o10 > x4Var.o()) {
+                    throw new IllegalArgumentException(a4.w.k(o10, x4Var.o(), "Ran off end of other: 0, ", ", "));
                 }
                 byte[] bArr = x4Var.b;
-                int i11 = 0;
                 int i12 = 0;
-                while (i11 < o6) {
-                    if (this.b[i11] == bArr[i12]) {
-                        i11++;
+                int i13 = 0;
+                while (i12 < o10) {
+                    if (this.b[i12] == bArr[i13]) {
                         i12++;
+                        i13++;
                     }
                 }
                 return true;
@@ -65,25 +65,25 @@ public class x4 implements Iterable, Serializable {
     }
 
     public final int hashCode() {
-        int i9 = this.a;
-        if (i9 != 0) {
-            return i9;
+        int i10 = this.a;
+        if (i10 != 0) {
+            return i10;
         }
-        int o6 = o();
+        int o10 = o();
         Charset charset = l5.a;
-        int i10 = o6;
-        for (int i11 = 0; i11 < o6; i11++) {
-            i10 = (i10 * 31) + this.b[i11];
+        int i11 = o10;
+        for (int i12 = 0; i12 < o10; i12++) {
+            i11 = (i11 * 31) + this.b[i12];
         }
-        if (i10 == 0) {
-            i10 = 1;
+        if (i11 == 0) {
+            i11 = 1;
         }
-        this.a = i10;
-        return i10;
+        this.a = i11;
+        return i11;
     }
 
-    public byte i(int i9) {
-        return this.b[i9];
+    public byte i(int i10) {
+        return this.b[i10];
     }
 
     @Override // java.lang.Iterable
@@ -91,8 +91,8 @@ public class x4 implements Iterable, Serializable {
         return new androidx.datastore.preferences.protobuf.e(this);
     }
 
-    public byte n(int i9) {
-        return this.b[i9];
+    public byte n(int i10) {
+        return this.b[i10];
     }
 
     public int o() {
@@ -103,18 +103,18 @@ public class x4 implements Iterable, Serializable {
         String concat;
         Locale locale = Locale.ROOT;
         String hexString = Integer.toHexString(System.identityHashCode(this));
-        int o6 = o();
+        int o10 = o();
         if (o() <= 50) {
-            concat = f7.u5.a(this);
+            concat = h7.b6.a(this);
         } else {
             p(o());
-            concat = f7.u5.a(new w4(this.b)).concat("...");
+            concat = h7.b6.a(new w4(this.b)).concat("...");
         }
         StringBuilder sb2 = new StringBuilder("<ByteString@");
         sb2.append(hexString);
         sb2.append(" size=");
-        sb2.append(o6);
+        sb2.append(o10);
         sb2.append(" contents=\"");
-        return aa.d.r(sb2, concat, "\">");
+        return a4.w.q(sb2, concat, "\">");
     }
 }

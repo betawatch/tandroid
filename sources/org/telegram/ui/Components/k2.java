@@ -1,45 +1,33 @@
 package org.telegram.ui.Components;
 
-import android.content.DialogInterface;
+import android.view.View;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class k2 implements DialogInterface.OnDismissListener {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ boolean[] b;
-    public final /* synthetic */ Runnable c;
+public final /* synthetic */ class k2 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ org.telegram.ui.ActionBar.f3[] b;
 
-    public /* synthetic */ k2(Runnable runnable, boolean[] zArr) {
-        this.c = runnable;
-        this.b = zArr;
+    public /* synthetic */ k2(org.telegram.ui.ActionBar.f3[] f3VarArr, int i10) {
+        this.a = i10;
+        this.b = f3VarArr;
     }
 
-    @Override // android.content.DialogInterface.OnDismissListener
-    public final void onDismiss(DialogInterface dialogInterface) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                Runnable runnable = this.c;
-                if (runnable != null && this.b[0]) {
-                    runnable.run();
-                    break;
-                }
+                this.b[0].dismiss();
+                break;
+            case 1:
+                this.b[0].dismiss();
+                break;
+            case 2:
+                this.b[0].dismiss();
                 break;
             default:
-                boolean[] zArr = this.b;
-                if (!zArr[0]) {
-                    zArr[0] = true;
-                    Runnable runnable2 = this.c;
-                    if (runnable2 != null) {
-                        runnable2.run();
-                        break;
-                    }
-                }
+                this.b[0].dismiss();
                 break;
         }
-    }
-
-    public /* synthetic */ k2(boolean[] zArr, Runnable runnable) {
-        this.b = zArr;
-        this.c = runnable;
     }
 }

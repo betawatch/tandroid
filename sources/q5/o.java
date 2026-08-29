@@ -1,9 +1,6 @@
 package q5;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public interface o {
-    void b(String str, long j10, long j11, long j12);
-
-    void p(String str, long j10, int i9, Object obj, long j11, long j12);
+public final class o extends com.google.android.gms.internal.cast.a {
 }

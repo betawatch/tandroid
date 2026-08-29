@@ -1,75 +1,46 @@
 package org.telegram.ui.Components;
 
-import android.webkit.JavascriptInterface;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MediaDataController;
+import android.content.Context;
+import android.graphics.Matrix;
+import android.view.TextureView;
+import android.view.View;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class ye0 {
-    public final /* synthetic */ org.telegram.ui.gt0 a;
+public final class ye0 extends TextureView {
+    public final /* synthetic */ ef0 a;
 
-    public ye0(org.telegram.ui.gt0 gt0Var) {
-        this.a = gt0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ye0(ef0 ef0Var, Context context) {
+        super(context);
+        this.a = ef0Var;
     }
 
-    @JavascriptInterface
-    public void onPlayerError(String str) {
-        AndroidUtilities.runOnUIThread(new qd(this, Integer.parseInt(str), 4));
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        View.MeasureSpec.getSize(i10);
+        super.onMeasure(i10, i11);
     }
 
-    @JavascriptInterface
-    public void onPlayerLoaded() {
-        AndroidUtilities.runOnUIThread(new we0(this, 0));
-    }
-
-    @JavascriptInterface
-    public void onPlayerNotifyBufferedPosition(float f10) {
-        this.a.F = f10;
-    }
-
-    @JavascriptInterface
-    public void onPlayerNotifyCurrentPosition(int i9) {
-        this.a.E = i9 * MediaDataController.MAX_STYLE_RUNS_COUNT;
-    }
-
-    @JavascriptInterface
-    public void onPlayerNotifyDuration(int i9) {
-        int i10 = i9 * MediaDataController.MAX_STYLE_RUNS_COUNT;
-        org.telegram.ui.gt0 gt0Var = this.a;
-        gt0Var.D = i10;
-        String str = gt0Var.s;
-        if (str != null) {
-            ze0.a(gt0Var, str);
-            gt0Var.s = null;
-        }
-    }
-
-    @JavascriptInterface
-    public void onPlayerStateChange(String str) {
-        int parseInt = Integer.parseInt(str);
-        org.telegram.ui.gt0 gt0Var = this.a;
-        boolean z10 = gt0Var.C;
-        boolean z11 = false;
-        int i9 = 1;
-        gt0Var.C = parseInt == 1 || parseInt == 3;
-        gt0Var.b(z10);
-        if (parseInt != 0) {
-            if (parseInt == 1) {
-                z11 = true;
-            } else if (parseInt != 2) {
-                if (parseInt == 3) {
-                    z11 = true;
-                    i9 = 2;
-                }
+    @Override // android.view.TextureView
+    public final void setTransform(Matrix matrix) {
+        super.setTransform(matrix);
+        qz qzVar = this.a.h0;
+        if (qzVar != null) {
+            int width = getWidth();
+            int height = getHeight();
+            ma maVar = qzVar.E;
+            if (maVar == null) {
+                return;
             }
-            i9 = 3;
-        } else {
-            i9 = 4;
+            Matrix matrix2 = maVar.v;
+            matrix.invert(matrix2);
+            float f9 = width;
+            float f10 = height;
+            matrix2.preScale(f9, f10);
+            matrix2.postScale(1.0f / f9, 1.0f / f10);
+            maVar.c(matrix2);
+            qzVar.e(false, false, false);
         }
-        if (i9 == 3 && gt0Var.h.getVisibility() != 4) {
-            AndroidUtilities.runOnUIThread(new we0(this, 1), 300L);
-        }
-        AndroidUtilities.runOnUIThread(new gh.q6(this, z11, i9, 1));
     }
 }

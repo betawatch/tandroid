@@ -1,31 +1,63 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.nc1;
+import android.view.View;
+import java.util.ArrayList;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.WallpapersListActivity;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class po implements nc1 {
+public final /* synthetic */ class po implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ki b;
-    public final /* synthetic */ org.telegram.ui.w3 c;
+    public final /* synthetic */ gp b;
 
-    public /* synthetic */ po(ki kiVar, org.telegram.ui.w3 w3Var, int i9) {
-        this.a = i9;
-        this.b = kiVar;
-        this.c = w3Var;
+    public /* synthetic */ po(gp gpVar, int i10) {
+        this.a = i10;
+        this.b = gpVar;
     }
 
-    @Override // org.telegram.ui.nc1
-    public final void a(TLRPC.TL_wallPaper tL_wallPaper) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                this.b.dismissInternal();
-                this.c.run(tL_wallPaper);
+                gp gpVar = this.b;
+                ni niVar = gpVar.U;
+                if (niVar.u0 != niVar.f0) {
+                    gpVar.W.setText(LocaleController.getString(R.string.SetColorAsBackground));
+                    ni niVar2 = gpVar.U;
+                    niVar2.Q1(niVar2.f0);
+                    break;
+                } else {
+                    gpVar.W.setText(LocaleController.getString(R.string.ChooseBackgroundFromGallery));
+                    gpVar.U.C1();
+                    bj bjVar = gpVar.U.n0;
+                    boolean z10 = gpVar.J;
+                    wa waVar = bjVar.v;
+                    ((ArrayList) waVar.e).clear();
+                    WallpapersListActivity.z0((ArrayList) waVar.e, z10);
+                    waVar.l();
+                    break;
+                }
+            case 1:
+                gp gpVar2 = this.b;
+                if (!gpVar2.v()) {
+                    gpVar2.dismiss();
+                    break;
+                } else {
+                    gpVar2.A(true);
+                    gpVar2.E(true);
+                    break;
+                }
+            case 2:
+                gp gpVar3 = this.b;
+                if (gpVar3.P == null) {
+                    gpVar3.C(!gpVar3.J);
+                    break;
+                }
                 break;
             default:
-                this.b.dismissInternal();
-                this.c.run(tL_wallPaper);
+                this.b.s(false);
                 break;
         }
     }

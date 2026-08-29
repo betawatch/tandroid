@@ -5,8 +5,8 @@ public final class w implements p0 {
     public static final w b = new w(0);
     public final /* synthetic */ int a;
 
-    public /* synthetic */ w(int i9) {
-        this.a = i9;
+    public /* synthetic */ w(int i10) {
+        this.a = i10;
     }
 
     @Override // com.google.android.gms.internal.clearcut.p0

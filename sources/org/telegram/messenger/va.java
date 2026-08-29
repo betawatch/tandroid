@@ -1,40 +1,43 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class va implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ MessagesController b;
-    public final /* synthetic */ TLRPC.Chat c;
+    public final /* synthetic */ TLObject c;
 
-    public /* synthetic */ va(MessagesController messagesController, TLRPC.Chat chat, int i9) {
-        this.a = i9;
+    public /* synthetic */ va(MessagesController messagesController, TLObject tLObject, int i10) {
+        this.a = i10;
         this.b = messagesController;
-        this.c = chat;
+        this.c = tLObject;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$addOrRemoveActiveVoiceChat$61(this.c);
+                this.b.lambda$loadHintDialogs$195(this.c);
                 break;
             case 1:
-                this.b.lambda$processLoadedDialogs$218(this.c);
+                this.b.lambda$getContentSettings$501(this.c);
                 break;
             case 2:
-                this.b.lambda$processUpdateArray$413(this.c);
+                this.b.lambda$reloadReactionsNotifySettings$204(this.c);
                 break;
             case 3:
-                this.b.lambda$putChat$58(this.c);
+                this.b.lambda$loadGlobalNotificationsSettings$202(this.c);
                 break;
             case 4:
-                this.b.lambda$putChat$59(this.c);
+                this.b.lambda$loadUnreadDialogs$361(this.c);
+                break;
+            case 5:
+                this.b.lambda$loadSuggestedFilters$24(this.c);
                 break;
             default:
-                this.b.lambda$putChat$60(this.c);
+                this.b.lambda$loadSignUpNotificationsSettings$206(this.c);
                 break;
         }
     }

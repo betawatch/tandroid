@@ -7,7 +7,7 @@ import java.lang.Thread;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public class BuildVars {
     public static String APP_HASH = null;
@@ -50,10 +50,10 @@ public class BuildVars {
             LOGS_ENABLED = z10;
             if (z10) {
                 final Thread.UncaughtExceptionHandler defaultUncaughtExceptionHandler = Thread.getDefaultUncaughtExceptionHandler();
-                Thread.setDefaultUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() { // from class: org.telegram.messenger.o0
+                Thread.setDefaultUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() { // from class: org.telegram.messenger.n0
                     @Override // java.lang.Thread.UncaughtExceptionHandler
-                    public final void uncaughtException(Thread thread, Throwable th) {
-                        BuildVars.lambda$static$0(defaultUncaughtExceptionHandler, thread, th);
+                    public final void uncaughtException(Thread thread, Throwable th2) {
+                        BuildVars.lambda$static$0(defaultUncaughtExceptionHandler, thread, th2);
                     }
                 });
             }
@@ -65,21 +65,21 @@ public class BuildVars {
     }
 
     private static boolean hasDirectCurrency() {
-        n2.l lVar;
+        p2.l lVar;
         if (BillingController.getInstance().isReady() && (lVar = BillingController.PREMIUM_PRODUCT_DETAILS) != null) {
             ArrayList arrayList = lVar.h;
             int size = arrayList.size();
-            int i9 = 0;
-            while (i9 < size) {
-                Object obj = arrayList.get(i9);
-                i9++;
-                ArrayList arrayList2 = (ArrayList) ((n2.k) obj).b.b;
+            int i10 = 0;
+            while (i10 < size) {
+                Object obj = arrayList.get(i10);
+                i10++;
+                ArrayList arrayList2 = (ArrayList) ((p2.k) obj).b.b;
                 int size2 = arrayList2.size();
-                int i10 = 0;
-                while (i10 < size2) {
-                    Object obj2 = arrayList2.get(i10);
-                    i10++;
-                    n2.j jVar = (n2.j) obj2;
+                int i11 = 0;
+                while (i11 < size2) {
+                    Object obj2 = arrayList2.get(i11);
+                    i11++;
+                    p2.j jVar = (p2.j) obj2;
                     Iterator<String> it = MessagesController.getInstance(UserConfig.selectedAccount).directPaymentsCurrency.iterator();
                     while (it.hasNext()) {
                         if (Objects.equals(jVar.c, it.next())) {
@@ -104,10 +104,10 @@ public class BuildVars {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$static$0(Thread.UncaughtExceptionHandler uncaughtExceptionHandler, Thread thread, Throwable th) {
-        FileLog.fatal(th, false);
+    public static /* synthetic */ void lambda$static$0(Thread.UncaughtExceptionHandler uncaughtExceptionHandler, Thread thread, Throwable th2) {
+        FileLog.fatal(th2, false);
         if (uncaughtExceptionHandler != null) {
-            uncaughtExceptionHandler.uncaughtException(thread, th);
+            uncaughtExceptionHandler.uncaughtException(thread, th2);
         }
     }
 

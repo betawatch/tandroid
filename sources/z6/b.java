@@ -1,37 +1,29 @@
 package z6;
 
-import android.os.IBinder;
-import android.os.IInterface;
-
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class b extends x5.g {
-    @Override // x5.g
-    public final boolean C() {
-        return true;
+public final class b extends d {
+    public static final b a = new b();
+
+    @Override // z6.d
+    public final Object a() {
+        throw new IllegalStateException("Optional.get() cannot be called on an absent value");
     }
 
-    @Override // x5.g, com.google.android.gms.common.api.c
-    public final int l() {
-        return 12600000;
+    @Override // z6.d
+    public final boolean b() {
+        return false;
     }
 
-    @Override // x5.g
-    public final /* bridge */ /* synthetic */ IInterface q(IBinder iBinder) {
-        if (iBinder == null) {
-            return null;
-        }
-        IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.appdatasearch.internal.ILightweightAppDataSearch");
-        return queryLocalInterface instanceof a ? (a) queryLocalInterface : new a(iBinder);
+    public final boolean equals(Object obj) {
+        return obj == this;
     }
 
-    @Override // x5.g
-    public final String v() {
-        return "com.google.android.gms.appdatasearch.internal.ILightweightAppDataSearch";
+    public final int hashCode() {
+        return 2040732332;
     }
 
-    @Override // x5.g
-    public final String w() {
-        return "com.google.android.gms.icing.LIGHTWEIGHT_INDEX_SERVICE";
+    public final String toString() {
+        return "Optional.absent()";
     }
 }

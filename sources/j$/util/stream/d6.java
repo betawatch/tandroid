@@ -10,9 +10,9 @@ public final class d6 extends g1 implements n8 {
     public final /* synthetic */ int s;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ d6(a aVar, int i9, int i10) {
-        super(aVar, i9);
-        this.s = i10;
+    public /* synthetic */ d6(a aVar, int i10, int i11) {
+        super(aVar, i10);
+        this.s = i11;
     }
 
     @Override // j$.util.stream.a
@@ -45,14 +45,14 @@ public final class d6 extends g1 implements n8 {
     }
 
     @Override // j$.util.stream.a
-    public final j5 Q0(int i9, j5 j5Var) {
+    public final j5 Q0(int i10, j5 j5Var) {
         switch (this.s) {
             case 0:
                 Objects.requireNonNull(j5Var);
-                if (v6.SORTED.m(i9)) {
+                if (v6.SORTED.m(i10)) {
                     return j5Var;
                 }
-                return v6.SIZED.m(i9) ? new i6(j5Var) : new a6(j5Var);
+                return v6.SIZED.m(i10) ? new i6(j5Var) : new a6(j5Var);
             case 1:
                 return new i8(this, j5Var);
             default:

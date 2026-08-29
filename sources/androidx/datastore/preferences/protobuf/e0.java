@@ -7,7 +7,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.RandomAccess;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class e0 extends b implements f0, RandomAccess {
     public final ArrayList b;
@@ -16,14 +16,14 @@ public final class e0 extends b implements f0, RandomAccess {
         new e0(10).a = false;
     }
 
-    public e0(int i9) {
-        this(new ArrayList(i9));
+    public e0(int i10) {
+        this(new ArrayList(i10));
     }
 
     @Override // java.util.AbstractList, java.util.List
-    public final void add(int i9, Object obj) {
+    public final void add(int i10, Object obj) {
         i();
-        this.b.add(i9, (String) obj);
+        this.b.add(i10, (String) obj);
         ((AbstractList) this).modCount++;
     }
 
@@ -40,12 +40,12 @@ public final class e0 extends b implements f0, RandomAccess {
     }
 
     @Override // androidx.datastore.preferences.protobuf.z
-    public final z e(int i9) {
+    public final z e(int i10) {
         ArrayList arrayList = this.b;
-        if (i9 < arrayList.size()) {
+        if (i10 < arrayList.size()) {
             throw new IllegalArgumentException();
         }
-        ArrayList arrayList2 = new ArrayList(i9);
+        ArrayList arrayList2 = new ArrayList(i10);
         arrayList2.addAll(arrayList);
         return new e0(arrayList2);
     }
@@ -58,9 +58,9 @@ public final class e0 extends b implements f0, RandomAccess {
     }
 
     @Override // java.util.AbstractList, java.util.List
-    public final Object get(int i9) {
+    public final Object get(int i10) {
         ArrayList arrayList = this.b;
-        Object obj = arrayList.get(i9);
+        Object obj = arrayList.get(i10);
         if (obj instanceof String) {
             return (String) obj;
         }
@@ -68,7 +68,7 @@ public final class e0 extends b implements f0, RandomAccess {
             byte[] bArr = (byte[]) obj;
             String str = new String(bArr, a0.a);
             if (v1.a.i(0, bArr.length, bArr) == 0) {
-                arrayList.set(i9, str);
+                arrayList.set(i10, str);
             }
             return str;
         }
@@ -76,7 +76,7 @@ public final class e0 extends b implements f0, RandomAccess {
         String str2 = gVar.size() == 0 ? "" : new String(gVar.b, gVar.n(), gVar.size(), a0.a);
         int n10 = gVar.n();
         if (v1.a.i(n10, gVar.size() + n10, gVar.b) == 0) {
-            arrayList.set(i9, str2);
+            arrayList.set(i10, str2);
         }
         return str2;
     }
@@ -92,14 +92,14 @@ public final class e0 extends b implements f0, RandomAccess {
     }
 
     @Override // androidx.datastore.preferences.protobuf.f0
-    public final Object l(int i9) {
-        return this.b.get(i9);
+    public final Object l(int i10) {
+        return this.b.get(i10);
     }
 
     @Override // java.util.AbstractList, java.util.List
-    public final Object remove(int i9) {
+    public final Object remove(int i10) {
         i();
-        Object remove = this.b.remove(i9);
+        Object remove = this.b.remove(i10);
         ((AbstractList) this).modCount++;
         if (remove instanceof String) {
             return (String) remove;
@@ -112,9 +112,9 @@ public final class e0 extends b implements f0, RandomAccess {
     }
 
     @Override // java.util.AbstractList, java.util.List
-    public final Object set(int i9, Object obj) {
+    public final Object set(int i10, Object obj) {
         i();
-        Object obj2 = this.b.set(i9, (String) obj);
+        Object obj2 = this.b.set(i10, (String) obj);
         if (obj2 instanceof String) {
             return (String) obj2;
         }
@@ -135,12 +135,12 @@ public final class e0 extends b implements f0, RandomAccess {
     }
 
     @Override // androidx.datastore.preferences.protobuf.b, java.util.AbstractList, java.util.List
-    public final boolean addAll(int i9, Collection collection) {
+    public final boolean addAll(int i10, Collection collection) {
         i();
         if (collection instanceof f0) {
             collection = ((f0) collection).h();
         }
-        boolean addAll = this.b.addAll(i9, collection);
+        boolean addAll = this.b.addAll(i10, collection);
         ((AbstractList) this).modCount++;
         return addAll;
     }

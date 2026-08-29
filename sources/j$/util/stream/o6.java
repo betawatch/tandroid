@@ -13,12 +13,12 @@ public class o6 extends s6 implements IntConsumer {
     }
 
     @Override // j$.util.stream.s6
-    public final void i(Object obj, int i9, int i10, Object obj2) {
+    public final void i(Object obj, int i10, int i11, Object obj2) {
         int[] iArr = (int[]) obj;
         IntConsumer intConsumer = (IntConsumer) obj2;
-        while (i9 < i10) {
-            intConsumer.accept(iArr[i9]);
-            i9++;
+        while (i10 < i11) {
+            intConsumer.accept(iArr[i10]);
+            i10++;
         }
     }
 
@@ -46,17 +46,17 @@ public class o6 extends s6 implements IntConsumer {
     }
 
     @Override // j$.util.stream.s6
-    public final Object newArray(int i9) {
-        return new int[i9];
+    public final Object newArray(int i10) {
+        return new int[i10];
     }
 
     @Override // java.util.function.IntConsumer
-    public void accept(int i9) {
+    public void accept(int i10) {
         n();
         int[] iArr = (int[]) this.e;
-        int i10 = this.b;
-        this.b = i10 + 1;
-        iArr[i10] = i9;
+        int i11 = this.b;
+        this.b = i11 + 1;
+        iArr[i11] = i10;
     }
 
     @Override // java.lang.Iterable

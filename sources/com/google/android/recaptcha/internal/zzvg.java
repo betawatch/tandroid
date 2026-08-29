@@ -10,7 +10,7 @@ jadx.core.utils.exceptions.JadxRuntimeException: Init of enum field 'zzc' uses e
 	at jadx.core.dex.visitors.EnumVisitor.visit(EnumVisitor.java:100)
  */
 /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class zzvg {
     public static final zzvg zza;
@@ -77,7 +77,7 @@ public final class zzvg {
         zzs = new zzvg[]{zzvgVar, zzvgVar2, zzvgVar3, zzvgVar4, zzvgVar5, zzvgVar6, zzvgVar7, zzvgVar8, zzvgVar9, zzvgVar10, zzvgVar11, zzvgVar12, zzvgVar13, zzvgVar14, zzvgVar15, zzvgVar16, zzvgVar17, zzvgVar18};
     }
 
-    private zzvg(String str, int i9, zzvh zzvhVar, int i10) {
+    private zzvg(String str, int i10, zzvh zzvhVar, int i11) {
         this.zzt = zzvhVar;
     }
 

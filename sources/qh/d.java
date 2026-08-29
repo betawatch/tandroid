@@ -1,59 +1,42 @@
 package qh;
 
-import org.telegram.messenger.UserConfig;
-import org.telegram.ui.li0;
+import org.telegram.messenger.MessagesStorage;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.ui.ActionBar.c2;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class d implements Runnable {
+public final /* synthetic */ class d implements MessagesStorage.LongCallback {
     public final /* synthetic */ int a;
-    public final /* synthetic */ p b;
+    public final /* synthetic */ c2 b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ boolean d;
+    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate e;
 
-    public /* synthetic */ d(p pVar, int i9) {
-        this.a = i9;
-        this.b = pVar;
+    public /* synthetic */ d(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, c2 c2Var, long j10, boolean z10, int i10) {
+        this.a = i10;
+        this.e = notificationCenterDelegate;
+        this.b = c2Var;
+        this.c = j10;
+        this.d = z10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.messenger.MessagesStorage.LongCallback
+    public final void run(long j10) {
         switch (this.a) {
             case 0:
-                p pVar = this.b;
-                pVar.H(2147483646, true, 0, false, 0L);
-                li0 li0Var = pVar.K;
-                if (li0Var != null) {
-                    li0Var.h(false);
-                    pVar.K = null;
-                    break;
-                }
-                break;
-            case 1:
-                p pVar2 = this.b;
-                pVar2.H(0, false, 0, false, 0L);
-                li0 li0Var2 = pVar2.K;
-                if (li0Var2 != null) {
-                    li0Var2.h(true);
-                    pVar2.K = null;
-                    break;
-                }
-                break;
-            case 2:
-                p pVar3 = this.b;
-                if (!UserConfig.getInstance(pVar3.n).isPremium()) {
-                    new zf.x0(pVar3.b.b0, pVar3.getContext(), pVar3.n, 43, true).show();
-                    break;
-                }
-                break;
-            case 3:
-                p pVar4 = this.b;
-                s3 s3Var = pVar4.s;
-                if (s3Var != null) {
-                    s3Var.setSendEnabled(pVar4.r.M3());
+                g gVar = (g) this.e;
+                gVar.getClass();
+                this.b.dismiss();
+                if (j10 != 0) {
+                    gVar.a = -j10;
+                    gVar.b = gVar.getMessagesController().getChat(Long.valueOf(j10));
+                    gVar.W(this.c, this.d);
                     break;
                 }
                 break;
             default:
-                this.b.Z();
+                i0.p((i0) this.e, this.b, this.c, this.d, j10);
                 break;
         }
     }

@@ -63,8 +63,8 @@ public final class l4 extends p4 implements o4, h5 {
     }
 
     @Override // j$.util.stream.j5, j$.util.stream.h5, java.util.function.IntConsumer
-    public final void accept(int i9) {
-        this.c.accept(this.a, i9);
+    public final void accept(int i10) {
+        this.c.accept(this.a, i10);
     }
 
     public l4(Supplier supplier, ObjIntConsumer objIntConsumer, o oVar) {

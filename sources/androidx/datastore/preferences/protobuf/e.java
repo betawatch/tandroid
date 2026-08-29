@@ -4,7 +4,7 @@ import com.google.android.gms.internal.cast.x4;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class e implements Iterator {
     public final /* synthetic */ int a = 0;
@@ -52,49 +52,49 @@ public final class e implements Iterator {
     public final Object next() {
         switch (this.a) {
             case 0:
-                int i9 = this.b;
-                if (i9 >= this.c) {
-                    throw new NoSuchElementException();
-                }
-                this.b = i9 + 1;
-                return Byte.valueOf(((g) this.d).b[i9]);
-            case 1:
                 int i10 = this.b;
                 if (i10 >= this.c) {
                     throw new NoSuchElementException();
                 }
                 this.b = i10 + 1;
-                return Byte.valueOf(((x4) this.d).n(i10));
+                return Byte.valueOf(((g) this.d).b[i10]);
+            case 1:
+                int i11 = this.b;
+                if (i11 >= this.c) {
+                    throw new NoSuchElementException();
+                }
+                this.b = i11 + 1;
+                return Byte.valueOf(((x4) this.d).n(i11));
             case 2:
                 try {
                     com.google.android.gms.internal.clearcut.o oVar = (com.google.android.gms.internal.clearcut.o) this.d;
-                    int i11 = this.b;
-                    this.b = i11 + 1;
-                    return Byte.valueOf(oVar.o(i11));
+                    int i12 = this.b;
+                    this.b = i12 + 1;
+                    return Byte.valueOf(oVar.o(i12));
                 } catch (IndexOutOfBoundsException e10) {
                     throw new NoSuchElementException(e10.getMessage());
                 }
             case 3:
-                int i12 = this.b;
-                if (i12 >= this.c) {
-                    throw new NoSuchElementException();
-                }
-                this.b = i12 + 1;
-                return Byte.valueOf(((com.google.android.gms.internal.play_billing.l1) this.d).n(i12));
-            case 4:
                 int i13 = this.b;
                 if (i13 >= this.c) {
                     throw new NoSuchElementException();
                 }
                 this.b = i13 + 1;
-                return Byte.valueOf(((com.google.android.gms.internal.vision.q0) this.d).p(i13));
-            default:
+                return Byte.valueOf(((com.google.android.gms.internal.play_billing.k1) this.d).n(i13));
+            case 4:
                 int i14 = this.b;
                 if (i14 >= this.c) {
                     throw new NoSuchElementException();
                 }
                 this.b = i14 + 1;
-                return Byte.valueOf(((x6.s0) this.d).n(i14));
+                return Byte.valueOf(((com.google.android.gms.internal.vision.q0) this.d).p(i14));
+            default:
+                int i15 = this.b;
+                if (i15 >= this.c) {
+                    throw new NoSuchElementException();
+                }
+                this.b = i15 + 1;
+                return Byte.valueOf(((z6.s0) this.d).n(i15));
         }
     }
 
@@ -121,9 +121,9 @@ public final class e implements Iterator {
         this.c = oVar.size();
     }
 
-    public e(com.google.android.gms.internal.play_billing.l1 l1Var) {
-        this.d = l1Var;
-        this.c = l1Var.o();
+    public e(com.google.android.gms.internal.play_billing.k1 k1Var) {
+        this.d = k1Var;
+        this.c = k1Var.o();
     }
 
     public e(com.google.android.gms.internal.vision.q0 q0Var) {
@@ -131,7 +131,7 @@ public final class e implements Iterator {
         this.c = q0Var.n();
     }
 
-    public e(x6.s0 s0Var) {
+    public e(z6.s0 s0Var) {
         this.d = s0Var;
         this.c = s0Var.p();
     }

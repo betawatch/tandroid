@@ -1,47 +1,30 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class nb implements RequestDelegate {
+public final /* synthetic */ class nb implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ MessagesController b;
-    public final /* synthetic */ long c;
+    public final /* synthetic */ TLRPC.TL_error c;
     public final /* synthetic */ long d;
-    public final /* synthetic */ ArrayList e;
 
-    public /* synthetic */ nb(int i9, long j10, long j11, ArrayList arrayList, MessagesController messagesController) {
-        this.a = i9;
+    public /* synthetic */ nb(MessagesController messagesController, TLRPC.TL_error tL_error, long j10, int i10) {
+        this.a = i10;
         this.b = messagesController;
-        this.c = j10;
-        this.d = j11;
-        this.e = arrayList;
+        this.c = tL_error;
+        this.d = j10;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$checkUnreadPollVotesInternal2$430(this.c, this.d, this.e, tLObject, tL_error);
-                break;
-            case 1:
-                this.b.lambda$checkUnreadPollVotesInternal2$432(this.c, this.d, this.e, tLObject, tL_error);
-                break;
-            case 2:
-                this.b.lambda$checkUnreadPollVotesInternal2$434(this.c, this.d, this.e, tLObject, tL_error);
-                break;
-            case 3:
-                this.b.lambda$checkUnreadReactionsInternal2$423(this.c, this.d, this.e, tLObject, tL_error);
-                break;
-            case 4:
-                this.b.lambda$checkUnreadReactionsInternal2$425(this.c, this.d, this.e, tLObject, tL_error);
+                this.b.lambda$loadFullChat$68(this.c, this.d);
                 break;
             default:
-                this.b.lambda$checkUnreadReactionsInternal2$427(this.c, this.d, this.e, tLObject, tL_error);
+                this.b.lambda$getChannelDifference$348(this.c, this.d);
                 break;
         }
     }

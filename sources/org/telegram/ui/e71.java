@@ -1,37 +1,26 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.tl.TL_account;
-
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class e71 implements Utilities.Callback {
+public final /* synthetic */ class e71 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ SessionsActivity b;
+    public final /* synthetic */ boolean c;
 
-    public /* synthetic */ e71(SessionsActivity sessionsActivity, int i9) {
-        this.a = i9;
+    public /* synthetic */ e71(SessionsActivity sessionsActivity, boolean z10, int i10) {
+        this.a = i10;
         this.b = sessionsActivity;
+        this.c = z10;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                TL_account.connectedBots connectedbots = (TL_account.connectedBots) obj;
-                SessionsActivity sessionsActivity = this.b;
-                sessionsActivity.getClass();
-                if (connectedbots != null) {
-                    sessionsActivity.h = connectedbots.connected_bots;
-                    if (sessionsActivity.a != null) {
-                        sessionsActivity.l0();
-                        sessionsActivity.a.l();
-                        break;
-                    }
-                }
+                this.b.k0(this.c);
                 break;
             default:
-                SessionsActivity.U(this.b, (Boolean) obj);
+                this.b.k0(this.c);
                 break;
         }
     }

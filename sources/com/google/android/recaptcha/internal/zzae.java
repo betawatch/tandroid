@@ -1,14 +1,13 @@
 package com.google.android.recaptcha.internal;
 
-import g7.y5;
-import hd.c0;
+import bd.p;
+import i7.c7;
 import java.util.List;
-import qc.c;
-import rc.a;
-import sc.i;
-import zc.p;
+import jd.c0;
+import sc.c;
+import uc.i;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 final class zzae extends i implements p {
     Object zza;
@@ -27,14 +26,14 @@ final class zzae extends i implements p {
         this.zzf = list;
     }
 
-    @Override // sc.a
+    @Override // uc.a
     public final c create(Object obj, c cVar) {
         return new zzae(this.zzc, this.zzd, this.zze, this.zzf, cVar);
     }
 
-    @Override // zc.p
+    @Override // bd.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzae) create((c0) obj, (c) obj2)).invokeSuspend(oc.i.a);
+        return ((zzae) create((c0) obj, (c) obj2)).invokeSuspend(qc.i.a);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:10:0x0034, code lost:
@@ -49,16 +48,16 @@ final class zzae extends i implements p {
     
         if (r5 != r0) goto L9;
      */
-    @Override // sc.a
+    @Override // uc.a
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
         zzhk zzhkVar;
-        a aVar = a.a;
-        int i9 = this.zzb;
-        if (i9 == 0) {
-            y5.b(obj);
+        tc.a aVar = tc.a.a;
+        int i10 = this.zzb;
+        if (i10 == 0) {
+            c7.b(obj);
             zzhkVar = this.zzc;
             zzar zzarVar = this.zzd;
             String str = this.zze;
@@ -66,13 +65,13 @@ final class zzae extends i implements p {
             this.zzb = 1;
             obj = zzarVar.zzc(str, this);
         } else {
-            if (i9 != 1) {
-                y5.b(obj);
+            if (i10 != 1) {
+                c7.b(obj);
                 this.zzf.add((zzat) obj);
-                return oc.i.a;
+                return qc.i.a;
             }
             zzhkVar = (zzhk) this.zza;
-            y5.b(obj);
+            c7.b(obj);
         }
         this.zza = null;
         this.zzb = 2;

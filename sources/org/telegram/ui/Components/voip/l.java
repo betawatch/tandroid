@@ -5,17 +5,16 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.ll;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.o50;
-import org.telegram.ui.u50;
+import org.telegram.ui.r50;
+import org.telegram.ui.x50;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* loaded from: classes.dex */
 public abstract class l extends FrameLayout {
     public int a;
-    public u50 b;
-    public t c;
+    public x50 b;
+    public u c;
     public ChatObject.VideoParticipant d;
     public boolean e;
     public final boolean f;
@@ -33,7 +32,7 @@ public abstract class l extends FrameLayout {
         return this.d;
     }
 
-    public t getRenderer() {
+    public u getRenderer() {
         return this.c;
     }
 
@@ -50,18 +49,18 @@ public abstract class l extends FrameLayout {
     }
 
     @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i9, int i10) {
+    public final void onMeasure(int i10, int i11) {
         if (this.f) {
             ((View) getParent()).getMeasuredWidth();
-            super.onMeasure(i9, View.MeasureSpec.makeMeasureSpec(this.b.F(), TLObject.FLAG_30));
+            super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(this.b.F(), TLObject.FLAG_30));
         } else {
-            float f10 = o50.B3 ? 3.0f : 2.0f;
-            float A = ll.A(14.0f, 2, AndroidUtilities.displaySize.x) + (o50.B3 ? -AndroidUtilities.dp(90.0f) : 0);
-            super.onMeasure(i9, View.MeasureSpec.makeMeasureSpec((int) ((o50.C3 ? A / 2.0f : A / f10) + AndroidUtilities.dp(4.0f)), TLObject.FLAG_30));
+            float f9 = r50.B3 ? 3.0f : 2.0f;
+            float z10 = org.telegram.ui.b.z(14.0f, 2, AndroidUtilities.displaySize.x) + (r50.B3 ? -AndroidUtilities.dp(90.0f) : 0);
+            super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec((int) ((r50.C3 ? z10 / 2.0f : z10 / f9) + AndroidUtilities.dp(4.0f)), TLObject.FLAG_30));
         }
     }
 
-    public void setRenderer(t tVar) {
-        this.c = tVar;
+    public void setRenderer(u uVar) {
+        this.c = uVar;
     }
 }

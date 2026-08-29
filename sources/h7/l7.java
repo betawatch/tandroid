@@ -1,19 +1,22 @@
 package h7;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
-/* loaded from: classes.dex */
-public final class l7 {
-    public final Long a;
-    public final s7 b;
-    public final Boolean c;
-    public final Boolean d;
-    public final Boolean e;
+import java.util.Date;
+import org.json.JSONObject;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-    public /* synthetic */ l7(b3.b bVar) {
-        this.a = (Long) bVar.a;
-        this.b = (s7) bVar.b;
-        this.c = (Boolean) bVar.c;
-        this.d = (Boolean) bVar.d;
-        this.e = (Boolean) bVar.e;
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* loaded from: classes.dex */
+public abstract class l7 {
+    public static androidx.biometric.e a(String str) {
+        JSONObject jSONObject = new JSONObject(str);
+        String a2 = x7.a(jSONObject.getString("id"));
+        long j10 = jSONObject.getLong("created");
+        jSONObject.getBoolean("livemode");
+        String str2 = "card".equals(x7.a(jSONObject.getString(TeXSymbolParser.TYPE_ATTR))) ? "card" : null;
+        Boolean valueOf = Boolean.valueOf(jSONObject.getBoolean("used"));
+        JSONObject jSONObject2 = jSONObject.getJSONObject("card");
+        ec.a aVar = new ec.a(null, Integer.valueOf(jSONObject2.getInt("exp_month")), Integer.valueOf(jSONObject2.getInt("exp_year")), null, x7.a(jSONObject2.optString("name")), x7.a(jSONObject2.optString("address_line1")), x7.a(jSONObject2.optString("address_line2")), x7.a(jSONObject2.optString("address_city")), x7.a(jSONObject2.optString("address_state")), x7.a(jSONObject2.optString("address_zip")), x7.a(jSONObject2.optString("address_country")), z7.a(x7.a(jSONObject2.optString("brand"))), x7.a(jSONObject2.optString("last4")), x7.a(jSONObject2.optString("fingerprint")), z7.b(x7.a(jSONObject2.optString("funding"))), x7.a(jSONObject2.optString("country")), x7.a(jSONObject2.optString("currency")));
+        new Date(j10 * 1000);
+        return new androidx.biometric.e(a2, valueOf, aVar, str2);
     }
 }

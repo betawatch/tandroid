@@ -3,7 +3,7 @@ package org.telegram.messenger;
 import java.math.BigInteger;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public class SRPHelper {
     public static byte[] getBigIntegerBytes(BigInteger bigInteger) {
@@ -18,8 +18,8 @@ public class SRPHelper {
         }
         byte[] bArr2 = new byte[256];
         System.arraycopy(byteArray, 0, bArr2, 256 - byteArray.length, byteArray.length);
-        for (int i9 = 0; i9 < 256 - byteArray.length; i9++) {
-            bArr2[i9] = 0;
+        for (int i10 = 0; i10 < 256 - byteArray.length; i10++) {
+            bArr2[i10] = 0;
         }
         return bArr2;
     }
@@ -79,8 +79,8 @@ public class SRPHelper {
         byte[] computeSHA256 = Utilities.computeSHA256(getBigIntegerBytes(subtract.modPow(bigInteger4.add(bigInteger7.multiply(bigInteger3)), bigInteger)));
         byte[] computeSHA2562 = Utilities.computeSHA256(tL_passwordKdfAlgoSHA256SHA256PBKDF2HMACSHA512iter100000SHA256ModPow.p);
         byte[] computeSHA2563 = Utilities.computeSHA256(bigIntegerBytes);
-        for (int i9 = 0; i9 < computeSHA2562.length; i9++) {
-            computeSHA2562[i9] = (byte) (computeSHA2563[i9] ^ computeSHA2562[i9]);
+        for (int i10 = 0; i10 < computeSHA2562.length; i10++) {
+            computeSHA2562[i10] = (byte) (computeSHA2563[i10] ^ computeSHA2562[i10]);
         }
         TLRPC.TL_inputCheckPasswordSRP tL_inputCheckPasswordSRP = new TLRPC.TL_inputCheckPasswordSRP();
         tL_inputCheckPasswordSRP.M1 = Utilities.computeSHA256(computeSHA2562, Utilities.computeSHA256(tL_passwordKdfAlgoSHA256SHA256PBKDF2HMACSHA512iter100000SHA256ModPow.salt1), Utilities.computeSHA256(tL_passwordKdfAlgoSHA256SHA256PBKDF2HMACSHA512iter100000SHA256ModPow.salt2), bigIntegerBytes2, bigIntegerBytes3, computeSHA256);

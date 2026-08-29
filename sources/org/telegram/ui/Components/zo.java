@@ -1,71 +1,28 @@
 package org.telegram.ui.Components;
 
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
+import android.content.Context;
+import android.view.accessibility.AccessibilityNodeInfo;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class zo implements org.telegram.ui.ActionBar.g6 {
-    public boolean a = false;
-    public final /* synthetic */ cp b;
+public final class zo extends aj0 {
+    public final /* synthetic */ gp r;
 
-    public zo(cp cpVar) {
-        this.b = cpVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public zo(gp gpVar, Context context) {
+        super(context);
+        this.r = gpVar;
     }
 
-    @Override // org.telegram.ui.ActionBar.g6
-    public final void a(float f10) {
-        ArrayList arrayList;
-        cp cpVar = this.b;
-        ap apVar = cpVar.h;
-        if (f10 == 0.0f && !this.a) {
-            if (apVar != null && (arrayList = apVar.d) != null) {
-                int size = arrayList.size();
-                int i9 = 0;
-                while (i9 < size) {
-                    Object obj = arrayList.get(i9);
-                    i9++;
-                    ((bp) obj).c = cpVar.J ? 1 : 0;
-                }
-            }
-            if (!cpVar.L) {
-                for (int i10 = 0; i10 < apVar.h(); i10++) {
-                    ((bp) apVar.d.get(i10)).getClass();
-                }
-            }
-            this.a = true;
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        if (this.r.J) {
+            accessibilityNodeInfo.setText(LocaleController.getString(R.string.AccDescrSwitchToDayTheme));
+        } else {
+            accessibilityNodeInfo.setText(LocaleController.getString(R.string.AccDescrSwitchToNightTheme));
         }
-        mi0 mi0Var = cpVar.B;
-        int i11 = org.telegram.ui.ActionBar.f6.Oh;
-        mi0Var.setColorFilter(new PorterDuffColorFilter(cpVar.getThemedColor(i11), PorterDuff.Mode.MULTIPLY));
-        cpVar.setOverlayNavBarColor(cpVar.getThemedColor(org.telegram.ui.ActionBar.f6.a7));
-        if (cpVar.L) {
-            for (int i12 = 0; i12 < apVar.h(); i12++) {
-                ((bp) apVar.d.get(i12)).getClass();
-            }
-        }
-        if (f10 == 1.0f && this.a) {
-            cpVar.L = false;
-            this.a = false;
-        }
-        cpVar.D();
-        fh.v vVar = cpVar.V;
-        if (vVar != null) {
-            int dp = AndroidUtilities.dp(0.0f);
-            int themedColor = cpVar.getThemedColor(org.telegram.ui.ActionBar.f6.d6);
-            int k10 = i0.a.k(cpVar.getThemedColor(i11), 76);
-            vVar.setBackground(org.telegram.ui.ActionBar.f6.i0(dp, dp, dp, dp, themedColor, k10, k10));
-        }
-        j6 j6Var = cpVar.W;
-        if (j6Var != null) {
-            j6Var.setTextColor(cpVar.getThemedColor(i11));
-        }
-        cpVar.setBackgroundColor(cpVar.getThemedColor(org.telegram.ui.ActionBar.f6.h5));
-    }
-
-    @Override // org.telegram.ui.ActionBar.g6
-    public final void b() {
     }
 }

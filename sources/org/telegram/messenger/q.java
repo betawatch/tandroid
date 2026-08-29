@@ -13,13 +13,13 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class q implements Comparator {
     public final /* synthetic */ int a;
 
-    public /* synthetic */ q(int i9) {
-        this.a = i9;
+    public /* synthetic */ q(int i10) {
+        this.a = i10;
     }
 
     @Override // java.util.Comparator
@@ -131,7 +131,7 @@ public final /* synthetic */ class q implements Comparator {
                 lambda$processLoadedFilterPeersInternal$70 = MessagesStorage.lambda$processLoadedFilterPeersInternal$70((MessagesController.DialogFilter) obj, (MessagesController.DialogFilter) obj2);
                 return lambda$processLoadedFilterPeersInternal$70;
             case 25:
-                lambda$localSearch$260 = MessagesStorage.lambda$localSearch$260((of.a0) obj, (of.a0) obj2);
+                lambda$localSearch$260 = MessagesStorage.lambda$localSearch$260((rf.v) obj, (rf.v) obj2);
                 return lambda$localSearch$260;
             case 26:
                 lambda$switchToAvailable$3 = ProxyRotationController.lambda$switchToAvailable$3((SharedConfig.ProxyInfo) obj, (SharedConfig.ProxyInfo) obj2);

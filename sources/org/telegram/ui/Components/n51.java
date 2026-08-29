@@ -1,68 +1,158 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
+import android.view.Gravity;
 import android.view.View;
-import androidx.core.widget.NestedScrollView;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class n51 extends NestedScrollView {
-    public boolean S;
-    public final /* synthetic */ o51 T;
+public final class n51 extends hv0 {
+    public final /* synthetic */ int s0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public n51(o51 o51Var, Context context) {
-        super(context);
-        this.T = o51Var;
+    public /* synthetic */ n51(Context context, org.telegram.ui.ActionBar.b5 b5Var, int i10) {
+        super(context, b5Var);
+        this.s0 = i10;
     }
 
-    @Override // androidx.core.widget.NestedScrollView, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i9, int i10, int i11, int i12) {
-        super.onLayout(z10, i9, i10, i11, i12);
-        o51.m(this.T);
+    @Override // org.telegram.ui.Components.hv0
+    public boolean P() {
+        switch (this.s0) {
+            case 1:
+                return false;
+            case 2:
+                return false;
+            case 3:
+            default:
+                return super.P();
+            case 4:
+                return false;
+        }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:4:0x002d, code lost:
-    
-        if (r9 < (org.telegram.messenger.AndroidUtilities.dp(90.0f) + (r0 / 2))) goto L6;
-     */
-    @Override // androidx.core.widget.NestedScrollView, android.widget.FrameLayout, android.view.View
+    @Override // android.view.ViewGroup
+    public void addView(View view) {
+        switch (this.s0) {
+            case 3:
+                if (view instanceof fz) {
+                    ViewGroup.LayoutParams layoutParams = ((fz) view).getLayoutParams();
+                    if (layoutParams == null) {
+                        layoutParams = new FrameLayout.LayoutParams(-1, -2);
+                    }
+                    if (layoutParams instanceof FrameLayout.LayoutParams) {
+                        ((FrameLayout.LayoutParams) layoutParams).gravity = 87;
+                    }
+                    view.setLayoutParams(layoutParams);
+                }
+                super.addView(view);
+                break;
+            default:
+                super.addView(view);
+                break;
+        }
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:20:0x007a  */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x00a0  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x0090  */
+    @Override // org.telegram.ui.Components.hv0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void onMeasure(int i9, int i10) {
-        int size = View.MeasureSpec.getSize(i10);
-        o51 o51Var = this.T;
-        measureChildWithMargins(o51Var.f, i9, 0, i10, 0);
-        int measuredHeight = o51Var.f.getMeasuredHeight();
-        int i11 = (size / 5) * 2;
-        if (measuredHeight - (size - i11) >= AndroidUtilities.dp(90.0f)) {
+    public void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        int i14;
+        int i15;
+        int i16;
+        int i17;
+        int i18;
+        int i19;
+        int i20;
+        switch (this.s0) {
+            case 3:
+                int childCount = getChildCount();
+                int R = R();
+                int paddingLeft = getPaddingLeft();
+                int paddingRight = (i12 - i10) - getPaddingRight();
+                int paddingTop = getPaddingTop();
+                int i21 = i13 - i11;
+                int paddingBottom = i21 - getPaddingBottom();
+                for (int i22 = 0; i22 < childCount; i22++) {
+                    View childAt = getChildAt(i22);
+                    if (childAt.getVisibility() != 8) {
+                        FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) childAt.getLayoutParams();
+                        int measuredWidth = childAt.getMeasuredWidth();
+                        int measuredHeight = childAt.getMeasuredHeight();
+                        int i23 = layoutParams.gravity;
+                        if (i23 == -1) {
+                            i23 = 51;
+                        }
+                        int absoluteGravity = Gravity.getAbsoluteGravity(i23, getLayoutDirection());
+                        int i24 = i23 & 112;
+                        int i25 = absoluteGravity & 7;
+                        if (i25 == 1) {
+                            i14 = (((paddingRight - paddingLeft) - measuredWidth) / 2) + paddingLeft + layoutParams.leftMargin;
+                            i15 = layoutParams.rightMargin;
+                        } else if (i25 != 5) {
+                            i16 = layoutParams.leftMargin + paddingLeft;
+                            if (i24 == 16) {
+                                if (i24 == 48) {
+                                    i20 = layoutParams.topMargin;
+                                } else if (i24 != 80) {
+                                    i20 = layoutParams.topMargin;
+                                } else {
+                                    i17 = paddingBottom - measuredHeight;
+                                    i18 = layoutParams.bottomMargin;
+                                }
+                                i19 = i20 + paddingTop;
+                                if (childAt instanceof fz) {
+                                    i19 = AndroidUtilities.isTablet() ? i21 - measuredHeight : (i21 + R) - measuredHeight;
+                                }
+                                childAt.layout(i16, i19, measuredWidth + i16, measuredHeight + i19);
+                            } else {
+                                i17 = (((paddingBottom - paddingTop) - measuredHeight) / 2) + paddingTop + layoutParams.topMargin;
+                                i18 = layoutParams.bottomMargin;
+                            }
+                            i19 = i17 - i18;
+                            if (childAt instanceof fz) {
+                            }
+                            childAt.layout(i16, i19, measuredWidth + i16, measuredHeight + i19);
+                        } else {
+                            i14 = paddingRight - measuredWidth;
+                            i15 = layoutParams.rightMargin;
+                        }
+                        i16 = i14 - i15;
+                        if (i24 == 16) {
+                        }
+                        i19 = i17 - i18;
+                        if (childAt instanceof fz) {
+                        }
+                        childAt.layout(i16, i19, measuredWidth + i16, measuredHeight + i19);
+                    }
+                }
+                S();
+                break;
+            default:
+                super.onLayout(z10, i10, i11, i12, i13);
+                break;
         }
-        i11 = size - measuredHeight;
-        if (i11 < 0) {
-            i11 = 0;
-        }
-        if (getPaddingTop() != i11) {
-            this.S = true;
-            setPadding(0, i11, 0, 0);
-            this.S = false;
-        }
-        super.onMeasure(i9, View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30));
     }
 
-    @Override // androidx.core.widget.NestedScrollView, android.view.View
-    public final void onScrollChanged(int i9, int i10, int i11, int i12) {
-        super.onScrollChanged(i9, i10, i11, i12);
-        o51.m(this.T);
-    }
-
-    @Override // androidx.core.widget.NestedScrollView, android.view.View, android.view.ViewParent
-    public final void requestLayout() {
-        if (this.S) {
-            return;
+    @Override // android.widget.FrameLayout, android.view.View
+    public void onMeasure(int i10, int i11) {
+        switch (this.s0) {
+            case 0:
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i11), TLObject.FLAG_30));
+                break;
+            case 5:
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i11), TLObject.FLAG_30));
+                break;
+            default:
+                super.onMeasure(i10, i11);
+                break;
         }
-        super.requestLayout();
     }
 }

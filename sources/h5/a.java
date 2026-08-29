@@ -1,73 +1,107 @@
 package h5;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import g7.p8;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import x5.l;
+import f5.d0;
+import f5.w;
+import j3.e;
+import j3.i0;
+import j3.t0;
+import java.nio.ByteBuffer;
+import m3.i;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class a extends y5.a {
-    public static final Parcelable.Creator<a> CREATOR = new h(2);
-    public final boolean a;
-    public final String b;
-    public final String c;
-    public final boolean d;
-    public final String e;
-    public final ArrayList f;
-    public final boolean h;
+public final class a extends e {
+    public final i a;
+    public final w b;
+    public i0 c;
+    public long d;
 
-    public a(boolean z10, String str, String str2, boolean z11, String str3, ArrayList arrayList, boolean z12) {
-        boolean z13 = true;
-        if (z11 && z12) {
-            z13 = false;
-        }
-        l.a("filterByAuthorizedAccounts and requestVerifiedPhoneNumber must not both be true; the Verified Phone Number feature only works in sign-ups.", z13);
-        this.a = z10;
-        if (z10) {
-            l.i(str, "serverClientId must be provided if Google ID tokens are requested");
-        }
-        this.b = str;
-        this.c = str2;
-        this.d = z11;
-        ArrayList arrayList2 = null;
-        if (arrayList != null && !arrayList.isEmpty()) {
-            arrayList2 = new ArrayList(arrayList);
-            Collections.sort(arrayList2);
-        }
-        this.f = arrayList2;
-        this.e = str3;
-        this.h = z12;
+    public a() {
+        super(6);
+        this.a = new i(1, 0);
+        this.b = new w();
     }
 
-    public final boolean equals(Object obj) {
-        if (!(obj instanceof a)) {
-            return false;
+    @Override // j3.e, j3.h2
+    public final String getName() {
+        return "CameraMotionRenderer";
+    }
+
+    @Override // j3.e, j3.d2
+    public final void handleMessage(int i10, Object obj) {
+        if (i10 == 8) {
+            this.c = (i0) obj;
         }
-        a aVar = (a) obj;
-        return this.a == aVar.a && l.l(this.b, aVar.b) && l.l(this.c, aVar.c) && this.d == aVar.d && l.l(this.e, aVar.e) && l.l(this.f, aVar.f) && this.h == aVar.h;
     }
 
-    public final int hashCode() {
-        return Arrays.hashCode(new Object[]{Boolean.valueOf(this.a), this.b, this.c, Boolean.valueOf(this.d), this.e, this.f, Boolean.valueOf(this.h)});
+    @Override // j3.e
+    public final boolean isEnded() {
+        return hasReadStreamToEnd();
     }
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i9) {
-        int q10 = p8.q(parcel, 20293);
-        p8.s(parcel, 1, 4);
-        parcel.writeInt(this.a ? 1 : 0);
-        p8.l(parcel, 2, this.b);
-        p8.l(parcel, 3, this.c);
-        p8.s(parcel, 4, 4);
-        parcel.writeInt(this.d ? 1 : 0);
-        p8.l(parcel, 5, this.e);
-        p8.n(parcel, 6, this.f);
-        p8.s(parcel, 7, 4);
-        parcel.writeInt(this.h ? 1 : 0);
-        p8.r(parcel, q10);
+    @Override // j3.e
+    public final boolean isReady() {
+        return true;
+    }
+
+    @Override // j3.e
+    public final void onDisabled() {
+        i0 i0Var = this.c;
+        if (i0Var != null) {
+            i0Var.c();
+        }
+    }
+
+    @Override // j3.e
+    public final void onPositionReset(long j10, boolean z10) {
+        this.d = Long.MIN_VALUE;
+        i0 i0Var = this.c;
+        if (i0Var != null) {
+            i0Var.c();
+        }
+    }
+
+    @Override // j3.e
+    public final void render(long j10, long j11) {
+        float[] fArr;
+        while (!hasReadStreamToEnd() && this.d < 100000 + j10) {
+            i iVar = this.a;
+            iVar.clear();
+            if (readSource(getFormatHolder(), iVar, 0) != -4 || iVar.isEndOfStream()) {
+                return;
+            }
+            this.d = iVar.d;
+            if (this.c != null && !iVar.isDecodeOnly()) {
+                iVar.c();
+                ByteBuffer byteBuffer = iVar.b;
+                int i10 = d0.a;
+                if (byteBuffer.remaining() != 16) {
+                    fArr = null;
+                } else {
+                    byte[] array = byteBuffer.array();
+                    int limit = byteBuffer.limit();
+                    w wVar = this.b;
+                    wVar.A(limit, array);
+                    wVar.C(byteBuffer.arrayOffset() + 4);
+                    float[] fArr2 = new float[3];
+                    for (int i11 = 0; i11 < 3; i11++) {
+                        fArr2[i11] = Float.intBitsToFloat(wVar.g());
+                    }
+                    fArr = fArr2;
+                }
+                if (fArr != null) {
+                    this.c.b();
+                }
+            }
+        }
+    }
+
+    @Override // j3.h2
+    public final int supportsFormat(t0 t0Var) {
+        return "application/x-camera-motion".equals(t0Var.B) ? com.google.android.recaptcha.internal.a.b(4, 0, 0) : com.google.android.recaptcha.internal.a.b(0, 0, 0);
+    }
+
+    @Override // j3.e
+    public final void onStreamChanged(t0[] t0VarArr, long j10, long j11) {
     }
 }

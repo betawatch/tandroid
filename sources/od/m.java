@@ -1,56 +1,62 @@
 package od;
 
-import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
-import java.util.concurrent.atomic.AtomicReferenceArray;
 import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class m {
-    public static final /* synthetic */ AtomicReferenceFieldUpdater b = AtomicReferenceFieldUpdater.newUpdater(m.class, Object.class, "lastScheduledTask$volatile");
-    public static final /* synthetic */ AtomicIntegerFieldUpdater c = AtomicIntegerFieldUpdater.newUpdater(m.class, "producerIndex$volatile");
-    public static final /* synthetic */ AtomicIntegerFieldUpdater d = AtomicIntegerFieldUpdater.newUpdater(m.class, "consumerIndex$volatile");
-    public static final /* synthetic */ AtomicIntegerFieldUpdater e = AtomicIntegerFieldUpdater.newUpdater(m.class, "blockingTasksInBuffer$volatile");
-    public final AtomicReferenceArray a = new AtomicReferenceArray(128);
-    private volatile /* synthetic */ int blockingTasksInBuffer$volatile;
-    private volatile /* synthetic */ int consumerIndex$volatile;
-    private volatile /* synthetic */ Object lastScheduledTask$volatile;
-    private volatile /* synthetic */ int producerIndex$volatile;
+public class m {
+    public static final /* synthetic */ AtomicReferenceFieldUpdater a = AtomicReferenceFieldUpdater.newUpdater(m.class, Object.class, "_cur$volatile");
+    private volatile /* synthetic */ Object _cur$volatile = new o(8, false);
 
-    public final i a() {
-        i iVar;
+    public final boolean a(Runnable runnable) {
         while (true) {
-            AtomicIntegerFieldUpdater atomicIntegerFieldUpdater = d;
-            int i9 = atomicIntegerFieldUpdater.get(this);
-            if (i9 - c.get(this) == 0) {
-                return null;
+            AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = a;
+            o oVar = (o) atomicReferenceFieldUpdater.get(this);
+            int a2 = oVar.a(runnable);
+            if (a2 == 0) {
+                return true;
             }
-            int i10 = i9 & 127;
-            if (atomicIntegerFieldUpdater.compareAndSet(this, i9, i9 + 1) && (iVar = (i) this.a.getAndSet(i10, null)) != null) {
-                if (iVar.b.a == 1) {
-                    e.decrementAndGet(this);
+            if (a2 == 1) {
+                o c3 = oVar.c();
+                while (!atomicReferenceFieldUpdater.compareAndSet(this, oVar, c3) && atomicReferenceFieldUpdater.get(this) == oVar) {
                 }
-                return iVar;
+            } else if (a2 == 2) {
+                return false;
             }
         }
     }
 
-    public final i b(int i9, boolean z10) {
-        int i10 = i9 & 127;
-        AtomicReferenceArray atomicReferenceArray = this.a;
-        i iVar = (i) atomicReferenceArray.get(i10);
-        if (iVar != null) {
-            if ((iVar.b.a == 1) == z10) {
-                while (!atomicReferenceArray.compareAndSet(i10, iVar, null)) {
-                    if (atomicReferenceArray.get(i10) != iVar) {
-                    }
-                }
-                if (z10) {
-                    e.decrementAndGet(this);
-                }
-                return iVar;
+    public final void b() {
+        while (true) {
+            AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = a;
+            o oVar = (o) atomicReferenceFieldUpdater.get(this);
+            if (oVar.b()) {
+                return;
+            }
+            o c3 = oVar.c();
+            while (!atomicReferenceFieldUpdater.compareAndSet(this, oVar, c3) && atomicReferenceFieldUpdater.get(this) == oVar) {
             }
         }
-        return null;
+    }
+
+    public final int c() {
+        o oVar = (o) a.get(this);
+        oVar.getClass();
+        long j10 = o.f.get(oVar);
+        return 1073741823 & (((int) ((j10 & 1152921503533105152L) >> 30)) - ((int) (1073741823 & j10)));
+    }
+
+    public final Object d() {
+        while (true) {
+            AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = a;
+            o oVar = (o) atomicReferenceFieldUpdater.get(this);
+            Object d = oVar.d();
+            if (d != o.g) {
+                return d;
+            }
+            o c3 = oVar.c();
+            while (!atomicReferenceFieldUpdater.compareAndSet(this, oVar, c3) && atomicReferenceFieldUpdater.get(this) == oVar) {
+            }
+        }
     }
 }

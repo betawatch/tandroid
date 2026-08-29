@@ -6,23 +6,23 @@ import java.util.WeakHashMap;
 import r0.j0;
 import r0.o0;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class y extends o0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ a0 b;
 
-    public /* synthetic */ y(a0 a0Var, int i9) {
-        this.a = i9;
+    public /* synthetic */ y(a0 a0Var, int i10) {
+        this.a = i10;
         this.b = a0Var;
     }
 
     @Override // r0.n0
     public final void c() {
         View view;
-        int i9 = this.a;
+        int i10 = this.a;
         a0 a0Var = this.b;
-        switch (i9) {
+        switch (i10) {
             case 0:
                 if (a0Var.o && (view = a0Var.g) != null) {
                     view.setTranslationY(0.0f);
@@ -31,9 +31,9 @@ public final class y extends o0 {
                 a0Var.d.setVisibility(8);
                 a0Var.d.setTransitioning(false);
                 a0Var.s = null;
-                we.b bVar = a0Var.k;
+                ze.b bVar = a0Var.k;
                 if (bVar != null) {
-                    bVar.H(a0Var.j);
+                    bVar.O(a0Var.j);
                     a0Var.j = null;
                     a0Var.k = null;
                 }

@@ -1,50 +1,60 @@
 package org.telegram.ui.Components.voip;
 
-import android.app.Activity;
-import android.graphics.Canvas;
-import android.graphics.CornerPathEffect;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.Shader;
-import kh.x3;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
-/* loaded from: classes3.dex */
-public final class c3 extends x3 {
-    public final Paint H0;
-    public final n1 I0;
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class c3 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ e3 b;
 
-    public c3(Activity activity, int i9, n1 n1Var, boolean z10) {
-        super(activity, i9);
-        Paint paint = new Paint(1);
-        this.H0 = paint;
-        this.I0 = n1Var;
-        n1Var.a(this);
-        paint.setPathEffect(new CornerPathEffect(this.v));
-        if (z10) {
-            i();
-        }
+    public /* synthetic */ c3(e3 e3Var, int i10) {
+        this.a = i10;
+        this.b = e3Var;
     }
 
-    @Override // kh.x3
-    public final void c(Canvas canvas, float f10) {
-        n1 n1Var = this.I0;
-        Shader shader = n1Var.b().getShader();
-        Paint paint = this.H0;
-        paint.setShader(shader);
-        canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), (int) (Math.min(this.B.getAlpha(), n1Var.b().getAlpha()) * f10), 31);
-        Path path = this.p0;
-        canvas.drawPath(path, paint);
-        if (n1Var.e) {
-            paint.setShader(((Paint) n1Var.d.a).getShader());
-            canvas.drawPath(path, paint);
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                e3 e3Var = this.b;
+                e3Var.getClass();
+                e3Var.D = ((Integer) valueAnimator.getAnimatedValue()).intValue();
+                e3Var.invalidate();
+                e3Var.P.c();
+                break;
+            case 1:
+                e3 e3Var2 = this.b;
+                e3Var2.getClass();
+                e3Var2.E = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                e3Var2.invalidate();
+                e3Var2.P.c();
+                break;
+            case 2:
+                e3 e3Var3 = this.b;
+                e3Var3.getClass();
+                e3Var3.D = ((Integer) valueAnimator.getAnimatedValue()).intValue();
+                e3Var3.invalidate();
+                e3Var3.P.c();
+                break;
+            case 3:
+                e3 e3Var4 = this.b;
+                e3Var4.getClass();
+                e3Var4.A = ((Integer) valueAnimator.getAnimatedValue()).intValue();
+                e3Var4.invalidate();
+                break;
+            case 4:
+                e3 e3Var5 = this.b;
+                e3Var5.getClass();
+                e3Var5.B = ((Integer) valueAnimator.getAnimatedValue()).intValue();
+                e3Var5.invalidate();
+                break;
+            default:
+                e3 e3Var6 = this.b;
+                e3Var6.getClass();
+                e3Var6.A = ((Integer) valueAnimator.getAnimatedValue()).intValue();
+                e3Var6.invalidate();
+                break;
         }
-        canvas.restore();
-    }
-
-    @Override // kh.x3, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        this.I0.d(getX(), getY());
-        super.dispatchDraw(canvas);
     }
 }

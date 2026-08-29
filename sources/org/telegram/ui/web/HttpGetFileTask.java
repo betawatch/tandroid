@@ -12,14 +12,14 @@ import java.net.ProtocolException;
 import java.net.URL;
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
-import kh.a8;
-import mh.m2;
+import nh.m6;
+import nh.o7;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes4.dex */
 public class HttpGetFileTask extends AsyncTask<String, Void, File> {
     private Utilities.Callback<File> doneCallback;
@@ -35,8 +35,8 @@ public class HttpGetFileTask extends AsyncTask<String, Void, File> {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$doInBackground$0(float f10) {
-        this.progressCallback.run(Float.valueOf(f10));
+    public /* synthetic */ void lambda$doInBackground$0(float f9) {
+        this.progressCallback.run(Float.valueOf(f9));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -72,16 +72,16 @@ public class HttpGetFileTask extends AsyncTask<String, Void, File> {
     public File doInBackground(String... strArr) {
         long j10;
         BufferedInputStream bufferedInputStream;
-        Throwable th;
-        FileOutputStream fileOutputStream;
         Throwable th2;
+        FileOutputStream fileOutputStream;
+        Throwable th3;
         FileChannel channel;
         String str = strArr[0];
         long j11 = 0;
         long j12 = 0;
-        int i9 = 0;
-        while (i9 < 5) {
-            boolean z10 = i9 > 0;
+        int i10 = 0;
+        while (i10 < 5) {
+            boolean z10 = i10 > 0;
             try {
                 HttpURLConnection httpURLConnection = (HttpURLConnection) new URL(str).openConnection();
                 httpURLConnection.setRequestMethod("GET");
@@ -115,23 +115,23 @@ public class HttpGetFileTask extends AsyncTask<String, Void, File> {
                             return null;
                         }
                         FileLog.d("got unexpected end of stream, lets try to resume");
-                        i9++;
+                        i10++;
                         j11 = j10;
                     }
                 }
                 long contentLengthLong = Build.VERSION.SDK_INT >= 24 ? httpURLConnection.getContentLengthLong() : httpURLConnection.getContentLength();
                 long j13 = this.max_size;
-                int i10 = (j13 > j11 ? 1 : (j13 == j11 ? 0 : -1));
-                j10 = i10;
+                int i11 = (j13 > j11 ? 1 : (j13 == j11 ? 0 : -1));
+                j10 = i11;
                 try {
                     try {
                         try {
                             try {
                                 try {
-                                    if (i10 > 0) {
-                                        int i11 = (contentLengthLong > j13 ? 1 : (contentLengthLong == j13 ? 0 : -1));
-                                        j10 = i11;
-                                        if (i11 > 0) {
+                                    if (i11 > 0) {
+                                        int i12 = (contentLengthLong > j13 ? 1 : (contentLengthLong == j13 ? 0 : -1));
+                                        j10 = i12;
+                                        if (i12 > 0) {
                                             errorStream.close();
                                             if (this.file != null) {
                                                 this.file = null;
@@ -145,7 +145,7 @@ public class HttpGetFileTask extends AsyncTask<String, Void, File> {
                                         j10 = j11;
                                         if (read == -1) {
                                             if (this.progressCallback != null) {
-                                                AndroidUtilities.runOnUIThread(new m2(this, 19));
+                                                AndroidUtilities.runOnUIThread(new m6(this, 28));
                                             }
                                             if (channel != null) {
                                                 channel.close();
@@ -170,60 +170,60 @@ public class HttpGetFileTask extends AsyncTask<String, Void, File> {
                                                 if (contentLengthLong > j10) {
                                                     float clamp01 = Utilities.clamp01(j12 / contentLengthLong);
                                                     if (this.progressCallback != null) {
-                                                        AndroidUtilities.runOnUIThread(new org.telegram.ui.d0(this, clamp01, 5));
+                                                        AndroidUtilities.runOnUIThread(new org.telegram.ui.e0(this, clamp01, 5));
                                                     }
                                                 }
                                                 j11 = j10;
                                             }
-                                        } catch (Throwable th3) {
-                                            th = th3;
-                                            Throwable th4 = th;
+                                        } catch (Throwable th4) {
+                                            th = th4;
+                                            Throwable th5 = th;
                                             if (channel == null) {
-                                                throw th4;
+                                                throw th5;
                                             }
                                             try {
                                                 channel.close();
-                                                throw th4;
-                                            } catch (Throwable th5) {
-                                                th4.addSuppressed(th5);
-                                                throw th4;
+                                                throw th5;
+                                            } catch (Throwable th6) {
+                                                th5.addSuppressed(th6);
+                                                throw th5;
                                             }
                                         }
                                     }
-                                } catch (Throwable th6) {
-                                    th = th6;
+                                } catch (Throwable th7) {
+                                    th = th7;
                                     j10 = j11;
                                 }
                                 channel = fileOutputStream.getChannel();
-                            } catch (Throwable th7) {
-                                th = th7;
-                                th2 = th;
+                            } catch (Throwable th8) {
+                                th = th8;
+                                th3 = th;
                                 try {
                                     fileOutputStream.close();
-                                    throw th2;
-                                } catch (Throwable th8) {
-                                    th2.addSuppressed(th8);
-                                    throw th2;
+                                    throw th3;
+                                } catch (Throwable th9) {
+                                    th3.addSuppressed(th9);
+                                    throw th3;
                                 }
                             }
-                        } catch (Throwable th9) {
-                            th = th9;
+                        } catch (Throwable th10) {
+                            th = th10;
                             j10 = j11;
-                            th2 = th;
+                            th3 = th;
                             fileOutputStream.close();
-                            throw th2;
+                            throw th3;
                         }
                         fileOutputStream = new FileOutputStream(this.file, z10);
-                    } catch (Throwable th10) {
-                        th = th10;
-                        th = th;
+                    } catch (Throwable th11) {
+                        th = th11;
+                        th2 = th;
                         try {
                             try {
                                 bufferedInputStream.close();
-                                throw th;
-                            } catch (Throwable th11) {
-                                th.addSuppressed(th11);
-                                throw th;
+                                throw th2;
+                            } catch (Throwable th12) {
+                                th2.addSuppressed(th12);
+                                throw th2;
                             }
                         } catch (Exception e12) {
                             e = e12;
@@ -231,19 +231,19 @@ public class HttpGetFileTask extends AsyncTask<String, Void, File> {
                             }
                         }
                     }
-                } catch (Throwable th12) {
-                    th = th12;
+                } catch (Throwable th13) {
+                    th = th13;
                     j10 = j11;
-                    th = th;
+                    th2 = th;
                     bufferedInputStream.close();
-                    throw th;
+                    throw th2;
                 }
                 if (this.file == null) {
                     String str2 = this.overrideExt;
                     if (str2 == null) {
                         str2 = MimeTypeMap.getSingleton().getExtensionFromMimeType(httpURLConnection.getContentType());
                     }
-                    this.file = a8.w(UserConfig.selectedAccount, str2);
+                    this.file = o7.w(UserConfig.selectedAccount, str2);
                 }
                 bufferedInputStream = new BufferedInputStream(errorStream, 16384);
             } catch (Exception e13) {

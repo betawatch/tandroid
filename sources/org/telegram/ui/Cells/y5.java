@@ -1,79 +1,205 @@
 package org.telegram.ui.Cells;
 
+import android.content.Context;
+import android.graphics.Canvas;
 import android.graphics.Paint;
-import android.view.View;
+import android.text.TextUtils;
+import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.ll;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.LocaleController;
+import org.telegram.ui.Components.Switch;
+import org.telegram.ui.Components.mb0;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
 public final class y5 extends FrameLayout {
-    public w5[] a;
-    public MediaController.AlbumEntry[] b;
-    public int c;
-    public x5 d;
-    public Paint e;
+    public final TextView a;
+    public final TextView b;
+    public final ImageView c;
+    public final Switch d;
+    public boolean e;
+    public boolean f;
+    public final org.telegram.ui.ActionBar.c6 h;
 
-    public final void a(int i9, MediaController.AlbumEntry albumEntry) {
-        w5[] w5VarArr = this.a;
-        this.b[i9] = albumEntry;
-        if (albumEntry == null) {
-            w5VarArr[i9].setVisibility(4);
-            return;
+    public y5(Context context, org.telegram.ui.ActionBar.c6 c6Var) {
+        super(context);
+        this.h = c6Var;
+        ImageView imageView = new ImageView(context);
+        this.c = imageView;
+        imageView.setFocusable(false);
+        imageView.setScaleType(ImageView.ScaleType.CENTER);
+        addView(imageView, i7.f6.d(28, 28.0f, (LocaleController.isRTL ? 5 : 3) | 48, 18.0f, 16.0f, 18.0f, 9.0f));
+        TextView textView = new TextView(context);
+        this.a = textView;
+        org.telegram.ui.b.m(org.telegram.ui.ActionBar.g6.G6, c6Var, textView, 1, 16.0f);
+        textView.setLines(1);
+        textView.setMaxLines(1);
+        textView.setSingleLine(true);
+        textView.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
+        textView.setEllipsize(TextUtils.TruncateAt.END);
+        boolean z10 = LocaleController.isRTL;
+        addView(textView, i7.f6.d(-1, -2.0f, (z10 ? 5 : 3) | 48, z10 ? 66.0f : 64.0f, 8.0f, z10 ? 64.0f : 66.0f, 0.0f));
+        TextView textView2 = new TextView(context);
+        this.b = textView2;
+        org.telegram.ui.b.m(org.telegram.ui.ActionBar.g6.z6, c6Var, textView2, 1, 13.0f);
+        textView2.setGravity(LocaleController.isRTL ? 5 : 3);
+        textView2.setLines(0);
+        textView2.setMaxLines(0);
+        textView2.setSingleLine(false);
+        textView2.setEllipsize(null);
+        textView2.setLineSpacing(AndroidUtilities.dp(1.66f), 1.0f);
+        boolean z11 = LocaleController.isRTL;
+        addView(textView2, i7.f6.d(-2, -2.0f, (z11 ? 5 : 3) | 48, z11 ? 66.0f : 64.0f, 31.0f, z11 ? 64.0f : 66.0f, 10.0f));
+        Switch r32 = new Switch(context, c6Var);
+        this.d = r32;
+        int i10 = org.telegram.ui.ActionBar.g6.M6;
+        int i11 = org.telegram.ui.ActionBar.g6.N6;
+        int i12 = org.telegram.ui.ActionBar.g6.d6;
+        r32.d(i10, i11, i12, i12);
+        addView(r32, i7.f6.d(37, 40.0f, (LocaleController.isRTL ? 3 : 5) | 48, 21.0f, 10.0f, 19.0f, 0.0f));
+        r32.setFocusable(false);
+    }
+
+    public final void a(String str, String str2, int i10, int i11, boolean z10) {
+        this.a.setText(str);
+        org.telegram.ui.ActionBar.c6 c6Var = this.h;
+        boolean a2 = c6Var != null ? c6Var.a() : org.telegram.ui.ActionBar.g6.I.q();
+        mb0 mb0Var = new mb0(1);
+        int i12 = -14899731;
+        switch (i10) {
+            case 1:
+            case 2:
+                break;
+            case 3:
+                i12 = -11565578;
+                break;
+            case 4:
+                i12 = -14965523;
+                break;
+            case 5:
+                i12 = -1007845;
+                break;
+            case 6:
+                i12 = -881871;
+                break;
+            case 7:
+                i12 = -11154873;
+                break;
+            case 8:
+                i12 = -765355;
+                break;
+            case 9:
+                i12 = -13451058;
+                break;
+            case 10:
+                i12 = -3903756;
+                break;
+            case 11:
+                i12 = -7956054;
+                break;
+            default:
+                throw null;
         }
-        w5 w5Var = w5VarArr[i9];
-        org.telegram.ui.Components.o9 o9Var = w5Var.a;
-        org.telegram.ui.Components.o9 o9Var2 = w5Var.a;
-        o9Var.q(0, true);
-        MediaController.PhotoEntry photoEntry = albumEntry.coverPhoto;
-        if (photoEntry == null || photoEntry.path == null) {
-            o9Var2.setImageDrawable(org.telegram.ui.ActionBar.f6.R4);
-        } else {
-            o9Var2.p(photoEntry.orientation, photoEntry.invert, true);
-            if (albumEntry.coverPhoto.isVideo) {
-                o9Var2.f("vthumb://" + albumEntry.coverPhoto.imageId + ":" + albumEntry.coverPhoto.path, null, org.telegram.ui.ActionBar.f6.R4);
-            } else {
-                o9Var2.f("thumb://" + albumEntry.coverPhoto.imageId + ":" + albumEntry.coverPhoto.path, null, org.telegram.ui.ActionBar.f6.R4);
+        int i13 = -15431455;
+        switch (i10) {
+            case 1:
+            case 4:
+                break;
+            case 2:
+                i13 = -15497247;
+                break;
+            case 3:
+                i13 = -13276952;
+                break;
+            case 5:
+                i13 = -1996271;
+                break;
+            case 6:
+                i13 = -1940716;
+                break;
+            case 7:
+                i13 = -14175180;
+                break;
+            case 8:
+                i13 = -2148011;
+                break;
+            case 9:
+                i13 = -14836538;
+                break;
+            case 10:
+                i13 = -6335009;
+                break;
+            case 11:
+                i13 = -9534569;
+                break;
+            default:
+                throw null;
+        }
+        mb0Var.b(i12, i13);
+        mb0Var.b = a2;
+        ImageView imageView = this.c;
+        imageView.setBackground(mb0Var);
+        imageView.setImageResource(i11);
+        boolean z11 = this.e;
+        Switch r02 = this.d;
+        r02.b(0, z10, z11);
+        this.b.setText(str2);
+        r02.setContentDescription(str);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        if (this.f) {
+            org.telegram.ui.ActionBar.c6 c6Var = this.h;
+            Paint G = c6Var != null ? c6Var.G("paintDivider") : org.telegram.ui.ActionBar.g6.k0;
+            if (G == null) {
+                G = org.telegram.ui.ActionBar.g6.k0;
+            }
+            Paint paint = G;
+            if (paint != null) {
+                canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(19.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(19.0f) : 0), getMeasuredHeight() - 1, paint);
             }
         }
-        w5Var.b.setText(albumEntry.bucketName);
-        w5Var.c.setText(String.format("%d", Integer.valueOf(albumEntry.photos.size())));
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i9, int i10) {
-        View[] viewArr = this.a;
-        int A = AndroidUtilities.isTablet() ? ll.A(4.0f, this.c - 1, AndroidUtilities.dp(490.0f) - AndroidUtilities.dp(12.0f)) / this.c : ll.A(4.0f, this.c - 1, AndroidUtilities.displaySize.x - AndroidUtilities.dp(12.0f)) / this.c;
-        for (int i11 = 0; i11 < this.c; i11++) {
-            FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) viewArr[i11].getLayoutParams();
-            layoutParams.topMargin = AndroidUtilities.dp(4.0f);
-            layoutParams.leftMargin = (AndroidUtilities.dp(4.0f) + A) * i11;
-            layoutParams.width = A;
-            layoutParams.height = A;
-            layoutParams.gravity = 51;
-            viewArr[i11].setLayoutParams(layoutParams);
+    public Switch getCheckBox() {
+        return this.d;
+    }
+
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        accessibilityNodeInfo.setClassName("android.widget.Switch");
+        StringBuilder sb2 = new StringBuilder();
+        sb2.append(this.a.getText());
+        TextView textView = this.b;
+        if (textView != null && !TextUtils.isEmpty(textView.getText())) {
+            sb2.append("\n");
+            sb2.append(textView.getText());
         }
-        super.onMeasure(i9, ll.C(4.0f, A, TLObject.FLAG_30));
+        accessibilityNodeInfo.setContentDescription(sb2);
+        accessibilityNodeInfo.setCheckable(true);
+        accessibilityNodeInfo.setChecked(this.d.h);
     }
 
-    public void setAlbumsCount(int i9) {
-        int i10 = 0;
-        while (true) {
-            w5[] w5VarArr = this.a;
-            if (i10 >= w5VarArr.length) {
-                this.c = i9;
-                return;
-            } else {
-                w5VarArr[i10].setVisibility(i10 < i9 ? 0 : 4);
-                i10++;
-            }
-        }
+    public void setAnimationsEnabled(boolean z10) {
+        this.e = z10;
     }
 
-    public void setDelegate(x5 x5Var) {
-        this.d = x5Var;
+    public void setChecked(boolean z10) {
+        this.d.b(0, z10, true);
+    }
+
+    public void setDivider(boolean z10) {
+        this.f = z10;
+        invalidate();
+    }
+
+    public void setValue(CharSequence charSequence) {
+        this.b.setText(charSequence);
     }
 }

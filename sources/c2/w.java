@@ -1,42 +1,66 @@
 package c2;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+import android.os.Bundle;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public abstract class w {
-    public abstract void e(a0 a0Var);
+public final class w {
+    public static final w c = new w(new Bundle(), null);
+    public final Bundle a;
+    public List b;
 
-    public void h(c0 c0Var, a0 a0Var, int i9) {
-        g(a0Var);
+    public w(Bundle bundle, ArrayList arrayList) {
+        this.a = bundle;
+        this.b = arrayList;
     }
 
-    public void j(c0 c0Var, a0 a0Var, int i9) {
-        i();
+    public static w b(Bundle bundle) {
+        if (bundle != null) {
+            return new w(bundle, null);
+        }
+        return null;
     }
 
-    public void a() {
+    public final void a() {
+        if (this.b == null) {
+            ArrayList<String> stringArrayList = this.a.getStringArrayList("controlCategories");
+            this.b = stringArrayList;
+            if (stringArrayList == null || stringArrayList.isEmpty()) {
+                this.b = Collections.EMPTY_LIST;
+            }
+        }
     }
 
-    public void b() {
+    public final ArrayList c() {
+        a();
+        return new ArrayList(this.b);
     }
 
-    public void c() {
+    public final boolean d() {
+        a();
+        return this.b.isEmpty();
     }
 
-    public void i() {
+    public final boolean equals(Object obj) {
+        if (!(obj instanceof w)) {
+            return false;
+        }
+        w wVar = (w) obj;
+        a();
+        wVar.a();
+        return this.b.equals(wVar.b);
     }
 
-    public void d(a0 a0Var) {
+    public final int hashCode() {
+        a();
+        return this.b.hashCode();
     }
 
-    public void f(a0 a0Var) {
-    }
-
-    public void g(a0 a0Var) {
-    }
-
-    public void k(a0 a0Var) {
-    }
-
-    public void l(f0 f0Var) {
+    public final String toString() {
+        return "MediaRouteSelector{ controlCategories=" + Arrays.toString(c().toArray()) + " }";
     }
 }

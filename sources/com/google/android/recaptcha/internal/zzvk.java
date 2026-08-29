@@ -6,12 +6,12 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 final class zzvk extends ThreadLocal {
     @Override // java.lang.ThreadLocal
     public final /* synthetic */ Object initialValue() {
-        int i9 = zzvl.zza;
+        int i10 = zzvl.zza;
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.ENGLISH);
         GregorianCalendar gregorianCalendar = new GregorianCalendar(DesugarTimeZone.getTimeZone("UTC"));
         gregorianCalendar.setGregorianChange(new Date(Long.MIN_VALUE));

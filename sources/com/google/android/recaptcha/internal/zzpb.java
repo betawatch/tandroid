@@ -2,7 +2,7 @@ package com.google.android.recaptcha.internal;
 
 import java.io.Serializable;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 final class zzpb extends zzpc implements Serializable {
     final byte[] zza;
@@ -35,8 +35,8 @@ final class zzpb extends zzpc implements Serializable {
             return false;
         }
         boolean z10 = true;
-        for (int i9 = 0; i9 < bArr.length; i9++) {
-            z10 &= bArr[i9] == zzpcVar.zze()[i9];
+        for (int i10 = 0; i10 < bArr.length; i10++) {
+            z10 &= bArr[i10] == zzpcVar.zze()[i10];
         }
         return z10;
     }

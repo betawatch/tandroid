@@ -1,42 +1,87 @@
 package org.telegram.ui.Components;
 
-import android.opengl.GLES20;
-import org.telegram.messenger.R;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.drawable.Drawable;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public class k40 {
-    public final int a;
-    public final int b;
-    public final int c;
-    public final int d;
-    public final int e;
-    public final int f;
+public final class k40 extends Drawable {
+    public byte[] a;
+    public final Paint b = new Paint();
+    public final int[] c = {-1, -2758925, -13805707, -13657655};
 
-    public k40(int i9) {
-        int a2 = l40.a(35633, R.raw.round_blur_vert);
-        this.b = a2;
-        int a3 = l40.a(35632, i9);
-        this.c = a3;
-        int glCreateProgram = GLES20.glCreateProgram();
-        GLES20.glAttachShader(glCreateProgram, a2);
-        GLES20.glAttachShader(glCreateProgram, a3);
-        GLES20.glLinkProgram(glCreateProgram);
-        int[] iArr = new int[1];
-        GLES20.glGetProgramiv(glCreateProgram, 35714, iArr, 0);
-        if (iArr[0] == 0) {
-            GLES20.glDeleteProgram(glCreateProgram);
-            glCreateProgram = 0;
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        byte[] bArr = this.a;
+        if (bArr == null) {
+            return;
         }
-        this.a = glCreateProgram;
-        this.d = GLES20.glGetAttribLocation(glCreateProgram, "aPosition");
-        this.e = GLES20.glGetAttribLocation(glCreateProgram, "aTextureCoord");
-        this.f = GLES20.glGetUniformLocation(glCreateProgram, "sTexture");
+        int length = bArr.length;
+        int[] iArr = this.c;
+        Paint paint = this.b;
+        if (length == 16) {
+            float floor = (float) Math.floor(Math.min(getBounds().width(), getBounds().height()) / 8.0f);
+            float f9 = 8.0f * floor;
+            float max = Math.max(0.0f, (getBounds().width() - f9) / 2.0f);
+            float max2 = Math.max(0.0f, (getBounds().height() - f9) / 2.0f);
+            int i10 = 0;
+            for (int i11 = 0; i11 < 8; i11++) {
+                int i12 = 0;
+                while (i12 < 8) {
+                    int i13 = i10 + 2;
+                    paint.setColor(iArr[Math.abs((this.a[i10 / 8] >> (i10 % 8)) & 3) % 4]);
+                    float f10 = (i12 * floor) + max;
+                    float f11 = i11 * floor;
+                    canvas.drawRect(f10, f11 + max2, f10 + floor, f11 + floor + max2, paint);
+                    i12++;
+                    i10 = i13;
+                }
+            }
+            return;
+        }
+        float floor2 = (float) Math.floor(Math.min(getBounds().width(), getBounds().height()) / 12.0f);
+        float f12 = 12.0f * floor2;
+        float max3 = Math.max(0.0f, (getBounds().width() - f12) / 2.0f);
+        float max4 = Math.max(0.0f, (getBounds().height() - f12) / 2.0f);
+        int i14 = 0;
+        int i15 = 0;
+        while (i15 < 12) {
+            int i16 = i14;
+            for (int i17 = 0; i17 < 12; i17++) {
+                paint.setColor(iArr[Math.abs((this.a[i16 / 8] >> (i16 % 8)) & 3) % 4]);
+                float f13 = (i17 * floor2) + max3;
+                float f14 = i15 * floor2;
+                canvas.drawRect(f13, f14 + max4, f13 + floor2, f14 + floor2 + max4, paint);
+                i16 += 2;
+            }
+            i15++;
+            i14 = i16;
+        }
     }
 
-    public final void a() {
-        GLES20.glDeleteProgram(this.a);
-        GLES20.glDeleteShader(this.b);
-        GLES20.glDeleteShader(this.c);
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        return AndroidUtilities.dp(32.0f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        return AndroidUtilities.dp(32.0f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return 0;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

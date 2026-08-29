@@ -10,9 +10,9 @@ public final class b6 extends x implements n8 {
     public final /* synthetic */ int s;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ b6(a aVar, int i9, int i10) {
-        super(aVar, i9);
-        this.s = i10;
+    public /* synthetic */ b6(a aVar, int i10, int i11) {
+        super(aVar, i10);
+        this.s = i11;
     }
 
     @Override // j$.util.stream.a
@@ -22,15 +22,15 @@ public final class b6 extends x implements n8 {
                 if (!v6.ORDERED.m(aVar.m)) {
                     return new r8((j$.util.u0) aVar.H0(spliterator), 1);
                 }
-                final int i9 = 0;
+                final int i10 = 0;
                 return N0(aVar, spliterator, new IntFunction() { // from class: j$.util.stream.k8
                     @Override // java.util.function.IntFunction
-                    public final Object apply(int i10) {
-                        switch (i9) {
+                    public final Object apply(int i11) {
+                        switch (i10) {
                             case 0:
-                                return new Double[i10];
+                                return new Double[i11];
                             default:
-                                return new Double[i10];
+                                return new Double[i11];
                         }
                     }
                 }).spliterator();
@@ -38,15 +38,15 @@ public final class b6 extends x implements n8 {
                 if (!v6.ORDERED.m(aVar.m)) {
                     return new r8((j$.util.u0) aVar.H0(spliterator), 0);
                 }
-                final int i10 = 1;
+                final int i11 = 1;
                 return N0(aVar, spliterator, new IntFunction() { // from class: j$.util.stream.k8
                     @Override // java.util.function.IntFunction
-                    public final Object apply(int i102) {
-                        switch (i10) {
+                    public final Object apply(int i112) {
+                        switch (i11) {
                             case 0:
-                                return new Double[i102];
+                                return new Double[i112];
                             default:
-                                return new Double[i102];
+                                return new Double[i112];
                         }
                     }
                 }).spliterator();
@@ -73,14 +73,14 @@ public final class b6 extends x implements n8 {
     }
 
     @Override // j$.util.stream.a
-    public final j5 Q0(int i9, j5 j5Var) {
+    public final j5 Q0(int i10, j5 j5Var) {
         switch (this.s) {
             case 0:
                 Objects.requireNonNull(j5Var);
-                if (v6.SORTED.m(i9)) {
+                if (v6.SORTED.m(i10)) {
                     return j5Var;
                 }
-                return v6.SIZED.m(i9) ? new g6(j5Var) : new y5(j5Var);
+                return v6.SIZED.m(i10) ? new g6(j5Var) : new y5(j5Var);
             case 1:
                 return new l8(this, j5Var);
             default:

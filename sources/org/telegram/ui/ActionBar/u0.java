@@ -5,7 +5,7 @@ import android.view.View;
 import android.widget.TextView;
 import org.telegram.ui.lh;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
 public final class u0 {
     public final int a;
@@ -23,28 +23,28 @@ public final class u0 {
     public Integer m;
     public Integer n;
 
-    public u0(int i9) {
-        this.a = i9;
+    public u0(int i10) {
+        this.a = i10;
     }
 
-    public final void a(int i9, int i10) {
+    public final void a(int i10, int i11) {
         Integer num = this.m;
-        if (num == null || this.n == null || num.intValue() != i9 || this.n.intValue() != i10) {
-            this.m = Integer.valueOf(i9);
-            this.n = Integer.valueOf(i10);
+        if (num == null || this.n == null || num.intValue() != i10 || this.n.intValue() != i11) {
+            this.m = Integer.valueOf(i10);
+            this.n = Integer.valueOf(i11);
             View view = this.i;
             if (view instanceof g1) {
-                ((g1) view).c(i9, i10);
+                ((g1) view).c(i10, i11);
             }
         }
     }
 
-    public final void b(int i9) {
-        if (i9 != this.c) {
-            this.c = i9;
+    public final void b(int i10) {
+        if (i10 != this.c) {
+            this.c = i10;
             View view = this.i;
             if (view instanceof g1) {
-                ((g1) view).setIcon(i9);
+                ((g1) view).setIcon(i10);
             }
         }
     }
@@ -67,11 +67,11 @@ public final class u0 {
         }
     }
 
-    public final void e(int i9) {
-        this.k = i9;
+    public final void e(int i10) {
+        this.k = i10;
         View view = this.i;
         if (view != null) {
-            view.setVisibility(i9);
+            view.setVisibility(i10);
         }
     }
 }

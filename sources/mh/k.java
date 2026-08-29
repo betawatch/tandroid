@@ -1,54 +1,96 @@
 package mh;
 
-import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import g7.e6;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ll;
-import org.telegram.ui.ActionBar.b6;
-import org.telegram.ui.ActionBar.f6;
+import android.view.KeyEvent;
+import androidx.recyclerview.widget.RecyclerView;
+import f2.d1;
+import f2.k1;
+import f2.w;
+import org.telegram.messenger.LocaleController;
+import org.telegram.ui.Components.fi;
+import org.telegram.ui.Components.nx0;
+import org.telegram.ui.Components.ul;
+import org.telegram.ui.Components.zi;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes4.dex */
-public final class k extends FrameLayout {
-    public final ImageView a;
-    public final TextView b;
-    public final TextView c;
+public final class k extends w {
+    public final /* synthetic */ int Q;
+    public final /* synthetic */ KeyEvent.Callback R;
 
-    public k(Context context, b6 b6Var, boolean z10) {
-        super(context);
-        ImageView imageView = new ImageView(context);
-        this.a = imageView;
-        imageView.setScaleType(ImageView.ScaleType.CENTER);
-        int i9 = f6.G6;
-        imageView.setColorFilter(new PorterDuffColorFilter(f6.v0(i9, b6Var), PorterDuff.Mode.SRC_IN));
-        addView(imageView, e6.d(24, 24.0f, 51, 20.0f, 11.46f, 0.0f, 0.0f));
-        LinearLayout linearLayout = new LinearLayout(context);
-        linearLayout.setOrientation(1);
-        addView(linearLayout, e6.d(-1, -2.0f, 23, 64.0f, z10 ? 2.0f : 9.8f, 24.0f, z10 ? 4.0f : 9.8f));
-        TextView textView = new TextView(context);
-        this.b = textView;
-        textView.setTextColor(f6.v0(i9, b6Var));
-        textView.setTypeface(AndroidUtilities.bold());
-        textView.setTextSize(1, 14.0f);
-        TextView h = j3.r0.h(linearLayout, textView, e6.t(-1, -2, 55, 0, 0, 0, 1), context);
-        this.c = h;
-        ll.n(f6.z6, b6Var, h, 1, 14.0f);
-        linearLayout.addView(h, e6.t(-1, -2, 55, 0, 0, 0, 0));
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ k(fi fiVar, int i10, int i11) {
+        super(i10);
+        this.Q = i11;
+        this.R = fiVar;
     }
 
-    public final void a(CharSequence charSequence, CharSequence charSequence2, int i9) {
-        this.a.setImageResource(i9);
-        this.b.setText(charSequence);
-        this.c.setText(charSequence2);
+    @Override // f2.j0
+    public boolean Y0() {
+        switch (this.Q) {
+            case 3:
+                return ((nx0) this.R).S != null && LocaleController.isRTL;
+            default:
+                return super.Y0();
+        }
     }
 
-    public void setText(CharSequence charSequence) {
-        this.c.setText(charSequence);
+    @Override // f2.w, f2.j0, f2.w0
+    public int o0(int i10, d1 d1Var, k1 k1Var) {
+        switch (this.Q) {
+            case 0:
+                if (((r) this.R).b) {
+                    i10 = 0;
+                }
+                return super.o0(i10, d1Var, k1Var);
+            default:
+                return super.o0(i10, d1Var, k1Var);
+        }
+    }
+
+    @Override // f2.j0, f2.w0
+    public void v0(RecyclerView recyclerView, k1 k1Var, int i10) {
+        switch (this.Q) {
+            case 1:
+                zi ziVar = new zi(this, recyclerView.getContext());
+                ziVar.a = i10;
+                w0(ziVar);
+                break;
+            case 2:
+                ul ulVar = new ul(this, recyclerView.getContext());
+                ulVar.a = i10;
+                w0(ulVar);
+                break;
+            default:
+                super.v0(recyclerView, k1Var, i10);
+                break;
+        }
+    }
+
+    @Override // f2.w, f2.j0, f2.w0
+    public boolean y0() {
+        switch (this.Q) {
+            case 0:
+                return false;
+            case 1:
+                return false;
+            case 2:
+                return false;
+            default:
+                return super.y0();
+        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public k(nx0 nx0Var) {
+        super(5);
+        this.Q = 3;
+        this.R = nx0Var;
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public k(r rVar) {
+        super(3);
+        this.Q = 0;
+        this.R = rVar;
     }
 }

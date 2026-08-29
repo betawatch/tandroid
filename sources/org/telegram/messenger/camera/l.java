@@ -2,7 +2,7 @@ package org.telegram.messenger.camera;
 
 import org.telegram.messenger.camera.CameraView;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class l implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -10,9 +10,9 @@ public final /* synthetic */ class l implements Runnable {
     public final /* synthetic */ int c;
     public final /* synthetic */ CameraView.CameraGLThread d;
 
-    public /* synthetic */ l(CameraView cameraView, int i9, CameraView.CameraGLThread cameraGLThread) {
+    public /* synthetic */ l(CameraView cameraView, int i10, CameraView.CameraGLThread cameraGLThread) {
         this.b = cameraView;
-        this.c = i9;
+        this.c = i10;
         this.d = cameraGLThread;
     }
 
@@ -28,9 +28,9 @@ public final /* synthetic */ class l implements Runnable {
         }
     }
 
-    public /* synthetic */ l(CameraView cameraView, CameraView.CameraGLThread cameraGLThread, int i9) {
+    public /* synthetic */ l(CameraView cameraView, CameraView.CameraGLThread cameraGLThread, int i10) {
         this.b = cameraView;
         this.d = cameraGLThread;
-        this.c = i9;
+        this.c = i10;
     }
 }

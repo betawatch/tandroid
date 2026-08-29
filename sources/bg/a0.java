@@ -1,92 +1,64 @@
 package bg;
 
-import android.app.Activity;
-import android.content.res.Configuration;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessagesController;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.b6;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.Components.gc;
+import android.widget.FrameLayout;
+import org.telegram.ui.Components.ka0;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class a0 extends org.telegram.ui.ActionBar.f3 {
-    public static a0 e;
-    public final w b;
-    public final q2 c;
-    public boolean d;
+public final /* synthetic */ class a0 implements o1.g {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ FrameLayout b;
+    public final /* synthetic */ boolean c;
 
-    public a0(Activity activity, h1 h1Var, q2 q2Var, b6 b6Var, boolean z10) {
-        super(activity, b6Var, true, false);
-        this.c = q2Var;
-        setApplyBottomPadding(false);
-        setApplyTopPadding(false);
-        this.useBackgroundTopPadding = false;
-        setBackgroundColor(0);
-        fixNavigationBar();
-        AndroidUtilities.setLightStatusBar(this, i0.a.f(f6.v0(f6.h5, this.resourcesProvider)) > 0.699999988079071d);
-        this.d = getContext().getResources().getConfiguration().orientation == 2;
-        w wVar = new w(this, getContext(), q2Var, b6Var, h1Var);
-        this.b = wVar;
-        wVar.setOverScrollMode(2);
-        wVar.setClipToPadding(false);
-        wVar.setAdapter(new x(h1Var, q2Var));
-        wVar.setPosition(0);
-        setCustomView(wVar);
-        h1Var.p0 = new v(this, 0);
-        h1Var.n0 = new we.b(9, this, q2Var);
-        q2Var.q0 = new y(this, h1Var, b6Var);
-        q2Var.o0 = new v(this, 1);
-        if (!z10) {
-            MessagesController.getInstance(this.currentAccount).getStoriesController().R();
-        }
-        gc.a(this.container, new z(0));
+    public /* synthetic */ a0(FrameLayout frameLayout, boolean z10, int i10) {
+        this.a = i10;
+        this.b = frameLayout;
+        this.c = z10;
     }
 
-    public static void m(org.telegram.ui.ActionBar.o2 o2Var, b6 b6Var, long j10, TL_stories.PrepaidGiveaway prepaidGiveaway) {
-        if (e != null) {
-            return;
+    @Override // o1.g
+    public final void a(o1.i iVar, boolean z10, float f9, float f10) {
+        switch (this.a) {
+            case 0:
+                g1 g1Var = (g1) this.b;
+                t2 t2Var = g1Var.r1;
+                if (iVar == g1Var.B1) {
+                    g1Var.B1 = null;
+                    if (!this.c) {
+                        t2Var.setVisibility(8);
+                    }
+                    t2Var.setMaskProvider(null);
+                    break;
+                }
+                break;
+            case 1:
+                g1 g1Var2 = (g1) this.b;
+                a1 a1Var = g1Var2.C1;
+                if (iVar == g1Var2.I1) {
+                    g1Var2.I1 = null;
+                    if (!this.c) {
+                        a1Var.setVisibility(8);
+                        ag.h1.e(g1Var2.L1).g();
+                        a1Var.getAdapter().l();
+                        break;
+                    }
+                }
+                break;
+            default:
+                ka0 ka0Var = (ka0) this.b;
+                if (!z10) {
+                    ka0Var.G = null;
+                    boolean z11 = this.c;
+                    ka0Var.setVisibility(z11 ? 8 : 0);
+                    if (ka0Var.J && z11) {
+                        ka0Var.J = false;
+                        ka0Var.b.setLayoutManager(ka0Var.getNeededLayoutManager());
+                        ka0Var.E = true;
+                        ka0Var.o(true);
+                        break;
+                    }
+                }
+                break;
         }
-        boolean z10 = b6Var instanceof ih.b;
-        org.telegram.ui.ActionBar.o2 i1Var = z10 ? new i1(o2Var) : o2Var;
-        a0 a0Var = new a0(o2Var.getParentActivity(), new h1(i1Var, j10, prepaidGiveaway), new q2(i1Var, j10), i1Var.getResourceProvider(), z10);
-        a0Var.show();
-        e = a0Var;
-    }
-
-    @Override // org.telegram.ui.ActionBar.f3
-    public final boolean canDismissWithSwipe() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.ActionBar.f3
-    public final void dismissInternal() {
-        super.dismissInternal();
-        e = null;
-    }
-
-    @Override // org.telegram.ui.ActionBar.f3, android.app.Dialog
-    public final void onBackPressed() {
-        w wVar = this.b;
-        if (wVar.getCurrentPosition() <= 0) {
-            super.onBackPressed();
-            return;
-        }
-        q2 q2Var = this.c;
-        if (q2Var.R()) {
-            return;
-        }
-        if (isKeyboardVisible()) {
-            AndroidUtilities.hideKeyboard(q2Var.getContainerView());
-        }
-        wVar.D(0);
-    }
-
-    @Override // org.telegram.ui.ActionBar.f3
-    public final void onConfigurationChanged(Configuration configuration) {
-        this.c.onConfigurationChanged(configuration);
-        this.d = getContext().getResources().getConfiguration().orientation == 2;
-        super.onConfigurationChanged(configuration);
     }
 }

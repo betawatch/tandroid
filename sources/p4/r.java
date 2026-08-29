@@ -1,12 +1,14 @@
 package p4;
 
-import android.net.Uri;
-import n2.w;
-
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public interface r {
-    void a();
+public final class r extends s {
+    public final long d;
+    public final long e;
 
-    boolean c(Uri uri, w wVar, boolean z10);
+    public r(j jVar, long j10, long j11, long j12, long j13) {
+        super(jVar, j10, j11);
+        this.d = j12;
+        this.e = j13;
+    }
 }

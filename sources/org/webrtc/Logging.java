@@ -6,7 +6,7 @@ import java.util.EnumSet;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes4.dex */
 public class Logging {
     private static final Logger fallbackLogger = createFallbackLogger();
@@ -14,7 +14,7 @@ public class Logging {
     private static Severity loggableSeverity;
     private static volatile boolean loggingEnabled;
 
-    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
     public enum Severity {
         LS_VERBOSE,
         LS_INFO,
@@ -23,7 +23,7 @@ public class Logging {
         LS_NONE
     }
 
-    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
     @Deprecated
     public enum TraceLevel {
         TRACE_NONE(0),
@@ -44,8 +44,8 @@ public class Logging {
 
         public final int level;
 
-        TraceLevel(int i9) {
-            this.level = i9;
+        TraceLevel(int i10) {
+            this.level = i10;
         }
     }
 
@@ -85,12 +85,12 @@ public class Logging {
         }
     }
 
-    private static String getStackTraceString(Throwable th) {
-        if (th == null) {
+    private static String getStackTraceString(Throwable th2) {
+        if (th2 == null) {
             return "";
         }
         StringWriter stringWriter = new StringWriter();
-        th.printStackTrace(new PrintWriter(stringWriter));
+        th2.printStackTrace(new PrintWriter(stringWriter));
         return stringWriter.toString();
     }
 
@@ -125,9 +125,9 @@ public class Logging {
 
     private static native void nativeEnableLogTimeStamps();
 
-    private static native void nativeEnableLogToDebugOutput(int i9);
+    private static native void nativeEnableLogToDebugOutput(int i10);
 
-    private static native void nativeLog(int i9, String str, String str2);
+    private static native void nativeLog(int i10, String str, String str2);
 
     public static void v(String str, String str2) {
         log(Severity.LS_VERBOSE, str, str2);
@@ -137,18 +137,18 @@ public class Logging {
         log(Severity.LS_WARNING, str, str2);
     }
 
-    public static void e(String str, String str2, Throwable th) {
+    public static void e(String str, String str2, Throwable th2) {
         Severity severity = Severity.LS_ERROR;
         log(severity, str, str2);
-        log(severity, str, th.toString());
-        log(severity, str, getStackTraceString(th));
+        log(severity, str, th2.toString());
+        log(severity, str, getStackTraceString(th2));
     }
 
-    public static void w(String str, String str2, Throwable th) {
+    public static void w(String str, String str2, Throwable th2) {
         Severity severity = Severity.LS_WARNING;
         log(severity, str, str2);
-        log(severity, str, th.toString());
-        log(severity, str, getStackTraceString(th));
+        log(severity, str, th2.toString());
+        log(severity, str, getStackTraceString(th2));
     }
 
     @Deprecated

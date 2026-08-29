@@ -1,17 +1,17 @@
 package com.google.android.gms.common.api.internal;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class z0 {
-    public final x5.j a;
+    public final z5.j a;
     public final int b;
     public final long c;
     public final int d;
 
-    public z0(x5.j jVar, int i9, long j10, int i10) {
+    public z0(z5.j jVar, int i10, long j10, int i11) {
         this.a = jVar;
-        this.b = i9;
+        this.b = i10;
         this.c = j10;
-        this.d = i10;
+        this.d = i11;
     }
 }

@@ -1,68 +1,66 @@
 package org.telegram.ui;
 
-import android.widget.FrameLayout;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import org.telegram.messenger.FileLog;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class cn0 implements OnCompleteListener, org.telegram.ui.ActionBar.b2, pt {
+public final /* synthetic */ class cn0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ co0 b;
+    public final /* synthetic */ bo0 b;
+    public final /* synthetic */ TLRPC.TL_error c;
+    public final /* synthetic */ TLObject d;
 
-    public /* synthetic */ cn0(co0 co0Var, int i9) {
-        this.a = i9;
-        this.b = co0Var;
+    public /* synthetic */ cn0(bo0 bo0Var, TLRPC.TL_error tL_error, TLObject tLObject, int i10) {
+        this.a = i10;
+        this.b = bo0Var;
+        this.c = tL_error;
+        this.d = tLObject;
     }
 
-    @Override // org.telegram.ui.pt
-    public void a1(lt ltVar) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
-            case 2:
-                co0 co0Var = this.b;
-                co0Var.w0 = ltVar;
-                co0Var.f[4].setText(ltVar.a);
+            case 0:
+                bo0 bo0Var = this.b;
+                bo0Var.a0 = false;
+                if (this.c == null) {
+                    TL_account.Password password = (TL_account.Password) this.d;
+                    bo0Var.W = password;
+                    if (!TwoStepVerificationActivity.i0(password, false)) {
+                        org.telegram.ui.Components.c5.x0(bo0Var.getParentActivity(), LocaleController.getString(R.string.UpdateAppAlert), true);
+                        break;
+                    } else {
+                        TLRPC.PaymentForm paymentForm = bo0Var.y0;
+                        if (paymentForm != null && bo0Var.W.has_password) {
+                            paymentForm.password_missing = false;
+                            paymentForm.can_save_credentials = true;
+                            bo0Var.K0();
+                        }
+                        TwoStepVerificationActivity.m0(bo0Var.W);
+                        bo0 bo0Var2 = bo0Var.b0;
+                        if (bo0Var2 != null) {
+                            bo0Var2.C0(bo0Var.W);
+                        }
+                        if (!bo0Var.W.has_password && bo0Var.Z == null) {
+                            an0 an0Var = new an0(bo0Var, 3);
+                            bo0Var.Z = an0Var;
+                            AndroidUtilities.runOnUIThread(an0Var, 5000L);
+                            break;
+                        }
+                    }
+                }
                 break;
-            default:
-                co0 co0Var2 = this.b;
-                co0Var2.w0 = ltVar;
-                co0Var2.f[4].setText(ltVar.a);
-                co0Var2.x0 = ltVar.d;
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.b2
-    public void f(org.telegram.ui.ActionBar.c2 c2Var, int i9) {
-        switch (this.a) {
             case 1:
-                co0 co0Var = this.b;
-                co0Var.H0(co0Var.N0[0]);
+                bo0.V(this.b, this.c, this.d);
                 break;
-            case 2:
             default:
-                co0 co0Var2 = this.b;
-                co0Var2.C0(true);
-                co0Var2.y0();
+                bo0.X(this.b, this.c, this.d);
                 break;
-            case 3:
-                this.b.z0(true);
-                break;
-        }
-    }
-
-    @Override // com.google.android.gms.tasks.OnCompleteListener
-    public void onComplete(Task task) {
-        co0 co0Var = this.b;
-        co0Var.getClass();
-        if (!task.isSuccessful()) {
-            FileLog.e("isReadyToPay failed", task.getException());
-            return;
-        }
-        FrameLayout frameLayout = co0Var.K;
-        if (frameLayout != null) {
-            frameLayout.setVisibility(0);
         }
     }
 }

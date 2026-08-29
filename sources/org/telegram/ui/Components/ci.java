@@ -1,172 +1,115 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.MotionEvent;
-import android.widget.FrameLayout;
-import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public abstract class ci extends FrameLayout {
-    public final org.telegram.ui.ActionBar.b6 a;
-    public final ki b;
-    public wk0 c;
-    public wk0 d;
-    public int e;
-    public boolean f;
-    public boolean h;
+public final class ci extends org.telegram.ui.ActionBar.q1 {
+    public final /* synthetic */ di x;
 
-    public ci(Context context, org.telegram.ui.ActionBar.b6 b6Var, ki kiVar) {
-        super(context);
-        this.a = b6Var;
-        this.b = kiVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ci(di diVar, di diVar2) {
+        super(diVar2);
+        this.x = diVar;
     }
 
-    public boolean C(int i9) {
+    @Override // org.telegram.ui.ActionBar.q1
+    public final boolean b() {
+        fz fzVar;
+        ni niVar = this.x.x0;
+        if (!niVar.isDismissed() && niVar.o1) {
+            fi fiVar = niVar.u0;
+            if (fiVar != niVar.i0 && fiVar != niVar.j0 && !niVar.m1().m()) {
+                return true;
+            }
+            fi fiVar2 = niVar.u0;
+            on onVar = niVar.i0;
+            if (fiVar2 == onVar && ((fzVar = onVar.A) == null || fzVar.getVisibility() != 0)) {
+                return true;
+            }
+            fi fiVar3 = niVar.u0;
+            on onVar2 = niVar.j0;
+            if (fiVar3 == onVar2) {
+                fz fzVar2 = onVar2.A;
+                return fzVar2 == null || fzVar2.getVisibility() != 0;
+            }
+        }
         return false;
     }
 
-    public boolean H(int i9, boolean z10, int i10, boolean z11, long j10) {
-        return false;
+    @Override // org.telegram.ui.ActionBar.q1
+    public final void e(float f9, float f10, boolean z10) {
+        di diVar = this.x;
+        ni niVar = diVar.x0;
+        niVar.h2 = f9;
+        float f11 = niVar.Z1;
+        if (f11 > 0.0f) {
+            niVar.h2 = com.google.android.recaptcha.internal.a.z(1.0f, f10, f11 - niVar.a2, f9);
+        }
+        niVar.T0.setTranslationY(niVar.h2);
+        niVar.W0.setTranslationY(niVar.h2);
+        org.telegram.ui.ActionBar.w0 w0Var = niVar.a1;
+        if (w0Var != null) {
+            w0Var.setTranslationY(niVar.h2);
+        }
+        org.telegram.ui.ActionBar.w0 w0Var2 = niVar.Y0;
+        if (w0Var2 != null) {
+            w0Var2.setTranslationY(niVar.W0.getTranslationY());
+        }
+        nh.t3 t3Var = niVar.Z0;
+        if (t3Var != null) {
+            t3Var.setTranslationY(niVar.W0.getTranslationY());
+        }
+        niVar.b1.setTranslationY(niVar.h2);
+        niVar.a2(0);
+        niVar.setCurrentPanTranslationY(niVar.h2);
+        diVar.invalidate();
+        niVar.z0.invalidate();
+        niVar.U1();
+        fi fiVar = niVar.u0;
+        if (fiVar != null) {
+            fiVar.k(niVar.h2);
+        }
     }
 
-    public boolean I() {
-        return !(this instanceof mh.g4);
+    @Override // org.telegram.ui.ActionBar.q1
+    public final void f() {
+        boolean z10;
+        ni niVar = this.x.x0;
+        niVar.X1(niVar.u0, 0);
+        niVar.Y1 = niVar.X1[0];
+        niVar.u0.v();
+        if (!(niVar.u0 instanceof ph.n3) || niVar.z1) {
+            return;
+        }
+        z10 = ((org.telegram.ui.ActionBar.f3) niVar).keyboardVisible;
+        int dp = z10 ? AndroidUtilities.dp(84.0f) : 0;
+        for (int i10 = 0; i10 < niVar.t0.size(); i10++) {
+            ((ph.n3) niVar.t0.valueAt(i10)).setMeasureOffsetY(dp);
+        }
     }
 
-    public boolean b() {
-        return true;
-    }
-
-    public boolean c() {
-        return true;
-    }
-
-    public boolean e() {
-        return false;
-    }
-
-    public boolean f() {
-        return false;
-    }
-
-    public boolean g() {
-        return false;
-    }
-
-    public int getButtonsHideOffset() {
-        return AndroidUtilities.dp(h() != 0 ? 12.0f : 17.0f);
-    }
-
-    public int getCurrentItemTop() {
-        return 0;
-    }
-
-    public int getCustomActionBarBackground() {
-        return 0;
-    }
-
-    public int getCustomBackground() {
-        return 0;
-    }
-
-    public int getFirstOffset() {
-        return 0;
-    }
-
-    public jg.a getIBlur3Capture() {
-        return null;
-    }
-
-    public int getListTopPadding() {
-        return 0;
-    }
-
-    public int getSelectedItemsCount() {
-        return 0;
-    }
-
-    public ArrayList<org.telegram.ui.ActionBar.h6> getThemeDescriptions() {
-        return null;
-    }
-
-    public int h() {
-        return 0;
-    }
-
-    public boolean i() {
-        return false;
-    }
-
-    public boolean l(MotionEvent motionEvent) {
-        return false;
-    }
-
-    public boolean n() {
-        return false;
-    }
-
-    public boolean p() {
-        return true;
-    }
-
-    public abstract void y(int i9, int i10);
-
-    public void A(int i9) {
-    }
-
-    public void D(ci ciVar) {
-    }
-
-    public void E() {
-    }
-
-    public void F() {
-    }
-
-    public void a(CharSequence charSequence) {
-    }
-
-    public void d() {
-    }
-
-    public void j() {
-    }
-
-    public void k(float f10) {
-    }
-
-    public void m() {
-    }
-
-    public void o(int i9) {
-    }
-
-    public void q() {
-    }
-
-    public void r() {
-    }
-
-    public void s(float f10) {
-    }
-
-    public void t(int i9) {
-    }
-
-    public void u() {
-    }
-
-    public void v() {
-    }
-
-    public void x() {
-    }
-
-    public void z() {
-    }
-
-    public void w(int i9, boolean z10) {
+    @Override // org.telegram.ui.ActionBar.q1
+    public final void g(int i10, boolean z10) {
+        int i11;
+        di diVar = this.x;
+        ni niVar = diVar.x0;
+        int i12 = niVar.Y1;
+        if (i12 <= 0 || i12 == (i11 = niVar.X1[0]) || !z10) {
+            niVar.Z1 = -1.0f;
+        } else {
+            niVar.Z1 = i12;
+            niVar.a2 = i11;
+        }
+        diVar.invalidate();
+        ph phVar = niVar.t1;
+        if ((niVar.u0 instanceof ph.n3) && !niVar.z1) {
+            if (z10) {
+                phVar.setVisibility(8);
+            } else {
+                phVar.setVisibility(0);
+            }
+        }
+        niVar.u0.w(i10, z10);
     }
 }

@@ -11,7 +11,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.WeakHashMap;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class g1 implements OnCompleteListener {
     public static final Status c = new Status(8, "The connection to Google Play services was lost", null, null);
@@ -24,7 +24,7 @@ public final class g1 implements OnCompleteListener {
     }
 
     public void a() {
-        boolean f10;
+        boolean f9;
         for (BasePendingResult basePendingResult : (BasePendingResult[]) ((Set) this.a).toArray(new BasePendingResult[0])) {
             basePendingResult.g.set(null);
             synchronized (basePendingResult.a) {
@@ -32,15 +32,15 @@ public final class g1 implements OnCompleteListener {
                     if (((com.google.android.gms.common.api.m) basePendingResult.c.get()) != null) {
                         if (!basePendingResult.m) {
                         }
-                        f10 = basePendingResult.f();
+                        f9 = basePendingResult.f();
                     }
                     basePendingResult.c();
-                    f10 = basePendingResult.f();
-                } catch (Throwable th) {
-                    throw th;
+                    f9 = basePendingResult.f();
+                } catch (Throwable th2) {
+                    throw th2;
                 }
             }
-            if (f10) {
+            if (f9) {
                 ((Set) this.a).remove(basePendingResult);
             }
         }
@@ -77,8 +77,8 @@ public final class g1 implements OnCompleteListener {
         this.a = obj2;
     }
 
-    public g1(int i9) {
-        switch (i9) {
+    public g1(int i10) {
+        switch (i10) {
             case 3:
                 this.a = DesugarCollections.synchronizedMap(new WeakHashMap());
                 this.b = DesugarCollections.synchronizedMap(new WeakHashMap());

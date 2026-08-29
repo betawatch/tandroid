@@ -1,67 +1,41 @@
 package tc;
 
-import aa.d;
-import java.io.Serializable;
-import kotlin.jvm.internal.i;
-import pc.c;
+import bd.p;
+import i7.c7;
+import kotlin.jvm.internal.j;
+import kotlin.jvm.internal.t;
+import uc.g;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class b extends c implements a, Serializable {
-    public final Enum[] a;
+public final class b extends g {
+    public int a;
+    public final /* synthetic */ p b;
+    public final /* synthetic */ sc.c c;
 
-    public b(Enum[] entries) {
-        i.e(entries, "entries");
-        this.a = entries;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public b(p pVar, sc.c cVar, sc.c cVar2) {
+        super(cVar);
+        this.b = pVar;
+        this.c = cVar2;
     }
 
-    @Override // pc.c, java.util.List, java.util.Collection
-    public final boolean contains(Object obj) {
-        if (!(obj instanceof Enum)) {
-            return false;
+    @Override // uc.a
+    public final Object invokeSuspend(Object obj) {
+        int i10 = this.a;
+        if (i10 != 0) {
+            if (i10 != 1) {
+                throw new IllegalStateException("This coroutine had already completed");
+            }
+            this.a = 2;
+            c7.b(obj);
+            return obj;
         }
-        Enum r42 = (Enum) obj;
-        int ordinal = r42.ordinal();
-        Enum[] enumArr = this.a;
-        i.e(enumArr, "<this>");
-        return ((ordinal < 0 || ordinal >= enumArr.length) ? null : enumArr[ordinal]) == r42;
-    }
-
-    @Override // java.util.List
-    public final Object get(int i9) {
-        Enum[] enumArr = this.a;
-        int length = enumArr.length;
-        if (i9 < 0 || i9 >= length) {
-            throw new IndexOutOfBoundsException(d.k(i9, length, "index: ", ", size: "));
-        }
-        return enumArr[i9];
-    }
-
-    @Override // pc.c
-    public final int i() {
-        return this.a.length;
-    }
-
-    @Override // pc.c, java.util.List
-    public final int indexOf(Object obj) {
-        if (!(obj instanceof Enum)) {
-            return -1;
-        }
-        Enum r42 = (Enum) obj;
-        int ordinal = r42.ordinal();
-        Enum[] enumArr = this.a;
-        i.e(enumArr, "<this>");
-        if (((ordinal < 0 || ordinal >= enumArr.length) ? null : enumArr[ordinal]) == r42) {
-            return ordinal;
-        }
-        return -1;
-    }
-
-    @Override // pc.c, java.util.List
-    public final int lastIndexOf(Object obj) {
-        if (obj instanceof Enum) {
-            return indexOf((Enum) obj);
-        }
-        return -1;
+        this.a = 1;
+        c7.b(obj);
+        p pVar = this.b;
+        j.c(pVar, "null cannot be cast to non-null type kotlin.Function2<R of kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsJvmKt.createCoroutineUnintercepted, kotlin.coroutines.Continuation<T of kotlin.coroutines.intrinsics.IntrinsicsKt__IntrinsicsJvmKt.createCoroutineUnintercepted>, kotlin.Any?>");
+        t.a(2, pVar);
+        return pVar.invoke(this.c, this);
     }
 }

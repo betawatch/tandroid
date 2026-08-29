@@ -5,10 +5,10 @@ import android.os.Bundle;
 import android.support.v4.media.MediaMetadataCompat;
 import android.support.v4.media.RatingCompat;
 import com.google.android.exoplayer2.ext.mediasession.MediaSessionConnector;
-import d5.f0;
+import f5.d0;
 import java.util.Set;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public abstract /* synthetic */ class a {
     public static boolean a(MediaSessionConnector.MediaMetadataProvider mediaMetadataProvider, MediaMetadataCompat mediaMetadataCompat, MediaMetadataCompat mediaMetadataCompat2) {
@@ -37,7 +37,7 @@ public abstract /* synthetic */ class a {
                     if (ratingCompat.c() != ratingCompat2.c() || ratingCompat.d() != ratingCompat2.d() || ratingCompat.e() != ratingCompat2.e() || ratingCompat.a() != ratingCompat2.a() || ratingCompat.b() != ratingCompat2.b() || ratingCompat.a != ratingCompat2.a) {
                         return false;
                     }
-                } else if (!f0.a(obj, obj2)) {
+                } else if (!d0.a(obj, obj2)) {
                     return false;
                 }
             }

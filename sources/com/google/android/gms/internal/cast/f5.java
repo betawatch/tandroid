@@ -7,7 +7,7 @@ import java.util.Map;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public abstract class f5 extends t4 {
     private static final Map zzb = new ConcurrentHashMap();
@@ -76,15 +76,15 @@ public abstract class f5 extends t4 {
             if (g10 >= 0) {
                 return g10;
             }
-            throw new IllegalStateException(j3.r0.l(g10, "serialized size must be non-negative, was "));
+            throw new IllegalStateException(j7.l1.k(g10, "serialized size must be non-negative, was "));
         }
-        int i9 = this.zzd & ConnectionsManager.DEFAULT_DATACENTER_ID;
-        if (i9 != Integer.MAX_VALUE) {
-            return i9;
+        int i10 = this.zzd & ConnectionsManager.DEFAULT_DATACENTER_ID;
+        if (i10 != Integer.MAX_VALUE) {
+            return i10;
         }
         int g11 = h6Var.g(this);
         if (g11 < 0) {
-            throw new IllegalStateException(j3.r0.l(g11, "serialized size must be non-negative, was "));
+            throw new IllegalStateException(j7.l1.k(g11, "serialized size must be non-negative, was "));
         }
         this.zzd = (this.zzd & TLObject.FLAG_31) | g11;
         return g11;
@@ -112,15 +112,15 @@ public abstract class f5 extends t4 {
         return (this.zzd & TLObject.FLAG_31) != 0;
     }
 
-    public abstract Object h(int i9, f5 f5Var);
+    public abstract Object h(int i10, f5 f5Var);
 
     public final int hashCode() {
         if (g()) {
             return e6.c.a(getClass()).b(this);
         }
-        int i9 = this.zza;
-        if (i9 != 0) {
-            return i9;
+        int i10 = this.zza;
+        if (i10 != 0) {
+            return i10;
         }
         int b10 = e6.c.a(getClass()).b(this);
         this.zza = b10;
@@ -133,15 +133,15 @@ public abstract class f5 extends t4 {
             if (g10 >= 0) {
                 return g10;
             }
-            throw new IllegalStateException(j3.r0.l(g10, "serialized size must be non-negative, was "));
+            throw new IllegalStateException(j7.l1.k(g10, "serialized size must be non-negative, was "));
         }
-        int i9 = this.zzd & ConnectionsManager.DEFAULT_DATACENTER_ID;
-        if (i9 != Integer.MAX_VALUE) {
-            return i9;
+        int i10 = this.zzd & ConnectionsManager.DEFAULT_DATACENTER_ID;
+        if (i10 != Integer.MAX_VALUE) {
+            return i10;
         }
         int g11 = e6.c.a(getClass()).g(this);
         if (g11 < 0) {
-            throw new IllegalStateException(j3.r0.l(g11, "serialized size must be non-negative, was "));
+            throw new IllegalStateException(j7.l1.k(g11, "serialized size must be non-negative, was "));
         }
         this.zzd = (this.zzd & TLObject.FLAG_31) | g11;
         return g11;

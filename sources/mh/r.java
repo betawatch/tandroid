@@ -1,381 +1,343 @@
 package mh;
 
-import android.app.Activity;
+import android.animation.ValueAnimator;
 import android.content.Context;
-import android.content.SharedPreferences;
-import android.os.Build;
-import android.security.keystore.KeyGenParameterSpec;
+import android.graphics.Canvas;
+import android.graphics.Rect;
 import android.text.TextUtils;
-import android.util.Pair;
-import java.nio.charset.StandardCharsets;
-import java.security.KeyStore;
-import java.security.SecureRandom;
-import java.util.ArrayList;
+import android.util.SparseArray;
+import android.view.View;
+import android.widget.FrameLayout;
+import bg.z2;
+import cg.c1;
+import cg.s0;
+import f2.e0;
+import i7.f6;
 import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.WeakHashMap;
-import javax.crypto.Cipher;
-import javax.crypto.KeyGenerator;
-import javax.crypto.SecretKey;
-import javax.crypto.spec.IvParameterSpec;
-import org.json.JSONObject;
-import org.scilab.forge.jlatexmath.TeXSymbolParser;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.FileLog;
+import lh.c6;
+import lh.m5;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.R;
-import org.telegram.messenger.UserObject;
+import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.eb0;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.Components.fr0;
+import org.telegram.ui.Components.ht0;
+import org.telegram.ui.Components.jr;
+import org.telegram.ui.Components.k31;
+import org.telegram.ui.Components.qw0;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes4.dex */
-public final class r {
-    public static final WeakHashMap k = new WeakHashMap();
-    public static KeyStore l;
-    public final Context a;
-    public final int b;
-    public final long c;
-    public boolean d;
-    public boolean e;
-    public boolean f;
-    public String g;
-    public String h;
-    public xa.c i;
-    public bg.y0 j;
+public final class r extends FrameLayout {
+    public static final /* synthetic */ int T = 0;
+    public final s0 A;
+    public final nh.d B;
+    public final e0 C;
+    public boolean D;
+    public boolean E;
+    public final o F;
+    public boolean G;
+    public boolean H;
+    public boolean I;
+    public int J;
+    public int K;
+    public float L;
+    public float M;
+    public boolean N;
+    public int O;
+    public int P;
+    public int Q;
+    public final Rect R;
+    public final /* synthetic */ fr0 S;
+    public c6 a;
+    public boolean b;
+    public float c;
+    public int d;
+    public int e;
+    public final i f;
+    public final h h;
+    public final f2.l n;
+    public final ht0 r;
+    public final k s;
+    public final l v;
+    public final q w;
+    public final m x;
+    public final qw0 y;
 
-    public r(Context context, int i9, long j10) {
-        this.a = context;
-        this.b = i9;
-        this.c = j10;
-        h();
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public r(fr0 fr0Var, Context context) {
+        super(context);
+        this.S = fr0Var;
+        this.d = Utilities.clamp(SharedConfig.storiesColumnsCount, 6, 2);
+        this.e = Utilities.clamp(SharedConfig.storiesColumnsCount, 6, 2);
+        this.D = false;
+        this.E = false;
+        this.R = new Rect();
+        h hVar = new h();
+        this.h = hVar;
+        hVar.O = new g(this, 1);
+        hVar.y1(this.d);
+        f2.l lVar = new f2.l();
+        this.n = lVar;
+        lVar.n(280L);
+        lVar.o(jr.h);
+        lVar.m = false;
+        i iVar = new i(this, context);
+        this.f = iVar;
+        iVar.setScrollingTouchSlop(1);
+        iVar.setPinnedSectionOffsetY(-AndroidUtilities.dp(2.0f));
+        iVar.setPadding(0, 0, 0, 0);
+        iVar.setItemAnimator(null);
+        iVar.setClipToPadding(false);
+        iVar.setSectionsType(2);
+        iVar.setLayoutManager(hVar);
+        addView(iVar, f6.c(-1.0f, -1));
+        iVar.i(new j(this, 0));
+        iVar.setOnItemClickListener(new bg.o(this, 12));
+        iVar.setOnItemLongClickListener(new l4.s0(this, 11));
+        ht0 ht0Var = new ht0(context, null);
+        this.r = ht0Var;
+        k kVar = new k(this);
+        this.s = kVar;
+        ht0Var.setLayoutManager(kVar);
+        ht0Var.i(new j(this, 1));
+        kVar.y1(this.e);
+        ht0Var.setVisibility(8);
+        addView(ht0Var, f6.c(-1.0f, -1));
+        l lVar2 = new l(this, context);
+        this.v = lVar2;
+        iVar.setAdapter(lVar2);
+        q qVar = new q(this, getContext());
+        lVar2.f = qVar;
+        this.w = qVar;
+        ht0Var.setAdapter(qVar);
+        m mVar = new m(this, context);
+        this.x = mVar;
+        mVar.w = false;
+        qw0 qw0Var = new qw0(context, mVar, 1, null);
+        this.y = qw0Var;
+        qw0Var.setVisibility(8);
+        qw0Var.setAnimateLayoutChange(true);
+        addView(qw0Var, f6.c(-1.0f, -1));
+        qw0Var.setOnTouchListener(new d(0));
+        qw0Var.e(true, false);
+        qw0Var.b.setVisibility(8);
+        qw0Var.d.setText(LocaleController.getString(R.string.ProfileBotPreviewEmptyTitle));
+        qw0Var.e.setText(LocaleController.formatPluralString("ProfileBotPreviewEmptyText", MessagesController.getInstance(fr0Var.b).botPreviewMediasMax, new Object[0]));
+        String string = LocaleController.getString(R.string.ProfileBotPreviewEmptyButton);
+        nh.d dVar = qw0Var.f;
+        dVar.g(string, false, true);
+        dVar.setVisibility(0);
+        dVar.setOnClickListener(new e(this, 0));
+        s0 s0Var = new s0(this, context);
+        this.A = s0Var;
+        int i10 = g6.y6;
+        org.telegram.ui.ActionBar.c6 c6Var = fr0Var.c;
+        s0Var.setTextColor(g6.v0(i10, c6Var));
+        s0Var.setText(LocaleController.getString(R.string.ProfileBotOr));
+        s0Var.setTextSize(1, 14.0f);
+        s0Var.setTextAlignment(4);
+        s0Var.setGravity(17);
+        s0Var.setTypeface(AndroidUtilities.bold());
+        qw0Var.a.addView(s0Var, f6.t(165, -2, 17, 0, 17, 0, 12));
+        nh.d dVar2 = new nh.d(context, c6Var, false);
+        this.B = dVar2;
+        dVar2.setMinWidth(AndroidUtilities.dp(200.0f));
+        qw0Var.a.addView(dVar2, f6.q(-2, 44, 17));
+        qw0Var.addView(mVar, 0, f6.c(-1.0f, -1));
+        iVar.setEmptyView(qw0Var);
+        iVar.U1 = true;
+        iVar.V1 = 0;
+        new SparseArray();
+        new HashMap();
+        e0 e0Var = new e0(new f(this, 0));
+        this.C = e0Var;
+        e0Var.d(iVar);
+        o oVar = new o(context, c6Var);
+        this.F = oVar;
+        addView(oVar, f6.e(-1, -2, 48));
     }
 
-    public static void b() {
-        Context context = ApplicationLoader.applicationContext;
-        if (context == null) {
-            return;
-        }
-        for (int i9 = 0; i9 < 4; i9++) {
-            context.getSharedPreferences("2botbiometry_" + i9, 0).edit().clear().apply();
-        }
-        k.clear();
-    }
-
-    public static r c(Context context, int i9, long j10) {
-        Pair pair = new Pair(Integer.valueOf(i9), Long.valueOf(j10));
-        WeakHashMap weakHashMap = k;
-        r rVar = (r) weakHashMap.get(pair);
-        if (rVar != null) {
-            return rVar;
-        }
-        r rVar2 = new r(context, i9, j10);
-        weakHashMap.put(pair, rVar2);
-        return rVar2;
-    }
-
-    public static void d(Activity activity, int i9, Utilities.Callback callback) {
-        int i10 = 0;
-        SharedPreferences sharedPreferences = activity.getSharedPreferences("2botbiometry_" + i9, 0);
-        ArrayList arrayList = new ArrayList();
-        Iterator<Map.Entry<String, ?>> it = sharedPreferences.getAll().entrySet().iterator();
-        while (it.hasNext()) {
-            String key = it.next().getKey();
-            if (key.endsWith("_requested")) {
-                try {
-                    arrayList.add(Long.valueOf(Long.parseLong(key.substring(0, key.length() - 10))));
-                } catch (Exception e10) {
-                    FileLog.e(e10);
+    public final void a() {
+        if (this.b) {
+            float f9 = this.c;
+            ht0 ht0Var = this.r;
+            i iVar = this.f;
+            if (f9 != 1.0f) {
+                if (f9 == 0.0f) {
+                    this.b = false;
+                    ht0Var.setVisibility(8);
+                    iVar.invalidate();
+                    return;
                 }
-            }
-        }
-        HashMap hashMap = new HashMap();
-        int size = arrayList.size();
-        while (i10 < size) {
-            Object obj = arrayList.get(i10);
-            i10++;
-            Long l10 = (Long) obj;
-            r c10 = c(activity, i9, l10.longValue());
-            if (c10.e && c10.f) {
-                hashMap.put(l10, Boolean.valueOf(!c10.d));
-            }
-        }
-        if (arrayList.isEmpty()) {
-            callback.run(new ArrayList());
-        } else {
-            MessagesStorage.getInstance(i9).getStorageQueue().postRunnable(new c3.d(i9, arrayList, hashMap, callback, 3));
-        }
-    }
-
-    public final boolean a() {
-        return this.f;
-    }
-
-    public final SecretKey e() {
-        if (l == null) {
-            KeyStore keyStore = KeyStore.getInstance("AndroidKeyStore");
-            l = keyStore;
-            keyStore.load(null);
-        }
-        KeyStore keyStore2 = l;
-        StringBuilder sb2 = new StringBuilder("9bot_");
-        long j10 = this.c;
-        sb2.append(j10);
-        if (keyStore2.containsAlias(sb2.toString())) {
-            return (SecretKey) l.getKey("9bot_" + j10, null);
-        }
-        KeyGenParameterSpec.Builder builder = new KeyGenParameterSpec.Builder("9bot_" + j10, 3);
-        builder.setBlockModes("CBC");
-        builder.setEncryptionPaddings("PKCS7Padding");
-        builder.setUserAuthenticationRequired(true);
-        int i9 = Build.VERSION.SDK_INT;
-        if (i9 >= 30) {
-            builder.setUserAuthenticationParameters(60, 2);
-        }
-        if (i9 >= 24) {
-            builder.setInvalidatedByBiometricEnrollment(true);
-        }
-        KeyGenerator keyGenerator = KeyGenerator.getInstance("AES", "AndroidKeyStore");
-        keyGenerator.init(builder.build());
-        return keyGenerator.generateKey();
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:16:0x0084  */
-    /* JADX WARN: Removed duplicated region for block: B:21:0x0034  */
-    /* JADX WARN: Removed duplicated region for block: B:8:0x002b  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final JSONObject f() {
-        String str;
-        String string;
-        JSONObject jSONObject = new JSONObject();
-        Context context = this.a;
-        try {
-        } catch (Exception e10) {
-            FileLog.e(e10);
-        }
-        if (new a5.m(new u5.h(context, 1)).e(15) == 0) {
-            str = "unknown";
-            if (str == null) {
-                jSONObject.put("available", true);
-                jSONObject.put(TeXSymbolParser.TYPE_ATTR, str);
-            } else {
-                jSONObject.put("available", false);
-            }
-            jSONObject.put("access_requested", this.f);
-            jSONObject.put("access_granted", (this.e || this.d) ? false : true);
-            jSONObject.put("token_saved", !TextUtils.isEmpty(this.g));
-            SharedPreferences sharedPreferences = context.getSharedPreferences("2botbiometry_" + this.b, 0);
-            StringBuilder sb2 = new StringBuilder("device_id");
-            long j10 = this.c;
-            sb2.append(j10);
-            string = sharedPreferences.getString(sb2.toString(), null);
-            if (string == null) {
-                byte[] bArr = new byte[32];
-                new SecureRandom().nextBytes(bArr);
-                SharedPreferences.Editor edit = sharedPreferences.edit();
-                String m10 = aa.d.m(j10, "device_id");
-                string = Utilities.bytesToHex(bArr);
-                edit.putString(m10, string).apply();
-            }
-            jSONObject.put("device_id", string);
-            return jSONObject;
-        }
-        str = null;
-        if (str == null) {
-        }
-        jSONObject.put("access_requested", this.f);
-        jSONObject.put("access_granted", (this.e || this.d) ? false : true);
-        jSONObject.put("token_saved", !TextUtils.isEmpty(this.g));
-        SharedPreferences sharedPreferences2 = context.getSharedPreferences("2botbiometry_" + this.b, 0);
-        StringBuilder sb22 = new StringBuilder("device_id");
-        long j102 = this.c;
-        sb22.append(j102);
-        string = sharedPreferences2.getString(sb22.toString(), null);
-        if (string == null) {
-        }
-        jSONObject.put("device_id", string);
-        return jSONObject;
-    }
-
-    public final boolean g() {
-        return this.e;
-    }
-
-    public final void h() {
-        SharedPreferences sharedPreferences = this.a.getSharedPreferences("2botbiometry_" + this.b, 0);
-        long j10 = this.c;
-        this.g = sharedPreferences.getString(String.valueOf(j10), null);
-        this.h = sharedPreferences.getString(String.valueOf(j10) + "_iv", null);
-        boolean z10 = true;
-        boolean z11 = this.g != null;
-        this.e = z11;
-        if (!z11) {
-            if (!sharedPreferences.getBoolean(j10 + "_requested", false)) {
-                z10 = false;
-            }
-        }
-        this.f = z10;
-        this.d = sharedPreferences.getBoolean(j10 + "_disabled", false);
-    }
-
-    public final androidx.biometric.u i(boolean z10) {
-        try {
-            if (Build.VERSION.SDK_INT < 23) {
-                return null;
-            }
-            Cipher cipher = Cipher.getInstance("AES/CBC/PKCS7Padding");
-            SecretKey e10 = e();
-            if (z10) {
-                cipher.init(2, e10, new IvParameterSpec(Utilities.hexToBytes(this.h)));
-            } else {
-                cipher.init(1, e10);
-            }
-            return new androidx.biometric.u(cipher);
-        } catch (Exception e11) {
-            FileLog.e(e11);
-            return null;
-        }
-    }
-
-    public final void j(String str, boolean z10, String str2, Utilities.Callback3 callback3) {
-        int i9;
-        int i10;
-        this.j = null;
-        try {
-            if (this.i == null) {
-                this.i = new xa.c(LaunchActivity.C1, f0.e.e(this.a), new p(this));
-            }
-            androidx.biometric.u i11 = i(z10);
-            TLRPC.User user = MessagesController.getInstance(this.b).getUser(Long.valueOf(this.c));
-            d5.w wVar = new d5.w();
-            wVar.b = UserObject.getUserName(user);
-            wVar.d = LocaleController.getString(R.string.Back);
-            wVar.a = 15;
-            if (!TextUtils.isEmpty(str)) {
-                wVar.c = str;
-            }
-            t5.l e10 = wVar.e();
-            if (i11 != null) {
-                Cipher cipher = i11.b;
-                if (!z10 && (i10 = Build.VERSION.SDK_INT) >= 30) {
-                    try {
-                        if (TextUtils.isEmpty(str2)) {
-                            this.g = null;
-                        } else if (i10 < 23) {
-                            this.g = str2;
-                        } else {
-                            this.g = Utilities.bytesToHex(cipher.doFinal(str2.getBytes(StandardCharsets.UTF_8)));
-                            this.h = Utilities.bytesToHex(cipher.getIV());
-                        }
-                        k();
-                        callback3.run(Boolean.TRUE, null, null);
-                        return;
-                    } catch (Exception e11) {
-                        FileLog.e(e11);
-                        i11 = i(z10);
-                    }
-                }
-            }
-            this.j = new bg.y0(9, callback3, (i11 == null || Build.VERSION.SDK_INT >= 30) ? null : i11);
-            if (i11 == null || (i9 = Build.VERSION.SDK_INT) >= 30) {
-                this.i.b(e10, null);
+                boolean z10 = f9 > 0.2f;
+                ValueAnimator ofFloat = ValueAnimator.ofFloat(f9, z10 ? 1.0f : 0.0f);
+                ofFloat.addUpdateListener(new c1(this, 4));
+                ofFloat.addListener(new z2(9, this, z10));
+                ofFloat.setInterpolator(jr.f);
+                ofFloat.setDuration(200L);
+                ofFloat.start();
                 return;
             }
-            xa.c cVar = this.i;
-            cVar.getClass();
-            int i12 = e10.a;
-            int i13 = i12 != 0 ? i12 : 15;
-            if ((i13 & 255) == 255) {
-                throw new IllegalArgumentException("Crypto-based authentication is not supported for Class 2 (Weak) biometrics.");
+            this.b = false;
+            int i10 = this.e;
+            this.d = i10;
+            this.S.y = i10;
+            SharedConfig.setStoriesColumnsCount(i10);
+            l lVar = this.v;
+            int h = lVar.h();
+            ht0Var.setVisibility(8);
+            int i11 = this.d;
+            h hVar = this.h;
+            hVar.y1(i11);
+            iVar.a0();
+            iVar.invalidate();
+            if (lVar.h() == h) {
+                AndroidUtilities.updateVisibleRows(iVar);
+            } else {
+                lVar.l();
             }
-            if (i9 < 30 && f7.m.a(i13)) {
-                throw new IllegalArgumentException("Crypto-based authentication is not supported for device credential prior to API 30.");
-            }
-            cVar.b(e10, i11);
-        } catch (Exception e12) {
-            FileLog.e(e12);
-            callback3.run(Boolean.FALSE, null, null);
-        }
-    }
-
-    public final void k() {
-        SharedPreferences.Editor edit = this.a.getSharedPreferences("2botbiometry_" + this.b, 0).edit();
-        boolean z10 = this.f;
-        long j10 = this.c;
-        if (z10) {
-            edit.putBoolean(j10 + "_requested", true);
-        } else {
-            edit.remove(j10 + "_requested");
-        }
-        if (this.e) {
-            String valueOf = String.valueOf(j10);
-            String str = this.g;
-            if (str == null) {
-                str = "";
-            }
-            edit.putString(valueOf, str);
-            String str2 = String.valueOf(j10) + "_iv";
-            String str3 = this.h;
-            edit.putString(str2, str3 != null ? str3 : "");
-        } else {
-            edit.remove(String.valueOf(j10));
-            edit.remove(String.valueOf(j10) + "_iv");
-        }
-        if (this.d) {
-            edit.putBoolean(j10 + "_disabled", true);
-        } else {
-            edit.remove(j10 + "_disabled");
-        }
-        edit.apply();
-    }
-
-    public final void l(String str, final String str2, final eb0 eb0Var) {
-        j(str, false, str2, new Utilities.Callback3() { // from class: mh.o
-            @Override // org.telegram.messenger.Utilities.Callback3
-            public final void run(Object obj, Object obj2, Object obj3) {
-                String str3 = str2;
-                Boolean bool = (Boolean) obj;
-                androidx.biometric.t tVar = (androidx.biometric.t) obj2;
-                androidx.biometric.u uVar = (androidx.biometric.u) obj3;
-                r rVar = r.this;
-                rVar.getClass();
-                if (tVar != null) {
-                    try {
-                        if (TextUtils.isEmpty(str3)) {
-                            rVar.g = null;
-                            rVar.h = null;
-                        } else {
-                            int i9 = Build.VERSION.SDK_INT;
-                            if (i9 < 23) {
-                                rVar.g = str3;
-                                rVar.h = null;
-                            } else {
-                                if (i9 >= 30) {
-                                    uVar = rVar.i(false);
-                                }
-                                if (uVar == null) {
-                                    throw new RuntimeException("No cryptoObject found");
-                                }
-                                Cipher cipher = uVar.b;
-                                rVar.g = Utilities.bytesToHex(cipher.doFinal(str3.getBytes(StandardCharsets.UTF_8)));
-                                rVar.h = Utilities.bytesToHex(cipher.getIV());
-                            }
-                        }
-                        rVar.k();
-                    } catch (Exception e10) {
-                        FileLog.e(e10);
-                        bool = Boolean.FALSE;
-                    }
+            int i12 = this.O;
+            if (i12 >= 0) {
+                View m10 = this.s.m(i12);
+                if (m10 != null) {
+                    this.P = m10.getTop();
                 }
-                eb0Var.run(bool);
+                hVar.h1(this.O, (-iVar.getPaddingTop()) + this.P);
             }
-        });
+        }
+    }
+
+    public final void b(boolean z10) {
+        if (this.b || this.S.C.y1) {
+            return;
+        }
+        int i10 = this.d + (!z10 ? 1 : -1);
+        if (i10 > 6) {
+            i10 = !z10 ? 9 : 6;
+        }
+        int clamp = Utilities.clamp(i10, 6, this.D ? 1 : 2);
+        this.e = clamp;
+        if (clamp == this.d || this.D) {
+            return;
+        }
+        ht0 ht0Var = this.r;
+        ht0Var.setVisibility(0);
+        ht0Var.setAdapter(this.w);
+        ht0Var.setPadding(ht0Var.getPaddingLeft(), 0, ht0Var.getPaddingRight(), this.F.getMeasuredHeight() + AndroidUtilities.dp(42.0f));
+        k kVar = this.s;
+        kVar.y1(clamp);
+        ht0Var.a0();
+        kVar.O = new g(this, 0);
+        AndroidUtilities.updateVisibleRows(this.f);
+        this.b = true;
+        this.c = 0.0f;
+        int i11 = this.O;
+        if (i11 >= 0) {
+            kVar.h1(i11, this.P - ht0Var.getPaddingTop());
+        }
+    }
+
+    public final void c() {
+        String string;
+        int i10 = this.S.b;
+        c6 c6Var = this.a;
+        int size = c6Var == null ? 0 : c6Var.i.size();
+        c6 c6Var2 = this.a;
+        int i11 = 1;
+        boolean z10 = c6Var2 == null || TextUtils.isEmpty(c6Var2.E);
+        int i12 = size > 0 ? 0 : 8;
+        o oVar = this.F;
+        oVar.setVisibility(i12);
+        String string2 = z10 ? LocaleController.getString(R.string.ProfileBotPreviewFooterGeneral) : LocaleController.formatString(R.string.ProfileBotPreviewFooterLanguage, k31.D(this.a.E, null, null));
+        String string3 = LocaleController.getString(R.string.ProfileBotAddPreview);
+        m5 m5Var = new m5(this, 15);
+        if (z10 || size <= 0) {
+            string = LocaleController.getString(z10 ? R.string.ProfileBotPreviewFooterCreateTranslation : R.string.ProfileBotPreviewFooterDeleteTranslation);
+        } else {
+            string = null;
+        }
+        hh.f fVar = (z10 || size <= 0) ? new hh.f(6, this, z10) : null;
+        s0 s0Var = oVar.c;
+        nh.d dVar = oVar.d;
+        oVar.a.setText(string2);
+        jh.n nVar = oVar.b;
+        nVar.g(string3, false, true);
+        nVar.setOnClickListener(new n(m5Var, r2));
+        if (string == null) {
+            s0Var.setVisibility(8);
+            dVar.setVisibility(8);
+        } else {
+            s0Var.setVisibility(0);
+            dVar.setVisibility(0);
+            dVar.g(string, false, true);
+            dVar.setOnClickListener(new gg.u(3, fVar));
+        }
+        s0 s0Var2 = this.A;
+        nh.d dVar2 = this.B;
+        qw0 qw0Var = this.y;
+        if (z10) {
+            qw0Var.d.setVisibility(0);
+            qw0Var.d.setText(LocaleController.getString(R.string.ProfileBotPreviewEmptyTitle));
+            qw0Var.e.setText(LocaleController.formatPluralString("ProfileBotPreviewEmptyText", MessagesController.getInstance(i10).botPreviewMediasMax, new Object[0]));
+            qw0Var.f.g(LocaleController.getString(R.string.ProfileBotPreviewEmptyButton), false, true);
+            s0Var2.setVisibility(8);
+            dVar2.setVisibility(8);
+        } else {
+            qw0Var.d.setVisibility(8);
+            qw0Var.e.setText(LocaleController.formatString(R.string.ProfileBotPreviewFooterLanguage, k31.D(this.a.E, null, null)));
+            qw0Var.f.g(LocaleController.getString(R.string.ProfileBotPreviewEmptyButton), false, true);
+            s0Var2.setVisibility(0);
+            dVar2.setVisibility(0);
+            dVar2.g(LocaleController.getString(R.string.ProfileBotPreviewFooterDeleteTranslation), false, true);
+            dVar2.setOnClickListener(new e(this, i11));
+        }
+        qw0Var.f.setVisibility(this.v.h() >= MessagesController.getInstance(i10).botPreviewMediasMax ? 8 : 0);
+    }
+
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j10) {
+        if (view == this.r) {
+            return true;
+        }
+        return super.drawChild(canvas, view, j10);
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, i11);
+        i iVar = this.f;
+        iVar.setPadding(iVar.getPaddingLeft(), iVar.U2, iVar.getPaddingRight(), this.F.getMeasuredHeight() + AndroidUtilities.dp(42.0f));
+    }
+
+    public void setList(c6 c6Var) {
+        if (this.a != c6Var) {
+            this.D = false;
+            this.E = false;
+            this.d = this.S.y;
+        }
+        this.a = c6Var;
+        l lVar = this.v;
+        lVar.e = c6Var;
+        if (lVar != lVar.s.w) {
+            lVar.M();
+        }
+        lVar.l();
+        q qVar = this.w;
+        qVar.e = c6Var;
+        if (qVar != qVar.s.w) {
+            qVar.M();
+        }
+        qVar.l();
+        c();
+    }
+
+    public void setVisibleHeight(int i10) {
+        float f9 = (-(getMeasuredHeight() - Math.max(i10, AndroidUtilities.dp(280.0f)))) / 2.0f;
+        this.y.setTranslationY(f9);
+        this.x.setTranslationY(-f9);
     }
 }

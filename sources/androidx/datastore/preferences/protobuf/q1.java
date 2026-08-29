@@ -1,6 +1,6 @@
 package androidx.datastore.preferences.protobuf;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class q1 extends r1 {
     @Override // androidx.datastore.preferences.protobuf.r1
@@ -39,7 +39,7 @@ public final class q1 extends r1 {
     }
 
     @Override // androidx.datastore.preferences.protobuf.r1
-    public final void n(Object obj, long j10, float f10) {
-        this.a.putFloat(obj, j10, f10);
+    public final void n(Object obj, long j10, float f9) {
+        this.a.putFloat(obj, j10, f9);
     }
 }

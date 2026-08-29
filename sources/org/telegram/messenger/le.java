@@ -1,36 +1,30 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
+import java.util.function.ToLongFunction;
+import org.telegram.messenger.NotificationsController;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class le implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ MessagesStorage b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ ArrayList d;
+public final /* synthetic */ class le implements ToLongFunction {
+    public final /* synthetic */ int a;
 
-    public /* synthetic */ le(MessagesStorage messagesStorage, ArrayList arrayList, boolean z10) {
-        this.b = messagesStorage;
-        this.d = arrayList;
-        this.c = z10;
+    public /* synthetic */ le(int i10) {
+        this.a = i10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // java.util.function.ToLongFunction
+    public final long applyAsLong(Object obj) {
+        long j10;
+        long j11;
         switch (this.a) {
             case 0:
-                this.b.lambda$putEphemeralMessages$204(this.d, this.c);
-                break;
+                return Long.parseLong((String) obj);
+            case 1:
+                j10 = ((NotificationsController.StoryNotification) obj).date;
+                return j10;
             default:
-                this.b.lambda$putContacts$146(this.c, this.d);
-                break;
+                j11 = ((NotificationsController.StoryNotification) obj).date;
+                return j11;
         }
-    }
-
-    public /* synthetic */ le(MessagesStorage messagesStorage, boolean z10, ArrayList arrayList) {
-        this.b = messagesStorage;
-        this.c = z10;
-        this.d = arrayList;
     }
 }

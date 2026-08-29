@@ -1,69 +1,63 @@
 package org.telegram.ui.Components;
 
+import android.animation.ObjectAnimator;
+import android.content.Context;
+import android.util.Property;
 import android.view.MotionEvent;
-import org.telegram.tgnet.TLRPC;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class rw extends e41 {
-    public final /* synthetic */ wy b;
+public final class rw extends m2.g {
+    public final /* synthetic */ fz s0;
 
-    public rw(wy wyVar) {
-        this.b = wyVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public rw(fz fzVar, Context context) {
+        super(context);
+        this.s0 = fzVar;
     }
 
-    @Override // org.telegram.ui.Components.e41
-    public final boolean a() {
-        return this.b.p1.b();
-    }
-
-    @Override // org.telegram.ui.Components.e41
-    public final String[] b() {
-        return this.b.S0;
-    }
-
-    @Override // org.telegram.ui.Components.e41
-    public final boolean c() {
-        return this.b.p1.c();
-    }
-
-    @Override // org.telegram.ui.Components.e41
-    public final boolean d(x31 x31Var, MotionEvent motionEvent) {
-        org.telegram.ui.ht q10 = org.telegram.ui.ht.q();
-        wy wyVar = this.b;
-        wyVar.getMeasuredHeight();
-        return q10.r(motionEvent, x31Var, wyVar.c2, wyVar.V1);
-    }
-
-    @Override // org.telegram.ui.Components.e41
-    public final boolean e(x31 x31Var, j jVar, MotionEvent motionEvent) {
-        org.telegram.ui.ht q10 = org.telegram.ui.ht.q();
-        wy wyVar = this.b;
-        wyVar.getMeasuredHeight();
-        return q10.s(motionEvent, x31Var, jVar, wyVar.c2, wyVar.V1);
-    }
-
-    @Override // org.telegram.ui.Components.e41
-    public final void f(TLRPC.Document document, Object obj, boolean z10, int i9) {
-        this.b.p1.m(null, document, null, obj, null, z10, i9);
-    }
-
-    @Override // org.telegram.ui.Components.e41
-    public final void g(TLRPC.StickerSetCovered stickerSetCovered, boolean z10) {
-        wy wyVar = this.b;
-        wyVar.p1.r(stickerSetCovered);
-        if (z10) {
-            wyVar.Y(true);
+    @Override // m2.g, android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        if (this.s0.f) {
+            return false;
+        }
+        if (getParent() != null) {
+            getParent().requestDisallowInterceptTouchEvent(canScrollHorizontally(-1));
+        }
+        try {
+            return super.onInterceptTouchEvent(motionEvent);
+        } catch (IllegalArgumentException unused) {
+            return false;
         }
     }
 
-    @Override // org.telegram.ui.Components.e41
-    public final void h(TLRPC.StickerSetCovered stickerSetCovered) {
-        this.b.p1.h(stickerSetCovered);
-    }
-
-    @Override // org.telegram.ui.Components.e41
-    public final void i(String[] strArr) {
-        this.b.S0 = strArr;
+    @Override // m2.g
+    public final void x(int i10, boolean z10) {
+        fz fzVar = this.s0;
+        bw bwVar = fzVar.E;
+        fz.a(fzVar, i10 == 1);
+        if (i10 != getCurrentItem()) {
+            super.x(i10, z10);
+            return;
+        }
+        if (i10 != 0) {
+            if (i10 == 1) {
+                fzVar.d0.x0(0);
+                return;
+            } else {
+                fzVar.z0.x0(1);
+                return;
+            }
+        }
+        fzVar.M0[1] = 0;
+        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(bwVar, (Property<bw, Float>) ViewGroup.TRANSLATION_Y, 0.0f);
+        ofFloat.setDuration(150L);
+        ofFloat.setInterpolator(jr.h);
+        ofFloat.start();
+        fzVar.H(1, 0);
+        if (bwVar != null) {
+            bwVar.j(0, true);
+        }
     }
 }

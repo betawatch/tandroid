@@ -5,12 +5,12 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import com.android.billingclient.api.Purchase;
-import f7.y5;
+import h7.h6;
 import java.util.ArrayList;
 import org.json.JSONException;
 import org.telegram.messenger.OneUIUtilities;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public abstract class u {
     public static final int a = Runtime.getRuntime().availableProcessors();
@@ -40,25 +40,25 @@ public abstract class u {
         bundle.putLong("billingClientSessionId", j10);
     }
 
-    public static Bundle c(int i9, n2.g gVar) {
+    public static Bundle c(int i10, p2.g gVar) {
         Bundle bundle = new Bundle();
         bundle.putInt("RESPONSE_CODE", gVar.a);
         bundle.putString("DEBUG_MESSAGE", gVar.c);
-        bundle.putInt("LOG_REASON", aa.d.c(i9));
+        bundle.putInt("LOG_REASON", a4.w.c(i10));
         return bundle;
     }
 
-    public static Bundle d(String str, String str2, ArrayList arrayList, t1 t1Var, long j10) {
+    public static Bundle d(String str, String str2, ArrayList arrayList, s1 s1Var, long j10) {
         Bundle bundle = new Bundle();
         b(bundle, str, str2, j10);
         bundle.putBoolean("enablePendingPurchases", true);
         bundle.putString("SKU_DETAILS_RESPONSE_FORMAT", "PRODUCT_DETAILS");
         p pVar = r.b;
         Object[] objArr = {"subs", "inapp"};
-        y5.a(2, objArr);
+        h6.a(2, objArr);
         bundle.putStringArrayList("PRODUCT_TYPES_TO_RETURN_MULTIPLE_OFFERS", new ArrayList<>(r.t(2, objArr)));
         Object[] objArr2 = {"inapp"};
-        y5.a(1, objArr2);
+        h6.a(1, objArr2);
         bundle.putStringArrayList("PRODUCT_TYPES_TO_RETURN_RENT_OFFERS", new ArrayList<>(r.t(1, objArr2)));
         bundle.putBoolean("SHOULD_RETURN_UNFETCHED_PRODUCTS", true);
         ArrayList<String> arrayList2 = new ArrayList<>();
@@ -67,8 +67,8 @@ public abstract class u {
         int size = arrayList.size();
         boolean z10 = false;
         boolean z11 = false;
-        for (int i9 = 0; i9 < size; i9++) {
-            n2.o oVar = (n2.o) arrayList.get(i9);
+        for (int i10 = 0; i10 < size; i10++) {
+            p2.o oVar = (p2.o) arrayList.get(i10);
             arrayList2.add(null);
             z10 |= !TextUtils.isEmpty(null);
             arrayList4.add(null);
@@ -92,18 +92,18 @@ public abstract class u {
         return bundle;
     }
 
-    public static n2.g e(String str, Intent intent) {
+    public static p2.g e(String str, Intent intent) {
         if (intent != null) {
-            j3.a a2 = n2.g.a();
+            l3.a a2 = p2.g.a();
             a2.a = a(str, intent.getExtras());
             a2.c = f(str, intent.getExtras());
             return a2.a();
         }
         h("BillingHelper", "Got null intent!");
-        j3.a a3 = n2.g.a();
-        a3.a = 6;
-        a3.c = "An internal error occurred.";
-        return a3.a();
+        l3.a a10 = p2.g.a();
+        a10.a = 6;
+        a10.c = "An internal error occurred.";
+        return a10.a();
     }
 
     public static String f(String str, Bundle bundle) {
@@ -129,12 +129,12 @@ public abstract class u {
                 Log.v(str, str2);
                 return;
             }
-            int i9 = OneUIUtilities.ONE_UI_4_0;
-            while (!str2.isEmpty() && i9 > 0) {
-                int min = Math.min(str2.length(), Math.min(4000, i9));
+            int i10 = OneUIUtilities.ONE_UI_4_0;
+            while (!str2.isEmpty() && i10 > 0) {
+                int min = Math.min(str2.length(), Math.min(4000, i10));
                 Log.v(str, str2.substring(0, min));
                 str2 = str2.substring(min);
-                i9 -= min;
+                i10 -= min;
             }
         }
     }
@@ -145,13 +145,13 @@ public abstract class u {
         }
     }
 
-    public static void i(String str, String str2, Throwable th) {
+    public static void i(String str, String str2, Throwable th2) {
         try {
             if (Log.isLoggable(str, 5)) {
-                if (th == null) {
+                if (th2 == null) {
                     Log.w(str, str2);
                 } else {
-                    Log.w(str, str2, th);
+                    Log.w(str, str2, th2);
                 }
             }
         } catch (Throwable unused) {

@@ -1,51 +1,40 @@
 package i3;
 
-import g7.c0;
-import h3.r2;
-import j4.d0;
-import java.util.Arrays;
+import android.util.SparseArray;
+import j7.l1;
+import java.util.HashMap;
+import v2.d;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class a {
-    public final long a;
-    public final r2 b;
-    public final int c;
-    public final d0 d;
-    public final long e;
-    public final r2 f;
-    public final int g;
-    public final d0 h;
-    public final long i;
-    public final long j;
+public abstract class a {
+    public static final SparseArray a = new SparseArray();
+    public static final HashMap b;
 
-    public a(long j10, r2 r2Var, int i9, d0 d0Var, long j11, r2 r2Var2, int i10, d0 d0Var2, long j12, long j13) {
-        this.a = j10;
-        this.b = r2Var;
-        this.c = i9;
-        this.d = d0Var;
-        this.e = j11;
-        this.f = r2Var2;
-        this.g = i10;
-        this.h = d0Var2;
-        this.i = j12;
-        this.j = j13;
+    static {
+        HashMap hashMap = new HashMap();
+        b = hashMap;
+        hashMap.put(d.a, 0);
+        hashMap.put(d.b, 1);
+        hashMap.put(d.c, 2);
+        for (d dVar : hashMap.keySet()) {
+            a.append(((Integer) b.get(dVar)).intValue(), dVar);
+        }
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    public static int a(d dVar) {
+        Integer num = (Integer) b.get(dVar);
+        if (num != null) {
+            return num.intValue();
         }
-        if (obj != null && a.class == obj.getClass()) {
-            a aVar = (a) obj;
-            if (this.a == aVar.a && this.c == aVar.c && this.e == aVar.e && this.g == aVar.g && this.i == aVar.i && this.j == aVar.j && c0.a(this.b, aVar.b) && c0.a(this.d, aVar.d) && c0.a(this.f, aVar.f) && c0.a(this.h, aVar.h)) {
-                return true;
-            }
-        }
-        return false;
+        throw new IllegalStateException("PriorityMapping is missing known Priority value " + dVar);
     }
 
-    public final int hashCode() {
-        return Arrays.hashCode(new Object[]{Long.valueOf(this.a), this.b, Integer.valueOf(this.c), this.d, Long.valueOf(this.e), this.f, Integer.valueOf(this.g), this.h, Long.valueOf(this.i), Long.valueOf(this.j)});
+    public static d b(int i10) {
+        d dVar = (d) a.get(i10);
+        if (dVar != null) {
+            return dVar;
+        }
+        throw new IllegalArgumentException(l1.k(i10, "Unknown Priority for value "));
     }
 }

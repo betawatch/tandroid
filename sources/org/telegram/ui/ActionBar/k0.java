@@ -1,38 +1,55 @@
 package org.telegram.ui.ActionBar;
 
-import android.text.Editable;
-import android.text.TextUtils;
-import android.text.TextWatcher;
+import android.view.ActionMode;
+import android.view.Menu;
+import android.view.MenuItem;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class k0 implements TextWatcher {
-    public final /* synthetic */ w0 a;
+public final class k0 implements ActionMode.Callback {
+    public final /* synthetic */ int a;
 
-    public k0(w0 w0Var) {
-        this.a = w0Var;
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i9, int i10, int i11) {
-        w0 w0Var = this.a;
-        e5 e5Var = w0Var.D;
-        if (e5Var != null) {
-            e5Var.q(w0Var.e);
+    @Override // android.view.ActionMode.Callback
+    public final boolean onActionItemClicked(ActionMode actionMode, MenuItem menuItem) {
+        switch (this.a) {
         }
-        w0Var.j();
-        if (w0Var.c0.isEmpty() || TextUtils.isEmpty(w0Var.e.getText()) || w0Var.d0 < 0) {
-            return;
+        return false;
+    }
+
+    @Override // android.view.ActionMode.Callback
+    public final boolean onCreateActionMode(ActionMode actionMode, Menu menu) {
+        switch (this.a) {
         }
-        w0Var.d0 = -1;
-        w0Var.y();
+        return false;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
+    @Override // android.view.ActionMode.Callback
+    public final void onDestroyActionMode(ActionMode actionMode) {
+        int i10 = this.a;
     }
 
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i9, int i10, int i11) {
+    @Override // android.view.ActionMode.Callback
+    public final boolean onPrepareActionMode(ActionMode actionMode, Menu menu) {
+        switch (this.a) {
+        }
+        return false;
+    }
+
+    private final void a(ActionMode actionMode) {
+    }
+
+    private final void b(ActionMode actionMode) {
+    }
+
+    private final void c(ActionMode actionMode) {
+    }
+
+    private final void d(ActionMode actionMode) {
+    }
+
+    private final void e(ActionMode actionMode) {
+    }
+
+    private final void f(ActionMode actionMode) {
     }
 }

@@ -2,63 +2,62 @@ package com.google.android.gms.internal.clearcut;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import g7.o8;
 
 /* loaded from: classes.dex */
 public final class f2 implements Parcelable.Creator {
     @Override // android.os.Parcelable.Creator
     public final Object createFromParcel(Parcel parcel) {
-        int z10 = o8.z(parcel);
+        int A = ce.b.A(parcel);
         String str = null;
         String str2 = null;
         String str3 = null;
         String str4 = null;
-        int i9 = 0;
         int i10 = 0;
-        boolean z11 = true;
-        boolean z12 = false;
         int i11 = 0;
-        while (parcel.dataPosition() < z10) {
+        boolean z10 = true;
+        boolean z11 = false;
+        int i12 = 0;
+        while (parcel.dataPosition() < A) {
             int readInt = parcel.readInt();
             switch ((char) readInt) {
                 case 2:
-                    str = o8.h(parcel, readInt);
+                    str = ce.b.i(parcel, readInt);
                     break;
                 case 3:
-                    i9 = o8.u(parcel, readInt);
+                    i10 = ce.b.v(parcel, readInt);
                     break;
                 case 4:
-                    i10 = o8.u(parcel, readInt);
+                    i11 = ce.b.v(parcel, readInt);
                     break;
                 case 5:
-                    str2 = o8.h(parcel, readInt);
+                    str2 = ce.b.i(parcel, readInt);
                     break;
                 case 6:
-                    str3 = o8.h(parcel, readInt);
+                    str3 = ce.b.i(parcel, readInt);
                     break;
                 case 7:
-                    z11 = o8.n(parcel, readInt);
+                    z10 = ce.b.o(parcel, readInt);
                     break;
                 case '\b':
-                    str4 = o8.h(parcel, readInt);
+                    str4 = ce.b.i(parcel, readInt);
                     break;
                 case '\t':
-                    z12 = o8.n(parcel, readInt);
+                    z11 = ce.b.o(parcel, readInt);
                     break;
                 case '\n':
-                    i11 = o8.u(parcel, readInt);
+                    i12 = ce.b.v(parcel, readInt);
                     break;
                 default:
-                    o8.y(parcel, readInt);
+                    ce.b.z(parcel, readInt);
                     break;
             }
         }
-        o8.m(parcel, z10);
-        return new e2(str, i9, i10, str2, str3, z11, str4, z12, i11);
+        ce.b.n(parcel, A);
+        return new e2(str, i10, i11, str2, str3, z10, str4, z11, i12);
     }
 
     @Override // android.os.Parcelable.Creator
-    public final /* synthetic */ Object[] newArray(int i9) {
-        return new e2[i9];
+    public final /* synthetic */ Object[] newArray(int i10) {
+        return new e2[i10];
     }
 }

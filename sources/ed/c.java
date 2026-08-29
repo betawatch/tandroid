@@ -1,99 +1,38 @@
 package ed;
 
-import g7.y5;
-import java.util.Iterator;
-import java.util.NoSuchElementException;
-import qc.i;
-import sc.h;
-
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class c implements Iterator, qc.c {
-    public int a;
-    public Object b;
-    public qc.c c;
-
-    public final RuntimeException a() {
-        int i9 = this.a;
-        if (i9 == 4) {
-            return new NoSuchElementException();
-        }
-        if (i9 == 5) {
-            return new IllegalStateException("Iterator has failed.");
-        }
-        return new IllegalStateException("Unexpected state of the iterator: " + this.a);
+public final class c extends a {
+    static {
+        new c((char) 1, (char) 0);
     }
 
-    public final void c(Object obj, h hVar) {
-        this.b = obj;
-        this.a = 3;
-        this.c = hVar;
-        rc.a aVar = rc.a.a;
-    }
-
-    @Override // qc.c
-    public final qc.h getContext() {
-        return i.a;
-    }
-
-    @Override // java.util.Iterator
-    public final boolean hasNext() {
-        int i9;
-        while (true) {
-            i9 = this.a;
-            if (i9 != 0) {
-                break;
-            }
-            this.a = 5;
-            qc.c cVar = this.c;
-            kotlin.jvm.internal.i.b(cVar);
-            this.c = null;
-            cVar.resumeWith(oc.i.a);
-        }
-        if (i9 == 1) {
-            kotlin.jvm.internal.i.b(null);
-            throw null;
-        }
-        if (i9 == 2 || i9 == 3) {
-            return true;
-        }
-        if (i9 == 4) {
+    public final boolean equals(Object obj) {
+        c cVar;
+        char c3;
+        char c6;
+        if (!(obj instanceof c)) {
             return false;
         }
-        throw a();
+        char c10 = this.a;
+        char c11 = this.b;
+        if (c10 >= c11 && c10 != c11 && (c3 = (cVar = (c) obj).a) >= (c6 = cVar.b) && c3 != c6) {
+            return true;
+        }
+        c cVar2 = (c) obj;
+        return c10 == cVar2.a && c11 == cVar2.b;
     }
 
-    @Override // java.util.Iterator
-    public final Object next() {
-        int i9 = this.a;
-        if (i9 == 0 || i9 == 1) {
-            if (hasNext()) {
-                return next();
-            }
-            throw new NoSuchElementException();
+    public final int hashCode() {
+        char c3 = this.a;
+        char c6 = this.b;
+        if (c3 >= c6 && c3 != c6) {
+            return -1;
         }
-        if (i9 == 2) {
-            this.a = 1;
-            kotlin.jvm.internal.i.b(null);
-            throw null;
-        }
-        if (i9 != 3) {
-            throw a();
-        }
-        this.a = 0;
-        Object obj = this.b;
-        this.b = null;
-        return obj;
+        return (c3 * 31) + c6;
     }
 
-    @Override // java.util.Iterator
-    public final void remove() {
-        throw new UnsupportedOperationException("Operation is not supported for read-only collection");
-    }
-
-    @Override // qc.c
-    public final void resumeWith(Object obj) {
-        y5.b(obj);
-        this.a = 4;
+    public final String toString() {
+        return this.a + ".." + this.b;
     }
 }

@@ -2,23 +2,23 @@ package com.google.android.exoplayer2.upstream;
 
 import android.os.SystemClock;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class s {
     public final /* synthetic */ u a;
 
-    public final void a(int i9) {
+    public final void a(int i10) {
         u uVar = this.a;
         synchronized (uVar) {
             synchronized (uVar) {
-                int i10 = uVar.i;
-                if (i10 == 0 || uVar.e) {
-                    if (i10 == i9) {
+                int i11 = uVar.i;
+                if (i11 == 0 || uVar.e) {
+                    if (i11 == i10) {
                         return;
                     }
-                    uVar.i = i9;
-                    if (i9 != 1 && i9 != 0 && i9 != 8) {
-                        uVar.l = uVar.a(i9);
+                    uVar.i = i10;
+                    if (i10 != 1 && i10 != 0 && i10 != 8) {
+                        uVar.l = uVar.a(i10);
                         uVar.d.getClass();
                         long elapsedRealtime = SystemClock.elapsedRealtime();
                         uVar.c(uVar.f > 0 ? (int) (elapsedRealtime - uVar.g) : 0, uVar.h, uVar.l);

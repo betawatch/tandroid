@@ -1,262 +1,103 @@
 package r3;
 
-import d5.y;
-import h3.s0;
-import h3.t0;
-import h3.t1;
-import m3.h;
-import m3.k;
-import m3.l;
-import m3.m;
-import m3.n;
-import m3.o;
-import m3.w;
-import o8.l0;
-import org.xmlpull.v1.XmlPullParserException;
-import u3.j;
+import o3.c;
+import o3.d;
+import o3.e;
+import o3.l;
+import o3.n;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class a implements k {
-    public m b;
-    public int c;
-    public int d;
-    public int e;
-    public f4.b g;
-    public l h;
-    public f2.d i;
-    public u3.l j;
-    public final y a = new y(6);
-    public long f = -1;
+public final class a {
+    public final o3.a a;
+    public final e b;
+    public o3.b c;
+    public final int d;
 
-    public final void a() {
-        d(new z3.b[0]);
-        m mVar = this.b;
-        mVar.getClass();
-        mVar.B();
-        this.b.y(new o(-9223372036854775807L));
-        this.c = 6;
+    public a(c cVar, e eVar, long j10, long j11, long j12, long j13, long j14, int i10) {
+        this.b = eVar;
+        this.d = i10;
+        this.a = new o3.a(cVar, j10, j11, j12, j13, j14);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:53:0x0166  */
-    @Override // m3.k
+    public static int a(int i10, byte[] bArr) {
+        return (bArr[i10 + 3] & 255) | ((bArr[i10] & 255) << 24) | ((bArr[i10 + 1] & 255) << 16) | ((bArr[i10 + 2] & 255) << 8);
+    }
+
+    public static int c(l lVar, long j10, n nVar) {
+        if (j10 == lVar.getPosition()) {
+            return 0;
+        }
+        nVar.a = j10;
+        return 1;
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:38:0x00ca, code lost:
+    
+        return c(r27, r8, r28);
+     */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final int b(l lVar, n nVar) {
-        String m10;
-        f2.d dVar;
-        l0 l0Var;
-        int i9;
-        f4.b bVar;
-        long j10;
-        int i10 = this.c;
-        y yVar = this.a;
-        if (i10 == 0) {
-            yVar.z(2);
-            ((h) lVar).d(yVar.a, 0, 2, false);
-            int w8 = yVar.w();
-            this.d = w8;
-            if (w8 == 65498) {
-                if (this.f != -1) {
-                    this.c = 4;
-                    return 0;
-                }
-                a();
-                return 0;
+        while (true) {
+            o3.b bVar = this.c;
+            f5.a.j(bVar);
+            long j10 = bVar.f;
+            long j11 = bVar.g;
+            long j12 = bVar.h;
+            long j13 = j11 - j10;
+            long j14 = this.d;
+            e eVar = this.b;
+            if (j13 <= j14) {
+                this.c = null;
+                eVar.f();
+                return c(lVar, j10, nVar);
             }
-            if ((w8 < 65488 || w8 > 65497) && w8 != 65281) {
-                this.c = 1;
+            long position = j12 - lVar.getPosition();
+            if (position < 0 || position > 262144) {
+                break;
             }
-            return 0;
-        }
-        if (i10 == 1) {
-            yVar.z(2);
-            ((h) lVar).d(yVar.a, 0, 2, false);
-            this.e = yVar.w() - 2;
-            this.c = 2;
-            return 0;
-        }
-        if (i10 != 2) {
-            if (i10 != 4) {
-                if (i10 != 5) {
-                    if (i10 == 6) {
-                        return -1;
+            lVar.t((int) position);
+            lVar.s();
+            d d = eVar.d(lVar, bVar.b);
+            int i10 = d.a;
+            long j15 = d.b;
+            long j16 = d.c;
+            if (i10 == -3) {
+                this.c = null;
+                eVar.f();
+                return c(lVar, j12, nVar);
+            }
+            if (i10 == -2) {
+                bVar.d = j15;
+                bVar.f = j16;
+                bVar.h = o3.b.a(bVar.b, j15, bVar.e, j16, bVar.g, bVar.c);
+            } else {
+                if (i10 != -1) {
+                    if (i10 != 0) {
+                        throw new IllegalStateException("Invalid case");
                     }
-                    throw new IllegalStateException();
-                }
-                if (this.i == null || lVar != this.h) {
-                    this.h = lVar;
-                    this.i = new f2.d(lVar, this.f);
-                }
-                u3.l lVar2 = this.j;
-                lVar2.getClass();
-                int b10 = lVar2.b(this.i, nVar);
-                if (b10 == 1) {
-                    nVar.a += this.f;
-                }
-                return b10;
-            }
-            long j11 = ((h) lVar).d;
-            long j12 = this.f;
-            if (j11 != j12) {
-                nVar.a = j12;
-                return 1;
-            }
-            h hVar = (h) lVar;
-            if (!hVar.g(yVar.a, 0, 1, true)) {
-                a();
-                return 0;
-            }
-            hVar.f = 0;
-            if (this.j == null) {
-                this.j = new u3.l(0);
-            }
-            f2.d dVar2 = new f2.d(lVar, this.f);
-            this.i = dVar2;
-            this.j.getClass();
-            if (!j.i(dVar2, false, false)) {
-                a();
-                return 0;
-            }
-            u3.l lVar3 = this.j;
-            long j13 = this.f;
-            m mVar = this.b;
-            mVar.getClass();
-            lVar3.q = new f2.d(j13, mVar, 11);
-            f4.b bVar2 = this.g;
-            bVar2.getClass();
-            d(bVar2);
-            this.c = 5;
-            return 0;
-        }
-        if (this.d == 65505) {
-            y yVar2 = new y(this.e);
-            ((h) lVar).d(yVar2.a, 0, this.e, false);
-            if (this.g == null && "http://ns.adobe.com/xap/1.0/".equals(yVar2.m()) && (m10 = yVar2.m()) != null) {
-                long j14 = ((h) lVar).c;
-                if (j14 != -1) {
-                    try {
-                        dVar = d.a(m10);
-                    } catch (t1 | NumberFormatException | XmlPullParserException e10) {
-                        d5.a.L("MotionPhotoXmpParser", "Ignoring unexpected XMP metadata", e10);
-                        dVar = null;
+                    long position2 = j16 - lVar.getPosition();
+                    if (position2 >= 0 && position2 <= 262144) {
+                        lVar.t((int) position2);
                     }
-                    if (dVar != null && (i9 = (l0Var = (l0) dVar.c).d) >= 2) {
-                        int i11 = i9 - 1;
-                        long j15 = -1;
-                        long j16 = -1;
-                        long j17 = -1;
-                        long j18 = -1;
-                        boolean z10 = false;
-                        while (i11 >= 0) {
-                            b bVar3 = (b) l0Var.get(i11);
-                            boolean equals = "video/mp4".equals(bVar3.a) | z10;
-                            if (i11 == 0) {
-                                j14 -= bVar3.d;
-                                j10 = 0;
-                            } else {
-                                j10 = j14 - bVar3.c;
-                            }
-                            long j19 = j10;
-                            long j20 = j14;
-                            j14 = j19;
-                            if (equals && j14 != j20) {
-                                j18 = j20 - j14;
-                                j17 = j14;
-                                equals = false;
-                            }
-                            if (i11 == 0) {
-                                j15 = j14;
-                                j16 = j20;
-                            }
-                            i11--;
-                            z10 = equals;
-                        }
-                        if (j17 != -1 && j18 != -1 && j15 != -1 && j16 != -1) {
-                            bVar = new f4.b(j15, j16, dVar.b, j17, j18);
-                            this.g = bVar;
-                            if (bVar != null) {
-                                this.f = bVar.d;
-                            }
-                        }
-                    }
+                    this.c = null;
+                    eVar.f();
+                    return c(lVar, j16, nVar);
                 }
-                bVar = null;
-                this.g = bVar;
-                if (bVar != null) {
-                }
-            }
-        } else {
-            ((h) lVar).u(this.e);
-        }
-        this.c = 0;
-        return 0;
-    }
-
-    @Override // m3.k
-    public final void c(m mVar) {
-        this.b = mVar;
-    }
-
-    public final void d(z3.b... bVarArr) {
-        m mVar = this.b;
-        mVar.getClass();
-        w I = mVar.I(1024, 4);
-        s0 s0Var = new s0();
-        s0Var.n = "image/jpeg";
-        s0Var.i = new z3.c(bVarArr);
-        I.c(new t0(s0Var));
-    }
-
-    @Override // m3.k
-    public final boolean f(l lVar) {
-        h hVar = (h) lVar;
-        y yVar = this.a;
-        yVar.z(2);
-        hVar.g(yVar.a, 0, 2, false);
-        if (yVar.w() == 65496) {
-            yVar.z(2);
-            hVar.g(yVar.a, 0, 2, false);
-            int w8 = yVar.w();
-            this.d = w8;
-            if (w8 == 65504) {
-                yVar.z(2);
-                hVar.g(yVar.a, 0, 2, false);
-                hVar.a(yVar.w() - 2, false);
-                yVar.z(2);
-                hVar.g(yVar.a, 0, 2, false);
-                this.d = yVar.w();
-            }
-            if (this.d == 65505) {
-                hVar.a(2, false);
-                yVar.z(6);
-                hVar.g(yVar.a, 0, 6, false);
-                if (yVar.s() == 1165519206 && yVar.w() == 0) {
-                    return true;
-                }
+                bVar.e = j15;
+                bVar.g = j16;
+                bVar.h = o3.b.a(bVar.b, bVar.d, j15, bVar.f, j16, bVar.c);
             }
         }
-        return false;
     }
 
-    @Override // m3.k
-    public final void g(long j10, long j11) {
-        if (j10 == 0) {
-            this.c = 0;
-            this.j = null;
-        } else if (this.c == 5) {
-            u3.l lVar = this.j;
-            lVar.getClass();
-            lVar.g(j10, j11);
-        }
-    }
-
-    @Override // m3.k
-    public final void release() {
-        u3.l lVar = this.j;
-        if (lVar != null) {
-            lVar.getClass();
+    public final void d(long j10) {
+        o3.b bVar = this.c;
+        if (bVar == null || bVar.a != j10) {
+            o3.a aVar = this.a;
+            this.c = new o3.b(j10, aVar.a.l(j10), aVar.c, aVar.d, aVar.e, aVar.f);
         }
     }
 }

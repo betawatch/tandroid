@@ -15,8 +15,8 @@ public final class y3 extends t3 {
     public final /* synthetic */ Object j;
     public final /* synthetic */ Object k;
 
-    public /* synthetic */ y3(w6 w6Var, Object obj, Object obj2, Object obj3, int i9) {
-        this.h = i9;
+    public /* synthetic */ y3(w6 w6Var, Object obj, Object obj2, Object obj3, int i10) {
+        this.h = i10;
         this.j = obj;
         this.k = obj2;
         this.i = obj3;

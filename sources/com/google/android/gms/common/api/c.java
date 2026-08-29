@@ -1,39 +1,40 @@
 package com.google.android.gms.common.api;
 
+import ag.o1;
 import android.content.Intent;
 import java.io.PrintWriter;
 import java.util.Set;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public interface c {
     boolean a();
 
     Set b();
 
-    void c(x5.h hVar, Set set);
+    void c(String str);
 
-    void d(String str);
+    void d(z5.b bVar);
 
     void disconnect();
 
-    void e(x5.b bVar);
+    boolean e();
 
-    boolean f();
+    void f(String str, PrintWriter printWriter);
 
-    void g(String str, PrintWriter printWriter);
+    String g();
 
-    String h();
+    boolean h();
 
-    boolean i();
+    void i(o1 o1Var);
 
-    void j(xa.c cVar);
+    boolean j();
 
-    boolean k();
+    int k();
 
-    int l();
+    w5.c[] l();
 
-    u5.c[] m();
+    void m(z5.h hVar, Set set);
 
     String n();
 

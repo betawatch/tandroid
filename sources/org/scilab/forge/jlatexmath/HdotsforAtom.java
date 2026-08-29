@@ -1,15 +1,15 @@
 package org.scilab.forge.jlatexmath;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public class HdotsforAtom extends MulticolumnAtom {
     private static final Atom ldotp = SymbolAtom.get("ldotp");
     private static final Atom thin = new SpaceAtom(1);
     private float coeff;
 
-    public HdotsforAtom(int i9, float f10) {
-        super(i9, "c", ldotp);
-        this.coeff = f10;
+    public HdotsforAtom(int i10, float f9) {
+        super(i10, "c", ldotp);
+        this.coeff = f9;
     }
 
     @Override // org.scilab.forge.jlatexmath.MulticolumnAtom, org.scilab.forge.jlatexmath.Atom
@@ -20,21 +20,21 @@ public class HdotsforAtom extends MulticolumnAtom {
         horizontalBox.add(strutBox);
         if (this.w != 0.0f) {
             float width = horizontalBox.getWidth();
-            float f10 = this.w;
-            if (width <= 0.0f || Float.isInfinite(width) || Float.isNaN(width) || f10 > 65536.0f) {
-                f10 = 0.0f;
+            float f9 = this.w;
+            if (width <= 0.0f || Float.isInfinite(width) || Float.isNaN(width) || f9 > 65536.0f) {
+                f9 = 0.0f;
             }
             HorizontalBox horizontalBox2 = new HorizontalBox(horizontalBox);
-            int i9 = 0;
-            while (horizontalBox2.getWidth() < f10) {
-                int i10 = i9 + 1;
-                if (i9 >= 65536) {
+            int i10 = 0;
+            while (horizontalBox2.getWidth() < f9) {
+                int i11 = i10 + 1;
+                if (i10 >= 65536) {
                     break;
                 }
                 horizontalBox2.add(horizontalBox);
-                i9 = i10;
+                i10 = i11;
             }
-            horizontalBox = f10 != 0.0f ? new HorizontalBox(horizontalBox2, f10, 2) : horizontalBox2;
+            horizontalBox = f9 != 0.0f ? new HorizontalBox(horizontalBox2, f9, 2) : horizontalBox2;
         }
         horizontalBox.type = 12;
         return horizontalBox;

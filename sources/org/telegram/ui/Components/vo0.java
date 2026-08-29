@@ -1,91 +1,54 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-import android.content.Context;
-import android.graphics.Canvas;
-import android.text.TextUtils;
-import android.widget.FrameLayout;
+import android.view.KeyEvent;
+import android.view.View;
+import android.view.WindowInsets;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class vo0 extends ut {
-    public boolean R;
-    public int S;
-    public int T;
-    public ValueAnimator U;
-    public final /* synthetic */ rp0 V;
+public final /* synthetic */ class vo0 implements r0.o, org.telegram.ui.ActionBar.m1 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ dq0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public vo0(rp0 rp0Var, Context context, cp0 cp0Var, org.telegram.ui.ActionBar.b6 b6Var) {
-        super(context, cp0Var, null, 1, true, b6Var);
-        this.V = rp0Var;
+    public /* synthetic */ vo0(dq0 dq0Var, int i10) {
+        this.a = i10;
+        this.b = dq0Var;
     }
 
-    @Override // org.telegram.ui.Components.ut
-    public final void c(float f10) {
-        this.V.Y0();
+    @Override // r0.o
+    public r0.m1 I0(View view, r0.m1 m1Var) {
+        WindowInsets g10 = m1Var.g();
+        dq0 dq0Var = this.b;
+        dq0Var.processLegacyContainerInsets(g10);
+        i0.b f9 = m1Var.a.f(519);
+        if (!dq0Var.C0.equals(f9)) {
+            dq0Var.C0 = f9;
+            dq0Var.container.requestLayout();
+        }
+        return r0.m1.b;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        if (this.R) {
-            mt editText = this.V.d.getEditText();
-            editText.setOffsetY(editText.getOffsetY() - ((this.T - editText.getScrollY()) + (this.S - editText.getMeasuredHeight())));
-            ValueAnimator ofFloat = ValueAnimator.ofFloat(editText.getOffsetY(), 0.0f);
-            ofFloat.addUpdateListener(new q60(editText, 18));
-            ValueAnimator valueAnimator = this.U;
-            if (valueAnimator != null) {
-                valueAnimator.cancel();
-            }
-            this.U = ofFloat;
-            ofFloat.setDuration(200L);
-            ofFloat.setInterpolator(gr.f);
-            ofFloat.start();
-            this.R = false;
+    @Override // org.telegram.ui.ActionBar.m1
+    public void o(KeyEvent keyEvent) {
+        org.telegram.ui.ActionBar.o1 o1Var;
+        org.telegram.ui.ActionBar.o1 o1Var2;
+        switch (this.a) {
+            case 1:
+                dq0 dq0Var = this.b;
+                dq0Var.getClass();
+                if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (o1Var = dq0Var.F0) != null && o1Var.isShowing()) {
+                    dq0Var.F0.d(true);
+                    break;
+                }
+                break;
+            default:
+                dq0 dq0Var2 = this.b;
+                dq0Var2.getClass();
+                if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (o1Var2 = dq0Var2.F0) != null && o1Var2.isShowing()) {
+                    dq0Var2.F0.d(true);
+                    break;
+                }
+                break;
         }
-        super.dispatchDraw(canvas);
-    }
-
-    @Override // org.telegram.ui.Components.ut
-    public final void f() {
-        super.f();
-        wy emojiView = getEmojiView();
-        rp0 rp0Var = this.V;
-        if (emojiView != null) {
-            emojiView.s0 = false;
-            emojiView.t2 = false;
-            emojiView.setShouldDrawBackground(false);
-            emojiView.setBottomInset(rp0Var.C0.d);
-        }
-        FrameLayout frameLayout = rp0Var.Y;
-        if (frameLayout != null) {
-            frameLayout.bringToFront();
-        }
-        uo0 uo0Var = rp0Var.c;
-        if (uo0Var != null) {
-            uo0Var.bringToFront();
-        }
-        uo0 uo0Var2 = rp0Var.f;
-        if (uo0Var2 != null) {
-            uo0Var2.bringToFront();
-        }
-    }
-
-    @Override // org.telegram.ui.Components.ut
-    public final void q(int i9, int i10) {
-        rp0 rp0Var = this.V;
-        uo0 uo0Var = rp0Var.c;
-        if (TextUtils.isEmpty(getEditText().getText())) {
-            getEditText().animate().cancel();
-            getEditText().setOffsetY(0.0f);
-            this.R = false;
-        } else {
-            this.R = true;
-            this.S = getEditText().getMeasuredHeight();
-            this.T = getEditText().getScrollY();
-            invalidate();
-        }
-        rp0Var.r0 = uo0Var.getTop() + rp0Var.q0;
-        uo0Var.invalidate();
     }
 }

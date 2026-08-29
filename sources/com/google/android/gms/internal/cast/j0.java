@@ -1,9 +1,9 @@
 package com.google.android.gms.internal.cast;
 
-import g7.va;
-import g7.wa;
-import g7.xa;
-import g7.ya;
+import i7.va;
+import i7.wa;
+import i7.xa;
+import i7.ya;
 import j$.util.Map;
 import java.io.Serializable;
 import java.util.AbstractCollection;
@@ -15,7 +15,7 @@ import java.util.function.BiConsumer;
 import java.util.function.BiFunction;
 import java.util.function.Function;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public abstract class j0 implements Map, Serializable, j$.util.Map {
     public final /* synthetic */ int a;
@@ -23,8 +23,8 @@ public abstract class j0 implements Map, Serializable, j$.util.Map {
     public transient AbstractCollection c;
     public transient AbstractCollection d;
 
-    public /* synthetic */ j0(int i9) {
-        this.a = i9;
+    public /* synthetic */ j0(int i10) {
+        this.a = i10;
     }
 
     /*  JADX ERROR: Types fix failed
@@ -39,7 +39,7 @@ public abstract class j0 implements Map, Serializable, j$.util.Map {
         */
     public static void a(java.util.Set r18) {
         /*
-            Method dump skipped, instructions count: 564
+            Method dump skipped, instructions count: 562
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: com.google.android.gms.internal.cast.j0.a(java.util.Set):void");
@@ -67,19 +67,19 @@ public abstract class j0 implements Map, Serializable, j$.util.Map {
 
     @Override // java.util.Map, j$.util.Map
     public /* synthetic */ Object compute(Object obj, BiFunction biFunction) {
-        int i9 = this.a;
+        int i10 = this.a;
         return Map.-CC.$default$compute(this, obj, biFunction);
     }
 
     @Override // java.util.Map, j$.util.Map
     public /* synthetic */ Object computeIfAbsent(Object obj, Function function) {
-        int i9 = this.a;
+        int i10 = this.a;
         return Map.-CC.$default$computeIfAbsent(this, obj, function);
     }
 
     @Override // java.util.Map, j$.util.Map
     public /* synthetic */ Object computeIfPresent(Object obj, BiFunction biFunction) {
-        int i9 = this.a;
+        int i10 = this.a;
         return Map.-CC.$default$computeIfPresent(this, obj, biFunction);
     }
 
@@ -140,18 +140,18 @@ public abstract class j0 implements Map, Serializable, j$.util.Map {
                 }
                 return zVar.contains(obj);
             case 2:
-                d7.k kVar = (d7.k) this.d;
+                f7.k kVar = (f7.k) this.d;
                 if (kVar == null) {
-                    d7.l lVar = (d7.l) this;
-                    d7.k kVar2 = new d7.k(1, lVar.h, lVar.f);
+                    f7.l lVar = (f7.l) this;
+                    f7.k kVar2 = new f7.k(1, lVar.h, lVar.f);
                     this.d = kVar2;
                     kVar = kVar2;
                 }
                 return kVar.contains(obj);
             case 3:
-                f7.c cVar = (f7.c) this.d;
+                h7.c cVar = (h7.c) this.d;
                 if (cVar == null) {
-                    f7.c cVar2 = new f7.c(1, ((f7.d) this).e);
+                    h7.c cVar2 = new h7.c(1, ((h7.d) this).e);
                     this.d = cVar2;
                     cVar = cVar2;
                 }
@@ -165,17 +165,17 @@ public abstract class j0 implements Map, Serializable, j$.util.Map {
                 }
                 return xaVar.contains(obj);
             case 5:
-                h7.a0 a0Var2 = (h7.a0) this.d;
+                j7.a0 a0Var2 = (j7.a0) this.d;
                 if (a0Var2 == null) {
-                    h7.a0 a0Var3 = new h7.a0(1, ((h7.b0) this).e);
+                    j7.a0 a0Var3 = new j7.a0(1, ((j7.b0) this).e);
                     this.d = a0Var3;
                     a0Var2 = a0Var3;
                 }
                 return a0Var2.contains(obj);
             default:
-                j7.q qVar = (j7.q) this.d;
+                l7.q qVar = (l7.q) this.d;
                 if (qVar == null) {
-                    j7.q qVar2 = new j7.q(1, ((j7.r) this).e);
+                    l7.q qVar2 = new l7.q(1, ((l7.r) this).e);
                     this.d = qVar2;
                     qVar = qVar2;
                 }
@@ -205,21 +205,21 @@ public abstract class j0 implements Map, Serializable, j$.util.Map {
                 this.b = xVar2;
                 return xVar2;
             case 2:
-                d7.i iVar = (d7.i) this.b;
+                f7.i iVar = (f7.i) this.b;
                 if (iVar != null) {
                     return iVar;
                 }
-                d7.l lVar = (d7.l) this;
-                d7.i iVar2 = new d7.i(lVar, lVar.f, lVar.h);
+                f7.l lVar = (f7.l) this;
+                f7.i iVar2 = new f7.i(lVar, lVar.f, lVar.h);
                 this.b = iVar2;
                 return iVar2;
             case 3:
-                f7.a aVar = (f7.a) this.b;
+                h7.a aVar = (h7.a) this.b;
                 if (aVar != null) {
                     return aVar;
                 }
-                f7.d dVar = (f7.d) this;
-                f7.a aVar2 = new f7.a(dVar, dVar.e);
+                h7.d dVar = (h7.d) this;
+                h7.a aVar2 = new h7.a(dVar, dVar.e);
                 this.b = aVar2;
                 return aVar2;
             case 4:
@@ -232,21 +232,21 @@ public abstract class j0 implements Map, Serializable, j$.util.Map {
                 this.b = vaVar2;
                 return vaVar2;
             case 5:
-                h7.y yVar = (h7.y) this.b;
+                j7.y yVar = (j7.y) this.b;
                 if (yVar != null) {
                     return yVar;
                 }
-                h7.b0 b0Var = (h7.b0) this;
-                h7.y yVar2 = new h7.y(b0Var, b0Var.e);
+                j7.b0 b0Var = (j7.b0) this;
+                j7.y yVar2 = new j7.y(b0Var, b0Var.e);
                 this.b = yVar2;
                 return yVar2;
             default:
-                j7.o oVar = (j7.o) this.b;
+                l7.o oVar = (l7.o) this.b;
                 if (oVar != null) {
                     return oVar;
                 }
-                j7.r rVar = (j7.r) this;
-                j7.o oVar2 = new j7.o(rVar, rVar.e);
+                l7.r rVar = (l7.r) this;
+                l7.o oVar2 = new l7.o(rVar, rVar.e);
                 this.b = oVar2;
                 return oVar2;
         }
@@ -310,7 +310,7 @@ public abstract class j0 implements Map, Serializable, j$.util.Map {
 
     @Override // java.util.Map, j$.util.Map
     public /* synthetic */ void forEach(BiConsumer biConsumer) {
-        int i9 = this.a;
+        int i10 = this.a;
         Map.-CC.$default$forEach(this, biConsumer);
     }
 
@@ -356,12 +356,12 @@ public abstract class j0 implements Map, Serializable, j$.util.Map {
                     o0Var = o0Var2;
                 }
                 Iterator it = o0Var.iterator();
-                int i9 = 0;
+                int i10 = 0;
                 while (it.hasNext()) {
                     Object next = it.next();
-                    i9 += next != null ? next.hashCode() : 0;
+                    i10 += next != null ? next.hashCode() : 0;
                 }
-                return i9;
+                return i10;
             case 1:
                 com.google.android.gms.internal.play_billing.x xVar = (com.google.android.gms.internal.play_billing.x) this.b;
                 if (xVar == null) {
@@ -371,42 +371,42 @@ public abstract class j0 implements Map, Serializable, j$.util.Map {
                     xVar = xVar2;
                 }
                 Iterator it2 = xVar.iterator();
-                int i10 = 0;
+                int i11 = 0;
                 while (it2.hasNext()) {
                     Object next2 = it2.next();
-                    i10 += next2 != null ? next2.hashCode() : 0;
+                    i11 += next2 != null ? next2.hashCode() : 0;
                 }
-                return i10;
+                return i11;
             case 2:
-                d7.i iVar = (d7.i) this.b;
+                f7.i iVar = (f7.i) this.b;
                 if (iVar == null) {
-                    d7.l lVar = (d7.l) this;
-                    d7.i iVar2 = new d7.i(lVar, lVar.f, lVar.h);
+                    f7.l lVar = (f7.l) this;
+                    f7.i iVar2 = new f7.i(lVar, lVar.f, lVar.h);
                     this.b = iVar2;
                     iVar = iVar2;
                 }
                 Iterator it3 = iVar.iterator();
-                int i11 = 0;
+                int i12 = 0;
                 while (it3.hasNext()) {
                     Object next3 = it3.next();
-                    i11 += next3 != null ? next3.hashCode() : 0;
+                    i12 += next3 != null ? next3.hashCode() : 0;
                 }
-                return i11;
+                return i12;
             case 3:
-                f7.a aVar = (f7.a) this.b;
+                h7.a aVar = (h7.a) this.b;
                 if (aVar == null) {
-                    f7.d dVar = (f7.d) this;
-                    f7.a aVar2 = new f7.a(dVar, dVar.e);
+                    h7.d dVar = (h7.d) this;
+                    h7.a aVar2 = new h7.a(dVar, dVar.e);
                     this.b = aVar2;
                     aVar = aVar2;
                 }
                 Iterator it4 = aVar.iterator();
-                int i12 = 0;
+                int i13 = 0;
                 while (it4.hasNext()) {
                     Object next4 = it4.next();
-                    i12 += next4 != null ? next4.hashCode() : 0;
+                    i13 += next4 != null ? next4.hashCode() : 0;
                 }
-                return i12;
+                return i13;
             case 4:
                 va vaVar = (va) this.b;
                 if (vaVar == null) {
@@ -416,42 +416,42 @@ public abstract class j0 implements Map, Serializable, j$.util.Map {
                     vaVar = vaVar2;
                 }
                 Iterator it5 = vaVar.iterator();
-                int i13 = 0;
+                int i14 = 0;
                 while (it5.hasNext()) {
                     Object next5 = it5.next();
-                    i13 += next5 != null ? next5.hashCode() : 0;
+                    i14 += next5 != null ? next5.hashCode() : 0;
                 }
-                return i13;
+                return i14;
             case 5:
-                h7.y yVar = (h7.y) this.b;
+                j7.y yVar = (j7.y) this.b;
                 if (yVar == null) {
-                    h7.b0 b0Var = (h7.b0) this;
-                    h7.y yVar2 = new h7.y(b0Var, b0Var.e);
+                    j7.b0 b0Var = (j7.b0) this;
+                    j7.y yVar2 = new j7.y(b0Var, b0Var.e);
                     this.b = yVar2;
                     yVar = yVar2;
                 }
                 Iterator it6 = yVar.iterator();
-                int i14 = 0;
+                int i15 = 0;
                 while (it6.hasNext()) {
                     Object next6 = it6.next();
-                    i14 += next6 != null ? next6.hashCode() : 0;
+                    i15 += next6 != null ? next6.hashCode() : 0;
                 }
-                return i14;
+                return i15;
             default:
-                j7.o oVar = (j7.o) this.b;
+                l7.o oVar = (l7.o) this.b;
                 if (oVar == null) {
-                    j7.r rVar = (j7.r) this;
-                    j7.o oVar2 = new j7.o(rVar, rVar.e);
+                    l7.r rVar = (l7.r) this;
+                    l7.o oVar2 = new l7.o(rVar, rVar.e);
                     this.b = oVar2;
                     oVar = oVar2;
                 }
                 Iterator it7 = oVar.iterator();
-                int i15 = 0;
+                int i16 = 0;
                 while (it7.hasNext()) {
                     Object next7 = it7.next();
-                    i15 += next7 != null ? next7.hashCode() : 0;
+                    i16 += next7 != null ? next7.hashCode() : 0;
                 }
-                return i15;
+                return i16;
         }
     }
 
@@ -467,7 +467,7 @@ public abstract class j0 implements Map, Serializable, j$.util.Map {
                 }
                 break;
             case 2:
-                if (((d7.l) this).size() == 0) {
+                if (((f7.l) this).size() == 0) {
                 }
                 break;
         }
@@ -496,21 +496,21 @@ public abstract class j0 implements Map, Serializable, j$.util.Map {
                 this.c = yVar2;
                 return yVar2;
             case 2:
-                d7.j jVar = (d7.j) this.c;
+                f7.j jVar = (f7.j) this.c;
                 if (jVar != null) {
                     return jVar;
                 }
-                d7.l lVar = (d7.l) this;
-                d7.j jVar2 = new d7.j(lVar, new d7.k(0, lVar.h, lVar.f));
+                f7.l lVar = (f7.l) this;
+                f7.j jVar2 = new f7.j(lVar, new f7.k(0, lVar.h, lVar.f));
                 this.c = jVar2;
                 return jVar2;
             case 3:
-                f7.b bVar = (f7.b) this.c;
+                h7.b bVar = (h7.b) this.c;
                 if (bVar != null) {
                     return bVar;
                 }
-                f7.d dVar = (f7.d) this;
-                f7.b bVar2 = new f7.b(dVar, new f7.c(0, dVar.e));
+                h7.d dVar = (h7.d) this;
+                h7.b bVar2 = new h7.b(dVar, new h7.c(0, dVar.e));
                 this.c = bVar2;
                 return bVar2;
             case 4:
@@ -523,21 +523,21 @@ public abstract class j0 implements Map, Serializable, j$.util.Map {
                 this.c = waVar2;
                 return waVar2;
             case 5:
-                h7.z zVar = (h7.z) this.c;
+                j7.z zVar = (j7.z) this.c;
                 if (zVar != null) {
                     return zVar;
                 }
-                h7.b0 b0Var = (h7.b0) this;
-                h7.z zVar2 = new h7.z(b0Var, new h7.a0(0, b0Var.e));
+                j7.b0 b0Var = (j7.b0) this;
+                j7.z zVar2 = new j7.z(b0Var, new j7.a0(0, b0Var.e));
                 this.c = zVar2;
                 return zVar2;
             default:
-                j7.p pVar = (j7.p) this.c;
+                l7.p pVar = (l7.p) this.c;
                 if (pVar != null) {
                     return pVar;
                 }
-                j7.r rVar = (j7.r) this;
-                j7.p pVar2 = new j7.p(rVar, new j7.q(0, rVar.e));
+                l7.r rVar = (l7.r) this;
+                l7.p pVar2 = new l7.p(rVar, new l7.q(0, rVar.e));
                 this.c = pVar2;
                 return pVar2;
         }
@@ -545,7 +545,7 @@ public abstract class j0 implements Map, Serializable, j$.util.Map {
 
     @Override // java.util.Map, j$.util.Map
     public /* synthetic */ Object merge(Object obj, Object obj2, BiFunction biFunction) {
-        int i9 = this.a;
+        int i10 = this.a;
         return Map.-CC.$default$merge(this, obj, obj2, biFunction);
     }
 
@@ -591,36 +591,36 @@ public abstract class j0 implements Map, Serializable, j$.util.Map {
 
     @Override // java.util.Map, j$.util.Map
     public /* synthetic */ Object putIfAbsent(Object obj, Object obj2) {
-        int i9 = this.a;
+        int i10 = this.a;
         return Map.-CC.$default$putIfAbsent(this, obj, obj2);
     }
 
     @Override // java.util.Map, j$.util.Map
     public /* synthetic */ boolean remove(Object obj, Object obj2) {
-        int i9 = this.a;
+        int i10 = this.a;
         return Map.-CC.$default$remove(this, obj, obj2);
     }
 
     @Override // java.util.Map, j$.util.Map
     public /* synthetic */ Object replace(Object obj, Object obj2) {
-        int i9 = this.a;
+        int i10 = this.a;
         return Map.-CC.$default$replace(this, obj, obj2);
     }
 
     @Override // java.util.Map, j$.util.Map
     public /* synthetic */ void replaceAll(BiFunction biFunction) {
-        int i9 = this.a;
+        int i10 = this.a;
         Map.-CC.$default$replaceAll(this, biFunction);
     }
 
     public final String toString() {
         switch (this.a) {
             case 0:
-                int i9 = ((s0) this).h;
-                if (i9 < 0) {
-                    throw new IllegalArgumentException(j3.r0.l(i9, "size cannot be negative but was: "));
+                int i10 = ((s0) this).h;
+                if (i10 < 0) {
+                    throw new IllegalArgumentException(j7.l1.k(i10, "size cannot be negative but was: "));
                 }
-                StringBuilder sb2 = new StringBuilder((int) Math.min(i9 * 8, 1073741824L));
+                StringBuilder sb2 = new StringBuilder((int) Math.min(i10 * 8, 1073741824L));
                 sb2.append('{');
                 Iterator it = ((o0) entrySet()).iterator();
                 boolean z10 = true;
@@ -637,11 +637,11 @@ public abstract class j0 implements Map, Serializable, j$.util.Map {
                 sb2.append('}');
                 return sb2.toString();
             case 1:
-                int i10 = ((com.google.android.gms.internal.play_billing.a0) this).h;
-                if (i10 < 0) {
-                    throw new IllegalArgumentException(j3.r0.l(i10, "size cannot be negative but was: "));
+                int i11 = ((com.google.android.gms.internal.play_billing.a0) this).h;
+                if (i11 < 0) {
+                    throw new IllegalArgumentException(j7.l1.k(i11, "size cannot be negative but was: "));
                 }
-                StringBuilder sb3 = new StringBuilder((int) Math.min(i10 * 8, 1073741824L));
+                StringBuilder sb3 = new StringBuilder((int) Math.min(i11 * 8, 1073741824L));
                 sb3.append('{');
                 Iterator it2 = ((com.google.android.gms.internal.play_billing.x) entrySet()).iterator();
                 boolean z11 = true;
@@ -658,13 +658,13 @@ public abstract class j0 implements Map, Serializable, j$.util.Map {
                 sb3.append('}');
                 return sb3.toString();
             case 2:
-                int i11 = ((d7.l) this).h;
-                if (i11 < 0) {
-                    throw new IllegalArgumentException(j3.r0.l(i11, "size cannot be negative but was: "));
+                int i12 = ((f7.l) this).h;
+                if (i12 < 0) {
+                    throw new IllegalArgumentException(j7.l1.k(i12, "size cannot be negative but was: "));
                 }
-                StringBuilder sb4 = new StringBuilder((int) Math.min(i11 * 8, 1073741824L));
+                StringBuilder sb4 = new StringBuilder((int) Math.min(i12 * 8, 1073741824L));
                 sb4.append('{');
-                Iterator it3 = ((d7.i) entrySet()).iterator();
+                Iterator it3 = ((f7.i) entrySet()).iterator();
                 boolean z12 = true;
                 while (it3.hasNext()) {
                     Map.Entry entry3 = (Map.Entry) it3.next();
@@ -682,7 +682,7 @@ public abstract class j0 implements Map, Serializable, j$.util.Map {
                 boolean z13 = true;
                 StringBuilder sb5 = new StringBuilder((int) Math.min(1 * 8, 1073741824L));
                 sb5.append('{');
-                Iterator it4 = ((f7.a) entrySet()).iterator();
+                Iterator it4 = ((h7.a) entrySet()).iterator();
                 while (it4.hasNext()) {
                     Map.Entry entry4 = (Map.Entry) it4.next();
                     if (!z13) {
@@ -716,7 +716,7 @@ public abstract class j0 implements Map, Serializable, j$.util.Map {
                 boolean z15 = true;
                 StringBuilder sb7 = new StringBuilder((int) Math.min(1 * 8, 1073741824L));
                 sb7.append('{');
-                Iterator it6 = ((h7.y) entrySet()).iterator();
+                Iterator it6 = ((j7.y) entrySet()).iterator();
                 while (it6.hasNext()) {
                     Map.Entry entry6 = (Map.Entry) it6.next();
                     if (!z15) {
@@ -733,7 +733,7 @@ public abstract class j0 implements Map, Serializable, j$.util.Map {
                 boolean z16 = true;
                 StringBuilder sb8 = new StringBuilder((int) Math.min(1 * 8, 1073741824L));
                 sb8.append('{');
-                Iterator it7 = ((j7.o) entrySet()).iterator();
+                Iterator it7 = ((l7.o) entrySet()).iterator();
                 while (it7.hasNext()) {
                     Map.Entry entry7 = (Map.Entry) it7.next();
                     if (!z16) {
@@ -771,20 +771,20 @@ public abstract class j0 implements Map, Serializable, j$.util.Map {
                 this.d = zVar2;
                 return zVar2;
             case 2:
-                d7.k kVar = (d7.k) this.d;
+                f7.k kVar = (f7.k) this.d;
                 if (kVar != null) {
                     return kVar;
                 }
-                d7.l lVar = (d7.l) this;
-                d7.k kVar2 = new d7.k(1, lVar.h, lVar.f);
+                f7.l lVar = (f7.l) this;
+                f7.k kVar2 = new f7.k(1, lVar.h, lVar.f);
                 this.d = kVar2;
                 return kVar2;
             case 3:
-                f7.c cVar = (f7.c) this.d;
+                h7.c cVar = (h7.c) this.d;
                 if (cVar != null) {
                     return cVar;
                 }
-                f7.c cVar2 = new f7.c(1, ((f7.d) this).e);
+                h7.c cVar2 = new h7.c(1, ((h7.d) this).e);
                 this.d = cVar2;
                 return cVar2;
             case 4:
@@ -796,19 +796,19 @@ public abstract class j0 implements Map, Serializable, j$.util.Map {
                 this.d = xaVar2;
                 return xaVar2;
             case 5:
-                h7.a0 a0Var2 = (h7.a0) this.d;
+                j7.a0 a0Var2 = (j7.a0) this.d;
                 if (a0Var2 != null) {
                     return a0Var2;
                 }
-                h7.a0 a0Var3 = new h7.a0(1, ((h7.b0) this).e);
+                j7.a0 a0Var3 = new j7.a0(1, ((j7.b0) this).e);
                 this.d = a0Var3;
                 return a0Var3;
             default:
-                j7.q qVar = (j7.q) this.d;
+                l7.q qVar = (l7.q) this.d;
                 if (qVar != null) {
                     return qVar;
                 }
-                j7.q qVar2 = new j7.q(1, ((j7.r) this).e);
+                l7.q qVar2 = new l7.q(1, ((l7.r) this).e);
                 this.d = qVar2;
                 return qVar2;
         }
@@ -836,7 +836,7 @@ public abstract class j0 implements Map, Serializable, j$.util.Map {
 
     @Override // java.util.Map, j$.util.Map
     public /* synthetic */ boolean replace(Object obj, Object obj2, Object obj3) {
-        int i9 = this.a;
+        int i10 = this.a;
         return Map.-CC.$default$replace(this, obj, obj2, obj3);
     }
 }

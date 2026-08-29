@@ -1,25 +1,11 @@
 package com.google.firebase.messaging;
 
-import android.os.Bundle;
-import android.os.Parcel;
-import android.os.Parcelable;
-import g7.p8;
-
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class r extends y5.a {
-    public static final Parcelable.Creator<r> CREATOR = new c.c(3);
-    public final Bundle a;
-    public a0.f b;
-
-    public r(Bundle bundle) {
-        this.a = bundle;
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i9) {
-        int q10 = p8.q(parcel, 20293);
-        p8.b(parcel, 2, this.a);
-        p8.r(parcel, q10);
+public class r extends Exception {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public r(String str) {
+        super(str);
+        z5.l.g(str, "Detail message must not be empty");
     }
 }

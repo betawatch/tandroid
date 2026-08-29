@@ -1,195 +1,103 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.tl.TL_iv;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.text.Layout;
+import android.text.SpannableString;
+import android.text.style.CharacterStyle;
+import android.text.style.ClickableSpan;
+import android.view.MotionEvent;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class w80 extends f7.p8 {
-    public int a;
-    public final TL_iv.PageBlock b;
-    public TL_iv.textConcat c = new TL_iv.textConcat();
+public final class w80 extends org.telegram.ui.ActionBar.h5 {
+    public final org.telegram.ui.ActionBar.c6 I0;
+    public final v80 J0;
+    public z80 K0;
 
-    public w80(TL_iv.PageBlock pageBlock) {
-        this.b = pageBlock;
+    public w80(Context context, org.telegram.ui.ActionBar.c6 c6Var) {
+        super(context);
+        this.J0 = new v80(this);
+        this.I0 = c6Var;
     }
 
-    public static TL_iv.RichText x(TL_iv.textConcat textconcat) {
-        return textconcat.texts.isEmpty() ? new TL_iv.textEmpty() : textconcat.texts.size() == 1 ? textconcat.texts.get(0) : textconcat;
-    }
-
-    @Override // f7.p8
-    public final void a(ie.b bVar) {
-        int i9 = this.a;
-        if (i9 >= 64) {
-            return;
+    @Override // org.telegram.ui.ActionBar.h5, android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        canvas.save();
+        canvas.translate(getLayoutX(), getLayoutY());
+        if (this.J0.f(canvas)) {
+            invalidate();
         }
-        this.a = i9 + 1;
-        try {
-            v(bVar);
-        } finally {
-            this.a--;
+        canvas.restore();
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:14:0x00b4  */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x00d4  */
+    @Override // org.telegram.ui.ActionBar.h5, android.view.View
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        ClickableSpan clickableSpan;
+        CharacterStyle characterStyle;
+        v80 v80Var = this.J0;
+        if (v80Var != null) {
+            Layout layout = getLayout();
+            int x4 = (int) motionEvent.getX();
+            int y8 = (int) motionEvent.getY();
+            Layout layout2 = getLayout();
+            if (layout2 != null) {
+                int layoutX = (int) (x4 - getLayoutX());
+                int layoutY = (int) (y8 - getLayoutY());
+                int lineForVertical = layout2.getLineForVertical(layoutY);
+                float f9 = layoutX;
+                int offsetForHorizontal = layout2.getOffsetForHorizontal(lineForVertical, f9);
+                float lineLeft = layout2.getLineLeft(lineForVertical);
+                if (lineLeft <= f9 && layout2.getLineWidth(lineForVertical) + lineLeft >= f9 && layoutY >= 0 && layoutY <= layout2.getHeight()) {
+                    ClickableSpan[] clickableSpanArr = (ClickableSpan[]) new SpannableString(layout2.getText()).getSpans(offsetForHorizontal, offsetForHorizontal, ClickableSpan.class);
+                    if (clickableSpanArr.length != 0 && !AndroidUtilities.isAccessibilityScreenReaderEnabled()) {
+                        clickableSpan = clickableSpanArr[0];
+                        if (clickableSpan == null && motionEvent.getAction() == 0) {
+                            z80 z80Var = new z80(clickableSpan, this.I0, motionEvent.getX(), motionEvent.getY(), 0);
+                            this.K0 = z80Var;
+                            v80Var.a(z80Var, null);
+                            SpannableString spannableString = new SpannableString(layout.getText());
+                            int spanStart = spannableString.getSpanStart(this.K0.i);
+                            int spanEnd = spannableString.getSpanEnd(this.K0.i);
+                            s80 b10 = this.K0.b();
+                            b10.d(layout, spanStart, 0.0f);
+                            layout.getSelectionPath(spanStart, spanEnd, b10);
+                            return true;
+                        }
+                        if (motionEvent.getAction() == 1) {
+                            v80Var.d(true);
+                            z80 z80Var2 = this.K0;
+                            if (z80Var2 != null && (characterStyle = z80Var2.i) == clickableSpan) {
+                                if (characterStyle instanceof ClickableSpan) {
+                                    ((ClickableSpan) characterStyle).onClick(this);
+                                }
+                                this.K0 = null;
+                                return true;
+                            }
+                            this.K0 = null;
+                        }
+                        if (motionEvent.getAction() == 3) {
+                            v80Var.d(true);
+                            this.K0 = null;
+                        }
+                    }
+                }
+            }
+            clickableSpan = null;
+            if (clickableSpan == null) {
+            }
+            if (motionEvent.getAction() == 1) {
+            }
+            if (motionEvent.getAction() == 3) {
+            }
         }
-    }
-
-    @Override // f7.p8
-    public final void b(ie.c cVar) {
-        int i9 = this.a;
-        if (i9 >= 64) {
-            return;
-        }
-        this.a = i9 + 1;
-        try {
-            v(cVar);
-        } finally {
-            this.a--;
-        }
-    }
-
-    @Override // f7.p8
-    public final void c(ie.d dVar) {
-        TL_iv.textFixed textfixed = new TL_iv.textFixed();
-        textfixed.text = z80.j(dVar.h);
-        w(textfixed);
-    }
-
-    @Override // f7.p8
-    public final void d(ie.e eVar) {
-        if (eVar instanceof be.a) {
-            TL_iv.textStrike textstrike = new TL_iv.textStrike();
-            textstrike.text = y(eVar);
-            w(textstrike);
-        } else if (eVar instanceof hc.d) {
-            w(z80.c(((hc.d) eVar).g));
-        } else {
-            v(eVar);
-        }
-    }
-
-    @Override // f7.p8
-    public final void e(ie.g gVar) {
-        TL_iv.textItalic textitalic = new TL_iv.textItalic();
-        textitalic.text = y(gVar);
-        w(textitalic);
-    }
-
-    @Override // f7.p8
-    public final void i(ie.k kVar) {
-        w(y(kVar));
-    }
-
-    @Override // f7.p8
-    public final void k(ie.n nVar) {
-        if (!(nVar instanceof hc.a)) {
-            v(nVar);
-            return;
-        }
-        if (!this.c.texts.isEmpty()) {
-            w(z80.j("\n"));
-        }
-        w(z80.c(((hc.a) nVar).g));
-        w(z80.j("\n"));
-    }
-
-    @Override // f7.p8
-    public final void l(ie.o oVar) {
-        int i9 = this.a;
-        if (i9 >= 64) {
-            return;
-        }
-        this.a = i9 + 1;
-        try {
-            v(oVar);
-        } finally {
-            this.a--;
-        }
-    }
-
-    @Override // f7.p8
-    public final void m(ie.q qVar) {
-        int i9 = this.a;
-        if (i9 >= 64) {
-            return;
-        }
-        this.a = i9 + 1;
-        try {
-            v(qVar);
-        } finally {
-            this.a--;
-        }
-    }
-
-    @Override // f7.p8
-    public final void n(ie.r rVar) {
-        if (!this.c.texts.isEmpty()) {
-            w(z80.j("\n\n"));
-        }
-        v(rVar);
-    }
-
-    @Override // f7.p8
-    public final void o(ie.s sVar) {
-        w(z80.j(sVar.g));
-    }
-
-    @Override // f7.p8
-    public final void q(ie.d dVar) {
-        w(z80.j(dVar.h));
-    }
-
-    @Override // f7.p8
-    public final void r(ie.g gVar) {
-        w(z80.j("\n"));
-    }
-
-    @Override // f7.p8
-    public final void s(ie.k kVar) {
-        String str = kVar.h;
-        if (str == null) {
-            str = "";
-        }
-        String trim = str.trim();
-        if (trim.startsWith("mailto:")) {
-            TL_iv.RichText textemail = new TL_iv.textEmail();
-            textemail.text = y(kVar);
-            textemail.email = trim.substring(7);
-            w(textemail);
-            return;
-        }
-        if (trim.startsWith("tel:")) {
-            TL_iv.textPhone textphone = new TL_iv.textPhone();
-            textphone.text = y(kVar);
-            textphone.phone = trim.substring(4);
-            w(textphone);
-            return;
-        }
-        TL_iv.RichText texturl = new TL_iv.textUrl();
-        texturl.text = y(kVar);
-        texturl.url = trim;
-        w(texturl);
-    }
-
-    @Override // f7.p8
-    public final void t(ie.g gVar) {
-        w(z80.j(this.b instanceof TL_iv.pageBlockBlockquote ? "\n" : " "));
-    }
-
-    @Override // f7.p8
-    public final void u(ie.g gVar) {
-        TL_iv.textBold textbold = new TL_iv.textBold();
-        textbold.text = y(gVar);
-        w(textbold);
-    }
-
-    public final void w(TL_iv.RichText richText) {
-        this.c.texts.add(richText);
-    }
-
-    public final TL_iv.RichText y(ie.p pVar) {
-        TL_iv.textConcat textconcat = this.c;
-        this.c = new TL_iv.textConcat();
-        v(pVar);
-        TL_iv.RichText x10 = x(this.c);
-        this.c = textconcat;
-        return x10;
+        return this.K0 != null || super.onTouchEvent(motionEvent);
     }
 }

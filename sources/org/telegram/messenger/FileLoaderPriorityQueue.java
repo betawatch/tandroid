@@ -2,7 +2,7 @@ package org.telegram.messenger;
 
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public class FileLoaderPriorityQueue {
     public static final int PRIORITY_VALUE_LOW = 0;
@@ -17,46 +17,46 @@ public class FileLoaderPriorityQueue {
     public ArrayList<FileLoadOperation> allOperations = new ArrayList<>();
     public ArrayList<FileLoadOperation> tmpListOperations = new ArrayList<>();
     boolean checkOperationsScheduled = false;
-    Runnable checkOperationsRunnable = new e1(this, 20);
+    Runnable checkOperationsRunnable = new d1(this, 20);
 
-    public FileLoaderPriorityQueue(int i9, String str, int i10, DispatchQueue dispatchQueue) {
-        this.currentAccount = i9;
+    public FileLoaderPriorityQueue(int i10, String str, int i11, DispatchQueue dispatchQueue) {
+        this.currentAccount = i10;
         this.name = str;
-        this.type = i10;
+        this.type = i11;
         this.workerQueue = dispatchQueue;
     }
 
     private void checkLoadingOperationInternal() {
-        int i9 = this.type == 1 ? MessagesController.getInstance(this.currentAccount).largeQueueMaxActiveOperations : MessagesController.getInstance(this.currentAccount).smallQueueMaxActiveOperations;
+        int i10 = this.type == 1 ? MessagesController.getInstance(this.currentAccount).largeQueueMaxActiveOperations : MessagesController.getInstance(this.currentAccount).smallQueueMaxActiveOperations;
         this.tmpListOperations.clear();
-        int i10 = 0;
-        boolean z10 = false;
         int i11 = 0;
-        while (i10 < this.allOperations.size()) {
-            FileLoadOperation fileLoadOperation = i10 > 0 ? this.allOperations.get(i10 - 1) : null;
-            FileLoadOperation fileLoadOperation2 = this.allOperations.get(i10);
-            if (i10 > 0 && !z10) {
+        boolean z10 = false;
+        int i12 = 0;
+        while (i11 < this.allOperations.size()) {
+            FileLoadOperation fileLoadOperation = i11 > 0 ? this.allOperations.get(i11 - 1) : null;
+            FileLoadOperation fileLoadOperation2 = this.allOperations.get(i11);
+            if (i11 > 0 && !z10) {
                 if (this.type == 1 && fileLoadOperation != null && fileLoadOperation.isStory && fileLoadOperation.getPriority() >= 1048576 && fileLoadOperation2.getPriority() <= 0) {
                     z10 = true;
                 }
-                if (i11 > 0 && fileLoadOperation2.getPriority() == 0) {
+                if (i12 > 0 && fileLoadOperation2.getPriority() == 0) {
                     z10 = true;
                 }
             }
             if (fileLoadOperation2.preFinished) {
-                i9++;
+                i10++;
             } else {
-                if (!z10 && i10 < i9) {
+                if (!z10 && i11 < i10) {
                     this.tmpListOperations.add(fileLoadOperation2);
                 } else if (fileLoadOperation2.wasStarted()) {
                     fileLoadOperation2.pause();
                 }
-                i11 = fileLoadOperation2.getPriority();
+                i12 = fileLoadOperation2.getPriority();
             }
-            i10++;
+            i11++;
         }
-        for (int i12 = 0; i12 < this.tmpListOperations.size(); i12++) {
-            this.tmpListOperations.get(i12).start();
+        for (int i13 = 0; i13 < this.tmpListOperations.size(); i13++) {
+            this.tmpListOperations.get(i13).start();
         }
     }
 
@@ -70,27 +70,27 @@ public class FileLoaderPriorityQueue {
         if (fileLoadOperation == null) {
             return;
         }
-        int i9 = 0;
         int i10 = 0;
-        while (i10 < this.allOperations.size()) {
-            if (this.allOperations.get(i10) == fileLoadOperation) {
-                this.allOperations.remove(i10);
-                i10--;
+        int i11 = 0;
+        while (i11 < this.allOperations.size()) {
+            if (this.allOperations.get(i11) == fileLoadOperation) {
+                this.allOperations.remove(i11);
+                i11--;
             }
-            i10++;
+            i11++;
         }
         while (true) {
-            if (i9 >= this.allOperations.size()) {
-                i9 = -1;
+            if (i10 >= this.allOperations.size()) {
+                i10 = -1;
                 break;
-            } else if (fileLoadOperation.getPriority() > this.allOperations.get(i9).getPriority()) {
+            } else if (fileLoadOperation.getPriority() > this.allOperations.get(i10).getPriority()) {
                 break;
             } else {
-                i9++;
+                i10++;
             }
         }
-        if (i9 >= 0) {
-            this.allOperations.add(i9, fileLoadOperation);
+        if (i10 >= 0) {
+            this.allOperations.add(i10, fileLoadOperation);
         } else {
             this.allOperations.add(fileLoadOperation);
         }

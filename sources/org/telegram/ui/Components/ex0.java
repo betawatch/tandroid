@@ -1,12 +1,15 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
-
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class ex0 extends AlertDialog$Builder {
-    public ArrayList c;
-    public int d;
-    public org.telegram.ui.ActionBar.o2 e;
+public final class ex0 extends org.telegram.ui.pt0 {
+    @Override // org.telegram.ui.pt0, org.telegram.ui.xt0
+    public final boolean P() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.pt0, org.telegram.ui.xt0
+    public final boolean z() {
+        return false;
+    }
 }

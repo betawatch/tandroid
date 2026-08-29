@@ -1,168 +1,65 @@
 package ih;
 
 import android.content.Context;
+import android.text.SpannableStringBuilder;
+import android.text.TextUtils;
 import android.view.View;
-import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
-import org.telegram.ui.Components.nr;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.Components.aj0;
+import org.telegram.ui.Components.jl0;
+import org.telegram.ui.Components.k51;
+import org.telegram.ui.Components.t41;
+import org.telegram.ui.Components.u51;
+import org.telegram.ui.Components.v41;
+import org.telegram.ui.Components.w41;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
-/* loaded from: classes4.dex */
-public final class v4 extends nr {
-    public final /* synthetic */ w4 c;
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* loaded from: classes.dex */
+public final class v4 extends v41 {
+    public static final /* synthetic */ int a = 0;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public v4(w4 w4Var, Context context, b bVar) {
-        super(context, bVar, false);
-        this.c = w4Var;
+    static {
+        v41.setup(new v4());
     }
 
-    @Override // org.telegram.ui.Components.nr
-    public final void b(ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout) {
-        actionBarPopupWindow$ActionBarPopupWindowLayout.setBackgroundColor(i0.a.d(0.18f, -16777216, -1));
-        w4 w4Var = this.c;
-        g5 g5Var = w4Var.x;
-        f5 f5Var = g5Var.A;
-        boolean z10 = f5Var != null && f5Var.f;
-        org.telegram.ui.ActionBar.g1 c10 = org.telegram.ui.ActionBar.w0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, z10 ? R.drawable.menu_views_reposts : g5Var.K.a ? R.drawable.menu_views_reactions2 : R.drawable.menu_views_reactions, LocaleController.getString(z10 ? R.string.SortByReposts : R.string.SortByReactions), false, g5Var.s);
-        if (!g5Var.K.a) {
-            c10.setAlpha(0.5f);
+    @Override // org.telegram.ui.Components.v41
+    public final void bindView(View view, w41 w41Var, boolean z10, k51 k51Var, u51 u51Var) {
+        w4 w4Var = (w4) view;
+        TL_stars.starGiftAttributeModel stargiftattributemodel = (TL_stars.starGiftAttributeModel) w41Var.G;
+        int i10 = w41Var.z;
+        String str = (String) w41Var.l;
+        boolean z11 = w41Var.e;
+        aj0 aj0Var = w4Var.c;
+        u4 u4Var = w4Var.J;
+        if (u4Var == null || w4Var.I != stargiftattributemodel.document.id) {
+            w4Var.I = stargiftattributemodel.document.id;
+            if (u4Var != null) {
+                u4Var.o(aj0Var);
+            }
+            w4Var.J = new u4(3, w4Var.H, stargiftattributemodel.document);
         }
-        final int i9 = 0;
-        c10.setOnClickListener(new View.OnClickListener(this) { // from class: ih.u4
-            public final /* synthetic */ v4 b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                switch (i9) {
-                    case 0:
-                        g5 g5Var2 = this.b.c.x;
-                        s4 s4Var = g5Var2.K;
-                        if (!s4Var.a) {
-                            s4 s4Var2 = g5Var2.I;
-                            if (s4Var2 != null) {
-                                s4Var.a = true;
-                                s4Var2.a = true;
-                            } else {
-                                s4Var.a = true;
-                            }
-                            g5Var2.h(true);
-                            g5.b(g5Var2);
-                            g5Var2.J.accept(g5Var2);
-                        }
-                        v4 v4Var = g5Var2.f;
-                        if (v4Var != null) {
-                            v4Var.a();
-                            break;
-                        }
-                        break;
-                    default:
-                        g5 g5Var3 = this.b.c.x;
-                        s4 s4Var3 = g5Var3.K;
-                        if (s4Var3.a) {
-                            s4 s4Var4 = g5Var3.I;
-                            if (s4Var4 != null) {
-                                s4Var3.a = false;
-                                s4Var4.a = false;
-                            } else {
-                                s4Var3.a = false;
-                            }
-                            g5Var3.h(true);
-                            g5.b(g5Var3);
-                            g5Var3.J.accept(g5Var3);
-                        }
-                        v4 v4Var2 = g5Var3.f;
-                        if (v4Var2 != null) {
-                            v4Var2.a();
-                            break;
-                        }
-                        break;
-                }
-            }
-        });
-        org.telegram.ui.ActionBar.g1 c11 = org.telegram.ui.ActionBar.w0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, !g5Var.K.a ? R.drawable.menu_views_recent2 : R.drawable.menu_views_recent, LocaleController.getString(R.string.SortByTime), false, g5Var.s);
-        if (g5Var.K.a) {
-            c11.setAlpha(0.5f);
+        if (aj0Var.isAttachedToWindow()) {
+            w4Var.J.a(aj0Var);
         }
-        final int i10 = 1;
-        c11.setOnClickListener(new View.OnClickListener(this) { // from class: ih.u4
-            public final /* synthetic */ v4 b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                switch (i10) {
-                    case 0:
-                        g5 g5Var2 = this.b.c.x;
-                        s4 s4Var = g5Var2.K;
-                        if (!s4Var.a) {
-                            s4 s4Var2 = g5Var2.I;
-                            if (s4Var2 != null) {
-                                s4Var.a = true;
-                                s4Var2.a = true;
-                            } else {
-                                s4Var.a = true;
-                            }
-                            g5Var2.h(true);
-                            g5.b(g5Var2);
-                            g5Var2.J.accept(g5Var2);
-                        }
-                        v4 v4Var = g5Var2.f;
-                        if (v4Var != null) {
-                            v4Var.a();
-                            break;
-                        }
-                        break;
-                    default:
-                        g5 g5Var3 = this.b.c.x;
-                        s4 s4Var3 = g5Var3.K;
-                        if (s4Var3.a) {
-                            s4 s4Var4 = g5Var3.I;
-                            if (s4Var4 != null) {
-                                s4Var3.a = false;
-                                s4Var4.a = false;
-                            } else {
-                                s4Var3.a = false;
-                            }
-                            g5Var3.h(true);
-                            g5.b(g5Var3);
-                            g5Var3.J.accept(g5Var3);
-                        }
-                        v4 v4Var2 = g5Var3.f;
-                        if (v4Var2 != null) {
-                            v4Var2.a();
-                            break;
-                        }
-                        break;
-                }
-            }
-        });
-        View l1Var = new org.telegram.ui.ActionBar.l1(w4Var.getContext(), org.telegram.ui.ActionBar.f6.H8, g5Var.s);
-        l1Var.setTag(R.id.fit_width_tag, 1);
-        actionBarPopupWindow$ActionBarPopupWindowLayout.a(l1Var, g7.e6.n(-1, 8));
-        String string = LocaleController.getString(z10 ? R.string.StoryReactionsSortDescription : R.string.StoryViewsSortDescription);
-        b bVar = g5Var.s;
-        TextView textView = new TextView(actionBarPopupWindow$ActionBarPopupWindowLayout.getContext());
-        textView.setTextSize(1, 13.0f);
-        textView.setTextColor(org.telegram.ui.ActionBar.f6.v0(org.telegram.ui.ActionBar.f6.j5, bVar));
-        textView.setPadding(AndroidUtilities.dp(13.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(13.0f), AndroidUtilities.dp(8.0f));
-        textView.setText(string);
-        textView.setTag(R.id.fit_width_tag, 1);
-        textView.setMaxWidth(AndroidUtilities.dp(200.0f));
-        actionBarPopupWindow$ActionBarPopupWindowLayout.a(textView, g7.e6.n(-1, -2));
+        CharSequence charSequence = stargiftattributemodel.name;
+        if (!TextUtils.isEmpty(str)) {
+            charSequence = AndroidUtilities.highlightText(charSequence, str, w4Var.B);
+        }
+        if (i10 > 0) {
+            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(charSequence);
+            spannableStringBuilder.append((CharSequence) "  ");
+            int length = spannableStringBuilder.length();
+            spannableStringBuilder.append((CharSequence) Integer.toString(i10));
+            spannableStringBuilder.setSpan(new t41(AndroidUtilities.bold()), length, spannableStringBuilder.length(), 33);
+            charSequence = spannableStringBuilder;
+        }
+        w4Var.g(charSequence, 0, w4Var.J);
+        w4Var.setChecked(z11);
     }
 
-    @Override // org.telegram.ui.Components.nr
-    public final void c() {
+    @Override // org.telegram.ui.Components.v41
+    public final View createView(Context context, jl0 jl0Var, int i10, int i11, org.telegram.ui.ActionBar.c6 c6Var) {
+        return new w4(context, i10, c6Var);
     }
 }

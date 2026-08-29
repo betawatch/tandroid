@@ -1,44 +1,50 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.View;
-import org.telegram.messenger.MessagesController;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
+import android.text.Editable;
+import android.text.TextWatcher;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class w extends org.telegram.ui.b61 {
-    public final /* synthetic */ org.telegram.ui.s51[] Z1;
-    public final /* synthetic */ y a2;
+public final class w implements TextWatcher {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ a0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public w(y yVar, Context context, Integer num, org.telegram.ui.ActionBar.b6 b6Var, org.telegram.ui.s51[] s51VarArr) {
-        super(null, context, true, num, 15, b6Var);
-        this.a2 = yVar;
-        this.Z1 = s51VarArr;
+    public /* synthetic */ w(a0 a0Var, int i10) {
+        this.a = i10;
+        this.b = a0Var;
     }
 
-    @Override // org.telegram.ui.b61
-    public final boolean F(TL_stars.TL_starGiftUnique tL_starGiftUnique) {
-        int i9;
-        if (tL_starGiftUnique == null) {
-            return true;
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        switch (this.a) {
+            case 0:
+                this.b.W();
+                break;
+            default:
+                this.b.W();
+                break;
         }
-        i9 = ((org.telegram.ui.ActionBar.f3) this.a2).currentAccount;
-        return gh.v7.y(i9, false).n(tL_starGiftUnique.id) == null || MessagesController.getGlobalMainSettings().getInt("statusgiftpage", 0) >= 2;
     }
 
-    @Override // org.telegram.ui.b61
-    public final void p(View view, Long l10, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, Integer num) {
-        y yVar = this.a2;
-        yVar.d0 = l10;
-        yVar.W();
-        yVar.V();
-        org.telegram.ui.s51 s51Var = this.Z1[0];
-        if (s51Var != null) {
-            yVar.e0 = null;
-            s51Var.dismiss();
-        }
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        int i13 = this.a;
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        int i13 = this.a;
+    }
+
+    private final void a(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void b(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void c(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void d(int i10, int i11, int i12, CharSequence charSequence) {
     }
 }

@@ -2,18 +2,18 @@ package org.telegram.ui;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
 public final class bv0 implements View.OnClickListener {
-    public final /* synthetic */ org.telegram.ui.Components.x60 a;
+    public final /* synthetic */ org.telegram.ui.Components.j70 a;
 
-    public bv0(org.telegram.ui.Components.x60 x60Var) {
-        this.a = x60Var;
+    public bv0(org.telegram.ui.Components.j70 j70Var) {
+        this.a = j70Var;
     }
 
     @Override // android.view.View.OnClickListener
     public final void onClick(View view) {
-        org.telegram.ui.Components.gc.e();
+        org.telegram.ui.Components.mc.e();
         this.a.s();
     }
 }

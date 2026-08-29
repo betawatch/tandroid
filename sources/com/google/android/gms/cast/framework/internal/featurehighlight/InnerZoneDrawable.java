@@ -4,7 +4,7 @@ import android.graphics.Canvas;
 import android.graphics.ColorFilter;
 import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 class InnerZoneDrawable extends Drawable {
     public float a;
@@ -24,7 +24,7 @@ class InnerZoneDrawable extends Drawable {
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i9) {
+    public final void setAlpha(int i10) {
         throw null;
     }
 
@@ -33,17 +33,17 @@ class InnerZoneDrawable extends Drawable {
         throw null;
     }
 
-    public void setPulseAlpha(float f10) {
-        this.b = f10;
+    public void setPulseAlpha(float f9) {
+        this.b = f9;
         invalidateSelf();
     }
 
-    public void setPulseScale(float f10) {
+    public void setPulseScale(float f9) {
         invalidateSelf();
     }
 
-    public void setScale(float f10) {
-        this.a = f10;
+    public void setScale(float f9) {
+        this.a = f9;
         invalidateSelf();
     }
 }

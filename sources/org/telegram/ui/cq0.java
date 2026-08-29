@@ -3,13 +3,13 @@ package org.telegram.ui;
 import android.content.Context;
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
 public final class cq0 extends FrameLayout {
     public org.telegram.ui.ActionBar.o2 a;
     public FrameLayout b;
-    public org.telegram.ui.ActionBar.k c;
-    public org.telegram.ui.Components.wk0 d;
+    public org.telegram.ui.ActionBar.l c;
+    public org.telegram.ui.Components.jl0 d;
     public int e;
     public final /* synthetic */ eq0 f;
 
@@ -20,9 +20,9 @@ public final class cq0 extends FrameLayout {
     }
 
     @Override // android.view.View
-    public final void setTranslationX(float f10) {
+    public final void setTranslationX(float f9) {
         cq0 cq0Var;
-        super.setTranslationX(f10);
+        super.setTranslationX(f9);
         eq0 eq0Var = this.f;
         cq0[] cq0VarArr = eq0Var.n;
         if (eq0Var.s && (cq0Var = cq0VarArr[0]) == this) {

@@ -1,45 +1,78 @@
 package org.telegram.ui.web;
 
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
+import android.webkit.WebResourceResponse;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.HashMap;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.BuildVars;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class a2 implements Utilities.Callback {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ b2 b;
+public final class a2 extends WebViewClient {
+    public boolean a = true;
+    public boolean b;
+    public final /* synthetic */ InputStream c;
+    public final /* synthetic */ f2 d;
 
-    public /* synthetic */ a2(b2 b2Var, int i9) {
-        this.a = i9;
-        this.b = b2Var;
+    public a2(f2 f2Var, InputStream inputStream) {
+        this.d = f2Var;
+        this.c = inputStream;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        d2 d2Var = (d2) obj;
-        switch (this.a) {
-            case 0:
-                b2 b2Var = this.b;
-                b2Var.l = null;
-                b2Var.i = true;
-                TLRPC.TL_webPage tL_webPage = b2Var.j;
-                if (tL_webPage != null) {
-                    d2.o(tL_webPage);
-                }
-                b2Var.j = d2Var.c;
-                b2Var.c();
-                break;
-            default:
-                b2 b2Var2 = this.b;
-                b2Var2.l = null;
-                b2Var2.i = true;
-                TLRPC.TL_webPage tL_webPage2 = b2Var2.j;
-                if (tL_webPage2 != null) {
-                    d2.o(tL_webPage2);
-                }
-                b2Var2.j = d2Var.c;
-                b2Var2.c();
-                break;
+    @Override // android.webkit.WebViewClient
+    public final WebResourceResponse shouldInterceptRequest(WebView webView, String str) {
+        InputStream a2;
+        String str2;
+        if (this.a) {
+            this.a = false;
+            return new WebResourceResponse("text/html", "UTF-8", new ByteArrayInputStream(a4.w.n("<script>\n", AndroidUtilities.readRes(R.raw.instant).replace("$DEBUG$", "" + BuildVars.DEBUG_VERSION), "\n</script>").getBytes(StandardCharsets.UTF_8)));
         }
+        f2 f2Var = this.d;
+        if (str == null || !str.endsWith("/index.html")) {
+            com.google.firebase.messaging.s sVar = f2Var.b;
+            h1 h1Var = sVar != null ? (h1) ((HashMap) sVar.d).get(str) : null;
+            if (h1Var == null) {
+                return new WebResourceResponse("text/plain", "utf-8", 404, "Not Found", null, null);
+            }
+            i1 i1Var = (i1) h1Var.a.get("content-type");
+            String str3 = i1Var == null ? null : i1Var.a;
+            if (!"text/html".equalsIgnoreCase(str3) && !"text/css".equalsIgnoreCase(str3)) {
+                return new WebResourceResponse("text/plain", "utf-8", 404, "Not Found", null, null);
+            }
+            try {
+                a2 = h1Var.a();
+                str2 = str3;
+            } catch (IOException e10) {
+                FileLog.e(e10);
+                return new WebResourceResponse("text/plain", "utf-8", 503, "Server error", null, null);
+            }
+        } else {
+            str2 = "application/octet-stream";
+            if (this.b) {
+                com.google.firebase.messaging.s sVar2 = f2Var.b;
+                h1 h1Var2 = sVar2 != null ? (h1) ((ArrayList) sVar2.c).get(0) : null;
+                if (h1Var2 == null) {
+                    return new WebResourceResponse("text/plain", "utf-8", 404, "Not Found", null, null);
+                }
+                try {
+                    a2 = h1Var2.a();
+                } catch (IOException e11) {
+                    FileLog.e(e11);
+                    return new WebResourceResponse("text/plain", "utf-8", 503, "Server error", null, null);
+                }
+            } else {
+                this.b = true;
+                a2 = this.c;
+            }
+        }
+        return new WebResourceResponse(str2, null, a2);
     }
 }

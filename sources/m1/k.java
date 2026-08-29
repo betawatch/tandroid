@@ -6,7 +6,7 @@ import androidx.datastore.preferences.protobuf.w;
 import androidx.datastore.preferences.protobuf.x;
 import androidx.datastore.preferences.protobuf.x0;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class k extends x {
     public static final int BOOLEAN_FIELD_NUMBER = 1;
@@ -55,14 +55,14 @@ public final class k extends x {
         kVar.value_ = Boolean.valueOf(z10);
     }
 
-    public static void n(k kVar, float f10) {
+    public static void n(k kVar, float f9) {
         kVar.valueCase_ = 2;
-        kVar.value_ = Float.valueOf(f10);
+        kVar.value_ = Float.valueOf(f9);
     }
 
-    public static void o(k kVar, int i9) {
+    public static void o(k kVar, int i10) {
         kVar.valueCase_ = 3;
-        kVar.value_ = Integer.valueOf(i9);
+        kVar.value_ = Integer.valueOf(i10);
     }
 
     public static k q() {
@@ -74,9 +74,9 @@ public final class k extends x {
     }
 
     @Override // androidx.datastore.preferences.protobuf.x
-    public final Object d(int i9) {
+    public final Object d(int i10) {
         x0 x0Var;
-        switch (j.b(i9)) {
+        switch (j.b(i10)) {
             case 0:
                 return (byte) 1;
             case 1:
@@ -101,8 +101,8 @@ public final class k extends x {
                             x0Var = new w();
                             PARSER = x0Var;
                         }
-                    } catch (Throwable th) {
-                        throw th;
+                    } catch (Throwable th2) {
+                        throw th2;
                     }
                 }
                 return x0Var;

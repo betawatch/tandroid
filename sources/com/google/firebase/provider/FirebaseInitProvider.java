@@ -9,11 +9,11 @@ import android.net.Uri;
 import android.os.SystemClock;
 import android.util.Log;
 import java.util.concurrent.atomic.AtomicBoolean;
-import s8.a;
-import s8.h;
-import x5.l;
+import u8.a;
+import u8.g;
+import z5.l;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public class FirebaseInitProvider extends ContentProvider {
     public static final a a = new a(System.currentTimeMillis(), SystemClock.elapsedRealtime(), SystemClock.uptimeMillis());
@@ -48,16 +48,16 @@ public class FirebaseInitProvider extends ContentProvider {
         AtomicBoolean atomicBoolean = b;
         try {
             atomicBoolean.set(true);
-            if (h.f(getContext()) == null) {
+            if (g.f(getContext()) == null) {
                 Log.i("FirebaseInitProvider", "FirebaseApp initialization unsuccessful");
             } else {
                 Log.i("FirebaseInitProvider", "FirebaseApp initialization successful");
             }
             atomicBoolean.set(false);
             return false;
-        } catch (Throwable th) {
+        } catch (Throwable th2) {
             atomicBoolean.set(false);
-            throw th;
+            throw th2;
         }
     }
 

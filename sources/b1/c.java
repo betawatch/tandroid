@@ -1,23 +1,23 @@
 package b1;
 
-import kotlin.jvm.internal.p;
-import oc.i;
-import zc.l;
+import bd.l;
+import kotlin.jvm.internal.q;
+import qc.i;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class c implements zc.a {
+public final /* synthetic */ class c implements bd.a {
     public final /* synthetic */ int a;
     public final /* synthetic */ l b;
-    public final /* synthetic */ p c;
+    public final /* synthetic */ q c;
 
-    public /* synthetic */ c(l lVar, p pVar, int i9) {
-        this.a = i9;
+    public /* synthetic */ c(l lVar, q qVar, int i10) {
+        this.a = i10;
         this.b = lVar;
-        this.c = pVar;
+        this.c = qVar;
     }
 
-    @Override // zc.a
+    @Override // bd.a
     public final Object invoke() {
         switch (this.a) {
             case 0:

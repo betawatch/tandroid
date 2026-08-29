@@ -1,17 +1,9 @@
 package com.google.android.gms.internal.play_billing;
 
-import java.util.concurrent.Executor;
-
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class v2 {
-    public static final v2 d = new v2(null, null);
-    public final Runnable a;
-    public final Executor b;
-    public v2 c;
-
-    public v2(Runnable runnable, Executor executor) {
-        this.a = runnable;
-        this.b = executor;
+public final class v2 extends RuntimeException {
+    public v2() {
+        super("Message was missing required fields.  (Lite runtime could not determine which fields were missing).");
     }
 }

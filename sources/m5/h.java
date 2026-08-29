@@ -1,42 +1,42 @@
 package m5;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import g7.p8;
-import java.util.Arrays;
+import ag.j2;
+import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.auth.api.signin.internal.SignInConfiguration;
+import com.google.android.gms.auth.api.signin.internal.SignInHubActivity;
+import com.google.android.gms.common.api.m;
+import java.util.Iterator;
+import java.util.Set;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class h extends y5.a {
-    public static final Parcelable.Creator<h> CREATOR = new v(1);
-    public final String a;
-    public final String b;
+public abstract class h {
+    public static final j2 a = new j2("GoogleSignInCommon", new String[0]);
 
-    public h(String str, String str2) {
-        this.a = str;
-        this.b = str2;
+    public static Intent a(Context context, GoogleSignInOptions googleSignInOptions) {
+        a.g("getSignInIntent()", new Object[0]);
+        SignInConfiguration signInConfiguration = new SignInConfiguration(context.getPackageName(), googleSignInOptions);
+        Intent intent = new Intent("com.google.android.gms.auth.GOOGLE_SIGN_IN");
+        intent.setPackage(context.getPackageName());
+        intent.setClass(context, SignInHubActivity.class);
+        Bundle bundle = new Bundle();
+        bundle.putParcelable("config", signInConfiguration);
+        intent.putExtra("config", bundle);
+        return intent;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    public static void b(Context context) {
+        i.J(context).L();
+        Set set = m.a;
+        synchronized (set) {
         }
-        if (!(obj instanceof h)) {
-            return false;
+        Iterator it = set.iterator();
+        while (it.hasNext()) {
+            ((m) it.next()).f();
         }
-        h hVar = (h) obj;
-        return x5.l.l(this.a, hVar.a) && x5.l.l(this.b, hVar.b);
-    }
-
-    public final int hashCode() {
-        return Arrays.hashCode(new Object[]{this.a, this.b});
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i9) {
-        int q10 = p8.q(parcel, 20293);
-        p8.l(parcel, 1, this.a);
-        p8.l(parcel, 2, this.b);
-        p8.r(parcel, q10);
+        com.google.android.gms.common.api.internal.h.a();
     }
 }

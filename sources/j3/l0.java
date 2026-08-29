@@ -1,25 +1,11 @@
 package j3;
 
-import android.media.AudioDeviceInfo;
-import android.media.AudioTrack;
-
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public abstract class l0 {
-    public static void a(s sVar, Object obj) {
-        d0 d0Var;
-        AudioDeviceInfo d = i3.i.d(obj);
-        i0 i0Var = (i0) sVar;
-        if (d == null) {
-            d0Var = null;
-        } else {
-            i0Var.getClass();
-            d0Var = new d0(d);
-        }
-        i0Var.Y = d0Var;
-        AudioTrack audioTrack = i0Var.u;
-        if (audioTrack != null) {
-            b0.a(audioTrack, d0Var);
-        }
+public final class l0 {
+    public final /* synthetic */ q0 a;
+
+    public l0(q0 q0Var) {
+        this.a = q0Var;
     }
 }

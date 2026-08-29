@@ -6,7 +6,7 @@ import android.widget.BaseAdapter;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class f extends BaseAdapter {
     public int a = -1;
@@ -24,9 +24,9 @@ public final class f extends BaseAdapter {
             kVar.i();
             ArrayList arrayList = kVar.j;
             int size = arrayList.size();
-            for (int i9 = 0; i9 < size; i9++) {
-                if (((m) arrayList.get(i9)) == mVar) {
-                    this.a = i9;
+            for (int i10 = 0; i10 < size; i10++) {
+                if (((m) arrayList.get(i10)) == mVar) {
+                    this.a = i10;
                     return;
                 }
             }
@@ -36,17 +36,17 @@ public final class f extends BaseAdapter {
 
     @Override // android.widget.Adapter
     /* renamed from: b, reason: merged with bridge method [inline-methods] */
-    public final m getItem(int i9) {
+    public final m getItem(int i10) {
         g gVar = this.b;
         k kVar = gVar.c;
         kVar.i();
         ArrayList arrayList = kVar.j;
         gVar.getClass();
-        int i10 = this.a;
-        if (i10 >= 0 && i9 >= i10) {
-            i9++;
+        int i11 = this.a;
+        if (i11 >= 0 && i10 >= i11) {
+            i10++;
         }
-        return (m) arrayList.get(i9);
+        return (m) arrayList.get(i10);
     }
 
     @Override // android.widget.Adapter
@@ -60,16 +60,16 @@ public final class f extends BaseAdapter {
     }
 
     @Override // android.widget.Adapter
-    public final long getItemId(int i9) {
-        return i9;
+    public final long getItemId(int i10) {
+        return i10;
     }
 
     @Override // android.widget.Adapter
-    public final View getView(int i9, View view, ViewGroup viewGroup) {
+    public final View getView(int i10, View view, ViewGroup viewGroup) {
         if (view == null) {
             view = this.b.b.inflate(R.layout.abc_list_menu_item_layout, viewGroup, false);
         }
-        ((y) view).b(getItem(i9));
+        ((y) view).b(getItem(i10));
         return view;
     }
 

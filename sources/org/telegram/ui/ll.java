@@ -1,34 +1,31 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import org.telegram.ui.Components.UndoView;
+import android.graphics.Bitmap;
+import java.util.ArrayList;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.VideoEditedInfo;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class ll extends org.telegram.ui.Components.y10 {
-    public final /* synthetic */ qn b;
+public final class ll extends pt0 {
+    public final /* synthetic */ Bitmap a;
+    public final /* synthetic */ ArrayList b;
+    public final /* synthetic */ tn c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ll(qn qnVar, Activity activity, org.telegram.ui.ActionBar.o2 o2Var) {
-        super(activity, o2Var);
-        this.b = qnVar;
+    public ll(tn tnVar, Bitmap bitmap, ArrayList arrayList) {
+        this.c = tnVar;
+        this.a = bitmap;
+        this.b = arrayList;
     }
 
-    @Override // org.telegram.ui.Components.y10
-    public final void m() {
-        qn qnVar = this.b;
-        qnVar.Q7();
-        UndoView undoView = qnVar.u3;
-        if (undoView == null) {
-            return;
-        }
-        undoView.j(75, 0L, null);
-        qnVar.getMessagesController().removeSuggestion(qnVar.P5, "CONVERT_GIGAGROUP");
+    @Override // org.telegram.ui.pt0, org.telegram.ui.xt0
+    public final ImageReceiver.BitmapHolder j(int i10) {
+        return new ImageReceiver.BitmapHolder(this.a, (String) null, 0);
     }
 
-    @Override // org.telegram.ui.Components.y10
-    public final void n() {
-        qn qnVar = this.b;
-        qnVar.getMessagesController().convertToGigaGroup(qnVar.getParentActivity(), qnVar.e, qnVar, new b1(this, 19));
+    @Override // org.telegram.ui.pt0, org.telegram.ui.xt0
+    public final void o(int i10, VideoEditedInfo videoEditedInfo, boolean z10, int i11, int i12, boolean z11) {
+        this.c.r((MediaController.PhotoEntry) this.b.get(0), videoEditedInfo, z10, i11, 0, z11, 0L);
     }
 }

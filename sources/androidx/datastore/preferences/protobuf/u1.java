@@ -1,9 +1,9 @@
 package androidx.datastore.preferences.protobuf;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class u1 extends IllegalArgumentException {
-    public u1(int i9, int i10) {
-        super(aa.d.k(i9, i10, "Unpaired surrogate at index ", " of "));
+    public u1(int i10, int i11) {
+        super(a4.w.k(i10, i11, "Unpaired surrogate at index ", " of "));
     }
 }

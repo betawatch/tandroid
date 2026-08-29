@@ -31,7 +31,7 @@ public class ThreadLocalRandom extends Random {
     public static final v f = new v();
     public static final AtomicLong g = new AtomicLong(f(System.currentTimeMillis()) ^ f(System.nanoTime()));
 
-    public /* synthetic */ ThreadLocalRandom(int i9) {
+    public /* synthetic */ ThreadLocalRandom(int i10) {
         this();
     }
 
@@ -55,9 +55,9 @@ public class ThreadLocalRandom extends Random {
         if (addAndGet == 0) {
             addAndGet = 1;
         }
-        long f10 = f(g.getAndAdd(-4942790177534073029L));
+        long f9 = f(g.getAndAdd(-4942790177534073029L));
         ThreadLocalRandom threadLocalRandom = (ThreadLocalRandom) f.get();
-        threadLocalRandom.a = f10;
+        threadLocalRandom.a = f9;
         threadLocalRandom.b = addAndGet;
     }
 
@@ -83,63 +83,63 @@ public class ThreadLocalRandom extends Random {
     }
 
     @Override // java.util.Random
-    public final int next(int i9) {
-        return nextInt() >>> (32 - i9);
+    public final int next(int i10) {
+        return nextInt() >>> (32 - i10);
     }
 
     public final long c(long j10, long j11) {
-        long f10 = f(g());
+        long f9 = f(g());
         if (j10 >= j11) {
-            return f10;
+            return f9;
         }
         long j12 = j11 - j10;
         long j13 = j12 - 1;
         if ((j12 & j13) == 0) {
-            return (f10 & j13) + j10;
+            return (f9 & j13) + j10;
         }
         if (j12 > 0) {
             while (true) {
-                long j14 = f10 >>> 1;
+                long j14 = f9 >>> 1;
                 long j15 = j14 + j13;
                 long j16 = j14 % j12;
                 if (j15 - j16 >= 0) {
                     return j16 + j10;
                 }
-                f10 = f(g());
+                f9 = f(g());
             }
         } else {
             while (true) {
-                if (f10 >= j10 && f10 < j11) {
-                    return f10;
+                if (f9 >= j10 && f9 < j11) {
+                    return f9;
                 }
-                f10 = f(g());
+                f9 = f(g());
             }
         }
     }
 
-    public final int b(int i9, int i10) {
+    public final int b(int i10, int i11) {
         int e10 = e(g());
-        if (i9 >= i10) {
+        if (i10 >= i11) {
             return e10;
         }
-        int i11 = i10 - i9;
-        int i12 = i11 - 1;
-        if ((i11 & i12) == 0) {
-            return (e10 & i12) + i9;
+        int i12 = i11 - i10;
+        int i13 = i12 - 1;
+        if ((i12 & i13) == 0) {
+            return (e10 & i13) + i10;
         }
-        if (i11 > 0) {
-            int i13 = e10 >>> 1;
+        if (i12 > 0) {
+            int i14 = e10 >>> 1;
             while (true) {
-                int i14 = i13 + i12;
-                int i15 = i13 % i11;
-                if (i14 - i15 >= 0) {
-                    return i15 + i9;
+                int i15 = i14 + i13;
+                int i16 = i14 % i12;
+                if (i15 - i16 >= 0) {
+                    return i16 + i10;
                 }
-                i13 = e(g()) >>> 1;
+                i14 = e(g()) >>> 1;
             }
         } else {
             while (true) {
-                if (e10 >= i9 && e10 < i10) {
+                if (e10 >= i10 && e10 < i11) {
                     return e10;
                 }
                 e10 = e(g());
@@ -147,13 +147,13 @@ public class ThreadLocalRandom extends Random {
         }
     }
 
-    public final double a(double d9, double d10) {
+    public final double a(double d10, double d11) {
         double nextLong = (nextLong() >>> 11) * 1.1102230246251565E-16d;
-        if (d9 >= d10) {
+        if (d10 >= d11) {
             return nextLong;
         }
-        double d11 = ((d10 - d9) * nextLong) + d9;
-        return d11 >= d10 ? Double.longBitsToDouble(Double.doubleToLongBits(d10) - 1) : d11;
+        double d12 = ((d11 - d10) * nextLong) + d10;
+        return d12 >= d11 ? Double.longBitsToDouble(Double.doubleToLongBits(d11) - 1) : d12;
     }
 
     @Override // java.util.Random
@@ -162,31 +162,31 @@ public class ThreadLocalRandom extends Random {
     }
 
     @Override // java.util.Random
-    public final int nextInt(int i9) {
-        if (i9 <= 0) {
+    public final int nextInt(int i10) {
+        if (i10 <= 0) {
             throw new IllegalArgumentException("bound must be positive");
         }
         int e10 = e(g());
-        int i10 = i9 - 1;
-        if ((i9 & i10) == 0) {
-            return e10 & i10;
+        int i11 = i10 - 1;
+        if ((i10 & i11) == 0) {
+            return e10 & i11;
         }
         while (true) {
-            int i11 = e10 >>> 1;
-            int i12 = i11 + i10;
-            int i13 = i11 % i9;
-            if (i12 - i13 >= 0) {
-                return i13;
+            int i12 = e10 >>> 1;
+            int i13 = i12 + i11;
+            int i14 = i12 % i10;
+            if (i13 - i14 >= 0) {
+                return i14;
             }
             e10 = e(g());
         }
     }
 
-    public final int nextInt(int i9, int i10) {
-        if (i9 >= i10) {
+    public final int nextInt(int i10, int i11) {
+        if (i10 >= i11) {
             throw new IllegalArgumentException("bound must be greater than origin");
         }
-        return b(i9, i10);
+        return b(i10, i11);
     }
 
     @Override // java.util.Random
@@ -198,19 +198,19 @@ public class ThreadLocalRandom extends Random {
         if (j10 <= 0) {
             throw new IllegalArgumentException("bound must be positive");
         }
-        long f10 = f(g());
+        long f9 = f(g());
         long j11 = j10 - 1;
         if ((j10 & j11) == 0) {
-            return f10 & j11;
+            return f9 & j11;
         }
         while (true) {
-            long j12 = f10 >>> 1;
+            long j12 = f9 >>> 1;
             long j13 = j12 + j11;
             long j14 = j12 % j10;
             if (j13 - j14 >= 0) {
                 return j14;
             }
-            f10 = f(g());
+            f9 = f(g());
         }
     }
 
@@ -226,19 +226,19 @@ public class ThreadLocalRandom extends Random {
         return (f(g()) >>> 11) * 1.1102230246251565E-16d;
     }
 
-    public final double nextDouble(double d9) {
-        if (d9 <= 0.0d) {
+    public final double nextDouble(double d10) {
+        if (d10 <= 0.0d) {
             throw new IllegalArgumentException("bound must be positive");
         }
-        double f10 = (f(g()) >>> 11) * 1.1102230246251565E-16d * d9;
-        return f10 < d9 ? f10 : Double.longBitsToDouble(Double.doubleToLongBits(d9) - 1);
+        double f9 = (f(g()) >>> 11) * 1.1102230246251565E-16d * d10;
+        return f9 < d10 ? f9 : Double.longBitsToDouble(Double.doubleToLongBits(d10) - 1);
     }
 
-    public final double nextDouble(double d9, double d10) {
-        if (d9 >= d10) {
+    public final double nextDouble(double d10, double d11) {
+        if (d10 >= d11) {
             throw new IllegalArgumentException("bound must be greater than origin");
         }
-        return a(d9, d10);
+        return a(d10, d11);
     }
 
     @Override // java.util.Random
@@ -254,17 +254,17 @@ public class ThreadLocalRandom extends Random {
     @Override // java.util.Random
     public final double nextGaussian() {
         ThreadLocal threadLocal = d;
-        Double d9 = (Double) threadLocal.get();
-        if (d9 != null) {
+        Double d10 = (Double) threadLocal.get();
+        if (d10 != null) {
             threadLocal.set(null);
-            return d9.doubleValue();
+            return d10.doubleValue();
         }
         while (true) {
             double nextDouble = (nextDouble() * 2.0d) - 1.0d;
             double nextDouble2 = (nextDouble() * 2.0d) - 1.0d;
-            double d10 = (nextDouble2 * nextDouble2) + (nextDouble * nextDouble);
-            if (d10 < 1.0d && d10 != 0.0d) {
-                double sqrt = StrictMath.sqrt((StrictMath.log(d10) * (-2.0d)) / d10);
+            double d11 = (nextDouble2 * nextDouble2) + (nextDouble * nextDouble);
+            if (d11 < 1.0d && d11 != 0.0d) {
+                double sqrt = StrictMath.sqrt((StrictMath.log(d11) * (-2.0d)) / d11);
                 d.set(Double.valueOf(nextDouble2 * sqrt));
                 return nextDouble * sqrt;
             }
@@ -287,23 +287,23 @@ public class ThreadLocalRandom extends Random {
     }
 
     @Override // java.util.Random
-    public final java.util.stream.IntStream ints(long j10, int i9, int i10) {
+    public final java.util.stream.IntStream ints(long j10, int i10, int i11) {
         if (j10 < 0) {
             throw new IllegalArgumentException("size must be non-negative");
         }
-        if (i9 >= i10) {
+        if (i10 >= i11) {
             throw new IllegalArgumentException("bound must be greater than origin");
         }
-        x xVar = new x(0L, j10, i9, i10);
+        x xVar = new x(0L, j10, i10, i11);
         return IntStream.Wrapper.convert(new w0(xVar, v6.l(xVar), false));
     }
 
     @Override // java.util.Random
-    public final java.util.stream.IntStream ints(int i9, int i10) {
-        if (i9 >= i10) {
+    public final java.util.stream.IntStream ints(int i10, int i11) {
+        if (i10 >= i11) {
             throw new IllegalArgumentException("bound must be greater than origin");
         }
-        x xVar = new x(0L, Long.MAX_VALUE, i9, i10);
+        x xVar = new x(0L, Long.MAX_VALUE, i10, i11);
         return IntStream.Wrapper.convert(new w0(xVar, v6.l(xVar), false));
     }
 
@@ -359,23 +359,23 @@ public class ThreadLocalRandom extends Random {
     }
 
     @Override // java.util.Random
-    public final DoubleStream doubles(long j10, double d9, double d10) {
+    public final DoubleStream doubles(long j10, double d10, double d11) {
         if (j10 < 0) {
             throw new IllegalArgumentException("size must be non-negative");
         }
-        if (d9 >= d10) {
+        if (d10 >= d11) {
             throw new IllegalArgumentException("bound must be greater than origin");
         }
-        w wVar = new w(0L, j10, d9, d10);
+        w wVar = new w(0L, j10, d10, d11);
         return b0.f(new j$.util.stream.w(wVar, v6.l(wVar), false));
     }
 
     @Override // java.util.Random
-    public final DoubleStream doubles(double d9, double d10) {
-        if (d9 >= d10) {
+    public final DoubleStream doubles(double d10, double d11) {
+        if (d10 >= d11) {
             throw new IllegalArgumentException("bound must be greater than origin");
         }
-        w wVar = new w(0L, Long.MAX_VALUE, d9, d10);
+        w wVar = new w(0L, Long.MAX_VALUE, d10, d11);
         return b0.f(new j$.util.stream.w(wVar, v6.l(wVar), false));
     }
 
@@ -383,8 +383,8 @@ public class ThreadLocalRandom extends Random {
         if (((Boolean) AccessController.doPrivileged(new t1(1))).booleanValue()) {
             byte[] seed = SecureRandom.getSeed(8);
             long j10 = seed[0] & 255;
-            for (int i9 = 1; i9 < 8; i9++) {
-                j10 = (j10 << 8) | (seed[i9] & 255);
+            for (int i10 = 1; i10 < 8; i10++) {
+                j10 = (j10 << 8) | (seed[i10] & 255);
             }
             g.set(j10);
         }

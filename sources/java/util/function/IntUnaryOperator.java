@@ -2,5 +2,5 @@ package java.util.function;
 
 /* loaded from: classes2.dex */
 public interface IntUnaryOperator {
-    int applyAsInt(int i9);
+    int applyAsInt(int i10);
 }

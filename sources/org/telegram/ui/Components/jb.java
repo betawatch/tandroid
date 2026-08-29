@@ -1,27 +1,75 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class jb implements o1.g {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ lb b;
-    public final /* synthetic */ q0.a c;
+import android.content.Context;
+import android.view.View;
+import android.view.ViewGroup;
+import org.telegram.tgnet.TLObject;
 
-    public /* synthetic */ jb(q0.a aVar, lb lbVar, int i9) {
-        this.a = i9;
-        this.c = aVar;
-        this.b = lbVar;
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* loaded from: classes3.dex */
+public abstract class jb extends rb {
+    private ib button;
+    private int childrenMeasuredWidth;
+    org.telegram.ui.ActionBar.c6 resourcesProvider;
+    public fc timerView;
+    private boolean wrapWidth;
+
+    public jb(Context context, org.telegram.ui.ActionBar.c6 c6Var) {
+        super(context, c6Var);
+        this.resourcesProvider = c6Var;
     }
 
-    @Override // o1.g
-    public final void a(o1.h hVar, float f10, float f11) {
-        switch (this.a) {
-            case 0:
-                ((xa) this.c).accept(Float.valueOf(this.b.getTranslationY()));
-                break;
-            default:
-                ((dl) this.c).accept(Float.valueOf(this.b.getTranslationY()));
-                break;
+    public ib getButton() {
+        return this.button;
+    }
+
+    @Override // android.view.ViewGroup
+    public void measureChildWithMargins(View view, int i10, int i11, int i12, int i13) {
+        ib ibVar = this.button;
+        if (ibVar != null && view != ibVar) {
+            i11 = org.telegram.ui.b.C(12.0f, ibVar.getMeasuredWidth(), i11);
         }
+        super.measureChildWithMargins(view, i10, i11, i12, i13);
+        if (view != this.button) {
+            ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) view.getLayoutParams();
+            this.childrenMeasuredWidth = Math.max(this.childrenMeasuredWidth, view.getMeasuredWidth() + marginLayoutParams.leftMargin + marginLayoutParams.rightMargin);
+        }
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public void onMeasure(int i10, int i11) {
+        this.childrenMeasuredWidth = 0;
+        if (this.wrapWidth) {
+            i10 = View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_31);
+        }
+        super.onMeasure(i10, i11);
+        if (this.button == null || View.MeasureSpec.getMode(i10) != Integer.MIN_VALUE) {
+            return;
+        }
+        setMeasuredDimension(this.button.getMeasuredWidth() + this.childrenMeasuredWidth, getMeasuredHeight());
+    }
+
+    public void setButton(ib ibVar) {
+        ib ibVar2 = this.button;
+        if (ibVar2 != null) {
+            removeCallback(ibVar2);
+            removeView(this.button);
+        }
+        this.button = ibVar;
+        if (ibVar != null) {
+            addCallback(ibVar);
+            addView(ibVar, 0, i7.f6.h(-2.0f, -2.0f, 8388629));
+        }
+    }
+
+    public void setTimer() {
+        fc fcVar = new fc(getContext(), this.resourcesProvider);
+        this.timerView = fcVar;
+        fcVar.b = 5000L;
+        addView(fcVar, i7.f6.i(20.0f, 20.0f, 8388627, 21.0f, 0.0f, 21.0f, 0.0f));
+    }
+
+    public void setWrapWidth() {
+        this.wrapWidth = true;
     }
 }

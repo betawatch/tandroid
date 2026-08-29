@@ -1,109 +1,75 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.text.SpannableStringBuilder;
-import android.text.TextUtils;
-import android.text.style.ForegroundColorSpan;
-import android.view.View;
-import android.view.ViewGroup;
-import java.util.ArrayList;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
+import java.io.File;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.NotificationCenter;
 import org.telegram.ui.Components.ThemeEditorView;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class r01 extends vk0 {
-    public final Context c;
-    public int d;
-    public ArrayList e = new ArrayList();
-    public ArrayList f = new ArrayList();
-    public org.telegram.ui.rl h;
-    public String n;
-    public final /* synthetic */ ThemeEditorView.EditorAlert r;
+public final class r01 implements f81 {
+    public final /* synthetic */ ThemeEditorView a;
 
-    public r01(ThemeEditorView.EditorAlert editorAlert, Context context) {
-        this.r = editorAlert;
-        this.c = context;
+    public r01(ThemeEditorView themeEditorView) {
+        this.a = themeEditorView;
     }
 
-    public static CharSequence E(String str, String str2) {
-        if (TextUtils.isEmpty(str)) {
-            return "";
-        }
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-        String trim = str.trim();
-        String lowerCase = trim.toLowerCase();
-        int i9 = 0;
+    @Override // org.telegram.ui.Components.f81
+    public final void a() {
+        int i10 = 0;
         while (true) {
-            int indexOf = lowerCase.indexOf(str2, i9);
-            if (indexOf == -1) {
-                break;
+            ThemeEditorView themeEditorView = this.a;
+            if (i10 >= themeEditorView.c.size()) {
+                ThemeEditorView.EditorAlert editorAlert = themeEditorView.l;
+                int i11 = ThemeEditorView.EditorAlert.I;
+                editorAlert.K(true);
+                return;
+            } else {
+                org.telegram.ui.ActionBar.i6 i6Var = (org.telegram.ui.ActionBar.i6) themeEditorView.c.get(i10);
+                int w02 = org.telegram.ui.ActionBar.g6.w0(i6Var.j, i6Var.f, false);
+                i6Var.i = w02;
+                if (i10 == 0) {
+                    themeEditorView.l.b.c(w02);
+                }
+                i10++;
             }
-            int length = str2.length() + indexOf;
-            if (i9 != 0 && i9 != indexOf + 1) {
-                spannableStringBuilder.append((CharSequence) trim.substring(i9, indexOf));
-            } else if (i9 == 0 && indexOf != 0) {
-                spannableStringBuilder.append((CharSequence) trim.substring(0, indexOf));
-            }
-            String substring = trim.substring(indexOf, Math.min(trim.length(), length));
-            if (substring.startsWith(" ")) {
-                spannableStringBuilder.append((CharSequence) " ");
-            }
-            String trim2 = substring.trim();
-            int length2 = spannableStringBuilder.length();
-            spannableStringBuilder.append((CharSequence) trim2);
-            spannableStringBuilder.setSpan(new ForegroundColorSpan(-11697229), length2, trim2.length() + length2, 33);
-            i9 = length;
-        }
-        if (i9 != -1 && i9 < trim.length()) {
-            spannableStringBuilder.append((CharSequence) trim.substring(i9));
-        }
-        return spannableStringBuilder;
-    }
-
-    @Override // org.telegram.ui.Components.vk0
-    public final boolean D(f2.q1 q1Var) {
-        return true;
-    }
-
-    @Override // f2.r0
-    public final int h() {
-        if (this.e.isEmpty()) {
-            return 0;
-        }
-        return this.e.size() + 1;
-    }
-
-    @Override // f2.r0
-    public final int j(int i9) {
-        return i9 == 0 ? 1 : 0;
-    }
-
-    @Override // f2.r0
-    public final void v(f2.q1 q1Var, int i9) {
-        if (q1Var.f == 0) {
-            int i10 = i9 - 1;
-            org.telegram.ui.ActionBar.h6 h6Var = (org.telegram.ui.ActionBar.h6) ((ArrayList) this.e.get(i10)).get(0);
-            int b10 = h6Var.f == org.telegram.ui.ActionBar.f6.Nd ? 0 : h6Var.b();
-            org.telegram.ui.Cells.w8 w8Var = (org.telegram.ui.Cells.w8) q1Var.a;
-            w8Var.a.setText((CharSequence) this.f.get(i10));
-            w8Var.b = b10;
-            w8Var.setWillNotDraw(b10 == 0);
-            w8Var.invalidate();
         }
     }
 
-    @Override // f2.r0
-    public final f2.q1 x(ViewGroup viewGroup, int i9) {
-        View w8Var;
-        Context context = this.c;
-        if (i9 != 0) {
-            w8Var = new View(context);
-            w8Var.setLayoutParams(new f2.a1(-1, AndroidUtilities.dp(56.0f)));
-        } else {
-            w8Var = new org.telegram.ui.Cells.w8(context);
-            w8Var.setLayoutParams(new f2.a1(-1, -2));
+    @Override // org.telegram.ui.Components.f81
+    public final void b(File file, Bitmap bitmap, boolean z10) {
+        org.telegram.ui.ActionBar.f6 f6Var = this.a.m;
+        org.telegram.ui.ActionBar.g6.rl.delete(org.telegram.ui.ActionBar.g6.Nd);
+        org.telegram.ui.ActionBar.g6.rl.delete(org.telegram.ui.ActionBar.g6.Od);
+        org.telegram.ui.ActionBar.g6.rl.delete(org.telegram.ui.ActionBar.g6.Pd);
+        org.telegram.ui.ActionBar.g6.rl.delete(org.telegram.ui.ActionBar.g6.Qd);
+        org.telegram.ui.ActionBar.g6.rl.delete(org.telegram.ui.ActionBar.g6.Rd);
+        org.telegram.ui.ActionBar.g6.h0 = null;
+        f6Var.v(null);
+        if (bitmap == null) {
+            org.telegram.ui.ActionBar.g6.f0 = null;
+            org.telegram.ui.ActionBar.g6.e0 = null;
+            org.telegram.ui.ActionBar.g6.r1(f6Var, false, false, false);
+            org.telegram.ui.ActionBar.g6.o1(true);
+            return;
         }
-        return new ik0(w8Var);
+        org.telegram.ui.ActionBar.g6.f0 = new BitmapDrawable(bitmap);
+        org.telegram.ui.ActionBar.g6.r1(f6Var, false, false, false);
+        int[] calcDrawableColor = AndroidUtilities.calcDrawableColor(org.telegram.ui.ActionBar.g6.f0);
+        int i10 = calcDrawableColor[0];
+        org.telegram.ui.ActionBar.g6.c0 = i10;
+        org.telegram.ui.ActionBar.g6.X = i10;
+        int i11 = calcDrawableColor[1];
+        org.telegram.ui.ActionBar.g6.d0 = i11;
+        org.telegram.ui.ActionBar.g6.b0 = i11;
+        Drawable drawable = org.telegram.ui.ActionBar.g6.e0;
+        if (drawable != null) {
+            org.telegram.ui.ActionBar.g6.i(drawable);
+        }
+        org.telegram.ui.ActionBar.g6.h(org.telegram.ui.ActionBar.g6.e0);
+        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.didSetNewWallpapper, new Object[0]);
     }
 }

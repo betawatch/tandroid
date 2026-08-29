@@ -3,33 +3,33 @@ package com.google.android.recaptcha.internal;
 import android.net.TrafficStats;
 import android.webkit.URLUtil;
 import androidx.car.app.navigation.model.Maneuver;
-import g7.x5;
+import i7.b7;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.List;
 import javax.net.ssl.HttpsURLConnection;
-import kotlin.jvm.internal.i;
-import oc.c;
-import oc.g;
+import kotlin.jvm.internal.j;
 import org.telegram.messenger.MessageObject;
-import pc.h;
+import qc.c;
+import qc.g;
+import rc.h;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class zzhc implements zzha {
     private final c zza;
 
     public zzhc() {
-        int i9 = zzby.zza;
-        this.zza = x5.a(zzhb.zza);
+        int i10 = zzby.zza;
+        this.zza = b7.a(zzhb.zza);
     }
 
     private static final void zzb(byte[] bArr) {
         for (zzwn zzwnVar : zzwq.zzk(bArr).zzl()) {
             String str = "INIT_TOTAL";
-            List c10 = h.c("INIT_TOTAL", "EXECUTE_TOTAL");
+            List c3 = h.c("INIT_TOTAL", "EXECUTE_TOTAL");
             switch (zzwnVar.zzaa()) {
                 case 2:
                     str = "UNKNOWN";
@@ -181,7 +181,7 @@ public final class zzhc implements zzha {
                     str = "UNRECOGNIZED";
                     break;
             }
-            if (c10.contains(str) && zzwnVar.zzY()) {
+            if (c3.contains(str) && zzwnVar.zzY()) {
                 zzwnVar.zzN();
                 zzwnVar.zzO();
                 zzwnVar.zzaa();
@@ -206,14 +206,14 @@ public final class zzhc implements zzha {
             String zzc = ((zzcy) ((g) this.zza).a()).zzc();
             if (URLUtil.isHttpUrl(zzc)) {
                 URLConnection openConnection = new URL(zzc).openConnection();
-                i.c(openConnection, "null cannot be cast to non-null type java.net.HttpURLConnection");
+                j.c(openConnection, "null cannot be cast to non-null type java.net.HttpURLConnection");
                 httpURLConnection = (HttpURLConnection) openConnection;
             } else {
                 if (!URLUtil.isHttpsUrl(zzc)) {
                     throw new MalformedURLException("Recaptcha server url only allows using Http or Https.");
                 }
                 URLConnection openConnection2 = new URL(zzc).openConnection();
-                i.c(openConnection2, "null cannot be cast to non-null type javax.net.ssl.HttpsURLConnection");
+                j.c(openConnection2, "null cannot be cast to non-null type javax.net.ssl.HttpsURLConnection");
                 httpURLConnection = (HttpsURLConnection) openConnection2;
             }
             httpURLConnection.setRequestMethod("POST");

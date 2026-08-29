@@ -1,12 +1,13 @@
 package qd;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public abstract class i {
-    public static final int a = md.a.j(100, 12, "kotlinx.coroutines.semaphore.maxSpinCycles");
-    public static final e5.c b = new e5.c("PERMIT", 2);
-    public static final e5.c c = new e5.c("TAKEN", 2);
-    public static final e5.c d = new e5.c("BROKEN", 2);
-    public static final e5.c e = new e5.c("CANCELLED", 2);
-    public static final int f = md.a.j(16, 12, "kotlinx.coroutines.semaphore.segmentSize");
+public abstract class i implements Runnable {
+    public long a;
+    public a5.c b;
+
+    public i(long j10, a5.c cVar) {
+        this.a = j10;
+        this.b = cVar;
+    }
 }

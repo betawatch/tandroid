@@ -5,7 +5,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public class UserObject {
     public static final long ANONYMOUS = 2666000;
@@ -127,7 +127,7 @@ public class UserObject {
         return peerColor.background_emoji_id;
     }
 
-    public static MessagesController.PeerColor getPeerColorForAvatar(int i9, TLRPC.User user) {
+    public static MessagesController.PeerColor getPeerColorForAvatar(int i10, TLRPC.User user) {
         return null;
     }
 
@@ -182,8 +182,8 @@ public class UserObject {
             return user.username;
         }
         if (user.usernames != null) {
-            for (int i9 = 0; i9 < user.usernames.size(); i9++) {
-                TLRPC.TL_username tL_username = user.usernames.get(i9);
+            for (int i10 = 0; i10 < user.usernames.size(); i10++) {
+                TLRPC.TL_username tL_username = user.usernames.get(i10);
                 if (tL_username != null && (((tL_username.active && !z10) || tL_username.editable) && !TextUtils.isEmpty(tL_username.username))) {
                     return tL_username.username;
                 }
@@ -215,7 +215,7 @@ public class UserObject {
         if (removeRTL.length() != 0 || TextUtils.isEmpty(user.phone)) {
             return removeRTL;
         }
-        return ll.g(new StringBuilder("+"), user.phone, ne.b.c());
+        return x3.k(new StringBuilder("+"), user.phone, qe.b.c());
     }
 
     public static boolean hasFallbackPhoto(TLRPC.UserFull userFull) {
@@ -234,8 +234,8 @@ public class UserObject {
                 return true;
             }
             if (user.usernames != null) {
-                for (int i9 = 0; i9 < user.usernames.size(); i9++) {
-                    TLRPC.TL_username tL_username = user.usernames.get(i9);
+                for (int i10 = 0; i10 < user.usernames.size(); i10++) {
+                    TLRPC.TL_username tL_username = user.usernames.get(i10);
                     if (tL_username != null && tL_username.active && str.equalsIgnoreCase(tL_username.username)) {
                         return true;
                     }
@@ -253,12 +253,12 @@ public class UserObject {
         return user != null && user.bot;
     }
 
-    public static boolean isBotForum(int i9, long j10) {
-        return isBotForum(MessagesController.getInstance(i9).getUser(Long.valueOf(j10)));
+    public static boolean isBotForum(int i10, long j10) {
+        return isBotForum(MessagesController.getInstance(i10).getUser(Long.valueOf(j10)));
     }
 
-    public static boolean isBotForumWithEditableTopics(int i9, long j10) {
-        return isBotForumWithEditableTopics(MessagesController.getInstance(i9).getUser(Long.valueOf(j10)));
+    public static boolean isBotForumWithEditableTopics(int i10, long j10) {
+        return isBotForumWithEditableTopics(MessagesController.getInstance(i10).getUser(Long.valueOf(j10)));
     }
 
     public static boolean isContact(TLRPC.User user) {

@@ -1,93 +1,144 @@
 package w5;
 
-import android.net.Uri;
+import android.app.PendingIntent;
 import android.os.Parcel;
 import android.os.Parcelable;
-import e2.c;
-import g7.p8;
+import j7.l1;
 import java.util.Arrays;
-import java.util.Locale;
-import org.json.JSONException;
-import org.json.JSONObject;
-import q7.j;
-import x5.l;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class a extends y5.a {
-    public static final Parcelable.Creator<a> CREATOR = new j(25);
+public final class a extends a6.a {
     public final int a;
-    public final Uri b;
-    public final int c;
-    public final int d;
+    public final int b;
+    public final PendingIntent c;
+    public final String d;
+    public static final a e = new a(0);
+    public static final Parcelable.Creator<a> CREATOR = new s6.i(29);
 
-    public a(int i9, Uri uri, int i10, int i11) {
-        this.a = i9;
-        this.b = uri;
-        this.c = i10;
-        this.d = i11;
+    public a(int i10, int i11, PendingIntent pendingIntent, String str) {
+        this.a = i10;
+        this.b = i11;
+        this.c = pendingIntent;
+        this.d = str;
+    }
+
+    public static String d(int i10) {
+        if (i10 == 99) {
+            return "UNFINISHED";
+        }
+        if (i10 == 1500) {
+            return "DRIVE_EXTERNAL_STORAGE_REQUIRED";
+        }
+        switch (i10) {
+            case -1:
+                return "UNKNOWN";
+            case 0:
+                return "SUCCESS";
+            case 1:
+                return "SERVICE_MISSING";
+            case 2:
+                return "SERVICE_VERSION_UPDATE_REQUIRED";
+            case 3:
+                return "SERVICE_DISABLED";
+            case 4:
+                return "SIGN_IN_REQUIRED";
+            case 5:
+                return "INVALID_ACCOUNT";
+            case 6:
+                return "RESOLUTION_REQUIRED";
+            case 7:
+                return "NETWORK_ERROR";
+            case 8:
+                return "INTERNAL_ERROR";
+            case 9:
+                return "SERVICE_INVALID";
+            case 10:
+                return "DEVELOPER_ERROR";
+            case 11:
+                return "LICENSE_CHECK_FAILED";
+            default:
+                switch (i10) {
+                    case 13:
+                        return "CANCELED";
+                    case 14:
+                        return "TIMEOUT";
+                    case 15:
+                        return "INTERRUPTED";
+                    case 16:
+                        return "API_UNAVAILABLE";
+                    case 17:
+                        return "SIGN_IN_FAILED";
+                    case 18:
+                        return "SERVICE_UPDATING";
+                    case 19:
+                        return "SERVICE_MISSING_PERMISSION";
+                    case 20:
+                        return "RESTRICTED_PROFILE";
+                    case 21:
+                        return "API_VERSION_UPDATE_REQUIRED";
+                    case 22:
+                        return "RESOLUTION_ACTIVITY_NOT_FOUND";
+                    case 23:
+                        return "API_DISABLED";
+                    case 24:
+                        return "API_DISABLED_FOR_CONNECTION";
+                    case 25:
+                        return "API_INSTALL_REQUIRED";
+                    default:
+                        return l1.l(i10, "UNKNOWN_ERROR_CODE(", ")");
+                }
+        }
+    }
+
+    public final boolean b() {
+        return (this.b == 0 || this.c == null) ? false : true;
+    }
+
+    public final boolean c() {
+        return this.b == 0;
     }
 
     public final boolean equals(Object obj) {
-        if (this == obj) {
+        if (obj == this) {
             return true;
         }
-        if (obj != null && (obj instanceof a)) {
-            a aVar = (a) obj;
-            if (l.l(this.b, aVar.b) && this.c == aVar.c && this.d == aVar.d) {
-                return true;
-            }
+        if (!(obj instanceof a)) {
+            return false;
         }
-        return false;
+        a aVar = (a) obj;
+        return this.b == aVar.b && z5.l.l(this.c, aVar.c) && z5.l.l(this.d, aVar.d);
     }
 
     public final int hashCode() {
-        return Arrays.hashCode(new Object[]{this.b, Integer.valueOf(this.c), Integer.valueOf(this.d)});
+        return Arrays.hashCode(new Object[]{Integer.valueOf(this.b), this.c, this.d});
     }
 
     public final String toString() {
-        Locale locale = Locale.US;
-        String uri = this.b.toString();
-        StringBuilder o6 = c.o("Image ", this.c, "x", this.d, " ");
-        o6.append(uri);
-        return o6.toString();
+        v5.n nVar = new v5.n(this);
+        nVar.g(d(this.b), "statusCode");
+        nVar.g(this.c, "resolution");
+        nVar.g(this.d, "message");
+        return nVar.toString();
     }
 
     @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i9) {
-        int q10 = p8.q(parcel, 20293);
-        p8.s(parcel, 1, 4);
+    public final void writeToParcel(Parcel parcel, int i10) {
+        int q6 = com.google.android.gms.internal.cast.o.q(parcel, 20293);
+        com.google.android.gms.internal.cast.o.s(parcel, 1, 4);
         parcel.writeInt(this.a);
-        p8.k(parcel, 2, this.b, i9);
-        p8.s(parcel, 3, 4);
-        parcel.writeInt(this.c);
-        p8.s(parcel, 4, 4);
-        parcel.writeInt(this.d);
-        p8.r(parcel, q10);
+        com.google.android.gms.internal.cast.o.s(parcel, 2, 4);
+        parcel.writeInt(this.b);
+        com.google.android.gms.internal.cast.o.k(parcel, 3, this.c, i10);
+        com.google.android.gms.internal.cast.o.l(parcel, 4, this.d);
+        com.google.android.gms.internal.cast.o.r(parcel, q6);
     }
 
-    public a(Uri uri, int i9, int i10) {
-        this(1, uri, i9, i10);
-        if (uri == null) {
-            throw new IllegalArgumentException("url cannot be null");
-        }
-        if (i9 < 0 || i10 < 0) {
-            throw new IllegalArgumentException("width and height must not be negative");
-        }
+    public a(int i10) {
+        this(1, i10, null, null);
     }
 
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public a(JSONObject jSONObject) {
-        this(r0, jSONObject.optInt("width", 0), jSONObject.optInt("height", 0));
-        Uri uri = Uri.EMPTY;
-        if (jSONObject.has("url")) {
-            try {
-                uri = Uri.parse(jSONObject.getString("url"));
-            } catch (JSONException unused) {
-            }
-        }
+    public a(int i10, PendingIntent pendingIntent) {
+        this(1, i10, pendingIntent, null);
     }
 }

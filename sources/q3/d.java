@@ -1,21 +1,24 @@
 package q3;
 
-import d5.y;
-import m3.w;
-
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class d extends a8.a {
-    public final y b;
-    public final y c;
-    public int d;
-    public boolean e;
-    public boolean f;
-    public int g;
+public final class d implements a {
+    public final int a;
+    public final int b;
+    public final int c;
+    public final int d;
+    public final int e;
 
-    public d(w wVar) {
-        super(wVar);
-        this.b = new y(d5.a.d);
-        this.c = new y(4);
+    public d(int i10, int i11, int i12, int i13, int i14) {
+        this.a = i10;
+        this.b = i11;
+        this.c = i12;
+        this.d = i13;
+        this.e = i14;
+    }
+
+    @Override // q3.a
+    public final int getType() {
+        return 1752331379;
     }
 }

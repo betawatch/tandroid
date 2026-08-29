@@ -1,192 +1,36 @@
 package org.telegram.ui;
 
-import android.os.Bundle;
-import java.util.ArrayList;
+import android.content.DialogInterface;
 import java.util.regex.Pattern;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class p80 implements Runnable {
-    public final /* synthetic */ int a = 1;
+public final /* synthetic */ class p80 implements DialogInterface.OnDismissListener {
+    public final /* synthetic */ int a;
     public final /* synthetic */ LaunchActivity b;
-    public final /* synthetic */ byte[] c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ Integer e;
-    public final /* synthetic */ String f;
-    public final /* synthetic */ int h;
-    public final /* synthetic */ long n;
-    public final /* synthetic */ Object r;
-    public final /* synthetic */ Object s;
-    public final /* synthetic */ Object v;
 
-    public /* synthetic */ p80(LaunchActivity launchActivity, Bundle bundle, byte[] bArr, int i9, Integer num, String str, int i10, long j10, l0 l0Var, org.telegram.ui.ActionBar.o2 o2Var) {
+    public /* synthetic */ p80(LaunchActivity launchActivity, int i10) {
+        this.a = i10;
         this.b = launchActivity;
-        this.r = bundle;
-        this.c = bArr;
-        this.d = i9;
-        this.e = num;
-        this.f = str;
-        this.h = i10;
-        this.n = j10;
-        this.s = l0Var;
-        this.v = o2Var;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:35:0x00ce  */
-    /* JADX WARN: Removed duplicated region for block: B:37:0x010b  */
-    @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void run() {
-        TLRPC.Message message;
-        int i9 = this.a;
-        Object obj = this.v;
-        Object obj2 = this.s;
-        Object obj3 = this.r;
-        switch (i9) {
+    @Override // android.content.DialogInterface.OnDismissListener
+    public final void onDismiss(DialogInterface dialogInterface) {
+        int i10 = this.a;
+        LaunchActivity launchActivity = this.b;
+        switch (i10) {
             case 0:
-                TLObject tLObject = (TLObject) obj3;
-                Integer num = (Integer) obj2;
-                Runnable runnable = (Runnable) obj;
+                launchActivity.r1 = false;
+                break;
+            case 1:
                 Pattern pattern = LaunchActivity.x1;
-                if (tLObject instanceof TLRPC.messages_Messages) {
-                    ArrayList<TLRPC.Message> arrayList = ((TLRPC.messages_Messages) tLObject).messages;
-                    for (int i10 = 0; i10 < arrayList.size(); i10++) {
-                        if (arrayList.get(i10) != null && arrayList.get(i10).id == this.e.intValue()) {
-                            message = arrayList.get(i10);
-                            LaunchActivity launchActivity = this.b;
-                            long j10 = this.n;
-                            if (message == null) {
-                                int i11 = launchActivity.K;
-                                Integer valueOf = Integer.valueOf(message.id);
-                                int i12 = launchActivity.K;
-                                launchActivity.v0(i11, null, valueOf, null, Long.valueOf(MessageObject.getTopicId(i12, message, MessagesController.getInstance(i12).isForum(message))), num, this.c, MessagesController.getInstance(launchActivity.K).getChat(Long.valueOf(-j10)), runnable, this.f, this.d, this.h);
-                                break;
-                            } else {
-                                Bundle bundle = new Bundle();
-                                bundle.putLong("chat_id", -j10);
-                                launchActivity.p0(we1.E0(launchActivity, bundle));
-                                if (runnable != null) {
-                                    runnable.run();
-                                    break;
-                                }
-                            }
-                        }
-                    }
-                }
-                message = null;
-                LaunchActivity launchActivity2 = this.b;
-                long j102 = this.n;
-                if (message == null) {
-                }
+                AndroidUtilities.runOnUIThread(new o80(launchActivity, 9), 30000L);
                 break;
             default:
-                final Bundle bundle2 = (Bundle) obj3;
-                final l0 l0Var = (l0) obj2;
-                final org.telegram.ui.ActionBar.o2 o2Var = (org.telegram.ui.ActionBar.o2) obj;
                 Pattern pattern2 = LaunchActivity.x1;
-                final LaunchActivity launchActivity3 = this.b;
-                launchActivity3.getClass();
-                final qn qnVar = new qn(bundle2);
-                final byte[] bArr = this.c;
-                final int i13 = this.d;
-                final Integer num2 = this.e;
-                final String str = this.f;
-                final int i14 = this.h;
-                if (bArr != null) {
-                    qnVar.N7 = bArr;
-                    qnVar.H7 = i13;
-                } else if (num2 != null) {
-                    qnVar.M7 = num2;
-                    qnVar.H7 = i13;
-                } else {
-                    qnVar.mb(i13, i14, str);
-                }
-                if (!((ActionBarLayout) (AndroidUtilities.isTablet() ? launchActivity3.o0 : launchActivity3.O())).P(qnVar)) {
-                    final long j11 = this.n;
-                    if (j11 < 0) {
-                        TLRPC.TL_channels_getChannels tL_channels_getChannels = new TLRPC.TL_channels_getChannels();
-                        TLRPC.TL_inputChannel tL_inputChannel = new TLRPC.TL_inputChannel();
-                        tL_inputChannel.channel_id = -j11;
-                        tL_channels_getChannels.id.add(tL_inputChannel);
-                        l0Var.b = new z70(launchActivity3, ConnectionsManager.getInstance(launchActivity3.K).sendRequest(tL_channels_getChannels, new RequestDelegate() { // from class: org.telegram.ui.e90
-                            @Override // org.telegram.tgnet.RequestDelegate
-                            public final void run(final TLObject tLObject2, TLRPC.TL_error tL_error) {
-                                Pattern pattern3 = LaunchActivity.x1;
-                                final LaunchActivity launchActivity4 = LaunchActivity.this;
-                                launchActivity4.getClass();
-                                final l0 l0Var2 = l0Var;
-                                final long j12 = j11;
-                                final int i15 = i13;
-                                final Integer num3 = num2;
-                                final byte[] bArr2 = bArr;
-                                final org.telegram.ui.ActionBar.o2 o2Var2 = o2Var;
-                                final Bundle bundle3 = bundle2;
-                                final qn qnVar2 = qnVar;
-                                final String str2 = str;
-                                final int i16 = i14;
-                                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.g90
-                                    @Override // java.lang.Runnable
-                                    public final void run() {
-                                        Pattern pattern4 = LaunchActivity.x1;
-                                        LaunchActivity launchActivity5 = LaunchActivity.this;
-                                        launchActivity5.getClass();
-                                        l0Var2.c(false);
-                                        TLObject tLObject3 = tLObject2;
-                                        if (tLObject3 instanceof TLRPC.TL_messages_chats) {
-                                            TLRPC.TL_messages_chats tL_messages_chats = (TLRPC.TL_messages_chats) tLObject3;
-                                            if (!tL_messages_chats.chats.isEmpty()) {
-                                                MessagesController.getInstance(launchActivity5.K).putChats(tL_messages_chats.chats, false);
-                                                TLRPC.Chat chat = tL_messages_chats.chats.get(0);
-                                                int i17 = i15;
-                                                if (chat != null && chat.forum) {
-                                                    launchActivity5.k0(-j12, Integer.valueOf(i17), null, num3, bArr2, null, 0, -1);
-                                                }
-                                                org.telegram.ui.ActionBar.o2 o2Var3 = o2Var2;
-                                                Bundle bundle4 = bundle3;
-                                                if (o2Var3 == null || MessagesController.getInstance(launchActivity5.K).checkCanOpenChat(bundle4, o2Var3)) {
-                                                    qn qnVar3 = new qn(bundle4);
-                                                    qnVar2.mb(i17, i16, str2);
-                                                    ((ActionBarLayout) launchActivity5.O()).P(qnVar3);
-                                                    return;
-                                                }
-                                                return;
-                                            }
-                                        }
-                                        launchActivity5.B0(org.telegram.ui.Components.y4.H(launchActivity5, LocaleController.getString(R.string.DialogNotAvailable), LocaleController.getString(R.string.LinkNotFound)));
-                                    }
-                                });
-                            }
-                        }), 1);
-                        break;
-                    }
-                }
-                l0Var.c(false);
+                AndroidUtilities.runOnUIThread(new o80(launchActivity, 10), 30000L);
                 break;
         }
-    }
-
-    public /* synthetic */ p80(LaunchActivity launchActivity, TLObject tLObject, Integer num, Integer num2, byte[] bArr, long j10, Runnable runnable, String str, int i9, int i10) {
-        this.b = launchActivity;
-        this.r = tLObject;
-        this.e = num;
-        this.s = num2;
-        this.c = bArr;
-        this.n = j10;
-        this.v = runnable;
-        this.f = str;
-        this.d = i9;
-        this.h = i10;
     }
 }

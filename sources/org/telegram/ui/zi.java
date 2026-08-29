@@ -1,44 +1,69 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.view.ViewGroup;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class zi implements MessagesStorage.IntCallback {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ Object c;
+public final class zi extends org.telegram.ui.Components.g40 {
+    public final /* synthetic */ int E;
 
-    public /* synthetic */ zi(int i9, Object obj, boolean z10) {
-        this.a = i9;
-        this.c = obj;
-        this.b = z10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ zi(int i10, int i11, Context context, org.telegram.ui.ActionBar.c6 c6Var, boolean z10) {
+        super(i10, context, c6Var, z10);
+        this.E = i11;
     }
 
-    @Override // org.telegram.messenger.MessagesStorage.IntCallback
-    public final void run(int i9) {
-        switch (this.a) {
+    @Override // org.telegram.ui.Components.g40
+    public int c() {
+        switch (this.E) {
             case 0:
-                qn qnVar = ((bj) this.c).b;
-                if (i9 > 0 && qnVar.getParentActivity() != null) {
-                    org.telegram.ui.Components.oc.a0(qnVar).m(this.b ? org.telegram.ui.Components.nc.C : org.telegram.ui.Components.nc.E, i9, 0, 0, qnVar.aa).j();
-                    break;
+                return AndroidUtilities.dp(56.0f) / 2;
+            default:
+                return super.c();
+        }
+    }
+
+    @Override // android.view.View
+    public void setVisibility(int i10) {
+        switch (this.E) {
+            case 1:
+                super.setVisibility(i10);
+                if (i10 != 0) {
+                    try {
+                        ((ViewGroup) getParent()).removeView(this);
+                        break;
+                    } catch (Exception unused) {
+                        return;
+                    }
+                }
+                break;
+            case 2:
+                super.setVisibility(i10);
+                if (i10 != 0) {
+                    try {
+                        ((ViewGroup) getParent()).removeView(this);
+                        break;
+                    } catch (Exception unused2) {
+                        return;
+                    }
+                }
+                break;
+            case 3:
+                super.setVisibility(i10);
+                if (i10 != 0) {
+                    try {
+                        ((ViewGroup) getParent()).removeView(this);
+                        break;
+                    } catch (Exception unused3) {
+                        return;
+                    }
                 }
                 break;
             default:
-                aj ajVar = (aj) this.c;
-                qn qnVar2 = ajVar.b.b;
-                if (i9 < 50) {
-                    qnVar2.qa(qnVar2.Z3, true);
-                    break;
-                } else {
-                    TLRPC.Chat chat = qnVar2.e;
-                    TLRPC.User user = qnVar2.f;
-                    boolean z10 = this.b;
-                    org.telegram.ui.Components.y4.s(qnVar2, true, chat, user, false, false, false, z10, new b1(ajVar, z10));
-                    break;
-                }
+                super.setVisibility(i10);
+                break;
         }
     }
 }

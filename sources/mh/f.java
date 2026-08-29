@@ -1,133 +1,618 @@
 package mh;
 
-import android.content.Context;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.v10;
+import android.graphics.Canvas;
+import android.util.SparseArray;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import f2.b0;
+import f2.n1;
+import java.util.ArrayList;
+import lh.c6;
+import lh.k6;
+import lh.o5;
+import org.telegram.messenger.DownloadController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.Components.jr;
+import org.telegram.ui.Components.k51;
+import org.telegram.ui.Components.mn;
+import org.telegram.ui.Components.on;
+import org.telegram.ui.Components.q71;
+import org.telegram.ui.Components.tm0;
+import org.telegram.ui.Components.u51;
+import org.telegram.ui.Components.v71;
+import org.telegram.ui.Components.w41;
+import org.telegram.ui.Components.y71;
+import org.telegram.ui.Components.z71;
+import org.telegram.ui.ia;
+import org.telegram.ui.tu0;
+import org.telegram.ui.vu0;
+import org.telegram.ui.wa1;
+import org.telegram.ui.wo;
+import org.telegram.ui.xo;
+import org.telegram.ui.yo;
+import th.u1;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes4.dex */
-public final class f extends zf.w1 {
-    public final /* synthetic */ int n;
+public final class f extends b0 {
+    public final /* synthetic */ int d;
+    public final /* synthetic */ Object e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ f(Context context, int i9) {
-        super(context);
-        this.n = i9;
+    public /* synthetic */ f(Object obj, int i10) {
+        this.d = i10;
+        this.e = obj;
     }
 
-    @Override // zf.w1
-    public final void a() {
-        switch (this.n) {
+    @Override // f2.b0
+    public void a(RecyclerView recyclerView, n1 n1Var) {
+        switch (this.d) {
             case 0:
-                super.a();
-                zf.v1 v1Var = this.a;
-                v1Var.q = true;
-                v1Var.K = false;
-                v1Var.L = true;
-                v1Var.H = true;
-                v1Var.c();
+                super.a(recyclerView, n1Var);
+                n1Var.a.setPressed(false);
                 break;
             case 1:
-                super.a();
-                zf.v1 v1Var2 = this.a;
-                v1Var2.q = true;
-                v1Var2.K = false;
-                v1Var2.L = true;
-                v1Var2.H = true;
-                v1Var2.c();
+                super.a(recyclerView, n1Var);
+                n1Var.a.setPressed(false);
                 break;
             case 2:
-                v10 v10Var = new v10(50);
-                this.a = v10Var;
-                v10Var.N = 100;
-                v10Var.M = false;
-                v10Var.G = false;
-                v10Var.K = true;
-                v10Var.H = true;
-                v10Var.J = false;
-                v10Var.r = 4;
-                v10Var.w = 0.98f;
-                v10Var.v = 0.98f;
-                v10Var.u = 0.98f;
-                v10Var.c();
+                super.a(recyclerView, n1Var);
+                View view = n1Var.a;
+                view.setPressed(false);
+                view.setBackground(null);
                 break;
             case 3:
-                zf.v1 v1Var3 = this.a;
-                v1Var3.q = true;
-                v1Var3.K = false;
-                v1Var3.H = true;
-                v1Var3.J = true;
-                v1Var3.k = AndroidUtilities.dp(-14.0f);
-                zf.v1 v1Var4 = this.a;
-                v1Var4.x = 2000L;
-                v1Var4.y = 3000;
-                v1Var4.r = 16;
-                v1Var4.G = false;
-                v1Var4.N = 28;
-                v1Var4.P = f6.Mj;
-                v1Var4.c();
+                super.a(recyclerView, n1Var);
+                n1Var.a.setPressed(false);
                 break;
             case 4:
-                zf.v1 v1Var5 = this.a;
-                v1Var5.q = true;
-                v1Var5.K = false;
-                v1Var5.H = true;
-                v1Var5.J = true;
-                v1Var5.k = AndroidUtilities.dp(-14.0f);
-                zf.v1 v1Var6 = this.a;
-                v1Var6.x = 2000L;
-                v1Var6.y = 3000;
-                v1Var6.r = 16;
-                v1Var6.G = false;
-                v1Var6.N = 28;
-                v1Var6.P = f6.Mj;
-                v1Var6.c();
-                break;
-            default:
-                super.a();
-                zf.v1 v1Var7 = this.a;
-                v1Var7.q = true;
-                v1Var7.K = false;
-                v1Var7.L = true;
-                v1Var7.H = true;
-                v1Var7.c();
-                break;
-        }
-    }
-
-    @Override // zf.w1
-    public int getStarsRectWidth() {
-        switch (this.n) {
-            case 0:
-                return getMeasuredWidth();
-            case 1:
-                return getMeasuredWidth();
-            case 2:
-                return getMeasuredWidth();
-            default:
-                return super.getStarsRectWidth();
-        }
-    }
-
-    @Override // zf.w1, android.view.View
-    public void onMeasure(int i9, int i10) {
-        switch (this.n) {
-            case 3:
-                super.onMeasure(i9, i10);
-                this.a.b.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight() - AndroidUtilities.dp(52.0f));
-                break;
-            case 4:
-                super.onMeasure(i9, i10);
-                this.a.b.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight() - AndroidUtilities.dp(52.0f));
+                u51 u51Var = (u51) this.e;
+                super.a(recyclerView, n1Var);
+                View view2 = n1Var.a;
+                view2.setPressed(false);
+                if (view2.getBackground() instanceof u1) {
+                    u1 u1Var = (u1) view2.getBackground();
+                    if (u1Var.c) {
+                        u1Var.c = false;
+                        u1Var.invalidateSelf();
+                    }
+                }
+                if (u51Var.A1()) {
+                    u51Var.F1(n1Var);
+                    view2.animate().scaleX(0.5f).scaleY(0.5f).setDuration(200L).setInterpolator(jr.h).start();
+                    break;
+                }
                 break;
             case 5:
-                super.onMeasure(i9, i10);
-                this.a.b.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight() - AndroidUtilities.dp(52.0f));
-                break;
             default:
-                super.onMeasure(i9, i10);
+                super.a(recyclerView, n1Var);
+                break;
+            case 6:
+                super.a(recyclerView, n1Var);
+                n1Var.a.setPressed(false);
                 break;
         }
+    }
+
+    @Override // f2.b0
+    public final int e(RecyclerView recyclerView, n1 n1Var) {
+        switch (this.d) {
+            case 0:
+                r rVar = (r) this.e;
+                if (!rVar.S.C.y1 || !rVar.v.L(n1Var.b())) {
+                    break;
+                } else {
+                    rVar.f.setItemAnimator(rVar.n);
+                    break;
+                }
+            case 1:
+                if (n1Var.f != 1 || !((ia) n1Var.a).C) {
+                    break;
+                } else {
+                    break;
+                }
+                break;
+            case 2:
+                if (n1Var.f == 5) {
+                    break;
+                } else {
+                    break;
+                }
+            case 3:
+                int b10 = n1Var.b();
+                tm0 tm0Var = (tm0) this.e;
+                if (b10 >= tm0Var.v && n1Var.b() < tm0Var.w) {
+                    break;
+                } else {
+                    break;
+                }
+                break;
+            case 4:
+                u51 u51Var = (u51) this.e;
+                if (u51Var.Y2 && u51Var.U2.H(n1Var.b()) >= 0) {
+                    int i10 = 15;
+                    if (u51Var.T2.o == 0) {
+                        if (!u51Var.X2) {
+                            i10 = 12;
+                        }
+                    } else if (!u51Var.X2) {
+                        i10 = 3;
+                    }
+                    break;
+                } else {
+                    break;
+                }
+                break;
+            case 5:
+                if (!((org.telegram.ui.Components.n) ((y71) this.e).y).f(n1Var.b())) {
+                    break;
+                } else {
+                    break;
+                }
+            default:
+                if (n1Var.f != 5 || !r(n1Var.b())) {
+                    break;
+                } else {
+                    break;
+                }
+                break;
+        }
+        return b0.l(0, 0);
+    }
+
+    @Override // f2.b0
+    public boolean k() {
+        switch (this.d) {
+            case 0:
+                return ((r) this.e).S.C.y1;
+            case 1:
+            case 2:
+            case 5:
+            default:
+                return super.k();
+            case 3:
+                return ((tm0) this.e).E.f();
+            case 4:
+                u51 u51Var = (u51) this.e;
+                return u51Var.Y2 && u51Var.a3;
+            case 6:
+                return true;
+        }
+    }
+
+    @Override // f2.b0
+    public void m(Canvas canvas, RecyclerView recyclerView, n1 n1Var, float f9, float f10, int i10, boolean z10) {
+        switch (this.d) {
+            case 4:
+                u51 u51Var = (u51) this.e;
+                if (i10 != 2 || z10 || !u51Var.A1()) {
+                    super.m(canvas, recyclerView, n1Var, f9, f10, i10, z10);
+                    if (i10 == 2 && z10) {
+                        u51Var.E1(n1Var);
+                        break;
+                    }
+                }
+                break;
+            case 5:
+                super.m(canvas, recyclerView, n1Var, f9, f10, i10, z10);
+                ((y71) this.e).invalidate();
+                break;
+            default:
+                super.m(canvas, recyclerView, n1Var, f9, f10, i10, z10);
+                break;
+        }
+    }
+
+    @Override // f2.b0
+    public final boolean n(RecyclerView recyclerView, n1 n1Var, n1 n1Var2) {
+        ArrayList arrayList;
+        int i10;
+        int i11;
+        int i12;
+        switch (this.d) {
+            case 0:
+                l lVar = ((r) this.e).v;
+                if (!lVar.L(n1Var.b()) || !lVar.L(n1Var2.b())) {
+                    return false;
+                }
+                int b10 = n1Var.b();
+                int b11 = n1Var2.b();
+                ArrayList arrayList2 = lVar.n;
+                k6 k6Var = lVar.e;
+                if (k6Var != null && b10 >= 0 && b10 < k6Var.i.size() && b11 >= 0 && b11 < lVar.e.i.size()) {
+                    if (lVar.e instanceof c6) {
+                        arrayList = new ArrayList();
+                        for (int i13 = 0; i13 < lVar.e.i.size(); i13++) {
+                            arrayList.add(Integer.valueOf(((MessageObject) lVar.e.i.get(i13)).getId()));
+                        }
+                    } else {
+                        arrayList = new ArrayList(lVar.e.g);
+                    }
+                    if (!lVar.r) {
+                        arrayList2.clear();
+                        arrayList2.addAll(arrayList);
+                        lVar.r = true;
+                    }
+                    MessageObject messageObject = (MessageObject) lVar.e.i.get(b10);
+                    arrayList.remove(Integer.valueOf(messageObject.getId()));
+                    arrayList.add(Utilities.clamp(b11, arrayList.size(), 0), Integer.valueOf(messageObject.getId()));
+                    lVar.e.C(arrayList, false);
+                    lVar.p(b10, b11);
+                }
+                return true;
+            case 1:
+                if (n1Var.f == n1Var2.f) {
+                    View view = n1Var2.a;
+                    if (!(view instanceof ia) || ((ia) view).C) {
+                        wo woVar = ((xo) this.e).T2;
+                        int b12 = n1Var.b();
+                        int b13 = n1Var2.b();
+                        int i14 = b12 - 1;
+                        int i15 = b13 - 1;
+                        xo xoVar = woVar.c;
+                        yo yoVar = xoVar.W2;
+                        ArrayList arrayList3 = yoVar.J;
+                        if (i14 >= yoVar.J.size() || i15 >= arrayList3.size()) {
+                            return true;
+                        }
+                        if (b12 != b13) {
+                            xoVar.U2 = true;
+                        }
+                        TLRPC.TL_username tL_username = (TLRPC.TL_username) arrayList3.get(i14);
+                        arrayList3.set(i14, (TLRPC.TL_username) arrayList3.get(i15));
+                        arrayList3.set(i15, tL_username);
+                        woVar.p(b12, b13);
+                        int size = arrayList3.size();
+                        if (b12 != size && b13 != size) {
+                            return true;
+                        }
+                        woVar.n(b12, 3);
+                        woVar.n(b13, 3);
+                        return true;
+                    }
+                }
+                return false;
+            case 2:
+                if (n1Var.f != n1Var2.f) {
+                    return false;
+                }
+                mn mnVar = ((on) this.e).r;
+                int b14 = n1Var.b();
+                int b15 = n1Var2.b();
+                on onVar = mnVar.d;
+                int i16 = onVar.p0;
+                bh.i iVar = onVar.h1;
+                int i17 = b14 - i16;
+                int i18 = b15 - i16;
+                if (i17 >= 0 && i18 >= 0 && i17 < (i10 = onVar.I) && i18 < i10) {
+                    bh.h b16 = iVar.b(i17);
+                    SparseArray sparseArray = iVar.a;
+                    sparseArray.put(i17, iVar.b(i18));
+                    sparseArray.put(i18, b16);
+                    CharSequence[] charSequenceArr = onVar.G;
+                    CharSequence charSequence = charSequenceArr[i17];
+                    charSequenceArr[i17] = charSequenceArr[i18];
+                    charSequenceArr[i18] = charSequence;
+                    boolean[] zArr = onVar.H;
+                    boolean z10 = zArr[i17];
+                    zArr[i17] = zArr[i18];
+                    zArr[i18] = z10;
+                    mnVar.p(b14, b15);
+                }
+                return true;
+            case 3:
+                int b17 = n1Var2.b();
+                tm0 tm0Var = (tm0) this.e;
+                ArrayList arrayList4 = tm0Var.e;
+                if (b17 < tm0Var.v || n1Var2.b() >= tm0Var.w) {
+                    return false;
+                }
+                int b18 = n1Var.b();
+                int b19 = n1Var2.b();
+                int i19 = tm0Var.v;
+                int i20 = b18 - i19;
+                int i21 = b19 - i19;
+                arrayList4.indexOf(Integer.valueOf(i20));
+                arrayList4.get(b18 - tm0Var.v);
+                MessageObject messageObject2 = (MessageObject) arrayList4.get(i20);
+                MessageObject messageObject3 = (MessageObject) arrayList4.get(i21);
+                arrayList4.set(i20, messageObject3);
+                arrayList4.set(i21, messageObject2);
+                DownloadController.getInstance(tm0Var.d).swapLoadingPriority(messageObject2, messageObject3);
+                tm0Var.c.p(b18, b19);
+                return false;
+            case 4:
+                u51 u51Var = (u51) this.e;
+                k51 k51Var = u51Var.U2;
+                if (k51Var.H(n1Var.b()) < 0 || k51Var.H(n1Var.b()) != k51Var.H(n1Var2.b())) {
+                    return false;
+                }
+                int b20 = n1Var.b();
+                int b21 = n1Var2.b();
+                ArrayList arrayList5 = k51Var.x;
+                if (k51Var.H != null) {
+                    int H = k51Var.H(b20);
+                    int H2 = k51Var.H(b21);
+                    if (H >= 0 && H == H2) {
+                        boolean J = k51Var.J(b20);
+                        boolean J2 = k51Var.J(b21);
+                        arrayList5.add(b21, (w41) arrayList5.remove(b20));
+                        k51Var.p(b20, b21);
+                        if (k51Var.J(b21) != J) {
+                            k51Var.n(b21, 3);
+                        }
+                        if (k51Var.J(b20) != J2) {
+                            k51Var.n(b20, 3);
+                        }
+                        if (k51Var.G && (i11 = k51Var.F) != H) {
+                            k51Var.F(i11);
+                        }
+                        k51Var.G = true;
+                        k51Var.F = H;
+                    }
+                }
+                u51Var.H1();
+                return true;
+            case 5:
+                int b22 = n1Var.b();
+                int b23 = n1Var2.b();
+                y71 y71Var = (y71) this.e;
+                ArrayList arrayList6 = y71Var.h;
+                boolean z11 = false;
+                int i22 = 0;
+                z11 = false;
+                if (((org.telegram.ui.Components.n) y71Var.y).f(b22) && ((org.telegram.ui.Components.n) y71Var.y).f(b23)) {
+                    Utilities.swapItems(arrayList6, b22, b23);
+                    y71Var.x.p(b22, b23);
+                    ArrayList arrayList7 = new ArrayList();
+                    int size2 = arrayList6.size();
+                    while (i22 < size2) {
+                        Object obj = arrayList6.get(i22);
+                        i22++;
+                        arrayList7.add(Integer.valueOf(((v71) obj).a));
+                    }
+                    q71 q71Var = ((z71) ((org.telegram.ui.Components.n) y71Var.y).b).H;
+                    z11 = true;
+                    z11 = true;
+                    if (q71Var != null) {
+                        q71Var.a(arrayList7);
+                    }
+                }
+                return z11;
+            default:
+                if (n1Var.f != n1Var2.f || !r(n1Var.b()) || !r(n1Var2.b())) {
+                    return false;
+                }
+                tu0 tu0Var = ((vu0) this.e).b;
+                int b24 = n1Var.b();
+                int b25 = n1Var2.b();
+                vu0 vu0Var = tu0Var.d;
+                int i23 = vu0Var.j0;
+                int i24 = b24 - i23;
+                int i25 = b25 - i23;
+                if (i24 >= 0 && i25 >= 0 && i24 < (i12 = vu0Var.y) && i25 < i12) {
+                    CharSequence[] charSequenceArr2 = vu0Var.v;
+                    CharSequence charSequence2 = charSequenceArr2[i24];
+                    charSequenceArr2[i24] = charSequenceArr2[i25];
+                    charSequenceArr2[i25] = charSequence2;
+                    int[] iArr = vu0Var.r;
+                    if (iArr != null) {
+                        int i26 = iArr[i24];
+                        iArr[i24] = iArr[i25];
+                        iArr[i25] = i26;
+                    }
+                    boolean[] zArr2 = vu0Var.w;
+                    boolean z12 = zArr2[i24];
+                    zArr2[i24] = zArr2[i25];
+                    zArr2[i25] = z12;
+                    tu0Var.p(b24, b25);
+                }
+                return true;
+        }
+    }
+
+    @Override // f2.b0
+    public void o(RecyclerView recyclerView, n1 n1Var, n1 n1Var2, int i10, int i11, int i12) {
+        switch (this.d) {
+            case 4:
+                break;
+            default:
+                super.o(recyclerView, n1Var, n1Var2, i10, i11, i12);
+                break;
+        }
+    }
+
+    @Override // f2.b0
+    public void p(n1 n1Var, int i10) {
+        ArrayList arrayList;
+        switch (this.d) {
+            case 0:
+                r rVar = (r) this.e;
+                i iVar = rVar.f;
+                if (n1Var != null) {
+                    iVar.d1(false);
+                }
+                if (i10 == 0) {
+                    l lVar = rVar.v;
+                    ArrayList arrayList2 = lVar.n;
+                    k6 k6Var = lVar.e;
+                    if (k6Var != null && lVar.r) {
+                        if (k6Var instanceof c6) {
+                            arrayList = new ArrayList();
+                            for (int i11 = 0; i11 < lVar.e.i.size(); i11++) {
+                                arrayList.add(Integer.valueOf(((MessageObject) lVar.e.i.get(i11)).getId()));
+                            }
+                        } else {
+                            arrayList = k6Var.g;
+                        }
+                        boolean z10 = arrayList2.size() != arrayList.size();
+                        if (!z10) {
+                            int i12 = 0;
+                            while (true) {
+                                if (i12 < arrayList2.size()) {
+                                    if (arrayList2.get(i12) != arrayList.get(i12)) {
+                                        z10 = true;
+                                    } else {
+                                        i12++;
+                                    }
+                                }
+                            }
+                        }
+                        if (z10) {
+                            lVar.e.C(arrayList, true);
+                        }
+                        lVar.r = false;
+                    }
+                    iVar.setItemAnimator(null);
+                    break;
+                } else {
+                    iVar.I0(false);
+                    if (n1Var != null) {
+                        n1Var.a.setPressed(true);
+                        break;
+                    }
+                }
+                break;
+            case 1:
+                xo xoVar = (xo) this.e;
+                yo yoVar = xoVar.W2;
+                if (i10 != 0) {
+                    yoVar.H = true;
+                    xoVar.I0(false);
+                    n1Var.a.setPressed(true);
+                    break;
+                } else {
+                    yoVar.H = false;
+                    if (xoVar.U2) {
+                        TLRPC.Chat chat = yoVar.T;
+                        ArrayList arrayList3 = yoVar.J;
+                        ArrayList arrayList4 = yoVar.I;
+                        if (chat != null) {
+                            xoVar.U2 = false;
+                            TLRPC.TL_channels_reorderUsernames tL_channels_reorderUsernames = new TLRPC.TL_channels_reorderUsernames();
+                            TLRPC.TL_inputChannel tL_inputChannel = new TLRPC.TL_inputChannel();
+                            TLRPC.Chat chat2 = yoVar.T;
+                            tL_inputChannel.channel_id = chat2.id;
+                            tL_inputChannel.access_hash = chat2.access_hash;
+                            tL_channels_reorderUsernames.channel = tL_inputChannel;
+                            ArrayList<String> arrayList5 = new ArrayList<>();
+                            for (int i13 = 0; i13 < arrayList4.size(); i13++) {
+                                if (((TLRPC.TL_username) arrayList4.get(i13)).active) {
+                                    arrayList5.add(((TLRPC.TL_username) arrayList4.get(i13)).username);
+                                }
+                            }
+                            for (int i14 = 0; i14 < arrayList3.size(); i14++) {
+                                if (((TLRPC.TL_username) arrayList3.get(i14)).active) {
+                                    arrayList5.add(((TLRPC.TL_username) arrayList3.get(i14)).username);
+                                }
+                            }
+                            tL_channels_reorderUsernames.order = arrayList5;
+                            yoVar.getConnectionsManager().sendRequest(tL_channels_reorderUsernames, new o5(7));
+                            yoVar.T.usernames.clear();
+                            yoVar.T.usernames.addAll(arrayList4);
+                            yoVar.T.usernames.addAll(arrayList3);
+                            yoVar.getMessagesController().putChat(yoVar.T, true);
+                            break;
+                        }
+                    }
+                }
+                break;
+            case 2:
+                on onVar = (on) this.e;
+                wa1 wa1Var = onVar.s;
+                if (i10 != 0) {
+                    wa1Var.setItemAnimator(onVar.v);
+                    wa1Var.I0(false);
+                    n1Var.a.setPressed(true);
+                    n1Var.a.setBackgroundColor(g6.v0(g6.h5, onVar.a));
+                    break;
+                }
+                break;
+            case 3:
+                if (i10 != 0) {
+                    ((tm0) this.e).b.I0(false);
+                    n1Var.a.setPressed(true);
+                    break;
+                }
+                break;
+            case 4:
+                u51 u51Var = (u51) this.e;
+                if (n1Var != null) {
+                    u51Var.d1(false);
+                }
+                if (i10 == 0) {
+                    k51 k51Var = u51Var.U2;
+                    if (k51Var.G) {
+                        k51Var.F(k51Var.F);
+                    }
+                    if (u51Var.Z2 != null) {
+                        u51Var.D1();
+                        u51Var.Z2 = null;
+                        break;
+                    }
+                } else {
+                    u51Var.I0(false);
+                    if (n1Var != null) {
+                        View view = n1Var.a;
+                        view.setPressed(true);
+                        if (view.getBackground() instanceof u1) {
+                            u1 u1Var = (u1) view.getBackground();
+                            if (!u1Var.c) {
+                                u1Var.c = true;
+                                u1Var.invalidateSelf();
+                            }
+                        }
+                        if (i10 == 2) {
+                            u51Var.Z2 = n1Var;
+                            u51Var.G1(n1Var);
+                            break;
+                        }
+                    }
+                }
+                break;
+            case 6:
+                if (i10 != 0) {
+                    ((vu0) this.e).c.I0(false);
+                    n1Var.a.setPressed(true);
+                    break;
+                }
+                break;
+        }
+    }
+
+    @Override // f2.b0
+    public final void q(n1 n1Var) {
+        int i10 = this.d;
+    }
+
+    public boolean r(int i10) {
+        vu0 vu0Var = (vu0) this.e;
+        return !vu0Var.E || i10 - vu0Var.j0 >= vu0Var.x;
+    }
+
+    private final void t(n1 n1Var) {
+    }
+
+    private final void u(n1 n1Var) {
+    }
+
+    private final void v(n1 n1Var) {
+    }
+
+    private final void w(n1 n1Var) {
+    }
+
+    private final void x(n1 n1Var) {
+    }
+
+    private final void y(n1 n1Var) {
+    }
+
+    private final void z(n1 n1Var) {
+    }
+
+    private final void s(RecyclerView recyclerView, n1 n1Var, n1 n1Var2, int i10, int i11, int i12) {
     }
 }

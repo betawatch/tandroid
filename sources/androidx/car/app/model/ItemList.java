@@ -4,7 +4,7 @@ import j$.util.Objects;
 import java.util.Collections;
 import java.util.List;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class ItemList {
     private final List<q> mItems;
@@ -90,7 +90,7 @@ public final class ItemList {
         List<q> list = this.mItems;
         sb2.append(list != null ? list.toString() : null);
         sb2.append(", selected: ");
-        return aa.d.l(this.mSelectedIndex, "]", sb2);
+        return a4.w.l(this.mSelectedIndex, "]", sb2);
     }
 
     private ItemList() {

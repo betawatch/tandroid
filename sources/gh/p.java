@@ -1,28 +1,17 @@
 package gh;
 
-import android.content.Context;
+import android.view.View;
+import java.util.List;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
-/* loaded from: classes.dex */
-public final class p extends kh.d {
-    public final /* synthetic */ int d0;
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* loaded from: classes3.dex */
+public final class p {
+    public final o4.g a;
+    public boolean b;
+    public int c;
+    public int d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ p(int i9, Context context, org.telegram.ui.ActionBar.b6 b6Var, boolean z10) {
-        super(context, b6Var, z10);
-        this.d0 = i9;
-    }
-
-    @Override // kh.d
-    public boolean i() {
-        switch (this.d0) {
-            case 0:
-                return false;
-            case 1:
-            default:
-                return super.i();
-            case 2:
-                return false;
-        }
+    public p(View view, List list, o oVar) {
+        this.a = new o4.g(view.getContext(), new n(this, view, list, oVar));
     }
 }

@@ -1,25 +1,25 @@
 package com.google.android.gms.location;
 
+import a6.a;
 import android.location.Location;
 import android.os.Build;
 import android.os.Parcel;
 import android.os.Parcelable;
 import com.google.android.gms.common.internal.ReflectedParcelable;
-import g7.p8;
+import com.google.android.gms.internal.cast.o;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
-import q7.j;
-import x5.l;
-import y5.a;
+import s6.i;
+import z5.l;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class LocationResult extends a implements ReflectedParcelable {
     public final List a;
     public static final List b = Collections.EMPTY_LIST;
-    public static final Parcelable.Creator<LocationResult> CREATOR = new j(5);
+    public static final Parcelable.Creator<LocationResult> CREATOR = new i(17);
 
     public LocationResult(List list) {
         this.a = list;
@@ -30,9 +30,9 @@ public final class LocationResult extends a implements ReflectedParcelable {
             return false;
         }
         List list = ((LocationResult) obj).a;
-        int i9 = Build.VERSION.SDK_INT;
+        int i10 = Build.VERSION.SDK_INT;
         List<Location> list2 = this.a;
-        if (i9 >= 31) {
+        if (i10 >= 31) {
             return list2.equals(list);
         }
         if (list2.size() != list.size()) {
@@ -57,9 +57,9 @@ public final class LocationResult extends a implements ReflectedParcelable {
     }
 
     @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i9) {
-        int q10 = p8.q(parcel, 20293);
-        p8.p(parcel, 1, this.a);
-        p8.r(parcel, q10);
+    public final void writeToParcel(Parcel parcel, int i10) {
+        int q6 = o.q(parcel, 20293);
+        o.p(parcel, 1, this.a);
+        o.r(parcel, q6);
     }
 }

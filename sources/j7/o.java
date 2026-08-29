@@ -1,55 +1,80 @@
 package j7;
 
-import java.util.Iterator;
-import java.util.Map;
+import java.io.Serializable;
+import java.lang.reflect.Array;
+import java.util.AbstractCollection;
+import java.util.Arrays;
+import java.util.Collection;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class o extends j {
-    public final transient com.google.android.gms.internal.cast.j0 c;
-    public final transient Object[] d;
-    public final transient int e = 1;
+public abstract class o extends AbstractCollection implements Serializable {
+    public static final Object[] a = new Object[0];
 
-    public o(com.google.android.gms.internal.cast.j0 j0Var, Object[] objArr) {
-        this.c = j0Var;
-        this.d = objArr;
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final boolean add(Object obj) {
+        throw new UnsupportedOperationException();
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final boolean contains(Object obj) {
-        if (obj instanceof Map.Entry) {
-            Map.Entry entry = (Map.Entry) obj;
-            Object key = entry.getKey();
-            Object value = entry.getValue();
-            if (value != null && value.equals(this.c.get(key))) {
-                return true;
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final boolean addAll(Collection collection) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final void clear() {
+        throw new UnsupportedOperationException();
+    }
+
+    public abstract int i(Object[] objArr);
+
+    public int n() {
+        throw new UnsupportedOperationException();
+    }
+
+    public int o() {
+        throw new UnsupportedOperationException();
+    }
+
+    public Object[] p() {
+        return null;
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final boolean remove(Object obj) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final boolean removeAll(Collection collection) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final boolean retainAll(Collection collection) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final Object[] toArray() {
+        return toArray(a);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final Object[] toArray(Object[] objArr) {
+        objArr.getClass();
+        int size = size();
+        int length = objArr.length;
+        if (length < size) {
+            Object[] p10 = p();
+            if (p10 != null) {
+                return Arrays.copyOfRange(p10, o(), n(), objArr.getClass());
             }
+            objArr = (Object[]) Array.newInstance(objArr.getClass().getComponentType(), size);
+        } else if (length > size) {
+            objArr[size] = null;
         }
-        return false;
-    }
-
-    @Override // j7.e
-    public final int i(Object[] objArr) {
-        i iVar = this.b;
-        if (iVar == null) {
-            iVar = new n(this);
-            this.b = iVar;
-        }
-        return iVar.i(objArr);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
-    public final Iterator iterator() {
-        i iVar = this.b;
-        if (iVar == null) {
-            iVar = new n(this);
-            this.b = iVar;
-        }
-        return iVar.listIterator(0);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final int size() {
-        return this.e;
+        i(objArr);
+        return objArr;
     }
 }

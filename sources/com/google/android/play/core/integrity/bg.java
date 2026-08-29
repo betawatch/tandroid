@@ -5,9 +5,9 @@ import android.os.Parcel;
 import android.os.RemoteException;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import com.google.android.play.core.integrity.StandardIntegrityManager;
-import k8.g0;
+import m8.g0;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 final class bg extends bm {
     final /* synthetic */ StandardIntegrityManager.StandardIntegrityTokenRequest a;
@@ -17,7 +17,7 @@ final class bg extends bm {
     final /* synthetic */ bn e;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public bg(bn bnVar, TaskCompletionSource taskCompletionSource, int i9, StandardIntegrityManager.StandardIntegrityTokenRequest standardIntegrityTokenRequest, long j10, long j11, TaskCompletionSource taskCompletionSource2) {
+    public bg(bn bnVar, TaskCompletionSource taskCompletionSource, int i10, StandardIntegrityManager.StandardIntegrityTokenRequest standardIntegrityTokenRequest, long j10, long j11, TaskCompletionSource taskCompletionSource2) {
         super(bnVar, taskCompletionSource);
         this.a = standardIntegrityTokenRequest;
         this.b = j10;
@@ -26,7 +26,7 @@ final class bg extends bm {
         this.e = bnVar;
     }
 
-    @Override // k8.h0
+    @Override // m8.h0
     public final void b() {
         g0 g0Var;
         if (bn.l(this.e)) {
@@ -39,14 +39,14 @@ final class bg extends bm {
         }
         try {
             bn bnVar = this.e;
-            k8.w wVar = (k8.w) bnVar.a.n;
+            m8.w wVar = (m8.w) bnVar.a.n;
             Bundle a2 = bn.a(bnVar, this.a, this.b, this.c, 0);
             bk bkVar = new bk(this.e, this.d, this.b);
-            k8.u uVar = (k8.u) wVar;
+            m8.u uVar = (m8.u) wVar;
             uVar.getClass();
             Parcel obtain = Parcel.obtain();
             obtain.writeInterfaceToken(uVar.c);
-            int i9 = k8.s.a;
+            int i10 = m8.s.a;
             obtain.writeInt(1);
             a2.writeToParcel(obtain, 0);
             obtain.writeStrongBinder(bkVar);

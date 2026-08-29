@@ -1,37 +1,19 @@
 package a9;
 
-import android.content.Context;
-import com.google.android.gms.internal.play_billing.u;
-import java.util.ArrayList;
-import y8.p;
+import java.util.Set;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class c {
-    public final Object a;
-    public volatile Object b;
-    public volatile Object c;
+public interface c {
+    Object a(Class cls);
 
-    public /* synthetic */ c(Object obj) {
-        this.a = obj;
-    }
+    t b(v vVar);
 
-    public boolean a() {
-        try {
-            Context context = (Context) this.a;
-            return context.getPackageManager().getApplicationInfo(context.getPackageName(), 128).metaData.getBoolean("com.google.android.play.billingclient.enableBillingOverridesTesting", false);
-        } catch (Exception e10) {
-            u.i("BillingClient", "Unable to retrieve metadata value for enableBillingOverridesTesting.", e10);
-            return false;
-        }
-    }
+    z9.b c(Class cls);
 
-    public c(p pVar) {
-        v9.d dVar = new v9.d(5);
-        d7.u uVar = new d7.u(4);
-        this.c = dVar;
-        this.a = new ArrayList();
-        this.b = uVar;
-        pVar.a(new b(this, 0));
-    }
+    Object d(v vVar);
+
+    Set f(v vVar);
+
+    z9.b g(v vVar);
 }

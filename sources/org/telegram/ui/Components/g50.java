@@ -1,34 +1,17 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+import java.io.File;
+import org.telegram.messenger.BuildVars;
+import org.telegram.messenger.FileLog;
+
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public abstract class g50 extends mn0 {
-    @Override // org.telegram.ui.Components.mn0
-    public final boolean a() {
-        return j() > 0;
-    }
-
-    @Override // org.telegram.ui.Components.mn0
-    public final boolean b() {
-        return j() < i();
-    }
-
-    @Override // org.telegram.ui.Components.mn0
-    public final void c(boolean z10) {
-        int h = h();
-        if (z10) {
-            h *= -1;
+public final class g50 extends File {
+    @Override // java.io.File
+    public final boolean delete() {
+        if (BuildVars.LOGS_ENABLED) {
+            FileLog.e("delete camera file");
         }
-        k(Math.min(i(), Math.max(0, j() + h)));
+        return super.delete();
     }
-
-    public int h() {
-        return 1;
-    }
-
-    public abstract int i();
-
-    public abstract int j();
-
-    public abstract void k(int i9);
 }

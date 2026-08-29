@@ -1,59 +1,37 @@
 package x2;
 
-import android.content.Context;
-
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class b extends c {
-    public final Context a;
-    public final f3.a b;
-    public final f3.a c;
-    public final String d;
+public final class b implements s9.d {
+    public static final b a = new b();
+    public static final s9.c b = s9.c.c("sdkVersion");
+    public static final s9.c c = s9.c.c("model");
+    public static final s9.c d = s9.c.c("hardware");
+    public static final s9.c e = s9.c.c("device");
+    public static final s9.c f = s9.c.c("product");
+    public static final s9.c g = s9.c.c("osBuild");
+    public static final s9.c h = s9.c.c("manufacturer");
+    public static final s9.c i = s9.c.c("fingerprint");
+    public static final s9.c j = s9.c.c("locale");
+    public static final s9.c k = s9.c.c("country");
+    public static final s9.c l = s9.c.c("mccMnc");
+    public static final s9.c m = s9.c.c("applicationBuild");
 
-    public b(Context context, f3.a aVar, f3.a aVar2, String str) {
-        if (context == null) {
-            throw new NullPointerException("Null applicationContext");
-        }
-        this.a = context;
-        if (aVar == null) {
-            throw new NullPointerException("Null wallClock");
-        }
-        this.b = aVar;
-        if (aVar2 == null) {
-            throw new NullPointerException("Null monotonicClock");
-        }
-        this.c = aVar2;
-        if (str == null) {
-            throw new NullPointerException("Null backendName");
-        }
-        this.d = str;
-    }
-
-    public final boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
-        }
-        if (obj instanceof c) {
-            b bVar = (b) ((c) obj);
-            if (this.a.equals(bVar.a) && this.b.equals(bVar.b) && this.c.equals(bVar.c) && this.d.equals(bVar.d)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public final int hashCode() {
-        return ((((((this.a.hashCode() ^ 1000003) * 1000003) ^ this.b.hashCode()) * 1000003) ^ this.c.hashCode()) * 1000003) ^ this.d.hashCode();
-    }
-
-    public final String toString() {
-        StringBuilder sb2 = new StringBuilder("CreationContext{applicationContext=");
-        sb2.append(this.a);
-        sb2.append(", wallClock=");
-        sb2.append(this.b);
-        sb2.append(", monotonicClock=");
-        sb2.append(this.c);
-        sb2.append(", backendName=");
-        return aa.d.r(sb2, this.d, "}");
+    @Override // s9.a
+    public final void a(Object obj, Object obj2) {
+        s9.e eVar = (s9.e) obj2;
+        h hVar = (h) ((a) obj);
+        eVar.e(b, hVar.a);
+        eVar.e(c, hVar.b);
+        eVar.e(d, hVar.c);
+        eVar.e(e, hVar.d);
+        eVar.e(f, hVar.e);
+        eVar.e(g, hVar.f);
+        eVar.e(h, hVar.g);
+        eVar.e(i, hVar.h);
+        eVar.e(j, hVar.i);
+        eVar.e(k, hVar.j);
+        eVar.e(l, hVar.k);
+        eVar.e(m, hVar.l);
     }
 }

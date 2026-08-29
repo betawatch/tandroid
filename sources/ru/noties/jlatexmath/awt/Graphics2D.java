@@ -7,7 +7,7 @@ import ru.noties.jlatexmath.awt.geom.Line2D;
 import ru.noties.jlatexmath.awt.geom.Rectangle2D;
 import ru.noties.jlatexmath.awt.geom.RoundRectangle2D;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes4.dex */
 public interface Graphics2D extends Graphics {
     void draw(Line2D.Float r12);
@@ -16,15 +16,15 @@ public interface Graphics2D extends Graphics {
 
     void draw(RoundRectangle2D.Float r12);
 
-    void drawArc(int i9, int i10, int i11, int i12, int i13, int i14);
+    void drawArc(int i10, int i11, int i12, int i13, int i14, int i15);
 
-    void drawChars(char[] cArr, int i9, int i10, int i11, int i12);
+    void drawChars(char[] cArr, int i10, int i11, int i12, int i13);
 
     void fill(Rectangle2D.Float r12);
 
-    void fillArc(int i9, int i10, int i11, int i12, int i13, int i14);
+    void fillArc(int i10, int i11, int i12, int i13, int i14, int i15);
 
-    void fillRect(int i9, int i10, int i11, int i12);
+    void fillRect(int i10, int i11, int i12, int i13);
 
     Color getColor();
 
@@ -40,9 +40,9 @@ public interface Graphics2D extends Graphics {
 
     void rotate(double d);
 
-    void rotate(double d, double d9, double d10);
+    void rotate(double d, double d10, double d11);
 
-    void scale(double d, double d9);
+    void scale(double d, double d10);
 
     void setColor(Color color);
 
@@ -56,5 +56,5 @@ public interface Graphics2D extends Graphics {
 
     void setTransform(AffineTransform affineTransform);
 
-    void translate(double d, double d9);
+    void translate(double d, double d10);
 }

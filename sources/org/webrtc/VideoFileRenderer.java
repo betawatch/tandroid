@@ -7,11 +7,11 @@ import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.charset.Charset;
 import java.util.concurrent.CountDownLatch;
-import org.telegram.ui.Components.ue0;
+import org.telegram.ui.Components.yw0;
 import org.webrtc.EglBase;
 import org.webrtc.VideoFrame;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes4.dex */
 public class VideoFileRenderer implements VideoSink {
     private static final String TAG = "VideoFileRenderer";
@@ -29,19 +29,19 @@ public class VideoFileRenderer implements VideoSink {
     private final FileOutputStream videoOutFile;
     private YuvConverter yuvConverter;
 
-    public VideoFileRenderer(String str, int i9, int i10, final EglBase.Context context) {
-        if (i9 % 2 == 1 || i10 % 2 == 1) {
+    public VideoFileRenderer(String str, int i10, int i11, final EglBase.Context context) {
+        if (i10 % 2 == 1 || i11 % 2 == 1) {
             throw new IllegalArgumentException("Does not support uneven width or height");
         }
         this.outputFileName = str;
-        this.outputFileWidth = i9;
-        this.outputFileHeight = i10;
-        int i11 = ((i9 * i10) * 3) / 2;
-        this.outputFrameSize = i11;
-        this.outputFrameBuffer = ByteBuffer.allocateDirect(i11);
+        this.outputFileWidth = i10;
+        this.outputFileHeight = i11;
+        int i12 = ((i10 * i11) * 3) / 2;
+        this.outputFrameSize = i12;
+        this.outputFrameBuffer = ByteBuffer.allocateDirect(i12);
         FileOutputStream fileOutputStream = new FileOutputStream(str);
         this.videoOutFile = fileOutputStream;
-        fileOutputStream.write(("YUV4MPEG2 C420 W" + i9 + " H" + i10 + " Ip F30:1 A1:1\n").getBytes(Charset.forName("US-ASCII")));
+        fileOutputStream.write(("YUV4MPEG2 C420 W" + i10 + " H" + i11 + " Ip F30:1 A1:1\n").getBytes(Charset.forName("US-ASCII")));
         HandlerThread handlerThread = new HandlerThread("VideoFileRendererRenderThread");
         this.renderThread = handlerThread;
         handlerThread.start();
@@ -98,22 +98,22 @@ public class VideoFileRenderer implements VideoSink {
     /* renamed from: renderFrameOnRenderThread, reason: merged with bridge method [inline-methods] */
     public void lambda$onFrame$0(VideoFrame videoFrame) {
         VideoFrame.Buffer buffer = videoFrame.getBuffer();
-        int i9 = videoFrame.getRotation() % 180 == 0 ? this.outputFileWidth : this.outputFileHeight;
-        int i10 = videoFrame.getRotation() % 180 == 0 ? this.outputFileHeight : this.outputFileWidth;
+        int i10 = videoFrame.getRotation() % 180 == 0 ? this.outputFileWidth : this.outputFileHeight;
+        int i11 = videoFrame.getRotation() % 180 == 0 ? this.outputFileHeight : this.outputFileWidth;
         float width = buffer.getWidth() / buffer.getHeight();
-        float f10 = i9 / i10;
+        float f9 = i10 / i11;
         int width2 = buffer.getWidth();
         int height = buffer.getHeight();
-        if (f10 > width) {
-            height = (int) ((width / f10) * height);
+        if (f9 > width) {
+            height = (int) ((width / f9) * height);
         } else {
-            width2 = (int) ((f10 / width) * width2);
+            width2 = (int) ((f9 / width) * width2);
         }
-        VideoFrame.Buffer cropAndScale = buffer.cropAndScale((buffer.getWidth() - width2) / 2, (buffer.getHeight() - height) / 2, width2, height, i9, i10);
+        VideoFrame.Buffer cropAndScale = buffer.cropAndScale((buffer.getWidth() - width2) / 2, (buffer.getHeight() - height) / 2, width2, height, i10, i11);
         videoFrame.release();
         VideoFrame.I420Buffer i420 = cropAndScale.toI420();
         cropAndScale.release();
-        this.fileThreadHandler.post(new ue0(this, i420, videoFrame, 29));
+        this.fileThreadHandler.post(new yw0(this, i420, videoFrame, 18));
     }
 
     @Override // org.webrtc.VideoSink

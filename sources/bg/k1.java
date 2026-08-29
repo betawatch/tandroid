@@ -1,54 +1,116 @@
 package bg;
 
-import android.os.Bundle;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.b6;
-import org.telegram.ui.Components.oc;
-import org.telegram.ui.qn;
+import android.content.Context;
+import android.graphics.PointF;
+import android.view.ViewGroup;
+import i7.f6;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.hk0;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class k1 extends cg.e {
-    public final /* synthetic */ l1 r;
+public final class k1 extends k {
+    public final i1 m0;
+    public int n0;
+    public int o0;
+    public boolean p0;
+    public h1 q0;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public k1(l1 l1Var, b6 b6Var) {
-        super(b6Var);
-        this.r = l1Var;
+    public k1(Context context, PointF pointF, int i10, h1 h1Var, float f9, int i11) {
+        super(context, pointF);
+        i1 i1Var = new i1(context, f9);
+        this.m0 = i1Var;
+        i1Var.setMaxWidth(i11);
+        this.q0 = h1Var;
+        i1Var.b(i10, h1Var, false);
+        m();
+        this.o0 = 3;
+        i1Var.c(3, this.n0);
+        addView(i1Var, f6.e(-2, -2, 51));
+        setClipChildren(false);
+        setClipToPadding(false);
+        k();
     }
 
-    @Override // cg.e
-    public final void E() {
-        b6 b6Var;
-        l1 l1Var = this.r;
-        String str = l1Var.W;
-        String string = ((str == null || str.isEmpty()) && l1Var.T.to_id == -1) ? LocaleController.getString(R.string.BoostingOnlyGiveawayCreatorSeeLink) : LocaleController.getString(R.string.BoostingOnlyRecipientCode);
-        org.telegram.ui.ActionBar.d3 d3Var = l1Var.container;
-        b6Var = ((org.telegram.ui.ActionBar.f3) l1Var).resourcesProvider;
-        new oc(d3Var, b6Var).Q(R.raw.chats_infotip, 36, string).k(true);
+    @Override // bg.k
+    public final j a() {
+        return new j1(this, getContext());
     }
 
-    @Override // cg.e
-    public final void F(TLObject tLObject) {
-        l1 l1Var = this.r;
-        TLRPC.TL_payments_checkedGiftCode tL_payments_checkedGiftCode = l1Var.T;
-        org.telegram.ui.ActionBar.o2 o2Var = l1Var.n;
-        l1Var.dismiss();
-        if (tLObject instanceof TLRPC.Chat) {
-            o2Var.presentFragment(qn.R9(-((TLRPC.Chat) tLObject).id));
-            return;
+    public int getColor() {
+        return this.n0;
+    }
+
+    @Override // bg.k
+    public float getMaxScale() {
+        return 1.5f;
+    }
+
+    public int getNextType() {
+        int i10 = this.o0 + 1;
+        return i10 == 4 ? !this.p0 ? 1 : 0 : i10;
+    }
+
+    @Override // bg.k
+    public hk0 getSelectionBounds() {
+        ViewGroup viewGroup = (ViewGroup) getParent();
+        if (viewGroup == null) {
+            return new hk0();
         }
-        if (tLObject instanceof TLRPC.User) {
-            o2Var.presentFragment(qn.R9(((TLRPC.User) tLObject).id));
-            return;
-        }
-        Bundle bundle = new Bundle();
-        bundle.putLong("chat_id", -DialogObject.getPeerDialogId(tL_payments_checkedGiftCode.from_id));
-        bundle.putInt("message_id", tL_payments_checkedGiftCode.giveaway_msg_id);
-        o2Var.presentFragment(new qn(bundle));
+        float scaleX = viewGroup.getScaleX();
+        float dp = (AndroidUtilities.dp(64.0f) / scaleX) + (getScale() * getMeasuredWidth());
+        float dp2 = (AndroidUtilities.dp(64.0f) / scaleX) + (getScale() * getMeasuredHeight());
+        float c3 = org.telegram.ui.b.c(dp, 2.0f, getPositionX(), scaleX);
+        return new hk0(c3, org.telegram.ui.b.c(dp2, 2.0f, getPositionY(), scaleX), ((dp * scaleX) + c3) - c3, dp2 * scaleX);
+    }
+
+    @Override // bg.k
+    public float getStickyPaddingBottom() {
+        return this.m0.h;
+    }
+
+    @Override // bg.k
+    public float getStickyPaddingLeft() {
+        return this.m0.f;
+    }
+
+    @Override // bg.k
+    public float getStickyPaddingRight() {
+        return this.m0.f;
+    }
+
+    @Override // bg.k
+    public float getStickyPaddingTop() {
+        return this.m0.h;
+    }
+
+    public int getType() {
+        return this.o0;
+    }
+
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        k();
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, i11);
+        k();
+    }
+
+    public void setColor(int i10) {
+        this.p0 = true;
+        this.n0 = i10;
+    }
+
+    public void setMaxWidth(int i10) {
+        this.m0.setMaxWidth(i10);
+    }
+
+    public void setType(int i10) {
+        this.o0 = i10;
+        this.m0.c(i10, this.n0);
     }
 }

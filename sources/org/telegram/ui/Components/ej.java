@@ -1,44 +1,65 @@
 package org.telegram.ui.Components;
 
-import j$.util.Objects;
-import org.telegram.messenger.ContactsController;
-import org.telegram.tgnet.TLRPC;
+import android.text.Editable;
+import android.text.TextWatcher;
+import org.telegram.messenger.DispatchQueue;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class ej {
-    public final int a;
-    public final long b;
+public final class ej implements TextWatcher {
+    public final /* synthetic */ sj a;
 
-    public ej(int i9, long j10) {
-        this.a = i9;
-        this.b = j10;
+    public ej(sj sjVar) {
+        this.a = sjVar;
     }
 
-    public static ej a(Object obj) {
-        if (obj instanceof ContactsController.Contact) {
-            return new ej(2, ((ContactsController.Contact) obj).contact_id);
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        int currentTop;
+        String obj = editable.toString();
+        if (obj.isEmpty()) {
+            f2.p0 adapter = this.a.s.getAdapter();
+            sj sjVar = this.a;
+            if (adapter != sjVar.A) {
+                currentTop = sjVar.getCurrentTop();
+                this.a.C.setText(LocaleController.getString(R.string.NoContacts));
+                this.a.C.c();
+                sj sjVar2 = this.a;
+                sjVar2.s.setAdapter(sjVar2.A);
+                this.a.A.l();
+                if (currentTop > 0) {
+                    this.a.v.h1(0, -currentTop);
+                }
+            }
+        } else {
+            hz hzVar = this.a.C;
+            if (hzVar != null) {
+                hzVar.setText(LocaleController.getString(R.string.NoResult));
+            }
         }
-        if (obj instanceof TLRPC.User) {
-            return new ej(1, ((TLRPC.User) obj).id);
+        oj ojVar = this.a.B;
+        if (ojVar != null) {
+            if (ojVar.f != null) {
+                Utilities.searchQueue.cancelRunnable(ojVar.f);
+                ojVar.f = null;
+            }
+            int i10 = ojVar.h + 1;
+            ojVar.h = i10;
+            DispatchQueue dispatchQueue = Utilities.searchQueue;
+            mj mjVar = new mj(ojVar, obj, i10, 0);
+            ojVar.f = mjVar;
+            dispatchQueue.postRunnable(mjVar, 300L);
         }
-        return null;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null || ej.class != obj.getClass()) {
-            return false;
-        }
-        ej ejVar = (ej) obj;
-        return this.b == ejVar.b && this.a == ejVar.a;
+    @Override // android.text.TextWatcher
+    public final /* synthetic */ void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 
-    public final int hashCode() {
-        Long valueOf = Long.valueOf(this.b);
-        int i9 = this.a;
-        return Objects.hash(i9 == 0 ? null : Integer.valueOf(i9 - 1), valueOf);
+    @Override // android.text.TextWatcher
+    public final /* synthetic */ void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

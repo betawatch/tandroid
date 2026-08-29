@@ -1,30 +1,46 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class ms0 extends bu0 {
-    public final /* synthetic */ eu0 C;
+public final class ms0 implements org.telegram.ui.Cells.i7 {
+    public final /* synthetic */ qu0 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ms0(eu0 eu0Var, Context context) {
-        super(eu0Var, context, 0, false);
-        this.C = eu0Var;
+    public ms0(qu0 qu0Var) {
+        this.a = qu0Var;
     }
 
-    @Override // org.telegram.ui.Components.bu0, f2.r0
-    public final void l() {
-        super.l();
-        eu0 eu0Var = this.C;
-        xs0 W = eu0Var.W(8);
-        if (W != null && W.r.getVisibility() == 0) {
-            eu0Var.W.l();
+    @Override // org.telegram.ui.Cells.i7
+    public final void a(String str, boolean z10) {
+        qu0 qu0Var = this.a;
+        org.telegram.ui.ActionBar.o2 o2Var = qu0Var.r1;
+        if (!z10) {
+            qu0Var.R0(str);
+            return;
         }
-        if (W != null) {
-            or0 or0Var = W.w;
-            ih.n6 n6Var = this.s;
-            or0Var.e(n6Var != null && (n6Var.k() || (eu0Var.i0() && this.s.g() > 0)), true);
-        }
+        org.telegram.ui.ActionBar.f3 f3Var = new org.telegram.ui.ActionBar.f3(o2Var.getParentActivity(), null, false, false);
+        f3Var.fixNavigationBar();
+        f3Var.title = str;
+        f3Var.bigTitle = false;
+        CharSequence[] charSequenceArr = {LocaleController.getString("Open", R.string.Open), LocaleController.getString("Copy", R.string.Copy)};
+        ag.y1 y1Var = new ag.y1(6, this, str);
+        f3Var.items = charSequenceArr;
+        f3Var.onClickListener = y1Var;
+        o2Var.showDialog(f3Var);
+    }
+
+    @Override // org.telegram.ui.Cells.i7
+    public final void b(TLRPC.WebPage webPage, MessageObject messageObject) {
+        qu0 qu0Var = this.a;
+        mu.I(qu0Var.r1, messageObject, qu0Var.n1, webPage.site_name, webPage.description, webPage.url, webPage.embed_url, webPage.embed_width, webPage.embed_height, -1, false);
+    }
+
+    @Override // org.telegram.ui.Cells.i7
+    public final boolean c() {
+        return !this.a.y1;
     }
 }

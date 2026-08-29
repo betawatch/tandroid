@@ -20,34 +20,34 @@ public final class s1 {
         this.c = "";
     }
 
-    public static int c(String str, char[] cArr, int i9) {
+    public static int c(String str, char[] cArr, int i10) {
         int length = str.length();
-        str.getChars(0, length, cArr, i9);
+        str.getChars(0, length, cArr, i10);
         return length;
     }
 
     public final String toString() {
         String[] strArr = this.d;
-        int i9 = this.e;
+        int i10 = this.e;
         String str = this.a;
         int length = str.length();
         String str2 = this.c;
         int length2 = str2.length() + length;
         if (length2 == 0) {
             b();
-            return i9 == 0 ? "" : strArr[0];
+            return i10 == 0 ? "" : strArr[0];
         }
         char[] cArr = new char[this.f + length2];
-        int c10 = c(str, cArr, 0);
-        if (i9 > 0) {
-            int c11 = c(strArr[0], cArr, c10) + c10;
-            for (int i10 = 1; i10 < i9; i10++) {
-                int c12 = c(this.b, cArr, c11) + c11;
-                c11 = c(strArr[i10], cArr, c12) + c12;
+        int c3 = c(str, cArr, 0);
+        if (i10 > 0) {
+            int c6 = c(strArr[0], cArr, c3) + c3;
+            for (int i11 = 1; i11 < i10; i11++) {
+                int c10 = c(this.b, cArr, c6) + c6;
+                c6 = c(strArr[i11], cArr, c10) + c10;
             }
-            c10 = c11;
+            c3 = c6;
         }
-        c(str2, cArr, c10);
+        c(str2, cArr, c3);
         return new String(cArr);
     }
 
@@ -57,32 +57,32 @@ public final class s1 {
         if (strArr == null) {
             this.d = new String[8];
         } else {
-            int i9 = this.e;
-            if (i9 == strArr.length) {
-                this.d = (String[]) Arrays.copyOf(strArr, i9 * 2);
+            int i10 = this.e;
+            if (i10 == strArr.length) {
+                this.d = (String[]) Arrays.copyOf(strArr, i10 * 2);
             }
             this.f = this.b.length() + this.f;
         }
         this.f = valueOf.length() + this.f;
         String[] strArr2 = this.d;
-        int i10 = this.e;
-        this.e = i10 + 1;
-        strArr2[i10] = valueOf;
+        int i11 = this.e;
+        this.e = i11 + 1;
+        strArr2[i11] = valueOf;
     }
 
     public final void b() {
         String[] strArr;
         if (this.e > 1) {
             char[] cArr = new char[this.f];
-            int c10 = c(this.d[0], cArr, 0);
-            int i9 = 1;
+            int c3 = c(this.d[0], cArr, 0);
+            int i10 = 1;
             do {
-                int c11 = c(this.b, cArr, c10) + c10;
-                c10 = c(this.d[i9], cArr, c11) + c11;
+                int c6 = c(this.b, cArr, c3) + c3;
+                c3 = c(this.d[i10], cArr, c6) + c6;
                 strArr = this.d;
-                strArr[i9] = null;
-                i9++;
-            } while (i9 < this.e);
+                strArr[i10] = null;
+                i10++;
+            } while (i10 < this.e);
             this.e = 1;
             strArr[0] = new String(cArr);
         }

@@ -1,58 +1,108 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
-import androidx.mediarouter.app.MediaRouteButton;
-import java.lang.reflect.Field;
+import android.graphics.Paint;
+import java.util.Random;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public abstract class bd extends MediaRouteButton {
-    public boolean a;
+public final class bd {
+    public float a;
+    public float b;
+    public float c;
+    public float d;
+    public float e;
+    public float f;
+    public int g;
+    public float[] k;
+    public float[] l;
+    public float[] m;
+    public float[] n;
+    public float[] o;
+    public float[] p;
+    public float[] q;
+    public float[] r;
+    public float[] s;
+    public float[] t;
+    public float[] u;
+    public float[] v;
+    public float[] w;
+    public int x;
+    public int h = -11318601;
+    public final Paint i = new Paint(1);
+    public final Random j = new Random();
+    public int y = 255;
 
     public final void a() {
-        boolean b10 = b();
-        if (this.a != b10) {
-            this.a = b10;
-            c(b10);
+        int i10 = this.h;
+        Paint paint = this.i;
+        paint.setColor(i10);
+        paint.setAlpha((this.g * this.y) / 255);
+    }
+
+    public final void b(int i10) {
+        float f9 = 0.18f / this.x;
+        float f10 = this.k[i10];
+        Random random = this.j;
+        float nextFloat = ((random.nextFloat() - 0.5f) * 2.0f * 0.35f) + f10;
+        float[] fArr = this.l;
+        if (nextFloat < 0.0f) {
+            nextFloat = 0.0f;
+        } else if (nextFloat > 1.0f) {
+            nextFloat = 1.0f;
         }
-    }
-
-    public final boolean b() {
-        Field declaredField;
-        try {
-            declaredField = MediaRouteButton.class.getDeclaredField("mConnectionState");
-            declaredField.setAccessible(true);
-        } catch (Exception unused) {
+        fArr[i10] = nextFloat;
+        float nextFloat2 = ((random.nextFloat() - 0.5f) * 2.0f * f9 * 0.35f) + this.m[i10];
+        float[] fArr2 = this.n;
+        float f11 = -f9;
+        if (nextFloat2 < f11) {
+            f9 = f11;
+        } else if (nextFloat2 <= f9) {
+            f9 = nextFloat2;
         }
-        return ((Integer) declaredField.get(this)).intValue() > 0;
+        fArr2[i10] = f9;
+        this.p[i10] = ((random.nextFloat() * 0.003f) + 0.017f) * this.a;
     }
 
-    public abstract void c(boolean z10);
-
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
+    public final void c(int i10) {
+        this.x = i10;
+        this.k = new float[i10];
+        this.l = new float[i10];
+        this.m = new float[i10];
+        this.n = new float[i10];
+        this.o = new float[i10];
+        this.p = new float[i10];
+        this.q = new float[i10];
+        this.r = new float[i10];
+        this.s = new float[i10];
+        this.t = new float[i10];
+        this.u = new float[i10];
+        this.v = new float[i10];
+        this.w = new float[i10];
+        for (int i11 = 0; i11 < this.x; i11++) {
+            float[] fArr = this.k;
+            Random random = this.j;
+            fArr[i11] = random.nextFloat();
+            this.m[i11] = (((random.nextFloat() - 0.5f) * 2.0f) * 0.18f) / this.x;
+            b(i11);
+            this.o[i11] = random.nextFloat();
+        }
         a();
     }
 
-    @Override // android.view.View
-    public final void invalidate() {
-        super.invalidate();
-        a();
-    }
-
-    @Override // androidx.mediarouter.app.MediaRouteButton, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        a();
-    }
-
-    @Override // androidx.mediarouter.app.MediaRouteButton, android.view.View
-    public final void onDraw(Canvas canvas) {
-        a();
-    }
-
-    @Override // android.view.View
-    public void setBackground(Drawable drawable) {
+    public final void d(float f9) {
+        for (int i10 = 0; i10 < this.x; i10++) {
+            float[] fArr = this.o;
+            float f10 = fArr[i10];
+            float f11 = this.p[i10];
+            gh.a aVar = cd.H;
+            float f12 = (f11 * f9 * 8.2f) + (0.8f * f11) + f10;
+            fArr[i10] = f12;
+            if (f12 >= 1.0f) {
+                fArr[i10] = 0.0f;
+                this.k[i10] = this.l[i10];
+                this.m[i10] = this.n[i10];
+                b(i10);
+            }
+        }
     }
 }

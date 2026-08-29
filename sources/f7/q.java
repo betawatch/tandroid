@@ -1,28 +1,22 @@
 package f7;
 
-import android.app.KeyguardManager;
-import android.content.Context;
-import android.os.Build;
+import java.util.concurrent.Callable;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public abstract class q {
-    public static KeyguardManager a(Context context) {
-        if (Build.VERSION.SDK_INT >= 23) {
-            return androidx.biometric.h0.a(context);
-        }
-        Object systemService = context.getSystemService("keyguard");
-        if (systemService instanceof KeyguardManager) {
-            return (KeyguardManager) systemService;
-        }
-        return null;
+public final /* synthetic */ class q implements Callable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ab.l b;
+
+    public /* synthetic */ q(ab.l lVar, int i10) {
+        this.a = i10;
+        this.b = lVar;
     }
 
-    public static boolean b(Context context) {
-        KeyguardManager a2 = a(context);
-        if (a2 == null) {
-            return false;
+    @Override // java.util.concurrent.Callable
+    public final Object call() {
+        switch (this.a) {
         }
-        return Build.VERSION.SDK_INT >= 23 ? androidx.biometric.h0.b(a2) : androidx.biometric.g0.a(a2);
+        return this.b.a();
     }
 }

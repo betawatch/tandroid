@@ -1,60 +1,46 @@
 package ih;
 
-import android.content.Intent;
-import android.net.Uri;
-import java.util.ArrayList;
-import org.telegram.messenger.AccountInstance;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.SendMessageChatArguments;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.wj;
-import org.telegram.ui.gn;
+import android.view.KeyEvent;
+import android.view.View;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
-/* loaded from: classes4.dex */
-public final class w2 implements wj {
-    public final /* synthetic */ i4 a;
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* loaded from: classes.dex */
+public final class w2 implements TextView.OnEditorActionListener {
+    public final /* synthetic */ v2 a;
+    public final /* synthetic */ Utilities.Callback b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.c2[] c;
+    public final /* synthetic */ View d;
 
-    public w2(i4 i4Var) {
-        this.a = i4Var;
+    public w2(v2 v2Var, Utilities.Callback callback, org.telegram.ui.ActionBar.c2[] c2VarArr, View view) {
+        this.a = v2Var;
+        this.b = callback;
+        this.c = c2VarArr;
+        this.d = view;
     }
 
-    @Override // org.telegram.ui.Components.wj
-    public final void l(ArrayList arrayList, String str, ArrayList arrayList2, ArrayList arrayList3, boolean z10, int i9, long j10, boolean z11, long j11) {
-        AccountInstance accountInstance;
-        i4 i4Var = this.a;
-        TL_stories.StoryItem storyItem = i4Var.K1.a;
-        if (storyItem == null || (storyItem instanceof TL_stories.TL_storyItemSkipped)) {
-            return;
+    @Override // android.widget.TextView.OnEditorActionListener
+    public final boolean onEditorAction(TextView textView, int i10, KeyEvent keyEvent) {
+        if (i10 != 6) {
+            return false;
         }
-        accountInstance = i4Var.getAccountInstance();
-        SendMessagesHelper.prepareSendingDocuments(accountInstance, (ArrayList<String>) arrayList, (ArrayList<String>) arrayList, (ArrayList<Uri>) null, str, (String) null, i4Var.x1, (MessageObject) null, (MessageObject) null, storyItem, (gn) null, (MessageObject) null, z10, i9, (t0.j) null, (SendMessageChatArguments) null, 0L, false, j11);
-        i4Var.k0(j11 <= 0);
-    }
-
-    @Override // org.telegram.ui.Components.wj
-    public final void x() {
-        try {
-            Intent intent = new Intent("android.intent.action.GET_CONTENT");
-            intent.putExtra("android.intent.extra.ALLOW_MULTIPLE", true);
-            intent.setType("*/*");
-            org.telegram.ui.ActionBar.o2 o2Var = this.a.F0.f;
-            if (o2Var.getParentActivity() == null) {
-                return;
-            }
-            o2Var.getParentActivity().startActivityForResult(intent, 21);
-        } catch (Exception e10) {
-            FileLog.e(e10);
+        v2 v2Var = this.a;
+        String obj = v2Var.getText().toString();
+        if (obj.length() <= 0 || obj.length() > 12) {
+            AndroidUtilities.shakeView(v2Var);
+            return true;
         }
-    }
-
-    @Override // org.telegram.ui.Components.wj
-    public final /* synthetic */ void N() {
-    }
-
-    @Override // org.telegram.ui.Components.wj
-    public final /* synthetic */ void m(long j10, ArrayList arrayList, boolean z10, int i9) {
+        this.b.run(obj);
+        org.telegram.ui.ActionBar.c2 c2Var = this.c[0];
+        if (c2Var != null) {
+            c2Var.dismiss();
+        }
+        View view = this.d;
+        if (view != null) {
+            view.requestFocus();
+        }
+        return true;
     }
 }

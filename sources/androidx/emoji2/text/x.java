@@ -6,7 +6,7 @@ import android.text.SpannableString;
 import j$.util.stream.IntStream;
 import java.util.stream.IntStream;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class x implements Spannable {
     public boolean a = false;
@@ -19,7 +19,7 @@ public final class x implements Spannable {
     public final void a() {
         Spannable spannable = this.b;
         if (!this.a) {
-            if ((Build.VERSION.SDK_INT < 28 ? new wa.a(2) : new w(2)).A3(spannable)) {
+            if ((Build.VERSION.SDK_INT < 28 ? new bb.a(3) : new w(3)).r3(spannable)) {
                 this.b = new SpannableString(spannable);
             }
         }
@@ -27,8 +27,8 @@ public final class x implements Spannable {
     }
 
     @Override // java.lang.CharSequence
-    public final char charAt(int i9) {
-        return this.b.charAt(i9);
+    public final char charAt(int i10) {
+        return this.b.charAt(i10);
     }
 
     @Override // java.lang.CharSequence
@@ -57,8 +57,8 @@ public final class x implements Spannable {
     }
 
     @Override // android.text.Spanned
-    public final Object[] getSpans(int i9, int i10, Class cls) {
-        return this.b.getSpans(i9, i10, cls);
+    public final Object[] getSpans(int i10, int i11, Class cls) {
+        return this.b.getSpans(i10, i11, cls);
     }
 
     @Override // java.lang.CharSequence
@@ -67,8 +67,8 @@ public final class x implements Spannable {
     }
 
     @Override // android.text.Spanned
-    public final int nextSpanTransition(int i9, int i10, Class cls) {
-        return this.b.nextSpanTransition(i9, i10, cls);
+    public final int nextSpanTransition(int i10, int i11, Class cls) {
+        return this.b.nextSpanTransition(i10, i11, cls);
     }
 
     @Override // android.text.Spannable
@@ -78,14 +78,14 @@ public final class x implements Spannable {
     }
 
     @Override // android.text.Spannable
-    public final void setSpan(Object obj, int i9, int i10, int i11) {
+    public final void setSpan(Object obj, int i10, int i11, int i12) {
         a();
-        this.b.setSpan(obj, i9, i10, i11);
+        this.b.setSpan(obj, i10, i11, i12);
     }
 
     @Override // java.lang.CharSequence
-    public final CharSequence subSequence(int i9, int i10) {
-        return this.b.subSequence(i9, i10);
+    public final CharSequence subSequence(int i10, int i11) {
+        return this.b.subSequence(i10, i11);
     }
 
     @Override // java.lang.CharSequence

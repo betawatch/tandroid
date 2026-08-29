@@ -1,32 +1,33 @@
 package ed;
 
-import g7.g7;
-import hd.r1;
-import java.util.Iterator;
-
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class e implements b {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class e extends d {
+    public static final e d = new e(1, 0, 1);
 
-    public /* synthetic */ e(Object obj, int i9) {
-        this.a = i9;
-        this.b = obj;
+    public final boolean equals(Object obj) {
+        if (!(obj instanceof e)) {
+            return false;
+        }
+        if (isEmpty() && ((e) obj).isEmpty()) {
+            return true;
+        }
+        e eVar = (e) obj;
+        return this.a == eVar.a && this.b == eVar.b;
     }
 
-    @Override // ed.b
-    public final Iterator iterator() {
-        switch (this.a) {
-            case 0:
-                r1 r1Var = (r1) this.b;
-                c cVar = new c();
-                cVar.c = g7.a(cVar, cVar, r1Var);
-                return cVar;
-            case 1:
-                return (Iterator) this.b;
-            default:
-                return new fd.b((String) this.b);
+    public final int hashCode() {
+        if (isEmpty()) {
+            return -1;
         }
+        return (this.a * 31) + this.b;
+    }
+
+    public final boolean isEmpty() {
+        return this.a > this.b;
+    }
+
+    public final String toString() {
+        return this.a + ".." + this.b;
     }
 }

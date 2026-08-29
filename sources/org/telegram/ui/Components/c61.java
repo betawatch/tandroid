@@ -1,149 +1,114 @@
 package org.telegram.ui.Components;
 
-import java.util.List;
+import android.app.Activity;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import java.io.File;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.IUpdateLayout;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class c61 implements h3.a2 {
-    public final /* synthetic */ k61 a;
+public final class c61 extends IUpdateLayout {
+    public FrameLayout a;
+    public RadialProgress2 b;
+    public org.telegram.ui.Cells.v1 c;
+    public final Activity d;
+    public final ViewGroup e;
 
-    public c61(k61 k61Var) {
-        this.a = k61Var;
+    public c61(Activity activity, ViewGroup viewGroup) {
+        super(activity, viewGroup);
+        this.d = activity;
+        this.e = viewGroup;
     }
 
-    @Override // h3.a2
-    public final /* synthetic */ void onCues(List list) {
-    }
-
-    @Override // h3.a2
-    public final void onPlayerStateChanged(boolean z10, int i9) {
-        k61 k61Var = this.a;
-        if (k61Var.D || i9 != 3) {
+    @Override // org.telegram.ui.IUpdateLayout
+    public final void createUpdateUI(int i10) {
+        ViewGroup viewGroup = this.e;
+        if (viewGroup == null || this.a != null) {
             return;
         }
-        k61Var.D = true;
-        if (k61Var.C && k61Var.E) {
-            k61Var.D();
+        Activity activity = this.d;
+        FrameLayout frameLayout = new FrameLayout(activity);
+        this.a = frameLayout;
+        frameLayout.setVisibility(4);
+        this.a.setTranslationY(AndroidUtilities.dp(44.0f));
+        this.a.setBackground(org.telegram.ui.ActionBar.g6.f0(1090519039, 2, -1));
+        viewGroup.addView(this.a, i7.f6.e(-1, 44, 83));
+        this.a.setOnClickListener(new jh.y0(this, i10, 13));
+        org.telegram.ui.Cells.v1 v1Var = new org.telegram.ui.Cells.v1(this, activity);
+        this.c = v1Var;
+        v1Var.setTextSize(AndroidUtilities.dp(15.0f));
+        this.c.setTypeface(AndroidUtilities.bold());
+        this.c.setTextColor(-1);
+        this.c.setGravity(17);
+        this.a.addView(this.c, i7.f6.g());
+        this.c.c(LocaleController.getString(R.string.AppUpdateBeta), false, true);
+        RadialProgress2 radialProgress2 = new RadialProgress2(this.c, null);
+        this.b = radialProgress2;
+        int i11 = org.telegram.ui.ActionBar.g6.Oh;
+        radialProgress2.setColors(-1, -1, org.telegram.ui.ActionBar.g6.w0(null, i11, false), org.telegram.ui.ActionBar.g6.w0(null, i11, false));
+        this.b.q(0, 0, AndroidUtilities.dp(22.0f), AndroidUtilities.dp(22.0f));
+        this.b.setCircleRadius(AndroidUtilities.dp(11.0f));
+        this.b.setAsMini();
+    }
+
+    @Override // org.telegram.ui.IUpdateLayout
+    public final void updateAppUpdateViews(int i10, boolean z10) {
+        if (this.e == null) {
+            return;
+        }
+        if (ApplicationLoader.applicationLoaderInstance.getUpdate() == null) {
+            FrameLayout frameLayout = this.a;
+            if (frameLayout == null || frameLayout.getTag() == null) {
+                return;
+            }
+            this.a.setTag(null);
+            if (z10) {
+                this.a.animate().translationY(AndroidUtilities.dp(44.0f)).setInterpolator(jr.g).setListener(new p11(this, 5)).setDuration(180L).start();
+                return;
+            } else {
+                this.a.setTranslationY(AndroidUtilities.dp(44.0f));
+                this.a.setVisibility(4);
+                return;
+            }
+        }
+        createUpdateUI(i10);
+        File downloadedUpdateFile = ApplicationLoader.applicationLoaderInstance.getDownloadedUpdateFile();
+        if (downloadedUpdateFile != null && downloadedUpdateFile.exists()) {
+            this.b.setIcon(15, true, z10);
+            this.c.c(LocaleController.getString(R.string.AppUpdateNow), z10, true);
+        } else if (ApplicationLoader.applicationLoaderInstance.isDownloadingUpdate()) {
+            this.b.setIcon(3, true, z10);
+            this.b.o(ApplicationLoader.applicationLoaderInstance.getDownloadingUpdateProgress(), true);
+            this.c.c(LocaleController.formatString(R.string.AppUpdateDownloading, Integer.valueOf((int) (ApplicationLoader.applicationLoaderInstance.getDownloadingUpdateProgress() * 100.0f))), z10, true);
+        } else {
+            this.b.setIcon(2, true, z10);
+            this.c.c(LocaleController.getString(R.string.AppUpdateBeta), z10, true);
+        }
+        if (this.a.getTag() != null) {
+            return;
+        }
+        this.a.setVisibility(0);
+        this.a.setTag(1);
+        if (z10) {
+            this.a.animate().translationY(0.0f).setInterpolator(jr.g).setListener(null).setDuration(180L).start();
+        } else {
+            this.a.setTranslationY(0.0f);
         }
     }
 
-    @Override // h3.a2
-    public final /* synthetic */ void onPositionDiscontinuity(int i9) {
-    }
-
-    @Override // h3.a2
-    public final /* synthetic */ void onCues(r4.c cVar) {
-    }
-
-    @Override // h3.a2
-    public final /* synthetic */ void onPositionDiscontinuity(h3.b2 b2Var, h3.b2 b2Var2, int i9) {
-    }
-
-    @Override // h3.a2
-    public final /* synthetic */ void onAudioAttributesChanged(j3.e eVar) {
-    }
-
-    @Override // h3.a2
-    public final /* synthetic */ void onAvailableCommandsChanged(h3.y1 y1Var) {
-    }
-
-    @Override // h3.a2
-    public final /* synthetic */ void onDeviceInfoChanged(h3.m mVar) {
-    }
-
-    @Override // h3.a2
-    public final /* synthetic */ void onIsLoadingChanged(boolean z10) {
-    }
-
-    @Override // h3.a2
-    public final /* synthetic */ void onIsPlayingChanged(boolean z10) {
-    }
-
-    @Override // h3.a2
-    public final /* synthetic */ void onLoadingChanged(boolean z10) {
-    }
-
-    @Override // h3.a2
-    public final /* synthetic */ void onMediaMetadataChanged(h3.h1 h1Var) {
-    }
-
-    @Override // h3.a2
-    public final /* synthetic */ void onMetadata(z3.c cVar) {
-    }
-
-    @Override // h3.a2
-    public final /* synthetic */ void onPlaybackParametersChanged(h3.x1 x1Var) {
-    }
-
-    @Override // h3.a2
-    public final /* synthetic */ void onPlaybackStateChanged(int i9) {
-    }
-
-    @Override // h3.a2
-    public final /* synthetic */ void onPlaybackSuppressionReasonChanged(int i9) {
-    }
-
-    @Override // h3.a2
-    public final /* synthetic */ void onPlayerError(h3.v1 v1Var) {
-    }
-
-    @Override // h3.a2
-    public final /* synthetic */ void onPlayerErrorChanged(h3.v1 v1Var) {
-    }
-
-    @Override // h3.a2
-    public final /* synthetic */ void onRenderedFirstFrame() {
-    }
-
-    @Override // h3.a2
-    public final /* synthetic */ void onRepeatModeChanged(int i9) {
-    }
-
-    @Override // h3.a2
-    public final /* synthetic */ void onSeekProcessed() {
-    }
-
-    @Override // h3.a2
-    public final /* synthetic */ void onShuffleModeEnabledChanged(boolean z10) {
-    }
-
-    @Override // h3.a2
-    public final /* synthetic */ void onSkipSilenceEnabledChanged(boolean z10) {
-    }
-
-    @Override // h3.a2
-    public final /* synthetic */ void onTracksChanged(h3.t2 t2Var) {
-    }
-
-    @Override // h3.a2
-    public final /* synthetic */ void onVideoSizeChanged(e5.z zVar) {
-    }
-
-    @Override // h3.a2
-    public final /* synthetic */ void onVolumeChanged(float f10) {
-    }
-
-    @Override // h3.a2
-    public final /* synthetic */ void onDeviceVolumeChanged(int i9, boolean z10) {
-    }
-
-    @Override // h3.a2
-    public final /* synthetic */ void onEvents(h3.c2 c2Var, h3.z1 z1Var) {
-    }
-
-    @Override // h3.a2
-    public final /* synthetic */ void onMediaItemTransition(h3.f1 f1Var, int i9) {
-    }
-
-    @Override // h3.a2
-    public final /* synthetic */ void onPlayWhenReadyChanged(boolean z10, int i9) {
-    }
-
-    @Override // h3.a2
-    public final /* synthetic */ void onSurfaceSizeChanged(int i9, int i10) {
-    }
-
-    @Override // h3.a2
-    public final /* synthetic */ void onTimelineChanged(h3.r2 r2Var, int i9) {
+    @Override // org.telegram.ui.IUpdateLayout
+    public final void updateFileProgress(Object[] objArr) {
+        if (this.a == null || this.c == null || !ApplicationLoader.applicationLoaderInstance.isDownloadingUpdate()) {
+            return;
+        }
+        float downloadingUpdateProgress = ApplicationLoader.applicationLoaderInstance.getDownloadingUpdateProgress();
+        this.b.o(downloadingUpdateProgress, true);
+        this.c.setText(LocaleController.formatString(R.string.AppUpdateDownloading, Integer.valueOf((int) (downloadingUpdateProgress * 100.0f))));
+        this.a.invalidate();
     }
 }

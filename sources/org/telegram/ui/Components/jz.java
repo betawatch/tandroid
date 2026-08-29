@@ -1,158 +1,175 @@
 package org.telegram.ui.Components;
 
-import android.opengl.GLES20;
-import java.util.Locale;
+import android.util.SparseArray;
+import android.view.View;
+import android.view.ViewGroup;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class jz {
-    public final String a;
-    public final String b;
-    public int c;
-    public int d;
-    public int e;
-    public int f;
-    public int g;
-    public int h;
+public class jz extends f2.w {
+    public final SparseArray Q;
+    public int R;
+    public int S;
+    public int T;
+    public final int U;
+    public final jl0 V;
+    public boolean W;
+    public boolean X;
 
-    public jz(float f10, float f11, boolean z10) {
-        int i9;
-        float f12;
-        int i10;
-        double d = 6.283185307179586d;
-        if (z10) {
-            f12 = Math.round(f10);
-            if (f12 >= 1.0f) {
-                double d9 = f12;
-                int floor = (int) Math.floor(Math.sqrt(Math.log(Math.sqrt(Math.pow(d9, 2.0d) * 6.283185307179586d) * 0.00390625f) * Math.pow(d9, 2.0d) * (-2.0d)));
-                i9 = (floor % 2) + floor;
-            } else {
-                i9 = 0;
-            }
-        } else {
-            i9 = (int) f10;
-            f12 = f11;
-        }
-        int i11 = (i9 * 2) + 1;
-        float[] fArr = new float[i11];
-        int i12 = 0;
-        float f13 = 0.0f;
-        while (true) {
-            i10 = i9 + 1;
-            if (i12 >= i10) {
-                break;
-            }
-            double d10 = d;
-            double d11 = f12;
-            float[] fArr2 = fArr;
-            float exp = (float) (Math.exp((-Math.pow(i12, 2.0d)) / (Math.pow(d11, 2.0d) * 2.0d)) * (1.0d / Math.sqrt(Math.pow(d11, 2.0d) * d10)));
-            fArr2[i12] = exp;
-            f13 = i12 == 0 ? f13 + exp : (float) ((exp * 2.0d) + f13);
-            i12++;
-            d = d10;
-            fArr = fArr2;
-        }
-        double d12 = d;
-        float[] fArr3 = fArr;
-        for (int i13 = 0; i13 < i10; i13++) {
-            fArr3[i13] = fArr3[i13] / f13;
-        }
-        int i14 = (i9 % 2) + (i9 / 2);
-        int min = Math.min(i14, 7);
-        StringBuilder sb2 = new StringBuilder("uniform sampler2D sTexture;\nuniform highp float texelWidthOffset;\nuniform highp float texelHeightOffset;\n");
-        Locale locale = Locale.US;
-        sb2.append("varying highp vec2 blurCoordinates[" + ((min * 2) + 1) + "];\n");
-        sb2.append("void main()\n{\nlowp vec4 sum = vec4(0.0);\n");
-        sb2.append(String.format(locale, "sum += texture2D(sTexture, blurCoordinates[0]) * %f;\n", Float.valueOf(fArr3[0])));
-        for (int i15 = 0; i15 < min; i15++) {
-            int i16 = i15 * 2;
-            int i17 = i16 + 1;
-            int i18 = i16 + 2;
-            float f14 = fArr3[i17] + fArr3[i18];
-            Locale locale2 = Locale.US;
-            sb2.append(String.format(locale2, "sum += texture2D(sTexture, blurCoordinates[%d]) * %f;\n", Integer.valueOf(i17), Float.valueOf(f14)));
-            sb2.append(String.format(locale2, "sum += texture2D(sTexture, blurCoordinates[%d]) * %f;\n", Integer.valueOf(i18), Float.valueOf(f14)));
-        }
-        if (i14 > min) {
-            sb2.append("highp vec2 singleStepOffset = vec2(texelWidthOffset, texelHeightOffset);\n");
-            while (min < i14) {
-                int i19 = min * 2;
-                int i20 = i19 + 1;
-                float f15 = fArr3[i20];
-                int i21 = i19 + 2;
-                float f16 = fArr3[i21];
-                float f17 = f15 + f16;
-                float y10 = e2.c.y(f16, i21, f15 * i20, f17);
-                Locale locale3 = Locale.US;
-                sb2.append(String.format(locale3, "sum += texture2D(sTexture, blurCoordinates[0] + singleStepOffset * %f) * %f;\n", Float.valueOf(y10), Float.valueOf(f17)));
-                sb2.append(String.format(locale3, "sum += texture2D(sTexture, blurCoordinates[0] - singleStepOffset * %f) * %f;\n", Float.valueOf(y10), Float.valueOf(f17)));
-                min++;
-            }
-        }
-        sb2.append("gl_FragColor = sum;\n}\n");
-        this.b = sb2.toString();
-        float[] fArr4 = new float[i11];
-        float f18 = 0.0f;
-        int i22 = 0;
-        while (i22 < i10) {
-            double d13 = f12;
-            float f19 = f18;
-            float exp2 = (float) (Math.exp((-Math.pow(i22, 2.0d)) / (Math.pow(d13, 2.0d) * 2.0d)) * (1.0d / Math.sqrt(Math.pow(d13, 2.0d) * d12)));
-            fArr4[i22] = exp2;
-            f18 = i22 == 0 ? f19 + exp2 : (float) ((exp2 * 2.0d) + f19);
-            i22++;
-        }
-        float f20 = f18;
-        for (int i23 = 0; i23 < i10; i23++) {
-            fArr4[i23] = fArr4[i23] / f20;
-        }
-        int min2 = Math.min(i14, 7);
-        float[] fArr5 = new float[min2];
-        for (int i24 = 0; i24 < min2; i24++) {
-            int i25 = i24 * 2;
-            int i26 = i25 + 1;
-            float f21 = fArr4[i26];
-            int i27 = i25 + 2;
-            float f22 = fArr4[i27];
-            fArr5[i24] = e2.c.y(f22, i27, f21 * i26, f21 + f22);
-        }
-        StringBuilder sb3 = new StringBuilder("attribute vec4 position;\nattribute vec4 inputTexCoord;\nuniform float texelWidthOffset;\nuniform float texelHeightOffset;\n");
-        Locale locale4 = Locale.US;
-        sb3.append("varying vec2 blurCoordinates[" + ((min2 * 2) + 1) + "];\n");
-        sb3.append("void main()\n{\ngl_Position = position;\nvec2 singleStepOffset = vec2(texelWidthOffset, texelHeightOffset);\nblurCoordinates[0] = inputTexCoord.xy;\n");
-        for (int i28 = 0; i28 < min2; i28++) {
-            int i29 = i28 * 2;
-            sb3.append(String.format(Locale.US, "blurCoordinates[%d] = inputTexCoord.xy + singleStepOffset * %f;\nblurCoordinates[%d] = inputTexCoord.xy - singleStepOffset * %f;\n", Integer.valueOf(i29 + 1), Float.valueOf(fArr5[i28]), Integer.valueOf(i29 + 2), Float.valueOf(fArr5[i28])));
-        }
-        sb3.append("}");
-        this.a = sb3.toString();
+    public jz(int i10, int i11, jl0 jl0Var) {
+        super(i10);
+        this.Q = new SparseArray();
+        this.R = -1;
+        this.W = true;
+        this.X = true;
+        this.V = jl0Var;
+        this.U = i11;
     }
 
-    public final boolean a() {
-        int h = lz.h(35633, this.a);
-        int h10 = lz.h(35632, this.b);
-        if (h == 0 || h10 == 0) {
-            return false;
+    public final void B1() {
+        jl0 jl0Var;
+        f2.p0 adapter;
+        int i10;
+        jl0 jl0Var2;
+        if (this.S <= 0 || !D1() || (adapter = (jl0Var = this.V).getAdapter()) == null) {
+            return;
         }
-        int glCreateProgram = GLES20.glCreateProgram();
-        this.c = glCreateProgram;
-        GLES20.glAttachShader(glCreateProgram, h);
-        GLES20.glAttachShader(this.c, h10);
-        GLES20.glBindAttribLocation(this.c, 0, "position");
-        GLES20.glBindAttribLocation(this.c, 1, "inputTexCoord");
-        GLES20.glLinkProgram(this.c);
-        int[] iArr = new int[1];
-        GLES20.glGetProgramiv(this.c, 35714, iArr, 0);
-        if (iArr[0] == 0) {
-            GLES20.glDeleteProgram(this.c);
-            this.c = 0;
-        } else {
-            this.d = GLES20.glGetAttribLocation(this.c, "position");
-            this.e = GLES20.glGetAttribLocation(this.c, "inputTexCoord");
-            this.f = GLES20.glGetUniformLocation(this.c, "sTexture");
-            this.g = GLES20.glGetUniformLocation(this.c, "texelWidthOffset");
-            this.h = GLES20.glGetUniformLocation(this.c, "texelHeightOffset");
+        int i11 = this.J;
+        int h = adapter.h() - 1;
+        f2.v vVar = this.O;
+        int i12 = 0;
+        int i13 = 0;
+        boolean z10 = true;
+        int i14 = 0;
+        while (true) {
+            i10 = this.U;
+            if (i12 >= h) {
+                jl0Var2 = jl0Var;
+                break;
+            }
+            int i15 = vVar.i(i12);
+            i13 += i15;
+            if (i15 == i11 || i13 > i11) {
+                i13 = i15;
+                z10 = true;
+            }
+            if (z10) {
+                int j10 = adapter.j(i12);
+                SparseArray sparseArray = this.Q;
+                f2.n1 n1Var = (f2.n1) sparseArray.get(j10, null);
+                if (n1Var == null) {
+                    n1Var = adapter.g(jl0Var, j10);
+                    View view = n1Var.a;
+                    sparseArray.put(j10, n1Var);
+                    if (view.getLayoutParams() == null) {
+                        view.setLayoutParams(n());
+                    }
+                }
+                View view2 = n1Var.a;
+                if (this.W) {
+                    adapter.v(n1Var, i12);
+                }
+                f2.x0 x0Var = (f2.x0) view2.getLayoutParams();
+                jl0Var2 = jl0Var;
+                view2.measure(f2.w0.s(d(), this.T, this.k, E() + D() + ((ViewGroup.MarginLayoutParams) x0Var).leftMargin + ((ViewGroup.MarginLayoutParams) x0Var).rightMargin, ((ViewGroup.MarginLayoutParams) x0Var).width), f2.w0.s(this.X, this.S, this.l, C() + F() + ((ViewGroup.MarginLayoutParams) x0Var).topMargin + ((ViewGroup.MarginLayoutParams) x0Var).bottomMargin, ((ViewGroup.MarginLayoutParams) x0Var).height));
+                i14 += view2.getMeasuredHeight();
+                if (i14 >= (this.S - i10) - jl0Var2.getPaddingBottom()) {
+                    break;
+                } else {
+                    z10 = false;
+                }
+            } else {
+                jl0Var2 = jl0Var;
+            }
+            i12++;
+            jl0Var = jl0Var2;
         }
+        this.R = Math.max(0, ((this.S - i14) - i10) - jl0Var2.getPaddingBottom());
+    }
+
+    public final void C1() {
+        this.W = false;
+    }
+
+    public boolean D1() {
         return true;
+    }
+
+    @Override // f2.w0
+    public final void Q() {
+        this.Q.clear();
+        B1();
+    }
+
+    @Override // f2.w, f2.w0
+    public final void V(RecyclerView recyclerView, int i10, int i11) {
+        super.V(recyclerView, i10, i11);
+        B1();
+    }
+
+    @Override // f2.w, f2.w0
+    public final void W(RecyclerView recyclerView) {
+        this.Q.clear();
+        B1();
+        super.W(recyclerView);
+    }
+
+    @Override // f2.w, f2.w0
+    public final void X(RecyclerView recyclerView, int i10, int i11) {
+        super.X(recyclerView, i10, i11);
+        B1();
+    }
+
+    @Override // f2.w, f2.w0
+    public final void Y(RecyclerView recyclerView, int i10, int i11) {
+        super.Y(recyclerView, i10, i11);
+        B1();
+    }
+
+    @Override // f2.w0
+    public final void Z() {
+        B1();
+    }
+
+    @Override // f2.w, f2.w0
+    public final void a0(RecyclerView recyclerView, int i10, int i11, Object obj) {
+        super.a0(recyclerView, i10, i11, obj);
+        B1();
+    }
+
+    @Override // f2.w0
+    public final void d0(f2.d1 d1Var, f2.k1 k1Var, int i10, int i11) {
+        int i12 = this.S;
+        this.T = View.MeasureSpec.getSize(i10);
+        int size = View.MeasureSpec.getSize(i11);
+        this.S = size;
+        if (i12 != size) {
+            B1();
+        }
+        super.d0(d1Var, k1Var, i10, i11);
+    }
+
+    @Override // f2.j0, f2.w0
+    public final boolean e() {
+        return this.X;
+    }
+
+    @Override // f2.w
+    public final void w1(View view, int i10, boolean z10) {
+        if (this.V.G(view).b() == B() - 1) {
+            ((ViewGroup.MarginLayoutParams) ((f2.x0) view.getLayoutParams())).height = Math.max(this.R, 0);
+        }
+        super.w1(view, i10, z10);
+    }
+
+    public jz(int i10, org.telegram.ui.x40 x40Var) {
+        super(i10, false);
+        this.Q = new SparseArray();
+        this.R = -1;
+        this.W = true;
+        this.X = true;
+        this.V = x40Var;
+        this.U = 0;
     }
 }

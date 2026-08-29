@@ -1,49 +1,120 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
+import android.os.Bundle;
+import java.util.ArrayList;
+import java.util.regex.Pattern;
+import org.telegram.messenger.DialogObject;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.MessagesStorage;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class mg implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.c2[] b;
+public final /* synthetic */ class mg implements uu0, yx {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
 
-    public /* synthetic */ mg(org.telegram.ui.ActionBar.c2[] c2VarArr, int i9) {
-        this.a = i9;
-        this.b = c2VarArr;
+    public /* synthetic */ mg(tn tnVar, boolean z10, MessageObject messageObject, int i10) {
+        this.c = tnVar;
+        this.a = z10;
+        this.d = messageObject;
+        this.b = i10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                org.telegram.ui.ActionBar.c2[] c2VarArr = this.b;
-                try {
-                    c2VarArr[0].dismiss();
-                } catch (Throwable unused) {
+    @Override // org.telegram.ui.yx
+    public /* synthetic */ boolean C() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.yx
+    public /* synthetic */ boolean J(fy fyVar) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.uu0
+    public void a(TLRPC.MessageMedia messageMedia) {
+        int i10;
+        tn tnVar = (tn) this.c;
+        MessageObject messageObject = (MessageObject) this.d;
+        if (!this.a) {
+            if (messageMedia instanceof TLRPC.TL_messageMediaToDo) {
+                TLRPC.MessageMedia messageMedia2 = messageObject.messageOwner.media;
+                if (messageMedia2 instanceof TLRPC.TL_messageMediaToDo) {
+                    ((TLRPC.TL_messageMediaToDo) messageMedia).completions = ((TLRPC.TL_messageMediaToDo) messageMedia2).completions;
                 }
-                c2VarArr[0] = null;
-                break;
-            case 1:
-                org.telegram.ui.ActionBar.c2[] c2VarArr2 = this.b;
-                try {
-                    c2VarArr2[0].dismiss();
-                } catch (Throwable unused2) {
-                }
-                c2VarArr2[0] = null;
-                break;
-            case 2:
-                AndroidUtilities.runOnUIThread(new mg(this.b, 4));
-                break;
-            case 3:
-                AndroidUtilities.runOnUIThread(new mg(this.b, 5));
-                break;
-            case 4:
-                this.b[0].dismiss();
-                break;
-            default:
-                this.b[0].dismiss();
-                break;
+            }
+            messageObject.messageOwner.media = messageMedia;
+            tnVar.getSendMessagesHelper().editMessage(messageObject, null, null, null, null, null, null, false, false, null);
+            return;
         }
+        TLRPC.TL_messages_appendTodoList tL_messages_appendTodoList = new TLRPC.TL_messages_appendTodoList();
+        tL_messages_appendTodoList.peer = tnVar.getMessagesController().getInputPeer(messageObject.getDialogId());
+        tL_messages_appendTodoList.msg_id = messageObject.getId();
+        if (messageMedia instanceof TLRPC.TL_messageMediaToDo) {
+            TLRPC.TL_messageMediaToDo tL_messageMediaToDo = (TLRPC.TL_messageMediaToDo) messageMedia;
+            int i11 = 0;
+            int i12 = 0;
+            while (true) {
+                i10 = this.b;
+                if (i11 >= i10) {
+                    break;
+                }
+                i12 = Math.max(i12, tL_messageMediaToDo.todo.list.get(i11).id);
+                i11++;
+            }
+            while (i10 < tL_messageMediaToDo.todo.list.size()) {
+                TLRPC.TodoItem todoItem = tL_messageMediaToDo.todo.list.get(i10);
+                if (todoItem.id <= i12) {
+                    todoItem.id = i12 + 1;
+                }
+                tL_messages_appendTodoList.list.add(todoItem);
+                i12 = Math.max(i12, todoItem.id);
+                i10++;
+            }
+            TLRPC.MessageMedia messageMedia3 = messageObject.messageOwner.media;
+            if (messageMedia3 instanceof TLRPC.TL_messageMediaToDo) {
+                tL_messageMediaToDo.completions = ((TLRPC.TL_messageMediaToDo) messageMedia3).completions;
+            }
+        }
+        messageObject.messageOwner.media = messageMedia;
+        tnVar.getConnectionsManager().sendRequest(tL_messages_appendTodoList, null);
+    }
+
+    @Override // org.telegram.ui.yx
+    public boolean v(fy fyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, ze1 ze1Var) {
+        LaunchActivity launchActivity = (LaunchActivity) this.c;
+        String str = (String) this.d;
+        Pattern pattern = LaunchActivity.x1;
+        long j10 = ((MessagesStorage.TopicKey) arrayList.get(0)).dialogId;
+        Bundle bundle = new Bundle();
+        bundle.putBoolean("scrollToTopOnResume", true);
+        bundle.putBoolean("hasUrl", this.a);
+        if (DialogObject.isEncryptedDialog(j10)) {
+            bundle.putInt("enc_id", DialogObject.getEncryptedChatId(j10));
+        } else if (DialogObject.isUserDialog(j10)) {
+            bundle.putLong("user_id", j10);
+        } else {
+            bundle.putLong("chat_id", -j10);
+        }
+        int i12 = this.b;
+        if (MessagesController.getInstance(i12).checkCanOpenChat(bundle, fyVar)) {
+            NotificationCenter.getInstance(i12).lambda$postNotificationNameOnUIThread$1(NotificationCenter.closeChats, new Object[0]);
+            MediaDataController.getInstance(i12).saveDraft(j10, 0, str, null, null, false, 0L);
+            ((ActionBarLayout) launchActivity.O()).S(new tn(bundle), true, false);
+        }
+        return true;
+    }
+
+    public /* synthetic */ mg(LaunchActivity launchActivity, boolean z10, int i10, String str) {
+        this.c = launchActivity;
+        this.a = z10;
+        this.b = i10;
+        this.d = str;
     }
 }

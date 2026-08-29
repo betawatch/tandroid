@@ -7,15 +7,15 @@ import android.view.View;
 import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
 public final class dr0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
     public final /* synthetic */ View b;
     public final /* synthetic */ PhotoViewer c;
 
-    public /* synthetic */ dr0(PhotoViewer photoViewer, View view, int i9) {
-        this.a = i9;
+    public /* synthetic */ dr0(PhotoViewer photoViewer, View view, int i10) {
+        this.a = i10;
         this.c = photoViewer;
         this.b = view;
     }
@@ -31,9 +31,9 @@ public final class dr0 extends AnimatorListenerAdapter {
                 if (imageView != null) {
                     imageView.setOutlineProvider(null);
                 }
-                st0 st0Var = photoViewer.A2;
-                if (st0Var != null) {
-                    st0Var.setOutlineProvider(null);
+                qt0 qt0Var = photoViewer.A2;
+                if (qt0Var != null) {
+                    qt0Var.setOutlineProvider(null);
                 }
                 SurfaceView surfaceView = photoViewer.y2;
                 if (surfaceView != null) {
@@ -45,7 +45,7 @@ public final class dr0 extends AnimatorListenerAdapter {
                 PhotoViewer photoViewer2 = this.c;
                 photoViewer2.x3 = false;
                 photoViewer2.e4.run();
-                AndroidUtilities.runOnUIThread(new cf0(27, this, this.b), 100L);
+                AndroidUtilities.runOnUIThread(new lf0(24, this, this.b), 100L);
                 break;
         }
     }

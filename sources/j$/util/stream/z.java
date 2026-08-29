@@ -67,7 +67,7 @@ public abstract class z extends a implements c0 {
     @Override // j$.util.stream.a
     public final boolean L0(Spliterator spliterator, j5 j5Var) {
         DoubleConsumer e0Var;
-        boolean q10;
+        boolean q6;
         j$.util.u0 U0 = U0(spliterator);
         if (j5Var instanceof DoubleConsumer) {
             e0Var = (DoubleConsumer) j5Var;
@@ -80,12 +80,12 @@ public abstract class z extends a implements c0 {
             e0Var = new j$.util.e0(j5Var, 1);
         }
         do {
-            q10 = j5Var.q();
-            if (q10) {
+            q6 = j5Var.q();
+            if (q6) {
                 break;
             }
         } while (U0.tryAdvance(e0Var));
-        return q10;
+        return q6;
     }
 
     @Override // j$.util.stream.t3
@@ -170,14 +170,14 @@ public abstract class z extends a implements c0 {
 
     @Override // j$.util.stream.c0
     public final c0 a() {
-        int i9 = w8.a;
+        int i10 = w8.a;
         Objects.requireNonNull(null);
         return new b6(this, w8.a, 1);
     }
 
     @Override // j$.util.stream.c0
     public final c0 c() {
-        int i9 = w8.a;
+        int i10 = w8.a;
         Objects.requireNonNull(null);
         return new b6(this, w8.b, 2);
     }
@@ -192,8 +192,8 @@ public abstract class z extends a implements c0 {
         double[] dArr = (double[]) collect(new n(8), new n(9), new j$.time.format.a(27));
         Set set = Collectors.a;
         double d = dArr[0] + dArr[1];
-        double d9 = dArr[dArr.length - 1];
-        return (Double.isNaN(d) && Double.isInfinite(d9)) ? d9 : d;
+        double d10 = dArr[dArr.length - 1];
+        return (Double.isNaN(d) && Double.isInfinite(d10)) ? d10 : d;
     }
 
     @Override // j$.util.stream.c0
@@ -214,9 +214,9 @@ public abstract class z extends a implements c0 {
         }
         Set set = Collectors.a;
         double d = dArr[0] + dArr[1];
-        double d9 = dArr[dArr.length - 1];
-        if (Double.isNaN(d) && Double.isInfinite(d9)) {
-            d = d9;
+        double d10 = dArr[dArr.length - 1];
+        if (Double.isNaN(d) && Double.isInfinite(d10)) {
+            d = d10;
         }
         return new j$.util.b0(d / dArr[2]);
     }

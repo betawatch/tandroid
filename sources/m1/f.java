@@ -17,7 +17,7 @@ import java.io.IOException;
 import java.nio.charset.Charset;
 import java.util.Map;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class f extends x {
     private static final f DEFAULT_INSTANCE;
@@ -51,7 +51,7 @@ public final class f extends x {
         try {
             z0 z0Var = z0.c;
             z0Var.getClass();
-            c1 a3 = z0Var.a(xVar.getClass());
+            c1 a10 = z0Var.a(xVar.getClass());
             androidx.datastore.preferences.protobuf.i iVar = hVar.b;
             if (iVar == null) {
                 iVar = new androidx.datastore.preferences.protobuf.i();
@@ -60,12 +60,12 @@ public final class f extends x {
                 iVar.d = hVar;
                 hVar.b = iVar;
             }
-            a3.i(xVar, iVar, a2);
-            a3.c(xVar);
+            a10.i(xVar, iVar, a2);
+            a10.c(xVar);
             if (xVar.g()) {
                 return (f) xVar;
             }
-            throw new c0(new androidx.car.app.j().getMessage());
+            throw new c0(new a6.b().getMessage());
         } catch (IOException e10) {
             if (e10.getCause() instanceof c0) {
                 throw ((c0) e10.getCause());
@@ -80,9 +80,9 @@ public final class f extends x {
     }
 
     @Override // androidx.datastore.preferences.protobuf.x
-    public final Object d(int i9) {
+    public final Object d(int i10) {
         x0 x0Var;
-        switch (j.b(i9)) {
+        switch (j.b(i10)) {
             case 0:
                 return (byte) 1;
             case 1:
@@ -107,8 +107,8 @@ public final class f extends x {
                             x0Var = new w();
                             PARSER = x0Var;
                         }
-                    } catch (Throwable th) {
-                        throw th;
+                    } catch (Throwable th2) {
+                        throw th2;
                     }
                 }
                 return x0Var;

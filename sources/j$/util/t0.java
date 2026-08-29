@@ -65,8 +65,8 @@ public final /* synthetic */ class t0 implements Spliterator.OfDouble {
     }
 
     @Override // java.util.Spliterator
-    public final /* synthetic */ boolean hasCharacteristics(int i9) {
-        return this.a.hasCharacteristics(i9);
+    public final /* synthetic */ boolean hasCharacteristics(int i10) {
+        return this.a.hasCharacteristics(i10);
     }
 
     public final /* synthetic */ int hashCode() {

@@ -1,27 +1,87 @@
 package org.telegram.ui;
 
-import org.webrtc.RendererCommon;
+import android.app.Activity;
+import android.graphics.Canvas;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.view.KeyEvent;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.AnimationNotificationsLocker;
+import org.telegram.messenger.voip.VoIPService;
+import org.telegram.messenger.voip.VoIPServiceState;
+import org.webrtc.OrientationHelper;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class gh1 implements RendererCommon.RendererEvents {
-    public final /* synthetic */ mh1 a;
+public final class gh1 extends org.telegram.ui.Components.voip.y2 {
+    public final Path s;
+    public final RectF v;
+    public final /* synthetic */ oh1 w;
 
-    public gh1(mh1 mh1Var) {
-        this.a = mh1Var;
-    }
-
-    @Override // org.webrtc.RendererCommon.RendererEvents
-    public final void onFirstFrameRendered() {
-        mh1 mh1Var = this.a;
-        af.f fVar = mh1Var.h1;
-        if (fVar != null) {
-            fVar.run();
-            mh1Var.h1 = null;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public gh1(Activity activity, boolean z10, oh1 oh1Var) {
+        super(activity);
+        this.w = oh1Var;
+        this.c = new AnimationNotificationsLocker();
+        this.a = activity;
+        setSystemUiVisibility(1792);
+        AndroidUtilities.lockOrientation(activity, 1);
+        OrientationHelper.cameraRotationDisabled = true;
+        if (!z10) {
+            this.e = true;
         }
+        this.s = new Path();
+        this.v = new RectF();
     }
 
-    @Override // org.webrtc.RendererCommon.RendererEvents
-    public final void onFrameResolutionChanged(int i9, int i10, int i11) {
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        oh1 oh1Var = this.w;
+        if (!oh1Var.A0 || getAlpha() == 0.0f) {
+            super.dispatchDraw(canvas);
+            return;
+        }
+        float scaleX = oh1Var.Y.getScaleX() * oh1Var.Y.getWidth();
+        float scaleY = oh1Var.Y.getScaleY() * oh1Var.Y.getHeight();
+        float x4 = oh1Var.Y.getX() + ((oh1Var.Y.getWidth() - scaleX) / 2.0f);
+        float y8 = oh1Var.Y.getY() + ((oh1Var.Y.getHeight() - scaleY) / 2.0f);
+        canvas.save();
+        Path path = this.s;
+        path.rewind();
+        RectF rectF = this.v;
+        rectF.set(x4, y8, scaleX + x4, scaleY + y8);
+        float dp = AndroidUtilities.dp(4.0f);
+        path.addRoundRect(rectF, dp, dp, Path.Direction.CW);
+        path.close();
+        canvas.clipPath(path);
+        super.dispatchDraw(canvas);
+        canvas.restore();
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchKeyEvent(KeyEvent keyEvent) {
+        VoIPServiceState sharedState;
+        oh1 oh1Var = this.w;
+        if (oh1Var.C0 || oh1Var.A0) {
+            return false;
+        }
+        int keyCode = keyEvent.getKeyCode();
+        if (keyCode == 4 && keyEvent.getAction() == 1) {
+            oh1Var.p();
+            return true;
+        }
+        if ((keyCode != 25 && keyCode != 24) || oh1Var.l0 != 15 || (sharedState = VoIPService.getSharedState()) == null) {
+            return super.dispatchKeyEvent(keyEvent);
+        }
+        sharedState.stopRinging();
+        return true;
+    }
+
+    @Override // android.view.View
+    public final void draw(Canvas canvas) {
+        if (this.w.i1) {
+            return;
+        }
+        super.draw(canvas);
     }
 }

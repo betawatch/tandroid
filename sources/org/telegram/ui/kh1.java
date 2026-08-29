@@ -1,55 +1,45 @@
 package org.telegram.ui;
 
-import android.content.Intent;
-import android.os.Build;
-import org.telegram.messenger.FileLog;
+import android.app.Activity;
+import android.text.TextUtils;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.widget.LinearLayout;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 import org.telegram.messenger.voip.VoIPService;
+import org.telegram.messenger.voip.VoIPServiceState;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class kh1 implements org.telegram.ui.Components.voip.d {
-    public final /* synthetic */ mh1 a;
+public final class kh1 extends LinearLayout {
+    public final /* synthetic */ oh1 a;
 
-    public kh1(mh1 mh1Var) {
-        this.a = mh1Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public kh1(oh1 oh1Var, Activity activity) {
+        super(activity);
+        this.a = oh1Var;
     }
 
-    public final void a() {
-        mh1 mh1Var = this.a;
-        if (mh1Var.l0 != 17) {
-            if (Build.VERSION.SDK_INT >= 23 && mh1Var.b.checkSelfPermission("android.permission.RECORD_AUDIO") != 0) {
-                mh1Var.b.requestPermissions(new String[]{"android.permission.RECORD_AUDIO"}, 101);
-                return;
-            } else {
-                if (VoIPService.getSharedState() != null) {
-                    mh1Var.r(new ky0(this, 26));
-                    return;
-                }
-                return;
-            }
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        VoIPServiceState sharedState = VoIPService.getSharedState();
+        CharSequence text = this.a.A.getText();
+        if (sharedState == null || TextUtils.isEmpty(text)) {
+            return;
         }
-        Intent intent = new Intent(mh1Var.b, (Class<?>) VoIPService.class);
-        intent.putExtra("user_id", mh1Var.d.id);
-        intent.putExtra("is_outgoing", true);
-        intent.putExtra("start_incall_activity", false);
-        intent.putExtra("video_call", mh1Var.Q0);
-        intent.putExtra("can_video_call", mh1Var.Q0);
-        intent.putExtra("account", mh1Var.a);
-        try {
-            mh1Var.b.startService(intent);
-        } catch (Throwable th) {
-            FileLog.e(th);
-        }
-    }
-
-    public final void b() {
-        mh1 mh1Var = this.a;
-        if (mh1Var.l0 == 17) {
-            mh1Var.q0.b();
-        } else if (VoIPService.getSharedState() != null) {
-            VoIPService.getSharedState().declineIncomingCall();
+        StringBuilder sb2 = new StringBuilder(text);
+        sb2.append(", ");
+        if (sharedState.getPrivateCall() == null || !sharedState.getPrivateCall().video) {
+            sb2.append(LocaleController.getString(R.string.VoipInCallBranding));
         } else {
-            mh1Var.q0.b();
+            sb2.append(LocaleController.getString(R.string.VoipInVideoCallBranding));
         }
+        long callDuration = sharedState.getCallDuration();
+        if (callDuration > 0) {
+            sb2.append(", ");
+            sb2.append(LocaleController.formatDuration((int) (callDuration / 1000)));
+        }
+        accessibilityNodeInfo.setText(sb2);
     }
 }

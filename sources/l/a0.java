@@ -8,9 +8,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.SubMenu;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public class a0 extends f2.x implements Menu {
+public class a0 extends f2.v implements Menu {
     public final k c;
 
     public a0(Context context, k kVar) {
@@ -27,13 +27,13 @@ public class a0 extends f2.x implements Menu {
     }
 
     @Override // android.view.Menu
-    public final int addIntentOptions(int i9, int i10, int i11, ComponentName componentName, Intent[] intentArr, Intent intent, int i12, MenuItem[] menuItemArr) {
+    public final int addIntentOptions(int i10, int i11, int i12, ComponentName componentName, Intent[] intentArr, Intent intent, int i13, MenuItem[] menuItemArr) {
         MenuItem[] menuItemArr2 = menuItemArr != null ? new MenuItem[menuItemArr.length] : null;
-        int addIntentOptions = this.c.addIntentOptions(i9, i10, i11, componentName, intentArr, intent, i12, menuItemArr2);
+        int addIntentOptions = this.c.addIntentOptions(i10, i11, i12, componentName, intentArr, intent, i13, menuItemArr2);
         if (menuItemArr2 != null) {
             int length = menuItemArr2.length;
-            for (int i13 = 0; i13 < length; i13++) {
-                menuItemArr[i13] = f(menuItemArr2[i13]);
+            for (int i14 = 0; i14 < length; i14++) {
+                menuItemArr[i14] = f(menuItemArr2[i14]);
             }
         }
         return addIntentOptions;
@@ -59,13 +59,13 @@ public class a0 extends f2.x implements Menu {
     }
 
     @Override // android.view.Menu
-    public final MenuItem findItem(int i9) {
-        return f(this.c.findItem(i9));
+    public final MenuItem findItem(int i10) {
+        return f(this.c.findItem(i10));
     }
 
     @Override // android.view.Menu
-    public final MenuItem getItem(int i9) {
-        return f(this.c.getItem(i9));
+    public final MenuItem getItem(int i10) {
+        return f(this.c.getItem(i10));
     }
 
     @Override // android.view.Menu
@@ -74,71 +74,71 @@ public class a0 extends f2.x implements Menu {
     }
 
     @Override // android.view.Menu
-    public final boolean isShortcutKey(int i9, KeyEvent keyEvent) {
-        return this.c.isShortcutKey(i9, keyEvent);
+    public final boolean isShortcutKey(int i10, KeyEvent keyEvent) {
+        return this.c.isShortcutKey(i10, keyEvent);
     }
 
     @Override // android.view.Menu
-    public final boolean performIdentifierAction(int i9, int i10) {
-        return this.c.performIdentifierAction(i9, i10);
+    public final boolean performIdentifierAction(int i10, int i11) {
+        return this.c.performIdentifierAction(i10, i11);
     }
 
     @Override // android.view.Menu
-    public final boolean performShortcut(int i9, KeyEvent keyEvent, int i10) {
-        return this.c.performShortcut(i9, keyEvent, i10);
+    public final boolean performShortcut(int i10, KeyEvent keyEvent, int i11) {
+        return this.c.performShortcut(i10, keyEvent, i11);
     }
 
     @Override // android.view.Menu
-    public final void removeGroup(int i9) {
+    public final void removeGroup(int i10) {
         if (((a0.k) this.b) != null) {
-            int i10 = 0;
+            int i11 = 0;
             while (true) {
                 a0.k kVar = (a0.k) this.b;
-                if (i10 >= kVar.c) {
+                if (i11 >= kVar.c) {
                     break;
                 }
-                if (((l0.a) kVar.e(i10)).getGroupId() == i9) {
-                    ((a0.k) this.b).f(i10);
-                    i10--;
+                if (((l0.a) kVar.e(i11)).getGroupId() == i10) {
+                    ((a0.k) this.b).f(i11);
+                    i11--;
                 }
-                i10++;
+                i11++;
             }
         }
-        this.c.removeGroup(i9);
+        this.c.removeGroup(i10);
     }
 
     @Override // android.view.Menu
-    public final void removeItem(int i9) {
+    public final void removeItem(int i10) {
         if (((a0.k) this.b) != null) {
-            int i10 = 0;
+            int i11 = 0;
             while (true) {
                 a0.k kVar = (a0.k) this.b;
-                if (i10 >= kVar.c) {
+                if (i11 >= kVar.c) {
                     break;
                 }
-                if (((l0.a) kVar.e(i10)).getItemId() == i9) {
-                    ((a0.k) this.b).f(i10);
+                if (((l0.a) kVar.e(i11)).getItemId() == i10) {
+                    ((a0.k) this.b).f(i11);
                     break;
                 }
-                i10++;
+                i11++;
             }
         }
-        this.c.removeItem(i9);
+        this.c.removeItem(i10);
     }
 
     @Override // android.view.Menu
-    public final void setGroupCheckable(int i9, boolean z10, boolean z11) {
-        this.c.setGroupCheckable(i9, z10, z11);
+    public final void setGroupCheckable(int i10, boolean z10, boolean z11) {
+        this.c.setGroupCheckable(i10, z10, z11);
     }
 
     @Override // android.view.Menu
-    public final void setGroupEnabled(int i9, boolean z10) {
-        this.c.setGroupEnabled(i9, z10);
+    public final void setGroupEnabled(int i10, boolean z10) {
+        this.c.setGroupEnabled(i10, z10);
     }
 
     @Override // android.view.Menu
-    public final void setGroupVisible(int i9, boolean z10) {
-        this.c.setGroupVisible(i9, z10);
+    public final void setGroupVisible(int i10, boolean z10) {
+        this.c.setGroupVisible(i10, z10);
     }
 
     @Override // android.view.Menu
@@ -152,32 +152,32 @@ public class a0 extends f2.x implements Menu {
     }
 
     @Override // android.view.Menu
-    public final SubMenu addSubMenu(int i9) {
-        return this.c.addSubMenu(i9);
+    public final SubMenu addSubMenu(int i10) {
+        return this.c.addSubMenu(i10);
     }
 
     @Override // android.view.Menu
-    public final MenuItem add(int i9) {
-        return f(this.c.add(i9));
+    public final MenuItem add(int i10) {
+        return f(this.c.add(i10));
     }
 
     @Override // android.view.Menu
-    public final SubMenu addSubMenu(int i9, int i10, int i11, CharSequence charSequence) {
-        return this.c.addSubMenu(i9, i10, i11, charSequence);
+    public final SubMenu addSubMenu(int i10, int i11, int i12, CharSequence charSequence) {
+        return this.c.addSubMenu(i10, i11, i12, charSequence);
     }
 
     @Override // android.view.Menu
-    public final MenuItem add(int i9, int i10, int i11, CharSequence charSequence) {
-        return f(this.c.a(i9, i10, i11, charSequence));
+    public final MenuItem add(int i10, int i11, int i12, CharSequence charSequence) {
+        return f(this.c.a(i10, i11, i12, charSequence));
     }
 
     @Override // android.view.Menu
-    public final SubMenu addSubMenu(int i9, int i10, int i11, int i12) {
-        return this.c.addSubMenu(i9, i10, i11, i12);
+    public final SubMenu addSubMenu(int i10, int i11, int i12, int i13) {
+        return this.c.addSubMenu(i10, i11, i12, i13);
     }
 
     @Override // android.view.Menu
-    public final MenuItem add(int i9, int i10, int i11, int i12) {
-        return f(this.c.add(i9, i10, i11, i12));
+    public final MenuItem add(int i10, int i11, int i12, int i13) {
+        return f(this.c.add(i10, i11, i12, i13));
     }
 }

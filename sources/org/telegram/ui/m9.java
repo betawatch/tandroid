@@ -1,36 +1,24 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class m9 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ s9 b;
+public final class m9 extends r9 {
+    public final /* synthetic */ n9 b0;
 
-    public /* synthetic */ m9(s9 s9Var, int i9) {
-        this.a = i9;
-        this.b = s9Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public m9(n9 n9Var, int i10) {
+        super(i10);
+        this.b0 = n9Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                s9 s9Var = this.b;
-                s9Var.T = floatValue;
-                s9Var.a.setAlpha(1.0f - floatValue);
-                if (s9Var.R == 3) {
-                    s9Var.b.setAlpha(1.0f - s9Var.T);
-                }
-                s9Var.r.setAlpha(1.0f - s9Var.T);
-                s9Var.v = (s9Var.T * 0.25f) + 0.5f;
-                s9Var.fragmentView.invalidate();
-                break;
-            default:
-                this.b.r.invalidate();
-                break;
-        }
+    @Override // org.telegram.ui.ActionBar.o2
+    public final void finishFragment() {
+        setFinishing(true);
+        this.b0.dismiss();
+    }
+
+    @Override // org.telegram.ui.ActionBar.o2
+    public final void removeSelfFromStack() {
+        this.b0.dismiss();
     }
 }

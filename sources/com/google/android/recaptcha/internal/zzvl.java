@@ -7,7 +7,7 @@ import java.util.Locale;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class zzvl {
     public static final /* synthetic */ int zza = 0;
@@ -44,18 +44,18 @@ public final class zzvl {
         if (!zze(j11)) {
             throw new IllegalArgumentException(zzmg.zza("Timestamp is not valid. Input seconds is too large. Seconds (%s) must be in range [-62,135,596,800, +253,402,300,799]. ", Long.valueOf(j11)));
         }
-        int i9 = (int) ((j10 % 1000) * 1000000);
-        if (i9 <= -1000000000 || i9 >= 1000000000) {
-            j11 = zzps.zza(j11, i9 / 1000000000);
-            i9 %= 1000000000;
+        int i10 = (int) ((j10 % 1000) * 1000000);
+        if (i10 <= -1000000000 || i10 >= 1000000000) {
+            j11 = zzps.zza(j11, i10 / 1000000000);
+            i10 %= 1000000000;
         }
-        if (i9 < 0) {
-            i9 += 1000000000;
+        if (i10 < 0) {
+            i10 += 1000000000;
             j11 = zzps.zzb(j11, 1L);
         }
         zzur zzi = zzut.zzi();
         zzi.zzf(j11);
-        zzi.zze(i9);
+        zzi.zze(i10);
         zzut zzutVar = (zzut) zzi.zzk();
         zza(zzutVar);
         return zzutVar;

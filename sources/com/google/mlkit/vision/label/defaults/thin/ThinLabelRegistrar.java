@@ -1,40 +1,41 @@
 package com.google.mlkit.vision.label.defaults.thin;
 
+import a9.a;
+import a9.b;
+import a9.m;
+import ab.h;
 import com.google.firebase.components.ComponentRegistrar;
-import f7.y7;
-import h7.q;
-import h7.s;
-import h7.w;
-import hb.d;
-import hb.e;
+import h7.r8;
+import j7.q;
+import j7.s;
+import j7.w;
 import java.util.List;
-import tg.b;
-import y8.a;
-import y8.j;
-import ya.g;
+import jb.d;
+import jb.e;
+import jb.g;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public class ThinLabelRegistrar implements ComponentRegistrar {
     @Override // com.google.firebase.components.ComponentRegistrar
     public final List getComponents() {
-        b a2 = a.a(e.class);
-        a2.a(j.a(g.class));
-        a2.f = hb.g.b;
-        a b10 = a2.b();
-        b a3 = a.a(d.class);
-        a3.a(j.a(e.class));
-        a3.a(j.a(ya.d.class));
-        a3.f = hb.g.c;
-        a b11 = a3.b();
-        b a10 = a.a(eb.b.class);
-        a10.b = 1;
-        a10.a(new j(1, 1, d.class));
-        a10.f = hb.g.d;
-        a b12 = a10.b();
+        a b10 = b.b(e.class);
+        b10.a(m.b(h.class));
+        b10.g = g.b;
+        b b11 = b10.b();
+        a b12 = b.b(d.class);
+        b12.a(m.b(e.class));
+        b12.a(m.b(ab.d.class));
+        b12.g = g.c;
+        b b13 = b12.b();
+        a b14 = b.b(gb.b.class);
+        b14.b = 1;
+        b14.a(new m(1, 1, d.class));
+        b14.g = g.d;
+        b b15 = b14.b();
         q qVar = s.b;
-        Object[] objArr = {b10, b11, b12};
-        y7.a(3, objArr);
+        Object[] objArr = {b11, b13, b15};
+        r8.a(3, objArr);
         return new w(3, objArr);
     }
 }

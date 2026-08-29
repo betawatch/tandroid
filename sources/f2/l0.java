@@ -1,25 +1,13 @@
 package f2;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class l0 implements Parcelable {
-    public static final Parcelable.Creator<l0> CREATOR = new c.c(21);
-    public int a;
-    public int b;
-    public boolean c;
+public interface l0 {
+    void H0(int i10, int i11);
 
-    @Override // android.os.Parcelable
-    public final int describeContents() {
-        return 0;
-    }
+    void f1(int i10, int i11);
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i9) {
-        parcel.writeInt(this.a);
-        parcel.writeInt(this.b);
-        parcel.writeInt(this.c ? 1 : 0);
-    }
+    void i0(int i10, int i11);
+
+    void z(int i10, int i11);
 }

@@ -12,7 +12,7 @@ import android.support.v4.media.MediaMetadataCompat;
 import android.util.Log;
 import j$.util.concurrent.ConcurrentHashMap;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class p {
     public final h a;
@@ -61,52 +61,52 @@ public final class p {
 
     public final l c() {
         MediaController.TransportControls transportControls = this.a.a.getTransportControls();
-        int i9 = Build.VERSION.SDK_INT;
-        return i9 >= 29 ? new o(transportControls) : i9 >= 24 ? new n(transportControls) : i9 >= 23 ? new m(transportControls) : new l(transportControls);
+        int i10 = Build.VERSION.SDK_INT;
+        return i10 >= 29 ? new o(transportControls) : i10 >= 24 ? new n(transportControls) : i10 >= 23 ? new m(transportControls) : new l(transportControls);
     }
 
-    public final void d(androidx.mediarouter.app.s sVar) {
-        if (sVar == null) {
+    public final void d(androidx.mediarouter.app.p pVar) {
+        if (pVar == null) {
             throw new IllegalArgumentException("callback must not be null");
         }
-        if (this.b.putIfAbsent(sVar, Boolean.TRUE) != null) {
+        if (this.b.putIfAbsent(pVar, Boolean.TRUE) != null) {
             Log.w("MediaControllerCompat", "the callback has already been registered");
             return;
         }
         Handler handler = new Handler();
-        sVar.f(handler);
+        pVar.f(handler);
         h hVar = this.a;
-        hVar.a.registerCallback(sVar.a, handler);
+        hVar.a.registerCallback(pVar.a, handler);
         synchronized (hVar.b) {
             if (hVar.e.a() != null) {
-                g gVar = new g(sVar);
-                hVar.d.put(sVar, gVar);
-                sVar.c = gVar;
+                g gVar = new g(pVar);
+                hVar.d.put(pVar, gVar);
+                pVar.c = gVar;
                 try {
                     hVar.e.a().k(gVar);
-                    sVar.e(13, null, null);
+                    pVar.e(13, null, null);
                 } catch (RemoteException e10) {
                     Log.e("MediaControllerCompat", "Dead object in registerCallback.", e10);
                 }
             } else {
-                sVar.c = null;
-                hVar.c.add(sVar);
+                pVar.c = null;
+                hVar.c.add(pVar);
             }
         }
     }
 
-    public final void e(androidx.mediarouter.app.s sVar) {
-        if (sVar == null) {
+    public final void e(androidx.mediarouter.app.p pVar) {
+        if (pVar == null) {
             throw new IllegalArgumentException("callback must not be null");
         }
-        if (this.b.remove(sVar) == null) {
+        if (this.b.remove(pVar) == null) {
             Log.w("MediaControllerCompat", "the callback has never been registered");
             return;
         }
         try {
-            this.a.b(sVar);
+            this.a.b(pVar);
         } finally {
-            sVar.f(null);
+            pVar.f(null);
         }
     }
 

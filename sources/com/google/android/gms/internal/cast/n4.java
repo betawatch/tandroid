@@ -5,14 +5,14 @@ import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class n4 extends f7.n5 implements ScheduledFuture, r8.a, Future {
-    public final f4 b;
+public final class n4 extends h7.u5 implements ScheduledFuture, t8.a, Future {
+    public final g4 b;
     public final ScheduledFuture c;
 
-    public n4(f4 f4Var, ScheduledFuture scheduledFuture) {
-        this.b = f4Var;
+    public n4(g4 g4Var, ScheduledFuture scheduledFuture) {
+        this.b = g4Var;
         this.c = scheduledFuture;
     }
 
@@ -42,7 +42,7 @@ public final class n4 extends f7.n5 implements ScheduledFuture, r8.a, Future {
 
     @Override // java.util.concurrent.Future
     public final boolean isCancelled() {
-        return this.b.a instanceof x3;
+        return this.b.a instanceof y3;
     }
 
     @Override // java.util.concurrent.Future

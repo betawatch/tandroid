@@ -2,46 +2,54 @@ package org.telegram.ui.Components.voip;
 
 import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.drawable.ShapeDrawable;
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import org.telegram.ui.Components.c9;
+import android.graphics.drawable.Drawable;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.gr;
-import org.telegram.ui.g30;
+import org.telegram.ui.j30;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
-/* loaded from: classes3.dex */
-public final class f0 extends FrameLayout {
-    public final /* synthetic */ ShapeDrawable a;
-    public final /* synthetic */ g30 b;
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* loaded from: classes.dex */
+public final class f0 extends View {
+    public final /* synthetic */ org.telegram.ui.Cells.z a;
+    public final /* synthetic */ j30 b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f0(g30 g30Var, Context context, ShapeDrawable shapeDrawable) {
+    public f0(j30 j30Var, Context context, org.telegram.ui.Cells.z zVar) {
         super(context);
-        this.b = g30Var;
-        this.a = shapeDrawable;
+        this.b = j30Var;
+        this.a = zVar;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
+    @Override // android.view.View
     public final void dispatchDraw(Canvas canvas) {
-        g30 g30Var = this.b;
-        c9 c9Var = g30Var.F;
-        TextView textView = g30Var.G;
-        float f10 = g30Var.K;
-        ShapeDrawable shapeDrawable = this.a;
-        if (f10 == 1.0f) {
-            shapeDrawable.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
-            c9Var.setTranslationX(0.0f);
-            textView.setTranslationX(0.0f);
-        } else {
-            float interpolation = 1.0f - gr.f.getInterpolation(f10);
-            float left = (g30Var.L - getLeft()) * interpolation;
-            float left2 = (g30Var.M - textView.getLeft()) * interpolation;
-            shapeDrawable.setBounds((int) left, 0, getMeasuredWidth() + ((int) ((g30Var.N - getRight()) * interpolation)), getMeasuredHeight());
-            c9Var.setTranslationX(left);
-            textView.setTranslationX(-left2);
-        }
-        shapeDrawable.draw(canvas);
+        j30 j30Var = this.b;
+        float measuredWidth = j30Var.W.getMeasuredWidth();
+        gr grVar = j30Var.V;
+        float measuredWidth2 = (j30Var.a0.getMeasuredWidth() * grVar.g) + ((1.0f - grVar.g) * measuredWidth);
+        canvas.save();
+        int dp = AndroidUtilities.dp(50.0f) + ((int) measuredWidth2);
+        int measuredHeight = getMeasuredHeight();
+        org.telegram.ui.Cells.z zVar = this.a;
+        zVar.setBounds(0, 0, dp, measuredHeight);
+        zVar.draw(canvas);
         super.dispatchDraw(canvas);
+    }
+
+    @Override // android.view.View
+    public final void drawableStateChanged() {
+        super.drawableStateChanged();
+        this.a.setState(getDrawableState());
+    }
+
+    @Override // android.view.View
+    public final void jumpDrawablesToCurrentState() {
+        super.jumpDrawablesToCurrentState();
+        this.a.jumpToCurrentState();
+    }
+
+    @Override // android.view.View
+    public final boolean verifyDrawable(Drawable drawable) {
+        return this.a == drawable || super.verifyDrawable(drawable);
     }
 }

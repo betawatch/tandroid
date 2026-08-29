@@ -12,7 +12,7 @@ import java.util.WeakHashMap;
 import org.telegram.messenger.beta.R;
 import r0.j0;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public class v {
     public final Context a;
@@ -27,12 +27,12 @@ public class v {
     public int f = 8388611;
     public final t k = new t(this);
 
-    public v(Context context, k kVar, View view, boolean z10, int i9, int i10) {
+    public v(Context context, k kVar, View view, boolean z10, int i10, int i11) {
         this.a = context;
         this.b = kVar;
         this.e = view;
         this.c = z10;
-        this.d = i9;
+        this.d = i10;
     }
 
     public final s a() {
@@ -50,7 +50,7 @@ public class v {
             c0Var.l(this.b);
             c0Var.r(this.k);
             c0Var.n(this.e);
-            c0Var.h(this.h);
+            c0Var.g(this.h);
             c0Var.o(this.g);
             c0Var.p(this.f);
             this.i = c0Var;
@@ -71,21 +71,21 @@ public class v {
         }
     }
 
-    public final void d(int i9, int i10, boolean z10, boolean z11) {
+    public final void d(int i10, int i11, boolean z10, boolean z11) {
         s a2 = a();
         a2.s(z11);
         if (z10) {
-            int i11 = this.f;
+            int i12 = this.f;
             View view = this.e;
             WeakHashMap weakHashMap = j0.a;
-            if ((Gravity.getAbsoluteGravity(i11, view.getLayoutDirection()) & 7) == 5) {
-                i9 -= this.e.getWidth();
+            if ((Gravity.getAbsoluteGravity(i12, view.getLayoutDirection()) & 7) == 5) {
+                i10 -= this.e.getWidth();
             }
-            a2.q(i9);
-            a2.t(i10);
-            int i12 = (int) ((this.a.getResources().getDisplayMetrics().density * 48.0f) / 2.0f);
-            a2.a = new Rect(i9 - i12, i10 - i12, i9 + i12, i10 + i12);
+            a2.q(i10);
+            a2.t(i11);
+            int i13 = (int) ((this.a.getResources().getDisplayMetrics().density * 48.0f) / 2.0f);
+            a2.a = new Rect(i10 - i13, i11 - i13, i10 + i13, i11 + i13);
         }
-        a2.g();
+        a2.h();
     }
 }

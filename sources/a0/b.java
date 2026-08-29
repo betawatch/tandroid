@@ -3,7 +3,7 @@ package a0;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class b implements Iterator {
     public int a;
@@ -12,8 +12,8 @@ public final class b implements Iterator {
     public final /* synthetic */ int d;
     public final /* synthetic */ Object e;
 
-    public b(int i9) {
-        this.a = i9;
+    public b(int i10) {
+        this.a = i10;
     }
 
     @Override // java.util.Iterator
@@ -27,16 +27,16 @@ public final class b implements Iterator {
         if (!hasNext()) {
             throw new NoSuchElementException();
         }
-        int i9 = this.b;
+        int i10 = this.b;
         switch (this.d) {
             case 0:
-                e10 = ((f) this.e).e(i9);
+                e10 = ((f) this.e).e(i10);
                 break;
             case 1:
-                e10 = ((f) this.e).h(i9);
+                e10 = ((f) this.e).h(i10);
                 break;
             default:
-                e10 = ((g) this.e).b[i9];
+                e10 = ((g) this.e).b[i10];
                 break;
         }
         this.b++;
@@ -49,17 +49,17 @@ public final class b implements Iterator {
         if (!this.c) {
             throw new IllegalStateException("Call next() before removing an element.");
         }
-        int i9 = this.b - 1;
-        this.b = i9;
+        int i10 = this.b - 1;
+        this.b = i10;
         switch (this.d) {
             case 0:
-                ((f) this.e).f(i9);
+                ((f) this.e).f(i10);
                 break;
             case 1:
-                ((f) this.e).f(i9);
+                ((f) this.e).f(i10);
                 break;
             default:
-                ((g) this.e).i(i9);
+                ((g) this.e).i(i10);
                 break;
         }
         this.a--;
@@ -74,10 +74,10 @@ public final class b implements Iterator {
     }
 
     /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
-    public b(f fVar, int i9) {
+    public b(f fVar, int i10) {
         this(fVar.c);
-        this.d = i9;
-        switch (i9) {
+        this.d = i10;
+        switch (i10) {
             case 1:
                 this.e = fVar;
                 this(fVar.c);

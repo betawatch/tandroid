@@ -10,7 +10,7 @@ import org.telegram.messenger.SharedConfig;
 import org.webrtc.Logging;
 import ru.noties.jlatexmath.android.BuildConfig;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes4.dex */
 public class WebRtcAudioEffects {
     private static final UUID AOSP_ACOUSTIC_ECHO_CANCELER = UUID.fromString("bb392ec0-8d4d-11e0-a896-0002a5d5c51b");
@@ -133,13 +133,13 @@ public class WebRtcAudioEffects {
         return isNoiseSuppressorEffectAvailable();
     }
 
-    public void enable(int i9) {
-        Logging.d(TAG, "enable(audioSession=" + i9 + ")");
+    public void enable(int i10) {
+        Logging.d(TAG, "enable(audioSession=" + i10 + ")");
         boolean z10 = false;
         assertTrue(this.aec == null);
         assertTrue(this.ns == null);
         if (isAcousticEchoCancelerSupported()) {
-            AcousticEchoCanceler create = AcousticEchoCanceler.create(i9);
+            AcousticEchoCanceler create = AcousticEchoCanceler.create(i10);
             this.aec = create;
             if (create != null) {
                 boolean enabled = create.getEnabled();
@@ -159,7 +159,7 @@ public class WebRtcAudioEffects {
             }
         }
         if (isNoiseSuppressorSupported()) {
-            NoiseSuppressor create2 = NoiseSuppressor.create(i9);
+            NoiseSuppressor create2 = NoiseSuppressor.create(i10);
             this.ns = create2;
             if (create2 == null) {
                 Logging.e(TAG, "Failed to create the NoiseSuppressor instance");

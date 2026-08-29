@@ -1,15 +1,14 @@
 package ih;
 
-import android.content.Context;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.u51;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
-/* loaded from: classes4.dex */
-public final class k5 extends g5 {
-    public final /* synthetic */ l5 T;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public k5(l5 l5Var, m9 m9Var, Context context, s4 s4Var, hg.i iVar) {
-        super(m9Var, context, s4Var, iVar);
-        this.T = l5Var;
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* loaded from: classes.dex */
+public final class k5 extends u51 {
+    @Override // org.telegram.ui.Components.jl0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(Math.min((int) (AndroidUtilities.displaySize.y * 0.35f), View.MeasureSpec.getSize(i11)), View.MeasureSpec.getMode(i11)));
     }
 }

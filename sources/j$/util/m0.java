@@ -9,8 +9,8 @@ public final /* synthetic */ class m0 implements LongConsumer {
     public final /* synthetic */ int a;
     public final /* synthetic */ Consumer b;
 
-    public /* synthetic */ m0(Consumer consumer, int i9) {
-        this.a = i9;
+    public /* synthetic */ m0(Consumer consumer, int i10) {
+        this.a = i10;
         this.b = consumer;
     }
 

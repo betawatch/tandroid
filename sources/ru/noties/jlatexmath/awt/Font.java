@@ -4,7 +4,7 @@ import android.graphics.Typeface;
 import java.io.InputStream;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes4.dex */
 public class Font {
     public static final int BOLD = 1;
@@ -14,36 +14,36 @@ public class Font {
     private int style;
     private final Typeface typeface;
 
-    public Font(String str, int i9, int i10) {
-        this(createTypeface(str, i9), i9, i10);
+    public Font(String str, int i10, int i11) {
+        this(createTypeface(str, i10), i10, i11);
     }
 
-    private static Typeface applyStyle(Typeface typeface, int i9) {
-        if (((typeface.isBold() ? 1 : 0) | (typeface.isItalic() ? 2 : 0)) != i9) {
-            return Typeface.create(typeface, ((i9 & 1) != 0 ? 1 : 0) | ((i9 & 2) != 0 ? 2 : 0));
+    private static Typeface applyStyle(Typeface typeface, int i10) {
+        if (((typeface.isBold() ? 1 : 0) | (typeface.isItalic() ? 2 : 0)) != i10) {
+            return Typeface.create(typeface, ((i10 & 1) != 0 ? 1 : 0) | ((i10 & 2) != 0 ? 2 : 0));
         }
         return typeface;
     }
 
     @Deprecated
-    public static Font createFont(int i9, InputStream inputStream) {
+    public static Font createFont(int i10, InputStream inputStream) {
         return null;
     }
 
-    private static Typeface createTypeface(String str, int i9) {
-        Typeface create = Typeface.create(str.toLowerCase(Locale.US), toAndroidStyle(i9));
+    private static Typeface createTypeface(String str, int i10) {
+        Typeface create = Typeface.create(str.toLowerCase(Locale.US), toAndroidStyle(i10));
         return create == null ? Typeface.DEFAULT : create;
     }
 
-    private static int toAndroidStyle(int i9) {
-        if (i9 == 0) {
+    private static int toAndroidStyle(int i10) {
+        if (i10 == 0) {
             return 0;
         }
-        return ((i9 & 1) != 0 ? 1 : 0) | ((i9 & 2) != 0 ? 2 : 0);
+        return ((i10 & 1) != 0 ? 1 : 0) | ((i10 & 2) != 0 ? 2 : 0);
     }
 
-    public Font deriveFont(int i9) {
-        return new Font(this.typeface, i9, this.size);
+    public Font deriveFont(int i10) {
+        return new Font(this.typeface, i10, this.size);
     }
 
     public boolean isBold() {
@@ -66,13 +66,13 @@ public class Font {
         return this.typeface;
     }
 
-    private Font(Typeface typeface, int i9, float f10) {
-        this.typeface = applyStyle(typeface, i9);
-        this.style = i9;
-        this.size = f10;
+    private Font(Typeface typeface, int i10, float f9) {
+        this.typeface = applyStyle(typeface, i10);
+        this.style = i10;
+        this.size = f9;
     }
 
-    public static Font createFont(Typeface typeface, float f10) {
-        return new Font(typeface, 0, f10);
+    public static Font createFont(Typeface typeface, float f9) {
+        return new Font(typeface, 0, f9);
     }
 }

@@ -8,7 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class y implements LayoutInflater.Factory2 {
     public final j0 a;
@@ -104,7 +104,7 @@ public final class y implements LayoutInflater.Factory2 {
                     C.R = viewGroup;
                     g10.j();
                     g10.i();
-                    throw new IllegalStateException(aa.d.o("Fragment ", attributeValue, " did not create a view."));
+                    throw new IllegalStateException(a4.w.n("Fragment ", attributeValue, " did not create a view."));
                 }
             }
         }

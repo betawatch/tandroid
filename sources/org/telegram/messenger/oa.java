@@ -1,27 +1,35 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+import j$.util.concurrent.ConcurrentHashMap;
+
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class oa implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Runnable b;
+    public final /* synthetic */ MessagesController b;
+    public final /* synthetic */ jf.t c;
+    public final /* synthetic */ ConcurrentHashMap d;
+    public final /* synthetic */ ConcurrentHashMap e;
 
-    public /* synthetic */ oa(int i9, Runnable runnable) {
-        this.a = i9;
-        this.b = runnable;
+    public /* synthetic */ oa(MessagesController messagesController, jf.t tVar, ConcurrentHashMap concurrentHashMap, ConcurrentHashMap concurrentHashMap2, int i10) {
+        this.a = i10;
+        this.b = messagesController;
+        this.c = tVar;
+        this.d = concurrentHashMap;
+        this.e = concurrentHashMap2;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                MessagesController.lambda$unblockPeer$110(this.b);
+                this.b.lambda$processUpdateArray$400(this.c, this.d, this.e);
                 break;
             case 1:
-                this.b.run();
+                this.b.lambda$processUpdateArray$401(this.c, this.d, this.e);
                 break;
             default:
-                AndroidUtilities.runOnUIThread(this.b);
+                this.b.lambda$processUpdateArray$405(this.c, this.d, this.e);
                 break;
         }
     }

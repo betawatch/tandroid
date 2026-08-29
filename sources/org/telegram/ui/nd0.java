@@ -1,56 +1,33 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.View;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
+import android.content.Intent;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class nd0 extends TextView {
-    public final /* synthetic */ int a;
+public final class nd0 implements NotificationCenter.NotificationCenterDelegate {
+    public final /* synthetic */ pd0 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ nd0(Context context, int i9) {
-        super(context);
-        this.a = i9;
+    public nd0(pd0 pd0Var) {
+        this.a = pd0Var;
     }
 
-    @Override // android.view.View
-    public void dispatchDraw(Canvas canvas) {
-        switch (this.a) {
-            case 4:
-                if (getPaddingLeft() > 0) {
-                    canvas.drawCircle((getPaddingLeft() - AndroidUtilities.dp(2.5f)) / 2.0f, AndroidUtilities.dp(10.0f), AndroidUtilities.dp(2.5f), getPaint());
-                }
-                super.dispatchDraw(canvas);
-                break;
-            default:
-                super.dispatchDraw(canvas);
-                break;
-        }
-    }
-
-    @Override // android.widget.TextView, android.view.View
-    public void onMeasure(int i9, int i10) {
-        switch (this.a) {
-            case 0:
-                super.onMeasure(i9, View.MeasureSpec.makeMeasureSpec(Math.max(View.MeasureSpec.getSize(i10), AndroidUtilities.dp(100.0f)), TLObject.FLAG_31));
-                break;
-            case 1:
-                super.onMeasure(i9, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(100.0f), TLObject.FLAG_31));
-                break;
-            case 2:
-                super.onMeasure(i9, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(100.0f), TLObject.FLAG_31));
-                break;
-            case 3:
-                super.onMeasure(i9, View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(AndroidUtilities.dp(26.0f)), TLObject.FLAG_30));
-                break;
-            default:
-                super.onMeasure(i9, i10);
-                break;
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+        pd0 pd0Var = this.a;
+        int intValue = ((Integer) objArr[0]).intValue();
+        ((Integer) objArr[1]).getClass();
+        Intent intent = (Intent) objArr[2];
+        NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.onActivityResultReceived);
+        if (intValue == 200) {
+            try {
+                pd0Var.B = (GoogleSignInAccount) i7.l.b(intent).getResult(com.google.android.gms.common.api.f.class);
+                pd0Var.h(null);
+            } catch (com.google.android.gms.common.api.f e10) {
+                FileLog.e(e10);
+            }
         }
     }
 }

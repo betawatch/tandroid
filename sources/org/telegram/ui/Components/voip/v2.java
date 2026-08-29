@@ -1,166 +1,141 @@
 package org.telegram.ui.Components.voip;
 
 import android.app.Activity;
-import android.view.MotionEvent;
-import android.view.VelocityTracker;
-import android.view.WindowInsets;
-import android.view.WindowManager;
-import android.widget.FrameLayout;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import android.text.Layout;
+import android.text.StaticLayout;
+import android.text.TextPaint;
+import android.view.View;
+import nh.m6;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.AnimationNotificationsLocker;
-import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.R;
 import org.telegram.messenger.voip.VoIPService;
-import org.telegram.ui.Components.gr;
-import org.telegram.ui.Components.y11;
-import org.telegram.ui.mh1;
-import org.webrtc.OrientationHelper;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
-/* loaded from: classes3.dex */
-public abstract class v2 extends FrameLayout {
-    public Activity a;
-    public boolean b;
-    public AnimationNotificationsLocker c;
-    public VelocityTracker d;
-    public boolean e;
-    public boolean f;
-    public float h;
-    public float n;
-    public boolean r;
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* loaded from: classes.dex */
+public final class v2 extends View {
+    public StaticLayout a;
+    public final RectF b;
+    public final Paint c;
+    public final Paint d;
+    public String e;
+    public final TextPaint f;
+    public int h;
+    public boolean n;
+    public final Drawable r;
+    public final m6 s;
 
-    public static WindowManager.LayoutParams a() {
-        WindowManager.LayoutParams layoutParams = new WindowManager.LayoutParams();
-        layoutParams.height = -1;
-        layoutParams.format = -2;
-        layoutParams.width = -1;
-        layoutParams.gravity = 51;
-        layoutParams.type = 99;
-        layoutParams.screenOrientation = 1;
-        AndroidUtilities.applyEdgeToEdgeLayoutParams(layoutParams);
-        layoutParams.flags = -2144665216;
-        return layoutParams;
+    public v2(Activity activity) {
+        super(activity);
+        this.b = new RectF();
+        Paint paint = new Paint(1);
+        this.c = paint;
+        Paint paint2 = new Paint(1);
+        this.d = paint2;
+        TextPaint textPaint = new TextPaint(1);
+        this.f = textPaint;
+        this.h = 4;
+        this.n = false;
+        this.s = new m6(this, 21);
+        textPaint.setTextSize(AndroidUtilities.dp(15.0f));
+        textPaint.setColor(-1);
+        paint.setColor(i0.a.k(-1, TLRPC.LAYER));
+        paint2.setColor(i0.a.k(-1, 102));
+        Drawable drawable = activity.getDrawable(R.drawable.calls_decline);
+        this.r = drawable;
+        drawable.setBounds(0, 0, AndroidUtilities.dp(24.0f), AndroidUtilities.dp(24.0f));
     }
 
-    public final void b() {
-        c(330L);
-    }
-
-    public final void c(long j10) {
-        if (this.f) {
+    public final void a() {
+        m6 m6Var = this.s;
+        removeCallbacks(m6Var);
+        VoIPService sharedInstance = VoIPService.getSharedInstance();
+        if (sharedInstance == null) {
             return;
         }
-        this.f = true;
-        if (mh1.j1 != null) {
-            if (VoIPService.getSharedInstance() != null) {
-                int measuredHeight = mh1.j1.q0.getMeasuredHeight();
-                if (mh1.j1.z0 && !VoIPService.getSharedInstance().isConverting()) {
-                    mh1 mh1Var = mh1.j1;
-                    l2.l(mh1Var.b, mh1Var.a, mh1Var.q0.getMeasuredWidth(), measuredHeight, 0);
-                    WindowInsets windowInsets = mh1.j1.n0;
-                    if (windowInsets != null) {
-                        l2.S = windowInsets.getSystemWindowInsetTop();
-                        mh1.j1.n0.getSystemWindowInsetBottom();
-                    }
-                }
+        String formatLongDuration = AndroidUtilities.formatLongDuration((int) (sharedInstance.getCallDuration() / 1000));
+        String str = this.e;
+        if (str == null || !str.equals(formatLongDuration)) {
+            this.e = formatLongDuration;
+            if (this.a == null) {
+                requestLayout();
             }
-            mh1.j1.Y.d.release();
-            mh1.j1.Z.d.release();
-            mh1.j1.X.release();
-            mh1.j1.l();
+            String str2 = this.e;
+            TextPaint textPaint = this.f;
+            this.a = new StaticLayout(str2, textPaint, (int) textPaint.measureText(str2), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
         }
-        mh1.j1 = null;
-        if (this.b) {
-            try {
-                ((WindowManager) this.a.getSystemService("window")).removeView(this);
-            } catch (Exception unused) {
-            }
-        } else {
-            this.c.lock();
-            animate().translationY(getMeasuredHeight()).alpha(0.0f).setListener(new y11(this, 16)).setDuration(j10).setInterpolator(gr.f).start();
-        }
-    }
-
-    public final void d() {
-        if (getParent() != null) {
-            AndroidUtilities.unlockOrientation(this.a);
-            WindowManager windowManager = (WindowManager) this.a.getSystemService("window");
-            setVisibility(8);
-            windowManager.removeView(this);
-            OrientationHelper.cameraRotationDisabled = false;
-        }
-    }
-
-    @Override // android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        return onTouchEvent(motionEvent);
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i9, int i10) {
-        super.onMeasure(i9, i10);
-        if (this.e) {
-            return;
-        }
-        this.e = true;
-        if (this.b) {
-            return;
-        }
-        setTranslationY(getMeasuredHeight());
-        setAlpha(0.0f);
-        animate().translationY(0.0f).alpha(1.0f).setDuration(330L).setInterpolator(gr.f).start();
+        postDelayed(m6Var, 300L);
+        invalidate();
     }
 
     @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        if (!this.b) {
-            if (motionEvent.getAction() == 0) {
-                this.h = motionEvent.getX();
-                this.n = motionEvent.getY();
-                if (this.d == null) {
-                    this.d = VelocityTracker.obtain();
-                }
-                this.d.clear();
-                return false;
-            }
-            if (motionEvent.getAction() == 2) {
-                float x10 = motionEvent.getX() - this.h;
-                float y10 = motionEvent.getY() - this.n;
-                if (!this.r && Math.abs(y10) > AndroidUtilities.getPixelsInCM(0.4f, true) && Math.abs(y10) / 3.0f > x10) {
-                    this.n = motionEvent.getY();
-                    this.r = true;
-                    y10 = 0.0f;
-                }
-                if (this.r) {
-                    float f10 = y10 >= 0.0f ? y10 : 0.0f;
-                    if (this.d == null) {
-                        this.d = VelocityTracker.obtain();
-                    }
-                    this.d.addMovement(motionEvent);
-                    setTranslationY(f10);
-                }
-                return this.r;
-            }
-            if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-                float translationY = getTranslationY();
-                if (this.d == null) {
-                    this.d = VelocityTracker.obtain();
-                }
-                this.d.computeCurrentVelocity(MediaDataController.MAX_STYLE_RUNS_COUNT);
-                float xVelocity = this.d.getXVelocity();
-                float yVelocity = this.d.getYVelocity();
-                if (translationY >= getMeasuredHeight() / 3.0f || (xVelocity >= 3500.0f && xVelocity >= yVelocity)) {
-                    c(Math.max((int) ((200.0f / getMeasuredHeight()) * (getMeasuredHeight() - getTranslationY())), 50));
-                } else {
-                    animate().translationY(0.0f).start();
-                }
-                this.r = false;
-                return false;
+    public final void onDraw(Canvas canvas) {
+        StaticLayout staticLayout = this.a;
+        int i10 = 0;
+        int dp = staticLayout == null ? 0 : AndroidUtilities.dp(21.0f) + staticLayout.getWidth();
+        canvas.save();
+        canvas.translate((getMeasuredWidth() - dp) / 2.0f, 0.0f);
+        canvas.save();
+        if (this.n) {
+            canvas.translate(-AndroidUtilities.dp(7.0f), -AndroidUtilities.dp(3.0f));
+            this.r.draw(canvas);
+        } else {
+            canvas.translate(0.0f, (getMeasuredHeight() - AndroidUtilities.dp(11.0f)) / 2.0f);
+            while (i10 < 4) {
+                int i11 = i10 + 1;
+                Paint paint = i11 > this.h ? this.d : this.c;
+                float f9 = i10;
+                float dpf2 = AndroidUtilities.dpf2(4.16f) * f9;
+                float dpf22 = AndroidUtilities.dpf2(2.75f) * (3 - i10);
+                float dpf23 = AndroidUtilities.dpf2(2.75f) + (AndroidUtilities.dpf2(4.16f) * f9);
+                float dp2 = AndroidUtilities.dp(11.0f);
+                RectF rectF = this.b;
+                rectF.set(dpf2, dpf22, dpf23, dp2);
+                canvas.drawRoundRect(rectF, AndroidUtilities.dpf2(0.7f), AndroidUtilities.dpf2(0.7f), paint);
+                i10 = i11;
             }
         }
-        return false;
+        canvas.restore();
+        if (staticLayout != null) {
+            canvas.translate(AndroidUtilities.dp(21.0f), 0.0f);
+            staticLayout.draw(canvas);
+        }
+        canvas.restore();
     }
 
-    public void setLockOnScreen(boolean z10) {
-        this.b = z10;
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        StaticLayout staticLayout = this.a;
+        if (staticLayout != null) {
+            setMeasuredDimension(View.MeasureSpec.getSize(i10), staticLayout.getHeight());
+        } else {
+            setMeasuredDimension(View.MeasureSpec.getSize(i10), AndroidUtilities.dp(15.0f));
+        }
+    }
+
+    public void setSignalBarCount(int i10) {
+        this.h = i10;
+        invalidate();
+    }
+
+    @Override // android.view.View
+    public void setVisibility(int i10) {
+        if (getVisibility() != i10) {
+            if (i10 == 0) {
+                this.e = "00:00";
+                String str = this.e;
+                TextPaint textPaint = this.f;
+                this.a = new StaticLayout(str, textPaint, (int) textPaint.measureText(str), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+                a();
+            } else {
+                this.e = null;
+                this.a = null;
+            }
+        }
+        super.setVisibility(i10);
     }
 }

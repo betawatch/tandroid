@@ -1,185 +1,124 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
 import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
+import android.os.SystemClock;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.R;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class o11 extends i51 {
-    public final org.telegram.ui.s10 b3;
-    public final y5 c3;
-    public final y5 d3;
-    public final RectF e3;
-    public final Paint f3;
-    public final y5 g3;
-    public Drawable h3;
-    public int i3;
-    public final Paint j3;
-    public final /* synthetic */ b21 k3;
+public final class o11 {
+    public long a;
+    public boolean b;
+    public final ArrayList c;
+    public final ArrayList d;
+    public final int e;
+    public boolean f;
+    public float g;
+    public float h;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public o11(b21 b21Var, Context context, int i9, n11 n11Var, i11 i11Var, i11 i11Var2, org.telegram.ui.ActionBar.b6 b6Var) {
-        super(context, i9, 0, false, n11Var, i11Var, i11Var2, b6Var);
-        this.k3 = b21Var;
-        this.b3 = new org.telegram.ui.s10();
-        gr grVar = gr.h;
-        this.c3 = new y5(this, 320L, grVar);
-        this.d3 = new y5(this, 320L, grVar);
-        this.e3 = new RectF();
-        this.f3 = new Paint(1);
-        this.g3 = new y5(this, 420L, grVar);
-        this.j3 = new Paint(1);
+    public o11() {
+        this(40);
     }
 
-    @Override // org.telegram.ui.Components.wk0
-    public final Integer W0(int i9) {
-        return 0;
-    }
-
-    @Override // org.telegram.ui.Components.i51, org.telegram.ui.Components.wk0, android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        Canvas canvas2;
-        float f10;
-        float f11;
-        float f12;
-        float f13;
-        int i9;
-        float e10 = this.c3.e(canScrollHorizontally(-1));
-        float e11 = this.d3.e(canScrollHorizontally(1));
-        int i10 = (e10 > 0.0f ? 1 : (e10 == 0.0f ? 0 : -1));
-        boolean z10 = i10 > 0 || e11 > 0.0f;
-        if (z10) {
-            canvas2 = canvas;
-            canvas2.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), 255, 31);
-        } else {
-            canvas2 = canvas;
+    public final void a(float f9, float f10, Canvas canvas, Paint paint, RectF rectF) {
+        n11 n11Var;
+        ArrayList arrayList = this.c;
+        int size = arrayList.size();
+        int i10 = 0;
+        for (int i11 = 0; i11 < size; i11++) {
+            n11 n11Var2 = (n11) arrayList.get(i11);
+            paint.setAlpha((int) (n11Var2.f * 255.0f * f10));
+            canvas.drawPoint(n11Var2.a, n11Var2.b, paint);
         }
-        float width = getWidth();
-        float f14 = 0.0f;
-        for (int i11 = 0; i11 < getChildCount(); i11++) {
-            View childAt = getChildAt(i11);
-            if (childAt instanceof v11) {
-                v11 v11Var = (v11) childAt;
-                if (v11Var.s) {
-                    if (width > v11Var.getX()) {
-                        width = v11Var.getX();
-                        RecyclerView.R(v11Var);
-                    }
-                    if (f14 < v11Var.getX() + v11Var.getWidth()) {
-                        f14 = v11Var.getX() + v11Var.getWidth();
-                        RecyclerView.R(v11Var);
-                    }
-                }
-            }
-        }
-        org.telegram.ui.ActionBar.b6 b6Var = this.l2;
-        if (f14 > width) {
-            int l1 = org.telegram.ui.ActionBar.f6.l1(0.06f, org.telegram.ui.ActionBar.f6.v0(org.telegram.ui.ActionBar.f6.G6, b6Var));
-            Paint paint = this.j3;
-            paint.setColor(l1);
-            RectF rectF = AndroidUtilities.rectTmp;
-            f10 = 14.0f;
-            f11 = 1.0f;
-            rectF.set(width + AndroidUtilities.dp(1.0f), (getHeight() - AndroidUtilities.dp(28.0f)) / 2.0f, f14 - AndroidUtilities.dp(1.0f), (AndroidUtilities.dp(28.0f) + getHeight()) / 2.0f);
-            canvas2.drawRoundRect(rectF, AndroidUtilities.dp(14.0f), AndroidUtilities.dp(14.0f), paint);
-            if (this.h3 == null) {
-                this.h3 = getContext().getResources().getDrawable(R.drawable.msg_limit_pin).mutate();
-            }
-            int v02 = org.telegram.ui.ActionBar.f6.v0(org.telegram.ui.ActionBar.f6.b9, b6Var);
-            if (this.i3 != v02) {
-                Drawable drawable = this.h3;
-                this.i3 = v02;
-                drawable.setColorFilter(new PorterDuffColorFilter(v02, PorterDuff.Mode.SRC_IN));
-            }
-            this.h3.setBounds((int) (AndroidUtilities.dp(-17.0f) + f14), (int) (rectF.top + AndroidUtilities.dp(10.0f)), (int) (f14 + AndroidUtilities.dp(-7.0f)), (int) (rectF.top + AndroidUtilities.dp(20.0f)));
-            this.h3.draw(canvas2);
-        } else {
-            f10 = 14.0f;
-            f11 = 1.0f;
-        }
-        super.dispatchDraw(canvas);
-        b21 b21Var = this.k3;
-        long j10 = b21Var.D;
-        long j11 = b21Var.R;
-        y5 y5Var = this.g3;
-        if (j10 != j11) {
-            b21Var.E = j10;
-            y5Var.d(0.0f, true);
-        }
-        b21Var.D = b21Var.R;
-        v11 v11Var2 = null;
-        v11 v11Var3 = null;
+        double d = (f9 - 90.0f) * 0.017453292519943295d;
+        double sin = Math.sin(d);
+        double d10 = -Math.cos(d);
+        double width = rectF.width() / 2.0f;
+        float centerX = (float) (((-d10) * width) + rectF.centerX());
+        float centerY = (float) ((width * sin) + rectF.centerY());
+        ArrayList arrayList2 = this.d;
+        int clamp = Utilities.clamp(arrayList2.size() / 12, 3, 1);
         int i12 = 0;
-        while (i12 < getChildCount()) {
-            View childAt2 = getChildAt(i12);
-            if (childAt2 instanceof v11) {
-                v11 v11Var4 = (v11) childAt2;
-                if (!v11Var4.x) {
-                    i9 = i10;
-                    if (v11Var4.getTopicId() == b21Var.R) {
-                        v11Var2 = v11Var4;
-                    }
-                    f13 = e11;
-                    if (v11Var4.getTopicId() == b21Var.E) {
-                        v11Var3 = v11Var4;
-                    }
-                    i12++;
-                    i10 = i9;
-                    e11 = f13;
-                }
-            }
-            f13 = e11;
-            i9 = i10;
-            i12++;
-            i10 = i9;
-            e11 = f13;
-        }
-        float f15 = e11;
-        int i13 = i10;
-        if (v11Var2 != null) {
-            float x10 = v11Var2.getX() + AndroidUtilities.dp(f11);
-            float y10 = v11Var2.getY() + AndroidUtilities.dp(4.0f);
-            float x11 = (v11Var2.getX() + v11Var2.getWidth()) - AndroidUtilities.dp(f11);
-            float y11 = (v11Var2.getY() + getHeight()) - AndroidUtilities.dp(4.0f);
-            RectF rectF2 = this.e3;
-            rectF2.set(x10, y10, x11, y11);
-            if (v11Var3 != null) {
-                RectF rectF3 = AndroidUtilities.rectTmp;
-                rectF3.set(v11Var3.getX() + AndroidUtilities.dp(f11), v11Var3.getY() + AndroidUtilities.dp(4.0f), (v11Var3.getX() + v11Var3.getWidth()) - AndroidUtilities.dp(f11), (v11Var3.getY() + getHeight()) - AndroidUtilities.dp(4.0f));
-                AndroidUtilities.lerp(rectF3, rectF2, y5Var.d(1.0f, false), rectF2);
-            }
-            int k10 = i0.a.k(org.telegram.ui.ActionBar.f6.v0(org.telegram.ui.ActionBar.f6.Oh, b6Var), 31);
-            Paint paint2 = this.f3;
-            paint2.setColor(k10);
-            canvas2.drawRoundRect(rectF2, AndroidUtilities.dp(f10), AndroidUtilities.dp(f10), paint2);
-        }
-        if (z10) {
-            canvas2.save();
-            org.telegram.ui.s10 s10Var = this.b3;
-            if (i13 > 0) {
-                RectF rectF4 = AndroidUtilities.rectTmp;
-                f12 = 0.0f;
-                rectF4.set(0.0f, 0.0f, AndroidUtilities.dp(12.0f), getHeight());
-                s10Var.b(canvas2, rectF4, 0, e10);
+        while (i12 < clamp) {
+            if (arrayList2.isEmpty()) {
+                n11Var = new n11();
             } else {
-                f12 = 0.0f;
+                n11Var = (n11) arrayList2.get(i10);
+                arrayList2.remove(i10);
             }
-            if (f15 > f12) {
-                RectF rectF5 = AndroidUtilities.rectTmp;
-                rectF5.set(getWidth() - AndroidUtilities.dp(12.0f), f12, getWidth(), getHeight());
-                s10Var.b(canvas2, rectF5, 2, f15);
+            if (this.b && this.f) {
+                float f11 = (i12 + 1) / clamp;
+                n11Var.a = AndroidUtilities.lerp(this.g, centerX, f11);
+                n11Var.b = AndroidUtilities.lerp(this.h, centerY, f11);
+            } else {
+                n11Var.a = centerX;
+                n11Var.b = centerY;
             }
-            canvas2.restore();
-            canvas2.restore();
+            double d11 = sin;
+            double nextInt = (Utilities.random.nextInt(140) - 70) * 0.017453292519943295d;
+            if (nextInt < 0.0d) {
+                nextInt += 6.283185307179586d;
+            }
+            n11Var.c = (float) ((Math.cos(nextInt) * d11) - (Math.sin(nextInt) * d10));
+            n11 n11Var3 = n11Var;
+            n11Var3.d = (float) j7.l1.b(nextInt, d10, Math.sin(nextInt) * d11);
+            n11Var3.f = 1.0f;
+            n11Var3.h = 0.0f;
+            if (this.b) {
+                n11Var3.g = Utilities.random.nextInt(200) + 600;
+                n11Var3.e = (Utilities.random.nextFloat() * 20.0f) + 30.0f;
+            } else {
+                n11Var3.g = Utilities.random.nextInt(100) + 400;
+                n11Var3.e = (Utilities.random.nextFloat() * 4.0f) + 20.0f;
+            }
+            arrayList.add(n11Var3);
+            i12++;
+            sin = d11;
+            i10 = 0;
+        }
+        this.f = true;
+        this.g = centerX;
+        this.h = centerY;
+        long elapsedRealtime = SystemClock.elapsedRealtime();
+        long min = Math.min(20L, elapsedRealtime - this.a);
+        int size2 = arrayList.size();
+        int i13 = 0;
+        while (i13 < size2) {
+            n11 n11Var4 = (n11) arrayList.get(i13);
+            float f12 = n11Var4.h;
+            float f13 = n11Var4.g;
+            if (f12 >= f13) {
+                if (arrayList2.size() < this.e) {
+                    arrayList2.add(n11Var4);
+                }
+                arrayList.remove(i13);
+                i13--;
+                size2--;
+            } else {
+                n11Var4.f = 1.0f - AndroidUtilities.decelerateInterpolator.getInterpolation(f12 / f13);
+                float f14 = n11Var4.a;
+                float f15 = n11Var4.c;
+                float f16 = n11Var4.e;
+                float f17 = min;
+                n11Var4.a = a4.w.d(f15 * f16, f17, 200.0f, f14);
+                n11Var4.b = (((n11Var4.d * f16) * f17) / 200.0f) + n11Var4.b;
+                n11Var4.h += f17;
+            }
+            i13++;
+        }
+        this.a = elapsedRealtime;
+    }
+
+    public o11(int i10) {
+        this.c = new ArrayList();
+        this.d = new ArrayList();
+        this.e = i10;
+        for (int i11 = 0; i11 < i10; i11++) {
+            this.d.add(new n11());
         }
     }
 }

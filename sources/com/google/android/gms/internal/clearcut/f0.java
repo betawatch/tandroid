@@ -15,24 +15,24 @@ public final class f0 extends k implements g0, RandomAccess {
         new f0(10).a = false;
     }
 
-    public f0(int i9) {
-        this(new ArrayList(i9));
+    public f0(int i10) {
+        this(new ArrayList(i10));
     }
 
     @Override // java.util.AbstractList, java.util.List
-    public final /* synthetic */ void add(int i9, Object obj) {
+    public final /* synthetic */ void add(int i10, Object obj) {
         i();
-        this.b.add(i9, (String) obj);
+        this.b.add(i10, (String) obj);
         ((AbstractList) this).modCount++;
     }
 
     @Override // com.google.android.gms.internal.clearcut.k, java.util.AbstractList, java.util.List
-    public final boolean addAll(int i9, Collection collection) {
+    public final boolean addAll(int i10, Collection collection) {
         i();
         if (collection instanceof g0) {
             collection = ((g0) collection).f();
         }
-        boolean addAll = this.b.addAll(i9, collection);
+        boolean addAll = this.b.addAll(i10, collection);
         ((AbstractList) this).modCount++;
         return addAll;
     }
@@ -45,12 +45,12 @@ public final class f0 extends k implements g0, RandomAccess {
     }
 
     @Override // com.google.android.gms.internal.clearcut.c0
-    public final c0 d(int i9) {
+    public final c0 d(int i10) {
         ArrayList arrayList = this.b;
-        if (i9 < arrayList.size()) {
+        if (i10 < arrayList.size()) {
             throw new IllegalArgumentException();
         }
-        ArrayList arrayList2 = new ArrayList(i9);
+        ArrayList arrayList2 = new ArrayList(i10);
         arrayList2.addAll(arrayList);
         return new f0(arrayList2);
     }
@@ -61,9 +61,9 @@ public final class f0 extends k implements g0, RandomAccess {
     }
 
     @Override // java.util.AbstractList, java.util.List
-    public final Object get(int i9) {
+    public final Object get(int i10) {
         ArrayList arrayList = this.b;
-        Object obj = arrayList.get(i9);
+        Object obj = arrayList.get(i10);
         if (obj instanceof String) {
             return (String) obj;
         }
@@ -71,15 +71,15 @@ public final class f0 extends k implements g0, RandomAccess {
             byte[] bArr = (byte[]) obj;
             String str = new String(bArr, a0.a);
             if (n1.a.t(bArr, 0, bArr.length)) {
-                arrayList.set(i9, str);
+                arrayList.set(i10, str);
             }
             return str;
         }
         o oVar = (o) obj;
         String str2 = oVar.size() == 0 ? "" : new String(oVar.b, oVar.i(), oVar.size(), a0.a);
-        int i10 = oVar.i();
-        if (n1.a.t(oVar.b, i10, oVar.size() + i10)) {
-            arrayList.set(i9, str2);
+        int i11 = oVar.i();
+        if (n1.a.t(oVar.b, i11, oVar.size() + i11)) {
+            arrayList.set(i10, str2);
         }
         return str2;
     }
@@ -90,9 +90,9 @@ public final class f0 extends k implements g0, RandomAccess {
     }
 
     @Override // java.util.AbstractList, java.util.List
-    public final Object remove(int i9) {
+    public final Object remove(int i10) {
         i();
-        Object remove = this.b.remove(i9);
+        Object remove = this.b.remove(i10);
         ((AbstractList) this).modCount++;
         if (remove instanceof String) {
             return (String) remove;
@@ -105,9 +105,9 @@ public final class f0 extends k implements g0, RandomAccess {
     }
 
     @Override // java.util.AbstractList, java.util.List
-    public final Object set(int i9, Object obj) {
+    public final Object set(int i10, Object obj) {
         i();
-        Object obj2 = this.b.set(i9, (String) obj);
+        Object obj2 = this.b.set(i10, (String) obj);
         if (obj2 instanceof String) {
             return (String) obj2;
         }

@@ -1,41 +1,46 @@
 package tb;
 
-import java.nio.ByteBuffer;
-import org.telegram.ui.Cells.j2;
+import java.lang.reflect.Array;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class b extends a {
-    public static final /* synthetic */ zd.b n;
-    public static final /* synthetic */ zd.b r;
+public final class b {
+    public final byte[][] a;
+    public final int b;
+    public final int c;
 
-    static {
-        zd.a aVar = new zd.a(b.class, "ESDescriptorBox.java");
-        aVar.e(aVar.d("getEsDescriptor", "com.googlecode.mp4parser.boxes.mp4.ESDescriptorBox", "", "", "com.googlecode.mp4parser.boxes.mp4.objectdescriptors.ESDescriptor"));
-        aVar.e(aVar.d("setEsDescriptor", "com.googlecode.mp4parser.boxes.mp4.ESDescriptorBox", "com.googlecode.mp4parser.boxes.mp4.objectdescriptors.ESDescriptor", "esDescriptor", "void"));
-        n = aVar.e(aVar.d("equals", "com.googlecode.mp4parser.boxes.mp4.ESDescriptorBox", "java.lang.Object", "o", "boolean"));
-        r = aVar.e(aVar.d("hashCode", "com.googlecode.mp4parser.boxes.mp4.ESDescriptorBox", "", "", "int"));
+    public b(int i10, int i11) {
+        this.a = (byte[][]) Array.newInstance((Class<?>) Byte.TYPE, i11, i10);
+        this.b = i10;
+        this.c = i11;
     }
 
-    public final boolean equals(Object obj) {
-        j2.t(zd.a.c(n, this, this, obj));
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null || b.class != obj.getClass()) {
-            return false;
-        }
-        ByteBuffer byteBuffer = this.e;
-        ByteBuffer byteBuffer2 = ((b) obj).e;
-        return byteBuffer != null ? byteBuffer.equals(byteBuffer2) : byteBuffer2 == null;
+    public final byte a(int i10, int i11) {
+        return this.a[i11][i10];
     }
 
-    public final int hashCode() {
-        j2.t(zd.a.b(r, this, this));
-        ByteBuffer byteBuffer = this.e;
-        if (byteBuffer != null) {
-            return byteBuffer.hashCode();
+    public final void b(int i10, int i11, int i12) {
+        this.a[i11][i10] = (byte) i12;
+    }
+
+    public final String toString() {
+        int i10 = this.b;
+        int i11 = this.c;
+        StringBuilder sb2 = new StringBuilder((i10 * 2 * i11) + 2);
+        for (int i12 = 0; i12 < i11; i12++) {
+            byte[] bArr = this.a[i12];
+            for (int i13 = 0; i13 < i10; i13++) {
+                byte b10 = bArr[i13];
+                if (b10 == 0) {
+                    sb2.append(" 0");
+                } else if (b10 != 1) {
+                    sb2.append("  ");
+                } else {
+                    sb2.append(" 1");
+                }
+            }
+            sb2.append('\n');
         }
-        return 0;
+        return sb2.toString();
     }
 }

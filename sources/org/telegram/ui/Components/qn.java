@@ -1,46 +1,53 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.TLRPC;
+import java.util.concurrent.atomic.AtomicReference;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class qn implements g8 {
-    public final /* synthetic */ org.telegram.ui.ActionBar.o1[] a;
-    public final /* synthetic */ tn b;
+public final /* synthetic */ class qn implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ xn b;
 
-    public qn(tn tnVar, org.telegram.ui.ActionBar.o1[] o1VarArr) {
-        this.b = tnVar;
-        this.a = o1VarArr;
+    public /* synthetic */ qn(xn xnVar, int i10) {
+        this.a = i10;
+        this.b = xnVar;
     }
 
-    @Override // org.telegram.ui.Components.g8
-    public final void V0(int i9, int i10) {
-        org.telegram.ui.qn qnVar = this.b.C;
-        if (qnVar == null) {
-            return;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                xn xnVar = this.b;
+                AtomicReference atomicReference = xnVar.n;
+                org.telegram.ui.ActionBar.h5 h5Var = (org.telegram.ui.ActionBar.h5) atomicReference.get();
+                if (h5Var != null) {
+                    xnVar.removeView(h5Var);
+                    atomicReference.set(null);
+                    break;
+                }
+                break;
+            case 1:
+                xn xnVar2 = this.b;
+                AtomicReference atomicReference2 = xnVar2.v;
+                org.telegram.ui.ActionBar.h5 h5Var2 = (org.telegram.ui.ActionBar.h5) atomicReference2.get();
+                if (h5Var2 != null) {
+                    xnVar2.removeView(h5Var2);
+                    atomicReference2.set(null);
+                    if (!xnVar2.b) {
+                        xnVar2.setClipChildren(true);
+                        break;
+                    }
+                }
+                break;
+            default:
+                xn xnVar3 = this.b;
+                xnVar3.f0 = false;
+                xnVar3.d0.c(false);
+                if (xnVar3.a()) {
+                    xnVar3.f();
+                    break;
+                }
+                break;
         }
-        qnVar.getMessagesController().setDialogHistoryTTL(qnVar.a(), i9);
-        TLRPC.ChatFull chatFull = qnVar.V7;
-        TLRPC.UserFull userFull = qnVar.W7;
-        if (userFull == null && chatFull == null) {
-            return;
-        }
-        qnVar.Q7();
-        UndoView undoView = qnVar.u3;
-        if (undoView != null) {
-            undoView.k(qnVar.a(), i10, qnVar.i(), Integer.valueOf(userFull != null ? userFull.ttl_period : chatFull.ttl_period), null, null);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.g8
-    public final void dismiss() {
-        org.telegram.ui.ActionBar.o1 o1Var = this.a[0];
-        if (o1Var != null) {
-            o1Var.dismiss();
-        }
-    }
-
-    @Override // org.telegram.ui.Components.g8
-    public final /* synthetic */ void h1() {
     }
 }

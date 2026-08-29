@@ -1,15 +1,35 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public interface wl0 {
-    void b(int i9, boolean z10);
+public final /* synthetic */ class wl0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ yl0 b;
 
-    boolean k1(int i9, View view);
+    public /* synthetic */ wl0(yl0 yl0Var, int i10) {
+        this.a = i10;
+        this.b = yl0Var;
+    }
 
-    void p();
-
-    void v0(float f10);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                yl0 yl0Var = this.b;
+                yl0Var.getClass();
+                AndroidUtilities.runOnUIThread(new wl0(yl0Var, 2));
+                break;
+            case 1:
+                AndroidUtilities.runOnUIThread(new wl0(this.b, 3));
+                break;
+            case 2:
+                super/*android.app.Dialog*/.dismiss();
+                break;
+            default:
+                super/*android.app.Dialog*/.dismiss();
+                break;
+        }
+    }
 }

@@ -1,153 +1,183 @@
 package org.telegram.ui.Components;
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
 import android.content.Context;
-import android.graphics.Point;
-import android.util.Property;
-import android.view.View;
-import android.view.ViewGroup;
-import java.util.ArrayList;
+import android.view.MotionEvent;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.widget.Button;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.voip.VoIPService;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class p10 extends ViewGroup {
-    public AnimatorSet a;
-    public boolean b;
-    public final ArrayList c;
-    public w20 d;
-    public final ArrayList e;
-    public int f;
-    public int h;
-    public int n;
-    public final /* synthetic */ q10 r;
+public final class p10 extends aj0 {
+    public boolean r;
+    public boolean s;
+    public final o10 v;
+    public final o10 w;
+    public final /* synthetic */ FragmentContextView x;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public p10(q10 q10Var, Context context) {
+    /* JADX WARN: Type inference failed for: r1v1, types: [org.telegram.ui.Components.o10] */
+    /* JADX WARN: Type inference failed for: r1v2, types: [org.telegram.ui.Components.o10] */
+    public p10(FragmentContextView fragmentContextView, Context context) {
         super(context);
-        this.r = q10Var;
-        this.c = new ArrayList();
-        this.e = new ArrayList();
-        this.f = -1;
-    }
+        this.x = fragmentContextView;
+        final int i10 = 0;
+        this.v = new Runnable(this) { // from class: org.telegram.ui.Components.o10
+            public final /* synthetic */ p10 b;
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i9, int i10, int i11, int i12) {
-        int childCount = getChildCount();
-        for (int i13 = 0; i13 < childCount; i13++) {
-            View childAt = getChildAt(i13);
-            childAt.layout(0, 0, childAt.getMeasuredWidth(), childAt.getMeasuredHeight());
-        }
+            {
+                this.b = this;
+            }
+
+            @Override // java.lang.Runnable
+            public final void run() {
+                switch (i10) {
+                    case 0:
+                        FragmentContextView fragmentContextView2 = this.b.x;
+                        if (VoIPService.getSharedInstance() != null) {
+                            VoIPService.getSharedInstance().setMicMute(false, true, false);
+                            if (fragmentContextView2.y.N(fragmentContextView2.K ? 15 : 29)) {
+                                if (fragmentContextView2.K) {
+                                    fragmentContextView2.y.K(0);
+                                } else {
+                                    fragmentContextView2.y.K(14);
+                                }
+                            }
+                            fragmentContextView2.x.d();
+                            org.telegram.ui.ActionBar.g6.D0().c(true);
+                            fragmentContextView2.a.f(true);
+                            break;
+                        }
+                        break;
+                    default:
+                        p10 p10Var = this.b;
+                        FragmentContextView fragmentContextView3 = p10Var.x;
+                        if (p10Var.r && VoIPService.getSharedInstance() != null) {
+                            p10Var.r = false;
+                            p10Var.s = true;
+                            fragmentContextView3.K = false;
+                            AndroidUtilities.runOnUIThread(p10Var.v, 90L);
+                            try {
+                                fragmentContextView3.x.performHapticFeedback(3, 2);
+                                break;
+                            } catch (Exception unused) {
+                                return;
+                            }
+                        }
+                        break;
+                }
+            }
+        };
+        final int i11 = 1;
+        this.w = new Runnable(this) { // from class: org.telegram.ui.Components.o10
+            public final /* synthetic */ p10 b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // java.lang.Runnable
+            public final void run() {
+                switch (i11) {
+                    case 0:
+                        FragmentContextView fragmentContextView2 = this.b.x;
+                        if (VoIPService.getSharedInstance() != null) {
+                            VoIPService.getSharedInstance().setMicMute(false, true, false);
+                            if (fragmentContextView2.y.N(fragmentContextView2.K ? 15 : 29)) {
+                                if (fragmentContextView2.K) {
+                                    fragmentContextView2.y.K(0);
+                                } else {
+                                    fragmentContextView2.y.K(14);
+                                }
+                            }
+                            fragmentContextView2.x.d();
+                            org.telegram.ui.ActionBar.g6.D0().c(true);
+                            fragmentContextView2.a.f(true);
+                            break;
+                        }
+                        break;
+                    default:
+                        p10 p10Var = this.b;
+                        FragmentContextView fragmentContextView3 = p10Var.x;
+                        if (p10Var.r && VoIPService.getSharedInstance() != null) {
+                            p10Var.r = false;
+                            p10Var.s = true;
+                            fragmentContextView3.K = false;
+                            AndroidUtilities.runOnUIThread(p10Var.v, 90L);
+                            try {
+                                fragmentContextView3.x.performHapticFeedback(3, 2);
+                                break;
+                            } catch (Exception unused) {
+                                return;
+                            }
+                        }
+                        break;
+                }
+            }
+        };
     }
 
     @Override // android.view.View
-    public final void onMeasure(int i9, int i10) {
-        ArrayList arrayList;
-        int y10;
-        char c10;
-        int childCount = getChildCount();
-        int size = View.MeasureSpec.getSize(i9);
-        int dp = size - AndroidUtilities.dp(26.0f);
-        int dp2 = AndroidUtilities.dp(10.0f);
-        int dp3 = AndroidUtilities.dp(10.0f);
-        if (!this.b) {
-            this.n = 0;
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        accessibilityNodeInfo.setClassName(Button.class.getName());
+        accessibilityNodeInfo.setText(LocaleController.getString(this.x.K ? R.string.VoipUnmute : R.string.VoipMute));
+    }
+
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        FragmentContextView fragmentContextView = this.x;
+        int i10 = fragmentContextView.P;
+        if (i10 != 3 && i10 != 1) {
+            return super.onTouchEvent(motionEvent);
         }
-        int i11 = 0;
-        int i12 = 0;
-        int i13 = 0;
-        while (true) {
-            arrayList = this.c;
-            if (i11 >= childCount) {
-                break;
-            }
-            View childAt = getChildAt(i11);
-            if (childAt instanceof w20) {
-                childAt.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(32.0f), TLObject.FLAG_30));
-                ArrayList arrayList2 = this.e;
-                boolean contains = arrayList2.contains(childAt);
-                if (contains) {
-                    c10 = 0;
-                } else {
-                    c10 = 0;
-                    if (childAt.getMeasuredWidth() + i12 > dp) {
-                        dp2 = org.telegram.messenger.l0.C(8.0f, childAt.getMeasuredHeight(), dp2);
-                        i12 = 0;
-                    }
-                }
-                if (childAt.getMeasuredWidth() + i13 > dp) {
-                    dp3 = org.telegram.messenger.l0.C(8.0f, childAt.getMeasuredHeight(), dp3);
-                    i13 = 0;
-                }
-                int dp4 = AndroidUtilities.dp(13.0f) + i12;
-                if (!this.b) {
-                    if (contains) {
-                        childAt.setTranslationX(AndroidUtilities.dp(13.0f) + i13);
-                        childAt.setTranslationY(dp3);
-                    } else if (arrayList2.isEmpty()) {
-                        childAt.setTranslationX(dp4);
-                        childAt.setTranslationY(dp2);
-                        this.n = Math.max(this.n, dp2);
+        VoIPService sharedInstance = VoIPService.getSharedInstance();
+        o10 o10Var = this.v;
+        o10 o10Var2 = this.w;
+        if (sharedInstance == null) {
+            AndroidUtilities.cancelRunOnUIThread(o10Var2);
+            AndroidUtilities.cancelRunOnUIThread(o10Var);
+            this.r = false;
+            this.s = false;
+            return true;
+        }
+        if (motionEvent.getAction() == 0 && sharedInstance.isMicMute()) {
+            AndroidUtilities.runOnUIThread(o10Var2, 300L);
+            this.r = true;
+        } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
+            AndroidUtilities.cancelRunOnUIThread(o10Var);
+            if (this.r) {
+                AndroidUtilities.cancelRunOnUIThread(o10Var2);
+                this.r = false;
+            } else if (this.s) {
+                fragmentContextView.K = true;
+                if (fragmentContextView.y.N(15)) {
+                    if (fragmentContextView.K) {
+                        fragmentContextView.y.K(0);
                     } else {
-                        float f10 = dp4;
-                        if (childAt.getTranslationX() != f10) {
-                            float[] fArr = new float[1];
-                            fArr[c10] = f10;
-                            arrayList.add(ObjectAnimator.ofFloat(childAt, (Property<View, Float>) View.TRANSLATION_X, fArr));
-                        }
-                        float f11 = dp2;
-                        if (childAt.getTranslationY() != f11) {
-                            float[] fArr2 = new float[1];
-                            fArr2[c10] = f11;
-                            arrayList.add(ObjectAnimator.ofFloat(childAt, (Property<View, Float>) View.TRANSLATION_Y, fArr2));
-                        }
-                        this.n = Math.max(this.n, dp2);
+                        fragmentContextView.y.K(14);
                     }
                 }
-                if (!contains) {
-                    i12 = org.telegram.messenger.l0.C(9.0f, childAt.getMeasuredWidth(), i12);
+                fragmentContextView.x.d();
+                if (VoIPService.getSharedInstance() != null) {
+                    VoIPService.getSharedInstance().setMicMute(true, true, false);
+                    try {
+                        fragmentContextView.x.performHapticFeedback(3, 2);
+                    } catch (Exception unused) {
+                    }
                 }
-                i13 = org.telegram.messenger.l0.C(9.0f, childAt.getMeasuredWidth(), i13);
-            }
-            i11++;
-        }
-        if (AndroidUtilities.isTablet()) {
-            y10 = AndroidUtilities.dp(372.0f) / 3;
-        } else {
-            Point point = AndroidUtilities.displaySize;
-            y10 = org.telegram.messenger.ll.y(158.0f, Math.min(point.x, point.y), 3);
-        }
-        if (dp - i12 < y10) {
-            dp2 += AndroidUtilities.dp(40.0f);
-        }
-        if (dp - i13 < y10) {
-            dp3 += AndroidUtilities.dp(40.0f);
-        }
-        boolean z10 = this.b;
-        q10 q10Var = this.r;
-        if (!z10) {
-            int dp5 = AndroidUtilities.dp(42.0f) + dp3;
-            q10Var.n = dp2;
-            if (this.a != null) {
-                this.h = AndroidUtilities.dp(42.0f) + dp2;
-                this.a.playTogether(arrayList);
-                this.a.addListener(new o10(this, 0));
-                this.f = NotificationCenter.getInstance(q10Var.a).setAnimationInProgress(this.f, null);
-                this.a.start();
-                this.b = true;
-            } else {
-                this.h = dp5;
+                this.s = false;
+                org.telegram.ui.ActionBar.g6.D0().c(true);
+                fragmentContextView.a.f(true);
+                MotionEvent obtain = MotionEvent.obtain(0L, 0L, 3, 0.0f, 0.0f, 0);
+                super.onTouchEvent(obtain);
+                obtain.recycle();
+                return true;
             }
         }
-        int i14 = this.n;
-        q10Var.e = i14 > 0 ? AndroidUtilities.dp(40.0f) + i14 : 0;
-        setMeasuredDimension(size, this.h);
-        n10 n10Var = q10Var.f;
-        if (n10Var != null) {
-            n10Var.a(q10Var.e);
-        }
+        return super.onTouchEvent(motionEvent);
     }
 }

@@ -5,7 +5,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.webrtc.VideoSink;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class t0 implements Runnable {
     public final /* synthetic */ int a;
@@ -14,8 +14,8 @@ public final /* synthetic */ class t0 implements Runnable {
     public final /* synthetic */ Object d;
     public final /* synthetic */ Object e;
 
-    public /* synthetic */ t0(Object obj, Object obj2, Object obj3, boolean z10, int i9) {
-        this.a = i9;
+    public /* synthetic */ t0(Object obj, Object obj2, Object obj3, boolean z10, int i10) {
+        this.a = i10;
         this.c = obj;
         this.d = obj2;
         this.e = obj3;

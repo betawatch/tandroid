@@ -5,32 +5,32 @@ import java.util.ArrayDeque;
 import java.util.Collection;
 import java.util.Queue;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class zzmj extends zzmn implements Serializable {
     final int zza;
     private final Queue zzb;
 
-    private zzmj(int i9) {
-        if (i9 < 0) {
-            throw new IllegalArgumentException(zzmg.zza("maxSize (%s) must >= 0", Integer.valueOf(i9)));
+    private zzmj(int i10) {
+        if (i10 < 0) {
+            throw new IllegalArgumentException(zzmg.zza("maxSize (%s) must >= 0", Integer.valueOf(i10)));
         }
-        this.zzb = new ArrayDeque(i9);
-        this.zza = i9;
+        this.zzb = new ArrayDeque(i10);
+        this.zza = i10;
     }
 
-    public static zzmj zza(int i9) {
-        return new zzmj(i9);
+    public static zzmj zza(int i10) {
+        return new zzmj(i10);
     }
 
     @Override // com.google.android.recaptcha.internal.zzml, java.util.Collection, java.util.Queue
     public final boolean add(Object obj) {
         obj.getClass();
-        int i9 = this.zza;
-        if (i9 == 0) {
+        int i10 = this.zza;
+        if (i10 == 0) {
             return true;
         }
-        if (size() == i9) {
+        if (size() == i10) {
             this.zzb.remove();
         }
         this.zzb.add(obj);
@@ -40,14 +40,14 @@ public final class zzmj extends zzmn implements Serializable {
     @Override // com.google.android.recaptcha.internal.zzml, java.util.Collection
     public final boolean addAll(Collection collection) {
         int size = collection.size();
-        int i9 = this.zza;
-        if (size < i9) {
+        int i10 = this.zza;
+        if (size < i10) {
             return zzmq.zza(this, collection.iterator());
         }
         clear();
-        int i10 = size - i9;
-        zzmd.zzb(i10 >= 0, "number to skip cannot be negative");
-        return zzmq.zza(this, new zzmp(collection, i10).iterator());
+        int i11 = size - i10;
+        zzmd.zzb(i11 >= 0, "number to skip cannot be negative");
+        return zzmq.zza(this, new zzmp(collection, i11).iterator());
     }
 
     @Override // com.google.android.recaptcha.internal.zzmn, java.util.Queue

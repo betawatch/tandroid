@@ -4,12 +4,12 @@ import android.util.Log;
 import java.util.ArrayList;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class a0 {
     public boolean a = false;
     public final CopyOnWriteArrayList b = new CopyOnWriteArrayList();
-    public kotlin.jvm.internal.h c;
+    public kotlin.jvm.internal.i c;
     public final /* synthetic */ j0 d;
 
     public a0(j0 j0Var) {
@@ -30,11 +30,11 @@ public final class a0 {
             aVar.r = false;
             aVar.d();
             a aVar2 = j0Var.h;
-            af.e eVar = new af.e(j0Var, 6);
+            a4.g gVar = new a4.g(j0Var, 11);
             if (aVar2.p == null) {
                 aVar2.p = new ArrayList();
             }
-            aVar2.p.add(eVar);
+            aVar2.p.add(gVar);
             j0Var.h.e(false, true);
             j0Var.i = true;
             j0Var.A(true);

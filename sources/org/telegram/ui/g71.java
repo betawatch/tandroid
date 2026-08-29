@@ -1,32 +1,38 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class g71 extends UndoView {
-    public final /* synthetic */ SessionsActivity b0;
+public final /* synthetic */ class g71 implements Utilities.Callback {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ SessionsActivity b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public g71(SessionsActivity sessionsActivity, Context context) {
-        super(context);
-        this.b0 = sessionsActivity;
+    public /* synthetic */ g71(SessionsActivity sessionsActivity, int i10) {
+        this.a = i10;
+        this.b = sessionsActivity;
     }
 
-    @Override // org.telegram.ui.Components.UndoView
-    public final void e(int i9, boolean z10) {
-        int i10;
-        if (!z10 && getCurrentInfoObject() != null) {
-            TLRPC.TL_authorization tL_authorization = (TLRPC.TL_authorization) getCurrentInfoObject();
-            TL_account.resetAuthorization resetauthorization = new TL_account.resetAuthorization();
-            resetauthorization.hash = tL_authorization.hash;
-            i10 = ((org.telegram.ui.ActionBar.o2) this.b0).currentAccount;
-            ConnectionsManager.getInstance(i10).sendRequest(resetauthorization, new v40(26, this, tL_authorization));
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        switch (this.a) {
+            case 0:
+                TL_account.connectedBots connectedbots = (TL_account.connectedBots) obj;
+                SessionsActivity sessionsActivity = this.b;
+                sessionsActivity.getClass();
+                if (connectedbots != null) {
+                    sessionsActivity.h = connectedbots.connected_bots;
+                    if (sessionsActivity.a != null) {
+                        sessionsActivity.m0();
+                        sessionsActivity.a.l();
+                        break;
+                    }
+                }
+                break;
+            default:
+                SessionsActivity.V(this.b, (Boolean) obj);
+                break;
         }
-        super.e(i9, z10);
     }
 }

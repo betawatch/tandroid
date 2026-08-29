@@ -15,16 +15,16 @@ public final class a8 implements Runnable {
         try {
             this.a.run();
             this.b.run();
-        } catch (Throwable th) {
+        } catch (Throwable th2) {
             try {
                 this.b.run();
-            } catch (Throwable th2) {
+            } catch (Throwable th3) {
                 try {
-                    th.addSuppressed(th2);
+                    th2.addSuppressed(th3);
                 } catch (Throwable unused) {
                 }
             }
-            throw th;
+            throw th2;
         }
     }
 }

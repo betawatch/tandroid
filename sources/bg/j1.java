@@ -1,397 +1,534 @@
 package bg;
 
-import android.animation.ValueAnimator;
-import android.os.Bundle;
-import android.text.TextUtils;
-import android.util.LongSparseArray;
-import android.widget.TextView;
-import ih.b4;
-import ih.i4;
-import ih.o6;
-import ih.v6;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.LinkedHashSet;
-import java.util.concurrent.atomic.AtomicBoolean;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.RectF;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_keyboard;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.b6;
-import org.telegram.ui.Components.ChatActivityEnterView;
-import org.telegram.ui.Components.eu0;
-import org.telegram.ui.Components.gr;
-import org.telegram.ui.Components.jn;
-import org.telegram.ui.Components.k5;
-import org.telegram.ui.Components.oc;
-import org.telegram.ui.Components.tf;
-import org.telegram.ui.Components.vx;
-import org.telegram.ui.Components.x60;
-import org.telegram.ui.Components.xk;
-import org.telegram.ui.Components.y4;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.b61;
-import org.telegram.ui.dy;
-import org.telegram.ui.id;
-import org.telegram.ui.jq;
-import org.telegram.ui.qn;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class j1 implements Utilities.Callback {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
+public final class j1 extends j {
+    public final /* synthetic */ int n = 2;
+    public final Paint r;
+    public final Path s;
 
-    public /* synthetic */ j1(fh.p2 p2Var, ve.d dVar, Utilities.Callback callback, fh.y1 y1Var) {
-        this.a = 2;
-        this.b = p2Var;
-        this.e = dVar;
-        this.c = callback;
-        this.d = y1Var;
+    public j1(k1 k1Var, Context context) {
+        super(k1Var, context);
+        Paint paint = new Paint(1);
+        this.r = paint;
+        this.s = new Path();
+        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:43:0x010f, code lost:
-    
-        if (r11.charAt(r12) <= 57343) goto L44;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:53:0x0129, code lost:
-    
-        if (r11.charAt(r3) != 9794) goto L46;
-     */
-    @Override // org.telegram.messenger.Utilities.Callback
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void run(Object obj) {
-        String formatString;
-        int i9 = this.a;
-        String str = "";
-        int i10 = 0;
-        int i11 = 1;
-        Object obj2 = this.e;
-        Object obj3 = this.d;
-        Object obj4 = this.c;
-        Object obj5 = this.b;
-        switch (i9) {
+    @Override // bg.j
+    public final int a(float f9, float f10) {
+        switch (this.n) {
             case 0:
-                org.telegram.ui.ActionBar.o2 o2Var = (org.telegram.ui.ActionBar.o2) obj4;
-                String str2 = (String) obj3;
-                ve.d dVar = (ve.d) obj2;
-                TLRPC.TL_payments_checkedGiftCode tL_payments_checkedGiftCode = (TLRPC.TL_payments_checkedGiftCode) obj;
-                if (!((AtomicBoolean) obj5).get() && o2Var.getParentActivity() != null) {
-                    if (tL_payments_checkedGiftCode.from_id == null) {
-                        TLRPC.TL_premiumGiftOption tL_premiumGiftOption = new TLRPC.TL_premiumGiftOption();
-                        tL_premiumGiftOption.months = tL_payments_checkedGiftCode.months;
-                        TLRPC.User i12 = o2Var instanceof qn ? ((qn) o2Var).i() : null;
-                        if (i12 == null || i12.self) {
-                            i12 = new TLRPC.TL_user();
-                        }
-                        TLRPC.User user = i12;
-                        boolean z10 = tL_payments_checkedGiftCode.used_date != 0;
-                        org.telegram.ui.ActionBar.o2 R = LaunchActivity.R();
-                        if (R != null && p1.O0 == null) {
-                            p1 p1Var = new p1(R, UserConfig.selectedAccount, user, new zf.k(tL_premiumGiftOption), str2, z10, R.getResourceProvider());
-                            p1Var.show();
-                            p1.O0 = p1Var;
-                        }
-                    } else {
-                        o2Var.showDialog(new l1(o2Var, tL_payments_checkedGiftCode, str2));
-                    }
-                    if (dVar != null) {
-                        dVar.b();
-                        break;
+                float dp = AndroidUtilities.dp(1.0f);
+                float dp2 = AndroidUtilities.dp(19.5f);
+                float f11 = dp + dp2;
+                float f12 = f11 * 2.0f;
+                float measuredWidth = getMeasuredWidth() - f12;
+                float A = com.google.android.recaptcha.internal.a.A(getMeasuredHeight(), f12, 2.0f, f11);
+                if (f9 <= f11 - dp2 || f10 <= A - dp2 || f9 >= f11 + dp2 || f10 >= A + dp2) {
+                    float f13 = f11 + measuredWidth;
+                    if (f9 <= f13 - dp2 || f10 <= A - dp2 || f9 >= f13 + dp2 || f10 >= A + dp2) {
                     }
                 }
                 break;
             case 1:
-                MessagesController.getInstance(r10.currentAccount).getBoostsController().getBoostsStats(-((TLRPC.Chat) obj4).id, new v1((g2) obj5, (TL_stories.TL_premium_myBoosts) obj, (ArrayList) obj3, (HashSet) obj2, 0));
+                float dp3 = AndroidUtilities.dp(1.0f);
+                float dp4 = AndroidUtilities.dp(19.5f);
+                float f14 = dp3 + dp4;
+                float f15 = f14 * 2.0f;
+                float measuredWidth2 = getMeasuredWidth() - f15;
+                float A2 = com.google.android.recaptcha.internal.a.A(getMeasuredHeight(), f15, 2.0f, f14);
+                if (f9 <= f14 - dp4 || f10 <= A2 - dp4 || f9 >= f14 + dp4 || f10 >= A2 + dp4) {
+                    float f16 = f14 + measuredWidth2;
+                    if (f9 <= f16 - dp4 || f10 <= A2 - dp4 || f9 >= f16 + dp4 || f10 >= A2 + dp4) {
+                    }
+                }
                 break;
             case 2:
-                fh.p2 p2Var = (fh.p2) obj5;
-                Utilities.Callback callback = (Utilities.Callback) obj4;
-                fh.y1 y1Var = (fh.y1) obj3;
-                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj;
-                ((ve.d) obj2).b();
-                if (callback != null) {
-                    callback.run(Boolean.FALSE);
+                float dp5 = AndroidUtilities.dp(1.0f);
+                float dp6 = AndroidUtilities.dp(19.5f);
+                float f17 = dp5 + dp6;
+                float f18 = f17 * 2.0f;
+                float measuredWidth3 = getMeasuredWidth() - f18;
+                float measuredHeight = getMeasuredHeight() - f18;
+                float f19 = (measuredHeight / 2.0f) + f17;
+                if (f9 <= f17 - dp6 || f10 <= f19 - dp6 || f9 >= f17 + dp6 || f10 >= f19 + dp6) {
+                    float f20 = f17 + measuredWidth3;
+                    if (f9 <= f20 - dp6 || f10 <= f19 - dp6 || f9 >= f20 + dp6 || f10 >= f19 + dp6) {
+                        if (f9 <= f17 || f9 >= measuredWidth3 || f10 <= f17 || f10 >= measuredHeight) {
+                        }
+                    }
                 }
-                p2Var.dismiss();
-                if (tL_error != null) {
-                    AndroidUtilities.runOnUIThread(new e5.u(5, y1Var, tL_error));
-                    break;
-                } else {
-                    p2Var.dismiss();
-                    break;
-                }
+                break;
             case 3:
-                TLRPC.TL_document tL_document = (TLRPC.TL_document) obj4;
-                Long l10 = (Long) obj;
-                i4 i4Var = ((ih.t2) obj5).a;
-                SendMessagesHelper.getInstance(i4Var.y2).sendSticker(tL_document, (String) obj3, i4Var.x1, null, null, i4Var.K1.a, null, null, true, 0, 0, false, this.e, null, l10.longValue(), i4Var.X1.getSendMonoForumPeerId(), i4Var.X1.getSendMessageSuggestionParams());
-                i4Var.X1.o(tL_document);
-                i4Var.X1.setFieldText("");
-                i4Var.k0(l10.longValue() <= 0);
+                float dp7 = AndroidUtilities.dp(1.0f);
+                float dp8 = AndroidUtilities.dp(19.5f);
+                float f21 = dp7 + dp8;
+                float f22 = f21 * 2.0f;
+                float measuredWidth4 = getMeasuredWidth() - f22;
+                float measuredHeight2 = getMeasuredHeight() - f22;
+                float f23 = (measuredHeight2 / 2.0f) + f21;
+                if (f9 <= f21 - dp8 || f10 <= f23 - dp8 || f9 >= f21 + dp8 || f10 >= f23 + dp8) {
+                    float f24 = f21 + measuredWidth4;
+                    if (f9 <= f24 - dp8 || f10 <= f23 - dp8 || f9 >= f24 + dp8 || f10 >= f23 + dp8) {
+                        if (f9 <= f21 || f9 >= measuredWidth4 || f10 <= f21 || f10 >= measuredHeight2) {
+                        }
+                    }
+                }
                 break;
             case 4:
-                TL_stories.StoryItem storyItem = (TL_stories.StoryItem) obj3;
-                b6 b6Var = (b6) obj2;
-                o6 o6Var = (o6) obj;
-                i4 i4Var2 = ((b4) obj5).l;
-                if (((HashSet) obj4).contains(Integer.valueOf(o6Var.a))) {
-                    i4Var2.O1.c(o6Var.a, i4Var2.x1, storyItem);
-                    formatString = LocaleController.formatString(R.string.StoryAddedToAlbumX, o6Var.b);
-                } else {
-                    v6 v6Var = i4Var2.O1;
-                    long j10 = i4Var2.x1;
-                    int i13 = o6Var.a;
-                    v6Var.getClass();
-                    ArrayList arrayList = new ArrayList(1);
-                    arrayList.add(storyItem);
-                    v6Var.c0(i13, j10, arrayList);
-                    formatString = LocaleController.formatString(R.string.StoryRemovedFromAlbumX, o6Var.b);
-                }
-                new oc(i4Var2.Y0, b6Var).Q(R.raw.contact_check, 36, AndroidUtilities.replaceTags(formatString)).j();
-                b4 b4Var = i4Var2.p1;
-                if (b4Var != null) {
-                    b4Var.a();
-                    break;
-                }
-                break;
-            case 5:
-                AndroidUtilities.runOnUIThread(new o0(obj5, obj4, obj3, obj2, (TLRPC.TL_error) obj, 24));
-                break;
-            case 6:
-                ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) obj5;
-                MessageObject messageObject = (MessageObject) obj4;
-                TL_keyboard.TL_buttonTypeRequestPeer tL_buttonTypeRequestPeer = (TL_keyboard.TL_buttonTypeRequestPeer) obj3;
-                TLRPC.User user2 = (TLRPC.User) obj2;
-                TLRPC.User user3 = (TLRPC.User) obj;
-                int i14 = ChatActivityEnterView.i5;
-                if (user3 != null) {
-                    TLRPC.TL_messages_sendBotRequestedPeer tL_messages_sendBotRequestedPeer = new TLRPC.TL_messages_sendBotRequestedPeer();
-                    tL_messages_sendBotRequestedPeer.peer = MessagesController.getInstance(chatActivityEnterView.M).getInputPeer(messageObject.messageOwner.peer_id);
-                    tL_messages_sendBotRequestedPeer.flags |= 1;
-                    tL_messages_sendBotRequestedPeer.msg_id = messageObject.getId();
-                    tL_messages_sendBotRequestedPeer.button_id = tL_buttonTypeRequestPeer.button_id;
-                    tL_messages_sendBotRequestedPeer.requested_peers.add(MessagesController.getInputPeer(user3));
-                    ConnectionsManager.getInstance(chatActivityEnterView.M).sendRequest(tL_messages_sendBotRequestedPeer, null);
-                    long j11 = user2.id;
-                    Bundle bundle = new Bundle();
-                    bundle.putLong("user_id", user3.id);
-                    tf tfVar = new tf(bundle, user3, user2, j11);
-                    qn qnVar = chatActivityEnterView.K2;
-                    if (qnVar != null) {
-                        qnVar.presentFragment(tfVar);
-                        break;
+                float dp9 = AndroidUtilities.dp(1.0f);
+                float dp10 = AndroidUtilities.dp(19.5f);
+                float f25 = dp9 + dp10;
+                float f26 = f25 * 2.0f;
+                float measuredWidth5 = getMeasuredWidth() - f26;
+                float A3 = com.google.android.recaptcha.internal.a.A(getMeasuredHeight(), f26, 2.0f, f25);
+                if (f9 <= f25 - dp10 || f10 <= A3 - dp10 || f9 >= f25 + dp10 || f10 >= A3 + dp10) {
+                    float f27 = f25 + measuredWidth5;
+                    if (f9 <= f27 - dp10 || f10 <= A3 - dp10 || f9 >= f27 + dp10 || f10 >= A3 + dp10) {
                     }
                 }
                 break;
-            case 7:
-                xk.K((xk) obj5, (qn) obj4, (TLRPC.TL_messageMediaGeo) obj3, (b6) obj2, (Long) obj);
-                break;
-            case 8:
-                xk.O((xk) obj5, (qn) obj4, (TLRPC.TL_messageMediaVenue) obj3, (b6) obj2);
-                break;
-            case 9:
-                jn jnVar = (jn) obj5;
-                qn qnVar2 = (qn) obj4;
-                TLRPC.TL_messageMediaPoll tL_messageMediaPoll = (TLRPC.TL_messageMediaPoll) obj3;
-                ArrayList arrayList2 = (ArrayList) obj2;
-                Long l11 = (Long) obj;
-                if (qnVar2.c()) {
-                    y4.L(qnVar2.getParentActivity(), qnVar2.a(), new a1.d(jnVar, tL_messageMediaPoll, arrayList2, l11, 10));
-                    break;
-                } else {
-                    jnVar.f0.e(tL_messageMediaPoll, jnVar.K, jnVar.h1, arrayList2, true, 0, l11.longValue());
-                    jnVar.b.dismiss(true);
-                    break;
-                }
-            case 10:
-                vx vxVar = (vx) obj5;
-                ArrayList arrayList3 = (ArrayList) obj4;
-                Runnable runnable = (Runnable) obj2;
-                ArrayList arrayList4 = (ArrayList) obj;
-                if (((String) obj3).equals(vxVar.v)) {
-                    k5.h(vxVar.B.Y0).f(arrayList4);
-                    int size = arrayList4.size();
-                    while (i10 < size) {
-                        Object obj6 = arrayList4.get(i10);
-                        i10++;
-                        MediaDataController.KeywordResult keywordResult = new MediaDataController.KeywordResult();
-                        keywordResult.emoji = "animated_" + ((TLRPC.Document) obj6).id;
-                        keywordResult.keyword = null;
-                        arrayList3.add(keywordResult);
-                    }
-                    runnable.run();
-                    break;
-                }
-                break;
-            case 11:
-                eu0.m((eu0) obj5, (HashSet) obj4, (TL_stories.StoryItem) obj3, (x60) obj2, (o6) obj);
-                break;
-            case 12:
-                dy dyVar = (dy) obj5;
-                dyVar.Q4(dyVar.getMessagesController().getChat((Long) obj3), (Runnable) obj, new jq(dyVar, (id) obj2, (org.telegram.ui.ActionBar.o2) obj4, i11));
-                break;
-            case 13:
-                b61 b61Var = (b61) obj5;
-                String[] strArr = (String[]) obj4;
-                String str3 = (String) obj3;
-                LinkedHashSet linkedHashSet = (LinkedHashSet) obj2;
-                Runnable runnable2 = (Runnable) obj;
-                int i15 = b61Var.R;
-                if (ConnectionsManager.getInstance(i15).getConnectionState() != 3) {
-                    runnable2.run();
-                    break;
-                } else {
-                    if (strArr != null && strArr.length != 0) {
-                        str = strArr[0];
-                    }
-                    MediaDataController.getInstance(i15).searchStickers(true, str, str3, new org.telegram.ui.a0(b61Var, linkedHashSet, runnable2, 9));
-                    break;
-                }
-                break;
-            case 14:
-                b61 b61Var2 = (b61) obj5;
-                String str4 = (String) obj3;
-                ArrayList arrayList5 = (ArrayList) obj4;
-                HashMap hashMap = (HashMap) obj2;
-                Runnable runnable3 = (Runnable) obj;
-                int i16 = b61Var2.R;
-                if (b61Var2.S != 4) {
-                    runnable3.run();
-                    break;
-                } else {
-                    ArrayList arrayList6 = new ArrayList(0);
-                    LongSparseArray longSparseArray = new LongSparseArray(0);
-                    HashMap<String, ArrayList<TLRPC.Document>> allStickers = MediaDataController.getInstance(i16).getAllStickers();
-                    if (str4.length() <= 14) {
-                        int length = str4.length();
-                        CharSequence charSequence = str4;
-                        int i17 = 0;
-                        while (i17 < length) {
-                            if (i17 < length - 1) {
-                                if (charSequence.charAt(i17) == 55356) {
-                                    int i18 = i17 + 1;
-                                    if (charSequence.charAt(i18) >= 57339) {
-                                        break;
-                                    }
-                                }
-                                if (charSequence.charAt(i17) == 8205) {
-                                    int i19 = i17 + 1;
-                                    if (charSequence.charAt(i19) != 9792) {
-                                        break;
-                                    }
-                                    charSequence = TextUtils.concat(charSequence.subSequence(0, i17), charSequence.subSequence(i17 + 2, charSequence.length()));
-                                    length -= 2;
-                                    i17--;
-                                    i17++;
-                                }
-                            }
-                            if (charSequence.charAt(i17) == 65039) {
-                                charSequence = TextUtils.concat(charSequence.subSequence(0, i17), charSequence.subSequence(i17 + 1, charSequence.length()));
-                                length--;
-                                i17--;
-                                i17++;
-                            } else {
-                                i17++;
-                            }
-                        }
-                        ArrayList<TLRPC.Document> arrayList7 = allStickers != null ? allStickers.get(charSequence.toString()) : null;
-                        if (arrayList7 != null && !arrayList7.isEmpty()) {
-                            arrayList6.addAll(arrayList7);
-                            int size2 = arrayList7.size();
-                            for (int i20 = 0; i20 < size2; i20++) {
-                                TLRPC.Document document = arrayList7.get(i20);
-                                longSparseArray.put(document.id, document);
-                            }
-                            arrayList5.add(arrayList6);
-                        }
-                    }
-                    if (allStickers != null && !allStickers.isEmpty() && str4.length() > 1) {
-                        MediaDataController.getInstance(i16).getEmojiSuggestions(b61.W1, str4, false, new a1.d(allStickers, hashMap, arrayList5, runnable3, 18), false);
-                        break;
-                    }
-                }
-                break;
-            case 15:
-                org.telegram.ui.web.y0 y0Var = (org.telegram.ui.web.y0) obj5;
-                String str5 = (String) obj3;
-                mh.p1 p1Var2 = (mh.p1) obj4;
-                String str6 = (String) obj2;
-                String str7 = (String) obj;
-                if (str7 == null) {
-                    y0Var.v("secure_storage_failed", org.telegram.ui.web.y0.y("req_id", str5, "error", "RESTORE_CANCELLED"));
-                    break;
-                } else {
-                    try {
-                        p1Var2.j(str7);
-                        y0Var.v("secure_storage_key_restored", org.telegram.ui.web.y0.y("req_id", str5, "value", (String) p1Var2.f(str6).first));
-                        break;
-                    } catch (Exception e10) {
-                        y0Var.v("secure_storage_failed", org.telegram.ui.web.y0.y("req_id", str5, "error", e10.getMessage()));
-                        return;
-                    }
-                }
             default:
-                Runnable[] runnableArr = (Runnable[]) obj5;
-                ValueAnimator[] valueAnimatorArr = (ValueAnimator[]) obj4;
-                TextView textView = (TextView) obj3;
-                TextView textView2 = (TextView) obj2;
-                Boolean bool = (Boolean) obj;
-                AndroidUtilities.cancelRunOnUIThread(runnableArr[0]);
-                ValueAnimator valueAnimator = valueAnimatorArr[0];
-                if (valueAnimator != null) {
-                    valueAnimator.cancel();
+                float dp11 = AndroidUtilities.dp(1.0f);
+                float dp12 = AndroidUtilities.dp(19.5f);
+                float f28 = dp11 + dp12;
+                float f29 = f28 * 2.0f;
+                float measuredWidth6 = getMeasuredWidth() - f29;
+                float A4 = com.google.android.recaptcha.internal.a.A(getMeasuredHeight(), f29, 2.0f, f28);
+                if (f9 <= f28 - dp12 || f10 <= A4 - dp12 || f9 >= f28 + dp12 || f10 >= A4 + dp12) {
+                    float f30 = f28 + measuredWidth6;
+                    if (f9 <= f30 - dp12 || f10 <= A4 - dp12 || f9 >= f30 + dp12 || f10 >= A4 + dp12) {
+                    }
                 }
-                ValueAnimator ofFloat = ValueAnimator.ofFloat(textView.getAlpha(), bool.booleanValue() ? 1.0f : 0.0f);
-                valueAnimatorArr[0] = ofFloat;
-                ofFloat.addUpdateListener(new f2.g(22, textView, textView2));
-                valueAnimatorArr[0].setDuration(320L);
-                valueAnimatorArr[0].setInterpolator(gr.h);
-                valueAnimatorArr[0].start();
-                if (bool.booleanValue()) {
-                    AndroidUtilities.runOnUIThread(runnableArr[0], 5320L);
+                break;
+        }
+        return 0;
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        Canvas canvas2;
+        switch (this.n) {
+            case 0:
+                super.onDraw(canvas);
+                int saveCount = canvas.getSaveCount();
+                float showAlpha = getShowAlpha();
+                if (showAlpha > 0.0f) {
+                    if (showAlpha < 1.0f) {
+                        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), (int) (showAlpha * 255.0f), 31);
+                    }
+                    float dp = AndroidUtilities.dp(2.0f);
+                    float dpf2 = AndroidUtilities.dpf2(5.66f);
+                    float dp2 = dp + dpf2 + AndroidUtilities.dp(15.0f);
+                    float f9 = dp2 * 2.0f;
+                    float measuredWidth = getMeasuredWidth() - f9;
+                    float measuredHeight = getMeasuredHeight() - f9;
+                    RectF rectF = AndroidUtilities.rectTmp;
+                    float f10 = dp2 + measuredWidth;
+                    float f11 = dp2 + measuredHeight;
+                    rectF.set(dp2, dp2, f10, f11);
+                    float dp3 = AndroidUtilities.dp(12.0f);
+                    float min = Math.min(dp3, measuredWidth / 2.0f);
+                    float f12 = measuredHeight / 2.0f;
+                    float min2 = Math.min(dp3, f12);
+                    Path path = this.s;
+                    path.rewind();
+                    float f13 = min * 2.0f;
+                    float f14 = dp2 + f13;
+                    float f15 = 2.0f * min2;
+                    float f16 = dp2 + f15;
+                    rectF.set(dp2, dp2, f14, f16);
+                    path.arcTo(rectF, 180.0f, 90.0f);
+                    float f17 = f10 - f13;
+                    rectF.set(f17, dp2, f10, f16);
+                    path.arcTo(rectF, 270.0f, 90.0f);
+                    Paint paint = this.a;
+                    canvas.drawPath(path, paint);
+                    path.rewind();
+                    float f18 = f11 - f15;
+                    rectF.set(dp2, f18, f14, f11);
+                    path.arcTo(rectF, 180.0f, -90.0f);
+                    rectF.set(f17, f18, f10, f11);
+                    path.arcTo(rectF, 90.0f, -90.0f);
+                    canvas.drawPath(path, paint);
+                    float f19 = dp2 + f12;
+                    Paint paint2 = this.c;
+                    canvas.drawCircle(dp2, f19, dpf2, paint2);
+                    Paint paint3 = this.b;
+                    canvas.drawCircle(dp2, f19, (dpf2 - AndroidUtilities.dp(1.0f)) + 1.0f, paint3);
+                    canvas.drawCircle(f10, f19, dpf2, paint2);
+                    canvas.drawCircle(f10, f19, (dpf2 - AndroidUtilities.dp(1.0f)) + 1.0f, paint3);
+                    canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), 255, 31);
+                    float f20 = dp2 + min2;
+                    float f21 = f11 - min2;
+                    canvas.drawLine(dp2, f20, dp2, f21, paint);
+                    canvas.drawLine(f10, f20, f10, f21, paint);
+                    Paint paint4 = this.r;
+                    canvas.drawCircle(f10, f19, (AndroidUtilities.dp(1.0f) + dpf2) - 1.0f, paint4);
+                    canvas.drawCircle(dp2, f19, (dpf2 + AndroidUtilities.dp(1.0f)) - 1.0f, paint4);
+                    canvas.restoreToCount(saveCount);
+                    break;
+                }
+                break;
+            case 1:
+                super.onDraw(canvas);
+                int saveCount2 = canvas.getSaveCount();
+                float showAlpha2 = getShowAlpha();
+                if (showAlpha2 > 0.0f) {
+                    if (showAlpha2 < 1.0f) {
+                        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), (int) (showAlpha2 * 255.0f), 31);
+                    }
+                    float dp4 = AndroidUtilities.dp(2.0f);
+                    float dpf22 = AndroidUtilities.dpf2(5.66f);
+                    float dp5 = dp4 + dpf22 + AndroidUtilities.dp(15.0f);
+                    float f22 = dp5 * 2.0f;
+                    float measuredWidth2 = getMeasuredWidth() - f22;
+                    float measuredHeight2 = getMeasuredHeight() - f22;
+                    RectF rectF2 = AndroidUtilities.rectTmp;
+                    float f23 = dp5 + measuredWidth2;
+                    float f24 = dp5 + measuredHeight2;
+                    rectF2.set(dp5, dp5, f23, f24);
+                    float dp6 = AndroidUtilities.dp(12.0f);
+                    float min3 = Math.min(dp6, measuredWidth2 / 2.0f);
+                    float f25 = measuredHeight2 / 2.0f;
+                    float min4 = Math.min(dp6, f25);
+                    Path path2 = this.s;
+                    path2.rewind();
+                    float f26 = min3 * 2.0f;
+                    float f27 = dp5 + f26;
+                    float f28 = 2.0f * min4;
+                    float f29 = dp5 + f28;
+                    rectF2.set(dp5, dp5, f27, f29);
+                    path2.arcTo(rectF2, 180.0f, 90.0f);
+                    float f30 = f23 - f26;
+                    rectF2.set(f30, dp5, f23, f29);
+                    path2.arcTo(rectF2, 270.0f, 90.0f);
+                    Paint paint5 = this.a;
+                    canvas.drawPath(path2, paint5);
+                    path2.rewind();
+                    float f31 = f24 - f28;
+                    rectF2.set(dp5, f31, f27, f24);
+                    path2.arcTo(rectF2, 180.0f, -90.0f);
+                    rectF2.set(f30, f31, f23, f24);
+                    path2.arcTo(rectF2, 90.0f, -90.0f);
+                    canvas.drawPath(path2, paint5);
+                    float f32 = dp5 + f25;
+                    Paint paint6 = this.c;
+                    canvas.drawCircle(dp5, f32, dpf22, paint6);
+                    Paint paint7 = this.b;
+                    canvas.drawCircle(dp5, f32, (dpf22 - AndroidUtilities.dp(1.0f)) + 1.0f, paint7);
+                    canvas.drawCircle(f23, f32, dpf22, paint6);
+                    canvas.drawCircle(f23, f32, (dpf22 - AndroidUtilities.dp(1.0f)) + 1.0f, paint7);
+                    canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), 255, 31);
+                    float f33 = dp5 + min4;
+                    float f34 = f24 - min4;
+                    canvas.drawLine(dp5, f33, dp5, f34, paint5);
+                    canvas.drawLine(f23, f33, f23, f34, paint5);
+                    Paint paint8 = this.r;
+                    canvas.drawCircle(f23, f32, (AndroidUtilities.dp(1.0f) + dpf22) - 1.0f, paint8);
+                    canvas.drawCircle(dp5, f32, (dpf22 + AndroidUtilities.dp(1.0f)) - 1.0f, paint8);
+                    canvas.restoreToCount(saveCount2);
+                    break;
+                }
+                break;
+            case 2:
+                super.onDraw(canvas);
+                int saveCount3 = canvas.getSaveCount();
+                float showAlpha3 = getShowAlpha();
+                if (showAlpha3 > 0.0f) {
+                    if (showAlpha3 < 1.0f) {
+                        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), (int) (showAlpha3 * 255.0f), 31);
+                    }
+                    float dp7 = AndroidUtilities.dp(2.0f);
+                    float dpf23 = AndroidUtilities.dpf2(5.66f);
+                    float dp8 = dp7 + dpf23 + AndroidUtilities.dp(15.0f);
+                    float f35 = dp8 * 2.0f;
+                    float measuredWidth3 = getMeasuredWidth() - f35;
+                    float measuredHeight3 = getMeasuredHeight() - f35;
+                    RectF rectF3 = AndroidUtilities.rectTmp;
+                    float f36 = dp8 + measuredWidth3;
+                    float f37 = dp8 + measuredHeight3;
+                    rectF3.set(dp8, dp8, f36, f37);
+                    float dp9 = AndroidUtilities.dp(12.0f);
+                    float min5 = Math.min(dp9, measuredWidth3 / 2.0f);
+                    float f38 = measuredHeight3 / 2.0f;
+                    float min6 = Math.min(dp9, f38);
+                    Path path3 = this.s;
+                    path3.rewind();
+                    float f39 = min5 * 2.0f;
+                    float f40 = dp8 + f39;
+                    float f41 = 2.0f * min6;
+                    float f42 = dp8 + f41;
+                    rectF3.set(dp8, dp8, f40, f42);
+                    path3.arcTo(rectF3, 180.0f, 90.0f);
+                    float f43 = f36 - f39;
+                    rectF3.set(f43, dp8, f36, f42);
+                    path3.arcTo(rectF3, 270.0f, 90.0f);
+                    Paint paint9 = this.a;
+                    canvas.drawPath(path3, paint9);
+                    path3.rewind();
+                    float f44 = f37 - f41;
+                    rectF3.set(dp8, f44, f40, f37);
+                    path3.arcTo(rectF3, 180.0f, -90.0f);
+                    rectF3.set(f43, f44, f36, f37);
+                    path3.arcTo(rectF3, 90.0f, -90.0f);
+                    canvas.drawPath(path3, paint9);
+                    float f45 = dp8 + f38;
+                    Paint paint10 = this.c;
+                    canvas.drawCircle(dp8, f45, dpf23, paint10);
+                    Paint paint11 = this.b;
+                    canvas.drawCircle(dp8, f45, (dpf23 - AndroidUtilities.dp(1.0f)) + 1.0f, paint11);
+                    canvas.drawCircle(f36, f45, dpf23, paint10);
+                    canvas.drawCircle(f36, f45, (dpf23 - AndroidUtilities.dp(1.0f)) + 1.0f, paint11);
+                    canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), 255, 31);
+                    float f46 = dp8 + min6;
+                    float f47 = f37 - min6;
+                    canvas.drawLine(dp8, f46, dp8, f47, paint9);
+                    canvas.drawLine(f36, f46, f36, f47, paint9);
+                    Paint paint12 = this.r;
+                    canvas.drawCircle(f36, f45, (AndroidUtilities.dp(1.0f) + dpf23) - 1.0f, paint12);
+                    canvas.drawCircle(dp8, f45, (dpf23 + AndroidUtilities.dp(1.0f)) - 1.0f, paint12);
+                    canvas.restoreToCount(saveCount3);
+                    break;
+                }
+                break;
+            case 3:
+                super.onDraw(canvas);
+                int saveCount4 = canvas.getSaveCount();
+                float showAlpha4 = getShowAlpha();
+                if (showAlpha4 > 0.0f) {
+                    if (showAlpha4 < 1.0f) {
+                        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), (int) (showAlpha4 * 255.0f), 31);
+                    }
+                    float dp10 = AndroidUtilities.dp(2.0f);
+                    float dpf24 = AndroidUtilities.dpf2(5.66f);
+                    float dp11 = dp10 + dpf24 + AndroidUtilities.dp(15.0f);
+                    float f48 = dp11 * 2.0f;
+                    float measuredWidth4 = getMeasuredWidth() - f48;
+                    float measuredHeight4 = getMeasuredHeight() - f48;
+                    RectF rectF4 = AndroidUtilities.rectTmp;
+                    float f49 = dp11 + measuredWidth4;
+                    float f50 = dp11 + measuredHeight4;
+                    rectF4.set(dp11, dp11, f49, f50);
+                    float dp12 = AndroidUtilities.dp(12.0f);
+                    float min7 = Math.min(dp12, measuredWidth4 / 2.0f);
+                    float f51 = measuredHeight4 / 2.0f;
+                    float min8 = Math.min(dp12, f51);
+                    Path path4 = this.s;
+                    path4.rewind();
+                    float f52 = min7 * 2.0f;
+                    float f53 = dp11 + f52;
+                    float f54 = 2.0f * min8;
+                    float f55 = dp11 + f54;
+                    rectF4.set(dp11, dp11, f53, f55);
+                    path4.arcTo(rectF4, 180.0f, 90.0f);
+                    float f56 = f49 - f52;
+                    rectF4.set(f56, dp11, f49, f55);
+                    path4.arcTo(rectF4, 270.0f, 90.0f);
+                    Paint paint13 = this.a;
+                    canvas.drawPath(path4, paint13);
+                    path4.rewind();
+                    float f57 = f50 - f54;
+                    rectF4.set(dp11, f57, f53, f50);
+                    path4.arcTo(rectF4, 180.0f, -90.0f);
+                    rectF4.set(f56, f57, f49, f50);
+                    path4.arcTo(rectF4, 90.0f, -90.0f);
+                    canvas.drawPath(path4, paint13);
+                    float f58 = dp11 + f51;
+                    Paint paint14 = this.c;
+                    canvas.drawCircle(dp11, f58, dpf24, paint14);
+                    Paint paint15 = this.b;
+                    canvas.drawCircle(dp11, f58, (dpf24 - AndroidUtilities.dp(1.0f)) + 1.0f, paint15);
+                    canvas.drawCircle(f49, f58, dpf24, paint14);
+                    canvas.drawCircle(f49, f58, (dpf24 - AndroidUtilities.dp(1.0f)) + 1.0f, paint15);
+                    canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), 255, 31);
+                    float f59 = dp11 + min8;
+                    float f60 = f50 - min8;
+                    canvas.drawLine(dp11, f59, dp11, f60, paint13);
+                    canvas.drawLine(f49, f59, f49, f60, paint13);
+                    Paint paint16 = this.r;
+                    canvas.drawCircle(f49, f58, (AndroidUtilities.dp(1.0f) + dpf24) - 1.0f, paint16);
+                    canvas.drawCircle(dp11, f58, (dpf24 + AndroidUtilities.dp(1.0f)) - 1.0f, paint16);
+                    canvas.restoreToCount(saveCount4);
+                    break;
+                }
+                break;
+            case 4:
+                super.onDraw(canvas);
+                int saveCount5 = canvas.getSaveCount();
+                float showAlpha5 = getShowAlpha();
+                if (showAlpha5 > 0.0f) {
+                    if (showAlpha5 < 1.0f) {
+                        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), (int) (showAlpha5 * 255.0f), 31);
+                    }
+                    float dp13 = AndroidUtilities.dp(2.0f);
+                    float dpf25 = AndroidUtilities.dpf2(5.66f);
+                    float dp14 = dp13 + dpf25 + AndroidUtilities.dp(15.0f);
+                    float f61 = dp14 * 2.0f;
+                    float measuredWidth5 = getMeasuredWidth() - f61;
+                    float measuredHeight5 = getMeasuredHeight() - f61;
+                    RectF rectF5 = AndroidUtilities.rectTmp;
+                    float f62 = dp14 + measuredWidth5;
+                    float f63 = dp14 + measuredHeight5;
+                    rectF5.set(dp14, dp14, f62, f63);
+                    float dp15 = AndroidUtilities.dp(12.0f);
+                    float min9 = Math.min(dp15, measuredWidth5 / 2.0f);
+                    float f64 = measuredHeight5 / 2.0f;
+                    float min10 = Math.min(dp15, f64);
+                    Path path5 = this.s;
+                    path5.rewind();
+                    float f65 = min9 * 2.0f;
+                    float f66 = dp14 + f65;
+                    float f67 = 2.0f * min10;
+                    float f68 = dp14 + f67;
+                    rectF5.set(dp14, dp14, f66, f68);
+                    path5.arcTo(rectF5, 180.0f, 90.0f);
+                    float f69 = f62 - f65;
+                    rectF5.set(f69, dp14, f62, f68);
+                    path5.arcTo(rectF5, 270.0f, 90.0f);
+                    Paint paint17 = this.a;
+                    canvas.drawPath(path5, paint17);
+                    path5.rewind();
+                    float f70 = f63 - f67;
+                    rectF5.set(dp14, f70, f66, f63);
+                    path5.arcTo(rectF5, 180.0f, -90.0f);
+                    rectF5.set(f69, f70, f62, f63);
+                    path5.arcTo(rectF5, 90.0f, -90.0f);
+                    canvas.drawPath(path5, paint17);
+                    float f71 = dp14 + f64;
+                    Paint paint18 = this.c;
+                    canvas.drawCircle(dp14, f71, dpf25, paint18);
+                    Paint paint19 = this.b;
+                    canvas.drawCircle(dp14, f71, (dpf25 - AndroidUtilities.dp(1.0f)) + 1.0f, paint19);
+                    canvas.drawCircle(f62, f71, dpf25, paint18);
+                    canvas.drawCircle(f62, f71, (dpf25 - AndroidUtilities.dp(1.0f)) + 1.0f, paint19);
+                    canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), 255, 31);
+                    float f72 = dp14 + min10;
+                    float f73 = f63 - min10;
+                    canvas.drawLine(dp14, f72, dp14, f73, paint17);
+                    canvas.drawLine(f62, f72, f62, f73, paint17);
+                    Paint paint20 = this.r;
+                    canvas.drawCircle(f62, f71, (AndroidUtilities.dp(1.0f) + dpf25) - 1.0f, paint20);
+                    canvas.drawCircle(dp14, f71, (dpf25 + AndroidUtilities.dp(1.0f)) - 1.0f, paint20);
+                    canvas.restoreToCount(saveCount5);
+                    break;
+                }
+                break;
+            default:
+                super.onDraw(canvas);
+                int saveCount6 = canvas.getSaveCount();
+                float showAlpha6 = getShowAlpha();
+                if (showAlpha6 > 0.0f) {
+                    if (showAlpha6 < 1.0f) {
+                        int i10 = (int) (showAlpha6 * 255.0f);
+                        canvas2 = canvas;
+                        canvas2.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), i10, 31);
+                    } else {
+                        canvas2 = canvas;
+                    }
+                    float dp16 = AndroidUtilities.dp(2.0f);
+                    float dpf26 = AndroidUtilities.dpf2(5.66f);
+                    float dp17 = dp16 + dpf26 + AndroidUtilities.dp(15.0f);
+                    float f74 = dp17 * 2.0f;
+                    float measuredWidth6 = getMeasuredWidth() - f74;
+                    float measuredHeight6 = getMeasuredHeight() - f74;
+                    RectF rectF6 = AndroidUtilities.rectTmp;
+                    float f75 = dp17 + measuredWidth6;
+                    float f76 = dp17 + measuredHeight6;
+                    rectF6.set(dp17, dp17, f75, f76);
+                    float dp18 = AndroidUtilities.dp(12.0f);
+                    float min11 = Math.min(dp18, measuredWidth6 / 2.0f);
+                    float f77 = measuredHeight6 / 2.0f;
+                    float min12 = Math.min(dp18, f77);
+                    Path path6 = this.s;
+                    path6.rewind();
+                    float f78 = min11 * 2.0f;
+                    float f79 = dp17 + f78;
+                    float f80 = 2.0f * min12;
+                    float f81 = dp17 + f80;
+                    rectF6.set(dp17, dp17, f79, f81);
+                    path6.arcTo(rectF6, 180.0f, 90.0f);
+                    float f82 = f75 - f78;
+                    rectF6.set(f82, dp17, f75, f81);
+                    path6.arcTo(rectF6, 270.0f, 90.0f);
+                    Paint paint21 = this.a;
+                    canvas2.drawPath(path6, paint21);
+                    path6.rewind();
+                    float f83 = f76 - f80;
+                    rectF6.set(dp17, f83, f79, f76);
+                    path6.arcTo(rectF6, 180.0f, -90.0f);
+                    rectF6.set(f82, f83, f75, f76);
+                    path6.arcTo(rectF6, 90.0f, -90.0f);
+                    canvas2.drawPath(path6, paint21);
+                    float f84 = dp17 + f77;
+                    Paint paint22 = this.c;
+                    canvas2.drawCircle(dp17, f84, dpf26, paint22);
+                    Paint paint23 = this.b;
+                    canvas2.drawCircle(dp17, f84, (dpf26 - AndroidUtilities.dp(1.0f)) + 1.0f, paint23);
+                    canvas2.drawCircle(f75, f84, dpf26, paint22);
+                    canvas2.drawCircle(f75, f84, (dpf26 - AndroidUtilities.dp(1.0f)) + 1.0f, paint23);
+                    canvas2.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), 255, 31);
+                    float f85 = dp17 + min12;
+                    float f86 = f76 - min12;
+                    canvas.drawLine(dp17, f85, dp17, f86, paint21);
+                    canvas.drawLine(f75, f85, f75, f86, paint21);
+                    Paint paint24 = this.r;
+                    canvas.drawCircle(f75, f84, (AndroidUtilities.dp(1.0f) + dpf26) - 1.0f, paint24);
+                    canvas.drawCircle(dp17, f84, (dpf26 + AndroidUtilities.dp(1.0f)) - 1.0f, paint24);
+                    canvas.restoreToCount(saveCount6);
                     break;
                 }
                 break;
         }
     }
 
-    public /* synthetic */ j1(Object obj, Object obj2, Object obj3, Object obj4, int i9) {
-        this.a = i9;
-        this.b = obj;
-        this.c = obj2;
-        this.d = obj3;
-        this.e = obj4;
+    public j1(g4 g4Var, Context context) {
+        super(g4Var, context);
+        Paint paint = new Paint(1);
+        this.r = paint;
+        this.s = new Path();
+        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
     }
 
-    public /* synthetic */ j1(Object obj, String str, Object obj2, Object obj3, int i9) {
-        this.a = i9;
-        this.b = obj;
-        this.d = str;
-        this.c = obj2;
-        this.e = obj3;
+    public j1(o1 o1Var, Context context) {
+        super(o1Var, context);
+        Paint paint = new Paint(1);
+        this.r = paint;
+        this.s = new Path();
+        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
     }
 
-    public /* synthetic */ j1(dy dyVar, Long l10, id idVar, org.telegram.ui.ActionBar.o2 o2Var) {
-        this.a = 12;
-        this.b = dyVar;
-        this.d = l10;
-        this.e = idVar;
-        this.c = o2Var;
+    public j1(f4 f4Var, Context context) {
+        super(f4Var, context);
+        Paint paint = new Paint(1);
+        this.r = paint;
+        this.s = new Path();
+        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
+    }
+
+    public j1(y2 y2Var, Context context) {
+        super(y2Var, context);
+        Paint paint = new Paint(1);
+        this.r = paint;
+        this.s = new Path();
+        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
+    }
+
+    public j1(d2 d2Var, Context context) {
+        super(d2Var, context);
+        Paint paint = new Paint(1);
+        this.r = paint;
+        this.s = new Path();
+        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
     }
 }

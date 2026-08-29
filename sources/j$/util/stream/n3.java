@@ -39,12 +39,12 @@ public final class n3 extends p3 implements i5 {
 
     @Override // j$.util.stream.p3, j$.util.stream.j5
     public final void accept(long j10) {
-        int i9 = this.f;
-        if (i9 >= this.g) {
+        int i10 = this.f;
+        if (i10 >= this.g) {
             throw new IndexOutOfBoundsException(Integer.toString(this.f));
         }
         long[] jArr = this.h;
-        this.f = i9 + 1;
-        jArr[i9] = j10;
+        this.f = i10 + 1;
+        jArr[i10] = j10;
     }
 }

@@ -1,96 +1,18 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.drawable.Drawable;
-import android.os.SystemClock;
 import android.view.View;
-import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class j50 extends Drawable {
-    public final Paint a;
-    public final Paint b;
-    public long c;
-    public float d;
-    public int e;
-    public boolean f;
-    public View g;
-
-    public j50() {
-        Paint paint = new Paint(1);
-        this.a = paint;
-        this.b = new Paint(1);
-        this.d = 1.0f;
-        paint.setColor(-1);
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeWidth(AndroidUtilities.dp(1.5f));
-    }
-
-    public final void a(ImageView imageView) {
-        this.g = imageView;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        float centerX = getBounds().centerX();
-        float centerY = getBounds().centerY();
-        canvas.drawCircle(centerX, centerY, AndroidUtilities.dp(10.0f), this.a);
-        int i9 = this.f ? -1147527 : -1;
-        Paint paint = this.b;
-        paint.setColor(i9);
-        paint.setAlpha((int) (this.d * 255.0f));
-        canvas.drawCircle(centerX, centerY, AndroidUtilities.dp(5.0f), paint);
-        if (this.f) {
-            long elapsedRealtime = SystemClock.elapsedRealtime();
-            long j10 = elapsedRealtime - this.c;
-            if (j10 > 17) {
-                j10 = 17;
-            }
-            this.c = elapsedRealtime;
-            int i10 = this.e;
-            if (i10 == 0) {
-                float f10 = (j10 / 2000.0f) + this.d;
-                this.d = f10;
-                if (f10 >= 1.0f) {
-                    this.d = 1.0f;
-                    this.e = 1;
-                }
-            } else if (i10 == 1) {
-                float f11 = this.d - (j10 / 2000.0f);
-                this.d = f11;
-                if (f11 < 0.5f) {
-                    this.d = 0.5f;
-                    this.e = 0;
-                }
-            }
-            this.g.invalidate();
+public final class j50 extends org.telegram.ui.Cells.t3 {
+    @Override // org.telegram.ui.Cells.t3, android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        if (AndroidUtilities.isTablet()) {
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(Math.min(AndroidUtilities.dp(420.0f), View.MeasureSpec.getSize(i10)), TLObject.FLAG_30), i11);
+        } else {
+            super.onMeasure(i10, i11);
         }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return AndroidUtilities.dp(24.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return AndroidUtilities.dp(24.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i9) {
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

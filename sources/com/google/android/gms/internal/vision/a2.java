@@ -7,7 +7,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class a2 extends LinkedHashMap {
     public static final a2 b;
@@ -29,14 +29,14 @@ public final class a2 extends LinkedHashMap {
         byte[] bArr = (byte[]) obj;
         int length = bArr.length;
         Charset charset = j1.a;
-        int i9 = length;
+        int i10 = length;
         for (byte b10 : bArr) {
-            i9 = (i9 * 31) + b10;
+            i10 = (i10 * 31) + b10;
         }
-        if (i9 == 0) {
+        if (i10 == 0) {
             return 1;
         }
-        return i9;
+        return i10;
     }
 
     public final void b() {
@@ -90,11 +90,11 @@ public final class a2 extends LinkedHashMap {
 
     @Override // java.util.AbstractMap, java.util.Map
     public final int hashCode() {
-        int i9 = 0;
+        int i10 = 0;
         for (Map.Entry entry : entrySet()) {
-            i9 += a(entry.getValue()) ^ a(entry.getKey());
+            i10 += a(entry.getValue()) ^ a(entry.getKey());
         }
-        return i9;
+        return i10;
     }
 
     @Override // java.util.HashMap, java.util.AbstractMap, java.util.Map

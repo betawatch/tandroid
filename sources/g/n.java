@@ -9,21 +9,21 @@ import android.os.Process;
 import android.util.Log;
 import java.util.Calendar;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class n extends f2.x {
-    public final /* synthetic */ int c = 1;
+public final class n extends f2.v {
+    public final /* synthetic */ int c = 0;
     public final /* synthetic */ q d;
     public final Object e;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public n(q qVar, a5.m mVar) {
+    public n(q qVar, androidx.biometric.e eVar) {
         super(qVar);
         this.d = qVar;
-        this.e = mVar;
+        this.e = eVar;
     }
 
-    @Override // f2.x
+    @Override // f2.v
     public final IntentFilter d() {
         switch (this.c) {
             case 0:
@@ -39,7 +39,7 @@ public final class n extends f2.x {
         }
     }
 
-    @Override // f2.x
+    @Override // f2.v
     public final int e() {
         Location location;
         boolean z10;
@@ -49,13 +49,13 @@ public final class n extends f2.x {
             case 0:
                 return ((PowerManager) this.e).isPowerSaveMode() ? 2 : 1;
             default:
-                a5.m mVar = (a5.m) this.e;
-                x xVar = (x) mVar.d;
-                LocationManager locationManager = (LocationManager) mVar.c;
+                androidx.biometric.e eVar = (androidx.biometric.e) this.e;
+                x xVar = (x) eVar.d;
+                LocationManager locationManager = (LocationManager) eVar.c;
                 if (xVar.a > System.currentTimeMillis()) {
                     z10 = xVar.b;
                 } else {
-                    Context context = (Context) mVar.b;
+                    Context context = (Context) eVar.b;
                     Location location3 = null;
                     if (f0.e.a(context, "android.permission.ACCESS_COARSE_LOCATION", Process.myPid(), Process.myUid(), context.getPackageName()) == 0) {
                         try {
@@ -110,8 +110,8 @@ public final class n extends f2.x {
                         xVar.a = j10;
                     } else {
                         Log.i("TwilightManager", "Could not get last known location. This is probably because the app does not have any location permissions. Falling back to hardcoded sunrise/sunset values.");
-                        int i9 = Calendar.getInstance().get(11);
-                        if (i9 < 6 || i9 >= 22) {
+                        int i10 = Calendar.getInstance().get(11);
+                        if (i10 < 6 || i10 >= 22) {
                             z10 = true;
                         }
                     }
@@ -120,7 +120,7 @@ public final class n extends f2.x {
         }
     }
 
-    @Override // f2.x
+    @Override // f2.v
     public final void k() {
         switch (this.c) {
             case 0:

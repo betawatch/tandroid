@@ -1,54 +1,35 @@
 package androidx.emoji2.text;
 
-import android.graphics.Rect;
-import android.view.View;
-import f2.m0;
-import org.telegram.tgnet.TLObject;
+import android.content.Context;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public abstract class f {
-    public int a;
-    public final Object b;
+public final class f {
+    public volatile Object a;
+    public volatile Object b;
     public final Object c;
 
-    public f(m0 m0Var) {
-        this.a = TLObject.FLAG_31;
-        this.c = new Rect();
-        this.b = m0Var;
+    public /* synthetic */ f(Object obj) {
+        this.c = obj;
     }
 
-    public abstract int a(View view);
+    public boolean a() {
+        try {
+            Context context = (Context) this.c;
+            return context.getPackageManager().getApplicationInfo(context.getPackageName(), 128).metaData.getBoolean("com.google.android.play.billingclient.enableBillingOverridesTesting", false);
+        } catch (Exception e10) {
+            com.google.android.gms.internal.play_billing.u.i("BillingClient", "Unable to retrieve metadata value for enableBillingOverridesTesting.", e10);
+            return false;
+        }
+    }
 
-    public abstract int b(View view);
-
-    public abstract int c(View view);
-
-    public abstract int d(View view);
-
-    public abstract int e();
-
-    public abstract int f();
-
-    public abstract int g();
-
-    public abstract int h();
-
-    public abstract int i();
-
-    public abstract int j();
-
-    public abstract int k();
-
-    public abstract int l(View view);
-
-    public abstract int m(View view);
-
-    public abstract void n(int i9);
-
-    public f(j jVar) {
-        this.a = 0;
-        this.c = new d();
-        this.b = jVar;
+    public f(a9.t tVar) {
+        bb.a aVar = new bb.a(7);
+        f7.v vVar = new f7.v(6);
+        this.b = aVar;
+        this.c = new ArrayList();
+        this.a = vVar;
+        tVar.a(new a9.f(this, 18));
     }
 }

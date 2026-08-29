@@ -1,66 +1,37 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.MessagesController;
+import android.icu.text.Collator;
+import java.util.Comparator;
+import java.util.HashMap;
+import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.TranslateController;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class pk implements RequestDelegate {
+public final /* synthetic */ class pk implements Comparator {
     public final /* synthetic */ int a;
-    public final /* synthetic */ BaseController b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ pk(BaseController baseController, long j10, Object obj, int i9) {
-        this.a = i9;
-        this.b = baseController;
-        this.c = j10;
-        this.d = obj;
+    public /* synthetic */ pk(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
+        int lambda$getMusicDialogsSortedByVisibleOrder$1;
+        int lambda$getLocales$3;
+        int lambda$getLanguages$1;
         switch (this.a) {
             case 0:
-                ((TranslateController) this.b).lambda$pushPollToTranslate$26((TranslateController.PendingPollTranslation) this.d, this.c, tLObject, tL_error);
-                break;
+                lambda$getMusicDialogsSortedByVisibleOrder$1 = TelegramMediaSession.lambda$getMusicDialogsSortedByVisibleOrder$1((HashMap) this.b, (Long) obj, (Long) obj2);
+                return lambda$getMusicDialogsSortedByVisibleOrder$1;
             case 1:
-                ((TranslateController) this.b).lambda$pushRichMessageToTranslate$29((TranslateController.PendingRichTranslation) this.d, this.c, tLObject, tL_error);
-                break;
-            case 2:
-                ((MediaDataController) this.b).lambda$loadPinnedMessageInternal$165(this.c, (TLRPC.TL_messages_getMessages) this.d, tLObject, tL_error);
-                break;
-            case 3:
-                ((MessagesController) this.b).lambda$updateTimerProc$155(this.c, (TLRPC.TL_messages_getMessagesViews) this.d, tLObject, tL_error);
-                break;
-            case 4:
-                ((MessagesController) this.b).lambda$reloadMentionsCountForChannel$221((TLRPC.InputPeer) this.d, this.c, tLObject, tL_error);
-                break;
-            case 5:
-                ((MessagesController) this.b).lambda$getGroupCall$63(this.c, (Runnable) this.d, tLObject, tL_error);
-                break;
-            case 6:
-                ((MessagesController) this.b).lambda$getSponsoredMessages$440(this.c, (MessagesController.SponsoredMessagesInfo) this.d, tLObject, tL_error);
-                break;
-            case 7:
-                ((MessagesController) this.b).lambda$loadUnknownChannel$330(this.c, (TLRPC.TL_channel) this.d, tLObject, tL_error);
-                break;
-            case 8:
-                ((MessagesController) this.b).lambda$setChatReactions$471(this.c, (TLRPC.TL_messages_setChatAvailableReactions) this.d, tLObject, tL_error);
-                break;
+                lambda$getLocales$3 = TranslateController.lambda$getLocales$3((LocaleController.LocaleInfo) this.b, (LocaleController.LocaleInfo) obj, (LocaleController.LocaleInfo) obj2);
+                return lambda$getLocales$3;
             default:
-                ((MessagesController) this.b).lambda$checkLastDialogMessage$227((TLRPC.Dialog) this.d, this.c, tLObject, tL_error);
-                break;
+                lambda$getLanguages$1 = TranslateController.lambda$getLanguages$1((Collator) this.b, (TranslateController.Language) obj, (TranslateController.Language) obj2);
+                return lambda$getLanguages$1;
         }
-    }
-
-    public /* synthetic */ pk(BaseController baseController, Object obj, long j10, int i9) {
-        this.a = i9;
-        this.b = baseController;
-        this.d = obj;
-        this.c = j10;
     }
 }

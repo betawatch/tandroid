@@ -1,124 +1,118 @@
 package androidx.activity;
 
-import android.content.Context;
-import android.os.Bundle;
-import androidx.lifecycle.m;
-import androidx.lifecycle.t;
-import androidx.savedstate.Recreator;
-import com.google.android.gms.tasks.TaskCompletionSource;
-import java.util.Map;
-import kotlin.jvm.internal.i;
+import android.util.Log;
+import androidx.fragment.app.a0;
+import androidx.fragment.app.i0;
+import androidx.fragment.app.j0;
+import androidx.fragment.app.t0;
+import androidx.fragment.app.u0;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class o implements com.google.android.gms.common.api.internal.s {
-    public boolean a;
-    public Object b;
-    public Object c = new g2.e();
+public final class o extends kotlin.jvm.internal.k implements bd.l {
+    public final /* synthetic */ int b;
+    public final /* synthetic */ w c;
 
-    public o(g2.f fVar) {
-        this.b = fVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ o(w wVar, int i10) {
+        super(1);
+        this.b = i10;
+        this.c = wVar;
     }
 
-    public void a() {
-        g2.f fVar = (g2.f) this.b;
-        androidx.lifecycle.o m10 = fVar.m();
-        if (((androidx.lifecycle.v) m10).c != androidx.lifecycle.n.b) {
-            throw new IllegalStateException("Restarter must be created only during owner's initialization stage");
-        }
-        m10.a(new Recreator(fVar));
-        final g2.e eVar = (g2.e) this.c;
-        eVar.getClass();
-        if (eVar.a) {
-            throw new IllegalStateException("SavedStateRegistry was already attached.");
-        }
-        m10.a(new androidx.lifecycle.r() { // from class: g2.b
-            @Override // androidx.lifecycle.r
-            public final void d(t tVar, m mVar) {
-                e this$0 = e.this;
-                i.e(this$0, "this$0");
-                if (mVar == m.ON_START) {
-                    this$0.c = true;
-                } else if (mVar == m.ON_STOP) {
-                    this$0.c = false;
+    @Override // bd.l
+    public final Object invoke(Object obj) {
+        Object obj2;
+        Object obj3;
+        switch (this.b) {
+            case 0:
+                kotlin.jvm.internal.j.e((b) obj, "backEvent");
+                w wVar = this.c;
+                rc.e eVar = wVar.b;
+                eVar.getClass();
+                ListIterator listIterator = eVar.listIterator(eVar.c);
+                while (true) {
+                    if (listIterator.hasPrevious()) {
+                        obj2 = listIterator.previous();
+                        if (((a0) obj2).a) {
+                        }
+                    } else {
+                        obj2 = null;
+                    }
                 }
-            }
-        });
-        eVar.a = true;
-        this.a = true;
-    }
-
-    @Override // com.google.android.gms.common.api.internal.s
-    public void accept(Object obj, Object obj2) {
-        com.google.android.gms.common.api.internal.n nVar;
-        boolean z10;
-        b7.m mVar = (b7.m) obj;
-        TaskCompletionSource taskCompletionSource = (TaskCompletionSource) obj2;
-        synchronized (this) {
-            nVar = ((com.google.android.gms.common.api.internal.p) this.b).c;
-            z10 = this.a;
-            com.google.android.gms.common.api.internal.p pVar = (com.google.android.gms.common.api.internal.p) this.b;
-            pVar.b = null;
-            pVar.c = null;
+                a0 a0Var = (a0) obj2;
+                wVar.c = a0Var;
+                if (a0Var != null) {
+                    j0 j0Var = a0Var.d;
+                    if (j0.K(3)) {
+                        Log.d("FragmentManager", "handleOnBackStarted. PREDICTIVE_BACK = true fragment manager " + j0Var);
+                    }
+                    j0Var.x();
+                    j0Var.y(new i0(j0Var), false);
+                }
+                return qc.i.a;
+            default:
+                b backEvent = (b) obj;
+                kotlin.jvm.internal.j.e(backEvent, "backEvent");
+                w wVar2 = this.c;
+                a0 a0Var2 = wVar2.c;
+                if (a0Var2 == null) {
+                    rc.e eVar2 = wVar2.b;
+                    eVar2.getClass();
+                    ListIterator listIterator2 = eVar2.listIterator(eVar2.c);
+                    while (true) {
+                        if (listIterator2.hasPrevious()) {
+                            obj3 = listIterator2.previous();
+                            if (((a0) obj3).a) {
+                            }
+                        } else {
+                            obj3 = null;
+                        }
+                    }
+                    a0Var2 = (a0) obj3;
+                }
+                if (a0Var2 != null) {
+                    j0 j0Var2 = a0Var2.d;
+                    if (j0.K(2)) {
+                        Log.v("FragmentManager", "handleOnBackProgressed. PREDICTIVE_BACK = true fragment manager " + j0Var2);
+                    }
+                    if (j0Var2.h != null) {
+                        Iterator it = j0Var2.f(0, 1, new ArrayList(Collections.singletonList(j0Var2.h))).iterator();
+                        while (it.hasNext()) {
+                            androidx.fragment.app.l lVar = (androidx.fragment.app.l) it.next();
+                            lVar.getClass();
+                            if (j0.K(2)) {
+                                Log.v("FragmentManager", "SpecialEffectsController: Processing Progress " + backEvent.c);
+                            }
+                            ArrayList arrayList = lVar.c;
+                            ArrayList arrayList2 = new ArrayList();
+                            int size = arrayList.size();
+                            int i10 = 0;
+                            while (i10 < size) {
+                                Object obj4 = arrayList.get(i10);
+                                i10++;
+                                ((u0) obj4).getClass();
+                                rc.m.e(arrayList2, null);
+                            }
+                            List m10 = rc.g.m(rc.g.p(arrayList2));
+                            int size2 = m10.size();
+                            for (int i11 = 0; i11 < size2; i11++) {
+                                ((t0) m10.get(i11)).b(backEvent, lVar.a);
+                            }
+                        }
+                        Iterator it2 = j0Var2.n.iterator();
+                        if (it2.hasNext()) {
+                            it2.next().getClass();
+                            throw new ClassCastException();
+                        }
+                    }
+                }
+                return qc.i.a;
         }
-        if (nVar == null) {
-            taskCompletionSource.setResult(Boolean.FALSE);
-        } else {
-            b7.b.a.a(mVar, nVar, z10, taskCompletionSource);
-        }
-    }
-
-    public void b(Bundle bundle) {
-        if (!this.a) {
-            a();
-        }
-        androidx.lifecycle.v vVar = (androidx.lifecycle.v) ((g2.f) this.b).m();
-        if (vVar.c.compareTo(androidx.lifecycle.n.d) >= 0) {
-            throw new IllegalStateException(("performRestore cannot be called when owner is " + vVar.c).toString());
-        }
-        g2.e eVar = (g2.e) this.c;
-        if (!eVar.a) {
-            throw new IllegalStateException("You must call performAttach() before calling performRestore(Bundle).");
-        }
-        if (eVar.b) {
-            throw new IllegalStateException("SavedStateRegistry was already restored.");
-        }
-        eVar.e = bundle != null ? bundle.getBundle("androidx.lifecycle.BundlableSavedStateRegistry.key") : null;
-        eVar.b = true;
-    }
-
-    public void c(Bundle bundle) {
-        g2.e eVar = (g2.e) this.c;
-        eVar.getClass();
-        Bundle bundle2 = new Bundle();
-        Bundle bundle3 = (Bundle) eVar.e;
-        if (bundle3 != null) {
-            bundle2.putAll(bundle3);
-        }
-        o.f fVar = (o.f) eVar.d;
-        fVar.getClass();
-        o.d dVar = new o.d(fVar);
-        fVar.c.put(dVar, Boolean.FALSE);
-        while (dVar.hasNext()) {
-            Map.Entry entry = (Map.Entry) dVar.next();
-            bundle2.putBundle((String) entry.getKey(), ((g2.d) entry.getValue()).a());
-        }
-        if (bundle2.isEmpty()) {
-            return;
-        }
-        bundle.putBundle("androidx.lifecycle.BundlableSavedStateRegistry.key", bundle2);
-    }
-
-    public void d() {
-        h3.b bVar = (h3.b) this.c;
-        Context context = (Context) this.b;
-        if (this.a) {
-            context.unregisterReceiver(bVar);
-            this.a = false;
-        }
-    }
-
-    public synchronized com.google.android.gms.common.api.internal.p e() {
-        return (com.google.android.gms.common.api.internal.p) this.b;
     }
 }

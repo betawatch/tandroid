@@ -1,62 +1,44 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.tl.TL_iv;
+import android.view.KeyEvent;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class td implements Utilities.Callback4 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ChatActivityEnterView b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ org.telegram.ui.ActionBar.b6 d;
+public final /* synthetic */ class td implements ph.i0, org.telegram.ui.ActionBar.b2, qt, org.telegram.ui.ActionBar.m1 {
+    public final /* synthetic */ ChatActivityEnterView a;
 
-    public /* synthetic */ td(ChatActivityEnterView chatActivityEnterView, long j10, org.telegram.ui.ActionBar.b6 b6Var, int i9) {
-        this.a = i9;
-        this.b = chatActivityEnterView;
-        this.c = j10;
-        this.d = b6Var;
+    public /* synthetic */ td(ChatActivityEnterView chatActivityEnterView) {
+        this.a = chatActivityEnterView;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback4
-    public final void run(Object obj, Object obj2, Object obj3, Object obj4) {
-        int i9 = this.a;
-        org.telegram.ui.ActionBar.b6 b6Var = this.d;
-        long j10 = this.c;
-        switch (i9) {
-            case 0:
-                Integer num = (Integer) obj2;
-                Integer num2 = (Integer) obj3;
-                Boolean bool = (Boolean) obj4;
-                int i10 = ChatActivityEnterView.i5;
-                ChatActivityEnterView chatActivityEnterView = this.b;
-                chatActivityEnterView.Q0((TL_iv.RichMessage) obj);
-                if (!chatActivityEnterView.c() || num.intValue() != 0) {
-                    chatActivityEnterView.T0(num.intValue(), bool.booleanValue(), num2.intValue(), true, 0L);
-                    break;
-                } else {
-                    y4.M(chatActivityEnterView.J2, j10, new he(chatActivityEnterView, 0), b6Var);
-                    break;
-                }
-            default:
-                Integer num3 = (Integer) obj2;
-                Integer num4 = (Integer) obj3;
-                Boolean bool2 = (Boolean) obj4;
-                ChatActivityEnterView chatActivityEnterView2 = this.b;
-                chatActivityEnterView2.A0.setText((CharSequence) obj);
-                if (chatActivityEnterView2.U1 == null) {
-                    if (!chatActivityEnterView2.c() || num3.intValue() != 0) {
-                        chatActivityEnterView2.T0(num3.intValue(), bool2.booleanValue(), num4.intValue(), true, 0L);
-                        break;
-                    } else {
-                        y4.M(chatActivityEnterView2.J2, j10, new ie(chatActivityEnterView2), b6Var);
-                        break;
-                    }
-                } else {
-                    chatActivityEnterView2.c0();
-                    break;
-                }
-                break;
+    @Override // org.telegram.ui.Components.qt
+    public void e1() {
+        ChatActivityEnterView chatActivityEnterView = this.a;
+        chatActivityEnterView.A0.invalidateEffects();
+        hg hgVar = chatActivityEnterView.U2;
+        if (hgVar != null) {
+            hgVar.v1(chatActivityEnterView.A0.getTextToUse());
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.b2
+    public void g(org.telegram.ui.ActionBar.c2 c2Var, int i10) {
+        int i11 = ChatActivityEnterView.i5;
+        ChatActivityEnterView chatActivityEnterView = this.a;
+        chatActivityEnterView.O();
+        jf jfVar = chatActivityEnterView.A0;
+        if (jfVar != null) {
+            jfVar.setText("");
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.m1
+    public void o(KeyEvent keyEvent) {
+        ChatActivityEnterView chatActivityEnterView;
+        ef efVar;
+        int i10 = ChatActivityEnterView.i5;
+        if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (efVar = (chatActivityEnterView = this.a).J0) != null && efVar.isShowing()) {
+            chatActivityEnterView.J0.dismiss();
         }
     }
 }

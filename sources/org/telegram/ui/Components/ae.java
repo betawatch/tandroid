@@ -1,96 +1,90 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.MotionEvent;
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BotForumHelper;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.MessagesStorage;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_keyboard;
+import org.telegram.ui.ze1;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class ae extends FrameLayout {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ChatActivityEnterView b;
+public final /* synthetic */ class ae implements org.telegram.ui.yi0, org.telegram.ui.yx {
+    public final /* synthetic */ ChatActivityEnterView a;
+    public final /* synthetic */ MessageObject b;
+    public final /* synthetic */ TL_keyboard.TL_buttonTypeRequestPeer c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ ae(ChatActivityEnterView chatActivityEnterView, Context context, int i9) {
-        super(context);
-        this.a = i9;
-        this.b = chatActivityEnterView;
+    public /* synthetic */ ae(ChatActivityEnterView chatActivityEnterView, MessageObject messageObject, TL_keyboard.TL_buttonTypeRequestPeer tL_buttonTypeRequestPeer) {
+        this.a = chatActivityEnterView;
+        this.b = messageObject;
+        this.c = tL_buttonTypeRequestPeer;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        switch (this.a) {
-            case 0:
-                ChatActivityEnterView chatActivityEnterView = this.b;
-                mh.v3 v3Var = chatActivityEnterView.g0;
-                return (v3Var == null || v3Var.getVisibility() != 0) ? super.dispatchTouchEvent(motionEvent) : chatActivityEnterView.g0.dispatchTouchEvent(motionEvent);
-            case 1:
-                ChatActivityEnterView chatActivityEnterView2 = this.b;
-                if (!chatActivityEnterView2.F || chatActivityEnterView2.O4 == BotForumHelper.SteamingSendButtonState.BLOCKING) {
-                    return false;
-                }
-                return super.dispatchTouchEvent(motionEvent);
-            default:
-                return super.dispatchTouchEvent(motionEvent);
-        }
+    @Override // org.telegram.ui.yx
+    public /* synthetic */ boolean C() {
+        return false;
     }
 
-    @Override // android.view.ViewGroup
-    public boolean drawChild(Canvas canvas, View view, long j10) {
-        switch (this.a) {
-            case 1:
-                ChatActivityEnterView chatActivityEnterView = this.b;
-                if (view == chatActivityEnterView.F0 && chatActivityEnterView.d0) {
-                    return true;
-                }
-                return super.drawChild(canvas, view, j10);
-            default:
-                return super.drawChild(canvas, view, j10);
-        }
+    @Override // org.telegram.ui.yx
+    public /* synthetic */ boolean J(org.telegram.ui.fy fyVar) {
+        return false;
     }
 
-    @Override // android.view.View
-    public void onSizeChanged(int i9, int i10, int i11, int i12) {
-        switch (this.a) {
-            case 1:
-                super.onSizeChanged(i9, i10, i11, i12);
-                setPivotX(i9 - AndroidUtilities.dp(22.0f));
-                setPivotY(i10 - AndroidUtilities.dp(22.0f));
-                break;
-            default:
-                super.onSizeChanged(i9, i10, i11, i12);
-                break;
+    @Override // org.telegram.ui.yi0
+    public void a(ArrayList arrayList) {
+        int i10 = ChatActivityEnterView.i5;
+        if (arrayList.isEmpty()) {
+            return;
         }
+        TLRPC.TL_messages_sendBotRequestedPeer tL_messages_sendBotRequestedPeer = new TLRPC.TL_messages_sendBotRequestedPeer();
+        ChatActivityEnterView chatActivityEnterView = this.a;
+        MessagesController messagesController = MessagesController.getInstance(chatActivityEnterView.M);
+        MessageObject messageObject = this.b;
+        tL_messages_sendBotRequestedPeer.peer = messagesController.getInputPeer(messageObject.messageOwner.peer_id);
+        tL_messages_sendBotRequestedPeer.flags |= 1;
+        tL_messages_sendBotRequestedPeer.msg_id = messageObject.getId();
+        tL_messages_sendBotRequestedPeer.button_id = this.c.button_id;
+        int size = arrayList.size();
+        int i11 = 0;
+        while (i11 < size) {
+            Object obj = arrayList.get(i11);
+            i11++;
+            tL_messages_sendBotRequestedPeer.requested_peers.add(MessagesController.getInstance(chatActivityEnterView.M).getInputPeer(((Long) obj).longValue()));
+        }
+        ConnectionsManager.getInstance(chatActivityEnterView.M).sendRequest(tL_messages_sendBotRequestedPeer, null);
     }
 
-    @Override // android.view.View
-    public boolean onTouchEvent(MotionEvent motionEvent) {
-        switch (this.a) {
-            case 1:
-                ChatActivityEnterView chatActivityEnterView = this.b;
-                if (!chatActivityEnterView.F || chatActivityEnterView.O4 == BotForumHelper.SteamingSendButtonState.BLOCKING) {
-                    return false;
-                }
-                return super.onTouchEvent(motionEvent);
-            default:
-                return super.onTouchEvent(motionEvent);
+    @Override // org.telegram.ui.yx
+    public boolean v(org.telegram.ui.fy fyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, ze1 ze1Var) {
+        int i12 = ChatActivityEnterView.i5;
+        if (!arrayList.isEmpty()) {
+            TLRPC.TL_messages_sendBotRequestedPeer tL_messages_sendBotRequestedPeer = new TLRPC.TL_messages_sendBotRequestedPeer();
+            ChatActivityEnterView chatActivityEnterView = this.a;
+            MessagesController messagesController = MessagesController.getInstance(chatActivityEnterView.M);
+            MessageObject messageObject = this.b;
+            tL_messages_sendBotRequestedPeer.peer = messagesController.getInputPeer(messageObject.messageOwner.peer_id);
+            tL_messages_sendBotRequestedPeer.flags |= 1;
+            tL_messages_sendBotRequestedPeer.msg_id = messageObject.getId();
+            tL_messages_sendBotRequestedPeer.button_id = this.c.button_id;
+            HashSet hashSet = new HashSet();
+            int size = arrayList.size();
+            int i13 = 0;
+            while (i13 < size) {
+                Object obj = arrayList.get(i13);
+                i13++;
+                hashSet.add(Long.valueOf(((MessagesStorage.TopicKey) obj).dialogId));
+            }
+            Iterator it = hashSet.iterator();
+            while (it.hasNext()) {
+                tL_messages_sendBotRequestedPeer.requested_peers.add(MessagesController.getInstance(chatActivityEnterView.M).getInputPeer(((Long) it.next()).longValue()));
+            }
+            ConnectionsManager.getInstance(chatActivityEnterView.M).sendRequest(tL_messages_sendBotRequestedPeer, null);
         }
-    }
-
-    @Override // android.view.View
-    public void setVisibility(int i9) {
-        switch (this.a) {
-            case 2:
-                super.setVisibility(i9);
-                this.b.P1(true);
-                break;
-            default:
-                super.setVisibility(i9);
-                break;
-        }
+        fyVar.finishFragment();
+        return true;
     }
 }

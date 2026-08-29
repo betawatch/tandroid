@@ -1,37 +1,42 @@
 package org.telegram.ui.web;
 
-import org.json.JSONObject;
-import org.telegram.messenger.Utilities;
-
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class q implements Utilities.Callback {
+public final /* synthetic */ class q implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ y0 b;
+    public final /* synthetic */ z0 b;
+    public final /* synthetic */ String c;
 
-    public /* synthetic */ q(y0 y0Var, int i9) {
-        this.a = i9;
-        this.b = y0Var;
+    public /* synthetic */ q(z0 z0Var, String str, int i10) {
+        this.a = i10;
+        this.b = z0Var;
+        this.c = str;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                y0 y0Var = this.b;
-                y0Var.getClass();
-                if (!((Boolean) obj).booleanValue()) {
-                    y0Var.v("home_screen_failed", y0.x("UNSUPPORTED", "error"));
-                    break;
-                } else {
-                    y0Var.v("home_screen_added", null);
+                w0 w0Var = this.b.a;
+                if (w0Var != null) {
+                    w0Var.d(this.c);
                     break;
                 }
-            case 1:
-                this.b.v("location_requested", (JSONObject) obj);
                 break;
             default:
-                this.b.v("location_requested", (JSONObject) obj);
+                z0 z0Var = this.b;
+                z0Var.J = false;
+                z0Var.L = 0L;
+                z0Var.P = false;
+                String str = this.c;
+                z0Var.b = str;
+                z0Var.c();
+                w0 w0Var2 = z0Var.a;
+                if (w0Var2 != null) {
+                    w0Var2.onResume();
+                    z0Var.a.loadUrl(str);
+                    break;
+                }
                 break;
         }
     }

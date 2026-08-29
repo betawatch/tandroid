@@ -1,19 +1,31 @@
 package org.telegram.ui;
 
-import android.webkit.JavascriptInterface;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class hi1 {
-    public final /* synthetic */ ii1 a;
+public final class hi1 extends org.telegram.ui.ActionBar.k {
+    public final /* synthetic */ ji1 a;
 
-    public hi1(ii1 ii1Var) {
-        this.a = ii1Var;
+    public hi1(ji1 ji1Var) {
+        this.a = ji1Var;
     }
 
-    @JavascriptInterface
-    public void postEvent(String str, String str2) {
-        AndroidUtilities.runOnUIThread(new ai1(2, this, str));
+    @Override // org.telegram.ui.ActionBar.k
+    public final void b(int i10) {
+        ji1 ji1Var = this.a;
+        MessageObject messageObject = ji1Var.n;
+        if (i10 == -1) {
+            ji1Var.finishFragment();
+            return;
+        }
+        if (i10 != 1) {
+            if (i10 == 2) {
+                ji1.V(ji1Var.d, messageObject, ji1Var.getParentActivity(), ji1Var.r, ji1Var.e);
+            }
+        } else if (messageObject != null) {
+            messageObject.messageOwner.with_my_score = false;
+            ji1Var.showDialog(org.telegram.ui.Components.dq0.N0(ji1Var.getParentActivity(), messageObject, null, false, ji1Var.h));
+        }
     }
 }

@@ -14,7 +14,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b0 implements Runnable {
     public final /* synthetic */ int a;
@@ -25,8 +25,8 @@ public final /* synthetic */ class b0 implements Runnable {
     public final /* synthetic */ Object f;
     public final /* synthetic */ Object h;
 
-    public /* synthetic */ b0(Object obj, Object obj2, Object obj3, Object obj4, Object obj5, Object obj6, int i9) {
-        this.a = i9;
+    public /* synthetic */ b0(Object obj, Object obj2, Object obj3, Object obj4, Object obj5, Object obj6, int i10) {
+        this.a = i10;
         this.b = obj;
         this.c = obj2;
         this.d = obj3;
@@ -39,7 +39,7 @@ public final /* synthetic */ class b0 implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                ((BillingController) this.b).lambda$launchBillingFlow$1((Activity) this.c, (AccountInstance) this.d, (TLRPC.InputStorePaymentPurpose) this.e, (List) this.f, (n2.e) this.h);
+                ((BillingController) this.b).lambda$launchBillingFlow$1((Activity) this.c, (AccountInstance) this.d, (TLRPC.InputStorePaymentPurpose) this.e, (List) this.f, (p2.e) this.h);
                 break;
             case 1:
                 LocationController.lambda$fetchLocationAddress$28((LocationController.LocationFetchCallback) this.b, (String) this.c, (String) this.d, (TLRPC.TL_messageMediaVenue) this.e, (TLRPC.TL_messageMediaVenue) this.f, (Location) this.h);
@@ -48,10 +48,10 @@ public final /* synthetic */ class b0 implements Runnable {
                 MediaController.lambda$saveFile$55((File) this.b, (File) this.c, (boolean[]) this.d, (Utilities.Callback) this.e, (org.telegram.ui.ActionBar.c2) this.f, (boolean[]) this.h);
                 break;
             case 3:
-                ((MessagesController) this.b).lambda$didReceivedNotification$44((TLRPC.WallPaper) this.c, (TLRPC.TL_wallPaperSettings) this.d, (org.telegram.ui.ActionBar.y5) this.e, (File) this.f, (String) this.h);
+                ((MessagesController) this.b).lambda$didReceivedNotification$44((TLRPC.WallPaper) this.c, (TLRPC.TL_wallPaperSettings) this.d, (org.telegram.ui.ActionBar.z5) this.e, (File) this.f, (String) this.h);
                 break;
             case 4:
-                ((MessagesController) this.b).lambda$checkCanOpenChat$451((org.telegram.ui.ActionBar.c2) this.c, (ve.d) this.d, (TLObject) this.e, (org.telegram.ui.ActionBar.o2) this.f, (Bundle) this.h);
+                ((MessagesController) this.b).lambda$checkCanOpenChat$451((org.telegram.ui.ActionBar.c2) this.c, (ye.c) this.d, (TLObject) this.e, (org.telegram.ui.ActionBar.o2) this.f, (Bundle) this.h);
                 break;
             case 5:
                 ((SavedMessagesController) this.b).lambda$loadCache$6((ArrayList) this.c, (ArrayList) this.d, (ArrayList) this.e, (ArrayList) this.f, (Runnable) this.h);

@@ -1,32 +1,29 @@
 package org.telegram.ui;
 
-import android.content.DialogInterface;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import android.content.Context;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class m40 implements DialogInterface.OnShowListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.c2 b;
-    public final /* synthetic */ EditTextBoldCursor c;
-    public final /* synthetic */ Object d;
+public final class m40 extends org.telegram.ui.Components.dq0 {
+    public final /* synthetic */ r50 X0;
 
-    public /* synthetic */ m40(Object obj, org.telegram.ui.ActionBar.c2 c2Var, EditTextBoldCursor editTextBoldCursor, int i9) {
-        this.a = i9;
-        this.d = obj;
-        this.b = c2Var;
-        this.c = editTextBoldCursor;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public m40(r50 r50Var, Context context, String str, String str2, String str3, String str4) {
+        super(context, null, str, str2, false, str3, str4, true);
+        this.X0 = r50Var;
     }
 
-    @Override // android.content.DialogInterface.OnShowListener
-    public final void onShow(DialogInterface dialogInterface) {
-        switch (this.a) {
-            case 0:
-                ((r40) this.d).b.s1(null, this.b, this.c, true);
-                break;
-            default:
-                ((n40) this.d).n.b.s1(null, this.b, this.c, true);
-                break;
+    @Override // org.telegram.ui.Components.dq0
+    public final void R0(a0.h hVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
+        if (z10) {
+            int m10 = hVar.m();
+            r50 r50Var = this.X0;
+            if (m10 == 1) {
+                r50Var.k1().m(((TLRPC.Dialog) hVar.n(0)).id, Integer.valueOf(i10), 41);
+            } else {
+                r50Var.k1().k(0L, 41, Integer.valueOf(i10), Integer.valueOf(hVar.m()), null, null);
+            }
         }
     }
 }

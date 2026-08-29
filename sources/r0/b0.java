@@ -9,7 +9,7 @@ import android.view.View;
 import android.view.WindowInsets;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public abstract class b0 {
     public static void a(WindowInsets windowInsets, View view) {
@@ -48,8 +48,8 @@ public abstract class b0 {
                     Rect rect = (Rect) x0.b.get(obj);
                     Rect rect2 = (Rect) x0.c.get(obj);
                     if (rect != null && rect2 != null) {
-                        int i9 = Build.VERSION.SDK_INT;
-                        c1 b1Var = i9 >= 34 ? new b1() : i9 >= 30 ? new a1() : i9 >= 29 ? new z0() : new y0();
+                        int i10 = Build.VERSION.SDK_INT;
+                        c1 b1Var = i10 >= 34 ? new b1() : i10 >= 30 ? new a1() : i10 >= 29 ? new z0() : new y0();
                         b1Var.e(i0.b.b(rect.left, rect.top, rect.right, rect.bottom));
                         b1Var.g(i0.b.b(rect2.left, rect2.top, rect2.right, rect2.bottom));
                         m1 b10 = b1Var.b();
@@ -73,8 +73,8 @@ public abstract class b0 {
         view.setBackgroundTintMode(mode);
     }
 
-    public static void i(View view, float f10) {
-        view.setElevation(f10);
+    public static void i(View view, float f9) {
+        view.setElevation(f9);
     }
 
     public static void j(View view, o oVar) {

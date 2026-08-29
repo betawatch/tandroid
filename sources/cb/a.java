@@ -1,35 +1,21 @@
 package cb;
 
-import f7.c9;
-import f7.g9;
-import f7.z8;
+import java.util.Arrays;
+import z5.l;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class a {
-    public final c9 a;
-    public final e b;
-    public final ya.d c;
+    public static final a a = new a();
 
-    public a(e eVar, ya.d dVar) {
-        c9 a2;
-        this.b = eVar;
-        this.c = dVar;
-        String str = true != eVar.g ? "play-services-mlkit-language-id" : "language-id";
-        synchronized (g9.class) {
-            byte b10 = (byte) (((byte) 1) | 2);
-            if (b10 != 3) {
-                StringBuilder sb2 = new StringBuilder();
-                if ((b10 & 1) == 0) {
-                    sb2.append(" enableFirelog");
-                }
-                if ((b10 & 2) == 0) {
-                    sb2.append(" firelogEventType");
-                }
-                throw new IllegalStateException("Missing required properties:".concat(sb2.toString()));
-            }
-            a2 = g9.a(new z8(str));
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
-        this.a = a2;
+        return (obj instanceof a) && l.l(null, null) && l.l(null, null);
+    }
+
+    public final int hashCode() {
+        return Arrays.hashCode(new Object[]{null, null});
     }
 }

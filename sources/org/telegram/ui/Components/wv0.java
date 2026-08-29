@@ -1,38 +1,47 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
+import android.content.Context;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class wv0 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ zv0 b;
+public final class wv0 extends xa {
+    public ls T;
 
-    public /* synthetic */ wv0(zv0 zv0Var, int i9) {
-        this.a = i9;
-        this.b = zv0Var;
+    public wv0(Context context) {
+        super(context, null, true, false, false, 1, null);
+        fixNavigationBar();
+        this.A = true;
+        this.y = true;
+        J();
+        jl0 jl0Var = this.d;
+        int i10 = this.backgroundPaddingLeft;
+        jl0Var.setPadding(i10, 0, i10, 0);
+        this.d.j(new h00(this, 8));
+        this.d.setOnItemClickListener(new k(this, 14));
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                zv0 zv0Var = this.b;
-                zv0Var.getClass();
-                zv0Var.A = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                zv0Var.invalidate();
-                break;
-            case 1:
-                zv0 zv0Var2 = this.b;
-                zv0Var2.getClass();
-                zv0Var2.m(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                break;
-            default:
-                zv0 zv0Var3 = this.b;
-                zv0Var3.getClass();
-                zv0Var3.y = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                zv0Var3.invalidate();
-                break;
+    public static void P(wv0 wv0Var, int i10) {
+        w41 G = wv0Var.T.G(i10 - 1);
+        Object obj = G != null ? G.G : null;
+        if (obj instanceof TLRPC.User) {
+            MessagesController.getInstance(wv0Var.currentAccount).openApp(wv0Var.attachedFragment, (TLRPC.User) obj, null, 0, null);
         }
+    }
+
+    @Override // org.telegram.ui.Components.xa
+    public final il0 v(jl0 jl0Var) {
+        ls lsVar = new ls(jl0Var, getContext(), this.currentAccount, 0, true, this.resourcesProvider);
+        this.T = lsVar;
+        lsVar.r = false;
+        return lsVar;
+    }
+
+    @Override // org.telegram.ui.Components.xa
+    public final CharSequence y() {
+        return LocaleController.getString(R.string.SearchAppsExamples);
     }
 }

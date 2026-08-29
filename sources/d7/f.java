@@ -1,38 +1,56 @@
 package d7;
 
-import java.util.Iterator;
-import java.util.Set;
+import android.location.Location;
+import android.os.Parcel;
+import com.google.android.gms.common.api.Status;
+import com.google.android.gms.tasks.TaskCompletionSource;
+import h7.o5;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public abstract class f extends a implements Set, j$.util.Set {
-    public transient d b;
+public final class f extends c7.a {
+    public final /* synthetic */ int b;
+    public final /* synthetic */ TaskCompletionSource c;
 
-    @Override // java.util.Collection, java.util.Set
-    public final boolean equals(Object obj) {
-        if (obj == this || obj == this) {
-            return true;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public f(int i10, TaskCompletionSource taskCompletionSource) {
+        super("com.google.android.gms.location.internal.ILocationStatusCallback", 4);
+        this.b = i10;
+        switch (i10) {
+            case 1:
+                this.c = taskCompletionSource;
+                super("com.google.android.gms.location.internal.ISettingsCallbacks", 4);
+                break;
+            default:
+                this.c = taskCompletionSource;
+                break;
         }
-        if (obj instanceof Set) {
-            Set set = (Set) obj;
-            try {
-                if (size() == set.size()) {
-                    return containsAll(set);
-                }
-            } catch (ClassCastException | NullPointerException unused) {
-            }
-        }
-        return false;
     }
 
-    @Override // java.util.Collection, java.util.Set
-    public final int hashCode() {
-        Iterator it = iterator();
-        int i9 = 0;
-        while (it.hasNext()) {
-            Object next = it.next();
-            i9 += next != null ? next.hashCode() : 0;
+    @Override // c7.a
+    public final boolean I0(Parcel parcel, int i10) {
+        switch (this.b) {
+            case 0:
+                if (i10 == 1) {
+                    Status status = (Status) d.a(parcel, Status.CREATOR);
+                    Location location = (Location) d.a(parcel, Location.CREATOR);
+                    d.b(parcel);
+                    o5.a(status, location, this.c);
+                    break;
+                }
+                break;
+            default:
+                if (i10 == 1) {
+                    s7.g gVar = (s7.g) d.a(parcel, s7.g.CREATOR);
+                    d.b(parcel);
+                    Status status2 = gVar.a;
+                    s7.f fVar = new s7.f();
+                    fVar.a = gVar;
+                    o5.a(status2, fVar, this.c);
+                    break;
+                }
+                break;
         }
-        return i9;
+        return true;
     }
 }

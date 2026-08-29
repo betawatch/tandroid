@@ -10,7 +10,7 @@ import android.text.TextPaint;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
 public final class yz0 extends View {
     public final RectF a;
@@ -42,17 +42,17 @@ public final class yz0 extends View {
         paint.setColor(637534208);
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
         this.d = ofFloat;
-        ofFloat.setInterpolator(org.telegram.ui.Components.gr.j);
-        ofFloat.addUpdateListener(new f3(this, 29));
-        ofFloat.addListener(new n60(5, this, profileActivity.j1));
+        ofFloat.setInterpolator(org.telegram.ui.Components.jr.j);
+        ofFloat.addUpdateListener(new g3(this, 29));
+        ofFloat.addListener(new p60(5, this, profileActivity.j1));
         profileActivity.j0.b(new xz0(this));
         adapter.a.registerObserver(new h1.a(this, 3));
     }
 
     public final void a(boolean z10) {
-        org.telegram.ui.ActionBar.k kVar;
-        int i9;
-        org.telegram.ui.ActionBar.k kVar2;
+        org.telegram.ui.ActionBar.l lVar;
+        int i10;
+        org.telegram.ui.ActionBar.l lVar2;
         ProfileActivity profileActivity = this.n;
         if (z10) {
             wz0 wz0Var = profileActivity.J;
@@ -67,12 +67,12 @@ public final class yz0 extends View {
         RectF rectF = this.a;
         rectF.right = measuredWidth;
         rectF.left = measuredWidth - (AndroidUtilities.dpf2(16.0f) + measureText);
-        kVar = ((org.telegram.ui.ActionBar.o2) profileActivity).actionBar;
-        if (kVar != null) {
-            kVar2 = ((org.telegram.ui.ActionBar.o2) profileActivity).actionBar;
-            if (kVar2.getOccupyStatusBar()) {
-                i9 = AndroidUtilities.statusBarHeight;
-                float dp = AndroidUtilities.dp(15.0f) + i9;
+        lVar = ((org.telegram.ui.ActionBar.o2) profileActivity).actionBar;
+        if (lVar != null) {
+            lVar2 = ((org.telegram.ui.ActionBar.o2) profileActivity).actionBar;
+            if (lVar2.getOccupyStatusBar()) {
+                i10 = AndroidUtilities.statusBarHeight;
+                float dp = AndroidUtilities.dp(15.0f) + i10;
                 rectF.top = dp;
                 rectF.bottom = dp + AndroidUtilities.dp(26.0f);
                 setPivotX(rectF.centerX());
@@ -80,8 +80,8 @@ public final class yz0 extends View {
                 invalidate();
             }
         }
-        i9 = 0;
-        float dp2 = AndroidUtilities.dp(15.0f) + i9;
+        i10 = 0;
+        float dp2 = AndroidUtilities.dp(15.0f) + i10;
         rectF.top = dp2;
         rectF.bottom = dp2 + AndroidUtilities.dp(26.0f);
         setPivotX(rectF.centerX());
@@ -89,7 +89,7 @@ public final class yz0 extends View {
         invalidate();
     }
 
-    public final void b(float f10) {
+    public final void b(float f9) {
         ProfileActivity profileActivity = this.n;
         boolean z10 = profileActivity.l2 && profileActivity.j0.getRealCount() > 20;
         if (z10 != this.h) {
@@ -99,12 +99,12 @@ public final class yz0 extends View {
             float animatedFraction = valueAnimator.getAnimatedFraction();
             float[] fArr = this.e;
             float lerp = AndroidUtilities.lerp(fArr, animatedFraction);
-            if (f10 <= 0.0f) {
+            if (f9 <= 0.0f) {
                 valueAnimator.setDuration(0L);
             } else if (z10) {
-                valueAnimator.setDuration((long) (((1.0f - lerp) * 250.0f) / f10));
+                valueAnimator.setDuration((long) (((1.0f - lerp) * 250.0f) / f9));
             } else {
-                valueAnimator.setDuration((long) ((250.0f * lerp) / f10));
+                valueAnimator.setDuration((long) ((250.0f * lerp) / f9));
             }
             fArr[0] = lerp;
             fArr[1] = z10 ? 1.0f : 0.0f;
@@ -137,7 +137,7 @@ public final class yz0 extends View {
     }
 
     @Override // android.view.View
-    public final void onSizeChanged(int i9, int i10, int i11, int i12) {
+    public final void onSizeChanged(int i10, int i11, int i12, int i13) {
         a(false);
     }
 }

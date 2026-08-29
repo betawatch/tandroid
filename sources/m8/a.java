@@ -1,25 +1,41 @@
 package m8;
 
-import android.app.Activity;
-import android.content.Intent;
-import android.os.Build;
-import android.os.Bundle;
+import android.os.IBinder;
+import android.os.IInterface;
+import android.os.RemoteException;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public abstract class a extends Activity {
-    public abstract Class getServiceClass();
+public final class a extends h0 {
+    public final /* synthetic */ IBinder h;
+    public final /* synthetic */ gf.a n;
 
-    @Override // android.app.Activity
-    public final void onCreate(Bundle bundle) {
-        super.onCreate(bundle);
-        Intent intent = new Intent(this, (Class<?>) getServiceClass());
-        intent.putExtra(c.EXTRA_INTENT, getIntent());
-        if (Build.VERSION.SDK_INT >= 26) {
-            startForegroundService(intent);
-        } else {
-            startService(intent);
+    public a(gf.a aVar, IBinder iBinder) {
+        this.h = iBinder;
+        this.n = aVar;
+    }
+
+    @Override // m8.h0
+    public final void b() {
+        c cVar = (c) this.n.b;
+        cVar.n = (IInterface) cVar.i.a(this.h);
+        g0 g0Var = cVar.b;
+        int i10 = 0;
+        g0Var.b("linkToDeath", new Object[0]);
+        try {
+            cVar.n.asBinder().linkToDeath(cVar.k, 0);
+        } catch (RemoteException e10) {
+            g0Var.a(e10, "linkToDeath failed", new Object[0]);
         }
-        finish();
+        cVar.g = false;
+        ArrayList arrayList = cVar.d;
+        int size = arrayList.size();
+        while (i10 < size) {
+            Object obj = arrayList.get(i10);
+            i10++;
+            ((Runnable) obj).run();
+        }
+        cVar.d.clear();
     }
 }

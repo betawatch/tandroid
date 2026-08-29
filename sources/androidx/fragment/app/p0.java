@@ -13,19 +13,19 @@ import java.util.HashMap;
 import java.util.Iterator;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class p0 {
-    public final we.b a;
-    public final com.google.firebase.messaging.t b;
+    public final ze.b a;
+    public final com.google.firebase.messaging.s b;
     public final s c;
     public boolean d = false;
     public int e = -1;
 
-    public p0(we.b bVar, com.google.firebase.messaging.t tVar, s sVar) {
+    public p0(ze.b bVar, com.google.firebase.messaging.s sVar, s sVar2) {
         this.a = bVar;
-        this.b = tVar;
-        this.c = sVar;
+        this.b = sVar;
+        this.c = sVar2;
     }
 
     public final void a() {
@@ -54,7 +54,7 @@ public final class p0 {
         k0Var.I = false;
         k0Var.O.i = false;
         k0Var.u(4);
-        this.a.n(sVar, false);
+        this.a.p(sVar, false);
     }
 
     public final void b() {
@@ -65,9 +65,9 @@ public final class p0 {
         }
         s sVar2 = sVar.h;
         p0 p0Var = null;
-        com.google.firebase.messaging.t tVar = this.b;
+        com.google.firebase.messaging.s sVar3 = this.b;
         if (sVar2 != null) {
-            p0 p0Var2 = (p0) ((HashMap) tVar.c).get(sVar2.e);
+            p0 p0Var2 = (p0) ((HashMap) sVar3.c).get(sVar2.e);
             if (p0Var2 == null) {
                 throw new IllegalStateException("Fragment " + sVar + " declared target fragment " + sVar.h + " that does not belong to this FragmentManager!");
             }
@@ -76,11 +76,11 @@ public final class p0 {
             p0Var = p0Var2;
         } else {
             String str = sVar.n;
-            if (str != null && (p0Var = (p0) ((HashMap) tVar.c).get(str)) == null) {
+            if (str != null && (p0Var = (p0) ((HashMap) sVar3.c).get(str)) == null) {
                 StringBuilder sb2 = new StringBuilder("Fragment ");
                 sb2.append(sVar);
                 sb2.append(" declared target fragment ");
-                throw new IllegalStateException(aa.d.r(sb2, sVar.n, " that does not belong to this FragmentManager!"));
+                throw new IllegalStateException(a4.w.q(sb2, sVar.n, " that does not belong to this FragmentManager!"));
             }
         }
         if (p0Var != null) {
@@ -89,14 +89,14 @@ public final class p0 {
         j0 j0Var = sVar.F;
         sVar.G = j0Var.w;
         sVar.I = j0Var.y;
-        we.b bVar = this.a;
-        bVar.t(sVar, false);
+        ze.b bVar = this.a;
+        bVar.v(sVar, false);
         ArrayList arrayList = sVar.d0;
         int size = arrayList.size();
-        int i9 = 0;
-        while (i9 < size) {
-            Object obj = arrayList.get(i9);
-            i9++;
+        int i10 = 0;
+        while (i10 < size) {
+            Object obj = arrayList.get(i10);
+            i10++;
             ((q) obj).a();
         }
         arrayList.clear();
@@ -116,7 +116,7 @@ public final class p0 {
         k0Var.I = false;
         k0Var.O.i = false;
         k0Var.u(0);
-        bVar.o(sVar, false);
+        bVar.q(sVar, false);
     }
 
     public final int c() {
@@ -127,30 +127,30 @@ public final class p0 {
         if (sVar.F == null) {
             return sVar.a;
         }
-        int i9 = this.e;
+        int i10 = this.e;
         int ordinal = sVar.Y.ordinal();
-        int i10 = 0;
+        int i11 = 0;
         if (ordinal == 1) {
-            i9 = Math.min(i9, 0);
+            i10 = Math.min(i10, 0);
         } else if (ordinal == 2) {
-            i9 = Math.min(i9, 1);
+            i10 = Math.min(i10, 1);
         } else if (ordinal == 3) {
-            i9 = Math.min(i9, 5);
+            i10 = Math.min(i10, 5);
         } else if (ordinal != 4) {
-            i9 = Math.min(i9, -1);
+            i10 = Math.min(i10, -1);
         }
         if (sVar.y) {
-            i9 = sVar.A ? Math.max(this.e, 2) : this.e < 4 ? Math.min(i9, sVar.a) : Math.min(i9, 1);
+            i10 = sVar.A ? Math.max(this.e, 2) : this.e < 4 ? Math.min(i10, sVar.a) : Math.min(i10, 1);
         }
         if (sVar.B && sVar.R == null) {
-            i9 = Math.min(i9, 4);
+            i10 = Math.min(i10, 4);
         }
         if (!sVar.v) {
-            i9 = Math.min(i9, 1);
+            i10 = Math.min(i10, 1);
         }
         ViewGroup viewGroup = sVar.R;
         if (viewGroup != null) {
-            kotlin.jvm.internal.i.d(sVar.p().I(), "fragmentManager.specialEffectsControllerFactory");
+            kotlin.jvm.internal.j.d(sVar.p().I(), "fragmentManager.specialEffectsControllerFactory");
             Object tag = viewGroup.getTag(R.id.special_effects_controller_view_tag);
             if (tag instanceof l) {
                 lVar = (l) tag;
@@ -160,48 +160,48 @@ public final class p0 {
             }
             ArrayList arrayList = lVar.b;
             int size = arrayList.size();
-            int i11 = 0;
+            int i12 = 0;
             while (true) {
                 obj = null;
-                if (i11 >= size) {
+                if (i12 >= size) {
                     obj2 = null;
                     break;
                 }
-                obj2 = arrayList.get(i11);
-                i11++;
+                obj2 = arrayList.get(i12);
+                i12++;
                 ((u0) obj2).getClass();
-                if (kotlin.jvm.internal.i.a(null, sVar)) {
+                if (kotlin.jvm.internal.j.a(null, sVar)) {
                     break;
                 }
             }
             ArrayList arrayList2 = lVar.c;
             int size2 = arrayList2.size();
             while (true) {
-                if (i10 >= size2) {
+                if (i11 >= size2) {
                     break;
                 }
-                Object obj3 = arrayList2.get(i10);
-                i10++;
+                Object obj3 = arrayList2.get(i11);
+                i11++;
                 ((u0) obj3).getClass();
-                if (kotlin.jvm.internal.i.a(null, sVar)) {
+                if (kotlin.jvm.internal.j.a(null, sVar)) {
                     obj = obj3;
                     break;
                 }
             }
         }
         if (sVar.w) {
-            i9 = sVar.v() ? Math.min(i9, 1) : Math.min(i9, -1);
+            i10 = sVar.v() ? Math.min(i10, 1) : Math.min(i10, -1);
         }
         if (sVar.S && sVar.a < 5) {
-            i9 = Math.min(i9, 4);
+            i10 = Math.min(i10, 4);
         }
         if (sVar.x) {
-            i9 = Math.max(i9, 3);
+            i10 = Math.max(i10, 3);
         }
         if (j0.K(2)) {
-            Log.v("FragmentManager", "computeExpectedState() of " + i9 + " for " + sVar);
+            Log.v("FragmentManager", "computeExpectedState() of " + i10 + " for " + sVar);
         }
-        return i9;
+        return i10;
     }
 
     public final void d() {
@@ -227,8 +227,8 @@ public final class p0 {
             k0Var.u(1);
             return;
         }
-        we.b bVar = this.a;
-        bVar.u(sVar, false);
+        ze.b bVar = this.a;
+        bVar.w(sVar, false);
         sVar.H.R();
         sVar.a = 1;
         sVar.Q = false;
@@ -244,7 +244,7 @@ public final class p0 {
         sVar.W = true;
         if (sVar.Q) {
             sVar.Z.e(androidx.lifecycle.m.ON_CREATE);
-            bVar.p(sVar, false);
+            bVar.r(sVar, false);
         } else {
             throw new w0("Fragment " + sVar + " did not call through to super.onCreate()");
         }
@@ -267,12 +267,12 @@ public final class p0 {
         if (viewGroup2 != null) {
             viewGroup = viewGroup2;
         } else {
-            int i9 = sVar.K;
-            if (i9 != 0) {
-                if (i9 == -1) {
+            int i10 = sVar.K;
+            if (i10 != 0) {
+                if (i10 == -1) {
                     throw new IllegalArgumentException("Cannot create fragment " + sVar + " for a container view with no id");
                 }
-                viewGroup = (ViewGroup) sVar.F.x.b(i9);
+                viewGroup = (ViewGroup) sVar.F.x.b(i10);
                 if (viewGroup == null) {
                     if (!sVar.C && !sVar.B) {
                         try {
@@ -295,25 +295,25 @@ public final class p0 {
     }
 
     public final void f() {
-        s p6;
+        s p10;
         boolean K = j0.K(3);
         s sVar = this.c;
         if (K) {
             Log.d("FragmentManager", "movefrom CREATED: " + sVar);
         }
         boolean z10 = true;
-        int i9 = 0;
+        int i10 = 0;
         boolean z11 = sVar.w && !sVar.v();
-        com.google.firebase.messaging.t tVar = this.b;
+        com.google.firebase.messaging.s sVar2 = this.b;
         if (z11) {
-            tVar.N(sVar.e, null);
+            sVar2.N(sVar.e, null);
         }
         if (!z11) {
-            m0 m0Var = (m0) tVar.e;
+            m0 m0Var = (m0) sVar2.e;
             if (!((m0Var.d.containsKey(sVar.e) && m0Var.g) ? m0Var.h : true)) {
                 String str = sVar.n;
-                if (str != null && (p6 = tVar.p(str)) != null && p6.O) {
-                    sVar.h = p6;
+                if (str != null && (p10 = sVar2.p(str)) != null && p10.O) {
+                    sVar.h = p10;
                 }
                 sVar.a = 0;
                 return;
@@ -321,15 +321,15 @@ public final class p0 {
         }
         u uVar = sVar.G;
         if (uVar != null) {
-            z10 = ((m0) tVar.e).h;
+            z10 = ((m0) sVar2.e).h;
         } else {
             v vVar = uVar.b;
-            if (e2.c.v(vVar)) {
+            if (com.google.android.recaptcha.internal.a.u(vVar)) {
                 z10 = true ^ vVar.isChangingConfigurations();
             }
         }
         if (z11 || z10) {
-            ((m0) tVar.e).c(sVar, false);
+            ((m0) sVar2.e).c(sVar, false);
         }
         sVar.H.l();
         sVar.Z.e(androidx.lifecycle.m.ON_DESTROY);
@@ -340,26 +340,26 @@ public final class p0 {
         if (!sVar.Q) {
             throw new w0("Fragment " + sVar + " did not call through to super.onDestroy()");
         }
-        this.a.q(sVar, false);
-        ArrayList s10 = tVar.s();
+        this.a.s(sVar, false);
+        ArrayList s10 = sVar2.s();
         int size = s10.size();
-        while (i9 < size) {
-            Object obj = s10.get(i9);
-            i9++;
+        while (i10 < size) {
+            Object obj = s10.get(i10);
+            i10++;
             p0 p0Var = (p0) obj;
             if (p0Var != null) {
-                s sVar2 = p0Var.c;
-                if (sVar.e.equals(sVar2.n)) {
-                    sVar2.h = sVar;
-                    sVar2.n = null;
+                s sVar3 = p0Var.c;
+                if (sVar.e.equals(sVar3.n)) {
+                    sVar3.h = sVar;
+                    sVar3.n = null;
                 }
             }
         }
         String str2 = sVar.n;
         if (str2 != null) {
-            sVar.h = tVar.p(str2);
+            sVar.h = sVar2.p(str2);
         }
-        tVar.B(this);
+        sVar2.B(this);
     }
 
     public final void g() {
@@ -376,13 +376,13 @@ public final class p0 {
         if (!sVar.Q) {
             throw new w0("Fragment " + sVar + " did not call through to super.onDestroyView()");
         }
-        a0.l lVar = ((w1.b) new a5.m(sVar.f(), w1.b.f).n(w1.b.class)).d;
-        int i9 = lVar.c;
-        for (int i10 = 0; i10 < i9; i10++) {
-            ((w1.a) lVar.b[i10]).k();
+        a0.l lVar = ((w1.b) new androidx.biometric.e(sVar.f(), w1.b.f).l(w1.b.class)).d;
+        int i10 = lVar.c;
+        for (int i11 = 0; i11 < i10; i11++) {
+            ((w1.a) lVar.b[i11]).k();
         }
         sVar.D = false;
-        this.a.z(sVar, false);
+        this.a.D(sVar, false);
         sVar.R = null;
         sVar.a0.j(null);
         sVar.A = false;
@@ -405,7 +405,7 @@ public final class p0 {
             k0Var.l();
             sVar.H = new k0();
         }
-        this.a.r(sVar, false);
+        this.a.t(sVar, false);
         sVar.a = -1;
         sVar.G = null;
         sVar.I = null;
@@ -435,12 +435,12 @@ public final class p0 {
     }
 
     public final void j() {
-        com.google.firebase.messaging.t tVar = this.b;
+        com.google.firebase.messaging.s sVar = this.b;
         boolean z10 = this.d;
-        s sVar = this.c;
+        s sVar2 = this.c;
         if (z10) {
             if (j0.K(2)) {
-                Log.v("FragmentManager", "Ignoring re-entrant call to moveToExpectedState() for " + sVar);
+                Log.v("FragmentManager", "Ignoring re-entrant call to moveToExpectedState() for " + sVar2);
                 return;
             }
             return;
@@ -449,33 +449,33 @@ public final class p0 {
             this.d = true;
             boolean z11 = false;
             while (true) {
-                int c10 = c();
-                int i9 = sVar.a;
-                if (c10 == i9) {
-                    if (!z11 && i9 == -1 && sVar.w && !sVar.v()) {
+                int c3 = c();
+                int i10 = sVar2.a;
+                if (c3 == i10) {
+                    if (!z11 && i10 == -1 && sVar2.w && !sVar2.v()) {
                         if (j0.K(3)) {
-                            Log.d("FragmentManager", "Cleaning up state of never attached fragment: " + sVar);
+                            Log.d("FragmentManager", "Cleaning up state of never attached fragment: " + sVar2);
                         }
-                        ((m0) tVar.e).c(sVar, true);
-                        tVar.B(this);
+                        ((m0) sVar.e).c(sVar2, true);
+                        sVar.B(this);
                         if (j0.K(3)) {
-                            Log.d("FragmentManager", "initState called for fragment: " + sVar);
+                            Log.d("FragmentManager", "initState called for fragment: " + sVar2);
                         }
-                        sVar.s();
+                        sVar2.s();
                     }
-                    if (sVar.V) {
-                        j0 j0Var = sVar.F;
-                        if (j0Var != null && sVar.v && j0.L(sVar)) {
+                    if (sVar2.V) {
+                        j0 j0Var = sVar2.F;
+                        if (j0Var != null && sVar2.v && j0.L(sVar2)) {
                             j0Var.G = true;
                         }
-                        sVar.V = false;
-                        sVar.H.o();
+                        sVar2.V = false;
+                        sVar2.H.o();
                     }
                     this.d = false;
                     return;
                 }
-                if (c10 <= i9) {
-                    switch (i9 - 1) {
+                if (c3 <= i10) {
+                    switch (i10 - 1) {
                         case -1:
                             h();
                             break;
@@ -484,30 +484,30 @@ public final class p0 {
                             break;
                         case 1:
                             g();
-                            sVar.a = 1;
+                            sVar2.a = 1;
                             break;
                         case 2:
-                            sVar.A = false;
-                            sVar.a = 2;
+                            sVar2.A = false;
+                            sVar2.a = 2;
                             break;
                         case 3:
                             if (j0.K(3)) {
-                                Log.d("FragmentManager", "movefrom ACTIVITY_CREATED: " + sVar);
+                                Log.d("FragmentManager", "movefrom ACTIVITY_CREATED: " + sVar2);
                             }
-                            sVar.a = 3;
+                            sVar2.a = 3;
                             break;
                         case 4:
                             o();
                             break;
                         case 5:
-                            sVar.a = 5;
+                            sVar2.a = 5;
                             break;
                         case 6:
                             k();
                             break;
                     }
                 } else {
-                    switch (i9 + 1) {
+                    switch (i10 + 1) {
                         case 0:
                             b();
                             break;
@@ -522,13 +522,13 @@ public final class p0 {
                             a();
                             break;
                         case 4:
-                            sVar.a = 4;
+                            sVar2.a = 4;
                             break;
                         case 5:
                             n();
                             break;
                         case 6:
-                            sVar.a = 6;
+                            sVar2.a = 6;
                             break;
                         case 7:
                             m();
@@ -537,9 +537,9 @@ public final class p0 {
                 }
                 z11 = true;
             }
-        } catch (Throwable th) {
+        } catch (Throwable th2) {
             this.d = false;
-            throw th;
+            throw th2;
         }
     }
 
@@ -555,7 +555,7 @@ public final class p0 {
         sVar.Q = false;
         sVar.E();
         if (sVar.Q) {
-            this.a.s(sVar, false);
+            this.a.u(sVar, false);
             return;
         }
         throw new w0("Fragment " + sVar + " did not call through to super.onPause()");
@@ -616,7 +616,7 @@ public final class p0 {
         k0Var.I = false;
         k0Var.O.i = false;
         k0Var.u(7);
-        this.a.v(sVar, false);
+        this.a.y(sVar, false);
         this.b.N(sVar.e, null);
         sVar.b = null;
         sVar.c = null;
@@ -643,7 +643,7 @@ public final class p0 {
         k0Var.I = false;
         k0Var.O.i = false;
         k0Var.u(5);
-        this.a.x(sVar, false);
+        this.a.B(sVar, false);
     }
 
     public final void o() {
@@ -661,15 +661,15 @@ public final class p0 {
         sVar.Q = false;
         sVar.I();
         if (sVar.Q) {
-            this.a.y(sVar, false);
+            this.a.C(sVar, false);
             return;
         }
         throw new w0("Fragment " + sVar + " did not call through to super.onStop()");
     }
 
-    public p0(we.b bVar, com.google.firebase.messaging.t tVar, ClassLoader classLoader, c0 c0Var, Bundle bundle) {
+    public p0(ze.b bVar, com.google.firebase.messaging.s sVar, ClassLoader classLoader, c0 c0Var, Bundle bundle) {
         this.a = bVar;
-        this.b = tVar;
+        this.b = sVar;
         o0 o0Var = (o0) bundle.getParcelable("state");
         s a2 = c0Var.a(o0Var.a);
         a2.e = o0Var.b;
@@ -699,19 +699,19 @@ public final class p0 {
         }
     }
 
-    public p0(we.b bVar, com.google.firebase.messaging.t tVar, s sVar, Bundle bundle) {
+    public p0(ze.b bVar, com.google.firebase.messaging.s sVar, s sVar2, Bundle bundle) {
         this.a = bVar;
-        this.b = tVar;
-        this.c = sVar;
-        sVar.c = null;
-        sVar.d = null;
-        sVar.E = 0;
-        sVar.A = false;
-        sVar.v = false;
-        s sVar2 = sVar.h;
-        sVar.n = sVar2 != null ? sVar2.e : null;
-        sVar.h = null;
-        sVar.b = bundle;
-        sVar.f = bundle.getBundle("arguments");
+        this.b = sVar;
+        this.c = sVar2;
+        sVar2.c = null;
+        sVar2.d = null;
+        sVar2.E = 0;
+        sVar2.A = false;
+        sVar2.v = false;
+        s sVar3 = sVar2.h;
+        sVar2.n = sVar3 != null ? sVar3.e : null;
+        sVar2.h = null;
+        sVar2.b = bundle;
+        sVar2.f = bundle.getBundle("arguments");
     }
 }

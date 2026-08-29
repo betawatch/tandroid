@@ -1,36 +1,20 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.MotionEvent;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class r51 extends m10 {
-    public final fg.g F;
-    public final /* synthetic */ s51 G;
+public final class r51 extends iz {
+    public final /* synthetic */ u51 X;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public r51(s51 s51Var, Context context, org.telegram.ui.ActionBar.b6 b6Var) {
-        super(context, b6Var);
-        this.G = s51Var;
-        fg.g gVar = this.r;
-        this.F = gVar;
-        gVar.setImeOptions(268435459);
-        gVar.setHint(LocaleController.getString(R.string.VoipGroupSearchMembers));
-        gVar.addTextChangedListener(new bh.f(this, 15));
-        gVar.setOnEditorActionListener(new c1(this, 10));
+    public r51(u51 u51Var, int i10) {
+        super(i10, false);
+        this.X = u51Var;
     }
 
-    @Override // org.telegram.ui.Components.m10
-    public /* bridge */ /* synthetic */ int[] getColorKeys() {
-        return null;
-    }
-
-    @Override // android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        this.G.D(motionEvent, this.F);
-        return super.onInterceptTouchEvent(motionEvent);
+    @Override // f2.j0
+    public final int W0(f2.k1 k1Var) {
+        return this.X.W2 ? AndroidUtilities.displaySize.y : super.W0(k1Var);
     }
 }

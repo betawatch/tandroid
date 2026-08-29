@@ -6,19 +6,19 @@ import com.google.android.gms.common.api.Status;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import java.util.Map;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class j1 extends w0 {
     public final w b;
     public final TaskCompletionSource c;
     public final t d;
 
-    public j1(int i9, w wVar, TaskCompletionSource taskCompletionSource, t tVar) {
-        super(i9);
+    public j1(int i10, w wVar, TaskCompletionSource taskCompletionSource, t tVar) {
+        super(i10);
         this.c = taskCompletionSource;
         this.b = wVar;
         this.d = tVar;
-        if (i9 == 2 && wVar.b) {
+        if (i10 == 2 && wVar.b) {
             throw new IllegalArgumentException("Best-effort write calls cannot pass methods that should auto-resolve missing features.");
         }
     }
@@ -62,7 +62,7 @@ public final class j1 extends w0 {
     }
 
     @Override // com.google.android.gms.common.api.internal.w0
-    public final u5.c[] g(p0 p0Var) {
+    public final w5.c[] g(p0 p0Var) {
         return this.b.a;
     }
 }

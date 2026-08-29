@@ -21,7 +21,7 @@ import android.view.accessibility.AccessibilityEvent;
 import android.widget.PopupWindow;
 import androidx.appcompat.widget.ActionBarContextView;
 import androidx.appcompat.widget.ViewStubCompat;
-import g7.q7;
+import i7.c8;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.WeakHashMap;
@@ -29,7 +29,7 @@ import org.telegram.messenger.beta.R;
 import r0.j0;
 import r0.m0;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class m implements Window.Callback {
     public final Window.Callback a;
@@ -55,16 +55,16 @@ public final class m implements Window.Callback {
         }
     }
 
-    public final boolean b(int i9, Menu menu) {
-        return this.a.onMenuOpened(i9, menu);
+    public final boolean b(int i10, Menu menu) {
+        return this.a.onMenuOpened(i10, menu);
     }
 
-    public final void c(int i9, Menu menu) {
-        this.a.onPanelClosed(i9, menu);
+    public final void c(int i10, Menu menu) {
+        this.a.onPanelClosed(i10, menu);
     }
 
-    public final void d(List list, Menu menu, int i9) {
-        k.k.a(this.a, list, menu, i9);
+    public final void d(List list, Menu menu, int i10) {
+        k.l.a(this.a, list, menu, i10);
     }
 
     @Override // android.view.Window.Callback
@@ -76,7 +76,7 @@ public final class m implements Window.Callback {
     public final boolean dispatchKeyEvent(KeyEvent keyEvent) {
         boolean z10 = this.c;
         Window.Callback callback = this.a;
-        return z10 ? callback.dispatchKeyEvent(keyEvent) : this.e.i(keyEvent) || callback.dispatchKeyEvent(keyEvent);
+        return z10 ? callback.dispatchKeyEvent(keyEvent) : this.e.j(keyEvent) || callback.dispatchKeyEvent(keyEvent);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:30:0x0066, code lost:
@@ -99,9 +99,9 @@ public final class m implements Window.Callback {
         if (!this.a.dispatchKeyShortcutEvent(keyEvent)) {
             int keyCode = keyEvent.getKeyCode();
             q qVar = this.e;
-            a0 q10 = qVar.q();
-            if (q10 != null) {
-                z zVar = q10.i;
+            a0 r6 = qVar.r();
+            if (r6 != null) {
+                z zVar = r6.i;
                 if (zVar == null || (kVar = zVar.d) == null) {
                     performShortcut = false;
                 } else {
@@ -112,10 +112,10 @@ public final class m implements Window.Callback {
             p pVar = qVar.R;
             if (pVar == null || !qVar.v(pVar, keyEvent.getKeyCode(), keyEvent)) {
                 if (qVar.R == null) {
-                    p p6 = qVar.p(0);
-                    qVar.w(p6, keyEvent);
-                    boolean v = qVar.v(p6, keyEvent.getKeyCode(), keyEvent);
-                    p6.k = false;
+                    p p10 = qVar.p(0);
+                    qVar.w(p10, keyEvent);
+                    boolean v = qVar.v(p10, keyEvent.getKeyCode(), keyEvent);
+                    p10.k = false;
                 }
                 z10 = false;
                 if (z10) {
@@ -149,7 +149,7 @@ public final class m implements Window.Callback {
         return this.a.dispatchTrackballEvent(motionEvent);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:57:0x01b1  */
+    /* JADX WARN: Removed duplicated region for block: B:57:0x01af  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -157,30 +157,30 @@ public final class m implements Window.Callback {
         ViewGroup viewGroup;
         q qVar = this.e;
         Context context = qVar.e;
-        com.google.firebase.messaging.t tVar = new com.google.firebase.messaging.t(context, callback);
+        com.google.firebase.messaging.s sVar = new com.google.firebase.messaging.s(context, callback);
         k.a aVar = qVar.x;
         if (aVar != null) {
             aVar.a();
         }
-        we.b bVar = new we.b(29, qVar, tVar);
-        a0 q10 = qVar.q();
-        int i9 = 1;
-        if (q10 != null) {
-            z zVar = q10.i;
+        ze.b bVar = new ze.b(qVar, sVar, false);
+        a0 r6 = qVar.r();
+        int i10 = 1;
+        if (r6 != null) {
+            z zVar = r6.i;
             if (zVar != null) {
                 zVar.a();
             }
-            q10.c.setHideOnContentScrollEnabled(false);
-            q10.f.e();
-            z zVar2 = new z(q10, q10.f.getContext(), bVar);
+            r6.c.setHideOnContentScrollEnabled(false);
+            r6.f.e();
+            z zVar2 = new z(r6, r6.f.getContext(), bVar);
             l.k kVar = zVar2.d;
             kVar.w();
             try {
-                if (((com.google.firebase.messaging.t) zVar2.e.b).G(zVar2, kVar)) {
-                    q10.i = zVar2;
+                if (((com.google.firebase.messaging.s) zVar2.e.a).G(zVar2, kVar)) {
+                    r6.i = zVar2;
                     zVar2.g();
-                    q10.f.c(zVar2);
-                    q10.a(true);
+                    r6.f.c(zVar2);
+                    r6.a(true);
                 } else {
                     zVar2 = null;
                 }
@@ -214,13 +214,13 @@ public final class m implements Window.Callback {
                     qVar.y = new ActionBarContextView(context);
                     PopupWindow popupWindow = new PopupWindow(context, (AttributeSet) null, R.attr.actionModePopupWindowStyle);
                     qVar.A = popupWindow;
-                    q7.b(popupWindow, 2);
+                    c8.b(popupWindow, 2);
                     qVar.A.setContentView(qVar.y);
                     qVar.A.setWidth(-1);
                     context.getTheme().resolveAttribute(R.attr.actionBarSize, typedValue, true);
                     qVar.y.setContentHeight(TypedValue.complexToDimensionPixelSize(typedValue.data, context.getResources().getDisplayMetrics()));
                     qVar.A.setHeight(-2);
-                    qVar.B = new h(qVar, i9);
+                    qVar.B = new h(qVar, i10);
                 } else {
                     ViewStubCompat viewStubCompat = (ViewStubCompat) qVar.F.findViewById(R.id.action_mode_bar_stub);
                     if (viewStubCompat != null) {
@@ -245,7 +245,7 @@ public final class m implements Window.Callback {
                 kVar2.l = 1;
                 dVar.n = kVar2;
                 kVar2.e = dVar;
-                if (tVar.G(dVar, kVar2)) {
+                if (sVar.G(dVar, kVar2)) {
                     dVar.g();
                     qVar.y.c(dVar);
                     qVar.x = dVar;
@@ -256,7 +256,7 @@ public final class m implements Window.Callback {
                             m0 a2 = j0.a(qVar.y);
                             a2.a(1.0f);
                             qVar.C = a2;
-                            a2.d(new i(qVar, i9));
+                            a2.d(new i(qVar, i10));
                             if (qVar.A != null) {
                                 qVar.f.getDecorView().post(qVar.B);
                             }
@@ -281,7 +281,7 @@ public final class m implements Window.Callback {
         qVar.y();
         k.a aVar3 = qVar.x;
         if (aVar3 != null) {
-            return tVar.r(aVar3);
+            return sVar.r(aVar3);
         }
         return null;
     }
@@ -309,16 +309,16 @@ public final class m implements Window.Callback {
     }
 
     @Override // android.view.Window.Callback
-    public final boolean onCreatePanelMenu(int i9, Menu menu) {
-        if (i9 != 0 || (menu instanceof l.k)) {
-            return this.a.onCreatePanelMenu(i9, menu);
+    public final boolean onCreatePanelMenu(int i10, Menu menu) {
+        if (i10 != 0 || (menu instanceof l.k)) {
+            return this.a.onCreatePanelMenu(i10, menu);
         }
         return false;
     }
 
     @Override // android.view.Window.Callback
-    public final View onCreatePanelView(int i9) {
-        return this.a.onCreatePanelView(i9);
+    public final View onCreatePanelView(int i10) {
+        return this.a.onCreatePanelView(i10);
     }
 
     @Override // android.view.Window.Callback
@@ -327,18 +327,18 @@ public final class m implements Window.Callback {
     }
 
     @Override // android.view.Window.Callback
-    public final boolean onMenuItemSelected(int i9, MenuItem menuItem) {
-        return this.a.onMenuItemSelected(i9, menuItem);
+    public final boolean onMenuItemSelected(int i10, MenuItem menuItem) {
+        return this.a.onMenuItemSelected(i10, menuItem);
     }
 
     @Override // android.view.Window.Callback
-    public final boolean onMenuOpened(int i9, Menu menu) {
-        a0 q10;
-        b(i9, menu);
-        if (i9 == 108 && (q10 = this.e.q()) != null) {
-            ArrayList arrayList = q10.m;
-            if (true != q10.l) {
-                q10.l = true;
+    public final boolean onMenuOpened(int i10, Menu menu) {
+        a0 r6;
+        b(i10, menu);
+        if (i10 == 108 && (r6 = this.e.r()) != null) {
+            ArrayList arrayList = r6.m;
+            if (true != r6.l) {
+                r6.l = true;
                 if (arrayList.size() > 0) {
                     arrayList.get(0).getClass();
                     throw new ClassCastException();
@@ -349,29 +349,29 @@ public final class m implements Window.Callback {
     }
 
     @Override // android.view.Window.Callback
-    public final void onPanelClosed(int i9, Menu menu) {
+    public final void onPanelClosed(int i10, Menu menu) {
         if (this.d) {
-            this.a.onPanelClosed(i9, menu);
+            this.a.onPanelClosed(i10, menu);
             return;
         }
-        c(i9, menu);
+        c(i10, menu);
         q qVar = this.e;
-        if (i9 != 108) {
-            if (i9 == 0) {
-                p p6 = qVar.p(i9);
-                if (p6.m) {
-                    qVar.h(p6, false);
+        if (i10 != 108) {
+            if (i10 == 0) {
+                p p10 = qVar.p(i10);
+                if (p10.m) {
+                    qVar.h(p10, false);
                     return;
                 }
                 return;
             }
             return;
         }
-        a0 q10 = qVar.q();
-        if (q10 != null) {
-            ArrayList arrayList = q10.m;
-            if (q10.l) {
-                q10.l = false;
+        a0 r6 = qVar.r();
+        if (r6 != null) {
+            ArrayList arrayList = r6.m;
+            if (r6.l) {
+                r6.l = false;
                 if (arrayList.size() <= 0) {
                     return;
                 }
@@ -383,19 +383,19 @@ public final class m implements Window.Callback {
 
     @Override // android.view.Window.Callback
     public final void onPointerCaptureChanged(boolean z10) {
-        k.l.a(this.a, z10);
+        k.m.a(this.a, z10);
     }
 
     @Override // android.view.Window.Callback
-    public final boolean onPreparePanel(int i9, View view, Menu menu) {
+    public final boolean onPreparePanel(int i10, View view, Menu menu) {
         l.k kVar = menu instanceof l.k ? (l.k) menu : null;
-        if (i9 == 0 && kVar == null) {
+        if (i10 == 0 && kVar == null) {
             return false;
         }
         if (kVar != null) {
             kVar.x = true;
         }
-        boolean onPreparePanel = this.a.onPreparePanel(i9, view, menu);
+        boolean onPreparePanel = this.a.onPreparePanel(i10, view, menu);
         if (kVar != null) {
             kVar.x = false;
         }
@@ -403,18 +403,18 @@ public final class m implements Window.Callback {
     }
 
     @Override // android.view.Window.Callback
-    public final void onProvideKeyboardShortcuts(List list, Menu menu, int i9) {
+    public final void onProvideKeyboardShortcuts(List list, Menu menu, int i10) {
         l.k kVar = this.e.p(0).h;
         if (kVar != null) {
-            d(list, kVar, i9);
+            d(list, kVar, i10);
         } else {
-            d(list, menu, i9);
+            d(list, menu, i10);
         }
     }
 
     @Override // android.view.Window.Callback
     public final boolean onSearchRequested(SearchEvent searchEvent) {
-        return k.j.a(this.a, searchEvent);
+        return k.k.a(this.a, searchEvent);
     }
 
     @Override // android.view.Window.Callback
@@ -441,10 +441,10 @@ public final class m implements Window.Callback {
     }
 
     @Override // android.view.Window.Callback
-    public final ActionMode onWindowStartingActionMode(ActionMode.Callback callback, int i9) {
-        if (this.e.D && i9 == 0) {
+    public final ActionMode onWindowStartingActionMode(ActionMode.Callback callback, int i10) {
+        if (this.e.D && i10 == 0) {
             return e(callback);
         }
-        return k.j.b(this.a, callback, i9);
+        return k.k.b(this.a, callback, i10);
     }
 }

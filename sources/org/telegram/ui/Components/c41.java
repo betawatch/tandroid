@@ -1,46 +1,32 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class c41 implements ax0 {
-    public final /* synthetic */ TLRPC.InputStickerSet a;
-    public final /* synthetic */ h41 b;
+public final class c41 implements gv0 {
+    public int a;
+    public boolean b;
+    public final /* synthetic */ d41 c;
 
-    public c41(h41 h41Var, TLRPC.InputStickerSet inputStickerSet) {
-        this.b = h41Var;
-        this.a = inputStickerSet;
+    public c41(d41 d41Var) {
+        this.c = d41Var;
     }
 
-    @Override // org.telegram.ui.Components.ax0
-    public final void a() {
-        h41 h41Var = this.b;
-        f2.r0 adapter = h41Var.n.getAdapter();
-        g41 g41Var = h41Var.s;
-        TLRPC.InputStickerSet inputStickerSet = this.a;
-        int i9 = 0;
-        if (adapter == g41Var) {
-            while (i9 < g41Var.e.size()) {
-                TLRPC.StickerSetCovered stickerSetCovered = (TLRPC.StickerSetCovered) g41Var.e.get(i9);
-                if (stickerSetCovered.set.id == inputStickerSet.id) {
-                    g41Var.F(stickerSetCovered, null);
-                    return;
-                }
-                i9++;
-            }
+    @Override // org.telegram.ui.Components.gv0
+    public final void G(int i10, boolean z10) {
+        if (this.a == i10 && this.b == z10) {
             return;
         }
-        of.y1 y1Var = h41Var.v;
-        ArrayList arrayList = y1Var.A;
-        while (i9 < arrayList.size()) {
-            TLRPC.StickerSetCovered stickerSetCovered2 = (TLRPC.StickerSetCovered) arrayList.get(i9);
-            if (stickerSetCovered2.set.id == inputStickerSet.id) {
-                y1Var.F(stickerSetCovered2, null);
+        this.a = i10;
+        this.b = z10;
+        if (i10 > AndroidUtilities.dp(20.0f)) {
+            d41 d41Var = this.c;
+            if (d41Var.t0) {
                 return;
             }
-            i9++;
+            d41Var.A0.setAllowNestedScroll(false);
+            d41Var.t0 = true;
         }
     }
 }

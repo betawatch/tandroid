@@ -11,10 +11,10 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public class iz0 extends org.telegram.ui.Components.o9 implements org.telegram.ui.Components.uu0 {
-    public static final v0 c0 = new v0("crossfadeProgress", 3);
+public class iz0 extends org.telegram.ui.Components.t9 implements org.telegram.ui.Components.ev0 {
+    public static final w0 c0 = new w0("crossfadeProgress", 3);
     public boolean C;
     public float D;
     public float E;
@@ -34,7 +34,7 @@ public class iz0 extends org.telegram.ui.Components.o9 implements org.telegram.u
     public ImageReceiver.BitmapHolder S;
     public boolean T;
     public float U;
-    public org.telegram.ui.Components.ah0 V;
+    public org.telegram.ui.Components.kh0 V;
     public boolean W;
     public float a0;
     public Runnable b0;
@@ -58,7 +58,7 @@ public class iz0 extends org.telegram.ui.Components.o9 implements org.telegram.u
         paint.setColor(-16777216);
     }
 
-    @Override // org.telegram.ui.Components.uu0
+    @Override // org.telegram.ui.Components.ev0
     public final void g(Runnable runnable) {
         this.b0 = runnable;
     }
@@ -67,7 +67,7 @@ public class iz0 extends org.telegram.ui.Components.o9 implements org.telegram.u
         return this.R;
     }
 
-    public org.telegram.ui.Components.rg getPrevFragment() {
+    public org.telegram.ui.Components.ug getPrevFragment() {
         return null;
     }
 
@@ -78,9 +78,9 @@ public class iz0 extends org.telegram.ui.Components.o9 implements org.telegram.u
     @Override // android.view.View
     public final void invalidate() {
         super.invalidate();
-        org.telegram.ui.Components.ah0 ah0Var = this.V;
-        if (ah0Var != null) {
-            ah0Var.invalidate();
+        org.telegram.ui.Components.kh0 kh0Var = this.V;
+        if (kh0Var != null) {
+            kh0Var.invalidate();
         }
         Runnable runnable = this.b0;
         if (runnable != null) {
@@ -88,13 +88,13 @@ public class iz0 extends org.telegram.ui.Components.o9 implements org.telegram.u
         }
     }
 
-    @Override // org.telegram.ui.Components.o9, android.view.View
+    @Override // org.telegram.ui.Components.t9, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         this.Q.onAttachedToWindow();
     }
 
-    @Override // org.telegram.ui.Components.o9, android.view.View
+    @Override // org.telegram.ui.Components.t9, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         this.Q.onDetachedFromWindow();
@@ -105,122 +105,122 @@ public class iz0 extends org.telegram.ui.Components.o9 implements org.telegram.u
         }
     }
 
-    @Override // org.telegram.ui.Components.o9, android.view.View
+    @Override // org.telegram.ui.Components.t9, android.view.View
     public final void onDraw(Canvas canvas) {
-        org.telegram.ui.Components.rg0 rg0Var;
+        org.telegram.ui.Components.bh0 bh0Var;
         boolean z10;
+        float f9;
         float f10;
+        char c3;
         float f11;
-        char c10;
         float f12;
-        float f13;
         int measuredWidth = getMeasuredWidth();
         int measuredHeight = getMeasuredHeight();
-        org.telegram.ui.Components.ah0 ah0Var = this.V;
-        boolean z11 = ah0Var != null && ah0Var.getVisibility() == 0 && this.I && this.D > 0.0f;
+        org.telegram.ui.Components.kh0 kh0Var = this.V;
+        boolean z11 = kh0Var != null && kh0Var.getVisibility() == 0 && this.I && this.D > 0.0f;
         if (z11) {
-            org.telegram.ui.Components.rg0 blurDrawer = this.V.getBlurDrawer();
-            rg0Var = blurDrawer;
+            org.telegram.ui.Components.bh0 blurDrawer = this.V.getBlurDrawer();
+            bh0Var = blurDrawer;
             z11 = blurDrawer != null;
         } else {
-            rg0Var = null;
+            bh0Var = null;
         }
-        float y10 = org.telegram.messenger.l0.y(1.0f, this.R, this.a0, (1.0f - this.U) * (this.W ? (int) AndroidUtilities.dpf2(3.5f) : 0.0f));
-        org.telegram.ui.Components.k5 k5Var = this.e;
-        ImageReceiver imageReceiver = k5Var != null ? k5Var.k : this.a;
-        int i9 = this.G;
-        if (i9 > 0) {
+        float y8 = org.telegram.messenger.x3.y(1.0f, this.R, this.a0, (1.0f - this.U) * (this.W ? (int) AndroidUtilities.dpf2(3.5f) : 0.0f));
+        org.telegram.ui.Components.p5 p5Var = this.e;
+        ImageReceiver imageReceiver = p5Var != null ? p5Var.k : this.a;
+        int i10 = this.G;
+        if (i10 > 0) {
             Path path = this.J;
             path.rewind();
             RectF rectF = AndroidUtilities.rectTmp;
-            rectF.set(y10, y10, measuredWidth - y10, measuredHeight - y10);
-            float f14 = i9;
-            path.addRoundRect(rectF, f14, f14, Path.Direction.CW);
+            rectF.set(y8, y8, measuredWidth - y8, measuredHeight - y8);
+            float f13 = i10;
+            path.addRoundRect(rectF, f13, f13, Path.Direction.CW);
             canvas.clipPath(path);
         }
         canvas.save();
-        float f15 = this.N;
-        float f16 = measuredWidth;
-        float f17 = measuredHeight;
-        canvas.scale(f15, f15, f16 / 2.0f, f17 / 2.0f);
+        float f14 = this.N;
+        float f15 = measuredWidth;
+        float f16 = measuredHeight;
+        canvas.scale(f14, f14, f15 / 2.0f, f16 / 2.0f);
         if (z11) {
-            measuredHeight = this.C ? Math.min(measuredHeight, measuredWidth) : (int) (f17 - AndroidUtilities.lerp(0.0f, this.H / this.E, this.D));
+            measuredHeight = this.C ? Math.min(measuredHeight, measuredWidth) : (int) (f16 - AndroidUtilities.lerp(0.0f, this.H / this.E, this.D));
         }
         ImageReceiver imageReceiver2 = this.P;
         if (imageReceiver2 != null) {
-            float f18 = this.O;
-            float f19 = (1.0f - f18) * 1.0f;
-            if (f18 > 0.0f) {
+            float f17 = this.O;
+            float f18 = (1.0f - f17) * 1.0f;
+            if (f17 > 0.0f) {
                 float imageX = imageReceiver2.getImageX();
                 float imageY = this.P.getImageY();
                 float imageWidth = this.P.getImageWidth();
-                f10 = 2.0f;
+                f9 = 2.0f;
                 float imageHeight = this.P.getImageHeight();
-                f11 = 0.0f;
+                f10 = 0.0f;
                 float alpha = this.P.getAlpha();
-                c10 = 0;
-                float f20 = y10 * 2.0f;
+                c3 = 0;
+                float f19 = y8 * 2.0f;
                 z10 = z11;
-                f13 = f19;
-                this.P.setImageCoords(y10, y10, f16 - f20, measuredHeight - f20);
-                this.P.setAlpha(f18);
+                f12 = f18;
+                this.P.setImageCoords(y8, y8, f15 - f19, measuredHeight - f19);
+                this.P.setAlpha(f17);
                 this.P.draw(canvas);
                 this.P.setImageCoords(imageX, imageY, imageWidth, imageHeight);
                 this.P.setAlpha(alpha);
             } else {
                 z10 = z11;
-                f13 = f19;
-                f10 = 2.0f;
-                f11 = 0.0f;
-                c10 = 0;
+                f12 = f18;
+                f9 = 2.0f;
+                f10 = 0.0f;
+                c3 = 0;
             }
-            f12 = f13;
+            f11 = f12;
         } else {
             z10 = z11;
-            f10 = 2.0f;
-            f11 = 0.0f;
-            c10 = 0;
-            f12 = 1.0f;
+            f9 = 2.0f;
+            f10 = 0.0f;
+            c3 = 0;
+            f11 = 1.0f;
         }
-        if (imageReceiver != null && f12 > f11 && (this.R < 1.0f || !this.T)) {
-            float f21 = y10 * f10;
-            imageReceiver.setImageCoords(y10, y10, f16 - f21, measuredHeight - f21);
+        if (imageReceiver != null && f11 > f10 && (this.R < 1.0f || !this.T)) {
+            float f20 = y8 * f9;
+            imageReceiver.setImageCoords(y8, y8, f15 - f20, measuredHeight - f20);
             float alpha2 = imageReceiver.getAlpha();
-            imageReceiver.setAlpha(alpha2 * f12);
+            imageReceiver.setAlpha(alpha2 * f11);
             if (this.M) {
-                int i10 = imageReceiver.getRoundRadius()[c10];
+                int i11 = imageReceiver.getRoundRadius()[c3];
                 if (z10) {
                     imageReceiver.setRoundRadius(0);
                 }
                 imageReceiver.draw(canvas);
                 if (z10) {
-                    imageReceiver.setRoundRadius(i10);
+                    imageReceiver.setRoundRadius(i11);
                 }
             }
             imageReceiver.setAlpha(alpha2);
         }
-        if (this.R > f11 && this.T && f12 > f11) {
+        if (this.R > f10 && this.T && f11 > f10) {
             ImageReceiver imageReceiver3 = this.Q;
             if (imageReceiver3.getDrawable() != null) {
-                float f22 = y10 * f10;
-                imageReceiver3.setImageCoords(y10, y10, f16 - f22, measuredHeight - f22);
-                imageReceiver3.setAlpha(this.R * f12);
+                float f21 = y8 * f9;
+                imageReceiver3.setImageCoords(y8, y8, f15 - f21, measuredHeight - f21);
+                imageReceiver3.setAlpha(this.R * f11);
                 imageReceiver3.draw(canvas);
             } else {
                 RectF rectF2 = this.K;
-                rectF2.set(0.0f, 0.0f, f16, measuredHeight);
-                int i11 = (int) (this.R * f12 * 255.0f);
+                rectF2.set(0.0f, 0.0f, f15, measuredHeight);
+                int i12 = (int) (this.R * f11 * 255.0f);
                 Paint paint = this.L;
-                paint.setAlpha(i11);
-                float f23 = imageReceiver3.getRoundRadius()[0];
-                canvas.drawRoundRect(rectF2, f23, f23, paint);
+                paint.setAlpha(i12);
+                float f22 = imageReceiver3.getRoundRadius()[0];
+                canvas.drawRoundRect(rectF2, f22, f22, paint);
             }
         }
         if (z10) {
-            float f24 = measuredHeight;
-            canvas.translate(y10, y10 + f24);
-            float f25 = y10 * f10;
-            rg0Var.f(canvas, this, f16 - f25, f24 - f25, true, (this.C || rg0Var.a || this.V.getRealPosition() == 0) ? 1.0f - this.D : 1.0f, f12);
+            float f23 = measuredHeight;
+            canvas.translate(y8, y8 + f23);
+            float f24 = y8 * f9;
+            bh0Var.f(canvas, this, f15 - f24, f23 - f24, true, (this.C || bh0Var.a || this.V.getRealPosition() == 0) ? 1.0f - this.D : 1.0f, f11);
         }
         canvas.restore();
     }
@@ -229,17 +229,17 @@ public class iz0 extends org.telegram.ui.Components.o9 implements org.telegram.u
         this.P = imageReceiver;
     }
 
-    public void setAvatarsViewPager(org.telegram.ui.Components.ah0 ah0Var) {
-        this.V = ah0Var;
+    public void setAvatarsViewPager(org.telegram.ui.Components.kh0 kh0Var) {
+        this.V = kh0Var;
     }
 
-    public void setCrossfadeProgress(float f10) {
-        this.O = f10;
+    public void setCrossfadeProgress(float f9) {
+        this.O = f9;
         invalidate();
     }
 
-    public void setForegroundAlpha(float f10) {
-        this.R = f10;
+    public void setForegroundAlpha(float f9) {
+        this.R = f9;
         invalidate();
     }
 
@@ -263,47 +263,47 @@ public class iz0 extends org.telegram.ui.Components.o9 implements org.telegram.u
         invalidate();
     }
 
-    public void setProgressToExpand(float f10) {
-        if (this.U == f10) {
+    public void setProgressToExpand(float f9) {
+        if (this.U == f9) {
             return;
         }
-        this.U = f10;
+        this.U = f9;
         invalidate();
     }
 
-    public void setProgressToStoriesInsets(float f10) {
-        if (f10 == this.a0) {
+    public void setProgressToStoriesInsets(float f9) {
+        if (f9 == this.a0) {
             return;
         }
-        this.a0 = f10;
+        this.a0 = f9;
         invalidate();
     }
 
-    @Override // org.telegram.ui.Components.o9
-    public void setRoundRadius(int i9) {
-        super.setRoundRadius(i9);
-        this.Q.setRoundRadius(i9);
+    @Override // org.telegram.ui.Components.t9
+    public void setRoundRadius(int i10) {
+        super.setRoundRadius(i10);
+        this.Q.setRoundRadius(i10);
     }
 
-    public void setRoundRadiusCollapse(int i9) {
-        int i10 = this.F;
-        this.F = i9;
-        if (i10 != i9) {
+    public void setRoundRadiusCollapse(int i10) {
+        int i11 = this.F;
+        this.F = i10;
+        if (i11 != i10) {
             super.invalidate();
         }
     }
 
-    public void setRoundRadiusForExpand(int i9) {
+    public void setRoundRadiusForExpand(int i10) {
         if (!this.I) {
-            setRoundRadius(i9);
+            setRoundRadius(i10);
         } else {
-            this.G = i9;
-            setRoundRadius(i9);
+            this.G = i10;
+            setRoundRadius(i10);
         }
     }
 
-    public final void t(int i9) {
-        this.H = i9;
+    public final void t(int i10) {
+        this.H = i10;
         this.I = true;
     }
 
@@ -326,8 +326,8 @@ public class iz0 extends org.telegram.ui.Components.o9 implements org.telegram.u
     }
 
     @Override // android.view.View
-    public final void invalidate(int i9, int i10, int i11, int i12) {
-        super.invalidate(i9, i10, i11, i12);
+    public final void invalidate(int i10, int i11, int i12, int i13) {
+        super.invalidate(i10, i11, i12, i13);
         Runnable runnable = this.b0;
         if (runnable != null) {
             runnable.run();

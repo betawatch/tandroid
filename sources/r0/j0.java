@@ -19,7 +19,7 @@ import java.util.List;
 import java.util.WeakHashMap;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public abstract class j0 {
     public static WeakHashMap a = null;
@@ -42,10 +42,10 @@ public abstract class j0 {
     }
 
     public static m1 b(View view, m1 m1Var) {
-        int i9 = Build.VERSION.SDK_INT;
+        int i10 = Build.VERSION.SDK_INT;
         WindowInsets g10 = m1Var.g();
         if (g10 != null) {
-            WindowInsets a2 = i9 >= 30 ? g0.a(view, g10) : z.a(view, g10);
+            WindowInsets a2 = i10 >= 30 ? g0.a(view, g10) : z.a(view, g10);
             if (!a2.equals(g10)) {
                 return m1.h(view, a2);
             }
@@ -145,13 +145,13 @@ public abstract class j0 {
         return Build.VERSION.SDK_INT >= 23 ? c0.a(view) : b0.f(view);
     }
 
-    public static void g(int i9, View view) {
+    public static void g(int i10, View view) {
         Object tag;
         AccessibilityManager accessibilityManager = (AccessibilityManager) view.getContext().getSystemService("accessibility");
         if (accessibilityManager.isEnabled()) {
-            int i10 = Build.VERSION.SDK_INT;
+            int i11 = Build.VERSION.SDK_INT;
             CharSequence charSequence = null;
-            if (i10 >= 28) {
+            if (i11 >= 28) {
                 tag = e0.a(view);
             } else {
                 tag = view.getTag(R.id.tag_accessibility_pane_title);
@@ -163,10 +163,10 @@ public abstract class j0 {
             if (view.getAccessibilityLiveRegion() != 0 || z10) {
                 AccessibilityEvent obtain = AccessibilityEvent.obtain();
                 obtain.setEventType(z10 ? 32 : 2048);
-                obtain.setContentChangeTypes(i9);
+                obtain.setContentChangeTypes(i10);
                 if (z10) {
                     List<CharSequence> text = obtain.getText();
-                    if (i10 >= 28) {
+                    if (i11 >= 28) {
                         charSequence = e0.a(view);
                     } else {
                         Object tag2 = view.getTag(R.id.tag_accessibility_pane_title);
@@ -182,10 +182,10 @@ public abstract class j0 {
                 view.sendAccessibilityEventUnchecked(obtain);
                 return;
             }
-            if (i9 != 32) {
+            if (i10 != 32) {
                 if (view.getParent() != null) {
                     try {
-                        view.getParent().notifySubtreeAccessibilityStateChanged(view, view, i9);
+                        view.getParent().notifySubtreeAccessibilityStateChanged(view, view, i10);
                         return;
                     } catch (AbstractMethodError e10) {
                         Log.e("ViewCompat", view.getParent().getClass().getSimpleName().concat(" does not fully implement ViewParent"), e10);
@@ -197,11 +197,11 @@ public abstract class j0 {
             AccessibilityEvent obtain2 = AccessibilityEvent.obtain();
             view.onInitializeAccessibilityEvent(obtain2);
             obtain2.setEventType(32);
-            obtain2.setContentChangeTypes(i9);
+            obtain2.setContentChangeTypes(i10);
             obtain2.setSource(view);
             view.onPopulateAccessibilityEvent(obtain2);
             List<CharSequence> text2 = obtain2.getText();
-            if (i10 >= 28) {
+            if (i11 >= 28) {
                 charSequence = e0.a(view);
             } else {
                 Object tag3 = view.getTag(R.id.tag_accessibility_pane_title);
@@ -251,9 +251,9 @@ public abstract class j0 {
         return pVar.a(a2);
     }
 
-    public static void j(View view, Context context, int[] iArr, AttributeSet attributeSet, TypedArray typedArray, int i9) {
+    public static void j(View view, Context context, int[] iArr, AttributeSet attributeSet, TypedArray typedArray, int i10) {
         if (Build.VERSION.SDK_INT >= 29) {
-            f0.b(view, context, iArr, attributeSet, typedArray, i9, 0);
+            f0.b(view, context, iArr, attributeSet, typedArray, i10, 0);
         }
     }
 

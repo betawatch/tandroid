@@ -1,62 +1,62 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.RectF;
-import android.os.Bundle;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.Emoji;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
+import android.graphics.drawable.ColorDrawable;
+import android.view.View;
+import android.view.ViewGroup;
 import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class wu extends org.telegram.ui.Components.kx0 {
-    public final /* synthetic */ g5.b E;
+public final class wu extends org.telegram.ui.Components.il0 {
+    public final /* synthetic */ yu c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public wu(Context context, long j10, g5.b bVar) {
-        super(context);
-        this.E = bVar;
-        this.a = new RectF();
-        this.f = 0.0f;
-        org.telegram.ui.Components.i6 i6Var = new org.telegram.ui.Components.i6(false, true, true, false);
-        this.r = i6Var;
-        org.telegram.ui.Components.i6 i6Var2 = new org.telegram.ui.Components.i6(false, true, false, false);
-        this.s = i6Var2;
-        i6Var.setCallback(this);
-        i6Var2.setCallback(this);
-        this.n = Long.valueOf(j10);
-        org.telegram.ui.Components.z8 z8Var = new org.telegram.ui.Components.z8((org.telegram.ui.ActionBar.b6) null);
-        z8Var.p = 1.5f;
-        ImageReceiver imageReceiver = new ImageReceiver();
-        this.h = imageReceiver;
-        imageReceiver.setParentView(this);
-        if (j10 == Long.MAX_VALUE) {
-            this.v = LocaleController.getString(R.string.CacheOtherChats);
-            z8Var.g(14);
-            imageReceiver.setForUserOrChat(null, z8Var);
-        } else {
-            String dialogPhotoTitle = DialogObject.setDialogPhotoTitle(imageReceiver, z8Var, MessagesController.getInstance(UserConfig.selectedAccount).getUserOrChat(j10));
-            this.v = dialogPhotoTitle;
-            this.v = Emoji.replaceEmoji(dialogPhotoTitle, null, false);
-        }
+    public wu(yu yuVar) {
+        this.c = yuVar;
     }
 
-    @Override // org.telegram.ui.Components.kx0
-    public final void b() {
-        g5.b bVar = this.E;
-        y6 y6Var = (y6) bVar.c;
-        y6Var.P.dismiss();
-        Bundle bundle = new Bundle();
-        long j10 = ((r6) bVar.b).a;
-        if (j10 > 0) {
-            bundle.putLong("user_id", j10);
+    @Override // org.telegram.ui.Components.il0
+    public final boolean D(f2.n1 n1Var) {
+        return false;
+    }
+
+    @Override // f2.p0
+    public final int h() {
+        return this.c.c0.h() ? 1 : 3;
+    }
+
+    @Override // f2.p0
+    public final f2.n1 x(ViewGroup viewGroup, int i10) {
+        View view;
+        int i11;
+        int i12;
+        yu yuVar = this.c;
+        if (i10 == 0) {
+            view = yuVar.Z;
+        } else if (i10 == 2) {
+            view = yuVar.a0;
+            f2.x0 x0Var = new f2.x0(-1, -2);
+            i11 = ((org.telegram.ui.ActionBar.f3) yuVar).backgroundPaddingLeft;
+            ((ViewGroup.MarginLayoutParams) x0Var).leftMargin = i11;
+            i12 = ((org.telegram.ui.ActionBar.f3) yuVar).backgroundPaddingLeft;
+            ((ViewGroup.MarginLayoutParams) x0Var).rightMargin = i12;
+            view.setLayoutParams(x0Var);
         } else {
-            bundle.putLong("chat_id", -j10);
+            org.telegram.ui.Cells.y8 y8Var = new org.telegram.ui.Cells.y8(viewGroup.getContext());
+            y8Var.setFixedSize(12);
+            org.telegram.ui.Components.jq jqVar = new org.telegram.ui.Components.jq(new ColorDrawable(org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.a7, false)), org.telegram.ui.ActionBar.g6.V0(viewGroup.getContext(), R.drawable.greydivider_bottom, org.telegram.ui.ActionBar.g6.b7));
+            jqVar.w = true;
+            y8Var.setBackgroundDrawable(jqVar);
+            view = y8Var;
         }
-        y6Var.presentFragment(new ProfileActivity(bundle, null));
+        return new org.telegram.ui.Components.vk0(view);
+    }
+
+    @Override // f2.p0
+    public final int j(int i10) {
+        return i10;
+    }
+
+    @Override // f2.p0
+    public final void v(f2.n1 n1Var, int i10) {
     }
 }

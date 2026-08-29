@@ -1,0 +1,182 @@
+package cg;
+
+import android.content.Context;
+import android.graphics.Canvas;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.DocumentObject;
+import org.telegram.messenger.ImageLocation;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.ActionBar.g6;
+
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* loaded from: classes3.dex */
+public final class i2 extends View {
+    public final /* synthetic */ j2 a;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public i2(j2 j2Var, Context context) {
+        super(context);
+        this.a = j2Var;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:25:0x00a5  */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x00c7  */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x00ee  */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x0153  */
+    /* JADX WARN: Removed duplicated region for block: B:43:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:45:0x00fd  */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x00d6  */
+    /* JADX WARN: Removed duplicated region for block: B:52:0x00b3  */
+    /* JADX WARN: Removed duplicated region for block: B:55:0x0094  */
+    /* JADX WARN: Removed duplicated region for block: B:8:0x0050  */
+    @Override // android.view.View
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void draw(Canvas canvas) {
+        ImageReceiver imageReceiver;
+        boolean z10;
+        boolean z11;
+        super.draw(canvas);
+        j2 j2Var = this.a;
+        h1 h1Var = j2Var.v;
+        ImageReceiver imageReceiver2 = j2Var.c;
+        ImageReceiver imageReceiver3 = j2Var.d;
+        if (j2Var.s) {
+            imageReceiver2.setImage(ImageLocation.getForDocument(j2Var.r), null, DocumentObject.getSvgThumb(j2Var.r, g6.a7, 0.5f), "webp", null, 1);
+            if (MessageObject.isPremiumSticker(j2Var.r)) {
+                imageReceiver = imageReceiver3;
+                imageReceiver.setImage(ImageLocation.getForDocument(MessageObject.getPremiumStickerAnimation(j2Var.r), j2Var.r), "140_140", (ImageLocation) null, (String) null, "tgs", (Object) null, 1);
+                if (!j2Var.e) {
+                    if (j2Var.h == 0.0f) {
+                        j2Var.h = 1.0f;
+                        if (imageReceiver.getLottieAnimation() != null) {
+                            imageReceiver.getLottieAnimation().L(0, false, false);
+                        }
+                    }
+                    if (imageReceiver.getLottieAnimation() != null) {
+                        imageReceiver.getLottieAnimation().start();
+                    }
+                    if (imageReceiver.getLottieAnimation() != null && imageReceiver.getLottieAnimation().y() && h1Var.j3) {
+                        AndroidUtilities.cancelRunOnUIThread(h1Var.a3);
+                        AndroidUtilities.runOnUIThread(h1Var.a3, 0L);
+                    }
+                } else if (imageReceiver.getLottieAnimation() != null) {
+                    imageReceiver.getLottieAnimation().stop();
+                }
+                if (j2Var.f) {
+                    if (imageReceiver2.getLottieAnimation() != null) {
+                        imageReceiver2.getLottieAnimation().stop();
+                    }
+                } else if (imageReceiver2.getLottieAnimation() != null) {
+                    imageReceiver2.getLottieAnimation().start();
+                }
+                z10 = j2Var.f;
+                if (z10) {
+                    float f9 = j2Var.n;
+                    if (f9 != 1.0f) {
+                        j2Var.n = f9 + 0.10666667f;
+                        invalidate();
+                        j2Var.n = Utilities.clamp(j2Var.n, 1.0f, 0.0f);
+                        z11 = j2Var.e;
+                        if (z11) {
+                            float f10 = j2Var.h;
+                            if (f10 != 1.0f) {
+                                j2Var.h = f10 + 0.10666667f;
+                                invalidate();
+                                j2Var.h = Utilities.clamp(j2Var.h, 1.0f, 0.0f);
+                                float f11 = h1Var.g3 * 0.45f;
+                                float f12 = 1.499267f * f11;
+                                float measuredWidth = getMeasuredWidth() - f12;
+                                float measuredHeight = (getMeasuredHeight() - f12) / 2.0f;
+                                float f13 = f12 - f11;
+                                imageReceiver2.setImageCoords((f13 - (0.02f * f12)) + measuredWidth, (f13 / 2.0f) + measuredHeight, f11, f11);
+                                imageReceiver2.setAlpha((j2Var.n * 0.7f) + 0.3f);
+                                imageReceiver2.draw(canvas);
+                                if (j2Var.h == 0.0f) {
+                                    imageReceiver.setImageCoords(measuredWidth, measuredHeight, f12, f12);
+                                    imageReceiver.setAlpha(j2Var.h);
+                                    imageReceiver.draw(canvas);
+                                    return;
+                                }
+                                return;
+                            }
+                        }
+                        if (!z11) {
+                            float f14 = j2Var.h;
+                            if (f14 != 0.0f) {
+                                j2Var.h = f14 - 0.10666667f;
+                                invalidate();
+                            }
+                        }
+                        j2Var.h = Utilities.clamp(j2Var.h, 1.0f, 0.0f);
+                        float f112 = h1Var.g3 * 0.45f;
+                        float f122 = 1.499267f * f112;
+                        float measuredWidth2 = getMeasuredWidth() - f122;
+                        float measuredHeight2 = (getMeasuredHeight() - f122) / 2.0f;
+                        float f132 = f122 - f112;
+                        imageReceiver2.setImageCoords((f132 - (0.02f * f122)) + measuredWidth2, (f132 / 2.0f) + measuredHeight2, f112, f112);
+                        imageReceiver2.setAlpha((j2Var.n * 0.7f) + 0.3f);
+                        imageReceiver2.draw(canvas);
+                        if (j2Var.h == 0.0f) {
+                        }
+                    }
+                }
+                if (!z10) {
+                    float f15 = j2Var.n;
+                    if (f15 != 0.0f) {
+                        j2Var.n = f15 - 0.10666667f;
+                        invalidate();
+                    }
+                }
+                j2Var.n = Utilities.clamp(j2Var.n, 1.0f, 0.0f);
+                z11 = j2Var.e;
+                if (z11) {
+                }
+                if (!z11) {
+                }
+                j2Var.h = Utilities.clamp(j2Var.h, 1.0f, 0.0f);
+                float f1122 = h1Var.g3 * 0.45f;
+                float f1222 = 1.499267f * f1122;
+                float measuredWidth22 = getMeasuredWidth() - f1222;
+                float measuredHeight22 = (getMeasuredHeight() - f1222) / 2.0f;
+                float f1322 = f1222 - f1122;
+                imageReceiver2.setImageCoords((f1322 - (0.02f * f1222)) + measuredWidth22, (f1322 / 2.0f) + measuredHeight22, f1122, f1122);
+                imageReceiver2.setAlpha((j2Var.n * 0.7f) + 0.3f);
+                imageReceiver2.draw(canvas);
+                if (j2Var.h == 0.0f) {
+                }
+            }
+        }
+        imageReceiver = imageReceiver3;
+        if (!j2Var.e) {
+        }
+        if (j2Var.f) {
+        }
+        z10 = j2Var.f;
+        if (z10) {
+        }
+        if (!z10) {
+        }
+        j2Var.n = Utilities.clamp(j2Var.n, 1.0f, 0.0f);
+        z11 = j2Var.e;
+        if (z11) {
+        }
+        if (!z11) {
+        }
+        j2Var.h = Utilities.clamp(j2Var.h, 1.0f, 0.0f);
+        float f11222 = h1Var.g3 * 0.45f;
+        float f12222 = 1.499267f * f11222;
+        float measuredWidth222 = getMeasuredWidth() - f12222;
+        float measuredHeight222 = (getMeasuredHeight() - f12222) / 2.0f;
+        float f13222 = f12222 - f11222;
+        imageReceiver2.setImageCoords((f13222 - (0.02f * f12222)) + measuredWidth222, (f13222 / 2.0f) + measuredHeight222, f11222, f11222);
+        imageReceiver2.setAlpha((j2Var.n * 0.7f) + 0.3f);
+        imageReceiver2.draw(canvas);
+        if (j2Var.h == 0.0f) {
+        }
+    }
+}

@@ -1,26 +1,26 @@
 package androidx.lifecycle;
 
 import android.app.Application;
-import g7.o6;
+import i7.m7;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public abstract class o0 {
-    public static final List a = pc.h.c(Application.class, i0.class);
-    public static final List b = o6.a(i0.class);
+    public static final List a = rc.h.c(Application.class, i0.class);
+    public static final List b = m7.a(i0.class);
 
     public static final Constructor a(List signature, Class cls) {
-        kotlin.jvm.internal.i.e(signature, "signature");
+        kotlin.jvm.internal.j.e(signature, "signature");
         Constructor<?>[] constructors = cls.getConstructors();
-        kotlin.jvm.internal.i.d(constructors, "modelClass.constructors");
+        kotlin.jvm.internal.j.d(constructors, "modelClass.constructors");
         for (Constructor<?> constructor : constructors) {
             Class<?>[] parameterTypes = constructor.getParameterTypes();
-            kotlin.jvm.internal.i.d(parameterTypes, "constructor.parameterTypes");
-            List h = pc.f.h(parameterTypes);
+            kotlin.jvm.internal.j.d(parameterTypes, "constructor.parameterTypes");
+            List h = rc.f.h(parameterTypes);
             if (signature.equals(h)) {
                 return constructor;
             }

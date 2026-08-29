@@ -1,16 +1,16 @@
 package org.telegram.ui.Cells;
 
-import org.telegram.ui.Components.mi0;
+import org.telegram.ui.Components.xi0;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ mi0 b;
+    public final /* synthetic */ xi0 b;
 
-    public /* synthetic */ q0(mi0 mi0Var, int i9) {
-        this.a = i9;
-        this.b = mi0Var;
+    public /* synthetic */ q0(xi0 xi0Var, int i10) {
+        this.a = i10;
+        this.b = xi0Var;
     }
 
     @Override // java.lang.Runnable

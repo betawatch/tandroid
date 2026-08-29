@@ -13,7 +13,7 @@ import android.os.Environment;
 import android.os.ParcelFileDescriptor;
 import android.text.TextUtils;
 import android.webkit.MimeTypeMap;
-import e2.c;
+import com.google.android.recaptcha.internal.a;
 import f0.f;
 import java.io.File;
 import java.io.IOException;
@@ -21,9 +21,9 @@ import java.util.HashMap;
 import java.util.Map;
 import org.telegram.tgnet.TLObject;
 import org.xmlpull.v1.XmlPullParserException;
-import ta.b;
+import u3.c;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public class FileProvider extends ContentProvider {
     public static final String[] e = {"_display_name", "_size"};
@@ -39,10 +39,10 @@ public class FileProvider extends ContentProvider {
     }
 
     public static String a(String str) {
-        return (str.length() <= 0 || str.charAt(str.length() - 1) != '/') ? str : c.m(str, 1, 0);
+        return (str.length() <= 0 || str.charAt(str.length() - 1) != '/') ? str : a.m(str, 1, 0);
     }
 
-    public static f c(Context context, String str, int i9) {
+    public static f c(Context context, String str, int i10) {
         f fVar;
         HashMap hashMap = h;
         synchronized (hashMap) {
@@ -51,7 +51,7 @@ public class FileProvider extends ContentProvider {
                 if (fVar == null) {
                     try {
                         try {
-                            fVar = e(context, str, i9);
+                            fVar = e(context, str, i10);
                             hashMap.put(str, fVar);
                         } catch (IOException e10) {
                             throw new IllegalArgumentException("Failed to parse android.support.FILE_PROVIDER_PATHS meta-data", e10);
@@ -60,44 +60,44 @@ public class FileProvider extends ContentProvider {
                         throw new IllegalArgumentException("Failed to parse android.support.FILE_PROVIDER_PATHS meta-data", e11);
                     }
                 }
-            } catch (Throwable th) {
-                throw th;
+            } catch (Throwable th2) {
+                throw th2;
             }
         }
         return fVar;
     }
 
     public static Uri d(Context context, String str, File file) {
-        f c10 = c(context, str, 0);
+        f c3 = c(context, str, 0);
         try {
             String canonicalPath = file.getCanonicalPath();
             Map.Entry entry = null;
-            for (Map.Entry entry2 : c10.b.entrySet()) {
+            for (Map.Entry entry2 : c3.b.entrySet()) {
                 String path = ((File) entry2.getValue()).getPath();
                 if (a(canonicalPath).startsWith(a(path) + '/') && (entry == null || path.length() > ((File) entry.getValue()).getPath().length())) {
                     entry = entry2;
                 }
             }
             if (entry == null) {
-                throw new IllegalArgumentException(b.d("Failed to find configured root that contains ", canonicalPath));
+                throw new IllegalArgumentException(c.e("Failed to find configured root that contains ", canonicalPath));
             }
             String path2 = ((File) entry.getValue()).getPath();
-            return new Uri.Builder().scheme("content").authority(c10.a).encodedPath(Uri.encode((String) entry.getKey()) + '/' + Uri.encode(path2.endsWith("/") ? canonicalPath.substring(path2.length()) : canonicalPath.substring(path2.length() + 1), "/")).build();
+            return new Uri.Builder().scheme("content").authority(c3.a).encodedPath(Uri.encode((String) entry.getKey()) + '/' + Uri.encode(path2.endsWith("/") ? canonicalPath.substring(path2.length()) : canonicalPath.substring(path2.length() + 1), "/")).build();
         } catch (IOException unused) {
             throw new IllegalArgumentException("Failed to resolve canonical path for " + file);
         }
     }
 
-    public static f e(Context context, String str, int i9) {
+    public static f e(Context context, String str, int i10) {
         f fVar = new f(str);
         ProviderInfo resolveContentProvider = context.getPackageManager().resolveContentProvider(str, 128);
         if (resolveContentProvider == null) {
-            throw new IllegalArgumentException(b.d("Couldn't find meta-data for provider with authority ", str));
+            throw new IllegalArgumentException(c.e("Couldn't find meta-data for provider with authority ", str));
         }
-        if (resolveContentProvider.metaData == null && i9 != 0) {
+        if (resolveContentProvider.metaData == null && i10 != 0) {
             Bundle bundle = new Bundle(1);
             resolveContentProvider.metaData = bundle;
-            bundle.putInt("android.support.FILE_PROVIDER_PATHS", i9);
+            bundle.putInt("android.support.FILE_PROVIDER_PATHS", i10);
         }
         XmlResourceParser loadXmlMetaData = resolveContentProvider.loadXmlMetaData(context.getPackageManager(), "android.support.FILE_PROVIDER_PATHS");
         if (loadXmlMetaData == null) {
@@ -191,8 +191,8 @@ public class FileProvider extends ContentProvider {
                     this.d = c(getContext(), this.c, this.b);
                 }
                 fVar = this.d;
-            } catch (Throwable th) {
-                throw th;
+            } catch (Throwable th2) {
+                throw th2;
             }
         }
         return fVar;
@@ -231,28 +231,28 @@ public class FileProvider extends ContentProvider {
 
     @Override // android.content.ContentProvider
     public final ParcelFileDescriptor openFile(Uri uri, String str) {
-        int i9;
+        int i10;
         File a2 = b().a(uri);
         if ("r".equals(str)) {
-            i9 = TLObject.FLAG_28;
+            i10 = TLObject.FLAG_28;
         } else if ("w".equals(str) || "wt".equals(str)) {
-            i9 = 738197504;
+            i10 = 738197504;
         } else if ("wa".equals(str)) {
-            i9 = 704643072;
+            i10 = 704643072;
         } else if ("rw".equals(str)) {
-            i9 = 939524096;
+            i10 = 939524096;
         } else {
             if (!"rwt".equals(str)) {
-                throw new IllegalArgumentException(b.d("Invalid mode: ", str));
+                throw new IllegalArgumentException(c.e("Invalid mode: ", str));
             }
-            i9 = 1006632960;
+            i10 = 1006632960;
         }
-        return ParcelFileDescriptor.open(a2, i9);
+        return ParcelFileDescriptor.open(a2, i10);
     }
 
     @Override // android.content.ContentProvider
     public final Cursor query(Uri uri, String[] strArr, String str, String[] strArr2, String str2) {
-        int i9;
+        int i10;
         File a2 = b().a(uri);
         String queryParameter = uri.getQueryParameter("displayName");
         if (strArr == null) {
@@ -260,23 +260,23 @@ public class FileProvider extends ContentProvider {
         }
         String[] strArr3 = new String[strArr.length];
         Object[] objArr = new Object[strArr.length];
-        int i10 = 0;
+        int i11 = 0;
         for (String str3 : strArr) {
             if ("_display_name".equals(str3)) {
-                strArr3[i10] = "_display_name";
-                i9 = i10 + 1;
-                objArr[i10] = queryParameter == null ? a2.getName() : queryParameter;
+                strArr3[i11] = "_display_name";
+                i10 = i11 + 1;
+                objArr[i11] = queryParameter == null ? a2.getName() : queryParameter;
             } else if ("_size".equals(str3)) {
-                strArr3[i10] = "_size";
-                i9 = i10 + 1;
-                objArr[i10] = Long.valueOf(a2.length());
+                strArr3[i11] = "_size";
+                i10 = i11 + 1;
+                objArr[i11] = Long.valueOf(a2.length());
             }
-            i10 = i9;
+            i11 = i10;
         }
-        String[] strArr4 = new String[i10];
-        System.arraycopy(strArr3, 0, strArr4, 0, i10);
-        Object[] objArr2 = new Object[i10];
-        System.arraycopy(objArr, 0, objArr2, 0, i10);
+        String[] strArr4 = new String[i11];
+        System.arraycopy(strArr3, 0, strArr4, 0, i11);
+        Object[] objArr2 = new Object[i11];
+        System.arraycopy(objArr, 0, objArr2, 0, i11);
         MatrixCursor matrixCursor = new MatrixCursor(strArr4, 1);
         matrixCursor.addRow(objArr2);
         return matrixCursor;
@@ -287,8 +287,8 @@ public class FileProvider extends ContentProvider {
         throw new UnsupportedOperationException("No external updates");
     }
 
-    public FileProvider(int i9) {
+    public FileProvider(int i10) {
         this.a = new Object();
-        this.b = i9;
+        this.b = i10;
     }
 }

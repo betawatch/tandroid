@@ -1,29 +1,17 @@
 package ih;
 
-import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
-/* loaded from: classes4.dex */
-public final class x4 {
-    public final int a;
-    public final TL_stories.StoryView b;
-    public final TL_stories.StoryReaction c;
-
-    public x4(int i9) {
-        this.a = i9;
-        this.b = null;
-        this.c = null;
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* loaded from: classes.dex */
+public final class x4 extends org.telegram.ui.Components.p5 {
+    @Override // org.telegram.ui.Components.p5, android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        return AndroidUtilities.dp(24.0f);
     }
 
-    public x4(TL_stories.StoryView storyView) {
-        this.a = 1;
-        this.b = storyView;
-        this.c = null;
-    }
-
-    public x4(TL_stories.StoryReaction storyReaction) {
-        this.a = 1;
-        this.b = null;
-        this.c = storyReaction;
+    @Override // org.telegram.ui.Components.p5, android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        return AndroidUtilities.dp(24.0f);
     }
 }

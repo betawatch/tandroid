@@ -1,46 +1,16 @@
 package p8;
 
-import java.math.RoundingMode;
-
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public abstract /* synthetic */ class c {
-    public static final /* synthetic */ int[] a;
+public final class c extends a {
+    public static final c a = new c();
 
-    static {
-        int[] iArr = new int[RoundingMode.values().length];
-        a = iArr;
-        try {
-            iArr[RoundingMode.UNNECESSARY.ordinal()] = 1;
-        } catch (NoSuchFieldError unused) {
-        }
-        try {
-            a[RoundingMode.DOWN.ordinal()] = 2;
-        } catch (NoSuchFieldError unused2) {
-        }
-        try {
-            a[RoundingMode.FLOOR.ordinal()] = 3;
-        } catch (NoSuchFieldError unused3) {
-        }
-        try {
-            a[RoundingMode.UP.ordinal()] = 4;
-        } catch (NoSuchFieldError unused4) {
-        }
-        try {
-            a[RoundingMode.CEILING.ordinal()] = 5;
-        } catch (NoSuchFieldError unused5) {
-        }
-        try {
-            a[RoundingMode.HALF_DOWN.ordinal()] = 6;
-        } catch (NoSuchFieldError unused6) {
-        }
-        try {
-            a[RoundingMode.HALF_UP.ordinal()] = 7;
-        } catch (NoSuchFieldError unused7) {
-        }
-        try {
-            a[RoundingMode.HALF_EVEN.ordinal()] = 8;
-        } catch (NoSuchFieldError unused8) {
-        }
+    @Override // p8.a
+    public final boolean a(char c3) {
+        return false;
+    }
+
+    public final String toString() {
+        return "CharMatcher.none()";
     }
 }

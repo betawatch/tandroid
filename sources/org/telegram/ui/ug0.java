@@ -3,7 +3,7 @@ package org.telegram.ui;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ug0 implements Runnable {
     public final /* synthetic */ int a;
@@ -13,8 +13,8 @@ public final /* synthetic */ class ug0 implements Runnable {
     public final /* synthetic */ TLObject e;
     public final /* synthetic */ boolean f;
 
-    public /* synthetic */ ug0(hh0 hh0Var, TLRPC.TL_chatInviteExported tL_chatInviteExported, TLRPC.TL_error tL_error, TLObject tLObject, boolean z10, int i9) {
-        this.a = i9;
+    public /* synthetic */ ug0(hh0 hh0Var, TLRPC.TL_chatInviteExported tL_chatInviteExported, TLRPC.TL_error tL_error, TLObject tLObject, boolean z10, int i10) {
+        this.a = i10;
         this.b = hh0Var;
         this.c = tL_chatInviteExported;
         this.d = tL_error;
@@ -30,7 +30,7 @@ public final /* synthetic */ class ug0 implements Runnable {
                 hh0Var.getNotificationCenter().doOnIdle(new ug0(hh0Var, this.c, this.d, this.e, this.f, 1));
                 break;
             default:
-                hh0.T(this.b, this.c, this.d, this.e, this.f);
+                hh0.U(this.b, this.c, this.d, this.e, this.f);
                 break;
         }
     }

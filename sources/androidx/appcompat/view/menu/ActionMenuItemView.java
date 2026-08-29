@@ -12,6 +12,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import f.a;
+import i7.v;
 import l.b;
 import l.c;
 import l.k;
@@ -21,7 +22,7 @@ import m.a1;
 import m.j;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public class ActionMenuItemView extends a1 implements y, View.OnClickListener, j {
     public boolean A;
@@ -65,10 +66,10 @@ public class ActionMenuItemView extends a1 implements y, View.OnClickListener, j
 
     public final boolean f() {
         Configuration configuration = getContext().getResources().getConfiguration();
-        int i9 = configuration.screenWidthDp;
-        int i10 = configuration.screenHeightDp;
-        if (i9 < 480) {
-            return (i9 >= 640 && i10 >= 480) || configuration.orientation == 2;
+        int i10 = configuration.screenWidthDp;
+        int i11 = configuration.screenHeightDp;
+        if (i10 < 480) {
+            return (i10 >= 640 && i11 >= 480) || configuration.orientation == 2;
         }
         return true;
     }
@@ -89,9 +90,9 @@ public class ActionMenuItemView extends a1 implements y, View.OnClickListener, j
         }
         CharSequence charSequence2 = this.n.r;
         if (TextUtils.isEmpty(charSequence2)) {
-            g7.m.a(this, z12 ? null : this.n.e);
+            v.a(this, z12 ? null : this.n.e);
         } else {
-            g7.m.a(this, charSequence2);
+            v.a(this, charSequence2);
         }
     }
 
@@ -121,20 +122,20 @@ public class ActionMenuItemView extends a1 implements y, View.OnClickListener, j
     }
 
     @Override // m.a1, android.widget.TextView, android.view.View
-    public final void onMeasure(int i9, int i10) {
-        int i11;
+    public final void onMeasure(int i10, int i11) {
+        int i12;
         boolean isEmpty = TextUtils.isEmpty(getText());
-        if (!isEmpty && (i11 = this.C) >= 0) {
-            super.setPadding(i11, getPaddingTop(), getPaddingRight(), getPaddingBottom());
+        if (!isEmpty && (i12 = this.C) >= 0) {
+            super.setPadding(i12, getPaddingTop(), getPaddingRight(), getPaddingBottom());
         }
-        super.onMeasure(i9, i10);
-        int mode = View.MeasureSpec.getMode(i9);
-        int size = View.MeasureSpec.getSize(i9);
+        super.onMeasure(i10, i11);
+        int mode = View.MeasureSpec.getMode(i10);
+        int size = View.MeasureSpec.getSize(i10);
         int measuredWidth = getMeasuredWidth();
-        int i12 = this.B;
-        int min = mode == Integer.MIN_VALUE ? Math.min(size, i12) : i12;
-        if (mode != 1073741824 && i12 > 0 && measuredWidth < min) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(min, TLObject.FLAG_30), i10);
+        int i13 = this.B;
+        int min = mode == Integer.MIN_VALUE ? Math.min(size, i13) : i13;
+        if (mode != 1073741824 && i13 > 0 && measuredWidth < min) {
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(min, TLObject.FLAG_30), i11);
         }
         if (!isEmpty || this.s == null) {
             return;
@@ -173,17 +174,17 @@ public class ActionMenuItemView extends a1 implements y, View.OnClickListener, j
         if (drawable != null) {
             int intrinsicWidth = drawable.getIntrinsicWidth();
             int intrinsicHeight = drawable.getIntrinsicHeight();
-            int i9 = this.D;
-            if (intrinsicWidth > i9) {
-                intrinsicHeight = (int) (intrinsicHeight * (i9 / intrinsicWidth));
-                intrinsicWidth = i9;
+            int i10 = this.D;
+            if (intrinsicWidth > i10) {
+                intrinsicHeight = (int) (intrinsicHeight * (i10 / intrinsicWidth));
+                intrinsicWidth = i10;
             }
-            if (intrinsicHeight > i9) {
-                intrinsicWidth = (int) (intrinsicWidth * (i9 / intrinsicHeight));
+            if (intrinsicHeight > i10) {
+                intrinsicWidth = (int) (intrinsicWidth * (i10 / intrinsicHeight));
             } else {
-                i9 = intrinsicHeight;
+                i10 = intrinsicHeight;
             }
-            drawable.setBounds(0, 0, intrinsicWidth, i9);
+            drawable.setBounds(0, 0, intrinsicWidth, i10);
         }
         setCompoundDrawables(drawable, null, null, null);
         g();
@@ -194,9 +195,9 @@ public class ActionMenuItemView extends a1 implements y, View.OnClickListener, j
     }
 
     @Override // android.widget.TextView, android.view.View
-    public final void setPadding(int i9, int i10, int i11, int i12) {
-        this.C = i9;
-        super.setPadding(i9, i10, i11, i12);
+    public final void setPadding(int i10, int i11, int i12, int i13) {
+        this.C = i10;
+        super.setPadding(i10, i11, i12, i13);
     }
 
     public void setPopupCallback(c cVar) {
@@ -212,11 +213,11 @@ public class ActionMenuItemView extends a1 implements y, View.OnClickListener, j
         this(context, attributeSet, 0);
     }
 
-    public ActionMenuItemView(Context context, AttributeSet attributeSet, int i9) {
-        super(context, attributeSet, i9);
+    public ActionMenuItemView(Context context, AttributeSet attributeSet, int i10) {
+        super(context, attributeSet, i10);
         Resources resources = context.getResources();
         this.y = f();
-        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, a.c, i9, 0);
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, a.c, i10, 0);
         this.B = obtainStyledAttributes.getDimensionPixelSize(0, 0);
         obtainStyledAttributes.recycle();
         this.D = (int) ((resources.getDisplayMetrics().density * 32.0f) + 0.5f);

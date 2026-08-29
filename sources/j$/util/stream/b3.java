@@ -70,24 +70,24 @@ public final class b3 extends o6 implements a2, u1 {
     }
 
     @Override // j$.util.stream.e2
-    public final /* bridge */ /* synthetic */ e2 a(int i9) {
-        a(i9);
+    public final /* bridge */ /* synthetic */ e2 a(int i10) {
+        a(i10);
         throw null;
     }
 
     @Override // j$.util.stream.d2, j$.util.stream.e2
-    public final d2 a(int i9) {
+    public final d2 a(int i10) {
         throw new IndexOutOfBoundsException();
     }
 
     @Override // j$.util.stream.e2
-    public final /* synthetic */ void f(Object[] objArr, int i9) {
-        t3.N(this, (Integer[]) objArr, i9);
+    public final /* synthetic */ void f(Object[] objArr, int i10) {
+        t3.N(this, (Integer[]) objArr, i10);
     }
 
     @Override // j$.util.stream.s6, j$.util.stream.d2
-    public final void c(int i9, Object obj) {
-        super.c(i9, (int[]) obj);
+    public final void c(int i10, Object obj) {
+        super.c(i10, (int[]) obj);
     }
 
     @Override // j$.util.stream.s6, j$.util.stream.d2

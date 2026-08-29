@@ -22,8 +22,8 @@ public final class p1 implements x0 {
     }
 
     @Override // j$.util.Spliterator
-    public final /* synthetic */ boolean hasCharacteristics(int i9) {
-        return j$.com.android.tools.r8.a.p(this, i9);
+    public final /* synthetic */ boolean hasCharacteristics(int i10) {
+        return j$.com.android.tools.r8.a.p(this, i10);
     }
 
     @Override // j$.util.Spliterator
@@ -31,52 +31,52 @@ public final class p1 implements x0 {
         return j$.com.android.tools.r8.a.A(this, consumer);
     }
 
-    public p1(int[] iArr, int i9, int i10, int i11) {
+    public p1(int[] iArr, int i10, int i11, int i12) {
         this.a = iArr;
-        this.b = i9;
-        this.c = i10;
-        this.d = i11 | 16448;
+        this.b = i10;
+        this.c = i11;
+        this.d = i12 | 16448;
     }
 
     @Override // j$.util.d1, j$.util.Spliterator
     public final x0 trySplit() {
-        int i9 = this.b;
-        int i10 = (this.c + i9) >>> 1;
-        if (i9 >= i10) {
+        int i10 = this.b;
+        int i11 = (this.c + i10) >>> 1;
+        if (i10 >= i11) {
             return null;
         }
-        this.b = i10;
-        return new p1(this.a, i9, i10, this.d);
+        this.b = i11;
+        return new p1(this.a, i10, i11, this.d);
     }
 
     @Override // j$.util.d1
     public final void forEachRemaining(IntConsumer intConsumer) {
-        int i9;
+        int i10;
         intConsumer.getClass();
         int[] iArr = this.a;
         int length = iArr.length;
-        int i10 = this.c;
-        if (length < i10 || (i9 = this.b) < 0) {
+        int i11 = this.c;
+        if (length < i11 || (i10 = this.b) < 0) {
             return;
         }
-        this.b = i10;
-        if (i9 < i10) {
+        this.b = i11;
+        if (i10 < i11) {
             do {
-                intConsumer.accept(iArr[i9]);
-                i9++;
-            } while (i9 < i10);
+                intConsumer.accept(iArr[i10]);
+                i10++;
+            } while (i10 < i11);
         }
     }
 
     @Override // j$.util.d1
     public final boolean tryAdvance(IntConsumer intConsumer) {
         intConsumer.getClass();
-        int i9 = this.b;
-        if (i9 < 0 || i9 >= this.c) {
+        int i10 = this.b;
+        if (i10 < 0 || i10 >= this.c) {
             return false;
         }
-        this.b = i9 + 1;
-        intConsumer.accept(this.a[i9]);
+        this.b = i10 + 1;
+        intConsumer.accept(this.a[i10]);
         return true;
     }
 

@@ -13,7 +13,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
 public class RadioButton extends View {
     public static Paint s;
@@ -64,9 +64,9 @@ public class RadioButton extends View {
         setProgress(z10 ? 1.0f : 0.0f);
     }
 
-    public final void b(int i9, int i10) {
-        this.b = i9;
-        this.a = i10;
+    public final void b(int i10, int i11) {
+        this.b = i10;
+        this.a = i11;
         invalidate();
     }
 
@@ -92,28 +92,28 @@ public class RadioButton extends View {
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
-        float f10;
-        float f11 = this.c;
-        if (f11 <= 0.5f) {
+        float f9;
+        float f10 = this.c;
+        if (f10 <= 0.5f) {
             s.setColor(this.b);
             w.setColor(this.b);
-            f10 = this.c / 0.5f;
+            f9 = this.c / 0.5f;
         } else {
-            f10 = 2.0f - (f11 / 0.5f);
-            float f12 = 1.0f - f10;
-            int rgb = Color.rgb(Color.red(this.b) + ((int) ((Color.red(this.a) - r4) * f12)), Color.green(this.b) + ((int) ((Color.green(this.a) - r7) * f12)), Color.blue(this.b) + ((int) ((Color.blue(this.a) - r9) * f12)));
+            f9 = 2.0f - (f10 / 0.5f);
+            float f11 = 1.0f - f9;
+            int rgb = Color.rgb(Color.red(this.b) + ((int) ((Color.red(this.a) - r4) * f11)), Color.green(this.b) + ((int) ((Color.green(this.a) - r7) * f11)), Color.blue(this.b) + ((int) ((Color.blue(this.a) - r9) * f11)));
             s.setColor(rgb);
             w.setColor(rgb);
         }
         canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), 255, 31);
-        float f13 = (this.h / 2) - ((f10 + 1.0f) * AndroidUtilities.density);
-        canvas.drawCircle(getMeasuredWidth() / 2, getMeasuredHeight() / 2, f13, s);
+        float f12 = (this.h / 2) - ((f9 + 1.0f) * AndroidUtilities.density);
+        canvas.drawCircle(getMeasuredWidth() / 2, getMeasuredHeight() / 2, f12, s);
         if (this.r == null) {
             if (this.c <= 0.5f) {
-                canvas.drawCircle(getMeasuredWidth() / 2, getMeasuredHeight() / 2, f13 - AndroidUtilities.dp(1.0f), w);
-                canvas.drawCircle(getMeasuredWidth() / 2, getMeasuredHeight() / 2, (1.0f - f10) * (f13 - AndroidUtilities.dp(1.0f)), v);
+                canvas.drawCircle(getMeasuredWidth() / 2, getMeasuredHeight() / 2, f12 - AndroidUtilities.dp(1.0f), w);
+                canvas.drawCircle(getMeasuredWidth() / 2, getMeasuredHeight() / 2, (1.0f - f9) * (f12 - AndroidUtilities.dp(1.0f)), v);
             } else {
-                canvas.drawCircle(getMeasuredWidth() / 2, getMeasuredHeight() / 2, e2.c.z(f13 - AndroidUtilities.dp(1.0f), this.h / 4, f10, this.h / 4), w);
+                canvas.drawCircle(getMeasuredWidth() / 2, getMeasuredHeight() / 2, com.google.android.recaptcha.internal.a.z(f12 - AndroidUtilities.dp(1.0f), this.h / 4, f9, this.h / 4), w);
             }
         }
         canvas.restore();
@@ -130,13 +130,13 @@ public class RadioButton extends View {
     }
 
     @Override // android.view.View
-    public void setBackgroundColor(int i9) {
-        this.b = i9;
+    public void setBackgroundColor(int i10) {
+        this.b = i10;
         invalidate();
     }
 
-    public void setCheckedColor(int i9) {
-        this.a = i9;
+    public void setCheckedColor(int i10) {
+        this.a = i10;
         invalidate();
     }
 
@@ -146,18 +146,18 @@ public class RadioButton extends View {
         invalidate();
     }
 
-    public void setProgress(float f10) {
-        if (this.c == f10) {
+    public void setProgress(float f9) {
+        if (this.c == f9) {
             return;
         }
-        this.c = f10;
+        this.c = f9;
         invalidate();
     }
 
-    public void setSize(int i9) {
-        if (this.h == i9) {
+    public void setSize(int i10) {
+        if (this.h == i10) {
             return;
         }
-        this.h = i9;
+        this.h = i10;
     }
 }

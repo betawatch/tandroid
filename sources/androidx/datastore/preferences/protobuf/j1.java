@@ -2,7 +2,7 @@ package androidx.datastore.preferences.protobuf;
 
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class j1 {
     public static final j1 f = new j1(0, new int[0], new Object[0], false);
@@ -12,8 +12,8 @@ public final class j1 {
     public int d = -1;
     public boolean e;
 
-    public j1(int i9, int[] iArr, Object[] objArr, boolean z10) {
-        this.a = i9;
+    public j1(int i10, int[] iArr, Object[] objArr, boolean z10) {
+        this.a = i10;
         this.b = iArr;
         this.c = objArr;
         this.e = z10;
@@ -24,62 +24,62 @@ public final class j1 {
     }
 
     public final int a() {
-        int y10;
+        int y8;
         int A;
         int u10;
-        int i9 = this.d;
-        if (i9 != -1) {
-            return i9;
+        int i10 = this.d;
+        if (i10 != -1) {
+            return i10;
         }
-        int i10 = 0;
-        for (int i11 = 0; i11 < this.a; i11++) {
-            int i12 = this.b[i11];
-            int i13 = i12 >>> 3;
-            int i14 = i12 & 7;
-            if (i14 != 0) {
-                if (i14 == 1) {
-                    ((Long) this.c[i11]).getClass();
-                    u10 = k.u(i13);
-                } else if (i14 == 2) {
-                    u10 = k.r(i13, (g) this.c[i11]);
-                } else if (i14 == 3) {
-                    y10 = k.y(i13) * 2;
-                    A = ((j1) this.c[i11]).a();
+        int i11 = 0;
+        for (int i12 = 0; i12 < this.a; i12++) {
+            int i13 = this.b[i12];
+            int i14 = i13 >>> 3;
+            int i15 = i13 & 7;
+            if (i15 != 0) {
+                if (i15 == 1) {
+                    ((Long) this.c[i12]).getClass();
+                    u10 = k.u(i14);
+                } else if (i15 == 2) {
+                    u10 = k.r(i14, (g) this.c[i12]);
+                } else if (i15 == 3) {
+                    y8 = k.y(i14) * 2;
+                    A = ((j1) this.c[i12]).a();
                 } else {
-                    if (i14 != 5) {
+                    if (i15 != 5) {
                         throw new IllegalStateException(c0.b());
                     }
-                    ((Integer) this.c[i11]).getClass();
-                    u10 = k.t(i13);
+                    ((Integer) this.c[i12]).getClass();
+                    u10 = k.t(i14);
                 }
-                i10 = u10 + i10;
+                i11 = u10 + i11;
             } else {
-                long longValue = ((Long) this.c[i11]).longValue();
-                y10 = k.y(i13);
+                long longValue = ((Long) this.c[i12]).longValue();
+                y8 = k.y(i14);
                 A = k.A(longValue);
             }
-            i10 = A + y10 + i10;
+            i11 = A + y8 + i11;
         }
-        this.d = i10;
-        return i10;
+        this.d = i11;
+        return i11;
     }
 
-    public final void c(int i9, Object obj) {
+    public final void c(int i10, Object obj) {
         if (!this.e) {
             throw new UnsupportedOperationException();
         }
-        int i10 = this.a;
+        int i11 = this.a;
         int[] iArr = this.b;
-        if (i10 == iArr.length) {
-            int i11 = i10 + (i10 < 4 ? 8 : i10 >> 1);
-            this.b = Arrays.copyOf(iArr, i11);
-            this.c = Arrays.copyOf(this.c, i11);
+        if (i11 == iArr.length) {
+            int i12 = i11 + (i11 < 4 ? 8 : i11 >> 1);
+            this.b = Arrays.copyOf(iArr, i12);
+            this.c = Arrays.copyOf(this.c, i12);
         }
         int[] iArr2 = this.b;
-        int i12 = this.a;
-        iArr2[i12] = i9;
-        this.c[i12] = obj;
-        this.a = i12 + 1;
+        int i13 = this.a;
+        iArr2[i13] = i10;
+        this.c[i13] = obj;
+        this.a = i13 + 1;
     }
 
     public final void d(l0 l0Var) {
@@ -88,26 +88,26 @@ public final class j1 {
         }
         l0Var.getClass();
         k kVar = (k) l0Var.a;
-        for (int i9 = 0; i9 < this.a; i9++) {
-            int i10 = this.b[i9];
-            Object obj = this.c[i9];
-            int i11 = i10 >>> 3;
-            int i12 = i10 & 7;
-            if (i12 == 0) {
-                kVar.U(i11, ((Long) obj).longValue());
-            } else if (i12 == 1) {
-                kVar.K(i11, ((Long) obj).longValue());
-            } else if (i12 == 2) {
-                l0Var.a(i11, (g) obj);
-            } else if (i12 == 3) {
-                kVar.R(i11, 3);
+        for (int i10 = 0; i10 < this.a; i10++) {
+            int i11 = this.b[i10];
+            Object obj = this.c[i10];
+            int i12 = i11 >>> 3;
+            int i13 = i11 & 7;
+            if (i13 == 0) {
+                kVar.U(i12, ((Long) obj).longValue());
+            } else if (i13 == 1) {
+                kVar.K(i12, ((Long) obj).longValue());
+            } else if (i13 == 2) {
+                l0Var.a(i12, (g) obj);
+            } else if (i13 == 3) {
+                kVar.R(i12, 3);
                 ((j1) obj).d(l0Var);
-                kVar.R(i11, 4);
+                kVar.R(i12, 4);
             } else {
-                if (i12 != 5) {
+                if (i13 != 5) {
                     throw new RuntimeException(c0.b());
                 }
-                kVar.I(i11, ((Integer) obj).intValue());
+                kVar.I(i12, ((Integer) obj).intValue());
             }
         }
     }
@@ -120,46 +120,46 @@ public final class j1 {
             return false;
         }
         j1 j1Var = (j1) obj;
-        int i9 = this.a;
-        if (i9 == j1Var.a) {
+        int i10 = this.a;
+        if (i10 == j1Var.a) {
             int[] iArr = this.b;
             int[] iArr2 = j1Var.b;
-            int i10 = 0;
+            int i11 = 0;
             while (true) {
-                if (i10 >= i9) {
+                if (i11 >= i10) {
                     Object[] objArr = this.c;
                     Object[] objArr2 = j1Var.c;
-                    int i11 = this.a;
-                    for (int i12 = 0; i12 < i11; i12++) {
-                        if (objArr[i12].equals(objArr2[i12])) {
+                    int i12 = this.a;
+                    for (int i13 = 0; i13 < i12; i13++) {
+                        if (objArr[i13].equals(objArr2[i13])) {
                         }
                     }
                     return true;
                 }
-                if (iArr[i10] != iArr2[i10]) {
+                if (iArr[i11] != iArr2[i11]) {
                     break;
                 }
-                i10++;
+                i11++;
             }
         }
         return false;
     }
 
     public final int hashCode() {
-        int i9 = this.a;
-        int i10 = (527 + i9) * 31;
+        int i10 = this.a;
+        int i11 = (527 + i10) * 31;
         int[] iArr = this.b;
-        int i11 = 17;
         int i12 = 17;
-        for (int i13 = 0; i13 < i9; i13++) {
-            i12 = (i12 * 31) + iArr[i13];
+        int i13 = 17;
+        for (int i14 = 0; i14 < i10; i14++) {
+            i13 = (i13 * 31) + iArr[i14];
         }
-        int i14 = (i10 + i12) * 31;
+        int i15 = (i11 + i13) * 31;
         Object[] objArr = this.c;
-        int i15 = this.a;
-        for (int i16 = 0; i16 < i15; i16++) {
-            i11 = (i11 * 31) + objArr[i16].hashCode();
+        int i16 = this.a;
+        for (int i17 = 0; i17 < i16; i17++) {
+            i12 = (i12 * 31) + objArr[i17].hashCode();
         }
-        return i14 + i11;
+        return i15 + i12;
     }
 }

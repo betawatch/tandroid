@@ -1,103 +1,66 @@
 package eh;
 
-import java.util.ArrayList;
+import android.app.Activity;
+import bg.t1;
+import ih.b1;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ContactsController;
-import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.ActionBar.o2;
-import org.telegram.ui.ag1;
-import org.telegram.ui.qn;
-import pf.m0;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.tl.TL_stats;
+import org.telegram.ui.ActionBar.a0;
+import org.telegram.ui.ActionBar.c6;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.Components.il0;
+import org.telegram.ui.Components.jl0;
+import org.telegram.ui.Components.k51;
+import org.telegram.ui.Components.xa;
+import org.telegram.ui.f91;
+import org.telegram.ui.t91;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class g implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
+public final class g extends xa {
+    public k51 T;
+    public final f91 U;
 
-    public /* synthetic */ g(x xVar, TLRPC.TL_chatInviteImporter tL_chatInviteImporter, boolean z10, TLRPC.User user, TLRPC.TL_messages_hideChatJoinRequest tL_messages_hideChatJoinRequest) {
-        this.a = 0;
-        this.c = xVar;
-        this.d = tL_chatInviteImporter;
-        this.b = z10;
-        this.e = user;
-        this.f = tL_messages_hideChatJoinRequest;
+    public g(Activity activity, c6 c6Var, TL_stats.TL_statsPollStats tL_statsPollStats) {
+        super(activity, null, true, false, false, false, false, 2, c6Var);
+        setBackgroundColor(g6.v0(g6.a7, c6Var));
+        this.occupyNavigationBar = true;
+        this.drawNavigationBar = false;
+        this.H = false;
+        this.G = AndroidUtilities.dp(12.0f);
+        this.U = t91.f0(tL_statsPollStats.votes_graph, LocaleController.getString(R.string.PollV2StatsVoteTimeline), 2, false);
+        jl0 jl0Var = this.d;
+        int i10 = this.backgroundPaddingLeft;
+        jl0Var.setPadding(i10, 0, i10, AndroidUtilities.navigationBarHeight);
+        this.d.setClipToPadding(false);
+        this.d.setSections(true);
+        a0 n10 = this.e.n();
+        n10.a(-1, R.drawable.ic_close_white);
+        n10.setTranslationX(-AndroidUtilities.dp(5.0f));
+        this.T.N(false);
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        switch (this.a) {
-            case 0:
-                x xVar = (x) this.c;
-                TLRPC.TL_chatInviteImporter tL_chatInviteImporter = (TLRPC.TL_chatInviteImporter) this.d;
-                TLRPC.User user = (TLRPC.User) this.e;
-                TLRPC.TL_messages_hideChatJoinRequest tL_messages_hideChatJoinRequest = (TLRPC.TL_messages_hideChatJoinRequest) this.f;
-                if (tL_error == null) {
-                    MessagesController.getInstance(xVar.k).processUpdates((TLRPC.TL_updates) tLObject, false);
-                }
-                AndroidUtilities.runOnUIThread(new h(xVar, tL_error, tLObject, tL_chatInviteImporter, this.b, user, tL_messages_hideChatJoinRequest));
-                break;
-            case 1:
-                ((ContactsController) this.c).lambda$deleteContact$57((ArrayList) this.d, (ArrayList) this.e, this.b, (String) this.f, tLObject, tL_error);
-                break;
-            case 2:
-                ((SendMessagesHelper) this.c).lambda$requestUrlAuth$37((TLRPC.TL_messages_requestUrlAuth) this.d, (qn) this.e, (String) this.f, this.b, tLObject, tL_error);
-                break;
-            case 3:
-                ((SendMessagesHelper) this.c).lambda$sendEditRichMessageRequest$26(this.b, (MessageObject) this.d, (TLRPC.TL_messages_editMessage) this.e, (o2) this.f, tLObject, tL_error);
-                break;
-            case 4:
-                AndroidUtilities.runOnUIThread(new h((ag1) this.c, tL_error, this.b, tLObject, (byte[]) this.d, (String) this.e, (TL_account.passwordInputSettings) this.f));
-                break;
-            default:
-                AndroidUtilities.runOnUIThread(new h((m0) this.c, tL_error, tLObject, (int[]) this.d, (ArrayList) this.f, this.b, (TLRPC.User) this.e));
-                break;
-        }
+    public static int P(int i10, long j10, int i11, b1 b1Var) {
+        TL_stats.TL_statsGetPollStats tL_statsGetPollStats = new TL_stats.TL_statsGetPollStats();
+        tL_statsGetPollStats.peer = MessagesController.getInstance(i10).getInputPeer(j10);
+        tL_statsGetPollStats.msg_id = i11;
+        return ConnectionsManager.getInstance(i10).sendRequestTyped(tL_statsGetPollStats, new org.telegram.messenger.a(), new t1(b1Var, 3));
     }
 
-    public /* synthetic */ g(Object obj, Object obj2, Object obj3, Object obj4, boolean z10, int i9) {
-        this.a = i9;
-        this.c = obj;
-        this.b = z10;
-        this.d = obj2;
-        this.e = obj3;
-        this.f = obj4;
+    @Override // org.telegram.ui.Components.xa
+    public final il0 v(jl0 jl0Var) {
+        k51 k51Var = new k51(jl0Var, getContext(), this.currentAccount, 0, true, new t1(this, 2), this.resourcesProvider);
+        this.T = k51Var;
+        k51Var.r = false;
+        return k51Var;
     }
 
-    public /* synthetic */ g(ContactsController contactsController, ArrayList arrayList, ArrayList arrayList2, boolean z10, String str) {
-        this.a = 1;
-        this.c = contactsController;
-        this.d = arrayList;
-        this.e = arrayList2;
-        this.b = z10;
-        this.f = str;
-    }
-
-    public /* synthetic */ g(SendMessagesHelper sendMessagesHelper, TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth, qn qnVar, String str, boolean z10) {
-        this.a = 2;
-        this.c = sendMessagesHelper;
-        this.d = tL_messages_requestUrlAuth;
-        this.e = qnVar;
-        this.f = str;
-        this.b = z10;
-    }
-
-    public /* synthetic */ g(m0 m0Var, int[] iArr, ArrayList arrayList, boolean z10, TLRPC.User user) {
-        this.a = 5;
-        this.c = m0Var;
-        this.d = iArr;
-        this.f = arrayList;
-        this.b = z10;
-        this.e = user;
+    @Override // org.telegram.ui.Components.xa
+    public final CharSequence y() {
+        return LocaleController.getString(R.string.PollV2StatsPollStats);
     }
 }

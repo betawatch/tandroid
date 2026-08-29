@@ -1,106 +1,75 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.RectF;
-import android.os.Build;
-import android.view.View;
+import android.content.Context;
+import android.widget.LinearLayout;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class q40 implements org.telegram.ui.Components.tj0 {
-    public final Path a = new Path();
-    public final Paint b;
-    public final /* synthetic */ o50 c;
+public final class q40 extends org.telegram.ui.Components.i30 {
+    public final /* synthetic */ u40 n;
 
-    public q40(o50 o50Var) {
-        this.c = o50Var;
-        Paint paint = new Paint(1);
-        this.b = paint;
-        paint.setColor(-14603467);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public q40(u40 u40Var, Context context, TLRPC.Chat chat, boolean z10) {
+        super(context, chat, z10);
+        this.n = u40Var;
     }
 
-    @Override // org.telegram.ui.Components.tj0
-    public final void d(View view, hg.r0 r0Var, boolean z10, boolean z11) {
-        TLRPC.TL_messageEntityCustomEmoji tL_messageEntityCustomEmoji = new TLRPC.TL_messageEntityCustomEmoji();
-        String str = r0Var.f;
-        if (str == null) {
-            str = "👍";
-        }
-        TLRPC.TL_textWithEntities tL_textWithEntities = new TLRPC.TL_textWithEntities();
-        tL_textWithEntities.text = str;
-        long j10 = r0Var.g;
-        if (j10 != 0) {
-            tL_messageEntityCustomEmoji.document_id = j10;
-            tL_messageEntityCustomEmoji.offset = 0;
-            tL_messageEntityCustomEmoji.length = str.length();
-            tL_textWithEntities.entities.add(tL_messageEntityCustomEmoji);
-        }
-        o50 o50Var = this.c;
-        o50Var.A1(tL_textWithEntities);
-        o30 o30Var = o50Var.D;
-        if (o30Var.m()) {
-            o30Var.j();
+    @Override // org.telegram.ui.Components.i30
+    public final void n(int i10) {
+        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getContext());
+        alertDialog$Builder.a.E = org.telegram.ui.ActionBar.g6.pg;
+        r50 r50Var = this.n.b;
+        r50Var.s0 = false;
+        alertDialog$Builder.a.N = LocaleController.getString(R.string.VoipGroupStartRecordingTitle);
+        if (i10 == 0) {
+            alertDialog$Builder.a.P = LocaleController.getString(r50Var.W0.call.rtmp_stream ? R.string.VoipGroupStartRecordingRtmpText : R.string.VoipGroupStartRecordingText);
+        } else if (ChatObject.isChannelOrGiga(r50Var.V0)) {
+            alertDialog$Builder.a.P = LocaleController.getString(r50Var.W0.call.rtmp_stream ? R.string.VoipGroupStartRecordingRtmpVideoText : R.string.VoipChannelStartRecordingVideoText);
         } else {
-            o30Var.d();
+            alertDialog$Builder.a.P = LocaleController.getString(r50Var.W0.call.rtmp_stream ? R.string.VoipGroupStartRecordingRtmpVideoText : R.string.VoipGroupStartRecordingVideoText);
         }
-        hg.e0 reactionsWindow = o50Var.G.getReactionsWindow();
-        if (reactionsWindow == null || reactionsWindow.q) {
-            return;
-        }
-        o50Var.G.getReactionsWindow().e();
-        o50Var.G.n();
-    }
-
-    @Override // org.telegram.ui.Components.tj0
-    public final boolean n() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.tj0
-    public final /* synthetic */ boolean p() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.tj0
-    public final void s(Canvas canvas, RectF rectF, float f10, float f11, float f12, int i9, boolean z10) {
-        Paint paint = this.b;
-        if (f10 > 0.0f) {
-            canvas.drawRoundRect(rectF, f10, f10, paint);
-        } else {
-            canvas.drawRect(rectF, paint);
-        }
-        if (Build.VERSION.SDK_INT < 29 || !canvas.isHardwareAccelerated()) {
-            return;
-        }
-        o50 o50Var = this.c;
-        if (o50Var.M2 != null) {
-            canvas.save();
-            if (f10 > 0.0f) {
-                Path path = this.a;
-                path.rewind();
-                path.addRoundRect(rectF, f10, f10, Path.Direction.CW);
-                path.close();
-                canvas.clipPath(path);
-            } else {
-                canvas.clipRect(rectF);
-            }
-            canvas.translate(-o50Var.G.getX(), -o50Var.G.getY());
-            float f13 = o50Var.N2;
-            canvas.scale(f13, f13);
-            canvas.drawRenderNode(o50Var.M2);
-            canvas.restore();
-        }
-    }
-
-    @Override // org.telegram.ui.Components.tj0
-    public final boolean u() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.tj0
-    public final /* synthetic */ void t() {
+        alertDialog$Builder.a.u0 = false;
+        EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(getContext());
+        editTextBoldCursor.setBackgroundDrawable(org.telegram.ui.ActionBar.g6.T(getContext(), org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.nh, false), org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.oh, false)));
+        LinearLayout linearLayout = new LinearLayout(getContext());
+        linearLayout.setOrientation(1);
+        alertDialog$Builder.n(linearLayout);
+        editTextBoldCursor.setTextSize(1, 16.0f);
+        int i11 = org.telegram.ui.ActionBar.g6.ng;
+        editTextBoldCursor.setTextColor(org.telegram.ui.ActionBar.g6.w0(null, i11, false));
+        editTextBoldCursor.setMaxLines(1);
+        editTextBoldCursor.setLines(1);
+        editTextBoldCursor.setInputType(16385);
+        editTextBoldCursor.setGravity(51);
+        editTextBoldCursor.setSingleLine(true);
+        editTextBoldCursor.setHint(LocaleController.getString(R.string.VoipGroupSaveFileHint));
+        editTextBoldCursor.setImeOptions(6);
+        editTextBoldCursor.setHintTextColor(org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.og, false));
+        editTextBoldCursor.setCursorColor(org.telegram.ui.ActionBar.g6.w0(null, i11, false));
+        editTextBoldCursor.setCursorSize(AndroidUtilities.dp(20.0f));
+        editTextBoldCursor.setCursorWidth(1.5f);
+        editTextBoldCursor.setPadding(0, AndroidUtilities.dp(4.0f), 0, 0);
+        linearLayout.addView(editTextBoldCursor, i7.f6.t(-1, 36, 51, 24, 0, 24, 12));
+        editTextBoldCursor.setOnEditorActionListener(new iz(alertDialog$Builder, 2));
+        int w02 = org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.fg, false);
+        org.telegram.ui.ActionBar.c2 c2Var = alertDialog$Builder.a;
+        c2Var.i(w02);
+        c2Var.setOnShowListener(new p40(this, c2Var, editTextBoldCursor, 1));
+        c2Var.setOnDismissListener(new jz(2, editTextBoldCursor));
+        alertDialog$Builder.k(LocaleController.getString(R.string.Start), new e3.d(this, editTextBoldCursor, i10, 8));
+        alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new hz(2, editTextBoldCursor));
+        int w03 = org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.ug, false);
+        org.telegram.ui.ActionBar.c2 c2Var2 = alertDialog$Builder.a;
+        c2Var2.i(w03);
+        c2Var2.show();
+        c2Var2.o(org.telegram.ui.ActionBar.g6.w0(null, i11, false));
+        editTextBoldCursor.requestFocus();
     }
 }

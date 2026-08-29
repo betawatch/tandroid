@@ -1,32 +1,38 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class p71 implements RequestDelegate {
+public final /* synthetic */ class p71 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ z71 b;
+    public final /* synthetic */ b81 b;
 
-    public /* synthetic */ p71(z71 z71Var, int i9) {
-        this.a = i9;
-        this.b = z71Var;
+    public /* synthetic */ p71(b81 b81Var, int i10) {
+        this.a = i10;
+        this.b = b81Var;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                TLRPC.TL_help_dismissSuggestion tL_help_dismissSuggestion = new TLRPC.TL_help_dismissSuggestion();
-                tL_help_dismissSuggestion.suggestion = "VALIDATE_PASSWORD";
-                tL_help_dismissSuggestion.peer = new TLRPC.TL_inputPeerEmpty();
-                z71 z71Var = this.b;
-                z71Var.getConnectionsManager().sendRequest(tL_help_dismissSuggestion, new p71(z71Var, 1));
+                this.b.c.U2.N(true);
+                break;
+            case 1:
+                ye.d.s(this.b.getParentActivity(), LocaleController.getString(R.string.CheckPhoneNumberLearnMoreUrl));
+                break;
+            case 2:
+                b81 b81Var = this.b;
+                b81Var.c.postOnAnimation(new p71(b81Var, 3));
+                break;
+            case 3:
+                this.b.i0();
                 break;
             default:
-                this.b.getMessagesController().loadAppConfig();
+                MessagesController.getInstance(this.b.currentAccount).deleteUserPhoto(null);
                 break;
         }
     }

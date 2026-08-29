@@ -1,24 +1,46 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.MotionEvent;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class u7 extends pn0 {
-    public final /* synthetic */ c8 h0;
+public final class u7 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ g8 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public u7(c8 c8Var, Context context, org.telegram.ui.ActionBar.b6 b6Var) {
-        super(context, b6Var, false);
-        this.h0 = c8Var;
+    public /* synthetic */ u7(g8 g8Var, int i10) {
+        this.a = i10;
+        this.b = g8Var;
     }
 
-    @Override // org.telegram.ui.Components.pn0
-    public final boolean d(MotionEvent motionEvent) {
-        if (this.h0.D0 != 0) {
-            return false;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationCancel(Animator animator) {
+        switch (this.a) {
+            case 2:
+                this.b.y0 = null;
+                break;
+            default:
+                super.onAnimationCancel(animator);
+                break;
         }
-        return super.d(motionEvent);
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                this.b.i0 = false;
+                break;
+            case 1:
+                g8 g8Var = this.b;
+                g8Var.e0.setVisibility(4);
+                g8Var.f0.setImageBitmap(null);
+                g8Var.i0 = false;
+                break;
+        }
+    }
+
+    private final void a(Animator animator) {
     }
 }

@@ -1,36 +1,26 @@
 package bg;
 
-import java.util.concurrent.atomic.AtomicBoolean;
-import org.telegram.messenger.Utilities;
+import org.telegram.ui.ws0;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class p implements Utilities.Callback {
+public final /* synthetic */ class p implements q0.a {
     public final /* synthetic */ int a;
-    public final /* synthetic */ AtomicBoolean b;
-    public final /* synthetic */ ve.d c;
+    public final /* synthetic */ ws0 b;
 
-    public /* synthetic */ p(AtomicBoolean atomicBoolean, ve.d dVar, int i9) {
-        this.a = i9;
-        this.b = atomicBoolean;
-        this.c = dVar;
+    public /* synthetic */ p(ws0 ws0Var, int i10) {
+        this.a = i10;
+        this.b = ws0Var;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        ve.d dVar;
+    @Override // q0.a
+    public final void accept(Object obj) {
         switch (this.a) {
             case 0:
-                if (!this.b.get()) {
-                    this.c.b();
-                    break;
-                }
+                g1.Z(this.b, (Integer) obj);
                 break;
             default:
-                if (!this.b.get() && (dVar = this.c) != null) {
-                    dVar.b();
-                    break;
-                }
+                g1.c0(this.b, (Integer) obj);
                 break;
         }
     }

@@ -1,78 +1,30 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.View;
-import android.widget.TextView;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class x70 implements View.OnClickListener {
+public final /* synthetic */ class x70 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ e80 b;
+    public final /* synthetic */ c80 b;
+    public final /* synthetic */ TLRPC.TL_chatInviteJoinResultWebView c;
+    public final /* synthetic */ long d;
 
-    public /* synthetic */ x70(e80 e80Var, int i9) {
-        this.a = i9;
-        this.b = e80Var;
+    public /* synthetic */ x70(c80 c80Var, TLRPC.TL_chatInviteJoinResultWebView tL_chatInviteJoinResultWebView, long j10, int i10) {
+        this.a = i10;
+        this.b = c80Var;
+        this.c = tL_chatInviteJoinResultWebView;
+        this.d = j10;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                this.b.r.j();
-                break;
-            case 1:
-                e80 e80Var = this.b;
-                org.telegram.ui.ActionBar.o1 o1Var = e80Var.s;
-                if (o1Var != null) {
-                    o1Var.d(true);
-                }
-                e80Var.r.b();
-                break;
-            case 2:
-                e80 e80Var2 = this.b;
-                String str = e80Var2.b;
-                boolean z10 = str != null && str.endsWith("?direct");
-                Context context = e80Var2.getContext();
-                String string = LocaleController.getString(R.string.InviteByQRCode);
-                String str2 = e80Var2.b;
-                String str3 = e80Var2.F;
-                if (str3 == null) {
-                    str3 = LocaleController.getString(e80Var2.D ? z10 ? R.string.QRCodeLinkHelpChannelDirect : R.string.QRCodeLinkHelpChannel : R.string.QRCodeLinkHelpGroup);
-                }
-                b80 b80Var = new b80(e80Var2, context, string, str2, str3);
-                e80Var2.A = b80Var;
-                b80Var.m(R.raw.qr_code_logo);
-                e80Var2.A.show();
-                org.telegram.ui.ActionBar.o1 o1Var2 = e80Var2.s;
-                if (o1Var2 != null) {
-                    o1Var2.d(true);
-                    break;
-                }
+                c80.p(this.b, this.c, this.d);
                 break;
             default:
-                e80 e80Var3 = this.b;
-                org.telegram.ui.ActionBar.o1 o1Var3 = e80Var3.s;
-                if (o1Var3 != null) {
-                    o1Var3.d(true);
-                }
-                org.telegram.ui.ActionBar.o2 o2Var = e80Var3.c;
-                if (o2Var.getParentActivity() != null) {
-                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(o2Var.getParentActivity());
-                    alertDialog$Builder.a.N = LocaleController.getString(R.string.RevokeLink);
-                    alertDialog$Builder.a.P = LocaleController.getString(R.string.RevokeAlert);
-                    alertDialog$Builder.k(LocaleController.getString(R.string.RevokeButton), new w70(e80Var3, 1));
-                    alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
-                    TextView textView = (TextView) alertDialog$Builder.a.d(-1);
-                    if (textView != null) {
-                        textView.setTextColor(org.telegram.ui.ActionBar.f6.w0(null, org.telegram.ui.ActionBar.f6.q7, false));
-                    }
-                    alertDialog$Builder.o();
-                    break;
-                }
+                c80.o(this.b, this.c, this.d);
                 break;
         }
     }

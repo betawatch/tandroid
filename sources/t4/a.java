@@ -1,17 +1,31 @@
 package t4;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+import android.graphics.Bitmap;
+import android.text.Layout;
+import org.telegram.tgnet.TLObject;
+
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class a {
-    public final int a;
-    public final int[] b;
-    public final int[] c;
-    public final int[] d;
+    public CharSequence a = null;
+    public final Bitmap b = null;
+    public Layout.Alignment c = null;
+    public Layout.Alignment d = null;
+    public float e = -3.4028235E38f;
+    public int f = TLObject.FLAG_31;
+    public int g = TLObject.FLAG_31;
+    public float h = -3.4028235E38f;
+    public int i = TLObject.FLAG_31;
+    public int j = TLObject.FLAG_31;
+    public float k = -3.4028235E38f;
+    public float l = -3.4028235E38f;
+    public final float m = -3.4028235E38f;
+    public final boolean n = false;
+    public final int o = -16777216;
+    public int p = TLObject.FLAG_31;
+    public float q;
 
-    public a(int i9, int[] iArr, int[] iArr2, int[] iArr3) {
-        this.a = i9;
-        this.b = iArr;
-        this.c = iArr2;
-        this.d = iArr3;
+    public final b a() {
+        return new b(this.a, this.c, this.d, this.b, this.e, this.f, this.g, this.h, this.i, this.j, this.k, this.l, this.m, this.n, this.o, this.p, this.q);
     }
 }

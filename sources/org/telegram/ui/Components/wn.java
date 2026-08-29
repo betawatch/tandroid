@@ -1,46 +1,45 @@
 package org.telegram.ui.Components;
 
-import android.graphics.drawable.Drawable;
-import org.telegram.messenger.ImageReceiver;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class wn implements ImageReceiver.ImageReceiverDelegate {
-    public boolean a;
-    public final /* synthetic */ pf.h b;
-    public final /* synthetic */ yn c;
+public final class wn extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ xn b;
 
-    public wn(pf.j jVar, pf.h hVar) {
-        this.c = jVar;
-        this.b = hVar;
+    public /* synthetic */ wn(xn xnVar, int i10) {
+        this.a = i10;
+        this.b = xnVar;
     }
 
-    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
-    public final void didSetImageBitmap(int i9, String str, Drawable drawable) {
-        mi0 mi0Var;
-        ff.h hVar;
-        if (this.a) {
-            return;
-        }
-        if ((i9 == 0 || i9 == 3) && drawable != null) {
-            this.a = true;
-            boolean z10 = drawable instanceof mi0;
-            pf.h hVar2 = this.b;
-            if (z10 && (hVar = (mi0Var = (mi0) drawable).z0) != null && hVar.g()) {
-                mi0Var.y0 = new org.telegram.ui.wq(26, this, hVar2);
-            } else {
-                yn.a(this.c);
-                hVar2.run();
-            }
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationCancel(Animator animator) {
+        switch (this.a) {
+            case 0:
+                this.b.M = null;
+                break;
+            default:
+                super.onAnimationCancel(animator);
+                break;
         }
     }
 
-    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
-    public final /* synthetic */ void onAnimationReady(ImageReceiver imageReceiver) {
-        org.telegram.messenger.g5.b(this, imageReceiver);
-    }
-
-    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
-    public final void didSetImage(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                xn xnVar = this.b;
+                if (xnVar.M == animator) {
+                    xnVar.getSubtitleTextView().setVisibility(4);
+                    xnVar.M = null;
+                    break;
+                }
+                break;
+            default:
+                this.b.M = null;
+                break;
+        }
     }
 }

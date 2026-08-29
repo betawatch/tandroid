@@ -1,7 +1,39 @@
 package x5;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+import com.google.android.gms.common.data.DataHolder;
+import java.util.Arrays;
+import z5.l;
+
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public abstract class a extends a7.a implements h {
-    public static final /* synthetic */ int b = 0;
+public abstract class a {
+    public final DataHolder a;
+    public final int b;
+    public final int c;
+
+    public a(DataHolder dataHolder, int i10) {
+        l.h(dataHolder);
+        this.a = dataHolder;
+        boolean z10 = false;
+        if (i10 >= 0 && i10 < dataHolder.n) {
+            z10 = true;
+        }
+        l.k(z10);
+        this.b = i10;
+        this.c = dataHolder.b(i10);
+    }
+
+    public final boolean equals(Object obj) {
+        if (obj instanceof a) {
+            a aVar = (a) obj;
+            if (l.l(Integer.valueOf(aVar.b), Integer.valueOf(this.b)) && l.l(Integer.valueOf(aVar.c), Integer.valueOf(this.c)) && aVar.a == this.a) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public final int hashCode() {
+        return Arrays.hashCode(new Object[]{Integer.valueOf(this.b), Integer.valueOf(this.c), this.a});
+    }
 }

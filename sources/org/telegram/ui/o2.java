@@ -1,44 +1,32 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.view.MotionEvent;
+import android.graphics.drawable.ColorDrawable;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class o2 extends m2.g {
-    public final /* synthetic */ t2 s0;
+public final class o2 extends View {
+    public final d70 a;
+    public final org.telegram.ui.Components.jq b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public o2(t2 t2Var, Context context) {
+    public o2(Context context, d70 d70Var) {
         super(context);
-        this.s0 = t2Var;
+        this.a = d70Var;
+        org.telegram.ui.Components.jq jqVar = new org.telegram.ui.Components.jq(new ColorDrawable(org.telegram.ui.ActionBar.g6.w0(null, org.telegram.ui.ActionBar.g6.Qk, false)), org.telegram.ui.ActionBar.g6.U0(context, R.drawable.greydivider_bottom, -16777216));
+        this.b = jqVar;
+        jqVar.w = true;
+        setBackgroundDrawable(jqVar);
+        setImportantForAccessibility(2);
     }
 
-    @Override // m2.g, android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        int actionMasked = motionEvent.getActionMasked();
-        t2 t2Var = this.s0;
-        if (actionMasked == 0) {
-            t2Var.x.b0.requestDisallowInterceptTouchEvent(true);
-        } else if (motionEvent.getActionMasked() == 1 || motionEvent.getActionMasked() == 3) {
-            t2Var.x.b0.requestDisallowInterceptTouchEvent(false);
-        }
-        t2Var.x.k();
-        return super.onInterceptTouchEvent(motionEvent);
-    }
-
-    @Override // m2.g, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        int actionMasked = motionEvent.getActionMasked();
-        t2 t2Var = this.s0;
-        if (actionMasked == 0) {
-            t2Var.x.b0.requestDisallowInterceptTouchEvent(true);
-        }
-        boolean onTouchEvent = super.onTouchEvent(motionEvent);
-        if (motionEvent.getActionMasked() != 1 && motionEvent.getActionMasked() != 3) {
-            return onTouchEvent;
-        }
-        t2Var.x.b0.requestDisallowInterceptTouchEvent(false);
-        return onTouchEvent;
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        setMeasuredDimension(View.MeasureSpec.getSize(i10), AndroidUtilities.dp(12.0f));
+        int i12 = org.telegram.ui.ActionBar.g6.Qk;
+        ((m4) this.a).getClass();
+        org.telegram.ui.ActionBar.g6.v1(this.b, org.telegram.ui.ActionBar.g6.w0(null, i12, false), false);
     }
 }

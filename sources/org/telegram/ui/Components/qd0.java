@@ -1,18 +1,12 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class qd0 extends org.telegram.ui.ActionBar.j {
-    public final /* synthetic */ wd0 a;
-
-    public qd0(wd0 wd0Var) {
-        this.a = wd0Var;
-    }
-
-    @Override // org.telegram.ui.ActionBar.j
-    public final void b(int i9) {
-        if (i9 == -1) {
-            this.a.dismiss();
-        }
-    }
+public final class qd0 {
+    public float a;
+    public float b;
+    public float c;
+    public float d;
+    public float e;
+    public float f;
 }

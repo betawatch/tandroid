@@ -9,9 +9,9 @@ public final class h extends a implements Iterator, Enumeration {
     public final /* synthetic */ int k;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ h(l[] lVarArr, int i9, int i10, ConcurrentHashMap concurrentHashMap, int i11) {
-        super(lVarArr, i9, i10, concurrentHashMap);
-        this.k = i11;
+    public /* synthetic */ h(l[] lVarArr, int i10, int i11, ConcurrentHashMap concurrentHashMap, int i12) {
+        super(lVarArr, i10, i11, concurrentHashMap);
+        this.k = i12;
     }
 
     @Override // java.util.Iterator

@@ -10,31 +10,31 @@ public final class g extends l {
     }
 
     @Override // j$.util.concurrent.l
-    public final l a(int i9, Object obj) {
-        l k10;
+    public final l a(int i10, Object obj) {
+        l k9;
         Object obj2;
         l[] lVarArr = this.e;
         loop0: while (true) {
             int length = lVarArr.length;
-            if (length == 0 || (k10 = ConcurrentHashMap.k(lVarArr, (length - 1) & i9)) == null) {
+            if (length == 0 || (k9 = ConcurrentHashMap.k(lVarArr, (length - 1) & i10)) == null) {
                 return null;
             }
             do {
-                int i10 = k10.a;
-                if (i10 != i9 || ((obj2 = k10.b) != obj && (obj2 == null || !obj.equals(obj2)))) {
-                    if (i10 < 0) {
-                        if (k10 instanceof g) {
-                            lVarArr = ((g) k10).e;
+                int i11 = k9.a;
+                if (i11 != i10 || ((obj2 = k9.b) != obj && (obj2 == null || !obj.equals(obj2)))) {
+                    if (i11 < 0) {
+                        if (k9 instanceof g) {
+                            lVarArr = ((g) k9).e;
                         } else {
-                            return k10.a(i9, obj);
+                            return k9.a(i10, obj);
                         }
                     } else {
-                        k10 = k10.d;
+                        k9 = k9.d;
                     }
                 }
-            } while (k10 != null);
+            } while (k9 != null);
             return null;
         }
-        return k10;
+        return k9;
     }
 }

@@ -1,6 +1,6 @@
 package org.scilab.forge.jlatexmath;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public class MonoScaleAtom extends ScaleAtom {
     private float factor;
@@ -9,10 +9,10 @@ public class MonoScaleAtom extends ScaleAtom {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public MonoScaleAtom(Atom atom, float f10) {
+    public MonoScaleAtom(Atom atom, float f9) {
         super(atom, r2, r2);
-        double d = f10;
-        this.factor = f10;
+        double d = f9;
+        this.factor = f9;
     }
 
     @Override // org.scilab.forge.jlatexmath.ScaleAtom, org.scilab.forge.jlatexmath.Atom

@@ -1,25 +1,48 @@
 package org.telegram.ui;
 
-import android.view.View;
+import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class ma0 implements View.OnAttachStateChangeListener {
-    public final /* synthetic */ LaunchActivity a;
+public final class ma0 implements bf.c {
+    public final jf.s0 a;
+    public final /* synthetic */ LaunchActivity b;
 
     public ma0(LaunchActivity launchActivity) {
-        this.a = launchActivity;
+        this.b = launchActivity;
+        Pattern pattern = LaunchActivity.x1;
+        this.a = new jf.s0(launchActivity, false);
     }
 
-    @Override // android.view.View.OnAttachStateChangeListener
-    public final void onViewAttachedToWindow(View view) {
-        LaunchActivity launchActivity = this.a;
-        launchActivity.getWindowManager().addCrossWindowBlurEnabledListener(launchActivity.Z0);
+    @Override // bf.c
+    public final void b() {
+        Pattern pattern = LaunchActivity.x1;
+        this.b.getWindow();
     }
 
-    @Override // android.view.View.OnAttachStateChangeListener
-    public final void onViewDetachedFromWindow(View view) {
-        LaunchActivity launchActivity = this.a;
-        launchActivity.getWindowManager().removeCrossWindowBlurEnabledListener(launchActivity.Z0);
+    @Override // bf.c
+    public final void d() {
+        this.a.a(false);
+    }
+
+    @Override // bf.c
+    public final void f() {
+        Pattern pattern = LaunchActivity.x1;
+        LaunchActivity launchActivity = this.b;
+        launchActivity.getClass();
+        this.a.a(true);
+        launchActivity.getWindow();
+    }
+
+    @Override // bf.c
+    public final /* synthetic */ void a() {
+    }
+
+    @Override // bf.c
+    public final /* synthetic */ void c() {
+    }
+
+    @Override // bf.c
+    public final /* synthetic */ void e() {
     }
 }

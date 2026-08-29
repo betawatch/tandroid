@@ -1,38 +1,48 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class yc implements RequestDelegate {
+public final /* synthetic */ class yc implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ id b;
+    public final /* synthetic */ hd b;
 
-    public /* synthetic */ yc(id idVar, int i9) {
-        this.a = i9;
-        this.b = idVar;
+    public /* synthetic */ yc(hd hdVar, int i10) {
+        this.a = i10;
+        this.b = hdVar;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                AndroidUtilities.runOnUIThread(new org.telegram.messenger.voip.l0(29, this.b, tLObject));
+                hd hdVar = this.b;
+                hdVar.f0 = true;
+                hdVar.h0();
                 break;
             case 1:
-                if (tLObject instanceof TLRPC.TL_boolTrue) {
-                    AndroidUtilities.runOnUIThread(new zc(this.b, 3));
-                    break;
-                }
+                hd hdVar2 = this.b;
+                hdVar2.x = null;
+                hdVar2.y = null;
+                hdVar2.h0 = null;
+                hdVar2.i0 = null;
+                hdVar2.k0 = null;
+                hdVar2.j0 = null;
+                hdVar2.l0 = 0.0d;
+                hdVar2.e0(false, true);
+                hdVar2.e.h(null, null, hdVar2.s, null);
+                hdVar2.h.setAnimation(hdVar2.F);
+                hdVar2.F.K(0);
                 break;
             case 2:
-                AndroidUtilities.runOnUIThread(new org.telegram.messenger.voip.l0(27, this.b, tL_error));
+                this.b.g0(true);
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new t1(this.b, tL_error, tLObject, 11));
+                hd hdVar3 = this.b;
+                hdVar3.f0 = true;
+                if (hdVar3.w.length() > 0) {
+                    hdVar3.d0(hdVar3.w.getText().toString());
+                }
+                hdVar3.h0();
                 break;
         }
     }

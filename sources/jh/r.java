@@ -1,39 +1,100 @@
 package jh;
 
-import android.content.Context;
-import android.view.View;
-import org.telegram.messenger.TranslateController;
-import org.telegram.ui.ActionBar.b6;
-import org.telegram.ui.Components.i51;
-import org.telegram.ui.Components.k41;
-import org.telegram.ui.Components.l41;
-import org.telegram.ui.Components.wk0;
-import org.telegram.ui.Components.z41;
+import java.util.HashMap;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes4.dex */
-public final class r extends k41 {
-    public static final /* synthetic */ int a = 0;
+public final /* synthetic */ class r implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ b0 b;
+    public final /* synthetic */ long c;
 
-    static {
-        k41.setup(new r());
+    public /* synthetic */ r(b0 b0Var, long j10, int i10) {
+        this.a = i10;
+        this.b = b0Var;
+        this.c = j10;
     }
 
-    @Override // org.telegram.ui.Components.k41
-    public final void bindView(View view, l41 l41Var, boolean z10, z41 z41Var, i51 i51Var) {
-        s sVar = (s) view;
-        TranslateController.Language language = (TranslateController.Language) l41Var.G;
-        sVar.a.setText(language.displayName);
-        sVar.b.setText(language.ownDisplayName);
-        if (sVar.c != z10) {
-            sVar.invalidate();
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(final TLObject tLObject, TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 0:
+                final int i10 = 1;
+                final b0 b0Var = this.b;
+                final long j10 = this.c;
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: jh.x
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        int i11 = i10;
+                        long j11 = j10;
+                        TLObject tLObject2 = tLObject;
+                        b0 b0Var2 = b0Var;
+                        switch (i11) {
+                            case 0:
+                                HashMap hashMap = b0Var2.e;
+                                if (tLObject2 instanceof TLRPC.TL_payments_starsRevenueStats) {
+                                    hashMap.put(Long.valueOf(j11), (TLRPC.TL_payments_starsRevenueStats) tLObject2);
+                                } else {
+                                    hashMap.put(Long.valueOf(j11), null);
+                                }
+                                b0Var2.d.put(Long.valueOf(j11), Long.valueOf(System.currentTimeMillis()));
+                                NotificationCenter.getInstance(b0Var2.a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.botStarsUpdated, Long.valueOf(j11));
+                                break;
+                            default:
+                                HashMap hashMap2 = b0Var2.c;
+                                if (tLObject2 instanceof TLRPC.TL_payments_starsRevenueStats) {
+                                    hashMap2.put(Long.valueOf(j11), (TLRPC.TL_payments_starsRevenueStats) tLObject2);
+                                } else {
+                                    hashMap2.put(Long.valueOf(j11), null);
+                                }
+                                b0Var2.b.put(Long.valueOf(j11), Long.valueOf(System.currentTimeMillis()));
+                                NotificationCenter.getInstance(b0Var2.a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.botStarsUpdated, Long.valueOf(j11));
+                                break;
+                        }
+                    }
+                });
+                break;
+            default:
+                final int i11 = 0;
+                final b0 b0Var2 = this.b;
+                final long j11 = this.c;
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: jh.x
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        int i112 = i11;
+                        long j112 = j11;
+                        TLObject tLObject2 = tLObject;
+                        b0 b0Var22 = b0Var2;
+                        switch (i112) {
+                            case 0:
+                                HashMap hashMap = b0Var22.e;
+                                if (tLObject2 instanceof TLRPC.TL_payments_starsRevenueStats) {
+                                    hashMap.put(Long.valueOf(j112), (TLRPC.TL_payments_starsRevenueStats) tLObject2);
+                                } else {
+                                    hashMap.put(Long.valueOf(j112), null);
+                                }
+                                b0Var22.d.put(Long.valueOf(j112), Long.valueOf(System.currentTimeMillis()));
+                                NotificationCenter.getInstance(b0Var22.a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.botStarsUpdated, Long.valueOf(j112));
+                                break;
+                            default:
+                                HashMap hashMap2 = b0Var22.c;
+                                if (tLObject2 instanceof TLRPC.TL_payments_starsRevenueStats) {
+                                    hashMap2.put(Long.valueOf(j112), (TLRPC.TL_payments_starsRevenueStats) tLObject2);
+                                } else {
+                                    hashMap2.put(Long.valueOf(j112), null);
+                                }
+                                b0Var22.b.put(Long.valueOf(j112), Long.valueOf(System.currentTimeMillis()));
+                                NotificationCenter.getInstance(b0Var22.a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.botStarsUpdated, Long.valueOf(j112));
+                                break;
+                        }
+                    }
+                });
+                break;
         }
-        sVar.c = z10;
-        sVar.setWillNotDraw(!z10);
-    }
-
-    @Override // org.telegram.ui.Components.k41
-    public final View createView(Context context, wk0 wk0Var, int i9, int i10, b6 b6Var) {
-        return new s(context);
     }
 }

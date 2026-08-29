@@ -13,7 +13,7 @@ import java.util.Collections;
 import java.util.List;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public class b {
     public static final View.AccessibilityDelegate c = new View.AccessibilityDelegate();
@@ -24,10 +24,10 @@ public class b {
         this(c);
     }
 
-    public n5.e0 a(View view) {
+    public org.telegram.ui.Components.n a(View view) {
         AccessibilityNodeProvider accessibilityNodeProvider = this.a.getAccessibilityNodeProvider(view);
         if (accessibilityNodeProvider != null) {
-            return new n5.e0(accessibilityNodeProvider, 21);
+            return new org.telegram.ui.Components.n(accessibilityNodeProvider, 15);
         }
         return null;
     }
@@ -36,30 +36,30 @@ public class b {
         this.a.onInitializeAccessibilityEvent(view, accessibilityEvent);
     }
 
-    public void c(View view, s0.d dVar) {
-        this.a.onInitializeAccessibilityNodeInfo(view, dVar.a);
+    public void c(View view, s0.c cVar) {
+        this.a.onInitializeAccessibilityNodeInfo(view, cVar.a);
     }
 
-    public boolean d(View view, int i9, Bundle bundle) {
+    public boolean d(View view, int i10, Bundle bundle) {
         WeakReference weakReference;
         ClickableSpan clickableSpan;
         List list = (List) view.getTag(R.id.tag_accessibility_actions);
         if (list == null) {
             list = Collections.EMPTY_LIST;
         }
-        for (int i10 = 0; i10 < list.size() && ((AccessibilityNodeInfo.AccessibilityAction) ((s0.c) list.get(i10)).a).getId() != i9; i10++) {
+        for (int i11 = 0; i11 < list.size() && ((AccessibilityNodeInfo.AccessibilityAction) ((s0.b) list.get(i11)).a).getId() != i10; i11++) {
         }
-        boolean performAccessibilityAction = this.a.performAccessibilityAction(view, i9, bundle);
-        if (performAccessibilityAction || i9 != R.id.accessibility_action_clickable_span || bundle == null) {
+        boolean performAccessibilityAction = this.a.performAccessibilityAction(view, i10, bundle);
+        if (performAccessibilityAction || i10 != R.id.accessibility_action_clickable_span || bundle == null) {
             return performAccessibilityAction;
         }
-        int i11 = bundle.getInt("ACCESSIBILITY_CLICKABLE_SPAN_ID", -1);
+        int i12 = bundle.getInt("ACCESSIBILITY_CLICKABLE_SPAN_ID", -1);
         SparseArray sparseArray = (SparseArray) view.getTag(R.id.tag_accessibility_clickable_spans);
-        if (sparseArray != null && (weakReference = (WeakReference) sparseArray.get(i11)) != null && (clickableSpan = (ClickableSpan) weakReference.get()) != null) {
+        if (sparseArray != null && (weakReference = (WeakReference) sparseArray.get(i12)) != null && (clickableSpan = (ClickableSpan) weakReference.get()) != null) {
             CharSequence text = view.createAccessibilityNodeInfo().getText();
             ClickableSpan[] clickableSpanArr = text instanceof Spanned ? (ClickableSpan[]) ((Spanned) text).getSpans(0, text.length(), ClickableSpan.class) : null;
-            for (int i12 = 0; clickableSpanArr != null && i12 < clickableSpanArr.length; i12++) {
-                if (clickableSpan.equals(clickableSpanArr[i12])) {
+            for (int i13 = 0; clickableSpanArr != null && i13 < clickableSpanArr.length; i13++) {
+                if (clickableSpan.equals(clickableSpanArr[i13])) {
                     clickableSpan.onClick(view);
                     return true;
                 }

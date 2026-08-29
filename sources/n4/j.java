@@ -1,77 +1,54 @@
 package n4;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+import com.google.android.exoplayer2.upstream.q;
+import com.google.android.exoplayer2.upstream.x0;
+import h7.m5;
+import j3.t0;
+
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class j {
-    public final long a;
-    public final long b;
-    public final String c;
-    public int d;
+public final class j extends e {
+    public final d s;
+    public g9.l v;
+    public long w;
+    public volatile boolean x;
 
-    public j(long j10, long j11, String str) {
-        this.c = str == null ? "" : str;
-        this.a = j10;
-        this.b = j11;
+    public j(com.google.android.exoplayer2.upstream.m mVar, q qVar, t0 t0Var, int i10, Object obj, d dVar) {
+        super(mVar, qVar, 2, t0Var, i10, obj, -9223372036854775807L, -9223372036854775807L);
+        this.s = dVar;
     }
 
-    public final j a(j jVar, String str) {
-        j jVar2;
-        long j10;
-        String G = d5.a.G(str, this.c);
-        if (jVar != null) {
-            long j11 = jVar.b;
-            if (G.equals(d5.a.G(str, jVar.c))) {
-                long j12 = this.b;
-                if (j12 != -1) {
-                    j10 = j11;
-                    long j13 = this.a;
-                    jVar2 = null;
-                    if (j13 + j12 == jVar.a) {
-                        return new j(j13, j10 == -1 ? -1L : j12 + j10, G);
+    @Override // com.google.android.exoplayer2.upstream.n0
+    public final void a() {
+        if (this.w == 0) {
+            this.s.a(this.v, -9223372036854775807L, -9223372036854775807L);
+        }
+        try {
+            q a2 = this.b.a(this.w);
+            x0 x0Var = this.r;
+            o3.h hVar = new o3.h(x0Var, a2.e, x0Var.open(a2));
+            while (!this.x) {
+                try {
+                    int d = this.s.a.d(hVar, d.s);
+                    boolean z10 = false;
+                    f5.a.i(d != 1);
+                    if (d == 0) {
+                        z10 = true;
                     }
-                } else {
-                    jVar2 = null;
-                    j10 = j11;
+                    if (!z10) {
+                        break;
+                    }
+                } finally {
+                    this.w = hVar.d - this.b.e;
                 }
-                if (j10 == -1) {
-                    return jVar2;
-                }
-                long j14 = jVar.a;
-                if (j14 + j10 == this.a) {
-                    return new j(j14, j12 == -1 ? -1L : j10 + j12, G);
-                }
-                return jVar2;
             }
+        } finally {
+            m5.a(this.r);
         }
-        return null;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj != null && j.class == obj.getClass()) {
-            j jVar = (j) obj;
-            if (this.a == jVar.a && this.b == jVar.b && this.c.equals(jVar.c)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public final int hashCode() {
-        if (this.d == 0) {
-            this.d = this.c.hashCode() + ((((527 + ((int) this.a)) * 31) + ((int) this.b)) * 31);
-        }
-        return this.d;
-    }
-
-    public final String toString() {
-        StringBuilder sb2 = new StringBuilder("RangedUri(referenceUri=");
-        sb2.append(this.c);
-        sb2.append(", start=");
-        sb2.append(this.a);
-        sb2.append(", length=");
-        return aa.d.q(sb2, this.b, ")");
+    @Override // com.google.android.exoplayer2.upstream.n0
+    public final void q() {
+        this.x = true;
     }
 }

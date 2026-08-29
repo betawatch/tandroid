@@ -1,31 +1,58 @@
 package org.telegram.ui.Components;
 
-import android.content.Intent;
-import java.util.ArrayList;
-import org.telegram.messenger.FileLog;
+import org.telegram.messenger.HashtagSearchController;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class a40 implements org.telegram.ui.hp0 {
-    public final /* synthetic */ e40 a;
+public final /* synthetic */ class a40 implements Utilities.Callback5, Utilities.Callback5Return {
+    public final /* synthetic */ b40 a;
 
-    public a40(e40 e40Var) {
-        this.a = e40Var;
+    public /* synthetic */ a40(b40 b40Var) {
+        this.a = b40Var;
     }
 
-    @Override // org.telegram.ui.hp0
-    public final void a(ArrayList arrayList) {
-        e40.b(this.a, false, arrayList);
-    }
-
-    @Override // org.telegram.ui.hp0
-    public final void b() {
-        try {
-            Intent intent = new Intent("android.intent.action.GET_CONTENT");
-            intent.setType("image/*");
-            this.a.a.startActivityForResult(intent, 14);
-        } catch (Exception e10) {
-            FileLog.e(e10);
+    @Override // org.telegram.messenger.Utilities.Callback5
+    public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
+        ((Integer) obj3).getClass();
+        ((Float) obj4).getClass();
+        ((Float) obj5).getClass();
+        int i10 = ((w41) obj).d;
+        b40 b40Var = this.a;
+        if (i10 == 0) {
+            HashtagSearchController.getInstance(b40Var.a).clearHistory();
+            b40Var.f.N(true);
+        } else {
+            Utilities.Callback callback = b40Var.h;
+            if (callback != null) {
+                callback.run((String) b40Var.c.get(i10 - 1));
+            }
         }
+    }
+
+    @Override // org.telegram.messenger.Utilities.Callback5Return
+    public Object run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
+        ((Integer) obj3).getClass();
+        ((Float) obj4).getClass();
+        ((Float) obj5).getClass();
+        int i10 = ((w41) obj).d;
+        boolean z10 = false;
+        if (i10 != 0) {
+            b40 b40Var = this.a;
+            String str = (String) b40Var.c.get(i10 - 1);
+            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(b40Var.getContext(), 0, b40Var.b);
+            String string = LocaleController.getString(R.string.ClearSearchSingleAlertTitle);
+            org.telegram.ui.ActionBar.c2 c2Var = alertDialog$Builder.a;
+            c2Var.N = string;
+            c2Var.P = LocaleController.formatString(R.string.ClearSearchSingleHashtagAlertText, str);
+            alertDialog$Builder.k(LocaleController.getString(R.string.ClearSearchRemove), new j1(21, b40Var, str));
+            alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
+            c2Var.show();
+            z10 = true;
+        }
+        return Boolean.valueOf(z10);
     }
 }

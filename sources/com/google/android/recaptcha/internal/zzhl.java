@@ -1,6 +1,6 @@
 package com.google.android.recaptcha.internal;
 
-import g7.e8;
+import i7.x8;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -8,9 +8,9 @@ import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.SocketTimeoutException;
 import java.net.UnknownServiceException;
-import kotlin.jvm.internal.i;
+import kotlin.jvm.internal.j;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class zzhl {
     private final HttpURLConnection zza;
@@ -59,17 +59,17 @@ public final class zzhl {
                 throw new zzcg(zzce.zzi, zzcd.zzJ, null, null, 12, null);
             }
             InputStream zzf = zzf();
-            i.e(zzf, "<this>");
+            j.e(zzf, "<this>");
             ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream(Math.max(8192, zzf.available()));
-            e8.a(zzf, byteArrayOutputStream);
+            x8.a(zzf, byteArrayOutputStream);
             byte[] byteArray = byteArrayOutputStream.toByteArray();
-            i.d(byteArray, "toByteArray(...)");
+            j.d(byteArray, "toByteArray(...)");
             if (byteArray.length == 0) {
                 throw new zzcg(zzce.zzc, zzcd.zzaw, null, null, 12, null);
             }
             try {
                 Object zzb = zztsVar.zzD().zzb(byteArray);
-                i.c(zzb, "null cannot be cast to non-null type T of com.google.android.libraries.abuse.recaptcha.network.CaptchaFeConnection.getResponse");
+                j.c(zzb, "null cannot be cast to non-null type T of com.google.android.libraries.abuse.recaptcha.network.CaptchaFeConnection.getResponse");
                 return (zzts) zzb;
             } catch (Exception e10) {
                 throw new zzcg(zzce.zzc, zzcd.zzG, e10.getMessage(), null, 8, null);

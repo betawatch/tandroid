@@ -20,10 +20,10 @@ public abstract class a implements k {
     }
 
     public static k j(k kVar, String str) {
-        String o6;
+        String o10;
         k kVar2 = (k) a.putIfAbsent(str, kVar);
-        if (kVar2 == null && (o6 = kVar.o()) != null) {
-            b.putIfAbsent(o6, kVar);
+        if (kVar2 == null && (o10 = kVar.o()) != null) {
+            b.putIfAbsent(o10, kVar);
         }
         return kVar2;
     }

@@ -1,54 +1,46 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
+import android.app.Activity;
+import android.content.Context;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.Utilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class y20 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ a30 b;
-    public final /* synthetic */ String c;
-    public final /* synthetic */ int d;
+    public final /* synthetic */ Context b;
 
-    public /* synthetic */ y20(a30 a30Var, String str, int i9, int i10) {
+    public /* synthetic */ y20(Context context, int i10) {
         this.a = i10;
-        this.b = a30Var;
-        this.c = str;
-        this.d = i9;
+        this.b = context;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                a30 a30Var = this.b;
-                String str = this.c;
-                int i9 = this.d;
-                if (a30Var.e != null) {
-                    a30Var.e = null;
-                    AndroidUtilities.runOnUIThread(new y20(a30Var, str, i9, 1));
+                w20.j(this.b);
+                break;
+            case 1:
+                ye.d.s(this.b, LocaleController.getString(R.string.StarsTOSLink));
+                break;
+            case 2:
+                Activity findActivity = AndroidUtilities.findActivity(this.b);
+                if (findActivity instanceof LaunchActivity) {
+                    ((LaunchActivity) findActivity).p0(new PremiumPreviewFragment(0, cg.v0.A1(10)));
                     break;
                 }
                 break;
             default:
-                a30 a30Var2 = this.b;
-                String str2 = this.c;
-                int i10 = this.d;
-                ArrayList arrayList = null;
-                a30Var2.e = null;
-                if (!ChatObject.isChannel(a30Var2.w.R) && a30Var2.w.S != null) {
-                    arrayList = new ArrayList(a30Var2.w.S.participants.participants);
+                Activity findActivity2 = AndroidUtilities.findActivity(this.b);
+                if (findActivity2 instanceof LaunchActivity) {
+                    ((LaunchActivity) findActivity2).p0(new PremiumPreviewFragment(0, cg.v0.A1(9)));
+                    break;
                 }
-                ArrayList arrayList2 = arrayList;
-                if (arrayList2 != null) {
-                    Utilities.searchQueue.postRunnable(new c3.d(a30Var2, str2, i10, arrayList2, 19));
-                } else {
-                    a30Var2.h = false;
-                }
-                a30Var2.d.g(str2, ChatObject.canAddUsers(a30Var2.w.R), false, true, false, ChatObject.isChannel(a30Var2.w.R) ? a30Var2.w.R.id : 0L, false, 2, i10);
                 break;
         }
     }

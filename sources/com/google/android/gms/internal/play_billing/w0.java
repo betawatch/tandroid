@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.play_billing;
 
-import f7.z5;
+import h7.m6;
 import j$.util.Objects;
 import java.util.Locale;
 import java.util.concurrent.CancellationException;
@@ -13,7 +13,7 @@ import java.util.concurrent.locks.LockSupport;
 import java.util.logging.Level;
 import org.telegram.messenger.BuildConfig;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class w0 extends l0 implements g0 {
     public t0 n;
@@ -21,9 +21,9 @@ public final class w0 extends l0 implements g0 {
 
     public static Object d(Object obj) {
         if (obj instanceof b0) {
-            Throwable th = ((b0) obj).b;
+            Throwable th2 = ((b0) obj).b;
             CancellationException cancellationException = new CancellationException("Task was cancelled.");
-            cancellationException.initCause(th);
+            cancellationException.initCause(th2);
             throw cancellationException;
         }
         if (!(obj instanceof e0)) {
@@ -32,9 +32,9 @@ public final class w0 extends l0 implements g0 {
             }
             return obj;
         }
-        Throwable th2 = ((e0) obj).a;
-        if (th2 != null) {
-            throw new ExecutionException(th2);
+        Throwable th3 = ((e0) obj).a;
+        if (th3 != null) {
+            throw new ExecutionException(th3);
         }
         l0.e.a().logp(Level.SEVERE, "com.google.common.util.concurrent.AbstractFuture", "getDoneValue", "Failure.exception is unexpectedly null.");
         throw new ExecutionException(e0.c.a);
@@ -53,8 +53,8 @@ public final class w0 extends l0 implements g0 {
             if (obj2 instanceof b0) {
                 b0 b0Var = (b0) obj2;
                 if (b0Var.a) {
-                    Throwable th = b0Var.b;
-                    obj2 = th != null ? new b0(th, false) : b0.d;
+                    Throwable th2 = b0Var.b;
+                    obj2 = th2 != null ? new b0(th2, false) : b0.d;
                 }
             }
             Objects.requireNonNull(obj2);
@@ -82,11 +82,11 @@ public final class w0 extends l0 implements g0 {
                     }
                 } catch (InterruptedException unused) {
                     z10 = true;
-                } catch (Throwable th2) {
+                } catch (Throwable th3) {
                     if (z10) {
                         Thread.currentThread().interrupt();
                     }
-                    throw th2;
+                    throw th3;
                 }
             } catch (Error | Exception e11) {
                 e = e11;
@@ -165,7 +165,7 @@ public final class w0 extends l0 implements g0 {
         try {
             executor.execute(runnable);
         } catch (Exception e10) {
-            l0.e.a().logp(Level.SEVERE, "com.google.common.util.concurrent.AbstractFuture", "executeListener", j3.r0.o("RuntimeException while executing runnable ", String.valueOf(runnable), " with executor ", String.valueOf(executor)), (Throwable) e10);
+            l0.e.a().logp(Level.SEVERE, "com.google.common.util.concurrent.AbstractFuture", "executeListener", j7.l1.n("RuntimeException while executing runnable ", String.valueOf(runnable), " with executor ", String.valueOf(executor)), (Throwable) e10);
         }
     }
 
@@ -256,15 +256,15 @@ public final class w0 extends l0 implements g0 {
         if (t0Var == null) {
             return null;
         }
-        String o6 = aa.d.o("inputFuture=[", t0Var.toString(), "]");
+        String n10 = a4.w.n("inputFuture=[", t0Var.toString(), "]");
         if (scheduledFuture == null) {
-            return o6;
+            return n10;
         }
         long delay = scheduledFuture.getDelay(TimeUnit.MILLISECONDS);
         if (delay <= 0) {
-            return o6;
+            return n10;
         }
-        return o6 + ", remaining delay=[" + delay + " ms]";
+        return n10 + ", remaining delay=[" + delay + " ms]";
     }
 
     @Override // java.util.concurrent.Future
@@ -282,9 +282,9 @@ public final class w0 extends l0 implements g0 {
         if (k0Var2 != k0Var) {
             k0 k0Var3 = new k0();
             do {
-                z5 z5Var = l0.h;
-                z5Var.c(k0Var3, k0Var2);
-                if (z5Var.g(this, k0Var2, k0Var3)) {
+                m6 m6Var = l0.h;
+                m6Var.c(k0Var3, k0Var2);
+                if (m6Var.g(this, k0Var2, k0Var3)) {
                     do {
                         LockSupport.park(this);
                         if (Thread.interrupted()) {
@@ -313,11 +313,11 @@ public final class w0 extends l0 implements g0 {
                     break;
                 } catch (InterruptedException unused) {
                     z10 = true;
-                } catch (Throwable th) {
+                } catch (Throwable th2) {
                     if (z10) {
                         Thread.currentThread().interrupt();
                     }
-                    throw th;
+                    throw th2;
                 }
             } catch (CancellationException unused2) {
                 sb2.append("CANCELLED");
@@ -396,12 +396,12 @@ public final class w0 extends l0 implements g0 {
                     } else {
                         sb2.append(t0Var);
                     }
-                } catch (Throwable th) {
-                    if ((th instanceof Error) && !(th instanceof StackOverflowError)) {
-                        throw th;
+                } catch (Throwable th2) {
+                    if ((th2 instanceof Error) && !(th2 instanceof StackOverflowError)) {
+                        throw th2;
                     }
                     sb2.append("Exception thrown from implementation: ");
-                    sb2.append(th.getClass());
+                    sb2.append(th2.getClass());
                 }
                 sb2.append("]");
             } else {
@@ -410,11 +410,11 @@ public final class w0 extends l0 implements g0 {
                     if (concat != null) {
                     }
                     concat = null;
-                } catch (Throwable th2) {
-                    if ((th2 instanceof Error) && !(th2 instanceof StackOverflowError)) {
-                        throw th2;
+                } catch (Throwable th3) {
+                    if ((th3 instanceof Error) && !(th3 instanceof StackOverflowError)) {
+                        throw th3;
                     }
-                    concat = "Exception thrown from implementation: ".concat(String.valueOf(th2.getClass()));
+                    concat = "Exception thrown from implementation: ".concat(String.valueOf(th3.getClass()));
                 }
                 if (concat != null) {
                     sb2.append(", info=[");
@@ -455,9 +455,9 @@ public final class w0 extends l0 implements g0 {
                 if (k0Var2 != k0Var) {
                     k0 k0Var3 = new k0();
                     while (true) {
-                        z5 z5Var = l0.h;
-                        z5Var.c(k0Var3, k0Var2);
-                        if (z5Var.g(this, k0Var2, k0Var3)) {
+                        m6 m6Var = l0.h;
+                        m6Var.c(k0Var3, k0Var2);
+                        if (m6Var.g(this, k0Var2, k0Var3)) {
                             j11 = j12;
                             while (true) {
                                 LockSupport.parkNanos(this, Math.min(nanos, 2147483647999999999L));
@@ -527,7 +527,7 @@ public final class w0 extends l0 implements g0 {
                         if (isDone()) {
                             throw new TimeoutException(str.concat(" but future completed as timeout expired"));
                         }
-                        throw new TimeoutException(aa.d.z(str, " for ", w0Var));
+                        throw new TimeoutException(a4.w.y(str, " for ", w0Var));
                     }
                 }
                 Object obj5 = this.a;

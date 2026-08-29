@@ -1,112 +1,185 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.os.Bundle;
+import android.animation.ValueAnimator;
+import android.os.Build;
+import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.TopicsController;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class lw extends of.m {
-    public final /* synthetic */ cy Z;
-    public final /* synthetic */ dy a0;
+public final class lw extends f2.a1 {
+    public boolean a;
+    public final /* synthetic */ ey b;
+    public final /* synthetic */ xx c;
+    public final /* synthetic */ fy d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public lw(dy dyVar, dy dyVar2, Context context, int i9, int i10, boolean z10, ArrayList arrayList, int i11, TLRPC.RequestPeerType requestPeerType, cy cyVar) {
-        super(dyVar2, context, i9, i10, z10, arrayList, i11, requestPeerType);
-        this.a0 = dyVar;
-        this.Z = cyVar;
+    public lw(fy fyVar, ey eyVar, xx xxVar) {
+        this.d = fyVar;
+        this.b = eyVar;
+        this.c = xxVar;
     }
 
-    @Override // of.m
-    public final void J() {
-        this.a0.presentFragment(new l());
-    }
-
-    @Override // of.m
-    public final void K() {
-        dy dyVar = this.a0;
-        org.telegram.ui.ActionBar.c2 c2Var = new org.telegram.ui.ActionBar.c2(dyVar.getParentActivity(), 3, null);
-        TLRPC.RequestPeerType requestPeerType = dyVar.C;
-        if (requestPeerType instanceof TLRPC.TL_requestPeerTypeBroadcast) {
-            Bundle h = aa.d.h(0, "step");
-            Boolean bool = dyVar.C.has_username;
-            if (bool != null) {
-                h.putBoolean("forcePublic", bool.booleanValue());
+    @Override // f2.a1
+    public final void a(RecyclerView recyclerView, int i10) {
+        fy fyVar = this.d;
+        if (i10 == 1) {
+            this.a = true;
+            fyVar.Z2 = true;
+            ag.j2 j2Var = fyVar.a0[0].b;
+            ValueAnimator valueAnimator = (ValueAnimator) j2Var.c;
+            if (valueAnimator != null) {
+                valueAnimator.removeAllListeners();
+                ((ValueAnimator) j2Var.c).cancel();
+                j2Var.c = null;
             }
-            id idVar = new id(h);
-            idVar.p0 = new l6(dyVar, idVar, c2Var, 2);
-            dyVar.presentFragment(idVar);
-            return;
+            if (fyVar.T.r.getText().length() == 0 && fyVar.T.r.hasFocus()) {
+                AndroidUtilities.hideKeyboard(fyVar.T.r);
+                fyVar.T.r.clearFocus();
+            }
+        } else {
+            fyVar.Z2 = false;
         }
-        if (requestPeerType instanceof TLRPC.TL_requestPeerTypeChat) {
-            Bundle bundle = new Bundle();
-            Boolean bool2 = dyVar.C.bot_participant;
-            bundle.putLongArray("result", (bool2 == null || !bool2.booleanValue()) ? new long[]{dyVar.getUserConfig().getClientUserId()} : new long[]{dyVar.getUserConfig().getClientUserId(), dyVar.D});
-            Boolean bool3 = dyVar.C.forum;
-            bundle.putInt("chatType", (bool3 == null || !bool3.booleanValue()) ? 4 : 5);
-            bundle.putBoolean("canToggleTopics", false);
-            r60 r60Var = new r60(bundle);
-            r60Var.U = new dx(dyVar, c2Var);
-            dyVar.presentFragment(r60Var);
+        if (i10 == 0) {
+            this.a = false;
+            fyVar.a2 = false;
+            boolean z10 = fyVar.X0;
+            ey eyVar = this.b;
+            if (z10) {
+                fyVar.X0 = false;
+                if (fyVar.Z0) {
+                    ay ayVar = eyVar.a;
+                    int i11 = ay.r3;
+                    ayVar.A1();
+                    fyVar.Z0 = false;
+                }
+                eyVar.d.l();
+            }
+            fy.r1(fyVar, eyVar);
         }
     }
 
-    @Override // of.m
-    public final void L(TLRPC.User user) {
-        int i9;
-        i9 = ((org.telegram.ui.ActionBar.o2) this.a0).currentAccount;
-        MessagesController.getInstance(i9).openApp(user, 0);
-    }
-
-    @Override // of.m
-    public final boolean S() {
-        return this.a0.N0 == 0;
-    }
-
-    @Override // of.m, org.telegram.ui.Cells.n2
-    public final void a(org.telegram.ui.Cells.r2 r2Var) {
-        cy cyVar = this.Z;
-        cyVar.a.getClass();
-        this.a0.o4(r2Var, RecyclerView.R(r2Var), 0.0f, cyVar.d);
-    }
-
-    @Override // of.m, org.telegram.ui.Cells.n2
-    public final void d(org.telegram.ui.Cells.r2 r2Var) {
-        int i9;
-        if (r2Var.getMessage() != null) {
-            dy dyVar = this.a0;
-            TopicsController topicsController = dyVar.getMessagesController().getTopicsController();
-            long j10 = -r2Var.getDialogId();
-            i9 = ((org.telegram.ui.ActionBar.o2) dyVar).currentAccount;
-            TLRPC.TL_forumTopic findTopic = topicsController.findTopic(j10, MessageObject.getTopicId(i9, r2Var.getMessage().messageOwner, true));
-            if (findTopic != null) {
-                if (dyVar.h2) {
-                    dyVar.O3(r2Var.getDialogId(), findTopic.id, false, null);
-                } else {
-                    vf.c.m(dyVar, -r2Var.getDialogId(), findTopic, 0);
+    /* JADX WARN: Type inference failed for: r11v4, types: [boolean] */
+    @Override // f2.a1
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        lg.e eVar;
+        ay ayVar;
+        org.telegram.ui.ActionBar.l lVar;
+        org.telegram.ui.ActionBar.l lVar2;
+        View childAt;
+        boolean z10;
+        boolean z11;
+        this.c.X();
+        ey eyVar = this.b;
+        hw hwVar = eyVar.x;
+        int i12 = -i11;
+        ArrayList arrayList = hwVar.x;
+        ArrayList arrayList2 = hwVar.o;
+        if (!arrayList2.isEmpty()) {
+            int size = arrayList2.size();
+            for (int i13 = 0; i13 < size; i13++) {
+                View view = ((f2.n1) arrayList2.get(i13)).a;
+                view.setTranslationY(view.getTranslationY() + i12);
+            }
+        }
+        if (!arrayList.isEmpty()) {
+            int size2 = arrayList.size();
+            for (int i14 = 0; i14 < size2; i14++) {
+                View view2 = ((f2.n1) arrayList.get(i14)).a;
+                view2.setTranslationY(view2.getTranslationY() + i12);
+            }
+        }
+        int i15 = -1;
+        int i16 = -1;
+        for (int i17 = 0; i17 < recyclerView.getChildCount(); i17++) {
+            int R = RecyclerView.R(recyclerView.getChildAt(i17));
+            if (R >= 0) {
+                if (i15 == -1 || R > i15) {
+                    i15 = R;
+                }
+                if (i16 == -1 || R < i16) {
+                    i16 = R;
                 }
             }
         }
-    }
-
-    @Override // of.m, f2.r0
-    public final void l() {
-        h();
-        int i9 = cy.H;
-        try {
-            super.l();
-        } catch (Exception e10) {
-            FileLog.e(e10);
+        fy fyVar = this.d;
+        fyVar.r3(eyVar);
+        fyVar.M = true;
+        View view3 = fyVar.fragmentView;
+        if (view3 != null) {
+            view3.invalidate();
         }
-        dy dyVar = this.a0;
-        if (dyVar.N0 == 15) {
-            dyVar.f0.setVisibility(this.Q ? 8 : 0);
+        if (fyVar.N0 != 10 && this.a && recyclerView.getChildCount() > 0 && i16 != -1) {
+            f2.n1 K = recyclerView.K(i16);
+            if (!fyVar.Z3() || (K != null && K.b() >= 0)) {
+                int top = K != null ? K.a.getTop() : 0;
+                int i18 = fyVar.U1;
+                if (i18 == i16) {
+                    int i19 = fyVar.V1;
+                    int i20 = i19 - top;
+                    z10 = top < i19;
+                    if (Math.abs(i20) <= 1) {
+                        z11 = false;
+                        if (z11 && fyVar.W1 && (z10 || fyVar.Z2)) {
+                            fyVar.c4(z10);
+                        }
+                        fyVar.U1 = i16;
+                        fyVar.V1 = top;
+                        fyVar.W1 = true;
+                    }
+                } else {
+                    z10 = i16 > i18;
+                }
+                z11 = true;
+                if (z11) {
+                    fyVar.c4(z10);
+                }
+                fyVar.U1 = i16;
+                fyVar.V1 = top;
+                fyVar.W1 = true;
+            }
         }
+        if (!fyVar.G && recyclerView == fyVar.a0[0].a && !fyVar.f2) {
+            lVar = ((org.telegram.ui.ActionBar.o2) fyVar).actionBar;
+            if (lVar != null) {
+                lVar2 = ((org.telegram.ui.ActionBar.o2) fyVar).actionBar;
+                if (!lVar2.s() && !fyVar.a2 && !fyVar.B3.c()) {
+                    if (i11 > 0 && fyVar.Z3() && fyVar.a0[0].s == 0 && (childAt = recyclerView.getChildAt(0)) != null && recyclerView.T(childAt).b() == 0) {
+                        int top2 = (childAt.getTop() - recyclerView.getPaddingTop()) + childAt.getMeasuredHeight();
+                        if (top2 + i11 > 0) {
+                            if (top2 >= 0) {
+                                return;
+                            } else {
+                                i11 = -top2;
+                            }
+                        }
+                    }
+                    fyVar.M = true;
+                    View view4 = fyVar.fragmentView;
+                    if (view4 != null) {
+                        view4.invalidate();
+                    }
+                }
+            }
+        }
+        if (fyVar.fragmentView != null) {
+            fyVar.m3();
+        }
+        ax axVar = fyVar.B3;
+        if (axVar != null && axVar.c() && (ayVar = eyVar.a) != null) {
+            ayVar.invalidate();
+        }
+        xw xwVar = fyVar.A0;
+        if (xwVar != null && xwVar.getPremiumHint() != null && fyVar.A0.getPremiumHint().R) {
+            fyVar.A0.getPremiumHint().e(true);
+        }
+        ?? Z3 = fyVar.Z3();
+        View childAt2 = eyVar.a.getChildAt(Z3 == true ? 1 : 0);
+        fyVar.e.a(i16 > Z3 || (((float) (childAt2 != null ? childAt2.getTop() : 0)) - fyVar.J) + ((float) AndroidUtilities.dp(5.0f)) < ((float) eyVar.a.getPaddingTop()), true);
+        if (i11 == 0 || (eVar = fyVar.h4) == null || Build.VERSION.SDK_INT < 31) {
+            return;
+        }
+        eVar.f(i10, i11);
     }
 }

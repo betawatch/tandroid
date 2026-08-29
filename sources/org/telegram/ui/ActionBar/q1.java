@@ -11,12 +11,12 @@ import android.widget.FrameLayout;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.AnimationNotificationsLocker;
-import org.telegram.ui.Components.gr;
+import org.telegram.ui.Components.jr;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
 public abstract class q1 {
-    public static final gr w = rh.m.V;
+    public static final jr w = uh.m.V;
     public final FrameLayout a;
     public FrameLayout b;
     public ViewGroup c;
@@ -42,7 +42,7 @@ public abstract class q1 {
 
     public q1(FrameLayout frameLayout) {
         this.a = frameLayout;
-        AndroidUtilities.runOnUIThread(new p(this, 4));
+        AndroidUtilities.runOnUIThread(new q(this, 4));
     }
 
     public static Activity a(Context context) {
@@ -103,22 +103,22 @@ public abstract class q1 {
         }
     }
 
-    public abstract void e(float f10, float f11, boolean z10);
+    public abstract void e(float f9, float f10, boolean z10);
 
     public abstract void f();
 
-    public abstract void g(int i9, boolean z10);
+    public abstract void g(int i10, boolean z10);
 
-    public final void h(int i9) {
-        int i10 = 0;
+    public final void h(int i10) {
+        int i11 = 0;
         while (true) {
             ArrayList arrayList = this.o;
-            if (i10 >= arrayList.size()) {
+            if (i11 >= arrayList.size()) {
                 return;
             }
-            ((View) arrayList.get(i10)).getLayoutParams().height = i9;
-            ((View) arrayList.get(i10)).requestLayout();
-            i10++;
+            ((View) arrayList.get(i11)).getLayoutParams().height = i10;
+            ((View) arrayList.get(i11)).requestLayout();
+            i11++;
         }
     }
 
@@ -140,7 +140,7 @@ public abstract class q1 {
         this.d.requestLayout();
         boolean z10 = this.s;
         e(0.0f, z10 ? 1.0f : 0.0f, z10);
-        if (!(this instanceof hg.o)) {
+        if (!(this instanceof kg.o)) {
             this.a.setTranslationY(0.0f);
         }
         f();

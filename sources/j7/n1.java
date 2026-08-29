@@ -1,6 +1,19 @@
 package j7;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public abstract class n1 {
+public final class n1 implements s9.d {
+    public static final n1 a = new n1();
+
+    static {
+        com.google.android.recaptcha.internal.a.t(com.google.android.recaptcha.internal.a.r(h0.class, l1.h(3, com.google.android.recaptcha.internal.a.r(h0.class, l1.h(2, com.google.android.recaptcha.internal.a.r(h0.class, new e0(1)))))));
+    }
+
+    @Override // s9.a
+    public final /* synthetic */ void a(Object obj, Object obj2) {
+        if (obj != null) {
+            throw new ClassCastException();
+        }
+        throw null;
+    }
 }

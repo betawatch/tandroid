@@ -16,21 +16,21 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.camera.CameraController;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
 public class ShutterButton extends View {
     public Drawable a;
     public DecelerateInterpolator b;
     public Paint c;
     public Paint d;
-    public ku0 e;
-    public lu0 f;
+    public vu0 e;
+    public wu0 f;
     public boolean h;
     public float n;
     public long r;
     public long s;
     public boolean v;
-    public ju0 w;
+    public rk0 w;
 
     private void setHighlighted(boolean z10) {
         AnimatorSet animatorSet = new AnimatorSet();
@@ -47,23 +47,23 @@ public class ShutterButton extends View {
         animatorSet.start();
     }
 
-    public final void a(lu0 lu0Var) {
-        if (this.f != lu0Var) {
-            this.f = lu0Var;
+    public final void a(wu0 wu0Var) {
+        if (this.f != wu0Var) {
+            this.f = wu0Var;
             this.r = System.currentTimeMillis();
             this.s = 0L;
-            if (this.f != lu0.b) {
+            if (this.f != wu0.b) {
                 this.n = 0.0f;
             }
             invalidate();
         }
     }
 
-    public ku0 getDelegate() {
+    public vu0 getDelegate() {
         return this.e;
     }
 
-    public lu0 getState() {
+    public wu0 getState() {
         return this.f;
     }
 
@@ -85,12 +85,12 @@ public class ShutterButton extends View {
         }
         float scaleX = (getScaleX() - 1.0f) / 0.06f;
         paint2.setAlpha((int) (255.0f * scaleX));
-        float f10 = measuredWidth;
-        float f11 = measuredHeight;
-        canvas.drawCircle(f10, f11, AndroidUtilities.dp(26.0f), paint2);
-        if (this.f != lu0.b) {
+        float f9 = measuredWidth;
+        float f10 = measuredHeight;
+        canvas.drawCircle(f9, f10, AndroidUtilities.dp(26.0f), paint2);
+        if (this.f != wu0.b) {
             if (this.n != 0.0f) {
-                canvas.drawCircle(f10, f11, AndroidUtilities.dp(26.5f) * scaleX, paint);
+                canvas.drawCircle(f9, f10, AndroidUtilities.dp(26.5f) * scaleX, paint);
                 return;
             }
             return;
@@ -108,7 +108,7 @@ public class ShutterButton extends View {
             this.n = this.b.getInterpolation(this.s / 120.0f);
             invalidate();
         }
-        canvas.drawCircle(f10, f11, AndroidUtilities.dp(26.5f) * scaleX * this.n, paint);
+        canvas.drawCircle(f9, f10, AndroidUtilities.dp(26.5f) * scaleX * this.n, paint);
     }
 
     @Override // android.view.View
@@ -122,7 +122,7 @@ public class ShutterButton extends View {
     }
 
     @Override // android.view.View
-    public final void onMeasure(int i9, int i10) {
+    public final void onMeasure(int i10, int i11) {
         setMeasuredDimension(AndroidUtilities.dp(84.0f), AndroidUtilities.dp(84.0f));
     }
 
@@ -139,12 +139,12 @@ public class ShutterButton extends View {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final boolean onTouchEvent(MotionEvent motionEvent) {
-        ju0 ju0Var = this.w;
-        float x10 = motionEvent.getX();
-        float y10 = motionEvent.getY();
+        rk0 rk0Var = this.w;
+        float x4 = motionEvent.getX();
+        float y8 = motionEvent.getY();
         int action = motionEvent.getAction();
         if (action == 0) {
-            AndroidUtilities.runOnUIThread(ju0Var, 800L);
+            AndroidUtilities.runOnUIThread(rk0Var, 800L);
             this.h = true;
             this.v = true;
             setHighlighted(true);
@@ -152,56 +152,56 @@ public class ShutterButton extends View {
         }
         if (action == 1) {
             setHighlighted(false);
-            AndroidUtilities.cancelRunOnUIThread(ju0Var);
+            AndroidUtilities.cancelRunOnUIThread(rk0Var);
             if (this.v) {
-                ((il) this.e).b();
+                ((ml) this.e).b();
             }
         } else if (action == 2) {
-            if (x10 >= 0.0f && x10 <= getMeasuredWidth()) {
-                x10 = 0.0f;
+            if (x4 >= 0.0f && x4 <= getMeasuredWidth()) {
+                x4 = 0.0f;
             }
-            if (y10 >= 0.0f && y10 <= getMeasuredHeight()) {
-                y10 = 0.0f;
+            if (y8 >= 0.0f && y8 <= getMeasuredHeight()) {
+                y8 = 0.0f;
             }
-            il ilVar = (il) this.e;
-            ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = ilVar.e;
-            i81 i81Var = chatAttachAlertPhotoLayout.h0;
-            org.telegram.ui.ActionBar.d3 d3Var = ilVar.d;
+            ml mlVar = (ml) this.e;
+            ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = mlVar.e;
+            u81 u81Var = chatAttachAlertPhotoLayout.h0;
+            org.telegram.ui.ActionBar.d3 d3Var = mlVar.d;
             boolean z10 = d3Var.getWidth() < d3Var.getHeight();
-            float f10 = z10 ? x10 : y10;
-            float f11 = z10 ? y10 : x10;
-            if (ilVar.b || Math.abs(f10) <= Math.abs(f11)) {
-                if (f11 < 0.0f) {
+            float f9 = z10 ? x4 : y8;
+            float f10 = z10 ? y8 : x4;
+            if (mlVar.b || Math.abs(f9) <= Math.abs(f10)) {
+                if (f10 < 0.0f) {
                     boolean z11 = ChatAttachAlertPhotoLayout.m1;
-                    chatAttachAlertPhotoLayout.s0(true);
-                    i81Var.b((-f11) / AndroidUtilities.dp(200.0f), true);
-                    ilVar.b = true;
+                    chatAttachAlertPhotoLayout.t0(true);
+                    u81Var.b((-f10) / AndroidUtilities.dp(200.0f), true);
+                    mlVar.b = true;
                     return true;
                 }
-                if (ilVar.b) {
-                    i81Var.b(0.0f, true);
+                if (mlVar.b) {
+                    u81Var.b(0.0f, true);
                 }
-                if (x10 == 0.0f && y10 == 0.0f) {
-                    ilVar.b = false;
+                if (x4 == 0.0f && y8 == 0.0f) {
+                    mlVar.b = false;
                 }
-                if (!ilVar.b) {
-                    if (x10 == 0.0f) {
+                if (!mlVar.b) {
+                    if (x4 == 0.0f) {
                     }
-                    AndroidUtilities.cancelRunOnUIThread(ju0Var);
-                    if (this.f == lu0.b) {
+                    AndroidUtilities.cancelRunOnUIThread(rk0Var);
+                    if (this.f == wu0.b) {
                         this.v = false;
                         setHighlighted(false);
-                        il ilVar2 = (il) this.e;
-                        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout2 = ilVar2.e;
-                        File file = ilVar2.a;
+                        ml mlVar2 = (ml) this.e;
+                        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout2 = mlVar2.e;
+                        File file = mlVar2.a;
                         if (file != null) {
                             file.delete();
-                            ilVar2.a = null;
+                            mlVar2.a = null;
                         }
                         boolean z12 = ChatAttachAlertPhotoLayout.m1;
-                        chatAttachAlertPhotoLayout2.k0();
+                        chatAttachAlertPhotoLayout2.l0();
                         CameraController.getInstance().stopVideoRecording(chatAttachAlertPhotoLayout2.L.getCameraSession(), true);
-                        a(lu0.a);
+                        a(wu0.a);
                         return true;
                     }
                 }
@@ -214,13 +214,13 @@ public class ShutterButton extends View {
         return true;
     }
 
-    public void setDelegate(ku0 ku0Var) {
-        this.e = ku0Var;
+    public void setDelegate(vu0 vu0Var) {
+        this.e = vu0Var;
     }
 
     @Override // android.view.View
-    public void setScaleX(float f10) {
-        super.setScaleX(f10);
+    public void setScaleX(float f9) {
+        super.setScaleX(f9);
         invalidate();
     }
 }

@@ -1,54 +1,29 @@
 package org.telegram.ui;
 
-import android.graphics.Bitmap;
-import android.graphics.Point;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.ImageLoader;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.VideoEditedInfo;
+import android.app.Activity;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class bc1 extends rt0 {
-    public final /* synthetic */ MediaController.PhotoEntry a;
-    public final /* synthetic */ cc1 b;
+public final class bc1 extends org.telegram.ui.Components.dq0 {
+    public final /* synthetic */ ec1 X0;
 
-    public bc1(cc1 cc1Var, MediaController.PhotoEntry photoEntry) {
-        this.b = cc1Var;
-        this.a = photoEntry;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public bc1(ec1 ec1Var, Activity activity, String str, String str2) {
+        super(activity, null, str, false, str2, false, null);
+        this.X0 = ec1Var;
     }
 
-    @Override // org.telegram.ui.rt0, org.telegram.ui.zt0
-    public final void o(int i9, VideoEditedInfo videoEditedInfo, boolean z10, int i10, int i11, boolean z11) {
-        oc1 oc1Var = this.b.a;
-        MediaController.PhotoEntry photoEntry = this.a;
-        if (photoEntry.imagePath != null) {
-            File file = new File(FileLoader.getDirectory(4), Utilities.random.nextInt() + ".jpg");
-            Point realScreenSize = AndroidUtilities.getRealScreenSize();
-            Bitmap loadBitmap = ImageLoader.loadBitmap(photoEntry.imagePath, null, (float) realScreenSize.x, (float) realScreenSize.y, true);
-            try {
-                loadBitmap.compress(Bitmap.CompressFormat.JPEG, 87, new FileOutputStream(file));
-            } catch (FileNotFoundException e10) {
-                e10.printStackTrace();
+    @Override // org.telegram.ui.Components.dq0
+    public final void R0(a0.h hVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
+        if (z10) {
+            int m10 = hVar.m();
+            ec1 ec1Var = this.X0;
+            if (m10 == 1) {
+                ec1Var.a.h0.m(((TLRPC.Dialog) hVar.n(0)).id, Integer.valueOf(i10), 61);
+            } else {
+                ec1Var.a.h0.k(0L, 61, Integer.valueOf(i10), Integer.valueOf(hVar.m()), null, null);
             }
-            File file2 = new File(photoEntry.imagePath);
-            oc1Var.x1 = new yh1(file2, file2, "");
-            oc1Var.y1 = loadBitmap;
-            oc1Var.X1 = 0;
-            oc1Var.t0.requestLayout();
-            oc1Var.b1(false);
-            oc1Var.s1 = null;
-            oc1Var.i1();
         }
-    }
-
-    @Override // org.telegram.ui.rt0, org.telegram.ui.zt0
-    public final boolean z() {
-        return false;
     }
 }

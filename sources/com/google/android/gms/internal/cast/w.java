@@ -7,14 +7,14 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class w implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
-    public /* synthetic */ w(Object obj, int i9) {
-        this.a = i9;
+    public /* synthetic */ w(Object obj, int i10) {
+        this.a = i10;
         this.b = obj;
     }
 
@@ -28,68 +28,68 @@ public final /* synthetic */ class w implements Runnable {
                 }
                 throw null;
             case 1:
-                a1 a1Var = (a1) this.b;
-                b1 b1Var = a1Var.g;
-                if (b1Var != null) {
-                    a1Var.a.a((s1) a1Var.c.b(b1Var).a(), 223);
+                b1 b1Var = (b1) this.b;
+                c1 c1Var = b1Var.g;
+                if (c1Var != null) {
+                    b1Var.a.a((t1) b1Var.c.b(c1Var).a(), 223);
                 }
-                a1Var.e();
+                b1Var.e();
                 return;
             default:
-                d2 d2Var = (d2) this.b;
-                HashSet hashSet = d2Var.f;
-                SharedPreferences sharedPreferences = d2Var.b;
-                HashSet hashSet2 = d2Var.g;
+                e2 e2Var = (e2) this.b;
+                HashSet hashSet = e2Var.f;
+                SharedPreferences sharedPreferences = e2Var.b;
+                HashSet hashSet2 = e2Var.g;
                 if (hashSet.isEmpty()) {
                     return;
                 }
                 long j10 = true != hashSet2.equals(hashSet) ? 86400000L : 172800000L;
                 long currentTimeMillis = System.currentTimeMillis();
-                long j11 = d2Var.h;
+                long j11 = e2Var.h;
                 if (j11 == 0 || currentTimeMillis - j11 >= j10) {
-                    d2.i.b("Upload the feature usage report.", new Object[0]);
-                    k1 l10 = l1.l();
-                    String str = d2.j;
+                    e2.i.b("Upload the feature usage report.", new Object[0]);
+                    l1 l10 = m1.l();
+                    String str = e2.j;
                     l10.c();
-                    l1.n((l1) l10.b, str);
-                    String str2 = d2Var.c;
+                    m1.n((m1) l10.b, str);
+                    String str2 = e2Var.c;
                     l10.c();
-                    l1.m((l1) l10.b, str2);
-                    l1 l1Var = (l1) l10.a();
+                    m1.m((m1) l10.b, str2);
+                    m1 m1Var = (m1) l10.a();
                     ArrayList arrayList = new ArrayList();
                     arrayList.addAll(hashSet);
-                    g1 l11 = h1.l();
+                    h1 l11 = i1.l();
                     l11.c();
-                    h1.n((h1) l11.b, arrayList);
+                    i1.n((i1) l11.b, arrayList);
                     l11.c();
-                    h1.m((h1) l11.b, l1Var);
-                    h1 h1Var = (h1) l11.a();
-                    r1 m10 = s1.m();
+                    i1.m((i1) l11.b, m1Var);
+                    i1 i1Var = (i1) l11.a();
+                    s1 m10 = t1.m();
                     m10.c();
-                    s1.s((s1) m10.b, h1Var);
-                    d2Var.a.a((s1) m10.a(), 243);
+                    t1.s((t1) m10.b, i1Var);
+                    e2Var.a.a((t1) m10.a(), 243);
                     SharedPreferences.Editor edit = sharedPreferences.edit();
                     if (!hashSet2.equals(hashSet)) {
                         hashSet2.clear();
                         hashSet2.addAll(hashSet);
                         Iterator it = hashSet2.iterator();
                         while (it.hasNext()) {
-                            String num = Integer.toString(((d1) it.next()).a);
-                            String d = ta.b.d("feature_usage_timestamp_reported_feature_", num);
-                            if (!sharedPreferences.contains(d)) {
-                                d = ta.b.d("feature_usage_timestamp_detected_feature_", num);
+                            String num = Integer.toString(((e1) it.next()).a);
+                            String e10 = u3.c.e("feature_usage_timestamp_reported_feature_", num);
+                            if (!sharedPreferences.contains(e10)) {
+                                e10 = u3.c.e("feature_usage_timestamp_detected_feature_", num);
                             }
-                            String d9 = ta.b.d("feature_usage_timestamp_reported_feature_", num);
-                            if (!TextUtils.equals(d, d9)) {
-                                long j12 = sharedPreferences.getLong(d, 0L);
-                                edit.remove(d);
+                            String e11 = u3.c.e("feature_usage_timestamp_reported_feature_", num);
+                            if (!TextUtils.equals(e10, e11)) {
+                                long j12 = sharedPreferences.getLong(e10, 0L);
+                                edit.remove(e10);
                                 if (j12 != 0) {
-                                    edit.putLong(d9, j12);
+                                    edit.putLong(e11, j12);
                                 }
                             }
                         }
                     }
-                    d2Var.h = currentTimeMillis;
+                    e2Var.h = currentTimeMillis;
                     edit.putLong("feature_usage_last_report_time", currentTimeMillis).apply();
                     return;
                 }

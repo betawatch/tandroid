@@ -1,88 +1,74 @@
 package com.google.firebase.messaging;
 
-import android.app.Activity;
-import android.app.Application;
+import android.content.Context;
 import android.content.Intent;
-import android.os.Build;
-import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
+import android.util.Base64;
 import android.util.Log;
-import f7.o6;
-import java.util.Collections;
-import java.util.Set;
-import java.util.WeakHashMap;
+import com.google.android.gms.tasks.Task;
+import com.google.android.gms.tasks.Tasks;
+import java.util.concurrent.ExecutorService;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.ib0;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class j implements Application.ActivityLifecycleCallbacks {
-    public final Set a = Collections.newSetFromMap(new WeakHashMap());
+public final class j {
+    public static final Object c = new Object();
+    public static f0 d;
+    public final Object a;
+    public final Object b;
 
-    public static void a(Intent intent) {
-        Bundle bundle = null;
-        try {
-            Bundle extras = intent.getExtras();
-            if (extras != null) {
-                bundle = extras.getBundle("gcm.n.analytics_data");
-            }
-        } catch (RuntimeException e10) {
-            Log.w("FirebaseMessaging", "Failed trying to get analytics data from Intent extras.", e10);
+    public j(ExecutorService executorService) {
+        this.b = new a0.f(0);
+        this.a = executorService;
+    }
+
+    public static Task a(Context context, Intent intent, boolean z10) {
+        f0 f0Var;
+        if (Log.isLoggable("FirebaseMessaging", 3)) {
+            Log.d("FirebaseMessaging", "Binding to service");
         }
-        if (bundle == null ? false : "1".equals(bundle.getString("google.c.a.e"))) {
-            if (bundle != null) {
-                if ("1".equals(bundle.getString("google.c.a.tc"))) {
-                    if (s8.h.c().b(t8.a.class) != null) {
-                        throw new ClassCastException();
-                    }
-                    if (Log.isLoggable("FirebaseMessaging", 3)) {
-                        Log.d("FirebaseMessaging", "Received event with track-conversion=true. Setting user property and reengagement event");
-                    }
-                    Log.w("FirebaseMessaging", "Unable to set user property for conversion tracking:  analytics library is missing");
-                } else if (Log.isLoggable("FirebaseMessaging", 3)) {
-                    Log.d("FirebaseMessaging", "Received event with track-conversion=false. Do not set user property");
+        synchronized (c) {
+            try {
+                if (d == null) {
+                    d = new f0(context);
                 }
+                f0Var = d;
+            } catch (Throwable th2) {
+                throw th2;
             }
-            o6.a("_no", bundle);
         }
-    }
-
-    @Override // android.app.Application.ActivityLifecycleCallbacks
-    public final void onActivityCreated(Activity activity, Bundle bundle) {
-        Intent intent = activity.getIntent();
-        if (intent == null || !this.a.add(intent)) {
-            return;
+        if (!z10) {
+            return f0Var.b(intent).continueWith(new ib0(1), new a9.f(24));
         }
-        if (Build.VERSION.SDK_INT <= 25) {
-            new Handler(Looper.getMainLooper()).post(new af.e(this, intent));
+        if (s.v().x(context)) {
+            c0.c(context, f0Var, intent);
         } else {
-            a(intent);
+            f0Var.b(intent);
         }
+        return Tasks.forResult(-1);
     }
 
-    @Override // android.app.Application.ActivityLifecycleCallbacks
-    public final void onActivityPaused(Activity activity) {
-        if (activity.isFinishing()) {
-            this.a.remove(activity.getIntent());
+    public Task b(Intent intent) {
+        String stringExtra = intent.getStringExtra("gcm.rawData64");
+        if (stringExtra != null) {
+            intent.putExtra("rawData", Base64.decode(stringExtra, 0));
+            intent.removeExtra("gcm.rawData64");
         }
+        Context context = (Context) this.a;
+        ib0 ib0Var = (ib0) this.b;
+        boolean z10 = g6.b.d() && context.getApplicationInfo().targetSdkVersion >= 26;
+        boolean z11 = (intent.getFlags() & TLObject.FLAG_28) != 0;
+        return (!z10 || z11) ? Tasks.call(ib0Var, new h(0, context, intent)).continueWithTask(ib0Var, new i(context, intent, z11, 0)) : a(context, intent, z11);
     }
 
-    @Override // android.app.Application.ActivityLifecycleCallbacks
-    public final void onActivityDestroyed(Activity activity) {
+    public j(Context context) {
+        this.a = context;
+        this.b = new ib0(1);
     }
 
-    @Override // android.app.Application.ActivityLifecycleCallbacks
-    public final void onActivityResumed(Activity activity) {
-    }
-
-    @Override // android.app.Application.ActivityLifecycleCallbacks
-    public final void onActivityStarted(Activity activity) {
-    }
-
-    @Override // android.app.Application.ActivityLifecycleCallbacks
-    public final void onActivityStopped(Activity activity) {
-    }
-
-    @Override // android.app.Application.ActivityLifecycleCallbacks
-    public final void onActivitySaveInstanceState(Activity activity, Bundle bundle) {
+    public j(e0.t tVar, String str) {
+        this.a = tVar;
+        this.b = str;
     }
 }

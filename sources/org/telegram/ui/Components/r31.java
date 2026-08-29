@@ -1,32 +1,35 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.RectF;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class r31 implements wu0 {
-    public int a;
-    public boolean b;
-    public final /* synthetic */ s31 c;
+public final class r31 extends gh.s {
+    public final org.telegram.ui.u10 N;
+    public final /* synthetic */ u31 O;
 
-    public r31(s31 s31Var) {
-        this.c = s31Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public r31(u31 u31Var, Context context) {
+        super(context);
+        this.O = u31Var;
+        this.N = new org.telegram.ui.u10();
     }
 
-    @Override // org.telegram.ui.Components.wu0
-    public final void G(int i9, boolean z10) {
-        if (this.a == i9 && this.b == z10) {
-            return;
-        }
-        this.a = i9;
-        this.b = z10;
-        if (i9 > AndroidUtilities.dp(20.0f)) {
-            s31 s31Var = this.c;
-            if (s31Var.t0) {
-                return;
-            }
-            s31Var.A0.setAllowNestedScroll(false);
-            s31Var.t0 = true;
-        }
+    @Override // gh.s, android.widget.TextView, android.view.View
+    public final void onDraw(Canvas canvas) {
+        int dp = AndroidUtilities.dp(8.0f) + this.O.d.getWidth();
+        canvas.saveLayerAlpha(getScrollX(), 0.0f, (getWidth() + getScrollX()) - dp, getHeight(), 255, 31);
+        super.onDraw(canvas);
+        canvas.save();
+        canvas.translate(getPaddingLeft(), getPaddingTop());
+        tv0.a(canvas, getLayout());
+        canvas.restore();
+        RectF rectF = AndroidUtilities.rectTmp;
+        rectF.set((getWidth() - dp) - AndroidUtilities.dp(24.0f), 0.0f, getWidth() - dp, getHeight());
+        this.N.b(canvas, rectF, 2, 1.0f);
+        canvas.restore();
     }
 }

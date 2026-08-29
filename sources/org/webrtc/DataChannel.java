@@ -2,13 +2,13 @@ package org.webrtc;
 
 import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes4.dex */
 public class DataChannel {
     private long nativeDataChannel;
     private long nativeObserver;
 
-    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
     public static class Buffer {
         public final boolean binary;
         public final ByteBuffer data;
@@ -19,7 +19,7 @@ public class DataChannel {
         }
     }
 
-    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
     public static class Init {
         public boolean negotiated;
         public boolean ordered = true;
@@ -53,7 +53,7 @@ public class DataChannel {
         }
     }
 
-    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
     public interface Observer {
         void onBufferedAmountChange(long j10);
 
@@ -62,15 +62,15 @@ public class DataChannel {
         void onStateChange();
     }
 
-    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
     public enum State {
         CONNECTING,
         OPEN,
         CLOSING,
         CLOSED;
 
-        public static State fromNativeIndex(int i9) {
-            return values()[i9];
+        public static State fromNativeIndex(int i10) {
+            return values()[i10];
         }
     }
 

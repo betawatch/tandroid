@@ -1,112 +1,77 @@
 package h7;
 
-import org.telegram.messenger.voip.VoIPService;
+import android.content.Context;
+import android.content.res.ColorStateList;
+import android.content.res.Resources;
+import android.graphics.drawable.Drawable;
+import android.os.Build;
+import android.util.Log;
+import android.util.SparseArray;
+import android.util.TypedValue;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public enum s7 implements f0 {
-    b(0),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF1(1),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF3(2),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF5(3),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF7(4),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF9(6),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF11(7),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF14(8),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF2(9),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF6(5),
-    c(100),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF8(101),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF10(102),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF12(103),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF13(104),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(105),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF1(106),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF2(107),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(108),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF1(109),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF2(110),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(111),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF1(112),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(113),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF1(114),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(115),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF1(116),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(201),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF1(202),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(VoIPService.ID_INCOMING_CALL_PRENOTIFICATION),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF1(204),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(205),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF1(206),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(207),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF1(301),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(302),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF1(303),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(304),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF1(305),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(400),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF1(401),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(402),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF1(403),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(404),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF1(405),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(406),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF1(407),
-    d(9999);
-
-    public final int a;
-
-    s7(int i9) {
-        this.a = i9;
+public abstract class s7 {
+    /* JADX WARN: Code restructure failed: missing block: B:46:0x0046, code lost:
+    
+        if (r5.c == r8.hashCode()) goto L21;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static ColorStateList a(Context context, int i10) {
+        ColorStateList colorStateList;
+        ColorStateList colorStateList2;
+        h0.i iVar;
+        Resources resources = context.getResources();
+        Resources.Theme theme = context.getTheme();
+        h0.j jVar = new h0.j(resources, theme);
+        synchronized (h0.k.c) {
+            try {
+                SparseArray sparseArray = (SparseArray) h0.k.b.get(jVar);
+                colorStateList = null;
+                if (sparseArray != null && sparseArray.size() > 0 && (iVar = (h0.i) sparseArray.get(i10)) != null) {
+                    if (iVar.b.equals(resources.getConfiguration())) {
+                        if (theme == null) {
+                            if (iVar.c != 0) {
+                            }
+                            colorStateList2 = iVar.a;
+                        }
+                        if (theme != null) {
+                        }
+                    }
+                    sparseArray.remove(i10);
+                }
+                colorStateList2 = null;
+            } finally {
+            }
+        }
+        if (colorStateList2 != null) {
+            return colorStateList2;
+        }
+        ThreadLocal threadLocal = h0.k.a;
+        TypedValue typedValue = (TypedValue) threadLocal.get();
+        if (typedValue == null) {
+            typedValue = new TypedValue();
+            threadLocal.set(typedValue);
+        }
+        resources.getValue(i10, typedValue, true);
+        int i11 = typedValue.type;
+        if (i11 < 28 || i11 > 31) {
+            try {
+                colorStateList = h0.c.a(resources, resources.getXml(i10), theme);
+            } catch (Exception e10) {
+                Log.w("ResourcesCompat", "Failed to inflate ColorStateList, leaving it to the framework", e10);
+            }
+        }
+        if (colorStateList == null) {
+            return Build.VERSION.SDK_INT >= 23 ? h0.h.a(resources, i10, theme) : resources.getColorStateList(i10);
+        }
+        h0.k.a(jVar, i10, colorStateList, theme);
+        return colorStateList;
     }
 
-    @Override // h7.f0
-    public final int zza() {
-        return this.a;
+    public static Drawable b(Context context, int i10) {
+        return m.n2.d().g(context, i10);
     }
 }

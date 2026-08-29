@@ -1,17 +1,17 @@
 package com.google.android.gms.wallet.wobs;
 
+import a6.a;
 import android.os.Parcel;
 import android.os.Parcelable;
-import f8.r;
-import g7.p8;
-import g8.f;
+import com.google.android.gms.internal.cast.o;
+import i4.g;
+import i8.f;
 import java.util.ArrayList;
-import y5.a;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public class CommonWalletObject extends a {
-    public static final Parcelable.Creator<CommonWalletObject> CREATOR = new r(20);
+    public static final Parcelable.Creator<CommonWalletObject> CREATOR = new g(2);
     public boolean B;
     public String a;
     public String b;
@@ -33,31 +33,31 @@ public class CommonWalletObject extends a {
     public ArrayList E = new ArrayList();
 
     @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i9) {
-        int q10 = p8.q(parcel, 20293);
-        p8.l(parcel, 2, this.a);
-        p8.l(parcel, 3, this.b);
-        p8.l(parcel, 4, this.c);
-        p8.l(parcel, 5, this.d);
-        p8.l(parcel, 6, this.e);
-        p8.l(parcel, 7, this.f);
-        p8.l(parcel, 8, this.h);
-        p8.l(parcel, 9, this.n);
-        int i10 = this.r;
-        p8.s(parcel, 10, 4);
-        parcel.writeInt(i10);
-        p8.p(parcel, 11, this.s);
-        p8.k(parcel, 12, this.v, i9);
-        p8.p(parcel, 13, this.w);
-        p8.l(parcel, 14, this.x);
-        p8.l(parcel, 15, this.y);
-        p8.p(parcel, 16, this.A);
+    public final void writeToParcel(Parcel parcel, int i10) {
+        int q6 = o.q(parcel, 20293);
+        o.l(parcel, 2, this.a);
+        o.l(parcel, 3, this.b);
+        o.l(parcel, 4, this.c);
+        o.l(parcel, 5, this.d);
+        o.l(parcel, 6, this.e);
+        o.l(parcel, 7, this.f);
+        o.l(parcel, 8, this.h);
+        o.l(parcel, 9, this.n);
+        int i11 = this.r;
+        o.s(parcel, 10, 4);
+        parcel.writeInt(i11);
+        o.p(parcel, 11, this.s);
+        o.k(parcel, 12, this.v, i10);
+        o.p(parcel, 13, this.w);
+        o.l(parcel, 14, this.x);
+        o.l(parcel, 15, this.y);
+        o.p(parcel, 16, this.A);
         boolean z10 = this.B;
-        p8.s(parcel, 17, 4);
+        o.s(parcel, 17, 4);
         parcel.writeInt(z10 ? 1 : 0);
-        p8.p(parcel, 18, this.C);
-        p8.p(parcel, 19, this.D);
-        p8.p(parcel, 20, this.E);
-        p8.r(parcel, q10);
+        o.p(parcel, 18, this.C);
+        o.p(parcel, 19, this.D);
+        o.p(parcel, 20, this.E);
+        o.r(parcel, q6);
     }
 }

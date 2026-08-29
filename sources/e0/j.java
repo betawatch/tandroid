@@ -5,7 +5,7 @@ import android.os.Bundle;
 import androidx.core.graphics.drawable.IconCompat;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class j {
     public final IconCompat a;
@@ -17,8 +17,8 @@ public final class j {
     public int g;
     public boolean h;
 
-    public j(int i9, String str, PendingIntent pendingIntent) {
-        IconCompat e10 = i9 == 0 ? null : IconCompat.e(null, "", i9);
+    public j(int i10, String str, PendingIntent pendingIntent) {
+        IconCompat e10 = i10 == 0 ? null : IconCompat.e(null, "", i10);
         Bundle bundle = new Bundle();
         this.d = true;
         this.h = true;
@@ -45,10 +45,10 @@ public final class j {
         ArrayList arrayList3 = this.f;
         if (arrayList3 != null) {
             int size = arrayList3.size();
-            int i9 = 0;
-            while (i9 < size) {
-                Object obj = arrayList3.get(i9);
-                i9++;
+            int i10 = 0;
+            while (i10 < size) {
+                Object obj = arrayList3.get(i10);
+                i10++;
                 r0 r0Var = (r0) obj;
                 r0Var.getClass();
                 arrayList2.add(r0Var);

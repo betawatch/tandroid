@@ -1,23 +1,32 @@
 package org.telegram.ui.Components;
 
+import android.net.Uri;
+import android.text.TextPaint;
+import android.text.style.URLSpan;
 import android.view.View;
-import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class y41 extends View {
-    public int a;
+public final class y41 extends URLSpan {
+    public final h01 a;
 
-    @Override // android.view.View
-    public final void onMeasure(int i9, int i10) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i9), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(this.a, TLObject.FLAG_30));
+    public y41(String str, h01 h01Var) {
+        super(str != null ? str.replace((char) 8238, ' ') : str);
+        this.a = h01Var;
     }
 
-    public void setHeight(int i9) {
-        if (this.a == i9) {
-            return;
+    @Override // android.text.style.URLSpan, android.text.style.ClickableSpan
+    public final void onClick(View view) {
+        ye.d.p(view.getContext(), Uri.parse(getURL()), true, true);
+    }
+
+    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        super.updateDrawState(textPaint);
+        h01 h01Var = this.a;
+        if (h01Var != null) {
+            h01Var.a(textPaint);
         }
-        this.a = i9;
-        requestLayout();
+        textPaint.setUnderlineText(true);
     }
 }

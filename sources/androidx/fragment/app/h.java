@@ -6,7 +6,7 @@ import android.os.Build;
 import android.util.Log;
 import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class h extends t0 {
     public final f b;
@@ -18,7 +18,7 @@ public final class h extends t0 {
 
     @Override // androidx.fragment.app.t0
     public final void a(ViewGroup container) {
-        kotlin.jvm.internal.i.e(container, "container");
+        kotlin.jvm.internal.j.e(container, "container");
         AnimatorSet animatorSet = this.c;
         animatorSet.getClass();
         animatorSet.start();
@@ -29,8 +29,8 @@ public final class h extends t0 {
 
     @Override // androidx.fragment.app.t0
     public final void b(androidx.activity.b backEvent, ViewGroup container) {
-        kotlin.jvm.internal.i.e(backEvent, "backEvent");
-        kotlin.jvm.internal.i.e(container, "container");
+        kotlin.jvm.internal.j.e(backEvent, "backEvent");
+        kotlin.jvm.internal.j.e(container, "container");
         this.c.getClass();
         if (Build.VERSION.SDK_INT >= 34) {
             throw null;
@@ -39,15 +39,15 @@ public final class h extends t0 {
 
     @Override // androidx.fragment.app.t0
     public final void c(ViewGroup container) {
-        kotlin.jvm.internal.i.e(container, "container");
+        kotlin.jvm.internal.j.e(container, "container");
         f fVar = this.b;
         if (fVar.a()) {
             return;
         }
         Context context = container.getContext();
-        kotlin.jvm.internal.i.d(context, "context");
-        we.b b10 = fVar.b(context);
-        this.c = b10 != null ? (AnimatorSet) b10.c : null;
+        kotlin.jvm.internal.j.d(context, "context");
+        ze.b b10 = fVar.b(context);
+        this.c = b10 != null ? (AnimatorSet) b10.b : null;
         throw null;
     }
 }

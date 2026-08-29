@@ -1,58 +1,51 @@
 package org.telegram.ui.Components;
 
-import android.app.Activity;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.TextView;
 import java.util.ArrayList;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class n30 extends FrameLayout {
-    public final int a;
-    public final org.telegram.ui.ActionBar.b6 b;
-    public ArrayList c;
-    public final FrameLayout d;
-    public final i51 e;
-    public final z41 f;
-    public Utilities.Callback h;
+public final class n30 implements rf.j1 {
+    public final /* synthetic */ o30 a;
 
-    public n30(int i9, Activity activity, org.telegram.ui.ActionBar.b6 b6Var) {
-        super(activity);
-        this.a = i9;
-        this.b = b6Var;
-        i51 i51Var = new i51(activity, i9, 0, false, new d(this, 15), new m30(this), new m30(this), b6Var);
-        this.e = i51Var;
-        i51Var.setClipToPadding(false);
-        z41 z41Var = (z41) i51Var.getAdapter();
-        this.f = z41Var;
-        z41Var.r = false;
-        addView(i51Var, -1, -1);
-        FrameLayout frameLayout = new FrameLayout(activity);
-        this.d = frameLayout;
-        ImageView imageView = new ImageView(activity);
-        int i10 = org.telegram.ui.ActionBar.f6.m6;
-        imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.f6.v0(i10, b6Var), PorterDuff.Mode.MULTIPLY));
-        imageView.setScaleType(ImageView.ScaleType.CENTER);
-        imageView.setImageResource(R.drawable.large_hashtags);
-        frameLayout.addView(imageView, g7.e6.e(56, 56, 49));
-        TextView textView = new TextView(activity);
-        textView.setTextColor(org.telegram.ui.ActionBar.f6.v0(i10, b6Var));
-        org.telegram.messenger.ll.l(R.string.HashtagSearchPlaceholder, textView, 17);
-        frameLayout.addView(textView, g7.e6.d(-2, -2.0f, 81, 0.0f, 56.0f, 0.0f, 0.0f));
-        addView(frameLayout, g7.e6.e(210, -2, 17));
-        i51Var.setEmptyView(frameLayout);
+    public n30(o30 o30Var) {
+        this.a = o30Var;
     }
 
-    public void setOnHashtagClickListener(Utilities.Callback<String> callback) {
-        this.h = callback;
+    @Override // rf.j1
+    public final /* synthetic */ boolean A(int i10) {
+        return true;
     }
 
-    public void setOnScrollListener(f2.d1 d1Var) {
-        this.e.j(d1Var);
+    @Override // rf.j1
+    public final void f(int i10) {
+        o30 o30Var = this.a;
+        p30 p30Var = o30Var.w;
+        if (i10 < 0 || i10 != o30Var.n || o30Var.h) {
+            return;
+        }
+        int i11 = o30Var.f - 1;
+        boolean z10 = p30Var.s.getVisibility() == 0;
+        o30Var.l();
+        if (o30Var.f > i11) {
+            p30Var.I(i11);
+        }
+        if (o30Var.d.e() || !p30Var.d.S0()) {
+            return;
+        }
+        p30Var.s.e(false, z10);
+    }
+
+    @Override // rf.j1
+    public final a0.h q() {
+        return this.a.w.a0;
+    }
+
+    @Override // rf.j1
+    public final /* synthetic */ a0.h t() {
+        return null;
+    }
+
+    @Override // rf.j1
+    public final /* synthetic */ void E(ArrayList arrayList) {
     }
 }

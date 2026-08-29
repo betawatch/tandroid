@@ -1,30 +1,41 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.MediaDataController;
+import android.view.View;
+import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class y91 extends org.telegram.ui.Components.e41 {
-    public final /* synthetic */ StickersActivity b;
+public final /* synthetic */ class y91 implements Utilities.Callback5, Utilities.Callback5Return {
+    public final /* synthetic */ StickersActivity a;
 
-    public y91(StickersActivity stickersActivity) {
-        this.b = stickersActivity;
+    public /* synthetic */ y91(StickersActivity stickersActivity) {
+        this.a = stickersActivity;
     }
 
-    @Override // org.telegram.ui.Components.e41
-    public final void g(TLRPC.StickerSetCovered stickerSetCovered, boolean z10) {
-        int i9;
-        StickersActivity stickersActivity = this.b;
-        i9 = ((org.telegram.ui.ActionBar.o2) stickersActivity).currentAccount;
-        MediaDataController.getInstance(i9).toggleStickerSet(stickersActivity.getParentActivity(), stickerSetCovered, 2, stickersActivity, false, false);
+    @Override // org.telegram.messenger.Utilities.Callback5
+    public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
+        ((Integer) obj3).getClass();
+        ((Float) obj4).getClass();
+        ((Float) obj5).getClass();
+        StickersActivity.U(this.a, (org.telegram.ui.Components.w41) obj, (View) obj2);
     }
 
-    @Override // org.telegram.ui.Components.e41
-    public final void h(TLRPC.StickerSetCovered stickerSetCovered) {
-        int i9;
-        StickersActivity stickersActivity = this.b;
-        i9 = ((org.telegram.ui.ActionBar.o2) stickersActivity).currentAccount;
-        MediaDataController.getInstance(i9).toggleStickerSet(stickersActivity.getParentActivity(), stickerSetCovered, 0, stickersActivity, false, false);
+    @Override // org.telegram.messenger.Utilities.Callback5Return
+    public Object run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
+        boolean z10;
+        org.telegram.ui.Components.w41 w41Var = (org.telegram.ui.Components.w41) obj;
+        View view = (View) obj2;
+        ((Integer) obj3).intValue();
+        ((Float) obj4).floatValue();
+        ((Float) obj5).floatValue();
+        StickersActivity stickersActivity = this.a;
+        if (stickersActivity.x.isEmpty() && (w41Var.G instanceof TLRPC.TL_messages_stickerSet)) {
+            stickersActivity.n0((org.telegram.ui.Cells.i8) view);
+            z10 = true;
+        } else {
+            z10 = false;
+        }
+        return Boolean.valueOf(z10);
     }
 }

@@ -1,35 +1,22 @@
 package org.telegram.ui.Components;
 
-import android.app.Dialog;
-import android.view.ViewTreeObserver;
-
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class xe implements ViewTreeObserver.OnPreDrawListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Dialog b;
-    public final /* synthetic */ ChatActivityEnterView c;
+public final class xe implements k71, b5 {
+    public final /* synthetic */ ChatActivityEnterView a;
 
-    public /* synthetic */ xe(ChatActivityEnterView chatActivityEnterView, Dialog dialog, int i9) {
-        this.a = i9;
-        this.c = chatActivityEnterView;
-        this.b = dialog;
+    public /* synthetic */ xe(ChatActivityEnterView chatActivityEnterView) {
+        this.a = chatActivityEnterView;
     }
 
-    @Override // android.view.ViewTreeObserver.OnPreDrawListener
-    public final boolean onPreDraw() {
-        switch (this.a) {
-            case 0:
-                ChatActivityEnterView chatActivityEnterView = this.c;
-                chatActivityEnterView.l0.getViewTreeObserver().removeOnPreDrawListener(this);
-                chatActivityEnterView.l0.postDelayed(new fg(this.b, 18), 100L);
-                break;
-            default:
-                ChatActivityEnterView chatActivityEnterView2 = this.c;
-                chatActivityEnterView2.l0.getViewTreeObserver().removeOnPreDrawListener(this);
-                chatActivityEnterView2.l0.postDelayed(new fg(this.b, 18), 100L);
-                break;
+    @Override // org.telegram.ui.Components.b5
+    public void I(int i10, int i11, boolean z10) {
+        ChatActivityEnterView chatActivityEnterView = this.a;
+        boolean T0 = chatActivityEnterView.T0(i10, z10, i11, true, 0L);
+        ff ffVar = chatActivityEnterView.H0;
+        if (ffVar != null) {
+            ffVar.h(!T0);
+            chatActivityEnterView.H0 = null;
         }
-        return true;
     }
 }

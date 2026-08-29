@@ -5,7 +5,7 @@ import android.app.Application;
 import android.os.Bundle;
 import android.util.Log;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class f implements Application.ActivityLifecycleCallbacks {
     public Object a;
@@ -37,12 +37,12 @@ public final class f implements Application.ActivityLifecycleCallbacks {
         try {
             Object obj2 = g.c.get(activity);
             if (obj2 == obj && activity.hashCode() == this.c) {
-                g.g.postAtFrontOfQueue(new androidx.biometric.j(g.b.get(activity), obj2, false, 4));
+                g.g.postAtFrontOfQueue(new ab.o(9, g.b.get(activity), obj2));
                 this.f = true;
                 this.a = null;
             }
-        } catch (Throwable th) {
-            Log.e("ActivityRecreator", "Exception while fetching field values", th);
+        } catch (Throwable th2) {
+            Log.e("ActivityRecreator", "Exception while fetching field values", th2);
         }
     }
 

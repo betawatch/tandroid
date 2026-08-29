@@ -1,18 +1,18 @@
 package com.google.mlkit.nl.languageid;
 
-import a5.m;
-import f7.t0;
+import androidx.biometric.e;
+import h7.s0;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class IdentifiedLanguage {
     public final String a;
     public final float b;
 
-    public IdentifiedLanguage(String str, float f10) {
+    public IdentifiedLanguage(String str, float f9) {
         this.a = str;
-        this.b = f10;
+        this.b = f9;
     }
 
     public final boolean equals(Object obj) {
@@ -39,18 +39,18 @@ public final class IdentifiedLanguage {
     }
 
     public final String toString() {
-        m mVar = new m("IdentifiedLanguage", 14);
-        m mVar2 = new m(13, false);
-        ((m) mVar.d).d = mVar2;
-        mVar.d = mVar2;
-        mVar2.c = this.a;
-        mVar2.b = "languageTag";
+        e eVar = new e("IdentifiedLanguage", 15);
+        e eVar2 = new e(14, false);
+        ((e) eVar.d).d = eVar2;
+        eVar.d = eVar2;
+        eVar2.c = this.a;
+        eVar2.b = "languageTag";
         String valueOf = String.valueOf(this.b);
-        t0 t0Var = new t0(13, false);
-        ((m) mVar.d).d = t0Var;
-        mVar.d = t0Var;
-        t0Var.c = valueOf;
-        t0Var.b = "confidence";
-        return mVar.toString();
+        s0 s0Var = new s0(14, false);
+        ((e) eVar.d).d = s0Var;
+        eVar.d = s0Var;
+        s0Var.c = valueOf;
+        s0Var.b = "confidence";
+        return eVar.toString();
     }
 }

@@ -1,47 +1,26 @@
 package org.telegram.ui;
 
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
+import android.app.Activity;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class z50 implements org.telegram.ui.Components.n10, org.telegram.ui.ActionBar.b2, r0.o {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ k60 b;
+public final class z50 extends cg.v0 {
+    public final /* synthetic */ a60 S0;
 
-    public /* synthetic */ z50(k60 k60Var, int i9) {
-        this.a = i9;
-        this.b = k60Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public z50(a60 a60Var, a60 a60Var2, Activity activity, int i10, int i11, org.telegram.ui.ActionBar.c6 c6Var) {
+        super(i10, i11, activity, a60Var2, c6Var);
+        this.S0 = a60Var;
     }
 
-    @Override // r0.o
-    public r0.m1 L0(View view, r0.m1 m1Var) {
-        int i9 = AndroidUtilities.getDefaultWindowInsets(m1Var, false).d;
-        k60 k60Var = this.b;
-        k60Var.i0 = i9;
-        gh.h1 h1Var = k60Var.B;
-        if (h1Var != null) {
-            h1Var.setPadding(0, 0, 0, i9);
-        }
-        k60Var.i0();
-        k60Var.g0();
-        return r0.m1.b;
+    @Override // org.telegram.ui.ActionBar.f3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.k2
+    public final void dismiss() {
+        super.dismiss();
+        this.S0.x0 = false;
     }
 
-    @Override // org.telegram.ui.Components.n10
-    public void a(int i9) {
-        this.b.b.a(Math.min(i9, r0.Y));
-    }
-
-    @Override // org.telegram.ui.ActionBar.b2
-    public void f(org.telegram.ui.ActionBar.c2 c2Var, int i9) {
-        switch (this.a) {
-            case 1:
-                this.b.n0();
-                break;
-            default:
-                this.b.finishFragment();
-                break;
-        }
+    @Override // org.telegram.ui.ActionBar.f3
+    public final void onOpenAnimationEnd() {
+        this.S0.x0 = false;
     }
 }

@@ -1,10 +1,9 @@
 package com.google.android.recaptcha.internal;
 
-import fd.j;
-import kotlin.jvm.internal.e;
-import kotlin.jvm.internal.i;
+import hd.j;
+import kotlin.jvm.internal.f;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class zzgn {
     private zzgn() {
@@ -17,7 +16,7 @@ public final class zzgn {
         int d = j.d(0, g10, "-", false);
         if (d != -1) {
             g10 = g10.substring(0, d);
-            i.d(g10, "substring(...)");
+            kotlin.jvm.internal.j.d(g10, "substring(...)");
         }
         return Integer.parseInt(g10);
     }
@@ -27,6 +26,6 @@ public final class zzgn {
         return "cesdb".concat(j.i("18.7.1", "-", ""));
     }
 
-    public /* synthetic */ zzgn(e eVar) {
+    public /* synthetic */ zzgn(f fVar) {
     }
 }

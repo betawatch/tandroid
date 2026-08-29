@@ -1,44 +1,21 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+import android.view.MotionEvent;
+import android.view.View;
+import org.telegram.tgnet.TLObject;
+
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class qa extends f2.t0 {
-    public final /* synthetic */ f2.t0 a;
-    public final /* synthetic */ ra b;
+public final class qa extends View {
+    public int a;
 
-    public qa(ra raVar, f2.t0 t0Var) {
-        this.b = raVar;
-        this.a = t0Var;
+    @Override // android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        return false;
     }
 
-    @Override // f2.t0
-    public final void a() {
-        this.a.a();
-    }
-
-    @Override // f2.t0
-    public final void b(int i9, int i10) {
-        this.a.b(i9 + (!((sa) this.b.f).M ? 1 : 0), i10);
-    }
-
-    @Override // f2.t0
-    public final void c(int i9, int i10, Object obj) {
-        this.a.c(i9 + (!((sa) this.b.f).M ? 1 : 0), i10, obj);
-    }
-
-    @Override // f2.t0
-    public final void d(int i9, int i10) {
-        this.a.d(i9 + (!((sa) this.b.f).M ? 1 : 0), i10);
-    }
-
-    @Override // f2.t0
-    public final void e(int i9, int i10) {
-        int i11 = !((sa) this.b.f).M ? 1 : 0;
-        this.a.e(i9 + i11, i10 + i11);
-    }
-
-    @Override // f2.t0
-    public final void f(int i9, int i10) {
-        this.a.f(i9 + (!((sa) this.b.f).M ? 1 : 0), i10);
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(this.a, TLObject.FLAG_30));
     }
 }

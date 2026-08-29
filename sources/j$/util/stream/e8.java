@@ -10,9 +10,9 @@ public final class e8 extends z4 implements n8 {
     public final /* synthetic */ Predicate t;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ e8(b5 b5Var, int i9, Predicate predicate, int i10) {
-        super(b5Var, i9);
-        this.s = i10;
+    public /* synthetic */ e8(b5 b5Var, int i10, Predicate predicate, int i11) {
+        super(b5Var, i10);
+        this.s = i11;
         this.t = predicate;
     }
 
@@ -37,7 +37,7 @@ public final class e8 extends z4 implements n8 {
     }
 
     @Override // j$.util.stream.a
-    public final j5 Q0(int i9, j5 j5Var) {
+    public final j5 Q0(int i10, j5 j5Var) {
         switch (this.s) {
             case 0:
                 return new k(this, j5Var);

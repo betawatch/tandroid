@@ -13,11 +13,11 @@ import android.util.SparseArray;
 import java.util.Calendar;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public class MrzRecognizer {
 
-    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
     public static class Result {
         public static final int GENDER_FEMALE = 2;
         public static final int GENDER_MALE = 1;
@@ -53,11 +53,11 @@ public class MrzRecognizer {
         }
         char[] charArray = str.toCharArray();
         boolean z10 = true;
-        for (int i9 = 0; i9 < charArray.length; i9++) {
-            if (z10 || !Character.isLetter(charArray[i9])) {
-                z10 = charArray[i9] == ' ';
+        for (int i10 = 0; i10 < charArray.length; i10++) {
+            if (z10 || !Character.isLetter(charArray[i10])) {
+                z10 = charArray[i10] == ' ';
             } else {
-                charArray[i9] = Character.toLowerCase(charArray[i9]);
+                charArray[i10] = Character.toLowerCase(charArray[i10]);
             }
         }
         return new String(charArray);
@@ -66,22 +66,22 @@ public class MrzRecognizer {
     private static int checksum(String str) {
         char[] charArray = str.toCharArray();
         int[] iArr = {7, 3, 1};
-        int i9 = 0;
-        for (int i10 = 0; i10 < charArray.length; i10++) {
-            char c10 = charArray[i10];
-            i9 += ((c10 < '0' || c10 > '9') ? (c10 < 'A' || c10 > 'Z') ? 0 : c10 - '7' : c10 - '0') * iArr[i10 % 3];
+        int i10 = 0;
+        for (int i11 = 0; i11 < charArray.length; i11++) {
+            char c3 = charArray[i11];
+            i10 += ((c3 < '0' || c3 > '9') ? (c3 < 'A' || c3 > 'Z') ? 0 : c3 - '7' : c3 - '0') * iArr[i11 % 3];
         }
-        return i9 % 10;
+        return i10 % 10;
     }
 
     private static String cyrillicToLatin(String str) {
         String[] strArr = {"A", "B", "V", "G", "D", "E", "E", "ZH", "Z", "I", "I", "K", "L", "M", "N", "O", "P", "R", "S", "T", "U", "F", "KH", "TS", "CH", "SH", "SHCH", "IE", "Y", "", "E", "IU", "IA"};
         String str2 = str;
-        int i9 = 0;
-        while (i9 < 33) {
-            int i10 = i9 + 1;
-            str2 = str2.replace("АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ".substring(i9, i10), strArr[i9]);
-            i9 = i10;
+        int i10 = 0;
+        while (i10 < 33) {
+            int i11 = i10 + 1;
+            str2 = str2.replace("АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ".substring(i10, i11), strArr[i10]);
+            i10 = i11;
         }
         return str2;
     }
@@ -342,17 +342,17 @@ public class MrzRecognizer {
         return hashMap;
     }
 
-    private static int getNumber(char c10) {
-        if (c10 == 'O') {
+    private static int getNumber(char c3) {
+        if (c3 == 'O') {
             return 0;
         }
-        if (c10 == 'I') {
+        if (c3 == 'I') {
             return 1;
         }
-        if (c10 == 'B') {
+        if (c3 == 'B') {
             return 8;
         }
-        return c10 - '0';
+        return c3 - '0';
     }
 
     private static void parseBirthDate(String str, Result result) {
@@ -379,14 +379,14 @@ public class MrzRecognizer {
         }
     }
 
-    private static int parseGender(char c10) {
-        if (c10 != 'F') {
-            return c10 != 'M' ? 0 : 1;
+    private static int parseGender(char c3) {
+        if (c3 != 'F') {
+            return c3 != 'M' ? 0 : 1;
         }
         return 2;
     }
 
-    private static native String performRecognition(Bitmap bitmap, int i9, int i10, AssetManager assetManager);
+    private static native String performRecognition(Bitmap bitmap, int i10, int i11, AssetManager assetManager);
 
     public static Result recognize(Bitmap bitmap, boolean z10) {
         Result recognizeBarcode;
@@ -408,29 +408,29 @@ public class MrzRecognizer {
     }
 
     private static Result recognizeBarcode(Bitmap bitmap) {
-        b8.n nVar = new b8.n(new com.google.android.gms.internal.vision.t2(ApplicationLoader.applicationContext, new com.google.android.gms.internal.vision.x1()));
+        d8.n nVar = new d8.n(new com.google.android.gms.internal.vision.t2(ApplicationLoader.applicationContext, new com.google.android.gms.internal.vision.x1()));
         if (bitmap.getWidth() > 1500 || bitmap.getHeight() > 1500) {
             float max = 1500.0f / Math.max(bitmap.getWidth(), bitmap.getHeight());
             bitmap = Bitmap.createScaledBitmap(bitmap, Math.round(bitmap.getWidth() * max), Math.round(bitmap.getHeight() * max), true);
         }
-        a5.m mVar = new a5.m(1);
+        androidx.biometric.e eVar = new androidx.biometric.e(5);
         int width = bitmap.getWidth();
         int height = bitmap.getHeight();
-        mVar.d = bitmap;
-        a8.b bVar = (a8.b) mVar.b;
-        bVar.a = width;
-        bVar.b = height;
-        SparseArray Q = nVar.Q(mVar);
-        int i9 = 0;
-        for (int i10 = 0; i10 < Q.size(); i10++) {
-            b8.m mVar2 = (b8.m) Q.valueAt(i10);
-            int i11 = mVar2.d;
-            int i12 = 6;
-            int i13 = 4;
-            if (i11 == 12 && mVar2.y != null) {
+        eVar.d = bitmap;
+        c8.a aVar = (c8.a) eVar.b;
+        aVar.a = width;
+        aVar.b = height;
+        SparseArray Q = nVar.Q(eVar);
+        int i10 = 0;
+        for (int i11 = 0; i11 < Q.size(); i11++) {
+            d8.m mVar = (d8.m) Q.valueAt(i11);
+            int i12 = mVar.d;
+            int i13 = 6;
+            int i14 = 4;
+            if (i12 == 12 && mVar.y != null) {
                 Result result = new Result();
-                result.type = "ID".equals(mVar2.y.a) ? 2 : 4;
-                String str = mVar2.y.y;
+                result.type = "ID".equals(mVar.y.a) ? 2 : 4;
+                String str = mVar.y.y;
                 str.getClass();
                 if (str.equals("CAN")) {
                     result.issuingCountry = "CA";
@@ -439,12 +439,12 @@ public class MrzRecognizer {
                     result.issuingCountry = "US";
                     result.nationality = "US";
                 }
-                result.firstName = capitalize(mVar2.y.b);
-                result.lastName = capitalize(mVar2.y.d);
-                result.middleName = capitalize(mVar2.y.c);
-                b8.e eVar = mVar2.y;
-                result.number = eVar.s;
-                String str2 = eVar.e;
+                result.firstName = capitalize(mVar.y.b);
+                result.lastName = capitalize(mVar.y.d);
+                result.middleName = capitalize(mVar.y.c);
+                d8.e eVar2 = mVar.y;
+                result.number = eVar2.s;
+                String str2 = eVar2.e;
                 if (str2 != null) {
                     if (str2.equals("1")) {
                         result.gender = 1;
@@ -453,30 +453,30 @@ public class MrzRecognizer {
                     }
                 }
                 if ("USA".equals(result.issuingCountry)) {
-                    i9 = 4;
-                    i12 = 2;
-                    i13 = 0;
+                    i10 = 4;
+                    i13 = 2;
+                    i14 = 0;
                 }
                 try {
-                    String str3 = mVar2.y.x;
+                    String str3 = mVar.y.x;
                     if (str3 != null && str3.length() == 8) {
-                        result.birthYear = Integer.parseInt(mVar2.y.x.substring(i9, i9 + 4));
-                        result.birthMonth = Integer.parseInt(mVar2.y.x.substring(i13, i13 + 2));
-                        result.birthDay = Integer.parseInt(mVar2.y.x.substring(i12, i12 + 2));
+                        result.birthYear = Integer.parseInt(mVar.y.x.substring(i10, i10 + 4));
+                        result.birthMonth = Integer.parseInt(mVar.y.x.substring(i14, i14 + 2));
+                        result.birthDay = Integer.parseInt(mVar.y.x.substring(i13, i13 + 2));
                     }
-                    String str4 = mVar2.y.w;
+                    String str4 = mVar.y.w;
                     if (str4 != null && str4.length() == 8) {
-                        result.expiryYear = Integer.parseInt(mVar2.y.w.substring(i9, i9 + 4));
-                        result.expiryMonth = Integer.parseInt(mVar2.y.w.substring(i13, i13 + 2));
-                        result.expiryDay = Integer.parseInt(mVar2.y.w.substring(i12, i12 + 2));
+                        result.expiryYear = Integer.parseInt(mVar.y.w.substring(i10, i10 + 4));
+                        result.expiryMonth = Integer.parseInt(mVar.y.w.substring(i14, i14 + 2));
+                        result.expiryDay = Integer.parseInt(mVar.y.w.substring(i13, i13 + 2));
                     }
                 } catch (NumberFormatException unused) {
                 }
                 return result;
             }
-            if (i11 == 7 && mVar2.a == 2048 && mVar2.b.matches("^[A-Za-z0-9=]+$")) {
+            if (i12 == 7 && mVar.a == 2048 && mVar.b.matches("^[A-Za-z0-9=]+$")) {
                 try {
-                    String[] split = new String(Base64.decode(mVar2.b, 0), "windows-1251").split("\\|");
+                    String[] split = new String(Base64.decode(mVar.b, 0), "windows-1251").split("\\|");
                     if (split.length >= 10) {
                         Result result2 = new Result();
                         result2.type = 4;
@@ -513,13 +513,13 @@ public class MrzRecognizer {
     private static Result recognizeMRZ(Bitmap bitmap) {
         float max;
         Bitmap createScaledBitmap;
-        char c10;
-        int i9;
-        Bitmap createScaledBitmap2;
+        char c3;
         int i10;
+        Bitmap createScaledBitmap2;
         int i11;
         int i12;
         int i13;
+        int i14;
         String trim;
         String replace;
         String replace2;
@@ -533,7 +533,7 @@ public class MrzRecognizer {
             max = 1.0f;
         }
         int[] findCornerPoints = findCornerPoints(createScaledBitmap);
-        float f10 = 1.0f / max;
+        float f9 = 1.0f / max;
         if (findCornerPoints != null) {
             Point point = new Point(findCornerPoints[0], findCornerPoints[1]);
             Point point2 = new Point(findCornerPoints[2], findCornerPoints[3]);
@@ -548,42 +548,42 @@ public class MrzRecognizer {
             double hypot = Math.hypot(point.x - point2.x, point.y - point2.y);
             double hypot2 = Math.hypot(point3.x - point4.x, point3.y - point4.y);
             double hypot3 = Math.hypot(point4.x - point2.x, point4.y - point2.y);
-            c10 = 0;
+            c3 = 0;
             double hypot4 = Math.hypot(point3.x - point.x, point3.y - point.y);
             double d = hypot / hypot3;
-            double d9 = hypot / hypot4;
-            double d10 = hypot2 / hypot3;
-            double d11 = hypot2 / hypot4;
-            if (d >= 1.35d && d <= 1.75d && d10 >= 1.35d && d10 <= 1.75d && d9 >= 1.35d && d9 <= 1.75d && d11 >= 1.35d && d11 <= 1.75d) {
-                Bitmap createBitmap = Bitmap.createBitmap(1024, (int) Math.round(1024.0d / ((((d + d9) + d10) + d11) / 4.0d)), Bitmap.Config.ARGB_8888);
+            double d10 = hypot / hypot4;
+            double d11 = hypot2 / hypot3;
+            double d12 = hypot2 / hypot4;
+            if (d >= 1.35d && d <= 1.75d && d11 >= 1.35d && d11 <= 1.75d && d10 >= 1.35d && d10 <= 1.75d && d12 >= 1.35d && d12 <= 1.75d) {
+                Bitmap createBitmap = Bitmap.createBitmap(1024, (int) Math.round(1024.0d / ((((d + d10) + d11) + d12) / 4.0d)), Bitmap.Config.ARGB_8888);
                 Canvas canvas = new Canvas(createBitmap);
                 Matrix matrix2 = new Matrix();
-                matrix2.setPolyToPoly(new float[]{point2.x * f10, point2.y * f10, point.x * f10, point.y * f10, point3.x * f10, point3.y * f10, point4.x * f10, point4.y * f10}, 0, new float[]{0.0f, 0.0f, createBitmap.getWidth(), 0.0f, createBitmap.getWidth(), createBitmap.getHeight(), 0.0f, createBitmap.getHeight()}, 0, 4);
+                matrix2.setPolyToPoly(new float[]{point2.x * f9, point2.y * f9, point.x * f9, point.y * f9, point3.x * f9, point3.y * f9, point4.x * f9, point4.y * f9}, 0, new float[]{0.0f, 0.0f, createBitmap.getWidth(), 0.0f, createBitmap.getWidth(), createBitmap.getHeight(), 0.0f, createBitmap.getHeight()}, 0, 4);
                 canvas.drawBitmap(bitmap2, matrix2, new Paint(2));
                 bitmap2 = createBitmap;
             }
         } else {
-            c10 = 0;
+            c3 = 0;
             if (bitmap2.getWidth() > 1500 || bitmap2.getHeight() > 1500) {
                 float max2 = 1500.0f / Math.max(bitmap2.getWidth(), bitmap2.getHeight());
-                i9 = 1;
+                i10 = 1;
                 createScaledBitmap2 = Bitmap.createScaledBitmap(bitmap2, Math.round(bitmap2.getWidth() * max2), Math.round(bitmap2.getHeight() * max2), true);
                 Result result = null;
                 Bitmap bitmap3 = null;
                 Rect[][] rectArr = null;
-                i10 = 0;
                 i11 = 0;
-                int i14 = 0;
+                i12 = 0;
+                int i15 = 0;
                 while (true) {
-                    if (i10 < 3) {
-                        i12 = 2;
+                    if (i11 < 3) {
+                        i13 = 2;
                         break;
                     }
-                    if (i10 == i9) {
+                    if (i11 == i10) {
                         Matrix matrix3 = new Matrix();
                         matrix3.setRotate(1.0f, createScaledBitmap2.getWidth() / 2, createScaledBitmap2.getHeight() / 2);
                         matrix = matrix3;
-                    } else if (i10 != 2) {
+                    } else if (i11 != 2) {
                         matrix = null;
                     } else {
                         Matrix matrix4 = new Matrix();
@@ -597,44 +597,44 @@ public class MrzRecognizer {
                         return null;
                     }
                     for (Rect[] rectArr2 : rectArr) {
-                        i11 = Math.max(rectArr2.length, i11);
+                        i12 = Math.max(rectArr2.length, i12);
                         if (rectArr2.length > 0) {
-                            i14++;
+                            i15++;
                         }
                     }
-                    i12 = 2;
-                    if (i14 >= 2 && i11 >= 30) {
+                    i13 = 2;
+                    if (i15 >= 2 && i12 >= 30) {
                         break;
                     }
-                    i10++;
-                    i9 = 1;
+                    i11++;
+                    i10 = 1;
                 }
-                if (i11 >= 30 || i14 < i12) {
+                if (i12 >= 30 || i15 < i13) {
                     return null;
                 }
-                Bitmap createBitmap3 = Bitmap.createBitmap(rectArr[c10].length * 10, rectArr.length * 15, Bitmap.Config.ALPHA_8);
+                Bitmap createBitmap3 = Bitmap.createBitmap(rectArr[c3].length * 10, rectArr.length * 15, Bitmap.Config.ALPHA_8);
                 Canvas canvas2 = new Canvas(createBitmap3);
                 Paint paint = new Paint(2);
                 Rect rect = new Rect(0, 0, 10, 15);
                 int length = rectArr.length;
-                int i15 = 0;
                 int i16 = 0;
-                while (i15 < length) {
-                    Rect[] rectArr3 = rectArr[i15];
+                int i17 = 0;
+                while (i16 < length) {
+                    Rect[] rectArr3 = rectArr[i16];
                     Result result2 = result;
-                    int i17 = 0;
                     int i18 = 0;
-                    for (int length2 = rectArr3.length; i17 < length2; length2 = length2) {
-                        Rect rect2 = rectArr3[i17];
-                        int i19 = i18 * 10;
-                        int i20 = i16 * 15;
-                        rect.set(i19, i20, i19 + 10, i20 + 15);
+                    int i19 = 0;
+                    for (int length2 = rectArr3.length; i18 < length2; length2 = length2) {
+                        Rect rect2 = rectArr3[i18];
+                        int i20 = i19 * 10;
+                        int i21 = i17 * 15;
+                        rect.set(i20, i21, i20 + 10, i21 + 15);
                         canvas2.drawBitmap(bitmap3, rect2, rect, paint);
+                        i19++;
                         i18++;
-                        i17++;
                     }
+                    i17++;
                     i16++;
-                    i15++;
                     result = result2;
                 }
                 Result result3 = result;
@@ -661,9 +661,9 @@ public class MrzRecognizer {
                             result4.firstName = trim2;
                             if (trim2.contains("   ")) {
                                 String str = result4.firstName;
-                                i13 = 0;
+                                i14 = 0;
                                 result4.firstName = str.substring(0, str.indexOf("   "));
-                                trim = split[1].substring(i13, 9).replace('<', ' ').replace('O', '0').trim();
+                                trim = split[1].substring(i14, 9).replace('<', ' ').replace('O', '0').trim();
                                 if (checksum(trim) == getNumber(split[1].charAt(9))) {
                                     result4.number = trim;
                                 }
@@ -697,8 +697,8 @@ public class MrzRecognizer {
                                 result4.middleName = capitalize(result4.middleName);
                             }
                         }
-                        i13 = 0;
-                        trim = split[1].substring(i13, 9).replace('<', ' ').replace('O', '0').trim();
+                        i14 = 0;
+                        trim = split[1].substring(i14, 9).replace('<', ' ').replace('O', '0').trim();
                         if (checksum(trim) == getNumber(split[1].charAt(9))) {
                         }
                         result4.nationality = split[1].substring(10, 13);
@@ -795,30 +795,30 @@ public class MrzRecognizer {
             }
         }
         createScaledBitmap2 = bitmap2;
-        i9 = 1;
+        i10 = 1;
         Result result5 = null;
         Bitmap bitmap32 = null;
         Rect[][] rectArr4 = null;
-        i10 = 0;
         i11 = 0;
-        int i142 = 0;
+        i12 = 0;
+        int i152 = 0;
         while (true) {
-            if (i10 < 3) {
+            if (i11 < 3) {
             }
-            i10++;
-            i9 = 1;
+            i11++;
+            i10 = 1;
         }
-        if (i11 >= 30) {
+        if (i12 >= 30) {
         }
         return null;
     }
 
     private static String russianPassportTranslit(String str) {
         char[] charArray = str.toCharArray();
-        for (int i9 = 0; i9 < charArray.length; i9++) {
-            int indexOf = "ABVGDE2JZIQKLMNOPRSTUFHC34WXY9678".indexOf(charArray[i9]);
+        for (int i10 = 0; i10 < charArray.length; i10++) {
+            int indexOf = "ABVGDE2JZIQKLMNOPRSTUFHC34WXY9678".indexOf(charArray[i10]);
             if (indexOf != -1) {
-                charArray[i9] = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ".charAt(indexOf);
+                charArray[i10] = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ".charAt(indexOf);
             }
         }
         return new String(charArray);
@@ -826,14 +826,14 @@ public class MrzRecognizer {
 
     private static native void setYuvBitmapPixels(Bitmap bitmap, byte[] bArr);
 
-    public static Result recognize(byte[] bArr, int i9, int i10, int i11) {
-        Bitmap createBitmap = Bitmap.createBitmap(i9, i10, Bitmap.Config.ARGB_8888);
+    public static Result recognize(byte[] bArr, int i10, int i11, int i12) {
+        Bitmap createBitmap = Bitmap.createBitmap(i10, i11, Bitmap.Config.ARGB_8888);
         setYuvBitmapPixels(createBitmap, bArr);
         Matrix matrix = new Matrix();
-        matrix.setRotate(i11);
-        int min = Math.min(i9, i10);
+        matrix.setRotate(i12);
+        int min = Math.min(i10, i11);
         int round = Math.round(min * 0.704f);
-        boolean z10 = i11 == 90 || i11 == 270;
-        return recognize(Bitmap.createBitmap(createBitmap, z10 ? (i9 / 2) - (round / 2) : 0, z10 ? 0 : (i10 / 2) - (round / 2), z10 ? round : min, z10 ? min : round, matrix, false), false);
+        boolean z10 = i12 == 90 || i12 == 270;
+        return recognize(Bitmap.createBitmap(createBitmap, z10 ? (i10 / 2) - (round / 2) : 0, z10 ? 0 : (i11 / 2) - (round / 2), z10 ? round : min, z10 ? min : round, matrix, false), false);
     }
 }

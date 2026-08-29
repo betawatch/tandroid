@@ -3,7 +3,7 @@ package org.telegram.messenger;
 import android.view.Window;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public class FlagSecureReason {
     private static HashMap<Window, Integer> currentSecureReasons;
@@ -12,7 +12,7 @@ public class FlagSecureReason {
     private boolean attached = false;
     private boolean value = false;
 
-    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
     public interface FlagSecureCondition {
         boolean run();
     }
@@ -27,12 +27,12 @@ public class FlagSecureReason {
         return (hashMap == null || hashMap.get(window) == null) ? false : true;
     }
 
-    private void update(int i9) {
+    private void update(int i10) {
         if (currentSecureReasons == null) {
             currentSecureReasons = new HashMap<>();
         }
         Integer num = currentSecureReasons.get(this.window);
-        int max = Math.max(0, (num == null ? 0 : num.intValue()) + i9);
+        int max = Math.max(0, (num == null ? 0 : num.intValue()) + i10);
         if (max <= 0) {
             currentSecureReasons.remove(this.window);
         } else {

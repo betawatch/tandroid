@@ -1,6 +1,18 @@
 package t6;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+import android.os.IInterface;
+import com.google.android.gms.common.api.Status;
+import s6.m;
+import s6.r;
+
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class a extends i5.a {
+public interface a extends IInterface {
+    void A0(Status status, s6.b bVar);
+
+    void E(Status status, r rVar);
+
+    void Q(Status status, m mVar);
+
+    void u0(Status status, s6.e eVar);
 }

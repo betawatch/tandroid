@@ -4,14 +4,14 @@ import androidx.credentials.playservices.CredentialProviderPlayServicesImpl;
 import v0.i;
 import w0.h;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ i b;
 
-    public /* synthetic */ b(i iVar, int i9) {
-        this.a = i9;
+    public /* synthetic */ b(i iVar, int i10) {
+        this.a = i10;
         this.b = iVar;
     }
 

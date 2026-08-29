@@ -1,20 +1,109 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.text.TextUtils;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class c40 {
-    public final TLObject a;
-    public TLRPC.User b;
-    public final int c;
-    public final boolean d;
-    public boolean e;
+public abstract class c40 extends k51 {
+    public final int J;
+    public final ArrayList K;
+    public boolean L;
+    public lh.e6 M;
+    public boolean N;
+    public boolean O;
+    public int P;
+    public int Q;
+    public boolean R;
+    public int S;
+    public String T;
+    public String U;
+    public int V;
+    public rm W;
+    public final boolean[] X;
 
-    public c40(int i9, TLObject tLObject) {
-        this.a = tLObject;
-        this.c = i9;
-        this.d = (tLObject instanceof TLRPC.User) && ((TLRPC.User) tLObject).self;
+    public c40(jl0 jl0Var, Context context, int i10) {
+        super(jl0Var, context, i10, 0, false, null, null);
+        this.K = new ArrayList();
+        this.P = 0;
+        this.Q = -1;
+        this.X = new boolean[1];
+        this.s = new d(this, 16);
+        this.J = i10;
+    }
+
+    public static String X(String str, boolean[] zArr) {
+        if (zArr != null) {
+            zArr[0] = false;
+        }
+        if (str == null || str.isEmpty()) {
+            return null;
+        }
+        String trim = str.trim();
+        if (trim.length() <= 1) {
+            return null;
+        }
+        if ((trim.charAt(0) != '#' && trim.charAt(0) != '$') || trim.indexOf(64) >= 0) {
+            return null;
+        }
+        if (zArr != null) {
+            zArr[0] = trim.charAt(0) == '$';
+        }
+        return trim.substring(1);
+    }
+
+    public final void V() {
+        lh.e6 e6Var = this.M;
+        if (e6Var != null && e6Var.I != 0) {
+            ConnectionsManager.getInstance(e6Var.c).cancelRequest(e6Var.I, true);
+            e6Var.I = 0;
+        }
+        this.L = false;
+        if (this.Q >= 0) {
+            ConnectionsManager.getInstance(this.J).cancelRequest(this.Q, true);
+            this.Q = -1;
+        }
+        AndroidUtilities.cancelRunOnUIThread(this.W);
+        this.P++;
+        this.O = false;
+    }
+
+    public final void W() {
+        jl0 jl0Var;
+        if (TextUtils.isEmpty(this.T) || this.R || this.O || (jl0Var = this.d) == null) {
+            return;
+        }
+        for (int i10 = 0; i10 < jl0Var.getChildCount(); i10++) {
+            if (jl0Var.getChildAt(i10) instanceof p00) {
+                Y(this.T);
+                return;
+            }
+        }
+    }
+
+    public final void Y(String str) {
+        this.T = str;
+        String X = X(str, this.X);
+        if (!TextUtils.equals(this.U, X)) {
+            this.K.clear();
+            this.R = false;
+            this.S = 0;
+            V();
+        } else if (this.O) {
+            return;
+        }
+        int i10 = this.P + 1;
+        this.P = i10;
+        if (X == null) {
+            return;
+        }
+        this.O = true;
+        N(true);
+        rm rmVar = new rm(this, i10, X, 5);
+        this.W = rmVar;
+        AndroidUtilities.runOnUIThread(rmVar, 300L);
     }
 }

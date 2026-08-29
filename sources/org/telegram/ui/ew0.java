@@ -1,41 +1,261 @@
 package org.telegram.ui;
 
+import android.animation.ValueAnimator;
 import android.content.Context;
-import android.view.ViewGroup;
+import android.graphics.Canvas;
+import android.graphics.Path;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import java.util.ArrayList;
+import java.util.Arrays;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.BillingController;
+import org.telegram.messenger.BuildVars;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class ew0 extends org.telegram.ui.Components.vk0 {
-    public final /* synthetic */ Context c;
-    public final /* synthetic */ fw0 d;
+public final class ew0 extends LinearLayout {
+    public final TextView a;
+    public final TextView b;
+    public final FrameLayout c;
+    public final aw0 d;
+    public final bw0 e;
+    public boolean f;
+    public boolean h;
+    public final /* synthetic */ PremiumPreviewFragment n;
 
-    public ew0(fw0 fw0Var, Context context) {
-        this.d = fw0Var;
-        this.c = context;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ew0(PremiumPreviewFragment premiumPreviewFragment, Context context) {
+        super(context);
+        this.n = premiumPreviewFragment;
+        setOrientation(1);
+        FrameLayout frameLayout = new FrameLayout(context);
+        this.c = frameLayout;
+        int i10 = premiumPreviewFragment.c0;
+        int i11 = i10 == 1 ? 175 : 190;
+        addView(frameLayout, i7.f6.q(i11, i11, 1));
+        aw0 aw0Var = new aw0(this, context, premiumPreviewFragment.d0 ? 1 : 0, i10 == 1 ? 1 : 0, context);
+        this.d = aw0Var;
+        frameLayout.addView(aw0Var, i7.f6.c(-1.0f, -1));
+        frameLayout.setClipChildren(false);
+        setClipChildren(false);
+        TextView textView = new TextView(context);
+        this.a = textView;
+        textView.setTextSize(1, 22.0f);
+        textView.setTypeface(AndroidUtilities.bold());
+        textView.setGravity(1);
+        addView(textView, i7.f6.p(-2, -2, 0.0f, 1, 16, i10 == 1 ? 8 : 20, 16, 0));
+        TextView textView2 = new TextView(context);
+        this.b = textView2;
+        textView2.setTextSize(1, 14.0f);
+        textView2.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
+        textView2.setGravity(1);
+        addView(textView2, i7.f6.p(-1, -2, 0.0f, 1, 16, 7, 16, 0));
+        bw0 bw0Var = new bw0(this, context);
+        this.e = bw0Var;
+        bw0Var.setOverScrollMode(2);
+        bw0Var.setLayoutManager(new f2.j0());
+        bw0Var.setAdapter(new dw0(this, context));
+        bw0Var.setOnItemClickListener(new j(this, 24));
+        final Path path = new Path();
+        final float[] fArr = new float[8];
+        bw0Var.setSelectorTransformer(new q0.a() { // from class: org.telegram.ui.yv0
+            @Override // q0.a
+            public final void accept(Object obj) {
+                Canvas canvas = (Canvas) obj;
+                bw0 bw0Var2 = ew0.this.e;
+                View pressedChildView = bw0Var2.getPressedChildView();
+                int b10 = pressedChildView == null ? -1 : bw0Var2.T(pressedChildView).b();
+                Path path2 = path;
+                path2.rewind();
+                Rect selectorRect = bw0Var2.getSelectorRect();
+                RectF rectF = AndroidUtilities.rectTmp;
+                rectF.set(selectorRect.left, selectorRect.top, selectorRect.right, selectorRect.bottom);
+                float[] fArr2 = fArr;
+                Arrays.fill(fArr2, 0.0f);
+                if (b10 == 0) {
+                    Arrays.fill(fArr2, 0, 4, AndroidUtilities.dp(12.0f));
+                }
+                if (b10 == bw0Var2.getAdapter().h() - 1) {
+                    Arrays.fill(fArr2, 4, 8, AndroidUtilities.dp(12.0f));
+                }
+                path2.addRoundRect(rectF, fArr2, Path.Direction.CW);
+                canvas.clipPath(path2);
+            }
+        });
+        setClipChildren(false);
+        setClipToPadding(false);
+        addView(bw0Var, i7.f6.k(12.0f, 16.0f, 12.0f, 4.0f, -1, -2));
+        a();
+        b();
     }
 
-    @Override // org.telegram.ui.Components.vk0
-    public final boolean D(f2.q1 q1Var) {
-        return !((hw0) this.d.n.d.get(q1Var.b())).a.current;
+    /* JADX WARN: Code restructure failed: missing block: B:107:0x00c6, code lost:
+    
+        if (j$.util.Objects.equals(r5, (r7 == null || (r7 = r7.transaction) == null) ? null : r7.replaceAll("^(.*?)(?:\\.\\.\\d*|)$", "$1")) != false) goto L46;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:108:0x00d2, code lost:
+    
+        r2.clear();
+        r1.f = null;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:113:0x00d0, code lost:
+    
+        if (r5.a.months == 12) goto L50;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void a() {
+        long j10;
+        PremiumPreviewFragment premiumPreviewFragment = this.n;
+        ArrayList arrayList = premiumPreviewFragment.d;
+        arrayList.clear();
+        premiumPreviewFragment.e = -1;
+        premiumPreviewFragment.f = null;
+        if (premiumPreviewFragment.getMediaDataController().getPremiumPromo() != null) {
+            ArrayList<TLRPC.TL_premiumSubscriptionOption> arrayList2 = premiumPreviewFragment.getMediaDataController().getPremiumPromo().period_options;
+            int size = arrayList2.size();
+            j10 = 0;
+            int i10 = 0;
+            while (i10 < size) {
+                TLRPC.TL_premiumSubscriptionOption tL_premiumSubscriptionOption = arrayList2.get(i10);
+                i10++;
+                TLRPC.TL_premiumSubscriptionOption tL_premiumSubscriptionOption2 = tL_premiumSubscriptionOption;
+                if (premiumPreviewFragment.getUserConfig().isPremium() && !tL_premiumSubscriptionOption2.can_purchase_upgrade && !tL_premiumSubscriptionOption2.current) {
+                }
+                gw0 gw0Var = new gw0(tL_premiumSubscriptionOption2);
+                arrayList.add(gw0Var);
+                if (premiumPreviewFragment.f0 && tL_premiumSubscriptionOption2.months == 12) {
+                    premiumPreviewFragment.e = arrayList.size() - 1;
+                }
+                if (tL_premiumSubscriptionOption2.current) {
+                    premiumPreviewFragment.f = gw0Var;
+                }
+                if (BuildVars.useInvoiceBilling() && gw0Var.i() > j10) {
+                    j10 = gw0Var.i();
+                }
+            }
+        } else {
+            j10 = 0;
+        }
+        if (BuildVars.useInvoiceBilling() && premiumPreviewFragment.getUserConfig().isPremium()) {
+            arrayList.clear();
+            premiumPreviewFragment.f = null;
+        } else {
+            if (!BuildVars.useInvoiceBilling() && premiumPreviewFragment.f != null) {
+                String lastPremiumTransaction = BillingController.getInstance().getLastPremiumTransaction();
+                TLRPC.TL_premiumSubscriptionOption tL_premiumSubscriptionOption3 = premiumPreviewFragment.f.a;
+            }
+            gw0 gw0Var2 = premiumPreviewFragment.f;
+            if (gw0Var2 != null) {
+            }
+        }
+        if (BuildVars.useInvoiceBilling()) {
+            int size2 = arrayList.size();
+            int i11 = 0;
+            while (i11 < size2) {
+                Object obj = arrayList.get(i11);
+                i11++;
+                ((gw0) obj).e = j10;
+            }
+        } else if (BillingController.getInstance().isReady() && BillingController.PREMIUM_PRODUCT_DETAILS != null) {
+            int size3 = arrayList.size();
+            boolean z10 = false;
+            int i12 = 0;
+            long j11 = 0;
+            while (i12 < size3) {
+                Object obj2 = arrayList.get(i12);
+                i12++;
+                gw0 gw0Var3 = (gw0) obj2;
+                gw0Var3.f = BillingController.PREMIUM_PRODUCT_DETAILS;
+                if (gw0Var3.i() > j11) {
+                    j11 = gw0Var3.i();
+                }
+                gw0Var3.a();
+                if (gw0Var3.g != null) {
+                    z10 = true;
+                }
+            }
+            if (z10) {
+                int i13 = 0;
+                while (i13 < arrayList.size()) {
+                    gw0 gw0Var4 = (gw0) arrayList.get(i13);
+                    gw0Var4.a();
+                    if (gw0Var4.g == null) {
+                        arrayList.remove(i13);
+                        i13--;
+                    }
+                    i13++;
+                }
+            }
+            int size4 = arrayList.size();
+            int i14 = 0;
+            while (i14 < size4) {
+                Object obj3 = arrayList.get(i14);
+                i14++;
+                ((gw0) obj3).e = j11;
+            }
+        }
+        if (premiumPreviewFragment.e == -1) {
+            int i15 = 0;
+            while (true) {
+                if (i15 >= arrayList.size()) {
+                    break;
+                }
+                if (((gw0) arrayList.get(i15)).a.months == 12) {
+                    premiumPreviewFragment.e = i15;
+                    break;
+                }
+                i15++;
+            }
+            if (premiumPreviewFragment.e == -1) {
+                premiumPreviewFragment.e = 0;
+            }
+        }
+        premiumPreviewFragment.t0(false);
+        this.e.getAdapter().l();
     }
 
-    @Override // f2.r0
-    public final int h() {
-        return this.d.n.d.size();
+    public final void b() {
+        PremiumPreviewFragment premiumPreviewFragment = this.n;
+        int i10 = premiumPreviewFragment.c0;
+        TextView textView = this.a;
+        TextView textView2 = this.b;
+        if (i10 == 0) {
+            textView.setText(LocaleController.getString(premiumPreviewFragment.l0 ? R.string.TelegramPremiumSubscribedTitle : R.string.TelegramPremium));
+            org.telegram.messenger.x3.r((premiumPreviewFragment.getUserConfig().isPremium() || premiumPreviewFragment.l0) ? R.string.TelegramPremiumSubscribedSubtitle : R.string.TelegramPremiumSubtitle, textView2);
+        } else if (i10 == 1) {
+            textView.setText(LocaleController.getString(premiumPreviewFragment.l0 ? R.string.TelegramPremiumSubscribedTitle : R.string.TelegramBusiness));
+            org.telegram.messenger.x3.r((premiumPreviewFragment.getUserConfig().isPremium() || premiumPreviewFragment.l0) ? R.string.TelegramBusinessSubscribedSubtitleTemp : R.string.TelegramBusinessSubtitleTemp, textView2);
+        }
+        textView2.getLayoutParams().width = Math.min(AndroidUtilities.displaySize.x - AndroidUtilities.dp(42.0f), nh.t3.a(textView2.getText(), textView2.getPaint()));
+        boolean z10 = premiumPreviewFragment.l0 || BuildVars.IS_BILLING_UNAVAILABLE || premiumPreviewFragment.d.size() <= 1;
+        boolean z11 = this.f;
+        bw0 bw0Var = this.e;
+        if (!z11 || !z10) {
+            bw0Var.setVisibility(z10 ? 8 : 0);
+            this.f = true;
+        } else if (bw0Var.getVisibility() == 0 && z10 && this.h == z10) {
+            ValueAnimator duration = ValueAnimator.ofFloat(1.0f, 0.0f).setDuration(250L);
+            duration.addUpdateListener(new zv0(this, bw0Var, duration, r2));
+            duration.addListener(new org.telegram.ui.Components.ok0(11, this, bw0Var));
+            duration.setInterpolator(org.telegram.ui.Components.jr.f);
+            duration.start();
+        }
+        this.h = !z10;
     }
 
-    @Override // f2.r0
-    public final void v(f2.q1 q1Var, int i9) {
-        zf.p1 p1Var = (zf.p1) q1Var.a;
-        PremiumPreviewFragment premiumPreviewFragment = this.d.n;
-        p1Var.a((hw0) premiumPreviewFragment.d.get(i9), i9 != h() - 1);
-        p1Var.c(premiumPreviewFragment.e == i9, false);
-    }
-
-    @Override // f2.r0
-    public final f2.q1 x(ViewGroup viewGroup, int i9) {
-        dw0 dw0Var = new dw0(this, this.c);
-        dw0Var.setCirclePaintProvider(new nl0(11, this, dw0Var));
-        return new org.telegram.ui.Components.ik0(dw0Var);
+    @Override // android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        return true;
     }
 }

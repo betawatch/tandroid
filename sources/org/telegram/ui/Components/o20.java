@@ -1,113 +1,136 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Matrix;
-import android.graphics.RadialGradient;
-import android.graphics.Shader;
+import android.view.View;
+import android.view.ViewGroup;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
+import org.telegram.messenger.ChatObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class o20 {
-    public float c;
-    public float d;
-    public float e;
-    public float f;
-    public RadialGradient g;
-    public final int i;
-    public int j;
-    public int k;
-    public int l;
-    public float a = -1.0f;
-    public float b = -1.0f;
-    public final Matrix h = new Matrix();
+public final class o20 extends il0 {
+    public ChatObject.Call c;
+    public final int d;
+    public ArrayList h;
+    public org.telegram.ui.j30 n;
+    public final org.telegram.ui.r50 r;
+    public final ArrayList e = new ArrayList();
+    public final ArrayList f = new ArrayList();
+    public boolean s = false;
 
-    public o20(int i9) {
-        this.i = i9;
+    public o20(ChatObject.Call call, int i10, org.telegram.ui.r50 r50Var) {
+        this.c = call;
+        this.d = i10;
+        this.r = r50Var;
     }
 
-    public final void a(float f10) {
-        int i9 = this.i;
-        if (i9 == 0) {
-            int i10 = this.j;
-            int i11 = org.telegram.ui.ActionBar.f6.Tg;
-            if (i10 != org.telegram.ui.ActionBar.f6.w0(null, i11, false) || this.k != org.telegram.ui.ActionBar.f6.w0(null, org.telegram.ui.ActionBar.f6.Ug, false)) {
-                int w02 = org.telegram.ui.ActionBar.f6.w0(null, i11, false);
-                this.j = w02;
-                int w03 = org.telegram.ui.ActionBar.f6.w0(null, org.telegram.ui.ActionBar.f6.Ug, false);
-                this.k = w03;
-                this.g = new RadialGradient(200.0f, 200.0f, 200.0f, new int[]{w02, w03}, (float[]) null, Shader.TileMode.CLAMP);
+    @Override // org.telegram.ui.Components.il0
+    public final boolean D(f2.n1 n1Var) {
+        return false;
+    }
+
+    public final void E(ArrayList arrayList, org.telegram.ui.j30 j30Var) {
+        this.h = arrayList;
+        this.n = j30Var;
+    }
+
+    public final void F(org.telegram.ui.f30 f30Var, boolean z10) {
+        this.s = z10;
+        for (int i10 = 0; i10 < f30Var.getChildCount(); i10++) {
+            View childAt = f30Var.getChildAt(i10);
+            if (childAt instanceof n20) {
+                n20 n20Var = (n20) childAt;
+                if (n20Var.getVideoParticipant() != null) {
+                    n20Var.b(z10);
+                }
             }
-        } else if (i9 == 1) {
-            int i12 = this.j;
-            int i13 = org.telegram.ui.ActionBar.f6.Vg;
-            if (i12 != org.telegram.ui.ActionBar.f6.w0(null, i13, false) || this.k != org.telegram.ui.ActionBar.f6.w0(null, org.telegram.ui.ActionBar.f6.Wg, false)) {
-                int w04 = org.telegram.ui.ActionBar.f6.w0(null, i13, false);
-                this.j = w04;
-                int w05 = org.telegram.ui.ActionBar.f6.w0(null, org.telegram.ui.ActionBar.f6.Wg, false);
-                this.k = w05;
-                this.g = new RadialGradient(200.0f, 200.0f, 200.0f, new int[]{w04, w05}, (float[]) null, Shader.TileMode.CLAMP);
+        }
+    }
+
+    public final void G(jl0 jl0Var, boolean z10) {
+        if (this.c == null) {
+            return;
+        }
+        ArrayList arrayList = this.e;
+        ArrayList arrayList2 = this.f;
+        if (!z10) {
+            arrayList2.clear();
+            ChatObject.Call call = this.c;
+            if (!call.call.rtmp_stream) {
+                arrayList2.addAll(call.visibleParticipants);
             }
+            arrayList.clear();
+            ChatObject.Call call2 = this.c;
+            if (!call2.call.rtmp_stream) {
+                arrayList.addAll(call2.visibleVideoParticipants);
+            }
+            l();
+            return;
+        }
+        ArrayList arrayList3 = new ArrayList(arrayList2);
+        ArrayList arrayList4 = new ArrayList(arrayList);
+        arrayList2.clear();
+        ChatObject.Call call3 = this.c;
+        if (!call3.call.rtmp_stream) {
+            arrayList2.addAll(call3.visibleParticipants);
+        }
+        arrayList.clear();
+        ChatObject.Call call4 = this.c;
+        if (!call4.call.rtmp_stream) {
+            arrayList.addAll(call4.visibleVideoParticipants);
+        }
+        f2.q.c(new l20(this, arrayList4, arrayList3), true).b(this);
+        AndroidUtilities.updateVisibleRows(jl0Var);
+    }
+
+    @Override // f2.p0
+    public final int h() {
+        return this.f.size() + this.e.size();
+    }
+
+    @Override // f2.p0
+    public final void v(f2.n1 n1Var, int i10) {
+        TLRPC.GroupCallParticipant groupCallParticipant;
+        ChatObject.VideoParticipant videoParticipant;
+        n20 n20Var = (n20) n1Var.a;
+        ChatObject.VideoParticipant videoParticipant2 = n20Var.f;
+        ArrayList arrayList = this.e;
+        if (i10 < arrayList.size()) {
+            videoParticipant = (ChatObject.VideoParticipant) arrayList.get(i10);
+            groupCallParticipant = ((ChatObject.VideoParticipant) arrayList.get(i10)).participant;
         } else {
-            if (i9 != 3) {
+            int size = i10 - arrayList.size();
+            ArrayList arrayList2 = this.f;
+            if (size >= arrayList2.size()) {
                 return;
             }
-            int i14 = this.j;
-            int i15 = org.telegram.ui.ActionBar.f6.ih;
-            if (i14 != org.telegram.ui.ActionBar.f6.w0(null, i15, false) || this.k != org.telegram.ui.ActionBar.f6.w0(null, org.telegram.ui.ActionBar.f6.jh, false) || this.l != org.telegram.ui.ActionBar.f6.w0(null, org.telegram.ui.ActionBar.f6.kh, false)) {
-                int w06 = org.telegram.ui.ActionBar.f6.w0(null, org.telegram.ui.ActionBar.f6.jh, false);
-                this.k = w06;
-                int w07 = org.telegram.ui.ActionBar.f6.w0(null, org.telegram.ui.ActionBar.f6.kh, false);
-                this.l = w07;
-                int w08 = org.telegram.ui.ActionBar.f6.w0(null, i15, false);
-                this.j = w08;
-                this.g = new RadialGradient(200.0f, 200.0f, 200.0f, new int[]{w06, w07, w08}, (float[]) null, Shader.TileMode.CLAMP);
+            groupCallParticipant = (TLRPC.GroupCallParticipant) arrayList2.get(i10 - arrayList.size());
+            videoParticipant = null;
+        }
+        n20Var.e(videoParticipant, groupCallParticipant);
+        if (videoParticipant2 != null && !videoParticipant2.equals(videoParticipant) && n20Var.G && n20Var.getRenderer() != null) {
+            n20Var.b(false);
+            if (videoParticipant != null) {
+                n20Var.b(true);
+                return;
+            }
+            return;
+        }
+        if (n20Var.G) {
+            if (n20Var.getRenderer() == null && videoParticipant != null && this.s) {
+                n20Var.b(true);
+            } else {
+                if (n20Var.getRenderer() == null || videoParticipant != null) {
+                    return;
+                }
+                n20Var.b(false);
             }
         }
-        int dp = AndroidUtilities.dp(130.0f);
-        float f11 = this.e;
-        if (f11 == 0.0f || this.f >= f11) {
-            this.e = Utilities.random.nextInt(700) + 500;
-            this.f = 0.0f;
-            if (this.a == -1.0f) {
-                b();
-            }
-            this.c = this.a;
-            this.d = this.b;
-            b();
-        }
-        float f12 = 16L;
-        float f13 = (f12 * 0.02f * f10) + (1.0f * f12) + this.f;
-        this.f = f13;
-        float f14 = this.e;
-        if (f13 > f14) {
-            this.f = f14;
-        }
-        float interpolation = gr.g.getInterpolation(this.f / f14);
-        float f15 = dp;
-        float f16 = this.c;
-        float f17 = ((((this.a - f16) * interpolation) + f16) * f15) - 200.0f;
-        float f18 = this.d;
-        float f19 = ((((this.b - f18) * interpolation) + f18) * f15) - 200.0f;
-        float f20 = (f15 / 400.0f) * (i9 == 3 ? 2.0f : 1.5f);
-        Matrix matrix = this.h;
-        matrix.reset();
-        matrix.postTranslate(f17, f19);
-        matrix.postScale(f20, f20, f17 + 200.0f, f19 + 200.0f);
-        this.g.setLocalMatrix(matrix);
     }
 
-    public final void b() {
-        int i9 = this.i;
-        if (i9 == 0) {
-            this.a = aa.d.d(Utilities.random.nextInt(100), 0.1f, 100.0f, 0.2f);
-            this.b = aa.d.d(Utilities.random.nextInt(100), 0.1f, 100.0f, 0.7f);
-        } else if (i9 == 3) {
-            this.a = aa.d.d(Utilities.random.nextInt(100), 0.1f, 100.0f, 0.6f);
-            this.b = (Utilities.random.nextInt(100) * 0.1f) / 100.0f;
-        } else {
-            this.a = org.telegram.ui.Cells.j2.b(Utilities.random.nextInt(100), 100.0f, 0.2f, 0.8f);
-            this.b = Utilities.random.nextInt(100) / 100.0f;
-        }
+    @Override // f2.p0
+    public final f2.n1 x(ViewGroup viewGroup, int i10) {
+        return new vk0(new n20(this, viewGroup.getContext()));
     }
 }

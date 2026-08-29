@@ -1,40 +1,39 @@
 package od;
 
-import g7.n7;
+import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class b {
-    public static final b a;
-    public static final b b;
-    public static final b c;
-    public static final b d;
-    public static final b e;
-    public static final /* synthetic */ b[] f;
+public abstract class b extends q {
+    public static final /* synthetic */ AtomicReferenceFieldUpdater a = AtomicReferenceFieldUpdater.newUpdater(b.class, Object.class, "_consensus$volatile");
+    private volatile /* synthetic */ Object _consensus$volatile = a.a;
 
-    static {
-        b bVar = new b("CPU_ACQUIRED", 0);
-        a = bVar;
-        b bVar2 = new b("BLOCKING", 1);
-        b = bVar2;
-        b bVar3 = new b("PARKING", 2);
-        c = bVar3;
-        b bVar4 = new b("DORMANT", 3);
-        d = bVar4;
-        b bVar5 = new b("TERMINATED", 4);
-        e = bVar5;
-        b[] bVarArr = {bVar, bVar2, bVar3, bVar4, bVar5};
-        f = bVarArr;
-        n7.a(bVarArr);
+    @Override // od.q
+    public final Object a(Object obj) {
+        AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = a;
+        Object obj2 = atomicReferenceFieldUpdater.get(this);
+        fc.a aVar = a.a;
+        if (obj2 == aVar) {
+            fc.a c3 = c(obj);
+            obj2 = atomicReferenceFieldUpdater.get(this);
+            if (obj2 == aVar) {
+                while (true) {
+                    if (atomicReferenceFieldUpdater.compareAndSet(this, aVar, c3)) {
+                        obj2 = c3;
+                        break;
+                    }
+                    if (atomicReferenceFieldUpdater.get(this) != aVar) {
+                        obj2 = atomicReferenceFieldUpdater.get(this);
+                        break;
+                    }
+                }
+            }
+        }
+        b(obj, obj2);
+        return obj2;
     }
 
-    public static b valueOf(String str) {
-        return (b) Enum.valueOf(b.class, str);
-    }
+    public abstract void b(Object obj, Object obj2);
 
-    public static b[] values() {
-        return (b[]) f.clone();
-    }
+    public abstract fc.a c(Object obj);
 }

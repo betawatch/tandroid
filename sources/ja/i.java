@@ -1,24 +1,26 @@
 package ja;
 
-import org.telegram.tgnet.TLObject;
-
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class i extends sc.c {
-    public /* synthetic */ Object a;
-    public final /* synthetic */ k b;
-    public int c;
+public enum i implements u9.f {
+    /* JADX INFO: Fake field, exist only in values array */
+    EF0(0),
+    b(1),
+    c(2),
+    d(3),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF43(4),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF51(5);
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public i(k kVar, sc.c cVar) {
-        super(cVar);
-        this.b = kVar;
+    public final int a;
+
+    i(int i10) {
+        this.a = i10;
     }
 
-    @Override // sc.a
-    public final Object invokeSuspend(Object obj) {
-        this.a = obj;
-        this.c |= TLObject.FLAG_31;
-        return this.b.c(null, null, this);
+    @Override // u9.f
+    public final int a() {
+        return this.a;
     }
 }

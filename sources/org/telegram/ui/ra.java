@@ -1,38 +1,39 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.RectF;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ra implements jg.a {
+public final /* synthetic */ class ra implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ ob b;
 
-    public /* synthetic */ ra(Object obj, int i9) {
-        this.a = i9;
-        this.b = obj;
+    public /* synthetic */ ra(ob obVar, int i10) {
+        this.a = i10;
+        this.b = obVar;
     }
 
-    @Override // jg.a
-    public final void e(Canvas canvas, RectF rectF) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                ((mb) this.b).Z(canvas, rectF);
+                ob obVar = this.b;
+                obVar.G0 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                obVar.H0 = -1;
+                obVar.e1();
+                obVar.I0 = null;
+                break;
+            case 1:
+                ob obVar2 = this.b;
+                obVar2.X0(false);
+                obVar2.E.l();
+                break;
+            case 2:
+                this.b.W0();
                 break;
             default:
-                PremiumPreviewFragment premiumPreviewFragment = (PremiumPreviewFragment) this.b;
-                org.telegram.ui.Components.wk0 wk0Var = premiumPreviewFragment.a;
-                og.d.b(wk0Var, canvas, rectF, wk0Var, premiumPreviewFragment.Z);
+                this.b.U0(2);
                 break;
         }
-    }
-
-    /* JADX WARN: Failed to find 'out' block for switch in B:2:0x0002. Please report as an issue. */
-    @Override // jg.a
-    public final void g(g.x xVar, RectF rectF) {
-        switch (this.a) {
-        }
-        xVar.b = true;
     }
 }

@@ -1,64 +1,32 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MrzRecognizer;
-import org.telegram.tgnet.TLObject;
+import android.content.Context;
+import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class j71 implements r9 {
-    public TLObject a = null;
-    public TLRPC.TL_error b = null;
-    public final /* synthetic */ SessionsActivity c;
+public final class j71 extends UndoView {
+    public final /* synthetic */ SessionsActivity b0;
 
-    public j71(SessionsActivity sessionsActivity) {
-        this.c = sessionsActivity;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public j71(SessionsActivity sessionsActivity, Context context) {
+        super(context);
+        this.b0 = sessionsActivity;
     }
 
-    @Override // org.telegram.ui.r9
-    public final /* synthetic */ String C0() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.r9
-    public final void K(String str) {
-        TLObject tLObject = this.a;
-        if (!(tLObject instanceof TLRPC.TL_authorization)) {
-            if (this.b != null) {
-                AndroidUtilities.runOnUIThread(new i71(this, 0));
-                return;
-            }
-            return;
+    @Override // org.telegram.ui.Components.UndoView
+    public final void e(int i10, boolean z10) {
+        int i11;
+        if (!z10 && getCurrentInfoObject() != null) {
+            TLRPC.TL_authorization tL_authorization = (TLRPC.TL_authorization) getCurrentInfoObject();
+            TL_account.resetAuthorization resetauthorization = new TL_account.resetAuthorization();
+            resetauthorization.hash = tL_authorization.hash;
+            i11 = ((org.telegram.ui.ActionBar.o2) this.b0).currentAccount;
+            ConnectionsManager.getInstance(i11).sendRequest(resetauthorization, new u80(22, this, tL_authorization));
         }
-        TLRPC.TL_authorization tL_authorization = (TLRPC.TL_authorization) tLObject;
-        boolean z10 = tL_authorization.password_pending;
-        SessionsActivity sessionsActivity = this.c;
-        if (z10) {
-            sessionsActivity.f.add(0, tL_authorization);
-            sessionsActivity.R = 4;
-            sessionsActivity.j0(false);
-        } else {
-            sessionsActivity.e.add(0, tL_authorization);
-        }
-        sessionsActivity.l0();
-        sessionsActivity.a.l();
-        sessionsActivity.s.m(0L, this.a, 11);
-    }
-
-    @Override // org.telegram.ui.r9
-    public final boolean i1(String str, j9 j9Var) {
-        this.a = null;
-        this.b = null;
-        AndroidUtilities.runOnUIThread(new ye0(this, str, j9Var, 29), 750L);
-        return true;
-    }
-
-    @Override // org.telegram.ui.r9
-    public final /* synthetic */ void T0(MrzRecognizer.Result result) {
-    }
-
-    @Override // org.telegram.ui.r9
-    public final /* synthetic */ void onDismiss() {
+        super.e(i10, z10);
     }
 }

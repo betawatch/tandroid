@@ -14,7 +14,7 @@ import android.view.View;
 import android.view.accessibility.AccessibilityNodeInfo;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
 public class CheckBox extends View {
     public static Paint D;
@@ -39,7 +39,7 @@ public class CheckBox extends View {
     public boolean x;
     public int y;
 
-    public CheckBox(Context context, int i9) {
+    public CheckBox(Context context, int i10) {
         super(context);
         this.v = true;
         this.y = 22;
@@ -69,7 +69,7 @@ public class CheckBox extends View {
         this.b = textPaint;
         textPaint.setTextSize(AndroidUtilities.dp(18.0f));
         textPaint.setTypeface(AndroidUtilities.bold());
-        this.a = context.getResources().getDrawable(i9).mutate();
+        this.a = context.getResources().getDrawable(i10).mutate();
     }
 
     public final void a(boolean z10) {
@@ -93,15 +93,15 @@ public class CheckBox extends View {
         this.v = z10;
         ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this, "progress", z10 ? 1.0f : 0.0f);
         this.s = ofFloat;
-        ofFloat.addListener(new org.telegram.ui.xp(this, 18));
+        ofFloat.addListener(new org.telegram.ui.bm(this, 20));
         this.s.setDuration(300L);
         this.s.start();
     }
 
-    public final void c(int i9, int i10) {
-        this.B = i9;
-        this.a.setColorFilter(new PorterDuffColorFilter(i10, PorterDuff.Mode.MULTIPLY));
-        this.b.setColor(i10);
+    public final void c(int i10, int i11) {
+        this.B = i10;
+        this.a.setColorFilter(new PorterDuffColorFilter(i11, PorterDuff.Mode.MULTIPLY));
+        this.b.setColor(i11);
         invalidate();
     }
 
@@ -138,15 +138,15 @@ public class CheckBox extends View {
             F.setStrokeWidth(AndroidUtilities.dp(this.y + 6));
             this.c.eraseColor(0);
             float measuredWidth = getMeasuredWidth() / 2;
-            float f10 = this.r;
-            float f11 = f10 >= 0.5f ? 1.0f : f10 / 0.5f;
-            float f12 = f10 < 0.5f ? 0.0f : (f10 - 0.5f) / 0.5f;
+            float f9 = this.r;
+            float f10 = f9 >= 0.5f ? 1.0f : f9 / 0.5f;
+            float f11 = f9 < 0.5f ? 0.0f : (f9 - 0.5f) / 0.5f;
             if (!this.v) {
-                f10 = 1.0f - f10;
+                f9 = 1.0f - f9;
             }
-            if (f10 >= 0.2f) {
-                if (f10 < 0.4f) {
-                    dp = AndroidUtilities.dp(2.0f) - (((f10 - 0.2f) * AndroidUtilities.dp(2.0f)) / 0.2f);
+            if (f9 >= 0.2f) {
+                if (f9 < 0.4f) {
+                    dp = AndroidUtilities.dp(2.0f) - (((f9 - 0.2f) * AndroidUtilities.dp(2.0f)) / 0.2f);
                 }
                 if (this.h) {
                     D.setColor(1140850688);
@@ -158,7 +158,7 @@ public class CheckBox extends View {
                     measuredWidth -= AndroidUtilities.dp(2.0f);
                 }
                 this.e.drawCircle(getMeasuredWidth() / 2, getMeasuredHeight() / 2, measuredWidth, D);
-                this.e.drawCircle(getMeasuredWidth() / 2, getMeasuredHeight() / 2, (1.0f - f11) * measuredWidth, E);
+                this.e.drawCircle(getMeasuredWidth() / 2, getMeasuredHeight() / 2, (1.0f - f10) * measuredWidth, E);
                 canvas.drawBitmap(this.c, 0.0f, 0.0f, (Paint) null);
                 this.d.eraseColor(0);
                 if (this.C == null) {
@@ -169,14 +169,14 @@ public class CheckBox extends View {
                     int intrinsicHeight = drawable.getIntrinsicHeight();
                     int measuredWidth2 = (getMeasuredWidth() - intrinsicWidth) / 2;
                     int measuredHeight = (getMeasuredHeight() - intrinsicHeight) / 2;
-                    int i9 = this.A;
-                    drawable.setBounds(measuredWidth2, measuredHeight + i9, intrinsicWidth + measuredWidth2, measuredHeight + intrinsicHeight + i9);
+                    int i10 = this.A;
+                    drawable.setBounds(measuredWidth2, measuredHeight + i10, intrinsicWidth + measuredWidth2, measuredHeight + intrinsicHeight + i10);
                     drawable.draw(this.f);
                 }
-                this.f.drawCircle((getMeasuredWidth() / 2) - AndroidUtilities.dp(2.5f), AndroidUtilities.dp(4.0f) + (getMeasuredHeight() / 2), (1.0f - f12) * ((AndroidUtilities.dp(6.0f) + getMeasuredWidth()) / 2), F);
+                this.f.drawCircle((getMeasuredWidth() / 2) - AndroidUtilities.dp(2.5f), AndroidUtilities.dp(4.0f) + (getMeasuredHeight() / 2), (1.0f - f11) * ((AndroidUtilities.dp(6.0f) + getMeasuredWidth()) / 2), F);
                 canvas.drawBitmap(this.d, 0.0f, 0.0f, (Paint) null);
             }
-            dp = (AndroidUtilities.dp(2.0f) * f10) / 0.2f;
+            dp = (AndroidUtilities.dp(2.0f) * f9) / 0.2f;
             measuredWidth -= dp;
             if (this.h) {
             }
@@ -184,12 +184,12 @@ public class CheckBox extends View {
             if (this.n) {
             }
             this.e.drawCircle(getMeasuredWidth() / 2, getMeasuredHeight() / 2, measuredWidth, D);
-            this.e.drawCircle(getMeasuredWidth() / 2, getMeasuredHeight() / 2, (1.0f - f11) * measuredWidth, E);
+            this.e.drawCircle(getMeasuredWidth() / 2, getMeasuredHeight() / 2, (1.0f - f10) * measuredWidth, E);
             canvas.drawBitmap(this.c, 0.0f, 0.0f, (Paint) null);
             this.d.eraseColor(0);
             if (this.C == null) {
             }
-            this.f.drawCircle((getMeasuredWidth() / 2) - AndroidUtilities.dp(2.5f), AndroidUtilities.dp(4.0f) + (getMeasuredHeight() / 2), (1.0f - f12) * ((AndroidUtilities.dp(6.0f) + getMeasuredWidth()) / 2), F);
+            this.f.drawCircle((getMeasuredWidth() / 2) - AndroidUtilities.dp(2.5f), AndroidUtilities.dp(4.0f) + (getMeasuredHeight() / 2), (1.0f - f11) * ((AndroidUtilities.dp(6.0f) + getMeasuredWidth()) / 2), F);
             canvas.drawBitmap(this.d, 0.0f, 0.0f, (Paint) null);
         }
     }
@@ -203,24 +203,24 @@ public class CheckBox extends View {
     }
 
     @Override // android.view.View
-    public final void onLayout(boolean z10, int i9, int i10, int i11, int i12) {
-        super.onLayout(z10, i9, i10, i11, i12);
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
     }
 
     @Override // android.view.View
-    public void setBackgroundColor(int i9) {
-        this.B = i9;
+    public void setBackgroundColor(int i10) {
+        this.B = i10;
         invalidate();
     }
 
-    public void setCheckColor(int i9) {
-        this.a.setColorFilter(new PorterDuffColorFilter(i9, PorterDuff.Mode.MULTIPLY));
-        this.b.setColor(i9);
+    public void setCheckColor(int i10) {
+        this.a.setColorFilter(new PorterDuffColorFilter(i10, PorterDuff.Mode.MULTIPLY));
+        this.b.setColor(i10);
         invalidate();
     }
 
-    public void setCheckOffset(int i9) {
-        this.A = i9;
+    public void setCheckOffset(int i10) {
+        this.A = i10;
     }
 
     public void setDrawBackground(boolean z10) {
@@ -231,38 +231,38 @@ public class CheckBox extends View {
         this.n = z10;
     }
 
-    public void setNum(int i9) {
-        if (i9 >= 0) {
-            this.C = "" + (i9 + 1);
+    public void setNum(int i10) {
+        if (i10 >= 0) {
+            this.C = "" + (i10 + 1);
         } else if (this.s == null) {
             this.C = null;
         }
         invalidate();
     }
 
-    public void setProgress(float f10) {
-        if (this.r == f10) {
+    public void setProgress(float f9) {
+        if (this.r == f9) {
             return;
         }
-        this.r = f10;
+        this.r = f9;
         invalidate();
     }
 
-    public void setSize(int i9) {
-        this.y = i9;
-        if (i9 == 40) {
+    public void setSize(int i10) {
+        this.y = i10;
+        if (i10 == 40) {
             this.b.setTextSize(AndroidUtilities.dp(24.0f));
         }
     }
 
-    public void setStrokeWidth(int i9) {
-        G.setStrokeWidth(i9);
+    public void setStrokeWidth(int i10) {
+        G.setStrokeWidth(i10);
     }
 
     @Override // android.view.View
-    public void setVisibility(int i9) {
-        super.setVisibility(i9);
-        if (i9 == 0 && this.c == null) {
+    public void setVisibility(int i10) {
+        super.setVisibility(i10);
+        if (i10 == 0 && this.c == null) {
             try {
                 int dp = AndroidUtilities.dp(this.y);
                 int dp2 = AndroidUtilities.dp(this.y);

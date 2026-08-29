@@ -1,41 +1,50 @@
 package org.telegram.ui;
 
-import android.view.KeyEvent;
+import android.text.Editable;
+import java.util.ArrayList;
+import java.util.HashMap;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ap0 implements org.telegram.ui.Components.x4, org.telegram.ui.ActionBar.m1 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ip0 b;
+public final class ap0 implements yp0 {
+    public final /* synthetic */ HashMap a;
+    public final /* synthetic */ ArrayList b;
+    public final /* synthetic */ hp0 c;
 
-    public /* synthetic */ ap0(ip0 ip0Var, int i9) {
-        this.a = i9;
-        this.b = ip0Var;
+    public ap0(hp0 hp0Var, HashMap hashMap, ArrayList arrayList) {
+        this.c = hp0Var;
+        this.a = hashMap;
+        this.b = arrayList;
     }
 
-    @Override // org.telegram.ui.Components.x4
-    public void B(int i9, int i10, boolean z10) {
-        switch (this.a) {
-            case 0:
-                ip0 ip0Var = this.b;
-                ip0Var.U(ip0Var.b, ip0Var.c, z10, i9);
-                ip0Var.finishFragment();
-                break;
-            default:
-                ip0 ip0Var2 = this.b;
-                ip0Var2.U(ip0Var2.b, ip0Var2.c, z10, i9);
-                ip0Var2.finishFragment();
-                break;
-        }
+    @Override // org.telegram.ui.yp0
+    public final void b(Editable editable) {
+        hp0 hp0Var = this.c;
+        org.telegram.ui.Components.au auVar = hp0Var.I;
+        hp0Var.a = editable;
+        auVar.setText(editable);
     }
 
-    @Override // org.telegram.ui.ActionBar.m1
-    public void k(KeyEvent keyEvent) {
-        org.telegram.ui.ActionBar.o1 o1Var;
-        ip0 ip0Var = this.b;
-        ip0Var.getClass();
-        if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (o1Var = ip0Var.E) != null && o1Var.isShowing()) {
-            ip0Var.E.d(true);
+    @Override // org.telegram.ui.yp0
+    public final /* synthetic */ boolean e() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.yp0
+    public final void h(int i10, boolean z10, boolean z11) {
+        hp0 hp0Var = this.c;
+        hp0Var.removeSelfFromStack();
+        if (z10) {
+            return;
         }
+        hp0Var.V(this.a, this.b, z11, i10);
+    }
+
+    @Override // org.telegram.ui.yp0
+    public final void a() {
+    }
+
+    @Override // org.telegram.ui.yp0
+    public final /* synthetic */ void g() {
     }
 }

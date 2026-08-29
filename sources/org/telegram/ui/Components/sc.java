@@ -1,133 +1,100 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Matrix;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.RadialGradient;
-import android.graphics.RectF;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LiteMode;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* JADX WARN: Enum visitor error
+jadx.core.utils.exceptions.JadxRuntimeException: Init of enum field 'e' uses external variables
+	at jadx.core.dex.visitors.EnumVisitor.createEnumFieldByConstructor(EnumVisitor.java:451)
+	at jadx.core.dex.visitors.EnumVisitor.processEnumFieldByRegister(EnumVisitor.java:395)
+	at jadx.core.dex.visitors.EnumVisitor.extractEnumFieldsFromFilledArray(EnumVisitor.java:324)
+	at jadx.core.dex.visitors.EnumVisitor.extractEnumFieldsFromInsn(EnumVisitor.java:262)
+	at jadx.core.dex.visitors.EnumVisitor.convertToEnum(EnumVisitor.java:151)
+	at jadx.core.dex.visitors.EnumVisitor.visit(EnumVisitor.java:100)
+ */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
 public final class sc {
-    public float A;
-    public float B;
-    public float C;
-    public float D;
-    public final /* synthetic */ uc E;
-    public final Paint a;
-    public Bitmap b;
-    public float c;
-    public float d;
-    public final y5 e;
-    public final y5 f;
-    public float g;
-    public final y5 h;
-    public float i;
-    public final y5 j;
-    public final i6 k;
-    public float l;
-    public final y5 m;
-    public boolean n;
-    public final y5 o;
-    public final Path p;
-    public final Paint q;
-    public final RectF r;
-    public final Paint s;
-    public final Paint t;
-    public final RectF u;
-    public RadialGradient v;
-    public Matrix w;
-    public float x;
-    public float y;
-    public float z;
+    public static final sc A;
+    public static final sc B;
+    public static final sc C;
+    public static final sc D;
+    public static final sc E;
+    public static final /* synthetic */ sc[] F;
+    public static final sc e;
+    public static final sc f;
+    public static final sc h;
+    public static final sc n;
+    public static final sc r;
+    public static final sc s;
+    public static final sc v;
+    public static final sc w;
+    public static final sc x;
+    public static final sc y;
+    public final String a;
+    public final int b;
+    public final boolean c;
+    public final rc d;
 
-    public sc(uc ucVar) {
-        this.E = ucVar;
-        Paint paint = new Paint(3);
-        this.a = paint;
-        paint.setColor(-1);
-        gr grVar = gr.h;
-        this.e = new y5(ucVar, 650L, grVar);
-        this.f = new y5(ucVar, 650L, grVar);
-        gr grVar2 = gr.g;
-        this.h = new y5(ucVar, 0L, 150L, grVar2);
-        this.i = 1.0f;
-        this.j = new y5(ucVar, 0L, 150L, grVar2);
-        i6 i6Var = new i6(false, true, true, false);
-        this.k = i6Var;
-        this.m = new y5(ucVar, 0L, 150L, grVar2);
-        this.o = new y5(ucVar, 0L, 200L, grVar);
-        i6Var.r(-1);
-        i6Var.k(0.35f, 200L, grVar);
-        i6Var.u(AndroidUtilities.bold());
-        i6Var.t(AndroidUtilities.dp(15.0f));
-        i6Var.b = 17;
-        this.p = new Path();
-        Paint paint2 = new Paint(1);
-        this.q = paint2;
-        this.r = new RectF();
-        this.s = new Paint(1);
-        Paint paint3 = new Paint(1);
-        this.t = paint3;
-        paint3.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
-        paint2.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
-        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_ATOP));
-        this.u = new RectF();
+    static {
+        int i10 = R.string.PhotoSavedHint;
+        rc rcVar = rc.e;
+        sc scVar = new sc("PHOTO", 0, "PhotoSavedHint", i10, rcVar);
+        e = scVar;
+        sc scVar2 = new sc("PHOTOS", 1, "PhotosSavedHint", rcVar);
+        f = scVar2;
+        sc scVar3 = new sc("VIDEO", 2, "VideoSavedHint", R.string.VideoSavedHint, rcVar);
+        h = scVar3;
+        sc scVar4 = new sc("VIDEOS", 3, "VideosSavedHint", rcVar);
+        n = scVar4;
+        sc scVar5 = new sc("LIVEPHOTO", 4, "LivePhotoSavedHint", R.string.LivePhotoSavedHint, rcVar);
+        r = scVar5;
+        sc scVar6 = new sc("LIVEPHOTOS", 5, "LivePhotosSavedHint", rcVar);
+        s = scVar6;
+        sc scVar7 = new sc("MEDIA", 6, "MediaSavedHint", rcVar);
+        v = scVar7;
+        int i11 = R.string.PhotoSavedToDownloadsHintLinked;
+        rc rcVar2 = rc.d;
+        sc scVar8 = new sc("PHOTO_TO_DOWNLOADS", 7, "PhotoSavedToDownloadsHintLinked", i11, rcVar2);
+        w = scVar8;
+        sc scVar9 = new sc("VIDEO_TO_DOWNLOADS", 8, "VideoSavedToDownloadsHintLinked", R.string.VideoSavedToDownloadsHintLinked, rcVar2);
+        x = scVar9;
+        sc scVar10 = new sc("GIF", 9, "GifSavedHint", R.string.GifSavedHint, rc.h);
+        y = scVar10;
+        sc scVar11 = new sc("GIF_TO_DOWNLOADS", 10, "GifSavedToDownloadsHintLinked", R.string.GifSavedToDownloadsHintLinked, rcVar2);
+        A = scVar11;
+        int i12 = R.string.AudioSavedHint;
+        rc rcVar3 = rc.f;
+        sc scVar12 = new sc("AUDIO", 11, "AudioSavedHint", i12, rcVar3);
+        B = scVar12;
+        sc scVar13 = new sc("AUDIOS", 12, "AudiosSavedHint", rcVar3);
+        C = scVar13;
+        sc scVar14 = new sc("UNKNOWN", 13, "FileSavedHintLinked", R.string.FileSavedHintLinked, rcVar2);
+        D = scVar14;
+        sc scVar15 = new sc("UNKNOWNS", 14, "FilesSavedHintLinked", rcVar2);
+        E = scVar15;
+        F = new sc[]{scVar, scVar2, scVar3, scVar4, scVar5, scVar6, scVar7, scVar8, scVar9, scVar10, scVar11, scVar12, scVar13, scVar14, scVar15};
     }
 
-    public final void a(Canvas canvas, float f10, float f11, float f12, float f13, float f14, float f15, float f16, float f17, float f18, float f19) {
-        if (f19 <= 0.0f || !LiteMode.isEnabled(LiteMode.FLAGS_CHAT)) {
-            return;
-        }
-        long currentTimeMillis = System.currentTimeMillis();
-        float sqrt = (float) Math.sqrt(2.0d);
-        if (uc.U < 0) {
-            uc.U = currentTimeMillis;
-        }
-        float f20 = (currentTimeMillis - uc.U) / 10000.0f;
-        Bitmap bitmap = this.b;
-        if (bitmap != null) {
-            int width = bitmap.getWidth();
-            float f21 = width;
-            float dpf2 = AndroidUtilities.dpf2(15.0f) / f21;
-            float f22 = 7.0f;
-            int floor = (int) Math.floor((f14 % 360.0f) / 7.0f);
-            int ceil = (int) Math.ceil((f15 % 360.0f) / 7.0f);
-            while (floor <= ceil) {
-                float f23 = floor * f22;
-                float sin = (float) (((((Math.sin(2000.0f * f23) + 1.0d) * 0.25d) + 1.0d) * (100.0f + f20)) % 1.0d);
-                float f24 = f21 * sqrt;
-                float f25 = f20;
-                double lerp = AndroidUtilities.lerp(f16 - f24, f17 + f24, sin);
-                float b10 = (float) j3.r0.b(uc.a(f23), lerp, f10);
-                int i9 = width;
-                float sin2 = (float) ((Math.sin(uc.a(f23)) * lerp) + f11);
-                float abs = (Math.abs(sin - 0.5f) * (-1.75f)) + 1.0f;
-                int max = (int) (Math.max(0.0f, Math.min(1.0f, AndroidUtilities.lerp(1.0f, Math.min(g7.w.a(b10, sin2, f12, f13) / AndroidUtilities.dpf2(64.0f), 1.0f), f18) * e2.c.B((float) (Math.sin(sin * 3.141592653589793d) - 1.0d), 0.25f, 1.0f, abs * 0.65f * f19))) * 255.0f);
-                Paint paint = this.a;
-                paint.setAlpha(max);
-                float f26 = dpf2;
-                float sin3 = f26 * ((float) ((((Math.sin(f23) + 1.0d) * 0.25d) + 0.800000011920929d) * e2.c.B((float) (Math.sin(r12) - 1.0d), 0.25f, 1.0f, 0.75f)));
-                canvas.save();
-                canvas.translate(b10, sin2);
-                canvas.scale(sin3, sin3);
-                float f27 = -(i9 >> 1);
-                canvas.drawBitmap(this.b, f27, f27, paint);
-                canvas.restore();
-                floor++;
-                sqrt = sqrt;
-                width = i9;
-                f21 = f21;
-                dpf2 = f26;
-                f20 = f25;
-                f22 = 7.0f;
-            }
-        }
+    public sc(String str, int i10, String str2, int i11, rc rcVar) {
+        this.a = str2;
+        this.b = i11;
+        this.d = rcVar;
+        this.c = false;
+    }
+
+    public static sc valueOf(String str) {
+        return (sc) Enum.valueOf(sc.class, str);
+    }
+
+    public static sc[] values() {
+        return (sc[]) F.clone();
+    }
+
+    public sc(String str, int i10, String str2, rc rcVar) {
+        this.a = str2;
+        this.d = rcVar;
+        this.b = 0;
+        this.c = true;
     }
 }

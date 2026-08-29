@@ -13,10 +13,10 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.g6;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
-/* loaded from: classes3.dex */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* loaded from: classes.dex */
 public final class j extends View {
     public org.telegram.ui.Cells.z a;
     public final Paint b;
@@ -90,30 +90,30 @@ public final class j extends View {
     public final void onDraw(Canvas canvas) {
         float width = getWidth() / 2.0f;
         float height = getHeight() / 2.0f;
-        int i9 = this.n;
+        int i10 = this.n;
         Paint paint = this.b;
-        paint.setColor(i9);
+        paint.setColor(i10);
         float width2 = getWidth();
         float height2 = getHeight();
         RectF rectF = this.e;
         rectF.set(0.0f, 0.0f, width2, height2);
-        float f10 = this.r;
-        canvas.drawRoundRect(rectF, f10, f10, paint);
+        float f9 = this.r;
+        canvas.drawRoundRect(rectF, f9, f9, paint);
         Drawable drawable = this.f;
         drawable.setBounds((int) (width - (drawable.getIntrinsicWidth() / 2.0f)), (int) (height - (drawable.getIntrinsicHeight() / 2)), (int) ((drawable.getIntrinsicWidth() / 2) + width), (int) ((drawable.getIntrinsicHeight() / 2) + height));
         drawable.setAlpha(this.s);
         drawable.draw(canvas);
-        int i10 = this.v;
+        int i11 = this.v;
         Paint paint2 = this.c;
-        paint2.setAlpha(i10);
-        int i11 = (this.v / 255) * 38;
+        paint2.setAlpha(i11);
+        int i12 = (this.v / 255) * 38;
         Paint paint3 = this.d;
-        paint3.setAlpha(i11);
+        paint3.setAlpha(i12);
         String str = this.h;
         canvas.drawText(str, width, AndroidUtilities.dp(6.0f) + height, paint2);
         canvas.drawText(str, width, height + AndroidUtilities.dp(6.0f), paint3);
         if (this.a == null) {
-            org.telegram.ui.Cells.z Y = f6.Y(f6.w0(null, f6.i6, false), 8, 8);
+            org.telegram.ui.Cells.z Y = g6.Y(g6.w0(null, g6.i6, false), 8, 8);
             this.a = Y;
             Y.setCallback(this);
         }

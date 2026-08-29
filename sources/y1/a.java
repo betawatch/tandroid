@@ -3,12 +3,12 @@ package y1;
 import android.os.Build;
 import android.text.TextUtils;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class a {
     public d a;
 
-    public a(String str, int i9, int i10) {
+    public a(String str, int i10, int i11) {
         if (str == null) {
             throw new NullPointerException("package shouldn't be null");
         }
@@ -16,11 +16,11 @@ public final class a {
             throw new IllegalArgumentException("packageName should be nonempty");
         }
         if (Build.VERSION.SDK_INT < 28) {
-            this.a = new d(str, i9, i10);
+            this.a = new d(str, i10, i11);
             return;
         }
-        c cVar = new c(str, i9, i10);
-        b.a(i9, i10, str);
+        c cVar = new c(str, i10, i11);
+        b.a(i10, i11, str);
         this.a = cVar;
     }
 

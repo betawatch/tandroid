@@ -1,237 +1,555 @@
 package org.telegram.ui.Components;
 
+import android.animation.ValueAnimator;
+import android.app.Dialog;
 import android.content.Context;
-import android.view.ViewConfiguration;
-import android.view.animation.AnimationUtils;
-import android.view.animation.DecelerateInterpolator;
-import android.view.animation.Interpolator;
+import android.graphics.Bitmap;
+import android.graphics.BitmapShader;
+import android.graphics.Canvas;
+import android.graphics.CornerPathEffect;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import android.os.Bundle;
+import android.text.Layout;
+import android.text.SpannableStringBuilder;
+import android.text.Spanned;
+import android.text.StaticLayout;
+import android.text.TextPaint;
+import android.text.style.CharacterStyle;
+import android.text.style.ForegroundColorSpan;
+import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.FrameLayout;
+import java.util.ArrayList;
+import java.util.WeakHashMap;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.R;
+import org.telegram.messenger.RichMessageLayout;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class yl0 {
-    public static final float A;
-    public static final float v = (float) (Math.log(0.75d) / Math.log(0.9d));
-    public static final float w = 0.4f;
-    public static final float x = 1.0f - 0.4f;
-    public static final float[] y = new float[101];
-    public static final float z;
-    public int a;
-    public int b;
-    public int c;
-    public int d;
-    public int e;
-    public int f;
-    public int g;
-    public int h;
-    public int i;
-    public int j;
-    public int k;
-    public long l;
-    public int m;
-    public float n;
-    public float o;
-    public float p;
-    public final Interpolator r;
-    public float t;
-    public final float u;
-    public boolean q = true;
-    public final boolean s = true;
+public final class yl0 extends Dialog {
+    public static final /* synthetic */ int K = 0;
+    public Drawable A;
+    public ng.d B;
+    public float C;
+    public float D;
+    public float E;
+    public float F;
+    public float G;
+    public boolean H;
+    public boolean I;
+    public ValueAnimator J;
+    public final Context a;
+    public final org.telegram.ui.ActionBar.c6 b;
+    public Bitmap c;
+    public BitmapShader d;
+    public Paint e;
+    public Matrix f;
+    public final qg.b h;
+    public final lg.a n;
+    public float r;
+    public final bg.x2 s;
+    public final hv0 v;
+    public j70 w;
+    public FrameLayout x;
+    public ViewGroup y;
 
-    static {
-        float f10;
-        float f11;
-        float f12 = 0.0f;
-        for (int i9 = 0; i9 <= 100; i9++) {
-            float f13 = i9 / 100.0f;
-            float f14 = 1.0f;
-            while (true) {
-                float A2 = e2.c.A(f14, f12, 2.0f, f12);
-                float f15 = 1.0f - A2;
-                f10 = 3.0f * A2 * f15;
-                f11 = A2 * A2 * A2;
-                float B = e2.c.B(A2, x, f15 * w, f10) + f11;
-                if (Math.abs(B - f13) < 1.0E-5d) {
-                    break;
-                } else if (B > f13) {
-                    f14 = A2;
-                } else {
-                    f12 = A2;
-                }
-            }
-            y[i9] = f10 + f11;
-        }
-        y[100] = 1.0f;
-        z = 8.0f;
-        A = 1.0f;
-        A = 1.0f / e(1.0f);
+    public yl0(Context context, org.telegram.ui.ActionBar.c6 c6Var) {
+        super(context, R.style.TransparentDialog);
+        this.F = 1.0f;
+        this.G = 1.0f;
+        this.I = false;
+        this.a = context;
+        this.b = c6Var;
+        bg.x2 x2Var = new bg.x2(this, context, 25);
+        this.s = x2Var;
+        int i10 = 10;
+        x2Var.setOnClickListener(new u70(this, i10));
+        hv0 hv0Var = new hv0(context, null);
+        this.v = hv0Var;
+        hv0Var.setClipToPadding(false);
+        x2Var.addView(hv0Var, i7.f6.e(-1, -1, 119));
+        qg.b bVar = new qg.b();
+        this.h = bVar;
+        lg.a aVar = new lg.a(bVar);
+        this.n = aVar;
+        aVar.d = new sg.i(x2Var);
+        aVar.e = x2Var;
+        o1.a aVar2 = new o1.a(this, i10);
+        WeakHashMap weakHashMap = r0.j0.a;
+        r0.b0.j(x2Var, aVar2);
     }
 
-    public yl0(Context context, DecelerateInterpolator decelerateInterpolator) {
-        this.r = decelerateInterpolator;
-        this.u = context.getResources().getDisplayMetrics().density * 160.0f * 386.0878f * ViewConfiguration.getScrollFriction();
+    public static void d(Utilities.Callback2 callback2) {
+        AndroidUtilities.makeGlobalBlurBitmap(new y2(callback2, 10), 15.0f);
     }
 
-    public static float e(float f10) {
-        float f11 = f10 * z;
-        return (f11 < 1.0f ? f11 - (1.0f - ((float) Math.exp(-f11))) : e2.c.z(1.0f, (float) Math.exp(1.0f - f11), 0.63212055f, 0.36787945f)) * A;
+    public final void c(Runnable runnable, boolean z10) {
+        ValueAnimator valueAnimator = this.J;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
+        }
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.r, z10 ? 1.0f : 0.0f);
+        this.J = ofFloat;
+        ofFloat.addUpdateListener(new d70(this, 11));
+        this.J.addListener(new androidx.fragment.app.g(this, z10, runnable, 7));
+        this.J.setInterpolator(jr.h);
+        this.J.setDuration(350L);
+        this.J.start();
     }
 
-    public final void a() {
-        this.j = this.d;
-        this.k = this.e;
-        this.q = true;
+    @Override // android.app.Dialog, android.content.DialogInterface
+    public final void dismiss() {
+        if (this.I) {
+            return;
+        }
+        this.I = true;
+        c(new wl0(this, 1), false);
+        this.s.invalidate();
     }
 
-    public final boolean b() {
-        if (this.q) {
-            return false;
-        }
-        int currentAnimationTimeMillis = (int) (AnimationUtils.currentAnimationTimeMillis() - this.l);
-        int i9 = this.m;
-        if (currentAnimationTimeMillis >= i9) {
-            this.j = this.d;
-            this.k = this.e;
-            this.q = true;
-            return true;
-        }
-        int i10 = this.a;
-        if (i10 == 0) {
-            float f10 = currentAnimationTimeMillis * this.n;
-            Interpolator interpolator = this.r;
-            float e10 = interpolator == null ? e(f10) : interpolator.getInterpolation(f10);
-            this.j = Math.round(this.o * e10) + this.b;
-            this.k = Math.round(e10 * this.p) + this.c;
-            return true;
-        }
-        if (i10 == 1) {
-            float f11 = currentAnimationTimeMillis / i9;
-            int i11 = (int) (f11 * 100.0f);
-            float f12 = i11 / 100.0f;
-            int i12 = i11 + 1;
-            float[] fArr = y;
-            float f13 = fArr[i11];
-            float z10 = e2.c.z(fArr[i12], f13, (f11 - f12) / ((i12 / 100.0f) - f12), f13);
-            int round = Math.round((this.d - r1) * z10) + this.b;
-            this.j = round;
-            int min = Math.min(round, this.g);
-            this.j = min;
-            this.j = Math.max(min, this.f);
-            int round2 = Math.round(z10 * (this.e - r1)) + this.c;
-            this.k = round2;
-            int min2 = Math.min(round2, this.i);
-            this.k = min2;
-            int max = Math.max(min2, this.h);
-            this.k = max;
-            if (this.j == this.d && max == this.e) {
-                this.q = true;
-            }
-        }
-        return true;
+    public final void e(j70 j70Var) {
+        int i10 = org.telegram.ui.ActionBar.g6.E8;
+        org.telegram.ui.ActionBar.c6 c6Var = this.b;
+        j70Var.T(org.telegram.ui.ActionBar.g6.l1(0.06f, org.telegram.ui.ActionBar.g6.v0(i10, c6Var)));
+        j70Var.Q(this.n, pg.a.j(c6Var), false);
+        this.w = j70Var;
+        this.y = j70Var.A;
+        FrameLayout frameLayout = new FrameLayout(this.a);
+        this.x = frameLayout;
+        frameLayout.addView(this.y, i7.f6.c(-2.0f, -2));
+        this.v.addView(this.x, i7.f6.c(-2.0f, -2));
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:12:0x00af  */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x00b7  */
-    /* JADX WARN: Removed duplicated region for block: B:18:0x00b2  */
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:112:0x0243  */
+    /* JADX WARN: Removed duplicated region for block: B:131:0x03c3  */
+    /* JADX WARN: Removed duplicated region for block: B:134:0x03d4  */
+    /* JADX WARN: Removed duplicated region for block: B:137:0x03e5  */
+    /* JADX WARN: Removed duplicated region for block: B:140:0x0447  */
+    /* JADX WARN: Removed duplicated region for block: B:150:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:151:0x03ea  */
+    /* JADX WARN: Removed duplicated region for block: B:152:0x03cd  */
+    /* JADX WARN: Removed duplicated region for block: B:158:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:43:0x0116  */
+    /* JADX WARN: Removed duplicated region for block: B:74:0x0192  */
+    /* JADX WARN: Type inference failed for: r10v13, types: [android.graphics.Canvas] */
+    /* JADX WARN: Type inference failed for: r14v0 */
+    /* JADX WARN: Type inference failed for: r14v1 */
+    /* JADX WARN: Type inference failed for: r14v11 */
+    /* JADX WARN: Type inference failed for: r14v12 */
+    /* JADX WARN: Type inference failed for: r14v13 */
+    /* JADX WARN: Type inference failed for: r14v15 */
+    /* JADX WARN: Type inference failed for: r14v16 */
+    /* JADX WARN: Type inference failed for: r14v18 */
+    /* JADX WARN: Type inference failed for: r14v19 */
+    /* JADX WARN: Type inference failed for: r14v2 */
+    /* JADX WARN: Type inference failed for: r14v20 */
+    /* JADX WARN: Type inference failed for: r14v21 */
+    /* JADX WARN: Type inference failed for: r14v22 */
+    /* JADX WARN: Type inference failed for: r14v3 */
+    /* JADX WARN: Type inference failed for: r14v4, types: [android.text.Layout, android.text.StaticLayout] */
+    /* JADX WARN: Type inference failed for: r14v8, types: [android.text.StaticLayout] */
+    /* JADX WARN: Type inference failed for: r14v9 */
+    /* JADX WARN: Type inference failed for: r1v1, types: [android.text.Layout] */
+    /* JADX WARN: Type inference failed for: r5v6, types: [android.graphics.Path, org.telegram.ui.Components.oq, org.telegram.ui.Components.s80] */
+    /* JADX WARN: Type inference failed for: r7v16, types: [android.graphics.Path, org.telegram.ui.Components.s80] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void c(int i9, int i10, int i11, int i12, int i13, int i14, int i15, int i16) {
+    public final void f(org.telegram.ui.Cells.s1 s1Var, CharacterStyle characterStyle, CharSequence charSequence, boolean z10) {
+        float f9;
+        float f10;
+        ArrayList<MessageObject.TextLayoutBlock> arrayList;
+        float f11;
+        boolean z11;
+        float f12;
+        float f13;
+        int i10;
+        int i11;
+        int i12;
+        ?? r14;
+        float f14;
+        RectF rectF;
+        StaticLayout staticLayout;
+        Layout layout;
+        Paint paint;
+        Bitmap bitmap;
+        SpannableStringBuilder spannableStringBuilder;
+        int i13;
+        RichMessageLayout richMessageLayout;
+        RichMessageLayout.FoundLink findLink;
+        ArrayList<org.telegram.ui.Cells.q1> pollButtons;
+        int i14;
+        int i15;
+        float f15;
+        float f16;
+        int i16;
         int i17;
+        float f17;
+        float f18;
         int i18;
-        if (!this.s || this.q) {
-            i17 = i11;
+        if (s1Var == null) {
+            return;
+        }
+        s1Var.getCurrentMessagesGroup();
+        MessageObject messageObject = s1Var.getMessageObject();
+        int i19 = 0;
+        boolean z12 = s1Var.getExplanationLayout() != null && messageObject.expandedExplanation;
+        if (z12 && z10) {
+            f9 = s1Var.getExplanationX();
+            f10 = s1Var.getExplanationY();
+            arrayList = s1Var.getExplanationLayout().textLayoutBlocks;
+            f11 = s1Var.getExplanationLayout().textXOffset;
+        } else if (s1Var.getCaptionLayout() != null) {
+            f9 = s1Var.getCaptionX();
+            f10 = s1Var.getCaptionY();
+            arrayList = s1Var.getCaptionLayout().textLayoutBlocks;
+            f11 = s1Var.getCaptionLayout().textXOffset;
         } else {
-            float currentAnimationTimeMillis = this.t - ((this.u * ((int) (AnimationUtils.currentAnimationTimeMillis() - this.l))) / 2000.0f);
-            float f10 = this.d - this.b;
-            float f11 = this.e - this.c;
-            float sqrt = (float) Math.sqrt((f11 * f11) + (f10 * f10));
-            float f12 = (f10 / sqrt) * currentAnimationTimeMillis;
-            float f13 = (f11 / sqrt) * currentAnimationTimeMillis;
-            i17 = i11;
-            float f14 = i17;
-            if (Math.signum(f14) == Math.signum(f12)) {
-                i18 = i12;
-                float f15 = i18;
-                if (Math.signum(f15) == Math.signum(f13)) {
-                    i17 = (int) (f14 + f12);
-                    i18 = (int) (f15 + f13);
+            f9 = 0.0f;
+            f10 = 0.0f;
+            arrayList = null;
+            f11 = 0.0f;
+        }
+        if (arrayList == null) {
+            f9 = s1Var.getTextX();
+            f10 = s1Var.getTextY() + s1Var.le;
+            arrayList = messageObject.textLayoutBlocks;
+            f11 = messageObject.textXOffset;
+        }
+        if (arrayList != null) {
+            int i20 = 0;
+            while (i20 < arrayList.size()) {
+                MessageObject.TextLayoutBlock textLayoutBlock = arrayList.get(i20);
+                StaticLayout staticLayout2 = textLayoutBlock.textLayout;
+                if (staticLayout2 != null && (staticLayout2.getText() instanceof Spanned)) {
+                    z11 = z12;
+                    CharacterStyle[] characterStyleArr = (CharacterStyle[]) ((Spanned) staticLayout2.getText()).getSpans(i19, staticLayout2.getText().length(), CharacterStyle.class);
+                    if (characterStyleArr != null) {
+                        for (CharacterStyle characterStyle2 : characterStyleArr) {
+                            if (characterStyle2 == characterStyle) {
+                                i10 = ((Spanned) staticLayout2.getText()).getSpanStart(characterStyle);
+                                i12 = ((Spanned) staticLayout2.getText()).getSpanEnd(characterStyle);
+                                if (textLayoutBlock.isRtl()) {
+                                    f17 = f9;
+                                    f18 = f10;
+                                    i18 = (int) Math.ceil(f11);
+                                } else {
+                                    f17 = f9;
+                                    f18 = f10;
+                                    i18 = 0;
+                                }
+                                f12 = i18 + f17;
+                                f13 = textLayoutBlock.textYOffset(arrayList, s1Var.Vc) + textLayoutBlock.padTop + f18;
+                                i11 = textLayoutBlock.originalWidth;
+                                r14 = staticLayout2;
+                                if (r14 == 0 && s1Var.getDescriptionlayout() != null) {
+                                    StaticLayout descriptionlayout = s1Var.getDescriptionlayout();
+                                    i16 = 0;
+                                    r14 = r14;
+                                    while (i16 == 0) {
+                                        if (descriptionlayout != null && (descriptionlayout.getText() instanceof Spanned)) {
+                                            i17 = i10;
+                                            CharacterStyle[] characterStyleArr2 = (CharacterStyle[]) ((Spanned) descriptionlayout.getText()).getSpans(0, descriptionlayout.getText().length(), CharacterStyle.class);
+                                            if (characterStyleArr2 != null) {
+                                                for (CharacterStyle characterStyle3 : characterStyleArr2) {
+                                                    if (characterStyle3 == characterStyle) {
+                                                        i10 = ((Spanned) descriptionlayout.getText()).getSpanStart(characterStyle);
+                                                        i12 = ((Spanned) descriptionlayout.getText()).getSpanEnd(characterStyle);
+                                                        f12 = s1Var.getDescriptionLayoutX();
+                                                        f13 = s1Var.getDescriptionLayoutY();
+                                                        i11 = descriptionlayout.getWidth();
+                                                        r14 = descriptionlayout;
+                                                        break;
+                                                    }
+                                                }
+                                            }
+                                        } else {
+                                            i17 = i10;
+                                        }
+                                        i10 = i17;
+                                        i16++;
+                                        r14 = r14;
+                                    }
+                                }
+                                if (r14 == 0 && ((messageObject.isTodo() || messageObject.isPoll()) && (pollButtons = s1Var.getPollButtons()) != null)) {
+                                    i14 = 0;
+                                    r14 = r14;
+                                    while (i14 < pollButtons.size()) {
+                                        org.telegram.ui.Cells.q1 q1Var = pollButtons.get(i14);
+                                        StaticLayout staticLayout3 = q1Var.p;
+                                        if (staticLayout3 == null) {
+                                            i15 = i10;
+                                        } else {
+                                            i15 = i10;
+                                            if (staticLayout3.getText() instanceof Spanned) {
+                                                f15 = f12;
+                                                f16 = f13;
+                                                CharacterStyle[] characterStyleArr3 = (CharacterStyle[]) ((Spanned) staticLayout3.getText()).getSpans(0, staticLayout3.getText().length(), CharacterStyle.class);
+                                                if (characterStyleArr3 != null) {
+                                                    for (CharacterStyle characterStyle4 : characterStyleArr3) {
+                                                        if (characterStyle4 == characterStyle) {
+                                                            i10 = ((Spanned) staticLayout3.getText()).getSpanStart(characterStyle);
+                                                            i12 = ((Spanned) staticLayout3.getText()).getSpanEnd(characterStyle);
+                                                            f12 = q1Var.m;
+                                                            f13 = q1Var.n;
+                                                            i11 = staticLayout3.getWidth();
+                                                            r14 = staticLayout3;
+                                                            break;
+                                                        }
+                                                    }
+                                                }
+                                                i10 = i15;
+                                                f13 = f16;
+                                                f12 = f15;
+                                                i14++;
+                                                r14 = r14;
+                                            }
+                                        }
+                                        f15 = f12;
+                                        f16 = f13;
+                                        i10 = i15;
+                                        f13 = f16;
+                                        f12 = f15;
+                                        i14++;
+                                        r14 = r14;
+                                    }
+                                }
+                                if (r14 == 0 && messageObject != null && (richMessageLayout = messageObject.richLayout) != null && (findLink = richMessageLayout.findLink(characterStyle)) != null) {
+                                    r14 = findLink.layout;
+                                    i10 = findLink.start;
+                                    i12 = findLink.end;
+                                    i11 = findLink.originalWidth;
+                                    f12 = s1Var.getTextX() + findLink.x;
+                                    f13 = s1Var.getTextY() + findLink.y;
+                                }
+                                int i21 = i11;
+                                int i22 = i10;
+                                float f19 = f12;
+                                int i23 = i12;
+                                if (r14 != 0 && z11 && !z10) {
+                                    f(s1Var, characterStyle, charSequence, true);
+                                    return;
+                                }
+                                if (r14 != 0) {
+                                    return;
+                                }
+                                if (charSequence != null) {
+                                    int lineForOffset = r14.getLineForOffset(i22);
+                                    float lineTop = f13 + r14.getLineTop(lineForOffset);
+                                    float primaryHorizontal = r14.getPrimaryHorizontal(i22);
+                                    float lineWidth = r14.getLineWidth(lineForOffset);
+                                    ?? s80Var = new s80(0);
+                                    s80Var.d(r14, i22, 0.0f);
+                                    r14.getSelectionPath(i22, i23, s80Var);
+                                    RectF rectF2 = new RectF();
+                                    s80Var.computeBounds(rectF2, true);
+                                    StaticLayout makeStaticLayout = MessageObject.makeStaticLayout(charSequence, r14.getPaint(), r14.getWidth(), 1.0f, 0.0f, false);
+                                    i23 = charSequence.length();
+                                    float width = makeStaticLayout.getWidth();
+                                    float f20 = 0.0f;
+                                    for (int i24 = 0; i24 < makeStaticLayout.getLineCount(); i24++) {
+                                        width = Math.min(width, makeStaticLayout.getLineLeft(i24));
+                                        f20 = Math.max(f20, makeStaticLayout.getLineRight(i24));
+                                    }
+                                    f19 += Math.max(0.0f, Math.min(primaryHorizontal, lineWidth - Math.max(0.0f, f20 - width)));
+                                    rectF = rectF2;
+                                    i22 = 0;
+                                    f14 = lineTop;
+                                    staticLayout = makeStaticLayout;
+                                } else {
+                                    f14 = f13;
+                                    rectF = null;
+                                    staticLayout = r14;
+                                }
+                                ?? r12 = staticLayout;
+                                float f21 = f19;
+                                Paint paint2 = new Paint(1);
+                                paint2.setColor(org.telegram.ui.ActionBar.g6.v0(messageObject.isOutOwner() ? org.telegram.ui.ActionBar.g6.Aa : org.telegram.ui.ActionBar.g6.ra, this.b));
+                                paint2.setPathEffect(new CornerPathEffect(AndroidUtilities.dp(5.0f)));
+                                ?? s80Var2 = new s80(0);
+                                s80Var2.c = true;
+                                s80Var2.d(r12, i22, 0.0f);
+                                r12.getSelectionPath(i22, i23, s80Var2);
+                                s80Var2.a();
+                                RectF rectF3 = new RectF();
+                                s80Var2.computeBounds(rectF3, true);
+                                int width2 = (int) (rectF3.width() + AndroidUtilities.dp(5.0f));
+                                if (!s1Var.C1() || width2 <= 0) {
+                                    layout = r12;
+                                    paint = paint2;
+                                } else {
+                                    if (rectF3.height() > 0.0f) {
+                                        Bitmap createBitmap = Bitmap.createBitmap(width2, (int) rectF3.height(), Bitmap.Config.ALPHA_8);
+                                        ?? canvas = new Canvas(createBitmap);
+                                        layout = r12;
+                                        paint = paint2;
+                                        Paint paint3 = new Paint(1);
+                                        paint3.setColor(-1);
+                                        canvas.drawRect(0.0f, 0.0f, width2, rectF3.height(), paint3);
+                                        Paint paint4 = new Paint(1);
+                                        paint4.setColor(-1);
+                                        paint4.setPathEffect(new CornerPathEffect(AndroidUtilities.dp(5.0f)));
+                                        paint4.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
+                                        canvas.translate(-rectF3.left, -rectF3.top);
+                                        canvas.drawPath(s80Var2, paint4);
+                                        bitmap = createBitmap;
+                                        Paint paint5 = new Paint(3);
+                                        paint5.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
+                                        s1Var.c4();
+                                        TextPaint textPaint = new TextPaint(layout.getPaint());
+                                        textPaint.set(layout.getPaint());
+                                        spannableStringBuilder = new SpannableStringBuilder(y5.cloneSpans(layout.getText(), -1, textPaint.getFontMetricsInt()));
+                                        if (i22 <= 0) {
+                                            i13 = 0;
+                                            spannableStringBuilder.setSpan(new ForegroundColorSpan(0), 0, i22, 33);
+                                        } else {
+                                            i13 = 0;
+                                        }
+                                        if (i23 < spannableStringBuilder.length()) {
+                                            spannableStringBuilder.setSpan(new ForegroundColorSpan(i13), i23, spannableStringBuilder.length(), 33);
+                                        }
+                                        StaticLayout makeStaticLayout2 = MessageObject.makeStaticLayout(spannableStringBuilder, textPaint, i21, 1.0f, messageObject.totalAnimatedEmojiCount < 4 ? -1.0f : 0.0f, false);
+                                        int[] iArr = new int[2];
+                                        s1Var.getLocationOnScreen(iArr);
+                                        this.A = new xl0(s80Var2, new int[]{iArr[0] + ((int) f21), iArr[1] + ((int) f14)}, s1Var, iArr, bitmap, rectF3, paint5, paint, makeStaticLayout2);
+                                        int dp = (int) ((AndroidUtilities.dp(5.0f) / 2.0f) + iArr[0] + f21 + rectF3.left);
+                                        int i25 = (int) (iArr[1] + f14 + rectF3.top);
+                                        this.A.setBounds(dp, i25, ((int) rectF3.width()) + dp, ((int) rectF3.height()) + i25);
+                                        if (charSequence == null) {
+                                            float f22 = dp;
+                                            if (rectF3.width() + f22 > AndroidUtilities.displaySize.x - AndroidUtilities.dp(8.0f)) {
+                                                this.D -= (rectF3.width() + f22) - (AndroidUtilities.displaySize.x - AndroidUtilities.dp(8.0f));
+                                            }
+                                            float f23 = i25;
+                                            if (rectF3.height() + f23 > ((AndroidUtilities.displaySize.y - AndroidUtilities.statusBarHeight) - AndroidUtilities.navigationBarHeight) - AndroidUtilities.dp(8.0f)) {
+                                                this.E -= (rectF3.height() + f23) - (((AndroidUtilities.displaySize.y - AndroidUtilities.statusBarHeight) - AndroidUtilities.navigationBarHeight) - AndroidUtilities.dp(8.0f));
+                                            }
+                                            if (rectF != null) {
+                                                this.F = rectF.width() / rectF3.width();
+                                                this.G = rectF.height() / rectF3.height();
+                                                return;
+                                            }
+                                            return;
+                                        }
+                                        return;
+                                    }
+                                    layout = r12;
+                                    paint = paint2;
+                                }
+                                bitmap = null;
+                                Paint paint52 = new Paint(3);
+                                paint52.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
+                                s1Var.c4();
+                                TextPaint textPaint2 = new TextPaint(layout.getPaint());
+                                textPaint2.set(layout.getPaint());
+                                spannableStringBuilder = new SpannableStringBuilder(y5.cloneSpans(layout.getText(), -1, textPaint2.getFontMetricsInt()));
+                                if (i22 <= 0) {
+                                }
+                                if (i23 < spannableStringBuilder.length()) {
+                                }
+                                StaticLayout makeStaticLayout22 = MessageObject.makeStaticLayout(spannableStringBuilder, textPaint2, i21, 1.0f, messageObject.totalAnimatedEmojiCount < 4 ? -1.0f : 0.0f, false);
+                                int[] iArr2 = new int[2];
+                                s1Var.getLocationOnScreen(iArr2);
+                                this.A = new xl0(s80Var2, new int[]{iArr2[0] + ((int) f21), iArr2[1] + ((int) f14)}, s1Var, iArr2, bitmap, rectF3, paint52, paint, makeStaticLayout22);
+                                int dp2 = (int) ((AndroidUtilities.dp(5.0f) / 2.0f) + iArr2[0] + f21 + rectF3.left);
+                                int i252 = (int) (iArr2[1] + f14 + rectF3.top);
+                                this.A.setBounds(dp2, i252, ((int) rectF3.width()) + dp2, ((int) rectF3.height()) + i252);
+                                if (charSequence == null) {
+                                }
+                            }
+                        }
+                    }
+                } else {
+                    z11 = z12;
                 }
-                this.a = 1;
-                this.q = false;
-                float sqrt2 = (float) Math.sqrt((i18 * i18) + (i17 * i17));
-                this.t = sqrt2;
-                double log = Math.log((w * sqrt2) / 800.0f);
-                double d = v;
-                double d9 = d - 1.0d;
-                this.m = (int) (Math.exp(log / d9) * 1000.0d);
-                this.l = AnimationUtils.currentAnimationTimeMillis();
-                this.b = i9;
-                this.c = i10;
-                float f16 = sqrt2 != 0.0f ? 1.0f : i17 / sqrt2;
-                float f17 = sqrt2 != 0.0f ? i18 / sqrt2 : 1.0f;
-                double exp = Math.exp((d / d9) * log);
-                this.f = i13;
-                this.g = i14;
-                this.h = i15;
-                this.i = i16;
-                float f18 = (int) (exp * 800.0f);
-                int round = Math.round(f16 * f18) + i9;
-                this.d = round;
-                int min = Math.min(round, this.g);
-                this.d = min;
-                this.d = Math.max(min, this.f);
-                int round2 = Math.round(f18 * f17) + i10;
-                this.e = round2;
-                int min2 = Math.min(round2, this.i);
-                this.e = min2;
-                this.e = Math.max(min2, this.h);
+                i20++;
+                f9 = f9;
+                z12 = z11;
+                f10 = f10;
+                i19 = 0;
             }
         }
-        i18 = i12;
-        this.a = 1;
-        this.q = false;
-        float sqrt22 = (float) Math.sqrt((i18 * i18) + (i17 * i17));
-        this.t = sqrt22;
-        double log2 = Math.log((w * sqrt22) / 800.0f);
-        double d10 = v;
-        double d92 = d10 - 1.0d;
-        this.m = (int) (Math.exp(log2 / d92) * 1000.0d);
-        this.l = AnimationUtils.currentAnimationTimeMillis();
-        this.b = i9;
-        this.c = i10;
-        if (sqrt22 != 0.0f) {
+        z11 = z12;
+        f12 = f9;
+        f13 = f10;
+        i10 = 0;
+        i11 = 0;
+        i12 = 0;
+        r14 = 0;
+        if (r14 == 0) {
+            StaticLayout descriptionlayout2 = s1Var.getDescriptionlayout();
+            i16 = 0;
+            r14 = r14;
+            while (i16 == 0) {
+            }
         }
-        if (sqrt22 != 0.0f) {
+        if (r14 == 0) {
+            i14 = 0;
+            r14 = r14;
+            while (i14 < pollButtons.size()) {
+            }
         }
-        double exp2 = Math.exp((d10 / d92) * log2);
-        this.f = i13;
-        this.g = i14;
-        this.h = i15;
-        this.i = i16;
-        float f182 = (int) (exp2 * 800.0f);
-        int round3 = Math.round(f16 * f182) + i9;
-        this.d = round3;
-        int min3 = Math.min(round3, this.g);
-        this.d = min3;
-        this.d = Math.max(min3, this.f);
-        int round22 = Math.round(f182 * f17) + i10;
-        this.e = round22;
-        int min22 = Math.min(round22, this.i);
-        this.e = min22;
-        this.e = Math.max(min22, this.h);
+        if (r14 == 0) {
+            r14 = findLink.layout;
+            i10 = findLink.start;
+            i12 = findLink.end;
+            i11 = findLink.originalWidth;
+            f12 = s1Var.getTextX() + findLink.x;
+            f13 = s1Var.getTextY() + findLink.y;
+        }
+        int i212 = i11;
+        int i222 = i10;
+        float f192 = f12;
+        int i232 = i12;
+        if (r14 != 0) {
+        }
+        if (r14 != 0) {
+        }
     }
 
-    public final void d(int i9, int i10) {
-        this.a = 0;
-        this.q = false;
-        this.m = i10;
-        this.l = AnimationUtils.currentAnimationTimeMillis();
-        this.b = 0;
-        this.c = 0;
-        this.d = 0;
-        this.e = i9;
-        this.o = 0;
-        this.p = i9;
-        this.n = 1.0f / this.m;
+    @Override // android.app.Dialog
+    public final boolean isShowing() {
+        return !this.I;
+    }
+
+    @Override // android.app.Dialog
+    public final void onCreate(Bundle bundle) {
+        super.onCreate(bundle);
+        Window window = getWindow();
+        window.setWindowAnimations(R.style.DialogNoAnimation);
+        ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams(-1, -1);
+        bg.x2 x2Var = this.s;
+        setContentView(x2Var, layoutParams);
+        WindowManager.LayoutParams attributes = window.getAttributes();
+        attributes.width = -1;
+        attributes.height = -1;
+        attributes.gravity = 119;
+        attributes.dimAmount = 0.0f;
+        int i10 = attributes.flags & (-3);
+        attributes.softInputMode = 16;
+        attributes.flags = i10 | (-1945959040);
+        AndroidUtilities.applyEdgeToEdgeLayoutParams(attributes);
+        window.setAttributes(attributes);
+        x2Var.setSystemUiVisibility(256);
+        AndroidUtilities.setLightNavigationBar(x2Var, !org.telegram.ui.ActionBar.g6.I.q());
+    }
+
+    @Override // android.app.Dialog
+    public final void show() {
+        if (AndroidUtilities.isSafeToShow(getContext())) {
+            super.show();
+            d(new d(this, 19));
+            c(null, true);
+        }
     }
 }

@@ -1,232 +1,107 @@
 package f2;
 
-import android.os.Build;
-import android.view.animation.Interpolator;
-import android.widget.OverScroller;
+import android.os.Bundle;
+import android.view.View;
+import android.view.accessibility.AccessibilityEvent;
 import androidx.recyclerview.widget.RecyclerView;
-import java.util.Arrays;
-import java.util.WeakHashMap;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class p1 implements Runnable {
-    public int a;
-    public int b;
-    public OverScroller c;
-    public Interpolator d;
-    public boolean e;
-    public boolean f;
-    public final /* synthetic */ RecyclerView h;
+public final class p1 extends r0.b {
+    public final RecyclerView d;
+    public final o1 e = new o1(this);
 
     public p1(RecyclerView recyclerView) {
-        this.h = recyclerView;
-        c0 c0Var = RecyclerView.P0;
-        this.d = c0Var;
-        this.e = false;
-        this.f = false;
-        this.c = new OverScroller(recyclerView.getContext(), c0Var);
+        this.d = recyclerView;
     }
 
-    public final void a() {
-        if (this.e) {
-            this.f = true;
+    @Override // r0.b
+    public final void b(View view, AccessibilityEvent accessibilityEvent) {
+        super.b(view, accessibilityEvent);
+        if (!(view instanceof RecyclerView) || this.d.Z()) {
             return;
         }
-        RecyclerView recyclerView = this.h;
-        recyclerView.removeCallbacks(this);
-        WeakHashMap weakHashMap = r0.j0.a;
-        recyclerView.postOnAnimation(this);
-    }
-
-    public final void b(int i9, int i10, int i11, Interpolator interpolator) {
-        int i12;
-        RecyclerView recyclerView = this.h;
-        if (i11 == Integer.MIN_VALUE) {
-            int abs = Math.abs(i9);
-            int abs2 = Math.abs(i10);
-            boolean z10 = abs > abs2;
-            int sqrt = (int) Math.sqrt(0);
-            int sqrt2 = (int) Math.sqrt((i10 * i10) + (i9 * i9));
-            int width = z10 ? recyclerView.getWidth() : recyclerView.getHeight();
-            int i13 = width / 2;
-            float f10 = width;
-            float f11 = i13;
-            float sin = (((float) Math.sin((Math.min(1.0f, (sqrt2 * 1.0f) / f10) - 0.5f) * 0.47123894f)) * f11) + f11;
-            if (sqrt > 0) {
-                i12 = Math.round(Math.abs(sin / sqrt) * 1000.0f) * 4;
-            } else {
-                if (!z10) {
-                    abs = abs2;
+        RecyclerView recyclerView = (RecyclerView) view;
+        if (recyclerView.getLayoutManager() != null) {
+            j0 j0Var = (j0) recyclerView.getLayoutManager();
+            RecyclerView recyclerView2 = j0Var.b;
+            d1 d1Var = recyclerView2.b;
+            if (accessibilityEvent != null) {
+                boolean z10 = true;
+                if (!recyclerView2.canScrollVertically(1) && !j0Var.b.canScrollVertically(-1) && !j0Var.b.canScrollHorizontally(-1) && !j0Var.b.canScrollHorizontally(1)) {
+                    z10 = false;
                 }
-                i12 = (int) (((abs / f10) + 1.0f) * 300.0f);
+                accessibilityEvent.setScrollable(z10);
+                p0 p0Var = j0Var.b.w;
+                if (p0Var != null) {
+                    accessibilityEvent.setItemCount(p0Var.h());
+                }
             }
-            i11 = Math.min(i12, 2000);
+            if (j0Var.r() > 0) {
+                accessibilityEvent.setFromIndex(j0Var.L0());
+                accessibilityEvent.setToIndex(j0Var.N0());
+            }
         }
-        int i14 = i11;
-        if (interpolator == null) {
-            interpolator = RecyclerView.P0;
-        }
-        if (this.d != interpolator) {
-            this.d = interpolator;
-            this.c = new OverScroller(recyclerView.getContext(), interpolator);
-        }
-        this.b = 0;
-        this.a = 0;
-        recyclerView.setScrollState(2);
-        this.c.startScroll(0, 0, i9, i10, i14);
-        if (Build.VERSION.SDK_INT < 23) {
-            this.c.computeScrollOffset();
-        }
-        a();
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i9;
-        int i10;
-        int i11;
-        int i12;
-        boolean awakenScrollBars;
-        RecyclerView recyclerView = this.h;
-        int[] iArr = recyclerView.E0;
-        if (recyclerView.x == null) {
-            recyclerView.J0 = true;
-            recyclerView.removeCallbacks(this);
-            this.c.abortAnimation();
+    @Override // r0.b
+    public final void c(View view, s0.c cVar) {
+        this.a.onInitializeAccessibilityNodeInfo(view, cVar.a);
+        RecyclerView recyclerView = this.d;
+        if (recyclerView.Z() || recyclerView.getLayoutManager() == null) {
             return;
         }
-        this.f = false;
-        this.e = true;
-        recyclerView.p();
-        OverScroller overScroller = this.c;
-        recyclerView.K0 = true;
-        if (overScroller.computeScrollOffset()) {
-            int currX = overScroller.getCurrX();
-            int currY = overScroller.getCurrY();
-            int i13 = currX - this.a;
-            int i14 = currY - this.b;
-            this.a = currX;
-            this.b = currY;
-            int[] iArr2 = recyclerView.E0;
-            iArr2[0] = 0;
-            iArr2[1] = 0;
-            if (recyclerView.v(i13, i14, 1, iArr2, null)) {
-                i9 = i13 - iArr[0];
-                i10 = i14 - iArr[1];
+        w0 layoutManager = recyclerView.getLayoutManager();
+        RecyclerView recyclerView2 = layoutManager.b;
+        layoutManager.S(recyclerView2.b, recyclerView2.p0, cVar);
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:15:0x0083 A[ADDED_TO_REGION] */
+    @Override // r0.b
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean d(View view, int i10, Bundle bundle) {
+        int F;
+        int D;
+        if (super.d(view, i10, bundle)) {
+            return true;
+        }
+        RecyclerView recyclerView = this.d;
+        if (!recyclerView.Z() && recyclerView.getLayoutManager() != null) {
+            w0 layoutManager = recyclerView.getLayoutManager();
+            RecyclerView recyclerView2 = layoutManager.b;
+            d1 d1Var = recyclerView2.b;
+            if (i10 == 4096) {
+                F = recyclerView2.canScrollVertically(1) ? (layoutManager.n - layoutManager.F()) - layoutManager.C() : 0;
+                if (layoutManager.b.canScrollHorizontally(1)) {
+                    D = (layoutManager.m - layoutManager.D()) - layoutManager.E();
+                    if (F == 0) {
+                    }
+                    layoutManager.b.v0(D, F, null);
+                    return true;
+                }
+                D = 0;
+                if (F == 0) {
+                }
+                layoutManager.b.v0(D, F, null);
+                return true;
+            }
+            if (i10 != 8192) {
+                D = 0;
+                F = 0;
             } else {
-                i9 = i13;
-                i10 = i14;
-            }
-            if (recyclerView.getOverScrollMode() != 2) {
-                recyclerView.o(i9, i10);
-            }
-            if (recyclerView.w != null) {
-                iArr[0] = 0;
-                iArr[1] = 0;
-                recyclerView.t0(i9, i10, iArr);
-                i11 = iArr[0];
-                i12 = iArr[1];
-                i9 -= i11;
-                i10 -= i12;
-                m1 m1Var = recyclerView.x.e;
-                if (m1Var != null && !m1Var.d && m1Var.e) {
-                    int b10 = recyclerView.p0.b();
-                    if (b10 == 0) {
-                        m1Var.h();
-                    } else if (m1Var.a >= b10) {
-                        m1Var.a = b10 - 1;
-                        m1Var.c(i11, i12);
-                    } else {
-                        m1Var.c(i11, i12);
-                    }
+                F = recyclerView2.canScrollVertically(-1) ? -((layoutManager.n - layoutManager.F()) - layoutManager.C()) : 0;
+                if (layoutManager.b.canScrollHorizontally(-1)) {
+                    D = -((layoutManager.m - layoutManager.D()) - layoutManager.E());
                 }
-            } else {
-                i11 = 0;
-                i12 = 0;
+                D = 0;
             }
-            if (!recyclerView.y.isEmpty()) {
-                recyclerView.invalidate();
-            }
-            int[] iArr3 = recyclerView.E0;
-            iArr3[0] = 0;
-            iArr3[1] = 0;
-            recyclerView.w(i11, i12, i9, i10, null, 1, iArr3);
-            int i15 = i9 - iArr[0];
-            int i16 = i10 - iArr[1];
-            if (i11 != 0 || i12 != 0) {
-                recyclerView.x(i11, i12);
-            }
-            awakenScrollBars = recyclerView.awakenScrollBars();
-            if (!awakenScrollBars) {
-                recyclerView.invalidate();
-            }
-            boolean z10 = overScroller.isFinished() || (((overScroller.getCurrX() == overScroller.getFinalX()) || i15 != 0) && ((overScroller.getCurrY() == overScroller.getFinalY()) || i16 != 0));
-            m1 m1Var2 = recyclerView.x.e;
-            if ((m1Var2 == null || !m1Var2.d) && z10) {
-                if (recyclerView.getOverScrollMode() != 2) {
-                    int currVelocity = (int) overScroller.getCurrVelocity();
-                    int i17 = i15 < 0 ? -currVelocity : i15 > 0 ? currVelocity : 0;
-                    if (i16 < 0) {
-                        currVelocity = -currVelocity;
-                    } else if (i16 <= 0) {
-                        currVelocity = 0;
-                    }
-                    if (i17 < 0) {
-                        recyclerView.z();
-                        if (recyclerView.R.isFinished()) {
-                            recyclerView.R.onAbsorb(-i17);
-                        }
-                    } else if (i17 > 0) {
-                        recyclerView.A();
-                        if (recyclerView.T.isFinished()) {
-                            recyclerView.T.onAbsorb(i17);
-                        }
-                    }
-                    if (currVelocity < 0) {
-                        recyclerView.B();
-                        if (recyclerView.S.isFinished()) {
-                            recyclerView.S.onAbsorb(-currVelocity);
-                        }
-                    } else if (currVelocity > 0) {
-                        recyclerView.y();
-                        if (recyclerView.U.isFinished()) {
-                            recyclerView.U.onAbsorb(currVelocity);
-                        }
-                    }
-                    if (i17 != 0 || currVelocity != 0) {
-                        WeakHashMap weakHashMap = r0.j0.a;
-                        recyclerView.postInvalidateOnAnimation();
-                    }
-                }
-                if (RecyclerView.O0) {
-                    androidx.datastore.preferences.protobuf.i iVar = recyclerView.o0;
-                    int[] iArr4 = (int[]) iVar.d;
-                    if (iArr4 != null) {
-                        Arrays.fill(iArr4, -1);
-                    }
-                    iVar.c = 0;
-                }
-            } else {
-                a();
-                u uVar = recyclerView.n0;
-                if (uVar != null) {
-                    uVar.a(recyclerView, i11, i12);
-                }
+            if (F == 0 || D != 0) {
+                layoutManager.b.v0(D, F, null);
+                return true;
             }
         }
-        recyclerView.K0 = false;
-        m1 m1Var3 = recyclerView.x.e;
-        if (m1Var3 != null && m1Var3.d) {
-            m1Var3.c(0, 0);
-        }
-        this.e = false;
-        if (!this.f) {
-            recyclerView.setScrollState(0);
-            recyclerView.A0(1);
-        } else {
-            recyclerView.removeCallbacks(this);
-            WeakHashMap weakHashMap2 = r0.j0.a;
-            recyclerView.postOnAnimation(this);
-        }
+        return false;
     }
 }

@@ -1,32 +1,73 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ys {
+public final class ys implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ at b;
 
-    public /* synthetic */ ys(Object obj, int i9) {
-        this.a = i9;
-        this.b = obj;
+    public /* synthetic */ ys(at atVar, int i10) {
+        this.a = i10;
+        this.b = atVar;
     }
 
-    public final void a(int i9, boolean z10) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10;
+        Bitmap bitmap;
         switch (this.a) {
             case 0:
-                ArrayList arrayList = ((at) this.b).b;
-                int size = arrayList.size();
-                int i10 = 0;
-                while (i10 < size) {
-                    Object obj = arrayList.get(i10);
-                    i10++;
-                    ((ys) obj).a(i9, z10);
+                at atVar = this.b;
+                try {
+                    i10 = atVar.w + 0;
+                    bitmap = atVar.b;
+                } catch (Exception e10) {
+                    FileLog.e(e10);
+                    atVar.A = true;
                 }
-                break;
+                if (bitmap != null) {
+                    if (bitmap.getWidth() == atVar.x) {
+                        if (atVar.b.getHeight() != i10) {
+                        }
+                        atVar.b.eraseColor(0);
+                        atVar.c.save();
+                        atVar.c.translate(0.0f, 0);
+                        atVar.c(atVar.c);
+                        atVar.c.restore();
+                        atVar.b.prepareToDraw();
+                        AndroidUtilities.runOnUIThread(atVar.D);
+                        break;
+                    }
+                }
+                Bitmap bitmap2 = atVar.b;
+                if (bitmap2 != null) {
+                    bitmap2.recycle();
+                }
+                atVar.b = Bitmap.createBitmap(atVar.x, i10, Bitmap.Config.ARGB_8888);
+                atVar.c = new Canvas(atVar.b);
+                atVar.b.eraseColor(0);
+                atVar.c.save();
+                atVar.c.translate(0.0f, 0);
+                atVar.c(atVar.c);
+                atVar.c.restore();
+                atVar.b.prepareToDraw();
+                AndroidUtilities.runOnUIThread(atVar.D);
             default:
-                ((Runnable) this.b).run();
+                at atVar2 = this.b;
+                atVar2.f = false;
+                atVar2.g();
+                if (!atVar2.a) {
+                    atVar2.j();
+                    break;
+                } else if (atVar2.v == atVar2.F) {
+                    atVar2.C = true;
+                    break;
+                }
                 break;
         }
     }

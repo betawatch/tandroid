@@ -1,9 +1,9 @@
 package org.telegram.messenger.video;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public class VUIParameters {
-    public wb.a aspect_ratio;
+    public yb.a aspect_ratio;
     public boolean aspect_ratio_info_present_flag;
     public BitstreamRestriction bitstreamRestriction;
     public boolean chroma_loc_info_present_flag;
@@ -14,7 +14,7 @@ public class VUIParameters {
     public boolean fixed_frame_rate_flag;
     public boolean low_delay_hrd_flag;
     public int matrix_coefficients;
-    public wb.b nalHRDParams;
+    public yb.b nalHRDParams;
     public int num_units_in_tick;
     public boolean overscan_appropriate_flag;
     public boolean overscan_info_present_flag;
@@ -24,12 +24,12 @@ public class VUIParameters {
     public int time_scale;
     public boolean timing_info_present_flag;
     public int transfer_characteristics;
-    public wb.b vclHRDParams;
+    public yb.b vclHRDParams;
     public int video_format;
     public boolean video_full_range_flag;
     public boolean video_signal_type_present_flag;
 
-    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
     public static class BitstreamRestriction {
         public int log2_max_mv_length_horizontal;
         public int log2_max_mv_length_vertical;

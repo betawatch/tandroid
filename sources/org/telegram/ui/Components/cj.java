@@ -1,27 +1,45 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
 import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class cj extends f2.n0 {
-    public final /* synthetic */ dj r;
+public final /* synthetic */ class cj implements bl0, ij {
+    public final /* synthetic */ sj a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public cj(dj djVar, Context context) {
-        super(context);
-        this.r = djVar;
+    public /* synthetic */ cj(sj sjVar) {
+        this.a = sjVar;
     }
 
-    @Override // f2.n0
-    public final int k(int i9, View view) {
-        return org.telegram.messenger.l0.A(8.0f, ((pj) this.r.V).s.getPaddingTop() - AndroidUtilities.statusBarHeight, super.k(i9, view));
+    @Override // org.telegram.ui.Components.ij
+    public void a(TLRPC.User user, boolean z10, int i10, long j10) {
+        sj sjVar = this.a;
+        sjVar.b.dismiss(true);
+        sjVar.F.a(user, z10, i10, j10);
     }
 
-    @Override // f2.n0
-    public final int m(int i9) {
-        return super.m(i9) * 2;
+    @Override // org.telegram.ui.Components.bl0
+    public boolean c(int i10, View view) {
+        Object O;
+        sj sjVar = this.a;
+        f2.p0 adapter = sjVar.s.getAdapter();
+        oj ojVar = sjVar.B;
+        if (adapter == ojVar) {
+            O = ojVar.E(i10);
+        } else {
+            lj ljVar = sjVar.A;
+            O = ljVar.O(ljVar.S(i10), ljVar.Q(i10));
+        }
+        if (O == null) {
+            return false;
+        }
+        sjVar.K((rj) view, O);
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.ij
+    public /* synthetic */ void b(ArrayList arrayList, String str, boolean z10, int i10, long j10, boolean z11) {
     }
 }

@@ -1,14 +1,14 @@
 package org.scilab.forge.jlatexmath;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public class LapedAtom extends Atom {
     private Atom at;
     private char type;
 
-    public LapedAtom(Atom atom, char c10) {
+    public LapedAtom(Atom atom, char c3) {
         this.at = atom;
-        this.type = c10;
+        this.type = c3;
     }
 
     @Override // org.scilab.forge.jlatexmath.Atom
@@ -17,12 +17,12 @@ public class LapedAtom extends Atom {
         VerticalBox verticalBox = new VerticalBox();
         verticalBox.add(createBox);
         verticalBox.setWidth(0.0f);
-        char c10 = this.type;
-        if (c10 == 'l') {
+        char c3 = this.type;
+        if (c3 == 'l') {
             createBox.setShift(-createBox.getWidth());
             return verticalBox;
         }
-        if (c10 != 'r') {
+        if (c3 != 'r') {
             createBox.setShift((-createBox.getWidth()) / 2.0f);
             return verticalBox;
         }

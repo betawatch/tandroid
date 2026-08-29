@@ -4,11 +4,11 @@ import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_keyboard;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public class BotInlineKeyboard {
 
-    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
     public enum BackgroundColor {
         NONE,
         PRIMARY,
@@ -16,17 +16,17 @@ public class BotInlineKeyboard {
         DANGER
     }
 
-    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
     public static class Builder {
         private final ArrayList<Button[]> buttons = new ArrayList<>();
         private int separators;
 
         public void addBotKeyboard(TLRPC.TL_replyInlineMarkup tL_replyInlineMarkup) {
-            for (int i9 = 0; i9 < tL_replyInlineMarkup.rows.size(); i9++) {
-                ArrayList<TL_keyboard.KeyboardInlineButton> arrayList = tL_replyInlineMarkup.rows.get(i9).buttons;
+            for (int i10 = 0; i10 < tL_replyInlineMarkup.rows.size(); i10++) {
+                ArrayList<TL_keyboard.KeyboardInlineButton> arrayList = tL_replyInlineMarkup.rows.get(i10).buttons;
                 ButtonBot[] buttonBotArr = new ButtonBot[arrayList.size()];
-                for (int i10 = 0; i10 < arrayList.size(); i10++) {
-                    buttonBotArr[i10] = new ButtonBot(arrayList.get(i10));
+                for (int i11 = 0; i11 < arrayList.size(); i11++) {
+                    buttonBotArr[i11] = new ButtonBot(arrayList.get(i11));
                 }
                 this.buttons.add(buttonBotArr);
             }
@@ -45,14 +45,14 @@ public class BotInlineKeyboard {
                 return;
             }
             int rowsCount = source.getRowsCount();
-            for (int i9 = 0; i9 < rowsCount; i9++) {
-                int columnsCount = source.getColumnsCount(i9);
+            for (int i10 = 0; i10 < rowsCount; i10++) {
+                int columnsCount = source.getColumnsCount(i10);
                 Button[] buttonArr = new Button[columnsCount];
-                for (int i10 = 0; i10 < columnsCount; i10++) {
-                    buttonArr[i10] = source.getButton(i9, i10);
+                for (int i11 = 0; i11 < columnsCount; i11++) {
+                    buttonArr[i11] = source.getButton(i10, i11);
                 }
                 this.buttons.add(buttonArr);
-                if (source.hasSeparator(i9)) {
+                if (source.hasSeparator(i10)) {
                     addSeparator();
                 }
             }
@@ -88,7 +88,7 @@ public class BotInlineKeyboard {
         }
     }
 
-    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
     public static abstract class Button {
         public BackgroundColor getColor() {
             return BackgroundColor.NONE;
@@ -105,7 +105,7 @@ public class BotInlineKeyboard {
         public abstract String getText();
     }
 
-    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
     public static class ButtonBot extends Button {
         public final TL_keyboard.KeyboardInlineButton button;
 
@@ -145,7 +145,7 @@ public class BotInlineKeyboard {
         }
     }
 
-    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
     public static class ButtonCustom extends Button {
         public static final int GIFT_OFFER_ACCEPT = 6;
         public static final int GIFT_OFFER_DECLINE = 5;
@@ -159,10 +159,10 @@ public class BotInlineKeyboard {
         public final int id;
         public final int text;
 
-        public ButtonCustom(int i9, int i10, int i11) {
-            this.id = i9;
-            this.text = i10;
-            this.icon = i11;
+        public ButtonCustom(int i10, int i11, int i12) {
+            this.id = i10;
+            this.text = i11;
+            this.icon = i12;
         }
 
         @Override // org.telegram.messenger.BotInlineKeyboard.Button
@@ -176,19 +176,19 @@ public class BotInlineKeyboard {
         }
     }
 
-    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
     public static class KeyboardSourceArray implements Source {
         private final Button[][] buttons;
         private final int separators;
 
         @Override // org.telegram.messenger.BotInlineKeyboard.Source
-        public Button getButton(int i9, int i10) {
-            return this.buttons[i9][i10];
+        public Button getButton(int i10, int i11) {
+            return this.buttons[i10][i11];
         }
 
         @Override // org.telegram.messenger.BotInlineKeyboard.Source
-        public int getColumnsCount(int i9) {
-            return this.buttons[i9].length;
+        public int getColumnsCount(int i10) {
+            return this.buttons[i10].length;
         }
 
         @Override // org.telegram.messenger.BotInlineKeyboard.Source
@@ -197,30 +197,30 @@ public class BotInlineKeyboard {
         }
 
         @Override // org.telegram.messenger.BotInlineKeyboard.Source
-        public boolean hasSeparator(int i9) {
-            return ((1 << i9) & this.separators) != 0;
+        public boolean hasSeparator(int i10) {
+            return ((1 << i10) & this.separators) != 0;
         }
 
         @Override // org.telegram.messenger.BotInlineKeyboard.Source
         public final /* synthetic */ boolean isEmpty() {
-            return n0.a(this);
+            return m0.a(this);
         }
 
-        private KeyboardSourceArray(Button[][] buttonArr, int i9) {
+        private KeyboardSourceArray(Button[][] buttonArr, int i10) {
             this.buttons = buttonArr;
-            this.separators = i9;
+            this.separators = i10;
         }
     }
 
-    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
     public interface Source {
-        Button getButton(int i9, int i10);
+        Button getButton(int i10, int i11);
 
-        int getColumnsCount(int i9);
+        int getColumnsCount(int i10);
 
         int getRowsCount();
 
-        boolean hasSeparator(int i9);
+        boolean hasSeparator(int i10);
 
         boolean isEmpty();
     }

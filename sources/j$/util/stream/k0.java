@@ -9,8 +9,8 @@ public final class k0 implements IntFunction, LongFunction {
     public IntFunction a;
 
     @Override // java.util.function.IntFunction
-    public Object apply(int i9) {
-        Object apply = this.a.apply(i9);
+    public Object apply(int i10) {
+        Object apply = this.a.apply(i10);
         if (apply == null) {
             return null;
         }

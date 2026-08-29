@@ -1,35 +1,33 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class an0 extends of.f0 {
-    public final /* synthetic */ org.telegram.ui.dy E0;
-    public final /* synthetic */ Context F0;
-    public final /* synthetic */ org.telegram.ui.mx G0;
+public final class an0 extends f2.q {
+    public final /* synthetic */ en0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public an0(org.telegram.ui.mx mxVar, Context context, org.telegram.ui.dy dyVar, int i9, int i10, f2.n nVar, boolean z10, org.telegram.ui.dy dyVar2, Context context2) {
-        super(context, dyVar, i9, i10, nVar, z10);
-        this.G0 = mxVar;
-        this.E0 = dyVar2;
-        this.F0 = context2;
+    public an0(en0 en0Var) {
+        this.b = en0Var;
     }
 
-    @Override // f2.r0
-    public final void l() {
-        gh.f1 f1Var;
-        int i9 = this.x0;
-        super.l();
-        org.telegram.ui.mx mxVar = this.G0;
-        if (!mxVar.E0 && (f1Var = mxVar.R) != null) {
-            f1Var.u0(0);
-            mxVar.E0 = true;
-        }
-        if (h() != 0 || i9 == 0 || this.z0 > 0) {
-            return;
-        }
-        mxVar.S.e(false, false);
+    @Override // f2.q
+    public final boolean a(int i10, int i11) {
+        en0 en0Var = this.b;
+        return ((bn0) en0Var.n.get(i10)).equals(en0Var.r.get(i11));
+    }
+
+    @Override // f2.q
+    public final boolean b(int i10, int i11) {
+        en0 en0Var = this.b;
+        return ((bn0) en0Var.n.get(i10)).a.h == ((bn0) en0Var.r.get(i11)).a.h;
+    }
+
+    @Override // f2.q
+    public final int d() {
+        return this.b.r.size();
+    }
+
+    @Override // f2.q
+    public final int e() {
+        return this.b.n.size();
     }
 }

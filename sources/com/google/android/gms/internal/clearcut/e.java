@@ -3,20 +3,46 @@ package com.google.android.gms.internal.clearcut;
 import android.content.ContentResolver;
 import android.net.Uri;
 import android.util.Log;
+import j$.util.Objects;
+import java.io.IOException;
+import java.util.AbstractCollection;
 import java.util.HashMap;
-import org.telegram.ui.Cells.j2;
+import java.util.Iterator;
+import org.telegram.ui.th;
 
 /* loaded from: classes.dex */
-public final /* synthetic */ class e implements h, na.n {
+public final /* synthetic */ class e implements h {
     public final String a;
 
-    public /* synthetic */ e(String str) {
-        this.a = str;
+    public e(String str, int i10) {
+        switch (i10) {
+            case 1:
+                str.getClass();
+                this.a = str;
+                break;
+            default:
+                this.a = str;
+                break;
+        }
     }
 
-    @Override // na.n
-    public Object Y1() {
-        throw new la.j(this.a);
+    public void a(StringBuilder sb2, AbstractCollection abstractCollection) {
+        Iterator it = abstractCollection.iterator();
+        try {
+            if (it.hasNext()) {
+                Object next = it.next();
+                Objects.requireNonNull(next);
+                sb2.append(next instanceof CharSequence ? (CharSequence) next : next.toString());
+                while (it.hasNext()) {
+                    sb2.append((CharSequence) this.a);
+                    Object next2 = it.next();
+                    Objects.requireNonNull(next2);
+                    sb2.append(next2 instanceof CharSequence ? (CharSequence) next2 : next2.toString());
+                }
+            }
+        } catch (IOException e10) {
+            throw new AssertionError(e10);
+        }
     }
 
     @Override // com.google.android.gms.internal.clearcut.h
@@ -43,7 +69,7 @@ public final /* synthetic */ class e implements h, na.n {
                     bool = Boolean.TRUE;
                     z11 = true;
                 } else if (!g2.d.matcher(b10).matches()) {
-                    Log.w("Gservices", j2.h("attempt to read gservices key ", str, " (value \"", b10, "\") as boolean"));
+                    Log.w("Gservices", th.j("attempt to read gservices key ", str, " (value \"", b10, "\") as boolean"));
                 }
                 g2.e(obj, hashMap, str, bool);
                 z10 = z11;

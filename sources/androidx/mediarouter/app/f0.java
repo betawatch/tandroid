@@ -1,32 +1,35 @@
 package androidx.mediarouter.app;
 
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.ProgressBar;
+import android.widget.TextView;
+import f2.n1;
+import h7.e5;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class f0 implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ p0 b;
+public final class f0 extends n1 {
+    public c2.b0 A;
+    public final /* synthetic */ k0 B;
+    public final View v;
+    public final ImageView w;
+    public final ProgressBar x;
+    public final TextView y;
+    public final float z;
 
-    public /* synthetic */ f0(p0 p0Var, int i9) {
-        this.a = i9;
-        this.b = p0Var;
-    }
-
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
-            case 0:
-                this.b.dismiss();
-                break;
-            default:
-                p0 p0Var = this.b;
-                if (p0Var.r.g()) {
-                    p0Var.f.getClass();
-                    c2.c0.j(2);
-                }
-                p0Var.dismiss();
-                break;
-        }
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public f0(k0 k0Var, View view) {
+        super(view);
+        this.B = k0Var;
+        this.v = view;
+        this.w = (ImageView) view.findViewById(R.id.mr_cast_group_icon);
+        ProgressBar progressBar = (ProgressBar) view.findViewById(R.id.mr_cast_group_progress_bar);
+        this.x = progressBar;
+        this.y = (TextView) view.findViewById(R.id.mr_cast_group_name);
+        m0 m0Var = k0Var.w;
+        this.z = e5.c(m0Var.y);
+        e5.i(m0Var.y, progressBar);
     }
 }

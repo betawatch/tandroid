@@ -6,7 +6,7 @@ import ru.noties.jlatexmath.awt.Graphics2D;
 import ru.noties.jlatexmath.awt.Stroke;
 import ru.noties.jlatexmath.awt.geom.Rectangle2D;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public class FramedBox extends Box {
     private Color bg;
@@ -15,51 +15,51 @@ public class FramedBox extends Box {
     protected float space;
     protected float thickness;
 
-    public FramedBox(Box box, float f10, float f11) {
+    public FramedBox(Box box, float f9, float f10) {
         this.box = box;
-        float f12 = 2.0f * f11;
-        this.width = f12 + (f10 * 2.0f) + box.width;
-        this.height = box.height + f10 + f11;
-        this.depth = box.depth + f10 + f11;
+        float f11 = 2.0f * f10;
+        this.width = f11 + (f9 * 2.0f) + box.width;
+        this.height = box.height + f9 + f10;
+        this.depth = box.depth + f9 + f10;
         this.shift = box.shift;
-        this.thickness = f10;
-        this.space = f11;
+        this.thickness = f9;
+        this.space = f10;
     }
 
     @Override // org.scilab.forge.jlatexmath.Box
-    public void draw(Graphics2D graphics2D, float f10, float f11) {
+    public void draw(Graphics2D graphics2D, float f9, float f10) {
         Stroke stroke = graphics2D.getStroke();
         graphics2D.setStroke(new BasicStroke(this.thickness, 0, 0));
-        float f12 = this.thickness / 2.0f;
+        float f11 = this.thickness / 2.0f;
         if (this.bg != null) {
             Color color = graphics2D.getColor();
             graphics2D.setColor(this.bg);
-            float f13 = this.height;
-            float f14 = this.width;
-            float f15 = this.thickness;
-            graphics2D.fill(new Rectangle2D.Float(f10 + f12, (f11 - f13) + f12, f14 - f15, (f13 + this.depth) - f15));
+            float f12 = this.height;
+            float f13 = this.width;
+            float f14 = this.thickness;
+            graphics2D.fill(new Rectangle2D.Float(f9 + f11, (f10 - f12) + f11, f13 - f14, (f12 + this.depth) - f14));
             graphics2D.setColor(color);
         }
         if (this.line != null) {
             Color color2 = graphics2D.getColor();
             graphics2D.setColor(this.line);
-            float f16 = f10 + f12;
-            float f17 = this.height;
-            float f18 = (f11 - f17) + f12;
-            float f19 = this.width;
-            float f20 = this.thickness;
-            graphics2D.draw(new Rectangle2D.Float(f16, f18, f19 - f20, (f17 + this.depth) - f20));
+            float f15 = f9 + f11;
+            float f16 = this.height;
+            float f17 = (f10 - f16) + f11;
+            float f18 = this.width;
+            float f19 = this.thickness;
+            graphics2D.draw(new Rectangle2D.Float(f15, f17, f18 - f19, (f16 + this.depth) - f19));
             graphics2D.setColor(color2);
         } else {
-            float f21 = f10 + f12;
-            float f22 = this.height;
-            float f23 = (f11 - f22) + f12;
-            float f24 = this.width;
-            float f25 = this.thickness;
-            graphics2D.draw(new Rectangle2D.Float(f21, f23, f24 - f25, (f22 + this.depth) - f25));
+            float f20 = f9 + f11;
+            float f21 = this.height;
+            float f22 = (f10 - f21) + f11;
+            float f23 = this.width;
+            float f24 = this.thickness;
+            graphics2D.draw(new Rectangle2D.Float(f20, f22, f23 - f24, (f21 + this.depth) - f24));
         }
         graphics2D.setStroke(stroke);
-        this.box.draw(graphics2D, f10 + this.space + this.thickness, f11);
+        this.box.draw(graphics2D, f9 + this.space + this.thickness, f10);
     }
 
     @Override // org.scilab.forge.jlatexmath.Box
@@ -67,8 +67,8 @@ public class FramedBox extends Box {
         return this.box.getLastFontId();
     }
 
-    public FramedBox(Box box, float f10, float f11, Color color, Color color2) {
-        this(box, f10, f11);
+    public FramedBox(Box box, float f9, float f10, Color color, Color color2) {
+        this(box, f9, f10);
         this.line = color;
         this.bg = color2;
     }

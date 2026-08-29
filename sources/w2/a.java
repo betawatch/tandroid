@@ -1,21 +1,57 @@
 package w2;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
-/* loaded from: classes.dex */
-public final class a implements q9.d {
-    public static final a a = new a();
-    public static final q9.c b = new q9.c("window", ta.b.g(ta.b.f(t9.d.class, new t9.a(1))));
-    public static final q9.c c = new q9.c("logSourceMetrics", ta.b.g(ta.b.f(t9.d.class, new t9.a(2))));
-    public static final q9.c d = new q9.c("globalMetrics", ta.b.g(ta.b.f(t9.d.class, new t9.a(3))));
-    public static final q9.c e = new q9.c("appNamespace", ta.b.g(ta.b.f(t9.d.class, new t9.a(4))));
+import i7.j8;
+import j$.util.DesugarCollections;
+import java.nio.charset.Charset;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.regex.Pattern;
+import v2.c;
+import y2.k;
 
-    @Override // q9.a
-    public final void a(Object obj, Object obj2) {
-        z2.a aVar = (z2.a) obj;
-        q9.e eVar = (q9.e) obj2;
-        eVar.g(b, aVar.a);
-        eVar.g(c, aVar.b);
-        eVar.g(d, aVar.c);
-        eVar.g(e, aVar.d);
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* loaded from: classes.dex */
+public final class a implements k {
+    public static final String c;
+    public static final Set d;
+    public static final a e;
+    public static final a f;
+    public final String a;
+    public final String b;
+
+    static {
+        String a2 = j8.a("hts/frbslgiggolai.o/0clgbthfra=snpoo", "tp:/ieaeogn.ogepscmvc/o/ac?omtjo_rt3");
+        c = a2;
+        String a10 = j8.a("hts/frbslgigp.ogepscmv/ieo/eaybtho", "tp:/ieaeogn-agolai.o/1frlglgc/aclg");
+        String a11 = j8.a("AzSCki82AwsLzKd5O8zo", "IayckHiZRO1EFl1aGoK");
+        d = DesugarCollections.unmodifiableSet(new HashSet(Arrays.asList(new c("proto"), new c("json"))));
+        e = new a(a2, null);
+        f = new a(a10, a11);
+    }
+
+    public a(String str, String str2) {
+        this.a = str;
+        this.b = str2;
+    }
+
+    public static a a(byte[] bArr) {
+        String str = new String(bArr, Charset.forName("UTF-8"));
+        if (!str.startsWith("1$")) {
+            throw new IllegalArgumentException("Version marker missing from extras");
+        }
+        String[] split = str.substring(2).split(Pattern.quote("\\"), 2);
+        if (split.length != 2) {
+            throw new IllegalArgumentException("Extra is not a valid encoded LegacyFlgDestination");
+        }
+        String str2 = split[0];
+        if (str2.isEmpty()) {
+            throw new IllegalArgumentException("Missing endpoint in CCTDestination extras");
+        }
+        String str3 = split[1];
+        if (str3.isEmpty()) {
+            str3 = null;
+        }
+        return new a(str2, str3);
     }
 }

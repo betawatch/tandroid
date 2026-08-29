@@ -1,6 +1,6 @@
 package org.scilab.forge.jlatexmath;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public class XMLResourceParseException extends ResourceParseException {
     private static final long serialVersionUID = 2091302779298293946L;
@@ -25,8 +25,8 @@ public class XMLResourceParseException extends ResourceParseException {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public XMLResourceParseException(String str, String str2, String str3, String str4, Throwable th) {
-        super(r0.toString(), th);
+    public XMLResourceParseException(String str, String str2, String str3, String str4, Throwable th2) {
+        super(r0.toString(), th2);
         StringBuilder sb2 = new StringBuilder();
         sb2.append(str);
         sb2.append(": invalid <");
@@ -41,8 +41,8 @@ public class XMLResourceParseException extends ResourceParseException {
         super(str + ": the required <" + str2 + ">-element is not found!");
     }
 
-    public XMLResourceParseException(String str, Throwable th) {
-        super(str, th);
+    public XMLResourceParseException(String str, Throwable th2) {
+        super(str, th2);
     }
 
     public XMLResourceParseException(String str) {

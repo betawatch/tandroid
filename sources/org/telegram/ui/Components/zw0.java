@@ -1,14 +1,36 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.MessageObject;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public interface zw0 {
-    void a(TLRPC.Document document, String str, Object obj, MessageObject.SendAnimationData sendAnimationData, boolean z10, boolean z11, int i9, int i10);
+public final /* synthetic */ class zw0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ nx0 b;
 
-    boolean b();
+    public /* synthetic */ zw0(nx0 nx0Var, int i10) {
+        this.a = i10;
+        this.b = nx0Var;
+    }
 
-    boolean c();
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.d.l();
+                break;
+            case 1:
+                this.b.d.l();
+                break;
+            case 2:
+                nx0.t(this.b);
+                break;
+            case 3:
+                MessagesController.getInstance(r0.currentAccount).openByUserName("stickers", this.b.H, 1);
+                break;
+            default:
+                nx0.s(this.b);
+                break;
+        }
+    }
 }

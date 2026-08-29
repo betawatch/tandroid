@@ -1,37 +1,49 @@
 package m3;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+import org.telegram.tgnet.TLObject;
+
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class a implements t {
-    public final c a;
-    public final long b;
-    public final long c;
-    public final long d;
-    public final long e;
-    public final long f;
+public abstract class a {
+    private int flags;
 
-    public a(c cVar, long j10, long j11, long j12, long j13, long j14) {
-        this.a = cVar;
-        this.b = j10;
-        this.c = j11;
-        this.d = j12;
-        this.e = j13;
-        this.f = j14;
+    public final void addFlag(int i10) {
+        this.flags = i10 | this.flags;
     }
 
-    @Override // m3.t
-    public final boolean e() {
-        return true;
+    public void clear() {
+        this.flags = 0;
     }
 
-    @Override // m3.t
-    public final s h(long j10) {
-        u uVar = new u(j10, b.a(this.a.c(j10), 0L, this.c, this.d, this.e, this.f));
-        return new s(uVar, uVar);
+    public final void clearFlag(int i10) {
+        this.flags = (~i10) & this.flags;
     }
 
-    @Override // m3.t
-    public final long i() {
-        return this.b;
+    public final boolean getFlag(int i10) {
+        return (this.flags & i10) == i10;
+    }
+
+    public final boolean hasSupplementalData() {
+        return getFlag(TLObject.FLAG_28);
+    }
+
+    public final boolean isDecodeOnly() {
+        return getFlag(TLObject.FLAG_31);
+    }
+
+    public final boolean isEndOfStream() {
+        return getFlag(4);
+    }
+
+    public final boolean isFirstSample() {
+        return getFlag(TLObject.FLAG_27);
+    }
+
+    public final boolean isKeyFrame() {
+        return getFlag(1);
+    }
+
+    public final void setFlags(int i10) {
+        this.flags = i10;
     }
 }

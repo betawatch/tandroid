@@ -1,5 +1,7 @@
 package c2;
 
+import ag.o1;
+import ag.q1;
 import android.app.ActivityManager;
 import android.content.ComponentName;
 import android.content.Context;
@@ -23,35 +25,35 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.concurrent.Executor;
-import org.telegram.ui.Cells.j2;
+import org.telegram.ui.th;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class e {
     public static final /* synthetic */ int F = 0;
     public o A;
     public int B;
-    public a5.m C;
+    public androidx.biometric.e C;
     public android.support.v4.media.session.d0 D;
-    public final xa.c E;
-    public final a1 c;
-    public a0 d;
-    public r e;
+    public final o1 E;
+    public final b1 c;
+    public b0 d;
+    public s e;
     public com.google.android.gms.internal.cast.p f;
-    public y g;
+    public z g;
     public final Context h;
-    public final b1 n;
-    public final k5.i o;
+    public final a4.k n;
+    public final ha.c o;
     public final boolean p;
     public final boolean q;
     public l r;
-    public final p0 s;
-    public final d0 t;
-    public f0 u;
-    public a0 v;
-    public a0 w;
-    public a0 x;
-    public q y;
+    public final q0 s;
+    public final e0 t;
+    public g0 u;
+    public b0 v;
+    public b0 w;
+    public b0 x;
+    public r y;
     public o z;
     public final b a = new b(this);
     public final HashMap b = new HashMap();
@@ -65,31 +67,30 @@ public final class e {
         Log.isLoggable("GlobalMediaRouter", 3);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:12:0x00bd  */
-    /* JADX WARN: Removed duplicated region for block: B:15:0x00df  */
-    /* JADX WARN: Removed duplicated region for block: B:18:0x00f1  */
+    /* JADX WARN: Removed duplicated region for block: B:12:0x00bf  */
+    /* JADX WARN: Removed duplicated region for block: B:15:0x00e1  */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x00f3  */
     /* JADX WARN: Removed duplicated region for block: B:21:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x00c3  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x00c5  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public e(Context context) {
         boolean z10;
-        s sVar;
-        a1 a1Var;
-        b1 b1Var = new b1();
-        b1Var.c = 0;
-        b1Var.d = 3;
-        this.n = b1Var;
-        int i9 = 6;
-        this.o = new k5.i(this, i9);
-        this.E = new xa.c(this, 7);
+        t tVar;
+        b1 b1Var;
+        a4.k kVar = new a4.k();
+        kVar.c = 0;
+        kVar.d = 3;
+        this.n = kVar;
+        this.o = new ha.c(this, 8);
+        this.E = new o1(this, 5);
         this.h = context;
         this.p = ((ActivityManager) context.getSystemService("activity")).isLowRamDevice();
         int i10 = Build.VERSION.SDK_INT;
         if (i10 >= 30) {
-            int i11 = k0.a;
-            Intent intent = new Intent(context, (Class<?>) k0.class);
+            int i11 = l0.a;
+            Intent intent = new Intent(context, (Class<?>) l0.class);
             intent.setPackage(context.getPackageName());
             if (context.getPackageManager().queryBroadcastReceivers(intent, 0).size() > 0) {
                 z10 = true;
@@ -98,20 +99,20 @@ public final class e {
                 Intent intent2 = new Intent(context, (Class<?>) c1.class);
                 intent2.setPackage(context.getPackageName());
                 context.getPackageManager().queryBroadcastReceivers(intent2, 0).size();
-                this.r = (i10 >= 30 || !z10) ? null : new l(context, new fa.c(this, i9));
-                p0 l0Var = i10 < 24 ? new l0(context, this) : new p0(context, this);
-                this.s = l0Var;
-                this.t = new d0(new af.e(this, 16));
-                a(l0Var, true);
-                sVar = this.r;
-                if (sVar != null) {
-                    a(sVar, true);
+                this.r = (i10 >= 30 || !z10) ? null : new l(context, new za.c(this, 6));
+                q0 m0Var = i10 < 24 ? new m0(context, this) : new q0(context, this);
+                this.s = m0Var;
+                this.t = new e0(new a4.g(this, 22));
+                a(m0Var, true);
+                tVar = this.r;
+                if (tVar != null) {
+                    a(tVar, true);
                 }
-                a1Var = new a1(context, this);
-                this.c = a1Var;
-                Handler handler = (Handler) a1Var.d;
-                if (a1Var.a) {
-                    a1Var.a = true;
+                b1Var = new b1(context, this);
+                this.c = b1Var;
+                Handler handler = (Handler) b1Var.d;
+                if (b1Var.a) {
+                    b1Var.a = true;
                     IntentFilter intentFilter = new IntentFilter();
                     intentFilter.addAction("android.intent.action.PACKAGE_ADDED");
                     intentFilter.addAction("android.intent.action.PACKAGE_REMOVED");
@@ -119,8 +120,8 @@ public final class e {
                     intentFilter.addAction("android.intent.action.PACKAGE_REPLACED");
                     intentFilter.addAction("android.intent.action.PACKAGE_RESTARTED");
                     intentFilter.addDataScheme("package");
-                    ((Context) a1Var.b).registerReceiver((androidx.mediarouter.app.h) a1Var.g, intentFilter, null, handler);
-                    handler.post((androidx.activity.i) a1Var.h);
+                    ((Context) b1Var.b).registerReceiver((af.c) b1Var.g, intentFilter, null, handler);
+                    handler.post((q1) b1Var.h);
                     return;
                 }
                 return;
@@ -132,117 +133,117 @@ public final class e {
         Intent intent22 = new Intent(context, (Class<?>) c1.class);
         intent22.setPackage(context.getPackageName());
         context.getPackageManager().queryBroadcastReceivers(intent22, 0).size();
-        this.r = (i10 >= 30 || !z10) ? null : new l(context, new fa.c(this, i9));
+        this.r = (i10 >= 30 || !z10) ? null : new l(context, new za.c(this, 6));
         if (i10 < 24) {
         }
-        this.s = l0Var;
-        this.t = new d0(new af.e(this, 16));
-        a(l0Var, true);
-        sVar = this.r;
-        if (sVar != null) {
+        this.s = m0Var;
+        this.t = new e0(new a4.g(this, 22));
+        a(m0Var, true);
+        tVar = this.r;
+        if (tVar != null) {
         }
-        a1Var = new a1(context, this);
-        this.c = a1Var;
-        Handler handler2 = (Handler) a1Var.d;
-        if (a1Var.a) {
-        }
-    }
-
-    public final void a(s sVar, boolean z10) {
-        if (d(sVar) == null) {
-            z zVar = new z(sVar, z10);
-            this.l.add(zVar);
-            this.a.b(513, zVar);
-            m(zVar, (t) sVar.n);
-            c0.b();
-            sVar.f = this.o;
-            sVar.h(this.z);
+        b1Var = new b1(context, this);
+        this.c = b1Var;
+        Handler handler2 = (Handler) b1Var.d;
+        if (b1Var.a) {
         }
     }
 
-    public final String b(z zVar, String str) {
-        String flattenToShortString = ((ComponentName) zVar.d.b).flattenToShortString();
-        boolean z10 = zVar.c;
-        String z11 = z10 ? str : aa.d.z(flattenToShortString, ":", str);
+    public final void a(t tVar, boolean z10) {
+        if (d(tVar) == null) {
+            a0 a0Var = new a0(tVar, z10);
+            this.l.add(a0Var);
+            this.a.b(513, a0Var);
+            m(a0Var, (u) tVar.n);
+            d0.b();
+            tVar.f = this.o;
+            tVar.h(this.z);
+        }
+    }
+
+    public final String b(a0 a0Var, String str) {
+        String flattenToShortString = ((ComponentName) a0Var.d.b).flattenToShortString();
+        boolean z10 = a0Var.c;
+        String y8 = z10 ? str : a4.w.y(flattenToShortString, ":", str);
         HashMap hashMap = this.k;
         if (!z10) {
             ArrayList arrayList = this.j;
             int size = arrayList.size();
-            int i9 = 0;
+            int i10 = 0;
             while (true) {
-                if (i9 >= size) {
-                    i9 = -1;
+                if (i10 >= size) {
+                    i10 = -1;
                     break;
                 }
-                if (((a0) arrayList.get(i9)).c.equals(z11)) {
+                if (((b0) arrayList.get(i10)).c.equals(y8)) {
                     break;
                 }
-                i9++;
+                i10++;
             }
-            if (i9 >= 0) {
-                Log.w("GlobalMediaRouter", j2.h("Either ", str, " isn't unique in ", flattenToShortString, " or we're trying to assign a unique ID for an already added route"));
-                int i10 = 2;
+            if (i10 >= 0) {
+                Log.w("GlobalMediaRouter", th.j("Either ", str, " isn't unique in ", flattenToShortString, " or we're trying to assign a unique ID for an already added route"));
+                int i11 = 2;
                 while (true) {
                     Locale locale = Locale.US;
-                    String str2 = z11 + "_" + i10;
+                    String str2 = y8 + "_" + i11;
                     int size2 = arrayList.size();
-                    int i11 = 0;
+                    int i12 = 0;
                     while (true) {
-                        if (i11 >= size2) {
-                            i11 = -1;
+                        if (i12 >= size2) {
+                            i12 = -1;
                             break;
                         }
-                        if (((a0) arrayList.get(i11)).c.equals(str2)) {
+                        if (((b0) arrayList.get(i12)).c.equals(str2)) {
                             break;
                         }
-                        i11++;
+                        i12++;
                     }
-                    if (i11 < 0) {
+                    if (i12 < 0) {
                         hashMap.put(new q0.b(flattenToShortString, str), str2);
                         return str2;
                     }
-                    i10++;
+                    i11++;
                 }
             }
         }
-        hashMap.put(new q0.b(flattenToShortString, str), z11);
-        return z11;
+        hashMap.put(new q0.b(flattenToShortString, str), y8);
+        return y8;
     }
 
-    public final a0 c() {
+    public final b0 c() {
         ArrayList arrayList = this.j;
         int size = arrayList.size();
-        int i9 = 0;
-        while (i9 < size) {
-            Object obj = arrayList.get(i9);
-            i9++;
-            a0 a0Var = (a0) obj;
-            if (a0Var != this.v && a0Var.c() == this.s && a0Var.m("android.media.intent.category.LIVE_AUDIO") && !a0Var.m("android.media.intent.category.LIVE_VIDEO") && a0Var.f()) {
-                return a0Var;
+        int i10 = 0;
+        while (i10 < size) {
+            Object obj = arrayList.get(i10);
+            i10++;
+            b0 b0Var = (b0) obj;
+            if (b0Var != this.v && b0Var.c() == this.s && b0Var.m("android.media.intent.category.LIVE_AUDIO") && !b0Var.m("android.media.intent.category.LIVE_VIDEO") && b0Var.f()) {
+                return b0Var;
             }
         }
         return this.v;
     }
 
-    public final z d(s sVar) {
+    public final a0 d(t tVar) {
         ArrayList arrayList = this.l;
         int size = arrayList.size();
-        int i9 = 0;
-        while (i9 < size) {
-            Object obj = arrayList.get(i9);
-            i9++;
-            z zVar = (z) obj;
-            if (zVar.a == sVar) {
-                return zVar;
+        int i10 = 0;
+        while (i10 < size) {
+            Object obj = arrayList.get(i10);
+            i10++;
+            a0 a0Var = (a0) obj;
+            if (a0Var.a == tVar) {
+                return a0Var;
             }
         }
         return null;
     }
 
-    public final a0 e() {
-        a0 a0Var = this.d;
-        if (a0Var != null) {
-            return a0Var;
+    public final b0 e() {
+        b0 b0Var = this.d;
+        if (b0Var != null) {
+            return b0Var;
         }
         throw new IllegalStateException("There is no currently selected route.  The media router has not yet been fully initialized.");
     }
@@ -251,56 +252,56 @@ public final class e {
         if (!this.q) {
             return false;
         }
-        f0 f0Var = this.u;
-        return f0Var == null || f0Var.b;
+        g0 g0Var = this.u;
+        return g0Var == null || g0Var.b;
     }
 
     public final void g() {
         if (this.d.e()) {
-            List<a0> unmodifiableList = DesugarCollections.unmodifiableList(this.d.v);
+            List<b0> unmodifiableList = DesugarCollections.unmodifiableList(this.d.v);
             HashSet hashSet = new HashSet();
             Iterator it = unmodifiableList.iterator();
             while (it.hasNext()) {
-                hashSet.add(((a0) it.next()).c);
+                hashSet.add(((b0) it.next()).c);
             }
             HashMap hashMap = this.b;
             Iterator it2 = hashMap.entrySet().iterator();
             while (it2.hasNext()) {
                 Map.Entry entry = (Map.Entry) it2.next();
                 if (!hashSet.contains(entry.getKey())) {
-                    r rVar = (r) entry.getValue();
-                    rVar.h(0);
-                    rVar.d();
+                    s sVar = (s) entry.getValue();
+                    sVar.h(0);
+                    sVar.d();
                     it2.remove();
                 }
             }
-            for (a0 a0Var : unmodifiableList) {
-                if (!hashMap.containsKey(a0Var.c)) {
-                    r e10 = a0Var.c().e(a0Var.b, this.d.b);
+            for (b0 b0Var : unmodifiableList) {
+                if (!hashMap.containsKey(b0Var.c)) {
+                    s e10 = b0Var.c().e(b0Var.b, this.d.b);
                     e10.e();
-                    hashMap.put(a0Var.c, e10);
+                    hashMap.put(b0Var.c, e10);
                 }
             }
         }
     }
 
-    public final void h(e eVar, a0 a0Var, r rVar, int i9, a0 a0Var2, Collection collection) {
+    public final void h(e eVar, b0 b0Var, s sVar, int i10, b0 b0Var2, Collection collection) {
         com.google.android.gms.internal.cast.p pVar;
-        y yVar = this.g;
-        if (yVar != null) {
-            yVar.a();
+        z zVar = this.g;
+        if (zVar != null) {
+            zVar.a();
             this.g = null;
         }
-        y yVar2 = new y(eVar, a0Var, rVar, i9, a0Var2, collection);
-        this.g = yVar2;
-        if (yVar2.b != 3 || (pVar = this.f) == null) {
-            yVar2.b();
+        z zVar2 = new z(eVar, b0Var, sVar, i10, b0Var2, collection);
+        this.g = zVar2;
+        if (zVar2.b != 3 || (pVar = this.f) == null) {
+            zVar2.b();
             return;
         }
-        a0 a0Var3 = this.d;
-        a0 a0Var4 = (a0) yVar2.g;
-        int i10 = 1;
-        com.google.android.gms.internal.cast.p.c.b("Prepare transfer from Route(%s) to Route(%s)", a0Var3, a0Var4);
+        b0 b0Var3 = this.d;
+        b0 b0Var4 = (b0) zVar2.g;
+        int i11 = 1;
+        com.google.android.gms.internal.cast.p.c.b("Prepare transfer from Route(%s) to Route(%s)", b0Var3, b0Var4);
         c0.i iVar = new c0.i();
         iVar.c = new c0.l();
         c0.k kVar = new c0.k(iVar);
@@ -308,107 +309,107 @@ public final class e {
         iVar.b = kVar;
         iVar.a = com.google.android.gms.internal.cast.o.class;
         try {
-            iVar.a = Boolean.valueOf(pVar.b.post(new af.f(pVar, a0Var3, a0Var4, iVar, false, 3)));
+            iVar.a = Boolean.valueOf(pVar.b.post(new p(pVar, b0Var3, b0Var4, iVar, false, 2)));
         } catch (Exception e10) {
             jVar.l(e10);
         }
-        y yVar3 = this.g;
-        e eVar2 = (e) ((WeakReference) yVar3.j).get();
-        if (eVar2 == null || eVar2.g != yVar3) {
+        z zVar3 = this.g;
+        e eVar2 = (e) ((WeakReference) zVar3.j).get();
+        if (eVar2 == null || eVar2.g != zVar3) {
             Log.w("AxMediaRouter", "Router is released. Cancel transfer");
-            yVar3.a();
+            zVar3.a();
         } else {
-            if (((c0.k) yVar3.k) != null) {
+            if (((c0.k) zVar3.k) != null) {
                 throw new IllegalStateException("future is already set");
             }
-            yVar3.k = kVar;
-            af.e eVar3 = new af.e(yVar3, 18);
+            zVar3.k = kVar;
+            a4.g gVar = new a4.g(zVar3, 24);
             b bVar = eVar2.a;
             Objects.requireNonNull(bVar);
-            jVar.c(eVar3, new f(bVar, i10));
+            jVar.c(gVar, new f(bVar, i11));
         }
     }
 
-    public final void i(a0 a0Var, int i9) {
-        if (!this.j.contains(a0Var)) {
-            Log.w("GlobalMediaRouter", "Ignoring attempt to select removed route: " + a0Var);
+    public final void i(b0 b0Var, int i10) {
+        if (!this.j.contains(b0Var)) {
+            Log.w("GlobalMediaRouter", "Ignoring attempt to select removed route: " + b0Var);
         } else {
-            if (!a0Var.g) {
-                Log.w("GlobalMediaRouter", "Ignoring attempt to select disabled route: " + a0Var);
+            if (!b0Var.g) {
+                Log.w("GlobalMediaRouter", "Ignoring attempt to select disabled route: " + b0Var);
                 return;
             }
             if (Build.VERSION.SDK_INT >= 30) {
-                s c10 = a0Var.c();
+                t c3 = b0Var.c();
                 l lVar = this.r;
-                if (c10 == lVar && this.d != a0Var) {
-                    lVar.s(a0Var.b);
+                if (c3 == lVar && this.d != b0Var) {
+                    lVar.s(b0Var.b);
                     return;
                 }
             }
-            j(a0Var, i9);
+            j(b0Var, i10);
         }
     }
 
-    public final void j(a0 a0Var, int i9) {
-        t tVar;
-        if (this.d == a0Var) {
+    public final void j(b0 b0Var, int i10) {
+        u uVar;
+        if (this.d == b0Var) {
             return;
         }
         if (this.x != null) {
             this.x = null;
-            q qVar = this.y;
-            if (qVar != null) {
-                qVar.h(3);
+            r rVar = this.y;
+            if (rVar != null) {
+                rVar.h(3);
                 this.y.d();
                 this.y = null;
             }
         }
-        if (f() && (tVar = a0Var.a.e) != null && tVar.b) {
-            q c10 = a0Var.c().c(a0Var.b);
-            if (c10 != null) {
+        if (f() && (uVar = b0Var.a.e) != null && uVar.b) {
+            r c3 = b0Var.c().c(b0Var.b);
+            if (c3 != null) {
                 Executor e10 = f0.e.e(this.h);
-                xa.c cVar = this.E;
-                synchronized (c10.a) {
+                o1 o1Var = this.E;
+                synchronized (c3.a) {
                     try {
                         if (e10 == null) {
                             throw new NullPointerException("Executor shouldn't be null");
                         }
-                        if (cVar == null) {
+                        if (o1Var == null) {
                             throw new NullPointerException("Listener shouldn't be null");
                         }
-                        c10.b = e10;
-                        c10.c = cVar;
-                        ArrayList arrayList = c10.e;
+                        c3.b = e10;
+                        c3.c = o1Var;
+                        ArrayList arrayList = c3.e;
                         if (arrayList != null && !arrayList.isEmpty()) {
-                            n nVar = c10.d;
-                            ArrayList arrayList2 = c10.e;
-                            c10.d = null;
-                            c10.e = null;
-                            c10.b.execute(new af.f(c10, cVar, nVar, arrayList2, 1));
+                            n nVar = c3.d;
+                            ArrayList arrayList2 = c3.e;
+                            c3.d = null;
+                            c3.e = null;
+                            c3.b.execute(new p(c3, o1Var, nVar, arrayList2, 0));
                         }
-                    } catch (Throwable th) {
-                        throw th;
+                    } catch (Throwable th2) {
+                        throw th2;
                     }
                 }
-                this.x = a0Var;
-                this.y = c10;
-                c10.e();
+                this.x = b0Var;
+                this.y = c3;
+                c3.e();
                 return;
             }
-            Log.w("GlobalMediaRouter", "setSelectedRouteInternal: Failed to create dynamic group route controller. route=" + a0Var);
+            Log.w("GlobalMediaRouter", "setSelectedRouteInternal: Failed to create dynamic group route controller. route=" + b0Var);
         }
-        r d = a0Var.c().d(a0Var.b);
+        s d = b0Var.c().d(b0Var.b);
         if (d != null) {
             d.e();
         }
         if (this.d != null) {
-            h(this, a0Var, d, i9, null, null);
+            h(this, b0Var, d, i10, null, null);
             return;
         }
-        this.d = a0Var;
+        this.d = b0Var;
         this.e = d;
-        Message obtainMessage = this.a.obtainMessage(262, new q0.b(null, a0Var));
-        obtainMessage.arg1 = i9;
+        Message obtainMessage = this.a.obtainMessage(262, new q0.b(null, b0Var));
+        obtainMessage.arg1 = i10;
         obtainMessage.sendToTarget();
     }
 
@@ -421,45 +422,45 @@ public final class e {
     */
     public final void k() {
         long j10;
-        u uVar;
+        v vVar;
         ArrayList arrayList;
-        u uVar2 = new u();
-        d0 d0Var = this.t;
+        v vVar2 = new v();
+        e0 e0Var = this.t;
         long j11 = 0;
-        d0Var.b = 0L;
-        d0Var.a = false;
-        d0Var.c = SystemClock.elapsedRealtime();
-        ((Handler) d0Var.d).removeCallbacks((af.e) d0Var.e);
+        e0Var.b = 0L;
+        e0Var.a = false;
+        e0Var.c = SystemClock.elapsedRealtime();
+        ((Handler) e0Var.d).removeCallbacks((a4.g) e0Var.e);
         ArrayList arrayList2 = this.i;
         int size = arrayList2.size();
-        int i9 = 0;
+        int i10 = 0;
         boolean z10 = false;
         while (true) {
             size--;
             boolean z11 = this.p;
             if (size < 0) {
-                u uVar3 = uVar2;
+                v vVar3 = vVar2;
                 long j12 = j11;
-                d0 d0Var2 = this.t;
-                if (d0Var2.a) {
-                    long j13 = d0Var2.b;
+                e0 e0Var2 = this.t;
+                if (e0Var2.a) {
+                    long j13 = e0Var2.b;
                     if (j13 > j12) {
-                        ((Handler) d0Var2.d).postDelayed((af.e) d0Var2.e, j13);
+                        ((Handler) e0Var2.d).postDelayed((a4.g) e0Var2.e, j13);
                     }
                 }
-                boolean z12 = d0Var2.a;
-                this.B = i9;
-                v a2 = z10 ? uVar3.a() : v.c;
-                v a3 = uVar3.a();
+                boolean z12 = e0Var2.a;
+                this.B = i10;
+                w a2 = z10 ? vVar3.a() : w.c;
+                w a10 = vVar3.a();
                 if (f()) {
                     o oVar = this.A;
                     if (oVar != null) {
                         oVar.a();
-                        if (oVar.b.equals(a3)) {
+                        if (oVar.b.equals(a10)) {
                         }
                     }
-                    if (!a3.d() || z12) {
-                        this.A = new o(a3, z12);
+                    if (!a10.d() || z12) {
+                        this.A = new o(a10, z12);
                     } else if (this.A != null) {
                         this.A = null;
                     }
@@ -484,147 +485,147 @@ public final class e {
                 }
                 ArrayList arrayList3 = this.l;
                 int size2 = arrayList3.size();
-                int i10 = 0;
-                while (i10 < size2) {
-                    Object obj = arrayList3.get(i10);
-                    i10++;
-                    s sVar = ((z) obj).a;
-                    if (sVar != this.r) {
-                        sVar.h(this.z);
+                int i11 = 0;
+                while (i11 < size2) {
+                    Object obj = arrayList3.get(i11);
+                    i11++;
+                    t tVar = ((a0) obj).a;
+                    if (tVar != this.r) {
+                        tVar.h(this.z);
                     }
                 }
                 return;
             }
-            c0 c0Var = (c0) ((WeakReference) arrayList2.get(size)).get();
-            if (c0Var == null) {
+            d0 d0Var = (d0) ((WeakReference) arrayList2.get(size)).get();
+            if (d0Var == null) {
                 arrayList2.remove(size);
             } else {
-                ArrayList arrayList4 = c0Var.b;
+                ArrayList arrayList4 = d0Var.b;
                 int size3 = arrayList4.size();
-                i9 += size3;
-                int i11 = 0;
-                while (i11 < size3) {
-                    x xVar = (x) arrayList4.get(i11);
-                    v vVar = xVar.c;
-                    if (vVar == null) {
+                i10 += size3;
+                int i12 = 0;
+                while (i12 < size3) {
+                    y yVar = (y) arrayList4.get(i12);
+                    w wVar = yVar.c;
+                    if (wVar == null) {
                         throw new IllegalArgumentException("selector must not be null");
                     }
-                    ArrayList c10 = vVar.c();
-                    if (c10.isEmpty()) {
+                    ArrayList c3 = wVar.c();
+                    if (c3.isEmpty()) {
                         j10 = j11;
                     } else {
-                        int size4 = c10.size();
+                        int size4 = c3.size();
                         j10 = j11;
-                        int i12 = 0;
-                        while (i12 < size4) {
-                            Object obj2 = c10.get(i12);
-                            i12++;
+                        int i13 = 0;
+                        while (i13 < size4) {
+                            Object obj2 = c3.get(i13);
+                            i13++;
                             String str = (String) obj2;
                             if (str == null) {
                                 throw new IllegalArgumentException("category must not be null");
                             }
-                            if (uVar2.a == null) {
-                                uVar2.a = new ArrayList();
+                            if (vVar2.a == null) {
+                                vVar2.a = new ArrayList();
                             }
-                            if (!uVar2.a.contains(str)) {
-                                uVar2.a.add(str);
+                            if (!vVar2.a.contains(str)) {
+                                vVar2.a.add(str);
                             }
                         }
                     }
-                    boolean z13 = (xVar.d & 1) != 0;
-                    long j14 = xVar.e;
-                    d0 d0Var3 = this.t;
+                    boolean z13 = (yVar.d & 1) != 0;
+                    long j14 = yVar.e;
+                    e0 e0Var3 = this.t;
                     if (z13) {
-                        uVar = uVar2;
+                        vVar = vVar2;
                         arrayList = arrayList2;
-                        long j15 = d0Var3.c;
+                        long j15 = e0Var3.c;
                         if (j15 - j14 < 30000) {
-                            d0Var3.b = Math.max(d0Var3.b, (j14 + 30000) - j15);
-                            d0Var3.a = true;
+                            e0Var3.b = Math.max(e0Var3.b, (j14 + 30000) - j15);
+                            e0Var3.a = true;
                         }
                     } else {
-                        d0Var3.getClass();
-                        uVar = uVar2;
+                        e0Var3.getClass();
+                        vVar = vVar2;
                         arrayList = arrayList2;
                     }
                     if (z13) {
                         z10 = true;
                     }
-                    int i13 = xVar.d;
-                    if ((i13 & 4) != 0 && !z11) {
+                    int i14 = yVar.d;
+                    if ((i14 & 4) != 0 && !z11) {
                         z10 = true;
                     }
-                    if ((i13 & 8) != 0) {
+                    if ((i14 & 8) != 0) {
                         z10 = true;
                     }
-                    i11++;
+                    i12++;
                     j11 = j10;
-                    uVar2 = uVar;
+                    vVar2 = vVar;
                     arrayList2 = arrayList;
                 }
             }
             j11 = j11;
-            uVar2 = uVar2;
+            vVar2 = vVar2;
             arrayList2 = arrayList2;
         }
     }
 
     public final void l() {
-        a0 a0Var = this.d;
-        if (a0Var == null) {
-            a5.m mVar = this.C;
-            if (mVar != null) {
-                mVar.g();
+        b0 b0Var = this.d;
+        if (b0Var == null) {
+            androidx.biometric.e eVar = this.C;
+            if (eVar != null) {
+                eVar.g();
                 return;
             }
             return;
         }
-        int i9 = a0Var.p;
-        b1 b1Var = this.n;
-        b1Var.a = i9;
-        b1Var.b = a0Var.q;
-        b1Var.c = (!a0Var.e() || c0.g()) ? a0Var.o : 0;
-        b1Var.d = this.d.m;
+        int i10 = b0Var.p;
+        a4.k kVar = this.n;
+        kVar.a = i10;
+        kVar.b = b0Var.q;
+        kVar.c = (!b0Var.e() || d0.g()) ? b0Var.o : 0;
+        kVar.d = this.d.m;
         if (f() && this.d.c() == this.r) {
-            b1Var.e = l.p(this.e);
+            kVar.e = l.p(this.e);
         } else {
-            b1Var.e = null;
+            kVar.e = null;
         }
         ArrayList arrayList = this.m;
         if (arrayList.size() > 0) {
             ((d) arrayList.get(0)).getClass();
             throw null;
         }
-        a5.m mVar2 = this.C;
-        if (mVar2 != null) {
-            a0 a0Var2 = this.d;
-            a0 a0Var3 = this.v;
-            if (a0Var3 == null) {
+        androidx.biometric.e eVar2 = this.C;
+        if (eVar2 != null) {
+            b0 b0Var2 = this.d;
+            b0 b0Var3 = this.v;
+            if (b0Var3 == null) {
                 throw new IllegalStateException("There is no default route.  The media router has not yet been fully initialized.");
             }
-            if (a0Var2 == a0Var3 || a0Var2 == this.w) {
-                mVar2.g();
+            if (b0Var2 == b0Var3 || b0Var2 == this.w) {
+                eVar2.g();
                 return;
             }
-            int i10 = b1Var.c == 1 ? 2 : 0;
-            int i11 = b1Var.b;
-            int i12 = b1Var.a;
-            String str = (String) b1Var.e;
-            android.support.v4.media.session.d0 d0Var = (android.support.v4.media.session.d0) mVar2.b;
+            int i11 = kVar.c == 1 ? 2 : 0;
+            int i12 = kVar.b;
+            int i13 = kVar.a;
+            String str = (String) kVar.e;
+            android.support.v4.media.session.d0 d0Var = (android.support.v4.media.session.d0) eVar2.b;
             if (d0Var != null) {
-                androidx.emoji2.text.o oVar = (androidx.emoji2.text.o) mVar2.c;
-                if (oVar != null && i10 == 0 && i11 == 0) {
-                    oVar.c = i12;
-                    y1.g.a(oVar.c(), i12);
+                androidx.emoji2.text.o oVar = (androidx.emoji2.text.o) eVar2.c;
+                if (oVar != null && i11 == 0 && i12 == 0) {
+                    oVar.c = i13;
+                    y1.g.a(oVar.c(), i13);
                     return;
                 }
                 androidx.emoji2.text.o oVar2 = new androidx.emoji2.text.o();
-                oVar2.f = mVar2;
-                oVar2.a = i10;
-                oVar2.b = i11;
-                oVar2.c = i12;
+                oVar2.f = eVar2;
+                oVar2.a = i11;
+                oVar2.b = i12;
+                oVar2.c = i13;
                 oVar2.d = str;
-                mVar2.c = oVar2;
+                eVar2.c = oVar2;
                 d0Var.a.a.setPlaybackToRemote(oVar2.c());
             }
         }
@@ -632,38 +633,38 @@ public final class e {
 
     /* JADX WARN: Code restructure failed: missing block: B:14:0x0039, code lost:
     
-        if (r21 == ((c2.t) r19.s.n)) goto L18;
+        if (r21 == ((c2.u) r19.s.n)) goto L18;
      */
     /* JADX WARN: Removed duplicated region for block: B:78:0x0191 A[LOOP:5: B:77:0x018f->B:78:0x0191, LOOP_END] */
     /* JADX WARN: Removed duplicated region for block: B:82:0x01ac A[LOOP:6: B:81:0x01aa->B:82:0x01ac, LOOP_END] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void m(z zVar, t tVar) {
+    public final void m(a0 a0Var, u uVar) {
         boolean z10;
-        int i9;
+        int i10;
         int size;
         int size2;
         Iterator it;
         boolean z11;
-        t tVar2 = zVar.e;
-        ArrayList arrayList = zVar.b;
-        if (tVar2 != tVar) {
-            zVar.e = tVar;
+        u uVar2 = a0Var.e;
+        ArrayList arrayList = a0Var.b;
+        if (uVar2 != uVar) {
+            a0Var.e = uVar;
             ArrayList arrayList2 = this.j;
             b bVar = this.a;
-            if (tVar != null) {
-                List list = (List) tVar.c;
+            if (uVar != null) {
+                List list = (List) uVar.c;
                 int size3 = list.size();
-                for (int i10 = 0; i10 < size3; i10++) {
-                    n nVar = (n) list.get(i10);
+                for (int i11 = 0; i11 < size3; i11++) {
+                    n nVar = (n) list.get(i11);
                     if (nVar != null && nVar.e()) {
                     }
                 }
                 ArrayList arrayList3 = new ArrayList();
                 ArrayList arrayList4 = new ArrayList();
                 Iterator it2 = list.iterator();
-                int i11 = 0;
+                int i12 = 0;
                 boolean z12 = false;
                 while (it2.hasNext()) {
                     n nVar2 = (n) it2.next();
@@ -674,47 +675,47 @@ public final class e {
                     } else {
                         String d = nVar2.d();
                         int size4 = arrayList.size();
-                        int i12 = 0;
+                        int i13 = 0;
                         while (true) {
-                            if (i12 >= size4) {
-                                i12 = -1;
+                            if (i13 >= size4) {
+                                i13 = -1;
                                 break;
-                            } else if (((a0) arrayList.get(i12)).b.equals(d)) {
+                            } else if (((b0) arrayList.get(i13)).b.equals(d)) {
                                 break;
                             } else {
-                                i12++;
+                                i13++;
                             }
                         }
-                        if (i12 < 0) {
+                        if (i13 < 0) {
                             it = it2;
                             z11 = z12;
-                            a0 a0Var = new a0(zVar, d, b(zVar, d), nVar2.a.getBoolean("isSystemRoute", false));
-                            int i13 = i11 + 1;
-                            arrayList.add(i11, a0Var);
-                            arrayList2.add(a0Var);
+                            b0 b0Var = new b0(a0Var, d, b(a0Var, d), nVar2.a.getBoolean("isSystemRoute", false));
+                            int i14 = i12 + 1;
+                            arrayList.add(i12, b0Var);
+                            arrayList2.add(b0Var);
                             if (nVar2.c().isEmpty()) {
-                                a0Var.i(nVar2);
-                                bVar.b(257, a0Var);
+                                b0Var.i(nVar2);
+                                bVar.b(257, b0Var);
                             } else {
-                                arrayList3.add(new q0.b(a0Var, nVar2));
+                                arrayList3.add(new q0.b(b0Var, nVar2));
                             }
-                            i11 = i13;
+                            i12 = i14;
                         } else {
                             it = it2;
                             z11 = z12;
-                            if (i12 < i11) {
+                            if (i13 < i12) {
                                 Log.w("GlobalMediaRouter", "Ignoring route descriptor with duplicate id: " + nVar2);
                             } else {
-                                a0 a0Var2 = (a0) arrayList.get(i12);
-                                int i14 = i11 + 1;
-                                Collections.swap(arrayList, i12, i11);
+                                b0 b0Var2 = (b0) arrayList.get(i13);
+                                int i15 = i12 + 1;
+                                Collections.swap(arrayList, i13, i12);
                                 if (!nVar2.c().isEmpty()) {
-                                    arrayList4.add(new q0.b(a0Var2, nVar2));
-                                } else if (n(a0Var2, nVar2) != 0 && a0Var2 == this.d) {
-                                    i11 = i14;
+                                    arrayList4.add(new q0.b(b0Var2, nVar2));
+                                } else if (n(b0Var2, nVar2) != 0 && b0Var2 == this.d) {
+                                    i12 = i15;
                                     z11 = true;
                                 }
-                                i11 = i14;
+                                i12 = i15;
                             }
                         }
                     }
@@ -722,121 +723,121 @@ public final class e {
                     z12 = z11;
                 }
                 boolean z13 = z12;
-                int i15 = 0;
-                int size5 = arrayList3.size();
                 int i16 = 0;
-                while (i16 < size5) {
-                    Object obj = arrayList3.get(i16);
-                    i16++;
+                int size5 = arrayList3.size();
+                int i17 = 0;
+                while (i17 < size5) {
+                    Object obj = arrayList3.get(i17);
+                    i17++;
                     q0.b bVar2 = (q0.b) obj;
-                    a0 a0Var3 = (a0) bVar2.a;
-                    a0Var3.i((n) bVar2.b);
-                    bVar.b(257, a0Var3);
+                    b0 b0Var3 = (b0) bVar2.a;
+                    b0Var3.i((n) bVar2.b);
+                    bVar.b(257, b0Var3);
                 }
                 int size6 = arrayList4.size();
                 boolean z14 = z13;
-                while (i15 < size6) {
-                    Object obj2 = arrayList4.get(i15);
-                    i15++;
+                while (i16 < size6) {
+                    Object obj2 = arrayList4.get(i16);
+                    i16++;
                     q0.b bVar3 = (q0.b) obj2;
-                    a0 a0Var4 = (a0) bVar3.a;
-                    if (n(a0Var4, (n) bVar3.b) != 0 && a0Var4 == this.d) {
+                    b0 b0Var4 = (b0) bVar3.a;
+                    if (n(b0Var4, (n) bVar3.b) != 0 && b0Var4 == this.d) {
                         z14 = true;
                     }
                 }
                 z10 = z14;
-                i9 = i11;
-                for (size = arrayList.size() - 1; size >= i9; size--) {
-                    a0 a0Var5 = (a0) arrayList.get(size);
-                    a0Var5.i(null);
-                    arrayList2.remove(a0Var5);
+                i10 = i12;
+                for (size = arrayList.size() - 1; size >= i10; size--) {
+                    b0 b0Var5 = (b0) arrayList.get(size);
+                    b0Var5.i(null);
+                    arrayList2.remove(b0Var5);
                 }
                 o(z10);
-                for (size2 = arrayList.size() - 1; size2 >= i9; size2--) {
-                    bVar.b(258, (a0) arrayList.remove(size2));
+                for (size2 = arrayList.size() - 1; size2 >= i10; size2--) {
+                    bVar.b(258, (b0) arrayList.remove(size2));
                 }
-                bVar.b(515, zVar);
+                bVar.b(515, a0Var);
             }
             z10 = false;
-            Log.w("GlobalMediaRouter", "Ignoring invalid provider descriptor: " + tVar);
-            i9 = 0;
-            while (size >= i9) {
+            Log.w("GlobalMediaRouter", "Ignoring invalid provider descriptor: " + uVar);
+            i10 = 0;
+            while (size >= i10) {
             }
             o(z10);
-            while (size2 >= i9) {
+            while (size2 >= i10) {
             }
-            bVar.b(515, zVar);
+            bVar.b(515, a0Var);
         }
     }
 
-    public final int n(a0 a0Var, n nVar) {
-        int i9 = a0Var.i(nVar);
-        if (i9 != 0) {
-            int i10 = i9 & 1;
+    public final int n(b0 b0Var, n nVar) {
+        int i10 = b0Var.i(nVar);
+        if (i10 != 0) {
+            int i11 = i10 & 1;
             b bVar = this.a;
-            if (i10 != 0) {
-                bVar.b(259, a0Var);
+            if (i11 != 0) {
+                bVar.b(259, b0Var);
             }
-            if ((i9 & 2) != 0) {
-                bVar.b(260, a0Var);
+            if ((i10 & 2) != 0) {
+                bVar.b(260, b0Var);
             }
-            if ((i9 & 4) != 0) {
-                bVar.b(261, a0Var);
+            if ((i10 & 4) != 0) {
+                bVar.b(261, b0Var);
             }
         }
-        return i9;
+        return i10;
     }
 
     public final void o(boolean z10) {
-        a0 a0Var = this.v;
-        if (a0Var != null && !a0Var.f()) {
+        b0 b0Var = this.v;
+        if (b0Var != null && !b0Var.f()) {
             Log.i("GlobalMediaRouter", "Clearing the default route because it is no longer selectable: " + this.v);
             this.v = null;
         }
-        a0 a0Var2 = this.v;
-        p0 p0Var = this.s;
+        b0 b0Var2 = this.v;
+        q0 q0Var = this.s;
         ArrayList arrayList = this.j;
-        if (a0Var2 == null) {
+        if (b0Var2 == null) {
             int size = arrayList.size();
-            int i9 = 0;
+            int i10 = 0;
             while (true) {
-                if (i9 >= size) {
+                if (i10 >= size) {
                     break;
                 }
-                Object obj = arrayList.get(i9);
-                i9++;
-                a0 a0Var3 = (a0) obj;
-                if (a0Var3.c() == p0Var && a0Var3.b.equals("DEFAULT_ROUTE") && a0Var3.f()) {
-                    this.v = a0Var3;
+                Object obj = arrayList.get(i10);
+                i10++;
+                b0 b0Var3 = (b0) obj;
+                if (b0Var3.c() == q0Var && b0Var3.b.equals("DEFAULT_ROUTE") && b0Var3.f()) {
+                    this.v = b0Var3;
                     Log.i("GlobalMediaRouter", "Found default route: " + this.v);
                     break;
                 }
             }
         }
-        a0 a0Var4 = this.w;
-        if (a0Var4 != null && !a0Var4.f()) {
+        b0 b0Var4 = this.w;
+        if (b0Var4 != null && !b0Var4.f()) {
             Log.i("GlobalMediaRouter", "Clearing the bluetooth route because it is no longer selectable: " + this.w);
             this.w = null;
         }
         if (this.w == null) {
             int size2 = arrayList.size();
-            int i10 = 0;
+            int i11 = 0;
             while (true) {
-                if (i10 >= size2) {
+                if (i11 >= size2) {
                     break;
                 }
-                Object obj2 = arrayList.get(i10);
-                i10++;
-                a0 a0Var5 = (a0) obj2;
-                if (a0Var5.c() == p0Var && a0Var5.m("android.media.intent.category.LIVE_AUDIO") && !a0Var5.m("android.media.intent.category.LIVE_VIDEO") && a0Var5.f()) {
-                    this.w = a0Var5;
+                Object obj2 = arrayList.get(i11);
+                i11++;
+                b0 b0Var5 = (b0) obj2;
+                if (b0Var5.c() == q0Var && b0Var5.m("android.media.intent.category.LIVE_AUDIO") && !b0Var5.m("android.media.intent.category.LIVE_VIDEO") && b0Var5.f()) {
+                    this.w = b0Var5;
                     Log.i("GlobalMediaRouter", "Found bluetooth route: " + this.w);
                     break;
                 }
             }
         }
-        a0 a0Var6 = this.d;
-        if (a0Var6 == null || !a0Var6.g) {
+        b0 b0Var6 = this.d;
+        if (b0Var6 == null || !b0Var6.g) {
             Log.i("GlobalMediaRouter", "Unselecting the current route because it is no longer selectable: " + this.d);
             j(c(), 0);
             return;

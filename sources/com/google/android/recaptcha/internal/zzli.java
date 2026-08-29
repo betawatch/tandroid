@@ -1,14 +1,13 @@
 package com.google.android.recaptcha.internal;
 
 import android.webkit.WebView;
-import g7.y5;
-import hd.t;
-import qc.c;
-import rc.a;
-import sc.i;
-import zc.p;
+import bd.p;
+import i7.c7;
+import jd.t;
+import sc.c;
+import uc.i;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 final class zzli extends i implements p {
     Object zza;
@@ -23,27 +22,27 @@ final class zzli extends i implements p {
         this.zzd = str;
     }
 
-    @Override // sc.a
+    @Override // uc.a
     public final c create(Object obj, c cVar) {
         return new zzli(this.zzc, this.zzd, cVar);
     }
 
-    @Override // zc.p
+    @Override // bd.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzli) create((zzgr) obj, (c) obj2)).invokeSuspend(oc.i.a);
+        return ((zzli) create((zzgr) obj, (c) obj2)).invokeSuspend(qc.i.a);
     }
 
-    @Override // sc.a
+    @Override // uc.a
     public final Object invokeSuspend(Object obj) {
         String zza;
-        a aVar = a.a;
+        tc.a aVar = tc.a.a;
         try {
             if (this.zzb != 0) {
                 String str = (String) this.zza;
-                y5.b(obj);
+                c7.b(obj);
                 zza = str;
             } else {
-                y5.b(obj);
+                c7.b(obj);
                 zzly zzlyVar = this.zzc;
                 zza = zzly.zzm(zzlyVar).zza();
                 this.zza = zza;
@@ -54,7 +53,7 @@ final class zzli extends i implements p {
                 }
             }
             ((WebView) obj).loadDataWithBaseURL(zza, this.zzd, "text/html", "utf-8", null);
-            return oc.i.a;
+            return qc.i.a;
         } catch (Exception e10) {
             zzcg zzcgVar = new zzcg(zzce.zzb, zzcd.zzU, e10.getMessage(), null, 8, null);
             ((t) this.zzc.zzz()).L(zzcgVar);

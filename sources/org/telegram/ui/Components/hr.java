@@ -1,54 +1,74 @@
 package org.telegram.ui.Components;
 
-import android.view.KeyEvent;
-import android.view.View;
-import android.widget.EditText;
+import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class hr implements Runnable {
+public final class hr implements Drawable.Callback {
     public final /* synthetic */ int a;
-    public final /* synthetic */ kr b;
+    public final /* synthetic */ ir b;
 
-    public /* synthetic */ hr(kr krVar, int i9) {
-        this.a = i9;
-        this.b = krVar;
+    public /* synthetic */ hr(ir irVar, int i10) {
+        this.a = i10;
+        this.b = irVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        View view;
+    @Override // android.graphics.drawable.Drawable.Callback
+    public final void invalidateDrawable(Drawable drawable) {
         switch (this.a) {
             case 0:
-                kr krVar = this.b;
-                if (krVar.b == null && (view = krVar.d) != null) {
-                    View findFocus = view.findFocus();
-                    if (findFocus instanceof EditText) {
-                        krVar.b = (EditText) findFocus;
-                    }
-                }
-                EditText editText = krVar.b;
-                if (editText != null) {
-                    if (editText.length() != 0 || krVar.e) {
-                        try {
-                            krVar.performHapticFeedback(3, 2);
-                            krVar.playSoundEffect(0);
-                        } catch (Exception unused) {
-                        }
-                        krVar.b.dispatchKeyEvent(new KeyEvent(0, 67));
-                        krVar.b.dispatchKeyEvent(new KeyEvent(1, 67));
-                        if (krVar.f) {
-                            krVar.postDelayed(krVar.h, 50L);
-                            break;
-                        }
-                    }
+                ir irVar = this.b;
+                if (irVar.c < 1.0f) {
+                    irVar.invalidateSelf();
+                    break;
                 }
                 break;
             default:
-                kr krVar2 = this.b;
-                krVar2.n = false;
-                krVar2.f = true;
-                krVar2.h.run();
+                ir irVar2 = this.b;
+                if (irVar2.c > 0.0f) {
+                    irVar2.invalidateSelf();
+                    break;
+                }
+                break;
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable.Callback
+    public final void scheduleDrawable(Drawable drawable, Runnable runnable, long j10) {
+        switch (this.a) {
+            case 0:
+                ir irVar = this.b;
+                if (irVar.c < 1.0f) {
+                    irVar.scheduleSelf(runnable, j10);
+                    break;
+                }
+                break;
+            default:
+                ir irVar2 = this.b;
+                if (irVar2.c > 0.0f) {
+                    irVar2.scheduleSelf(runnable, j10);
+                    break;
+                }
+                break;
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable.Callback
+    public final void unscheduleDrawable(Drawable drawable, Runnable runnable) {
+        switch (this.a) {
+            case 0:
+                ir irVar = this.b;
+                if (irVar.c < 1.0f) {
+                    irVar.unscheduleSelf(runnable);
+                    break;
+                }
+                break;
+            default:
+                ir irVar2 = this.b;
+                if (irVar2.c > 0.0f) {
+                    irVar2.unscheduleSelf(runnable);
+                    break;
+                }
                 break;
         }
     }

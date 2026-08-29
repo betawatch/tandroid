@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.ListIterator;
 import java.util.RandomAccess;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class n1 extends AbstractList implements f0, RandomAccess {
     public final e0 a;
@@ -22,8 +22,8 @@ public final class n1 extends AbstractList implements f0, RandomAccess {
     }
 
     @Override // java.util.AbstractList, java.util.List
-    public final Object get(int i9) {
-        return (String) this.a.get(i9);
+    public final Object get(int i10) {
+        return (String) this.a.get(i10);
     }
 
     @Override // androidx.datastore.preferences.protobuf.f0
@@ -39,14 +39,14 @@ public final class n1 extends AbstractList implements f0, RandomAccess {
     }
 
     @Override // androidx.datastore.preferences.protobuf.f0
-    public final Object l(int i9) {
-        return this.a.b.get(i9);
+    public final Object l(int i10) {
+        return this.a.b.get(i10);
     }
 
     @Override // java.util.AbstractList, java.util.List
-    public final ListIterator listIterator(int i9) {
+    public final ListIterator listIterator(int i10) {
         l1 l1Var = new l1();
-        l1Var.a = this.a.listIterator(i9);
+        l1Var.a = this.a.listIterator(i10);
         return l1Var;
     }
 

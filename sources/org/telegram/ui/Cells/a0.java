@@ -4,15 +4,15 @@ import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.view.ViewConfiguration;
 import android.view.ViewGroup;
-import org.telegram.ui.Components.uu0;
+import org.telegram.ui.Components.ev0;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public abstract class a0 extends ViewGroup implements uu0 {
+public abstract class a0 extends ViewGroup implements ev0 {
     public boolean a;
-    public androidx.emoji2.text.i b;
+    public androidx.emoji2.text.j b;
     public int c;
-    public m.i3 d;
+    public lh.m7 d;
     public Runnable e;
 
     public a0(Context context) {
@@ -26,25 +26,25 @@ public abstract class a0 extends ViewGroup implements uu0 {
         setHapticFeedbackEnabled(true);
     }
 
-    public static float n(Drawable drawable, float f10, float f11, float f12) {
-        float intrinsicWidth = (drawable.getIntrinsicWidth() * f12) / drawable.getIntrinsicHeight();
-        int i9 = (int) f10;
-        int i10 = (int) f11;
-        drawable.setBounds(i9, i10, ((int) intrinsicWidth) + i9, ((int) f12) + i10);
+    public static float n(Drawable drawable, float f9, float f10, float f11) {
+        float intrinsicWidth = (drawable.getIntrinsicWidth() * f11) / drawable.getIntrinsicHeight();
+        int i10 = (int) f9;
+        int i11 = (int) f10;
+        drawable.setBounds(i10, i11, ((int) intrinsicWidth) + i10, ((int) f11) + i11);
         return intrinsicWidth;
     }
 
-    public static void o(int i9, int i10, Drawable drawable) {
-        drawable.setBounds(i9, i10, drawable.getIntrinsicWidth() + i9, drawable.getIntrinsicHeight() + i10);
+    public static void o(int i10, int i11, Drawable drawable) {
+        drawable.setBounds(i10, i11, drawable.getIntrinsicWidth() + i10, drawable.getIntrinsicHeight() + i11);
     }
 
-    public static void p(Drawable drawable, float f10, float f11) {
-        int i9 = (int) f10;
-        int i10 = (int) f11;
-        drawable.setBounds(i9, i10, drawable.getIntrinsicWidth() + i9, drawable.getIntrinsicHeight() + i10);
+    public static void p(Drawable drawable, float f9, float f10) {
+        int i10 = (int) f9;
+        int i11 = (int) f10;
+        drawable.setBounds(i10, i11, drawable.getIntrinsicWidth() + i10, drawable.getIntrinsicHeight() + i11);
     }
 
-    @Override // org.telegram.ui.Components.uu0
+    @Override // org.telegram.ui.Components.ev0
     public final void g(Runnable runnable) {
         this.e = runnable;
     }
@@ -73,13 +73,13 @@ public abstract class a0 extends ViewGroup implements uu0 {
 
     public final void k() {
         this.a = false;
-        androidx.emoji2.text.i iVar = this.b;
-        if (iVar != null) {
-            removeCallbacks(iVar);
+        androidx.emoji2.text.j jVar = this.b;
+        if (jVar != null) {
+            removeCallbacks(jVar);
         }
-        m.i3 i3Var = this.d;
-        if (i3Var != null) {
-            removeCallbacks(i3Var);
+        lh.m7 m7Var = this.d;
+        if (m7Var != null) {
+            removeCallbacks(m7Var);
         }
     }
 
@@ -97,7 +97,7 @@ public abstract class a0 extends ViewGroup implements uu0 {
         }
         this.a = true;
         if (this.d == null) {
-            this.d = new m.i3(this, 4);
+            this.d = new lh.m7(this, 7);
         }
         postDelayed(this.d, ViewConfiguration.getTapTimeout());
     }

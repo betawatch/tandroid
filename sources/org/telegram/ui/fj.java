@@ -1,83 +1,100 @@
 package org.telegram.ui;
 
-import android.content.SharedPreferences;
-import android.os.Bundle;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationsController;
+import android.content.Context;
+import android.graphics.Rect;
+import android.os.Build;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.ImageView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class fj implements org.telegram.ui.Components.eo {
-    public final /* synthetic */ qn a;
+public final class fj implements View.OnTouchListener {
+    public View a;
+    public org.telegram.ui.ActionBar.o1 b;
+    public final Rect c = new Rect();
+    public boolean d;
+    public boolean e;
+    public final org.telegram.ui.Components.f20 f;
+    public final int[] h;
+    public View n;
+    public float r;
+    public float s;
+    public final /* synthetic */ View v;
+    public final /* synthetic */ tn w;
 
-    public fj(qn qnVar) {
-        this.a = qnVar;
+    public fj(tn tnVar, ImageView imageView) {
+        this.w = tnVar;
+        this.v = imageView;
+        org.telegram.ui.Components.f20 f20Var = new org.telegram.ui.Components.f20((Context) null, new h(this, 24));
+        this.f = f20Var;
+        this.h = new int[2];
+        f20Var.v = true;
     }
 
-    @Override // org.telegram.ui.Components.eo
-    public final void A(int i9) {
-        qn qnVar = this.a;
-        if (i9 != 0) {
-            qnVar.getNotificationsController().muteUntil(qnVar.P5, qnVar.b(), i9);
-            if (org.telegram.ui.Components.oc.a(qnVar)) {
-                org.telegram.ui.Components.oc.z(qnVar, 5, i9, qnVar.getResourceProvider()).j();
-                return;
+    @Override // android.view.View.OnTouchListener
+    public final boolean onTouch(View view, MotionEvent motionEvent) {
+        View view2;
+        this.a = view;
+        if (motionEvent.getAction() == 0) {
+            this.r = motionEvent.getX();
+            this.s = motionEvent.getY();
+            this.e = false;
+        }
+        this.f.a(motionEvent);
+        if (this.b != null && !this.d && motionEvent.getAction() == 2) {
+            View view3 = this.a;
+            int[] iArr = this.h;
+            view3.getLocationOnScreen(iArr);
+            float x4 = motionEvent.getX() + iArr[0];
+            float y8 = motionEvent.getY() + iArr[1];
+            this.b.getContentView().getLocationOnScreen(iArr);
+            float f9 = x4 - iArr[0];
+            float f10 = y8 - iArr[1];
+            this.n = null;
+            ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = (ActionBarPopupWindow$ActionBarPopupWindowLayout) this.b.getContentView();
+            for (int i10 = 0; i10 < actionBarPopupWindow$ActionBarPopupWindowLayout.getItemsCount(); i10++) {
+                View childAt = actionBarPopupWindow$ActionBarPopupWindowLayout.H.getChildAt(i10);
+                Rect rect = this.c;
+                childAt.getHitRect(rect);
+                childAt.getTag();
+                if (childAt.getVisibility() == 0 && childAt.isClickable()) {
+                    if (rect.contains((int) f9, (int) f10)) {
+                        childAt.setPressed(true);
+                        childAt.setSelected(true);
+                        if (Build.VERSION.SDK_INT == 21 && childAt.getBackground() != null) {
+                            childAt.getBackground().setVisible(true, false);
+                        }
+                        childAt.drawableHotspotChanged(f9, f10 - childAt.getTop());
+                        this.n = childAt;
+                    } else {
+                        childAt.setPressed(false);
+                        childAt.setSelected(false);
+                        if (Build.VERSION.SDK_INT == 21 && childAt.getBackground() != null) {
+                            childAt.getBackground().setVisible(false, false);
+                        }
+                    }
+                }
             }
-            return;
         }
-        if (qnVar.getMessagesController().isDialogMuted(qnVar.P5, qnVar.b())) {
-            qnVar.bc(true);
+        if ((motionEvent.getAction() == 2 && Math.abs(motionEvent.getX() - this.r) > AndroidUtilities.touchSlop * 2.0f) || Math.abs(motionEvent.getY() - this.s) > AndroidUtilities.touchSlop * 2.0f) {
+            this.e = true;
+            this.a.setPressed(false);
+            this.a.setSelected(false);
         }
-        if (org.telegram.ui.Components.oc.a(qnVar)) {
-            org.telegram.ui.Components.oc.z(qnVar, 4, i9, qnVar.getResourceProvider()).j();
+        if (motionEvent.getAction() == 1 && !this.d && !this.e) {
+            View view4 = this.n;
+            if (view4 != null) {
+                view4.callOnClick();
+                this.d = true;
+                return true;
+            }
+            if (this.b == null && (view2 = this.a) != null) {
+                view2.callOnClick();
+            }
         }
-    }
-
-    @Override // org.telegram.ui.Components.eo
-    public final void dismiss() {
-        this.a.d0.M(null, null);
-    }
-
-    @Override // org.telegram.ui.Components.eo
-    public final void p() {
-        qn qnVar = this.a;
-        qnVar.bc(true);
-        org.telegram.ui.Components.oc.A(qnVar, qnVar.getMessagesController().isDialogMuted(qnVar.P5, qnVar.b()), qnVar.aa).j();
-    }
-
-    @Override // org.telegram.ui.Components.eo
-    public final void s() {
-        qn qnVar = this.a;
-        if (qnVar.P5 == 0 || qnVar.N3 == 3) {
-            return;
-        }
-        if (qnVar.f != null) {
-            qnVar.getMessagesController().putUser(qnVar.f, true);
-        }
-        Bundle bundle = new Bundle();
-        bundle.putLong("dialog_id", qnVar.P5);
-        if (qnVar.b() != 0) {
-            bundle.putLong("topic_id", qnVar.b());
-        }
-        qnVar.presentFragment(new s01(bundle, qnVar.aa));
-    }
-
-    @Override // org.telegram.ui.Components.eo
-    public final void w() {
-        int i9;
-        qn qnVar = this.a;
-        i9 = ((org.telegram.ui.ActionBar.o2) qnVar).currentAccount;
-        SharedPreferences notificationsSettings = MessagesController.getNotificationsSettings(i9);
-        boolean z10 = notificationsSettings.getBoolean("sound_enabled_" + NotificationsController.getSharedPrefKey(qnVar.P5, qnVar.b()), true);
-        boolean z11 = !z10;
-        notificationsSettings.edit().putBoolean("sound_enabled_" + NotificationsController.getSharedPrefKey(qnVar.P5, qnVar.b()), z11).apply();
-        if (org.telegram.ui.Components.oc.a(qnVar)) {
-            org.telegram.ui.Components.oc.S(z10 ? 1 : 0, qnVar, qnVar.getResourceProvider()).j();
-        }
-        qnVar.Pc(false);
-    }
-
-    @Override // org.telegram.ui.Components.eo
-    public final /* synthetic */ void o() {
+        return true;
     }
 }

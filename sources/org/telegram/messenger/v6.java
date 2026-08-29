@@ -1,40 +1,35 @@
 package org.telegram.messenger;
 
-import android.content.SharedPreferences;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class v6 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ MediaDataController b;
-    public final /* synthetic */ TLRPC.TL_error c;
-    public final /* synthetic */ TLObject d;
-    public final /* synthetic */ SharedPreferences e;
-    public final /* synthetic */ boolean[] f;
+    public final /* synthetic */ MediaController.MediaLoader b;
 
-    public /* synthetic */ v6(MediaDataController mediaDataController, TLRPC.TL_error tL_error, TLObject tLObject, SharedPreferences sharedPreferences, boolean[] zArr, int i9) {
-        this.a = i9;
-        this.b = mediaDataController;
-        this.c = tL_error;
-        this.d = tLObject;
-        this.e = sharedPreferences;
-        this.f = zArr;
+    public /* synthetic */ v6(MediaController.MediaLoader mediaLoader, int i10) {
+        this.a = i10;
+        this.b = mediaLoader;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                SharedPreferences sharedPreferences = this.e;
-                boolean[] zArr = this.f;
-                this.b.lambda$loadRecentAndTopReactions$237(this.c, this.d, sharedPreferences, zArr);
+                this.b.lambda$start$1();
+                break;
+            case 1:
+                this.b.lambda$start$2();
+                break;
+            case 2:
+                this.b.lambda$copyFile$8();
+                break;
+            case 3:
+                this.b.lambda$checkIfFinished$3();
                 break;
             default:
-                SharedPreferences sharedPreferences2 = this.e;
-                boolean[] zArr2 = this.f;
-                this.b.lambda$loadRecentAndTopReactions$235(this.c, this.d, sharedPreferences2, zArr2);
+                this.b.lambda$checkIfFinished$4();
                 break;
         }
     }

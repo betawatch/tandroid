@@ -2,28 +2,28 @@ package w1;
 
 import a0.l;
 import androidx.lifecycle.p0;
-import c2.t;
-import v9.d;
+import c2.u;
+import m5.d;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public class b extends p0 {
-    public static final d f = new d(25);
+    public static final ya.a f = new ya.a(23);
     public final l d = new l();
     public boolean e = false;
 
     @Override // androidx.lifecycle.p0
     public final void b() {
         l lVar = this.d;
-        int i9 = lVar.c;
-        for (int i10 = 0; i10 < i9; i10++) {
-            a aVar = (a) lVar.b[i10];
-            k5.d dVar = aVar.l;
+        int i10 = lVar.c;
+        for (int i11 = 0; i11 < i10; i11++) {
+            a aVar = (a) lVar.b[i11];
+            d dVar = aVar.l;
             dVar.a();
             dVar.c = true;
-            t tVar = aVar.n;
-            if (tVar != null) {
-                aVar.i(tVar);
+            u uVar = aVar.n;
+            if (uVar != null) {
+                aVar.i(uVar);
             }
             a aVar2 = dVar.a;
             if (aVar2 == null) {
@@ -33,18 +33,18 @@ public class b extends p0 {
                 throw new IllegalArgumentException("Attempting to unregister the wrong listener");
             }
             dVar.a = null;
-            if (tVar != null) {
-                boolean z10 = tVar.b;
+            if (uVar != null) {
+                boolean z10 = uVar.b;
             }
             dVar.d = true;
             dVar.b = false;
             dVar.c = false;
             dVar.e = false;
         }
-        int i11 = lVar.c;
+        int i12 = lVar.c;
         Object[] objArr = lVar.b;
-        for (int i12 = 0; i12 < i11; i12++) {
-            objArr[i12] = null;
+        for (int i13 = 0; i13 < i12; i13++) {
+            objArr[i13] = null;
         }
         lVar.c = 0;
     }

@@ -21,10 +21,10 @@ import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputConnection;
 import android.widget.AbsSeekBar;
 import android.widget.EditText;
-import g7.p6;
+import i7.u6;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public class z {
     public static final int[] d = {R.attr.indeterminateDrawable, R.attr.progressDrawable};
@@ -39,7 +39,7 @@ public class z {
         if (keyListener instanceof NumberKeyListener) {
             return keyListener;
         }
-        ((org.telegram.ui.Cells.e3) ((m5.c0) this.c).b).getClass();
+        ((oc.i) ((org.telegram.ui.Components.n) this.c).b).getClass();
         if (keyListener instanceof q1.e) {
             return keyListener;
         }
@@ -49,71 +49,71 @@ public class z {
         return keyListener instanceof NumberKeyListener ? keyListener : new q1.e(keyListener);
     }
 
-    public void b(AttributeSet attributeSet, int i9) {
+    public void b(AttributeSet attributeSet, int i10) {
         switch (this.a) {
             case 0:
                 AbsSeekBar absSeekBar = (AbsSeekBar) this.b;
-                j4.c E = j4.c.E(absSeekBar.getContext(), attributeSet, d, i9);
-                Drawable x10 = E.x(0);
-                if (x10 != null) {
-                    if (x10 instanceof AnimationDrawable) {
-                        AnimationDrawable animationDrawable = (AnimationDrawable) x10;
+                l3.g0 z10 = l3.g0.z(absSeekBar.getContext(), attributeSet, d, i10);
+                Drawable r6 = z10.r(0);
+                if (r6 != null) {
+                    if (r6 instanceof AnimationDrawable) {
+                        AnimationDrawable animationDrawable = (AnimationDrawable) r6;
                         int numberOfFrames = animationDrawable.getNumberOfFrames();
                         AnimationDrawable animationDrawable2 = new AnimationDrawable();
                         animationDrawable2.setOneShot(animationDrawable.isOneShot());
-                        for (int i10 = 0; i10 < numberOfFrames; i10++) {
-                            Drawable e10 = e(animationDrawable.getFrame(i10), true);
+                        for (int i11 = 0; i11 < numberOfFrames; i11++) {
+                            Drawable e10 = e(animationDrawable.getFrame(i11), true);
                             e10.setLevel(10000);
-                            animationDrawable2.addFrame(e10, animationDrawable.getDuration(i10));
+                            animationDrawable2.addFrame(e10, animationDrawable.getDuration(i11));
                         }
                         animationDrawable2.setLevel(10000);
-                        x10 = animationDrawable2;
+                        r6 = animationDrawable2;
                     }
-                    absSeekBar.setIndeterminateDrawable(x10);
+                    absSeekBar.setIndeterminateDrawable(r6);
                 }
-                Drawable x11 = E.x(1);
-                if (x11 != null) {
-                    absSeekBar.setProgressDrawable(e(x11, false));
+                Drawable r9 = z10.r(1);
+                if (r9 != null) {
+                    absSeekBar.setProgressDrawable(e(r9, false));
                 }
-                E.G();
+                z10.B();
                 return;
             default:
-                TypedArray obtainStyledAttributes = ((EditText) this.b).getContext().obtainStyledAttributes(attributeSet, f.a.i, i9, 0);
+                TypedArray obtainStyledAttributes = ((EditText) this.b).getContext().obtainStyledAttributes(attributeSet, f.a.i, i10, 0);
                 try {
-                    boolean z10 = obtainStyledAttributes.hasValue(14) ? obtainStyledAttributes.getBoolean(14, true) : true;
+                    boolean z11 = obtainStyledAttributes.hasValue(14) ? obtainStyledAttributes.getBoolean(14, true) : true;
                     obtainStyledAttributes.recycle();
-                    d(z10);
+                    d(z11);
                     return;
-                } catch (Throwable th) {
+                } catch (Throwable th2) {
                     obtainStyledAttributes.recycle();
-                    throw th;
+                    throw th2;
                 }
         }
     }
 
     public q1.b c(InputConnection inputConnection, EditorInfo editorInfo) {
-        m5.c0 c0Var = (m5.c0) this.c;
+        org.telegram.ui.Components.n nVar = (org.telegram.ui.Components.n) this.c;
         if (inputConnection == null) {
-            c0Var.getClass();
+            nVar.getClass();
             inputConnection = null;
         } else {
-            org.telegram.ui.Cells.e3 e3Var = (org.telegram.ui.Cells.e3) c0Var.b;
-            e3Var.getClass();
+            oc.i iVar = (oc.i) nVar.b;
+            iVar.getClass();
             if (!(inputConnection instanceof q1.b)) {
-                inputConnection = new q1.b((EditText) e3Var.b, inputConnection, editorInfo);
+                inputConnection = new q1.b((EditText) iVar.b, inputConnection, editorInfo);
             }
         }
         return (q1.b) inputConnection;
     }
 
     public void d(boolean z10) {
-        q1.i iVar = (q1.i) ((org.telegram.ui.Cells.e3) ((m5.c0) this.c).b).c;
+        q1.i iVar = (q1.i) ((oc.i) ((org.telegram.ui.Components.n) this.c).b).c;
         if (iVar.c != z10) {
             if (iVar.b != null) {
-                androidx.emoji2.text.k a2 = androidx.emoji2.text.k.a();
+                androidx.emoji2.text.l a2 = androidx.emoji2.text.l.a();
                 q1.h hVar = iVar.b;
                 a2.getClass();
-                p6.a(hVar, "initCallback cannot be null");
+                u6.a(hVar, "initCallback cannot be null");
                 ReentrantReadWriteLock reentrantReadWriteLock = a2.a;
                 reentrantReadWriteLock.writeLock().lock();
                 try {
@@ -124,7 +124,7 @@ public class z {
             }
             iVar.c = z10;
             if (z10) {
-                q1.i.a(iVar.a, androidx.emoji2.text.k.a().b());
+                q1.i.a(iVar.a, androidx.emoji2.text.l.a().b());
             }
         }
     }
@@ -143,15 +143,15 @@ public class z {
                 LayerDrawable layerDrawable = (LayerDrawable) drawable;
                 int numberOfLayers = layerDrawable.getNumberOfLayers();
                 Drawable[] drawableArr = new Drawable[numberOfLayers];
-                for (int i9 = 0; i9 < numberOfLayers; i9++) {
-                    int id2 = layerDrawable.getId(i9);
-                    drawableArr[i9] = e(layerDrawable.getDrawable(i9), id2 == 16908301 || id2 == 16908303);
+                for (int i10 = 0; i10 < numberOfLayers; i10++) {
+                    int id2 = layerDrawable.getId(i10);
+                    drawableArr[i10] = e(layerDrawable.getDrawable(i10), id2 == 16908301 || id2 == 16908303);
                 }
                 LayerDrawable layerDrawable2 = new LayerDrawable(drawableArr);
-                for (int i10 = 0; i10 < numberOfLayers; i10++) {
-                    layerDrawable2.setId(i10, layerDrawable.getId(i10));
+                for (int i11 = 0; i11 < numberOfLayers; i11++) {
+                    layerDrawable2.setId(i11, layerDrawable.getId(i11));
                     if (Build.VERSION.SDK_INT >= 23) {
-                        e0.b.A(layerDrawable, layerDrawable2, i10);
+                        e0.b.A(layerDrawable, layerDrawable2, i11);
                     }
                 }
                 return layerDrawable2;
@@ -177,6 +177,6 @@ public class z {
 
     public z(EditText editText) {
         this.b = editText;
-        this.c = new m5.c0(editText);
+        this.c = new org.telegram.ui.Components.n(editText);
     }
 }

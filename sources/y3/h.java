@@ -1,9 +1,15 @@
 package y3;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class h {
-    public long a;
-    public long b;
-    public boolean c;
+public interface h {
+    void a();
+
+    void c(f5.w wVar);
+
+    void d();
+
+    void e(o3.m mVar, d0 d0Var);
+
+    void f(int i10, long j10);
 }

@@ -1,37 +1,44 @@
 package org.telegram.messenger;
 
-import android.animation.ValueAnimator;
-import android.view.View;
-import android.view.Window;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.RichMessageLayout;
-import org.telegram.ui.Components.k61;
+import org.telegram.messenger.PasskeysController;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_payments;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class oh implements ValueAnimator.AnimatorUpdateListener {
+public final /* synthetic */ class oh implements Utilities.Callback2 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ long b;
     public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
 
-    public /* synthetic */ oh(int i9, Object obj, Object obj2) {
-        this.a = i9;
-        this.b = obj;
-        this.c = obj2;
+    public /* synthetic */ oh(Object obj, Object obj2, long j10, int i10) {
+        this.a = i10;
+        this.c = obj;
+        this.d = obj2;
+        this.b = j10;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // org.telegram.messenger.Utilities.Callback2
+    public final void run(Object obj, Object obj2) {
         switch (this.a) {
             case 0:
-                ((RichMessageLayout.SpoilerReveal) this.b).lambda$start$0((View) this.c, valueAnimator);
+                PasskeysController.1.lambda$onResult$0((org.telegram.ui.ActionBar.c2) this.c, (Utilities.Callback3) this.d, this.b, (TLRPC.auth_Authorization) obj, (TLRPC.TL_error) obj2);
                 break;
             case 1:
-                AndroidUtilities.lambda$setNavigationBarColor$23((AndroidUtilities.IntColorCallback) this.b, (Window) this.c, valueAnimator);
+                ((BotForumHelper) this.c).lambda$performSendBotTopicCreate$5(this.b, (String) this.d, (TLRPC.Updates) obj, (TLRPC.TL_error) obj2);
                 break;
             default:
-                ((MediaController) this.b).lambda$cleanupPlayer$10((k61) this.c, valueAnimator);
+                ((GiftAuctionController) this.c).lambda$getOrRequestAuction$12((Utilities.Callback2) this.d, this.b, (TL_payments.TL_StarGiftAuctionState) obj, (TLRPC.TL_error) obj2);
                 break;
         }
+    }
+
+    public /* synthetic */ oh(BotForumHelper botForumHelper, long j10, String str) {
+        this.a = 1;
+        this.c = botForumHelper;
+        this.b = j10;
+        this.d = str;
     }
 }

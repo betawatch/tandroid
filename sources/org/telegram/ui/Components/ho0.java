@@ -1,38 +1,38 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
-
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class ho0 {
-    public final yt a;
-    public final long b;
-    public final float c;
-    public final float d;
-    public final float e;
+public final /* synthetic */ class ho0 implements o1.g {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ po0 b;
+    public final /* synthetic */ o1.k c;
 
-    public ho0(View view) {
-        yt ytVar = new yt(1, view);
-        this.b = System.currentTimeMillis();
-        this.a = ytVar;
-        this.c = AndroidUtilities.lerp(5.0f, 9.0f, Utilities.clamp01(Utilities.fastRandom.nextFloat()));
-        this.d = AndroidUtilities.lerp(2.5f, 5.0f, Utilities.clamp01(Utilities.fastRandom.nextFloat()));
-        this.e = AndroidUtilities.lerp(2.5f, 5.2f, Utilities.clamp01(Utilities.fastRandom.nextFloat()));
+    public /* synthetic */ ho0(po0 po0Var, o1.k kVar, int i10) {
+        this.a = i10;
+        this.b = po0Var;
+        this.c = kVar;
     }
 
-    public final void a(Canvas canvas, float f10) {
-        yt ytVar;
-        float currentTimeMillis = (System.currentTimeMillis() - this.b) / 1000.0f;
-        canvas.translate(0.0f, 0.0f);
-        canvas.rotate(((float) Math.sin(this.c * currentTimeMillis * 3.141592653589793d)) * 1.0f * f10);
-        canvas.translate(((float) Math.cos(this.d * currentTimeMillis * 3.141592653589793d)) * AndroidUtilities.dp(0.5f) * f10, ((float) Math.sin(currentTimeMillis * this.e * 3.141592653589793d)) * AndroidUtilities.dp(0.5f) * f10);
-        canvas.translate(-0.0f, -0.0f);
-        if (f10 <= 0.0f || (ytVar = this.a) == null) {
-            return;
+    @Override // o1.g
+    public final void a(o1.i iVar, boolean z10, float f9, float f10) {
+        switch (this.a) {
+            case 0:
+                if (!z10) {
+                    this.b.z.remove(this.c);
+                    iVar.c();
+                    break;
+                }
+                break;
+            default:
+                po0 po0Var = this.b;
+                if (!z10) {
+                    po0Var.z.remove(this.c);
+                    iVar.c();
+                    break;
+                } else {
+                    po0Var.getClass();
+                    break;
+                }
         }
-        ytVar.run();
     }
 }

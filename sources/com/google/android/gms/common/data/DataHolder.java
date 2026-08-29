@@ -1,24 +1,24 @@
 package com.google.android.gms.common.data;
 
+import a6.a;
 import android.database.CursorIndexOutOfBoundsException;
 import android.database.CursorWindow;
 import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.Log;
-import g7.p8;
+import com.google.android.gms.internal.cast.o;
 import java.io.Closeable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.messenger.MediaDataController;
-import q7.j;
-import x5.l;
-import y5.a;
+import w5.k;
+import z5.l;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class DataHolder extends a implements Closeable {
-    public static final Parcelable.Creator<DataHolder> CREATOR = new j(20);
+    public static final Parcelable.Creator<DataHolder> CREATOR = new k(2);
     public final int a;
     public final String[] b;
     public Bundle c;
@@ -34,34 +34,34 @@ public final class DataHolder extends a implements Closeable {
         new HashMap();
     }
 
-    public DataHolder(int i9, String[] strArr, CursorWindow[] cursorWindowArr, int i10, Bundle bundle) {
-        this.a = i9;
+    public DataHolder(int i10, String[] strArr, CursorWindow[] cursorWindowArr, int i11, Bundle bundle) {
+        this.a = i10;
         this.b = strArr;
         this.d = cursorWindowArr;
-        this.e = i10;
+        this.e = i11;
         this.f = bundle;
     }
 
-    public final int b(int i9) {
+    public final int b(int i10) {
         int length;
-        int i10 = 0;
-        l.k(i9 >= 0 && i9 < this.n);
+        int i11 = 0;
+        l.k(i10 >= 0 && i10 < this.n);
         while (true) {
             int[] iArr = this.h;
             length = iArr.length;
-            if (i10 >= length) {
+            if (i11 >= length) {
                 break;
             }
-            if (i9 < iArr[i10]) {
-                i10--;
+            if (i10 < iArr[i11]) {
+                i11--;
                 break;
             }
-            i10++;
+            i11++;
         }
-        return i10 == length ? i10 - 1 : i10;
+        return i11 == length ? i11 - 1 : i11;
     }
 
-    public final void c(int i9, String str) {
+    public final void c(int i10, String str) {
         boolean z10;
         Bundle bundle = this.c;
         if (bundle == null || !bundle.containsKey(str)) {
@@ -73,8 +73,8 @@ public final class DataHolder extends a implements Closeable {
         if (z10) {
             throw new IllegalArgumentException("Buffer is closed.");
         }
-        if (i9 < 0 || i9 >= this.n) {
-            throw new CursorIndexOutOfBoundsException(i9, this.n);
+        if (i10 < 0 || i10 >= this.n) {
+            throw new CursorIndexOutOfBoundsException(i10, this.n);
         }
     }
 
@@ -84,18 +84,18 @@ public final class DataHolder extends a implements Closeable {
             try {
                 if (!this.r) {
                     this.r = true;
-                    int i9 = 0;
+                    int i10 = 0;
                     while (true) {
                         CursorWindow[] cursorWindowArr = this.d;
-                        if (i9 >= cursorWindowArr.length) {
+                        if (i10 >= cursorWindowArr.length) {
                             break;
                         }
-                        cursorWindowArr[i9].close();
-                        i9++;
+                        cursorWindowArr[i10].close();
+                        i10++;
                     }
                 }
-            } catch (Throwable th) {
-                throw th;
+            } catch (Throwable th2) {
+                throw th2;
             }
         }
     }
@@ -118,17 +118,17 @@ public final class DataHolder extends a implements Closeable {
     }
 
     @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i9) {
-        int q10 = p8.q(parcel, 20293);
-        p8.m(parcel, 1, this.b);
-        p8.o(parcel, 2, this.d, i9);
-        p8.s(parcel, 3, 4);
+    public final void writeToParcel(Parcel parcel, int i10) {
+        int q6 = o.q(parcel, 20293);
+        o.m(parcel, 1, this.b);
+        o.o(parcel, 2, this.d, i10);
+        o.s(parcel, 3, 4);
         parcel.writeInt(this.e);
-        p8.b(parcel, 4, this.f);
-        p8.s(parcel, MediaDataController.MAX_STYLE_RUNS_COUNT, 4);
+        o.b(parcel, 4, this.f);
+        o.s(parcel, MediaDataController.MAX_STYLE_RUNS_COUNT, 4);
         parcel.writeInt(this.a);
-        p8.r(parcel, q10);
-        if ((i9 & 1) != 0) {
+        o.r(parcel, q6);
+        if ((i10 & 1) != 0) {
             close();
         }
     }

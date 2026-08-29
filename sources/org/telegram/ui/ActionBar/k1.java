@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
 public final class k1 extends LinearLayout {
     public final /* synthetic */ ActionBarPopupWindow$ActionBarPopupWindowLayout a;
@@ -28,7 +28,7 @@ public final class k1 extends LinearLayout {
     }
 
     @Override // android.widget.LinearLayout, android.view.View
-    public final void onMeasure(int i9, int i10) {
+    public final void onMeasure(int i10, int i11) {
         k1 k1Var = this;
         ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = k1Var.a;
         if (actionBarPopupWindow$ActionBarPopupWindowLayout.K) {
@@ -36,11 +36,11 @@ public final class k1 extends LinearLayout {
             actionBarPopupWindow$ActionBarPopupWindowLayout.B = -1000000;
             int childCount = k1Var.getChildCount();
             ArrayList arrayList = null;
-            int i11 = 0;
             int i12 = 0;
             int i13 = 0;
-            while (i11 < childCount) {
-                View childAt = k1Var.getChildAt(i11);
+            int i14 = 0;
+            while (i12 < childCount) {
+                View childAt = k1Var.getChildAt(i12);
                 if (childAt.getVisibility() != 8) {
                     Object tag = childAt.getTag(R.id.width_tag);
                     Object tag2 = childAt.getTag(R.id.object_tag);
@@ -48,13 +48,13 @@ public final class k1 extends LinearLayout {
                     if (tag != null) {
                         childAt.getLayoutParams().width = -2;
                     }
-                    k1Var.measureChildWithMargins(childAt, i9, 0, i10, 0);
+                    k1Var.measureChildWithMargins(childAt, i10, 0, i11, 0);
                     if (tag3 == null) {
                         boolean z10 = tag instanceof Integer;
                         if (!z10 && tag2 == null) {
-                            i12 = Math.max(i12, childAt.getMeasuredWidth());
+                            i13 = Math.max(i13, childAt.getMeasuredWidth());
                         } else if (z10) {
-                            i13 = Math.max(((Integer) tag).intValue(), childAt.getMeasuredWidth());
+                            i14 = Math.max(((Integer) tag).intValue(), childAt.getMeasuredWidth());
                             actionBarPopupWindow$ActionBarPopupWindowLayout.A = childAt.getMeasuredHeight();
                             actionBarPopupWindow$ActionBarPopupWindowLayout.B = AndroidUtilities.dp(6.0f) + actionBarPopupWindow$ActionBarPopupWindowLayout.A;
                         }
@@ -64,16 +64,16 @@ public final class k1 extends LinearLayout {
                     }
                     arrayList.add(childAt);
                 }
-                i11++;
+                i12++;
                 k1Var = this;
             }
             if (arrayList != null) {
                 int size = arrayList.size();
-                for (int i14 = 0; i14 < size; i14++) {
-                    ((View) arrayList.get(i14)).getLayoutParams().width = Math.max(i12, i13);
+                for (int i15 = 0; i15 < size; i15++) {
+                    ((View) arrayList.get(i15)).getLayoutParams().width = Math.max(i13, i14);
                 }
             }
         }
-        super.onMeasure(i9, i10);
+        super.onMeasure(i10, i11);
     }
 }

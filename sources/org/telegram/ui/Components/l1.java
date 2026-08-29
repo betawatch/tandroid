@@ -1,47 +1,48 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import java.util.ArrayList;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.PrivacyControlActivity;
+import android.app.Activity;
+import android.content.Intent;
+import android.net.Uri;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class l1 implements Runnable {
+public final /* synthetic */ class l1 implements org.telegram.ui.ActionBar.b2 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ArrayList b;
+    public final /* synthetic */ Activity b;
 
-    public /* synthetic */ l1(ArrayList arrayList, int i9) {
-        this.a = i9;
-        this.b = arrayList;
+    public /* synthetic */ l1(Activity activity, int i10) {
+        this.a = i10;
+        this.b = activity;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        org.telegram.ui.ActionBar.o2 R;
+    @Override // org.telegram.ui.ActionBar.b2
+    public final void g(org.telegram.ui.ActionBar.c2 c2Var, int i10) {
         switch (this.a) {
             case 0:
-                if (this.b != null && (R = LaunchActivity.R()) != null) {
-                    org.telegram.ui.ActionBar.m2 m2Var = new org.telegram.ui.ActionBar.m2();
-                    m2Var.a = true;
-                    R.showAsSheet(new PrivacyControlActivity(11, false), m2Var);
-                    break;
-                }
+                c5.a(this.b);
                 break;
+            case 1:
+                Activity activity = this.b;
+                try {
+                    Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
+                    intent.setData(Uri.parse("package:" + ApplicationLoader.applicationContext.getPackageName()));
+                    activity.startActivity(intent);
+                    break;
+                } catch (Exception e10) {
+                    FileLog.e(e10);
+                    return;
+                }
             default:
-                int i9 = 0;
-                while (true) {
-                    ArrayList arrayList = this.b;
-                    if (i9 >= arrayList.size()) {
-                        break;
-                    } else {
-                        ((View) arrayList.get(i9)).setVisibility(8);
-                        if (arrayList.get(i9) instanceof org.telegram.ui.Cells.t1) {
-                            ((org.telegram.ui.Cells.t1) arrayList.get(i9)).J3(false, false);
-                            ((org.telegram.ui.Cells.t1) arrayList.get(i9)).L3(false, false, false);
-                        }
-                        i9++;
-                    }
+                Activity activity2 = this.b;
+                try {
+                    Intent intent2 = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
+                    intent2.setData(Uri.parse("package:" + ApplicationLoader.applicationContext.getPackageName()));
+                    activity2.startActivity(intent2);
+                    break;
+                } catch (Exception e11) {
+                    FileLog.e(e11);
                 }
         }
     }

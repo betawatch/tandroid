@@ -1,65 +1,120 @@
 package fh;
 
-import android.content.Context;
-import android.text.SpannableStringBuilder;
-import android.view.View;
-import gh.oa;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.GiftAuctionController;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.i41;
-import org.telegram.ui.Components.i51;
-import org.telegram.ui.Components.k41;
-import org.telegram.ui.Components.l41;
-import org.telegram.ui.Components.wk0;
-import org.telegram.ui.Components.wy0;
-import org.telegram.ui.Components.z41;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.drawable.Drawable;
+import i7.w;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
-/* loaded from: classes.dex */
-public final class b extends k41 {
-    public static final /* synthetic */ int a = 0;
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* loaded from: classes3.dex */
+public final class b extends Drawable {
+    public final a b;
+    public Bitmap c;
+    public Canvas d;
+    public int e;
+    public float f;
+    public int g;
+    public int h;
+    public final Paint a = new Paint(2);
+    public int i = 255;
 
-    static {
-        k41.setup(new b());
+    public b(a aVar) {
+        this.b = aVar;
     }
 
-    @Override // org.telegram.ui.Components.k41
-    public final void bindView(View view, l41 l41Var, boolean z10, z41 z41Var, i51 i51Var) {
-        c cVar = (c) view;
-        GiftAuctionController.Auction auction = (GiftAuctionController.Auction) l41Var.H;
-        TL_stars.TL_StarGiftAuctionAcquiredGift tL_StarGiftAuctionAcquiredGift = (TL_stars.TL_StarGiftAuctionAcquiredGift) l41Var.G;
-        View.OnClickListener onClickListener = l41Var.D;
-        int i9 = c.c;
-        cVar.removeAllViews();
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("*");
-        spannableStringBuilder.setSpan(new org.telegram.ui.Components.t5(auction.giftDocumentId, org.telegram.ui.ActionBar.f6.s2.getFontMetricsInt()), 0, spannableStringBuilder.length(), 33);
-        spannableStringBuilder.append(' ');
-        spannableStringBuilder.append((CharSequence) LocaleController.formatString(R.string.Gift2AuctionsAcquiredRound2, auction.gift.title, Integer.valueOf(tL_StarGiftAuctionAcquiredGift.gift_num), Integer.valueOf(tL_StarGiftAuctionAcquiredGift.round)));
-        spannableStringBuilder.setSpan(new i41(AndroidUtilities.bold()), 0, spannableStringBuilder.length(), 33);
-        SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder();
-        spannableStringBuilder2.append((CharSequence) oa.X0(false, j3.r0.n(tL_StarGiftAuctionAcquiredGift.bid_amount, ',', new StringBuilder("⭐️")), 0.75f, null));
-        String formatString = LocaleController.formatString(R.string.Gift2AuctionsAcquiredTop, Integer.valueOf(tL_StarGiftAuctionAcquiredGift.pos));
-        wy0 wy0Var = new wy0(cVar.getContext(), cVar.a);
-        wy0Var.a(spannableStringBuilder).setFilled(true);
-        wy0Var.k(LocaleController.getString(R.string.Gift2AuctionsAcquiredRecipient), cVar.b, DialogObject.getPeerDialogId(tL_StarGiftAuctionAcquiredGift.peer), new e5.u(4, cVar, onClickListener));
-        wy0Var.f(tL_StarGiftAuctionAcquiredGift.date, LocaleController.getString(R.string.Gift2AuctionsAcquiredDate));
-        wy0Var.e(LocaleController.getString(R.string.Gift2AuctionsAcquiredAcceptedBid), spannableStringBuilder2, formatString, null, null);
-        cVar.addView(wy0Var, g7.e6.c(-2.0f, -1));
+    public final void a(int i10, int i11, float f9, int i12) {
+        int i13 = i12 * 2;
+        int i14 = (int) ((i10 + i13) / f9);
+        int i15 = (int) ((i11 + i13) / f9);
+        Bitmap bitmap = this.c;
+        if (bitmap != null && bitmap.getWidth() == i14 && this.c.getHeight() == i15) {
+            this.c.eraseColor(0);
+        } else {
+            Bitmap bitmap2 = this.c;
+            if (bitmap2 != null) {
+                bitmap2.recycle();
+            }
+            this.c = Bitmap.createBitmap(i14, i15, Bitmap.Config.ARGB_8888);
+            this.d = new Canvas(this.c);
+        }
+        this.f = f9;
+        this.e = i12;
+        this.d.save();
+        float f10 = i12 / f9;
+        this.d.translate(f10, f10);
+        float f11 = 1.0f / f9;
+        this.d.scale(f11, f11);
+        this.b.p(this.d, 255);
+        Utilities.stackBlurBitmap(this.c, (int) f10);
+        this.d.restore();
     }
 
-    @Override // org.telegram.ui.Components.k41
-    public final View createView(Context context, wk0 wk0Var, int i9, int i10, org.telegram.ui.ActionBar.b6 b6Var) {
-        c cVar = new c(context, i9, b6Var);
-        cVar.setLayoutParams(g7.e6.c(-2.0f, -1));
-        return cVar;
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        int i10 = this.i;
+        a aVar = this.b;
+        if (i10 == 255) {
+            canvas.save();
+            canvas.translate(this.g, this.h);
+            aVar.p(canvas, 255);
+            canvas.restore();
+            return;
+        }
+        if (i10 == 0) {
+            return;
+        }
+        double d = i10 / 255.0d;
+        double d10 = d / ((1.0d - d) * 6.0d);
+        double d11 = 1.0d + d10;
+        double sqrt = ((-d11) + Math.sqrt((d11 * d11) - (((-d10) * 4.0d) * (-d)))) / ((-2.0d) * d10);
+        int b10 = w.b((int) (d10 * sqrt * 255.0d), 0, 255);
+        int b11 = w.b((int) (sqrt * 255.0d), 0, 255);
+        if (b11 > 0 && this.c != null) {
+            Paint paint = this.a;
+            paint.setAlpha(b11);
+            canvas.save();
+            int i11 = this.g;
+            int i12 = this.e;
+            canvas.translate(i11 - i12, this.h - i12);
+            float f9 = this.f;
+            canvas.scale(f9, f9);
+            canvas.drawBitmap(this.c, 0.0f, 0.0f, paint);
+            canvas.restore();
+        }
+        if (b10 > 0) {
+            canvas.save();
+            canvas.translate(this.g, this.h);
+            aVar.p(canvas, b10);
+            canvas.restore();
+        }
     }
 
-    @Override // org.telegram.ui.Components.k41
-    public final boolean isClickable() {
-        return false;
+    @Override // android.graphics.drawable.Drawable
+    public final int getAlpha() {
+        return this.i;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return 0;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+        this.i = i10;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setBounds(int i10, int i11, int i12, int i13) {
+        this.g = i10;
+        this.h = i11;
+        super.setBounds(i10, i11, i12, i13);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

@@ -1,20 +1,20 @@
 package com.google.android.recaptcha.internal;
 
-import g7.x5;
-import hd.f0;
-import oc.c;
-import oc.g;
+import i7.b7;
+import jd.e0;
+import qc.c;
+import qc.g;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class zzht {
     private final c zza;
     private final c zzb;
 
     public zzht() {
-        int i9 = zzby.zza;
-        this.zza = x5.a(zzhr.zza);
-        this.zzb = x5.a(zzhs.zza);
+        int i10 = zzby.zza;
+        this.zza = b7.a(zzhr.zza);
+        this.zzb = b7.a(zzhs.zza);
     }
 
     public static final /* synthetic */ zzhn zza(zzht zzhtVar) {
@@ -25,7 +25,7 @@ public final class zzht {
         return (zzig) ((g) zzhtVar.zza).a();
     }
 
-    public final Object zzc(String str, zzzd zzzdVar, qc.c cVar) {
-        return f0.f(new zzhq(this, str, zzzdVar, null), cVar);
+    public final Object zzc(String str, zzzd zzzdVar, sc.c cVar) {
+        return e0.f(new zzhq(this, str, zzzdVar, null), cVar);
     }
 }

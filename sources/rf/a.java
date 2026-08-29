@@ -1,17 +1,37 @@
 package rf;
 
-import org.telegram.messenger.SegmentTree;
+import android.location.Location;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class a {
-    public long[] a;
-    public SegmentTree b;
-    public String c;
-    public String d;
-    public int g;
-    public long e = 0;
-    public long f = Long.MAX_VALUE;
-    public int h = -16777216;
-    public int i = -1;
+public final /* synthetic */ class a implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ c b;
+    public final /* synthetic */ String c;
+    public final /* synthetic */ Location d;
+
+    public /* synthetic */ a(c cVar, String str, Location location, int i10) {
+        this.a = i10;
+        this.b = cVar;
+        this.c = str;
+        this.d = location;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                c cVar = this.b;
+                cVar.getClass();
+                AndroidUtilities.runOnUIThread(new a(cVar, this.c, this.d, 1));
+                break;
+            default:
+                c cVar2 = this.b;
+                cVar2.A = null;
+                cVar2.v = null;
+                cVar2.H(this.c, this.d, true);
+                break;
+        }
+    }
 }

@@ -1,35 +1,26 @@
 package ih;
 
-import android.graphics.Canvas;
-import android.view.View;
-import android.view.ViewGroup;
-import org.telegram.tgnet.TLObject;
+import android.content.Context;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.Components.tc;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
-/* loaded from: classes4.dex */
-public final class j1 extends ViewGroup {
-    @Override // android.view.View
-    public final void draw(Canvas canvas) {
-        if (k1.V.S) {
-            return;
-        }
-        super.draw(canvas);
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* loaded from: classes.dex */
+public final class j1 extends e6 {
+    public final /* synthetic */ h2 t0;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public j1(h2 h2Var, Context context, int i10, TL_stars.StarGift starGift, long j10, y0 y0Var, boolean z10, boolean z11) {
+        super(context, i10, starGift, null, j10, y0Var, z10, z11);
+        this.t0 = h2Var;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i9, int i10, int i11, int i12) {
-        k1 k1Var = k1.V;
-        if (k1Var.e.getParent() == this) {
-            k1Var.e.layout(0, 0, k1Var.F, k1Var.G);
-        }
-    }
-
-    @Override // android.view.View
-    public final void onMeasure(int i9, int i10) {
-        setMeasuredDimension(View.MeasureSpec.getSize(i9), View.MeasureSpec.getSize(i10));
-        k1 k1Var = k1.V;
-        if (k1Var.e.getParent() == this) {
-            k1Var.e.measure(View.MeasureSpec.makeMeasureSpec(k1Var.F, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(k1Var.G, TLObject.FLAG_30));
-        }
+    @Override // ih.e6
+    public final tc X() {
+        org.telegram.ui.ActionBar.c6 c6Var;
+        h2 h2Var = this.t0;
+        org.telegram.ui.ActionBar.d3 d3Var = h2Var.container;
+        c6Var = h2Var.resourcesProvider;
+        return new tc(d3Var, c6Var);
     }
 }

@@ -1,44 +1,63 @@
 package bg;
 
-import android.util.Pair;
-import java.util.ArrayList;
-import java.util.List;
-import org.telegram.messenger.Utilities;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.drawable.Drawable;
+import android.text.TextUtils;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.ActionBar.w5;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class m2 implements Utilities.Callback {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ q2 b;
-    public final /* synthetic */ boolean c;
+public final class m2 extends TextView {
+    public boolean a;
+    public Drawable b;
 
-    public /* synthetic */ m2(q2 q2Var, boolean z10, int i9) {
-        this.a = i9;
-        this.b = q2Var;
-        this.c = z10;
+    public m2(Context context) {
+        super(context);
+        setTextColor(-1);
+        setTextSize(1, 14.0f);
+        setCurrent(false);
+        setEllipsize(TextUtils.TruncateAt.END);
+        setSingleLine();
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        switch (this.a) {
-            case 0:
-                List list = (List) obj;
-                q2 q2Var = this.b;
-                ArrayList arrayList = q2Var.c0;
-                if (this.c) {
-                    q2Var.d0.addAll(list);
-                }
-                if (q2Var.n0 == 1) {
-                    arrayList.clear();
-                    arrayList.addAll(list);
-                    q2Var.a0(true, true);
-                    q2Var.W(true);
-                    break;
-                }
-                break;
-            default:
-                q2.O(this.b, this.c, (Pair) obj);
-                break;
+    @Override // android.widget.TextView, android.view.View
+    public final void onDraw(Canvas canvas) {
+        canvas.save();
+        canvas.translate(0.0f, AndroidUtilities.dp(-1.0f));
+        super.onDraw(canvas);
+        canvas.restore();
+        if (this.a) {
+            int x4 = org.telegram.ui.b.x(16.0f, getHeight(), 2);
+            if (LocaleController.isRTL) {
+                this.b.setBounds(AndroidUtilities.dp(7.0f), x4, AndroidUtilities.dp(23.0f), AndroidUtilities.dp(16.0f) + x4);
+            } else {
+                this.b.setBounds(getWidth() - AndroidUtilities.dp(23.0f), x4, getWidth() - AndroidUtilities.dp(7.0f), AndroidUtilities.dp(16.0f) + x4);
+            }
+            this.b.draw(canvas);
         }
+    }
+
+    public void setCurrent(boolean z10) {
+        this.a = z10;
+        if (z10) {
+            setPadding(AndroidUtilities.dp(LocaleController.isRTL ? 27.0f : 12.0f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(LocaleController.isRTL ? 12.0f : 27.0f), AndroidUtilities.dp(6.0f));
+            setBackground(w5.d(new float[]{AndroidUtilities.dp(32.0f)}, 0, w5.b(1090519039)));
+        } else {
+            setPadding(AndroidUtilities.dp(24.0f), AndroidUtilities.dp(14.0f), AndroidUtilities.dp(24.0f), AndroidUtilities.dp(14.0f));
+            setBackground(w5.d(new float[]{0.0f}, 0, w5.b(-14145495)));
+        }
+        if (this.a && this.b == null) {
+            Drawable drawable = getContext().getDrawable(R.drawable.photo_expand);
+            this.b = drawable;
+            drawable.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
+        }
+        invalidate();
     }
 }

@@ -8,11 +8,11 @@ import android.text.style.URLSpan;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.m80;
-import org.telegram.ui.Components.oc;
-import org.telegram.ui.Components.p41;
+import org.telegram.ui.Components.a51;
+import org.telegram.ui.Components.tc;
+import org.telegram.ui.Components.z80;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
 public final class f implements Runnable {
     public final /* synthetic */ j a;
@@ -24,16 +24,16 @@ public final class f implements Runnable {
     @Override // java.lang.Runnable
     public final void run() {
         j jVar = this.a;
-        m80 m80Var = jVar.w;
-        if (m80Var != null) {
-            CharacterStyle characterStyle = m80Var.i;
-            final String url = characterStyle instanceof p41 ? ((p41) characterStyle).getURL() : characterStyle instanceof URLSpan ? ((URLSpan) characterStyle).getURL() : characterStyle.toString();
+        z80 z80Var = jVar.w;
+        if (z80Var != null) {
+            CharacterStyle characterStyle = z80Var.i;
+            final String url = characterStyle instanceof a51 ? ((a51) characterStyle).getURL() : characterStyle instanceof URLSpan ? ((URLSpan) characterStyle).getURL() : characterStyle.toString();
             try {
                 jVar.performHapticFeedback(0, 2);
             } catch (Exception unused) {
             }
             final StaticLayout staticLayout = jVar.y;
-            final float f10 = jVar.x;
+            final float f9 = jVar.x;
             if (jVar.getContext() != null) {
                 final ClickableSpan clickableSpan = (ClickableSpan) jVar.w.i;
                 org.telegram.ui.ActionBar.f3 f3Var = new org.telegram.ui.ActionBar.f3(jVar.getContext(), null, false, false);
@@ -43,23 +43,23 @@ public final class f implements Runnable {
                 CharSequence[] charSequenceArr = {LocaleController.getString(R.string.Open), LocaleController.getString(R.string.Copy)};
                 DialogInterface.OnClickListener onClickListener = new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Cells.d
                     @Override // android.content.DialogInterface.OnClickListener
-                    public final void onClick(DialogInterface dialogInterface, int i9) {
+                    public final void onClick(DialogInterface dialogInterface, int i10) {
                         j jVar2 = f.this.a;
                         org.telegram.ui.ActionBar.o2 o2Var = jVar2.D;
-                        if (i9 == 0) {
-                            jVar2.d(clickableSpan, staticLayout, f10);
+                        if (i10 == 0) {
+                            jVar2.d(clickableSpan, staticLayout, f9);
                             return;
                         }
-                        if (i9 == 1) {
+                        if (i10 == 1) {
                             String str = url;
                             AndroidUtilities.addToClipboard(str);
                             if (AndroidUtilities.shouldShowClipboardToast()) {
                                 if (str.startsWith("@")) {
-                                    org.telegram.messenger.l0.p(R.string.UsernameCopied, oc.a0(o2Var), R.raw.copy, 36);
+                                    j7.l1.v(R.string.UsernameCopied, tc.a0(o2Var), R.raw.copy, 36);
                                 } else if (str.startsWith("#") || str.startsWith("$")) {
-                                    org.telegram.messenger.l0.p(R.string.HashtagCopied, oc.a0(o2Var), R.raw.copy, 36);
+                                    j7.l1.v(R.string.HashtagCopied, tc.a0(o2Var), R.raw.copy, 36);
                                 } else {
-                                    org.telegram.messenger.l0.p(R.string.LinkCopied, oc.a0(o2Var), R.raw.copy, 36);
+                                    j7.l1.v(R.string.LinkCopied, tc.a0(o2Var), R.raw.copy, 36);
                                 }
                             }
                         }

@@ -2,14 +2,14 @@ package com.google.android.gms.common.api.internal;
 
 import com.google.android.gms.tasks.TaskCompletionSource;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class e1 extends w {
     public final /* synthetic */ v d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public e1(v vVar, u5.c[] cVarArr, boolean z10, int i9) {
-        super(cVarArr, z10, i9);
+    public e1(v vVar, w5.c[] cVarArr, boolean z10, int i10) {
+        super(cVarArr, z10, i10);
         this.d = vVar;
     }
 

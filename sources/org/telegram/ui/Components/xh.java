@@ -1,90 +1,117 @@
 package org.telegram.ui.Components;
 
-import android.content.Intent;
-import java.util.ArrayList;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.SendMessagesHelper;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
+import android.text.style.ImageSpan;
+import org.telegram.messenger.Emoji;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class xh implements wj {
-    public final /* synthetic */ ki a;
+public final class xh implements TextWatcher {
+    public boolean a;
+    public boolean b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.o2 c;
+    public final /* synthetic */ ni d;
 
-    public xh(ki kiVar) {
-        this.a = kiVar;
+    public xh(ni niVar, org.telegram.ui.ActionBar.o2 o2Var) {
+        this.d = niVar;
+        this.c = o2Var;
     }
 
-    @Override // org.telegram.ui.Components.wj
-    public final void N() {
-        this.a.B1(true);
-    }
-
-    @Override // org.telegram.ui.Components.wj
-    public final void l(ArrayList arrayList, String str, ArrayList arrayList2, ArrayList arrayList3, boolean z10, int i9, long j10, boolean z11, long j11) {
-        ki kiVar = this.a;
-        wj wjVar = kiVar.T;
-        if (wjVar != null) {
-            wjVar.l(arrayList, str, arrayList2, arrayList3, z10, i9, j10, z11, j11);
-            return;
-        }
-        Object obj = kiVar.b0;
-        if (obj instanceof wj) {
-            ((wj) obj).l(arrayList, str, arrayList2, arrayList3, z10, i9, j10, z11, j11);
-            return;
-        }
-        if (obj instanceof org.telegram.ui.wm0) {
-            org.telegram.ui.wm0 wm0Var = (org.telegram.ui.wm0) obj;
-            ArrayList arrayList4 = new ArrayList();
-            int size = arrayList.size();
-            for (int i10 = 0; i10 < size; i10++) {
-                SendMessagesHelper.SendingMediaInfo sendingMediaInfo = new SendMessagesHelper.SendingMediaInfo();
-                sendingMediaInfo.path = (String) arrayList.get(i10);
-                arrayList4.add(sendingMediaInfo);
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        boolean z10;
+        int i10;
+        ni niVar = this.d;
+        o6 o6Var = niVar.s;
+        wh whVar = niVar.L0;
+        int i11 = niVar.F1;
+        o6 o6Var2 = niVar.v;
+        if (this.b != TextUtils.isEmpty(editable)) {
+            fi fiVar = niVar.u0;
+            if (fiVar != null) {
+                fiVar.B(fiVar.getSelectedItemsCount());
             }
-            wm0Var.G1(arrayList4);
+            this.b = !this.b;
         }
-    }
-
-    @Override // org.telegram.ui.Components.wj
-    public final void m(long j10, ArrayList arrayList, boolean z10, int i9) {
-        ki kiVar = this.a;
-        wj wjVar = kiVar.T;
-        if (wjVar != null) {
-            wjVar.m(j10, arrayList, z10, i9);
-            return;
-        }
-        org.telegram.ui.ActionBar.o2 o2Var = kiVar.b0;
-        if (o2Var instanceof org.telegram.ui.qn) {
-            ((org.telegram.ui.qn) o2Var).m(j10, arrayList, z10, i9);
-        } else if (o2Var instanceof org.telegram.ui.wm0) {
-            ((org.telegram.ui.wm0) o2Var).G1(arrayList);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.wj
-    public final void x() {
-        ki kiVar = this.a;
-        wj wjVar = kiVar.T;
-        if (wjVar != null) {
-            wjVar.x();
-            return;
-        }
-        Object obj = kiVar.b0;
-        if (obj instanceof wj) {
-            ((wj) obj).x();
-            return;
-        }
-        if (obj instanceof org.telegram.ui.wm0) {
-            org.telegram.ui.wm0 wm0Var = (org.telegram.ui.wm0) obj;
-            wm0Var.getClass();
-            try {
-                Intent intent = new Intent("android.intent.action.GET_CONTENT");
-                intent.putExtra("android.intent.extra.ALLOW_MULTIPLE", true);
-                intent.setType("*/*");
-                wm0Var.startActivityForResult(intent, 21);
-            } catch (Exception e10) {
-                FileLog.e(e10);
+        boolean z11 = false;
+        if (this.a) {
+            for (ImageSpan imageSpan : (ImageSpan[]) editable.getSpans(0, editable.length(), ImageSpan.class)) {
+                editable.removeSpan(imageSpan);
             }
+            Emoji.replaceEmoji(editable, whVar.getEditText().getPaint().getFontMetricsInt(), false);
+            this.a = false;
         }
+        int codePointCount = Character.codePointCount(editable, 0, editable.length());
+        niVar.H = codePointCount;
+        niVar.e.a(codePointCount > 0, true);
+        int i12 = niVar.G;
+        if (i12 <= 0 || (i10 = i12 - niVar.H) > 100) {
+            o6Var2.animate().alpha(0.0f).scaleX(0.5f).scaleY(0.5f).setDuration(100L).setListener(new org.telegram.ui.bm(this, 13));
+            o6Var.setAlpha(0.0f);
+            z10 = true;
+        } else {
+            if (i10 < -9999) {
+                i10 = -9999;
+            }
+            long j10 = i10;
+            o6Var2.c(LocaleController.formatNumber(j10, ','), o6Var2.getVisibility() == 0, true);
+            if (o6Var2.getVisibility() != 0) {
+                o6Var2.setVisibility(0);
+                o6Var2.setAlpha(0.0f);
+                o6Var2.setScaleX(0.5f);
+                o6Var2.setScaleY(0.5f);
+            }
+            o6Var2.animate().setListener(null).cancel();
+            o6Var2.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(100L).start();
+            if (i10 < 0) {
+                o6Var2.setTextColor(niVar.getThemedColor(org.telegram.ui.ActionBar.g6.p7));
+                z10 = false;
+            } else {
+                o6Var2.setTextColor(niVar.getThemedColor(org.telegram.ui.ActionBar.g6.y6));
+                z10 = true;
+            }
+            o6Var.c(LocaleController.formatNumber(j10, ','), false, true);
+            o6Var.setAlpha(1.0f);
+        }
+        if (niVar.Q0 != z10) {
+            niVar.Q0 = z10;
+            niVar.E0.invalidate();
+        }
+        if (!niVar.e2 && !MessagesController.getInstance(i11).premiumFeaturesBlocked() && !UserConfig.getInstance(i11).isPremium() && niVar.H > MessagesController.getInstance(i11).captionLengthLimitDefault && niVar.H < MessagesController.getInstance(i11).captionLengthLimitPremium) {
+            niVar.e2 = true;
+            niVar.O1(this.c);
+        }
+        if (niVar.Y) {
+            if (whVar.getEditText().getLineCount() > 2 && !TextUtils.isEmpty(whVar.getText().toString().trim())) {
+                z11 = true;
+            }
+            niVar.M1(z11);
+        }
+        niVar.d1(true);
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        if (i12 - i11 >= 1) {
+            this.a = true;
+        }
+        ni niVar = this.d;
+        if (niVar.x2 == null) {
+            ni.Q(niVar);
+        }
+        if (niVar.x2.getAdapter() != null) {
+            niVar.x2.setReversed(true);
+            niVar.x2.getAdapter().U(charSequence, niVar.L0.getEditText().getSelectionStart(), null, false, false);
+            niVar.U1();
+        }
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

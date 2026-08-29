@@ -20,18 +20,17 @@ import android.os.SystemClock;
 import android.view.ViewGroup;
 import java.io.File;
 import java.util.Locale;
-import java.util.concurrent.atomic.AtomicBoolean;
 import org.json.JSONObject;
 import org.telegram.messenger.PushListenerController;
 import org.telegram.messenger.voip.VideoCapturerDevice;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.r00;
-import org.telegram.ui.Components.x60;
+import org.telegram.ui.Components.c10;
+import org.telegram.ui.Components.j70;
 import org.telegram.ui.IUpdateLayout;
-import org.telegram.ui.pa0;
+import org.telegram.ui.sa0;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public class ApplicationLoader extends Application {
     public static volatile Context applicationContext = null;
@@ -56,8 +55,8 @@ public class ApplicationLoader extends Application {
     private static PushListenerController.IPushListenerServiceProvider pushProvider;
     public static long startTime;
 
-    public static void appCenterLog(Throwable th) {
-        applicationLoaderInstance.appCenterLogInternal(th);
+    public static void appCenterLog(Throwable th2) {
+        applicationLoaderInstance.appCenterLogInternal(th2);
     }
 
     public static void checkForUpdates() {
@@ -66,8 +65,8 @@ public class ApplicationLoader extends Application {
 
     private boolean checkPlayServices() {
         try {
-            AtomicBoolean atomicBoolean = u5.g.a;
-            return u5.g.b(this, 12451000) == 0;
+            int i10 = w5.g.e;
+            return w5.g.b(this, 12451000) == 0;
         } catch (Exception e10) {
             FileLog.e(e10);
             return true;
@@ -85,7 +84,7 @@ public class ApplicationLoader extends Application {
     }
 
     public static int getAutodownloadNetworkType() {
-        int i9;
+        int i10;
         try {
             ensureCurrentNetworkGet(false);
         } catch (Exception e10) {
@@ -97,7 +96,7 @@ public class ApplicationLoader extends Application {
         if (currentNetworkInfo.getType() != 1 && currentNetworkInfo.getType() != 9) {
             return currentNetworkInfo.isRoaming() ? 2 : 0;
         }
-        if (Build.VERSION.SDK_INT >= 24 && (((i9 = lastKnownNetworkType) == 0 || i9 == 1) && System.currentTimeMillis() - lastNetworkCheckTypeTime < 5000)) {
+        if (Build.VERSION.SDK_INT >= 24 && (((i10 = lastKnownNetworkType) == 0 || i10 == 1) && System.currentTimeMillis() - lastNetworkCheckTypeTime < 5000)) {
             return lastKnownNetworkType;
         }
         if (connectivityManager.isActiveNetworkMetered()) {
@@ -117,7 +116,7 @@ public class ApplicationLoader extends Application {
     }
 
     public static File getFilesDirFixed() {
-        for (int i9 = 0; i9 < 10; i9++) {
+        for (int i10 = 0; i10 < 10; i10++) {
             File filesDir = applicationContext.getFilesDir();
             if (filesDir != null) {
                 return filesDir;
@@ -337,9 +336,9 @@ public class ApplicationLoader extends Application {
                     } catch (Throwable unused) {
                     }
                     boolean isConnectionSlow = ApplicationLoader.isConnectionSlow();
-                    for (int i9 = 0; i9 < 4; i9++) {
-                        ConnectionsManager.getInstance(i9).checkConnection();
-                        FileLoader.getInstance(i9).onNetworkChanged(isConnectionSlow);
+                    for (int i10 = 0; i10 < 4; i10++) {
+                        ConnectionsManager.getInstance(i10).checkConnection();
+                        FileLoader.getInstance(i10).onNetworkChanged(isConnectionSlow);
                     }
                 }
             }, new IntentFilter("android.net.conn.CONNECTIVITY_CHANGE"));
@@ -363,18 +362,18 @@ public class ApplicationLoader extends Application {
         }
         SharedConfig.loadConfig();
         SharedPrefsHelper.init(applicationContext);
-        for (int i9 = 0; i9 < 4; i9++) {
-            UserConfig.getInstance(i9).loadConfig();
-            MessagesController.getInstance(i9);
-            if (i9 == 0) {
-                SharedConfig.pushStringStatus = "__FIREBASE_GENERATING_SINCE_" + ConnectionsManager.getInstance(i9).getCurrentTime() + "__";
+        for (int i10 = 0; i10 < 4; i10++) {
+            UserConfig.getInstance(i10).loadConfig();
+            MessagesController.getInstance(i10);
+            if (i10 == 0) {
+                SharedConfig.pushStringStatus = "__FIREBASE_GENERATING_SINCE_" + ConnectionsManager.getInstance(i10).getCurrentTime() + "__";
             } else {
-                ConnectionsManager.getInstance(i9);
+                ConnectionsManager.getInstance(i10);
             }
-            TLRPC.User currentUser = UserConfig.getInstance(i9).getCurrentUser();
+            TLRPC.User currentUser = UserConfig.getInstance(i10).getCurrentUser();
             if (currentUser != null) {
-                MessagesController.getInstance(i9).putUser(currentUser, true);
-                SendMessagesHelper.getInstance(i9).checkUnsentMessages();
+                MessagesController.getInstance(i10).putUser(currentUser, true);
+                SendMessagesHelper.getInstance(i10).checkUnsentMessages();
             }
         }
         ((ApplicationLoader) applicationContext).initPushServices();
@@ -382,9 +381,9 @@ public class ApplicationLoader extends Application {
             FileLog.d("app initied");
         }
         MediaController.getInstance();
-        for (int i10 = 0; i10 < 4; i10++) {
-            ContactsController.getInstance(i10).checkAppAccount();
-            DownloadController.getInstance(i10);
+        for (int i11 = 0; i11 < 4; i11++) {
+            ContactsController.getInstance(i11).checkAppAccount();
+            DownloadController.getInstance(i11);
         }
         BillingController.getInstance().lambda$onBillingServiceDisconnected$13();
     }
@@ -414,11 +413,11 @@ public class ApplicationLoader extends Application {
         return false;
     }
 
-    public boolean checkRequestPermissionResult(int i9, String[] strArr, int[] iArr) {
+    public boolean checkRequestPermissionResult(int i10, String[] strArr, int[] iArr) {
         return false;
     }
 
-    public boolean consumePush(int i9, JSONObject jSONObject) {
+    public boolean consumePush(int i10, JSONObject jSONObject) {
         return false;
     }
 
@@ -481,17 +480,17 @@ public class ApplicationLoader extends Application {
         }
         super.onCreate();
         String helloWorld = AndroidUtilities.getHelloWorld();
-        int i9 = 0;
+        int i10 = 0;
         if (BuildVars.LOGS_ENABLED) {
             FileLog.d(helloWorld);
             StringBuilder sb2 = new StringBuilder("app start time = ");
             long elapsedRealtime = SystemClock.elapsedRealtime();
             startTime = elapsedRealtime;
-            j3.r0.z(sb2, elapsedRealtime);
+            j7.l1.x(sb2, elapsedRealtime);
             try {
                 PackageInfo packageInfo = applicationContext.getPackageManager().getPackageInfo(applicationContext.getPackageName(), 0);
-                int i10 = packageInfo.versionCode % 10;
-                if (i10 == 1 || i10 == 2) {
+                int i11 = packageInfo.versionCode % 10;
+                if (i11 == 1 || i11 == 2) {
                     str = "store bundled " + Build.CPU_ABI + " " + Build.CPU_ABI2;
                 } else if (isStandaloneBuild()) {
                     str = "direct " + Build.CPU_ABI + " " + Build.CPU_ABI2;
@@ -510,7 +509,7 @@ public class ApplicationLoader extends Application {
             sb3.append(", model=");
             sb3.append(Build.MODEL);
             sb3.append(", product=");
-            j3.r0.x(Build.PRODUCT, sb3);
+            org.telegram.ui.th.v(Build.PRODUCT, sb3);
         }
         if (applicationContext == null) {
             applicationContext = getApplicationContext();
@@ -518,8 +517,8 @@ public class ApplicationLoader extends Application {
         NativeLoader.initNativeLibs(applicationContext);
         try {
             ConnectionsManager.native_setJava(false);
-            new r00(this) { // from class: org.telegram.messenger.ApplicationLoader.2
-                @Override // org.telegram.ui.Components.r00, android.app.Application.ActivityLifecycleCallbacks
+            new c10(this) { // from class: org.telegram.messenger.ApplicationLoader.2
+                @Override // org.telegram.ui.Components.c10, android.app.Application.ActivityLifecycleCallbacks
                 public void onActivityStarted(Activity activity) {
                     boolean isBackground = isBackground();
                     super.onActivityStarted(activity);
@@ -534,16 +533,16 @@ public class ApplicationLoader extends Application {
             }
             applicationHandler = new Handler(applicationContext.getMainLooper());
             AndroidUtilities.runOnUIThread(new w1(4));
-            pa0[] values = pa0.values();
+            sa0[] values = sa0.values();
             int length = values.length;
             while (true) {
-                if (i9 >= length) {
-                    g7.l6.b(pa0.h);
+                if (i10 >= length) {
+                    i7.m6.b(sa0.h);
                     break;
-                } else if (g7.l6.a(values[i9])) {
+                } else if (i7.m6.a(values[i10])) {
                     break;
                 } else {
-                    i9++;
+                    i10++;
                 }
             }
             ProxyRotationController.init();
@@ -584,19 +583,19 @@ public class ApplicationLoader extends Application {
         return false;
     }
 
-    public org.telegram.ui.ActionBar.o2 openSettings(int i9) {
+    public org.telegram.ui.ActionBar.o2 openSettings(int i10) {
         return null;
     }
 
-    public TLRPC.Update parseTLUpdate(int i9) {
+    public TLRPC.Update parseTLUpdate(int i10) {
         return null;
     }
 
-    public boolean showCustomUpdateAppPopup(Context context, BetaUpdate betaUpdate, int i9) {
+    public boolean showCustomUpdateAppPopup(Context context, BetaUpdate betaUpdate, int i10) {
         return false;
     }
 
-    public boolean showUpdateAppPopup(Context context, TLRPC.TL_help_appUpdate tL_help_appUpdate, int i9) {
+    public boolean showUpdateAppPopup(Context context, TLRPC.TL_help_appUpdate tL_help_appUpdate, int i10) {
         return false;
     }
 
@@ -655,10 +654,10 @@ public class ApplicationLoader extends Application {
     public void onResume() {
     }
 
-    public void addItemOptions(x60 x60Var) {
+    public void addItemOptions(j70 j70Var) {
     }
 
-    public void appCenterLogInternal(Throwable th) {
+    public void appCenterLogInternal(Throwable th2) {
     }
 
     public void startAppCenterInternal(Activity activity) {
@@ -670,6 +669,6 @@ public class ApplicationLoader extends Application {
     public void logDualCameraInternal(boolean z10, boolean z11) {
     }
 
-    public void processUpdate(int i9, TLRPC.Update update) {
+    public void processUpdate(int i10, TLRPC.Update update) {
     }
 }

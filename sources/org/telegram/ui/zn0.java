@@ -1,27 +1,16 @@
 package org.telegram.ui;
 
-import android.text.TextPaint;
-import android.text.style.ClickableSpan;
-import android.view.View;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class zn0 extends ClickableSpan {
-    public final /* synthetic */ co0 a;
+public interface zn0 {
+    void a(TL_account.Password password);
 
-    public zn0(co0 co0Var) {
-        this.a = co0Var;
-    }
+    void b();
 
-    @Override // android.text.style.ClickableSpan
-    public final void onClick(View view) {
-        co0 co0Var = this.a;
-        co0Var.presentFragment(new ag1(6, co0Var.W));
-    }
+    boolean c(String str, String str2, boolean z10, TLRPC.TL_inputPaymentCredentialsGooglePay tL_inputPaymentCredentialsGooglePay, TLRPC.TL_paymentSavedCredentialsCard tL_paymentSavedCredentialsCard);
 
-    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        super.updateDrawState(textPaint);
-        textPaint.setUnderlineText(false);
-    }
+    void d(TLRPC.TL_payments_validateRequestedInfo tL_payments_validateRequestedInfo);
 }

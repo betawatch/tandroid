@@ -1,116 +1,132 @@
 package org.telegram.ui.Components;
 
-import android.hardware.Camera;
-import android.os.Handler;
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.camera.CameraSession;
-import org.telegram.messenger.camera.Size;
+import java.util.ArrayList;
+import java.util.HashMap;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.SendMessagesHelper;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class n40 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ f50 b;
+public final class n40 implements li {
+    public final /* synthetic */ s40 a;
 
-    public /* synthetic */ n40(f50 f50Var, int i9) {
-        this.a = i9;
-        this.b = f50Var;
+    public n40(s40 s40Var) {
+        this.a = s40Var;
     }
 
-    /* JADX WARN: Can't wrap try/catch for region: R(14:14|15|16|(11:18|(1:20)|21|22|(7:24|(1:26)|27|28|(1:30)|31|(0)(1:37))|42|43|28|(0)|31|(1:33))|48|21|22|(0)|42|43|28|(0)|31|(0)(0)) */
-    /* JADX WARN: Code restructure failed: missing block: B:45:0x0097, code lost:
-    
-        r0 = move-exception;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:47:0x00c7, code lost:
-    
-        org.telegram.messenger.FileLog.e(r0);
-     */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x008c A[Catch: Exception -> 0x0097, TryCatch #1 {Exception -> 0x0097, blocks: (B:22:0x007c, B:24:0x008c, B:42:0x0099), top: B:21:0x007c }] */
-    /* JADX WARN: Removed duplicated region for block: B:30:0x00cf  */
-    /* JADX WARN: Removed duplicated region for block: B:33:0x00db  */
-    @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void run() {
-        boolean z10;
-        w40 w40Var;
-        Handler handler;
-        Camera.Size currentPictureSize;
-        Camera.Size currentPreviewSize;
-        switch (this.a) {
-            case 0:
-                f50 f50Var = this.b;
-                if (f50Var.l0) {
-                    f50Var.p();
-                    break;
-                }
-                break;
-            case 1:
-                f50 f50Var2 = this.b;
-                Size[] sizeArr = f50Var2.e0;
-                if (f50Var2.k0 != null) {
-                    f50Var2.r();
-                    try {
-                        currentPreviewSize = f50Var2.k0.getCurrentPreviewSize();
-                    } catch (Exception e10) {
-                        FileLog.e(e10);
-                    }
-                    if (currentPreviewSize.width == sizeArr[0].getWidth()) {
-                        if (currentPreviewSize.height != sizeArr[0].getHeight()) {
-                        }
-                        currentPictureSize = f50Var2.k0.getCurrentPictureSize();
-                        if (currentPictureSize.width == f50Var2.f0.getWidth()) {
-                            if (currentPictureSize.height == f50Var2.f0.getHeight()) {
-                            }
-                            z10 = false;
-                            if (BuildVars.LOGS_ENABLED) {
-                                FileLog.d("InstantCamera camera initied");
-                            }
-                            f50Var2.k0.setInitied();
-                            if (z10 && (w40Var = f50Var2.d0) != null && (handler = w40Var.getHandler()) != null) {
-                                w40Var.sendMessage(handler.obtainMessage(2), 0);
-                                break;
-                            }
-                        }
-                        f50Var2.f0 = new Size(currentPictureSize.width, currentPictureSize.height);
-                        FileLog.d("InstantCamera change picture size to w = " + f50Var2.f0.getWidth() + " h = " + f50Var2.f0.getHeight());
-                        z10 = true;
-                        if (BuildVars.LOGS_ENABLED) {
-                        }
-                        f50Var2.k0.setInitied();
-                        if (z10) {
-                        }
-                    }
-                    sizeArr[0] = new Size(currentPreviewSize.width, currentPreviewSize.height);
-                    FileLog.d("InstantCamera change preview size to w = " + sizeArr[0].getWidth() + " h = " + sizeArr[0].getHeight());
-                    currentPictureSize = f50Var2.k0.getCurrentPictureSize();
-                    if (currentPictureSize.width == f50Var2.f0.getWidth()) {
-                    }
-                    f50Var2.f0 = new Size(currentPictureSize.width, currentPictureSize.height);
-                    FileLog.d("InstantCamera change picture size to w = " + f50Var2.f0.getWidth() + " h = " + f50Var2.f0.getHeight());
-                    z10 = true;
-                    if (BuildVars.LOGS_ENABLED) {
-                    }
-                    f50Var2.k0.setInitied();
-                    if (z10) {
-                    }
-                }
-                break;
-            default:
-                f50 f50Var3 = this.b;
-                w40 w40Var2 = f50Var3.d0;
-                if (w40Var2 != null) {
-                    CameraSession cameraSession = f50Var3.k0;
-                    Handler handler2 = w40Var2.getHandler();
-                    if (handler2 != null) {
-                        w40Var2.sendMessage(handler2.obtainMessage(3, cameraSession), 0);
-                        break;
-                    }
-                }
-                break;
+    @Override // org.telegram.ui.Components.li
+    public final void B1(int i10, boolean z10, boolean z11, int i11, int i12, long j10, boolean z12, boolean z13, long j11) {
+        ni niVar;
+        s40 s40Var = this.a;
+        org.telegram.ui.ActionBar.o2 o2Var = s40Var.a;
+        if (o2Var == null || o2Var.getParentActivity() == null || (niVar = s40Var.c) == null) {
+            return;
         }
+        if (i10 != 8 && i10 != 7) {
+            niVar.dismissWithButtonClick(i10);
+            if (i10 == 0) {
+                s40Var.m();
+                return;
+            }
+            return;
+        }
+        HashMap<Object, Object> selectedPhotos = niVar.f0.getSelectedPhotos();
+        ArrayList<Object> selectedPhotosOrder = s40Var.c.f0.getSelectedPhotosOrder();
+        ArrayList arrayList = new ArrayList();
+        boolean z14 = false;
+        for (int i13 = 0; i13 < selectedPhotosOrder.size(); i13++) {
+            Object obj = selectedPhotos.get(selectedPhotosOrder.get(i13));
+            SendMessagesHelper.SendingMediaInfo sendingMediaInfo = new SendMessagesHelper.SendingMediaInfo();
+            arrayList.add(sendingMediaInfo);
+            if (obj instanceof MediaController.PhotoEntry) {
+                MediaController.PhotoEntry photoEntry = (MediaController.PhotoEntry) obj;
+                String str = photoEntry.imagePath;
+                if (str != null) {
+                    sendingMediaInfo.path = str;
+                } else {
+                    sendingMediaInfo.path = photoEntry.path;
+                }
+                sendingMediaInfo.thumbPath = photoEntry.thumbPath;
+                sendingMediaInfo.coverPath = photoEntry.coverPath;
+                sendingMediaInfo.videoEditedInfo = photoEntry.editedInfo;
+                sendingMediaInfo.isLivePhoto = photoEntry.isLivePhoto();
+                sendingMediaInfo.isVideo = photoEntry.isVideo;
+                sendingMediaInfo.livePhotoVideoOffset = photoEntry.livePhotoVideoOffset;
+                sendingMediaInfo.discardLivePhoto = true;
+                CharSequence charSequence = photoEntry.caption;
+                sendingMediaInfo.caption = charSequence != null ? charSequence.toString() : null;
+                sendingMediaInfo.entities = photoEntry.entities;
+                sendingMediaInfo.masks = photoEntry.stickers;
+                sendingMediaInfo.ttl = photoEntry.ttl;
+                TLRPC.VideoSize videoSize = photoEntry.emojiMarkup;
+                sendingMediaInfo.emojiMarkup = videoSize;
+                z14 = videoSize instanceof TLRPC.TL_videoSizeEmojiMarkup;
+            } else if (obj instanceof MediaController.SearchImage) {
+                MediaController.SearchImage searchImage = (MediaController.SearchImage) obj;
+                String str2 = searchImage.imagePath;
+                if (str2 != null) {
+                    sendingMediaInfo.path = str2;
+                } else {
+                    sendingMediaInfo.searchImage = searchImage;
+                }
+                sendingMediaInfo.thumbPath = searchImage.thumbPath;
+                sendingMediaInfo.coverPath = searchImage.coverPath;
+                sendingMediaInfo.videoEditedInfo = searchImage.editedInfo;
+                CharSequence charSequence2 = searchImage.caption;
+                sendingMediaInfo.caption = charSequence2 != null ? charSequence2.toString() : null;
+                sendingMediaInfo.entities = searchImage.entities;
+                sendingMediaInfo.masks = searchImage.stickers;
+                sendingMediaInfo.ttl = searchImage.ttl;
+                TLRPC.BotInlineResult botInlineResult = searchImage.inlineResult;
+                if (botInlineResult != null && searchImage.type == 1) {
+                    sendingMediaInfo.inlineResult = botInlineResult;
+                    sendingMediaInfo.params = searchImage.params;
+                }
+                searchImage.date = (int) (System.currentTimeMillis() / 1000);
+            }
+        }
+        s40.b(s40Var, z14, arrayList);
+        if (i10 != 8) {
+            s40Var.c.dismiss(true);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.li
+    public final void L0() {
+        AndroidUtilities.hideKeyboard(this.a.a.getFragmentView().findFocus());
+    }
+
+    @Override // org.telegram.ui.Components.li
+    public final /* synthetic */ boolean T1() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.li
+    public final boolean a0() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.li
+    public final void u0() {
+        this.a.r();
+    }
+
+    @Override // org.telegram.ui.Components.li
+    public final void x0(zg zgVar) {
+        zgVar.run();
+    }
+
+    @Override // org.telegram.ui.Components.li
+    public final /* synthetic */ void U0(Object obj) {
+    }
+
+    @Override // org.telegram.ui.Components.li
+    public final void j1(TLRPC.User user) {
+    }
+
+    @Override // org.telegram.ui.Components.li
+    public final /* synthetic */ void X1(ArrayList arrayList, CharSequence charSequence, boolean z10, int i10, int i11, long j10, boolean z11, long j11) {
     }
 }

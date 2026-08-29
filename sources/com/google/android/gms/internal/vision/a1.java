@@ -2,9 +2,8 @@ package com.google.android.gms.internal.vision;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import g7.o8;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class a1 implements Parcelable.Creator {
     public final /* synthetic */ int a;
@@ -13,67 +12,67 @@ public final class a1 implements Parcelable.Creator {
     public final Object createFromParcel(Parcel parcel) {
         switch (this.a) {
             case 0:
-                int z10 = o8.z(parcel);
-                int i9 = 0;
-                boolean z11 = false;
-                while (parcel.dataPosition() < z10) {
+                int A = ce.b.A(parcel);
+                int i10 = 0;
+                boolean z10 = false;
+                while (parcel.dataPosition() < A) {
                     int readInt = parcel.readInt();
-                    char c10 = (char) readInt;
-                    if (c10 == 2) {
-                        i9 = o8.u(parcel, readInt);
-                    } else if (c10 != 3) {
-                        o8.y(parcel, readInt);
+                    char c3 = (char) readInt;
+                    if (c3 == 2) {
+                        i10 = ce.b.v(parcel, readInt);
+                    } else if (c3 != 3) {
+                        ce.b.z(parcel, readInt);
                     } else {
-                        z11 = o8.n(parcel, readInt);
+                        z10 = ce.b.o(parcel, readInt);
                     }
                 }
-                o8.m(parcel, z10);
+                ce.b.n(parcel, A);
                 x1 x1Var = new x1();
-                x1Var.a = i9;
-                x1Var.b = z11;
+                x1Var.a = i10;
+                x1Var.b = z10;
                 return x1Var;
             default:
-                int z12 = o8.z(parcel);
-                int i10 = 0;
-                long j10 = 0;
+                int A2 = ce.b.A(parcel);
                 int i11 = 0;
+                long j10 = 0;
                 int i12 = 0;
                 int i13 = 0;
-                while (parcel.dataPosition() < z12) {
+                int i14 = 0;
+                while (parcel.dataPosition() < A2) {
                     int readInt2 = parcel.readInt();
-                    char c11 = (char) readInt2;
-                    if (c11 == 2) {
-                        i10 = o8.u(parcel, readInt2);
-                    } else if (c11 == 3) {
-                        i11 = o8.u(parcel, readInt2);
-                    } else if (c11 == 4) {
-                        i12 = o8.u(parcel, readInt2);
-                    } else if (c11 == 5) {
-                        j10 = o8.w(parcel, readInt2);
-                    } else if (c11 != 6) {
-                        o8.y(parcel, readInt2);
+                    char c6 = (char) readInt2;
+                    if (c6 == 2) {
+                        i11 = ce.b.v(parcel, readInt2);
+                    } else if (c6 == 3) {
+                        i12 = ce.b.v(parcel, readInt2);
+                    } else if (c6 == 4) {
+                        i13 = ce.b.v(parcel, readInt2);
+                    } else if (c6 == 5) {
+                        j10 = ce.b.x(parcel, readInt2);
+                    } else if (c6 != 6) {
+                        ce.b.z(parcel, readInt2);
                     } else {
-                        i13 = o8.u(parcel, readInt2);
+                        i14 = ce.b.v(parcel, readInt2);
                     }
                 }
-                o8.m(parcel, z12);
+                ce.b.n(parcel, A2);
                 f3 f3Var = new f3();
-                f3Var.a = i10;
-                f3Var.b = i11;
-                f3Var.c = i12;
+                f3Var.a = i11;
+                f3Var.b = i12;
+                f3Var.c = i13;
                 f3Var.d = j10;
-                f3Var.e = i13;
+                f3Var.e = i14;
                 return f3Var;
         }
     }
 
     @Override // android.os.Parcelable.Creator
-    public final /* synthetic */ Object[] newArray(int i9) {
+    public final /* synthetic */ Object[] newArray(int i10) {
         switch (this.a) {
             case 0:
-                return new x1[i9];
+                return new x1[i10];
             default:
-                return new f3[i9];
+                return new f3[i10];
         }
     }
 }

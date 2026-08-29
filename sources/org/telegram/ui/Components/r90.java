@@ -1,45 +1,64 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.AndroidUtilities;
+import java.util.ArrayList;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class r90 {
-    public final /* synthetic */ org.telegram.ui.ActionBar.o2 a;
-    public final /* synthetic */ w90 b;
+public final class r90 extends org.telegram.ui.ActionBar.k {
+    public final /* synthetic */ y90 a;
 
-    public r90(w90 w90Var, org.telegram.ui.ActionBar.o2 o2Var) {
-        this.b = w90Var;
-        this.a = o2Var;
+    public r90(y90 y90Var) {
+        this.a = y90Var;
     }
 
-    public final void a(boolean z10) {
-        w90 w90Var = this.b;
-        if (w90Var.getNeededLayoutManager() != w90Var.getCurrentLayoutManager() && w90Var.a()) {
-            if (w90Var.f.H0 > 0) {
-                w90Var.J = true;
-                w90Var.o(false);
+    @Override // org.telegram.ui.ActionBar.k
+    public final void b(int i10) {
+        y90 y90Var = this.a;
+        if (i10 == -1) {
+            if (y90Var.R.L(true)) {
                 return;
             }
-            w90Var.b.setLayoutManager(w90Var.getNeededLayoutManager());
-        }
-        if (z10 && !w90Var.a()) {
-            z10 = false;
-        }
-        w90Var.o((!z10 || w90Var.f.K() > 0) ? z10 : false);
-    }
-
-    public final void b(boolean z10) {
-        this.b.l(z10);
-    }
-
-    public final void c() {
-        w90 w90Var = this.b;
-        np npVar = w90Var.F;
-        if (w90Var.b.getLayoutManager() == w90Var.d || !w90Var.E) {
+            y90Var.finishFragment();
             return;
         }
-        AndroidUtilities.cancelRunOnUIThread(npVar);
-        AndroidUtilities.runOnUIThread(npVar, this.a.getFragmentBeginToShow() ? 0L : 100L);
+        if (i10 != 2) {
+            if (i10 == 10) {
+                v90 v90Var = y90Var.R;
+                v90Var.c1(v90Var.getClosestTab(), false);
+                return;
+            } else {
+                if (i10 == 11) {
+                    y90Var.R.L(true);
+                    y90Var.R.getSearchItem().z(false);
+                    return;
+                }
+                return;
+            }
+        }
+        if (y90Var.E != null) {
+            ArrayList arrayList = new ArrayList();
+            for (int i11 = 0; i11 < y90Var.E.size(); i11++) {
+                TL_stories.StoryItem storyItem = ((MessageObject) y90Var.E.valueAt(i11)).storyItem;
+                if (storyItem != null) {
+                    arrayList.add(storyItem);
+                }
+            }
+            if (arrayList.isEmpty()) {
+                return;
+            }
+            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(y90Var.getParentActivity(), 0, y90Var.getResourceProvider());
+            alertDialog$Builder.a.N = LocaleController.getString(arrayList.size() > 1 ? R.string.DeleteStoriesTitle : R.string.DeleteStoryTitle);
+            alertDialog$Builder.a.P = LocaleController.formatPluralString("DeleteStoriesSubtitle", arrayList.size(), new Object[0]);
+            alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new j1(22, this, arrayList));
+            alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new r2(11));
+            org.telegram.ui.ActionBar.c2 c2Var = alertDialog$Builder.a;
+            c2Var.show();
+            c2Var.h();
+        }
     }
 }

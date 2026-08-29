@@ -3,7 +3,7 @@ package r1;
 import java.io.InputStream;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class f extends b {
     public f(byte[] bArr) {
@@ -12,12 +12,12 @@ public final class f extends b {
     }
 
     public final void b(long j10) {
-        int i9 = this.c;
-        if (i9 > j10) {
+        int i10 = this.c;
+        if (i10 > j10) {
             this.c = 0;
             this.a.reset();
         } else {
-            j10 -= i9;
+            j10 -= i10;
         }
         a((int) j10);
     }

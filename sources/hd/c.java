@@ -1,49 +1,22 @@
 package hd;
 
-import java.util.ArrayList;
-import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
-import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
+import java.io.Serializable;
+import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class c extends l1 {
-    public static final /* synthetic */ AtomicReferenceFieldUpdater n = AtomicReferenceFieldUpdater.newUpdater(c.class, Object.class, "_disposer$volatile");
-    private volatile /* synthetic */ Object _disposer$volatile;
-    public final m e;
-    public p0 f;
-    public final /* synthetic */ e h;
+public final class c implements Serializable {
+    public final Pattern a;
 
-    public c(e eVar, m mVar) {
-        this.h = eVar;
-        this.e = mVar;
+    public c() {
+        Pattern compile = Pattern.compile("^[a-zA-Z0-9/_]{1,100}$");
+        kotlin.jvm.internal.j.d(compile, "compile(...)");
+        this.a = compile;
     }
 
-    @Override // hd.e1
-    public final void a(Throwable th) {
-        m mVar = this.e;
-        if (th != null) {
-            mVar.getClass();
-            e5.c F = mVar.F(null, new v(th, false));
-            if (F != null) {
-                mVar.e(F);
-                d dVar = (d) n.get(this);
-                if (dVar != null) {
-                    dVar.b();
-                    return;
-                }
-                return;
-            }
-            return;
-        }
-        AtomicIntegerFieldUpdater atomicIntegerFieldUpdater = e.b;
-        e eVar = this.h;
-        if (atomicIntegerFieldUpdater.decrementAndGet(eVar) == 0) {
-            i0[] i0VarArr = eVar.a;
-            ArrayList arrayList = new ArrayList(i0VarArr.length);
-            for (i0 i0Var : i0VarArr) {
-                arrayList.add(i0Var.getCompleted());
-            }
-            mVar.resumeWith(arrayList);
-        }
+    public final String toString() {
+        String pattern = this.a.toString();
+        kotlin.jvm.internal.j.d(pattern, "toString(...)");
+        return pattern;
     }
 }

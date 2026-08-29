@@ -4,14 +4,14 @@ import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
 import com.google.android.gms.common.api.m;
-import d7.p;
+import f7.p;
 import java.util.Iterator;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
-import k5.d;
-import org.telegram.ui.fm;
+import m5.d;
+import od.i;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class a implements Runnable {
     public static Handler f;
@@ -28,14 +28,14 @@ public final class a implements Runnable {
     public final void a() {
         d dVar = this.e;
         Iterator it = dVar.j.iterator();
-        int i9 = 0;
+        int i10 = 0;
         while (it.hasNext()) {
-            if (((m) it.next()).d(dVar)) {
-                i9++;
+            if (((m) it.next()).e(dVar)) {
+                i10++;
             }
         }
         try {
-            dVar.i.tryAcquire(i9, 5L, TimeUnit.SECONDS);
+            dVar.i.tryAcquire(i10, 5L, TimeUnit.SECONDS);
         } catch (InterruptedException e10) {
             Log.i("GACSignInLoader", "Unexpected InterruptedException", e10);
             Thread.currentThread().interrupt();
@@ -50,11 +50,11 @@ public final class a implements Runnable {
                     f = new Handler(Looper.getMainLooper());
                 }
                 handler = f;
-            } catch (Throwable th) {
-                throw th;
+            } catch (Throwable th2) {
+                throw th2;
             }
         }
-        handler.post(new fm(8, this, obj));
+        handler.post(new i(13, this, obj));
     }
 
     @Override // java.lang.Runnable

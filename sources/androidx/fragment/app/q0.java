@@ -1,6 +1,6 @@
 package androidx.fragment.app;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class q0 {
     public int a;
@@ -13,16 +13,16 @@ public final class q0 {
     public androidx.lifecycle.n h;
     public androidx.lifecycle.n i;
 
-    public q0(int i9, s sVar) {
-        this.a = i9;
+    public q0(int i10, s sVar) {
+        this.a = i10;
         this.b = sVar;
         androidx.lifecycle.n nVar = androidx.lifecycle.n.e;
         this.h = nVar;
         this.i = nVar;
     }
 
-    public q0(int i9, s sVar, int i10) {
-        this.a = i9;
+    public q0(int i10, s sVar, int i11) {
+        this.a = i10;
         this.b = sVar;
         androidx.lifecycle.n nVar = androidx.lifecycle.n.e;
         this.h = nVar;

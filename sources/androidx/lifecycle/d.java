@@ -4,7 +4,7 @@ import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Map;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class d {
     public static final d c = new d();
@@ -24,7 +24,7 @@ public final class d {
     }
 
     public final b a(Class cls, Method[] methodArr) {
-        int i9;
+        int i10;
         Class superclass = cls.getSuperclass();
         HashMap hashMap = new HashMap();
         HashMap hashMap2 = this.a;
@@ -57,12 +57,12 @@ public final class d {
             if (b0Var != null) {
                 Class<?>[] parameterTypes = method.getParameterTypes();
                 if (parameterTypes.length <= 0) {
-                    i9 = 0;
+                    i10 = 0;
                 } else {
                     if (!t.class.isAssignableFrom(parameterTypes[0])) {
                         throw new IllegalArgumentException("invalid parameter type. Must be one and instanceof LifecycleOwner");
                     }
-                    i9 = 1;
+                    i10 = 1;
                 }
                 m value = b0Var.value();
                 if (parameterTypes.length > 1) {
@@ -72,12 +72,12 @@ public final class d {
                     if (value != m.ON_ANY) {
                         throw new IllegalArgumentException("Second arg is supported only for ON_ANY value");
                     }
-                    i9 = 2;
+                    i10 = 2;
                 }
                 if (parameterTypes.length > 2) {
                     throw new IllegalArgumentException("cannot have more than 2 params");
                 }
-                b(hashMap, new c(i9, method), value, cls);
+                b(hashMap, new c(i10, method), value, cls);
                 z10 = true;
             }
         }

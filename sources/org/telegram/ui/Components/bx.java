@@ -1,10 +1,16 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class bx {
-    public TLRPC.TL_messages_stickerSet a;
-    public long b;
+public final class bx extends org.telegram.ui.tn {
+    @Override // org.telegram.ui.tn, org.telegram.ui.ActionBar.o2
+    public final void onTransitionAnimationEnd(boolean z10, boolean z11) {
+        org.telegram.ui.dk dkVar;
+        super.onTransitionAnimationEnd(z10, z11);
+        if (!z10 || (dkVar = this.U) == null) {
+            return;
+        }
+        dkVar.s1();
+        this.U.postDelayed(new rp(this, 13), 100L);
+    }
 }

@@ -1,47 +1,64 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.UnconfirmedAuthController;
-import org.telegram.messenger.Utilities;
+import org.telegram.messenger.TranslateController;
+import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class il implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ UnconfirmedAuthController.UnconfirmedAuth b;
-    public final /* synthetic */ TLObject c;
-    public final /* synthetic */ Utilities.Callback d;
-    public final /* synthetic */ TLRPC.TL_error e;
+public final /* synthetic */ class il implements RequestDelegate {
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ String c;
+    public final /* synthetic */ Runnable d;
+    public final /* synthetic */ BaseController e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Object g;
+    public final /* synthetic */ Object h;
 
-    public /* synthetic */ il(UnconfirmedAuthController.UnconfirmedAuth unconfirmedAuth, Utilities.Callback callback, TLObject tLObject, TLRPC.TL_error tL_error) {
-        this.a = 1;
-        this.b = unconfirmedAuth;
-        this.c = tLObject;
-        this.d = callback;
-        this.e = tL_error;
+    public /* synthetic */ il(MessagesController messagesController, long j10, String str, Runnable runnable, org.telegram.ui.ActionBar.o2 o2Var, TLRPC.TL_channels_updateUsername tL_channels_updateUsername, Runnable runnable2) {
+        this.e = messagesController;
+        this.b = j10;
+        this.c = str;
+        this.d = runnable;
+        this.f = o2Var;
+        this.g = tL_channels_updateUsername;
+        this.h = runnable2;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                this.b.lambda$confirm$1(this.d, this.c, this.e);
+                ((TranslateController) this.e).lambda$translatePhoto$46((MessageObject) this.f, this.c, (TranslateController.MessageKey) this.g, this.d, this.b, (TLRPC.TL_textWithEntities) this.h, tLObject, tL_error);
                 break;
             case 1:
-                this.b.lambda$deny$3(this.c, this.d, this.e);
+                ((MessagesController) this.e).lambda$updateChannelUserName$292(this.b, this.c, this.d, (org.telegram.ui.ActionBar.o2) this.f, (TLRPC.TL_channels_updateUsername) this.g, (Runnable) this.h, tLObject, tL_error);
                 break;
             default:
-                this.b.lambda$deny$5(this.d, this.c, this.e);
+                ((MessagesController) this.e).lambda$changeChatAvatar$319((TLRPC.TL_inputChatPhoto) this.f, (TLRPC.FileLocation) this.g, (TLRPC.FileLocation) this.h, this.c, this.b, this.d, tLObject, tL_error);
                 break;
         }
     }
 
-    public /* synthetic */ il(UnconfirmedAuthController.UnconfirmedAuth unconfirmedAuth, Utilities.Callback callback, TLObject tLObject, TLRPC.TL_error tL_error, int i9) {
-        this.a = i9;
-        this.b = unconfirmedAuth;
-        this.d = callback;
-        this.c = tLObject;
-        this.e = tL_error;
+    public /* synthetic */ il(MessagesController messagesController, TLRPC.TL_inputChatPhoto tL_inputChatPhoto, TLRPC.FileLocation fileLocation, TLRPC.FileLocation fileLocation2, String str, long j10, Runnable runnable) {
+        this.e = messagesController;
+        this.f = tL_inputChatPhoto;
+        this.g = fileLocation;
+        this.h = fileLocation2;
+        this.c = str;
+        this.b = j10;
+        this.d = runnable;
+    }
+
+    public /* synthetic */ il(TranslateController translateController, MessageObject messageObject, String str, TranslateController.MessageKey messageKey, Runnable runnable, long j10, TLRPC.TL_textWithEntities tL_textWithEntities) {
+        this.e = translateController;
+        this.f = messageObject;
+        this.c = str;
+        this.g = messageKey;
+        this.d = runnable;
+        this.b = j10;
+        this.h = tL_textWithEntities;
     }
 }

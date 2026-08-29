@@ -9,7 +9,7 @@ import java.util.logging.Logger;
 import libcore.io.Memory;
 import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public abstract class s6 {
     public static final Unsafe a;
@@ -20,26 +20,26 @@ public abstract class s6 {
     public static final long f;
     public static final boolean g;
 
-    /* JADX WARN: Removed duplicated region for block: B:20:0x0160  */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x015f  */
     static {
-        char c10;
+        char c3;
         boolean z10;
         Field b10;
         r6 r6Var;
-        Unsafe i9 = i();
-        a = i9;
-        int i10 = v4.a;
+        Unsafe i10 = i();
+        a = i10;
+        int i11 = v4.a;
         b = Memory.class;
         Class<?> cls = Long.TYPE;
-        boolean o6 = o(cls);
+        boolean o10 = o(cls);
         Class<?> cls2 = Integer.TYPE;
-        boolean o9 = o(cls2);
+        boolean o11 = o(cls2);
         r6 r6Var2 = null;
-        if (i9 != null) {
-            if (o6) {
-                r6Var2 = new q6(i9);
-            } else if (o9) {
-                r6Var2 = new p6(i9);
+        if (i10 != null) {
+            if (o10) {
+                r6Var2 = new q6(i10);
+            } else if (o11) {
+                r6Var2 = new p6(i10);
             }
         }
         c = r6Var2;
@@ -52,57 +52,57 @@ public abstract class s6 {
                 if (b() != null) {
                     z11 = true;
                 }
-            } catch (Throwable th) {
-                c10 = 0;
-                Logger.getLogger(s6.class.getName()).logp(Level.WARNING, "com.google.protobuf.UnsafeUtil", "logMissingMethod", "platform method missing - proto runtime falling back to safer methods: ".concat(th.toString()));
+            } catch (Throwable th2) {
+                c3 = 0;
+                Logger.getLogger(s6.class.getName()).logp(Level.WARNING, "com.google.protobuf.UnsafeUtil", "logMissingMethod", "platform method missing - proto runtime falling back to safer methods: ".concat(th2.toString()));
                 z11 = false;
             }
         }
-        c10 = 0;
+        c3 = 0;
         d = z11;
         r6 r6Var3 = c;
         if (r6Var3 != null) {
             try {
                 Class<?> cls4 = r6Var3.a.getClass();
                 Class<?>[] clsArr = new Class[1];
-                clsArr[c10] = Field.class;
+                clsArr[c3] = Field.class;
                 cls4.getMethod("objectFieldOffset", clsArr);
                 Class<?>[] clsArr2 = new Class[1];
-                clsArr2[c10] = Class.class;
+                clsArr2[c3] = Class.class;
                 cls4.getMethod("arrayBaseOffset", clsArr2);
                 Class<?>[] clsArr3 = new Class[1];
-                clsArr3[c10] = Class.class;
+                clsArr3[c3] = Class.class;
                 cls4.getMethod("arrayIndexScale", clsArr3);
                 Class<?>[] clsArr4 = new Class[2];
-                clsArr4[c10] = Object.class;
+                clsArr4[c3] = Object.class;
                 clsArr4[1] = cls;
                 cls4.getMethod("getInt", clsArr4);
                 Class<?>[] clsArr5 = new Class[3];
-                clsArr5[c10] = Object.class;
+                clsArr5[c3] = Object.class;
                 clsArr5[1] = cls;
                 clsArr5[2] = cls2;
                 cls4.getMethod("putInt", clsArr5);
                 Class<?>[] clsArr6 = new Class[2];
-                clsArr6[c10] = Object.class;
+                clsArr6[c3] = Object.class;
                 clsArr6[1] = cls;
                 cls4.getMethod("getLong", clsArr6);
                 Class<?>[] clsArr7 = new Class[3];
-                clsArr7[c10] = Object.class;
+                clsArr7[c3] = Object.class;
                 clsArr7[1] = cls;
                 clsArr7[2] = cls;
                 cls4.getMethod("putLong", clsArr7);
                 Class<?>[] clsArr8 = new Class[2];
-                clsArr8[c10] = Object.class;
+                clsArr8[c3] = Object.class;
                 clsArr8[1] = cls;
                 cls4.getMethod("getObject", clsArr8);
                 Class<?>[] clsArr9 = new Class[3];
-                clsArr9[c10] = Object.class;
+                clsArr9[c3] = Object.class;
                 clsArr9[1] = cls;
                 clsArr9[2] = Object.class;
                 cls4.getMethod("putObject", clsArr9);
                 z10 = true;
-            } catch (Throwable th2) {
-                Logger.getLogger(s6.class.getName()).logp(Level.WARNING, "com.google.protobuf.UnsafeUtil", "logMissingMethod", "platform method missing - proto runtime falling back to safer methods: ".concat(th2.toString()));
+            } catch (Throwable th3) {
+                Logger.getLogger(s6.class.getName()).logp(Level.WARNING, "com.google.protobuf.UnsafeUtil", "logMissingMethod", "platform method missing - proto runtime falling back to safer methods: ".concat(th3.toString()));
             }
             e = z10;
             f = p(byte[].class);
@@ -155,7 +155,7 @@ public abstract class s6 {
     public static Field b() {
         Field field;
         Field field2;
-        int i9 = v4.a;
+        int i10 = v4.a;
         try {
             field = Buffer.class.getDeclaredField("effectiveDirectAddress");
         } catch (Throwable unused) {
@@ -178,16 +178,16 @@ public abstract class s6 {
     public static void c(Object obj, long j10, byte b10) {
         r6 r6Var = c;
         long j11 = (-4) & j10;
-        int i9 = r6Var.a.getInt(obj, j11);
-        int i10 = ((~((int) j10)) & 3) << 3;
-        r6Var.a.putInt(obj, j11, ((255 & b10) << i10) | (i9 & (~(255 << i10))));
+        int i10 = r6Var.a.getInt(obj, j11);
+        int i11 = ((~((int) j10)) & 3) << 3;
+        r6Var.a.putInt(obj, j11, ((255 & b10) << i11) | (i10 & (~(255 << i11))));
     }
 
     public static void d(Object obj, long j10, byte b10) {
         r6 r6Var = c;
         long j11 = (-4) & j10;
-        int i9 = (((int) j10) & 3) << 3;
-        r6Var.a.putInt(obj, j11, ((255 & b10) << i9) | (r6Var.a.getInt(obj, j11) & (~(255 << i9))));
+        int i10 = (((int) j10) & 3) << 3;
+        r6Var.a.putInt(obj, j11, ((255 & b10) << i10) | (r6Var.a.getInt(obj, j11) & (~(255 << i10))));
     }
 
     public static int e(Object obj, long j10) {
@@ -218,8 +218,8 @@ public abstract class s6 {
         }
     }
 
-    public static void j(Object obj, long j10, int i9) {
-        c.a.putInt(obj, j10, i9);
+    public static void j(Object obj, long j10, int i10) {
+        c.a.putInt(obj, j10, i10);
     }
 
     public static void k(Object obj, long j10, long j11) {
@@ -240,7 +240,7 @@ public abstract class s6 {
 
     /* JADX WARN: Multi-variable type inference failed */
     public static boolean o(Class cls) {
-        int i9 = v4.a;
+        int i10 = v4.a;
         try {
             Class cls2 = b;
             Class cls3 = Boolean.TYPE;

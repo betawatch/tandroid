@@ -1,33 +1,99 @@
 package f6;
 
-import android.os.Looper;
-import c2.u0;
+import android.content.ComponentName;
+import android.content.Context;
+import android.content.Intent;
+import android.content.ServiceConnection;
+import android.content.pm.PackageManager;
+import android.os.Build;
+import android.util.Log;
+import i6.b;
+import j$.util.concurrent.ConcurrentHashMap;
+import java.util.NoSuchElementException;
 import java.util.concurrent.Executor;
-import java.util.concurrent.ExecutorService;
+import org.telegram.tgnet.TLObject;
+import z5.h0;
+import z5.l;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class a implements Executor {
-    public final /* synthetic */ int a = 0;
-    public final Object b;
+public final class a {
+    public static final Object b = new Object();
+    public static volatile a c;
+    public final ConcurrentHashMap a = new ConcurrentHashMap();
 
-    public a(Looper looper) {
-        this.b = new u0(looper, 6);
+    public static a a() {
+        if (c == null) {
+            synchronized (b) {
+                try {
+                    if (c == null) {
+                        c = new a();
+                    }
+                } finally {
+                }
+            }
+        }
+        a aVar = c;
+        l.h(aVar);
+        return aVar;
     }
 
-    @Override // java.util.concurrent.Executor
-    public final void execute(Runnable runnable) {
-        switch (this.a) {
-            case 0:
-                ((u0) this.b).post(runnable);
-                break;
-            default:
-                ((Executor) this.b).execute(new c(1, runnable));
-                break;
+    public final void b(Context context, ServiceConnection serviceConnection) {
+        if (!(serviceConnection instanceof h0)) {
+            ConcurrentHashMap concurrentHashMap = this.a;
+            if (concurrentHashMap.containsKey(serviceConnection)) {
+                try {
+                    try {
+                        context.unbindService((ServiceConnection) concurrentHashMap.get(serviceConnection));
+                    } catch (IllegalArgumentException | IllegalStateException | NoSuchElementException unused) {
+                    }
+                    return;
+                } finally {
+                    concurrentHashMap.remove(serviceConnection);
+                }
+            }
+        }
+        try {
+            context.unbindService(serviceConnection);
+        } catch (IllegalArgumentException | IllegalStateException | NoSuchElementException unused2) {
         }
     }
 
-    public a(ExecutorService executorService) {
-        this.b = executorService;
+    public final boolean c(Context context, String str, Intent intent, ServiceConnection serviceConnection, int i10, Executor executor) {
+        ComponentName component = intent.getComponent();
+        if (component != null) {
+            String packageName = component.getPackageName();
+            "com.google.android.gms".equals(packageName);
+            try {
+                if ((b.a(context).a.getPackageManager().getApplicationInfo(packageName, 0).flags & TLObject.FLAG_21) != 0) {
+                    Log.w("ConnectionTracker", "Attempted to bind to a service in a STOPPED package.");
+                    return false;
+                }
+            } catch (PackageManager.NameNotFoundException unused) {
+            }
+        }
+        if (serviceConnection instanceof h0) {
+            if (executor == null) {
+                executor = null;
+            }
+            return (Build.VERSION.SDK_INT < 29 || executor == null) ? context.bindService(intent, serviceConnection, i10) : context.bindService(intent, i10, executor, serviceConnection);
+        }
+        ConcurrentHashMap concurrentHashMap = this.a;
+        ServiceConnection serviceConnection2 = (ServiceConnection) concurrentHashMap.putIfAbsent(serviceConnection, serviceConnection);
+        if (serviceConnection2 != null && serviceConnection != serviceConnection2) {
+            Log.w("ConnectionTracker", String.format("Duplicate binding with the same ServiceConnection: %s, %s, %s.", serviceConnection, str, intent.getAction()));
+        }
+        if (executor == null) {
+            executor = null;
+        }
+        try {
+            boolean bindService = (Build.VERSION.SDK_INT < 29 || executor == null) ? context.bindService(intent, serviceConnection, i10) : context.bindService(intent, i10, executor, serviceConnection);
+            if (bindService) {
+                return bindService;
+            }
+            return false;
+        } finally {
+            concurrentHashMap.remove(serviceConnection, serviceConnection);
+        }
     }
 }

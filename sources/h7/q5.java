@@ -1,19 +1,24 @@
 package h7;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+import android.os.Bundle;
+import j$.util.DesugarCollections;
+import java.util.HashMap;
+import java.util.Map;
+
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class q5 implements q9.d {
-    public static final q5 a = new q5();
-
-    static {
-        e2.c.u(e2.c.s(h0.class, e2.c.j(8, e2.c.s(h0.class, e2.c.j(7, e2.c.s(h0.class, e2.c.j(6, e2.c.s(h0.class, e2.c.j(5, e2.c.s(h0.class, e2.c.j(4, e2.c.s(h0.class, e2.c.j(3, e2.c.s(h0.class, e2.c.j(2, e2.c.s(h0.class, new e0(1)))))))))))))))));
-    }
-
-    @Override // q9.a
-    public final /* synthetic */ void a(Object obj, Object obj2) {
-        if (obj != null) {
-            throw new ClassCastException();
+public abstract class q5 {
+    public static Map a(String str, Bundle bundle) {
+        Map map = (Map) bundle.getSerializable(str);
+        if (map == null) {
+            return com.google.android.gms.internal.cast.s0.n;
         }
-        throw null;
+        HashMap hashMap = new HashMap();
+        for (Map.Entry entry : map.entrySet()) {
+            if (entry != null && entry.getKey() != null && entry.getValue() != null) {
+                hashMap.put((Integer) entry.getKey(), (Integer) entry.getValue());
+            }
+        }
+        return DesugarCollections.unmodifiableMap(hashMap);
     }
 }

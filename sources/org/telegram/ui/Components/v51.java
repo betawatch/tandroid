@@ -1,45 +1,46 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Point;
+import android.animation.ValueAnimator;
 import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class v51 implements View.OnLayoutChangeListener {
-    public Boolean a;
-    public boolean b;
-    public final /* synthetic */ org.telegram.ui.Cells.e3 c;
+public final /* synthetic */ class v51 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ View b;
 
-    public v51(org.telegram.ui.Cells.e3 e3Var, View view) {
-        this.c = e3Var;
-        o1.j jVar = new o1.j(view, o1.h.n, 0.0f);
-        e3Var.c = jVar;
-        jVar.u.a(1.0f);
-        ((o1.j) e3Var.c).u.b(350.0f);
+    public /* synthetic */ v51(int i10, View view) {
+        this.a = i10;
+        this.b = view;
     }
 
-    @Override // android.view.View.OnLayoutChangeListener
-    public final void onLayoutChange(View view, int i9, int i10, int i11, int i12, int i13, int i14, int i15, int i16) {
-        Point point = AndroidUtilities.displaySize;
-        boolean z10 = point.x > point.y;
-        Boolean bool = this.a;
-        if (bool == null || bool.booleanValue() != z10) {
-            this.a = Boolean.valueOf(z10);
-            this.b = true;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                w51 w51Var = (w51) this.b;
+                w51Var.getClass();
+                w51Var.C = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                w51Var.invalidate();
+                break;
+            case 1:
+                d61 d61Var = (d61) this.b;
+                d61Var.getClass();
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                d61Var.b = floatValue;
+                d61Var.setTranslationY(floatValue);
+                break;
+            default:
+                y71 y71Var = (y71) this.b;
+                y71Var.getClass();
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                y71Var.setAnimationIdicatorProgress(floatValue2);
+                x71 x71Var = y71Var.y;
+                if (x71Var != null) {
+                    ((n) x71Var).j(floatValue2);
+                    break;
+                }
+                break;
         }
-        if (i14 == 0 || i14 == i10 || this.b) {
-            this.b = false;
-            return;
-        }
-        org.telegram.ui.Cells.e3 e3Var = this.c;
-        ((o1.j) e3Var.c).c();
-        if (view.getVisibility() != 0) {
-            view.setTranslationY(0.0f);
-            return;
-        }
-        ((o1.j) e3Var.c).u.i = 0.0f;
-        view.setTranslationY((i14 - i10) + 0.0f);
-        ((o1.j) e3Var.c).f();
     }
 }

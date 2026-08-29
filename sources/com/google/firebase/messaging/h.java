@@ -11,15 +11,15 @@ import java.util.ArrayDeque;
 import java.util.concurrent.Callable;
 import org.webrtc.audio.WebRtcAudioRecord;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class h implements Callable {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
 
-    public /* synthetic */ h(int i9, Object obj, Object obj2) {
-        this.a = i9;
+    public /* synthetic */ h(int i10, Object obj, Object obj2) {
+        this.a = i10;
         this.b = obj;
         this.c = obj2;
     }
@@ -29,14 +29,14 @@ public final /* synthetic */ class h implements Callable {
         String str;
         ServiceInfo serviceInfo;
         String str2;
-        int i9;
+        int i10;
         ComponentName startService;
         String lambda$scheduleLogRecordingConfigurationsTask$0;
         switch (this.a) {
             case 0:
                 Context context = (Context) this.b;
                 Intent intent = (Intent) this.c;
-                t v = t.v();
+                s v = s.v();
                 v.getClass();
                 if (Log.isLoggable("FirebaseMessaging", 3)) {
                     Log.d("FirebaseMessaging", "Starting service");
@@ -82,18 +82,18 @@ public final /* synthetic */ class h implements Callable {
                     }
                     if (startService == null) {
                         Log.e("FirebaseMessaging", "Error while delivering the message: ServiceIntent not found.");
-                        i9 = 404;
+                        i10 = 404;
                     } else {
-                        i9 = -1;
+                        i10 = -1;
                     }
                 } catch (IllegalStateException e10) {
                     Log.e("FirebaseMessaging", "Failed to start service while in background: " + e10);
-                    i9 = 402;
+                    i10 = 402;
                 } catch (SecurityException e11) {
                     Log.e("FirebaseMessaging", "Error while delivering the message to the serviceIntent", e11);
-                    i9 = 401;
+                    i10 = 401;
                 }
-                return Integer.valueOf(i9);
+                return Integer.valueOf(i10);
             default:
                 lambda$scheduleLogRecordingConfigurationsTask$0 = ((WebRtcAudioRecord) this.b).lambda$scheduleLogRecordingConfigurationsTask$0((AudioRecord) this.c);
                 return lambda$scheduleLogRecordingConfigurationsTask$0;

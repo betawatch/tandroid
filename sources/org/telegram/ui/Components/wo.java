@@ -1,10 +1,32 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.pc1;
+
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class wo extends f2.n0 {
-    @Override // f2.n0
-    public final int n(int i9) {
-        return super.n(i9) * 6;
+public final /* synthetic */ class wo implements pc1 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ xo b;
+
+    public /* synthetic */ wo(xo xoVar, int i10) {
+        this.a = i10;
+        this.b = xoVar;
+    }
+
+    @Override // org.telegram.ui.pc1
+    public final void a(TLRPC.TL_wallPaper tL_wallPaper) {
+        switch (this.a) {
+            case 0:
+                gp gpVar = this.b.a;
+                gpVar.U.dismissInternal();
+                gpVar.dismiss();
+                break;
+            default:
+                gp gpVar2 = this.b.a;
+                gpVar2.U.dismissInternal();
+                gpVar2.dismiss();
+                break;
+        }
     }
 }

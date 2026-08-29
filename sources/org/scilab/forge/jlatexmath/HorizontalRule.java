@@ -4,34 +4,34 @@ import ru.noties.jlatexmath.awt.Color;
 import ru.noties.jlatexmath.awt.Graphics2D;
 import ru.noties.jlatexmath.awt.geom.Rectangle2D;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public class HorizontalRule extends Box {
     private Color color;
     private float speShift;
 
-    public HorizontalRule(float f10, float f11, float f12) {
+    public HorizontalRule(float f9, float f10, float f11) {
         this.color = null;
         this.speShift = 0.0f;
-        this.height = f10;
-        this.width = f11;
-        this.shift = f12;
+        this.height = f9;
+        this.width = f10;
+        this.shift = f11;
     }
 
     @Override // org.scilab.forge.jlatexmath.Box
-    public void draw(Graphics2D graphics2D, float f10, float f11) {
+    public void draw(Graphics2D graphics2D, float f9, float f10) {
         Color color = graphics2D.getColor();
         Color color2 = this.color;
         if (color2 != null) {
             graphics2D.setColor(color2);
         }
-        float f12 = this.speShift;
-        if (f12 == 0.0f) {
-            float f13 = this.height;
-            graphics2D.fill(new Rectangle2D.Float(f10, f11 - f13, this.width, f13));
+        float f11 = this.speShift;
+        if (f11 == 0.0f) {
+            float f12 = this.height;
+            graphics2D.fill(new Rectangle2D.Float(f9, f10 - f12, this.width, f12));
         } else {
-            float f14 = this.height;
-            graphics2D.fill(new Rectangle2D.Float(f10, (f11 - f14) + f12, this.width, f14));
+            float f13 = this.height;
+            graphics2D.fill(new Rectangle2D.Float(f9, (f10 - f13) + f11, this.width, f13));
         }
         graphics2D.setColor(color);
     }
@@ -41,24 +41,24 @@ public class HorizontalRule extends Box {
         return -1;
     }
 
-    public HorizontalRule(float f10, float f11, float f12, boolean z10) {
+    public HorizontalRule(float f9, float f10, float f11, boolean z10) {
         this.color = null;
         this.speShift = 0.0f;
-        this.height = f10;
-        this.width = f11;
+        this.height = f9;
+        this.width = f10;
         if (z10) {
-            this.shift = f12;
+            this.shift = f11;
         } else {
             this.shift = 0.0f;
-            this.speShift = f12;
+            this.speShift = f11;
         }
     }
 
-    public HorizontalRule(float f10, float f11, float f12, Color color) {
+    public HorizontalRule(float f9, float f10, float f11, Color color) {
         this.speShift = 0.0f;
-        this.height = f10;
-        this.width = f11;
+        this.height = f9;
+        this.width = f10;
         this.color = color;
-        this.shift = f12;
+        this.shift = f11;
     }
 }

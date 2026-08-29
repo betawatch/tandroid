@@ -1,33 +1,30 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class tz extends FrameLayout {
-    public ImageView a;
-    public TextView b;
-    public int c;
-    public boolean d;
-    public Boolean e;
+public final /* synthetic */ class tz implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ p00 b;
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        TextView textView = this.b;
-        super.onDraw(canvas);
-        if (this.d) {
-            canvas.drawRect(textView.getLeft(), getMeasuredHeight() - 1, textView.getRight(), getMeasuredHeight(), org.telegram.ui.ActionBar.f6.k0);
-        }
+    public /* synthetic */ tz(p00 p00Var, int i10) {
+        this.a = i10;
+        this.b = p00Var;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i9, int i10) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i9), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLObject.FLAG_30));
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 0:
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.voip.o(19, this.b, tLObject));
+                break;
+            default:
+                AndroidUtilities.runOnUIThread(new lq(this.b, tL_error, tLObject, 6));
+                break;
+        }
     }
 }

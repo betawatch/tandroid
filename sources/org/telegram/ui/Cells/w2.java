@@ -1,44 +1,45 @@
 package org.telegram.ui.Cells;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.BotWebViewVibrationEffect;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class w2 extends AnimatorListenerAdapter {
+public final /* synthetic */ class w2 implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ x2 b;
+    public final /* synthetic */ FrameLayout b;
+    public final /* synthetic */ Object c;
 
-    public /* synthetic */ w2(x2 x2Var, int i9) {
-        this.a = i9;
-        this.b = x2Var;
+    public /* synthetic */ w2(FrameLayout frameLayout, Object obj, int i10) {
+        this.a = i10;
+        this.b = frameLayout;
+        this.c = obj;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                x2 x2Var = this.b;
-                Runnable runnable = x2Var.b;
-                if (runnable != null) {
-                    runnable.run();
-                }
-                if (animator == x2Var.e) {
-                    x2Var.e = null;
+                x2 x2Var = (x2) this.b;
+                View.OnClickListener onClickListener = (View.OnClickListener) this.c;
+                if (x2Var.getAlpha() > 0.5f && onClickListener != null) {
+                    onClickListener.onClick(view);
                     break;
                 }
                 break;
             default:
-                x2 x2Var2 = this.b;
-                Runnable runnable2 = x2Var2.b;
-                if (runnable2 != null) {
-                    runnable2.run();
-                }
-                if (animator == x2Var2.e) {
-                    x2Var2.e = null;
+                nh.d dVar = (nh.d) this.b;
+                org.telegram.ui.ActionBar.f3 f3Var = (org.telegram.ui.ActionBar.f3) this.c;
+                if (dVar.B <= 0) {
+                    f3Var.dismiss();
+                    break;
+                } else {
+                    AndroidUtilities.shakeViewSpring(dVar, 3.0f);
+                    BotWebViewVibrationEffect.APP_ERROR.vibrate();
                     break;
                 }
-                break;
         }
     }
 }

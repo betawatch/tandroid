@@ -1,11 +1,11 @@
 package com.google.android.gms.internal.play_billing;
 
-import f7.z5;
+import h7.m6;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class i0 extends z5 {
-    @Override // f7.z5
+public final class i0 extends m6 {
+    @Override // h7.m6
     public final f0 a(w0 w0Var) {
         f0 f0Var;
         f0 f0Var2 = f0.d;
@@ -15,14 +15,14 @@ public final class i0 extends z5 {
                 if (f0Var != f0Var2) {
                     w0Var.b = f0Var2;
                 }
-            } catch (Throwable th) {
-                throw th;
+            } catch (Throwable th2) {
+                throw th2;
             }
         }
         return f0Var;
     }
 
-    @Override // f7.z5
+    @Override // h7.m6
     public final k0 b(w0 w0Var) {
         k0 k0Var;
         k0 k0Var2 = k0.c;
@@ -32,24 +32,24 @@ public final class i0 extends z5 {
                 if (k0Var != k0Var2) {
                     w0Var.c = k0Var2;
                 }
-            } catch (Throwable th) {
-                throw th;
+            } catch (Throwable th2) {
+                throw th2;
             }
         }
         return k0Var;
     }
 
-    @Override // f7.z5
+    @Override // h7.m6
     public final void c(k0 k0Var, k0 k0Var2) {
         k0Var.b = k0Var2;
     }
 
-    @Override // f7.z5
+    @Override // h7.m6
     public final void d(k0 k0Var, Thread thread) {
         k0Var.a = thread;
     }
 
-    @Override // f7.z5
+    @Override // h7.m6
     public final boolean e(w0 w0Var, f0 f0Var, f0 f0Var2) {
         synchronized (w0Var) {
             try {
@@ -58,13 +58,13 @@ public final class i0 extends z5 {
                 }
                 w0Var.b = f0Var2;
                 return true;
-            } catch (Throwable th) {
-                throw th;
+            } catch (Throwable th2) {
+                throw th2;
             }
         }
     }
 
-    @Override // f7.z5
+    @Override // h7.m6
     public final boolean f(l0 l0Var, Object obj, Object obj2) {
         synchronized (l0Var) {
             try {
@@ -73,13 +73,13 @@ public final class i0 extends z5 {
                 }
                 l0Var.a = obj2;
                 return true;
-            } catch (Throwable th) {
-                throw th;
+            } catch (Throwable th2) {
+                throw th2;
             }
         }
     }
 
-    @Override // f7.z5
+    @Override // h7.m6
     public final boolean g(l0 l0Var, k0 k0Var, k0 k0Var2) {
         synchronized (l0Var) {
             try {
@@ -88,8 +88,8 @@ public final class i0 extends z5 {
                 }
                 l0Var.c = k0Var2;
                 return true;
-            } catch (Throwable th) {
-                throw th;
+            } catch (Throwable th2) {
+                throw th2;
             }
         }
     }

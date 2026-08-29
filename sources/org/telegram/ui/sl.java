@@ -1,52 +1,71 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.MediaController;
+import android.view.View;
+import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class sl extends rt0 {
-    public final /* synthetic */ MessageObject a;
-    public final /* synthetic */ MediaController.PhotoEntry b;
-    public final /* synthetic */ tl c;
+public final class sl extends pt0 {
+    public final /* synthetic */ tn a;
 
-    public sl(tl tlVar, MessageObject messageObject, MediaController.PhotoEntry photoEntry) {
-        this.c = tlVar;
-        this.a = messageObject;
-        this.b = photoEntry;
+    public sl(tn tnVar) {
+        this.a = tnVar;
     }
 
-    @Override // org.telegram.ui.rt0, org.telegram.ui.zt0
-    public final bu0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i9, boolean z10, boolean z11) {
-        return this.c.a.M.Ba.E(this.a, fileLocation, i9, z10, false);
-    }
-
-    @Override // org.telegram.ui.rt0, org.telegram.ui.zt0
-    public final void o(int i9, VideoEditedInfo videoEditedInfo, boolean z10, int i10, int i11, boolean z11) {
-        bm bmVar = this.c.a;
-        MessageObject messageObject = this.a;
-        messageObject.settingAvatar = true;
-        MediaController.PhotoEntry photoEntry = this.b;
-        if (photoEntry.imagePath != null || photoEntry.isVideo) {
-            qn qnVar = bmVar.M;
-            ri riVar = new ri(messageObject, 4);
-            org.telegram.ui.ActionBar.b5 parentLayout = qnVar.getParentLayout();
-            int currentAccount = qnVar.getCurrentAccount();
-            org.telegram.ui.Components.e40 e40Var = new org.telegram.ui.Components.e40(0, true, true);
-            e40Var.a = qnVar;
-            e40Var.t(photoEntry);
-            e40Var.b = new bg.d0(currentAccount, riVar, parentLayout, e40Var);
-            return;
+    /* JADX WARN: Removed duplicated region for block: B:17:0x0076 A[LOOP:0: B:10:0x002a->B:17:0x0076, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x004b A[SYNTHETIC] */
+    @Override // org.telegram.ui.pt0, org.telegram.ui.xt0
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final zt0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
+        wj wjVar;
+        ImageReceiver imageReceiver;
+        if (i10 >= 0) {
+            tn tnVar = this.a;
+            if (i10 < tnVar.Da.size() && (wjVar = tnVar.E1) != null && wjVar.getListView() != null) {
+                int childCount = tnVar.E1.getListView().getChildCount();
+                Object obj = tnVar.Da.get(i10);
+                for (int i11 = 0; i11 < childCount; i11++) {
+                    View childAt = tnVar.E1.getListView().getChildAt(i11);
+                    if (childAt instanceof org.telegram.ui.Cells.d2) {
+                        org.telegram.ui.Cells.d2 d2Var = (org.telegram.ui.Cells.d2) childAt;
+                        if (d2Var.getResult() == obj) {
+                            imageReceiver = d2Var.getPhotoImage();
+                            if (imageReceiver == null) {
+                                int[] iArr = new int[2];
+                                childAt.getLocationInWindow(iArr);
+                                zt0 zt0Var = new zt0();
+                                zt0Var.b = iArr[0];
+                                zt0Var.c = iArr[1];
+                                zt0Var.d = tnVar.E1.getListView();
+                                zt0Var.a = imageReceiver;
+                                zt0Var.e = imageReceiver.getBitmapSafe();
+                                zt0Var.h = imageReceiver.getRoundRadius(true);
+                                return zt0Var;
+                            }
+                        }
+                    }
+                    imageReceiver = null;
+                    if (imageReceiver == null) {
+                    }
+                }
+            }
         }
-        TLRPC.TL_photos_updateProfilePhoto tL_photos_updateProfilePhoto = new TLRPC.TL_photos_updateProfilePhoto();
-        TLRPC.TL_inputPhoto tL_inputPhoto = new TLRPC.TL_inputPhoto();
-        tL_photos_updateProfilePhoto.id = tL_inputPhoto;
-        TLRPC.Photo photo = messageObject.messageOwner.action.photo;
-        tL_inputPhoto.id = photo.id;
-        tL_inputPhoto.access_hash = photo.access_hash;
-        tL_inputPhoto.file_reference = photo.file_reference;
-        bmVar.M.getConnectionsManager().sendRequest(tL_photos_updateProfilePhoto, new rc(6, this, messageObject));
+        return null;
+    }
+
+    @Override // org.telegram.ui.pt0, org.telegram.ui.xt0
+    public final void o(int i10, VideoEditedInfo videoEditedInfo, boolean z10, int i11, int i12, boolean z11) {
+        if (i10 >= 0) {
+            tn tnVar = this.a;
+            if (i10 >= tnVar.Da.size()) {
+                return;
+            }
+            tnVar.cb((TLRPC.BotInlineResult) tnVar.Da.get(i10), z10, i11, 0L);
+        }
     }
 }

@@ -1,71 +1,44 @@
 package bh;
 
-import android.view.View;
-import java.util.ArrayList;
-import java.util.HashMap;
-import n5.a0;
-import org.telegram.ui.Components.jn;
+import android.text.TextUtils;
+import java.io.File;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.MessageObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class a implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ j b;
+public final class a {
+    public final int a;
+    public final TLRPC.Document b;
+    public final String c;
+    public final MessageObject d;
+    public final String e;
+    public boolean f;
+    public boolean g;
 
-    public /* synthetic */ a(j jVar, int i9) {
-        this.a = i9;
-        this.b = jVar;
+    public a(int i10, MessageObject messageObject, TLRPC.Document document, String str) {
+        this.a = i10;
+        this.d = messageObject;
+        this.b = document;
+        this.c = str;
+        this.e = TextUtils.isEmpty(str) ? FileLoader.getAttachFileName(document) : str;
+        a();
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        int i9 = this.a;
-        j jVar = this.b;
-        switch (i9) {
-            case 0:
-                a0 a0Var = jVar.g0;
-                if (a0Var != null) {
-                    ArrayList arrayList = new ArrayList(jVar.f0.keySet());
-                    jn jnVar = (jn) a0Var.b;
-                    ArrayList arrayList2 = jnVar.L0;
-                    arrayList2.clear();
-                    arrayList2.addAll(arrayList);
-                    int i10 = jnVar.H0;
-                    if (i10 >= 0) {
-                        jnVar.r.m(i10);
-                    }
-                }
-                jVar.dismiss();
-                break;
-            case 1:
-                a0 a0Var2 = jVar.g0;
-                if (a0Var2 != null) {
-                    ArrayList arrayList3 = new ArrayList(jVar.f0.keySet());
-                    jn jnVar2 = (jn) a0Var2.b;
-                    ArrayList arrayList4 = jnVar2.L0;
-                    arrayList4.clear();
-                    arrayList4.addAll(arrayList3);
-                    int i11 = jnVar2.H0;
-                    if (i11 >= 0) {
-                        jnVar2.r.m(i11);
-                    }
-                }
-                jVar.dismiss();
-                break;
-            case 2:
-                HashMap hashMap = jVar.f0;
-                hashMap.clear();
-                jVar.d0.b();
-                jVar.Z.N(true);
-                jVar.a0.c(hashMap.size(), true);
-                break;
-            case 3:
-                jVar.R(view);
-                break;
-            default:
-                int i12 = j.n0;
-                jVar.R(view);
-                break;
+    public final void a() {
+        boolean z10 = false;
+        String str = this.c;
+        boolean exists = str != null ? new File(str).exists() : false;
+        int i10 = this.a;
+        if (!exists) {
+            exists = FileLoader.getInstance(i10).getPathToAttach(this.b).exists();
         }
+        this.f = exists;
+        String str2 = this.e;
+        if (!TextUtils.isEmpty(str2) && FileLoader.getInstance(i10).isLoadingFile(str2)) {
+            z10 = true;
+        }
+        this.g = z10;
     }
 }

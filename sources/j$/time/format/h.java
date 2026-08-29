@@ -11,12 +11,12 @@ public final class h implements f {
         j$.time.temporal.l lVar = rVar.a;
         j$.time.temporal.a aVar = j$.time.temporal.a.NANO_OF_SECOND;
         Long valueOf = lVar.e(aVar) ? Long.valueOf(lVar.y(aVar)) : null;
-        int i9 = 0;
+        int i10 = 0;
         if (a2 == null) {
             return false;
         }
         long longValue = a2.longValue();
-        int a3 = aVar.b.a(valueOf != null ? valueOf.longValue() : 0L, aVar);
+        int a10 = aVar.b.a(valueOf != null ? valueOf.longValue() : 0L, aVar);
         if (longValue >= -62167219200L) {
             long j10 = longValue - 253402300800L;
             long S = 1 + j$.com.android.tools.r8.a.S(j10, 315569520000L);
@@ -49,18 +49,18 @@ public final class h implements f {
                 }
             }
         }
-        if (a3 > 0) {
+        if (a10 > 0) {
             sb2.append('.');
-            int i10 = 100000000;
+            int i11 = 100000000;
             while (true) {
-                if (a3 <= 0 && i9 % 3 == 0 && i9 >= -2) {
+                if (a10 <= 0 && i10 % 3 == 0 && i10 >= -2) {
                     break;
                 }
-                int i11 = a3 / i10;
-                sb2.append((char) (i11 + 48));
-                a3 -= i11 * i10;
-                i10 /= 10;
-                i9++;
+                int i12 = a10 / i11;
+                sb2.append((char) (i12 + 48));
+                a10 -= i12 * i11;
+                i11 /= 10;
+                i10++;
             }
         }
         sb2.append('Z');

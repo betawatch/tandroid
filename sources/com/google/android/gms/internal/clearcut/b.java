@@ -37,8 +37,8 @@ public final class b {
                     }
                     throw null;
                 }
-            } catch (Throwable th) {
-                throw th;
+            } catch (Throwable th2) {
+                throw th2;
             }
         }
     }

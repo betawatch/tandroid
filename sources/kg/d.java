@@ -1,560 +1,260 @@
 package kg;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapShader;
 import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.ColorFilter;
-import android.graphics.Matrix;
-import android.graphics.Outline;
-import android.graphics.Paint;
-import android.graphics.Path;
 import android.graphics.Rect;
-import android.graphics.RectF;
-import android.graphics.Shader;
-import android.graphics.drawable.Drawable;
-import android.graphics.drawable.NinePatchDrawable;
-import android.os.Build;
-import ff.m0;
-import g.x;
-import g7.n;
-import g7.z5;
-import java.lang.ref.WeakReference;
-import java.util.Arrays;
+import android.view.View;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.f6;
+import org.telegram.messenger.ImageLocation;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.LiteMode;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.jr;
+import org.telegram.ui.Components.p5;
+import org.telegram.ui.Components.xi0;
+import org.telegram.ui.ry;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public abstract class d extends Drawable {
-    public static final float[] C = new float[8];
-    public static Path D = new Path();
-    public NinePatchDrawable A;
-    public long B;
-    public float a;
-    public float b;
-    public lg.a c;
-    public int d;
-    public int e;
-    public int f;
-    public int g;
-    public final c h;
-    public b i;
-    public int j;
-    public boolean k;
-    public float l;
-    public float m;
-    public float n;
-    public final Paint o;
-    public final Paint p;
-    public final Paint q;
-    public final Paint r;
-    public final Paint s;
-    public final Matrix t;
-    public final WeakReference u;
-    public BitmapShader v;
-    public final RectF w;
-    public final RectF x;
-    public final x y;
-    public final Rect z;
+public final class d {
+    public static int m;
+    public p5 a;
+    public Rect b;
+    public ArrayList c;
+    public View d;
+    public long e;
+    public boolean f;
+    public boolean g;
+    public int h;
+    public boolean i;
+    public ImageReceiver j;
+    public int k;
+    public long l;
 
-    public d() {
-        c cVar = new c();
-        this.h = cVar;
-        this.j = 255;
-        this.n = 1.0f;
-        this.o = new Paint(1);
-        this.p = new Paint(1);
-        Paint paint = new Paint(1);
-        this.q = paint;
-        this.r = new Paint(1);
-        Paint paint2 = new Paint(1);
-        this.s = paint2;
-        this.t = new Matrix();
-        this.u = new WeakReference(null);
-        paint2.setColor(0);
-        paint.setFilterBitmap(true);
-        this.w = new RectF();
-        this.x = new RectF();
-        this.y = new x();
-        this.z = new Rect();
-        cVar.i = AndroidUtilities.dpf2(1.0f);
-        cVar.j = AndroidUtilities.dpf2(0.6666667f);
-        this.l = AndroidUtilities.dpf2(1.0f);
-        this.m = AndroidUtilities.dpf2(0.33333334f);
+    public static d a(p5 p5Var, boolean z10, boolean z11) {
+        int i10 = UserConfig.selectedAccount;
+        d dVar = new d();
+        dVar.b = new Rect();
+        dVar.c = new ArrayList();
+        dVar.g = true;
+        dVar.k = -1;
+        dVar.a = p5Var;
+        dVar.f = z10;
+        dVar.h = i10;
+        dVar.i = z11;
+        dVar.e = System.currentTimeMillis();
+        if (z11 && LiteMode.isEnabled(LiteMode.FLAG_ANIMATED_EMOJI_CHAT)) {
+            ImageReceiver imageReceiver = new ImageReceiver();
+            dVar.j = imageReceiver;
+            if (z10) {
+                imageReceiver.setAllowDrawWhileCacheGenerating(true);
+            }
+        }
+        return dVar;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:49:0x003a, code lost:
-    
-        if (r4 == r20[7]) goto L10;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:8:0x0022, code lost:
-    
-        if (r4 == r20[3]) goto L10;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:9:0x0024, code lost:
-    
-        r4 = true;
-     */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x0149  */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x018b  */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x0190 A[SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static void e(Canvas canvas, float f10, float f11, float[] fArr, float f12, boolean z10, Paint paint) {
-        boolean z11;
-        float f13;
+    public final void b(Canvas canvas) {
+        float f9;
+        Rect rect = this.b;
+        ImageReceiver imageReceiver = this.j;
+        ArrayList arrayList = this.c;
+        boolean z10 = this.f;
         if (z10) {
-            float f14 = fArr[0];
-            float f15 = fArr[1];
-            if (f14 == f15) {
-                float f16 = fArr[2];
-                if (f15 == f16) {
+            long currentTimeMillis = System.currentTimeMillis();
+            if (arrayList.size() < 12) {
+                long j10 = currentTimeMillis - this.e;
+                if (j10 < 1500 && j10 > 200 && currentTimeMillis - this.l > 50 && Utilities.fastRandom.nextInt() % 6 == 0) {
+                    c cVar = new c(this);
+                    cVar.a();
+                    arrayList.add(cVar);
+                    this.l = currentTimeMillis;
                 }
             }
+        } else if (this.g) {
+            for (int i10 = 0; i10 < 7; i10++) {
+                c cVar2 = new c(this);
+                cVar2.a();
+                arrayList.add(cVar2);
+            }
+        }
+        if (imageReceiver != null && this.i && (imageReceiver.getLottieAnimation() == null || !imageReceiver.getLottieAnimation().y())) {
+            if (z10) {
+                canvas.save();
+                canvas.translate(rect.width() / 3.0f, 0.0f);
+                imageReceiver.draw(canvas);
+                canvas.restore();
+            } else {
+                imageReceiver.draw(canvas);
+            }
+        }
+        canvas.save();
+        canvas.translate(rect.left, rect.top);
+        int i11 = 0;
+        while (i11 < arrayList.size()) {
+            c cVar3 = (c) arrayList.get(i11);
+            float min = (Math.min(40.0f, 1000.0f / AndroidUtilities.screenRefreshRate) / cVar3.i) + cVar3.h;
+            cVar3.h = min;
+            float clamp = Utilities.clamp(min, 1.0f, 0.0f);
+            cVar3.h = clamp;
+            jr jrVar = jr.g;
+            float interpolation = jrVar.getInterpolation(clamp);
+            float lerp = AndroidUtilities.lerp(cVar3.a, cVar3.c, interpolation);
+            d dVar = cVar3.l;
+            p5 p5Var = dVar.a;
+            float f10 = cVar3.h;
+            float lerp2 = f10 < 0.3f ? AndroidUtilities.lerp(cVar3.b, cVar3.d, jrVar.getInterpolation(f10 / 0.3f)) : AndroidUtilities.lerp(cVar3.d, cVar3.e, jr.i.getInterpolation((f10 - 0.3f) / 0.7f));
+            float lerp3 = AndroidUtilities.lerp(cVar3.f, cVar3.g, interpolation);
+            if (!dVar.f) {
+                float height = dVar.b.height() * 0.8f;
+                if (lerp2 > height) {
+                    f9 = 1.0f - Utilities.clamp((lerp2 - height) / AndroidUtilities.dp(16.0f), 1.0f, 0.0f);
+                    float f11 = (lerp3 / 2.0f) * f9;
+                    canvas.save();
+                    if (cVar3.j) {
+                        canvas.scale(-1.0f, 1.0f, lerp, lerp2);
+                    }
+                    canvas.rotate(cVar3.k, lerp, lerp2);
+                    p5Var.setAlpha((int) (Utilities.clamp(cVar3.h / 0.2f, 1.0f, 0.0f) * f9 * 255.0f));
+                    p5Var.setBounds((int) (lerp - f11), (int) (lerp2 - f11), (int) (lerp + f11), (int) (lerp2 + f11));
+                    p5Var.draw(canvas);
+                    p5Var.setAlpha(255);
+                    canvas.restore();
+                    if (((c) arrayList.get(i11)).h < 1.0f) {
+                        arrayList.remove(i11);
+                        i11--;
+                    }
+                    i11++;
+                }
+            }
+            f9 = 1.0f;
+            float f112 = (lerp3 / 2.0f) * f9;
+            canvas.save();
+            if (cVar3.j) {
+            }
+            canvas.rotate(cVar3.k, lerp, lerp2);
+            p5Var.setAlpha((int) (Utilities.clamp(cVar3.h / 0.2f, 1.0f, 0.0f) * f9 * 255.0f));
+            p5Var.setBounds((int) (lerp - f112), (int) (lerp2 - f112), (int) (lerp + f112), (int) (lerp2 + f112));
+            p5Var.draw(canvas);
+            p5Var.setAlpha(255);
+            canvas.restore();
+            if (((c) arrayList.get(i11)).h < 1.0f) {
+            }
+            i11++;
+        }
+        canvas.restore();
+        View view = this.d;
+        if (view != null) {
+            view.invalidate();
+        }
+        this.g = false;
+    }
+
+    public final boolean c() {
+        return System.currentTimeMillis() - this.e > 2500;
+    }
+
+    public final void d(View view) {
+        this.a.o(view);
+        ImageReceiver imageReceiver = this.j;
+        if (imageReceiver != null) {
+            imageReceiver.onDetachedFromWindow();
+            imageReceiver.clearImage();
+        }
+    }
+
+    public final void e(int i10, int i11, int i12, int i13) {
+        Rect rect = this.b;
+        rect.set(i10, i11, i12, i13);
+        ImageReceiver imageReceiver = this.j;
+        if (imageReceiver != null) {
+            imageReceiver.setImageCoords(rect);
+        }
+    }
+
+    public final void f(View view) {
+        boolean z10;
+        boolean z11;
+        TLRPC.TL_availableReaction tL_availableReaction;
+        TLRPC.Document document;
+        boolean z12 = this.f;
+        int i10 = this.h;
+        p5 p5Var = this.a;
+        p5Var.a(view);
+        this.d = view;
+        ImageReceiver imageReceiver = this.j;
+        if (imageReceiver == null || !this.i) {
+            return;
+        }
+        imageReceiver.onAttachedToWindow();
+        TLRPC.Document document2 = p5Var.e;
+        TLRPC.TL_messages_stickerSet tL_messages_stickerSet = null;
+        String findAnimatedEmojiEmoticon = MessageObject.findAnimatedEmojiEmoticon(document2, null);
+        if (findAnimatedEmojiEmoticon == null || (tL_availableReaction = MediaDataController.getInstance(i10).getReactionsMap().get(findAnimatedEmojiEmoticon)) == null || (document = tL_availableReaction.around_animation) == null) {
+            z10 = true;
             z11 = false;
         } else {
-            float f17 = fArr[4];
-            float f18 = fArr[5];
-            if (f17 == f18) {
-                float f19 = fArr[6];
-                if (f18 == f19) {
-                }
-            }
-            z11 = false;
-        }
-        float f20 = f12 / 2.0f;
-        if (z10) {
-            if (z11) {
-                canvas.save();
-                if (canvas.clipRect(0.0f, 0.0f, f10, n.a((fArr[0] * 2.0f) + 0.0f, 0.0f, f11))) {
-                    float f21 = fArr[0];
-                    canvas.drawRoundRect(0.0f - f20, 0.0f + f20, f10 + f20, f11 + f20, f21, f21, paint);
-                }
-                canvas.restore();
-                return;
-            }
-            float f22 = (0.0f + f10) / 2.0f;
-            canvas.save();
-            if (canvas.clipRect(0.0f, 0.0f, f22, n.a((fArr[0] * 2.0f) + 0.0f, 0.0f, f11))) {
-                f13 = 0.0f;
-                canvas.drawRoundRect(0.0f - f20, 0.0f + f20, f10 + f20, f11 + f20, fArr[0], fArr[1], paint);
+            if (z12) {
+                StringBuilder sb2 = new StringBuilder();
+                int i11 = m;
+                m = i11 + 1;
+                sb2.append(i11);
+                sb2.append(" ");
+                imageReceiver.setUniqKeyPrefix(sb2.toString());
+                int f9 = ry.f();
+                TLRPC.Document document3 = tL_availableReaction.around_animation;
+                z10 = true;
+                imageReceiver.setImage(ImageLocation.getForDocument(tL_availableReaction.around_animation), f9 + "_" + f9 + "_pcache_compress", null, null, document3, 0);
             } else {
-                f13 = 0.0f;
+                ImageLocation forDocument = ImageLocation.getForDocument(document);
+                String a2 = m0.a();
+                TLRPC.Document document4 = tL_availableReaction.around_animation;
+                z10 = true;
+                imageReceiver.setImage(forDocument, a2, null, null, document4, 0);
             }
-            canvas.restore();
-            canvas.save();
-            if (canvas.clipRect(f22, f13, f10, n.a((fArr[0] * 2.0f) + f13, f13, f11))) {
-                canvas.drawRoundRect(f13 - f20, f13 + f20, f10 + f20, f11 + f20, fArr[2], fArr[3], paint);
+            z11 = true;
+        }
+        if (!z11) {
+            String str = UserConfig.getInstance(i10).genericAnimationsStickerPack;
+            if (str != null && (tL_messages_stickerSet = MediaDataController.getInstance(i10).getStickerSetByName(str)) == null) {
+                tL_messages_stickerSet = MediaDataController.getInstance(i10).getStickerSetByEmojiOrName(str);
             }
-            canvas.restore();
-            return;
+            if (tL_messages_stickerSet != null) {
+                if (this.k < 0) {
+                    this.k = Math.abs(Utilities.fastRandom.nextInt() % tL_messages_stickerSet.documents.size());
+                }
+                if (z12) {
+                    StringBuilder sb3 = new StringBuilder();
+                    int i12 = m;
+                    m = i12 + 1;
+                    sb3.append(i12);
+                    sb3.append(" ");
+                    imageReceiver.setUniqKeyPrefix(sb3.toString());
+                    int f10 = ry.f();
+                    imageReceiver.setImage(ImageLocation.getForDocument(tL_messages_stickerSet.documents.get(this.k)), f10 + "_" + f10 + "_pcache_compress", null, null, tL_messages_stickerSet.documents.get(this.k), 0);
+                } else {
+                    imageReceiver.setImage(ImageLocation.getForDocument(tL_messages_stickerSet.documents.get(this.k)), "60_60", null, null, tL_messages_stickerSet.documents.get(this.k), 0);
+                }
+                z11 = true;
+            }
         }
         if (z11) {
-            canvas.save();
-            if (canvas.clipRect(0.0f, n.a(f11 - (fArr[4] * 2.0f), 0.0f, f11), f10, f11)) {
-                float f23 = 0.0f - f20;
-                float f24 = fArr[4];
-                canvas.drawRoundRect(f23, f23, f10 + f20, f11 - f20, f24, f24, paint);
+            if (imageReceiver.getLottieAnimation() != null) {
+                imageReceiver.getLottieAnimation().L(0, false, z10);
             }
-            canvas.restore();
-            return;
-        }
-        float f25 = (0.0f + f10) / 2.0f;
-        canvas.save();
-        if (canvas.clipRect(0.0f, n.a(f11 - (fArr[4] * 2.0f), 0.0f, f11), f25, f11)) {
-            float f26 = 0.0f - f20;
-            canvas.drawRoundRect(f26, f26, f10 + f20, f11 - f20, fArr[6], fArr[7], paint);
-        }
-        canvas.restore();
-        canvas.save();
-        if (canvas.clipRect(f25, n.a(f11 - (fArr[4] * 2.0f), 0.0f, f11), f10, f11)) {
-            float f27 = 0.0f - f20;
-            canvas.drawRoundRect(f27, f27, f10 + f20, f11 - f20, fArr[4], fArr[5], paint);
-        }
-        canvas.restore();
-    }
-
-    public static void f(Canvas canvas, RectF rectF, float f10, float f11, boolean z10, Paint paint) {
-        float f12 = rectF.left;
-        float f13 = rectF.top;
-        float f14 = rectF.right;
-        float f15 = rectF.bottom;
-        float f16 = f11 / 2.0f;
-        canvas.save();
-        if (z10) {
-            float f17 = f12 - f16;
-            float f18 = f14 + f16;
-            if (canvas.clipRect(f17, f13, f18, n.a((2.0f * f10) + f13, f13, f15))) {
-                canvas.drawRoundRect(f17, f13 + f16, f18, f15 + f16, f10, f10, paint);
-            }
+            imageReceiver.setAutoRepeat(0);
         } else {
-            float f19 = f12 - f16;
-            float f20 = f14 + f16;
-            if (canvas.clipRect(f19, n.a(f15 - (2.0f * f10), f13, f15), f20, f15)) {
-                canvas.drawRoundRect(f19, f13 - f16, f20, f15 - f16, f10, f10, paint);
-            }
+            imageReceiver.setImageBitmap(new xi0(R.raw.custom_emoji_reaction, "" + R.raw.custom_emoji_reaction, AndroidUtilities.dp(60.0f), AndroidUtilities.dp(60.0f), false, null));
         }
-        canvas.restore();
-    }
-
-    public static void h(Outline outline, Rect rect, float[] fArr) {
-        if (m0.c(fArr)) {
-            outline.setRoundRect(rect, Math.min(fArr[0], Math.min(rect.width(), rect.height()) / 2.0f));
-            return;
-        }
-        Path path = D;
-        if (path == null) {
-            D = new Path();
-        } else {
-            path.rewind();
-        }
-        D.addRoundRect(rect.left, rect.top, rect.right, rect.bottom, fArr, Path.Direction.CW);
-        outline.setConvexPath(D);
-    }
-
-    public final NinePatchDrawable a(int i9, boolean z10) {
-        x xVar = this.y;
-        xVar.a = 0L;
-        xVar.b = false;
-        xVar.a(i9);
-        xVar.a(this.d);
-        c cVar = this.h;
-        for (float f10 : cVar.b) {
-            xVar.c(f10);
-        }
-        xVar.c(this.l);
-        xVar.c(0.0f);
-        xVar.c(this.m);
-        xVar.b(z10);
-        if (z10) {
-            xVar.a(this.f);
-            xVar.a(this.g);
-            xVar.c(cVar.i);
-            xVar.c(cVar.j);
-        }
-        long j10 = xVar.b ? -1L : xVar.a;
-        if (this.A == null || this.B != j10) {
-            this.B = j10;
-            NinePatchDrawable b10 = z5.b(null, cVar.b, this.l, this.m, Color.alpha(i9) == 255 ? i9 : 1, new a(i9, this, z10));
-            this.A = b10;
-            b10.getPadding(this.z);
-        }
-        return this.A;
-    }
-
-    public final void b() {
-        Rect rect = this.h.m;
-        RectF rectF = this.w;
-        rectF.set(rect);
-        rectF.offset(this.a, this.b);
-        RectF rectF2 = this.x;
-        if (rectF.equals(rectF2)) {
-            return;
-        }
-        rectF2.set(rectF);
-        l();
-    }
-
-    public final void c(Canvas canvas, ng.a aVar) {
-        int i9;
-        c cVar = this.h;
-        Rect rect = cVar.m;
-        Rect rect2 = cVar.m;
-        if (rect.isEmpty()) {
-            return;
-        }
-        if (Color.alpha(this.e) == 255) {
-            d(canvas, 0);
-            return;
-        }
-        if (aVar instanceof ng.c) {
-            d(canvas, ((ng.c) aVar).a.getColor());
-            return;
-        }
-        if (aVar instanceof ng.b) {
-            ng.b bVar = (ng.b) aVar;
-            Bitmap bitmap = bVar.d;
-            Bitmap bitmap2 = (Bitmap) this.u.get();
-            Paint paint = this.q;
-            if (bitmap != bitmap2) {
-                if (bitmap == null || bitmap.isRecycled()) {
-                    this.v = null;
-                    paint.setShader(null);
-                } else {
-                    Shader.TileMode tileMode = Shader.TileMode.CLAMP;
-                    BitmapShader bitmapShader = new BitmapShader(bitmap, tileMode, tileMode);
-                    this.v = bitmapShader;
-                    paint.setShader(bitmapShader);
-                }
-            }
-            if (Color.alpha(this.d) > 0) {
-                NinePatchDrawable a2 = a(0, false);
-                int i10 = rect2.left;
-                Rect rect3 = this.z;
-                a2.setBounds(i10 - rect3.left, rect2.top - rect3.top, rect2.right + rect3.right, rect2.bottom + rect3.bottom);
-                a2.setAlpha(this.j);
-                a2.draw(canvas);
-            }
-            if (this.v != null && bitmap != null && !bitmap.isRecycled() && this.j > 0) {
-                Matrix matrix = bVar.b;
-                Matrix matrix2 = this.t;
-                matrix2.set(matrix);
-                matrix2.postTranslate(-this.a, -this.b);
-                this.v.setLocalMatrix(matrix2);
-                paint.setAlpha(this.j);
-                cVar.b(canvas, paint);
-            }
-            int l1 = f6.l1(this.j / 255.0f, this.e);
-            if (Color.alpha(l1) > 0) {
-                Paint paint2 = this.r;
-                paint2.setColor(l1);
-                cVar.b(canvas, paint2);
-            }
-            g(canvas);
-            return;
-        }
-        if (Build.VERSION.SDK_INT >= 29 && (aVar instanceof ng.d)) {
-            ng.d dVar = (ng.d) aVar;
-            if (canvas.isHardwareAccelerated()) {
-                return;
-            }
-            c(canvas, dVar.a);
-            return;
-        }
-        if (aVar instanceof ng.e) {
-            c(canvas, ((ng.e) aVar).a);
-            return;
-        }
-        if (aVar == null || (i9 = this.j) == 0) {
-            return;
-        }
-        int l12 = f6.l1(i9 / 255.0f, this.e);
-        if (Color.alpha(this.d) > 0 && this.j == 255) {
-            float f10 = this.n;
-            if (f10 > 0.0f) {
-                float f11 = this.l;
-                float f12 = this.m;
-                int l13 = f6.l1(f10, this.d);
-                Paint paint3 = this.s;
-                paint3.setShadowLayer(f11, 0.0f, f12, l13);
-                cVar.c(canvas, paint3, this.k);
-            }
-        }
-        float f13 = this.a;
-        float f14 = this.b;
-        float f15 = rect2.left;
-        float f16 = f15 + f13;
-        float f17 = rect2.top;
-        float f18 = f17 + f14;
-        float f19 = rect2.right;
-        float f20 = f19 + f13;
-        float f21 = rect2.bottom;
-        float f22 = f21 + f14;
-        int i11 = this.j;
-        boolean z10 = i11 != 255;
-        if (z10) {
-            canvas.saveLayerAlpha(f15, f17, f19, f21, i11);
-        }
-        canvas.save();
-        canvas.clipPath(cVar.k);
-        canvas.translate(rect2.left, rect2.top);
-        canvas.translate(-f16, -f18);
-        aVar.T0(canvas, f16, f18, f20, f22);
-        canvas.restore();
-        if (Color.alpha(l12) > 0) {
-            Paint paint4 = this.o;
-            paint4.setColor(l12);
-            cVar.b(canvas, paint4);
-        }
-        g(canvas);
-        if (z10) {
-            canvas.restore();
-        }
-    }
-
-    public final void d(Canvas canvas, int i9) {
-        int h = i0.a.h(this.e, i9);
-        if (Color.alpha(h) == 0 && Color.alpha(this.d) == 0) {
-            return;
-        }
-        NinePatchDrawable a2 = a(h, true);
-        Rect rect = this.h.m;
-        int i10 = rect.left;
-        Rect rect2 = this.z;
-        a2.setBounds(i10 - rect2.left, rect.top - rect2.top, rect.right + rect2.right, rect.bottom + rect2.bottom);
-        a2.setAlpha(this.j);
-        a2.draw(canvas);
-    }
-
-    public final void g(Canvas canvas) {
-        int l1 = f6.l1(this.j / 255.0f, this.f);
-        int l12 = f6.l1(this.j / 255.0f, this.g);
-        int alpha = Color.alpha(l1);
-        c cVar = this.h;
-        Paint paint = this.p;
-        if (alpha > 0) {
-            paint.setColor(l1);
-            canvas.drawPath(cVar.n, paint);
-        }
-        if (Color.alpha(l12) > 0) {
-            paint.setColor(l12);
-            canvas.drawPath(cVar.o, paint);
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getAlpha() {
-        return this.j;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -3;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void getOutline(Outline outline) {
-        c cVar = this.h;
-        h(outline, cVar.m, cVar.b);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final boolean getPadding(Rect rect) {
-        c cVar = this.h;
-        int i9 = cVar.d;
-        rect.set(i9, i9, i9, i9);
-        return cVar.e;
-    }
-
-    public abstract ng.a i();
-
-    public void j() {
-        b();
-    }
-
-    public void k() {
-        b();
-    }
-
-    public final void n(lg.a aVar) {
-        this.c = aVar;
-        u();
-        if (aVar instanceof lg.d) {
-            lg.d dVar = (lg.d) aVar;
-            float f10 = dVar.f;
-            float f11 = dVar.h;
-            c cVar = this.h;
-            cVar.i = f10;
-            cVar.j = f11;
-            float f12 = dVar.n;
-            float f13 = dVar.r;
-            this.l = f12;
-            this.m = f13;
-        }
-    }
-
-    public final void o(int i9) {
-        c cVar = this.h;
-        if (cVar.d != i9) {
-            cVar.d = i9;
-            cVar.a();
-            j();
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void onBoundsChange(Rect rect) {
-        super.onBoundsChange(rect);
-        c cVar = this.h;
-        cVar.a.set(rect);
-        cVar.a();
-        j();
-    }
-
-    public final void p(float f10) {
-        c cVar = this.h;
-        Arrays.fill(cVar.b, f10);
-        Arrays.fill(cVar.c, f10);
-        cVar.a();
-        j();
-    }
-
-    public final void q(float f10, float f11, float f12, float f13) {
-        c cVar = this.h;
-        float[] fArr = cVar.b;
-        fArr[1] = f10;
-        fArr[0] = f10;
-        fArr[3] = f11;
-        fArr[2] = f11;
-        fArr[5] = f12;
-        fArr[4] = f12;
-        fArr[7] = f13;
-        fArr[6] = f13;
-        cVar.a();
-        j();
-    }
-
-    public final void r(float f10, float f11, float f12, float f13) {
-        c cVar = this.h;
-        float[] fArr = cVar.b;
-        fArr[1] = f10;
-        fArr[0] = f10;
-        fArr[3] = f11;
-        fArr[2] = f11;
-        fArr[5] = 0.0f;
-        fArr[4] = 0.0f;
-        fArr[7] = 0.0f;
-        fArr[6] = 0.0f;
-        float[] fArr2 = cVar.c;
-        fArr2[1] = f10;
-        fArr2[0] = f10;
-        fArr2[3] = f11;
-        fArr2[2] = f11;
-        fArr2[5] = f12;
-        fArr2[4] = f12;
-        fArr2[7] = f13;
-        fArr2[6] = f13;
-        cVar.a();
-        j();
-    }
-
-    public final void s(float f10, float f11) {
-        if (this.a == f10 && this.b == f11) {
-            return;
-        }
-        this.a = f10;
-        this.b = f11;
-        k();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public void setAlpha(int i9) {
-        this.j = i9;
-    }
-
-    public final void t(int i9) {
-        this.h.f = i9;
-        j();
-    }
-
-    public void u() {
-        lg.a aVar = this.c;
-        if (aVar == null) {
-            return;
-        }
-        this.e = aVar.k();
-        this.d = this.c.j();
-        this.f = this.c.e();
-        this.g = this.c.g();
-    }
-
-    public void l() {
-    }
-
-    public d m() {
-        return this;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

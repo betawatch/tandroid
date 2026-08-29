@@ -11,7 +11,7 @@ import java.util.function.BiConsumer;
 import java.util.function.BiFunction;
 import java.util.function.Function;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class f extends k implements Map, j$.util.Map {
     public a d;
@@ -39,7 +39,7 @@ public final class f extends k implements Map, j$.util.Map {
         if (aVar != null) {
             return aVar;
         }
-        a aVar2 = new a(this, 0);
+        a aVar2 = new a(0, this);
         this.d = aVar2;
         return aVar2;
     }
@@ -60,12 +60,12 @@ public final class f extends k implements Map, j$.util.Map {
     }
 
     public final boolean j(Collection collection) {
-        int i9 = this.c;
+        int i10 = this.c;
         Iterator it = collection.iterator();
         while (it.hasNext()) {
             super.remove(it.next());
         }
-        return i9 != this.c;
+        return i10 != this.c;
     }
 
     @Override // java.util.Map
@@ -87,17 +87,17 @@ public final class f extends k implements Map, j$.util.Map {
     @Override // java.util.Map
     public final void putAll(java.util.Map map) {
         int size = map.size() + this.c;
-        int i9 = this.c;
+        int i10 = this.c;
         int[] iArr = this.a;
         if (iArr.length < size) {
             int[] copyOf = Arrays.copyOf(iArr, size);
-            kotlin.jvm.internal.i.d(copyOf, "copyOf(this, newSize)");
+            kotlin.jvm.internal.j.d(copyOf, "copyOf(this, newSize)");
             this.a = copyOf;
             Object[] copyOf2 = Arrays.copyOf(this.b, size * 2);
-            kotlin.jvm.internal.i.d(copyOf2, "copyOf(this, newSize)");
+            kotlin.jvm.internal.j.d(copyOf2, "copyOf(this, newSize)");
             this.b = copyOf2;
         }
-        if (this.c != i9) {
+        if (this.c != i10) {
             throw new ConcurrentModificationException();
         }
         for (Map.Entry entry : map.entrySet()) {

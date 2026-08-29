@@ -1,13 +1,13 @@
 package com.google.android.gms.internal.play_billing;
 
-import f7.z5;
+import h7.m6;
 import java.security.AccessController;
 import java.security.PrivilegedActionException;
 import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class j0 extends z5 {
+public final class j0 extends m6 {
     public static final Unsafe a;
     public static final long b;
     public static final long c;
@@ -38,7 +38,7 @@ public final class j0 extends z5 {
         }
     }
 
-    @Override // f7.z5
+    @Override // h7.m6
     public final f0 a(w0 w0Var) {
         f0 f0Var;
         f0 f0Var2 = f0.d;
@@ -51,7 +51,7 @@ public final class j0 extends z5 {
         return f0Var;
     }
 
-    @Override // f7.z5
+    @Override // h7.m6
     public final k0 b(w0 w0Var) {
         k0 k0Var;
         k0 k0Var2 = k0.c;
@@ -64,27 +64,27 @@ public final class j0 extends z5 {
         return k0Var;
     }
 
-    @Override // f7.z5
+    @Override // h7.m6
     public final void c(k0 k0Var, k0 k0Var2) {
         a.putObject(k0Var, f, k0Var2);
     }
 
-    @Override // f7.z5
+    @Override // h7.m6
     public final void d(k0 k0Var, Thread thread) {
         a.putObject(k0Var, e, thread);
     }
 
-    @Override // f7.z5
+    @Override // h7.m6
     public final boolean e(w0 w0Var, f0 f0Var, f0 f0Var2) {
         return n0.a(a, w0Var, b, f0Var, f0Var2);
     }
 
-    @Override // f7.z5
+    @Override // h7.m6
     public final boolean f(l0 l0Var, Object obj, Object obj2) {
         return n0.a(a, l0Var, d, obj, obj2);
     }
 
-    @Override // f7.z5
+    @Override // h7.m6
     public final boolean g(l0 l0Var, k0 k0Var, k0 k0Var2) {
         return n0.a(a, l0Var, c, k0Var, k0Var2);
     }

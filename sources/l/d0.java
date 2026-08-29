@@ -5,9 +5,9 @@ import android.graphics.drawable.Drawable;
 import android.view.MenuItem;
 import android.view.SubMenu;
 import android.view.View;
-import j3.r0;
+import j7.l1;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class d0 extends k implements SubMenu {
     public final m A;
@@ -42,11 +42,11 @@ public final class d0 extends k implements SubMenu {
     @Override // l.k
     public final String j() {
         m mVar = this.A;
-        int i9 = mVar != null ? mVar.a : 0;
-        if (i9 == 0) {
+        int i10 = mVar != null ? mVar.a : 0;
+        if (i10 == 0) {
             return null;
         }
-        return r0.l(i9, "android:menu:actionviewstates:");
+        return l1.k(i10, "android:menu:actionviewstates:");
     }
 
     @Override // l.k
@@ -104,20 +104,20 @@ public final class d0 extends k implements SubMenu {
     }
 
     @Override // android.view.SubMenu
-    public final SubMenu setHeaderIcon(int i9) {
-        u(0, null, i9, null, null);
+    public final SubMenu setHeaderIcon(int i10) {
+        u(0, null, i10, null, null);
         return this;
     }
 
     @Override // android.view.SubMenu
-    public final SubMenu setHeaderTitle(int i9) {
-        u(i9, null, 0, null, null);
+    public final SubMenu setHeaderTitle(int i10) {
+        u(i10, null, 0, null, null);
         return this;
     }
 
     @Override // android.view.SubMenu
-    public final SubMenu setIcon(int i9) {
-        this.A.setIcon(i9);
+    public final SubMenu setIcon(int i10) {
+        this.A.setIcon(i10);
         return this;
     }
 }

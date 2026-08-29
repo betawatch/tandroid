@@ -1,70 +1,47 @@
 package la;
 
-import java.util.ArrayList;
-import java.util.concurrent.atomic.AtomicLong;
-import java.util.concurrent.atomic.AtomicLongArray;
-
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class e extends u {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ u b;
+public final class e {
+    public final Boolean a;
+    public final Double b;
+    public final Integer c;
+    public final Integer d;
+    public final Long e;
 
-    public /* synthetic */ e(u uVar, int i9) {
-        this.a = i9;
-        this.b = uVar;
+    public e(Boolean bool, Double d, Integer num, Integer num2, Long l10) {
+        this.a = bool;
+        this.b = d;
+        this.c = num;
+        this.d = num2;
+        this.e = l10;
     }
 
-    @Override // la.u
-    public final Object read(ta.a aVar) {
-        switch (this.a) {
-            case 0:
-                return new AtomicLong(((Number) this.b.read(aVar)).longValue());
-            case 1:
-                ArrayList arrayList = new ArrayList();
-                aVar.a();
-                while (aVar.k()) {
-                    arrayList.add(Long.valueOf(((Number) this.b.read(aVar)).longValue()));
-                }
-                aVar.e();
-                int size = arrayList.size();
-                AtomicLongArray atomicLongArray = new AtomicLongArray(size);
-                for (int i9 = 0; i9 < size; i9++) {
-                    atomicLongArray.set(i9, ((Long) arrayList.get(i9)).longValue());
-                }
-                return atomicLongArray;
-            default:
-                if (aVar.x() != 9) {
-                    return this.b.read(aVar);
-                }
-                aVar.t();
-                return null;
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
+        if (!(obj instanceof e)) {
+            return false;
+        }
+        e eVar = (e) obj;
+        return kotlin.jvm.internal.j.a(this.a, eVar.a) && kotlin.jvm.internal.j.a(this.b, eVar.b) && kotlin.jvm.internal.j.a(this.c, eVar.c) && kotlin.jvm.internal.j.a(this.d, eVar.d) && kotlin.jvm.internal.j.a(this.e, eVar.e);
     }
 
-    @Override // la.u
-    public final void write(ta.c cVar, Object obj) {
-        switch (this.a) {
-            case 0:
-                this.b.write(cVar, Long.valueOf(((AtomicLong) obj).get()));
-                break;
-            case 1:
-                AtomicLongArray atomicLongArray = (AtomicLongArray) obj;
-                cVar.b();
-                int length = atomicLongArray.length();
-                for (int i9 = 0; i9 < length; i9++) {
-                    this.b.write(cVar, Long.valueOf(atomicLongArray.get(i9)));
-                }
-                cVar.e();
-                break;
-            default:
-                if (obj == null) {
-                    cVar.i();
-                    break;
-                } else {
-                    this.b.write(cVar, obj);
-                    break;
-                }
-        }
+    public final int hashCode() {
+        Boolean bool = this.a;
+        int hashCode = (bool == null ? 0 : bool.hashCode()) * 31;
+        Double d = this.b;
+        int hashCode2 = (hashCode + (d == null ? 0 : d.hashCode())) * 31;
+        Integer num = this.c;
+        int hashCode3 = (hashCode2 + (num == null ? 0 : num.hashCode())) * 31;
+        Integer num2 = this.d;
+        int hashCode4 = (hashCode3 + (num2 == null ? 0 : num2.hashCode())) * 31;
+        Long l10 = this.e;
+        return hashCode4 + (l10 != null ? l10.hashCode() : 0);
+    }
+
+    public final String toString() {
+        return "SessionConfigs(sessionEnabled=" + this.a + ", sessionSamplingRate=" + this.b + ", sessionRestartTimeout=" + this.c + ", cacheDuration=" + this.d + ", cacheUpdatedTime=" + this.e + ')';
     }
 }

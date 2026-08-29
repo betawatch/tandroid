@@ -1,61 +1,50 @@
 package org.telegram.ui;
 
-import android.content.SharedPreferences;
-import android.os.StatFs;
-import java.io.File;
-import java.util.regex.Pattern;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.ConnectionsManager;
+import android.telephony.PhoneNumberUtils;
+import j$.util.function.Predicate$-CC;
+import java.util.function.Predicate;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class z70 implements Runnable {
+public final /* synthetic */ class z70 implements Predicate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ LaunchActivity b;
-    public final /* synthetic */ int c;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ z70(LaunchActivity launchActivity, int i9, int i10) {
+    public /* synthetic */ z70(Object obj, int i10) {
         this.a = i10;
-        this.b = launchActivity;
-        this.c = i9;
+        this.b = obj;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        File directory;
-        int i9 = this.a;
-        int i10 = this.c;
-        LaunchActivity launchActivity = this.b;
-        switch (i9) {
+    public /* synthetic */ Predicate and(Predicate predicate) {
+        int i10 = this.a;
+        return Predicate$-CC.$default$and(this, predicate);
+    }
+
+    public /* synthetic */ Predicate negate() {
+        switch (this.a) {
+        }
+        return Predicate$-CC.$default$negate(this);
+    }
+
+    public /* synthetic */ Predicate or(Predicate predicate) {
+        int i10 = this.a;
+        return Predicate$-CC.$default$or(this, predicate);
+    }
+
+    @Override // java.util.function.Predicate
+    public final boolean test(Object obj) {
+        switch (this.a) {
             case 0:
-                Pattern pattern = LaunchActivity.x1;
-                if (UserConfig.getInstance(launchActivity.K).isClientActivated()) {
-                    try {
-                        SharedPreferences globalMainSettings = MessagesController.getGlobalMainSettings();
-                        if ((((i10 == 2 || i10 == 1) && Math.abs(launchActivity.s1 - System.currentTimeMillis()) > 240000) || Math.abs(globalMainSettings.getLong("last_space_check", 0L) - System.currentTimeMillis()) >= 259200000) && (directory = FileLoader.getDirectory(4)) != null) {
-                            StatFs statFs = new StatFs(directory.getAbsolutePath());
-                            long availableBlocksLong = statFs.getAvailableBlocksLong() * statFs.getBlockSizeLong();
-                            if (i10 > 0 || availableBlocksLong < 52428800) {
-                                if (i10 > 0) {
-                                    launchActivity.s1 = System.currentTimeMillis();
-                                }
-                                globalMainSettings.edit().putLong("last_space_check", System.currentTimeMillis()).commit();
-                                AndroidUtilities.runOnUIThread(new l80(launchActivity, 6));
-                                break;
-                            }
-                        }
-                    } catch (Throwable unused) {
-                        return;
-                    }
-                }
-                break;
+                String str = (String) obj;
+                return str != null && str.equals((String) this.b);
+            case 1:
+                return PhoneNumberUtils.compare((String) this.b, (String) obj);
+            case 2:
+                String str2 = (String) obj;
+                return str2 != null && str2.equals((String) this.b);
             default:
-                Pattern pattern2 = LaunchActivity.x1;
-                ConnectionsManager.getInstance(launchActivity.K).cancelRequest(i10, true);
-                break;
+                return tn.v1((tn) this.b, (TLRPC.MessageEntity) obj);
         }
     }
 }

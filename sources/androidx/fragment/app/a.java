@@ -5,7 +5,7 @@ import java.io.PrintWriter;
 import java.lang.reflect.Modifier;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class a implements g0 {
     public final ArrayList a;
@@ -62,18 +62,18 @@ public final class a implements g0 {
         q0Var.g = this.e;
     }
 
-    public final void c(int i9) {
+    public final void c(int i10) {
         if (this.g) {
             if (j0.K(2)) {
-                Log.v("FragmentManager", "Bump nesting in " + this + " by " + i9);
+                Log.v("FragmentManager", "Bump nesting in " + this + " by " + i10);
             }
             ArrayList arrayList = this.a;
             int size = arrayList.size();
-            for (int i10 = 0; i10 < size; i10++) {
-                q0 q0Var = (q0) arrayList.get(i10);
+            for (int i11 = 0; i11 < size; i11++) {
+                q0 q0Var = (q0) arrayList.get(i11);
                 s sVar = q0Var.b;
                 if (sVar != null) {
-                    sVar.E += i9;
+                    sVar.E += i10;
                     if (j0.K(2)) {
                         Log.v("FragmentManager", "Bump nesting of " + q0Var.b + " to " + q0Var.b.E);
                     }
@@ -93,13 +93,13 @@ public final class a implements g0 {
                     arrayList.remove(size - 1);
                     size--;
                 } else {
-                    int i9 = q0Var.b.K;
+                    int i10 = q0Var.b.K;
                     q0Var.a = 2;
                     q0Var.c = false;
-                    for (int i10 = size - 1; i10 >= 0; i10--) {
-                        q0 q0Var2 = (q0) arrayList.get(i10);
-                        if (q0Var2.c && q0Var2.b.K == i9) {
-                            arrayList.remove(i10);
+                    for (int i11 = size - 1; i11 >= 0; i11--) {
+                        q0 q0Var2 = (q0) arrayList.get(i11);
+                        if (q0Var2.c && q0Var2.b.K == i10) {
+                            arrayList.remove(i11);
                             size--;
                         }
                     }
@@ -133,7 +133,7 @@ public final class a implements g0 {
         return this.s;
     }
 
-    public final void f(int i9, s sVar, String str) {
+    public final void f(int i10, s sVar, String str) {
         String str2 = sVar.X;
         if (str2 != null) {
             t1.c.c(sVar, str2);
@@ -149,20 +149,20 @@ public final class a implements g0 {
                 StringBuilder sb2 = new StringBuilder("Can't change tag of fragment ");
                 sb2.append(sVar);
                 sb2.append(": was ");
-                throw new IllegalStateException(aa.d.p(sVar.L, " now ", str, sb2));
+                throw new IllegalStateException(a4.w.o(sVar.L, " now ", str, sb2));
             }
             sVar.L = str;
         }
-        if (i9 != 0) {
-            if (i9 == -1) {
+        if (i10 != 0) {
+            if (i10 == -1) {
                 throw new IllegalArgumentException("Can't add fragment " + sVar + " with tag " + str + " to container view with no id");
             }
-            int i10 = sVar.J;
-            if (i10 != 0 && i10 != i9) {
-                throw new IllegalStateException("Can't change container ID of fragment " + sVar + ": was " + sVar.J + " now " + i9);
+            int i11 = sVar.J;
+            if (i11 != 0 && i11 != i10) {
+                throw new IllegalStateException("Can't change container ID of fragment " + sVar + ": was " + sVar.J + " now " + i10);
             }
-            sVar.J = i9;
-            sVar.K = i9;
+            sVar.J = i10;
+            sVar.K = i10;
         }
         b(new q0(1, sVar));
         sVar.F = this.q;
@@ -219,8 +219,8 @@ public final class a implements g0 {
         printWriter.print(str);
         printWriter.println("Operations:");
         int size = arrayList.size();
-        for (int i9 = 0; i9 < size; i9++) {
-            q0 q0Var = (q0) arrayList.get(i9);
+        for (int i10 = 0; i10 < size; i10++) {
+            q0 q0Var = (q0) arrayList.get(i10);
             switch (q0Var.a) {
                 case 0:
                     str2 = "NULL";
@@ -261,7 +261,7 @@ public final class a implements g0 {
             }
             printWriter.print(str);
             printWriter.print("  Op #");
-            printWriter.print(i9);
+            printWriter.print(i10);
             printWriter.print(": ");
             printWriter.print(str2);
             printWriter.print(" ");

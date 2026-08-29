@@ -1,422 +1,291 @@
 package od;
 
-import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
-import java.util.concurrent.atomic.AtomicLongFieldUpdater;
+import i7.a7;
+import i7.c7;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.concurrent.CancellationException;
 import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
-import java.util.concurrent.locks.LockSupport;
-import kotlin.jvm.internal.p;
+import jd.a0;
+import jd.b0;
+import jd.b2;
+import jd.c2;
+import jd.e0;
+import jd.f1;
+import jd.g2;
+import jd.w0;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class a extends Thread {
-    public static final /* synthetic */ AtomicIntegerFieldUpdater r = AtomicIntegerFieldUpdater.newUpdater(a.class, "workerCtl$volatile");
-    public final m a;
-    public final p b;
-    public b c;
-    public long d;
-    public long e;
-    public int f;
-    public boolean h;
-    private volatile int indexInArray;
-    public final /* synthetic */ c n;
-    private volatile Object nextParkedWorker;
-    private volatile /* synthetic */ int workerCtl$volatile;
+public abstract class a {
+    public static final fc.a a = new fc.a("NO_DECISION", 2);
+    public static final fc.a b = new fc.a("CLOSED", 2);
+    public static final fc.a c = new fc.a("UNDEFINED", 2);
+    public static final fc.a d = new fc.a("REUSABLE_CLAIMED", 2);
+    public static final fc.a e = new fc.a("CONDITION_FALSE", 2);
+    public static final fc.a f = new fc.a("NO_THREAD_ELEMENTS", 2);
 
-    public a(c cVar, int i9) {
-        this.n = cVar;
-        setDaemon(true);
-        setContextClassLoader(c.class.getClassLoader());
-        this.a = new m();
-        this.b = new p();
-        this.c = b.d;
-        this.nextParkedWorker = c.v;
-        int nanoTime = (int) System.nanoTime();
-        this.f = nanoTime == 0 ? 42 : nanoTime;
-        g(i9);
-    }
-
-    public final i a(boolean z10) {
-        i f10;
-        i f11;
-        long j10;
-        b bVar = this.c;
-        b bVar2 = b.a;
-        c cVar = this.n;
-        i iVar = null;
-        m mVar = this.a;
-        if (bVar != bVar2) {
-            AtomicLongFieldUpdater atomicLongFieldUpdater = c.r;
-            do {
-                j10 = atomicLongFieldUpdater.get(cVar);
-                if (((int) ((9223367638808264704L & j10) >> 42)) == 0) {
-                    mVar.getClass();
-                    loop1: while (true) {
-                        AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = m.b;
-                        i iVar2 = (i) atomicReferenceFieldUpdater.get(mVar);
-                        if (iVar2 != null && iVar2.b.a == 1) {
-                            while (!atomicReferenceFieldUpdater.compareAndSet(mVar, iVar2, null)) {
-                                if (atomicReferenceFieldUpdater.get(mVar) != iVar2) {
-                                    break;
-                                }
-                            }
-                            iVar = iVar2;
-                            break loop1;
-                        }
+    public static final Object a(u uVar, long j10, bd.p pVar) {
+        while (true) {
+            if (uVar.c >= j10 && !uVar.d()) {
+                return uVar;
+            }
+            AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = d.a;
+            Object obj = atomicReferenceFieldUpdater.get(uVar);
+            fc.a aVar = b;
+            if (obj == aVar) {
+                return aVar;
+            }
+            u uVar2 = (u) ((d) obj);
+            if (uVar2 == null) {
+                uVar2 = (u) pVar.invoke(Long.valueOf(uVar.c + 1), uVar);
+                while (!atomicReferenceFieldUpdater.compareAndSet(uVar, null, uVar2)) {
+                    if (atomicReferenceFieldUpdater.get(uVar) != null) {
+                        break;
                     }
-                    int i9 = m.d.get(mVar);
-                    int i10 = m.c.get(mVar);
-                    while (true) {
-                        if (i9 == i10 || m.e.get(mVar) == 0) {
-                            break;
-                        }
-                        i10--;
-                        i b10 = mVar.b(i10, true);
-                        if (b10 != null) {
-                            iVar = b10;
-                            break;
-                        }
-                    }
-                    if (iVar != null) {
-                        return iVar;
-                    }
-                    i iVar3 = (i) cVar.f.d();
-                    return iVar3 == null ? j(1) : iVar3;
                 }
-            } while (!c.r.compareAndSet(cVar, j10, j10 - 4398046511104L));
-            this.c = b.a;
-        }
-        if (z10) {
-            boolean z11 = e(cVar.a * 2) == 0;
-            if (z11 && (f11 = f()) != null) {
-                return f11;
+                if (uVar.d()) {
+                    uVar.e();
+                }
             }
-            mVar.getClass();
-            i iVar4 = (i) m.b.getAndSet(mVar, null);
-            if (iVar4 == null) {
-                iVar4 = mVar.a();
-            }
-            if (iVar4 != null) {
-                return iVar4;
-            }
-            if (!z11 && (f10 = f()) != null) {
-                return f10;
-            }
-        } else {
-            i f12 = f();
-            if (f12 != null) {
-                return f12;
-            }
+            uVar = uVar2;
         }
-        return j(3);
     }
 
-    public final int b() {
-        return this.indexInArray;
-    }
-
-    public final Object c() {
-        return this.nextParkedWorker;
-    }
-
-    public final int e(int i9) {
-        int i10 = this.f;
-        int i11 = i10 ^ (i10 << 13);
-        int i12 = i11 ^ (i11 >> 17);
-        int i13 = i12 ^ (i12 << 5);
-        this.f = i13;
-        int i14 = i9 - 1;
-        return (i14 & i9) == 0 ? i13 & i14 : (i13 & ConnectionsManager.DEFAULT_DATACENTER_ID) % i9;
-    }
-
-    public final i f() {
-        int e10 = e(2);
-        c cVar = this.n;
-        if (e10 == 0) {
-            i iVar = (i) cVar.e.d();
-            return iVar != null ? iVar : (i) cVar.f.d();
+    public static final u b(Object obj) {
+        if (obj != b) {
+            return (u) obj;
         }
-        i iVar2 = (i) cVar.f.d();
-        return iVar2 != null ? iVar2 : (i) cVar.e.d();
+        throw new IllegalStateException("Does not contain segment");
     }
 
-    public final void g(int i9) {
-        StringBuilder sb2 = new StringBuilder();
-        sb2.append(this.n.d);
-        sb2.append("-worker-");
-        sb2.append(i9 == 0 ? "TERMINATED" : String.valueOf(i9));
-        setName(sb2.toString());
-        this.indexInArray = i9;
-    }
-
-    public final void h(Object obj) {
-        this.nextParkedWorker = obj;
-    }
-
-    public final boolean i(b bVar) {
-        b bVar2 = this.c;
-        boolean z10 = bVar2 == b.a;
-        if (z10) {
-            c.r.addAndGet(this.n, 4398046511104L);
-        }
-        if (bVar2 != bVar) {
-            this.c = bVar;
-        }
-        return z10;
-    }
-
-    public final i j(int i9) {
-        long j10;
-        i iVar;
-        long j11;
-        long j12;
-        i iVar2;
-        AtomicLongFieldUpdater atomicLongFieldUpdater = c.r;
-        c cVar = this.n;
-        int i10 = (int) (atomicLongFieldUpdater.get(cVar) & 2097151);
-        i iVar3 = null;
-        if (i10 < 2) {
-            return null;
-        }
-        int e10 = e(i10);
-        int i11 = 0;
-        long j13 = Long.MAX_VALUE;
-        while (i11 < i10) {
-            e10++;
-            if (e10 > i10) {
-                e10 = 1;
-            }
-            a aVar = (a) cVar.h.b(e10);
-            if (aVar != null && aVar != this) {
-                m mVar = aVar.a;
-                if (i9 == 3) {
-                    iVar = mVar.a();
-                    j10 = 0;
+    public static final void c(Throwable th2, sc.h hVar) {
+        Throwable runtimeException;
+        Iterator it = f.a.iterator();
+        while (it.hasNext()) {
+            try {
+                ((kd.b) it.next()).c(th2);
+            } catch (Throwable th3) {
+                if (th2 == th3) {
+                    runtimeException = th2;
                 } else {
-                    mVar.getClass();
-                    int i12 = m.d.get(mVar);
-                    int i13 = m.c.get(mVar);
-                    boolean z10 = i9 == 1;
-                    while (true) {
-                        if (i12 == i13) {
-                            j10 = 0;
-                            break;
-                        }
-                        j10 = 0;
-                        if (!z10 || m.e.get(mVar) != 0) {
-                            int i14 = i12 + 1;
-                            iVar = mVar.b(i12, z10);
-                            if (iVar != null) {
-                                break;
-                            }
-                            i12 = i14;
-                        } else {
-                            break;
-                        }
-                    }
-                    iVar = iVar3;
+                    runtimeException = new RuntimeException("Exception while trying to handle coroutine exception", th3);
+                    a7.a(runtimeException, th2);
                 }
-                p pVar = this.b;
-                if (iVar != null) {
-                    pVar.a = iVar;
-                    iVar2 = iVar3;
-                    j12 = -1;
-                    j11 = -1;
-                } else {
-                    while (true) {
-                        AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = m.b;
-                        i iVar4 = (i) atomicReferenceFieldUpdater.get(mVar);
-                        if (iVar4 == null) {
-                            j11 = -1;
-                            break;
-                        }
-                        j11 = -1;
-                        if (((iVar4.b.a == 1 ? 1 : 2) & i9) == 0) {
-                            break;
-                        }
-                        k.f.getClass();
-                        m mVar2 = mVar;
-                        long nanoTime = System.nanoTime() - iVar4.a;
-                        long j14 = k.b;
-                        if (nanoTime < j14) {
-                            j12 = j14 - nanoTime;
-                            iVar2 = null;
-                            break;
-                        }
-                        do {
-                            iVar2 = null;
-                            if (atomicReferenceFieldUpdater.compareAndSet(mVar2, iVar4, null)) {
-                                pVar.a = iVar4;
-                                j12 = -1;
-                                break;
-                            }
-                        } while (atomicReferenceFieldUpdater.get(mVar2) == iVar4);
-                        mVar = mVar2;
-                        iVar3 = null;
-                    }
-                    j12 = -2;
-                    iVar2 = iVar3;
-                }
-                if (j12 == j11) {
-                    i iVar5 = (i) pVar.a;
-                    pVar.a = iVar2;
-                    return iVar5;
-                }
-                if (j12 > j10) {
-                    j13 = Math.min(j13, j12);
-                }
+                Thread currentThread = Thread.currentThread();
+                currentThread.getUncaughtExceptionHandler().uncaughtException(currentThread, runtimeException);
             }
-            i11++;
-            iVar3 = null;
         }
-        if (j13 == Long.MAX_VALUE) {
-            j13 = 0;
+        try {
+            a7.a(th2, new g(hVar));
+        } catch (Throwable unused) {
         }
-        this.e = j13;
-        return null;
+        Thread currentThread2 = Thread.currentThread();
+        currentThread2.getUncaughtExceptionHandler().uncaughtException(currentThread2, th2);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:80:0x0004, code lost:
-    
-        continue;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:81:0x0004, code lost:
-    
-        continue;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:82:0x0004, code lost:
-    
-        continue;
-     */
-    @Override // java.lang.Thread, java.lang.Runnable
+    public static final boolean d(Object obj) {
+        return obj == b;
+    }
+
+    public static final Object e(Object obj, Object obj2) {
+        if (obj == null) {
+            return obj2;
+        }
+        if (obj instanceof ArrayList) {
+            ((ArrayList) obj).add(obj2);
+            return obj;
+        }
+        ArrayList arrayList = new ArrayList(4);
+        arrayList.add(obj);
+        arrayList.add(obj2);
+        return arrayList;
+    }
+
+    public static final void f(sc.h hVar, Object obj) {
+        if (obj == f) {
+            return;
+        }
+        if (!(obj instanceof z)) {
+            Object fold = hVar.fold(null, x.d);
+            kotlin.jvm.internal.j.c(fold, "null cannot be cast to non-null type kotlinx.coroutines.ThreadContextElement<kotlin.Any?>");
+            a4.w.u(fold);
+            throw null;
+        }
+        z zVar = (z) obj;
+        b2[] b2VarArr = zVar.b;
+        int length = b2VarArr.length - 1;
+        if (length < 0) {
+            return;
+        }
+        b2 b2Var = b2VarArr[length];
+        kotlin.jvm.internal.j.b(null);
+        Object obj2 = zVar.a[length];
+        throw null;
+    }
+
+    public static final void g(Object obj, sc.c cVar) {
+        if (!(cVar instanceof h)) {
+            cVar.resumeWith(obj);
+            return;
+        }
+        h hVar = (h) cVar;
+        a0 a0Var = hVar.d;
+        uc.c cVar2 = hVar.e;
+        Throwable a2 = qc.f.a(obj);
+        Object vVar = a2 == null ? obj : new jd.v(a2, false);
+        cVar2.getContext();
+        if (a0Var.e()) {
+            hVar.f = vVar;
+            hVar.c = 1;
+            a0Var.c(cVar2.getContext(), hVar);
+            return;
+        }
+        w0 a10 = c2.a();
+        if (a10.c >= 4294967296L) {
+            hVar.f = vVar;
+            hVar.c = 1;
+            rc.e eVar = a10.e;
+            if (eVar == null) {
+                eVar = new rc.e();
+                a10.e = eVar;
+            }
+            eVar.addLast(hVar);
+            return;
+        }
+        a10.h(true);
+        try {
+            f1 f1Var = (f1) cVar2.getContext().get(b0.b);
+            if (f1Var == null || f1Var.isActive()) {
+                Object obj2 = hVar.h;
+                sc.h context = cVar2.getContext();
+                Object k9 = k(context, obj2);
+                g2 v = k9 != f ? e0.v(cVar2, context, k9) : null;
+                try {
+                    cVar2.resumeWith(obj);
+                } finally {
+                    if (v == null || v.M()) {
+                        f(context, k9);
+                    }
+                }
+            } else {
+                CancellationException cancellationException = f1Var.getCancellationException();
+                hVar.c(vVar, cancellationException);
+                hVar.resumeWith(c7.a(cancellationException));
+            }
+            while (a10.j()) {
+            }
+        } finally {
+            try {
+            } finally {
+            }
+        }
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:20:0x0049  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x0082  */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x0092  */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x00d0  */
+    /* JADX WARN: Removed duplicated region for block: B:50:0x0087  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void run() {
-        long j10;
-        loop0: while (true) {
-            boolean z10 = false;
-            while (c.s.get(this.n) == 0) {
-                b bVar = this.c;
-                b bVar2 = b.e;
-                if (bVar == bVar2) {
-                    break loop0;
-                }
-                i a2 = a(this.h);
-                if (a2 != null) {
-                    this.e = 0L;
-                    c cVar = this.n;
-                    int i9 = a2.b.a;
-                    this.d = 0L;
-                    if (this.c == b.c) {
-                        this.c = b.b;
-                    }
-                    if (i9 != 0 && i(b.b) && !cVar.e() && !cVar.d(c.r.get(cVar))) {
-                        cVar.e();
-                    }
-                    try {
-                        a2.run();
-                    } catch (Throwable th) {
-                        Thread currentThread = Thread.currentThread();
-                        currentThread.getUncaughtExceptionHandler().uncaughtException(currentThread, th);
-                    }
-                    if (i9 != 0) {
-                        c.r.addAndGet(cVar, -2097152L);
-                        if (this.c != bVar2) {
-                            this.c = b.d;
-                        }
-                    }
-                } else {
-                    this.h = false;
-                    if (this.e == 0) {
-                        Object obj = this.nextParkedWorker;
-                        e5.c cVar2 = c.v;
-                        if (obj != cVar2) {
-                            r.set(this, -1);
-                            while (this.nextParkedWorker != c.v) {
-                                AtomicIntegerFieldUpdater atomicIntegerFieldUpdater = r;
-                                if (atomicIntegerFieldUpdater.get(this) == -1) {
-                                    c cVar3 = this.n;
-                                    AtomicIntegerFieldUpdater atomicIntegerFieldUpdater2 = c.s;
-                                    if (atomicIntegerFieldUpdater2.get(cVar3) != 0) {
-                                        break;
-                                    }
-                                    b bVar3 = this.c;
-                                    b bVar4 = b.e;
-                                    if (bVar3 == bVar4) {
-                                        break;
-                                    }
-                                    i(b.c);
-                                    Thread.interrupted();
-                                    if (this.d == 0) {
-                                        j10 = 2097151;
-                                        this.d = System.nanoTime() + this.n.c;
-                                    } else {
-                                        j10 = 2097151;
-                                    }
-                                    LockSupport.parkNanos(this.n.c);
-                                    if (System.nanoTime() - this.d >= 0) {
-                                        this.d = 0L;
-                                        c cVar4 = this.n;
-                                        synchronized (cVar4.h) {
-                                            try {
-                                                if (!(atomicIntegerFieldUpdater2.get(cVar4) != 0)) {
-                                                    AtomicLongFieldUpdater atomicLongFieldUpdater = c.r;
-                                                    if (((int) (atomicLongFieldUpdater.get(cVar4) & j10)) > cVar4.a) {
-                                                        if (atomicIntegerFieldUpdater.compareAndSet(this, -1, 1)) {
-                                                            int i10 = this.indexInArray;
-                                                            g(0);
-                                                            cVar4.c(this, i10, 0);
-                                                            int andDecrement = (int) (atomicLongFieldUpdater.getAndDecrement(cVar4) & j10);
-                                                            if (andDecrement != i10) {
-                                                                Object b10 = cVar4.h.b(andDecrement);
-                                                                kotlin.jvm.internal.i.b(b10);
-                                                                a aVar = (a) b10;
-                                                                cVar4.h.c(i10, aVar);
-                                                                aVar.g(i10);
-                                                                cVar4.c(aVar, andDecrement, i10);
-                                                            }
-                                                            cVar4.h.c(andDecrement, null);
-                                                            this.c = bVar4;
-                                                        }
-                                                    }
-                                                }
-                                            } catch (Throwable th2) {
-                                                throw th2;
-                                            }
-                                        }
+    public static final long i(String str, long j10, long j11, long j12) {
+        String str2;
+        Long l10;
+        boolean z10;
+        int i10;
+        int i11;
+        int i12 = w.a;
+        try {
+            str2 = System.getProperty(str);
+        } catch (SecurityException unused) {
+            str2 = null;
+        }
+        if (str2 == null) {
+            return j10;
+        }
+        int length = str2.length();
+        if (length != 0) {
+            int i13 = 0;
+            char charAt = str2.charAt(0);
+            long j13 = -9223372036854775807L;
+            if (charAt < '0') {
+                z10 = true;
+                if (length != 1) {
+                    if (charAt == '+') {
+                        i13 = 1;
+                    } else if (charAt == '-') {
+                        j13 = Long.MIN_VALUE;
+                        i13 = 1;
+                        long j14 = 0;
+                        long j15 = -256204778801521550L;
+                        while (i13 < length) {
+                            int digit = Character.digit((int) str2.charAt(i13), 10);
+                            if (digit >= 0) {
+                                if (j14 >= j15) {
+                                    i10 = length;
+                                    i11 = i13;
+                                } else if (j15 == -256204778801521550L) {
+                                    i10 = length;
+                                    i11 = i13;
+                                    j15 = j13 / 10;
+                                    if (j14 < j15) {
                                     }
                                 }
-                            }
-                        } else {
-                            c cVar5 = this.n;
-                            if (this.nextParkedWorker == cVar2) {
-                                AtomicLongFieldUpdater atomicLongFieldUpdater2 = c.n;
-                                while (true) {
-                                    long j11 = atomicLongFieldUpdater2.get(cVar5);
-                                    int i11 = this.indexInArray;
-                                    this.nextParkedWorker = cVar5.h.b((int) (j11 & 2097151));
-                                    c cVar6 = cVar5;
-                                    if (c.n.compareAndSet(cVar6, j11, ((j11 + 2097152) & (-2097152)) | i11)) {
-                                        break;
-                                    } else {
-                                        cVar5 = cVar6;
-                                    }
+                                long j16 = j14 * 10;
+                                long j17 = digit;
+                                if (j16 >= j13 + j17) {
+                                    j14 = j16 - j17;
+                                    i13 = i11 + 1;
+                                    length = i10;
                                 }
                             }
                         }
-                    } else if (z10) {
-                        i(b.c);
-                        Thread.interrupted();
-                        LockSupport.parkNanos(this.e);
-                        this.e = 0L;
-                    } else {
-                        z10 = true;
+                        l10 = !z10 ? Long.valueOf(j14) : Long.valueOf(-j14);
+                        if (l10 == null) {
+                            throw new IllegalStateException(("System property '" + str + "' has unrecognized value '" + str2 + '\'').toString());
+                        }
+                        long longValue = l10.longValue();
+                        if (j11 <= longValue && longValue <= j12) {
+                            return longValue;
+                        }
+                        throw new IllegalStateException(("System property '" + str + "' should be in range " + j11 + ".." + j12 + ", but is '" + longValue + '\'').toString());
                     }
                 }
             }
-            break loop0;
+            z10 = false;
+            long j142 = 0;
+            long j152 = -256204778801521550L;
+            while (i13 < length) {
+            }
+            if (!z10) {
+            }
+            if (l10 == null) {
+            }
         }
-        i(b.e);
+        l10 = null;
+        if (l10 == null) {
+        }
+    }
+
+    public static int j(int i10, int i11, String str) {
+        return (int) i(str, i10, 1, (i11 & 8) != 0 ? ConnectionsManager.DEFAULT_DATACENTER_ID : 2097150);
+    }
+
+    public static final Object k(sc.h hVar, Object obj) {
+        if (obj == null) {
+            obj = hVar.fold(0, x.c);
+            kotlin.jvm.internal.j.b(obj);
+        }
+        if (obj == 0) {
+            return f;
+        }
+        if (obj instanceof Integer) {
+            return hVar.fold(new z(((Number) obj).intValue(), hVar), x.e);
+        }
+        a4.w.u(obj);
+        throw null;
     }
 }

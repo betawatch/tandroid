@@ -2,17 +2,17 @@ package com.google.android.gms.common.api.internal;
 
 import java.lang.ref.WeakReference;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class e0 extends y7.c {
+public final class e0 extends a8.c {
     public final WeakReference b;
 
     public e0(g0 g0Var) {
         this.b = new WeakReference(g0Var);
     }
 
-    @Override // y7.d
-    public final void s0(y7.h hVar) {
+    @Override // a8.d
+    public final void t0(a8.h hVar) {
         g0 g0Var = (g0) this.b.get();
         if (g0Var == null) {
             return;

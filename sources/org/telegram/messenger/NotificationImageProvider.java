@@ -15,7 +15,7 @@ import java.util.List;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public class NotificationImageProvider extends ContentProvider implements NotificationCenter.NotificationCenterDelegate {
     private static String authority;
@@ -46,8 +46,8 @@ public class NotificationImageProvider extends ContentProvider implements Notifi
     }
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public void didReceivedNotification(int i9, int i10, Object... objArr) {
-        if (i9 == NotificationCenter.fileLoaded) {
+    public void didReceivedNotification(int i10, int i11, Object... objArr) {
+        if (i10 == NotificationCenter.fileLoaded) {
             synchronized (this.sync) {
                 try {
                     String str = (String) objArr[0];
@@ -55,8 +55,8 @@ public class NotificationImageProvider extends ContentProvider implements Notifi
                         this.fileStartTimes.remove(str);
                         this.sync.notifyAll();
                     }
-                } catch (Throwable th) {
-                    throw th;
+                } catch (Throwable th2) {
+                    throw th2;
                 }
             }
         }
@@ -82,8 +82,8 @@ public class NotificationImageProvider extends ContentProvider implements Notifi
 
     @Override // android.content.ContentProvider
     public boolean onCreate() {
-        for (int i9 = 0; i9 < UserConfig.getActivatedAccountsCount(); i9++) {
-            NotificationCenter.getInstance(i9).addObserver(this, NotificationCenter.fileLoaded);
+        for (int i10 = 0; i10 < UserConfig.getActivatedAccountsCount(); i10++) {
+            NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.fileLoaded);
         }
         return true;
     }
@@ -148,8 +148,8 @@ public class NotificationImageProvider extends ContentProvider implements Notifi
 
     @Override // android.content.ContentProvider
     public void shutdown() {
-        for (int i9 = 0; i9 < UserConfig.getActivatedAccountsCount(); i9++) {
-            NotificationCenter.getInstance(i9).removeObserver(this, NotificationCenter.fileLoaded);
+        for (int i10 = 0; i10 < UserConfig.getActivatedAccountsCount(); i10++) {
+            NotificationCenter.getInstance(i10).removeObserver(this, NotificationCenter.fileLoaded);
         }
     }
 

@@ -2,9 +2,9 @@ package com.google.android.recaptcha.internal;
 
 import java.lang.reflect.Method;
 import java.util.Arrays;
-import pc.f;
+import rc.f;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class zzkc implements zzjt {
     public static final zzkc zza = new zzkc();
@@ -13,7 +13,7 @@ public final class zzkc implements zzjt {
     }
 
     @Override // com.google.android.recaptcha.internal.zzjt
-    public final void zza(int i9, zziz zzizVar, zzzt... zzztVarArr) {
+    public final void zza(int i10, zziz zzizVar, zzzt... zzztVarArr) {
         int length = zzztVarArr.length;
         if (length == 0) {
             throw new zzdm(4, 3, null);
@@ -28,7 +28,7 @@ public final class zzkc implements zzjt {
         }
         Object[] zzg = zzizVar.zzc().zzg(f.h(zzztVarArr).subList(1, length));
         try {
-            zzizVar.zzc().zze(i9, method.invoke(null, Arrays.copyOf(zzg, zzg.length)));
+            zzizVar.zzc().zze(i10, method.invoke(null, Arrays.copyOf(zzg, zzg.length)));
         } catch (Exception e10) {
             throw new zzdm(6, 15, e10);
         }

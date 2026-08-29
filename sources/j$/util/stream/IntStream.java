@@ -41,8 +41,6 @@ public interface IntStream extends BaseStream<Integer, IntStream> {
 
     IntStream distinct();
 
-    IntStream e();
-
     j$.util.c0 findAny();
 
     j$.util.c0 findFirst();
@@ -59,6 +57,8 @@ public interface IntStream extends BaseStream<Integer, IntStream> {
     LongStream k();
 
     IntStream limit(long j10);
+
+    IntStream map(IntUnaryOperator intUnaryOperator);
 
     <U> Stream<U> mapToObj(IntFunction<? extends U> intFunction);
 
@@ -77,7 +77,7 @@ public interface IntStream extends BaseStream<Integer, IntStream> {
 
     boolean r();
 
-    int reduce(int i9, IntBinaryOperator intBinaryOperator);
+    int reduce(int i10, IntBinaryOperator intBinaryOperator);
 
     j$.util.c0 reduce(IntBinaryOperator intBinaryOperator);
 
@@ -227,7 +227,7 @@ public interface IntStream extends BaseStream<Integer, IntStream> {
 
         @Override // java.util.stream.IntStream
         public final /* synthetic */ java.util.stream.IntStream map(IntUnaryOperator intUnaryOperator) {
-            return convert(IntStream.this.e());
+            return convert(IntStream.this.map(intUnaryOperator));
         }
 
         @Override // java.util.stream.IntStream
@@ -283,8 +283,8 @@ public interface IntStream extends BaseStream<Integer, IntStream> {
         }
 
         @Override // java.util.stream.IntStream
-        public final /* synthetic */ int reduce(int i9, IntBinaryOperator intBinaryOperator) {
-            return IntStream.this.reduce(i9, intBinaryOperator);
+        public final /* synthetic */ int reduce(int i10, IntBinaryOperator intBinaryOperator) {
+            return IntStream.this.reduce(i10, intBinaryOperator);
         }
 
         @Override // java.util.stream.IntStream
@@ -427,11 +427,6 @@ public interface IntStream extends BaseStream<Integer, IntStream> {
             return convert(this.a.distinct());
         }
 
-        @Override // j$.util.stream.IntStream
-        public final /* synthetic */ IntStream e() {
-            return convert(this.a.map(null));
-        }
-
         public final /* synthetic */ boolean equals(Object obj) {
             java.util.stream.IntStream intStream = this.a;
             if (obj instanceof VivifiedWrapper) {
@@ -500,6 +495,11 @@ public interface IntStream extends BaseStream<Integer, IntStream> {
         }
 
         @Override // j$.util.stream.IntStream
+        public final /* synthetic */ IntStream map(IntUnaryOperator intUnaryOperator) {
+            return convert(this.a.map(intUnaryOperator));
+        }
+
+        @Override // j$.util.stream.IntStream
         public final /* synthetic */ Stream mapToObj(IntFunction intFunction) {
             return Stream.VivifiedWrapper.convert(this.a.mapToObj(intFunction));
         }
@@ -545,8 +545,8 @@ public interface IntStream extends BaseStream<Integer, IntStream> {
         }
 
         @Override // j$.util.stream.IntStream
-        public final /* synthetic */ int reduce(int i9, IntBinaryOperator intBinaryOperator) {
-            return this.a.reduce(i9, intBinaryOperator);
+        public final /* synthetic */ int reduce(int i10, IntBinaryOperator intBinaryOperator) {
+            return this.a.reduce(i10, intBinaryOperator);
         }
 
         @Override // j$.util.stream.IntStream

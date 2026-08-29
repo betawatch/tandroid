@@ -1,37 +1,36 @@
 package com.google.android.recaptcha.internal;
 
 import android.app.Application;
-import g7.x5;
-import g7.y5;
-import kotlin.jvm.internal.i;
-import oc.c;
-import oc.g;
+import i7.b7;
+import i7.c7;
+import kotlin.jvm.internal.j;
 import org.telegram.tgnet.TLObject;
-import qd.a;
-import qd.d;
-import qd.e;
+import qc.c;
+import qc.g;
+import sd.d;
+import sd.e;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class zzeh {
     private final Application zza;
-    private final a zzb = e.a();
+    private final sd.a zzb = e.a();
     private zzeq zzc;
     private final c zzd;
 
     public zzeh(Application application) {
         this.zza = application;
-        int i9 = zzby.zza;
-        this.zzd = x5.a(zzef.zza);
+        int i10 = zzby.zza;
+        this.zzd = b7.a(zzef.zza);
         zzdp.zza(application);
     }
 
-    public static /* synthetic */ Object zzd(zzeh zzehVar, String str, long j10, zzdw zzdwVar, zzdq zzdqVar, qc.c cVar, int i9, Object obj) {
-        if ((i9 & 8) != 0) {
+    public static /* synthetic */ Object zzd(zzeh zzehVar, String str, long j10, zzdw zzdwVar, zzdq zzdqVar, sc.c cVar, int i10, Object obj) {
+        if ((i10 & 8) != 0) {
             zzdqVar = zzdq.zza;
         }
         zzdq zzdqVar2 = zzdqVar;
-        if ((i9 & 2) != 0) {
+        if ((i10 & 2) != 0) {
             j10 = 10000;
         }
         return zzehVar.zzc(str, j10, null, zzdqVar2, cVar);
@@ -58,11 +57,11 @@ public final class zzeh {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Object zzc(String str, long j10, zzdw zzdwVar, zzdq zzdqVar, qc.c cVar) {
+    public final Object zzc(String str, long j10, zzdw zzdwVar, zzdq zzdqVar, sc.c cVar) {
         zzea zzeaVar;
         Object obj;
-        rc.a aVar;
-        int i9;
+        tc.a aVar;
+        int i10;
         String str2;
         zzdq zzdqVar2;
         long j11;
@@ -71,16 +70,16 @@ public final class zzeh {
         try {
             if (cVar instanceof zzea) {
                 zzeaVar = (zzea) cVar;
-                int i10 = zzeaVar.zzg;
-                if ((i10 & TLObject.FLAG_31) != 0) {
-                    zzeaVar.zzg = i10 - TLObject.FLAG_31;
+                int i11 = zzeaVar.zzg;
+                if ((i11 & TLObject.FLAG_31) != 0) {
+                    zzeaVar.zzg = i11 - TLObject.FLAG_31;
                     zzea zzeaVar2 = zzeaVar;
                     obj = zzeaVar2.zze;
-                    aVar = rc.a.a;
-                    i9 = zzeaVar2.zzg;
-                    if (i9 != 0) {
-                        y5.b(obj);
-                        a aVar2 = this.zzb;
+                    aVar = tc.a.a;
+                    i10 = zzeaVar2.zzg;
+                    if (i10 != 0) {
+                        c7.b(obj);
+                        sd.a aVar2 = this.zzb;
                         str2 = str;
                         zzeaVar2.zza = str2;
                         zzeaVar2.zzb = null;
@@ -96,39 +95,39 @@ public final class zzeh {
                         }
                         return aVar;
                     }
-                    if (i9 != 1) {
-                        if (i9 != 2) {
+                    if (i10 != 1) {
+                        if (i10 != 2) {
                             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                         }
-                        obj3 = (a) zzeaVar2.zza;
+                        obj3 = (sd.a) zzeaVar2.zza;
                         try {
-                            y5.b(obj);
+                            c7.b(obj);
                             zzeq zzeqVar = (zzeq) obj;
                             ((d) obj3).e(null);
                             return zzeqVar;
-                        } catch (Throwable th) {
-                            th = th;
+                        } catch (Throwable th2) {
+                            th = th2;
                             ((d) obj3).e(null);
                             throw th;
                         }
                     }
                     long j12 = zzeaVar2.zzd;
-                    Object obj4 = (a) zzeaVar2.zzc;
+                    Object obj4 = (sd.a) zzeaVar2.zzc;
                     zzdq zzdqVar3 = zzeaVar2.zzh;
                     String str3 = (String) zzeaVar2.zza;
-                    y5.b(obj);
+                    c7.b(obj);
                     obj2 = obj4;
                     zzdqVar2 = zzdqVar3;
                     str2 = str3;
                     j11 = j12;
-                    int i11 = !i.a(zzdqVar2, zzdq.zza) ? 3 : i.a(zzdqVar2, zzdq.zzb) ? 4 : 2;
+                    int i12 = !j.a(zzdqVar2, zzdq.zza) ? 3 : j.a(zzdqVar2, zzdq.zzb) ? 4 : 2;
                     zzed zzedVar = new zzed(this, str2, null, zzdqVar2, j11, null);
                     zzeaVar2.zza = obj2;
                     zzeaVar2.zzb = null;
                     zzeaVar2.zzh = null;
                     zzeaVar2.zzc = null;
                     zzeaVar2.zzg = 2;
-                    obj = zzedVar.invoke(new zzhh(str2, i11), zzeaVar2);
+                    obj = zzedVar.invoke(new zzhh(str2, i12), zzeaVar2);
                     if (obj != aVar) {
                         obj3 = obj2;
                         zzeq zzeqVar2 = (zzeq) obj;
@@ -138,7 +137,7 @@ public final class zzeh {
                     return aVar;
                 }
             }
-            if (!i.a(zzdqVar2, zzdq.zza)) {
+            if (!j.a(zzdqVar2, zzdq.zza)) {
             }
             zzed zzedVar2 = new zzed(this, str2, null, zzdqVar2, j11, null);
             zzeaVar2.zza = obj2;
@@ -146,12 +145,12 @@ public final class zzeh {
             zzeaVar2.zzh = null;
             zzeaVar2.zzc = null;
             zzeaVar2.zzg = 2;
-            obj = zzedVar2.invoke(new zzhh(str2, i11), zzeaVar2);
+            obj = zzedVar2.invoke(new zzhh(str2, i12), zzeaVar2);
             if (obj != aVar) {
             }
             return aVar;
-        } catch (Throwable th2) {
-            th = th2;
+        } catch (Throwable th3) {
+            th = th3;
             obj3 = obj2;
             ((d) obj3).e(null);
             throw th;
@@ -159,9 +158,9 @@ public final class zzeh {
         zzeaVar = new zzea(this, cVar);
         zzea zzeaVar22 = zzeaVar;
         obj = zzeaVar22.zze;
-        aVar = rc.a.a;
-        i9 = zzeaVar22.zzg;
-        if (i9 != 0) {
+        aVar = tc.a.a;
+        i10 = zzeaVar22.zzg;
+        if (i10 != 0) {
         }
     }
 }

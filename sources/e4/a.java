@@ -2,73 +2,129 @@ package e4;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import d5.f0;
-import h3.g1;
-import java.util.Arrays;
+import b4.b;
+import d6.d;
+import f5.d0;
+import j3.g1;
+import j3.t0;
+import j7.l1;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class a extends j {
-    public static final Parcelable.Creator<a> CREATOR = new c.c(6);
+public class a implements b {
+    public static final Parcelable.Creator<a> CREATOR = new d(15);
+    public final String a;
     public final String b;
-    public final String c;
-    public final int d;
-    public final byte[] e;
 
-    public a(int i9, String str, String str2, byte[] bArr) {
-        super("APIC");
-        this.b = str;
-        this.c = str2;
-        this.d = i9;
-        this.e = bArr;
+    public a(String str, String str2) {
+        this.a = str;
+        this.b = str2;
+    }
+
+    @Override // android.os.Parcelable
+    public final int describeContents() {
+        return 0;
     }
 
     public final boolean equals(Object obj) {
         if (this == obj) {
             return true;
         }
-        if (obj != null && a.class == obj.getClass()) {
+        if (obj != null && getClass() == obj.getClass()) {
             a aVar = (a) obj;
-            if (this.d == aVar.d && f0.a(this.b, aVar.b) && f0.a(this.c, aVar.c) && Arrays.equals(this.e, aVar.e)) {
+            if (this.a.equals(aVar.a) && this.b.equals(aVar.b)) {
                 return true;
             }
         }
         return false;
     }
 
+    @Override // b4.b
+    public final /* synthetic */ byte[] getWrappedMetadataBytes() {
+        return null;
+    }
+
+    @Override // b4.b
+    public final /* synthetic */ t0 getWrappedMetadataFormat() {
+        return null;
+    }
+
     public final int hashCode() {
-        int i9 = (527 + this.d) * 31;
-        String str = this.b;
-        int hashCode = (i9 + (str != null ? str.hashCode() : 0)) * 31;
-        String str2 = this.c;
-        return Arrays.hashCode(this.e) + ((hashCode + (str2 != null ? str2.hashCode() : 0)) * 31);
+        return this.b.hashCode() + l1.f(527, 31, this.a);
     }
 
-    @Override // e4.j, z3.b
+    /* JADX WARN: Failed to restore switch over string. Please report as a decompilation issue */
+    @Override // b4.b
     public final void populateMediaMetadata(g1 g1Var) {
-        g1Var.a(this.d, this.e);
+        String str = this.a;
+        str.getClass();
+        char c3 = 65535;
+        switch (str.hashCode()) {
+            case 62359119:
+                if (str.equals("ALBUM")) {
+                    c3 = 0;
+                    break;
+                }
+                break;
+            case 79833656:
+                if (str.equals("TITLE")) {
+                    c3 = 1;
+                    break;
+                }
+                break;
+            case 428414940:
+                if (str.equals("DESCRIPTION")) {
+                    c3 = 2;
+                    break;
+                }
+                break;
+            case 1746739798:
+                if (str.equals("ALBUMARTIST")) {
+                    c3 = 3;
+                    break;
+                }
+                break;
+            case 1939198791:
+                if (str.equals("ARTIST")) {
+                    c3 = 4;
+                    break;
+                }
+                break;
+        }
+        String str2 = this.b;
+        switch (c3) {
+            case 0:
+                g1Var.c = str2;
+                break;
+            case 1:
+                g1Var.a = str2;
+                break;
+            case 2:
+                g1Var.g = str2;
+                break;
+            case 3:
+                g1Var.d = str2;
+                break;
+            case 4:
+                g1Var.b = str2;
+                break;
+        }
     }
 
-    @Override // e4.j
     public final String toString() {
-        return this.a + ": mimeType=" + this.b + ", description=" + this.c;
+        return "VC: " + this.a + "=" + this.b;
     }
 
     @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i9) {
+    public final void writeToParcel(Parcel parcel, int i10) {
+        parcel.writeString(this.a);
         parcel.writeString(this.b);
-        parcel.writeString(this.c);
-        parcel.writeInt(this.d);
-        parcel.writeByteArray(this.e);
     }
 
     public a(Parcel parcel) {
-        super("APIC");
         String readString = parcel.readString();
-        int i9 = f0.a;
-        this.b = readString;
-        this.c = parcel.readString();
-        this.d = parcel.readInt();
-        this.e = parcel.createByteArray();
+        int i10 = d0.a;
+        this.a = readString;
+        this.b = parcel.readString();
     }
 }

@@ -1,7 +1,11 @@
 package z6;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+import java.io.Serializable;
+
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public abstract class d {
-    public static final com.google.android.gms.common.api.e a = new com.google.android.gms.common.api.e("AppDataSearch.LIGHTWEIGHT_API", new b7.d(19), new com.google.android.gms.common.api.d());
+public abstract class d implements Serializable {
+    public abstract Object a();
+
+    public abstract boolean b();
 }

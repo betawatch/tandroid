@@ -1,127 +1,97 @@
 package org.telegram.ui.Cells;
 
-import android.view.ViewGroup;
-import org.telegram.ui.Components.f00;
-import org.telegram.ui.Components.ln0;
-import org.telegram.ui.Components.on0;
-import org.telegram.ui.Components.pn0;
-import org.telegram.ui.Components.rn0;
+import android.view.MotionEvent;
+import org.telegram.messenger.video.OldVideoPlayerRewinder;
+import org.telegram.ui.Components.ag0;
+import org.telegram.ui.Components.bg0;
+import org.telegram.ui.Components.n61;
+import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class f1 extends f00 {
-    public final /* synthetic */ int e = 0;
-    public final /* synthetic */ ViewGroup f;
+public final class f1 extends OldVideoPlayerRewinder {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f1(pn0 pn0Var, boolean z10) {
-        super(z10);
-        this.f = pn0Var;
+    public /* synthetic */ f1(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // org.telegram.ui.Components.mn0
-    public CharSequence d() {
-        switch (this.e) {
-            case 1:
-                on0 on0Var = ((pn0) this.f).w;
-                if (on0Var != null) {
-                    return on0Var.getContentDescription();
-                }
-                return null;
-            default:
-                return super.d();
-        }
-    }
-
-    @Override // org.telegram.ui.Components.f00
-    public float h() {
-        switch (this.e) {
-            case 1:
-                int c02 = ((pn0) this.f).w.c0();
-                if (c02 > 0) {
-                    return 1.0f / c02;
-                }
-                return 0.05f;
-            default:
-                return super.h();
-        }
-    }
-
-    @Override // org.telegram.ui.Components.f00
-    public final float k() {
-        float f10;
-        int i9;
-        int i10;
-        switch (this.e) {
+    @Override // org.telegram.messenger.video.OldVideoPlayerRewinder
+    public final void onRewindCanceled() {
+        switch (this.a) {
             case 0:
-                t1 t1Var = (t1) this.f;
-                e1 e1Var = t1Var.C5;
-                if (t1Var.u7.isMusic()) {
-                    f10 = e1Var.b;
-                    i9 = e1Var.f;
-                    i10 = ln0.E;
-                } else {
-                    if (!t1Var.u7.isVoice()) {
-                        if (t1Var.u7.isRoundVideo()) {
-                            return t1Var.u7.audioProgress;
-                        }
-                        return 0.0f;
-                    }
-                    if (t1Var.B5) {
-                        rn0 rn0Var = t1Var.D5;
-                        return rn0Var.a / rn0Var.g;
-                    }
-                    f10 = e1Var.b;
-                    i9 = e1Var.f;
-                    i10 = ln0.E;
-                }
-                return f10 / (i9 - i10);
-            default:
-                return ((pn0) this.f).getProgress();
-        }
-    }
-
-    @Override // org.telegram.ui.Components.f00
-    public final void l(float f10) {
-        switch (this.e) {
-            case 0:
-                t1 t1Var = (t1) this.f;
-                rn0 rn0Var = t1Var.D5;
-                e1 e1Var = t1Var.C5;
-                if (t1Var.u7.isMusic()) {
-                    e1Var.i(f10);
-                } else if (t1Var.u7.isVoice()) {
-                    if (t1Var.B5) {
-                        rn0Var.g(f10, false);
-                    } else {
-                        e1Var.i(f10);
-                    }
-                } else if (t1Var.u7.isRoundVideo()) {
-                    if (t1Var.B5) {
-                        if (rn0Var != null) {
-                            rn0Var.g(f10, false);
-                        }
-                    } else if (e1Var != null) {
-                        e1Var.i(f10);
-                    }
-                    t1Var.u7.audioProgress = f10;
-                }
-                t1Var.b(f10);
-                t1Var.invalidate();
+                s1 s1Var = (s1) this.b;
+                s1Var.onTouchEvent(MotionEvent.obtain(0L, 0L, 3, 0.0f, 0.0f, 0));
+                s1Var.Cd.f(false);
                 break;
             default:
-                pn0 pn0Var = (pn0) this.f;
-                pn0Var.v = true;
-                pn0Var.setProgress(f10);
-                pn0Var.f(f10, true);
-                pn0Var.v = false;
+                PhotoViewer photoViewer = (PhotoViewer) this.b;
+                PhotoViewer.k(photoViewer, MotionEvent.obtain(0L, 0L, 3, 0.0f, 0.0f, 0));
+                photoViewer.v1.f(false);
+                bg0.l0.M.f(false);
                 break;
         }
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f1(t1 t1Var) {
-        super(false);
-        this.f = t1Var;
+    @Override // org.telegram.messenger.video.OldVideoPlayerRewinder
+    public final void onRewindStart(boolean z10) {
+        switch (this.a) {
+            case 0:
+                s1 s1Var = (s1) this.b;
+                n61 n61Var = s1Var.Cd;
+                n61Var.n = new o1.a(this, 4);
+                n61Var.e(false);
+                s1Var.Cd.d(!z10);
+                s1Var.Cd.f(true);
+                s1Var.invalidate();
+                break;
+            default:
+                PhotoViewer photoViewer = (PhotoViewer) this.b;
+                photoViewer.v1.e(false);
+                photoViewer.v1.d(!z10);
+                photoViewer.v1.f(true);
+                photoViewer.a0.invalidate();
+                bg0.v(z10);
+                break;
+        }
+    }
+
+    @Override // org.telegram.messenger.video.OldVideoPlayerRewinder
+    public final void updateRewindProgressUi(long j10, float f9, boolean z10) {
+        switch (this.a) {
+            case 0:
+                s1 s1Var = (s1) this.b;
+                s1Var.Cd.g(Math.abs(j10));
+                if (z10) {
+                    s1Var.u7.audioProgress = f9;
+                    s1Var.q4();
+                    break;
+                }
+                break;
+            default:
+                PhotoViewer photoViewer = (PhotoViewer) this.b;
+                photoViewer.v1.g(Math.abs(j10));
+                if (z10) {
+                    photoViewer.m3.h(f9, false);
+                    photoViewer.n3.invalidate();
+                }
+                bg0 bg0Var = bg0.l0;
+                bg0Var.M.g(0L);
+                if (z10) {
+                    bg0Var.V = f9;
+                    lh.z2 z2Var = bg0Var.X;
+                    if (z2Var != null) {
+                        z2Var.invalidate();
+                    }
+                    ag0 ag0Var = bg0Var.h;
+                    if (ag0Var != null) {
+                        ag0Var.invalidate();
+                        break;
+                    }
+                }
+                break;
+        }
     }
 }

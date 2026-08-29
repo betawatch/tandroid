@@ -1,35 +1,49 @@
 package z6;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import g7.p8;
-
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class l extends y5.a {
-    public static final Parcelable.Creator<l> CREATOR = new w7.i(24);
-    public final boolean a;
+public final class l extends m {
+    public final transient int c;
+    public final transient int d;
+    public final /* synthetic */ m e;
 
-    public l(boolean z10) {
-        this.a = z10;
+    public l(m mVar, int i10, int i11) {
+        this.e = mVar;
+        this.c = i10;
+        this.d = i11;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        return (obj instanceof l) && this.a == ((l) obj).a;
+    @Override // java.util.List
+    public final Object get(int i10) {
+        a.e(i10, this.d);
+        return this.e.get(i10 + this.c);
     }
 
-    public final int hashCode() {
-        return this.a ? 1 : 0;
+    @Override // z6.h
+    public final int n() {
+        return this.e.o() + this.c + this.d;
     }
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i9) {
-        int q10 = p8.q(parcel, 20293);
-        p8.s(parcel, 1, 4);
-        parcel.writeInt(this.a ? 1 : 0);
-        p8.r(parcel, q10);
+    @Override // z6.h
+    public final int o() {
+        return this.e.o() + this.c;
+    }
+
+    @Override // z6.h
+    public final Object[] q() {
+        return this.e.q();
+    }
+
+    @Override // z6.m, java.util.List
+    /* renamed from: s */
+    public final m subList(int i10, int i11) {
+        a.m(i10, i11, this.d);
+        int i12 = this.c;
+        return this.e.subList(i10 + i12, i11 + i12);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final int size() {
+        return this.d;
     }
 }

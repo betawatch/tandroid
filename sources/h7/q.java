@@ -1,78 +1,69 @@
 package h7;
 
-import java.util.ListIterator;
-import java.util.NoSuchElementException;
-
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class q extends b7.x implements ListIterator {
-    public final int b;
-    public int c;
-    public final s d;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public q(s sVar, int i9) {
-        super(7);
-        int size = sVar.size();
-        if (i9 < 0 || i9 > size) {
-            throw new IndexOutOfBoundsException(f7.b8.c(i9, size, "index"));
+public abstract class q {
+    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
+    /* JADX WARN: Failed to restore switch over string. Please report as a decompilation issue
+    java.lang.NullPointerException: Cannot invoke "java.util.List.iterator()" because the return value of "jadx.core.dex.visitors.regions.SwitchOverStringVisitor$SwitchData.getNewCases()" is null
+    	at jadx.core.dex.visitors.regions.SwitchOverStringVisitor.restoreSwitchOverString(SwitchOverStringVisitor.java:109)
+    	at jadx.core.dex.visitors.regions.SwitchOverStringVisitor.visitRegion(SwitchOverStringVisitor.java:66)
+    	at jadx.core.dex.visitors.regions.DepthRegionTraversal.traverseIterativeStepInternal(DepthRegionTraversal.java:77)
+    	at jadx.core.dex.visitors.regions.DepthRegionTraversal.traverseIterativeStepInternal(DepthRegionTraversal.java:82)
+     */
+    public static final Class a(fd.c cVar) {
+        kotlin.jvm.internal.j.e(cVar, "<this>");
+        Class a2 = ((kotlin.jvm.internal.d) cVar).a();
+        if (a2.isPrimitive()) {
+            String name = a2.getName();
+            switch (name.hashCode()) {
+                case -1325958191:
+                    if (name.equals("double")) {
+                        return Double.class;
+                    }
+                    break;
+                case 104431:
+                    if (name.equals("int")) {
+                        return Integer.class;
+                    }
+                    break;
+                case 3039496:
+                    if (name.equals("byte")) {
+                        return Byte.class;
+                    }
+                    break;
+                case 3052374:
+                    if (name.equals("char")) {
+                        return Character.class;
+                    }
+                    break;
+                case 3327612:
+                    if (name.equals("long")) {
+                        return Long.class;
+                    }
+                    break;
+                case 3625364:
+                    if (name.equals("void")) {
+                        return Void.class;
+                    }
+                    break;
+                case 64711720:
+                    if (name.equals("boolean")) {
+                        return Boolean.class;
+                    }
+                    break;
+                case 97526364:
+                    if (name.equals("float")) {
+                        return Float.class;
+                    }
+                    break;
+                case 109413500:
+                    if (name.equals("short")) {
+                        return Short.class;
+                    }
+                    break;
+            }
         }
-        this.b = size;
-        this.c = i9;
-        this.d = sVar;
-    }
-
-    public final Object a(int i9) {
-        return this.d.get(i9);
-    }
-
-    @Override // java.util.ListIterator
-    public final void add(Object obj) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.Iterator, java.util.ListIterator
-    public final boolean hasNext() {
-        return this.c < this.b;
-    }
-
-    @Override // java.util.ListIterator
-    public final boolean hasPrevious() {
-        return this.c > 0;
-    }
-
-    @Override // java.util.Iterator, java.util.ListIterator
-    public final Object next() {
-        if (!hasNext()) {
-            throw new NoSuchElementException();
-        }
-        int i9 = this.c;
-        this.c = i9 + 1;
-        return a(i9);
-    }
-
-    @Override // java.util.ListIterator
-    public final int nextIndex() {
-        return this.c;
-    }
-
-    @Override // java.util.ListIterator
-    public final Object previous() {
-        if (!hasPrevious()) {
-            throw new NoSuchElementException();
-        }
-        int i9 = this.c - 1;
-        this.c = i9;
-        return a(i9);
-    }
-
-    @Override // java.util.ListIterator
-    public final int previousIndex() {
-        return this.c - 1;
-    }
-
-    @Override // java.util.ListIterator
-    public final void set(Object obj) {
-        throw new UnsupportedOperationException();
+        return a2;
     }
 }

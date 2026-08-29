@@ -1,5 +1,6 @@
 package androidx.startup;
 
+import a6.b;
 import android.content.ComponentName;
 import android.content.ContentProvider;
 import android.content.ContentValues;
@@ -8,11 +9,10 @@ import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Trace;
-import androidx.car.app.j;
-import f7.r8;
+import h7.m8;
 import i2.a;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public class InitializationProvider extends ContentProvider {
     @Override // android.content.ContentProvider
@@ -34,20 +34,20 @@ public class InitializationProvider extends ContentProvider {
     public final boolean onCreate() {
         Context context = getContext();
         if (context == null) {
-            throw new j("Context cannot be null");
+            throw new b("Context cannot be null");
         }
         if (context.getApplicationContext() == null) {
             return true;
         }
-        a c10 = a.c(context);
-        Context context2 = c10.c;
+        a c3 = a.c(context);
+        Context context2 = c3.c;
         try {
             try {
-                r8.a("Startup");
-                c10.a(context2.getPackageManager().getProviderInfo(new ComponentName(context2.getPackageName(), InitializationProvider.class.getName()), 128).metaData);
+                m8.a("Startup");
+                c3.a(context2.getPackageManager().getProviderInfo(new ComponentName(context2.getPackageName(), InitializationProvider.class.getName()), 128).metaData);
                 return true;
             } catch (PackageManager.NameNotFoundException e10) {
-                throw new j(e10);
+                throw new b(e10);
             }
         } finally {
             Trace.endSection();

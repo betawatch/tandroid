@@ -10,7 +10,7 @@ import org.webrtc.ContextUtils;
 import org.webrtc.Logging;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes4.dex */
 public class WebRtcAudioManager {
     private static final int BITS_PER_SAMPLE = 16;
@@ -41,21 +41,21 @@ public class WebRtcAudioManager {
     private int sampleRate;
     private final VolumeLogger volumeLogger;
 
-    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
     public static class VolumeLogger {
         private static final String THREAD_NAME = "WebRtcVolumeLevelLoggerThread";
         private static final int TIMER_PERIOD_IN_SECONDS = 30;
         private final AudioManager audioManager;
         private Timer timer;
 
-        /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+        /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
         public class LogVolumeTask extends TimerTask {
             private final int maxRingVolume;
             private final int maxVoiceCallVolume;
 
-            public LogVolumeTask(int i9, int i10) {
-                this.maxRingVolume = i9;
-                this.maxVoiceCallVolume = i10;
+            public LogVolumeTask(int i10, int i11) {
+                this.maxRingVolume = i10;
+                this.maxVoiceCallVolume = i11;
             }
 
             @Override // java.util.TimerTask, java.lang.Runnable
@@ -129,12 +129,12 @@ public class WebRtcAudioManager {
         return Integer.parseInt(property);
     }
 
-    private static int getMinInputFrameSize(int i9, int i10) {
-        return AudioRecord.getMinBufferSize(i9, i10 == 1 ? 16 : 12, 2) / (i10 * 2);
+    private static int getMinInputFrameSize(int i10, int i11) {
+        return AudioRecord.getMinBufferSize(i10, i11 == 1 ? 16 : 12, 2) / (i11 * 2);
     }
 
-    private static int getMinOutputFrameSize(int i9, int i10) {
-        return AudioTrack.getMinBufferSize(i9, i10 == 1 ? 4 : 12, 2) / (i10 * 2);
+    private static int getMinOutputFrameSize(int i10, int i11) {
+        return AudioTrack.getMinBufferSize(i10, i11 == 1 ? 4 : 12, 2) / (i11 * 2);
     }
 
     private int getNativeOutputSampleRate() {
@@ -220,7 +220,7 @@ public class WebRtcAudioManager {
         return Build.VERSION.SDK_INT >= 23 && ContextUtils.getApplicationContext().getPackageManager().hasSystemFeature("android.hardware.audio.pro");
     }
 
-    private native void nativeCacheAudioParameters(int i9, int i10, int i11, boolean z10, boolean z11, boolean z12, boolean z13, boolean z14, boolean z15, boolean z16, int i12, int i13, long j10);
+    private native void nativeCacheAudioParameters(int i10, int i11, int i12, boolean z10, boolean z11, boolean z12, boolean z13, boolean z14, boolean z15, boolean z16, int i13, int i14, long j10);
 
     public static synchronized void setBlacklistDeviceForOpenSLESUsage(boolean z10) {
         synchronized (WebRtcAudioManager.class) {

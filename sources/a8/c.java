@@ -1,30 +1,42 @@
 package a8;
 
-import android.util.SparseIntArray;
+import android.os.Parcel;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class c {
-    public static final Object c = new Object();
-    public static int d;
-    public final SparseIntArray a = new SparseIntArray();
-    public final SparseIntArray b = new SparseIntArray();
+public abstract class c extends c7.a implements d {
+    public c() {
+        super("com.google.android.gms.signin.internal.ISignInCallbacks", 10);
+    }
 
-    public final int a(int i9) {
-        synchronized (c) {
-            try {
-                int i10 = this.a.get(i9, -1);
-                if (i10 != -1) {
-                    return i10;
-                }
-                int i11 = d;
-                d = i11 + 1;
-                this.a.append(i9, i11);
-                this.b.append(i11, i9);
-                return i11;
-            } catch (Throwable th) {
-                throw th;
-            }
+    @Override // c7.a
+    public final boolean F0(int i10, Parcel parcel, Parcel parcel2) {
+        switch (i10) {
+            case 3:
+                w6.a.b(parcel);
+                break;
+            case 4:
+                w6.a.b(parcel);
+                break;
+            case 5:
+            default:
+                return false;
+            case 6:
+                w6.a.b(parcel);
+                break;
+            case 7:
+                w6.a.b(parcel);
+                break;
+            case 8:
+                h hVar = (h) w6.a.a(parcel, h.CREATOR);
+                w6.a.b(parcel);
+                t0(hVar);
+                break;
+            case 9:
+                w6.a.b(parcel);
+                break;
         }
+        parcel2.writeNoException();
+        return true;
     }
 }

@@ -1,30 +1,15 @@
 package ih;
 
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.InputSerializedData;
-import org.telegram.tgnet.OutputSerializedData;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stories;
+import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
-/* loaded from: classes4.dex */
-public final class l1 extends TLRPC.TL_messageMediaStory {
-    @Override // org.telegram.tgnet.TLRPC.TL_messageMediaStory, org.telegram.tgnet.TLObject
-    public final void readParams(InputSerializedData inputSerializedData, boolean z10) {
-        this.user_id = inputSerializedData.readInt64(z10);
-        this.id = inputSerializedData.readInt32(z10);
-        this.storyItem = TL_stories.StoryItem.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-        this.via_mention = inputSerializedData.readBool(z10);
-        this.peer = MessagesController.getInstance(UserConfig.selectedAccount).getPeer(this.user_id);
-    }
-
-    @Override // org.telegram.tgnet.TLRPC.TL_messageMediaStory, org.telegram.tgnet.TLObject
-    public final void serializeToStream(OutputSerializedData outputSerializedData) {
-        outputSerializedData.writeInt32(-946147811);
-        outputSerializedData.writeInt64(this.user_id);
-        outputSerializedData.writeInt32(this.id);
-        this.storyItem.serializeToStream(outputSerializedData);
-        outputSerializedData.writeBool(this.via_mention);
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* loaded from: classes.dex */
+public final class l1 extends FrameLayout {
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(120.0f), TLObject.FLAG_30));
     }
 }

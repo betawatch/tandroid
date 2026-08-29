@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class h extends x {
     private static final h DEFAULT_INSTANCE;
@@ -81,9 +81,9 @@ public final class h extends x {
     }
 
     @Override // androidx.datastore.preferences.protobuf.x
-    public final Object d(int i9) {
+    public final Object d(int i10) {
         x0 x0Var;
-        switch (j.b(i9)) {
+        switch (j.b(i10)) {
             case 0:
                 return (byte) 1;
             case 1:
@@ -108,8 +108,8 @@ public final class h extends x {
                             x0Var = new w();
                             PARSER = x0Var;
                         }
-                    } catch (Throwable th) {
-                        throw th;
+                    } catch (Throwable th2) {
+                        throw th2;
                     }
                 }
                 return x0Var;

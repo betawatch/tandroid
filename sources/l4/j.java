@@ -1,54 +1,102 @@
 package l4;
 
-import com.google.android.exoplayer2.upstream.q;
-import com.google.android.exoplayer2.upstream.x0;
-import f7.f5;
-import h3.t0;
+import ag.j2;
+import android.os.Handler;
+import j3.r2;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.concurrent.CopyOnWriteArrayList;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class j extends e {
-    public final d s;
-    public g5.b v;
-    public long w;
-    public volatile boolean x;
+public abstract class j extends a {
+    public final HashMap h = new HashMap();
+    public Handler i;
+    public com.google.android.exoplayer2.upstream.y0 j;
 
-    public j(com.google.android.exoplayer2.upstream.m mVar, q qVar, t0 t0Var, int i9, Object obj, d dVar) {
-        super(mVar, qVar, 2, t0Var, i9, obj, -9223372036854775807L, -9223372036854775807L);
-        this.s = dVar;
-    }
-
-    @Override // com.google.android.exoplayer2.upstream.n0
-    public final void K() {
-        this.x = true;
-    }
-
-    @Override // com.google.android.exoplayer2.upstream.n0
-    public final void a() {
-        if (this.w == 0) {
-            this.s.a(this.v, -9223372036854775807L, -9223372036854775807L);
+    @Override // l4.a
+    public final void d() {
+        for (i iVar : this.h.values()) {
+            iVar.a.c(iVar.b);
         }
-        try {
-            q a2 = this.b.a(this.w);
-            x0 x0Var = this.r;
-            m3.h hVar = new m3.h(x0Var, a2.e, x0Var.open(a2));
-            while (!this.x) {
-                try {
-                    int b10 = this.s.a.b(hVar, d.s);
-                    boolean z10 = false;
-                    d5.a.i(b10 != 1);
-                    if (b10 == 0) {
-                        z10 = true;
-                    }
-                    if (!z10) {
-                        break;
-                    }
-                } finally {
-                    this.w = hVar.d - this.b.e;
-                }
+    }
+
+    @Override // l4.a
+    public final void f() {
+        for (i iVar : this.h.values()) {
+            iVar.a.e(iVar.b);
+        }
+    }
+
+    @Override // l4.a
+    public void j() {
+        Iterator it = this.h.values().iterator();
+        while (it.hasNext()) {
+            ((i) it.next()).a.j();
+        }
+    }
+
+    @Override // l4.a
+    public void p() {
+        HashMap hashMap = this.h;
+        for (i iVar : hashMap.values()) {
+            a aVar = iVar.a;
+            com.google.firebase.messaging.s sVar = iVar.c;
+            aVar.o(iVar.b);
+            aVar.r(sVar);
+            aVar.q(sVar);
+        }
+        hashMap.clear();
+    }
+
+    public abstract c0 s(Object obj, c0 c0Var);
+
+    public abstract void v(Object obj, a aVar, r2 r2Var);
+
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r1v2, types: [l4.d0, l4.h] */
+    public final void w(final Integer num, a aVar) {
+        HashMap hashMap = this.h;
+        f5.a.f(!hashMap.containsKey(num));
+        ?? r12 = new d0() { // from class: l4.h
+            @Override // l4.d0
+            public final void a(a aVar2, r2 r2Var) {
+                j.this.v(num, aVar2, r2Var);
             }
-        } finally {
-            f5.a(this.r);
+        };
+        com.google.firebase.messaging.s sVar = new com.google.firebase.messaging.s(this, num);
+        hashMap.put(num, new i(aVar, r12, sVar));
+        Handler handler = this.i;
+        handler.getClass();
+        aVar.getClass();
+        g0 g0Var = aVar.c;
+        g0Var.getClass();
+        CopyOnWriteArrayList copyOnWriteArrayList = g0Var.c;
+        f0 f0Var = new f0();
+        f0Var.a = handler;
+        f0Var.b = sVar;
+        copyOnWriteArrayList.add(f0Var);
+        this.i.getClass();
+        j2 j2Var = aVar.d;
+        j2Var.getClass();
+        CopyOnWriteArrayList copyOnWriteArrayList2 = (CopyOnWriteArrayList) j2Var.d;
+        n3.f fVar = new n3.f();
+        fVar.a = sVar;
+        copyOnWriteArrayList2.add(fVar);
+        com.google.android.exoplayer2.upstream.y0 y0Var = this.j;
+        k3.k kVar = this.g;
+        f5.a.j(kVar);
+        aVar.k(r12, y0Var, kVar);
+        if (this.b.isEmpty()) {
+            aVar.c(r12);
         }
+    }
+
+    public long t(Object obj, long j10) {
+        return j10;
+    }
+
+    public int u(int i10, Object obj) {
+        return i10;
     }
 }

@@ -1,204 +1,103 @@
 package org.telegram.ui.Components;
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.graphics.Bitmap;
+import android.app.Activity;
+import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Matrix;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
-import android.view.ContextThemeWrapper;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.MediaController;
-import org.telegram.ui.BubbleActivity;
-import org.telegram.ui.Components.Crop.CropAreaView;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
 public final class be0 extends FrameLayout {
-    public final yd0 A;
-    public final yd0 B;
-    public ae0 a;
-    public final tf.n b;
-    public final tf.e c;
-    public final boolean d;
-    public final ImageReceiver e;
-    public boolean f;
-    public boolean h;
-    public float n;
-    public float r;
-    public AnimatorSet s;
-    public AnimatorSet v;
-    public float w;
-    public final Paint x;
-    public final org.telegram.ui.ActionBar.b6 y;
+    public final RectF a;
+    public boolean b;
+    public final /* synthetic */ Context c;
+    public final /* synthetic */ ke0 d;
 
-    public be0(ContextThemeWrapper contextThemeWrapper, org.telegram.ui.ActionBar.b6 b6Var) {
-        super(contextThemeWrapper);
-        this.h = true;
-        this.r = 1.0f;
-        this.w = 0.0f;
-        this.x = new Paint(1);
-        this.A = new yd0(this, 0);
-        this.B = new yd0(this, 1);
-        this.y = b6Var;
-        this.d = contextThemeWrapper instanceof BubbleActivity;
-        tf.n nVar = new tf.n(contextThemeWrapper);
-        this.b = nVar;
-        nVar.setListener(new n5.a0(this, 8));
-        nVar.setBottomPadding(AndroidUtilities.dp(64.0f));
-        addView(nVar);
-        this.e = new ImageReceiver(this);
-        tf.e eVar = new tf.e(contextThemeWrapper);
-        this.c = eVar;
-        eVar.setListener(new kh.i0(2, this));
-        addView(eVar, g7.e6.d(-1, -2.0f, 81, 0.0f, 0.0f, 0.0f, 0.0f));
-    }
-
-    public final void a() {
-        tf.n nVar = this.b;
-        nVar.b.setVisibility(4);
-        CropAreaView cropAreaView = nVar.a;
-        cropAreaView.setDimVisibility(false);
-        cropAreaView.f(false, false);
-        cropAreaView.invalidate();
-    }
-
-    public final void b(Bitmap bitmap, int i9, boolean z10, boolean z11, tf.f fVar, y51 y51Var, MediaController.CropState cropState) {
-        requestLayout();
-        this.f = false;
-        this.e.setImageBitmap((Drawable) null);
-        tf.n nVar = this.b;
-        ImageView imageView = nVar.b;
-        nVar.x = z10;
-        nVar.d = y51Var;
-        nVar.e = fVar;
-        nVar.G = i9;
-        nVar.w = bitmap;
-        CropAreaView cropAreaView = nVar.a;
-        cropAreaView.setIsVideo(y51Var != null);
-        if (bitmap == null && y51Var == null) {
-            nVar.H = null;
-            imageView.setImageDrawable(null);
-        } else {
-            int currentWidth = nVar.getCurrentWidth();
-            int currentHeight = nVar.getCurrentHeight();
-            tf.l lVar = nVar.H;
-            if (lVar == null || !z11) {
-                nVar.H = new tf.l(nVar, currentWidth, currentHeight);
-                cropAreaView.getViewTreeObserver().addOnPreDrawListener(new tf.j(nVar, cropState, currentHeight, currentWidth));
-            } else {
-                float f10 = currentWidth;
-                lVar.e *= lVar.a / f10;
-                lVar.a = f10;
-                lVar.b = currentHeight;
-                lVar.h();
-                Matrix matrix = lVar.k;
-                tf.n nVar2 = lVar.l;
-                matrix.getValues(nVar2.D);
-                matrix.reset();
-                float f11 = lVar.e;
-                matrix.postScale(f11, f11);
-                float[] fArr = nVar2.D;
-                matrix.postTranslate(fArr[2], fArr[5]);
-                nVar2.r(false);
-            }
-            imageView.setImageBitmap(y51Var == null ? nVar.w : null);
-        }
-        tf.e eVar = this.c;
-        eVar.setFreeform(z10);
-        eVar.b(0.0f);
-        eVar.setMirrored(false);
-        eVar.setRotated(false);
-        if (cropState != null) {
-            eVar.b(cropState.cropRotate);
-            eVar.setRotated(cropState.transformRotation != 0);
-            eVar.setMirrored(cropState.mirrored);
-        } else {
-            eVar.setRotated(false);
-            eVar.setMirrored(false);
-        }
-        eVar.setVisibility(z10 ? 0 : 4);
-    }
-
-    @Override // android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j10) {
-        tf.n nVar;
-        boolean drawChild = super.drawChild(canvas, view, j10);
-        if (this.f && view == (nVar = this.b)) {
-            RectF actualRect = nVar.getActualRect();
-            int dp = AndroidUtilities.dp(32.0f);
-            org.telegram.ui.qr0 qr0Var = (org.telegram.ui.qr0) this.a;
-            qr0Var.getClass();
-            int dp2 = AndroidUtilities.dp(2.0f) + (((int) (((r1.N7.getMeasuredWidth() - AndroidUtilities.dp(32.0f)) * qr0Var.a.r8) + AndroidUtilities.dp(16.0f))) - (dp / 2));
-            int measuredHeight = getMeasuredHeight() - AndroidUtilities.dp(156.0f);
-            float f10 = actualRect.left;
-            float f11 = this.r;
-            float f12 = ((dp2 - f10) * f11) + f10;
-            float f13 = actualRect.top;
-            float z10 = e2.c.z(measuredHeight, f13, f11, f13);
-            float width = ((dp - actualRect.width()) * this.r) + actualRect.width();
-            ImageReceiver imageReceiver = this.e;
-            imageReceiver.setRoundRadius((int) (width / 2.0f));
-            imageReceiver.setImageCoords(f12, z10, width, width);
-            imageReceiver.setAlpha(this.n);
-            imageReceiver.draw(canvas);
-            float f14 = this.w;
-            Paint paint = this.x;
-            if (f14 > 0.0f) {
-                paint.setColor(-1);
-                paint.setAlpha((int) (this.w * 255.0f));
-                canvas.drawCircle(actualRect.centerX(), actualRect.centerY(), actualRect.width() / 2.0f, paint);
-            }
-            paint.setColor(org.telegram.ui.ActionBar.f6.v0(org.telegram.ui.ActionBar.f6.zf, this.y));
-            paint.setAlpha(Math.min(255, (int) (this.r * 255.0f * this.n)));
-            canvas.drawCircle(dp2 + r1, AndroidUtilities.dp(8.0f) + measuredHeight + dp, AndroidUtilities.dp(3.0f), paint);
-        }
-        return drawChild;
-    }
-
-    public float getRectSizeX() {
-        return this.b.getCropWidth();
-    }
-
-    public float getRectSizeY() {
-        return this.b.getCropHeight();
-    }
-
-    public float getRectX() {
-        return this.b.getCropLeft() - AndroidUtilities.dp(14.0f);
-    }
-
-    public float getRectY() {
-        return (this.b.getCropTop() - AndroidUtilities.dp(14.0f)) - (!this.d ? AndroidUtilities.statusBarHeight : 0);
-    }
-
-    public Bitmap getVideoThumb() {
-        if (this.f && this.h) {
-            return this.e.getBitmap();
-        }
-        return null;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public be0(ke0 ke0Var, Activity activity, Activity activity2) {
+        super(activity);
+        this.d = ke0Var;
+        this.c = activity2;
+        this.a = new RectF();
     }
 
     @Override // android.view.View
-    public final void invalidate() {
-        super.invalidate();
-        this.b.invalidate();
+    public final void onDraw(Canvas canvas) {
+        int i10;
+        int i11;
+        int i12;
+        float f9;
+        Drawable drawable;
+        Drawable drawable2;
+        int i13;
+        int i14;
+        int i15;
+        int i16;
+        int i17;
+        int i18;
+        int i19;
+        ke0 ke0Var = this.d;
+        Paint paint = ke0Var.v;
+        int i20 = ke0Var.w;
+        i10 = ((org.telegram.ui.ActionBar.f3) ke0Var).backgroundPaddingTop;
+        int i21 = i20 - i10;
+        int dp = AndroidUtilities.dp(30.0f) + getMeasuredHeight();
+        i11 = ((org.telegram.ui.ActionBar.f3) ke0Var).backgroundPaddingTop;
+        int i22 = i11 + dp;
+        float dp2 = AndroidUtilities.dp(12.0f);
+        i12 = ((org.telegram.ui.ActionBar.f3) ke0Var).backgroundPaddingTop;
+        if (i12 + i21 < dp2) {
+            i19 = ((org.telegram.ui.ActionBar.f3) ke0Var).backgroundPaddingTop;
+            f9 = 1.0f - Math.min(1.0f, ((dp2 - i21) - i19) / dp2);
+        } else {
+            f9 = 1.0f;
+        }
+        int i23 = AndroidUtilities.statusBarHeight;
+        int i24 = i21 + i23;
+        int i25 = i22 - i23;
+        drawable = ((org.telegram.ui.ActionBar.f3) ke0Var).shadowDrawable;
+        drawable.setBounds(0, i24, getMeasuredWidth(), i25);
+        drawable2 = ((org.telegram.ui.ActionBar.f3) ke0Var).shadowDrawable;
+        drawable2.draw(canvas);
+        if (f9 != 1.0f) {
+            paint.setColor(ke0Var.getThemedColor(org.telegram.ui.ActionBar.g6.h5));
+            i15 = ((org.telegram.ui.ActionBar.f3) ke0Var).backgroundPaddingLeft;
+            i16 = ((org.telegram.ui.ActionBar.f3) ke0Var).backgroundPaddingTop;
+            float f10 = i16 + i24;
+            int measuredWidth = getMeasuredWidth();
+            i17 = ((org.telegram.ui.ActionBar.f3) ke0Var).backgroundPaddingLeft;
+            float f11 = measuredWidth - i17;
+            i18 = ((org.telegram.ui.ActionBar.f3) ke0Var).backgroundPaddingTop;
+            float dp3 = AndroidUtilities.dp(24.0f) + i18 + i24;
+            RectF rectF = this.a;
+            rectF.set(i15, f10, f11, dp3);
+            float f12 = dp2 * f9;
+            canvas.drawRoundRect(rectF, f12, f12, paint);
+        }
+        int themedColor = ke0Var.getThemedColor(org.telegram.ui.ActionBar.g6.h5);
+        paint.setColor(Color.argb((int) (ke0Var.e.getAlpha() * 255.0f), (int) (Color.red(themedColor) * 0.8f), (int) (Color.green(themedColor) * 0.8f), (int) (Color.blue(themedColor) * 0.8f)));
+        i13 = ((org.telegram.ui.ActionBar.f3) ke0Var).backgroundPaddingLeft;
+        float f13 = i13;
+        int measuredWidth2 = getMeasuredWidth();
+        i14 = ((org.telegram.ui.ActionBar.f3) ke0Var).backgroundPaddingLeft;
+        canvas.drawRect(f13, 0.0f, measuredWidth2 - i14, AndroidUtilities.statusBarHeight, paint);
     }
 
     @Override // android.view.ViewGroup
     public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        if (this.h && this.f) {
-            if (this.e.isInsideImage(motionEvent.getX(), motionEvent.getY())) {
-                if (motionEvent.getAction() == 1) {
-                    ((org.telegram.ui.qr0) this.a).f();
-                }
+        if (motionEvent.getAction() == 0) {
+            ke0 ke0Var = this.d;
+            if (ke0Var.w != 0 && motionEvent.getY() < ke0Var.w && ke0Var.e.getAlpha() == 0.0f) {
+                ke0Var.dismiss();
                 return true;
             }
         }
@@ -206,70 +105,58 @@ public final class be0 extends FrameLayout {
     }
 
     @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i9, int i10, int i11, int i12) {
-        tf.l lVar;
-        super.onLayout(z10, i9, i10, i11, i12);
-        tf.n nVar = this.b;
-        CropAreaView cropAreaView = nVar.a;
-        float cropWidth = cropAreaView.getCropWidth();
-        if (cropWidth == 0.0f || (lVar = nVar.H) == null) {
-            return;
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        ke0 ke0Var = this.d;
+        ke0Var.s = true;
+        super.onLayout(z10, i10, i11, i12, i13);
+        ke0Var.s = false;
+        ke0Var.G(false);
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        int i12;
+        int i13;
+        int size = View.MeasureSpec.getSize(i11);
+        this.b = true;
+        ke0 ke0Var = this.d;
+        ce0 ce0Var = ke0Var.c;
+        i12 = ((org.telegram.ui.ActionBar.f3) ke0Var).backgroundPaddingLeft;
+        int i14 = AndroidUtilities.statusBarHeight;
+        i13 = ((org.telegram.ui.ActionBar.f3) ke0Var).backgroundPaddingLeft;
+        setPadding(i12, i14, i13, 0);
+        this.b = false;
+        int paddingTop = size - getPaddingTop();
+        View.MeasureSpec.getSize(i10);
+        ((FrameLayout.LayoutParams) ke0Var.f.getLayoutParams()).topMargin = org.telegram.ui.ActionBar.l.getCurrentActionBarHeight();
+        this.b = true;
+        int dp = AndroidUtilities.dp(80.0f);
+        he0 he0Var = ke0Var.b;
+        int i15 = he0Var.a.A;
+        for (int i16 = 0; i16 < i15; i16++) {
+            ViewGroup a2 = he0Var.a(this.c, i16);
+            a2.measure(i10, View.MeasureSpec.makeMeasureSpec(0, 0));
+            dp += a2.getMeasuredHeight();
         }
-        cropAreaView.a(nVar.h, lVar.a / lVar.b);
-        cropAreaView.setActualRect(cropAreaView.getAspectRatio());
-        cropAreaView.d(nVar.f);
-        tf.l.g(nVar.H, cropAreaView.getCropWidth() / cropWidth, 0.0f, 0.0f);
-        nVar.r(false);
+        int i17 = dp < paddingTop ? paddingTop - dp : paddingTop / 5;
+        if (ce0Var.getPaddingTop() != i17) {
+            ce0Var.getPaddingTop();
+            ce0Var.setPadding(0, i17, 0, 0);
+        }
+        this.b = false;
+        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30));
     }
 
     @Override // android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
-        if (this.h && this.f) {
-            if (this.e.isInsideImage(motionEvent.getX(), motionEvent.getY())) {
-                if (motionEvent.getAction() == 1) {
-                    ((org.telegram.ui.qr0) this.a).f();
-                }
-                return true;
-            }
-        }
-        return super.onTouchEvent(motionEvent);
+        return !this.d.isDismissed() && super.onTouchEvent(motionEvent);
     }
 
-    public void setAspectRatio(float f10) {
-        this.b.setAspectRatio(f10);
-    }
-
-    public void setDelegate(ae0 ae0Var) {
-        this.a = ae0Var;
-    }
-
-    public void setFreeform(boolean z10) {
-        this.b.setFreeform(z10);
-    }
-
-    public void setSubtitle(String str) {
-        this.b.setSubtitle(str);
-    }
-
-    public void setVideoThumbFlashAlpha(float f10) {
-        this.w = f10;
-        invalidate();
-    }
-
-    public void setVideoThumbVisible(boolean z10) {
-        if (this.h == z10) {
+    @Override // android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        if (this.b) {
             return;
         }
-        this.h = z10;
-        AnimatorSet animatorSet = this.v;
-        if (animatorSet != null) {
-            animatorSet.cancel();
-        }
-        AnimatorSet animatorSet2 = new AnimatorSet();
-        this.v = animatorSet2;
-        animatorSet2.playTogether(ObjectAnimator.ofFloat(this, this.B, z10 ? 1.0f : 0.0f));
-        this.v.setDuration(180L);
-        this.v.addListener(new zd0(this, 1));
-        this.v.start();
+        super.requestLayout();
     }
 }

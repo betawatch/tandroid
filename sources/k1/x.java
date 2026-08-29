@@ -2,26 +2,25 @@ package k1;
 
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class x extends sc.c {
-    public z a;
+public final class x extends uc.c {
+    public Object a;
     public Object b;
-    public Object c;
-    public /* synthetic */ Object d;
-    public final /* synthetic */ z e;
-    public int f;
+    public /* synthetic */ Object c;
+    public final /* synthetic */ a0 d;
+    public int e;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public x(z zVar, sc.c cVar) {
+    public x(a0 a0Var, uc.c cVar) {
         super(cVar);
-        this.e = zVar;
+        this.d = a0Var;
     }
 
-    @Override // sc.a
+    @Override // uc.a
     public final Object invokeSuspend(Object obj) {
-        this.d = obj;
-        this.f |= TLObject.FLAG_31;
-        return this.e.i(null, null, this);
+        this.c = obj;
+        this.e |= TLObject.FLAG_31;
+        return this.d.h(this);
     }
 }

@@ -1,74 +1,67 @@
 package org.telegram.ui.Components;
 
-import j$.time.YearMonth;
-import org.telegram.messenger.FileLog;
+import android.app.Activity;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.DialogObject;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u2 implements Runnable {
-    public final /* synthetic */ bc0 a;
+    public final /* synthetic */ int a;
     public final /* synthetic */ int b;
-    public final /* synthetic */ bc0 c;
-    public final /* synthetic */ bc0 d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ int f;
-    public final /* synthetic */ int h;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ Utilities.Callback e;
+    public final /* synthetic */ long f;
 
-    public /* synthetic */ u2(bc0 bc0Var, int i9, bc0 bc0Var2, bc0 bc0Var3, int i10, int i11, int i12) {
-        this.a = bc0Var;
-        this.b = i9;
-        this.c = bc0Var2;
-        this.d = bc0Var3;
-        this.e = i10;
-        this.f = i11;
-        this.h = i12;
+    public /* synthetic */ u2(int i10, long j10, long j11, Utilities.Callback callback, long j12, int i11) {
+        this.a = i11;
+        this.b = i10;
+        this.c = j10;
+        this.d = j11;
+        this.e = callback;
+        this.f = j12;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        bc0 bc0Var = this.a;
-        int value = bc0Var.getValue();
-        int i9 = this.b;
-        bc0 bc0Var2 = this.c;
-        bc0 bc0Var3 = this.d;
-        if (value == i9) {
-            bc0Var2.setMinValue(1);
-            try {
-                bc0Var2.setMaxValue(YearMonth.of(2024, bc0Var3.getValue() + 1).lengthOfMonth());
-            } catch (Exception e10) {
-                FileLog.e(e10);
-                bc0Var2.setMaxValue(31);
-            }
-            bc0Var3.setMinValue(0);
-            bc0Var3.setMaxValue(11);
-            return;
-        }
-        if (bc0Var.getValue() != this.e) {
-            bc0Var2.setMinValue(1);
-            try {
-                bc0Var2.setMaxValue(YearMonth.of(bc0Var.getValue(), bc0Var3.getValue() + 1).lengthOfMonth());
-            } catch (Exception e11) {
-                FileLog.e(e11);
-                bc0Var2.setMaxValue(31);
-            }
-            bc0Var3.setMinValue(0);
-            bc0Var3.setMaxValue(11);
-            return;
-        }
-        bc0Var3.setMinValue(0);
-        int i10 = this.f;
-        bc0Var3.setMaxValue(i10);
-        if (bc0Var3.getValue() == i10) {
-            bc0Var2.setMinValue(1);
-            bc0Var2.setMaxValue(this.h);
-            return;
-        }
-        bc0Var2.setMinValue(1);
-        try {
-            bc0Var2.setMaxValue(YearMonth.of(bc0Var.getValue(), bc0Var3.getValue() + 1).lengthOfMonth());
-        } catch (Exception e12) {
-            FileLog.e(e12);
-            bc0Var2.setMaxValue(31);
+        switch (this.a) {
+            case 0:
+                int i10 = this.b;
+                u2 u2Var = new u2(i10, this.c, this.d, this.e, this.f, 1);
+                if (!jh.s7.y(i10, false).e) {
+                    jh.s7 y8 = jh.s7.y(i10, false);
+                    y8.e = false;
+                    y8.q(false, true, u2Var);
+                    y8.e = true;
+                    break;
+                } else {
+                    u2Var.run();
+                    break;
+                }
+            default:
+                int i11 = this.b;
+                long j10 = jh.s7.y(i11, false).p().amount;
+                long j11 = this.c;
+                Utilities.Callback callback = this.e;
+                long j12 = this.f;
+                if (j10 >= j11) {
+                    callback.run(Long.valueOf(j12));
+                    break;
+                } else {
+                    Activity activity = AndroidUtilities.getActivity();
+                    org.telegram.ui.ActionBar.o2 U = LaunchActivity.U();
+                    org.telegram.ui.ActionBar.c6 bVar = (PhotoViewer.t1().Q1() || (U != null && U.hasShownSheet())) ? new lh.b() : U != null ? U.getResourceProvider() : null;
+                    if (activity != null) {
+                        long j13 = this.d;
+                        new jh.y9(activity, bVar, j11, 13, DialogObject.getShortName(i11, j13), new org.telegram.ui.f6(j12, 1, callback), j13).show();
+                        break;
+                    }
+                }
+                break;
         }
     }
 }

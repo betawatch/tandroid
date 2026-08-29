@@ -1,12 +1,15 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.LocaleController;
+import android.graphics.Outline;
+import android.view.View;
+import android.view.ViewOutlineProvider;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class p4 extends bc0 {
-    @Override // org.telegram.ui.Components.bc0
-    public final CharSequence d(int i9) {
-        return LocaleController.formatPluralString("Minutes", i9, new Object[0]);
+public final class p4 extends ViewOutlineProvider {
+    @Override // android.view.ViewOutlineProvider
+    public final void getOutline(View view, Outline outline) {
+        outline.setRoundRect(0, 0, view.getMeasuredWidth(), AndroidUtilities.dp(6.0f) + view.getMeasuredHeight(), AndroidUtilities.dp(6.0f));
     }
 }

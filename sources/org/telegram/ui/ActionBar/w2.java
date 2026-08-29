@@ -8,14 +8,14 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.AnimationNotificationsLocker;
 import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
 public final class w2 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
     public final /* synthetic */ f3 b;
 
-    public /* synthetic */ w2(f3 f3Var, int i9) {
-        this.a = i9;
+    public /* synthetic */ w2(f3 f3Var, int i10) {
+        this.a = i10;
         this.b = f3Var;
     }
 
@@ -46,9 +46,9 @@ public final class w2 extends AnimatorListenerAdapter {
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
         AnimationNotificationsLocker animationNotificationsLocker;
-        int i9 = this.a;
+        int i10 = this.a;
         f3 f3Var = this.b;
-        switch (i9) {
+        switch (i10) {
             case 0:
                 AnimatorSet animatorSet = f3Var.currentSheetAnimation;
                 if (animatorSet != null && animatorSet.equals(animator)) {
@@ -79,7 +79,7 @@ public final class w2 extends AnimatorListenerAdapter {
                 if (animatorSet2 != null && animatorSet2.equals(animator)) {
                     f3Var.currentSheetAnimation = null;
                     f3Var.currentSheetAnimationType = 0;
-                    AndroidUtilities.runOnUIThread(new p(this, 9));
+                    AndroidUtilities.runOnUIThread(new q(this, 9));
                 }
                 NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.startAllHeavyOperations, 512);
                 break;

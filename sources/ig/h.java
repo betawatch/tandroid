@@ -1,39 +1,40 @@
 package ig;
 
-import android.graphics.RenderNode;
-import g.x;
+import android.view.KeyEvent;
+import android.view.View;
+import j7.l1;
+import java.util.ArrayList;
+import java.util.HashSet;
+import org.telegram.ui.Components.j30;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class h {
-    public final RenderNode a;
-    public final g b;
-    public final x c = new x();
-    public long d = 0;
-    public int e;
-    public int f;
+public final class h implements View.OnKeyListener {
+    public boolean a;
+    public final /* synthetic */ HashSet b;
+    public final /* synthetic */ Runnable c;
+    public final /* synthetic */ k d;
 
-    public h(RenderNode renderNode, g gVar) {
-        this.a = renderNode;
-        this.b = gVar;
+    public h(k kVar, HashSet hashSet, Runnable runnable) {
+        this.d = kVar;
+        this.b = hashSet;
+        this.c = runnable;
     }
 
-    public final void a() {
-        int width = this.a.getWidth();
-        int height = this.a.getHeight();
-        x xVar = this.c;
-        xVar.a = 0L;
-        xVar.b = false;
-        g gVar = this.b;
-        gVar.x0(xVar);
-        long j10 = xVar.b ? -1L : xVar.a;
-        boolean z10 = (this.a.hasDisplayList() && width == this.e && height == this.f && j10 == this.d && j10 != -1) ? false : true;
-        this.e = width;
-        this.f = height;
-        this.d = j10;
-        if (z10) {
-            gVar.k(this.a.beginRecording());
-            this.a.endRecording();
+    @Override // android.view.View.OnKeyListener
+    public final boolean onKey(View view, int i10, KeyEvent keyEvent) {
+        k kVar = this.d;
+        ArrayList arrayList = kVar.e;
+        if (i10 == 67) {
+            if (keyEvent.getAction() == 0) {
+                this.a = kVar.b.length() == 0;
+                return false;
+            }
+            if (keyEvent.getAction() == 1 && this.a && !arrayList.isEmpty()) {
+                kVar.a((j30) l1.i(1, arrayList), this.b, this.c);
+                return true;
+            }
         }
+        return false;
     }
 }

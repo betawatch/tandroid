@@ -1,21 +1,26 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class qr0 extends FragmentContextView {
-    public final /* synthetic */ eu0 J0;
+public final class qr0 extends f2.w {
+    public final /* synthetic */ qu0 Q;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public qr0(eu0 eu0Var, Context context, org.telegram.ui.ActionBar.o2 o2Var, eu0 eu0Var2, org.telegram.ui.ActionBar.b6 b6Var) {
-        super(context, o2Var, eu0Var2, false, b6Var);
-        this.J0 = eu0Var;
+    public qr0(qu0 qu0Var) {
+        super(3);
+        this.Q = qu0Var;
     }
 
-    @Override // org.telegram.ui.Components.FragmentContextView, android.view.View
-    public final void setVisibility(int i9) {
-        eu0 eu0Var = this.J0;
-        eu0Var.L0.i(eu0Var.M0, i9 == 0, true);
+    @Override // f2.w, f2.j0, f2.w0
+    public final int o0(int i10, f2.d1 d1Var, f2.k1 k1Var) {
+        if (this.Q.k1) {
+            i10 = 0;
+        }
+        return super.o0(i10, d1Var, k1Var);
+    }
+
+    @Override // f2.w, f2.j0, f2.w0
+    public final boolean y0() {
+        return false;
     }
 }

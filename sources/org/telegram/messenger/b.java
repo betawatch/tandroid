@@ -10,13 +10,13 @@ import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_ephemeral;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b implements OnSuccessListener, GenericProvider, org.telegram.ui.ActionBar.b2, Vector.TLDeserializer {
     public final /* synthetic */ int a;
 
-    public /* synthetic */ b(int i9) {
-        this.a = i9;
+    public /* synthetic */ b(int i10) {
+        this.a = i10;
     }
 
     public static /* bridge */ /* synthetic */ BlendMode b(Object obj) {
@@ -28,21 +28,21 @@ public final /* synthetic */ class b implements OnSuccessListener, GenericProvid
     }
 
     @Override // org.telegram.tgnet.Vector.TLDeserializer
-    public TLObject deserialize(InputSerializedData inputSerializedData, int i9, boolean z10) {
+    public TLObject deserialize(InputSerializedData inputSerializedData, int i10, boolean z10) {
         switch (this.a) {
             case 26:
-                return TLRPC.Peer.TLdeserialize(inputSerializedData, i9, z10);
+                return TLRPC.Peer.TLdeserialize(inputSerializedData, i10, z10);
             case 27:
-                return TL_account.WebBrowserSettings.TLdeserialize(inputSerializedData, i9, z10);
+                return TL_account.WebBrowserSettings.TLdeserialize(inputSerializedData, i10, z10);
             case 28:
-                return TLRPC.MessageEntity.TLdeserialize(inputSerializedData, i9, z10);
+                return TLRPC.MessageEntity.TLdeserialize(inputSerializedData, i10, z10);
             default:
-                return TL_ephemeral.EphemeralMessage.TLdeserialize(inputSerializedData, i9, z10);
+                return TL_ephemeral.EphemeralMessage.TLdeserialize(inputSerializedData, i10, z10);
         }
     }
 
     @Override // org.telegram.ui.ActionBar.b2
-    public void f(org.telegram.ui.ActionBar.c2 c2Var, int i9) {
+    public void g(org.telegram.ui.ActionBar.c2 c2Var, int i10) {
         c2Var.dismiss();
     }
 

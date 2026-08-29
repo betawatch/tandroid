@@ -1,40 +1,21 @@
 package androidx.activity.result;
 
 import androidx.fragment.app.e0;
-import d7.o;
-import d7.r;
-import d7.s;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class c {
-    public static s e;
     public final /* synthetic */ int a;
     public final /* synthetic */ String b;
     public final /* synthetic */ e0 c;
     public final /* synthetic */ f d;
 
-    public /* synthetic */ c(f fVar, String str, e0 e0Var, int i9) {
-        this.a = i9;
+    public /* synthetic */ c(f fVar, String str, e0 e0Var, int i10) {
+        this.a = i10;
         this.d = fVar;
         this.b = str;
         this.c = e0Var;
-    }
-
-    public static synchronized r b(o oVar) {
-        r rVar;
-        synchronized (c.class) {
-            try {
-                if (e == null) {
-                    e = new s(0);
-                }
-                rVar = (r) e.G(oVar);
-            } catch (Throwable th) {
-                throw th;
-            }
-        }
-        return rVar;
     }
 
     public final void a(Object obj) {

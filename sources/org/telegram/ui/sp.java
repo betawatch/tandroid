@@ -1,81 +1,75 @@
 package org.telegram.ui;
 
-import android.os.Bundle;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.MessagesStorage;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class sp implements Runnable {
+public final /* synthetic */ class sp implements org.telegram.ui.ActionBar.b2, MessagesController.ErrorDelegate, MessagesStorage.LongCallback {
     public final /* synthetic */ int a;
-    public final /* synthetic */ bq b;
+    public final /* synthetic */ dq b;
 
-    public /* synthetic */ sp(bq bqVar, int i9) {
-        this.a = i9;
-        this.b = bqVar;
+    public /* synthetic */ sp(dq dqVar, int i10) {
+        this.a = i10;
+        this.b = dqVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i9 = this.a;
-        bq bqVar = this.b;
-        int i10 = 1;
-        switch (i9) {
+    @Override // org.telegram.ui.ActionBar.b2
+    public void g(org.telegram.ui.ActionBar.c2 c2Var, int i10) {
+        switch (this.a) {
             case 0:
-                TLRPC.User user = bqVar.v;
-                yp ypVar = bqVar.T0;
-                if (ypVar != null) {
-                    ypVar.b(0, bqVar.G ? bqVar.I : null, null, bqVar.O);
-                }
-                Bundle i11 = aa.d.i("scrollToTopOnResume", true);
-                i11.putLong("chat_id", bqVar.w.id);
-                if (!bqVar.getMessagesController().checkCanOpenChat(i11, bqVar)) {
-                    bqVar.s0(false);
-                    break;
-                } else {
-                    qn qnVar = new qn(i11);
-                    bqVar.presentFragment(qnVar, true);
-                    if (org.telegram.ui.Components.oc.a(qnVar)) {
-                        boolean z10 = bqVar.V0;
-                        if (!z10 || !bqVar.G) {
-                            if (!z10 && !bqVar.H && bqVar.G) {
-                                org.telegram.ui.Components.oc.C(qnVar, user.first_name).j();
-                                break;
-                            }
-                        } else {
-                            String str = user.first_name;
-                            org.telegram.ui.Components.ob obVar = new org.telegram.ui.Components.ob(qnVar.getParentActivity(), qnVar.aa);
-                            obVar.d(R.raw.ic_admin, "Shield");
-                            obVar.b.setText(AndroidUtilities.replaceTags(LocaleController.formatString("UserAddedAsAdminHint", R.string.UserAddedAsAdminHint, str)));
-                            org.telegram.ui.Components.gc.g(qnVar, obVar, 1500).j();
-                            break;
-                        }
-                    }
-                }
+                this.b.r0(true);
                 break;
             case 1:
-                bqVar.q0(false);
-                break;
-            default:
-                if (bqVar.r) {
-                    long j10 = bqVar.n;
-                    org.telegram.ui.ActionBar.c2[] c2VarArr = {new org.telegram.ui.ActionBar.c2(bqVar.getParentActivity(), 3, null)};
-                    bqVar.getMessagesController().toggleChatJoinRequest(bqVar.s, j10, true, false, true, new mg(c2VarArr, 2), new mg(c2VarArr, 3));
-                    c2VarArr[0].q(300L);
-                }
-                yp ypVar2 = bqVar.T0;
-                if (ypVar2 != null) {
-                    TLRPC.TL_chatAdminRights tL_chatAdminRights = bqVar.I;
-                    if (!tL_chatAdminRights.change_info && !tL_chatAdminRights.post_messages && !tL_chatAdminRights.manage_direct_messages && !tL_chatAdminRights.manage_welcome_messages && !tL_chatAdminRights.edit_messages && !tL_chatAdminRights.delete_messages && !tL_chatAdminRights.ban_users && !tL_chatAdminRights.invite_users && ((!bqVar.C || !tL_chatAdminRights.manage_topics) && !tL_chatAdminRights.pin_messages && !tL_chatAdminRights.manage_ranks && !tL_chatAdminRights.add_admins && !tL_chatAdminRights.anonymous && !tL_chatAdminRights.manage_call && ((!bqVar.A || (!tL_chatAdminRights.post_stories && !tL_chatAdminRights.edit_stories && !tL_chatAdminRights.delete_stories)) && !tL_chatAdminRights.other))) {
-                        i10 = 0;
-                    }
-                    ypVar2.b(i10, tL_chatAdminRights, bqVar.K, bqVar.O);
-                    bqVar.finishFragment();
+                dq dqVar = this.b;
+                dqVar.t0(true);
+                vp vpVar = new vp(dqVar, 0);
+                if (!dqVar.G && !dqVar.H) {
+                    dqVar.getMessagesController().addUserToChat(dqVar.w.id, dqVar.v, 0, dqVar.U0, dqVar, true, vpVar, new sp(dqVar, 3));
+                    break;
+                } else {
+                    dqVar.getMessagesController().setUserAdminRole(dqVar.w.id, dqVar.v, dqVar.G ? dqVar.I : dq.o0(false), dqVar.O, false, dqVar, dqVar.V0, dqVar.G, dqVar.U0, vpVar, new sp(dqVar, 2));
                     break;
                 }
                 break;
+            case 2:
+            case 3:
+            default:
+                dq dqVar2 = this.b;
+                dqVar2.getClass();
+                dqVar2.presentFragment(new cg1(6, null));
+                break;
+            case 4:
+                this.b.finishFragment();
+                break;
+            case 5:
+                TwoStepVerificationActivity twoStepVerificationActivity = new TwoStepVerificationActivity();
+                dq dqVar3 = this.b;
+                kg.w wVar = new kg.w(26, dqVar3, twoStepVerificationActivity);
+                twoStepVerificationActivity.V = 0;
+                twoStepVerificationActivity.X = wVar;
+                dqVar3.presentFragment(twoStepVerificationActivity);
+                break;
+        }
+    }
+
+    @Override // org.telegram.messenger.MessagesStorage.LongCallback
+    public void run(long j10) {
+        dq.U(this.b, j10);
+    }
+
+    @Override // org.telegram.messenger.MessagesController.ErrorDelegate
+    public boolean run(TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 2:
+                this.b.t0(false);
+                return true;
+            case 3:
+                this.b.t0(false);
+                return true;
+            default:
+                return dq.W(this.b, tL_error);
         }
     }
 }

@@ -1,44 +1,70 @@
 package org.telegram.messenger;
 
+import java.nio.ByteBuffer;
+import java.util.ArrayList;
+import java.util.HashMap;
 import org.telegram.messenger.MediaController;
+import org.telegram.messenger.MessagesStorage;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class p6 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int c;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ Object c;
     public final /* synthetic */ Object d;
 
-    public /* synthetic */ p6(int i9, int i10, String str) {
-        this.a = 3;
-        this.b = i9;
-        this.c = i10;
-        this.d = str;
+    public /* synthetic */ p6(Object obj, Object obj2, boolean z10, int i10) {
+        this.a = i10;
+        this.c = obj;
+        this.d = obj2;
+        this.b = z10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                ((MediaController.8) this.d).lambda$onStateChanged$0(this.b, this.c);
+                ((MediaController.2) this.c).lambda$run$1((ByteBuffer) this.d, this.b);
                 break;
             case 1:
-                ((MediaDataController) this.d).lambda$processLoadedStickers$106(this.b, this.c);
+                ((FileLoader) this.c).lambda$cancelFileUpload$2(this.b, (String) this.d);
                 break;
             case 2:
-                ((NotificationsController) this.d).lambda$deleteNotificationChannelGlobal$43(this.b, this.c);
+                ((ImageLoader) this.c).lambda$cancelLoadingForImageReceiver$4(this.b, (ImageReceiver) this.d);
+                break;
+            case 3:
+                ((MediaDataController) this.c).lambda$loadBotKeyboard$196((MessagesStorage.TopicKey) this.d, this.b);
+                break;
+            case 4:
+                ((MediaDataController) this.c).lambda$buildShortcuts$143(this.b, (ArrayList) this.d);
+                break;
+            case 5:
+                ((MessagesController) this.c).lambda$processDialogsUpdate$229((TLRPC.messages_Dialogs) this.d, this.b);
+                break;
+            case 6:
+                ((MessagesStorage) this.c).lambda$updateUserInfo$130((TLRPC.UserFull) this.d, this.b);
+                break;
+            case 7:
+                ((MessagesStorage) this.c).lambda$putCachedPhoneBook$149((HashMap) this.d, this.b);
+                break;
+            case 8:
+                ((MessagesStorage) this.c).lambda$updateEncryptedChatSeq$171((TLRPC.EncryptedChat) this.d, this.b);
+                break;
+            case 9:
+                ((MessagesStorage) this.c).lambda$updateChatInfo$134((TLRPC.ChatFull) this.d, this.b);
                 break;
             default:
-                PushListenerController.lambda$sendRegistrationToServer$0(this.b, this.c, (String) this.d);
+                ((MessagesStorage) this.c).lambda$deleteEphemeralMessages$206((a0.h) this.d, this.b);
                 break;
         }
     }
 
-    public /* synthetic */ p6(Object obj, int i9, int i10, int i11) {
-        this.a = i11;
-        this.d = obj;
-        this.b = i9;
-        this.c = i10;
+    public /* synthetic */ p6(Object obj, boolean z10, Object obj2, int i10) {
+        this.a = i10;
+        this.c = obj;
+        this.b = z10;
+        this.d = obj2;
     }
 }

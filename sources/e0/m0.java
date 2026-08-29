@@ -23,7 +23,7 @@ import java.util.List;
 import java.util.Map;
 import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class m0 implements Handler.Callback, ServiceConnection {
     public final Context a;
@@ -99,15 +99,15 @@ public final class m0 implements Handler.Callback, ServiceConnection {
         if (handler.hasMessages(3, componentName)) {
             return;
         }
-        int i9 = l0Var.e;
-        int i10 = i9 + 1;
-        l0Var.e = i10;
-        if (i10 <= 6) {
-            int i11 = (1 << i9) * MediaDataController.MAX_STYLE_RUNS_COUNT;
+        int i10 = l0Var.e;
+        int i11 = i10 + 1;
+        l0Var.e = i11;
+        if (i11 <= 6) {
+            int i12 = (1 << i10) * MediaDataController.MAX_STYLE_RUNS_COUNT;
             if (Log.isLoggable("NotifManCompat", 3)) {
-                Log.d("NotifManCompat", "Scheduling retry for " + i11 + " ms");
+                Log.d("NotifManCompat", "Scheduling retry for " + i12 + " ms");
             }
-            handler.sendMessageDelayed(handler.obtainMessage(3, componentName), i11);
+            handler.sendMessageDelayed(handler.obtainMessage(3, componentName), i12);
             return;
         }
         Log.w("NotifManCompat", "Giving up on delivering " + arrayDeque.size() + " tasks to " + componentName + " after " + l0Var.e + " retries");
@@ -117,9 +117,9 @@ public final class m0 implements Handler.Callback, ServiceConnection {
     @Override // android.os.Handler.Callback
     public final boolean handleMessage(Message message) {
         HashSet hashSet;
-        int i9 = message.what;
+        int i10 = message.what;
         b.c cVar = null;
-        if (i9 == 0) {
+        if (i10 == 0) {
             j0 j0Var = (j0) message.obj;
             String string = Settings.Secure.getString(this.a.getContentResolver(), "enabled_notification_listeners");
             synchronized (n0.c) {
@@ -137,8 +137,8 @@ public final class m0 implements Handler.Callback, ServiceConnection {
                             n0.e = hashSet2;
                             n0.d = string;
                         }
-                    } catch (Throwable th) {
-                        throw th;
+                    } catch (Throwable th2) {
+                        throw th2;
                     }
                 }
                 hashSet = n0.e;
@@ -189,13 +189,13 @@ public final class m0 implements Handler.Callback, ServiceConnection {
                 l0Var2.d.add(j0Var);
                 a(l0Var2);
             }
-        } else if (i9 == 1) {
+        } else if (i10 == 1) {
             k0 k0Var = (k0) message.obj;
             ComponentName componentName3 = k0Var.a;
             IBinder iBinder = k0Var.b;
             l0 l0Var3 = (l0) this.c.get(componentName3);
             if (l0Var3 != null) {
-                int i10 = b.b.a;
+                int i11 = b.b.a;
                 if (iBinder != null) {
                     IInterface queryLocalInterface = iBinder.queryLocalInterface(b.c.g);
                     if (queryLocalInterface == null || !(queryLocalInterface instanceof b.c)) {
@@ -211,7 +211,7 @@ public final class m0 implements Handler.Callback, ServiceConnection {
                 a(l0Var3);
                 return true;
             }
-        } else if (i9 == 2) {
+        } else if (i10 == 2) {
             l0 l0Var4 = (l0) this.c.get((ComponentName) message.obj);
             if (l0Var4 != null) {
                 if (l0Var4.b) {
@@ -222,7 +222,7 @@ public final class m0 implements Handler.Callback, ServiceConnection {
                 return true;
             }
         } else {
-            if (i9 != 3) {
+            if (i10 != 3) {
                 return false;
             }
             l0 l0Var5 = (l0) this.c.get((ComponentName) message.obj);

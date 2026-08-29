@@ -9,42 +9,42 @@ import java.util.Map;
 import java.util.TreeSet;
 import org.scilab.forge.jlatexmath.TeXFormulaSettingsParser;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public abstract class s0 {
     public static final f1 a = new f1();
     public static final g1 b = new g1();
 
-    public static void a(byte b10, byte b11, byte b12, byte b13, char[] cArr, int i9) {
+    public static void a(byte b10, byte b11, byte b12, byte b13, char[] cArr, int i10) {
         if (!h(b11)) {
             if ((((b11 + 112) + (b10 << 28)) >> 30) == 0 && !h(b12) && !h(b13)) {
-                int i10 = ((b10 & 7) << 18) | ((b11 & 63) << 12) | ((b12 & 63) << 6) | (b13 & 63);
-                cArr[i9] = (char) ((i10 >>> 10) + 55232);
-                cArr[i9 + 1] = (char) ((i10 & 1023) + 56320);
+                int i11 = ((b10 & 7) << 18) | ((b11 & 63) << 12) | ((b12 & 63) << 6) | (b13 & 63);
+                cArr[i10] = (char) ((i11 >>> 10) + 55232);
+                cArr[i10 + 1] = (char) ((i11 & 1023) + 56320);
                 return;
             }
         }
         throw c0.a();
     }
 
-    public static void b(byte b10, byte b11, char[] cArr, int i9) {
+    public static void b(byte b10, byte b11, char[] cArr, int i10) {
         if (b10 < -62 || h(b11)) {
             throw c0.a();
         }
-        cArr[i9] = (char) (((b10 & 31) << 6) | (b11 & 63));
+        cArr[i10] = (char) (((b10 & 31) << 6) | (b11 & 63));
     }
 
-    public static void c(byte b10, byte b11, byte b12, char[] cArr, int i9) {
+    public static void c(byte b10, byte b11, byte b12, char[] cArr, int i10) {
         if (h(b11) || ((b10 == -32 && b11 < -96) || ((b10 == -19 && b11 >= -96) || h(b12)))) {
             throw c0.a();
         }
-        cArr[i9] = (char) (((b10 & 15) << 12) | ((b11 & 63) << 6) | (b12 & 63));
+        cArr[i10] = (char) (((b10 & 15) << 12) | ((b11 & 63) << 6) | (b12 & 63));
     }
 
     public static final String d(String str) {
         StringBuilder sb2 = new StringBuilder();
-        for (int i9 = 0; i9 < str.length(); i9++) {
-            char charAt = str.charAt(i9);
+        for (int i10 = 0; i10 < str.length(); i10++) {
+            char charAt = str.charAt(i10);
             if (Character.isUpperCase(charAt)) {
                 sb2.append("_");
             }
@@ -55,8 +55,8 @@ public abstract class s0 {
 
     public static String g(g gVar) {
         StringBuilder sb2 = new StringBuilder(gVar.size());
-        for (int i9 = 0; i9 < gVar.size(); i9++) {
-            byte b10 = gVar.b[i9];
+        for (int i10 = 0; i10 < gVar.size(); i10++) {
+            byte b10 = gVar.b[i10];
             if (b10 == 34) {
                 sb2.append("\\\"");
             } else if (b10 == 39) {
@@ -108,24 +108,24 @@ public abstract class s0 {
         return b10 > -65;
     }
 
-    public static final void j(StringBuilder sb2, int i9, String str, Object obj) {
+    public static final void j(StringBuilder sb2, int i10, String str, Object obj) {
         if (obj instanceof List) {
             Iterator it = ((List) obj).iterator();
             while (it.hasNext()) {
-                j(sb2, i9, str, it.next());
+                j(sb2, i10, str, it.next());
             }
             return;
         }
         if (obj instanceof Map) {
             Iterator it2 = ((Map) obj).entrySet().iterator();
             while (it2.hasNext()) {
-                j(sb2, i9, str, (Map.Entry) it2.next());
+                j(sb2, i10, str, (Map.Entry) it2.next());
             }
             return;
         }
         sb2.append('\n');
-        int i10 = 0;
-        for (int i11 = 0; i11 < i9; i11++) {
+        int i11 = 0;
+        for (int i12 = 0; i12 < i10; i12++) {
             sb2.append(' ');
         }
         sb2.append(str);
@@ -144,11 +144,11 @@ public abstract class s0 {
         }
         if (obj instanceof x) {
             sb2.append(" {");
-            k((x) obj, sb2, i9 + 2);
+            k((x) obj, sb2, i10 + 2);
             sb2.append("\n");
-            while (i10 < i9) {
+            while (i11 < i10) {
                 sb2.append(' ');
-                i10++;
+                i11++;
             }
             sb2.append("}");
             return;
@@ -160,13 +160,13 @@ public abstract class s0 {
         }
         sb2.append(" {");
         Map.Entry entry = (Map.Entry) obj;
-        int i12 = i9 + 2;
-        j(sb2, i12, "key", entry.getKey());
-        j(sb2, i12, "value", entry.getValue());
+        int i13 = i10 + 2;
+        j(sb2, i13, "key", entry.getKey());
+        j(sb2, i13, "value", entry.getValue());
         sb2.append("\n");
-        while (i10 < i9) {
+        while (i11 < i10) {
             sb2.append(' ');
-            i10++;
+            i11++;
         }
         sb2.append("}");
     }
@@ -190,7 +190,7 @@ public abstract class s0 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static void k(x xVar, StringBuilder sb2, int i9) {
+    public static void k(x xVar, StringBuilder sb2, int i10) {
         boolean equals;
         HashMap hashMap = new HashMap();
         HashMap hashMap2 = new HashMap();
@@ -213,14 +213,14 @@ public abstract class s0 {
                 String str2 = replaceFirst.substring(0, 1).toLowerCase() + replaceFirst.substring(1, replaceFirst.length() - 4);
                 Method method2 = (Method) hashMap.get(str);
                 if (method2 != null && method2.getReturnType().equals(List.class)) {
-                    j(sb2, i9, d(str2), x.f(method2, xVar, new Object[0]));
+                    j(sb2, i10, d(str2), x.f(method2, xVar, new Object[0]));
                 }
             }
             if (replaceFirst.endsWith(TeXFormulaSettingsParser.CHARTODEL_MAPPING_EL) && !replaceFirst.equals(TeXFormulaSettingsParser.CHARTODEL_MAPPING_EL)) {
                 String str3 = replaceFirst.substring(0, 1).toLowerCase() + replaceFirst.substring(1, replaceFirst.length() - 3);
                 Method method3 = (Method) hashMap.get(str);
                 if (method3 != null && method3.getReturnType().equals(Map.class) && !method3.isAnnotationPresent(Deprecated.class) && Modifier.isPublic(method3.getModifiers())) {
-                    j(sb2, i9, d(str3), x.f(method3, xVar, new Object[0]));
+                    j(sb2, i10, d(str3), x.f(method3, xVar, new Object[0]));
                 }
             }
             if (((Method) hashMap2.get("set".concat(replaceFirst))) != null) {
@@ -232,14 +232,14 @@ public abstract class s0 {
                 Method method4 = (Method) hashMap.get("get".concat(replaceFirst));
                 Method method5 = (Method) hashMap.get("has".concat(replaceFirst));
                 if (method4 != null) {
-                    Object f10 = x.f(method4, xVar, new Object[0]);
+                    Object f9 = x.f(method4, xVar, new Object[0]);
                     if (method5 == null) {
-                        if (f10 instanceof Boolean) {
-                            equals = !((Boolean) f10).booleanValue();
-                        } else if (!(f10 instanceof Integer)) {
-                            if (!(f10 instanceof Float)) {
-                                if (!(f10 instanceof Double)) {
-                                    equals = f10 instanceof String ? f10.equals("") : f10 instanceof g ? f10.equals(g.c) : !(f10 instanceof a) ? false : false;
+                        if (f9 instanceof Boolean) {
+                            equals = !((Boolean) f9).booleanValue();
+                        } else if (!(f9 instanceof Integer)) {
+                            if (!(f9 instanceof Float)) {
+                                if (!(f9 instanceof Double)) {
+                                    equals = f9 instanceof String ? f9.equals("") : f9 instanceof g ? f9.equals(g.c) : !(f9 instanceof a) ? false : false;
                                 }
                             }
                         }
@@ -250,24 +250,24 @@ public abstract class s0 {
                         z10 = ((Boolean) x.f(method5, xVar, new Object[0])).booleanValue();
                     }
                     if (z10) {
-                        j(sb2, i9, d(str4), f10);
+                        j(sb2, i10, d(str4), f9);
                     }
                 }
             }
         }
         j1 j1Var = xVar.unknownFields;
         if (j1Var != null) {
-            for (int i10 = 0; i10 < j1Var.a; i10++) {
-                j(sb2, i9, String.valueOf(j1Var.b[i10] >>> 3), j1Var.c[i10]);
+            for (int i11 = 0; i11 < j1Var.a; i11++) {
+                j(sb2, i10, String.valueOf(j1Var.b[i11] >>> 3), j1Var.c[i11]);
             }
         }
     }
 
-    public abstract String e(int i9, int i10, byte[] bArr);
+    public abstract String e(int i10, int i11, byte[] bArr);
 
-    public abstract int f(String str, byte[] bArr, int i9, int i10);
+    public abstract int f(String str, byte[] bArr, int i10, int i11);
 
-    public abstract int i(int i9, int i10, byte[] bArr);
+    public abstract int i(int i10, int i11, byte[] bArr);
 
-    public abstract void l(int i9, int i10, byte[] bArr);
+    public abstract void l(int i10, int i11, byte[] bArr);
 }

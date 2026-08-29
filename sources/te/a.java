@@ -1,34 +1,48 @@
 package te;
 
-import java.io.FilterInputStream;
+import android.content.Context;
+import android.util.SparseArray;
+import java.io.BufferedInputStream;
+import o4.g;
+import org.telegram.tgnet.SerializedData;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public abstract class a extends re.a {
-    public static String b(int i9, int i10, byte[] bArr) {
+public final class a {
+    public static final a b = new a();
+    public final SparseArray a;
+
+    public a() {
+        this.a = new SparseArray();
+    }
+
+    public static void a(Context context, int i10, SparseArray sparseArray) {
+        BufferedInputStream bufferedInputStream = new BufferedInputStream(context.getResources().openRawResource(i10));
         try {
-            String str = new String(bArr, i9, i10, "ISO-8859-1");
-            int indexOf = str.indexOf(0);
-            return indexOf < 0 ? str : str.substring(0, indexOf);
-        } catch (Exception unused) {
-            return "";
+            SerializedData serializedData = new SerializedData(bufferedInputStream);
+            while (serializedData.remaining() > 0) {
+                sparseArray.put(serializedData.readInt32(true), serializedData.readString(true));
+            }
+            bufferedInputStream.close();
+        } catch (Throwable th2) {
+            try {
+                bufferedInputStream.close();
+            } catch (Throwable th3) {
+                th2.addSuppressed(th3);
+            }
+            throw th2;
         }
     }
 
-    public static boolean c(FilterInputStream filterInputStream) {
-        boolean z10;
-        filterInputStream.mark(3);
-        try {
-            if (filterInputStream.read() == 84 && filterInputStream.read() == 65) {
-                if (filterInputStream.read() == 71) {
-                    z10 = true;
-                    return z10;
-                }
-            }
-            z10 = false;
-            return z10;
-        } finally {
-            filterInputStream.reset();
+    public final String b(String str) {
+        if (str == null) {
+            return null;
         }
+        return (String) this.a.get(str.hashCode());
+    }
+
+    public a(g gVar) {
+        SparseArray sparseArray = (SparseArray) gVar.b;
+        this.a = sparseArray == null ? new SparseArray() : sparseArray;
     }
 }

@@ -1,40 +1,36 @@
 package org.telegram.ui;
 
-import android.content.Context;
-
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class c60 extends org.telegram.ui.Components.q10 {
-    public final /* synthetic */ k60 r;
+public final /* synthetic */ class c60 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ m60 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c60(k60 k60Var, Context context, int i9) {
-        super(context, i9);
-        this.r = k60Var;
+    public /* synthetic */ c60(m60 m60Var, int i10) {
+        this.a = i10;
+        this.b = m60Var;
     }
 
-    @Override // org.telegram.ui.Components.q10
-    public final void a(org.telegram.ui.Components.w20 w20Var) {
-        super.a(w20Var);
-        k60.Y(this.r);
-    }
-
-    @Override // org.telegram.ui.Components.q10
-    public final void b() {
-        super.b();
-        k60.Y(this.r);
-    }
-
-    @Override // org.telegram.ui.Components.q10
-    public final void c(org.telegram.ui.Components.w20 w20Var) {
-        k60 k60Var = this.r;
-        if (w20Var == k60Var.T) {
-            k60Var.T = null;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.finishFragment();
+                break;
+            case 1:
+                m60 m60Var = this.b;
+                m60Var.i0();
+                m60Var.e0();
+                break;
+            case 2:
+                m60 m60Var2 = this.b;
+                m60Var2.getClass();
+                m60Var2.presentFragment(new PremiumPreviewFragment(0, "noncontacts"));
+                break;
+            default:
+                m60 m60Var3 = this.b;
+                m60Var3.n.postOnAnimation(new c60(m60Var3, 1));
+                break;
         }
-        if (w20Var == k60Var.U) {
-            k60Var.U = null;
-        }
-        super.c(w20Var);
-        k60.Y(k60Var);
     }
 }

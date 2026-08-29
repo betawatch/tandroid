@@ -1,36 +1,44 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import android.graphics.Rect;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ia0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ wa0 b;
-    public final /* synthetic */ Context c;
+public final class ia0 extends f2.v0 {
+    public final /* synthetic */ ja0 a;
 
-    public /* synthetic */ ia0(wa0 wa0Var, Context context, int i9) {
-        this.a = i9;
-        this.b = wa0Var;
-        this.c = context;
+    public ia0(ja0 ja0Var) {
+        this.a = ja0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                wa0 wa0Var = this.b;
-                wa0Var.V.a(false);
-                AndroidUtilities.runOnUIThread(new ia0(wa0Var, this.c, 1));
-                break;
-            default:
-                Context context = this.c;
-                if (AndroidUtilities.isContextSafe(context)) {
-                    new zf.x0(context, 43, this.b.V.B).show();
-                    break;
-                }
-                break;
+    @Override // f2.v0
+    public final void a(Rect rect, View view, RecyclerView recyclerView, f2.k1 k1Var) {
+        int R;
+        rect.left = 0;
+        rect.right = 0;
+        rect.top = 0;
+        rect.bottom = 0;
+        f2.w0 layoutManager = recyclerView.getLayoutManager();
+        ka0 ka0Var = this.a.X2;
+        if (layoutManager != ka0Var.d || (R = RecyclerView.R(view)) == 0 || ka0Var.f.N()) {
+            return;
         }
+        if (ka0Var.f.I() == null && ka0Var.f.Q == null) {
+            rect.top = AndroidUtilities.dp(2.0f);
+        } else {
+            if (R == 0) {
+                return;
+            }
+            R--;
+            da0 da0Var = ka0Var.d;
+            da0Var.B1();
+            if (R > da0Var.U) {
+                rect.top = AndroidUtilities.dp(2.0f);
+            }
+        }
+        rect.right = ka0Var.d.E1(R) ? 0 : AndroidUtilities.dp(2.0f);
     }
 }

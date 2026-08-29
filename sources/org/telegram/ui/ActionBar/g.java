@@ -2,176 +2,132 @@ package org.telegram.ui.ActionBar;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
-import android.animation.AnimatorSet;
+import android.view.KeyEvent;
+import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import org.telegram.ui.Components.ci;
-import org.telegram.ui.Components.h90;
-import org.telegram.ui.Components.k90;
-import org.telegram.ui.Components.ki;
-import org.telegram.ui.Components.p8;
-import org.telegram.ui.Components.w8;
-import org.telegram.ui.fg0;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.jf;
+import org.telegram.ui.Components.og;
+import org.telegram.ui.Components.t9;
+import org.telegram.ui.di0;
+import org.telegram.ui.ki0;
+import org.telegram.ui.xh0;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
 public final class g extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public boolean b;
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ boolean b;
     public final /* synthetic */ boolean c;
     public final /* synthetic */ Object d;
+    public final /* synthetic */ KeyEvent.Callback e;
 
-    public /* synthetic */ g(Object obj, boolean z10, boolean z11, int i9) {
-        this.a = i9;
-        this.d = obj;
+    public g(l lVar, ArrayList arrayList, boolean z10, boolean z11) {
+        this.e = lVar;
+        this.d = arrayList;
         this.b = z10;
         this.c = z11;
     }
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationCancel(Animator animator) {
-        switch (this.a) {
-            case 1:
-                this.b = true;
-                ActionBarLayout actionBarLayout = (ActionBarLayout) this.d;
-                actionBarLayout.Z0 = false;
-                actionBarLayout.s.setAlpha(1.0f);
-                ActionBarLayout.a(actionBarLayout, true);
-                actionBarLayout.d1 = null;
-                break;
-            case 2:
-            default:
-                super.onAnimationCancel(animator);
-                break;
-            case 3:
-                ki kiVar = (ki) this.d;
-                if (animator.equals(kiVar.I0)) {
-                    kiVar.I0 = null;
-                    break;
-                }
-                break;
-            case 4:
-                ((h90) this.d).b2 = null;
-                break;
-            case 5:
-                fg0 fg0Var = (fg0) this.d;
-                AnimatorSet[] animatorSetArr = fg0Var.G;
-                boolean z10 = this.b;
-                if (animatorSetArr[!z10 ? 1 : 0] != null && animatorSetArr[!z10 ? 1 : 0].equals(animator)) {
-                    fg0Var.G[!z10 ? 1 : 0] = null;
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
-        ci ciVar;
-        w0 w0Var;
+        jf jfVar;
+        org.telegram.ui.Cells.s1 s1Var;
+        ViewGroup viewGroup;
+        xh0 xh0Var;
         switch (this.a) {
             case 0:
-                k kVar = (k) this.d;
-                h5 h5Var = kVar.n[1];
-                if (h5Var != null && h5Var.getParent() != null) {
-                    ((ViewGroup) kVar.n[1].getParent()).removeView(kVar.n[1]);
-                }
-                kVar.n[1] = null;
-                kVar.t0 = false;
-                if (this.b && this.c) {
-                    kVar.r.setVisibility(8);
-                }
-                kVar.requestLayout();
-                break;
-            case 1:
-                ActionBarLayout actionBarLayout = (ActionBarLayout) this.d;
-                if (!this.b) {
-                    actionBarLayout.Z0 = false;
-                    actionBarLayout.s.setAlpha(1.0f);
-                    ActionBarLayout.a(actionBarLayout, this.c);
-                    actionBarLayout.d1 = null;
-                    break;
-                }
-                break;
-            case 2:
-                w8 w8Var = (w8) this.d;
-                w8Var.C = null;
-                boolean z10 = this.b;
-                w8Var.h0(z10 ? 1.0f : 0.0f, false);
-                if (this.c) {
-                    p8 p8Var = w8Var.a;
-                    p8Var.w = -1.0f;
-                    p8Var.setExpanded(z10);
-                    break;
-                }
-                break;
-            case 3:
-                boolean z11 = this.b;
-                ki kiVar = (ki) this.d;
-                if (animator.equals(kiVar.I0)) {
-                    if (!z11) {
-                        if (!kiVar.J) {
-                            kiVar.z0.setVisibility(4);
+                ArrayList arrayList = (ArrayList) this.d;
+                l lVar = (l) this.e;
+                int i10 = 0;
+                while (true) {
+                    int size = arrayList.size();
+                    boolean z10 = this.b;
+                    if (i10 >= size) {
+                        if (z10 && !this.c) {
+                            h5 h5Var = lVar.n[0];
+                            if (h5Var != null) {
+                                h5Var.setVisibility(8);
+                            }
+                            h5 h5Var2 = lVar.n[1];
+                            if (h5Var2 != null) {
+                                h5Var2.setVisibility(8);
+                            }
                         }
-                        kiVar.D0.setVisibility(4);
-                    } else if (kiVar.O0 && ((ciVar = kiVar.u0) == null || ciVar.I())) {
-                        kiVar.t1.setVisibility(4);
-                    }
-                    if (this.c) {
-                        kiVar.b2();
-                        kiVar.K0.setVisibility(z11 ? 0 : 8);
-                    }
-                    kiVar.I0 = null;
-                    break;
-                }
-                break;
-            case 4:
-                h90 h90Var = (h90) this.d;
-                k90 k90Var = h90Var.e2;
-                if (h90Var.b2 != null) {
-                    h90Var.b2 = null;
-                    if (!this.b) {
-                        k90Var.B.setVisibility(4);
-                        FrameLayout frameLayout = k90Var.O;
-                        if (frameLayout != null) {
-                            frameLayout.setVisibility(4);
-                        }
-                        w0 w0Var2 = k90Var.D;
-                        if (w0Var2 != null) {
-                            w0Var2.setVisibility(8);
-                        }
-                        if (this.c && (w0Var = k90Var.C) != null) {
-                            w0Var.setVisibility(8);
+                        t9 t9Var = lVar.f;
+                        if (t9Var != null && !z10) {
+                            t9Var.setVisibility(8);
                             break;
                         }
                     } else {
-                        k90Var.s.setVisibility(4);
-                        w0 w0Var3 = k90Var.C;
-                        if (w0Var3 != null) {
-                            w0Var3.setVisibility(8);
-                            break;
+                        View view = (View) arrayList.get(i10);
+                        if (z10) {
+                            view.setVisibility(4);
+                            view.setAlpha(0.0f);
+                        } else {
+                            view.setAlpha(1.0f);
                         }
+                        i10++;
                     }
                 }
                 break;
             default:
-                fg0 fg0Var = (fg0) this.d;
-                AnimatorSet[] animatorSetArr = fg0Var.G;
-                boolean z12 = this.b;
-                if (animatorSetArr[!z12 ? 1 : 0] != null && animatorSetArr[!z12 ? 1 : 0].equals(animator) && !this.c && z12 && fg0Var.I.getAlpha() != 1.0f) {
-                    fg0Var.I.setAlpha(1.0f);
-                    fg0Var.I.setScaleX(1.0f);
-                    fg0Var.I.setScaleY(1.0f);
-                    fg0Var.I.setVisibility(0);
-                    break;
+                Runnable runnable = (Runnable) this.d;
+                ki0 ki0Var = (ki0) this.e;
+                di0 di0Var = ki0Var.G;
+                boolean z11 = this.b;
+                float f9 = z11 ? 1.0f : 0.0f;
+                ki0Var.A = f9;
+                ki0Var.x = false;
+                ki0Var.y = false;
+                ki0Var.D.setAlpha(f9);
+                if (z11) {
+                    ki0Var.w = false;
+                    ki0Var.v = false;
+                }
+                jf jfVar2 = ki0Var.O;
+                if (jfVar2 != null) {
+                    jfVar2.setAlpha(1.0f);
+                }
+                org.telegram.ui.Cells.s1 s1Var2 = ki0Var.n0;
+                if (s1Var2 != null) {
+                    s1Var2.setVisibility(0);
+                }
+                og ogVar = ki0Var.S;
+                if (ogVar != null && !ki0Var.s) {
+                    ogVar.setAlpha(1.0f);
+                }
+                if (!z11 && (xh0Var = ki0Var.T) != null) {
+                    xh0Var.setAlpha(0.0f);
+                }
+                if (!this.c && (viewGroup = ki0Var.V) != null) {
+                    viewGroup.setAlpha(ki0Var.A);
+                }
+                di0Var.invalidate();
+                di0Var.setAlpha(ki0Var.A);
+                ki0Var.B.invalidate();
+                ki0Var.C.invalidate();
+                if (runnable != null) {
+                    if (!z11 && (s1Var = ki0Var.n0) != null && s1Var.isAttachedToWindow()) {
+                        ki0Var.n0.post(runnable);
+                        break;
+                    } else if (!z11 && (jfVar = ki0Var.O) != null && jfVar.isAttachedToWindow()) {
+                        ki0Var.O.post(runnable);
+                        break;
+                    } else {
+                        AndroidUtilities.runOnUIThread(runnable);
+                        break;
+                    }
                 }
                 break;
         }
     }
 
-    public g(ActionBarLayout actionBarLayout, boolean z10) {
-        this.a = 1;
-        this.d = actionBarLayout;
-        this.c = z10;
+    public g(ki0 ki0Var, boolean z10, boolean z11, Runnable runnable) {
+        this.e = ki0Var;
+        this.b = z10;
+        this.c = z11;
+        this.d = runnable;
     }
 }

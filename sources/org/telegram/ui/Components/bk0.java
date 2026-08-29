@@ -1,89 +1,36 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
+import android.graphics.drawable.Drawable;
+import android.view.View;
+import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public abstract class bk0 extends vk0 {
-    public boolean c;
-    public boolean d;
-    public ArrayList e;
-    public ArrayList f;
+public final class bk0 extends ImageReceiver {
+    public final /* synthetic */ int a;
 
-    public final void E() {
-        this.c = false;
-        if (!this.d && this.e.isEmpty() && this.f.isEmpty()) {
-            return;
-        }
-        ((org.telegram.ui.bm) this).O(false);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ bk0(int i10, View view) {
+        super(view);
+        this.a = i10;
     }
 
-    @Override // f2.r0
-    public void l() {
-        if (this.c) {
-            this.d = true;
-        } else {
-            super.l();
-        }
-    }
-
-    @Override // f2.r0
-    public void m(int i9) {
-        if (this.c) {
-            return;
-        }
-        super.m(i9);
-    }
-
-    @Override // f2.r0
-    public void o(int i9) {
-        ArrayList arrayList = this.e;
-        if (!this.c) {
-            super.o(i9);
-        } else {
-            arrayList.add(Integer.valueOf(i9));
-            arrayList.add(1);
-        }
-    }
-
-    @Override // f2.r0
-    public void q(int i9, int i10) {
-        if (this.c) {
-            return;
-        }
-        super.q(i9, i10);
-    }
-
-    @Override // f2.r0
-    public void s(int i9, int i10) {
-        ArrayList arrayList = this.e;
-        if (!this.c) {
-            super.s(i9, i10);
-        } else {
-            arrayList.add(Integer.valueOf(i9));
-            arrayList.add(Integer.valueOf(i10));
-        }
-    }
-
-    @Override // f2.r0
-    public void t(int i9, int i10) {
-        ArrayList arrayList = this.f;
-        if (!this.c) {
-            super.t(i9, i10);
-        } else {
-            arrayList.add(Integer.valueOf(i9));
-            arrayList.add(Integer.valueOf(i10));
-        }
-    }
-
-    @Override // f2.r0
-    public void u(int i9) {
-        ArrayList arrayList = this.f;
-        if (!this.c) {
-            super.u(i9);
-        } else {
-            arrayList.add(Integer.valueOf(i9));
-            arrayList.add(1);
+    @Override // org.telegram.messenger.ImageReceiver
+    public final boolean setImageBitmapByKey(Drawable drawable, String str, int i10, boolean z10, int i11) {
+        switch (this.a) {
+            case 0:
+                if (drawable instanceof xi0) {
+                    ((xi0) drawable).L(0, false, true);
+                }
+                return super.setImageBitmapByKey(drawable, str, i10, z10, i11);
+            default:
+                boolean imageBitmapByKey = super.setImageBitmapByKey(drawable, str, i10, z10, i11);
+                if (imageBitmapByKey && (drawable instanceof xi0)) {
+                    xi0 xi0Var = (xi0) drawable;
+                    xi0Var.L(0, false, true);
+                    xi0Var.stop();
+                }
+                return imageBitmapByKey;
         }
     }
 }

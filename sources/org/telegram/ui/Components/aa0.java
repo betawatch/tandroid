@@ -1,26 +1,145 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import org.telegram.tgnet.TLRPC;
+import android.app.Activity;
+import android.view.MotionEvent;
+import android.view.ViewConfiguration;
+import android.view.ViewGroup;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class aa0 extends t5 {
-    public final /* synthetic */ ca0 a;
+public abstract class aa0 extends f61 {
+    public final int P;
+    public final z90 Q;
+    public final p00 R;
+    public final qw0 S;
+    public final qw0 T;
+    public float U;
+    public boolean V;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public aa0(ca0 ca0Var, TLRPC.Document document, Paint.FontMetricsInt fontMetricsInt) {
-        super(document, fontMetricsInt);
-        this.a = ca0Var;
+    public aa0(org.telegram.ui.ActionBar.o2 o2Var, long j10) {
+        super(o2Var.getParentActivity(), o2Var.getCurrentAccount(), o2Var.getResourceProvider());
+        this.P = ViewConfiguration.get(getContext()).getScaledTouchSlop();
+        int i10 = org.telegram.ui.ActionBar.g6.a7;
+        setBackgroundColor(getThemedColor(i10));
+        this.H = i10;
+        this.G = i10;
+        G(0.0f);
+        fixNavigationBar(getThemedColor(i10));
+        this.C = false;
+        this.D = false;
+        z90 z90Var = new z90((hh.c) this, o2Var, this.container, j10);
+        this.Q = z90Var;
+        z90Var.B = false;
+        setDimBehindAlpha(75);
+        this.w.F.setHint(LocaleController.getString(R.string.SearchMemberRequests));
+        hh.n nVar = z90Var.f;
+        this.f = nVar;
+        this.e = nVar;
+        this.d.setAdapter(nVar);
+        this.d.p1();
+        jh.e1 e1Var = this.d;
+        z90Var.p = e1Var;
+        e1Var.setOnItemClickListener(new bg.o(z90Var, 4));
+        f2.a1 onScrollListener = e1Var.getOnScrollListener();
+        if (onScrollListener == null) {
+            e1Var.setOnScrollListener(z90Var.D);
+        } else {
+            e1Var.setOnScrollListener(new hh.l(0, z90Var, onScrollListener));
+        }
+        int indexOfChild = ((ViewGroup) this.d.getParent()).indexOfChild(this.d);
+        p00 b10 = z90Var.b();
+        this.R = b10;
+        this.containerView.addView(b10, indexOfChild, i7.f6.c(-1.0f, -1));
+        qw0 a2 = z90Var.a();
+        this.S = a2;
+        this.containerView.addView(a2, indexOfChild, i7.f6.c(-1.0f, -1));
+        qw0 c3 = z90Var.c();
+        this.T = c3;
+        this.containerView.addView(c3, indexOfChild, i7.f6.c(-1.0f, -1));
+        z90Var.e();
     }
 
-    @Override // org.telegram.ui.Components.t5, android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i9, int i10, float f10, int i11, int i12, int i13, Paint paint) {
-        ca0 ca0Var = this.a;
-        int i14 = ca0Var.y;
-        int i15 = i13 + i11;
-        int i16 = this.measuredSize;
-        ca0Var.c.set((int) f10, j3.r0.d(i15, i16, 2, i14), (int) (f10 + i16), ((i15 + i16) / 2) + i14);
+    @Override // org.telegram.ui.Components.f61
+    public final void D(MotionEvent motionEvent, ig.f fVar) {
+        org.telegram.ui.ActionBar.o2 o2Var;
+        int action = motionEvent.getAction();
+        z90 z90Var = this.Q;
+        if (action == 0) {
+            this.U = this.y;
+            z90Var.i(false);
+        } else if (motionEvent.getAction() == 1 && Math.abs(this.y - this.U) < this.P && !this.V) {
+            Activity findActivity = AndroidUtilities.findActivity(getContext());
+            if (findActivity instanceof LaunchActivity) {
+                LaunchActivity launchActivity = (LaunchActivity) findActivity;
+                o2Var = (org.telegram.ui.ActionBar.o2) launchActivity.O().getFragmentStack().get(launchActivity.O().getFragmentStack().size() - 1);
+            } else {
+                o2Var = null;
+            }
+            if (o2Var instanceof org.telegram.ui.tn) {
+                boolean P9 = ((org.telegram.ui.tn) o2Var).P9();
+                this.V = true;
+                AndroidUtilities.runOnUIThread(new gt(25, this, fVar), P9 ? 200L : 0L);
+            } else {
+                this.V = true;
+                setFocusable(true);
+                fVar.requestFocus();
+                AndroidUtilities.runOnUIThread(new s1(4, fVar));
+            }
+        }
+        if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
+            z90Var.i(true);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.f61
+    public final void F(String str) {
+        this.Q.j(str);
+    }
+
+    @Override // org.telegram.ui.Components.f61
+    public final void H(int i10) {
+        super.H(i10);
+        this.R.setTranslationY(this.c.getMeasuredHeight() + i10);
+        float f9 = i10;
+        this.S.setTranslationY(f9);
+        this.T.setTranslationY(f9);
+    }
+
+    @Override // org.telegram.ui.Components.f61
+    public final void K() {
+        jh.e1 e1Var = this.d;
+        if (e1Var.getChildCount() > 0) {
+            super.K();
+            return;
+        }
+        int paddingTop = e1Var.getVisibility() == 0 ? e1Var.getPaddingTop() - AndroidUtilities.dp(8.0f) : 0;
+        if (this.y != paddingTop) {
+            this.y = paddingTop;
+            H(paddingTop);
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.f3, android.app.Dialog
+    public final void onBackPressed() {
+        hh.u uVar = this.Q.s;
+        if (uVar != null) {
+            uVar.e(false);
+        } else {
+            super.onBackPressed();
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.f3, android.app.Dialog
+    public final void show() {
+        z90 z90Var = this.Q;
+        if (z90Var.b && this.y == 0) {
+            this.y = AndroidUtilities.dp(8.0f);
+        }
+        super.show();
+        z90Var.b = false;
     }
 }

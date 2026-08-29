@@ -1,58 +1,39 @@
 package t3;
 
-import android.util.Pair;
-import d5.f0;
-import m3.s;
-import m3.u;
+import o3.s;
+import o3.t;
+import o3.u;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class c implements f {
-    public final long[] a;
-    public final long[] b;
-    public final long c;
+public final class c implements t {
+    public final /* synthetic */ t a;
+    public final /* synthetic */ f2.c b;
 
-    public c(long j10, long[] jArr, long[] jArr2) {
-        this.a = jArr;
-        this.b = jArr2;
-        this.c = j10 == -9223372036854775807L ? f0.H(jArr2[jArr2.length - 1]) : j10;
+    public c(f2.c cVar, t tVar) {
+        this.b = cVar;
+        this.a = tVar;
     }
 
-    public static Pair b(long j10, long[] jArr, long[] jArr2) {
-        int e10 = f0.e(jArr, j10, true);
-        long j11 = jArr[e10];
-        long j12 = jArr2[e10];
-        int i9 = e10 + 1;
-        if (i9 == jArr.length) {
-            return Pair.create(Long.valueOf(j11), Long.valueOf(j12));
-        }
-        return Pair.create(Long.valueOf(j10), Long.valueOf(((long) ((jArr[i9] == j11 ? 0.0d : (j10 - j11) / (r6 - j11)) * (jArr2[i9] - j12))) + j12));
+    @Override // o3.t
+    public final boolean c() {
+        return this.a.c();
     }
 
-    @Override // t3.f
-    public final long a(long j10) {
-        return f0.H(((Long) b(j10, this.a, this.b).second).longValue());
+    @Override // o3.t
+    public final s g(long j10) {
+        s g10 = this.a.g(j10);
+        u uVar = g10.a;
+        long j11 = uVar.a;
+        long j12 = uVar.b;
+        long j13 = this.b.b;
+        u uVar2 = new u(j11, j12 + j13);
+        u uVar3 = g10.b;
+        return new s(uVar2, new u(uVar3.a, uVar3.b + j13));
     }
 
-    @Override // t3.f
-    public final long d() {
-        return -1L;
-    }
-
-    @Override // m3.t
-    public final boolean e() {
-        return true;
-    }
-
-    @Override // m3.t
-    public final s h(long j10) {
-        Pair b10 = b(f0.S(f0.i(j10, 0L, this.c)), this.b, this.a);
-        u uVar = new u(f0.H(((Long) b10.first).longValue()), ((Long) b10.second).longValue());
-        return new s(uVar, uVar);
-    }
-
-    @Override // m3.t
-    public final long i() {
-        return this.c;
+    @Override // o3.t
+    public final long h() {
+        return this.a.h();
     }
 }

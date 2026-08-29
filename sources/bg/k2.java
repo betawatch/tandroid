@@ -1,30 +1,17 @@
 package bg;
 
-import android.view.View;
-
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class k2 implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ q2 b;
+public final class k2 {
+    public final int a;
+    public final int b;
+    public final int c;
+    public final int d;
 
-    public /* synthetic */ k2(q2 q2Var, int i9) {
-        this.a = i9;
-        this.b = q2Var;
-    }
-
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
-            case 0:
-                q2 q2Var = this.b;
-                q2Var.a0.clear();
-                q2Var.U.d.b(true);
-                q2Var.a0(true, false);
-                break;
-            default:
-                this.b.V(false);
-                break;
-        }
+    public k2(int i10, int i11, int i12, int i13) {
+        this.a = i10;
+        this.b = i11;
+        this.c = i12;
+        this.d = i13;
     }
 }

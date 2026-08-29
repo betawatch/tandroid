@@ -1,27 +1,24 @@
 package h7;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+import android.os.Parcel;
+import android.os.Parcelable;
+
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class a0 extends s {
-    public final transient Object[] c;
-    public final transient int d;
-    public final transient int e = 1;
-
-    public a0(int i9, Object[] objArr) {
-        this.c = objArr;
-        this.d = i9;
+public abstract class a0 {
+    public static Object a(Parcel parcel, Parcelable.Creator creator) {
+        if (parcel.readInt() != 0) {
+            return creator.createFromParcel(parcel);
+        }
+        return null;
     }
 
-    @Override // java.util.List
-    public final Object get(int i9) {
-        f7.b8.a(i9, this.e);
-        Object obj = this.c[i9 + i9 + this.d];
-        obj.getClass();
-        return obj;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final int size() {
-        return this.e;
+    public static void b(Parcel parcel, Parcelable parcelable) {
+        if (parcelable == null) {
+            parcel.writeInt(0);
+        } else {
+            parcel.writeInt(1);
+            parcelable.writeToParcel(parcel, 0);
+        }
     }
 }

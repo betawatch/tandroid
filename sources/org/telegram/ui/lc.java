@@ -1,55 +1,115 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.view.ViewGroup;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class lc extends org.telegram.ui.Components.vk0 {
-    public final /* synthetic */ Context c;
-    public final /* synthetic */ org.telegram.ui.ActionBar.b6 d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ nc f;
+public final class lc extends View {
+    public final Paint a;
+    public final Paint b;
+    public final Paint c;
+    public final Paint d;
+    public final Path e;
+    public final Path f;
+    public boolean h;
+    public boolean n;
+    public final org.telegram.ui.Components.uc r;
+    public boolean s;
+    public final org.telegram.ui.Components.d6 v;
+    public final /* synthetic */ mc w;
 
-    public lc(nc ncVar, Context context, org.telegram.ui.ActionBar.b6 b6Var, int i9) {
-        this.f = ncVar;
-        this.c = context;
-        this.d = b6Var;
-        this.e = i9;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public lc(mc mcVar, Context context) {
+        super(context);
+        this.w = mcVar;
+        Paint paint = new Paint(1);
+        this.a = paint;
+        this.b = new Paint(1);
+        this.c = new Paint(1);
+        this.d = new Paint(1);
+        this.e = new Path();
+        this.f = new Path();
+        this.r = new org.telegram.ui.Components.uc(this);
+        this.v = new org.telegram.ui.Components.d6(this, 0L, 320L, org.telegram.ui.Components.jr.h);
+        paint.setStyle(Paint.Style.STROKE);
     }
 
-    @Override // org.telegram.ui.Components.vk0
-    public final boolean D(f2.q1 q1Var) {
-        return true;
-    }
-
-    @Override // f2.r0
-    public final int h() {
-        MessagesController.PeerColors peerColors = MessagesController.getInstance(this.e).peerColors;
-        if (peerColors == null) {
-            return 0;
+    public final void a(MessagesController.PeerColor peerColor) {
+        org.telegram.ui.ActionBar.c6 c6Var = this.w.a;
+        boolean a2 = c6Var != null ? c6Var.a() : org.telegram.ui.ActionBar.g6.I.q();
+        Paint paint = this.c;
+        Paint paint2 = this.b;
+        if (a2 && peerColor.hasColor2() && !peerColor.hasColor3()) {
+            paint2.setColor(peerColor.getColor(1, c6Var));
+            paint.setColor(peerColor.getColor(0, c6Var));
+        } else {
+            paint2.setColor(peerColor.getColor(0, c6Var));
+            paint.setColor(peerColor.getColor(1, c6Var));
         }
-        return peerColors.colors.size();
+        this.d.setColor(peerColor.getColor(2, c6Var));
+        this.h = peerColor.hasColor2();
+        this.n = peerColor.hasColor3();
     }
 
-    @Override // f2.r0
-    public final void v(f2.q1 q1Var, int i9) {
-        mc mcVar = (mc) q1Var.a;
-        mcVar.setBackgroundColor(org.telegram.ui.ActionBar.f6.v0(org.telegram.ui.ActionBar.f6.d6, this.d));
-        boolean z10 = i9 == this.f.e;
-        mcVar.s = z10;
-        mcVar.v.f(z10, true);
-        mcVar.invalidate();
-        MessagesController.PeerColors peerColors = MessagesController.getInstance(this.e).peerColors;
-        if (peerColors == null || i9 < 0 || i9 >= peerColors.colors.size()) {
-            return;
+    @Override // android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        canvas.save();
+        float a2 = this.r.a(0.05f);
+        canvas.scale(a2, a2, getMeasuredWidth() / 2.0f, getMeasuredHeight() / 2.0f);
+        canvas.save();
+        canvas.clipPath(this.e);
+        canvas.drawPaint(this.b);
+        if (this.h) {
+            canvas.drawPath(this.f, this.c);
         }
-        mcVar.a(peerColors.colors.get(i9));
+        canvas.restore();
+        if (this.n) {
+            canvas.save();
+            RectF rectF = AndroidUtilities.rectTmp;
+            rectF.set((getMeasuredWidth() - AndroidUtilities.dp(12.4f)) / 2.0f, (getMeasuredHeight() - AndroidUtilities.dp(12.4f)) / 2.0f, (AndroidUtilities.dp(12.4f) + getMeasuredWidth()) / 2.0f, (AndroidUtilities.dp(12.4f) + getMeasuredHeight()) / 2.0f);
+            canvas.rotate(45.0f, getMeasuredWidth() / 2.0f, getMeasuredHeight() / 2.0f);
+            canvas.drawRoundRect(rectF, AndroidUtilities.dp(2.33f), AndroidUtilities.dp(2.33f), this.d);
+            canvas.restore();
+        }
+        float e10 = this.v.e(this.s);
+        if (e10 > 0.0f) {
+            float dpf2 = AndroidUtilities.dpf2(2.0f);
+            Paint paint = this.a;
+            paint.setStrokeWidth(dpf2);
+            canvas.drawCircle(getMeasuredWidth() / 2.0f, getMeasuredHeight() / 2.0f, AndroidUtilities.lerp((paint.getStrokeWidth() * 0.5f) + AndroidUtilities.dp(20.0f), AndroidUtilities.dp(20.0f) - (paint.getStrokeWidth() * 2.0f), e10), paint);
+        }
+        canvas.restore();
     }
 
-    @Override // f2.r0
-    public final f2.q1 x(ViewGroup viewGroup, int i9) {
-        return new org.telegram.ui.Components.ik0(new mc(this.f, this.c));
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        setMeasuredDimension(AndroidUtilities.dp(56.0f), AndroidUtilities.dp(56.0f));
+        Path path = this.e;
+        path.rewind();
+        path.addCircle(getMeasuredWidth() / 2.0f, getMeasuredHeight() / 2.0f, AndroidUtilities.dp(20.0f), Path.Direction.CW);
+        Path path2 = this.f;
+        path2.rewind();
+        path2.moveTo(getMeasuredWidth(), 0.0f);
+        path2.lineTo(getMeasuredWidth(), getMeasuredHeight());
+        path2.lineTo(0.0f, getMeasuredHeight());
+        path2.close();
+    }
+
+    @Override // android.view.View
+    public final void setBackgroundColor(int i10) {
+        this.a.setColor(i10);
+    }
+
+    @Override // android.view.View
+    public final void setPressed(boolean z10) {
+        super.setPressed(z10);
+        this.r.c(z10);
     }
 }

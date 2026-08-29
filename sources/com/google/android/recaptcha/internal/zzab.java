@@ -1,14 +1,14 @@
 package com.google.android.recaptcha.internal;
 
-import g7.y5;
+import bd.p;
+import i7.c7;
 import java.util.Collections;
 import java.util.Map;
-import qc.c;
-import rc.a;
-import sc.i;
-import zc.p;
+import kotlin.jvm.internal.j;
+import sc.c;
+import uc.i;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 final class zzab extends i implements p {
     final /* synthetic */ zzxp zza;
@@ -21,20 +21,20 @@ final class zzab extends i implements p {
         this.zzb = zzadVar;
     }
 
-    @Override // sc.a
+    @Override // uc.a
     public final c create(Object obj, c cVar) {
         return new zzab(this.zza, this.zzb, cVar);
     }
 
-    @Override // zc.p
+    @Override // bd.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzab) create((zzhk) obj, (c) obj2)).invokeSuspend(oc.i.a);
+        return ((zzab) create((zzhk) obj, (c) obj2)).invokeSuspend(qc.i.a);
     }
 
-    @Override // sc.a
+    @Override // uc.a
     public final Object invokeSuspend(Object obj) {
-        a aVar = a.a;
-        y5.b(obj);
+        tc.a aVar = tc.a.a;
+        c7.b(obj);
         zzxp zzxpVar = this.zza;
         if (zzxpVar.zzl().length() == 0) {
             this.zzb.zzj(false);
@@ -42,8 +42,8 @@ final class zzab extends i implements p {
         }
         zzci zzb = zzad.zzb(this.zzb);
         Map singletonMap = Collections.singletonMap("_GRECAPTCHA_KC", zzxpVar.zzl());
-        kotlin.jvm.internal.i.d(singletonMap, "singletonMap(...)");
+        j.d(singletonMap, "singletonMap(...)");
         zzb.zzb(singletonMap);
-        return oc.i.a;
+        return qc.i.a;
     }
 }

@@ -1,63 +1,61 @@
 package qh;
 
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.text.style.ReplacementSpan;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.w41;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes4.dex */
-public final class r extends ReplacementSpan {
-    public static final /* synthetic */ int h = 0;
-    public final String a;
-    public final Bitmap b;
-    public final int c;
-    public final int d;
-    public final int e;
-    public final Paint f;
+public final /* synthetic */ class r implements Utilities.Callback2 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ i0 b;
 
-    public r(String str, Bitmap bitmap, int i9, int i10, int i11, int i12) {
-        Paint paint = new Paint(3);
-        this.f = paint;
-        this.a = str;
-        this.b = bitmap;
-        this.c = i9;
-        this.d = i10;
-        this.e = i12;
-        paint.setColor(i11);
+    public /* synthetic */ r(i0 i0Var, int i10) {
+        this.a = i10;
+        this.b = i0Var;
     }
 
-    public static r a(String str, int i9, float f10) {
-        q a2;
-        if (str == null || str.isEmpty() || (a2 = q.a(str, f10, true)) == null) {
-            return null;
+    @Override // org.telegram.messenger.Utilities.Callback2
+    public final void run(Object obj, Object obj2) {
+        int i10 = this.a;
+        i0 i0Var = this.b;
+        switch (i10) {
+            case 0:
+                i0Var.U((ArrayList) obj, true);
+                break;
+            case 1:
+                i0.o(i0Var, (TLRPC.TL_error) obj2);
+                break;
+            case 2:
+                i0.n(i0Var, (ArrayList) obj, (TLRPC.TL_error) obj2);
+                break;
+            case 3:
+                int i11 = i0.R;
+                i0Var.U((ArrayList) obj, false);
+                break;
+            case 4:
+                i0.A(i0Var, (ArrayList) obj);
+                break;
+            default:
+                ArrayList arrayList = (ArrayList) obj;
+                o0 o0Var = i0Var.I;
+                arrayList.add(w41.D(99, (int) (AndroidUtilities.displaySize.y * 0.35f)));
+                arrayList.add(w41.D(0, AndroidUtilities.dp(48.0f)));
+                int i12 = 2;
+                if (ChatObject.canBlockUsers(i0Var.f)) {
+                    arrayList.add(w41.A(1, AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.CommunityPendingRequestsInfo), new t(i0Var, i12)), true)));
+                } else {
+                    arrayList.add(w41.A(1, LocaleController.getString(R.string.CommunityPendingRequestsInfoNoChange)));
+                }
+                arrayList.add(w41.j(2, i0Var.H));
+                arrayList.add(w41.s(3, LocaleController.formatPluralString("CommunityPendingRequestsSuggestedHeader", o0Var.l, new Object[0])));
+                o0Var.c(arrayList);
+                break;
         }
-        return new r(str, a2.a, a2.b, a2.c, i9, a2.d);
-    }
-
-    @Override // android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i9, int i10, float f10, int i11, int i12, int i13, Paint paint) {
-        Bitmap bitmap = this.b;
-        if (bitmap == null) {
-            return;
-        }
-        int color = paint.getColor();
-        Paint paint2 = this.f;
-        paint2.setColor(color);
-        canvas.drawBitmap(bitmap, f10, i12 - (this.d - this.e), paint2);
-    }
-
-    @Override // android.text.style.ReplacementSpan
-    public final int getSize(Paint paint, CharSequence charSequence, int i9, int i10, Paint.FontMetricsInt fontMetricsInt) {
-        if (fontMetricsInt != null) {
-            int i11 = this.d;
-            int i12 = this.e;
-            int i13 = -(i11 - i12);
-            fontMetricsInt.ascent = i13;
-            fontMetricsInt.top = i13;
-            fontMetricsInt.descent = i12;
-            fontMetricsInt.bottom = i12;
-        }
-        return this.c;
     }
 }

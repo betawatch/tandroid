@@ -105,9 +105,9 @@ public final class t5 extends b {
         if (b()) {
             v6 v6Var = v6.SIZED;
             a aVar = this.j;
-            int i9 = aVar.j;
-            int i10 = v6Var.e;
-            w1 A0 = this.j.A0((i9 & i10) == i10 ? aVar.k0(this.b) : -1L, this.k);
+            int i10 = aVar.j;
+            int i11 = v6Var.e;
+            w1 A0 = this.j.A0((i10 & i11) == i11 ? aVar.k0(this.b) : -1L, this.k);
             j5 Q0 = this.j.Q0(((a) this.a).m, A0);
             t3 t3Var = this.a;
             t3Var.g0(this.b, t3Var.G0(Q0));

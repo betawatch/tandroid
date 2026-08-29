@@ -1,31 +1,15 @@
 package h7;
 
-import java.io.Serializable;
+import java.util.Date;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class p extends f implements Serializable {
-    public final Object b;
-    public final e c;
-
-    public p(Object obj, e eVar) {
-        super(0, false);
-        this.b = obj;
-        this.c = eVar;
+public abstract class p {
+    public static long a(Date date) {
+        return (date.getTime() / 1000) + 2082844800;
     }
 
-    @Override // java.util.Map.Entry
-    public final Object getKey() {
-        return this.b;
-    }
-
-    @Override // java.util.Map.Entry
-    public final Object getValue() {
-        return this.c;
-    }
-
-    @Override // java.util.Map.Entry
-    public final Object setValue(Object obj) {
-        throw new UnsupportedOperationException();
+    public static Date b(long j10) {
+        return new Date((j10 - 2082844800) * 1000);
     }
 }

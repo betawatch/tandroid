@@ -12,7 +12,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
 class ColorPicker$RadioButton extends View {
     public final Paint a;
@@ -26,8 +26,8 @@ class ColorPicker$RadioButton extends View {
         this.a = new Paint(1);
     }
 
-    public final void a(int i9) {
-        this.e = i9;
+    public final void a(int i10) {
+        this.e = i10;
         invalidate();
     }
 
@@ -61,9 +61,9 @@ class ColorPicker$RadioButton extends View {
         float dp = AndroidUtilities.dp(15.0f);
         float measuredWidth = getMeasuredWidth() * 0.5f;
         float measuredHeight = getMeasuredHeight() * 0.5f;
-        int i9 = this.e;
+        int i10 = this.e;
         Paint paint = this.a;
-        paint.setColor(i9);
+        paint.setColor(i10);
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeWidth(AndroidUtilities.dp(3.0f));
         paint.setAlpha(Math.round(this.c * 255.0f));
@@ -84,12 +84,12 @@ class ColorPicker$RadioButton extends View {
     }
 
     @Override // android.view.View
-    public final void onMeasure(int i9, int i10) {
+    public final void onMeasure(int i10, int i11) {
         super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(30.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(30.0f), TLObject.FLAG_30));
     }
 
-    public void setCheckedState(float f10) {
-        this.c = f10;
+    public void setCheckedState(float f9) {
+        this.c = f9;
         invalidate();
     }
 }

@@ -1,51 +1,32 @@
 package org.telegram.messenger;
 
-import j$.util.function.Function$-CC;
-import java.util.function.Function;
-import org.telegram.messenger.TranslateController;
+import android.content.Context;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class ea implements Function {
+public final /* synthetic */ class ea implements Runnable {
     public final /* synthetic */ int a;
+    public final /* synthetic */ Context b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.c2 c;
 
-    public /* synthetic */ ea(int i9) {
-        this.a = i9;
+    public /* synthetic */ ea(int i10, Context context, org.telegram.ui.ActionBar.c2 c2Var) {
+        this.a = i10;
+        this.b = context;
+        this.c = c2Var;
     }
 
-    public /* synthetic */ Function andThen(Function function) {
-        int i9 = this.a;
-        return Function$-CC.$default$andThen(this, function);
-    }
-
-    @Override // java.util.function.Function
-    public final Object apply(Object obj) {
-        String valueOf;
-        String lambda$applyAppConfig$35;
-        Long lambda$new$14;
-        int[] lambda$new$15;
-        String str;
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                valueOf = String.valueOf((Long) obj);
-                return valueOf;
+                MessagesController.lambda$convertToGigaGroup$267(this.b, this.c);
+                break;
             case 1:
-                lambda$applyAppConfig$35 = MessagesController.lambda$applyAppConfig$35((int[]) obj);
-                return lambda$applyAppConfig$35;
-            case 2:
-                lambda$new$14 = MessagesController.lambda$new$14((String) obj);
-                return lambda$new$14;
-            case 3:
-                lambda$new$15 = MessagesController.lambda$new$15((String) obj);
-                return lambda$new$15;
+                MessagesController.lambda$convertToMegaGroup$262(this.b, this.c);
+                break;
             default:
-                str = ((TranslateController.Language) obj).displayName;
-                return str;
+                SecretChatHelper.lambda$startSecretChat$24(this.b, this.c);
+                break;
         }
-    }
-
-    public /* synthetic */ Function compose(Function function) {
-        int i9 = this.a;
-        return Function$-CC.$default$compose(this, function);
     }
 }

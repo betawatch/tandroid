@@ -2,7 +2,7 @@ package i;
 
 import android.animation.TimeInterpolator;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class d implements TimeInterpolator {
     public int[] a;
@@ -10,19 +10,19 @@ public final class d implements TimeInterpolator {
     public int c;
 
     @Override // android.animation.TimeInterpolator
-    public final float getInterpolation(float f10) {
-        int i9 = (int) ((f10 * this.c) + 0.5f);
-        int i10 = this.b;
+    public final float getInterpolation(float f9) {
+        int i10 = (int) ((f9 * this.c) + 0.5f);
+        int i11 = this.b;
         int[] iArr = this.a;
-        int i11 = 0;
-        while (i11 < i10) {
-            int i12 = iArr[i11];
-            if (i9 < i12) {
+        int i12 = 0;
+        while (i12 < i11) {
+            int i13 = iArr[i12];
+            if (i10 < i13) {
                 break;
             }
-            i9 -= i12;
-            i11++;
+            i10 -= i13;
+            i12++;
         }
-        return (i11 / i10) + (i11 < i10 ? i9 / this.c : 0.0f);
+        return (i12 / i11) + (i12 < i11 ? i10 / this.c : 0.0f);
     }
 }

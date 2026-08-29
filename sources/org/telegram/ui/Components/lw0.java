@@ -1,132 +1,57 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-import android.content.Context;
-import android.text.TextUtils;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.SvgHelper;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class lw0 extends FrameLayout {
-    public static int C;
-    public boolean A;
-    public float B;
-    public final int a;
-    public float b;
-    public boolean c;
-    public boolean d;
-    public final o9 e;
-    public final ImageView f;
-    public final bg.t h;
-    public final View n;
-    public boolean r;
-    public final int s;
-    public SvgHelper.SvgDrawable v;
-    public boolean w;
-    public ValueAnimator x;
-    public float y;
+public final /* synthetic */ class lw0 implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Utilities.Callback4 b;
 
-    public lw0(Context context, int i9) {
-        super(context);
-        this.a = i9;
-        int i10 = C;
-        C = i10 + 1;
-        this.s = i10;
-        if (i9 == 2) {
-            o9 o9Var = new o9(getContext());
-            this.e = o9Var;
-            o9Var.setLayerNum(1);
-            o9Var.setAspectFit(false);
-            o9Var.setRoundRadius(AndroidUtilities.dp(6.0f));
-            addView(o9Var, g7.e6.e(26, 26, 17));
-            this.n = o9Var;
-        } else if (i9 == 1) {
-            ImageView imageView = new ImageView(context);
-            this.f = imageView;
-            imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-            addView(imageView, g7.e6.e(24, 24, 17));
-            this.n = imageView;
-        } else {
-            o9 o9Var2 = new o9(getContext());
-            this.e = o9Var2;
-            o9Var2.setLayerNum(1);
-            o9Var2.setAspectFit(true);
-            o9Var2.setRoundRadius(AndroidUtilities.dp(6.0f));
-            addView(o9Var2, g7.e6.e(26, 26, 17));
-            this.n = o9Var2;
-        }
-        bg.t tVar = new bg.t(context, 25);
-        this.h = tVar;
-        tVar.addOnLayoutChangeListener(new n60(this, 1));
-        tVar.setLines(1);
-        tVar.setEllipsize(TextUtils.TruncateAt.END);
-        tVar.setTextSize(1, 11.0f);
-        tVar.setGravity(1);
-        tVar.setTextColor(org.telegram.ui.ActionBar.f6.w0(null, org.telegram.ui.ActionBar.f6.G6, false));
-        addView(tVar, g7.e6.d(-1, -2.0f, 81, 8.0f, 0.0f, 8.0f, 10.0f));
-        tVar.setVisibility(8);
+    public /* synthetic */ lw0(Utilities.Callback4 callback4, int i10) {
+        this.a = i10;
+        this.b = callback4;
     }
 
-    public final void a(float f10) {
-        int i9 = this.a;
-        if (i9 == 2) {
-            return;
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 0:
+                boolean z10 = tLObject instanceof TLRPC.TL_messages_emojiGroupsNotModified;
+                Utilities.Callback4 callback4 = this.b;
+                if (!z10) {
+                    if (!(tLObject instanceof TLRPC.TL_messages_emojiGroups)) {
+                        callback4.run(Boolean.FALSE, null, 0L, Boolean.TRUE);
+                        break;
+                    } else {
+                        callback4.run(Boolean.FALSE, (TLRPC.TL_messages_emojiGroups) tLObject, Long.valueOf(r5.hash), Boolean.TRUE);
+                        break;
+                    }
+                } else {
+                    Boolean bool = Boolean.TRUE;
+                    callback4.run(bool, null, 0L, bool);
+                    break;
+                }
+            default:
+                boolean z11 = tLObject instanceof TLRPC.TL_emojiListNotModified;
+                Utilities.Callback4 callback42 = this.b;
+                if (!z11) {
+                    if (!(tLObject instanceof TLRPC.TL_emojiList)) {
+                        callback42.run(Boolean.FALSE, null, 0L, Boolean.TRUE);
+                        break;
+                    } else {
+                        TLRPC.TL_emojiList tL_emojiList = (TLRPC.TL_emojiList) tLObject;
+                        callback42.run(Boolean.FALSE, tL_emojiList, Long.valueOf(tL_emojiList.hash), Boolean.TRUE);
+                        break;
+                    }
+                } else {
+                    Boolean bool2 = Boolean.TRUE;
+                    callback42.run(bool2, null, 0L, bool2);
+                    break;
+                }
         }
-        boolean z10 = this.r;
-        View view = this.n;
-        if (!z10) {
-            view.setTranslationX(0.0f);
-            view.setTranslationY(0.0f);
-            view.setScaleX(1.0f);
-            view.setScaleY(1.0f);
-            return;
-        }
-        float f11 = i9 == 1 ? 24.0f : 26.0f;
-        float f12 = i9 == 1 ? 38.0f : 44.0f;
-        int i10 = sl0.p0;
-        float f13 = 1.0f - f10;
-        view.setTranslationY((((AndroidUtilities.dp(36.0f - f11) / 2.0f) - (AndroidUtilities.dp(86.0f - f12) / 2.0f)) * f13) - (AndroidUtilities.dp(8.0f) * f10));
-        view.setTranslationX(((AndroidUtilities.dp(33.0f - f11) / 2.0f) - (AndroidUtilities.dp(64.0f - f12) / 2.0f)) * f13);
-        float max = Math.max(0.0f, (f10 - 0.5f) / 0.5f);
-        bg.t tVar = this.h;
-        tVar.setAlpha(max);
-        tVar.setTranslationY((-AndroidUtilities.dp(40.0f)) * f13);
-        tVar.setTranslationX((-AndroidUtilities.dp(12.0f)) * f13);
-        view.setPivotX(0.0f);
-        view.setPivotY(0.0f);
-        float f14 = ((f11 / f12) * f13) + f10;
-        view.setScaleX(f14);
-        view.setScaleY(f14);
-    }
-
-    public float getTextWidth() {
-        return this.B;
-    }
-
-    public void setExpanded(boolean z10) {
-        int i9 = this.a;
-        if (i9 == 2) {
-            return;
-        }
-        this.r = z10;
-        float f10 = i9 == 1 ? 24.0f : 26.0f;
-        float f11 = i9 == 1 ? 38.0f : 44.0f;
-        View view = this.n;
-        view.getLayoutParams().width = AndroidUtilities.dp(z10 ? f11 : f10);
-        ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
-        if (z10) {
-            f10 = f11;
-        }
-        layoutParams.height = AndroidUtilities.dp(f10);
-        this.h.setVisibility(z10 ? 0 : 8);
-        if (i9 == 1 || !this.w) {
-            return;
-        }
-        this.e.setRoundRadius(AndroidUtilities.dp(view.getLayoutParams().width / 2.0f));
     }
 }

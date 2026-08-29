@@ -1,33 +1,30 @@
 package t7;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
-/* loaded from: classes.dex */
-public final class c extends h {
-    public final /* synthetic */ int c;
-    public final float d;
+import android.os.Parcel;
+import android.os.RemoteException;
+import java.util.HashMap;
+import z5.l;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c(float f10, int i9) {
-        super(0, Float.valueOf(Math.max(f10, 0.0f)));
-        this.c = i9;
-        switch (i9) {
-            case 1:
-                super(2, Float.valueOf(Math.max(f10, 0.0f)));
-                this.d = Math.max(f10, 0.0f);
-                break;
-            default:
-                this.d = Math.max(f10, 0.0f);
-                break;
-        }
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* loaded from: classes.dex */
+public final class c {
+    public final u7.f a;
+    public h b;
+
+    public c(u7.f fVar) {
+        new HashMap();
+        l.h(fVar);
+        this.a = fVar;
     }
 
-    @Override // t7.h
-    public final String toString() {
-        switch (this.c) {
-            case 0:
-                return "[Dash: length=" + this.d + "]";
-            default:
-                return "[Gap: length=" + this.d + "]";
+    public final void a(int i10) {
+        try {
+            u7.f fVar = this.a;
+            Parcel M0 = fVar.M0();
+            M0.writeInt(i10);
+            fVar.Q0(M0, 16);
+        } catch (RemoteException e10) {
+            throw new a6.b(e10);
         }
     }
 }

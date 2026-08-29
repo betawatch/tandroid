@@ -1,62 +1,58 @@
 package org.telegram.ui;
 
-import android.text.Editable;
-import android.text.TextWatcher;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class yk0 implements TextWatcher {
+public final /* synthetic */ class yk0 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ PasscodeActivity b;
+    public final /* synthetic */ PasskeysActivity b;
 
-    public /* synthetic */ yk0(PasscodeActivity passcodeActivity, int i9) {
-        this.a = i9;
-        this.b = passcodeActivity;
+    public /* synthetic */ yk0(PasskeysActivity passkeysActivity, int i10) {
+        this.a = i10;
+        this.b = passkeysActivity;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        int i9 = this.a;
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i9, int i10, int i11) {
-        switch (this.a) {
+    @Override // org.telegram.messenger.Utilities.Callback2
+    public final void run(Object obj, Object obj2) {
+        int i10 = this.a;
+        PasskeysActivity passkeysActivity = this.b;
+        switch (i10) {
             case 0:
-                PasscodeActivity passcodeActivity = this.b;
-                uk0 uk0Var = passcodeActivity.K;
-                if (passcodeActivity.J) {
-                    passcodeActivity.n.removeCallbacks(uk0Var);
-                    uk0Var.run();
-                    break;
+                ArrayList arrayList = (ArrayList) obj;
+                ArrayList arrayList2 = passkeysActivity.b;
+                passkeysActivity.addPasskeyRow = -1;
+                String string = LocaleController.getString(R.string.PasskeyTopInfo);
+                int i11 = R.raw.passkey;
+                org.telegram.ui.Components.w41 w41Var = new org.telegram.ui.Components.w41(2);
+                w41Var.l = string;
+                w41Var.k = i11;
+                arrayList.add(w41Var);
+                for (int i12 = 0; i12 < arrayList2.size(); i12++) {
+                    TL_account.Passkey passkey = (TL_account.Passkey) arrayList2.get(i12);
+                    t50 t50Var = new t50(passkeysActivity, 15);
+                    int i13 = bl0.a;
+                    org.telegram.ui.Components.w41 J = org.telegram.ui.Components.w41.J(bl0.class);
+                    J.G = passkey;
+                    J.D = t50Var;
+                    arrayList.add(J);
                 }
+                if (arrayList2.size() + 1 <= passkeysActivity.getMessagesController().config.passkeysAccountPasskeysMax.get()) {
+                    passkeysActivity.addPasskeyRow = arrayList.size();
+                    org.telegram.ui.Components.w41 c3 = org.telegram.ui.Components.w41.c(-1, R.drawable.menu_passkey_add, LocaleController.getString(R.string.PasskeyAdd));
+                    c3.q = true;
+                    arrayList.add(c3);
+                }
+                arrayList.add(org.telegram.ui.Components.w41.B(AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.PasskeyInfo), new vk0(passkeysActivity, 1)), true)));
                 break;
             default:
-                PasscodeActivity passcodeActivity2 = this.b;
-                uk0 uk0Var2 = passcodeActivity2.K;
-                if (passcodeActivity2.J) {
-                    passcodeActivity2.n.removeCallbacks(uk0Var2);
-                    uk0Var2.run();
-                    break;
-                }
+                PasskeysActivity.U(passkeysActivity, (TL_account.Passkey) obj, (String) obj2);
                 break;
         }
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i9, int i10, int i11) {
-        int i12 = this.a;
-    }
-
-    private final void a(Editable editable) {
-    }
-
-    private final void b(Editable editable) {
-    }
-
-    private final void c(int i9, int i10, int i11, CharSequence charSequence) {
-    }
-
-    private final void d(int i9, int i10, int i11, CharSequence charSequence) {
     }
 }

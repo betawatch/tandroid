@@ -1,63 +1,134 @@
 package org.telegram.ui.Cells;
 
-import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.drawable.Drawable;
-import android.view.View;
-import android.widget.FrameLayout;
+import android.text.TextUtils;
+import java.io.File;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.ImageLoader;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class a2 extends FrameLayout {
-    public final org.telegram.ui.Components.j6 a;
-    public final View b;
-    public final org.telegram.ui.ActionBar.b6 c;
+public final class a2 implements Runnable {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ d2 b;
 
-    public a2(Context context, org.telegram.ui.ActionBar.b6 b6Var) {
-        super(context);
-        this.c = b6Var;
-        org.telegram.ui.Components.j6 j6Var = new org.telegram.ui.Components.j6(context, false, false, false);
-        this.a = j6Var;
-        int i9 = org.telegram.ui.ActionBar.f6.G6;
-        j6Var.setTextColor(org.telegram.ui.ActionBar.f6.v0(i9, b6Var));
-        j6Var.setTextSize(AndroidUtilities.dp(14.0f));
-        j6Var.setGravity(LocaleController.isRTL ? 5 : 3);
-        j6Var.setImportantForAccessibility(2);
-        j6Var.setOnWidthUpdatedListener(new g(this, 2));
-        addView(j6Var, g7.e6.i(-2.0f, -2.0f, 8388627, 21.0f, 0.0f, 38.0f, 3.0f));
-        View view = new View(context);
-        this.b = view;
-        Drawable mutate = getContext().getResources().getDrawable(R.drawable.arrow_more).mutate();
-        mutate.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.f6.v0(i9, b6Var), PorterDuff.Mode.MULTIPLY));
-        view.setBackground(mutate);
-        addView(view, g7.e6.i(14.0f, 14.0f, 8388627, 21.0f, 1.0f, 0.0f, 3.0f));
+    public a2(d2 d2Var, boolean z10) {
+        this.b = d2Var;
+        this.a = z10;
     }
 
-    public final void a() {
-        float d = this.a.getDrawable().d() + AndroidUtilities.dp(1.0f);
-        boolean z10 = LocaleController.isRTL;
-        View view = this.b;
-        if (z10) {
-            view.setTranslationX(-d);
+    /* JADX WARN: Removed duplicated region for block: B:14:0x00fe  */
+    @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run() {
+        File file;
+        File file2;
+        String str;
+        String attachFileName;
+        File pathToAttach;
+        TLRPC.Document document;
+        d2 d2Var = this.b;
+        int i10 = d2Var.d;
+        int i11 = d2Var.K;
+        String str2 = null;
+        if (i11 == 5 || i11 == 3) {
+            TLRPC.Document document2 = d2Var.G;
+            if (document2 != null) {
+                str2 = FileLoader.getAttachFileName(document2);
+                file = FileLoader.getInstance(i10).getPathToAttach(d2Var.G);
+            } else {
+                if (d2Var.E.content instanceof TLRPC.TL_webDocument) {
+                    StringBuilder sb2 = new StringBuilder();
+                    sb2.append(Utilities.MD5(d2Var.E.content.url));
+                    sb2.append(".");
+                    sb2.append(ImageLoader.getHttpUrlExtension(d2Var.E.content.url, d2Var.K == 5 ? "mp3" : "ogg"));
+                    str2 = sb2.toString();
+                    file = new File(FileLoader.getDirectory(4), str2);
+                }
+                str = null;
+                file2 = null;
+            }
+            file2 = file;
+            str = str2;
         } else {
-            view.setTranslationX(d);
+            if (d2Var.L) {
+                TLRPC.BotInlineResult botInlineResult = d2Var.E;
+                if (botInlineResult != null) {
+                    TLRPC.Document document3 = botInlineResult.document;
+                    if (document3 instanceof TLRPC.TL_document) {
+                        attachFileName = FileLoader.getAttachFileName(document3);
+                        pathToAttach = FileLoader.getInstance(i10).getPathToAttach(d2Var.E.document);
+                    } else {
+                        TLRPC.Photo photo = botInlineResult.photo;
+                        if (photo instanceof TLRPC.TL_photo) {
+                            TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(photo.sizes, AndroidUtilities.getPhotoSize(), true);
+                            d2Var.J = closestPhotoSizeWithSize;
+                            attachFileName = FileLoader.getAttachFileName(closestPhotoSizeWithSize);
+                            pathToAttach = FileLoader.getInstance(i10).getPathToAttach(d2Var.J);
+                        } else if (botInlineResult.content instanceof TLRPC.TL_webDocument) {
+                            StringBuilder sb3 = new StringBuilder();
+                            sb3.append(Utilities.MD5(d2Var.E.content.url));
+                            sb3.append(".");
+                            TLRPC.WebDocument webDocument = d2Var.E.content;
+                            sb3.append(ImageLoader.getHttpUrlExtension(webDocument.url, FileLoader.getMimeTypePart(webDocument.mime_type)));
+                            attachFileName = sb3.toString();
+                            pathToAttach = new File(FileLoader.getDirectory(4), attachFileName);
+                            if (d2Var.K == 2) {
+                                TLRPC.WebDocument webDocument2 = d2Var.E.thumb;
+                                if ((webDocument2 instanceof TLRPC.TL_webDocument) && "video/mp4".equals(webDocument2.mime_type)) {
+                                    attachFileName = null;
+                                }
+                            }
+                        } else {
+                            if (botInlineResult.thumb instanceof TLRPC.TL_webDocument) {
+                                StringBuilder sb4 = new StringBuilder();
+                                sb4.append(Utilities.MD5(d2Var.E.thumb.url));
+                                sb4.append(".");
+                                TLRPC.WebDocument webDocument3 = d2Var.E.thumb;
+                                sb4.append(ImageLoader.getHttpUrlExtension(webDocument3.url, FileLoader.getMimeTypePart(webDocument3.mime_type)));
+                                attachFileName = sb4.toString();
+                                pathToAttach = new File(FileLoader.getDirectory(4), attachFileName);
+                            }
+                            pathToAttach = null;
+                            attachFileName = null;
+                        }
+                    }
+                    document = d2Var.G;
+                    if (document == null && d2Var.K == 2 && MessageObject.getDocumentVideoThumb(document) != null) {
+                        file2 = pathToAttach;
+                        str = str2;
+                    } else {
+                        file2 = pathToAttach;
+                        str = attachFileName;
+                    }
+                } else {
+                    TLRPC.Document document4 = d2Var.G;
+                    if (document4 != null) {
+                        attachFileName = FileLoader.getAttachFileName(document4);
+                        pathToAttach = FileLoader.getInstance(i10).getPathToAttach(d2Var.G);
+                        document = d2Var.G;
+                        if (document == null) {
+                        }
+                        file2 = pathToAttach;
+                        str = attachFileName;
+                    }
+                    pathToAttach = null;
+                    attachFileName = null;
+                    document = d2Var.G;
+                    if (document == null) {
+                    }
+                    file2 = pathToAttach;
+                    str = attachFileName;
+                }
+            }
+            str = null;
+            file2 = null;
         }
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i9, int i10) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i9), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(46.0f), TLObject.FLAG_30));
-        a();
-    }
-
-    public void setColor(int i9) {
-        int v02 = org.telegram.ui.ActionBar.f6.v0(i9, this.c);
-        this.a.setTextColor(v02);
-        this.b.getBackground().setColorFilter(new PorterDuffColorFilter(v02, PorterDuff.Mode.MULTIPLY));
+        AndroidUtilities.runOnUIThread(new org.telegram.messenger.camera.i(this, str, file2, !TextUtils.isEmpty(str) && file2.exists(), this.a));
     }
 }

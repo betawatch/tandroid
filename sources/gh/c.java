@@ -1,76 +1,83 @@
 package gh;
 
-import android.text.SpannableStringBuilder;
+import android.animation.ValueAnimator;
+import android.graphics.Path;
+import android.text.Layout;
+import android.view.View;
+import i7.w;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Stack;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.ll;
-import org.telegram.ui.Components.eq;
-import org.telegram.ui.Components.gc;
-import org.telegram.ui.Components.ob;
+import org.telegram.ui.Components.ct;
+import org.telegram.ui.Components.mi0;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class c implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ r b;
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* loaded from: classes3.dex */
+public final class c extends Path {
+    public final /* synthetic */ View a;
+    public final /* synthetic */ Layout b;
+    public final /* synthetic */ Stack c;
+    public final /* synthetic */ List d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ int f;
+    public final /* synthetic */ ArrayList g;
 
-    public /* synthetic */ c(r rVar, int i9) {
-        this.a = i9;
-        this.b = rVar;
+    public c(View view, Layout layout, Stack stack, List list, int i10, int i11, ArrayList arrayList) {
+        this.a = view;
+        this.b = layout;
+        this.c = stack;
+        this.d = list;
+        this.e = i10;
+        this.f = i11;
+        this.g = arrayList;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i9 = this.a;
-        r rVar = this.b;
-        switch (i9) {
-            case 0:
-                c cVar = rVar.j0;
-                int currentTime = rVar.getConnectionsManager().getCurrentTime();
-                rVar.N.setEnabled(rVar.L > 0 || rVar.C > currentTime);
-                if (currentTime >= rVar.C) {
-                    rVar.N.f(null, true);
-                    rVar.N.g(oa.V0(false, rVar.K ? LocaleController.getString(R.string.BotStarsButtonWithdrawShortAll) : LocaleController.formatPluralStringSpaced("BotStarsButtonWithdrawShort", (int) rVar.L), rVar.P), true, true);
-                    break;
-                } else {
-                    rVar.N.g(LocaleController.getString(R.string.BotStarsButtonWithdrawShortUntil), true, true);
-                    if (rVar.i0 == null) {
-                        rVar.i0 = new SpannableStringBuilder("l");
-                        eq eqVar = new eq(R.drawable.mini_switch_lock, 0);
-                        eqVar.setTopOffset(1);
-                        rVar.i0.setSpan(eqVar, 0, 1, 33);
-                    }
-                    SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-                    spannableStringBuilder.append((CharSequence) rVar.i0).append((CharSequence) r.i0(rVar.C - currentTime));
-                    rVar.N.f(spannableStringBuilder, true);
-                    gc gcVar = rVar.W;
-                    if (gcVar != null) {
-                        org.telegram.ui.Components.lb lbVar = gcVar.e;
-                        if ((lbVar instanceof ob) && lbVar.isAttachedToWindow()) {
-                            ll.q(R.string.BotStarsWithdrawalToast, new Object[]{r.i0(rVar.C - currentTime)}, ((ob) rVar.W.e).b);
-                        }
-                    }
-                    AndroidUtilities.cancelRunOnUIThread(cVar);
-                    AndroidUtilities.runOnUIThread(cVar, 1000L);
+    @Override // android.graphics.Path
+    public final void addRect(float f9, float f10, float f11, float f12, Path.Direction direction) {
+        Stack stack = this.c;
+        int i10 = 0;
+        k kVar = (stack == null || stack.isEmpty()) ? new k() : (k) stack.remove(0);
+        kVar.y = false;
+        ArrayList arrayList = this.g;
+        if (arrayList != null) {
+            float f13 = (f10 + f12) / 2.0f;
+            while (true) {
+                if (i10 >= arrayList.size()) {
                     break;
                 }
-                break;
-            case 1:
-                r.T(rVar);
-                break;
-            case 2:
-                r.U(rVar);
-                break;
-            case 3:
-                ve.e.s(rVar.getParentActivity(), LocaleController.getString(R.string.BotMonetizationBalanceInfoLink));
-                break;
-            case 4:
-                ve.e.s(rVar.getParentActivity(), LocaleController.getString(R.string.BotStarsWithdrawInfoLink));
-                break;
-            default:
-                rVar.O.setLoading(false);
-                break;
+                mi0 mi0Var = (mi0) arrayList.get(i10);
+                if (f13 >= mi0Var.b && f13 <= mi0Var.c) {
+                    kVar.y = true;
+                    break;
+                }
+                i10++;
+            }
         }
+        kVar.n = -1.0f;
+        ValueAnimator valueAnimator = kVar.r;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
+        }
+        kVar.p = true;
+        int max = (int) Math.max(f9, this.e);
+        int i11 = (int) f10;
+        int i12 = this.f;
+        kVar.setBounds(max, i11, (int) Math.min(f11, i12 <= 0 ? 2.14748365E9f : i12), (int) f12);
+        kVar.h(this.b.getPaint().getColor());
+        kVar.t = ct.c;
+        int width = kVar.getBounds().width() / AndroidUtilities.dp(6.0f);
+        int i13 = k.B;
+        int b10 = w.b(width * i13, i13, k.A);
+        Stack stack2 = kVar.c;
+        kVar.d = b10;
+        while (kVar.h.size() + stack2.size() < b10) {
+            stack2.push(new e());
+        }
+        View view = this.a;
+        if (view != null) {
+            kVar.i = view;
+        }
+        this.d.add(kVar);
     }
 }

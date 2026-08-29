@@ -1,7 +1,7 @@
 package androidx.emoji2.text;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class q extends f {
-    public static final v9.d d = new v9.d(2);
+public final class q extends g {
+    public static final ab.b d = new ab.b(3);
 }

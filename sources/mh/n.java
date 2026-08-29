@@ -1,248 +1,293 @@
 package mh;
 
+import ag.v0;
 import android.app.Activity;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.text.SpannableStringBuilder;
-import android.text.style.ClickableSpan;
-import android.text.style.ForegroundColorSpan;
-import android.text.style.URLSpan;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import g7.e6;
-import g7.g6;
-import kh.x8;
+import android.content.Context;
+import android.content.Intent;
+import android.media.projection.MediaProjectionManager;
+import android.util.LongSparseArray;
+import android.view.View;
+import j7.l1;
+import lh.m5;
+import nh.l8;
+import nh.o8;
+import nh.u0;
+import nh.v5;
+import nh.w5;
+import nh.wa;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Emoji;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.voip.VoIPService;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.b6;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.Components.k80;
-import org.telegram.ui.Components.l80;
-import org.telegram.ui.Components.o9;
-import org.telegram.ui.gf;
-import org.telegram.ui.qn;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.tgnet.tl.TL_iv;
+import org.telegram.tgnet.tl.TL_keyboard;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.ui.Cells.p3;
+import org.telegram.ui.Components.ChatActivityEnterView;
+import org.telegram.ui.Components.o6;
+import org.telegram.ui.Components.tc;
+import org.telegram.ui.Components.td;
+import org.telegram.ui.Components.voip.h1;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.df;
+import org.telegram.ui.hh1;
+import org.telegram.ui.ki0;
+import org.telegram.ui.lx0;
+import ph.l0;
+import qh.c0;
+import qh.d0;
+import qh.i0;
+import rf.m1;
+import th.b2;
+import th.e4;
+import th.g4;
+import th.l3;
+import th.q0;
+import th.x2;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes4.dex */
-public final class n extends FrameLayout {
-    public static final /* synthetic */ int n = 0;
-    public final b6 a;
-    public final o9 b;
-    public final ImageView c;
-    public final TextView d;
-    public final TextView e;
-    public final TextView f;
-    public final l80 h;
+public final /* synthetic */ class n implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public n(Activity activity, b6 b6Var) {
-        super(activity);
-        this.a = b6Var;
-        LinearLayout f10 = org.telegram.messenger.l0.f(activity, 0);
-        f10.setPadding(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(5.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(5.0f));
-        g6.b(f10, 0.025f, 1.4f);
-        addView(f10, e6.e(-1, -1, 119));
-        int i9 = f6.Oh;
-        setBackground(f6.Y(f6.l1(0.1f, f6.v0(i9, b6Var)), 0, 0));
-        LinearLayout linearLayout = new LinearLayout(activity);
-        linearLayout.setOrientation(1);
-        f10.addView(linearLayout, e6.o(-1, -2, 1.0f, 3));
-        LinearLayout linearLayout2 = new LinearLayout(activity);
-        linearLayout2.setOrientation(0);
-        linearLayout.addView(linearLayout2, e6.p(-1, -2, 0.0f, 51, 0, 0, 0, 0));
-        TextView textView = new TextView(activity);
-        this.d = textView;
-        textView.setTextSize(1, 14.0f);
-        int i10 = f6.G6;
-        textView.setTextColor(f6.v0(i10, b6Var));
-        textView.setTypeface(AndroidUtilities.bold());
-        linearLayout2.addView(textView, e6.o(-2, -2, 0.0f, 16));
-        NotificationCenter.listenEmojiLoading(textView);
-        TextView textView2 = new TextView(activity);
-        this.f = textView2;
-        textView2.setTextSize(1, 11.0f);
-        textView2.setTextColor(f6.v0(i9, b6Var));
-        g6.b(textView2, 0.1f, 1.5f);
-        textView2.setPadding(AndroidUtilities.dp(6.33f), 0, AndroidUtilities.dp(6.33f), 0);
-        textView2.setBackground(f6.b0(AndroidUtilities.dp(9.0f), f6.l1(0.1f, f6.v0(i9, b6Var))));
-        textView2.setText(LocaleController.getString(R.string.BotAdWhat));
-        linearLayout2.addView(textView2, e6.p(-2, 17, 0.0f, 19, 5, 1, 0, 0));
-        TextView textView3 = new TextView(activity);
-        this.e = textView3;
-        textView3.setVisibility(8);
-        textView3.setTextSize(1, 14.0f);
-        textView3.setTextColor(f6.v0(i10, b6Var));
-        textView3.setTypeface(AndroidUtilities.bold());
-        linearLayout.addView(textView3, e6.k(0.0f, 0.0f, 0.0f, 2.0f, -1, -2));
-        NotificationCenter.listenEmojiLoading(textView3);
-        l80 l80Var = new l80(activity, null);
-        this.h = l80Var;
-        l80Var.setTextSize(1, 13.0f);
-        l80Var.setLinkTextColor(f6.v0(f6.gc, b6Var));
-        l80Var.setTextColor(f6.v0(i10, b6Var));
-        linearLayout.addView(l80Var, e6.k(0.0f, 0.0f, 0.0f, 0.0f, -1, -2));
-        NotificationCenter.listenEmojiLoading(l80Var);
-        o9 o9Var = new o9(activity);
-        this.b = o9Var;
-        o9Var.setRoundRadius(AndroidUtilities.dp(4.0f));
-        o9Var.setVisibility(8);
-        f10.addView(o9Var, e6.t(48, 48, 53, 10, 0, 2, 2));
-        ImageView imageView = new ImageView(activity);
-        this.c = imageView;
-        imageView.setBackground(f6.f0(5, f6.l1(0.2f, f6.v0(f6.W5, b6Var)), -1));
-        g6.a(imageView);
-        imageView.setImageResource(R.drawable.msg_close);
-        imageView.setScaleType(ImageView.ScaleType.CENTER);
-        imageView.setColorFilter(new PorterDuffColorFilter(f6.v0(f6.de, b6Var), PorterDuff.Mode.SRC_IN));
-        imageView.setOnClickListener(new fh.n(8));
-        imageView.setVisibility(8);
-        f10.addView(imageView, e6.t(32, 32, 53, 10, 3, 0, 2));
+    public /* synthetic */ n(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:13:0x0143  */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x0153  */
-    /* JADX WARN: Removed duplicated region for block: B:19:0x0178  */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x0146  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void a(final qn qnVar, final MessageObject messageObject, gf gfVar, gf gfVar2) {
-        boolean z10;
-        float measureText;
-        float measureText2;
-        if (messageObject == null) {
-            return;
-        }
-        String str = messageObject.sponsoredTitle;
-        TextView textView = this.d;
-        CharSequence replaceEmoji = Emoji.replaceEmoji(str, textView.getPaint().getFontMetricsInt(), false);
-        CharSequence charSequence = messageObject.messageText;
-        l80 l80Var = this.h;
-        CharSequence replaceEmoji2 = Emoji.replaceEmoji(charSequence, l80Var.getPaint().getFontMetricsInt(), false);
-        String str2 = messageObject.sponsoredUrl;
-        TLRPC.MessageMedia messageMedia = messageObject.sponsoredMedia;
-        ImageView imageView = this.c;
-        o9 o9Var = this.b;
-        if (messageMedia != null) {
-            o9Var.setVisibility(0);
-            imageView.setVisibility(8);
-            TLRPC.MessageMedia messageMedia2 = messageObject.sponsoredMedia;
-            TLRPC.Document document = messageMedia2.document;
-            if (document != null) {
-                o9Var.k(ImageLocation.getForDocument(messageObject.sponsoredMedia.document), "48_48", ImageLocation.getForDocument(FileLoader.getClosestPhotoSizeWithSize(document.thumbs, 48), messageObject.sponsoredMedia.document), "48_48", 0L, null, null, 0);
-            } else {
-                TLRPC.Photo photo = messageMedia2.photo;
-                if (photo != null) {
-                    TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(photo.sizes, 48, true, null, true);
-                    o9Var.k(ImageLocation.getForPhoto(closestPhotoSizeWithSize, messageObject.sponsoredMedia.photo), "48_48", ImageLocation.getForPhoto(FileLoader.getClosestPhotoSizeWithSize(messageObject.sponsoredMedia.photo.sizes, 48, true, closestPhotoSizeWithSize, false), messageObject.sponsoredMedia.photo), "48_48", 0L, null, null, 0);
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        Utilities.Callback callback;
+        th.a aVar;
+        e4 e4Var;
+        switch (this.a) {
+            case 0:
+                ((m5) this.b).run();
+                break;
+            case 1:
+                nh.m mVar = (nh.m) this.b;
+                nh.g gVar = mVar.f;
+                gVar.d();
+                gVar.k(true);
+                nh.e eVar = mVar.V;
+                AndroidUtilities.cancelRunOnUIThread(eVar);
+                eVar.run();
+                break;
+            case 2:
+                ((wa) this.b).B();
+                break;
+            case 3:
+                u0.a((u0) this.b);
+                break;
+            case 4:
+                ((v0) this.b).run();
+                break;
+            case 5:
+                w5 w5Var = ((v5) this.b).x;
+                if (w5Var.r && (callback = w5Var.f) != null) {
+                    callback.run(5);
+                    break;
                 }
-            }
-        } else {
-            TLRPC.Photo photo2 = messageObject.sponsoredPhoto;
-            if (photo2 == null) {
-                o9Var.setVisibility(8);
-                imageView.setVisibility(0);
-                z10 = false;
-                SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(LocaleController.getString(R.string.SponsoredMessageAd));
-                int i9 = f6.Oh;
-                b6 b6Var = this.a;
-                spannableStringBuilder.setSpan(new ForegroundColorSpan(f6.v0(i9, b6Var)), 0, spannableStringBuilder.length(), 33);
-                spannableStringBuilder.append((CharSequence) " \u2009");
-                spannableStringBuilder.append(replaceEmoji);
-                measureText = textView.getPaint().measureText(spannableStringBuilder.toString());
-                float dp = AndroidUtilities.displaySize.x - AndroidUtilities.dp(44.660004f);
-                TextView textView2 = this.f;
-                measureText2 = ((dp - textView2.getPaint().measureText(textView2.getText().toString())) - AndroidUtilities.dp(32.0f)) - AndroidUtilities.dp(!z10 ? 58.0f : 0.0f);
-                TextView textView3 = this.e;
-                if (measureText <= measureText2) {
-                    spannableStringBuilder = new SpannableStringBuilder(LocaleController.getString(R.string.SponsoredMessageAd));
-                    spannableStringBuilder.setSpan(new ForegroundColorSpan(f6.v0(i9, b6Var)), 0, spannableStringBuilder.length(), 33);
-                    textView3.setVisibility(0);
-                    textView3.setText(replaceEmoji);
+                break;
+            case 6:
+                o8 o8Var = (o8) ((l8) this.b).h;
+                if (o8Var != null) {
+                    o8Var.run();
+                    break;
+                }
+                break;
+            case 7:
+                org.telegram.ui.Components.voip.u uVar = (org.telegram.ui.Components.voip.u) this.b;
+                if (VoIPService.getSharedInstance() != null) {
+                    VoIPService.getSharedInstance().stopScreenCapture();
+                }
+                uVar.J.animate().alpha(0.0f).scaleX(0.0f).scaleY(0.0f).setDuration(180L).start();
+                break;
+            case 8:
+                org.telegram.ui.Components.voip.v0 v0Var = (org.telegram.ui.Components.voip.v0) this.b;
+                if (!v0Var.a) {
+                    if (v0Var.x != 0 || !v0Var.y) {
+                        v0Var.b(false, true);
+                        break;
+                    } else {
+                        ((Activity) v0Var.getContext()).startActivityForResult(((MediaProjectionManager) v0Var.getContext().getSystemService("media_projection")).createScreenCaptureIntent(), 520);
+                        break;
+                    }
+                }
+                break;
+            case 9:
+                hh1 hh1Var = (hh1) this.b;
+                if (!hh1Var.a) {
+                    if (hh1Var.w != 0) {
+                        hh1Var.a(false, true);
+                        break;
+                    } else {
+                        ((Activity) hh1Var.getContext()).startActivityForResult(((MediaProjectionManager) hh1Var.getContext().getSystemService("media_projection")).createScreenCaptureIntent(), 520);
+                        break;
+                    }
+                }
+                break;
+            case 10:
+                Context context = (Context) this.b;
+                if (VoIPService.getSharedInstance() != null) {
+                    Intent action = new Intent(context, (Class<?>) LaunchActivity.class).setAction("voip_chat");
+                    action.putExtra("currentAccount", VoIPService.getSharedInstance().getAccount());
+                    if (!(context instanceof Activity)) {
+                        action.addFlags(TLObject.FLAG_28);
+                    }
+                    context.startActivity(action);
+                    h1.j();
+                    break;
+                }
+                break;
+            case 11:
+                org.telegram.ui.web.l lVar = (org.telegram.ui.web.l) this.b;
+                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(lVar.getContext());
+                alertDialog$Builder.a.N = LocaleController.getString(R.string.WebRecentClearTitle);
+                alertDialog$Builder.a.P = LocaleController.getString(R.string.WebRecentClearText);
+                alertDialog$Builder.k(LocaleController.getString(R.string.OK), new org.telegram.ui.web.a(lVar));
+                l1.u(R.string.Cancel, alertDialog$Builder, null);
+                break;
+            case 12:
+                ((df) this.b).run();
+                break;
+            case 13:
+                ((df) this.b).run();
+                break;
+            case 14:
+                ChatActivityEnterView.h(((td) ((l0) this.b).d).a, (TL_keyboard.KeyboardButton) view.getTag());
+                break;
+            case 15:
+                ((lx0) this.b).run();
+                break;
+            case 16:
+                qh.n nVar = (qh.n) this.b;
+                TLRPC.Chat chat = nVar.D;
+                if (chat != null && !chat.title.equals(((jh.m) nVar.n.b).getText().toString())) {
+                    nVar.getMessagesController().changeChatTitle(nVar.D.id, ((jh.m) nVar.n.b).getText().toString(), new qh.i(nVar, 1));
+                }
+                TLRPC.Chat chat2 = nVar.D;
+                if (chat2 != null && nVar.h != nVar.f) {
+                    if (chat2.default_banned_rights == null) {
+                        chat2.default_banned_rights = new TLRPC.TL_chatBannedRights();
+                    }
+                    nVar.D.default_banned_rights.manage_linked_peers = !nVar.h;
+                    nVar.getMessagesController().setDefaultBannedRole(nVar.b, nVar.D.default_banned_rights, false, nVar);
+                }
+                nVar.finishFragment();
+                break;
+            case 17:
+                ((c0) this.b).h.d.D(0);
+                break;
+            case 18:
+                i0.x(((d0) this.b).r);
+                break;
+            case 19:
+                rf.l lVar2 = (rf.l) this.b;
+                MessagesController.getInstance(lVar2.B).hintDialogs.clear();
+                MessagesController.getGlobalMainSettings().edit().remove("installReferer").commit();
+                lVar2.l();
+                break;
+            case 20:
+                ((rf.q) this.b).run();
+                break;
+            case 21:
+                ((rf.i0) this.b).K();
+                break;
+            case 22:
+                m1 m1Var = (m1) this.b;
+                LongSparseArray longSparseArray = m1Var.n;
+                p3 p3Var = (p3) view.getParent();
+                TLRPC.StickerSetCovered stickerSet = p3Var.getStickerSet();
+                if (stickerSet != null && m1Var.h.indexOfKey(stickerSet.set.id) < 0 && longSparseArray.indexOfKey(stickerSet.set.id) < 0) {
+                    if (!p3Var.r) {
+                        m1Var.F(stickerSet, p3Var);
+                        break;
+                    } else {
+                        longSparseArray.put(stickerSet.set.id, stickerSet);
+                        m1Var.e.a.h(p3Var.getStickerSet());
+                        break;
+                    }
+                }
+                break;
+            case 23:
+                sf.f fVar = (sf.f) this.b;
+                o6 o6Var = fVar.f;
+                int i10 = fVar.a;
+                boolean z10 = fVar.r;
+                fVar.r = !z10;
+                fVar.h.c(LocaleController.getString(!z10 ? R.string.BizBotStart : R.string.BizBotStop), true, true);
+                o6Var.a();
+                o6Var.c(LocaleController.getString(fVar.r ? R.string.BizBotStatusStopped : R.string.BizBotStatusManages), true, true);
+                if (fVar.r) {
+                    fVar.w |= 1;
                 } else {
-                    textView3.setVisibility(8);
+                    fVar.w &= -2;
                 }
-                textView.setText(spannableStringBuilder);
-                l80Var.setText(replaceEmoji2);
-                l80Var.setOnLinkPressListener(new k80() { // from class: mh.m
-                    @Override // org.telegram.ui.Components.k80
-                    public final void a(ClickableSpan clickableSpan) {
-                        n nVar = n.this;
-                        nVar.getClass();
-                        qn qnVar2 = qnVar;
-                        if (qnVar2 != null) {
-                            qnVar2.J9(messageObject, false, false);
+                MessagesController.getNotificationsSettings(i10).edit().putInt("dialog_botflags" + fVar.s, fVar.w).apply();
+                TL_account.toggleConnectedBotPaused toggleconnectedbotpaused = new TL_account.toggleConnectedBotPaused();
+                toggleconnectedbotpaused.peer = MessagesController.getInstance(i10).getInputPeer(fVar.s);
+                toggleconnectedbotpaused.paused = fVar.r;
+                ConnectionsManager.getInstance(i10).sendRequest(toggleconnectedbotpaused, null);
+                break;
+            case 24:
+                TL_account.TL_businessChatLink tL_businessChatLink = ((sf.p) this.b).f;
+                if (tL_businessChatLink != null) {
+                    AndroidUtilities.addToClipboard(tL_businessChatLink.link);
+                    tc.a0(LaunchActivity.R()).k(false).j();
+                    break;
+                }
+                break;
+            case 25:
+                ((sh.b) this.b).dismiss();
+                break;
+            case 26:
+                th.p pVar = (th.p) this.b;
+                pVar.H(0, true, 0, false, 0L);
+                ki0 ki0Var = pVar.K;
+                if (ki0Var != null) {
+                    ki0Var.h(true);
+                    pVar.K = null;
+                    break;
+                }
+                break;
+            case 27:
+                q0 q0Var = (q0) this.b;
+                x2 x2Var = q0Var.h;
+                if (x2Var != null && (aVar = q0Var.f) != null) {
+                    th.p3 p3Var2 = x2Var.a;
+                    p3Var2.getClass();
+                    if (th.p3.x3(aVar)) {
+                        TL_iv.pageBlockDetails pageblockdetails = (TL_iv.pageBlockDetails) aVar.b;
+                        b2 b2Var = p3Var2.F3;
+                        if (b2Var != null) {
+                            b2Var.d();
                         }
-                        if (clickableSpan instanceof URLSpan) {
-                            String url = ((URLSpan) clickableSpan).getURL();
-                            if (url != null) {
-                                url = url.trim();
-                            }
-                            if (qnVar2 != null && url != null && (url.startsWith("$") || url.startsWith("#"))) {
-                                qnVar2.da(url, true);
-                                return;
-                            }
+                        pageblockdetails.open = !pageblockdetails.open;
+                        p3Var2.U2.N(true);
+                        b2 b2Var2 = p3Var2.F3;
+                        if (b2Var2 != null) {
+                            b2Var2.h();
+                            break;
                         }
-                        clickableSpan.onClick(nVar.h);
-                    }
-                });
-                textView2.setOnClickListener(new x8(gfVar, 1));
-                setOnClickListener(new fh.g4(this, qnVar, messageObject, str2, 2));
-                imageView.setOnClickListener(new x8(gfVar2, 2));
-            }
-            TLRPC.PhotoSize closestPhotoSizeWithSize2 = FileLoader.getClosestPhotoSizeWithSize(photo2.sizes, 48, true, null, true);
-            o9Var.k(ImageLocation.getForPhoto(closestPhotoSizeWithSize2, messageObject.sponsoredPhoto), "48_48", ImageLocation.getForPhoto(FileLoader.getClosestPhotoSizeWithSize(messageObject.sponsoredPhoto.sizes, 48, true, closestPhotoSizeWithSize2, false), messageObject.sponsoredPhoto), "48_48", 0L, null, null, 0);
-            o9Var.setVisibility(0);
-            imageView.setVisibility(8);
-        }
-        z10 = true;
-        SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(LocaleController.getString(R.string.SponsoredMessageAd));
-        int i92 = f6.Oh;
-        b6 b6Var2 = this.a;
-        spannableStringBuilder2.setSpan(new ForegroundColorSpan(f6.v0(i92, b6Var2)), 0, spannableStringBuilder2.length(), 33);
-        spannableStringBuilder2.append((CharSequence) " \u2009");
-        spannableStringBuilder2.append(replaceEmoji);
-        measureText = textView.getPaint().measureText(spannableStringBuilder2.toString());
-        float dp2 = AndroidUtilities.displaySize.x - AndroidUtilities.dp(44.660004f);
-        TextView textView22 = this.f;
-        measureText2 = ((dp2 - textView22.getPaint().measureText(textView22.getText().toString())) - AndroidUtilities.dp(32.0f)) - AndroidUtilities.dp(!z10 ? 58.0f : 0.0f);
-        TextView textView32 = this.e;
-        if (measureText <= measureText2) {
-        }
-        textView.setText(spannableStringBuilder2);
-        l80Var.setText(replaceEmoji2);
-        l80Var.setOnLinkPressListener(new k80() { // from class: mh.m
-            @Override // org.telegram.ui.Components.k80
-            public final void a(ClickableSpan clickableSpan) {
-                n nVar = n.this;
-                nVar.getClass();
-                qn qnVar2 = qnVar;
-                if (qnVar2 != null) {
-                    qnVar2.J9(messageObject, false, false);
-                }
-                if (clickableSpan instanceof URLSpan) {
-                    String url = ((URLSpan) clickableSpan).getURL();
-                    if (url != null) {
-                        url = url.trim();
-                    }
-                    if (qnVar2 != null && url != null && (url.startsWith("$") || url.startsWith("#"))) {
-                        qnVar2.da(url, true);
-                        return;
                     }
                 }
-                clickableSpan.onClick(nVar.h);
-            }
-        });
-        textView22.setOnClickListener(new x8(gfVar, 1));
-        setOnClickListener(new fh.g4(this, qnVar, messageObject, str2, 2));
-        imageView.setOnClickListener(new x8(gfVar2, 2));
+                break;
+            default:
+                g4 g4Var = (g4) this.b;
+                th.a aVar2 = g4Var.a;
+                if (aVar2 != null && (e4Var = g4Var.C) != null) {
+                    ((l3) e4Var).a.d3.J(aVar2);
+                    break;
+                }
+                break;
+        }
     }
 }

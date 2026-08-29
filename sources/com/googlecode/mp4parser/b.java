@@ -4,9 +4,9 @@ import java.nio.ByteBuffer;
 import java.nio.channels.WritableByteChannel;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public abstract class b extends e implements q2.b {
+public abstract class b extends e implements s2.b {
     public e d;
     public final String e;
 
@@ -38,30 +38,30 @@ public abstract class b extends e implements q2.b {
         return wrap;
     }
 
-    @Override // q2.b
+    @Override // s2.b
     public void getBox(WritableByteChannel writableByteChannel) {
         writableByteChannel.write(d());
         c(writableByteChannel);
     }
 
-    @Override // q2.b
-    public final q2.f getParent() {
+    @Override // s2.b
+    public final s2.f getParent() {
         return this.d;
     }
 
-    @Override // q2.b
+    @Override // s2.b
     public long getSize() {
         long b10 = b();
         return b10 + (8 + b10 >= 4294967296L ? 16 : 8);
     }
 
-    @Override // q2.b
+    @Override // s2.b
     public final String getType() {
         return this.e;
     }
 
-    @Override // q2.b
-    public final void setParent(q2.f fVar) {
+    @Override // s2.b
+    public final void setParent(s2.f fVar) {
         this.d = (e) fVar;
     }
 }

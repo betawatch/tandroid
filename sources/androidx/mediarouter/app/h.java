@@ -1,181 +1,125 @@
 package androidx.mediarouter.app;
 
-import android.content.BroadcastReceiver;
-import android.content.Context;
-import android.content.Intent;
-import android.content.IntentFilter;
-import android.content.IntentSender;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
-import android.os.Build;
-import android.util.Log;
-import c2.a1;
-import com.google.firebase.messaging.FirebaseMessaging;
-import fh.o1;
-import h3.m2;
+import android.view.View;
+import android.view.ViewTreeObserver;
+import android.view.animation.AlphaAnimation;
 import java.util.ArrayList;
-import java.util.Iterator;
-import org.telegram.ui.Components.fg;
-import org.telegram.ui.Components.fk;
+import java.util.HashSet;
+import java.util.WeakHashMap;
+import m.k2;
+import m.q0;
+import org.telegram.ui.Components.zc0;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class h extends BroadcastReceiver {
+public final class h implements ViewTreeObserver.OnGlobalLayoutListener {
     public final /* synthetic */ int a;
-    public Object b;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ h() {
-        this.a = 2;
-    }
-
-    public void a() {
-        if (Log.isLoggable("FirebaseMessaging", 3) || (Build.VERSION.SDK_INT == 23 && Log.isLoggable("FirebaseMessaging", 3))) {
-            Log.d("FirebaseMessaging", "Connectivity change received registered");
-        }
-        ((FirebaseMessaging) ((com.google.firebase.messaging.v) this.b).d).b.registerReceiver(this, new IntentFilter("android.net.conn.CONNECTIVITY_CHANGE"));
-    }
-
-    @Override // android.content.BroadcastReceiver
-    public final void onReceive(Context context, Intent intent) {
-        switch (this.a) {
-            case 0:
-                if ("android.intent.action.SCREEN_OFF".equals(intent.getAction())) {
-                    ((i) this.b).dismiss();
-                    return;
-                }
-                return;
-            case 1:
-                ((a1) this.b).c();
-                return;
-            case 2:
-                com.google.firebase.messaging.v vVar = (com.google.firebase.messaging.v) this.b;
-                if (vVar != null && vVar.a()) {
-                    if (Log.isLoggable("FirebaseMessaging", 3) || (Build.VERSION.SDK_INT == 23 && Log.isLoggable("FirebaseMessaging", 3))) {
-                        Log.d("FirebaseMessaging", "Connectivity changed. Starting background sync.");
-                    }
-                    com.google.firebase.messaging.v vVar2 = (com.google.firebase.messaging.v) this.b;
-                    ((FirebaseMessaging) vVar2.d).getClass();
-                    FirebaseMessaging.b(vVar2, 0L);
-                    ((FirebaseMessaging) ((com.google.firebase.messaging.v) this.b).d).b.unregisterReceiver(this);
-                    this.b = null;
-                    return;
-                }
-                return;
-            case 3:
-                d5.w wVar = (d5.w) this.b;
-                ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService("connectivity");
-                int i9 = 0;
-                if (connectivityManager != null) {
-                    try {
-                        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
-                        if (activeNetworkInfo != null && activeNetworkInfo.isConnected()) {
-                            int type = activeNetworkInfo.getType();
-                            if (type != 0) {
-                                if (type != 1) {
-                                    if (type != 4 && type != 5) {
-                                        if (type != 6) {
-                                            i9 = type != 9 ? 8 : 7;
-                                        }
-                                        i9 = 5;
-                                    }
-                                }
-                                i9 = 2;
-                            }
-                            switch (activeNetworkInfo.getSubtype()) {
-                                case 1:
-                                case 2:
-                                    i9 = 3;
-                                    break;
-                                case 3:
-                                case 4:
-                                case 5:
-                                case 6:
-                                case 7:
-                                case 8:
-                                case 9:
-                                case 10:
-                                case 11:
-                                case 12:
-                                case 14:
-                                case 15:
-                                case 17:
-                                    i9 = 4;
-                                    break;
-                                case 13:
-                                    i9 = 5;
-                                    break;
-                                case 16:
-                                case 19:
-                                default:
-                                    i9 = 6;
-                                    break;
-                                case 18:
-                                    i9 = 2;
-                                    break;
-                                case 20:
-                                    if (d5.f0.a >= 29) {
-                                        i9 = 9;
-                                        break;
-                                    }
-                                    break;
-                            }
-                        } else {
-                            i9 = 1;
-                        }
-                    } catch (SecurityException unused) {
-                    }
-                }
-                if (d5.f0.a < 31 || i9 != 5) {
-                    d5.w.a(wVar, i9);
-                    return;
-                } else {
-                    d5.v.a(context, wVar);
-                    return;
-                }
-            case 4:
-                ((f2.x) this.b).k();
-                return;
-            case 5:
-                try {
-                    ((IntentSender) this.b).sendIntent(context, 0, null, null, null);
-                    return;
-                } catch (IntentSender.SendIntentException unused2) {
-                    return;
-                }
-            case 6:
-                m2 m2Var = (m2) this.b;
-                m2Var.b.post(new o1(m2Var, 25));
-                return;
-            case 7:
-                fg fgVar = new fg(this, 22);
-                if ("android.intent.action.MEDIA_UNMOUNTED".equals(intent.getAction())) {
-                    ((fk) this.b).r.postDelayed(fgVar, 1000L);
-                    return;
-                } else {
-                    fgVar.run();
-                    return;
-                }
-            default:
-                if ("PIP_CUSTOM_EVENT".equals(intent.getAction())) {
-                    String stringExtra = intent.getStringExtra("source_id");
-                    intent.getIntExtra("action_id", -1);
-                    ArrayList arrayList = (ArrayList) ((xe.b) this.b).c.get(stringExtra);
-                    if (arrayList == null) {
-                        return;
-                    }
-                    Iterator it = arrayList.iterator();
-                    if (it.hasNext()) {
-                        it.next().getClass();
-                        throw new ClassCastException();
-                    }
-                    return;
-                }
-                return;
-        }
-    }
-
-    public /* synthetic */ h(Object obj, int i9) {
-        this.a = i9;
+    public /* synthetic */ h(Object obj, int i10) {
+        this.a = i10;
         this.b = obj;
+    }
+
+    @Override // android.view.ViewTreeObserver.OnGlobalLayoutListener
+    public final void onGlobalLayout() {
+        int i10 = this.a;
+        int i11 = 0;
+        Object obj = this.b;
+        switch (i10) {
+            case 0:
+                s sVar = (s) obj;
+                sVar.Q.getViewTreeObserver().removeGlobalOnLayoutListener(this);
+                HashSet hashSet = sVar.T;
+                if (hashSet != null && hashSet.size() != 0) {
+                    i iVar = new i(sVar, i11);
+                    int firstVisiblePosition = sVar.Q.getFirstVisiblePosition();
+                    boolean z10 = false;
+                    while (i11 < sVar.Q.getChildCount()) {
+                        View childAt = sVar.Q.getChildAt(i11);
+                        if (sVar.T.contains((c2.b0) sVar.R.getItem(firstVisiblePosition + i11))) {
+                            AlphaAnimation alphaAnimation = new AlphaAnimation(0.0f, 1.0f);
+                            alphaAnimation.setDuration(sVar.u0);
+                            alphaAnimation.setFillEnabled(true);
+                            alphaAnimation.setFillAfter(true);
+                            if (!z10) {
+                                alphaAnimation.setAnimationListener(iVar);
+                                z10 = true;
+                            }
+                            childAt.clearAnimation();
+                            childAt.startAnimation(alphaAnimation);
+                        }
+                        i11++;
+                    }
+                    break;
+                } else {
+                    sVar.j(true);
+                    break;
+                }
+            case 1:
+                l.e eVar = (l.e) obj;
+                ArrayList arrayList = eVar.n;
+                if (eVar.a() && arrayList.size() > 0 && !((l.d) arrayList.get(0)).a.J) {
+                    View view = eVar.A;
+                    if (view != null && view.isShown()) {
+                        int size = arrayList.size();
+                        while (i11 < size) {
+                            Object obj2 = arrayList.get(i11);
+                            i11++;
+                            ((l.d) obj2).a.h();
+                        }
+                        break;
+                    } else {
+                        eVar.dismiss();
+                        break;
+                    }
+                }
+                break;
+            case 2:
+                l.c0 c0Var = (l.c0) obj;
+                k2 k2Var = c0Var.n;
+                if (c0Var.a() && !k2Var.J) {
+                    View view2 = c0Var.x;
+                    if (view2 != null && view2.isShown()) {
+                        k2Var.h();
+                        break;
+                    } else {
+                        c0Var.dismiss();
+                        break;
+                    }
+                }
+                break;
+            case 3:
+                q0 q0Var = (q0) obj;
+                if (!q0Var.getInternalPopup().a()) {
+                    q0Var.f.m(m.h0.b(q0Var), m.h0.a(q0Var));
+                }
+                ViewTreeObserver viewTreeObserver = q0Var.getViewTreeObserver();
+                if (viewTreeObserver != null) {
+                    m.g0.a(viewTreeObserver, this);
+                    break;
+                }
+                break;
+            case 4:
+                m.n0 n0Var = (m.n0) obj;
+                q0 q0Var2 = n0Var.S;
+                n0Var.getClass();
+                WeakHashMap weakHashMap = r0.j0.a;
+                if (!q0Var2.isAttachedToWindow() || !q0Var2.getGlobalVisibleRect(n0Var.Q)) {
+                    n0Var.dismiss();
+                    break;
+                } else {
+                    n0Var.s();
+                    n0Var.h();
+                    break;
+                }
+                break;
+            default:
+                zc0 zc0Var = (zc0) obj;
+                zc0Var.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+                zc0Var.h = zc0Var.e.getCurrentItem();
+                zc0.a(zc0Var, zc0Var.h, 0);
+                break;
+        }
     }
 }

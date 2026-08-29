@@ -1,35 +1,32 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
 import android.graphics.Typeface;
-import android.widget.ImageView;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public class yb extends eb {
-    public final ImageView a;
-    public final l80 b;
+public class yb extends jb {
+    public final t9 a;
+    public final TextView b;
 
-    public yb(Context context, org.telegram.ui.ActionBar.b6 b6Var) {
-        super(context, b6Var);
-        int themedColor = getThemedColor(org.telegram.ui.ActionBar.f6.Hi);
-        ImageView imageView = new ImageView(context);
-        this.a = imageView;
-        imageView.setColorFilter(new PorterDuffColorFilter(themedColor, PorterDuff.Mode.MULTIPLY));
-        addView(imageView, g7.e6.i(24.0f, 24.0f, 8388627, 16.0f, 12.0f, 16.0f, 12.0f));
-        l80 l80Var = new l80(context, null);
-        this.b = l80Var;
-        l80Var.setDisablePaddingsOffsetY(true);
-        l80Var.setSingleLine();
-        l80Var.setTextColor(themedColor);
-        l80Var.setTypeface(Typeface.SANS_SERIF);
-        l80Var.setTextSize(1, 15.0f);
-        addView(l80Var, g7.e6.i(-2.0f, -2.0f, 8388627, 56.0f, 0.0f, 16.0f, 0.0f));
+    public yb(Context context, org.telegram.ui.ActionBar.c6 c6Var) {
+        super(context, c6Var);
+        t9 t9Var = new t9(getContext());
+        this.a = t9Var;
+        TextView textView = new TextView(getContext());
+        this.b = textView;
+        addView(t9Var, i7.f6.i(30.0f, 30.0f, 8388627, 12.0f, 8.0f, 12.0f, 8.0f));
+        textView.setGravity(8388611);
+        textView.setPadding(0, AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f));
+        textView.setTextColor(getThemedColor(org.telegram.ui.ActionBar.g6.Hi));
+        textView.setTextSize(1, 15.0f);
+        textView.setTypeface(Typeface.SANS_SERIF);
+        addView(textView, i7.f6.i(-1.0f, -2.0f, 8388627, 56.0f, 0.0f, 16.0f, 0.0f));
     }
 
-    @Override // org.telegram.ui.Components.lb
+    @Override // org.telegram.ui.Components.rb
     public CharSequence getAccessibilityText() {
         return this.b.getText();
     }

@@ -14,64 +14,64 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
 public final class l extends FrameLayout {
-    public final org.telegram.ui.Components.i6 a;
+    public final org.telegram.ui.Components.n6 a;
     public final Paint b;
-    public final ff.q c;
+    public final jf.p c;
     public final Drawable d;
     public final int e;
     public int f;
 
-    public l(Context context, int i9) {
+    public l(Context context, int i10) {
         super(context);
         Paint paint = new Paint(1);
         this.b = paint;
-        this.c = new ff.q(new ia(this, 1));
-        this.e = i9;
+        this.c = new jf.p(new fa(this, 1));
+        this.e = i10;
         this.d = context.getResources().getDrawable(R.drawable.filled_gift_sell_24).mutate();
-        org.telegram.ui.Components.i6 i6Var = new org.telegram.ui.Components.i6(false, false, false, false);
-        this.a = i6Var;
-        i6Var.G = AndroidUtilities.displaySize.x;
-        i6Var.setCallback(this);
-        i6Var.u(AndroidUtilities.bold());
-        i6Var.t(AndroidUtilities.dp(14.0f));
-        i6Var.r(-1);
-        i6Var.b = 3;
+        org.telegram.ui.Components.n6 n6Var = new org.telegram.ui.Components.n6(false, false, false, false);
+        this.a = n6Var;
+        n6Var.G = AndroidUtilities.displaySize.x;
+        n6Var.setCallback(this);
+        n6Var.u(AndroidUtilities.bold());
+        n6Var.t(AndroidUtilities.dp(14.0f));
+        n6Var.r(-1);
+        n6Var.b = 3;
         paint.setShader(new LinearGradient(0.0f, 0.0f, AndroidUtilities.dp(72.0f), 0.0f, new int[]{-13460514, -10042885}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP));
     }
 
-    public final void a(int i9) {
-        this.f = i9;
+    public final void a(int i10) {
+        this.f = i10;
         if (isAttachedToWindow()) {
-            long max = Math.max(0, i9 - ConnectionsManager.getInstance(this.e).getCurrentTime());
+            long max = Math.max(0, i10 - ConnectionsManager.getInstance(this.e).getCurrentTime());
             this.c.a(max);
             b(max);
         }
     }
 
     public final void b(long j10) {
-        org.telegram.ui.Components.i6 i6Var = this.a;
+        org.telegram.ui.Components.n6 n6Var = this.a;
         if (j10 == 0) {
-            i6Var.q(LocaleController.getString(R.string.Gift2AuctionPriceView), true, true);
+            n6Var.q(LocaleController.getString(R.string.Gift2AuctionPriceView), true, true);
         } else {
-            i6Var.q(j10 > 3600 ? AndroidUtilities.formatDuration((int) j10, false) : AndroidUtilities.formatDurationNoHours((int) j10, false), isAttachedToWindow(), true);
+            n6Var.q(j10 > 3600 ? AndroidUtilities.formatDuration((int) j10, false) : AndroidUtilities.formatDurationNoHours((int) j10, false), isAttachedToWindow(), true);
         }
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         int measuredWidth = getMeasuredWidth() - AndroidUtilities.dp(14.0f);
-        org.telegram.ui.Components.i6 i6Var = this.a;
-        int d = measuredWidth - ((int) i6Var.d());
+        org.telegram.ui.Components.n6 n6Var = this.a;
+        int d = measuredWidth - ((int) n6Var.d());
         int dp = d - AndroidUtilities.dp(30.0f);
         canvas.save();
         canvas.translate(dp, 0.0f);
         canvas.drawRoundRect(0.0f, 0.0f, getWidth() - dp, getHeight(), AndroidUtilities.dp(14.0f), AndroidUtilities.dp(14.0f), this.b);
         canvas.restore();
-        i6Var.setBounds(d, 0, getMeasuredWidth() - AndroidUtilities.dp(8.0f), getMeasuredHeight() - AndroidUtilities.dp(1.0f));
-        i6Var.draw(canvas);
+        n6Var.setBounds(d, 0, getMeasuredWidth() - AndroidUtilities.dp(8.0f), getMeasuredHeight() - AndroidUtilities.dp(1.0f));
+        n6Var.draw(canvas);
         int dp2 = AndroidUtilities.dp(-22.0f) + d;
         int dp3 = AndroidUtilities.dp(5.0f);
         int dp4 = AndroidUtilities.dp(-4.0f) + d;
@@ -95,7 +95,7 @@ public final class l extends FrameLayout {
     }
 
     @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i9, int i10) {
+    public final void onMeasure(int i10, int i11) {
         super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(172), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(28), TLObject.FLAG_30));
     }
 

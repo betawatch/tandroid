@@ -6,15 +6,15 @@ import android.os.IInterface;
 import android.os.Parcel;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public abstract class e {
-    public static final q5.b a = new q5.b("CastDynamiteModule", null);
+    public static final s5.b a = new s5.b("CastDynamiteModule", null);
 
-    public static n5.n a(Context context, n5.b bVar, q qVar, HashMap hashMap) {
-        n5.n lVar;
+    public static p5.n a(Context context, p5.b bVar, q qVar, HashMap hashMap) {
+        p5.n lVar;
         g b10 = b(context);
-        h6.b bVar2 = new h6.b(context.getApplicationContext());
+        j6.b bVar2 = new j6.b(context.getApplicationContext());
         Parcel M0 = b10.M0();
         u.d(M0, bVar2);
         u.c(M0, bVar);
@@ -22,12 +22,12 @@ public abstract class e {
         M0.writeMap(hashMap);
         Parcel O0 = b10.O0(M0, 1);
         IBinder readStrongBinder = O0.readStrongBinder();
-        int i9 = n5.m.b;
+        int i10 = p5.m.b;
         if (readStrongBinder == null) {
             lVar = null;
         } else {
             IInterface queryLocalInterface = readStrongBinder.queryLocalInterface("com.google.android.gms.cast.framework.ICastContext");
-            lVar = queryLocalInterface instanceof n5.n ? (n5.n) queryLocalInterface : new n5.l(readStrongBinder, "com.google.android.gms.cast.framework.ICastContext", 2);
+            lVar = queryLocalInterface instanceof p5.n ? (p5.n) queryLocalInterface : new p5.l(readStrongBinder, "com.google.android.gms.cast.framework.ICastContext", 0);
         }
         O0.recycle();
         return lVar;
@@ -35,14 +35,14 @@ public abstract class e {
 
     public static g b(Context context) {
         try {
-            IBinder b10 = i6.e.c(context, i6.e.b, "com.google.android.gms.cast.framework.dynamite").b("com.google.android.gms.cast.framework.internal.CastDynamiteModuleImpl");
+            IBinder b10 = k6.e.c(context, k6.e.b, "com.google.android.gms.cast.framework.dynamite").b("com.google.android.gms.cast.framework.internal.CastDynamiteModuleImpl");
             if (b10 == null) {
                 return null;
             }
             IInterface queryLocalInterface = b10.queryLocalInterface("com.google.android.gms.cast.framework.internal.ICastDynamiteModule");
-            return queryLocalInterface instanceof g ? (g) queryLocalInterface : new g(b10, "com.google.android.gms.cast.framework.internal.ICastDynamiteModule", 2);
-        } catch (i6.b e10) {
-            throw new n5.d(e10);
+            return queryLocalInterface instanceof g ? (g) queryLocalInterface : new g(b10, "com.google.android.gms.cast.framework.internal.ICastDynamiteModule", 0);
+        } catch (k6.b e10) {
+            throw new p5.d(e10);
         }
     }
 }

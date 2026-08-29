@@ -7,12 +7,12 @@ import android.widget.BaseAdapter;
 import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.ImageView;
-import j3.r0;
+import j7.l1;
 import m.b3;
 import m.c3;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public abstract class b extends BaseAdapter implements Filterable {
     public boolean a;
@@ -76,11 +76,11 @@ public abstract class b extends BaseAdapter implements Filterable {
     }
 
     @Override // android.widget.BaseAdapter, android.widget.SpinnerAdapter
-    public View getDropDownView(int i9, View view, ViewGroup viewGroup) {
+    public View getDropDownView(int i10, View view, ViewGroup viewGroup) {
         if (!this.a) {
             return null;
         }
-        this.c.moveToPosition(i9);
+        this.c.moveToPosition(i10);
         if (view == null) {
             c3 c3Var = (c3) this;
             view = c3Var.s.inflate(c3Var.r, viewGroup, false);
@@ -100,31 +100,31 @@ public abstract class b extends BaseAdapter implements Filterable {
     }
 
     @Override // android.widget.Adapter
-    public final Object getItem(int i9) {
+    public final Object getItem(int i10) {
         Cursor cursor;
         if (!this.a || (cursor = this.c) == null) {
             return null;
         }
-        cursor.moveToPosition(i9);
+        cursor.moveToPosition(i10);
         return this.c;
     }
 
     @Override // android.widget.Adapter
-    public final long getItemId(int i9) {
+    public final long getItemId(int i10) {
         Cursor cursor;
-        if (this.a && (cursor = this.c) != null && cursor.moveToPosition(i9)) {
+        if (this.a && (cursor = this.c) != null && cursor.moveToPosition(i10)) {
             return this.c.getLong(this.d);
         }
         return 0L;
     }
 
     @Override // android.widget.Adapter
-    public View getView(int i9, View view, ViewGroup viewGroup) {
+    public View getView(int i10, View view, ViewGroup viewGroup) {
         if (!this.a) {
             throw new IllegalStateException("this should only be called when the cursor is valid");
         }
-        if (!this.c.moveToPosition(i9)) {
-            throw new IllegalStateException(r0.l(i9, "couldn't move cursor to position "));
+        if (!this.c.moveToPosition(i10)) {
+            throw new IllegalStateException(l1.k(i10, "couldn't move cursor to position "));
         }
         if (view == null) {
             c3 c3Var = (c3) this;

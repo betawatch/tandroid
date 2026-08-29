@@ -1,107 +1,16 @@
 package e6;
 
-import android.app.AppOpsManager;
-import android.content.Context;
-import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
-import android.os.Build;
-import android.util.Base64;
-import android.util.Log;
-import java.io.Closeable;
-import java.io.IOException;
-import u5.h;
+import java.util.Comparator;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public abstract class b {
-    public static final char[] a = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
-    public static Boolean b;
-    public static Boolean c;
-    public static Boolean d;
-    public static Boolean e;
+public final /* synthetic */ class b implements Comparator {
+    public static final /* synthetic */ b a = new b();
 
-    public static void a(Closeable closeable) {
-        if (closeable != null) {
-            try {
-                closeable.close();
-            } catch (IOException unused) {
-            }
-        }
-    }
-
-    public static byte[] b(String str) {
-        if (str == null) {
-            return null;
-        }
-        return Base64.decode(str, 11);
-    }
-
-    public static String c(byte[] bArr) {
-        if (bArr == null) {
-            return null;
-        }
-        return Base64.encodeToString(bArr, 11);
-    }
-
-    public static boolean d() {
-        return Build.VERSION.SDK_INT >= 26;
-    }
-
-    public static boolean e(Context context, int i9) {
-        if (g(context, "com.google.android.gms", i9)) {
-            try {
-                PackageInfo packageInfo = context.getPackageManager().getPackageInfo("com.google.android.gms", 64);
-                h c10 = h.c(context);
-                c10.getClass();
-                if (packageInfo != null) {
-                    if (!h.f(packageInfo, false)) {
-                        if (h.f(packageInfo, true)) {
-                            if (!u5.g.a(c10.a)) {
-                                Log.w("GoogleSignatureVerifier", "Test-keys aren't accepted on this build.");
-                            }
-                        }
-                    }
-                    return true;
-                }
-                return false;
-            } catch (PackageManager.NameNotFoundException unused) {
-                if (Log.isLoggable("UidVerifier", 3)) {
-                    Log.d("UidVerifier", "Package manager can't find google play services package, defaulting to false");
-                }
-            }
-        }
-        return false;
-    }
-
-    public static boolean f(Context context) {
-        PackageManager packageManager = context.getPackageManager();
-        if (b == null) {
-            b = Boolean.valueOf(packageManager.hasSystemFeature("android.hardware.type.watch"));
-        }
-        if (b.booleanValue() && Build.VERSION.SDK_INT < 24) {
-            return true;
-        }
-        if (c == null) {
-            c = Boolean.valueOf(context.getPackageManager().hasSystemFeature("cn.google"));
-        }
-        if (c.booleanValue()) {
-            return !d() || Build.VERSION.SDK_INT >= 30;
-        }
-        return false;
-    }
-
-    public static boolean g(Context context, String str, int i9) {
-        g6.b a2 = g6.c.a(context);
-        a2.getClass();
-        try {
-            AppOpsManager appOpsManager = (AppOpsManager) a2.a.getSystemService("appops");
-            if (appOpsManager == null) {
-                throw new NullPointerException("context.getSystemService(Context.APP_OPS_SERVICE) is null");
-            }
-            appOpsManager.checkPackage(i9, str);
-            return true;
-        } catch (SecurityException unused) {
-            return false;
-        }
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
+        w5.c cVar = (w5.c) obj;
+        w5.c cVar2 = (w5.c) obj2;
+        return !cVar.a.equals(cVar2.a) ? cVar.a.compareTo(cVar2.a) : (cVar.b() > cVar2.b() ? 1 : (cVar.b() == cVar2.b() ? 0 : -1));
     }
 }

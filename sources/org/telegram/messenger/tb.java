@@ -1,66 +1,48 @@
 package org.telegram.messenger;
 
-import android.util.SparseIntArray;
 import java.util.ArrayList;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.support.LongSparseIntArray;
-import org.telegram.ui.NotificationsSettingsActivity;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class tb implements Runnable {
+public final /* synthetic */ class tb implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate b;
-    public final /* synthetic */ Cloneable c;
-    public final /* synthetic */ Cloneable d;
-    public final /* synthetic */ Cloneable e;
-    public final /* synthetic */ Cloneable f;
-    public final /* synthetic */ Cloneable h;
-    public final /* synthetic */ Cloneable n;
-    public final /* synthetic */ Cloneable r;
-    public final /* synthetic */ Object s;
-    public final /* synthetic */ Cloneable v;
+    public final /* synthetic */ MessagesController b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ ArrayList e;
 
-    public /* synthetic */ tb(MessagesController messagesController, LongSparseIntArray longSparseIntArray, LongSparseIntArray longSparseIntArray2, SparseIntArray sparseIntArray, a0.h hVar, a0.h hVar2, a0.h hVar3, a0.h hVar4, a0.h hVar5, LongSparseIntArray longSparseIntArray3, int i9) {
-        this.a = i9;
+    public /* synthetic */ tb(int i10, long j10, long j11, ArrayList arrayList, MessagesController messagesController) {
+        this.a = i10;
         this.b = messagesController;
-        this.c = longSparseIntArray;
-        this.d = longSparseIntArray2;
-        this.e = sparseIntArray;
-        this.f = hVar;
-        this.h = hVar2;
-        this.n = hVar3;
-        this.r = hVar4;
-        this.s = hVar5;
-        this.v = longSparseIntArray3;
+        this.c = j10;
+        this.d = j11;
+        this.e = arrayList;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                ((MessagesController) this.b).lambda$processUpdateArray$416((LongSparseIntArray) this.c, (LongSparseIntArray) this.d, (SparseIntArray) this.e, (a0.h) this.f, (a0.h) this.h, (a0.h) this.n, (a0.h) this.r, (a0.h) this.s, (LongSparseIntArray) this.v);
+                this.b.lambda$checkUnreadPollVotesInternal2$430(this.c, this.d, this.e, tLObject, tL_error);
                 break;
             case 1:
-                ((MessagesController) this.b).lambda$processUpdateArray$417((LongSparseIntArray) this.c, (LongSparseIntArray) this.d, (SparseIntArray) this.e, (a0.h) this.f, (a0.h) this.h, (a0.h) this.n, (a0.h) this.r, (a0.h) this.s, (LongSparseIntArray) this.v);
+                this.b.lambda$checkUnreadPollVotesInternal2$432(this.c, this.d, this.e, tLObject, tL_error);
+                break;
+            case 2:
+                this.b.lambda$checkUnreadPollVotesInternal2$434(this.c, this.d, this.e, tLObject, tL_error);
+                break;
+            case 3:
+                this.b.lambda$checkUnreadReactionsInternal2$423(this.c, this.d, this.e, tLObject, tL_error);
+                break;
+            case 4:
+                this.b.lambda$checkUnreadReactionsInternal2$425(this.c, this.d, this.e, tLObject, tL_error);
                 break;
             default:
-                NotificationsSettingsActivity.T((NotificationsSettingsActivity) this.b, (ArrayList) this.c, (ArrayList) this.d, (ArrayList) this.v, (ArrayList) this.e, (ArrayList) this.f, (ArrayList) this.h, (ArrayList) this.n, (ArrayList) this.r, (Runnable) this.s);
+                this.b.lambda$checkUnreadReactionsInternal2$427(this.c, this.d, this.e, tLObject, tL_error);
                 break;
         }
-    }
-
-    public /* synthetic */ tb(NotificationsSettingsActivity notificationsSettingsActivity, ArrayList arrayList, ArrayList arrayList2, ArrayList arrayList3, ArrayList arrayList4, ArrayList arrayList5, ArrayList arrayList6, ArrayList arrayList7, ArrayList arrayList8, Runnable runnable) {
-        this.a = 2;
-        this.b = notificationsSettingsActivity;
-        this.c = arrayList;
-        this.d = arrayList2;
-        this.v = arrayList3;
-        this.e = arrayList4;
-        this.f = arrayList5;
-        this.h = arrayList6;
-        this.n = arrayList7;
-        this.r = arrayList8;
-        this.s = runnable;
     }
 }

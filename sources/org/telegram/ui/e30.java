@@ -1,23 +1,23 @@
 package org.telegram.ui;
 
-import android.view.ViewGroup;
-import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class e30 extends f2.d1 {
-    public final /* synthetic */ o50 a;
+public final class e30 extends UndoView {
+    public final /* synthetic */ r50 b0;
 
-    public e30(o50 o50Var) {
-        this.a = o50Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public e30(r50 r50Var, LaunchActivity launchActivity) {
+        super(launchActivity);
+        this.b0 = r50Var;
     }
 
-    @Override // f2.d1
-    public final void b(RecyclerView recyclerView, int i9, int i10) {
-        ViewGroup viewGroup;
-        o50 o50Var = this.a;
-        viewGroup = ((org.telegram.ui.ActionBar.f3) o50Var).containerView;
-        viewGroup.invalidate();
-        o50Var.W1.invalidate();
+    @Override // org.telegram.ui.Components.UndoView
+    public final void k(long j10, int i10, Object obj, Object obj2, Runnable runnable, Runnable runnable2) {
+        if (this.b0.v0 != null) {
+            return;
+        }
+        super.k(j10, i10, obj, obj2, runnable, runnable2);
     }
 }

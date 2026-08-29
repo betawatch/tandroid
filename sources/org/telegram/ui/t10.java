@@ -1,53 +1,48 @@
 package org.telegram.ui;
 
-import android.text.style.URLSpan;
+import android.content.Context;
 import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class t10 implements Utilities.CallbackReturn {
+public final class t10 implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ Context b;
+    public final /* synthetic */ dg.a c;
 
-    public /* synthetic */ t10(Object obj, int i9) {
-        this.a = i9;
-        this.b = obj;
+    public /* synthetic */ t10(Context context, dg.a aVar, int i10) {
+        this.a = i10;
+        this.b = context;
+        this.c = aVar;
     }
 
-    @Override // org.telegram.messenger.Utilities.CallbackReturn
-    public final Object run(Object obj) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                x10 x10Var = (x10) this.b;
-                x10Var.getClass();
-                if (((View) obj).getParent() == x10Var.c) {
-                    break;
-                } else {
-                    break;
-                }
-            case 1:
-                of0 of0Var = (of0) this.b;
-                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj;
-                if (tL_error != null && "PHONE_CODE_EXPIRED".equalsIgnoreCase(tL_error.text)) {
-                    AndroidUtilities.runOnUIThread(new lf0(of0Var, 1));
-                    break;
-                } else {
-                    break;
-                }
+                h hVar = new h(this, 18);
+                Context context = this.b;
+                org.telegram.ui.Components.r8 r8Var = new org.telegram.ui.Components.r8(context, false, hVar, 1);
+                dg.j jVar = this.c.c;
+                r8Var.e(jVar != null ? jVar.C : 0, 0);
+                r8Var.f(-1, 1, 1, false);
+                org.telegram.ui.ActionBar.f3 f3Var = new org.telegram.ui.ActionBar.f3(context, false);
+                f3Var.setCustomView(r8Var);
+                f3Var.setDimBehind(false);
+                f3Var.show();
                 break;
             default:
-                ProfileActivity profileActivity = (ProfileActivity) this.b;
-                URLSpan uRLSpan = (URLSpan) obj;
-                if (uRLSpan == null) {
-                    break;
-                } else {
-                    profileActivity.B4(uRLSpan.getURL(), null);
-                    break;
-                }
+                h hVar2 = new h(this, 19);
+                Context context2 = this.b;
+                org.telegram.ui.Components.r8 r8Var2 = new org.telegram.ui.Components.r8(context2, false, hVar2, 2);
+                dg.j jVar2 = this.c.c;
+                r8Var2.e(jVar2 == null ? 0 : jVar2.B, 0);
+                r8Var2.f(-1, 1, 1, false);
+                org.telegram.ui.ActionBar.f3 f3Var2 = new org.telegram.ui.ActionBar.f3(context2, false);
+                f3Var2.setCustomView(r8Var2);
+                f3Var2.setDimBehind(false);
+                f3Var2.show();
+                break;
         }
-        return Boolean.FALSE;
     }
 }

@@ -1,131 +1,141 @@
 package t5;
 
-import android.app.PendingIntent;
-import android.content.Context;
-import android.content.Intent;
-import android.os.Bundle;
-import android.os.Looper;
-import android.os.Message;
-import android.os.Messenger;
-import android.os.RemoteException;
+import a4.w;
+import android.text.TextUtils;
 import android.util.Log;
-import com.google.android.exoplayer2.upstream.w;
-import com.google.android.gms.tasks.Task;
-import com.google.android.gms.tasks.TaskCompletionSource;
-import java.util.concurrent.ScheduledThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
-import java.util.regex.Pattern;
-import org.telegram.ui.Components.ju0;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Iterator;
+import java.util.List;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+import s5.b;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class a {
-    public static int h;
-    public static PendingIntent i;
-    public static final Pattern j = Pattern.compile("\\|ID\\|([^|]+)\\|:?+(.*)");
-    public final Context b;
-    public final w c;
-    public final ScheduledThreadPoolExecutor d;
-    public Messenger f;
-    public g g;
-    public final a0.k a = new a0.k(0);
-    public final Messenger e = new Messenger(new d(this, Looper.getMainLooper()));
+public abstract class a {
+    public static final b a = new b("MetadataUtils", null);
+    public static final String[] b;
+    public static final String c;
 
-    public a(Context context) {
-        this.b = context;
-        this.c = new w(context);
-        ScheduledThreadPoolExecutor scheduledThreadPoolExecutor = new ScheduledThreadPoolExecutor(1);
-        scheduledThreadPoolExecutor.setKeepAliveTime(60L, TimeUnit.SECONDS);
-        scheduledThreadPoolExecutor.allowCoreThreadTimeOut(true);
-        this.d = scheduledThreadPoolExecutor;
+    static {
+        String[] strArr = {"Z", "+hh", "+hhmm", "+hh:mm"};
+        b = strArr;
+        c = "yyyyMMdd'T'HHmmss".concat(String.valueOf(strArr[0]));
     }
 
-    public static synchronized String b() {
-        String num;
-        synchronized (a.class) {
-            int i9 = h;
-            h = i9 + 1;
-            num = Integer.toString(i9);
+    /* JADX WARN: Removed duplicated region for block: B:12:0x003b  */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x0043  */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x00e9  */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x00fc  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static Calendar a(String str) {
+        String substring;
+        String substring2;
+        String str2;
+        boolean isEmpty = TextUtils.isEmpty(str);
+        b bVar = a;
+        if (isEmpty) {
+            bVar.b("Input string is empty or null", new Object[0]);
+            return null;
         }
-        return num;
-    }
-
-    public static synchronized void c(Context context, Intent intent) {
-        synchronized (a.class) {
-            try {
-                if (i == null) {
-                    Intent intent2 = new Intent();
-                    intent2.setPackage("com.google.example.invalidpackage");
-                    i = PendingIntent.getBroadcast(context, 0, intent2, v6.a.a);
-                }
-                intent.putExtra("app", i);
-            } catch (Throwable th) {
-                throw th;
-            }
-        }
-    }
-
-    public final Task a(Bundle bundle) {
-        String b10 = b();
-        TaskCompletionSource taskCompletionSource = new TaskCompletionSource();
-        synchronized (this.a) {
-            this.a.put(b10, taskCompletionSource);
-        }
-        Intent intent = new Intent();
-        intent.setPackage("com.google.android.gms");
-        if (this.c.g() == 2) {
-            intent.setAction("com.google.iid.TOKEN_REQUEST");
+        if (TextUtils.isEmpty(str)) {
+            bVar.b("Input string is empty or null", new Object[0]);
         } else {
-            intent.setAction("com.google.android.c2dm.intent.REGISTER");
-        }
-        intent.putExtras(bundle);
-        c(this.b, intent);
-        intent.putExtra("kid", "|ID|" + b10 + "|");
-        if (Log.isLoggable("Rpc", 3)) {
-            Log.d("Rpc", "Sending ".concat(String.valueOf(intent.getExtras())));
-        }
-        intent.putExtra("google.messenger", this.e);
-        if (this.f != null || this.g != null) {
-            Message obtain = Message.obtain();
-            obtain.obj = intent;
             try {
-                Messenger messenger = this.f;
-                if (messenger != null) {
-                    messenger.send(obtain);
+                substring = str.substring(0, 8);
+            } catch (IndexOutOfBoundsException e10) {
+                Log.e(bVar.a, bVar.d("Error extracting the date", new Object[0]), e10);
+            }
+            if (!TextUtils.isEmpty(substring)) {
+                bVar.b("Invalid date format", new Object[0]);
+                return null;
+            }
+            try {
+                if (TextUtils.isEmpty(str)) {
+                    bVar.b("string is empty or null", new Object[0]);
                 } else {
-                    Messenger messenger2 = this.g.a;
-                    messenger2.getClass();
-                    messenger2.send(obtain);
+                    int indexOf = str.indexOf(84);
+                    int i10 = indexOf + 1;
+                    if (indexOf == 8) {
+                        try {
+                            substring2 = str.substring(i10);
+                            if (substring2.length() != 6) {
+                                char charAt = substring2.charAt(6);
+                                String[] strArr = b;
+                                if (charAt == '+' || charAt == '-') {
+                                    int length = substring2.length();
+                                    if (length == strArr[1].length() + 6 || length == strArr[2].length() + 6 || length == strArr[3].length() + 6) {
+                                        substring2 = substring2.replaceAll("([\\+\\-]\\d\\d):(\\d\\d)", "$1$2");
+                                    }
+                                } else if (charAt == 'Z' && substring2.length() == strArr[0].length() + 6) {
+                                    substring2 = String.valueOf(substring2.substring(0, substring2.length() - 1)).concat("+0000");
+                                }
+                            }
+                        } catch (IndexOutOfBoundsException e11) {
+                            Log.e(bVar.a, bVar.d("Error extracting the time substring: %s", new Object[0]), e11);
+                        }
+                        if (TextUtils.isEmpty(substring2)) {
+                            substring = w.y(substring, "T", substring2);
+                            str2 = substring2.length() == 6 ? "yyyyMMdd'T'HHmmss" : c;
+                        } else {
+                            str2 = "yyyyMMdd";
+                        }
+                        Calendar calendar = Calendar.getInstance();
+                        calendar.setTime(new SimpleDateFormat(str2).parse(substring));
+                        return calendar;
+                    }
+                    bVar.b("T delimeter is not found", new Object[0]);
                 }
-            } catch (RemoteException unused) {
-                if (Log.isLoggable("Rpc", 3)) {
-                    Log.d("Rpc", "Messenger failed, fallback to startService");
-                }
+                calendar.setTime(new SimpleDateFormat(str2).parse(substring));
+                return calendar;
+            } catch (ParseException e12) {
+                Log.e(bVar.a, bVar.d("Error parsing string", new Object[0]), e12);
+                return null;
             }
-            taskCompletionSource.getTask().addOnCompleteListener(m.a, new c(this, b10, this.d.schedule(new ju0(taskCompletionSource, 7), 30L, TimeUnit.SECONDS), 0));
-            return taskCompletionSource.getTask();
+            substring2 = null;
+            if (TextUtils.isEmpty(substring2)) {
+            }
+            Calendar calendar2 = Calendar.getInstance();
         }
-        if (this.c.g() == 2) {
-            this.b.sendBroadcast(intent);
-        } else {
-            this.b.startService(intent);
+        substring = null;
+        if (!TextUtils.isEmpty(substring)) {
         }
-        taskCompletionSource.getTask().addOnCompleteListener(m.a, new c(this, b10, this.d.schedule(new ju0(taskCompletionSource, 7), 30L, TimeUnit.SECONDS), 0));
-        return taskCompletionSource.getTask();
     }
 
-    public final void d(String str, Bundle bundle) {
-        synchronized (this.a) {
+    public static JSONArray b(List list) {
+        list.getClass();
+        JSONArray jSONArray = new JSONArray();
+        Iterator it = list.iterator();
+        while (it.hasNext()) {
+            y5.a aVar = (y5.a) it.next();
+            aVar.getClass();
+            JSONObject jSONObject = new JSONObject();
             try {
-                TaskCompletionSource taskCompletionSource = (TaskCompletionSource) this.a.remove(str);
-                if (taskCompletionSource != null) {
-                    taskCompletionSource.setResult(bundle);
-                    return;
-                }
-                Log.w("Rpc", "Missing callback for " + str);
-            } catch (Throwable th) {
-                throw th;
+                jSONObject.put("url", aVar.b.toString());
+                jSONObject.put("width", aVar.c);
+                jSONObject.put("height", aVar.d);
+            } catch (JSONException unused) {
             }
+            jSONArray.put(jSONObject);
+        }
+        return jSONArray;
+    }
+
+    public static void c(List list, JSONArray jSONArray) {
+        try {
+            list.clear();
+            for (int i10 = 0; i10 < jSONArray.length(); i10++) {
+                try {
+                    list.add(new y5.a(jSONArray.getJSONObject(i10)));
+                } catch (IllegalArgumentException unused) {
+                }
+            }
+        } catch (JSONException unused2) {
         }
     }
 }

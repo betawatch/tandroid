@@ -1,51 +1,31 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.ui.Components.ChatActivityEnterView;
-
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class wd implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ boolean f;
+    public final /* synthetic */ org.telegram.ui.ActionBar.o2 b;
 
-    public /* synthetic */ wd(int i9, int i10, int i11, long j10, MessagesController messagesController, boolean z10) {
-        this.a = i11;
-        this.b = messagesController;
-        this.c = j10;
-        this.d = i9;
-        this.e = i10;
-        this.f = z10;
+    public /* synthetic */ wd(int i10, org.telegram.ui.ActionBar.o2 o2Var) {
+        this.a = i10;
+        this.b = o2Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        int i9 = this.a;
-        NotificationCenter.NotificationCenterDelegate notificationCenterDelegate = this.b;
-        switch (i9) {
+        switch (this.a) {
             case 0:
-                ((MessagesController) notificationCenterDelegate).lambda$markDialogAsRead$242(this.c, this.d, this.e, this.f);
+                MessagesController.lambda$checkSensitive$447(this.b);
                 break;
             case 1:
-                ((MessagesController) notificationCenterDelegate).lambda$markDialogAsRead$241(this.c, this.d, this.e, this.f);
+                org.telegram.ui.Components.c5.t0(7, this.b, null);
+                break;
+            case 2:
+                org.telegram.ui.Components.c5.t0(8, this.b, null);
                 break;
             default:
-                int i10 = ChatActivityEnterView.i5;
-                ((ChatActivityEnterView) notificationCenterDelegate).T0(this.d, this.f, this.e, false, this.c);
+                TranslateController.lambda$pushToSummarize$18(this.b);
                 break;
         }
-    }
-
-    public /* synthetic */ wd(ChatActivityEnterView chatActivityEnterView, boolean z10, int i9, int i10, long j10) {
-        this.a = 2;
-        this.b = chatActivityEnterView;
-        this.f = z10;
-        this.d = i9;
-        this.e = i10;
-        this.c = j10;
     }
 }

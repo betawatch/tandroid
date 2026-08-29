@@ -1,5 +1,6 @@
 package r1;
 
+import a4.w;
 import android.util.Log;
 import java.io.IOException;
 import java.io.InputStream;
@@ -7,7 +8,7 @@ import java.io.Serializable;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class c {
     public final int a;
@@ -15,8 +16,8 @@ public final class c {
     public final long c;
     public final byte[] d;
 
-    public c(int i9, int i10, byte[] bArr) {
-        this(-1L, bArr, i9, i10);
+    public c(int i10, int i11, byte[] bArr) {
+        this(-1L, bArr, i10, i11);
     }
 
     public static c a(long j10, ByteOrder byteOrder) {
@@ -37,10 +38,10 @@ public final class c {
         return new c(5, 1, wrap.array());
     }
 
-    public static c c(int i9, ByteOrder byteOrder) {
+    public static c c(int i10, ByteOrder byteOrder) {
         ByteBuffer wrap = ByteBuffer.wrap(new byte[g.F[3]]);
         wrap.order(byteOrder);
-        wrap.putShort((short) new int[]{i9}[0]);
+        wrap.putShort((short) new int[]{i10}[0]);
         return new c(3, 1, wrap.array());
     }
 
@@ -116,13 +117,13 @@ public final class c {
             return (String) g10;
         }
         StringBuilder sb2 = new StringBuilder();
-        int i9 = 0;
+        int i10 = 0;
         if (g10 instanceof long[]) {
             long[] jArr = (long[]) g10;
-            while (i9 < jArr.length) {
-                sb2.append(jArr[i9]);
-                i9++;
-                if (i9 != jArr.length) {
+            while (i10 < jArr.length) {
+                sb2.append(jArr[i10]);
+                i10++;
+                if (i10 != jArr.length) {
                     sb2.append(",");
                 }
             }
@@ -130,10 +131,10 @@ public final class c {
         }
         if (g10 instanceof int[]) {
             int[] iArr = (int[]) g10;
-            while (i9 < iArr.length) {
-                sb2.append(iArr[i9]);
-                i9++;
-                if (i9 != iArr.length) {
+            while (i10 < iArr.length) {
+                sb2.append(iArr[i10]);
+                i10++;
+                if (i10 != iArr.length) {
                     sb2.append(",");
                 }
             }
@@ -141,10 +142,10 @@ public final class c {
         }
         if (g10 instanceof double[]) {
             double[] dArr = (double[]) g10;
-            while (i9 < dArr.length) {
-                sb2.append(dArr[i9]);
-                i9++;
-                if (i9 != dArr.length) {
+            while (i10 < dArr.length) {
+                sb2.append(dArr[i10]);
+                i10++;
+                if (i10 != dArr.length) {
                     sb2.append(",");
                 }
             }
@@ -154,12 +155,12 @@ public final class c {
             return null;
         }
         e[] eVarArr = (e[]) g10;
-        while (i9 < eVarArr.length) {
-            sb2.append(eVarArr[i9].a);
+        while (i10 < eVarArr.length) {
+            sb2.append(eVarArr[i10].a);
             sb2.append('/');
-            sb2.append(eVarArr[i9].b);
-            i9++;
-            if (i9 != eVarArr.length) {
+            sb2.append(eVarArr[i10].b);
+            i10++;
+            if (i10 != eVarArr.length) {
                 sb2.append(",");
             }
         }
@@ -195,10 +196,10 @@ public final class c {
                 bVar = new b(bArr);
                 try {
                     bVar.b = byteOrder;
-                    int i9 = this.a;
-                    int i10 = 0;
-                    int i11 = this.b;
-                    switch (i9) {
+                    int i10 = this.a;
+                    int i11 = 0;
+                    int i12 = this.b;
+                    switch (i10) {
                         case 1:
                         case 6:
                             if (bArr.length == 1 && (b10 = bArr[0]) >= 0 && b10 <= 1) {
@@ -216,20 +217,20 @@ public final class c {
                             break;
                         case 2:
                         case 7:
-                            if (i11 >= g.G.length) {
-                                int i12 = 0;
+                            if (i12 >= g.G.length) {
+                                int i13 = 0;
                                 while (true) {
                                     byte[] bArr2 = g.G;
-                                    if (i12 >= bArr2.length) {
-                                        i10 = bArr2.length;
-                                    } else if (bArr[i12] == bArr2[i12]) {
-                                        i12++;
+                                    if (i13 >= bArr2.length) {
+                                        i11 = bArr2.length;
+                                    } else if (bArr[i13] == bArr2[i13]) {
+                                        i13++;
                                     }
                                 }
                             }
                             StringBuilder sb2 = new StringBuilder();
-                            while (i10 < i11) {
-                                byte b11 = bArr[i10];
+                            while (i11 < i12) {
+                                byte b11 = bArr[i11];
                                 if (b11 == 0) {
                                     str = sb2.toString();
                                     break;
@@ -239,57 +240,57 @@ public final class c {
                                     } else {
                                         sb2.append('?');
                                     }
-                                    i10++;
+                                    i11++;
                                 }
                             }
                             str = sb2.toString();
                         case 3:
-                            str = new int[i11];
-                            while (i10 < i11) {
-                                str[i10] = bVar.readUnsignedShort();
-                                i10++;
+                            str = new int[i12];
+                            while (i11 < i12) {
+                                str[i11] = bVar.readUnsignedShort();
+                                i11++;
                             }
                         case 4:
-                            str = new long[i11];
-                            while (i10 < i11) {
-                                str[i10] = bVar.readInt() & 4294967295L;
-                                i10++;
+                            str = new long[i12];
+                            while (i11 < i12) {
+                                str[i11] = bVar.readInt() & 4294967295L;
+                                i11++;
                             }
                         case 5:
-                            str = new e[i11];
-                            while (i10 < i11) {
-                                str[i10] = new e(bVar.readInt() & 4294967295L, bVar.readInt() & 4294967295L);
-                                i10++;
+                            str = new e[i12];
+                            while (i11 < i12) {
+                                str[i11] = new e(bVar.readInt() & 4294967295L, bVar.readInt() & 4294967295L);
+                                i11++;
                             }
                         case 8:
-                            str = new int[i11];
-                            while (i10 < i11) {
-                                str[i10] = bVar.readShort();
-                                i10++;
+                            str = new int[i12];
+                            while (i11 < i12) {
+                                str[i11] = bVar.readShort();
+                                i11++;
                             }
                         case 9:
-                            str = new int[i11];
-                            while (i10 < i11) {
-                                str[i10] = bVar.readInt();
-                                i10++;
+                            str = new int[i12];
+                            while (i11 < i12) {
+                                str[i11] = bVar.readInt();
+                                i11++;
                             }
                         case 10:
-                            str = new e[i11];
-                            while (i10 < i11) {
-                                str[i10] = new e(bVar.readInt(), bVar.readInt());
-                                i10++;
+                            str = new e[i12];
+                            while (i11 < i12) {
+                                str[i11] = new e(bVar.readInt(), bVar.readInt());
+                                i11++;
                             }
                         case 11:
-                            str = new double[i11];
-                            while (i10 < i11) {
-                                str[i10] = bVar.readFloat();
-                                i10++;
+                            str = new double[i12];
+                            while (i11 < i12) {
+                                str[i11] = bVar.readFloat();
+                                i11++;
                             }
                         case 12:
-                            str = new double[i11];
-                            while (i10 < i11) {
-                                str[i10] = bVar.readDouble();
-                                i10++;
+                            str = new double[i12];
+                            while (i11 < i12) {
+                                str[i11] = bVar.readDouble();
+                                i11++;
                             }
                         default:
                             try {
@@ -319,8 +320,8 @@ public final class c {
                     }
                     return null;
                 }
-            } catch (Throwable th) {
-                th = th;
+            } catch (Throwable th2) {
+                th = th2;
                 inputStream2 = inputStream;
                 if (inputStream2 != null) {
                     try {
@@ -334,8 +335,8 @@ public final class c {
         } catch (IOException e16) {
             e = e16;
             bVar = null;
-        } catch (Throwable th2) {
-            th = th2;
+        } catch (Throwable th3) {
+            th = th3;
             if (inputStream2 != null) {
             }
             throw th;
@@ -346,12 +347,12 @@ public final class c {
         StringBuilder sb2 = new StringBuilder("(");
         sb2.append(g.E[this.a]);
         sb2.append(", data length:");
-        return aa.d.l(this.d.length, ")", sb2);
+        return w.l(this.d.length, ")", sb2);
     }
 
-    public c(long j10, byte[] bArr, int i9, int i10) {
-        this.a = i9;
-        this.b = i10;
+    public c(long j10, byte[] bArr, int i10, int i11) {
+        this.a = i10;
+        this.b = i11;
         this.c = j10;
         this.d = bArr;
     }

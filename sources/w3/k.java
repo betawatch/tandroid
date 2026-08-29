@@ -1,28 +1,21 @@
 package w3;
 
-import java.util.Arrays;
+import o3.w;
+import o3.x;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class k {
-    public static final byte[] f = {0, 0, 1};
-    public boolean a;
-    public int b;
-    public int c;
-    public int d;
-    public byte[] e;
+    public final o a;
+    public final r b;
+    public final w c;
+    public final x d;
+    public int e;
 
-    public final void a(int i9, int i10, byte[] bArr) {
-        if (this.a) {
-            int i11 = i10 - i9;
-            byte[] bArr2 = this.e;
-            int length = bArr2.length;
-            int i12 = this.c + i11;
-            if (length < i12) {
-                this.e = Arrays.copyOf(bArr2, i12 * 2);
-            }
-            System.arraycopy(bArr, i9, this.e, this.c, i11);
-            this.c += i11;
-        }
+    public k(o oVar, r rVar, w wVar) {
+        this.a = oVar;
+        this.b = rVar;
+        this.c = wVar;
+        this.d = "audio/true-hd".equals(oVar.f.B) ? new x() : null;
     }
 }

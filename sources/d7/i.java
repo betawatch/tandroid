@@ -1,57 +1,55 @@
 package d7;
 
-import com.google.android.gms.internal.cast.j0;
-import java.util.Iterator;
-import java.util.Map;
+import android.os.Parcel;
+import com.google.android.gms.location.LocationAvailability;
+import com.google.android.gms.location.LocationResult;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class i extends f {
-    public final transient j0 c;
-    public final transient Object[] d;
-    public final transient int e;
+public final class i extends c7.a implements s7.m {
+    public static final /* synthetic */ int c = 0;
+    public final androidx.activity.n b;
 
-    public i(j0 j0Var, Object[] objArr, int i9) {
-        this.c = j0Var;
-        this.d = objArr;
-        this.e = i9;
+    public i(androidx.activity.n nVar) {
+        super("com.google.android.gms.location.ILocationCallback", 4);
+        this.b = nVar;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final boolean contains(Object obj) {
-        if (obj instanceof Map.Entry) {
-            Map.Entry entry = (Map.Entry) obj;
-            Object key = entry.getKey();
-            Object value = entry.getValue();
-            if (value != null && value.equals(this.c.get(key))) {
-                return true;
+    @Override // c7.a
+    public final boolean I0(Parcel parcel, int i10) {
+        androidx.activity.n nVar = this.b;
+        if (i10 == 1) {
+            LocationResult locationResult = (LocationResult) d.a(parcel, LocationResult.CREATOR);
+            d.b(parcel);
+            nVar.e().a(new za.c(locationResult, 11));
+            return true;
+        }
+        if (i10 != 2) {
+            if (i10 != 3) {
+                return false;
+            }
+            J0();
+            return true;
+        }
+        LocationAvailability locationAvailability = (LocationAvailability) d.a(parcel, LocationAvailability.CREATOR);
+        d.b(parcel);
+        nVar.e().a(new ha.c(locationAvailability, 13));
+        return true;
+    }
+
+    public final void J0() {
+        this.b.e().a(new m5.i(this, 10));
+    }
+
+    public final void K0(com.google.android.gms.common.api.internal.p pVar) {
+        androidx.activity.n nVar = this.b;
+        synchronized (nVar) {
+            com.google.android.gms.common.api.internal.p pVar2 = (com.google.android.gms.common.api.internal.p) nVar.b;
+            if (pVar2 != pVar) {
+                pVar2.b = null;
+                pVar2.c = null;
+                nVar.b = pVar;
             }
         }
-        return false;
-    }
-
-    @Override // d7.a
-    public final int i(Object[] objArr) {
-        d dVar = this.b;
-        if (dVar == null) {
-            dVar = new h(this);
-            this.b = dVar;
-        }
-        return dVar.i(objArr);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
-    public final Iterator iterator() {
-        d dVar = this.b;
-        if (dVar == null) {
-            dVar = new h(this);
-            this.b = dVar;
-        }
-        return dVar.listIterator(0);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final int size() {
-        return this.e;
     }
 }

@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
 public final class xz0 implements m2.e {
     public int a;
@@ -13,12 +13,12 @@ public final class xz0 implements m2.e {
     }
 
     @Override // m2.e
-    public final void b(int i9) {
+    public final void a(int i10) {
         yz0 yz0Var = this.b;
         ProfileActivity profileActivity = yz0Var.n;
-        int k10 = profileActivity.j0.z0.k(i9);
-        yz0Var.a(this.a != k10);
-        this.a = k10;
+        int k9 = profileActivity.j0.z0.k(i10);
+        yz0Var.a(this.a != k9);
+        this.a = k9;
         if (profileActivity.m0 == null) {
             return;
         }
@@ -30,10 +30,10 @@ public final class xz0 implements m2.e {
     }
 
     @Override // m2.e
-    public final void d(int i9) {
+    public final void c(int i10) {
     }
 
     @Override // m2.e
-    public final void c(float f10, int i9, int i10) {
+    public final void b(float f9, int i10, int i11) {
     }
 }

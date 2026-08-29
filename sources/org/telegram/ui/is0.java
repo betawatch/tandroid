@@ -1,48 +1,29 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import android.content.Context;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class is0 extends org.telegram.ui.Components.f00 {
-    public final /* synthetic */ qr0 e;
-    public final /* synthetic */ PhotoViewer f;
+public final class is0 extends org.telegram.ui.Components.d71 {
+    public final /* synthetic */ PhotoViewer d0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public is0(PhotoViewer photoViewer, qr0 qr0Var) {
-        super(false);
-        this.f = photoViewer;
-        this.e = qr0Var;
+    public is0(PhotoViewer photoViewer, Context context, oq0 oq0Var) {
+        super(context, oq0Var);
+        this.d0 = photoViewer;
     }
 
-    @Override // org.telegram.ui.Components.mn0
-    public final CharSequence d() {
-        StringBuilder sb2 = new StringBuilder();
-        PhotoViewer photoViewer = this.f;
-        int[] iArr = photoViewer.i3;
-        sb2.append(LocaleController.formatPluralString("Minutes", iArr[0], new Object[0]));
-        sb2.append(' ');
-        sb2.append(LocaleController.formatPluralString("Seconds", iArr[1], new Object[0]));
-        String sb3 = sb2.toString();
-        StringBuilder sb4 = new StringBuilder();
-        int[] iArr2 = photoViewer.j3;
-        sb4.append(LocaleController.formatPluralString("Minutes", iArr2[0], new Object[0]));
-        sb4.append(' ');
-        sb4.append(LocaleController.formatPluralString("Seconds", iArr2[1], new Object[0]));
-        return LocaleController.formatString("AccDescrPlayerDuration", R.string.AccDescrPlayerDuration, sb3, sb4.toString());
+    @Override // android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        PhotoViewer.X(this.d0);
     }
 
-    @Override // org.telegram.ui.Components.f00
-    public final float k() {
-        return this.f.m3.c();
-    }
-
-    @Override // org.telegram.ui.Components.f00
-    public final void l(float f10) {
-        this.e.b(f10);
-        PhotoViewer photoViewer = this.f;
-        photoViewer.m3.h(f10, false);
-        photoViewer.n3.invalidate();
+    @Override // android.view.View
+    public final void setVisibility(int i10) {
+        super.setVisibility(i10);
+        if (i10 == 0) {
+            PhotoViewer.X(this.d0);
+        }
     }
 }

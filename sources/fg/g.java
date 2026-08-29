@@ -1,250 +1,133 @@
 package fg;
 
-import android.content.Context;
-import android.graphics.Rect;
+import ag.n;
 import android.text.TextUtils;
-import android.view.KeyEvent;
-import android.view.MotionEvent;
 import android.view.View;
-import android.view.accessibility.AccessibilityNodeInfo;
-import j3.r0;
-import kh.g2;
-import kh.q9;
-import of.m0;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.e5;
-import org.telegram.ui.ActionBar.w0;
-import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.ec0;
-import org.telegram.ui.Components.hm0;
-import org.telegram.ui.Components.l10;
-import org.telegram.ui.Components.m10;
-import org.telegram.ui.Components.w20;
-import org.telegram.ui.UsersSelectActivity;
-import org.telegram.ui.ge0;
-import org.telegram.ui.ix;
-import org.telegram.ui.o00;
-import org.telegram.ui.o70;
-import org.telegram.ui.po;
-import org.telegram.ui.q70;
-import org.telegram.ui.vo;
+import eg.j2;
+import org.telegram.messenger.DialogObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.jq;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class g extends EditTextBoldCursor {
-    public final /* synthetic */ int b;
-    public final /* synthetic */ Object c;
+public final class g extends zf.a {
+    public TLRPC.User c;
+    public TLRPC.InputPeer d;
+    public TLRPC.Chat e;
+    public TLRPC.TL_help_country f;
+    public CharSequence g;
+    public String h;
+    public int i;
+    public int j;
+    public boolean k;
+    public int l;
+    public n m;
+    public n n;
+    public j2 o;
+    public j2 p;
+    public View q;
+    public jq r;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ g(Object obj, Context context, int i9) {
-        super(context);
-        this.b = i9;
-        this.c = obj;
+    public g(int i10, boolean z10) {
+        super(i10, z10);
+        this.l = -1;
     }
 
-    @Override // org.telegram.ui.Components.ot, android.view.View
-    public boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        switch (this.b) {
-            case 7:
-                ((hm0) this.c).getClass();
-                break;
+    public static g b(CharSequence charSequence) {
+        g gVar = new g(8, false);
+        gVar.g = charSequence;
+        return gVar;
+    }
+
+    public static g c(TLRPC.User user, boolean z10) {
+        g gVar = new g(3, true);
+        gVar.c = user;
+        gVar.d = null;
+        gVar.e = null;
+        gVar.k = z10;
+        return gVar;
+    }
+
+    @Override // zf.a
+    public final boolean a(zf.a aVar) {
+        if (this != aVar) {
+            if (g.class == aVar.getClass()) {
+                g gVar = (g) aVar;
+                if (this.k == gVar.k) {
+                    if (this.a == 8) {
+                        if (TextUtils.equals(this.h, gVar.h)) {
+                            if ((this.m == null) == (gVar.m == null)) {
+                            }
+                        }
+                    }
+                }
+            }
+            return false;
         }
-        return super.dispatchTouchEvent(motionEvent);
+        return true;
     }
 
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
-    public void onFocusChanged(boolean z10, int i9, Rect rect) {
-        switch (this.b) {
-            case 1:
-                super.onFocusChanged(z10, i9, rect);
-                if (!z10) {
-                    AndroidUtilities.hideKeyboard(((g2) this.c).d);
-                    break;
-                }
-                break;
-            case 6:
-                super.onFocusChanged(z10, i9, rect);
-                ec0 ec0Var = (ec0) this.c;
-                float f10 = (z10 || isFocused()) ? 1.0f : 0.0f;
-                ec0Var.b(f10, f10, true);
-                break;
-            default:
-                super.onFocusChanged(z10, i9, rect);
-                break;
+    public final boolean equals(Object obj) {
+        long peerDialogId;
+        if (this == obj) {
+            return true;
         }
-    }
-
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.view.View
-    public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        switch (this.b) {
-            case 4:
-                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                StringBuilder sb2 = new StringBuilder();
-                sb2.append((CharSequence) getText());
-                vo voVar = (vo) this.c;
-                po poVar = voVar.f;
-                if (poVar != null && poVar.getTextView() != null && !TextUtils.isEmpty(voVar.f.getTextView().getText())) {
-                    sb2.append("\n");
-                    sb2.append(voVar.f.getTextView().getText());
-                }
-                accessibilityNodeInfo.setText(sb2);
-                break;
-            default:
-                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                break;
+        if (obj == null || g.class != obj.getClass()) {
+            return false;
         }
-    }
-
-    @Override // android.widget.TextView, android.view.View, android.view.KeyEvent.Callback
-    public boolean onKeyDown(int i9, KeyEvent keyEvent) {
-        switch (this.b) {
-            case 3:
-                w0 w0Var = (w0) this.c;
-                if (i9 != 67 || w0Var.e.length() != 0 || ((w0Var.h.getVisibility() != 0 || w0Var.h.length() <= 0) && !w0Var.p())) {
-                    return super.onKeyDown(i9, keyEvent);
-                }
-                if (!w0Var.p()) {
-                    w0Var.s.callOnClick();
-                    return true;
-                }
-                m0 m0Var = (m0) r0.j(1, w0Var.c0);
-                e5 e5Var = w0Var.D;
-                if (e5Var != null) {
-                    e5Var.o(m0Var);
-                }
-                w0Var.C(m0Var);
-                return true;
-            case 5:
-                m10 m10Var = (m10) this.c;
-                if (i9 != 67 || m10Var.r.length() != 0 || !m10Var.e()) {
-                    return super.onKeyDown(i9, keyEvent);
-                }
-                if (!m10Var.e()) {
-                    return true;
-                }
-                m0 m0Var2 = (m0) r0.j(1, m10Var.B);
-                l10 l10Var = m10Var.D;
-                if (l10Var != null) {
-                    ((ix) l10Var).e(m0Var2);
-                }
-                m10Var.g(m0Var2);
-                return true;
-            case 8:
-                o70 o70Var = (o70) this.c;
-                q70 q70Var = o70Var.f;
-                if (i9 != 67 || o70Var.d.length() != 0 || q70Var.C.isEmpty()) {
-                    return super.onKeyDown(i9, keyEvent);
-                }
-                q70Var.f.a((w20) r0.j(1, q70Var.C));
-                q70Var.c.e(!q70Var.C.isEmpty(), true);
-                q70Var.b0();
-                return true;
-            default:
-                return super.onKeyDown(i9, keyEvent);
+        g gVar = (g) obj;
+        int i10 = this.a;
+        if (i10 != gVar.a) {
+            return false;
         }
-    }
-
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
-    public void onMeasure(int i9, int i10) {
-        switch (this.b) {
-            case 3:
-                super.onMeasure(i9, i10);
-                setMeasuredDimension(AndroidUtilities.dp(3.0f) + Math.max(View.MeasureSpec.getSize(i9), getMeasuredWidth()), getMeasuredHeight());
-                break;
-            case 4:
-            default:
-                super.onMeasure(i9, i10);
-                break;
-            case 5:
-                super.onMeasure(i9, i10);
-                setPivotX(getPaddingLeft());
-                setPivotY(getMeasuredHeight() / 2.0f);
-                break;
+        if (i10 == -1 && this.l != gVar.l) {
+            return false;
         }
-    }
-
-    @Override // android.widget.EditText, android.widget.TextView
-    public boolean onTextContextMenuItem(int i9) {
-        switch (this.b) {
-            case 9:
-                if (i9 == 16908322 || i9 == 16908337) {
-                    ((ge0) this.c).y = true;
-                    postDelayed(new o00(this, 21), 1000L);
-                }
-                break;
-        }
-        return super.onTextContextMenuItem(i9);
-    }
-
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
-    public boolean onTouchEvent(MotionEvent motionEvent) {
-        switch (this.b) {
-            case 0:
-                m mVar = (m) this.c;
-                w20 w20Var = mVar.f;
-                if (w20Var != null) {
-                    w20Var.a();
-                    mVar.f = null;
-                }
-                if (motionEvent.getAction() == 0 && !AndroidUtilities.showKeyboard(this)) {
-                    mVar.fullScroll(130);
-                    clearFocus();
-                    requestFocus();
-                }
-                break;
-            case 1:
-                g gVar = ((g2) this.c).d;
-                if (!gVar.isEnabled()) {
-                    break;
+        if (i10 == 3) {
+            TLRPC.User user = this.c;
+            long j10 = 0;
+            if (user != null) {
+                peerDialogId = user.id;
+            } else {
+                TLRPC.Chat chat = this.e;
+                if (chat != null) {
+                    peerDialogId = -chat.id;
                 } else {
-                    if (motionEvent.getAction() == 0) {
-                        gVar.requestFocus();
-                        AndroidUtilities.showKeyboard(gVar);
+                    TLRPC.InputPeer inputPeer = this.d;
+                    peerDialogId = inputPeer != null ? DialogObject.getPeerDialogId(inputPeer) : 0L;
+                }
+            }
+            TLRPC.User user2 = gVar.c;
+            if (user2 != null) {
+                j10 = user2.id;
+            } else {
+                TLRPC.Chat chat2 = gVar.e;
+                if (chat2 != null) {
+                    j10 = -chat2.id;
+                } else {
+                    TLRPC.InputPeer inputPeer2 = gVar.d;
+                    if (inputPeer2 != null) {
+                        j10 = DialogObject.getPeerDialogId(inputPeer2);
                     }
-                    break;
                 }
-            case 2:
-                q9 q9Var = (q9) this.c;
-                w20 w20Var2 = q9Var.e;
-                if (w20Var2 != null) {
-                    w20Var2.a();
-                    q9Var.e = null;
-                }
-                if (motionEvent.getAction() == 0 && !AndroidUtilities.showKeyboard(this)) {
-                    q9Var.fullScroll(130);
-                    clearFocus();
-                    requestFocus();
-                }
-                break;
-            case 3:
-                boolean onTouchEvent = super.onTouchEvent(motionEvent);
-                if (motionEvent.getAction() == 1 && !AndroidUtilities.showKeyboard(this)) {
-                    clearFocus();
-                    requestFocus();
-                    break;
-                }
-                break;
-            case 7:
-                if (isEnabled()) {
-                    if (motionEvent.getAction() == 1) {
-                        ((hm0) this.c).getClass();
-                    }
-                    break;
-                }
-                break;
-            case 10:
-                UsersSelectActivity usersSelectActivity = (UsersSelectActivity) this.c;
-                w20 w20Var3 = usersSelectActivity.L;
-                if (w20Var3 != null) {
-                    w20Var3.a();
-                    usersSelectActivity.L = null;
-                }
-                if (motionEvent.getAction() == 0 && !AndroidUtilities.showKeyboard(this)) {
-                    clearFocus();
-                    requestFocus();
-                }
-                break;
+            }
+            if (peerDialogId != j10) {
+                return false;
+            }
         }
-        return super.onTouchEvent(motionEvent);
+        int i11 = this.a;
+        if (i11 == 6 && this.f != gVar.f) {
+            return false;
+        }
+        if (i11 == 7 && !TextUtils.equals(this.g, gVar.g)) {
+            return false;
+        }
+        if (this.a == 8 && !TextUtils.equals(this.g, gVar.g)) {
+            return false;
+        }
+        if (this.a != 9 || (TextUtils.equals(this.g, gVar.g) && this.i == gVar.i && this.j == gVar.j)) {
+            return this.a != 10 || this.q == gVar.q;
+        }
+        return false;
     }
 }

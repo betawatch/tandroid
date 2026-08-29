@@ -5,16 +5,16 @@ import android.os.Message;
 import android.util.Log;
 import java.util.concurrent.locks.ReentrantLock;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class h0 extends c2.u0 {
+public final class h0 extends c2.v0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ h0(Object obj, Looper looper, int i9) {
+    public /* synthetic */ h0(Object obj, Looper looper, int i10) {
         super(looper, 4);
-        this.a = i9;
+        this.a = i10;
         this.b = obj;
     }
 
@@ -23,32 +23,32 @@ public final class h0 extends c2.u0 {
         switch (this.a) {
             case 0:
                 j0 j0Var = (j0) this.b;
-                int i9 = message.what;
-                if (i9 != 1) {
-                    if (i9 == 2) {
-                        j0.g(j0Var);
+                int i10 = message.what;
+                if (i10 != 1) {
+                    if (i10 == 2) {
+                        j0.h(j0Var);
                         return;
                     }
-                    Log.w("GoogleApiClientImpl", "Unknown message id: " + i9);
+                    Log.w("GoogleApiClientImpl", "Unknown message id: " + i10);
                     return;
                 }
                 ReentrantLock reentrantLock = j0Var.b;
                 reentrantLock.lock();
                 try {
-                    if (j0Var.h()) {
-                        j0Var.j();
+                    if (j0Var.i()) {
+                        j0Var.k();
                     }
                     return;
                 } finally {
                     reentrantLock.unlock();
                 }
             default:
-                int i10 = message.what;
-                if (i10 != 1) {
-                    if (i10 == 2) {
+                int i11 = message.what;
+                if (i11 != 1) {
+                    if (i11 == 2) {
                         throw ((RuntimeException) message.obj);
                     }
-                    Log.w("GACStateManager", "Unknown message id: " + i10);
+                    Log.w("GACStateManager", "Unknown message id: " + i11);
                     return;
                 }
                 l0 l0Var = (l0) message.obj;

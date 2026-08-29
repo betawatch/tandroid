@@ -1,107 +1,132 @@
 package org.telegram.ui.Components;
 
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Matrix;
 import android.graphics.Paint;
-import java.util.Random;
+import android.graphics.Path;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.RadialGradient;
+import android.graphics.RectF;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LiteMode;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
 public final class xc {
-    public float a;
-    public float b;
+    public float A;
+    public float B;
+    public float C;
+    public float D;
+    public final /* synthetic */ zc E;
+    public final Paint a;
+    public Bitmap b;
     public float c;
     public float d;
-    public float e;
-    public float f;
-    public int g;
-    public float[] k;
-    public float[] l;
-    public float[] m;
-    public float[] n;
-    public float[] o;
-    public float[] p;
-    public float[] q;
-    public float[] r;
-    public float[] s;
-    public float[] t;
-    public float[] u;
-    public float[] v;
-    public float[] w;
-    public int x;
-    public int h = -11318601;
-    public final Paint i = new Paint(1);
-    public final Random j = new Random();
-    public int y = 255;
+    public final d6 e;
+    public final d6 f;
+    public float g;
+    public final d6 h;
+    public float i;
+    public final d6 j;
+    public final n6 k;
+    public float l;
+    public final d6 m;
+    public boolean n;
+    public final d6 o;
+    public final Path p;
+    public final Paint q;
+    public final RectF r;
+    public final Paint s;
+    public final Paint t;
+    public final RectF u;
+    public RadialGradient v;
+    public Matrix w;
+    public float x;
+    public float y;
+    public float z;
 
-    public final void a() {
-        int i9 = this.h;
-        Paint paint = this.i;
-        paint.setColor(i9);
-        paint.setAlpha((this.g * this.y) / 255);
+    public xc(zc zcVar) {
+        this.E = zcVar;
+        Paint paint = new Paint(3);
+        this.a = paint;
+        paint.setColor(-1);
+        jr jrVar = jr.h;
+        this.e = new d6(zcVar, 650L, jrVar);
+        this.f = new d6(zcVar, 650L, jrVar);
+        jr jrVar2 = jr.g;
+        this.h = new d6(zcVar, 0L, 150L, jrVar2);
+        this.i = 1.0f;
+        this.j = new d6(zcVar, 0L, 150L, jrVar2);
+        n6 n6Var = new n6(false, true, true, false);
+        this.k = n6Var;
+        this.m = new d6(zcVar, 0L, 150L, jrVar2);
+        this.o = new d6(zcVar, 0L, 200L, jrVar);
+        n6Var.r(-1);
+        n6Var.k(0.35f, 200L, jrVar);
+        n6Var.u(AndroidUtilities.bold());
+        n6Var.t(AndroidUtilities.dp(15.0f));
+        n6Var.b = 17;
+        this.p = new Path();
+        Paint paint2 = new Paint(1);
+        this.q = paint2;
+        this.r = new RectF();
+        this.s = new Paint(1);
+        Paint paint3 = new Paint(1);
+        this.t = paint3;
+        paint3.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
+        paint2.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
+        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_ATOP));
+        this.u = new RectF();
     }
 
-    public final void b(int i9) {
-        float f10 = 0.18f / this.x;
-        float f11 = this.k[i9];
-        Random random = this.j;
-        float nextFloat = ((random.nextFloat() - 0.5f) * 2.0f * 0.35f) + f11;
-        float[] fArr = this.l;
-        if (nextFloat < 0.0f) {
-            nextFloat = 0.0f;
-        } else if (nextFloat > 1.0f) {
-            nextFloat = 1.0f;
+    public final void a(Canvas canvas, float f9, float f10, float f11, float f12, float f13, float f14, float f15, float f16, float f17, float f18) {
+        if (f18 <= 0.0f || !LiteMode.isEnabled(LiteMode.FLAGS_CHAT)) {
+            return;
         }
-        fArr[i9] = nextFloat;
-        float nextFloat2 = ((random.nextFloat() - 0.5f) * 2.0f * f10 * 0.35f) + this.m[i9];
-        float[] fArr2 = this.n;
-        float f12 = -f10;
-        if (nextFloat2 < f12) {
-            f10 = f12;
-        } else if (nextFloat2 <= f10) {
-            f10 = nextFloat2;
+        long currentTimeMillis = System.currentTimeMillis();
+        float sqrt = (float) Math.sqrt(2.0d);
+        if (zc.U < 0) {
+            zc.U = currentTimeMillis;
         }
-        fArr2[i9] = f10;
-        this.p[i9] = ((random.nextFloat() * 0.003f) + 0.017f) * this.a;
-    }
-
-    public final void c(int i9) {
-        this.x = i9;
-        this.k = new float[i9];
-        this.l = new float[i9];
-        this.m = new float[i9];
-        this.n = new float[i9];
-        this.o = new float[i9];
-        this.p = new float[i9];
-        this.q = new float[i9];
-        this.r = new float[i9];
-        this.s = new float[i9];
-        this.t = new float[i9];
-        this.u = new float[i9];
-        this.v = new float[i9];
-        this.w = new float[i9];
-        for (int i10 = 0; i10 < this.x; i10++) {
-            float[] fArr = this.k;
-            Random random = this.j;
-            fArr[i10] = random.nextFloat();
-            this.m[i10] = (((random.nextFloat() - 0.5f) * 2.0f) * 0.18f) / this.x;
-            b(i10);
-            this.o[i10] = random.nextFloat();
-        }
-        a();
-    }
-
-    public final void d(float f10) {
-        for (int i9 = 0; i9 < this.x; i9++) {
-            float[] fArr = this.o;
-            float f11 = fArr[i9];
-            float f12 = this.p[i9];
-            dh.a aVar = yc.H;
-            float f13 = (f12 * f10 * 8.2f) + (0.8f * f12) + f11;
-            fArr[i9] = f13;
-            if (f13 >= 1.0f) {
-                fArr[i9] = 0.0f;
-                this.k[i9] = this.l[i9];
-                this.m[i9] = this.n[i9];
-                b(i9);
+        float f19 = (currentTimeMillis - zc.U) / 10000.0f;
+        Bitmap bitmap = this.b;
+        if (bitmap != null) {
+            int width = bitmap.getWidth();
+            float f20 = width;
+            float dpf2 = AndroidUtilities.dpf2(15.0f) / f20;
+            float f21 = 7.0f;
+            int floor = (int) Math.floor((f13 % 360.0f) / 7.0f);
+            int ceil = (int) Math.ceil((f14 % 360.0f) / 7.0f);
+            while (floor <= ceil) {
+                float f22 = floor * f21;
+                float sin = (float) (((((Math.sin(2000.0f * f22) + 1.0d) * 0.25d) + 1.0d) * (100.0f + f19)) % 1.0d);
+                float f23 = f20 * sqrt;
+                float f24 = f19;
+                double lerp = AndroidUtilities.lerp(f15 - f23, f16 + f23, sin);
+                float b10 = (float) j7.l1.b(zc.a(f22), lerp, f9);
+                int i10 = width;
+                float sin2 = (float) ((Math.sin(zc.a(f22)) * lerp) + f10);
+                float abs = (Math.abs(sin - 0.5f) * (-1.75f)) + 1.0f;
+                int max = (int) (Math.max(0.0f, Math.min(1.0f, AndroidUtilities.lerp(1.0f, Math.min(i7.z5.a(b10, sin2, f11, f12) / AndroidUtilities.dpf2(64.0f), 1.0f), f17) * com.google.android.recaptcha.internal.a.B((float) (Math.sin(sin * 3.141592653589793d) - 1.0d), 0.25f, 1.0f, abs * 0.65f * f18))) * 255.0f);
+                Paint paint = this.a;
+                paint.setAlpha(max);
+                float f25 = dpf2;
+                float sin3 = f25 * ((float) ((((Math.sin(f22) + 1.0d) * 0.25d) + 0.800000011920929d) * com.google.android.recaptcha.internal.a.B((float) (Math.sin(r12) - 1.0d), 0.25f, 1.0f, 0.75f)));
+                canvas.save();
+                canvas.translate(b10, sin2);
+                canvas.scale(sin3, sin3);
+                float f26 = -(i10 >> 1);
+                canvas.drawBitmap(this.b, f26, f26, paint);
+                canvas.restore();
+                floor++;
+                sqrt = sqrt;
+                width = i10;
+                f20 = f20;
+                dpf2 = f25;
+                f19 = f24;
+                f21 = 7.0f;
             }
         }
     }

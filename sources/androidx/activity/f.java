@@ -4,43 +4,43 @@ import android.os.Bundle;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class f {
     public final /* synthetic */ int a;
-    public final /* synthetic */ m b;
+    public final /* synthetic */ l b;
 
-    public /* synthetic */ f(m mVar, int i9) {
-        this.a = i9;
-        this.b = mVar;
+    public /* synthetic */ f(l lVar, int i10) {
+        this.a = i10;
+        this.b = lVar;
     }
 
     public final void a() {
         switch (this.a) {
             case 0:
-                m mVar = this.b;
-                Bundle c10 = ((g2.e) mVar.e.c).c("android:support:activity-result");
-                if (c10 != null) {
-                    h hVar = mVar.w;
+                l lVar = this.b;
+                Bundle c3 = ((g2.e) lVar.e.c).c("android:support:activity-result");
+                if (c3 != null) {
+                    h hVar = lVar.w;
                     HashMap hashMap = hVar.b;
                     HashMap hashMap2 = hVar.a;
                     Bundle bundle = hVar.g;
-                    ArrayList<Integer> integerArrayList = c10.getIntegerArrayList("KEY_COMPONENT_ACTIVITY_REGISTERED_RCS");
-                    ArrayList<String> stringArrayList = c10.getStringArrayList("KEY_COMPONENT_ACTIVITY_REGISTERED_KEYS");
+                    ArrayList<Integer> integerArrayList = c3.getIntegerArrayList("KEY_COMPONENT_ACTIVITY_REGISTERED_RCS");
+                    ArrayList<String> stringArrayList = c3.getStringArrayList("KEY_COMPONENT_ACTIVITY_REGISTERED_KEYS");
                     if (stringArrayList != null && integerArrayList != null) {
-                        hVar.d = c10.getStringArrayList("KEY_COMPONENT_ACTIVITY_LAUNCHED_KEYS");
-                        bundle.putAll(c10.getBundle("KEY_COMPONENT_ACTIVITY_PENDING_RESULT"));
-                        for (int i9 = 0; i9 < stringArrayList.size(); i9++) {
-                            String str = stringArrayList.get(i9);
+                        hVar.d = c3.getStringArrayList("KEY_COMPONENT_ACTIVITY_LAUNCHED_KEYS");
+                        bundle.putAll(c3.getBundle("KEY_COMPONENT_ACTIVITY_PENDING_RESULT"));
+                        for (int i10 = 0; i10 < stringArrayList.size(); i10++) {
+                            String str = stringArrayList.get(i10);
                             if (hashMap.containsKey(str)) {
                                 Integer num = (Integer) hashMap.remove(str);
                                 if (!bundle.containsKey(str)) {
                                     hashMap2.remove(num);
                                 }
                             }
-                            Integer num2 = integerArrayList.get(i9);
+                            Integer num2 = integerArrayList.get(i10);
                             num2.intValue();
-                            String str2 = stringArrayList.get(i9);
+                            String str2 = stringArrayList.get(i10);
                             hashMap2.put(num2, str2);
                             hVar.b.put(str2, num2);
                         }

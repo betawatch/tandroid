@@ -79,35 +79,35 @@ public final class a implements Externalizable {
             long[] jArr = ZoneRules.i;
             int readInt = objectInput.readInt();
             long[] jArr2 = readInt == 0 ? jArr : new long[readInt];
-            for (int i9 = 0; i9 < readInt; i9++) {
-                jArr2[i9] = a(objectInput);
+            for (int i10 = 0; i10 < readInt; i10++) {
+                jArr2[i10] = a(objectInput);
             }
-            int i10 = readInt + 1;
-            ZoneOffset[] zoneOffsetArr = new ZoneOffset[i10];
-            for (int i11 = 0; i11 < i10; i11++) {
-                zoneOffsetArr[i11] = b(objectInput);
+            int i11 = readInt + 1;
+            ZoneOffset[] zoneOffsetArr = new ZoneOffset[i11];
+            for (int i12 = 0; i12 < i11; i12++) {
+                zoneOffsetArr[i12] = b(objectInput);
             }
             int readInt2 = objectInput.readInt();
             if (readInt2 != 0) {
                 jArr = new long[readInt2];
             }
             long[] jArr3 = jArr;
-            for (int i12 = 0; i12 < readInt2; i12++) {
-                jArr3[i12] = a(objectInput);
+            for (int i13 = 0; i13 < readInt2; i13++) {
+                jArr3[i13] = a(objectInput);
             }
-            int i13 = readInt2 + 1;
-            ZoneOffset[] zoneOffsetArr2 = new ZoneOffset[i13];
-            for (int i14 = 0; i14 < i13; i14++) {
-                zoneOffsetArr2[i14] = b(objectInput);
+            int i14 = readInt2 + 1;
+            ZoneOffset[] zoneOffsetArr2 = new ZoneOffset[i14];
+            for (int i15 = 0; i15 < i14; i15++) {
+                zoneOffsetArr2[i15] = b(objectInput);
             }
             int readByte2 = objectInput.readByte();
             e[] eVarArr = readByte2 == 0 ? ZoneRules.j : new e[readByte2];
-            for (int i15 = 0; i15 < readByte2; i15++) {
-                eVarArr[i15] = e.a(objectInput);
+            for (int i16 = 0; i16 < readByte2; i16++) {
+                eVarArr[i16] = e.a(objectInput);
             }
             zoneRules = new ZoneRules(jArr2, zoneOffsetArr, jArr3, zoneOffsetArr2, eVarArr);
         } else if (readByte == 2) {
-            int i16 = b.e;
+            int i17 = b.e;
             long a2 = a(objectInput);
             ZoneOffset b10 = b(objectInput);
             ZoneOffset b11 = b(objectInput);
@@ -132,9 +132,9 @@ public final class a implements Externalizable {
 
     public static void d(ZoneOffset zoneOffset, DataOutput dataOutput) {
         int totalSeconds = zoneOffset.getTotalSeconds();
-        int i9 = totalSeconds % RichMessageLayout.PART_MAX_HEIGHT_DP == 0 ? totalSeconds / RichMessageLayout.PART_MAX_HEIGHT_DP : 127;
-        dataOutput.writeByte(i9);
-        if (i9 == 127) {
+        int i10 = totalSeconds % RichMessageLayout.PART_MAX_HEIGHT_DP == 0 ? totalSeconds / RichMessageLayout.PART_MAX_HEIGHT_DP : 127;
+        dataOutput.writeByte(i10);
+        if (i10 == 127) {
             dataOutput.writeInt(totalSeconds);
         }
     }
@@ -146,10 +146,10 @@ public final class a implements Externalizable {
 
     public static void c(long j10, DataOutput dataOutput) {
         if (j10 >= -4575744000L && j10 < 10413792000L && j10 % 900 == 0) {
-            int i9 = (int) ((j10 + 4575744000L) / 900);
-            dataOutput.writeByte((i9 >>> 16) & 255);
-            dataOutput.writeByte((i9 >>> 8) & 255);
-            dataOutput.writeByte(i9 & 255);
+            int i10 = (int) ((j10 + 4575744000L) / 900);
+            dataOutput.writeByte((i10 >>> 16) & 255);
+            dataOutput.writeByte((i10 >>> 8) & 255);
+            dataOutput.writeByte(i10 & 255);
             return;
         }
         dataOutput.writeByte(255);

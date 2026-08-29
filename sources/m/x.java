@@ -12,9 +12,9 @@ import android.util.AttributeSet;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputConnection;
 import android.widget.MultiAutoCompleteTextView;
-import f7.t7;
+import h7.s7;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class x extends MultiAutoCompleteTextView implements u0.k {
     public static final int[] d = {R.attr.popupBackground};
@@ -27,11 +27,11 @@ public final class x extends MultiAutoCompleteTextView implements u0.k {
         super(context, attributeSet, org.telegram.messenger.beta.R.attr.autoCompleteTextViewStyle);
         e3.a(context);
         d3.a(this, getContext());
-        j4.c E = j4.c.E(getContext(), attributeSet, d, org.telegram.messenger.beta.R.attr.autoCompleteTextViewStyle);
-        if (((TypedArray) E.c).hasValue(0)) {
-            setDropDownBackgroundDrawable(E.w(0));
+        l3.g0 z10 = l3.g0.z(getContext(), attributeSet, d, org.telegram.messenger.beta.R.attr.autoCompleteTextViewStyle);
+        if (((TypedArray) z10.c).hasValue(0)) {
+            setDropDownBackgroundDrawable(z10.q(0));
         }
-        E.G();
+        z10.B();
         n nVar = new n(this);
         this.a = nVar;
         nVar.d(attributeSet, org.telegram.messenger.beta.R.attr.autoCompleteTextViewStyle);
@@ -101,7 +101,7 @@ public final class x extends MultiAutoCompleteTextView implements u0.k {
     @Override // android.widget.TextView, android.view.View
     public final InputConnection onCreateInputConnection(EditorInfo editorInfo) {
         InputConnection onCreateInputConnection = super.onCreateInputConnection(editorInfo);
-        g7.l.a(editorInfo, onCreateInputConnection, this);
+        i7.u.a(editorInfo, onCreateInputConnection, this);
         return this.c.c(onCreateInputConnection, editorInfo);
     }
 
@@ -115,11 +115,11 @@ public final class x extends MultiAutoCompleteTextView implements u0.k {
     }
 
     @Override // android.view.View
-    public void setBackgroundResource(int i9) {
-        super.setBackgroundResource(i9);
+    public void setBackgroundResource(int i10) {
+        super.setBackgroundResource(i10);
         n nVar = this.a;
         if (nVar != null) {
-            nVar.f(i9);
+            nVar.f(i10);
         }
     }
 
@@ -142,8 +142,8 @@ public final class x extends MultiAutoCompleteTextView implements u0.k {
     }
 
     @Override // android.widget.AutoCompleteTextView
-    public void setDropDownBackgroundResource(int i9) {
-        setDropDownBackgroundDrawable(t7.b(getContext(), i9));
+    public void setDropDownBackgroundResource(int i10) {
+        setDropDownBackgroundDrawable(s7.b(getContext(), i10));
     }
 
     public void setEmojiCompatEnabled(boolean z10) {
@@ -184,11 +184,11 @@ public final class x extends MultiAutoCompleteTextView implements u0.k {
     }
 
     @Override // android.widget.TextView
-    public final void setTextAppearance(Context context, int i9) {
-        super.setTextAppearance(context, i9);
+    public final void setTextAppearance(Context context, int i10) {
+        super.setTextAppearance(context, i10);
         x0 x0Var = this.b;
         if (x0Var != null) {
-            x0Var.g(context, i9);
+            x0Var.g(context, i10);
         }
     }
 }

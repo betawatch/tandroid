@@ -39,22 +39,22 @@ public final class ZonedDateTime implements Temporal, ChronoZonedDateTime<LocalD
             return new ZonedDateTime(localDateTime, zoneId, (ZoneOffset) zoneId);
         }
         ZoneRules rules = zoneId.getRules();
-        List f10 = rules.f(localDateTime);
-        if (f10.size() == 1) {
-            zoneOffset = (ZoneOffset) f10.get(0);
-        } else if (f10.size() == 0) {
+        List f9 = rules.f(localDateTime);
+        if (f9.size() == 1) {
+            zoneOffset = (ZoneOffset) f9.get(0);
+        } else if (f9.size() == 0) {
             j$.time.zone.b e10 = rules.e(localDateTime);
             localDateTime = localDateTime.M(Duration.j(e10.d.getTotalSeconds() - e10.c.getTotalSeconds(), 0).getSeconds());
             zoneOffset = e10.d;
-        } else if (zoneOffset == null || !f10.contains(zoneOffset)) {
-            zoneOffset = (ZoneOffset) Objects.requireNonNull((ZoneOffset) f10.get(0), "offset");
+        } else if (zoneOffset == null || !f9.contains(zoneOffset)) {
+            zoneOffset = (ZoneOffset) Objects.requireNonNull((ZoneOffset) f9.get(0), "offset");
         }
         return new ZonedDateTime(localDateTime, zoneId, zoneOffset);
     }
 
-    public static ZonedDateTime q(long j10, int i9, ZoneId zoneId) {
-        ZoneOffset offset = zoneId.getRules().getOffset(Instant.I(j10, i9));
-        return new ZonedDateTime(LocalDateTime.K(j10, i9, offset), zoneId, offset);
+    public static ZonedDateTime q(long j10, int i10, ZoneId zoneId) {
+        ZoneOffset offset = zoneId.getRules().getOffset(Instant.I(j10, i10));
+        return new ZonedDateTime(LocalDateTime.K(j10, i10, offset), zoneId, offset);
     }
 
     @Override // j$.time.chrono.ChronoZonedDateTime
@@ -114,11 +114,11 @@ public final class ZonedDateTime implements Temporal, ChronoZonedDateTime<LocalD
     @Override // j$.time.temporal.l
     public final int j(j$.time.temporal.o oVar) {
         if (oVar instanceof j$.time.temporal.a) {
-            int i9 = v.a[((j$.time.temporal.a) oVar).ordinal()];
-            if (i9 == 1) {
+            int i10 = v.a[((j$.time.temporal.a) oVar).ordinal()];
+            if (i10 == 1) {
                 throw new j$.time.temporal.r("Invalid field 'InstantSeconds' for get() method, use getLong() instead");
             }
-            if (i9 == 2) {
+            if (i10 == 2) {
                 return this.b.getTotalSeconds();
             }
             return this.a.j(oVar);
@@ -131,8 +131,8 @@ public final class ZonedDateTime implements Temporal, ChronoZonedDateTime<LocalD
         if (!(oVar instanceof j$.time.temporal.a)) {
             return oVar.m(this);
         }
-        int i9 = v.a[((j$.time.temporal.a) oVar).ordinal()];
-        return i9 != 1 ? i9 != 2 ? this.a.y(oVar) : this.b.getTotalSeconds() : j$.com.android.tools.r8.a.x(this);
+        int i10 = v.a[((j$.time.temporal.a) oVar).ordinal()];
+        return i10 != 1 ? i10 != 2 ? this.a.y(oVar) : this.b.getTotalSeconds() : j$.com.android.tools.r8.a.x(this);
     }
 
     @Override // j$.time.chrono.ChronoZonedDateTime
@@ -193,11 +193,11 @@ public final class ZonedDateTime implements Temporal, ChronoZonedDateTime<LocalD
     public final Temporal c(long j10, j$.time.temporal.o oVar) {
         if (oVar instanceof j$.time.temporal.a) {
             j$.time.temporal.a aVar = (j$.time.temporal.a) oVar;
-            int i9 = v.a[aVar.ordinal()];
-            if (i9 == 1) {
+            int i10 = v.a[aVar.ordinal()];
+            if (i10 == 1) {
                 return q(j10, this.a.b.d, this.c);
             }
-            if (i9 == 2) {
+            if (i10 == 2) {
                 return K(ZoneOffset.O(aVar.b.a(j10, aVar)));
             }
             return J(this.a.c(j10, oVar));
@@ -245,12 +245,12 @@ public final class ZonedDateTime implements Temporal, ChronoZonedDateTime<LocalD
     public final long g(Temporal temporal, j$.time.temporal.q qVar) {
         ZonedDateTime G = G(temporal);
         if (qVar instanceof ChronoUnit) {
-            ZonedDateTime i9 = G.i(this.c);
+            ZonedDateTime i10 = G.i(this.c);
             ChronoUnit chronoUnit = (ChronoUnit) qVar;
             if (chronoUnit.compareTo(ChronoUnit.DAYS) >= 0 && chronoUnit != ChronoUnit.FOREVER) {
-                return this.a.g(i9.a, qVar);
+                return this.a.g(i10.a, qVar);
             }
-            return new OffsetDateTime(this.a, this.b).g(new OffsetDateTime(i9.a, i9.b), qVar);
+            return new OffsetDateTime(this.a, this.b).g(new OffsetDateTime(i10.a, i10.b), qVar);
         }
         return qVar.between(this, G);
     }

@@ -1,13 +1,13 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class sv0 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ PremiumPreviewFragment b;
 
-    public /* synthetic */ sv0(PremiumPreviewFragment premiumPreviewFragment, int i9) {
-        this.a = i9;
+    public /* synthetic */ sv0(PremiumPreviewFragment premiumPreviewFragment, int i10) {
+        this.a = i10;
         this.b = premiumPreviewFragment;
     }
 
@@ -15,7 +15,7 @@ public final /* synthetic */ class sv0 implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.i0();
+                this.b.j0();
                 break;
             case 1:
                 PremiumPreviewFragment premiumPreviewFragment = this.b;

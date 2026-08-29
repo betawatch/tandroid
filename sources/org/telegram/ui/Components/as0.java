@@ -1,62 +1,32 @@
 package org.telegram.ui.Components;
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.util.Property;
-import android.view.KeyEvent;
-import android.view.View;
-import android.view.ViewTreeObserver;
-import androidx.recyclerview.widget.RecyclerView;
+import android.content.Context;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class as0 implements ViewTreeObserver.OnPreDrawListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ KeyEvent.Callback c;
+public final class as0 extends org.telegram.ui.Cells.f7 {
+    public final /* synthetic */ qu0 h0;
 
-    public /* synthetic */ as0(KeyEvent.Callback callback, int i9, int i10) {
-        this.a = i10;
-        this.c = callback;
-        this.b = i9;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public as0(qu0 qu0Var, Context context) {
+        super(context);
+        this.h0 = qu0Var;
     }
 
-    @Override // android.view.ViewTreeObserver.OnPreDrawListener
-    public final boolean onPreDraw() {
-        int i9 = this.a;
-        int i10 = this.b;
-        KeyEvent.Callback callback = this.c;
-        switch (i9) {
-            case 0:
-                eu0 eu0Var = (eu0) callback;
-                eu0Var.g0[i10].getViewTreeObserver().removeOnPreDrawListener(this);
-                eu0Var.U(i10);
-                break;
-            default:
-                s51 s51Var = (s51) callback;
-                gh.f1 f1Var = s51Var.d;
-                f1Var.getViewTreeObserver().removeOnPreDrawListener(this);
-                int childCount = f1Var.getChildCount();
-                AnimatorSet animatorSet = new AnimatorSet();
-                for (int i11 = 0; i11 < childCount; i11++) {
-                    View childAt = f1Var.getChildAt(i11);
-                    f1Var.getClass();
-                    int R = RecyclerView.R(childAt);
-                    if (R >= i10) {
-                        if (R == 1 && f1Var.getAdapter() == s51Var.e && (childAt instanceof org.telegram.ui.Cells.v3)) {
-                            childAt = ((org.telegram.ui.Cells.v3) childAt).getTextView();
-                        }
-                        childAt.setAlpha(0.0f);
-                        int min = (int) ((Math.min(f1Var.getMeasuredHeight(), Math.max(0, childAt.getTop())) / f1Var.getMeasuredHeight()) * 100.0f);
-                        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(childAt, (Property<View, Float>) View.ALPHA, 0.0f, 1.0f);
-                        ofFloat.setStartDelay(min);
-                        ofFloat.setDuration(200L);
-                        animatorSet.playTogether(ofFloat);
-                    }
-                }
-                animatorSet.start();
-                break;
+    @Override // org.telegram.ui.Cells.f7
+    public final boolean d(MessageObject messageObject) {
+        boolean isVoice = messageObject.isVoice();
+        qu0 qu0Var = this.h0;
+        if (isVoice || messageObject.isRoundVideo()) {
+            boolean playMessage = MediaController.getInstance().playMessage(messageObject);
+            MediaController.getInstance().setVoiceMessagesPlaylist(playMessage ? qu0Var.p1[4].a : null, false);
+            return playMessage;
         }
-        return true;
+        if (messageObject.isMusic()) {
+            return MediaController.getInstance().setPlaylist(qu0Var.p1[4].a, messageObject, qu0Var.Y0);
+        }
+        return false;
     }
 }

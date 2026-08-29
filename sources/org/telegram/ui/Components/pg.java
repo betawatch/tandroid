@@ -1,59 +1,82 @@
 package org.telegram.ui.Components;
 
+import android.app.Activity;
+import android.graphics.Canvas;
+import android.graphics.LinearGradient;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.graphics.Shader;
+import android.graphics.drawable.Drawable;
+import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 
-/* JADX WARN: Enum visitor error
-jadx.core.utils.exceptions.JadxRuntimeException: Init of enum field 'd' uses external variables
-	at jadx.core.dex.visitors.EnumVisitor.createEnumFieldByConstructor(EnumVisitor.java:451)
-	at jadx.core.dex.visitors.EnumVisitor.processEnumFieldByRegister(EnumVisitor.java:395)
-	at jadx.core.dex.visitors.EnumVisitor.extractEnumFieldsFromFilledArray(EnumVisitor.java:324)
-	at jadx.core.dex.visitors.EnumVisitor.extractEnumFieldsFromInsn(EnumVisitor.java:262)
-	at jadx.core.dex.visitors.EnumVisitor.convertToEnum(EnumVisitor.java:151)
-	at jadx.core.dex.visitors.EnumVisitor.visit(EnumVisitor.java:100)
- */
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class pg {
-    public static final pg d;
-    public static final pg e;
-    public static final /* synthetic */ pg[] f;
-    public final og a;
-    public final og b;
-    public final int c;
+public final class pg extends FrameLayout {
+    public final org.telegram.ui.ActionBar.h5 a;
+    public final RectF b;
+    public final Paint c;
+    public final Drawable d;
+    public boolean e;
 
-    static {
-        int i9 = R.raw.voice_and_video;
-        og ogVar = og.a;
-        og ogVar2 = og.b;
-        pg pgVar = new pg("VOICE_TO_VIDEO", 0, ogVar, ogVar2, i9);
-        d = pgVar;
-        int i10 = R.raw.sticker_to_keyboard;
-        og ogVar3 = og.c;
-        og ogVar4 = og.d;
-        pg pgVar2 = new pg("STICKER_TO_KEYBOARD", 1, ogVar3, ogVar4, i10);
-        int i11 = R.raw.smile_to_keyboard;
-        og ogVar5 = og.e;
-        pg pgVar3 = new pg("SMILE_TO_KEYBOARD", 2, ogVar5, ogVar4, i11);
-        pg pgVar4 = new pg("VIDEO_TO_VOICE", 3, ogVar2, ogVar, i9);
-        e = pgVar4;
-        pg pgVar5 = new pg("KEYBOARD_TO_STICKER", 4, ogVar4, ogVar3, R.raw.keyboard_to_sticker);
-        int i12 = R.raw.keyboard_to_gif;
-        og ogVar6 = og.f;
-        f = new pg[]{pgVar, pgVar2, pgVar3, pgVar4, pgVar5, new pg("KEYBOARD_TO_GIF", 5, ogVar4, ogVar6, i12), new pg("KEYBOARD_TO_SMILE", 6, ogVar4, ogVar5, R.raw.keyboard_to_smile), new pg("GIF_TO_KEYBOARD", 7, ogVar6, ogVar4, R.raw.gif_to_keyboard), new pg("GIF_TO_SMILE", 8, ogVar6, ogVar5, R.raw.gif_to_smile), new pg("SMILE_TO_GIF", 9, ogVar5, ogVar6, R.raw.smile_to_gif), new pg("SMILE_TO_STICKER", 10, ogVar5, ogVar3, R.raw.smile_to_sticker), new pg("STICKER_TO_SMILE", 11, ogVar3, ogVar5, R.raw.sticker_to_smile)};
+    public pg(Activity activity) {
+        super(activity);
+        this.b = new RectF();
+        this.c = new Paint(1);
+        this.e = false;
+        org.telegram.ui.ActionBar.h5 h5Var = new org.telegram.ui.ActionBar.h5(activity);
+        this.a = h5Var;
+        addView(h5Var, i7.f6.c(-1.0f, -1));
+        setWillNotDraw(false);
+        Drawable drawable = activity.getDrawable(R.drawable.msg_mini_close_tooltip);
+        this.d = drawable;
+        drawable.setBounds(0, 0, drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight());
+        setClipToPadding(false);
+        setClipChildren(false);
+        i7.h6.a(this);
     }
 
-    public pg(String str, int i9, og ogVar, og ogVar2, int i10) {
-        this.a = ogVar;
-        this.b = ogVar2;
-        this.c = i10;
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j10) {
+        if (!(view instanceof org.telegram.ui.ActionBar.h5) || !this.e) {
+            return super.drawChild(canvas, view, j10);
+        }
+        org.telegram.ui.ActionBar.h5 h5Var = (org.telegram.ui.ActionBar.h5) view;
+        canvas.save();
+        canvas.scale(0.8f, 0.8f);
+        canvas.translate(-AndroidUtilities.dp(12.0f), AndroidUtilities.dp(6.0f));
+        int color = h5Var.getTextPaint().getColor();
+        h5Var.getTextPaint().setColor(-1);
+        boolean drawChild = super.drawChild(canvas, view, j10);
+        h5Var.getTextPaint().setColor(color);
+        canvas.restore();
+        return drawChild;
     }
 
-    public static pg valueOf(String str) {
-        return (pg) Enum.valueOf(pg.class, str);
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        if (this.e) {
+            canvas.save();
+            int dp = AndroidUtilities.dp(26.0f);
+            canvas.translate(AndroidUtilities.dp(5.0f), (getMeasuredHeight() - dp) / 2.0f);
+            float f9 = dp;
+            RectF rectF = this.b;
+            rectF.set(-AndroidUtilities.dp(5.0f), 0.0f, getMeasuredWidth() - getPaddingEnd(), f9);
+            float f10 = f9 / 2.0f;
+            canvas.drawRoundRect(rectF, f10, f10, this.c);
+            int measuredWidth = (getMeasuredWidth() - getPaddingEnd()) - AndroidUtilities.dp(6.0f);
+            Drawable drawable = this.d;
+            canvas.translate(measuredWidth - drawable.getIntrinsicWidth(), AndroidUtilities.dp(5.0f));
+            drawable.draw(canvas);
+            canvas.restore();
+        }
     }
 
-    public static pg[] values() {
-        return (pg[]) f.clone();
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        this.c.setShader(new LinearGradient(0.0f, 0.0f, getMeasuredWidth(), 0.0f, new int[]{-9071617, -5999873}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP));
     }
 }

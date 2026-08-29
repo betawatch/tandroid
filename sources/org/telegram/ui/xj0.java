@@ -1,25 +1,39 @@
 package org.telegram.ui;
 
-import android.widget.ImageView;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class xj0 extends org.telegram.ui.Cells.p8 {
-    public ImageView M;
+public final /* synthetic */ class xj0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ yj0 b;
+    public final /* synthetic */ String c;
 
-    @Override // org.telegram.ui.Cells.p8, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i9, int i10, int i11, int i12) {
-        super.onLayout(z10, i9, i10, i11, i12);
-        int dp = LocaleController.isRTL ? AndroidUtilities.dp(17.0f) : (i11 - i9) - AndroidUtilities.dp(41.0f);
-        int y10 = org.telegram.messenger.ll.y(24.0f, i12 - i10, 2);
-        this.M.layout(dp, y10, AndroidUtilities.dp(24.0f) + dp, AndroidUtilities.dp(24.0f) + y10);
+    public /* synthetic */ xj0(yj0 yj0Var, String str, int i10) {
+        this.a = i10;
+        this.b = yj0Var;
+        this.c = str;
     }
 
-    @Override // org.telegram.ui.Cells.p8, android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i9, int i10) {
-        super.onMeasure(i9, i10);
-        this.M.measure(i9, i10);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                yj0 yj0Var = this.b;
+                String str = this.c;
+                yj0Var.getClass();
+                AndroidUtilities.runOnUIThread(new xj0(yj0Var, str, 1));
+                break;
+            default:
+                yj0 yj0Var2 = this.b;
+                String str2 = this.c;
+                rf.k1 k1Var = yj0Var2.h;
+                int i10 = yj0Var2.n.s;
+                k1Var.g(str2, true, (i10 == 1 || i10 == 3) ? false : true, true, false, 0L, false, 0, 0);
+                Utilities.searchQueue.postRunnable(new xe0(yj0Var2, str2, new ArrayList(yj0Var2.n.w), 8));
+                break;
+        }
     }
 }

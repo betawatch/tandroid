@@ -1,21 +1,9 @@
 package p2;
 
-import com.googlecode.mp4parser.e;
-
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public abstract class c extends e {
-    static {
-        yb.c.a(c.class);
-    }
+public interface c {
+    void onBillingServiceDisconnected();
 
-    public static byte[] d(String str) {
-        byte[] bArr = new byte[4];
-        if (str != null) {
-            for (int i9 = 0; i9 < Math.min(4, str.length()); i9++) {
-                bArr[i9] = (byte) str.charAt(i9);
-            }
-        }
-        return bArr;
-    }
+    void onBillingSetupFinished(g gVar);
 }

@@ -1,89 +1,68 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.widget.FrameLayout;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.DocumentObject;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.ImageLocation;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class ko0 extends FrameLayout {
-    public long a;
-    public TL_stars.starGiftAttributeBackdrop b;
-    public TL_stars.starGiftAttributePattern c;
-    public final FrameLayout d;
-    public final fh.b2 e;
-    public final org.telegram.ui.Components.o9 f;
-    public final fh.g2 h;
-    public TLRPC.Document n;
+public final class ko0 extends Drawable {
+    public final org.telegram.ui.Components.zz0 a;
+    public final Drawable b;
+    public final cg.r1 c;
 
-    public ko0(Context context, org.telegram.ui.ActionBar.b6 b6Var, boolean z10) {
-        super(context);
-        FrameLayout frameLayout = new FrameLayout(context);
-        this.d = frameLayout;
-        fh.b2 b2Var = new fh.b2(frameLayout, b6Var, false);
-        this.e = b2Var;
-        frameLayout.setBackground(b2Var);
-        addView(frameLayout, g7.e6.e(-1, -1, 119));
-        g7.g6.b(frameLayout, 0.025f, 1.25f);
-        org.telegram.ui.Components.o9 o9Var = new org.telegram.ui.Components.o9(context);
-        this.f = o9Var;
-        frameLayout.addView(o9Var, g7.e6.d(80, 80.0f, 17, 0.0f, 12.0f, 0.0f, 12.0f));
-        if (!z10) {
-            this.h = null;
-            return;
-        }
-        fh.g2 g2Var = new fh.g2(context);
-        this.h = g2Var;
-        addView(g2Var, g7.e6.d(-2, -2.0f, 53, 0.0f, 2.0f, 1.0f, 0.0f));
+    public ko0(int i10, Context context, org.telegram.ui.ActionBar.c6 c6Var, boolean z10) {
+        this.a = new org.telegram.ui.Components.zz0(LocaleController.formatPluralString(z10 ? "BoostLevelPlus" : "BoostLevel", i10, new Object[0]), 12.0f, AndroidUtilities.bold());
+        Drawable mutate = context.getResources().getDrawable(R.drawable.mini_switch_lock).mutate();
+        this.b = mutate;
+        mutate.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
+        this.c = new cg.r1(org.telegram.ui.ActionBar.g6.Lj, org.telegram.ui.ActionBar.g6.Mj, -1, -1, c6Var);
     }
 
-    public final void a(int i9, TL_stars.TL_starGiftUnique tL_starGiftUnique) {
-        this.a = tL_starGiftUnique.id;
-        boolean z10 = i9 % 3 == 1;
-        setPadding(z10 ? AndroidUtilities.dp(4.0f) : 0, 0, z10 ? AndroidUtilities.dp(4.0f) : 0, 0);
-        c(tL_starGiftUnique.getDocument(), tL_starGiftUnique);
-        this.b = (TL_stars.starGiftAttributeBackdrop) gh.v7.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeBackdrop.class);
-        this.c = (TL_stars.starGiftAttributePattern) gh.v7.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributePattern.class);
-        TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = this.b;
-        fh.b2 b2Var = this.e;
-        b2Var.d(stargiftattributebackdrop);
-        b2Var.e(this.c);
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        int i10 = getBounds().left;
+        int centerY = getBounds().centerY();
+        RectF rectF = AndroidUtilities.rectTmp;
+        float f9 = centerY;
+        rectF.set(i10, f9 - (AndroidUtilities.dp(18.33f) / 2.0f), getIntrinsicWidth() + i10, (AndroidUtilities.dp(18.33f) / 2.0f) + f9);
+        cg.r1 r1Var = this.c;
+        r1Var.e(rectF);
+        canvas.drawRoundRect(rectF, AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), r1Var.f);
+        int dp = AndroidUtilities.dp(3.33f) + i10;
+        Drawable drawable = this.b;
+        drawable.setBounds(dp, (int) (f9 - ((drawable.getIntrinsicHeight() * 0.875f) / 2.0f)), (int) ((drawable.getIntrinsicWidth() * 0.875f) + AndroidUtilities.dp(3.33f) + i10), (int) a4.w.d(drawable.getIntrinsicHeight(), 0.875f, 2.0f, f9));
+        drawable.draw(canvas);
+        this.a.c((drawable.getIntrinsicWidth() * 0.875f) + AndroidUtilities.dp(3.66f) + i10, f9, 1.0f, -1, canvas);
     }
 
-    public final void b(boolean z10, boolean z11) {
-        this.e.f(z10, z11);
-        float f10 = z10 ? 0.9f : 1.0f;
-        org.telegram.ui.Components.o9 o9Var = this.f;
-        if (z11) {
-            o9Var.animate().scaleX(f10).scaleY(f10).start();
-            return;
-        }
-        o9Var.animate().cancel();
-        o9Var.setScaleX(f10);
-        o9Var.setScaleY(f10);
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        return AndroidUtilities.dp(18.33f);
     }
 
-    public final void c(TLRPC.Document document, TL_stars.StarGift starGift) {
-        org.telegram.ui.Components.o9 o9Var = this.f;
-        if (document == null) {
-            o9Var.b();
-            this.n = null;
-        } else {
-            if (this.n == document) {
-                return;
-            }
-            this.n = document;
-            TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(document.thumbs, AndroidUtilities.dp(100.0f));
-            o9Var.l(ImageLocation.getForDocument(document), "100_100", ImageLocation.getForDocument(closestPhotoSizeWithSize, document), "100_100", DocumentObject.getSvgThumb(document, org.telegram.ui.ActionBar.f6.a7, 0.3f), starGift);
-        }
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        return (int) (this.a.l() + (this.b.getIntrinsicWidth() * 0.875f) + AndroidUtilities.dp(9.66f));
     }
 
-    public long getGiftId() {
-        return this.a;
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

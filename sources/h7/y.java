@@ -1,55 +1,28 @@
 package h7;
 
-import java.util.Iterator;
-import java.util.Map;
+import android.app.KeyguardManager;
+import android.content.Context;
+import android.os.Build;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class y extends t {
-    public final transient com.google.android.gms.internal.cast.j0 c;
-    public final transient Object[] d;
-    public final transient int e = 1;
-
-    public y(com.google.android.gms.internal.cast.j0 j0Var, Object[] objArr) {
-        this.c = j0Var;
-        this.d = objArr;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final boolean contains(Object obj) {
-        if (obj instanceof Map.Entry) {
-            Map.Entry entry = (Map.Entry) obj;
-            Object key = entry.getKey();
-            Object value = entry.getValue();
-            if (value != null && value.equals(this.c.get(key))) {
-                return true;
-            }
+public abstract class y {
+    public static KeyguardManager a(Context context) {
+        if (Build.VERSION.SDK_INT >= 23) {
+            return androidx.biometric.i0.a(context);
         }
-        return false;
-    }
-
-    @Override // h7.o
-    public final int i(Object[] objArr) {
-        s sVar = this.b;
-        if (sVar == null) {
-            sVar = new x(this);
-            this.b = sVar;
+        Object systemService = context.getSystemService("keyguard");
+        if (systemService instanceof KeyguardManager) {
+            return (KeyguardManager) systemService;
         }
-        return sVar.i(objArr);
+        return null;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
-    public final Iterator iterator() {
-        s sVar = this.b;
-        if (sVar == null) {
-            sVar = new x(this);
-            this.b = sVar;
+    public static boolean b(Context context) {
+        KeyguardManager a2 = a(context);
+        if (a2 == null) {
+            return false;
         }
-        return sVar.listIterator(0);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final int size() {
-        return this.e;
+        return Build.VERSION.SDK_INT >= 23 ? androidx.biometric.i0.b(a2) : androidx.biometric.h0.a(a2);
     }
 }

@@ -1,61 +1,49 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class fh implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ki b;
-    public final /* synthetic */ boolean c;
+import android.view.KeyEvent;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Utilities;
 
-    public /* synthetic */ fh(ki kiVar, boolean z10, int i9) {
-        this.a = i9;
-        this.b = kiVar;
-        this.c = z10;
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class fh implements Utilities.Callback4 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ KeyEvent.Callback b;
+
+    public /* synthetic */ fh(KeyEvent.Callback callback, int i10) {
+        this.a = i10;
+        this.b = callback;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.messenger.Utilities.Callback4
+    public final void run(Object obj, Object obj2, Object obj3, Object obj4) {
         switch (this.a) {
             case 0:
-                boolean z10 = this.c;
-                ki kiVar = this.b;
-                if (!z10) {
-                    kiVar.Y0.setVisibility(8);
-                    break;
-                } else {
-                    kiVar.getClass();
-                    break;
-                }
+                ni niVar = (ni) this.b;
+                CharSequence charSequence = (CharSequence) obj;
+                th thVar = niVar.A0;
+                thVar.setText(charSequence);
+                thVar.w(charSequence.length(), charSequence.length());
+                niVar.z1();
+                break;
             case 1:
-                boolean z11 = this.c;
-                ki kiVar2 = this.b;
-                if (!z11) {
-                    kiVar2.w.setVisibility(8);
-                    break;
-                } else {
-                    kiVar2.getClass();
-                    break;
-                }
-            case 2:
-                boolean z12 = this.c;
-                ki kiVar3 = this.b;
-                if (!z12) {
-                    kiVar3.y.setVisibility(8);
-                    break;
-                } else {
-                    kiVar3.getClass();
-                    break;
-                }
+                ni niVar2 = (ni) this.b;
+                CharSequence charSequence2 = (CharSequence) obj;
+                wh whVar = niVar2.L0;
+                whVar.setText(charSequence2);
+                whVar.w(charSequence2.length(), charSequence2.length());
+                niVar2.z1();
+                break;
             default:
-                boolean z13 = this.c;
-                ki kiVar4 = this.b;
-                if (!z13) {
-                    kiVar4.getClass();
-                    break;
-                } else {
-                    kiVar4.t1.setVisibility(4);
-                    break;
-                }
+                ed edVar = (ed) this.b;
+                nh.g gVar = edVar.f;
+                gVar.setText((CharSequence) obj);
+                gVar.d();
+                gVar.k(true);
+                nh.e eVar = edVar.V;
+                AndroidUtilities.cancelRunOnUIThread(eVar);
+                eVar.run();
+                break;
         }
     }
 }

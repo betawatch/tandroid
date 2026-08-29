@@ -1,27 +1,39 @@
 package mh;
 
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.l41;
+import android.content.Context;
+import android.view.View;
+import org.telegram.messenger.TranslateController;
+import org.telegram.ui.ActionBar.c6;
+import org.telegram.ui.Components.jl0;
+import org.telegram.ui.Components.k51;
+import org.telegram.ui.Components.u51;
+import org.telegram.ui.Components.v41;
+import org.telegram.ui.Components.w41;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class s implements Utilities.Callback5, Utilities.Callback5Return {
-    public final /* synthetic */ t a;
+public final class s extends v41 {
+    public static final /* synthetic */ int a = 0;
 
-    @Override // org.telegram.messenger.Utilities.Callback5Return
-    public Object run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        ((Integer) obj3).intValue();
-        ((Float) obj4).floatValue();
-        ((Float) obj5).floatValue();
-        this.a.getClass();
-        return Boolean.FALSE;
+    static {
+        v41.setup(new s());
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback5
-    public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        ((Integer) obj3).getClass();
-        ((Float) obj4).getClass();
-        ((Float) obj5).getClass();
-        t.U(this.a, (l41) obj);
+    @Override // org.telegram.ui.Components.v41
+    public final void bindView(View view, w41 w41Var, boolean z10, k51 k51Var, u51 u51Var) {
+        t tVar = (t) view;
+        TranslateController.Language language = (TranslateController.Language) w41Var.G;
+        tVar.a.setText(language.displayName);
+        tVar.b.setText(language.ownDisplayName);
+        if (tVar.c != z10) {
+            tVar.invalidate();
+        }
+        tVar.c = z10;
+        tVar.setWillNotDraw(!z10);
+    }
+
+    @Override // org.telegram.ui.Components.v41
+    public final View createView(Context context, jl0 jl0Var, int i10, int i11, c6 c6Var) {
+        return new t(context);
     }
 }

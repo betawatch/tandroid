@@ -1,37 +1,35 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class u6 implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ MediaDataController b;
-    public final /* synthetic */ TLRPC.Message c;
-    public final /* synthetic */ MessagesStorage.TopicKey d;
+    public final /* synthetic */ int a;
+    public final /* synthetic */ MediaController.MediaLoader b;
+    public final /* synthetic */ int c;
 
-    public /* synthetic */ u6(MediaDataController mediaDataController, MessagesStorage.TopicKey topicKey, TLRPC.Message message) {
-        this.b = mediaDataController;
-        this.d = topicKey;
-        this.c = message;
+    public /* synthetic */ u6(MediaController.MediaLoader mediaLoader, int i10, int i11) {
+        this.a = i11;
+        this.b = mediaLoader;
+        this.c = i10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$putBotKeyboard$200(this.d, this.c);
+                this.b.lambda$didReceivedNotification$11(this.c);
+                break;
+            case 1:
+                this.b.lambda$copyFile$9(this.c);
+                break;
+            case 2:
+                this.b.lambda$copyFile$10(this.c);
                 break;
             default:
-                this.b.lambda$loadBotKeyboard$195(this.c, this.d);
+                this.b.lambda$processLivePhotoMessage$6(this.c);
                 break;
         }
-    }
-
-    public /* synthetic */ u6(MediaDataController mediaDataController, TLRPC.Message message, MessagesStorage.TopicKey topicKey) {
-        this.b = mediaDataController;
-        this.c = message;
-        this.d = topicKey;
     }
 }

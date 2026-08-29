@@ -1,25 +1,31 @@
 package y3;
 
-import android.media.MediaCodec;
-import d5.f0;
-
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public class l extends k3.g {
-    public final String a;
+public final class l {
+    public final o3.w a;
+    public boolean b;
+    public boolean c;
+    public boolean d;
+    public int e;
+    public int f;
+    public long g;
+    public long h;
 
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public l(IllegalStateException illegalStateException, n nVar) {
-        super(r0.toString(), illegalStateException);
-        StringBuilder sb2 = new StringBuilder("Decoder failed: ");
-        String str = null;
-        sb2.append(nVar == null ? null : nVar.a);
-        if (f0.a >= 21 && (illegalStateException instanceof MediaCodec.CodecException)) {
-            str = ((MediaCodec.CodecException) illegalStateException).getDiagnosticInfo();
+    public l(o3.w wVar) {
+        this.a = wVar;
+    }
+
+    public final void a(int i10, int i11, byte[] bArr) {
+        if (this.c) {
+            int i12 = this.f;
+            int i13 = (i10 + 1) - i12;
+            if (i13 >= i11) {
+                this.f = (i11 - i10) + i12;
+            } else {
+                this.d = ((bArr[i13] & 192) >> 6) == 0;
+                this.c = false;
+            }
         }
-        this.a = str;
     }
 }

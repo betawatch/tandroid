@@ -1,57 +1,67 @@
 package gh;
 
-import android.content.Context;
+import android.view.GestureDetector;
 import android.view.MotionEvent;
-import org.telegram.ui.Components.fc0;
-import org.telegram.ui.Components.i51;
-import org.telegram.ui.fe;
+import android.view.View;
+import java.util.Iterator;
+import java.util.List;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
-/* loaded from: classes.dex */
-public final class n extends fc0 {
-    public final /* synthetic */ int H;
-    public final /* synthetic */ Object I;
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* loaded from: classes3.dex */
+public final class n extends GestureDetector.SimpleOnGestureListener {
+    public final /* synthetic */ View a;
+    public final /* synthetic */ List b;
+    public final /* synthetic */ o c;
+    public final /* synthetic */ p d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ n(Object obj, Context context, int i9) {
-        super(context, null);
-        this.H = i9;
-        this.I = obj;
+    public n(p pVar, View view, List list, o oVar) {
+        this.d = pVar;
+        this.a = view;
+        this.b = list;
+        this.c = oVar;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        switch (this.H) {
-            case 0:
-                r rVar = (r) this.I;
-                o oVar = rVar.M;
-                if (oVar != null && !oVar.isFocusable()) {
-                    rVar.M.setFocusable(true);
-                    rVar.M.setFocusableInTouchMode(true);
-                    int x12 = rVar.e.x1(1);
-                    if (x12 >= 0 && x12 < rVar.e.U2.x.size()) {
-                        rVar.e.B0();
-                        rVar.e.x0(x12);
-                    }
-                    rVar.M.requestFocus();
-                }
-                break;
-            default:
-                fe feVar = (fe) this.I;
-                i51 i51Var = feVar.W0;
-                o oVar2 = feVar.U0;
-                if (oVar2 != null && !oVar2.isFocusable()) {
-                    oVar2.setFocusable(true);
-                    oVar2.setFocusableInTouchMode(true);
-                    int x13 = i51Var.x1(3);
-                    if (x13 >= 0 && x13 < i51Var.U2.x.size()) {
-                        i51Var.B0();
-                        i51Var.x0(x13);
-                    }
-                    oVar2.requestFocus();
-                }
-                break;
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    public final boolean onDown(MotionEvent motionEvent) {
+        int x4 = (int) motionEvent.getX();
+        int y8 = (int) motionEvent.getY();
+        View view = this.a;
+        int scrollY = view.getScrollY() + y8;
+        int paddingLeft = x4 - view.getPaddingLeft();
+        int paddingTop = scrollY - view.getPaddingTop();
+        p pVar = this.d;
+        int i10 = paddingLeft - pVar.c;
+        int i11 = paddingTop - pVar.d;
+        Iterator it = this.b.iterator();
+        while (it.hasNext()) {
+            if (((k) it.next()).getBounds().contains(i10, i11)) {
+                pVar.b = true;
+                return true;
+            }
         }
-        return super.dispatchTouchEvent(motionEvent);
+        return false;
+    }
+
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    public final boolean onSingleTapUp(MotionEvent motionEvent) {
+        p pVar = this.d;
+        if (pVar.b) {
+            View view = this.a;
+            view.playSoundEffect(0);
+            pVar.b = false;
+            int x4 = (int) motionEvent.getX();
+            int scrollY = view.getScrollY() + ((int) motionEvent.getY());
+            int paddingLeft = x4 - view.getPaddingLeft();
+            int paddingTop = scrollY - view.getPaddingTop();
+            int i10 = paddingLeft - pVar.c;
+            int i11 = paddingTop - pVar.d;
+            for (k kVar : this.b) {
+                if (kVar.getBounds().contains(i10, i11)) {
+                    this.c.m(kVar, i10, i11);
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 }

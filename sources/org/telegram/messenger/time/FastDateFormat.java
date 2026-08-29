@@ -8,7 +8,7 @@ import java.util.Date;
 import java.util.Locale;
 import java.util.TimeZone;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public class FastDateFormat extends Format implements DateParser, DatePrinter {
     public static final int FULL = 0;
@@ -29,20 +29,20 @@ public class FastDateFormat extends Format implements DateParser, DatePrinter {
         this(str, timeZone, locale, null);
     }
 
-    public static FastDateFormat getDateInstance(int i9) {
-        return cache.getDateInstance(i9, null, null);
+    public static FastDateFormat getDateInstance(int i10) {
+        return cache.getDateInstance(i10, null, null);
     }
 
-    public static FastDateFormat getDateTimeInstance(int i9, int i10) {
-        return cache.getDateTimeInstance(i9, i10, (TimeZone) null, (Locale) null);
+    public static FastDateFormat getDateTimeInstance(int i10, int i11) {
+        return cache.getDateTimeInstance(i10, i11, (TimeZone) null, (Locale) null);
     }
 
     public static FastDateFormat getInstance() {
         return cache.getInstance();
     }
 
-    public static FastDateFormat getTimeInstance(int i9) {
-        return cache.getTimeInstance(i9, null, null);
+    public static FastDateFormat getTimeInstance(int i10) {
+        return cache.getTimeInstance(i10, null, null);
     }
 
     public StringBuffer applyRules(Calendar calendar, StringBuffer stringBuffer) {
@@ -103,20 +103,20 @@ public class FastDateFormat extends Format implements DateParser, DatePrinter {
         this.parser = new FastDateParser(str, timeZone, locale, date);
     }
 
-    public static FastDateFormat getDateInstance(int i9, Locale locale) {
-        return cache.getDateInstance(i9, null, locale);
+    public static FastDateFormat getDateInstance(int i10, Locale locale) {
+        return cache.getDateInstance(i10, null, locale);
     }
 
-    public static FastDateFormat getDateTimeInstance(int i9, int i10, Locale locale) {
-        return cache.getDateTimeInstance(i9, i10, (TimeZone) null, locale);
+    public static FastDateFormat getDateTimeInstance(int i10, int i11, Locale locale) {
+        return cache.getDateTimeInstance(i10, i11, (TimeZone) null, locale);
     }
 
     public static FastDateFormat getInstance(String str) {
         return cache.getInstance(str, null, null);
     }
 
-    public static FastDateFormat getTimeInstance(int i9, Locale locale) {
-        return cache.getTimeInstance(i9, null, locale);
+    public static FastDateFormat getTimeInstance(int i10, Locale locale) {
+        return cache.getTimeInstance(i10, null, locale);
     }
 
     @Override // org.telegram.messenger.time.DatePrinter
@@ -129,20 +129,20 @@ public class FastDateFormat extends Format implements DateParser, DatePrinter {
         return this.parser.parse(str, parsePosition);
     }
 
-    public static FastDateFormat getDateInstance(int i9, TimeZone timeZone) {
-        return cache.getDateInstance(i9, timeZone, null);
+    public static FastDateFormat getDateInstance(int i10, TimeZone timeZone) {
+        return cache.getDateInstance(i10, timeZone, null);
     }
 
-    public static FastDateFormat getDateTimeInstance(int i9, int i10, TimeZone timeZone) {
-        return getDateTimeInstance(i9, i10, timeZone, null);
+    public static FastDateFormat getDateTimeInstance(int i10, int i11, TimeZone timeZone) {
+        return getDateTimeInstance(i10, i11, timeZone, null);
     }
 
     public static FastDateFormat getInstance(String str, TimeZone timeZone) {
         return cache.getInstance(str, timeZone, null);
     }
 
-    public static FastDateFormat getTimeInstance(int i9, TimeZone timeZone) {
-        return cache.getTimeInstance(i9, timeZone, null);
+    public static FastDateFormat getTimeInstance(int i10, TimeZone timeZone) {
+        return cache.getTimeInstance(i10, timeZone, null);
     }
 
     @Override // org.telegram.messenger.time.DatePrinter
@@ -150,20 +150,20 @@ public class FastDateFormat extends Format implements DateParser, DatePrinter {
         return this.printer.format(date);
     }
 
-    public static FastDateFormat getDateInstance(int i9, TimeZone timeZone, Locale locale) {
-        return cache.getDateInstance(i9, timeZone, locale);
+    public static FastDateFormat getDateInstance(int i10, TimeZone timeZone, Locale locale) {
+        return cache.getDateInstance(i10, timeZone, locale);
     }
 
-    public static FastDateFormat getDateTimeInstance(int i9, int i10, TimeZone timeZone, Locale locale) {
-        return cache.getDateTimeInstance(i9, i10, timeZone, locale);
+    public static FastDateFormat getDateTimeInstance(int i10, int i11, TimeZone timeZone, Locale locale) {
+        return cache.getDateTimeInstance(i10, i11, timeZone, locale);
     }
 
     public static FastDateFormat getInstance(String str, Locale locale) {
         return cache.getInstance(str, null, locale);
     }
 
-    public static FastDateFormat getTimeInstance(int i9, TimeZone timeZone, Locale locale) {
-        return cache.getTimeInstance(i9, timeZone, locale);
+    public static FastDateFormat getTimeInstance(int i10, TimeZone timeZone, Locale locale) {
+        return cache.getTimeInstance(i10, timeZone, locale);
     }
 
     @Override // org.telegram.messenger.time.DatePrinter

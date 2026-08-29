@@ -3,38 +3,39 @@ package androidx.emoji2.text;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.os.Handler;
-import g7.p6;
+import h7.e0;
+import i7.u6;
 import j$.util.DesugarCollections;
 import j$.util.Objects;
-import j3.r0;
+import j7.l1;
 import java.util.ArrayList;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class p implements j {
+public final class p implements k {
     public final Context a;
     public final o0.d b;
-    public final v9.d c;
+    public final ab.b c;
     public final Object d = new Object();
     public Handler e;
     public ThreadPoolExecutor f;
     public ThreadPoolExecutor g;
-    public f7.w h;
+    public e0 h;
 
     public p(Context context, o0.d dVar) {
-        p6.a(context, "Context cannot be null");
+        u6.a(context, "Context cannot be null");
         this.a = context.getApplicationContext();
         this.b = dVar;
         this.c = q.d;
     }
 
-    @Override // androidx.emoji2.text.j
-    public final void a(f7.w wVar) {
+    @Override // androidx.emoji2.text.k
+    public final void a(e0 e0Var) {
         synchronized (this.d) {
-            this.h = wVar;
+            this.h = e0Var;
         }
         c();
     }
@@ -54,8 +55,8 @@ public final class p implements j {
                 }
                 this.f = null;
                 this.g = null;
-            } catch (Throwable th) {
-                throw th;
+            } catch (Throwable th2) {
+                throw th2;
             }
         }
     }
@@ -72,34 +73,34 @@ public final class p implements j {
                     this.g = threadPoolExecutor;
                     this.f = threadPoolExecutor;
                 }
-                this.f.execute(new af.e(this, 4));
-            } catch (Throwable th) {
-                throw th;
+                this.f.execute(new a4.g(this, 9));
+            } catch (Throwable th2) {
+                throw th2;
             }
         }
     }
 
-    public final o0.i d() {
+    public final o0.j d() {
         try {
-            v9.d dVar = this.c;
+            ab.b bVar = this.c;
             Context context = this.a;
-            o0.d dVar2 = this.b;
-            dVar.getClass();
-            Object[] objArr = {dVar2};
+            o0.d dVar = this.b;
+            bVar.getClass();
+            Object[] objArr = {dVar};
             ArrayList arrayList = new ArrayList(1);
             Object obj = objArr[0];
             Objects.requireNonNull(obj);
             arrayList.add(obj);
-            o0.h a2 = o0.c.a(context, DesugarCollections.unmodifiableList(arrayList));
-            int i9 = a2.a;
-            if (i9 != 0) {
-                throw new RuntimeException(r0.m(i9, "fetchFonts failed (", ")"));
+            o0.i a2 = o0.c.a(context, DesugarCollections.unmodifiableList(arrayList));
+            int i10 = a2.a;
+            if (i10 != 0) {
+                throw new RuntimeException(l1.l(i10, "fetchFonts failed (", ")"));
             }
-            o0.i[] iVarArr = (o0.i[]) a2.b.get(0);
-            if (iVarArr == null || iVarArr.length == 0) {
+            o0.j[] jVarArr = (o0.j[]) a2.b.get(0);
+            if (jVarArr == null || jVarArr.length == 0) {
                 throw new RuntimeException("fetchFonts failed (empty result)");
             }
-            return iVarArr[0];
+            return jVarArr[0];
         } catch (PackageManager.NameNotFoundException e10) {
             throw new RuntimeException("provider not found", e10);
         }

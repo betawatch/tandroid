@@ -1,81 +1,60 @@
 package ih;
 
-import android.app.Activity;
-import android.view.View;
-import org.telegram.messenger.AccountInstance;
+import java.util.ArrayList;
+import jh.i7;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.messenger.VideoEditedInfo;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.x40;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.Components.gr0;
+import org.telegram.ui.Components.tc;
+import org.telegram.ui.Components.y71;
+import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
-/* loaded from: classes4.dex */
-public final class d3 implements x40 {
-    public final /* synthetic */ i4 a;
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class d3 implements Utilities.Callback {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ n3 b;
+    public final /* synthetic */ TL_stars.SavedStarGift c;
 
-    public d3(i4 i4Var) {
-        this.a = i4Var;
+    public /* synthetic */ d3(n3 n3Var, TL_stars.SavedStarGift savedStarGift, int i10) {
+        this.a = i10;
+        this.b = n3Var;
+        this.c = savedStarGift;
     }
 
-    @Override // org.telegram.ui.Components.x40
-    public final long a() {
-        return this.a.x1;
-    }
-
-    @Override // org.telegram.ui.Components.x40
-    public final /* synthetic */ boolean c() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.x40
-    public final int getClassGuid() {
-        return this.a.v2;
-    }
-
-    @Override // org.telegram.ui.Components.x40
-    public final View getFragmentView() {
-        return this.a;
-    }
-
-    @Override // org.telegram.ui.Components.x40
-    public final Activity getParentActivity() {
-        return AndroidUtilities.findActivity(this.a.getContext());
-    }
-
-    @Override // org.telegram.ui.Components.x40
-    public final void r(MediaController.PhotoEntry photoEntry, VideoEditedInfo videoEditedInfo, boolean z10, int i9, int i10, boolean z11, long j10) {
-        AccountInstance accountInstance;
-        AccountInstance accountInstance2;
-        AccountInstance accountInstance3;
-        AccountInstance accountInstance4;
-        i4 i4Var = this.a;
-        TL_stories.StoryItem storyItem = i4Var.K1.a;
-        if (storyItem == null || (storyItem instanceof TL_stories.TL_storyItemSkipped)) {
-            return;
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        int i10 = this.a;
+        TL_stars.SavedStarGift savedStarGift = this.c;
+        n3 n3Var = this.b;
+        int i11 = 1;
+        switch (i10) {
+            case 0:
+                n3Var.a.e.b((String) obj, new d3(n3Var, savedStarGift, i11));
+                break;
+            default:
+                TL_stars.TL_starGiftCollection tL_starGiftCollection = (TL_stars.TL_starGiftCollection) obj;
+                gr0 gr0Var = n3Var.a;
+                i7 i7Var = gr0Var.e;
+                int i12 = tL_starGiftCollection.collection_id;
+                i7Var.getClass();
+                ArrayList arrayList = new ArrayList();
+                arrayList.add(savedStarGift);
+                i7Var.a(i12, arrayList);
+                gr0Var.f(true);
+                y71 y71Var = gr0Var.n;
+                int i13 = tL_starGiftCollection.collection_id;
+                y71Var.d(i13, gr0Var.e.f(i13) + 1);
+                org.telegram.ui.ActionBar.o2 o2Var = gr0Var.a;
+                if (o2Var instanceof ProfileActivity) {
+                    ((ProfileActivity) o2Var).G4(true);
+                }
+                gr0Var.n();
+                tc.a0(o2Var).R(savedStarGift.gift.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2AddedToCollection, jh.h5.D1(savedStarGift.gift), tL_starGiftCollection.title))).j();
+                break;
         }
-        storyItem.dialogId = i4Var.x1;
-        if (photoEntry.isVideo) {
-            if (videoEditedInfo != null) {
-                accountInstance4 = i4Var.getAccountInstance();
-                SendMessagesHelper.prepareSendingVideo(accountInstance4, photoEntry.path, videoEditedInfo, null, null, i4Var.x1, null, null, storyItem, null, photoEntry.entities, photoEntry.ttl, null, z10, i9, i10, false, photoEntry.hasSpoiler, photoEntry.caption, null, 0L, j10);
-            } else {
-                accountInstance3 = i4Var.getAccountInstance();
-                SendMessagesHelper.prepareSendingVideo(accountInstance3, photoEntry.path, null, null, null, i4Var.x1, null, null, storyItem, null, photoEntry.entities, photoEntry.ttl, null, z10, i9, i10, false, photoEntry.hasSpoiler, photoEntry.caption, null, 0L, j10);
-            }
-        } else if (photoEntry.imagePath != null) {
-            accountInstance2 = i4Var.getAccountInstance();
-            SendMessagesHelper.prepareSendingPhoto(accountInstance2, photoEntry.imagePath, photoEntry.thumbPath, null, i4Var.x1, null, null, storyItem, null, photoEntry.entities, photoEntry.stickers, null, photoEntry.ttl, null, videoEditedInfo, z10, i9, i10, false, photoEntry.caption, null, 0L, j10);
-        } else if (photoEntry.path != null) {
-            accountInstance = i4Var.getAccountInstance();
-            SendMessagesHelper.prepareSendingPhoto(accountInstance, photoEntry.path, photoEntry.thumbPath, null, i4Var.x1, null, null, storyItem, null, photoEntry.entities, photoEntry.stickers, null, photoEntry.ttl, null, videoEditedInfo, z10, i9, i10, false, photoEntry.caption, null, 0L, j10);
-        }
-        i4Var.k0(j10 <= 0);
-    }
-
-    @Override // org.telegram.ui.Components.x40
-    public final /* synthetic */ boolean w() {
-        return false;
     }
 }

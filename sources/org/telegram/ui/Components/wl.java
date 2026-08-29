@@ -1,42 +1,47 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Outline;
-import android.view.View;
-import android.view.ViewOutlineProvider;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class wl extends ViewOutlineProvider {
-    public final /* synthetic */ yl a;
+public final class wl extends TextView {
+    public float a;
+    public boolean b;
+    public final /* synthetic */ Paint c;
 
-    public wl(yl ylVar) {
-        this.a = ylVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public wl(Context context, Paint paint) {
+        super(context);
+        this.c = paint;
+        this.a = 0.0f;
     }
 
-    @Override // android.view.ViewOutlineProvider
-    public final void getOutline(View view, Outline outline) {
-        org.telegram.ui.Cells.t5 t5Var = (org.telegram.ui.Cells.t5) view;
-        if (t5Var.getTag() == null) {
-            return;
-        }
-        int intValue = ((Integer) t5Var.getTag()).intValue();
-        yl ylVar = this.a;
-        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = ylVar.v;
-        if (ylVar.d && chatAttachAlertPhotoLayout.P0 == chatAttachAlertPhotoLayout.Q0 && !chatAttachAlertPhotoLayout.K0) {
-            intValue++;
-        }
-        if (chatAttachAlertPhotoLayout.c1) {
-            intValue++;
-        }
-        if (intValue == 0) {
-            int dp = AndroidUtilities.dp(16.0f);
-            outline.setRoundRect(0, 0, view.getMeasuredWidth() + dp, view.getMeasuredHeight() + dp, dp);
-        } else if (intValue != chatAttachAlertPhotoLayout.I0 - 1) {
-            outline.setRect(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight());
+    @Override // android.widget.TextView, android.view.View
+    public final void onDraw(Canvas canvas) {
+        int i10 = (int) ((this.a * 130.0f) + 125.0f);
+        Paint paint = this.c;
+        paint.setAlpha(i10);
+        if (this.b) {
+            float f9 = this.a + 0.026666667f;
+            this.a = f9;
+            if (f9 >= 1.0f) {
+                this.a = 1.0f;
+                this.b = false;
+            }
         } else {
-            int dp2 = AndroidUtilities.dp(16.0f);
-            outline.setRoundRect(-dp2, 0, view.getMeasuredWidth(), view.getMeasuredHeight() + dp2, dp2);
+            float f10 = this.a - 0.026666667f;
+            this.a = f10;
+            if (f10 <= 0.0f) {
+                this.a = 0.0f;
+                this.b = true;
+            }
         }
+        super.onDraw(canvas);
+        canvas.drawCircle(AndroidUtilities.dp(14.0f), getMeasuredHeight() / 2, AndroidUtilities.dp(4.0f), paint);
+        invalidate();
     }
 }

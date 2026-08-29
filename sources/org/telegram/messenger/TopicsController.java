@@ -26,7 +26,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_forum;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public class TopicsController extends BaseController {
     public static final int LOAD_TYPE_HASH_CHECK = 3;
@@ -50,7 +50,7 @@ public class TopicsController extends BaseController {
     LongSparseIntArray topicsIsLoading;
     a0.h topicsMapByChatId;
 
-    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
     public static class TopicUpdate {
         boolean checkForDelete;
         long dialogId;
@@ -65,7 +65,7 @@ public class TopicsController extends BaseController {
         int unreadMentions;
     }
 
-    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
     public class TopicsLoadOffset {
         int lastMessageDate;
         int lastMessageId;
@@ -75,8 +75,8 @@ public class TopicsController extends BaseController {
         }
     }
 
-    public TopicsController(int i9) {
-        super(i9);
+    public TopicsController(int i10) {
+        super(i10);
         this.topicsByChatId = new a0.h();
         this.topicsMapByChatId = new a0.h();
         this.topicsIsLoading = new LongSparseIntArray();
@@ -87,32 +87,32 @@ public class TopicsController extends BaseController {
         this.offsets = new a0.h();
     }
 
-    public static long calculateHashSavedDialogs(ArrayList<TLRPC.TL_forumTopic> arrayList, int i9, int i10) {
-        int i11;
-        if (arrayList == null || arrayList.size() < (i11 = i10 + i9)) {
+    public static long calculateHashSavedDialogs(ArrayList<TLRPC.TL_forumTopic> arrayList, int i10, int i11) {
+        int i12;
+        if (arrayList == null || arrayList.size() < (i12 = i11 + i10)) {
             return 0L;
         }
         long j10 = 0;
-        while (i9 < i11) {
-            TLRPC.TL_forumTopic tL_forumTopic = arrayList.get(i9);
+        while (i10 < i12) {
+            TLRPC.TL_forumTopic tL_forumTopic = arrayList.get(i10);
             TLRPC.Message message = tL_forumTopic.topMessage;
             if (message == null || message.id != tL_forumTopic.top_message) {
                 return 0L;
             }
             j10 = MediaDataController.calcHash(MediaDataController.calcHash(MediaDataController.calcHash(MediaDataController.calcHash(j10, tL_forumTopic.pinned ? 1L : 0L), Math.abs(DialogObject.getPeerDialogId(tL_forumTopic.from_id))), tL_forumTopic.top_message), (message.flags & 32768) != 0 ? message.edit_date : message.date);
-            i9++;
+            i10++;
         }
         return j10;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public void deleteTopic(final long j10, final int i9, int i10) {
+    public void deleteTopic(final long j10, final int i10, int i11) {
         TL_forum.TL_messages_deleteTopicHistory tL_messages_deleteTopicHistory = new TL_forum.TL_messages_deleteTopicHistory();
         long j11 = -j10;
         tL_messages_deleteTopicHistory.peer = getMessagesController().getInputPeer(j11);
-        tL_messages_deleteTopicHistory.top_msg_id = i9;
-        if (i10 == 0) {
-            getMessagesStorage().removeTopic(j11, i9);
+        tL_messages_deleteTopicHistory.top_msg_id = i10;
+        if (i11 == 0) {
+            getMessagesStorage().removeTopic(j11, i10);
         }
         ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_deleteTopicHistory, new RequestDelegate() { // from class: org.telegram.messenger.TopicsController.1
             @Override // org.telegram.tgnet.RequestDelegate
@@ -120,9 +120,9 @@ public class TopicsController extends BaseController {
                 if (tL_error == null) {
                     TLRPC.TL_messages_affectedHistory tL_messages_affectedHistory = (TLRPC.TL_messages_affectedHistory) tLObject;
                     TopicsController.this.getMessagesController().processNewChannelDifferenceParams(tL_messages_affectedHistory.pts, tL_messages_affectedHistory.pts_count, j10);
-                    int i11 = tL_messages_affectedHistory.offset;
-                    if (i11 > 0) {
-                        TopicsController.this.deleteTopic(j10, i9, i11);
+                    int i12 = tL_messages_affectedHistory.offset;
+                    if (i12 > 0) {
+                        TopicsController.this.deleteTopic(j10, i10, i12);
                     }
                 }
             }
@@ -173,13 +173,13 @@ public class TopicsController extends BaseController {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$getTopicRepliesCount$30(TLRPC.TL_forumTopic tL_forumTopic, long j10, long j11, TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new bg.x0(this, tLObject, tL_forumTopic, j10, j11, 6));
+        AndroidUtilities.runOnUIThread(new eg.t0(this, tLObject, tL_forumTopic, j10, j11, 6));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$loadTopic$27(long j10, ArrayList arrayList, long j11, Runnable runnable) {
         if (BuildVars.LOGS_ENABLED) {
-            l0.n(arrayList == null ? 0 : arrayList.size(), aa.d.s(j10, "loaded from cache ", " topics_count="));
+            j7.l1.t(arrayList == null ? 0 : arrayList.size(), a4.w.r(j10, "loaded from cache ", " topics_count="));
         }
         processTopics(j10, arrayList, null, true, 0, -1);
         sortTopics(j10);
@@ -194,36 +194,36 @@ public class TopicsController extends BaseController {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$loadTopic$28(long j10, long j11, Runnable runnable, ArrayList arrayList) {
-        AndroidUtilities.runOnUIThread(new bg.x0(j10, j11, runnable, arrayList, this));
+        AndroidUtilities.runOnUIThread(new eg.t0(j10, j11, runnable, arrayList, this));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$loadTopics$0(long j10, ArrayList arrayList, boolean z10, int i9) {
+    public /* synthetic */ void lambda$loadTopics$0(long j10, ArrayList arrayList, boolean z10, int i10) {
         if (BuildVars.LOGS_ENABLED) {
-            l0.n(arrayList == null ? 0 : arrayList.size(), aa.d.s(j10, "loaded from cache ", " topics_count="));
+            j7.l1.t(arrayList == null ? 0 : arrayList.size(), a4.w.r(j10, "loaded from cache ", " topics_count="));
         }
         this.topicsIsLoading.put(j10, 0);
-        processTopics(j10, arrayList, null, z10, i9, -1);
+        processTopics(j10, arrayList, null, z10, i10, -1);
         sortTopics(j10);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$loadTopics$1(long j10, boolean z10, int i9, ArrayList arrayList) {
-        AndroidUtilities.runOnUIThread(new yf(this, j10, arrayList, z10, i9, 1));
+    public /* synthetic */ void lambda$loadTopics$1(long j10, boolean z10, int i10, ArrayList arrayList) {
+        AndroidUtilities.runOnUIThread(new fg(this, j10, arrayList, z10, i10, 1));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$loadTopics$2(TLRPC.TL_messages_savedDialogs tL_messages_savedDialogs, long j10, a0.h hVar, int i9) {
+    public /* synthetic */ void lambda$loadTopics$2(TLRPC.TL_messages_savedDialogs tL_messages_savedDialogs, long j10, a0.h hVar, int i10) {
         getMessagesStorage().putUsersAndChats(tL_messages_savedDialogs.users, tL_messages_savedDialogs.chats, true, true);
         getMessagesController().putUsers(tL_messages_savedDialogs.users, false);
         getMessagesController().putChats(tL_messages_savedDialogs.chats, false);
         this.topicsIsLoading.put(j10, 0);
-        processTopics(j10, vf.c.l(tL_messages_savedDialogs.dialogs), hVar, false, i9, tL_messages_savedDialogs.dialogs.size());
+        processTopics(j10, yf.d.l(tL_messages_savedDialogs.dialogs), hVar, false, i10, tL_messages_savedDialogs.dialogs.size());
         sortTopics(j10);
         getMessagesStorage().saveTopics(-j10, (List) this.topicsByChatId.f(j10), true, true, getConnectionsManager().getCurrentTime());
         getMessagesStorage().putMessages(tL_messages_savedDialogs.messages, false, true, false, 0, false, 0, 0L);
-        if (!tL_messages_savedDialogs.dialogs.isEmpty() && i9 == 1) {
-            TLRPC.TL_monoForumDialog tL_monoForumDialog = (TLRPC.TL_monoForumDialog) j3.r0.j(1, tL_messages_savedDialogs.dialogs);
+        if (!tL_messages_savedDialogs.dialogs.isEmpty() && i10 == 1) {
+            TLRPC.TL_monoForumDialog tL_monoForumDialog = (TLRPC.TL_monoForumDialog) j7.l1.i(1, tL_messages_savedDialogs.dialogs);
             TLRPC.Message message = (TLRPC.Message) hVar.f(tL_monoForumDialog.top_message);
             saveLoadOffset(j10, tL_monoForumDialog.top_message, message == null ? 0 : message.date, DialogObject.getPeerDialogId(tL_monoForumDialog.peer));
         } else if (getTopics(j10) == null || getTopics(j10).size() < tL_messages_savedDialogs.dialogs.size()) {
@@ -233,17 +233,17 @@ public class TopicsController extends BaseController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$loadTopics$3(TLRPC.TL_messages_savedDialogsSlice tL_messages_savedDialogsSlice, long j10, a0.h hVar, int i9) {
+    public /* synthetic */ void lambda$loadTopics$3(TLRPC.TL_messages_savedDialogsSlice tL_messages_savedDialogsSlice, long j10, a0.h hVar, int i10) {
         getMessagesStorage().putUsersAndChats(tL_messages_savedDialogsSlice.users, tL_messages_savedDialogsSlice.chats, true, true);
         getMessagesController().putUsers(tL_messages_savedDialogsSlice.users, false);
         getMessagesController().putChats(tL_messages_savedDialogsSlice.chats, false);
         this.topicsIsLoading.put(j10, 0);
-        processTopics(j10, vf.c.l(tL_messages_savedDialogsSlice.dialogs), hVar, false, i9, tL_messages_savedDialogsSlice.count);
+        processTopics(j10, yf.d.l(tL_messages_savedDialogsSlice.dialogs), hVar, false, i10, tL_messages_savedDialogsSlice.count);
         sortTopics(j10);
         getMessagesStorage().saveTopics(-j10, (List) this.topicsByChatId.f(j10), true, true, getConnectionsManager().getCurrentTime());
         getMessagesStorage().putMessages(tL_messages_savedDialogsSlice.messages, false, true, false, 0, false, 0, 0L);
-        if (!tL_messages_savedDialogsSlice.dialogs.isEmpty() && i9 == 1) {
-            TLRPC.TL_monoForumDialog tL_monoForumDialog = (TLRPC.TL_monoForumDialog) j3.r0.j(1, tL_messages_savedDialogsSlice.dialogs);
+        if (!tL_messages_savedDialogsSlice.dialogs.isEmpty() && i10 == 1) {
+            TLRPC.TL_monoForumDialog tL_monoForumDialog = (TLRPC.TL_monoForumDialog) j7.l1.i(1, tL_messages_savedDialogsSlice.dialogs);
             TLRPC.Message message = (TLRPC.Message) hVar.f(tL_monoForumDialog.top_message);
             saveLoadOffset(j10, tL_monoForumDialog.top_message, message == null ? 0 : message.date, DialogObject.getPeerDialogId(tL_monoForumDialog.peer));
         } else if (getTopics(j10) == null || getTopics(j10).size() < tL_messages_savedDialogsSlice.count) {
@@ -263,18 +263,18 @@ public class TopicsController extends BaseController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$loadTopics$5(TLObject tLObject, long j10, TLRPC.TL_messages_forumTopics tL_messages_forumTopics, a0.h hVar, int i9) {
+    public /* synthetic */ void lambda$loadTopics$5(TLObject tLObject, long j10, TLRPC.TL_messages_forumTopics tL_messages_forumTopics, a0.h hVar, int i10) {
         TLRPC.TL_messages_forumTopics tL_messages_forumTopics2 = (TLRPC.TL_messages_forumTopics) tLObject;
         getMessagesStorage().putUsersAndChats(tL_messages_forumTopics2.users, tL_messages_forumTopics2.chats, true, true);
         getMessagesController().putUsers(tL_messages_forumTopics2.users, false);
         getMessagesController().putChats(tL_messages_forumTopics2.chats, false);
         this.topicsIsLoading.put(j10, 0);
-        processTopics(j10, tL_messages_forumTopics.topics, hVar, false, i9, tL_messages_forumTopics2.count);
+        processTopics(j10, tL_messages_forumTopics.topics, hVar, false, i10, tL_messages_forumTopics2.count);
         sortTopics(j10);
         getMessagesStorage().saveTopics(-j10, (List) this.topicsByChatId.f(j10), true, true, getConnectionsManager().getCurrentTime());
         getMessagesStorage().putMessages(tL_messages_forumTopics.messages, false, true, false, 0, false, 0, 0L);
-        if (!tL_messages_forumTopics.topics.isEmpty() && i9 == 1) {
-            TLRPC.TL_forumTopic tL_forumTopic = (TLRPC.TL_forumTopic) j3.r0.j(1, tL_messages_forumTopics.topics);
+        if (!tL_messages_forumTopics.topics.isEmpty() && i10 == 1) {
+            TLRPC.TL_forumTopic tL_forumTopic = (TLRPC.TL_forumTopic) j7.l1.i(1, tL_messages_forumTopics.topics);
             TLRPC.Message message = (TLRPC.Message) hVar.f(tL_forumTopic.top_message);
             saveLoadOffset(j10, tL_forumTopic.top_message, message == null ? 0 : message.date, tL_forumTopic.id);
         } else if (getTopics(j10) == null || getTopics(j10).size() < tL_messages_forumTopics.count) {
@@ -290,47 +290,47 @@ public class TopicsController extends BaseController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$loadTopics$7(long j10, int i9, TLObject tLObject, TLRPC.TL_error tL_error) {
+    public /* synthetic */ void lambda$loadTopics$7(long j10, int i10, TLObject tLObject, TLRPC.TL_error tL_error) {
         a0.h hVar = new a0.h();
         if (tLObject instanceof TLRPC.TL_messages_savedDialogs) {
             TLRPC.TL_messages_savedDialogs tL_messages_savedDialogs = (TLRPC.TL_messages_savedDialogs) tLObject;
-            for (int i10 = 0; i10 < tL_messages_savedDialogs.messages.size(); i10++) {
-                hVar.k(tL_messages_savedDialogs.messages.get(i10), tL_messages_savedDialogs.messages.get(i10).id);
+            for (int i11 = 0; i11 < tL_messages_savedDialogs.messages.size(); i11++) {
+                hVar.k(tL_messages_savedDialogs.messages.get(i11), tL_messages_savedDialogs.messages.get(i11).id);
             }
-            AndroidUtilities.runOnUIThread(new fh.c0(this, tL_messages_savedDialogs, j10, hVar, i9, 10));
+            AndroidUtilities.runOnUIThread(new ih.y(this, tL_messages_savedDialogs, j10, hVar, i10, 10));
             return;
         }
-        int i11 = 0;
+        int i12 = 0;
         if (tLObject instanceof TLRPC.TL_messages_savedDialogsSlice) {
             TLRPC.TL_messages_savedDialogsSlice tL_messages_savedDialogsSlice = (TLRPC.TL_messages_savedDialogsSlice) tLObject;
-            while (i11 < tL_messages_savedDialogsSlice.messages.size()) {
-                hVar.k(tL_messages_savedDialogsSlice.messages.get(i11), tL_messages_savedDialogsSlice.messages.get(i11).id);
-                i11++;
+            while (i12 < tL_messages_savedDialogsSlice.messages.size()) {
+                hVar.k(tL_messages_savedDialogsSlice.messages.get(i12), tL_messages_savedDialogsSlice.messages.get(i12).id);
+                i12++;
             }
-            AndroidUtilities.runOnUIThread(new fh.c0(this, tL_messages_savedDialogsSlice, j10, hVar, i9, 11));
+            AndroidUtilities.runOnUIThread(new ih.y(this, tL_messages_savedDialogsSlice, j10, hVar, i10, 11));
             return;
         }
         if (tLObject instanceof TLRPC.TL_messages_savedDialogsNotModified) {
-            AndroidUtilities.runOnUIThread(new a4(this, j10, (TLRPC.TL_messages_savedDialogsNotModified) tLObject, 27));
+            AndroidUtilities.runOnUIThread(new c4(this, j10, (TLRPC.TL_messages_savedDialogsNotModified) tLObject, 27));
             return;
         }
         if (!(tLObject instanceof TLRPC.TL_messages_forumTopics)) {
-            AndroidUtilities.runOnUIThread(new jk(this, j10, 0));
+            AndroidUtilities.runOnUIThread(new rk(this, j10, 0));
             return;
         }
         TLRPC.TL_messages_forumTopics tL_messages_forumTopics = (TLRPC.TL_messages_forumTopics) tLObject;
-        while (i11 < tL_messages_forumTopics.messages.size()) {
-            hVar.k(tL_messages_forumTopics.messages.get(i11), tL_messages_forumTopics.messages.get(i11).id);
-            i11++;
+        while (i12 < tL_messages_forumTopics.messages.size()) {
+            hVar.k(tL_messages_forumTopics.messages.get(i12), tL_messages_forumTopics.messages.get(i12).id);
+            i12++;
         }
-        AndroidUtilities.runOnUIThread(new gh.w6(this, tL_messages_forumTopics, j10, tL_messages_forumTopics, hVar, i9));
+        AndroidUtilities.runOnUIThread(new jh.t6(this, tL_messages_forumTopics, j10, tL_messages_forumTopics, hVar, i10));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$onTopicsDeletedServerSide$23(ArrayList arrayList) {
         HashSet hashSet = new HashSet();
-        for (int i9 = 0; i9 < arrayList.size(); i9++) {
-            MessagesStorage.TopicKey topicKey = (MessagesStorage.TopicKey) arrayList.get(i9);
+        for (int i10 = 0; i10 < arrayList.size(); i10++) {
+            MessagesStorage.TopicKey topicKey = (MessagesStorage.TopicKey) arrayList.get(i10);
             long j10 = -topicKey.dialogId;
             a0.h hVar = (a0.h) this.topicsMapByChatId.f(j10);
             if (hVar != null) {
@@ -338,18 +338,18 @@ public class TopicsController extends BaseController {
             }
             ArrayList arrayList2 = (ArrayList) this.topicsByChatId.f(j10);
             if (arrayList2 != null) {
-                int i10 = 0;
+                int i11 = 0;
                 while (true) {
-                    if (i10 >= arrayList2.size()) {
+                    if (i11 >= arrayList2.size()) {
                         break;
                     }
-                    if ((getMessagesController().isMonoForum(topicKey.dialogId) ? DialogObject.getPeerDialogId(((TLRPC.TL_forumTopic) arrayList2.get(i10)).from_id) : ((TLRPC.TL_forumTopic) arrayList2.get(i10)).id) == topicKey.topicId) {
-                        arrayList2.remove(i10);
+                    if ((getMessagesController().isMonoForum(topicKey.dialogId) ? DialogObject.getPeerDialogId(((TLRPC.TL_forumTopic) arrayList2.get(i11)).from_id) : ((TLRPC.TL_forumTopic) arrayList2.get(i11)).id) == topicKey.topicId) {
+                        arrayList2.remove(i11);
                         getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.dialogDeleted, Long.valueOf(-j10), Long.valueOf(topicKey.topicId));
                         hashSet.add(Long.valueOf(j10));
                         break;
                     }
-                    i10++;
+                    i11++;
                 }
             }
         }
@@ -382,7 +382,7 @@ public class TopicsController extends BaseController {
                     return;
                 }
                 applyPinnedOrder(j10, arrayList);
-                AndroidUtilities.runOnUIThread(new og(12, this, o2Var));
+                AndroidUtilities.runOnUIThread(new vg(13, this, o2Var));
             }
         }
     }
@@ -396,8 +396,8 @@ public class TopicsController extends BaseController {
     public /* synthetic */ void lambda$processUpdate$22(List list) {
         HashSet hashSet = new HashSet();
         a0.h hVar = null;
-        for (int i9 = 0; i9 < list.size(); i9++) {
-            TopicUpdate topicUpdate = (TopicUpdate) list.get(i9);
+        for (int i10 = 0; i10 < list.size(); i10++) {
+            TopicUpdate topicUpdate = (TopicUpdate) list.get(i10);
             if (topicUpdate.reloadTopic) {
                 if (hVar == null) {
                     hVar = new a0.h();
@@ -420,27 +420,27 @@ public class TopicsController extends BaseController {
                 TLRPC.TL_forumTopic findTopic = findTopic(-topicUpdate.dialogId, topicUpdate.topicId);
                 if (findTopic != null) {
                     if (topicUpdate.onlyCounters) {
-                        int i10 = topicUpdate.unreadCount;
-                        if (i10 >= 0) {
-                            findTopic.unread_count = i10;
-                        }
-                        int i11 = topicUpdate.unreadMentions;
+                        int i11 = topicUpdate.unreadCount;
                         if (i11 >= 0) {
-                            findTopic.unread_mentions_count = i11;
+                            findTopic.unread_count = i11;
+                        }
+                        int i12 = topicUpdate.unreadMentions;
+                        if (i12 >= 0) {
+                            findTopic.unread_mentions_count = i12;
                         }
                     } else {
                         this.topicsByTopMsgId.l(messageHash(findTopic.top_message, -topicUpdate.dialogId));
                         findTopic.topMessage = topicUpdate.topMessage;
                         findTopic.groupedMessages = topicUpdate.groupedMessages;
-                        int i12 = topicUpdate.topMessageId;
-                        findTopic.top_message = i12;
+                        int i13 = topicUpdate.topMessageId;
+                        findTopic.top_message = i13;
                         findTopic.unread_count = topicUpdate.unreadCount;
                         findTopic.unread_mentions_count = topicUpdate.unreadMentions;
-                        this.topicsByTopMsgId.k(findTopic, messageHash(i12, -topicUpdate.dialogId));
+                        this.topicsByTopMsgId.k(findTopic, messageHash(i13, -topicUpdate.dialogId));
                     }
-                    int i13 = topicUpdate.totalMessagesCount;
-                    if (i13 > 0) {
-                        findTopic.totalMessagesCount = i13;
+                    int i14 = topicUpdate.totalMessagesCount;
+                    if (i14 > 0) {
+                        findTopic.totalMessagesCount = i14;
                     }
                     hashSet.add(Long.valueOf(-topicUpdate.dialogId));
                 }
@@ -455,15 +455,15 @@ public class TopicsController extends BaseController {
             sortTopics(((Long) it.next()).longValue(), true);
         }
         if (hVar != null) {
-            for (int i14 = 0; i14 < hVar.m(); i14++) {
-                reloadTopics(-hVar.j(i14), (ArrayList) hVar.n(i14), null);
+            for (int i15 = 0; i15 < hVar.m(); i15++) {
+                reloadTopics(-hVar.j(i15), (ArrayList) hVar.n(i15), null);
             }
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$reloadTopics$13(TLRPC.TL_messages_savedDialogs tL_messages_savedDialogs, long j10, ArrayList arrayList, a0.h hVar, HashSet hashSet, Runnable runnable) {
-        int i9 = 0;
+        int i10 = 0;
         getMessagesController().putUsers(tL_messages_savedDialogs.users, false);
         getMessagesController().putChats(tL_messages_savedDialogs.chats, false);
         processTopics(j10, arrayList, hVar, false, 2, -1);
@@ -471,9 +471,9 @@ public class TopicsController extends BaseController {
         getMessagesStorage().saveTopics(j11, (List) this.topicsByChatId.f(j10), true, true, getConnectionsManager().getCurrentTime());
         getMessagesStorage().putMessages(tL_messages_savedDialogs.messages, false, true, false, 0, false, 0, 0L);
         int size = arrayList.size();
-        while (i9 < size) {
-            Object obj = arrayList.get(i9);
-            i9++;
+        while (i10 < size) {
+            Object obj = arrayList.get(i10);
+            i10++;
             hashSet.remove(Long.valueOf(DialogObject.getPeerDialogId(((TLRPC.TL_forumTopic) obj).from_id)));
         }
         Iterator it = hashSet.iterator();
@@ -502,32 +502,32 @@ public class TopicsController extends BaseController {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$reloadTopics$15(TLObject tLObject, boolean z10, long j10, HashSet hashSet, Runnable runnable) {
-        int i9 = 0;
+        int i10 = 0;
         if (tLObject != null && z10) {
             a0.h hVar = new a0.h();
             TLRPC.TL_messages_savedDialogs tL_messages_savedDialogs = (TLRPC.TL_messages_savedDialogs) tLObject;
-            ArrayList l10 = vf.c.l(tL_messages_savedDialogs.dialogs);
-            while (i9 < tL_messages_savedDialogs.messages.size()) {
-                hVar.k(tL_messages_savedDialogs.messages.get(i9), tL_messages_savedDialogs.messages.get(i9).id);
-                i9++;
+            ArrayList l10 = yf.d.l(tL_messages_savedDialogs.dialogs);
+            while (i10 < tL_messages_savedDialogs.messages.size()) {
+                hVar.k(tL_messages_savedDialogs.messages.get(i10), tL_messages_savedDialogs.messages.get(i10).id);
+                i10++;
             }
-            AndroidUtilities.runOnUIThread(new i8(this, tL_messages_savedDialogs, j10, l10, hVar, hashSet, runnable));
+            AndroidUtilities.runOnUIThread(new n8(this, tL_messages_savedDialogs, j10, l10, hVar, hashSet, runnable));
             return;
         }
         if (tLObject != null) {
             a0.h hVar2 = new a0.h();
             TLRPC.TL_messages_forumTopics tL_messages_forumTopics = (TLRPC.TL_messages_forumTopics) tLObject;
-            while (i9 < tL_messages_forumTopics.messages.size()) {
-                hVar2.k(tL_messages_forumTopics.messages.get(i9), tL_messages_forumTopics.messages.get(i9).id);
-                i9++;
+            while (i10 < tL_messages_forumTopics.messages.size()) {
+                hVar2.k(tL_messages_forumTopics.messages.get(i10), tL_messages_forumTopics.messages.get(i10).id);
+                i10++;
             }
-            AndroidUtilities.runOnUIThread(new uk(this, tLObject, j10, tL_messages_forumTopics, hVar2, runnable));
+            AndroidUtilities.runOnUIThread(new cl(this, tLObject, j10, tL_messages_forumTopics, hVar2, runnable));
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$reloadTopics$16(boolean z10, long j10, HashSet hashSet, Runnable runnable, TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new fd(this, tLObject, z10, j10, hashSet, runnable));
+        AndroidUtilities.runOnUIThread(new md(this, tLObject, z10, j10, hashSet, runnable));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -559,9 +559,9 @@ public class TopicsController extends BaseController {
             return tL_forumTopic.pinnedOrder - tL_forumTopic2.pinnedOrder;
         }
         TLRPC.Message message = tL_forumTopic2.topMessage;
-        int i9 = message != null ? message.date : 0;
+        int i10 = message != null ? message.date : 0;
         TLRPC.Message message2 = tL_forumTopic.topMessage;
-        return i9 - (message2 != null ? message2.date : 0);
+        return i10 - (message2 != null ? message2.date : 0);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -572,11 +572,11 @@ public class TopicsController extends BaseController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$updateMentionsUnread$21(long j10, long j11, int i9) {
+    public /* synthetic */ void lambda$updateMentionsUnread$21(long j10, long j11, int i10) {
         long j12 = -j10;
         TLRPC.TL_forumTopic findTopic = findTopic(j12, j11);
         if (findTopic != null) {
-            findTopic.unread_mentions_count = i9;
+            findTopic.unread_mentions_count = i10;
             sortTopics(j12, true);
         }
     }
@@ -606,19 +606,19 @@ public class TopicsController extends BaseController {
     public /* synthetic */ void lambda$updateTopicsWithDeletedMessages$10(ArrayList arrayList, long j10) {
         ArrayList<TLRPC.TL_forumTopic> arrayList2 = null;
         boolean z10 = false;
-        for (int i9 = 0; i9 < arrayList.size(); i9++) {
-            TLRPC.TL_forumTopic tL_forumTopic = (TLRPC.TL_forumTopic) arrayList.get(i9);
+        for (int i10 = 0; i10 < arrayList.size(); i10++) {
+            TLRPC.TL_forumTopic tL_forumTopic = (TLRPC.TL_forumTopic) arrayList.get(i10);
             a0.h hVar = (a0.h) this.topicsMapByChatId.f(j10);
             if (hVar != null) {
                 TLRPC.TL_forumTopic tL_forumTopic2 = (TLRPC.TL_forumTopic) hVar.f(tL_forumTopic.id);
                 if (tL_forumTopic2 != null && tL_forumTopic.top_message != -1 && tL_forumTopic.topMessage != null) {
                     this.topicsByTopMsgId.l(messageHash(tL_forumTopic2.top_message, j10));
                     TLRPC.Message message = tL_forumTopic.topMessage;
-                    int i10 = message.id;
-                    tL_forumTopic2.top_message = i10;
+                    int i11 = message.id;
+                    tL_forumTopic2.top_message = i11;
                     tL_forumTopic2.topMessage = message;
                     tL_forumTopic2.groupedMessages = tL_forumTopic.groupedMessages;
-                    this.topicsByTopMsgId.k(tL_forumTopic2, messageHash(i10, j10));
+                    this.topicsByTopMsgId.k(tL_forumTopic2, messageHash(i11, j10));
                     z10 = true;
                 } else if (tL_forumTopic.top_message == -1 || tL_forumTopic.topMessage == null) {
                     if (arrayList2 == null) {
@@ -679,8 +679,8 @@ public class TopicsController extends BaseController {
             }
             queryFinalized.dispose();
             if (arrayList4 != null) {
-                for (int i9 = 0; i9 < arrayList4.size(); i9++) {
-                    TLRPC.TL_forumTopic tL_forumTopic2 = arrayList4.get(i9);
+                for (int i10 = 0; i10 < arrayList4.size(); i10++) {
+                    TLRPC.TL_forumTopic tL_forumTopic2 = arrayList4.get(i10);
                     SQLiteDatabase database2 = getMessagesStorage().getDatabase();
                     Locale locale2 = Locale.US;
                     SQLiteCursor queryFinalized2 = database2.queryFinalized("SELECT mid, data FROM messages_topics WHERE uid = " + j10 + " AND topic_id = " + tL_forumTopic2.id + " ORDER BY mid DESC LIMIT 1", new Object[0]);
@@ -689,18 +689,18 @@ public class TopicsController extends BaseController {
                         TLdeserialize.readAttachPath(byteBufferValue, getUserConfig().clientUserId);
                         byteBufferValue.reuse();
                         this.topicsByTopMsgId.l(messageHash(tL_forumTopic2.top_message, j11));
-                        int i10 = TLdeserialize.id;
-                        tL_forumTopic2.top_message = i10;
+                        int i11 = TLdeserialize.id;
+                        tL_forumTopic2.top_message = i11;
                         tL_forumTopic2.topMessage = TLdeserialize;
                         tL_forumTopic2.groupedMessages = null;
-                        this.topicsByTopMsgId.k(tL_forumTopic2, messageHash(i10, j11));
+                        this.topicsByTopMsgId.k(tL_forumTopic2, messageHash(i11, j11));
                     }
                     queryFinalized2.dispose();
                 }
-                for (int i11 = 0; i11 < arrayList4.size(); i11++) {
+                for (int i12 = 0; i12 < arrayList4.size(); i12++) {
                     SQLiteDatabase database3 = getMessagesStorage().getDatabase();
                     Locale locale3 = Locale.US;
-                    database3.executeFast("UPDATE topics SET top_message = " + arrayList4.get(i11).top_message + " WHERE did = " + j10 + " AND topic_id = " + arrayList4.get(i11).id).stepThis().dispose();
+                    database3.executeFast("UPDATE topics SET top_message = " + arrayList4.get(i12).top_message + " WHERE did = " + j10 + " AND topic_id = " + arrayList4.get(i12).id).stepThis().dispose();
                 }
             }
             arrayList2 = arrayList4;
@@ -709,17 +709,17 @@ public class TopicsController extends BaseController {
         }
         getMessagesStorage().loadGroupedMessagesForTopics(j10, arrayList2);
         if (arrayList2 == null) {
-            AndroidUtilities.runOnUIThread(new a4(this, arrayList2, j11, 28));
+            AndroidUtilities.runOnUIThread(new c4(this, arrayList2, j11, 28));
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$updateTopicsWithDeletedMessages$12(long j10, ArrayList arrayList, boolean z10, long j11) {
-        getMessagesStorage().getStorageQueue().postRunnable(new ik(this, j10, arrayList, z10, j11, 0));
+        getMessagesStorage().getStorageQueue().postRunnable(new qk(this, j10, arrayList, z10, j11, 0));
     }
 
-    private long messageHash(int i9, long j10) {
-        return j10 + (i9 << 12);
+    private long messageHash(int i10, long j10) {
+        return j10 + (i10 << 12);
     }
 
     private void sortTopics(long j10) {
@@ -735,15 +735,15 @@ public class TopicsController extends BaseController {
     }
 
     public void databaseCleared() {
-        AndroidUtilities.runOnUIThread(new kk(this, 1));
+        AndroidUtilities.runOnUIThread(new sk(this, 1));
     }
 
     public void deleteTopics(long j10, ArrayList<Integer> arrayList) {
         ArrayList arrayList2 = (ArrayList) this.topicsByChatId.f(j10);
         a0.h hVar = (a0.h) this.topicsMapByChatId.f(j10);
         if (hVar != null && arrayList2 != null) {
-            for (int i9 = 0; i9 < arrayList.size(); i9++) {
-                long intValue = arrayList.get(i9).intValue();
+            for (int i10 = 0; i10 < arrayList.size(); i10++) {
+                long intValue = arrayList.get(i10).intValue();
                 TLRPC.TL_forumTopic tL_forumTopic = (TLRPC.TL_forumTopic) hVar.f(intValue);
                 hVar.l(intValue);
                 if (tL_forumTopic != null) {
@@ -753,8 +753,8 @@ public class TopicsController extends BaseController {
             }
             sortTopics(j10);
         }
-        for (int i10 = 0; i10 < arrayList.size(); i10++) {
-            deleteTopic(j10, arrayList.get(i10).intValue(), 0);
+        for (int i11 = 0; i11 < arrayList.size(); i11++) {
+            deleteTopic(j10, arrayList.get(i11).intValue(), 0);
         }
     }
 
@@ -771,7 +771,7 @@ public class TopicsController extends BaseController {
         if (tL_forumTopic != null || !getMessagesController().isMonoForum(-j10)) {
             return tL_forumTopic;
         }
-        int i9 = vf.c.a;
+        int i10 = yf.d.a;
         return (TLRPC.TL_forumTopic) hVar.f((int) ((j11 >>> 32) ^ j11));
     }
 
@@ -779,8 +779,8 @@ public class TopicsController extends BaseController {
         ArrayList<TLRPC.TL_forumTopic> topics = getTopics(j10);
         ArrayList<Integer> arrayList = new ArrayList<>();
         if (topics != null) {
-            for (int i9 = 0; i9 < topics.size(); i9++) {
-                TLRPC.TL_forumTopic tL_forumTopic = topics.get(i9);
+            for (int i10 = 0; i10 < topics.size(); i10++) {
+                TLRPC.TL_forumTopic tL_forumTopic = topics.get(i10);
                 if (tL_forumTopic != null && tL_forumTopic.pinned) {
                     arrayList.add(Integer.valueOf(tL_forumTopic.id));
                 }
@@ -793,8 +793,8 @@ public class TopicsController extends BaseController {
         ArrayList arrayList = (ArrayList) this.topicsByChatId.f(j10);
         Arrays.fill(countsTmp, 0);
         if (arrayList != null) {
-            for (int i9 = 0; i9 < arrayList.size(); i9++) {
-                TLRPC.TL_forumTopic tL_forumTopic = (TLRPC.TL_forumTopic) arrayList.get(i9);
+            for (int i10 = 0; i10 < arrayList.size(); i10++) {
+                TLRPC.TL_forumTopic tL_forumTopic = (TLRPC.TL_forumTopic) arrayList.get(i10);
                 int[] iArr = countsTmp;
                 iArr[0] = iArr[0] + (tL_forumTopic.unread_count > 0 ? 1 : 0);
                 iArr[1] = iArr[1] + (tL_forumTopic.unread_mentions_count > 0 ? 1 : 0);
@@ -823,11 +823,11 @@ public class TopicsController extends BaseController {
         if (messageReplyHeader == null) {
             return null;
         }
-        int i9 = messageReplyHeader.reply_to_top_id;
-        if (i9 == 0) {
-            i9 = messageReplyHeader.reply_to_msg_id;
+        int i10 = messageReplyHeader.reply_to_top_id;
+        if (i10 == 0) {
+            i10 = messageReplyHeader.reply_to_msg_id;
         }
-        return (i9 == 0 || (findTopic = findTopic(chat.id, (long) i9)) == null) ? "" : findTopic.title;
+        return (i10 == 0 || (findTopic = findTopic(chat.id, (long) i10)) == null) ? "" : findTopic.title;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -850,7 +850,7 @@ public class TopicsController extends BaseController {
             tL_messages_getReplies2.limit = 1;
             tL_messages_getReplies = tL_messages_getReplies2;
         }
-        getConnectionsManager().sendRequest(tL_messages_getReplies, new gh.d2(this, findTopic, j10, j11, 4));
+        getConnectionsManager().sendRequest(tL_messages_getReplies, new jh.b2(this, findTopic, j10, j11, 4));
     }
 
     public ArrayList<TLRPC.TL_forumTopic> getTopics(long j10) {
@@ -870,7 +870,7 @@ public class TopicsController extends BaseController {
     }
 
     public void loadTopic(final long j10, final long j11, final Runnable runnable) {
-        getMessagesStorage().loadTopics(-j10, new Consumer() { // from class: org.telegram.messenger.mk
+        getMessagesStorage().loadTopics(-j10, new Consumer() { // from class: org.telegram.messenger.uk
             @Override // java.util.function.Consumer
             /* renamed from: accept */
             public final void x(Object obj) {
@@ -936,8 +936,8 @@ public class TopicsController extends BaseController {
     }
 
     public void onTopicFragmentPause(long j10) {
-        int i9 = this.openedTopicsByChatId.get(j10, 0) - 1;
-        this.openedTopicsByChatId.put(j10, i9 >= 0 ? i9 : 0);
+        int i10 = this.openedTopicsByChatId.get(j10, 0) - 1;
+        this.openedTopicsByChatId.put(j10, i10 >= 0 ? i10 : 0);
     }
 
     public void onTopicFragmentResume(long j10) {
@@ -951,19 +951,19 @@ public class TopicsController extends BaseController {
         onTopicsDeletedServerSide(arrayList);
     }
 
-    public void pinTopic(long j10, int i9, boolean z10, org.telegram.ui.ActionBar.o2 o2Var) {
+    public void pinTopic(long j10, int i10, boolean z10, org.telegram.ui.ActionBar.o2 o2Var) {
         TL_forum.TL_messages_updatePinnedForumTopic tL_messages_updatePinnedForumTopic = new TL_forum.TL_messages_updatePinnedForumTopic();
         tL_messages_updatePinnedForumTopic.peer = getMessagesController().getInputPeer(-j10);
-        tL_messages_updatePinnedForumTopic.topic_id = i9;
+        tL_messages_updatePinnedForumTopic.topic_id = i10;
         tL_messages_updatePinnedForumTopic.pinned = z10;
         ArrayList<Integer> currentPinnedOrder = getCurrentPinnedOrder(j10);
         ArrayList<Integer> arrayList = new ArrayList<>(currentPinnedOrder);
-        arrayList.remove(Integer.valueOf(i9));
+        arrayList.remove(Integer.valueOf(i10));
         if (z10) {
-            arrayList.add(0, Integer.valueOf(i9));
+            arrayList.add(0, Integer.valueOf(i10));
         }
         applyPinnedOrder(j10, arrayList);
-        ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_updatePinnedForumTopic, new gh.w(this, o2Var, j10, currentPinnedOrder, 6));
+        ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_updatePinnedForumTopic, new jh.v(this, o2Var, j10, currentPinnedOrder, 6));
     }
 
     public void preloadTopics(long j10) {
@@ -980,13 +980,13 @@ public class TopicsController extends BaseController {
 
     public void processEditedMessages(a0.h hVar) {
         HashSet hashSet = new HashSet();
-        for (int i9 = 0; i9 < hVar.m(); i9++) {
-            ArrayList arrayList = (ArrayList) hVar.n(i9);
-            for (int i10 = 0; i10 < arrayList.size(); i10++) {
-                TLRPC.TL_forumTopic tL_forumTopic = (TLRPC.TL_forumTopic) this.topicsByTopMsgId.f(messageHash(((MessageObject) arrayList.get(i10)).getId(), -((MessageObject) arrayList.get(i10)).getDialogId()));
+        for (int i10 = 0; i10 < hVar.m(); i10++) {
+            ArrayList arrayList = (ArrayList) hVar.n(i10);
+            for (int i11 = 0; i11 < arrayList.size(); i11++) {
+                TLRPC.TL_forumTopic tL_forumTopic = (TLRPC.TL_forumTopic) this.topicsByTopMsgId.f(messageHash(((MessageObject) arrayList.get(i11)).getId(), -((MessageObject) arrayList.get(i11)).getDialogId()));
                 if (tL_forumTopic != null) {
-                    tL_forumTopic.topMessage = ((MessageObject) arrayList.get(i10)).messageOwner;
-                    hashSet.add(Long.valueOf(-((MessageObject) arrayList.get(i10)).getDialogId()));
+                    tL_forumTopic.topMessage = ((MessageObject) arrayList.get(i11)).messageOwner;
+                    hashSet.add(Long.valueOf(-((MessageObject) arrayList.get(i11)).getDialogId()));
                 }
             }
         }
@@ -1008,16 +1008,16 @@ public class TopicsController extends BaseController {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public void processTopics(long j10, ArrayList<TLRPC.TL_forumTopic> arrayList, a0.h hVar, boolean z10, int i9, int i10) {
+    public void processTopics(long j10, ArrayList<TLRPC.TL_forumTopic> arrayList, a0.h hVar, boolean z10, int i10, int i11) {
         ArrayList<Long> arrayList2;
         ArrayList<TLRPC.TL_forumTopic> arrayList3;
         boolean z11;
         ?? r32;
-        int i11;
+        int i12;
         TLRPC.TL_forumTopic tL_forumTopic;
         ArrayList<TLRPC.TL_forumTopic> arrayList4 = arrayList;
         a0.h hVar2 = hVar;
-        if (i9 == 3 && getMessagesController().isMonoForum(-j10)) {
+        if (i10 == 3 && getMessagesController().isMonoForum(-j10)) {
             getUserConfig().getPreferences().edit().remove("topics_end_reached_" + j10).apply();
             this.topicsByChatId.l(j10);
             this.topicsMapByChatId.l(j10);
@@ -1030,9 +1030,9 @@ public class TopicsController extends BaseController {
             sb2.append(" fromCache=");
             sb2.append(z10);
             sb2.append(" load_type=");
-            sb2.append(i9);
-            sb2.append(" totalCount=");
             sb2.append(i10);
+            sb2.append(" totalCount=");
+            sb2.append(i11);
             FileLog.d(sb2.toString());
         }
         ArrayList arrayList5 = (ArrayList) this.topicsByChatId.f(j10);
@@ -1046,22 +1046,22 @@ public class TopicsController extends BaseController {
             this.topicsMapByChatId.k(hVar3, j10);
         }
         if (arrayList4 != null) {
-            int i12 = 0;
+            int i13 = 0;
             ArrayList<Long> arrayList6 = null;
             ArrayList<TLRPC.TL_forumTopic> arrayList7 = null;
             z11 = false;
-            while (i12 < arrayList4.size()) {
-                TLRPC.TL_forumTopic tL_forumTopic2 = arrayList4.get(i12);
+            while (i13 < arrayList4.size()) {
+                TLRPC.TL_forumTopic tL_forumTopic2 = arrayList4.get(i13);
                 if (tL_forumTopic2 instanceof TLRPC.TL_forumTopicDeleted) {
                     if (arrayList6 == null) {
                         arrayList6 = new ArrayList<>();
                     }
                     ArrayList<Long> arrayList8 = arrayList6;
-                    i11 = i12;
+                    i12 = i13;
                     arrayList8.add(Long.valueOf(tL_forumTopic2.id));
                     arrayList6 = arrayList8;
                 } else {
-                    i11 = i12;
+                    i12 = i13;
                     if (!hVar3.d(tL_forumTopic2.id)) {
                         if (hVar2 != null) {
                             tL_forumTopic2.topMessage = (TLRPC.Message) hVar2.f(tL_forumTopic2.top_message);
@@ -1097,7 +1097,7 @@ public class TopicsController extends BaseController {
                     }
                     z11 = true;
                 }
-                i12 = i11 + 1;
+                i13 = i12 + 1;
                 arrayList4 = arrayList;
                 hVar2 = hVar;
             }
@@ -1108,46 +1108,46 @@ public class TopicsController extends BaseController {
             arrayList3 = null;
             z11 = false;
         }
-        int i13 = 0;
-        for (int i14 = 0; i14 < arrayList5.size(); i14++) {
-            TLRPC.TL_forumTopic tL_forumTopic3 = (TLRPC.TL_forumTopic) arrayList5.get(i14);
+        int i14 = 0;
+        for (int i15 = 0; i15 < arrayList5.size(); i15++) {
+            TLRPC.TL_forumTopic tL_forumTopic3 = (TLRPC.TL_forumTopic) arrayList5.get(i15);
             if (tL_forumTopic3 != null && tL_forumTopic3.pinned) {
-                int i15 = i13 + 1;
-                if (tL_forumTopic3.pinnedOrder != i13) {
-                    tL_forumTopic3.pinnedOrder = i13;
-                    i13 = i15;
+                int i16 = i14 + 1;
+                if (tL_forumTopic3.pinnedOrder != i14) {
+                    tL_forumTopic3.pinnedOrder = i14;
+                    i14 = i16;
                     z11 = true;
                 } else {
-                    i13 = i15;
+                    i14 = i16;
                 }
             }
         }
-        if (arrayList2 != null && i9 == 2) {
-            for (int i16 = 0; i16 < arrayList2.size(); i16++) {
-                int i17 = 0;
+        if (arrayList2 != null && i10 == 2) {
+            for (int i17 = 0; i17 < arrayList2.size(); i17++) {
+                int i18 = 0;
                 while (true) {
-                    if (i17 >= arrayList5.size()) {
+                    if (i18 >= arrayList5.size()) {
                         break;
                     }
-                    if (((TLRPC.TL_forumTopic) arrayList5.get(i17)).id == arrayList2.get(i16).longValue()) {
-                        arrayList5.remove(i17);
+                    if (((TLRPC.TL_forumTopic) arrayList5.get(i18)).id == arrayList2.get(i17).longValue()) {
+                        arrayList5.remove(i18);
                         break;
                     }
-                    i17++;
+                    i18++;
                 }
             }
             getMessagesStorage().removeTopics(j10, arrayList2);
         }
-        if (arrayList3 == null || i9 == 2) {
-            if (i9 != 0 || z10) {
+        if (arrayList3 == null || i10 == 2) {
+            if (i10 != 0 || z10) {
                 r32 = 1;
                 r32 = 1;
-                if (i9 != 1) {
+                if (i10 != 1) {
                 }
             } else {
                 r32 = 1;
             }
-            if (arrayList5.size() >= i10 && i10 >= 0 && !endIsReached(j10)) {
+            if (arrayList5.size() >= i11 && i11 >= 0 && !endIsReached(j10)) {
                 this.endIsReached.put(j10, r32);
                 getUserConfig().getPreferences().edit().putBoolean("topics_end_reached_" + j10, r32).apply();
                 z11 = true;
@@ -1158,14 +1158,14 @@ public class TopicsController extends BaseController {
         if (hVar3.m() > arrayList5.size()) {
             FileLog.e("[TopicsController]: cache desynchronization");
             HashSet hashSet = new HashSet(hVar3.m());
-            for (int i18 = 0; i18 < hVar3.m(); i18++) {
-                hashSet.add(Long.valueOf(hVar3.j(i18)));
+            for (int i19 = 0; i19 < hVar3.m(); i19++) {
+                hashSet.add(Long.valueOf(hVar3.j(i19)));
             }
             int size = arrayList5.size();
-            int i19 = 0;
-            while (i19 < size) {
-                Object obj = arrayList5.get(i19);
-                i19++;
+            int i20 = 0;
+            while (i20 < size) {
+                Object obj = arrayList5.get(i20);
+                i20++;
                 if (((TLRPC.TL_forumTopic) obj) != null) {
                     hashSet.remove(Long.valueOf(r8.id));
                 }
@@ -1180,13 +1180,13 @@ public class TopicsController extends BaseController {
             sortTopics(j10, false);
         }
         getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.topicsDidLoaded, Long.valueOf(j10), Boolean.TRUE);
-        if ((i9 == 0 || (i9 == 0 && !z10)) && z10 && ((ArrayList) this.topicsByChatId.f(j10)).isEmpty()) {
-            AndroidUtilities.runOnUIThread(new jk(this, j10, 1));
+        if ((i10 == 0 || (i10 == 0 && !z10)) && z10 && ((ArrayList) this.topicsByChatId.f(j10)).isEmpty()) {
+            AndroidUtilities.runOnUIThread(new rk(this, j10, 1));
         }
     }
 
     public void processUpdate(List<TopicUpdate> list) {
-        AndroidUtilities.runOnUIThread(new og(11, this, list));
+        AndroidUtilities.runOnUIThread(new vg(12, this, list));
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -1195,26 +1195,26 @@ public class TopicsController extends BaseController {
         long j11 = -j10;
         boolean isMonoForum = getMessagesController().isMonoForum(j11);
         HashSet hashSet = new HashSet();
-        int i9 = 0;
+        int i10 = 0;
         if (isMonoForum) {
             TLRPC.TL_messages_getSavedDialogsByID tL_messages_getSavedDialogsByID = new TLRPC.TL_messages_getSavedDialogsByID();
-            while (i9 < arrayList.size()) {
-                long peerDialogId = DialogObject.getPeerDialogId(arrayList.get(i9).from_id);
+            while (i10 < arrayList.size()) {
+                long peerDialogId = DialogObject.getPeerDialogId(arrayList.get(i10).from_id);
                 hashSet.add(Long.valueOf(peerDialogId));
                 tL_messages_getSavedDialogsByID.ids.add(getMessagesController().getInputPeer(peerDialogId));
-                i9++;
+                i10++;
             }
             tL_messages_getSavedDialogsByID.parent_peer = getMessagesController().getInputPeer(j11);
             tL_messages_getForumTopicsByID = tL_messages_getSavedDialogsByID;
         } else {
             TL_forum.TL_messages_getForumTopicsByID tL_messages_getForumTopicsByID2 = new TL_forum.TL_messages_getForumTopicsByID();
-            while (i9 < arrayList.size()) {
-                i9 = j3.r0.e(arrayList.get(i9).id, i9, 1, tL_messages_getForumTopicsByID2.topics);
+            while (i10 < arrayList.size()) {
+                i10 = org.telegram.ui.th.d(arrayList.get(i10).id, i10, 1, tL_messages_getForumTopicsByID2.topics);
             }
             tL_messages_getForumTopicsByID2.peer = getMessagesController().getInputPeer(j11);
             tL_messages_getForumTopicsByID = tL_messages_getForumTopicsByID2;
         }
-        getConnectionsManager().sendRequest(tL_messages_getForumTopicsByID, new ka(this, isMonoForum, j10, hashSet, runnable));
+        getConnectionsManager().sendRequest(tL_messages_getForumTopicsByID, new qa(this, isMonoForum, j10, hashSet, runnable));
     }
 
     public void reorderPinnedTopics(long j10, ArrayList<Integer> arrayList) {
@@ -1228,10 +1228,10 @@ public class TopicsController extends BaseController {
         ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_messages_reorderPinnedForumTopics, null);
     }
 
-    public void saveLoadOffset(long j10, int i9, int i10, long j11) {
+    public void saveLoadOffset(long j10, int i10, int i11, long j11) {
         TopicsLoadOffset topicsLoadOffset = new TopicsLoadOffset();
-        topicsLoadOffset.lastMessageId = i9;
-        topicsLoadOffset.lastMessageDate = i10;
+        topicsLoadOffset.lastMessageId = i10;
+        topicsLoadOffset.lastMessageDate = i11;
         topicsLoadOffset.lastTopicId = j11;
         this.offsets.k(topicsLoadOffset, j10);
     }
@@ -1242,16 +1242,16 @@ public class TopicsController extends BaseController {
         }
     }
 
-    public void toggleCloseTopic(long j10, int i9, boolean z10) {
+    public void toggleCloseTopic(long j10, int i10, boolean z10) {
         TLRPC.TL_forumTopic tL_forumTopic;
         TL_forum.TL_messages_editForumTopic tL_messages_editForumTopic = new TL_forum.TL_messages_editForumTopic();
         long j11 = -j10;
         tL_messages_editForumTopic.peer = getMessagesController().getInputPeer(j11);
-        tL_messages_editForumTopic.topic_id = i9;
+        tL_messages_editForumTopic.topic_id = i10;
         tL_messages_editForumTopic.flags |= 4;
         tL_messages_editForumTopic.closed = z10;
         a0.h hVar = (a0.h) this.topicsMapByChatId.f(j10);
-        if (hVar != null && (tL_forumTopic = (TLRPC.TL_forumTopic) hVar.f(i9)) != null) {
+        if (hVar != null && (tL_forumTopic = (TLRPC.TL_forumTopic) hVar.f(i10)) != null) {
             tL_forumTopic.closed = z10;
             getMessagesStorage().updateTopicData(j11, tL_forumTopic, 8);
         }
@@ -1262,14 +1262,14 @@ public class TopicsController extends BaseController {
         });
     }
 
-    public void toggleShowTopic(long j10, int i9, boolean z10) {
+    public void toggleShowTopic(long j10, int i10, boolean z10) {
         TL_forum.TL_messages_editForumTopic tL_messages_editForumTopic = new TL_forum.TL_messages_editForumTopic();
         long j11 = -j10;
         tL_messages_editForumTopic.peer = getMessagesController().getInputPeer(j11);
-        tL_messages_editForumTopic.topic_id = i9;
+        tL_messages_editForumTopic.topic_id = i10;
         tL_messages_editForumTopic.flags = 8;
         tL_messages_editForumTopic.hidden = !z10;
-        TLRPC.TL_forumTopic findTopic = findTopic(j10, i9);
+        TLRPC.TL_forumTopic findTopic = findTopic(j10, i10);
         if (findTopic != null) {
             boolean z11 = tL_messages_editForumTopic.hidden;
             findTopic.hidden = z11;
@@ -1289,83 +1289,83 @@ public class TopicsController extends BaseController {
         getConnectionsManager().sendRequest(tL_channels_toggleViewForumAsMessages, new g0(this, 9));
     }
 
-    public void updateMaxReadId(long j10, long j11, int i9, int i10, int i11) {
+    public void updateMaxReadId(long j10, long j11, int i10, int i11, int i12) {
         TLRPC.TL_forumTopic findTopic = findTopic(j10, j11);
         if (findTopic != null) {
-            findTopic.read_inbox_max_id = i9;
-            findTopic.unread_count = i10;
-            if (i11 >= 0) {
-                findTopic.unread_mentions_count = i11;
+            findTopic.read_inbox_max_id = i10;
+            findTopic.unread_count = i11;
+            if (i12 >= 0) {
+                findTopic.unread_mentions_count = i12;
             }
             sortTopics(j10);
         }
     }
 
-    public void updateMentionsUnread(long j10, long j11, int i9) {
-        AndroidUtilities.runOnUIThread(new q7(this, j10, j11, i9, 2));
+    public void updateMentionsUnread(long j10, long j11, int i10) {
+        AndroidUtilities.runOnUIThread(new v7(this, j10, j11, i10, 2));
     }
 
-    public int updatePollVotesUnread(long j10, long j11, int i9, boolean z10) {
+    public int updatePollVotesUnread(long j10, long j11, int i10, boolean z10) {
         long j12 = -j10;
         TLRPC.TL_forumTopic findTopic = findTopic(j12, j11);
         if (findTopic == null) {
             return -1;
         }
         if (z10) {
-            int i10 = findTopic.unread_poll_votes_count + i9;
-            findTopic.unread_poll_votes_count = i10;
-            if (i10 < 0) {
+            int i11 = findTopic.unread_poll_votes_count + i10;
+            findTopic.unread_poll_votes_count = i11;
+            if (i11 < 0) {
                 findTopic.unread_poll_votes_count = 0;
             }
         } else {
-            findTopic.unread_poll_votes_count = i9;
+            findTopic.unread_poll_votes_count = i10;
         }
-        int i11 = findTopic.unread_poll_votes_count;
+        int i12 = findTopic.unread_poll_votes_count;
         sortTopics(j12, true);
-        return i11;
+        return i12;
     }
 
-    public int updateReactionsUnread(long j10, long j11, int i9, boolean z10) {
+    public int updateReactionsUnread(long j10, long j11, int i10, boolean z10) {
         long j12 = -j10;
         TLRPC.TL_forumTopic findTopic = findTopic(j12, j11);
         if (findTopic == null) {
             return -1;
         }
         if (z10) {
-            int i10 = findTopic.unread_reactions_count + i9;
-            findTopic.unread_reactions_count = i10;
-            if (i10 < 0) {
+            int i11 = findTopic.unread_reactions_count + i10;
+            findTopic.unread_reactions_count = i11;
+            if (i11 < 0) {
                 findTopic.unread_reactions_count = 0;
             }
         } else {
-            findTopic.unread_reactions_count = i9;
+            findTopic.unread_reactions_count = i10;
         }
-        int i11 = findTopic.unread_reactions_count;
+        int i12 = findTopic.unread_reactions_count;
         sortTopics(j12, true);
-        return i11;
+        return i12;
     }
 
     public void updateReadOutbox(HashMap<MessagesStorage.TopicKey, Integer> hashMap) {
-        AndroidUtilities.runOnUIThread(new og(14, this, hashMap));
+        AndroidUtilities.runOnUIThread(new vg(15, this, hashMap));
     }
 
-    public void updateTopicInUi(long j10, TLRPC.TL_forumTopic tL_forumTopic, int i9) {
+    public void updateTopicInUi(long j10, TLRPC.TL_forumTopic tL_forumTopic, int i10) {
         long j11 = -j10;
         TLRPC.TL_forumTopic findTopic = findTopic(j11, tL_forumTopic.id);
         if (findTopic != null) {
-            if ((i9 & 1) != 0) {
+            if ((i10 & 1) != 0) {
                 findTopic.title = tL_forumTopic.title;
             }
-            if ((i9 & 2) != 0) {
+            if ((i10 & 2) != 0) {
                 findTopic.icon_emoji_id = tL_forumTopic.icon_emoji_id;
             }
-            if ((i9 & 8) != 0) {
+            if ((i10 & 8) != 0) {
                 findTopic.closed = tL_forumTopic.closed;
             }
-            if ((i9 & 4) != 0) {
+            if ((i10 & 4) != 0) {
                 findTopic.pinned = tL_forumTopic.pinned;
             }
-            if ((i9 & 32) != 0) {
+            if ((i10 & 32) != 0) {
                 findTopic.hidden = tL_forumTopic.hidden;
             }
             sortTopics(j11);
@@ -1377,7 +1377,7 @@ public class TopicsController extends BaseController {
             return;
         }
         long j11 = -j10;
-        AndroidUtilities.runOnUIThread(new ik(this, j10, arrayList, ChatObject.isMonoForum(getMessagesController().getChat(Long.valueOf(j11))), j11, 1));
+        AndroidUtilities.runOnUIThread(new qk(this, j10, arrayList, ChatObject.isMonoForum(getMessagesController().getChat(Long.valueOf(j11))), j11, 1));
     }
 
     public void applyPinnedOrder(long j10, ArrayList<Integer> arrayList, boolean z10) {
@@ -1388,8 +1388,8 @@ public class TopicsController extends BaseController {
         boolean z11 = true;
         if (topics != null) {
             boolean z12 = false;
-            for (int i9 = 0; i9 < topics.size(); i9++) {
-                TLRPC.TL_forumTopic tL_forumTopic = topics.get(i9);
+            for (int i10 = 0; i10 < topics.size(); i10++) {
+                TLRPC.TL_forumTopic tL_forumTopic = topics.get(i10);
                 if (tL_forumTopic != null) {
                     int indexOf = arrayList.indexOf(Integer.valueOf(tL_forumTopic.id));
                     boolean z13 = indexOf >= 0;
@@ -1404,7 +1404,7 @@ public class TopicsController extends BaseController {
             z11 = z12;
         }
         if (z10 && z11) {
-            AndroidUtilities.runOnUIThread(new kk(this, 0));
+            AndroidUtilities.runOnUIThread(new sk(this, 0));
         }
     }
 
@@ -1414,17 +1414,17 @@ public class TopicsController extends BaseController {
         if (messageReplyHeader == null) {
             return null;
         }
-        int i9 = messageReplyHeader.reply_to_top_id;
-        if (i9 == 0) {
-            i9 = messageReplyHeader.reply_to_msg_id;
+        int i10 = messageReplyHeader.reply_to_top_id;
+        if (i10 == 0) {
+            i10 = messageReplyHeader.reply_to_msg_id;
         }
-        if (i9 == 0 || (findTopic = findTopic(chat.id, i9)) == null) {
+        if (i10 == 0 || (findTopic = findTopic(chat.id, i10)) == null) {
             return null;
         }
-        return vf.c.j(findTopic, textPaint, drawableArr);
+        return yf.d.j(findTopic, textPaint, drawableArr);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:20:0x008b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:20:0x008a, code lost:
     
         if (r8.lastTopicId == 0) goto L27;
      */
@@ -1435,23 +1435,23 @@ public class TopicsController extends BaseController {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public void loadTopics(final long j10, final boolean z10, final int i9) {
+    public void loadTopics(final long j10, final boolean z10, final int i10) {
         TLObject tL_messages_getForumTopics;
         long j11;
         if (this.topicsIsLoading.get(j10, 0) != 0) {
             return;
         }
         if (BuildVars.LOGS_ENABLED) {
-            FileLog.d("load topics " + j10 + " fromCache=" + z10 + " loadType=" + i9);
+            FileLog.d("load topics " + j10 + " fromCache=" + z10 + " loadType=" + i10);
         }
         this.topicsIsLoading.put(j10, 1);
         if (z10) {
-            getMessagesStorage().loadTopics(-j10, new Consumer() { // from class: org.telegram.messenger.lk
+            getMessagesStorage().loadTopics(-j10, new Consumer() { // from class: org.telegram.messenger.tk
                 @Override // java.util.function.Consumer
                 /* renamed from: accept */
                 public final void x(Object obj) {
                     long j12 = j10;
-                    TopicsController.this.lambda$loadTopics$1(j12, z10, i9, (ArrayList) obj);
+                    TopicsController.this.lambda$loadTopics$1(j12, z10, i10, (ArrayList) obj);
                 }
 
                 public /* synthetic */ Consumer andThen(Consumer consumer) {
@@ -1466,9 +1466,9 @@ public class TopicsController extends BaseController {
             tL_messages_getForumTopics.parent_peer = MessagesController.getInstance(this.currentAccount).getInputPeer(j12);
             tL_messages_getForumTopics.flags |= 2;
             TopicsLoadOffset loadOffset = getLoadOffset(j10);
-            if (i9 != 0 && i9 != 3) {
-                j11 = i9 != 1 ? 0L : 0L;
-                if (i9 == 1) {
+            if (i10 != 0 && i10 != 3) {
+                j11 = i10 != 1 ? 0L : 0L;
+                if (i10 == 1) {
                     tL_messages_getForumTopics.limit = 100;
                     tL_messages_getForumTopics.offset_date = loadOffset.lastMessageDate;
                     tL_messages_getForumTopics.offset_id = loadOffset.lastMessageId;
@@ -1479,7 +1479,7 @@ public class TopicsController extends BaseController {
                         sb2.append(" offset_id=");
                         sb2.append(loadOffset.lastMessageId);
                         sb2.append(" offset_topic=");
-                        j3.r0.z(sb2, loadOffset.lastTopicId);
+                        j7.l1.x(sb2, loadOffset.lastTopicId);
                     }
                 }
             }
@@ -1492,9 +1492,9 @@ public class TopicsController extends BaseController {
         } else {
             tL_messages_getForumTopics = new TL_forum.TL_messages_getForumTopics();
             tL_messages_getForumTopics.peer = getMessagesController().getInputPeer(j12);
-            if (i9 == 0) {
+            if (i10 == 0) {
                 tL_messages_getForumTopics.limit = 20;
-            } else if (i9 == 1) {
+            } else if (i10 == 1) {
                 tL_messages_getForumTopics.limit = 100;
                 TopicsLoadOffset loadOffset2 = getLoadOffset(j10);
                 tL_messages_getForumTopics.offset_date = loadOffset2.lastMessageDate;
@@ -1506,18 +1506,18 @@ public class TopicsController extends BaseController {
                     sb3.append(" offset_id=");
                     sb3.append(loadOffset2.lastMessageId);
                     sb3.append(" offset_topic=");
-                    j3.r0.z(sb3, loadOffset2.lastTopicId);
+                    j7.l1.x(sb3, loadOffset2.lastTopicId);
                 }
             }
         }
-        getConnectionsManager().sendRequest(tL_messages_getForumTopics, new yd(this, j10, i9, 1));
+        getConnectionsManager().sendRequest(tL_messages_getForumTopics, new fe(this, j10, i10, 1));
     }
 
     public void sortTopics(long j10, boolean z10) {
         ArrayList arrayList = (ArrayList) this.topicsByChatId.f(j10);
         if (arrayList != null) {
             if (this.openedTopicsByChatId.get(j10, 0) > 0) {
-                Collections.sort(arrayList, new sh(4));
+                Collections.sort(arrayList, new zh(4));
             }
             if (z10) {
                 getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.topicsDidLoaded, Long.valueOf(j10), Boolean.TRUE);
@@ -1526,14 +1526,14 @@ public class TopicsController extends BaseController {
     }
 
     public void onTopicsDeletedServerSide(ArrayList<MessagesStorage.TopicKey> arrayList) {
-        AndroidUtilities.runOnUIThread(new og(13, this, arrayList));
+        AndroidUtilities.runOnUIThread(new vg(14, this, arrayList));
     }
 
     public void markAllPollVotesAsRead(long j10) {
         ArrayList<TLRPC.TL_forumTopic> topics = getTopics(j10);
         if (topics != null) {
-            for (int i9 = 0; i9 < topics.size(); i9++) {
-                TLRPC.TL_forumTopic tL_forumTopic = topics.get(i9);
+            for (int i10 = 0; i10 < topics.size(); i10++) {
+                TLRPC.TL_forumTopic tL_forumTopic = topics.get(i10);
                 if (tL_forumTopic != null) {
                     tL_forumTopic.unread_poll_votes_count = 0;
                 }
@@ -1545,8 +1545,8 @@ public class TopicsController extends BaseController {
     public void markAllReactionsAsRead(long j10) {
         ArrayList<TLRPC.TL_forumTopic> topics = getTopics(j10);
         if (topics != null) {
-            for (int i9 = 0; i9 < topics.size(); i9++) {
-                TLRPC.TL_forumTopic tL_forumTopic = topics.get(i9);
+            for (int i10 = 0; i10 < topics.size(); i10++) {
+                TLRPC.TL_forumTopic tL_forumTopic = topics.get(i10);
                 if (tL_forumTopic != null) {
                     tL_forumTopic.unread_reactions_count = 0;
                 }
@@ -1560,6 +1560,6 @@ public class TopicsController extends BaseController {
     }
 
     public void reloadTopics(long j10, boolean z10) {
-        AndroidUtilities.runOnUIThread(new gh.ua(this, j10, z10, 5));
+        AndroidUtilities.runOnUIThread(new jh.oa(this, j10, z10, 4));
     }
 }

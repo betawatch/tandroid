@@ -1,132 +1,41 @@
 package bg;
 
+import android.content.Context;
+import android.graphics.Canvas;
 import android.view.View;
-import android.view.ViewGroup;
-import g7.e6;
-import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.Components.gc;
-import org.telegram.ui.Components.oc;
-import org.telegram.ui.Components.sa;
-import org.telegram.ui.Components.vk0;
-import org.telegram.ui.Components.wk0;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class g2 extends sa {
-    public final ArrayList T;
-    public final ArrayList U;
-    public final TLRPC.Chat V;
-    public final m1 W;
-    public f2 X;
-    public x1 Y;
+public final class g2 extends View {
+    public int a;
+    public float b;
+    public final /* synthetic */ h2 c;
 
-    public g2(org.telegram.ui.ActionBar.o2 o2Var, TL_stories.TL_premium_myBoosts tL_premium_myBoosts, TLRPC.Chat chat) {
-        super(o2Var, false);
-        this.T = new ArrayList();
-        this.U = new ArrayList();
-        this.v = 0.3f;
-        this.V = chat;
-        ArrayList<TL_stories.TL_myBoost> arrayList = tL_premium_myBoosts.my_boosts;
-        int size = arrayList.size();
-        int i9 = 0;
-        while (i9 < size) {
-            TL_stories.TL_myBoost tL_myBoost = arrayList.get(i9);
-            i9++;
-            TL_stories.TL_myBoost tL_myBoost2 = tL_myBoost;
-            TLRPC.Peer peer = tL_myBoost2.peer;
-            if (peer != null && DialogObject.getPeerDialogId(peer) != (-chat.id)) {
-                this.U.add(tL_myBoost2);
-            }
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public g2(h2 h2Var, Context context) {
+        super(context);
+        this.c = h2Var;
+        setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f));
+        setLayoutParams(new f2.x0(-2, 0));
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        h2 h2Var = this.c;
+        h2Var.T2.setColor(this.a);
+        float min = Math.min((getWidth() - getPaddingLeft()) - getPaddingRight(), (getHeight() - getPaddingTop()) - getPaddingBottom()) / 2.0f;
+        if (this.b != 0.0f) {
+            min -= (h2Var.U2.getStrokeWidth() + AndroidUtilities.dp(3.0f)) * this.b;
         }
-        fg.a aVar = new fg.a(getContext(), this.resourcesProvider, this.d);
-        aVar.setClickable(true);
-        aVar.setOrientation(1);
-        aVar.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
-        aVar.setBackgroundColor(f6.v0(f6.h5, this.resourcesProvider));
-        m1 m1Var = new m1(getContext(), this.resourcesProvider);
-        this.W = m1Var;
-        m1Var.k();
-        m1Var.setCounterColor(-6785796);
-        m1Var.setOnClickListener(new u1(0, this, chat));
-        aVar.addView(m1Var, e6.q(-1, 48, 87));
-        ViewGroup viewGroup = this.containerView;
-        int i10 = this.backgroundPaddingLeft;
-        viewGroup.addView(aVar, e6.f(-2.0f, 87, i10, 0, i10, 0));
-        wk0 wk0Var = this.d;
-        int i11 = this.backgroundPaddingLeft;
-        wk0Var.setPadding(i11, 0, i11, AndroidUtilities.dp(64.0f));
-        this.d.setOnItemClickListener(new b1(1, this, chat));
-        fixNavigationBar();
-        M();
-        R(false);
-        gc.a(this.container, new w1());
-    }
-
-    public static void O(g2 g2Var, TLRPC.Chat chat, View view) {
-        ArrayList arrayList = g2Var.T;
-        if (view instanceof fg.p) {
-            fg.p pVar = (fg.p) view;
-            if (pVar.getBoost().cooldown_until_date > 0) {
-                new oc(g2Var.container, g2Var.resourcesProvider).G(R.raw.chats_infotip, 5, AndroidUtilities.replaceTags(LocaleController.formatPluralString("BoostingWaitWarningPlural", (int) MessagesController.getInstance(UserConfig.selectedAccount).boostsPerSentGift, new Object[0]))).k(true);
-                return;
-            }
-            if (arrayList.contains(pVar.getBoost())) {
-                arrayList.remove(pVar.getBoost());
-            } else {
-                arrayList.add(pVar.getBoost());
-            }
-            pVar.c(arrayList.contains(pVar.getBoost()), true);
-            g2Var.R(true);
-            g2Var.X.a(arrayList, chat);
+        float width = ((getWidth() / 2.0f) + getPaddingLeft()) - getPaddingRight();
+        float height = ((getHeight() / 2.0f) + getPaddingTop()) - getPaddingBottom();
+        h2.x1(width, height, min, this.a, canvas);
+        if (this.b != 0.0f) {
+            h2Var.U2.setColor(this.a);
+            h2Var.U2.setAlpha(255);
+            canvas.drawCircle(width, height, (Math.min((getWidth() - getPaddingLeft()) - getPaddingRight(), (getHeight() - getPaddingTop()) - getPaddingBottom()) / 2.0f) - AndroidUtilities.dp(2.0f), h2Var.U2);
         }
-    }
-
-    public final void R(boolean z10) {
-        m1 m1Var = this.W;
-        m1Var.setShowZero(false);
-        ArrayList arrayList = this.T;
-        if (arrayList.size() > 1) {
-            m1Var.g(LocaleController.getString(R.string.BoostingReassignBoosts), z10, true);
-        } else {
-            m1Var.g(LocaleController.getString(R.string.BoostingReassignBoost), z10, true);
-        }
-        m1Var.c(arrayList.size(), z10);
-        m1Var.setEnabled(arrayList.size() > 0);
-    }
-
-    @Override // android.app.Dialog, android.view.Window.Callback
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.Y = new x1(this);
-    }
-
-    @Override // android.app.Dialog, android.view.Window.Callback
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.Y.cancel();
-    }
-
-    @Override // org.telegram.ui.ActionBar.f3
-    public final void onOpenAnimationEnd() {
-        this.Y.start();
-    }
-
-    @Override // org.telegram.ui.Components.sa
-    public final vk0 v(wk0 wk0Var) {
-        return new y1(this);
-    }
-
-    @Override // org.telegram.ui.Components.sa
-    public final CharSequence y() {
-        return LocaleController.getString(R.string.BoostingReassignBoost);
     }
 }

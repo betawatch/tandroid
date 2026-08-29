@@ -21,8 +21,8 @@ public final class f1 extends AbstractList implements g0, RandomAccess {
     }
 
     @Override // java.util.AbstractList, java.util.List
-    public final /* synthetic */ Object get(int i9) {
-        return (String) this.a.get(i9);
+    public final /* synthetic */ Object get(int i10) {
+        return (String) this.a.get(i10);
     }
 
     @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.List
@@ -33,9 +33,9 @@ public final class f1 extends AbstractList implements g0, RandomAccess {
     }
 
     @Override // java.util.AbstractList, java.util.List
-    public final ListIterator listIterator(int i9) {
+    public final ListIterator listIterator(int i10) {
         g1 g1Var = new g1();
-        g1Var.a = this.a.listIterator(i9);
+        g1Var.a = this.a.listIterator(i10);
         return g1Var;
     }
 

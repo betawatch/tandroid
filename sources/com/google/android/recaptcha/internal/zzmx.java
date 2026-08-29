@@ -1,8 +1,8 @@
 package com.google.android.recaptcha.internal;
 
-import ta.b;
+import u3.c;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public class zzmx {
     private final String zza;
@@ -21,12 +21,12 @@ public class zzmx {
         Class cls = this.zzb;
         String name = getClass().getName();
         String name2 = cls.getName();
-        StringBuilder e10 = b.e(name, "/");
-        e10.append(this.zza);
-        e10.append("[");
-        e10.append(name2);
-        e10.append("]");
-        return e10.toString();
+        StringBuilder f9 = c.f(name, "/");
+        f9.append(this.zza);
+        f9.append("[");
+        f9.append(name2);
+        f9.append("]");
+        return f9.toString();
     }
 
     public final boolean zzb() {
@@ -39,7 +39,7 @@ public class zzmx {
         this.zzb = cls;
         this.zzc = z10;
         System.identityHashCode(this);
-        for (int i9 = 0; i9 < 5; i9++) {
+        for (int i10 = 0; i10 < 5; i10++) {
         }
     }
 }

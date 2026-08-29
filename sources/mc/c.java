@@ -1,44 +1,25 @@
 package mc;
 
-import f7.e8;
-import ie.p;
-import java.util.regex.Pattern;
+import java.lang.reflect.Field;
+import java.util.Collections;
+import java.util.Map;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class c extends h {
-    public static final Pattern e = Pattern.compile("`+");
-    public static final Pattern f = Pattern.compile("^`+");
+public abstract class c {
+    public static final Map a;
 
-    @Override // mc.h
-    public final p b() {
-        String a2;
-        String a3 = a(f);
-        if (a3 == null) {
-            return null;
+    static {
+        Map map;
+        try {
+            Field declaredField = ke.b.class.getDeclaredField("a");
+            declaredField.setAccessible(true);
+            map = (Map) declaredField.get(null);
+        } catch (Throwable th2) {
+            Map map2 = Collections.EMPTY_MAP;
+            th2.printStackTrace();
+            map = map2;
         }
-        int i9 = this.d;
-        do {
-            a2 = a(e);
-            if (a2 == null) {
-                this.d = i9;
-                return f(a3);
-            }
-        } while (!a2.equals(a3));
-        ie.d dVar = new ie.d(0);
-        String replace = this.c.substring(i9, this.d - a3.length()).replace('\n', ' ');
-        if (replace.length() >= 3 && replace.charAt(0) == ' ' && replace.charAt(replace.length() - 1) == ' ') {
-            int length = replace.length();
-            if (e8.b(' ', replace, 0, length) != length) {
-                replace = e2.c.m(replace, 1, 1);
-            }
-        }
-        dVar.h = replace;
-        return dVar;
-    }
-
-    @Override // mc.h
-    public final char d() {
-        return '`';
+        a = map;
     }
 }

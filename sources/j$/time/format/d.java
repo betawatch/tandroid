@@ -4,8 +4,8 @@ package j$.time.format;
 public final class d implements f {
     public final char a;
 
-    public d(char c10) {
-        this.a = c10;
+    public d(char c3) {
+        this.a = c3;
     }
 
     @Override // j$.time.format.f
@@ -15,10 +15,10 @@ public final class d implements f {
     }
 
     public final String toString() {
-        char c10 = this.a;
-        if (c10 == '\'') {
+        char c3 = this.a;
+        if (c3 == '\'') {
             return "''";
         }
-        return "'" + c10 + "'";
+        return "'" + c3 + "'";
     }
 }

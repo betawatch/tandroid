@@ -1,68 +1,55 @@
 package org.telegram.ui;
 
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
+import android.content.Context;
+import android.view.ViewGroup;
+import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class kc implements d5.d {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ Object c;
+public final class kc extends org.telegram.ui.Components.il0 {
+    public final /* synthetic */ Context c;
+    public final /* synthetic */ org.telegram.ui.ActionBar.c6 d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ mc f;
 
-    public /* synthetic */ kc(int i9, Object obj, boolean z10) {
-        this.a = i9;
-        this.c = obj;
-        this.b = z10;
+    public kc(mc mcVar, Context context, org.telegram.ui.ActionBar.c6 c6Var, int i10) {
+        this.f = mcVar;
+        this.c = context;
+        this.d = c6Var;
+        this.e = i10;
     }
 
-    @Override // d5.d
-    public final void accept(Object obj) {
-        org.telegram.ui.Components.l71 l71Var;
-        switch (this.a) {
-            case 0:
-                nc ncVar = (nc) this.c;
-                View view = (View) obj;
-                mc mcVar = (mc) view;
-                ncVar.b.getClass();
-                boolean z10 = RecyclerView.R(view) == ncVar.e;
-                mcVar.s = z10;
-                if (!this.b) {
-                    mcVar.v.f(z10, true);
-                }
-                mcVar.invalidate();
-                break;
-            case 1:
-                qn qnVar = (qn) this.c;
-                View view2 = (View) obj;
-                boolean z11 = view2 instanceof org.telegram.ui.Cells.t1;
-                boolean z12 = this.b;
-                if (!z11) {
-                    if (view2 instanceof org.telegram.ui.Cells.w0) {
-                        ((org.telegram.ui.Cells.w0) view2).a0 = z12;
-                        break;
-                    }
-                } else {
-                    org.telegram.ui.Cells.t1 t1Var = (org.telegram.ui.Cells.t1) view2;
-                    if ((t1Var.A8 && t1Var.C8) != z12 && qnVar.B9()) {
-                        t1Var.A8 = z12;
-                        t1Var.C8 = qnVar.B9();
-                        t1Var.j8 = true;
-                        t1Var.forceLayout();
-                        break;
-                    }
-                }
-                break;
-            default:
-                org.telegram.ui.Components.m71 m71Var = (org.telegram.ui.Components.m71) this.c;
-                View view3 = (View) obj;
-                m71Var.v.getClass();
-                int R = RecyclerView.R(view3);
-                if (view3 instanceof org.telegram.ui.Components.k71) {
-                    ((org.telegram.ui.Components.k71) view3).setReordering(this.b && (l71Var = m71Var.y) != null && ((n2.p) l71Var).o(R));
-                    break;
-                }
-                break;
+    @Override // org.telegram.ui.Components.il0
+    public final boolean D(f2.n1 n1Var) {
+        return true;
+    }
+
+    @Override // f2.p0
+    public final int h() {
+        MessagesController.PeerColors peerColors = MessagesController.getInstance(this.e).peerColors;
+        if (peerColors == null) {
+            return 0;
         }
+        return peerColors.colors.size();
+    }
+
+    @Override // f2.p0
+    public final void v(f2.n1 n1Var, int i10) {
+        lc lcVar = (lc) n1Var.a;
+        lcVar.setBackgroundColor(org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.d6, this.d));
+        boolean z10 = i10 == this.f.e;
+        lcVar.s = z10;
+        lcVar.v.f(z10, true);
+        lcVar.invalidate();
+        MessagesController.PeerColors peerColors = MessagesController.getInstance(this.e).peerColors;
+        if (peerColors == null || i10 < 0 || i10 >= peerColors.colors.size()) {
+            return;
+        }
+        lcVar.a(peerColors.colors.get(i10));
+    }
+
+    @Override // f2.p0
+    public final f2.n1 x(ViewGroup viewGroup, int i10) {
+        return new org.telegram.ui.Components.vk0(new lc(this.f, this.c));
     }
 }

@@ -1,11 +1,11 @@
 package k;
 
 import java.util.ArrayList;
-import m.p3;
+import m.o3;
 import r0.n0;
 import r0.o0;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class i extends o0 {
     public final /* synthetic */ int a;
@@ -13,9 +13,9 @@ public final class i extends o0 {
     public int c;
     public final /* synthetic */ Object d;
 
-    public i(jb.d dVar) {
+    public i(j jVar) {
         this.a = 0;
-        this.d = dVar;
+        this.d = jVar;
         this.b = false;
         this.c = 0;
     }
@@ -35,7 +35,7 @@ public final class i extends o0 {
             case 0:
                 if (!this.b) {
                     this.b = true;
-                    n0 n0Var = (n0) ((jb.d) this.d).e;
+                    n0 n0Var = (n0) ((j) this.d).e;
                     if (n0Var != null) {
                         n0Var.b();
                         break;
@@ -43,7 +43,7 @@ public final class i extends o0 {
                 }
                 break;
             default:
-                ((p3) this.d).a.setVisibility(0);
+                ((o3) this.d).a.setVisibility(0);
                 break;
         }
     }
@@ -52,33 +52,33 @@ public final class i extends o0 {
     public final void c() {
         switch (this.a) {
             case 0:
-                int i9 = this.c + 1;
-                this.c = i9;
-                jb.d dVar = (jb.d) this.d;
-                if (i9 == ((ArrayList) dVar.c).size()) {
-                    n0 n0Var = (n0) dVar.e;
+                int i10 = this.c + 1;
+                this.c = i10;
+                j jVar = (j) this.d;
+                if (i10 == ((ArrayList) jVar.c).size()) {
+                    n0 n0Var = (n0) jVar.e;
                     if (n0Var != null) {
                         n0Var.c();
                     }
                     this.c = 0;
                     this.b = false;
-                    dVar.b = false;
+                    jVar.b = false;
                     break;
                 }
                 break;
             default:
                 if (!this.b) {
-                    ((p3) this.d).a.setVisibility(this.c);
+                    ((o3) this.d).a.setVisibility(this.c);
                     break;
                 }
                 break;
         }
     }
 
-    public i(p3 p3Var, int i9) {
+    public i(o3 o3Var, int i10) {
         this.a = 1;
-        this.d = p3Var;
-        this.c = i9;
+        this.d = o3Var;
+        this.c = i10;
         this.b = false;
     }
 }

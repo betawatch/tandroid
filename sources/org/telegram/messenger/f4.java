@@ -1,27 +1,28 @@
 package org.telegram.messenger;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class f4 implements OnCompleteListener {
+public final /* synthetic */ class f4 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ q0.a b;
+    public final /* synthetic */ Utilities.Callback b;
 
-    public /* synthetic */ f4(q0.a aVar, int i9) {
-        this.a = i9;
-        this.b = aVar;
+    public /* synthetic */ f4(int i10, Utilities.Callback callback) {
+        this.a = i10;
+        this.b = callback;
     }
 
-    @Override // com.google.android.gms.tasks.OnCompleteListener
-    public void onComplete(Task task) {
+    @Override // org.telegram.messenger.Utilities.Callback2
+    public final void run(Object obj, Object obj2) {
         switch (this.a) {
             case 0:
-                GoogleLocationProvider.lambda$getLastLocation$0(this.b, task);
+                GiftAuctionController.lambda$requestAuctionUpgrades$5(this.b, (TL_stars.starGiftUpgradeAttributes) obj, (TLRPC.TL_error) obj2);
                 break;
             default:
-                GoogleLocationProvider.lambda$checkLocationSettings$1(this.b, task);
+                MediaDataController.lambda$searchStickerSets$249(this.b, (TLRPC.messages_FoundStickerSets) obj, (TLRPC.TL_error) obj2);
                 break;
         }
     }

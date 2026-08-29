@@ -1,6 +1,6 @@
 package org.scilab.forge.jlatexmath;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public class MulticolumnAtom extends Atom {
     protected int afterVlines;
@@ -12,23 +12,23 @@ public class MulticolumnAtom extends Atom {
     protected int row;
     protected float w = 0.0f;
 
-    public MulticolumnAtom(int i9, String str, Atom atom) {
-        this.n = i9 < 1 ? 1 : i9;
+    public MulticolumnAtom(int i10, String str, Atom atom) {
+        this.n = i10 < 1 ? 1 : i10;
         this.cols = atom;
         this.align = parseAlign(str);
     }
 
     private int parseAlign(String str) {
         int length = str.length();
-        int i9 = 0;
-        int i10 = 2;
+        int i10 = 0;
+        int i11 = 2;
         boolean z10 = true;
-        while (i9 < length) {
-            char charAt = str.charAt(i9);
+        while (i10 < length) {
+            char charAt = str.charAt(i10);
             if (charAt == 'c') {
-                i10 = 2;
+                i11 = 2;
             } else if (charAt == 'l') {
-                i10 = 0;
+                i11 = 0;
             } else if (charAt != 'r') {
                 if (charAt == '|') {
                     if (z10) {
@@ -37,12 +37,12 @@ public class MulticolumnAtom extends Atom {
                         this.afterVlines = 1;
                     }
                     while (true) {
-                        int i11 = i9 + 1;
-                        if (i11 >= length) {
-                            i9 = i11;
+                        int i12 = i10 + 1;
+                        if (i12 >= length) {
+                            i10 = i12;
                             break;
                         }
-                        if (str.charAt(i11) != '|') {
+                        if (str.charAt(i12) != '|') {
                             break;
                         }
                         if (z10) {
@@ -50,17 +50,17 @@ public class MulticolumnAtom extends Atom {
                         } else {
                             this.afterVlines++;
                         }
-                        i9 = i11;
+                        i10 = i12;
                     }
                 }
-                i9++;
+                i10++;
             } else {
-                i10 = 1;
+                i11 = 1;
             }
             z10 = false;
-            i9++;
+            i10++;
         }
-        return i10;
+        return i11;
     }
 
     @Override // org.scilab.forge.jlatexmath.Atom
@@ -86,12 +86,12 @@ public class MulticolumnAtom extends Atom {
         return this.afterVlines != 0;
     }
 
-    public void setRowColumn(int i9, int i10) {
-        this.row = i9;
-        this.col = i10;
+    public void setRowColumn(int i10, int i11) {
+        this.row = i10;
+        this.col = i11;
     }
 
-    public void setWidth(float f10) {
-        this.w = f10;
+    public void setWidth(float f9) {
+        this.w = f9;
     }
 }

@@ -1,57 +1,49 @@
 package m3;
 
-import d5.f0;
-import java.util.Arrays;
+import f5.d0;
+import j7.l1;
+import java.util.Locale;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class f implements t {
-    public final int a;
-    public final int[] b;
-    public final long[] c;
-    public final long[] d;
-    public final long[] e;
-    public final long f;
-
-    public f(int[] iArr, long[] jArr, long[] jArr2, long[] jArr3) {
-        this.b = iArr;
-        this.c = jArr;
-        this.d = jArr2;
-        this.e = jArr3;
-        int length = iArr.length;
-        this.a = length;
-        if (length > 0) {
-            this.f = jArr2[length - 1] + jArr3[length - 1];
-        } else {
-            this.f = 0L;
-        }
-    }
-
-    @Override // m3.t
-    public final boolean e() {
-        return true;
-    }
-
-    @Override // m3.t
-    public final s h(long j10) {
-        long[] jArr = this.e;
-        int e10 = f0.e(jArr, j10, true);
-        long j11 = jArr[e10];
-        long[] jArr2 = this.c;
-        u uVar = new u(j11, jArr2[e10]);
-        if (j11 >= j10 || e10 == this.a - 1) {
-            return new s(uVar, uVar);
-        }
-        int i9 = e10 + 1;
-        return new s(uVar, new u(jArr[i9], jArr2[i9]));
-    }
-
-    @Override // m3.t
-    public final long i() {
-        return this.f;
-    }
+public final class f {
+    public int a;
+    public int b;
+    public int c;
+    public int d;
+    public int e;
+    public int f;
+    public int g;
+    public int h;
+    public int i;
+    public int j;
+    public long k;
+    public int l;
 
     public final String toString() {
-        return "ChunkIndex(length=" + this.a + ", sizes=" + Arrays.toString(this.b) + ", offsets=" + Arrays.toString(this.c) + ", timeUs=" + Arrays.toString(this.e) + ", durationsUs=" + Arrays.toString(this.d) + ")";
+        int i10 = this.a;
+        int i11 = this.b;
+        int i12 = this.c;
+        int i13 = this.d;
+        int i14 = this.e;
+        int i15 = this.f;
+        int i16 = this.g;
+        int i17 = this.h;
+        int i18 = this.i;
+        int i19 = this.j;
+        long j10 = this.k;
+        int i20 = this.l;
+        int i21 = d0.a;
+        Locale locale = Locale.US;
+        StringBuilder o10 = com.google.android.recaptcha.internal.a.o("DecoderCounters {\n decoderInits=", i10, ",\n decoderReleases=", i11, "\n queuedInputBuffers=");
+        l1.w(o10, i12, "\n skippedInputBuffers=", i13, "\n renderedOutputBuffers=");
+        l1.w(o10, i14, "\n skippedOutputBuffers=", i15, "\n droppedBuffers=");
+        l1.w(o10, i16, "\n droppedInputBuffers=", i17, "\n maxConsecutiveDroppedBuffers=");
+        l1.w(o10, i18, "\n droppedToKeyframeEvents=", i19, "\n totalVideoFrameProcessingOffsetUs=");
+        o10.append(j10);
+        o10.append("\n videoFrameProcessingOffsetCount=");
+        o10.append(i20);
+        o10.append("\n}");
+        return o10.toString();
     }
 }

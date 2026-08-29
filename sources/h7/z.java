@@ -1,36 +1,24 @@
 package h7;
 
-import java.util.Iterator;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class z extends t {
-    public final transient b0 c;
-    public final transient a0 d;
-
-    public z(b0 b0Var, a0 a0Var) {
-        this.c = b0Var;
-        this.d = a0Var;
+public abstract class z {
+    public static Object a(Parcel parcel, Parcelable.Creator creator) {
+        if (parcel.readInt() != 0) {
+            return creator.createFromParcel(parcel);
+        }
+        return null;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final boolean contains(Object obj) {
-        return this.c.get(obj) != null;
-    }
-
-    @Override // h7.o
-    public final int i(Object[] objArr) {
-        return this.d.i(objArr);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
-    public final /* synthetic */ Iterator iterator() {
-        return this.d.listIterator(0);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final int size() {
-        this.c.getClass();
-        return 1;
+    public static void b(Parcel parcel, Parcelable parcelable, int i10) {
+        if (parcelable == null) {
+            parcel.writeInt(0);
+        } else {
+            parcel.writeInt(1);
+            parcelable.writeToParcel(parcel, i10);
+        }
     }
 }

@@ -1,53 +1,27 @@
 package d3;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+import androidx.biometric.e;
+import g3.c;
+import java.util.concurrent.Executor;
+import java.util.logging.Logger;
+import y2.q;
+import z2.d;
+
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class a {
-    public static final a f = new a(200, 10485760, 604800000, 10000, 81920);
-    public final long a;
-    public final int b;
-    public final int c;
-    public final long d;
-    public final int e;
+public final class a implements b {
+    public static final Logger f = Logger.getLogger(q.class.getName());
+    public final e a;
+    public final Executor b;
+    public final d c;
+    public final f3.d d;
+    public final c e;
 
-    public a(int i9, long j10, long j11, int i10, int i11) {
-        this.a = j10;
-        this.b = i9;
-        this.c = i10;
-        this.d = j11;
-        this.e = i11;
-    }
-
-    public final boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
-        }
-        if (obj instanceof a) {
-            a aVar = (a) obj;
-            if (this.a == aVar.a && this.b == aVar.b && this.c == aVar.c && this.d == aVar.d && this.e == aVar.e) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public final int hashCode() {
-        long j10 = this.a;
-        int i9 = (((((((int) (j10 ^ (j10 >>> 32))) ^ 1000003) * 1000003) ^ this.b) * 1000003) ^ this.c) * 1000003;
-        long j11 = this.d;
-        return this.e ^ ((i9 ^ ((int) (j11 ^ (j11 >>> 32)))) * 1000003);
-    }
-
-    public final String toString() {
-        StringBuilder sb2 = new StringBuilder("EventStoreConfig{maxStorageSizeInBytes=");
-        sb2.append(this.a);
-        sb2.append(", loadBatchSize=");
-        sb2.append(this.b);
-        sb2.append(", criticalSectionEnterTimeoutMs=");
-        sb2.append(this.c);
-        sb2.append(", eventCleanUpAge=");
-        sb2.append(this.d);
-        sb2.append(", maxBlobByteSizePerRow=");
-        return aa.d.l(this.e, "}", sb2);
+    public a(Executor executor, d dVar, e eVar, f3.d dVar2, c cVar) {
+        this.b = executor;
+        this.c = dVar;
+        this.a = eVar;
+        this.d = dVar2;
+        this.e = cVar;
     }
 }

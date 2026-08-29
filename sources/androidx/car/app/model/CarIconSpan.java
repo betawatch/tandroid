@@ -1,8 +1,9 @@
 package androidx.car.app.model;
 
 import j$.util.Objects;
+import j7.l1;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class CarIconSpan extends CarSpan {
     public static final int ALIGN_BASELINE = 1;
@@ -11,13 +12,13 @@ public final class CarIconSpan extends CarSpan {
     private final int mAlignment;
     private final CarIcon mIcon;
 
-    private CarIconSpan(CarIcon carIcon, int i9) {
+    private CarIconSpan(CarIcon carIcon, int i10) {
         this.mIcon = carIcon;
-        this.mAlignment = i9;
+        this.mAlignment = i10;
     }
 
-    private static String alignmentToString(int i9) {
-        return i9 != 0 ? i9 != 1 ? i9 != 2 ? "unknown" : "center" : "baseline" : "bottom";
+    private static String alignmentToString(int i10) {
+        return i10 != 0 ? i10 != 1 ? i10 != 2 ? "unknown" : "center" : "baseline" : "bottom";
     }
 
     public static CarIconSpan create(CarIcon carIcon) {
@@ -52,16 +53,16 @@ public final class CarIconSpan extends CarSpan {
         StringBuilder sb2 = new StringBuilder("[icon: ");
         sb2.append(this.mIcon);
         sb2.append(", alignment: ");
-        return aa.d.r(sb2, alignmentToString(this.mAlignment), "]");
+        return a4.w.q(sb2, alignmentToString(this.mAlignment), "]");
     }
 
-    public static CarIconSpan create(CarIcon carIcon, int i9) {
+    public static CarIconSpan create(CarIcon carIcon, int i10) {
         t.b.b.a(carIcon);
-        if (i9 != 1 && i9 != 0 && i9 != 2) {
-            throw new IllegalStateException(j3.r0.l(i9, "Invalid alignment value: "));
+        if (i10 != 1 && i10 != 0 && i10 != 2) {
+            throw new IllegalStateException(l1.k(i10, "Invalid alignment value: "));
         }
         Objects.requireNonNull(carIcon);
-        return new CarIconSpan(carIcon, i9);
+        return new CarIconSpan(carIcon, i10);
     }
 
     private CarIconSpan() {

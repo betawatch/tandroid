@@ -55,7 +55,7 @@ public abstract class z extends j {
         throw new IllegalStateException(name.length() != 0 ? "Unable to get default instance for: ".concat(name) : new String("Unable to get default instance for: "));
     }
 
-    public abstract Object a(int i9);
+    public abstract Object a(int i10);
 
     public final boolean equals(Object obj) {
         if (this == obj) {
@@ -70,9 +70,9 @@ public abstract class z extends j {
     }
 
     public final int hashCode() {
-        int i9 = this.zzex;
-        if (i9 != 0) {
-            return i9;
+        int i10 = this.zzex;
+        if (i10 != 0) {
+            return i10;
         }
         w0 w0Var = w0.c;
         w0Var.getClass();

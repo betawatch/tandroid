@@ -1,93 +1,365 @@
 package dh;
 
-import android.animation.ValueAnimator;
+import ag.j2;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import android.text.TextUtils;
+import java.util.ArrayList;
+import jf.r;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.f3;
-import org.telegram.ui.ActionBar.h5;
-import org.telegram.ui.Cells.t1;
-import org.telegram.ui.Components.dk0;
-import org.telegram.ui.Components.k90;
-import org.telegram.ui.Components.ut;
-import org.telegram.ui.Components.wy;
-import org.telegram.ui.nq;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.DocumentObject;
+import org.telegram.messenger.DownloadController;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.ImageLocation;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.R;
+import org.telegram.messenger.WebFile;
+import org.telegram.messenger.x3;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.Cells.s1;
+import org.telegram.ui.Components.RadialProgress2;
+import org.telegram.ui.Components.j9;
+import org.telegram.ui.Components.jr;
+import org.telegram.ui.Components.n6;
+import vd.h;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class b implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ Object c;
+public final class b extends Drawable implements DownloadController.FileDownloadProgressListener {
+    public final RadialProgress2 A;
+    public MessageObject B;
+    public final j2 C;
+    public String D;
+    public final int E;
+    public boolean F;
+    public int G;
+    public int H;
+    public final n6 a;
+    public final j9 b;
+    public final ImageReceiver c;
+    public final s1 d;
+    public final int e;
+    public boolean f;
+    public boolean h;
+    public boolean n;
+    public boolean r;
+    public Drawable s;
+    public boolean v;
+    public final Paint w;
+    public final Paint x;
+    public final vd.a y;
 
-    public /* synthetic */ b(Object obj, int i9, int i10) {
-        this.a = i10;
-        this.c = obj;
-        this.b = i9;
+    public b(int i10, s1 s1Var) {
+        Paint paint = new Paint(1);
+        this.w = paint;
+        this.x = new Paint(1);
+        this.C = new j2((char) 0, 17);
+        this.e = i10;
+        this.d = s1Var;
+        this.y = new vd.a(s1Var, jr.h, 380L);
+        n6 n6Var = new n6(false, false, false, false);
+        this.a = n6Var;
+        n6Var.b = 21;
+        n6Var.t(AndroidUtilities.dp(11.0f));
+        n6Var.setCallback(s1Var);
+        this.b = new j9(i10, s1Var, AndroidUtilities.dp(18.0f), AndroidUtilities.dp(8.33f), AndroidUtilities.dpf2(1.0f));
+        ImageReceiver imageReceiver = new ImageReceiver(s1Var);
+        this.c = imageReceiver;
+        imageReceiver.setRoundRadius(AndroidUtilities.dp(5.0f));
+        paint.setColor(TLObject.FLAG_30);
+        RadialProgress2 radialProgress2 = new RadialProgress2(s1Var, null);
+        this.A = radialProgress2;
+        radialProgress2.setCircleRadius(AndroidUtilities.dp(18.0f));
+        radialProgress2.d = -1;
+        this.E = DownloadController.getInstance(i10).generateObserverTag();
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        int i9;
-        switch (this.a) {
-            case 0:
-                l lVar = (l) this.c;
-                lVar.getClass();
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                lVar.n = floatValue;
-                lVar.setAlpha((int) ((1.0f - floatValue) * this.b));
-                lVar.p = true;
-                lVar.invalidateSelf();
-                break;
-            case 1:
-                f3 f3Var = (f3) this.c;
-                f3Var.getClass();
-                int intValue = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-                f3Var.setItemColor(this.b, intValue, intValue);
-                break;
-            case 2:
-                t1 t1Var = (t1) this.c;
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                if (t1Var.getMessageObject() != null && t1Var.getMessageObject().getId() == this.b) {
-                    t1Var.setSelectedBackgroundProgress(floatValue2);
-                    break;
-                }
-                break;
-            case 3:
-                ut utVar = (ut) this.c;
-                float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                utVar.d.setTranslationY(floatValue3);
-                int i10 = this.b;
-                float f10 = i10;
-                float f11 = 1.0f - (floatValue3 / f10);
-                utVar.N = f11;
-                if (i10 > 0 && ((i9 = utVar.H) == 2 || i9 == 3)) {
-                    utVar.d.setAlpha(f11);
-                }
-                utVar.c(floatValue3 - f10);
-                break;
-            case 4:
-                ((wy) this.c).M0[this.b] = (int) ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                break;
-            case 5:
-                k90 k90Var = (k90) this.c;
-                float[] fArr = k90Var.V;
-                float floatValue4 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                int i11 = this.b;
-                fArr[i11] = floatValue4;
-                h5[] h5VarArr = k90Var.w;
-                h5VarArr[i11].setScaleX(AndroidUtilities.lerp(1.111f, 1.0f, floatValue4));
-                h5VarArr[i11].setScaleY(AndroidUtilities.lerp(1.111f, 1.0f, fArr[i11]));
-                h5VarArr[i11].setTranslationY(AndroidUtilities.lerp(AndroidUtilities.dp(8.0f), 0, fArr[i11]));
-                k90Var.x[i11].setAlpha(fArr[i11]);
-                break;
-            default:
-                nq nqVar = (nq) this.c;
-                nqVar.getClass();
-                Float f12 = (Float) valueAnimator.getAnimatedValue();
-                dk0 dk0Var = (dk0) nqVar.d;
-                dk0Var.b.put(this.b, f12);
-                dk0Var.d = true;
-                dk0Var.a.invalidate();
-                break;
+    public final void a(TLRPC.Photo photo, Object obj) {
+        TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(photo.sizes, 40);
+        TLRPC.PhotoSize closestPhotoSizeWithSize2 = FileLoader.getClosestPhotoSizeWithSize(photo.sizes, AndroidUtilities.dp(36.0f), false, closestPhotoSizeWithSize, true);
+        this.c.setImage(ImageLocation.getForObject(closestPhotoSizeWithSize2, photo), "36_36", ImageLocation.getForObject(closestPhotoSizeWithSize, photo), "36_36_b", null, closestPhotoSizeWithSize2 != null ? closestPhotoSizeWithSize2.size : 0L, null, obj, 1);
+    }
+
+    public final void b(boolean z10) {
+        if (this.B.isSending() || this.B.isEditing()) {
+            return;
         }
+        if (TextUtils.isEmpty(this.D) || !FileLoader.getInstance(this.e).isLoadingFile(this.D)) {
+            g(this.v ? 0 : 4, z10);
+        } else {
+            g(3, z10);
+        }
+    }
+
+    public final void c(Canvas canvas) {
+        int w02;
+        Rect bounds = getBounds();
+        int dp = AndroidUtilities.dp(this.f ? 56.33f : 19.0f);
+        if (this.y.e > 0.0f) {
+            h hVar = this.b.c.d;
+            float f9 = hVar.c.a;
+            int i10 = (int) hVar.f.a;
+            int lerp = (bounds.right - dp) - AndroidUtilities.lerp(AndroidUtilities.dp(2.0f), AndroidUtilities.dp(4.0f) + i10, f9);
+            if (f9 > 0.0f) {
+                j9 j9Var = this.b;
+                j9Var.i = (int) (this.y.e * 255.0f);
+                j9Var.setBounds((bounds.right - dp) - i10, bounds.bottom - AndroidUtilities.dp(31.33f), bounds.right - dp, bounds.bottom);
+                this.b.c(canvas);
+            }
+            int dp2 = bounds.bottom - AndroidUtilities.dp(21.33f);
+            n6 n6Var = this.a;
+            n6Var.w = (int) (this.y.e * 255.0f);
+            n6Var.setBounds(bounds.left, AndroidUtilities.dp(15.0f) + dp2, lerp, dp2 - AndroidUtilities.dp(15.0f));
+            this.a.draw(canvas);
+        }
+        if (this.h) {
+            int dp3 = AndroidUtilities.dp(36.0f);
+            Rect rect = AndroidUtilities.rectTmp2;
+            rect.set(x3.B(9.0f, bounds.right, dp3), x3.B(4.0f, bounds.bottom, dp3), bounds.right - AndroidUtilities.dp(9.0f), bounds.bottom - AndroidUtilities.dp(4.0f));
+            RectF rectF = AndroidUtilities.rectTmp;
+            rectF.set(rect);
+            this.A.a.set(rectF.left, rectF.top, rectF.right, rectF.bottom);
+            this.c.setImageCoords(rect);
+            if (!this.n || this.r) {
+                this.c.draw(canvas);
+            }
+            if (this.v || this.n) {
+                if (!this.n || this.r) {
+                    canvas.drawRoundRect(rectF, AndroidUtilities.dp(5.0f), AndroidUtilities.dp(5.0f), this.w);
+                } else {
+                    this.x.setColor(i0.a.k(g6.w0(null, this.B.isOutOwner() ? g6.fc : g6.ec, false), 16));
+                    canvas.drawRoundRect(rectF, AndroidUtilities.dp(5.0f), AndroidUtilities.dp(5.0f), this.x);
+                }
+            }
+            if (this.n) {
+                if (this.s == null) {
+                    this.s = ApplicationLoader.applicationContext.getResources().getDrawable(R.drawable.media_link_24).mutate();
+                }
+                Drawable drawable = this.s;
+                j2 j2Var = this.C;
+                if (this.r) {
+                    w02 = -1;
+                } else {
+                    w02 = g6.w0(null, this.B.isOutOwner() ? g6.sb : g6.nd, false);
+                }
+                PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
+                j2Var.getClass();
+                if (((PorterDuffColorFilter) j2Var.c) == null || j2Var.b != w02 || ((PorterDuff.Mode) j2Var.d) != mode) {
+                    j2Var.c = new PorterDuffColorFilter(w02, mode);
+                    j2Var.b = w02;
+                    j2Var.d = mode;
+                }
+                drawable.setColorFilter((PorterDuffColorFilter) j2Var.c);
+                r.e(this.s, rectF.centerX(), rectF.centerY(), AndroidUtilities.dp(24.0f), AndroidUtilities.dp(24.0f), 17);
+                this.s.draw(canvas);
+            }
+            b(true);
+            if (this.F) {
+                this.A.draw(canvas);
+            }
+        }
+    }
+
+    public final float d(float f9) {
+        j9 j9Var = this.b;
+        float d = this.a.d() + j9Var.c.d.f.a;
+        float dp = j9Var.c.d.c.a * AndroidUtilities.dp(4.0f);
+        float f10 = this.y.e;
+        return (f9 * f10) + (dp * f10) + d;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        c(canvas);
+    }
+
+    public final float e() {
+        return this.a.d + (this.G > 0 ? AndroidUtilities.dp((r1 * 9.34f) + 8.66f) : 0);
+    }
+
+    public final void f(boolean z10) {
+        this.f = z10;
+    }
+
+    public final void g(int i10, boolean z10) {
+        if (this.H != i10) {
+            this.H = i10;
+            this.A.setIcon(i10, true, z10);
+        }
+    }
+
+    @Override // org.telegram.messenger.DownloadController.FileDownloadProgressListener
+    public final int getObserverTag() {
+        return this.E;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return 0;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:13:0x012b  */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x0132  */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x013e  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x015f  */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x0140  */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x0134  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void h(MessageObject messageObject, TLRPC.MessageMedia messageMedia, MessageObject messageObject2, String str, boolean z10) {
+        ImageReceiver imageReceiver;
+        boolean z11;
+        TLRPC.GeoPoint geoPoint;
+        this.B = messageObject;
+        String str2 = this.D;
+        this.F = false;
+        this.D = null;
+        ImageReceiver imageReceiver2 = this.c;
+        if (messageMedia != null && !(messageMedia instanceof TLRPC.TL_messageMediaEmpty)) {
+            this.r = false;
+            this.n = false;
+            this.v = false;
+            z11 = true;
+            if (messageMedia instanceof TLRPC.TL_messageMediaWebPage) {
+                TLRPC.WebPage webPage = ((TLRPC.TL_messageMediaWebPage) messageMedia).webpage;
+                this.n = true;
+                TLRPC.Photo photo = webPage.photo;
+                if (photo != null) {
+                    this.r = true;
+                    a(photo, messageObject2);
+                } else {
+                    imageReceiver2.clearImage();
+                }
+            } else {
+                if (!(messageMedia instanceof TLRPC.TL_messageMediaPhoto)) {
+                    if (messageMedia instanceof TLRPC.TL_messageMediaDocument) {
+                        TLRPC.TL_messageMediaDocument tL_messageMediaDocument = (TLRPC.TL_messageMediaDocument) messageMedia;
+                        TLRPC.Document document = tL_messageMediaDocument.document;
+                        if (document != null) {
+                            this.D = !TextUtils.isEmpty(str) ? str : MessageObject.getFileName(messageMedia);
+                            if (MessageObject.isVideoDocument(tL_messageMediaDocument.document)) {
+                                TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(document.thumbs, 40);
+                                TLRPC.PhotoSize closestPhotoSizeWithSize2 = FileLoader.getClosestPhotoSizeWithSize(document.thumbs, AndroidUtilities.dp(36.0f), false, closestPhotoSizeWithSize, true);
+                                this.v = true;
+                                this.F = true;
+                                ImageLocation forObject = ImageLocation.getForObject(closestPhotoSizeWithSize2, document);
+                                ImageLocation forObject2 = ImageLocation.getForObject(closestPhotoSizeWithSize, document);
+                                imageReceiver = imageReceiver2;
+                                imageReceiver.setImage(forObject, "36_36", forObject2, "36_36_b", null, closestPhotoSizeWithSize2 != null ? closestPhotoSizeWithSize2.size : 0L, null, messageObject2, 1);
+                            } else {
+                                imageReceiver = imageReceiver2;
+                                boolean z12 = MessageObject.isStickerDocument(document) || MessageObject.isVideoSticker(document);
+                                boolean isAnimatedStickerDocument = MessageObject.isAnimatedStickerDocument(document, true);
+                                if (z12 || isAnimatedStickerDocument) {
+                                    imageReceiver.setImage(ImageLocation.getForDocument(document), "36_36", DocumentObject.getSvgThumb(document, g6.lc, 1.0f), document.size, z12 ? "webp" : null, messageObject2, 1);
+                                }
+                                z11 = false;
+                            }
+                        }
+                    } else if (((messageMedia instanceof TLRPC.TL_messageMediaGeo) || (messageMedia instanceof TLRPC.TL_messageMediaVenue)) && (geoPoint = messageMedia.geo) != null) {
+                        ImageLocation forWebFile = ImageLocation.getForWebFile(WebFile.createWithGeoPoint(geoPoint, 36, 36, 13, Math.min(2, (int) Math.ceil(AndroidUtilities.density))));
+                        imageReceiver = imageReceiver2;
+                        imageReceiver.setImage(forWebFile, (String) null, (ImageLocation) null, (String) null, (Drawable) null, messageObject2, 0);
+                    } else {
+                        imageReceiver = imageReceiver2;
+                        z11 = false;
+                    }
+                    this.h = z11;
+                    if (!z11) {
+                        imageReceiver.clearImage();
+                    }
+                    this.A.setColors(this.v ? 0 : g6.w0(null, g6.le, false), this.v ? 0 : g6.w0(null, g6.me, false), g6.w0(null, g6.ne, false), g6.w0(null, g6.oe, false));
+                    if (!TextUtils.equals(str2, this.D)) {
+                        boolean isEmpty = TextUtils.isEmpty(str2);
+                        int i10 = this.e;
+                        if (!isEmpty) {
+                            DownloadController.getInstance(i10).removeLoadingFileObserver(this);
+                        }
+                        if (!TextUtils.isEmpty(this.D)) {
+                            DownloadController.getInstance(i10).addLoadingFileObserver(this.D, this);
+                        }
+                    }
+                    b(z10);
+                }
+                TLRPC.TL_messageMediaPhoto tL_messageMediaPhoto = (TLRPC.TL_messageMediaPhoto) messageMedia;
+                this.F = true;
+                this.D = !TextUtils.isEmpty(str) ? str : MessageObject.getFileName(messageMedia);
+                a(tL_messageMediaPhoto.photo, messageObject2);
+            }
+            imageReceiver = imageReceiver2;
+            this.h = z11;
+            if (!z11) {
+            }
+            this.A.setColors(this.v ? 0 : g6.w0(null, g6.le, false), this.v ? 0 : g6.w0(null, g6.me, false), g6.w0(null, g6.ne, false), g6.w0(null, g6.oe, false));
+            if (!TextUtils.equals(str2, this.D)) {
+            }
+            b(z10);
+        }
+        imageReceiver = imageReceiver2;
+        z11 = false;
+        this.h = z11;
+        if (!z11) {
+        }
+        this.A.setColors(this.v ? 0 : g6.w0(null, g6.le, false), this.v ? 0 : g6.w0(null, g6.me, false), g6.w0(null, g6.ne, false), g6.w0(null, g6.oe, false));
+        if (!TextUtils.equals(str2, this.D)) {
+        }
+        b(z10);
+    }
+
+    public final void i(ArrayList arrayList, boolean z10) {
+        this.G = arrayList != null ? arrayList.size() : 0;
+        this.b.d(arrayList, z10);
+    }
+
+    public final void j(int i10, boolean z10) {
+        this.a.q(i10 > 0 ? LocaleController.formatShortNumber(i10, null) : null, z10, true);
+    }
+
+    public final void k(int i10) {
+        this.a.r(i10);
+    }
+
+    @Override // org.telegram.messenger.DownloadController.FileDownloadProgressListener
+    public final void onProgressDownload(String str, long j10, long j11) {
+        float min = j11 == 0 ? 0.0f : Math.min(1.0f, j10 / j11);
+        this.A.o(min, true);
+        g(min < 1.0f ? 3 : this.v ? 0 : 4, true);
+        this.d.invalidate();
+    }
+
+    @Override // org.telegram.messenger.DownloadController.FileDownloadProgressListener
+    public final void onProgressUpload(String str, long j10, long j11, boolean z10) {
+        float min = j11 == 0 ? 0.0f : Math.min(1.0f, j10 / j11);
+        this.A.o(min, true);
+        g(min < 1.0f ? 3 : this.v ? 0 : 4, true);
+        this.d.invalidate();
+    }
+
+    @Override // org.telegram.messenger.DownloadController.FileDownloadProgressListener
+    public final void onSuccessDownload(String str) {
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+    }
+
+    @Override // org.telegram.messenger.DownloadController.FileDownloadProgressListener
+    public final void onFailedDownload(String str, boolean z10) {
     }
 }

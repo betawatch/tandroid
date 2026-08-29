@@ -14,7 +14,7 @@ import android.text.TextUtils;
 import android.util.Log;
 import androidx.versionedparcelable.ParcelImpl;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class s extends MediaSession.Callback {
     public final /* synthetic */ t a;
@@ -24,13 +24,13 @@ public final class s extends MediaSession.Callback {
     }
 
     public static void b(w wVar) {
-        int i9 = Build.VERSION.SDK_INT;
-        if (i9 >= 28) {
+        int i10 = Build.VERSION.SDK_INT;
+        if (i10 >= 28) {
             return;
         }
         MediaSession mediaSession = wVar.a;
         String str = null;
-        if (i9 >= 24) {
+        if (i10 >= 24) {
             try {
                 str = (String) mediaSession.getClass().getMethod("getCallingPackage", null).invoke(mediaSession, null);
             } catch (Exception e10) {
@@ -67,8 +67,8 @@ public final class s extends MediaSession.Callback {
             if (str.equals("android.support.v4.media.session.command.GET_EXTRA_BINDER")) {
                 Bundle bundle2 = new Bundle();
                 MediaSessionCompat$Token mediaSessionCompat$Token = a2.b;
-                d a3 = mediaSessionCompat$Token.a();
-                bundle2.putBinder("android.support.v4.media.session.EXTRA_BINDER", a3 == null ? null : a3.asBinder());
+                d a10 = mediaSessionCompat$Token.a();
+                bundle2.putBinder("android.support.v4.media.session.EXTRA_BINDER", a10 == null ? null : a10.asBinder());
                 synchronized (mediaSessionCompat$Token.a) {
                     dVar = mediaSessionCompat$Token.d;
                 }
@@ -87,8 +87,8 @@ public final class s extends MediaSession.Callback {
             } else if (!str.equals("android.support.v4.media.session.command.REMOVE_QUEUE_ITEM_AT")) {
                 this.a.onCommand(str, bundle, resultReceiver);
             } else if (a2.g != null) {
-                int i9 = bundle.getInt("android.support.v4.media.session.command.ARGUMENT_INDEX", -1);
-                MediaSessionCompat$QueueItem mediaSessionCompat$QueueItem = (i9 < 0 || i9 >= a2.g.size()) ? null : (MediaSessionCompat$QueueItem) a2.g.get(i9);
+                int i10 = bundle.getInt("android.support.v4.media.session.command.ARGUMENT_INDEX", -1);
+                MediaSessionCompat$QueueItem mediaSessionCompat$QueueItem = (i10 < 0 || i10 >= a2.g.size()) ? null : (MediaSessionCompat$QueueItem) a2.g.get(i10);
                 if (mediaSessionCompat$QueueItem != null) {
                     this.a.onRemoveQueueItem(mediaSessionCompat$QueueItem.a);
                 }
@@ -305,13 +305,13 @@ public final class s extends MediaSession.Callback {
     }
 
     @Override // android.media.session.MediaSession.Callback
-    public final void onSetPlaybackSpeed(float f10) {
+    public final void onSetPlaybackSpeed(float f9) {
         w a2 = a();
         if (a2 == null) {
             return;
         }
         b(a2);
-        this.a.onSetPlaybackSpeed(f10);
+        this.a.onSetPlaybackSpeed(f9);
         a2.d(null);
     }
 
@@ -319,7 +319,7 @@ public final class s extends MediaSession.Callback {
     @Override // android.media.session.MediaSession.Callback
     public final void onSetRating(Rating rating) {
         RatingCompat ratingCompat;
-        float f10;
+        float f9;
         w a2 = a();
         if (a2 == null) {
             return;
@@ -327,8 +327,8 @@ public final class s extends MediaSession.Callback {
         b(a2);
         RatingCompat ratingCompat2 = null;
         if (rating != null) {
-            int b10 = android.support.v4.media.d.b(rating);
-            if (!android.support.v4.media.d.e(rating)) {
+            int b10 = android.support.v4.media.c.b(rating);
+            if (!android.support.v4.media.c.e(rating)) {
                 switch (b10) {
                     case 1:
                     case 2:
@@ -342,29 +342,29 @@ public final class s extends MediaSession.Callback {
             } else {
                 switch (b10) {
                     case 1:
-                        ratingCompat = new RatingCompat(1, android.support.v4.media.d.d(rating) ? 1.0f : 0.0f);
+                        ratingCompat = new RatingCompat(1, android.support.v4.media.c.d(rating) ? 1.0f : 0.0f);
                         ratingCompat2 = ratingCompat;
                         break;
                     case 2:
-                        ratingCompat = new RatingCompat(2, android.support.v4.media.d.f(rating) ? 1.0f : 0.0f);
+                        ratingCompat = new RatingCompat(2, android.support.v4.media.c.f(rating) ? 1.0f : 0.0f);
                         ratingCompat2 = ratingCompat;
                         break;
                     case 3:
                     case 4:
                     case 5:
-                        float c10 = android.support.v4.media.d.c(rating);
+                        float c3 = android.support.v4.media.c.c(rating);
                         if (b10 == 3) {
-                            f10 = 3.0f;
+                            f9 = 3.0f;
                         } else if (b10 == 4) {
-                            f10 = 4.0f;
+                            f9 = 4.0f;
                         } else if (b10 != 5) {
                             Log.e("Rating", "Invalid rating style (" + b10 + ") for a star rating");
                             break;
                         } else {
-                            f10 = 5.0f;
+                            f9 = 5.0f;
                         }
-                        if (c10 >= 0.0f && c10 <= f10) {
-                            ratingCompat2 = new RatingCompat(b10, c10);
+                        if (c3 >= 0.0f && c3 <= f9) {
+                            ratingCompat2 = new RatingCompat(b10, c3);
                             break;
                         } else {
                             Log.e("Rating", "Trying to set out of range star-based rating");
@@ -372,9 +372,9 @@ public final class s extends MediaSession.Callback {
                         }
                         break;
                     case 6:
-                        float a3 = android.support.v4.media.d.a(rating);
-                        if (a3 >= 0.0f && a3 <= 100.0f) {
-                            ratingCompat2 = new RatingCompat(6, a3);
+                        float a10 = android.support.v4.media.c.a(rating);
+                        if (a10 >= 0.0f && a10 <= 100.0f) {
+                            ratingCompat2 = new RatingCompat(6, a10);
                             break;
                         } else {
                             Log.e("Rating", "Invalid percentage-based rating value");

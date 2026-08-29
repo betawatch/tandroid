@@ -6,7 +6,7 @@ import ru.noties.jlatexmath.awt.Font;
 import ru.noties.jlatexmath.awt.Graphics2D;
 import ru.noties.jlatexmath.awt.geom.Rectangle2D;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes4.dex */
 public class TextLayout {
     private final Rectangle2D bounds;
@@ -23,7 +23,7 @@ public class TextLayout {
         this.bounds = new Rectangle2D.Float(r4.left, r4.top, r4.width(), r4.height());
     }
 
-    public void draw(Graphics2D graphics2D, int i9, int i10) {
+    public void draw(Graphics2D graphics2D, int i10, int i11) {
         Font font = graphics2D.getFont();
         Font font2 = this.font;
         boolean z10 = font2 != font;
@@ -31,7 +31,7 @@ public class TextLayout {
             graphics2D.setFont(font2);
         }
         char[] cArr = this.chars;
-        graphics2D.drawChars(cArr, 0, cArr.length, i9, i10);
+        graphics2D.drawChars(cArr, 0, cArr.length, i10, i11);
         if (z10) {
             graphics2D.setFont(font);
         }

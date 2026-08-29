@@ -2,35 +2,73 @@ package g4;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import d5.f0;
-import f8.r;
+import f5.d0;
+import j3.g1;
+import java.util.Arrays;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class a extends b {
-    public static final Parcelable.Creator<a> CREATOR = new r(15);
-    public final long a;
-    public final long b;
-    public final byte[] c;
+public final class a extends j {
+    public static final Parcelable.Creator<a> CREATOR = new d6.d(19);
+    public final String b;
+    public final String c;
+    public final int d;
+    public final byte[] e;
 
-    public a(long j10, long j11, byte[] bArr) {
-        this.a = j11;
-        this.b = j10;
-        this.c = bArr;
+    public a(int i10, String str, String str2, byte[] bArr) {
+        super("APIC");
+        this.b = str;
+        this.c = str2;
+        this.d = i10;
+        this.e = bArr;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj != null && a.class == obj.getClass()) {
+            a aVar = (a) obj;
+            if (this.d == aVar.d && d0.a(this.b, aVar.b) && d0.a(this.c, aVar.c) && Arrays.equals(this.e, aVar.e)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public final int hashCode() {
+        int i10 = (527 + this.d) * 31;
+        String str = this.b;
+        int hashCode = (i10 + (str != null ? str.hashCode() : 0)) * 31;
+        String str2 = this.c;
+        return Arrays.hashCode(this.e) + ((hashCode + (str2 != null ? str2.hashCode() : 0)) * 31);
+    }
+
+    @Override // g4.j, b4.b
+    public final void populateMediaMetadata(g1 g1Var) {
+        g1Var.a(this.d, this.e);
+    }
+
+    @Override // g4.j
+    public final String toString() {
+        return this.a + ": mimeType=" + this.b + ", description=" + this.c;
     }
 
     @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i9) {
-        parcel.writeLong(this.a);
-        parcel.writeLong(this.b);
-        parcel.writeByteArray(this.c);
+    public final void writeToParcel(Parcel parcel, int i10) {
+        parcel.writeString(this.b);
+        parcel.writeString(this.c);
+        parcel.writeInt(this.d);
+        parcel.writeByteArray(this.e);
     }
 
     public a(Parcel parcel) {
-        this.a = parcel.readLong();
-        this.b = parcel.readLong();
-        byte[] createByteArray = parcel.createByteArray();
-        int i9 = f0.a;
-        this.c = createByteArray;
+        super("APIC");
+        String readString = parcel.readString();
+        int i10 = d0.a;
+        this.b = readString;
+        this.c = parcel.readString();
+        this.d = parcel.readInt();
+        this.e = parcel.createByteArray();
     }
 }

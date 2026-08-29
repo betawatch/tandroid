@@ -1,71 +1,82 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.R;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class o7 extends f2.d0 {
-    public final /* synthetic */ c8 d;
+public final class o7 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ p7 b;
 
-    public o7(c8 c8Var) {
-        this.d = c8Var;
+    public /* synthetic */ o7(p7 p7Var, int i10) {
+        this.a = i10;
+        this.b = p7Var;
     }
 
-    @Override // f2.d0
-    public final void a(RecyclerView recyclerView, f2.q1 q1Var) {
-        super.a(recyclerView, q1Var);
-        View view = q1Var.a;
-        view.setPressed(false);
-        view.setTag(R.id.dragging, null);
-    }
-
-    @Override // f2.d0
-    public final int e(RecyclerView recyclerView, f2.q1 q1Var) {
-        if (q1Var.f != 0) {
-            return 0;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                p7 p7Var = this.b;
+                int i10 = p7Var.v + 1;
+                p7Var.v = i10;
+                if (i10 != 1) {
+                    if (i10 == 2) {
+                        AndroidUtilities.runOnUIThread(this, 2000L);
+                        break;
+                    }
+                } else {
+                    g8 g8Var = p7Var.D;
+                    g8Var.D0 = -1;
+                    g8Var.E0 = MediaController.getInstance().getPlayingMessageObject().audioProgress;
+                    p7Var.w = System.currentTimeMillis();
+                    AndroidUtilities.runOnUIThread(this, 2000L);
+                    AndroidUtilities.runOnUIThread(p7Var.A);
+                    break;
+                }
+                break;
+            default:
+                p7 p7Var2 = this.b;
+                g8 g8Var2 = p7Var2.D;
+                long duration = MediaController.getInstance().getDuration();
+                if (duration != 0 && duration != -9223372036854775807L) {
+                    float f9 = g8Var2.E0;
+                    long currentTimeMillis = System.currentTimeMillis();
+                    long j10 = currentTimeMillis - p7Var2.w;
+                    p7Var2.w = currentTimeMillis;
+                    long j11 = currentTimeMillis - p7Var2.x;
+                    int i11 = p7Var2.v;
+                    float f10 = ((long) ((f9 * r2) - (j10 * (i11 == 1 ? 3L : i11 == 2 ? 6L : 12L)))) / duration;
+                    if (f10 < 0.0f) {
+                        f10 = 0.0f;
+                    }
+                    g8Var2.E0 = f10;
+                    MessageObject playingMessageObject = MediaController.getInstance().getPlayingMessageObject();
+                    if (playingMessageObject != null && playingMessageObject.isMusic()) {
+                        g8Var2.G0(playingMessageObject, false);
+                    }
+                    if (g8Var2.D0 == -1 && p7Var2.v > 0) {
+                        if (j11 > 200 || g8Var2.E0 == 0.0f) {
+                            p7Var2.x = currentTimeMillis;
+                            if (g8Var2.E0 == 0.0f) {
+                                MediaController.getInstance().seekToProgress(MediaController.getInstance().getPlayingMessageObject(), 0.0f);
+                                MediaController.getInstance().pauseByRewind();
+                            } else {
+                                MediaController.getInstance().seekToProgress(MediaController.getInstance().getPlayingMessageObject(), f10);
+                            }
+                        }
+                        if (p7Var2.v > 0 && g8Var2.E0 > 0.0f) {
+                            AndroidUtilities.runOnUIThread(p7Var2.A, 16L);
+                            break;
+                        }
+                    }
+                } else {
+                    p7Var2.w = System.currentTimeMillis();
+                    break;
+                }
+                break;
         }
-        return f2.d0.l(3, 0);
-    }
-
-    @Override // f2.d0
-    public final boolean n(RecyclerView recyclerView, f2.q1 q1Var, f2.q1 q1Var2) {
-        int b10 = q1Var.b();
-        int b11 = q1Var2.b();
-        c8 c8Var = this.d;
-        if (!c8Var.r0) {
-            c8Var.s0.move(b10, b11);
-        } else {
-            if (b10 <= 0 || b11 <= 0) {
-                return false;
-            }
-            c8Var.s0.move(b10 - 1, b11 - 1);
-        }
-        c8Var.t0.clear();
-        c8Var.t0.addAll(c8Var.s0.list);
-        c8Var.s.p(b10, b11);
-        return true;
-    }
-
-    @Override // f2.d0
-    public final void p(f2.q1 q1Var, int i9) {
-        n7 n7Var = this.d.n;
-        if (q1Var != null) {
-            n7Var.d1(false);
-        }
-        if (i9 != 0) {
-            n7Var.I0(false);
-            if (q1Var != null) {
-                q1Var.a.setPressed(true);
-            }
-        }
-        if (q1Var != null) {
-            q1Var.a.setTag(R.id.dragging, i9 == 2 ? Boolean.TRUE : null);
-        }
-    }
-
-    @Override // f2.d0
-    public final void q(f2.q1 q1Var) {
     }
 }

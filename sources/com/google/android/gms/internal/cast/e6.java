@@ -3,7 +3,7 @@ package com.google.android.gms.internal.cast;
 import j$.util.concurrent.ConcurrentHashMap;
 import java.nio.charset.Charset;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class e6 {
     public static final e6 c = new e6();
@@ -29,9 +29,9 @@ public final class e6 {
             throw new IllegalArgumentException("Message classes must extend GeneratedMessage or GeneratedMessageLite");
         }
         g6 zzb = ((t5) u5Var.a).zzb(cls);
-        int i9 = zzb.d;
+        int i10 = zzb.d;
         t4 t4Var = zzb.a;
-        if ((i9 & 2) == 2) {
+        if ((i10 & 2) == 2) {
             if (f5.class.isAssignableFrom(cls)) {
                 j10 = new a6(i6.c, b5.a, t4Var);
             } else {
@@ -44,34 +44,34 @@ public final class e6 {
             }
         } else if (f5.class.isAssignableFrom(cls)) {
             if (zzb.a() - 1 != 1) {
-                int i10 = c6.a;
+                int i11 = c6.a;
                 q5 q5Var = r5.b;
                 k6 k6Var2 = i6.c;
                 a5 a5Var2 = b5.a;
-                int i11 = w5.a;
+                int i12 = w5.a;
                 j10 = z5.j(zzb, q5Var, k6Var2, a5Var2);
             } else {
-                int i12 = c6.a;
+                int i13 = c6.a;
                 q5 q5Var2 = r5.b;
                 k6 k6Var3 = i6.c;
-                int i13 = w5.a;
+                int i14 = w5.a;
                 j10 = z5.j(zzb, q5Var2, k6Var3, null);
             }
         } else if (zzb.a() - 1 != 1) {
-            int i14 = c6.a;
+            int i15 = c6.a;
             p5 p5Var = r5.a;
             k6 k6Var4 = i6.b;
             a5 a5Var3 = b5.b;
             if (a5Var3 == null) {
                 throw new IllegalStateException("Protobuf runtime is not correctly loaded.");
             }
-            int i15 = w5.a;
+            int i16 = w5.a;
             j10 = z5.j(zzb, p5Var, k6Var4, a5Var3);
         } else {
-            int i16 = c6.a;
+            int i17 = c6.a;
             p5 p5Var2 = r5.a;
             k6 k6Var5 = i6.b;
-            int i17 = w5.a;
+            int i18 = w5.a;
             j10 = z5.j(zzb, p5Var2, k6Var5, null);
         }
         h6 h6Var2 = (h6) concurrentHashMap.putIfAbsent(cls, j10);

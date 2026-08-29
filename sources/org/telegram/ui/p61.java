@@ -1,23 +1,18 @@
 package org.telegram.ui;
 
-import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class p61 implements View.OnClickListener {
-    public final /* synthetic */ y61 a;
+public final class p61 extends f2.a1 {
+    public final /* synthetic */ q61 a;
 
-    public p61(y61 y61Var) {
-        this.a = y61Var;
+    public p61(q61 q61Var) {
+        this.a = q61Var;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        org.telegram.ui.Components.pi0 pi0Var = this.a.d;
-        if (pi0Var.b() || pi0Var.getAnimatedDrawable() == null) {
-            return;
-        }
-        pi0Var.getAnimatedDrawable().K(40);
-        pi0Var.d();
+    @Override // f2.a1
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        this.a.P();
     }
 }

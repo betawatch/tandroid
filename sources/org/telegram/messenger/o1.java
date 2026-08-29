@@ -1,31 +1,31 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class o1 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ ContactsController b;
-    public final /* synthetic */ TLRPC.TL_error c;
-    public final /* synthetic */ TLObject d;
+    public final /* synthetic */ ArrayList c;
 
-    public /* synthetic */ o1(int i9, ContactsController contactsController, TLObject tLObject, TLRPC.TL_error tL_error) {
-        this.a = i9;
+    public /* synthetic */ o1(ContactsController contactsController, ArrayList arrayList, int i10) {
+        this.a = i10;
         this.b = contactsController;
-        this.c = tL_error;
-        this.d = tLObject;
+        this.c = arrayList;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$loadGlobalPrivacySetting$60(this.c, this.d);
+                this.b.lambda$deleteContact$55(this.c);
+                break;
+            case 1:
+                this.b.lambda$performWriteContactsToPhoneBook$45(this.c);
                 break;
             default:
-                this.b.lambda$loadPrivacySettings$62(this.c, this.d);
+                this.b.lambda$deleteContactsUndoable$54(this.c);
                 break;
         }
     }

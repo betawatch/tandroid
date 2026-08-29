@@ -1,35 +1,31 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import org.telegram.messenger.AndroidUtilities;
+import android.view.View;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class ri extends i51 {
-    public final /* synthetic */ vi b3;
+public final /* synthetic */ class ri implements Utilities.Callback5, Utilities.Callback5Return {
+    public final /* synthetic */ yi a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ri(vi viVar, Context context, int i9, d dVar, oi oiVar, oi oiVar2, org.telegram.ui.ActionBar.b6 b6Var) {
-        super(context, i9, 0, false, dVar, oiVar, oiVar2, b6Var);
-        this.b3 = viVar;
+    public /* synthetic */ ri(yi yiVar) {
+        this.a = yiVar;
     }
 
-    @Override // org.telegram.ui.Components.i51
-    public final void C1() {
-        vi viVar = this.b3;
-        viVar.b.X1(viVar, 0);
+    @Override // org.telegram.messenger.Utilities.Callback5
+    public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
+        ((Integer) obj3).getClass();
+        ((Float) obj4).getClass();
+        ((Float) obj5).getClass();
+        this.a.L((w41) obj, (View) obj2);
     }
 
-    @Override // org.telegram.ui.Components.wk0
-    public final boolean E0(float f10) {
-        ki kiVar = this.b3.b;
-        return f10 >= ((float) ((AndroidUtilities.dp(30.0f) + kiVar.X1[0]) + (!kiVar.c0 ? AndroidUtilities.statusBarHeight : 0)));
-    }
-
-    @Override // org.telegram.ui.Components.wk0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i9, int i10, int i11, int i12) {
-        super.onLayout(z10, i9, i10, i11, i12);
-        vi viVar = this.b3;
-        viVar.b.X1(viVar, 0);
+    @Override // org.telegram.messenger.Utilities.Callback5Return
+    public Object run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
+        ((Integer) obj3).getClass();
+        ((Float) obj4).getClass();
+        ((Float) obj5).getClass();
+        this.a.L((w41) obj, (View) obj2);
+        return Boolean.TRUE;
     }
 }

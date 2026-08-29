@@ -5,7 +5,7 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.Set;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class c implements Set {
     public final /* synthetic */ f a;
@@ -62,12 +62,12 @@ public final class c implements Set {
     @Override // java.util.Set, java.util.Collection
     public final int hashCode() {
         f fVar = this.a;
-        int i9 = 0;
-        for (int i10 = fVar.c - 1; i10 >= 0; i10--) {
-            Object e10 = fVar.e(i10);
-            i9 += e10 == null ? 0 : e10.hashCode();
+        int i10 = 0;
+        for (int i11 = fVar.c - 1; i11 >= 0; i11--) {
+            Object e10 = fVar.e(i11);
+            i10 += e10 == null ? 0 : e10.hashCode();
         }
-        return i9;
+        return i10;
     }
 
     @Override // java.util.Set, java.util.Collection
@@ -83,11 +83,11 @@ public final class c implements Set {
     @Override // java.util.Set, java.util.Collection
     public final boolean remove(Object obj) {
         f fVar = this.a;
-        int c10 = fVar.c(obj);
-        if (c10 < 0) {
+        int c3 = fVar.c(obj);
+        if (c3 < 0) {
             return false;
         }
-        fVar.f(c10);
+        fVar.f(c3);
         return true;
     }
 
@@ -99,13 +99,13 @@ public final class c implements Set {
     @Override // java.util.Set, java.util.Collection
     public final boolean retainAll(Collection collection) {
         f fVar = this.a;
-        int i9 = fVar.c;
-        for (int i10 = i9 - 1; i10 >= 0; i10--) {
-            if (!collection.contains(fVar.e(i10))) {
-                fVar.f(i10);
+        int i10 = fVar.c;
+        for (int i11 = i10 - 1; i11 >= 0; i11--) {
+            if (!collection.contains(fVar.e(i11))) {
+                fVar.f(i11);
             }
         }
-        return i9 != fVar.c;
+        return i10 != fVar.c;
     }
 
     @Override // java.util.Set, java.util.Collection
@@ -116,10 +116,10 @@ public final class c implements Set {
     @Override // java.util.Set, java.util.Collection
     public final Object[] toArray() {
         f fVar = this.a;
-        int i9 = fVar.c;
-        Object[] objArr = new Object[i9];
-        for (int i10 = 0; i10 < i9; i10++) {
-            objArr[i10] = fVar.e(i10);
+        int i10 = fVar.c;
+        Object[] objArr = new Object[i10];
+        for (int i11 = 0; i11 < i10; i11++) {
+            objArr[i11] = fVar.e(i11);
         }
         return objArr;
     }
@@ -127,15 +127,15 @@ public final class c implements Set {
     @Override // java.util.Set, java.util.Collection
     public final Object[] toArray(Object[] objArr) {
         f fVar = this.a;
-        int i9 = fVar.c;
-        if (objArr.length < i9) {
-            objArr = (Object[]) Array.newInstance(objArr.getClass().getComponentType(), i9);
+        int i10 = fVar.c;
+        if (objArr.length < i10) {
+            objArr = (Object[]) Array.newInstance(objArr.getClass().getComponentType(), i10);
         }
-        for (int i10 = 0; i10 < i9; i10++) {
-            objArr[i10] = fVar.e(i10);
+        for (int i11 = 0; i11 < i10; i11++) {
+            objArr[i11] = fVar.e(i11);
         }
-        if (objArr.length > i9) {
-            objArr[i9] = null;
+        if (objArr.length > i10) {
+            objArr[i10] = null;
         }
         return objArr;
     }

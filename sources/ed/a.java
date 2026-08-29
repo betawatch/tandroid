@@ -1,23 +1,22 @@
 package ed;
 
+import i7.l8;
 import java.util.Iterator;
-import java.util.concurrent.atomic.AtomicReference;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class a implements b {
-    public final AtomicReference a;
+public abstract class a implements Iterable {
+    public final char a;
+    public final char b;
+    public final int c = 1;
 
-    public a(e eVar) {
-        this.a = new AtomicReference(eVar);
+    public a(char c3, char c6) {
+        this.a = c3;
+        this.b = (char) l8.a(c3, c6, 1);
     }
 
-    @Override // ed.b
+    @Override // java.lang.Iterable
     public final Iterator iterator() {
-        b bVar = (b) this.a.getAndSet(null);
-        if (bVar != null) {
-            return bVar.iterator();
-        }
-        throw new IllegalStateException("This sequence can be consumed only once.");
+        return new b(this.a, this.b, this.c);
     }
 }

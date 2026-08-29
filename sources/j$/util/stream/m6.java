@@ -13,12 +13,12 @@ public class m6 extends s6 implements DoubleConsumer {
     }
 
     @Override // j$.util.stream.s6
-    public final void i(Object obj, int i9, int i10, Object obj2) {
+    public final void i(Object obj, int i10, int i11, Object obj2) {
         double[] dArr = (double[]) obj;
         DoubleConsumer doubleConsumer = (DoubleConsumer) obj2;
-        while (i9 < i10) {
-            doubleConsumer.accept(dArr[i9]);
-            i9++;
+        while (i10 < i11) {
+            doubleConsumer.accept(dArr[i10]);
+            i10++;
         }
     }
 
@@ -46,17 +46,17 @@ public class m6 extends s6 implements DoubleConsumer {
     }
 
     @Override // j$.util.stream.s6
-    public final Object newArray(int i9) {
-        return new double[i9];
+    public final Object newArray(int i10) {
+        return new double[i10];
     }
 
     @Override // java.util.function.DoubleConsumer
     public void accept(double d) {
         n();
         double[] dArr = (double[]) this.e;
-        int i9 = this.b;
-        this.b = i9 + 1;
-        dArr[i9] = d;
+        int i10 = this.b;
+        this.b = i10 + 1;
+        dArr[i10] = d;
     }
 
     @Override // java.lang.Iterable

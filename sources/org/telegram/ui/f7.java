@@ -1,45 +1,51 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.MessageObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public abstract class f7 extends e7 {
-    public final ArrayList f;
-    public final /* synthetic */ r7 h;
+public final class f7 extends pt0 {
+    public org.telegram.ui.Components.jl0 a;
+    public final /* synthetic */ q7 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f7(r7 r7Var, int i9) {
-        super(i9);
-        this.h = r7Var;
-        this.f = new ArrayList();
+    public f7(q7 q7Var) {
+        this.b = q7Var;
     }
 
-    @Override // org.telegram.ui.Components.vk0
-    public boolean D(f2.q1 q1Var) {
-        return !(this instanceof n7);
-    }
-
-    @Override // org.telegram.ui.e7
-    public void F() {
-        ArrayList arrayList = this.f;
-        arrayList.clear();
-        ArrayList arrayList2 = this.e;
-        arrayList.addAll(arrayList2);
-        arrayList2.clear();
-        hh.b bVar = this.h.f;
-        if (bVar != null) {
-            int i9 = this.d;
-            ArrayList arrayList3 = i9 == 1 ? bVar.d : i9 == 2 ? bVar.e : i9 == 3 ? bVar.f : i9 == 5 ? bVar.g : i9 == 4 ? bVar.h : null;
-            if (arrayList3 != null) {
-                for (int i10 = 0; i10 < arrayList3.size(); i10++) {
-                    hh.a aVar = (hh.a) arrayList3.get(i10);
-                    l7 l7Var = new l7(2, true);
-                    l7Var.d = aVar;
-                    arrayList2.add(l7Var);
-                }
+    @Override // org.telegram.ui.pt0, org.telegram.ui.xt0
+    public final zt0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
+        org.telegram.ui.Cells.p7 p7Var;
+        org.telegram.ui.Components.jl0 listView = this.b.getListView();
+        int i11 = 0;
+        while (true) {
+            if (i11 >= listView.getChildCount()) {
+                p7Var = null;
+                break;
             }
+            View childAt = listView.getChildAt(i11);
+            if (RecyclerView.R(childAt) == i10 && (childAt instanceof org.telegram.ui.Cells.p7)) {
+                p7Var = (org.telegram.ui.Cells.p7) childAt;
+                break;
+            }
+            i11++;
         }
-        E(arrayList, arrayList2);
+        if (p7Var == null) {
+            return null;
+        }
+        int[] iArr = new int[2];
+        p7Var.getLocationInWindow(iArr);
+        zt0 zt0Var = new zt0();
+        zt0Var.b = iArr[0];
+        zt0Var.c = iArr[1];
+        zt0Var.d = this.a;
+        ImageReceiver imageReceiver = p7Var.c;
+        zt0Var.a = imageReceiver;
+        zt0Var.e = imageReceiver.getBitmapSafe();
+        zt0Var.k = p7Var.getScaleX();
+        return zt0Var;
     }
 }

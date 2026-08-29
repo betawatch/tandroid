@@ -1,11 +1,16 @@
 package com.google.android.gms.internal.play_billing;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public abstract class f2 {
-    public static final /* synthetic */ int a = 0;
+public final class f2 {
+    public final Throwable a;
 
     static {
-        q2 q2Var = q2.c;
+        new f2(new c0.b("Failure occurred while trying to finish a future.", 3));
+    }
+
+    public f2(Throwable th2) {
+        boolean z10 = f4.d;
+        this.a = th2;
     }
 }

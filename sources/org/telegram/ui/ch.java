@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ch implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -11,8 +11,8 @@ public final /* synthetic */ class ch implements Utilities.Callback {
     public final /* synthetic */ Long d;
     public final /* synthetic */ Object e;
 
-    public /* synthetic */ ch(Object obj, long j10, long j11, Long l10, int i9) {
-        this.a = i9;
+    public /* synthetic */ ch(Object obj, long j10, long j11, Long l10, int i10) {
+        this.a = i10;
         this.e = obj;
         this.b = j10;
         this.c = j11;
@@ -21,15 +21,15 @@ public final /* synthetic */ class ch implements Utilities.Callback {
 
     @Override // org.telegram.messenger.Utilities.Callback
     public final void run(Object obj) {
-        int i9;
+        int i10;
         switch (this.a) {
             case 0:
-                qn.X((qn) this.e, this.b, this.c, this.d, (Boolean) obj);
+                tn.Y((tn) this.e, this.b, this.c, this.d, (Boolean) obj);
                 break;
             default:
                 Boolean bool = (Boolean) obj;
-                i9 = ((org.telegram.ui.ActionBar.o2) ((bj) this.e).b).currentAccount;
-                gh.v7.y(i9, false).i0(this.b, this.c, this.d.longValue() > 0 && bool.booleanValue(), true);
+                i10 = ((org.telegram.ui.ActionBar.o2) ((ej) this.e).b).currentAccount;
+                jh.s7.y(i10, false).i0(this.b, this.c, this.d.longValue() > 0 && bool.booleanValue(), true);
                 break;
         }
     }

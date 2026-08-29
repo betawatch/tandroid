@@ -23,8 +23,8 @@ public final class e7 implements Spliterator, Consumer {
     }
 
     @Override // j$.util.Spliterator
-    public final /* synthetic */ boolean hasCharacteristics(int i9) {
-        return j$.com.android.tools.r8.a.p(this, i9);
+    public final /* synthetic */ boolean hasCharacteristics(int i10) {
+        return j$.com.android.tools.r8.a.p(this, i10);
     }
 
     public e7(Spliterator spliterator, ConcurrentHashMap concurrentHashMap) {

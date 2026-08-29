@@ -1,28 +1,28 @@
 package org.telegram.ui.ActionBar;
 
-import org.telegram.ui.jn;
-import org.telegram.ui.ln;
+import org.telegram.ui.mn;
+import org.telegram.ui.on;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
 public final class a5 {
-    public final e6 a;
+    public final f6 a;
     public final int b;
     public final boolean c;
     public final boolean d;
     public boolean e;
     public Runnable h;
-    public jn i;
-    public jn j;
-    public ln k;
-    public b6 m;
+    public mn i;
+    public mn j;
+    public on k;
+    public c6 m;
     public boolean f = true;
     public boolean g = true;
     public long l = 200;
 
-    public a5(e6 e6Var, int i9, boolean z10, boolean z11) {
-        this.a = e6Var;
-        this.b = i9;
+    public a5(f6 f6Var, int i10, boolean z10, boolean z11) {
+        this.a = f6Var;
+        this.b = i10;
         this.c = z10;
         this.d = z11;
     }

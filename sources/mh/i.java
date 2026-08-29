@@ -1,119 +1,92 @@
 package mh;
 
 import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.text.TextUtils;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import g7.e6;
+import android.graphics.Canvas;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.R;
-import org.telegram.messenger.ll;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.b6;
-import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.Components.gu0;
+import org.telegram.ui.Components.ht0;
+import org.telegram.ui.Components.tk0;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes4.dex */
-public final class i extends FrameLayout {
-    public final ImageView a;
-    public final FrameLayout.LayoutParams b;
-    public final FrameLayout.LayoutParams c;
-    public final TextView d;
-    public final TextView e;
-    public final TextView f;
+public final class i extends gu0 {
+    public final /* synthetic */ r m3;
 
-    public i(Context context, b6 b6Var) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public i(r rVar, Context context) {
         super(context);
-        ImageView imageView = new ImageView(context);
-        this.a = imageView;
-        PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
-        imageView.setColorFilter(new PorterDuffColorFilter(-1, mode));
-        ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
-        imageView.setScaleType(scaleType);
-        FrameLayout.LayoutParams d = e6.d(28, 28.0f, 51, 17.0f, 14.33f, 0.0f, 0.0f);
-        this.b = d;
-        addView(imageView, d);
-        LinearLayout linearLayout = new LinearLayout(context);
-        linearLayout.setOrientation(1);
-        FrameLayout.LayoutParams d9 = e6.d(-1, -2.0f, 55, 62.0f, 10.0f, 40.0f, 8.66f);
-        this.c = d9;
-        addView(linearLayout, d9);
-        TextView textView = new TextView(context);
-        this.d = textView;
-        ll.k(15.0f, 1, textView);
-        textView.setTextColor(f6.v0(f6.G6, b6Var));
-        TextView h = j3.r0.h(linearLayout, textView, e6.t(-1, -2, 55, 0, 0, 0, 0), context);
-        this.e = h;
-        h.setTextSize(1, 14.0f);
-        h.setTextColor(f6.v0(f6.z6, b6Var));
-        linearLayout.addView(h, e6.t(-1, -2, 55, 0, 3, 0, 0));
-        ImageView imageView2 = new ImageView(context);
-        imageView2.setColorFilter(new PorterDuffColorFilter(f6.v0(f6.M6, b6Var), mode));
-        imageView2.setImageResource(R.drawable.msg_arrowright);
-        imageView2.setScaleType(scaleType);
-        addView(imageView2, e6.d(24, 24.0f, 21, 0.0f, 0.0f, 10.0f, 0.0f));
-        TextView textView2 = new TextView(context);
-        this.f = textView2;
-        textView2.setTextColor(-1);
-        textView2.setBackground(f6.b0(AndroidUtilities.dp(4.0f), f6.v0(f6.uj, b6Var)));
-        textView2.setTextSize(1, 13.0f);
-        textView2.setTypeface(AndroidUtilities.bold());
-        textView2.setPadding(AndroidUtilities.dp(5.0f), 0, AndroidUtilities.dp(4.0f), 0);
-        textView2.setGravity(17);
-        textView2.setVisibility(8);
-        addView(textView2, e6.d(-2, 18.0f, 21, 0.0f, 0.0f, 35.33f, 0.0f));
+        this.m3 = rVar;
     }
 
-    public final void a(int i9, int i10, CharSequence charSequence, CharSequence charSequence2) {
-        ImageView imageView = this.a;
-        imageView.setImageResource(i10);
-        imageView.setBackground(f6.b0(AndroidUtilities.dp(9.0f), i9));
-        TextView textView = this.d;
-        textView.setText(charSequence);
-        boolean isEmpty = TextUtils.isEmpty(charSequence2);
-        TextView textView2 = this.e;
-        FrameLayout.LayoutParams layoutParams = this.c;
-        FrameLayout.LayoutParams layoutParams2 = this.b;
-        if (isEmpty) {
-            layoutParams2.topMargin = AndroidUtilities.dp(10.0f);
-            layoutParams2.bottomMargin = AndroidUtilities.dp(10.0f);
-            textView.setTypeface(null);
-            textView.setTextSize(1, 16.0f);
-            layoutParams.topMargin = 0;
-            layoutParams.bottomMargin = 0;
-            layoutParams.gravity = 23;
-            textView2.setVisibility(8);
-            return;
+    @Override // org.telegram.ui.Components.gu0
+    public final boolean A1() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.gu0, org.telegram.ui.Components.fa, org.telegram.ui.Components.jl0, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        int i10 = 0;
+        for (int i11 = 0; i11 < getChildCount(); i11++) {
+            int bottom = getChildAt(i11).getBottom() - getPaddingTop();
+            if (bottom > i10) {
+                i10 = bottom;
+            }
         }
-        layoutParams2.topMargin = AndroidUtilities.dp(14.33f);
-        layoutParams2.bottomMargin = AndroidUtilities.dp(10.0f);
-        textView.setTypeface(AndroidUtilities.bold());
-        textView.setTextSize(1, 15.0f);
-        layoutParams.topMargin = AndroidUtilities.dp(10.0f);
-        layoutParams.bottomMargin = AndroidUtilities.dp(8.66f);
-        layoutParams.gravity = 55;
-        textView2.setText(charSequence2);
-        textView2.setVisibility(0);
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i9, int i10) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i9), TLObject.FLAG_30), i10);
-    }
-
-    public void setPercent(CharSequence charSequence) {
-        boolean isEmpty = TextUtils.isEmpty(charSequence);
-        TextView textView = this.f;
-        if (isEmpty) {
-            textView.setVisibility(8);
-        } else {
-            textView.setVisibility(0);
-            textView.setText(charSequence);
+        float f9 = i10;
+        r rVar = this.m3;
+        o oVar = rVar.F;
+        if (rVar.b) {
+            ht0 ht0Var = rVar.r;
+            int i12 = 0;
+            for (int i13 = 0; i13 < ht0Var.getChildCount(); i13++) {
+                int bottom2 = ht0Var.getChildAt(i13).getBottom() - ht0Var.getPaddingTop();
+                if (bottom2 > i12) {
+                    i12 = bottom2;
+                }
+            }
+            f9 = AndroidUtilities.lerp(f9, i12, rVar.c);
         }
+        oVar.setVisibility(rVar.v.h() <= 0 ? 8 : 0);
+        oVar.setTranslationY(f9);
+    }
+
+    @Override // org.telegram.ui.Components.gu0
+    public final int getAnimateToColumnsCount() {
+        return this.m3.e;
+    }
+
+    @Override // org.telegram.ui.Components.gu0
+    public final float getChangeColumnsProgress() {
+        return this.m3.c;
+    }
+
+    @Override // org.telegram.ui.Components.gu0
+    public final int getColumnsCount() {
+        return this.m3.d;
+    }
+
+    @Override // org.telegram.ui.Components.gu0
+    public final tk0 getMovingAdapter() {
+        r rVar = this.m3;
+        if (rVar.C.y != 0 || rVar.S.C.y1) {
+            return null;
+        }
+        return rVar.v;
+    }
+
+    @Override // org.telegram.ui.Components.gu0
+    public final tk0 getSupportingAdapter() {
+        return this.m3.w;
+    }
+
+    @Override // org.telegram.ui.Components.gu0
+    public final ht0 getSupportingListView() {
+        return this.m3.r;
+    }
+
+    @Override // org.telegram.ui.Components.gu0
+    public final boolean z1() {
+        return this.m3.b;
     }
 }

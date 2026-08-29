@@ -3,7 +3,7 @@ package e0;
 import android.app.Notification;
 import android.app.PendingIntent;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public abstract class p {
     public static Notification.BubbleMetadata a(r rVar) {
@@ -12,9 +12,9 @@ public abstract class p {
             return null;
         }
         Notification.BubbleMetadata.Builder suppressNotification = new Notification.BubbleMetadata.Builder().setIcon(rVar.b.m(null)).setIntent(pendingIntent).setDeleteIntent(null).setAutoExpandBubble((rVar.d & 1) != 0).setSuppressNotification((rVar.d & 2) != 0);
-        int i9 = rVar.c;
-        if (i9 != 0) {
-            suppressNotification.setDesiredHeight(i9);
+        int i10 = rVar.c;
+        if (i10 != 0) {
+            suppressNotification.setDesiredHeight(i10);
         }
         return suppressNotification.build();
     }

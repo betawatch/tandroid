@@ -1,159 +1,183 @@
 package org.telegram.ui.Components;
 
-import android.os.Looper;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.util.LongSparseArray;
+import java.util.regex.Pattern;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.BuildVars;
+import org.telegram.messenger.CallReceiver;
 import org.telegram.messenger.FileLog;
-import org.telegram.messenger.MessageObject;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.SavedMessagesController;
+import org.telegram.messenger.voip.VoIPService;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.PhotoViewer;
+import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class g5 {
-    public HashMap a;
-    public HashMap b;
-    public HashSet c;
-    public fg d;
-    public final int e;
+public final /* synthetic */ class g5 implements Runnable {
+    public final /* synthetic */ int a;
 
-    public g5(int i9) {
-        this.e = i9;
+    public /* synthetic */ g5(int i10) {
+        this.a = i10;
     }
 
-    public static boolean a() {
-        if (Thread.currentThread() == Looper.getMainLooper().getThread()) {
-            return true;
-        }
-        if (!BuildVars.DEBUG_VERSION) {
-            return false;
-        }
-        FileLog.e("EmojiDocumentFetcher", new IllegalStateException("Wrong thread"));
-        return false;
-    }
-
-    public final void b(long j10, h5 h5Var) {
-        TLRPC.Document document;
-        if (j10 == 0) {
-            return;
-        }
-        synchronized (this) {
-            try {
-                HashMap hashMap = this.a;
-                if (hashMap != null && (document = (TLRPC.Document) hashMap.get(Long.valueOf(j10))) != null) {
-                    if (h5Var != null) {
-                        h5Var.a(document);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                AndroidUtilities.cancelRunOnUIThread(p5.v);
+                try {
+                    if (p5.q != null) {
+                        for (int i10 = 0; i10 < p5.q.size(); i10++) {
+                            LongSparseArray longSparseArray = (LongSparseArray) p5.q.valueAt(i10);
+                            int i11 = 0;
+                            while (i11 < longSparseArray.size()) {
+                                if (!((p5) longSparseArray.valueAt(i11)).a) {
+                                    longSparseArray.removeAt(i11);
+                                    i11--;
+                                }
+                                i11++;
+                            }
+                        }
+                        break;
+                    }
+                } catch (Exception e10) {
+                    if (BuildVars.DEBUG_PRIVATE_VERSION) {
+                        FileLog.e(e10);
+                        return;
                     }
                     return;
                 }
-                if (a()) {
-                    if (this.b == null) {
-                        this.b = new HashMap();
-                    }
-                    ArrayList arrayList = (ArrayList) this.b.get(Long.valueOf(j10));
-                    if (arrayList != null) {
-                        arrayList.add(h5Var);
-                        return;
-                    }
-                    ArrayList arrayList2 = new ArrayList(1);
-                    arrayList2.add(h5Var);
-                    this.b.put(Long.valueOf(j10), arrayList2);
-                    if (this.c == null) {
-                        this.c = new HashSet();
-                    }
-                    this.c.add(Long.valueOf(j10));
-                    if (this.d != null) {
-                        return;
-                    }
-                    fg fgVar = new fg(this, 5);
-                    this.d = fgVar;
-                    AndroidUtilities.runOnUIThread(fgVar);
+                break;
+            case 1:
+                g8 g8Var = g8.P0;
+                break;
+            case 2:
+                SavedMessagesController.openSavedMessages();
+                break;
+            case 3:
+                LaunchActivity launchActivity = LaunchActivity.C1;
+                if (launchActivity != null && !launchActivity.isFinishing()) {
+                    Intent intent = new Intent("android.intent.action.VIEW_DOWNLOADS");
+                    intent.setFlags(268468224);
+                    LaunchActivity.C1.startActivity(intent);
+                    break;
                 }
-            } catch (Throwable th) {
-                throw th;
-            }
+                break;
+            case 4:
+                SavedMessagesController.openSavedMessagesReminders();
+                break;
+            case 5:
+                MediaController.getInstance().stopRecording(0, false, 0, false, 0L);
+                break;
+            case 6:
+                MediaController.getInstance().stopRecording(0, false, 0, false, 0L);
+                break;
+            case 7:
+                break;
+            case 8:
+                int i12 = on.i1;
+                break;
+            case 9:
+                PhotoViewer.t1().G0(false, false);
+                break;
+            case 10:
+                PhotoViewer.t1().G0(false, false);
+                break;
+            case 11:
+                int i13 = st.b;
+                break;
+            case 12:
+                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.groupCallVisibilityChanged, new Object[0]);
+                break;
+            case 13:
+                if (VoIPService.getSharedInstance() != null && VoIPService.getSharedInstance().isMicMute()) {
+                    VoIPService.getSharedInstance().setMicMute(false, true, false);
+                    break;
+                }
+                break;
+            case 14:
+                org.telegram.ui.ActionBar.o2 R = LaunchActivity.R();
+                if (R != null) {
+                    org.telegram.ui.ActionBar.m2 m2Var = new org.telegram.ui.ActionBar.m2();
+                    m2Var.a = true;
+                    R.showAsSheet(new PremiumPreviewFragment(0, "noncontacts"), m2Var);
+                    break;
+                }
+                break;
+            case 15:
+                int i14 = a01.f;
+                break;
+            case 16:
+                SharedPreferences.Editor edit = MessagesController.getGlobalMainSettings().edit();
+                p01.f = Boolean.TRUE;
+                edit.putBoolean("nothanos", true).apply();
+                break;
+            case 17:
+                SharedPreferences.Editor edit2 = MessagesController.getGlobalMainSettings().edit();
+                p01.f = Boolean.TRUE;
+                edit2.putBoolean("nothanos", true).apply();
+                break;
+            case 18:
+                int i15 = m21.b0;
+                break;
+            case 19:
+                SavedMessagesController.openSavedMessages();
+                break;
+            case 20:
+                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.groupCallVisibilityChanged, new Object[0]);
+                break;
+            case 21:
+                org.telegram.ui.Components.voip.o2.i();
+                break;
+            case 22:
+                lh.q5.p();
+                break;
+            case 23:
+                org.telegram.ui.r50 r50Var = org.telegram.ui.r50.z3;
+                if (r50Var != null) {
+                    r50Var.show();
+                    break;
+                }
+                break;
+            case 24:
+                if (VoIPService.getSharedInstance() != null) {
+                    VoIPService.getSharedInstance().setMicMute(false, true, false);
+                    break;
+                }
+                break;
+            case 25:
+                Pattern pattern = LaunchActivity.x1;
+                break;
+            case 26:
+                Pattern pattern2 = LaunchActivity.x1;
+                break;
+            case 27:
+                Pattern pattern3 = LaunchActivity.x1;
+                ApplicationLoader.mainInterfacePausedStageQueue = false;
+                ApplicationLoader.mainInterfacePausedStageQueueTime = System.currentTimeMillis();
+                break;
+            case 28:
+                break;
+            default:
+                CallReceiver.checkLastReceivedCall();
+                break;
         }
     }
 
-    public final TLRPC.InputStickerSet c(long j10) {
-        synchronized (this) {
-            try {
-                HashMap hashMap = this.a;
-                if (hashMap == null) {
-                    return null;
-                }
-                TLRPC.Document document = (TLRPC.Document) hashMap.get(Long.valueOf(j10));
-                if (document == null) {
-                    return null;
-                }
-                return MessageObject.getInputStickerSet(document);
-            } catch (Throwable th) {
-                throw th;
-            }
-        }
+    public /* synthetic */ g5(Object obj, int i10) {
+        this.a = i10;
     }
 
-    public final void d(ArrayList arrayList) {
-        ArrayList arrayList2;
-        if (a()) {
-            k5.x();
-            for (int i9 = 0; i9 < arrayList.size(); i9++) {
-                if (arrayList.get(i9) instanceof TLRPC.Document) {
-                    TLRPC.Document document = (TLRPC.Document) arrayList.get(i9);
-                    e(document);
-                    HashMap hashMap = this.b;
-                    if (hashMap != null && (arrayList2 = (ArrayList) hashMap.remove(Long.valueOf(document.id))) != null) {
-                        for (int i10 = 0; i10 < arrayList2.size(); i10++) {
-                            h5 h5Var = (h5) arrayList2.get(i10);
-                            if (h5Var != null) {
-                                h5Var.a(document);
-                            }
-                        }
-                        arrayList2.clear();
-                    }
-                }
-            }
-        }
+    private final void a() {
     }
 
-    public final void e(TLRPC.Document document) {
-        if (document == null) {
-            return;
-        }
-        synchronized (this) {
-            try {
-                if (this.a == null) {
-                    this.a = new HashMap();
-                }
-                this.a.put(Long.valueOf(document.id), document);
-            } catch (Throwable th) {
-                throw th;
-            }
-        }
-    }
-
-    public final void f(ArrayList arrayList) {
-        if (arrayList == null) {
-            return;
-        }
-        synchronized (this) {
-            try {
-                if (this.a == null) {
-                    this.a = new HashMap();
-                }
-                int size = arrayList.size();
-                int i9 = 0;
-                while (i9 < size) {
-                    Object obj = arrayList.get(i9);
-                    i9++;
-                    TLRPC.Document document = (TLRPC.Document) obj;
-                    this.a.put(Long.valueOf(document.id), document);
-                }
-            } catch (Throwable th) {
-                throw th;
-            }
-        }
+    private final void b() {
     }
 }

@@ -1,0 +1,68 @@
+package g4;
+
+import android.os.Parcel;
+import android.os.Parcelable;
+import f5.d0;
+import java.util.Arrays;
+
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* loaded from: classes.dex */
+public final class l extends j {
+    public static final Parcelable.Creator<l> CREATOR = new d6.d(26);
+    public final int b;
+    public final int c;
+    public final int d;
+    public final int[] e;
+    public final int[] f;
+
+    public l(int i10, int i11, int i12, int[] iArr, int[] iArr2) {
+        super("MLLT");
+        this.b = i10;
+        this.c = i11;
+        this.d = i12;
+        this.e = iArr;
+        this.f = iArr2;
+    }
+
+    @Override // g4.j, android.os.Parcelable
+    public final int describeContents() {
+        return 0;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj != null && l.class == obj.getClass()) {
+            l lVar = (l) obj;
+            if (this.b == lVar.b && this.c == lVar.c && this.d == lVar.d && Arrays.equals(this.e, lVar.e) && Arrays.equals(this.f, lVar.f)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public final int hashCode() {
+        return Arrays.hashCode(this.f) + ((Arrays.hashCode(this.e) + ((((((527 + this.b) * 31) + this.c) * 31) + this.d) * 31)) * 31);
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i10) {
+        parcel.writeInt(this.b);
+        parcel.writeInt(this.c);
+        parcel.writeInt(this.d);
+        parcel.writeIntArray(this.e);
+        parcel.writeIntArray(this.f);
+    }
+
+    public l(Parcel parcel) {
+        super("MLLT");
+        this.b = parcel.readInt();
+        this.c = parcel.readInt();
+        this.d = parcel.readInt();
+        int[] createIntArray = parcel.createIntArray();
+        int i10 = d0.a;
+        this.e = createIntArray;
+        this.f = parcel.createIntArray();
+    }
+}

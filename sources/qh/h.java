@@ -1,44 +1,31 @@
 package qh;
 
-import android.view.View;
-import android.view.ViewTreeObserver;
+import org.telegram.messenger.MessagesController;
+import org.telegram.ui.tn;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class h implements ViewTreeObserver.OnGlobalFocusChangeListener {
+public final /* synthetic */ class h implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ n b;
+    public final /* synthetic */ long c;
 
-    public /* synthetic */ h(Object obj, int i9) {
-        this.a = i9;
-        this.b = obj;
+    public /* synthetic */ h(n nVar, long j10, int i10) {
+        this.a = i10;
+        this.b = nVar;
+        this.c = j10;
     }
 
-    @Override // android.view.ViewTreeObserver.OnGlobalFocusChangeListener
-    public final void onGlobalFocusChanged(View view, View view2) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                ((p) this.b).Y();
-                break;
-            case 1:
-                ((x1) this.b).v0();
-                break;
-            case 2:
-                o3 o3Var = (o3) this.b;
-                o3Var.W2 = (view2 == null || o3Var.F(view2) == null) ? false : true;
-                if (view2 instanceof d1) {
-                    o3Var.H3 = (d1) view2;
-                    break;
-                }
+                MessagesController.getInstance(r0.currentAccount).unlinkCommunity(this.c, r0.b, new j(this.b, 0));
                 break;
             default:
-                f5 f5Var = (f5) this.b;
-                f5Var.x();
-                h5 h5Var = f5Var.v;
-                if (h5Var != null) {
-                    h5Var.invalidate();
-                    break;
-                }
+                n nVar = this.b;
+                nVar.getClass();
+                nVar.presentFragment(tn.R9(this.c));
                 break;
         }
     }

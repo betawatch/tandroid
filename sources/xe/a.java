@@ -1,35 +1,49 @@
 package xe;
 
-import android.app.Activity;
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.LaunchActivity;
+import com.google.firebase.messaging.d;
+import java.io.InputStream;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class a extends FrameLayout {
-    public final Activity a;
-    public int b;
-    public int c;
-    public boolean d;
+public final class a extends d {
+    public final long d;
 
-    public a(LaunchActivity launchActivity) {
-        super(launchActivity);
-        this.a = launchActivity;
+    public a(InputStream inputStream, long j10, long j11) {
+        super(inputStream, j10);
+        this.d = j10 + j11;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i9, int i10) {
-        int size = View.MeasureSpec.getSize(i9);
-        int size2 = View.MeasureSpec.getSize(i10);
-        boolean isInPictureInPictureMode = AndroidUtilities.isInPictureInPictureMode(this.a);
-        if (!isInPictureInPictureMode) {
-            this.b = size;
-            this.c = size2;
+    public final long e() {
+        return this.d - this.b;
+    }
+
+    @Override // com.google.firebase.messaging.d, java.io.FilterInputStream, java.io.InputStream
+    public final int read() {
+        if (this.b == this.d) {
+            return -1;
         }
-        this.d = isInPictureInPictureMode && size < this.b && size2 < this.c;
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_30));
+        return super.read();
+    }
+
+    @Override // com.google.firebase.messaging.d, java.io.FilterInputStream, java.io.InputStream
+    public final long skip(long j10) {
+        long j11 = this.b;
+        long j12 = j11 + j10;
+        long j13 = this.d;
+        if (j12 > j13) {
+            j10 = (int) (j13 - j11);
+        }
+        return super.skip(j10);
+    }
+
+    @Override // com.google.firebase.messaging.d, java.io.FilterInputStream, java.io.InputStream
+    public final int read(byte[] bArr, int i10, int i11) {
+        long j10 = this.b;
+        long j11 = i11 + j10;
+        long j12 = this.d;
+        if (j11 <= j12 || (i11 = (int) (j12 - j10)) != 0) {
+            return super.read(bArr, i10, i11);
+        }
+        return -1;
     }
 }

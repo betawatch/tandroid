@@ -29,7 +29,7 @@ import java.util.List;
 import java.util.WeakHashMap;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class c3 extends h1.b implements View.OnClickListener {
     public static final /* synthetic */ int J = 0;
@@ -75,12 +75,12 @@ public final class c3 extends h1.b implements View.OnClickListener {
         this.y = weakHashMap;
     }
 
-    public static String g(Cursor cursor, int i9) {
-        if (i9 == -1) {
+    public static String g(Cursor cursor, int i10) {
+        if (i10 == -1) {
             return null;
         }
         try {
-            return cursor.getString(i9);
+            return cursor.getString(i10);
         } catch (Exception e10) {
             Log.e("SuggestionsAdapter", "unexpected error retrieving valid column from cursor, did the remote process die?", e10);
             return null;
@@ -95,15 +95,15 @@ public final class c3 extends h1.b implements View.OnClickListener {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void a(View view, Cursor cursor) {
-        int i9;
         int i10;
+        int i11;
         Drawable e10;
         ActivityInfo activityInfo;
         int iconResource;
         String str;
         b3 b3Var = (b3) view.getTag();
-        int i11 = this.I;
-        int i12 = i11 != -1 ? cursor.getInt(i11) : 0;
+        int i12 = this.I;
+        int i13 = i12 != -1 ? cursor.getInt(i12) : 0;
         TextView textView = b3Var.a;
         TextView textView2 = b3Var.b;
         ImageView imageView = b3Var.e;
@@ -149,11 +149,11 @@ public final class c3 extends h1.b implements View.OnClickListener {
         }
         ImageView imageView2 = b3Var.c;
         if (imageView2 != null) {
-            int i13 = this.G;
-            if (i13 == -1) {
+            int i14 = this.G;
+            if (i14 == -1) {
                 e10 = null;
             } else {
-                e10 = e(cursor.getString(i13));
+                e10 = e(cursor.getString(i14));
                 if (e10 == null) {
                     ComponentName searchActivity = this.w.getSearchActivity();
                     String flattenToShortString = searchActivity.flattenToShortString();
@@ -172,9 +172,9 @@ public final class c3 extends h1.b implements View.OnClickListener {
                         if (iconResource != 0) {
                             Drawable drawable = packageManager.getDrawable(searchActivity.getPackageName(), iconResource, activityInfo.applicationInfo);
                             if (drawable == null) {
-                                StringBuilder p6 = j3.r0.p(iconResource, "Invalid icon resource ", " for ");
-                                p6.append(searchActivity.flattenToShortString());
-                                Log.w("SuggestionsAdapter", p6.toString());
+                                StringBuilder o10 = j7.l1.o(iconResource, "Invalid icon resource ", " for ");
+                                o10.append(searchActivity.flattenToShortString());
+                                Log.w("SuggestionsAdapter", o10.toString());
                             } else {
                                 e10 = drawable;
                                 weakHashMap.put(flattenToShortString, e10 != null ? null : e10.getConstantState());
@@ -199,16 +199,16 @@ public final class c3 extends h1.b implements View.OnClickListener {
         }
         ImageView imageView3 = b3Var.d;
         if (imageView3 != null) {
-            int i14 = this.H;
-            Drawable e12 = i14 == -1 ? null : e(cursor.getString(i14));
+            int i15 = this.H;
+            Drawable e12 = i15 == -1 ? null : e(cursor.getString(i15));
             imageView3.setImageDrawable(e12);
             if (e12 != null) {
                 imageView3.setVisibility(0);
                 e12.setVisible(false, false);
-                i9 = 1;
+                i10 = 1;
                 e12.setVisible(true, false);
-                i10 = this.B;
-                if (i10 == 2 && (i10 != i9 || (i12 & 1) == 0)) {
+                i11 = this.B;
+                if (i11 == 2 && (i11 != i10 || (i13 & 1) == 0)) {
                     imageView.setVisibility(8);
                     return;
                 }
@@ -218,9 +218,9 @@ public final class c3 extends h1.b implements View.OnClickListener {
             }
             imageView3.setVisibility(8);
         }
-        i9 = 1;
-        i10 = this.B;
-        if (i10 == 2) {
+        i10 = 1;
+        i11 = this.B;
+        if (i11 == 2) {
         }
         imageView.setVisibility(0);
         imageView.setTag(textView.getText());
@@ -390,9 +390,9 @@ public final class c3 extends h1.b implements View.OnClickListener {
     }
 
     @Override // h1.b, android.widget.BaseAdapter, android.widget.SpinnerAdapter
-    public final View getDropDownView(int i9, View view, ViewGroup viewGroup) {
+    public final View getDropDownView(int i10, View view, ViewGroup viewGroup) {
         try {
-            return super.getDropDownView(i9, view, viewGroup);
+            return super.getDropDownView(i10, view, viewGroup);
         } catch (RuntimeException e10) {
             Log.w("SuggestionsAdapter", "Search suggestions cursor threw exception.", e10);
             View inflate = this.s.inflate(this.r, viewGroup, false);
@@ -404,9 +404,9 @@ public final class c3 extends h1.b implements View.OnClickListener {
     }
 
     @Override // h1.b, android.widget.Adapter
-    public final View getView(int i9, View view, ViewGroup viewGroup) {
+    public final View getView(int i10, View view, ViewGroup viewGroup) {
         try {
-            return super.getView(i9, view, viewGroup);
+            return super.getView(i10, view, viewGroup);
         } catch (RuntimeException e10) {
             Log.w("SuggestionsAdapter", "Search suggestions cursor threw exception.", e10);
             View inflate = this.s.inflate(this.n, viewGroup, false);

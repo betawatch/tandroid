@@ -2,13 +2,13 @@ package com.google.android.gms.common.api.internal;
 
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class q0 {
     public final b a;
-    public final u5.c b;
+    public final w5.c b;
 
-    public /* synthetic */ q0(b bVar, u5.c cVar) {
+    public /* synthetic */ q0(b bVar, w5.c cVar) {
         this.a = bVar;
         this.b = cVar;
     }
@@ -16,7 +16,7 @@ public final class q0 {
     public final boolean equals(Object obj) {
         if (obj != null && (obj instanceof q0)) {
             q0 q0Var = (q0) obj;
-            if (x5.l.l(this.a, q0Var.a) && x5.l.l(this.b, q0Var.b)) {
+            if (z5.l.l(this.a, q0Var.a) && z5.l.l(this.b, q0Var.b)) {
                 return true;
             }
         }
@@ -28,9 +28,9 @@ public final class q0 {
     }
 
     public final String toString() {
-        w4.e eVar = new w4.e(this);
-        eVar.c(this.a, "key");
-        eVar.c(this.b, "feature");
-        return eVar.toString();
+        v5.n nVar = new v5.n(this);
+        nVar.g(this.a, "key");
+        nVar.g(this.b, "feature");
+        return nVar.toString();
     }
 }

@@ -7,7 +7,7 @@ import android.view.Window;
 import android.widget.FrameLayout;
 import java.util.List;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
 public interface b5 {
     o2 getBackgroundFragment();
@@ -42,7 +42,7 @@ public interface b5 {
 
     void setDrawerLayoutContainer(x3 x3Var);
 
-    void setFragmentPanTranslationOffset(int i9);
+    void setFragmentPanTranslationOffset(int i10);
 
     void setFragmentStack(List list);
 
@@ -52,7 +52,7 @@ public interface b5 {
 
     void setIsSheet(boolean z10);
 
-    void setNavigationBarColor(int i9);
+    void setNavigationBarColor(int i10);
 
     void setPulledDialogs(List list);
 

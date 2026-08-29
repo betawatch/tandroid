@@ -7,11 +7,12 @@ import android.os.Bundle;
 import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
 import android.text.style.TextAppearanceSpan;
+import j7.l1;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class a0 extends b0 {
     public final ArrayList e = new ArrayList();
@@ -68,7 +69,7 @@ public final class a0 extends b0 {
         Notification.MessagingStyle b10;
         Notification.Builder builder = (Notification.Builder) i0Var.c;
         t tVar = this.a;
-        int i9 = 0;
+        int i10 = 0;
         if (tVar == null || tVar.a.getApplicationInfo().targetSdkVersion >= 28 || this.i != null) {
             Boolean bool = this.i;
             if (bool != null) {
@@ -82,29 +83,29 @@ public final class a0 extends b0 {
             booleanValue = false;
         }
         this.i = Boolean.valueOf(booleanValue);
-        int i10 = Build.VERSION.SDK_INT;
+        int i11 = Build.VERSION.SDK_INT;
         ArrayList arrayList = this.e;
-        if (i10 >= 24) {
+        if (i11 >= 24) {
             p0 p0Var = this.g;
-            if (i10 >= 28) {
+            if (i11 >= 28) {
                 p0Var.getClass();
-                b10 = w.a(d1.f.D(p0Var));
+                b10 = w.a(d1.f.E(p0Var));
             } else {
                 b10 = u.b(p0Var.a);
             }
             int size2 = arrayList.size();
-            int i11 = 0;
-            while (i11 < size2) {
-                Object obj = arrayList.get(i11);
-                i11++;
+            int i12 = 0;
+            while (i12 < size2) {
+                Object obj = arrayList.get(i12);
+                i12++;
                 u.a(b10, ((z) obj).b());
             }
             if (Build.VERSION.SDK_INT >= 26) {
                 ArrayList arrayList2 = this.f;
                 int size3 = arrayList2.size();
-                while (i9 < size3) {
-                    Object obj2 = arrayList2.get(i9);
-                    i9++;
+                while (i10 < size3) {
+                    Object obj2 = arrayList2.get(i10);
+                    i10++;
                     v.a(b10, ((z) obj2).b());
                 }
             }
@@ -128,7 +129,7 @@ public final class a0 extends b0 {
                     size4--;
                 }
             } else {
-                zVar = !arrayList.isEmpty() ? (z) j3.r0.j(1, arrayList) : null;
+                zVar = !arrayList.isEmpty() ? (z) l1.i(1, arrayList) : null;
             }
         }
         if (this.h != null && this.i.booleanValue()) {
@@ -182,17 +183,17 @@ public final class a0 extends b0 {
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
         p0 p0Var = zVar.c;
         CharSequence charSequence = p0Var == null ? "" : p0Var.a;
-        int i9 = -16777216;
+        int i10 = -16777216;
         if (TextUtils.isEmpty(charSequence)) {
             charSequence = this.g.a;
-            int i10 = this.a.w;
-            if (i10 != 0) {
-                i9 = i10;
+            int i11 = this.a.w;
+            if (i11 != 0) {
+                i10 = i11;
             }
         }
-        SpannableStringBuilder c10 = bVar.c(charSequence);
-        spannableStringBuilder.append((CharSequence) c10);
-        spannableStringBuilder.setSpan(new TextAppearanceSpan(null, 0, 0, ColorStateList.valueOf(i9), null), spannableStringBuilder.length() - c10.length(), spannableStringBuilder.length(), 33);
+        SpannableStringBuilder c3 = bVar.c(charSequence);
+        spannableStringBuilder.append((CharSequence) c3);
+        spannableStringBuilder.setSpan(new TextAppearanceSpan(null, 0, 0, ColorStateList.valueOf(i10), null), spannableStringBuilder.length() - c3.length(), spannableStringBuilder.length(), 33);
         CharSequence charSequence2 = zVar.a;
         spannableStringBuilder.append((CharSequence) "  ").append((CharSequence) bVar.c(charSequence2 != null ? charSequence2 : ""));
         return spannableStringBuilder;

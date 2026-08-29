@@ -8,7 +8,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public abstract class s1 {
     public static final Logger a = Logger.getLogger(s1.class.getName());
@@ -20,45 +20,45 @@ public abstract class s1 {
     public static final long g;
     public static final boolean h;
 
-    /* JADX WARN: Removed duplicated region for block: B:15:0x010b  */
-    /* JADX WARN: Removed duplicated region for block: B:19:0x0252  */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x0262  */
-    /* JADX WARN: Removed duplicated region for block: B:28:0x0264  */
-    /* JADX WARN: Removed duplicated region for block: B:29:0x0110 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:15:0x010a  */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x0251  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x0261  */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x0263  */
+    /* JADX WARN: Removed duplicated region for block: B:29:0x010f A[EXC_TOP_SPLITTER, SYNTHETIC] */
     static {
         Class<?> cls;
         boolean z10;
         Unsafe unsafe;
         boolean z11;
         Class<?> cls2;
-        Field d9;
+        Field d10;
         r1 r1Var;
-        Unsafe i9 = i();
-        b = i9;
+        Unsafe i10 = i();
+        b = i10;
         c = c.a;
         Class<?> cls3 = Long.TYPE;
         boolean e10 = e(cls3);
         Class<?> cls4 = Integer.TYPE;
         boolean e11 = e(cls4);
         r1 r1Var2 = null;
-        if (i9 != null) {
+        if (i10 != null) {
             if (!c.a()) {
-                r1Var2 = new q1(i9);
+                r1Var2 = new q1(i10);
             } else if (e10) {
-                r1Var2 = new p1(i9, 1);
+                r1Var2 = new p1(i10, 1);
             } else if (e11) {
-                r1Var2 = new p1(i9, 0);
+                r1Var2 = new p1(i10, 0);
             }
         }
         d = r1Var2;
         Class<?> cls5 = Byte.TYPE;
-        if (i9 != null) {
+        if (i10 != null) {
             try {
-                cls = i9.getClass();
+                cls = i10.getClass();
                 cls.getMethod("objectFieldOffset", Field.class);
                 cls.getMethod("getLong", Object.class, cls3);
-            } catch (Throwable th) {
-                a.log(Level.WARNING, "platform method missing - proto runtime falling back to safer methods: " + th);
+            } catch (Throwable th2) {
+                a.log(Level.WARNING, "platform method missing - proto runtime falling back to safer methods: " + th2);
             }
             if (d() != null) {
                 if (!c.a()) {
@@ -96,8 +96,8 @@ public abstract class s1 {
                             clsArr2[1] = cls3;
                             clsArr2[2] = Object.class;
                             cls2.getMethod("putObject", clsArr2);
-                        } catch (Throwable th2) {
-                            th = th2;
+                        } catch (Throwable th3) {
+                            th = th3;
                             a.log(Level.WARNING, "platform method missing - proto runtime falling back to safer methods: " + th);
                             z11 = false;
                             f = z11;
@@ -114,13 +114,13 @@ public abstract class s1 {
                             c(double[].class);
                             b(Object[].class);
                             c(Object[].class);
-                            d9 = d();
-                            if (d9 != null) {
+                            d10 = d();
+                            if (d10 != null) {
                             }
                             h = ByteOrder.nativeOrder() != ByteOrder.BIG_ENDIAN;
                         }
-                    } catch (Throwable th3) {
-                        th = th3;
+                    } catch (Throwable th4) {
+                        th = th4;
                     }
                     if (!c.a()) {
                         Class<?>[] clsArr3 = new Class[2];
@@ -170,9 +170,9 @@ public abstract class s1 {
                         c(double[].class);
                         b(Object[].class);
                         c(Object[].class);
-                        d9 = d();
-                        if (d9 != null && (r1Var = d) != null) {
-                            r1Var.j(d9);
+                        d10 = d();
+                        if (d10 != null && (r1Var = d) != null) {
+                            r1Var.j(d10);
                         }
                         h = ByteOrder.nativeOrder() != ByteOrder.BIG_ENDIAN;
                     }
@@ -192,9 +192,9 @@ public abstract class s1 {
                 c(double[].class);
                 b(Object[].class);
                 c(Object[].class);
-                d9 = d();
-                if (d9 != null) {
-                    r1Var.j(d9);
+                d10 = d();
+                if (d10 != null) {
+                    r1Var.j(d10);
                 }
                 h = ByteOrder.nativeOrder() != ByteOrder.BIG_ENDIAN;
             }
@@ -218,8 +218,8 @@ public abstract class s1 {
         c(double[].class);
         b(Object[].class);
         c(Object[].class);
-        d9 = d();
-        if (d9 != null) {
+        d10 = d();
+        if (d10 != null) {
         }
         h = ByteOrder.nativeOrder() != ByteOrder.BIG_ENDIAN;
     }
@@ -319,18 +319,18 @@ public abstract class s1 {
     public static void k(Object obj, long j10, byte b10) {
         long j11 = (-4) & j10;
         int g10 = d.g(obj, j11);
-        int i9 = ((~((int) j10)) & 3) << 3;
-        m(j11, obj, ((255 & b10) << i9) | (g10 & (~(255 << i9))));
+        int i10 = ((~((int) j10)) & 3) << 3;
+        m(j11, obj, ((255 & b10) << i10) | (g10 & (~(255 << i10))));
     }
 
     public static void l(Object obj, long j10, byte b10) {
         long j11 = (-4) & j10;
-        int i9 = (((int) j10) & 3) << 3;
-        m(j11, obj, ((255 & b10) << i9) | (d.g(obj, j11) & (~(255 << i9))));
+        int i10 = (((int) j10) & 3) << 3;
+        m(j11, obj, ((255 & b10) << i10) | (d.g(obj, j11) & (~(255 << i10))));
     }
 
-    public static void m(long j10, Object obj, int i9) {
-        d.o(j10, obj, i9);
+    public static void m(long j10, Object obj, int i10) {
+        d.o(j10, obj, i10);
     }
 
     public static void n(Object obj, long j10, long j11) {

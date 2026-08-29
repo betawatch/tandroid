@@ -8,7 +8,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public abstract class x2 {
     public static final Unsafe a;
@@ -19,13 +19,13 @@ public abstract class x2 {
     public static final long f;
     public static final boolean g;
 
-    /* JADX WARN: Removed duplicated region for block: B:14:0x0129  */
-    /* JADX WARN: Removed duplicated region for block: B:18:0x0286  */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x0298  */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x029a  */
-    /* JADX WARN: Removed duplicated region for block: B:28:0x012e A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:57:0x0066 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:9:0x005f  */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x0128  */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x0285  */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x0297  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x0299  */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x012d A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:57:0x0065 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:9:0x005e  */
     static {
         w2 w2Var;
         Class<?> cls;
@@ -41,15 +41,15 @@ public abstract class x2 {
         a = g10;
         b = m0.a;
         Class<?> cls5 = Long.TYPE;
-        boolean k10 = k(cls5);
+        boolean k9 = k(cls5);
         Class<?> cls6 = Integer.TYPE;
-        boolean k11 = k(cls6);
+        boolean k10 = k(cls6);
         if (g10 != null) {
             if (!m0.a()) {
                 w2Var = new v2(g10);
-            } else if (k10) {
+            } else if (k9) {
                 w2Var = new u2(g10, 1);
-            } else if (k11) {
+            } else if (k10) {
                 w2Var = new u2(g10, 0);
             }
             c = w2Var;
@@ -60,15 +60,15 @@ public abstract class x2 {
                 try {
                     cls3 = g10.getClass();
                     cls = cls5;
-                } catch (Throwable th) {
-                    th = th;
+                } catch (Throwable th2) {
+                    th = th2;
                     cls = cls5;
                 }
                 try {
                     cls3.getMethod("objectFieldOffset", Field.class);
                     cls3.getMethod("getLong", Object.class, cls);
-                } catch (Throwable th2) {
-                    th = th2;
+                } catch (Throwable th3) {
+                    th = th3;
                     Logger logger = Logger.getLogger(x2.class.getName());
                     Level level = Level.WARNING;
                     String valueOf = String.valueOf(th);
@@ -138,8 +138,8 @@ public abstract class x2 {
                                 clsArr2[1] = cls;
                                 clsArr2[2] = Object.class;
                                 cls4.getMethod("putObject", clsArr2);
-                            } catch (Throwable th3) {
-                                th = th3;
+                            } catch (Throwable th4) {
+                                th = th4;
                                 Logger logger2 = Logger.getLogger(x2.class.getName());
                                 Level level2 = Level.WARNING;
                                 String valueOf2 = String.valueOf(th);
@@ -167,8 +167,8 @@ public abstract class x2 {
                                 }
                                 g = ByteOrder.nativeOrder() != ByteOrder.BIG_ENDIAN;
                             }
-                        } catch (Throwable th4) {
-                            th = th4;
+                        } catch (Throwable th5) {
+                            th = th5;
                         }
                         if (!m0.a()) {
                             Class<?>[] clsArr3 = new Class[2];
@@ -315,8 +315,8 @@ public abstract class x2 {
         }
     }
 
-    public static void c(long j10, Object obj, int i9) {
-        c.b(j10, obj, i9);
+    public static void c(long j10, Object obj, int i10) {
+        c.b(j10, obj, i10);
     }
 
     public static void d(Object obj, long j10, Object obj2) {
@@ -350,15 +350,15 @@ public abstract class x2 {
 
     public static void i(Object obj, long j10, byte b10) {
         long j11 = (-4) & j10;
-        int k10 = c.k(obj, j11);
-        int i9 = ((~((int) j10)) & 3) << 3;
-        c(j11, obj, ((255 & b10) << i9) | (k10 & (~(255 << i9))));
+        int k9 = c.k(obj, j11);
+        int i10 = ((~((int) j10)) & 3) << 3;
+        c(j11, obj, ((255 & b10) << i10) | (k9 & (~(255 << i10))));
     }
 
     public static void j(Object obj, long j10, byte b10) {
         long j11 = (-4) & j10;
-        int i9 = (((int) j10) & 3) << 3;
-        c(j11, obj, ((255 & b10) << i9) | (c.k(obj, j11) & (~(255 << i9))));
+        int i10 = (((int) j10) & 3) << 3;
+        c(j11, obj, ((255 & b10) << i10) | (c.k(obj, j11) & (~(255 << i10))));
     }
 
     /* JADX WARN: Multi-variable type inference failed */

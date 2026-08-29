@@ -1,53 +1,48 @@
 package ih;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import java.util.ArrayList;
+import jh.i7;
+import org.telegram.messenger.MessagesController;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.Components.gr0;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
-/* loaded from: classes4.dex */
-public final class l2 extends AnimatorListenerAdapter {
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class l2 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ i4 b;
+    public final /* synthetic */ gr0 b;
 
-    public /* synthetic */ l2(i4 i4Var, int i9) {
-        this.a = i9;
-        this.b = i4Var;
+    public /* synthetic */ l2(gr0 gr0Var, int i10) {
+        this.a = i10;
+        this.b = gr0Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        r2 r2Var;
-        Runnable runnable;
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                i4 i4Var = this.b;
-                i4Var.p3 = 0.0f;
-                i4Var.n3.setAlpha(1.0f);
-                i4Var.n3.setVisibility(8);
-                i4Var.n3.n();
+                this.b.a();
+                break;
+            case 1:
+                this.b.setReorderingCollections(true);
                 break;
             default:
-                super.onAnimationEnd(animator);
-                i4 i4Var2 = this.b;
-                i4Var2.J2.unlock();
-                i4Var2.D2 = i4Var2.k2;
-                p2 p2Var = i4Var2.X1;
-                if (p2Var != null && (runnable = p2Var.w) != null) {
-                    runnable.run();
-                    p2Var.w = null;
+                i7 i7Var = this.b.e;
+                i7Var.getClass();
+                TL_stars.reorderStarGiftCollections reorderstargiftcollections = new TL_stars.reorderStarGiftCollections();
+                int i10 = i7Var.a;
+                reorderstargiftcollections.peer = MessagesController.getInstance(i10).getInputPeer(i7Var.b);
+                ArrayList arrayList = i7Var.e;
+                int size = arrayList.size();
+                int i11 = 0;
+                while (i11 < size) {
+                    Object obj = arrayList.get(i11);
+                    i11++;
+                    reorderstargiftcollections.order.add(Integer.valueOf(((TL_stars.TL_starGiftCollection) obj).collection_id));
                 }
-                if (i4Var2.G1 && !i4Var2.r2) {
-                    m9 m9Var = ((d9) i4Var2.M1).d;
-                    if (m9Var.x) {
-                        m9Var.x = false;
-                        m9Var.P();
-                    }
-                }
-                if (!i4Var2.r2 && (r2Var = i4Var2.Z2) != null) {
-                    r2Var.setVisibility(8);
-                }
-                i4Var2.R2 = true;
-                i4Var2.invalidate();
+                ConnectionsManager.getInstance(i10).sendRequest(reorderstargiftcollections, null);
+                i7Var.j();
                 break;
         }
     }

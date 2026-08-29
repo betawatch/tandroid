@@ -1,35 +1,31 @@
 package n4;
 
-import g7.c0;
-import java.util.Arrays;
+import java.util.NoSuchElementException;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class b {
-    public final String a;
-    public final String b;
-    public final int c;
-    public final int d;
+public abstract class b implements l {
+    public final long a;
+    public final long b;
+    public long c;
 
-    public b(int i9, int i10, String str, String str2) {
-        this.a = str;
-        this.b = str2;
-        this.c = i9;
-        this.d = i10;
+    public b(long j10, long j11) {
+        this.a = j10;
+        this.b = j11;
+        this.c = j10 - 1;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    public final void a() {
+        long j10 = this.c;
+        if (j10 < this.a || j10 > this.b) {
+            throw new NoSuchElementException();
         }
-        if (!(obj instanceof b)) {
-            return false;
-        }
-        b bVar = (b) obj;
-        return this.c == bVar.c && this.d == bVar.d && c0.a(this.a, bVar.a) && c0.a(this.b, bVar.b);
     }
 
-    public final int hashCode() {
-        return Arrays.hashCode(new Object[]{this.a, this.b, Integer.valueOf(this.c), Integer.valueOf(this.d)});
+    @Override // n4.l
+    public final boolean next() {
+        long j10 = this.c + 1;
+        this.c = j10;
+        return !(j10 > this.b);
     }
 }

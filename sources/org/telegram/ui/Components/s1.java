@@ -1,34 +1,51 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.MessagesStorage;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class s1 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ MessagesStorage.BooleanCallback b;
+    public final /* synthetic */ EditTextBoldCursor b;
 
-    public /* synthetic */ s1(MessagesStorage.BooleanCallback booleanCallback, int i9) {
-        this.a = i9;
-        this.b = booleanCallback;
+    public /* synthetic */ s1(int i10, EditTextBoldCursor editTextBoldCursor) {
+        this.a = i10;
+        this.b = editTextBoldCursor;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                MessagesStorage.BooleanCallback booleanCallback = this.b;
-                if (booleanCallback != null) {
-                    booleanCallback.run(false);
-                    break;
-                }
+                EditTextBoldCursor editTextBoldCursor = this.b;
+                editTextBoldCursor.requestFocus();
+                AndroidUtilities.showKeyboard(editTextBoldCursor);
+                break;
+            case 1:
+                AndroidUtilities.showKeyboard(this.b);
+                break;
+            case 2:
+                AndroidUtilities.showKeyboard(this.b);
+                break;
+            case 3:
+                AndroidUtilities.showKeyboard(this.b);
+                break;
+            case 4:
+                AndroidUtilities.showKeyboard(this.b);
+                break;
+            case 5:
+                AndroidUtilities.showKeyboard(this.b);
+                break;
+            case 6:
+                EditTextBoldCursor editTextBoldCursor2 = this.b;
+                editTextBoldCursor2.requestFocus();
+                AndroidUtilities.showKeyboard(editTextBoldCursor2);
                 break;
             default:
-                MessagesStorage.BooleanCallback booleanCallback2 = this.b;
-                if (booleanCallback2 != null) {
-                    booleanCallback2.run(false);
-                    break;
-                }
+                EditTextBoldCursor editTextBoldCursor3 = this.b;
+                editTextBoldCursor3.requestFocus();
+                editTextBoldCursor3.setSelection(0, editTextBoldCursor3.length());
+                AndroidUtilities.showKeyboard(editTextBoldCursor3);
                 break;
         }
     }

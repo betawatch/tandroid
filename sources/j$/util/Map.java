@@ -9,25 +9,25 @@ import java.util.function.Function;
 
 /* loaded from: classes2.dex */
 public interface Map<K, V> {
-    V compute(K k10, BiFunction<? super K, ? super V, ? extends V> biFunction);
+    V compute(K k9, BiFunction<? super K, ? super V, ? extends V> biFunction);
 
-    V computeIfAbsent(K k10, Function<? super K, ? extends V> function);
+    V computeIfAbsent(K k9, Function<? super K, ? extends V> function);
 
-    V computeIfPresent(K k10, BiFunction<? super K, ? super V, ? extends V> biFunction);
+    V computeIfPresent(K k9, BiFunction<? super K, ? super V, ? extends V> biFunction);
 
     void forEach(BiConsumer<? super K, ? super V> biConsumer);
 
     V getOrDefault(Object obj, V v);
 
-    V merge(K k10, V v, BiFunction<? super V, ? super V, ? extends V> biFunction);
+    V merge(K k9, V v, BiFunction<? super V, ? super V, ? extends V> biFunction);
 
-    V putIfAbsent(K k10, V v);
+    V putIfAbsent(K k9, V v);
 
     boolean remove(Object obj, Object obj2);
 
-    V replace(K k10, V v);
+    V replace(K k9, V v);
 
-    boolean replace(K k10, V v, V v4);
+    boolean replace(K k9, V v, V v10);
 
     void replaceAll(BiFunction<? super K, ? super V, ? extends V> biFunction);
 

@@ -1,79 +1,131 @@
 package nh;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
-import android.view.View;
+import android.animation.ObjectAnimator;
+import android.animation.ValueAnimator;
+import android.graphics.Bitmap;
+import android.graphics.BitmapShader;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.Shader;
 import android.widget.FrameLayout;
-import android.widget.TextView;
-import g7.e6;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.b6;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.w5;
-import org.telegram.ui.Components.o9;
+import org.telegram.messenger.LiteMode;
+import org.telegram.messenger.SharedConfig;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.Components.jr;
+import org.telegram.ui.Components.st;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes4.dex */
-public final class e extends FrameLayout implements w5 {
-    public final o9 a;
-    public final b6 b;
-    public final TextView c;
-    public final TextView d;
+public final /* synthetic */ class e implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ m b;
 
-    public e(Context context, b6 b6Var) {
-        super(context);
-        this.b = b6Var;
-        o9 o9Var = new o9(context);
-        this.a = o9Var;
-        o9Var.setRoundRadius(AndroidUtilities.dp(20.0f));
-        addView(o9Var, e6.d(72, 72.0f, 49, 0.0f, 36.0f, 0.0f, 0.0f));
-        TextView textView = new TextView(context);
-        this.c = textView;
-        textView.setTypeface(AndroidUtilities.bold());
-        textView.setTextSize(1, 20.0f);
-        textView.setGravity(17);
-        addView(textView, e6.d(-1, -2.0f, 49, 24.0f, 123.0f, 24.0f, 0.0f));
-        TextView textView2 = new TextView(context);
-        this.d = textView2;
-        textView2.setTextSize(1, 14.0f);
-        textView2.setGravity(17);
-        textView2.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
-        addView(textView2, e6.d(-1, -2.0f, 49, 32.0f, 157.0f, 32.0f, 0.0f));
-        d();
+    public /* synthetic */ e(m mVar, int i10) {
+        this.a = i10;
+        this.b = mVar;
     }
 
-    @Override // org.telegram.ui.ActionBar.w5
-    public final void d() {
-        int i9 = f6.G6;
-        b6 b6Var = this.b;
-        this.c.setTextColor(f6.v0(i9, b6Var));
-        this.d.setTextColor(f6.v0(f6.z6, b6Var));
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        Drawable drawable = f6.S0;
-        o9 o9Var = this.a;
-        ff.s.a(canvas, drawable, (o9Var.getWidth() / 2.0f) + o9Var.getLeft(), (o9Var.getHeight() / 2.0f) + o9Var.getTop(), o9Var.getHeight());
-    }
-
-    public /* bridge */ /* synthetic */ int[] getColorKeys() {
-        return null;
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i9, int i10) {
-        super.onMeasure(i9, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(218.0f), TLObject.FLAG_30));
-    }
-
-    public void setSubtitle(CharSequence charSequence) {
-        this.d.setText(charSequence);
-    }
-
-    public void setTitle(CharSequence charSequence) {
-        this.c.setText(charSequence);
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10 = this.a;
+        m mVar = this.b;
+        switch (i10) {
+            case 0:
+                mVar.t();
+                break;
+            default:
+                boolean z10 = mVar.i0;
+                FrameLayout frameLayout = mVar.F;
+                j jVar = mVar.r;
+                g gVar = mVar.f;
+                if (mVar.l0 != z10) {
+                    mVar.l0 = z10;
+                    ValueAnimator valueAnimator = mVar.m0;
+                    if (valueAnimator != null) {
+                        valueAnimator.cancel();
+                        mVar.m0 = null;
+                    }
+                    Utilities.Callback callback = mVar.g0;
+                    if (callback != null) {
+                        callback.run(Boolean.valueOf(z10));
+                    }
+                    mVar.d(z10);
+                    if (z10) {
+                        i iVar = mVar.I;
+                        if (iVar != null) {
+                            iVar.setVisibility(0);
+                        }
+                        jVar.setVisibility(0);
+                    } else {
+                        gVar.getEditText().scrollBy(0, -gVar.getEditText().getScrollY());
+                    }
+                    ValueAnimator ofFloat = ValueAnimator.ofFloat(mVar.k0, z10 ? 1.0f : 0.0f);
+                    mVar.m0 = ofFloat;
+                    ofFloat.addUpdateListener(new lh.d5(mVar, 4));
+                    if (!z10) {
+                        gVar.getEditText().setAllowDrawCursor(false);
+                    }
+                    mVar.m0.addListener(new bg.z2(11, mVar, z10));
+                    if (z10) {
+                        mVar.m0.setInterpolator(org.telegram.ui.ActionBar.q1.w);
+                        mVar.m0.setDuration(250L);
+                    } else {
+                        mVar.m0.setInterpolator(new u1.a());
+                        mVar.m0.setDuration(420L);
+                    }
+                    mVar.m0.start();
+                    st editText = gVar.getEditText();
+                    if (editText != null && editText.getLayout() != null) {
+                        ObjectAnimator objectAnimator = mVar.c0;
+                        if (objectAnimator != null) {
+                            objectAnimator.cancel();
+                        }
+                        int scrollY = editText.getScrollY();
+                        gVar.setSelection(z10 ? gVar.a.length() : 0);
+                        gVar.getEditText().setForceCursorEnd(false);
+                        ObjectAnimator ofInt = ObjectAnimator.ofInt(editText, "scrollY", scrollY, z10 ? editText.getLayout().getLineTop(editText.getLineCount()) - ((editText.getHeight() - editText.getPaddingTop()) - editText.getPaddingBottom()) : 0);
+                        mVar.c0 = ofInt;
+                        ofInt.setDuration(360L);
+                        mVar.c0.setInterpolator(jr.h);
+                        mVar.c0.start();
+                    }
+                    gVar.setSuggestionsEnabled(z10);
+                    if (!z10) {
+                        gVar.getEditText().setSpoilersRevealed(false, true);
+                    }
+                    if (z10 && SharedConfig.getDevicePerformanceClass() >= 1 && !LiteMode.isPowerSaverApplied()) {
+                        if (mVar.n0 == null) {
+                            mVar.n0 = Bitmap.createBitmap((int) (frameLayout.getWidth() / 12.0f), (int) (frameLayout.getHeight() / 12.0f), Bitmap.Config.ARGB_8888);
+                        }
+                        mVar.u0 = true;
+                        mVar.i(mVar.n0);
+                        mVar.u0 = false;
+                        Bitmap bitmap = mVar.n0;
+                        if (bitmap != null && !bitmap.isRecycled()) {
+                            Bitmap bitmap2 = mVar.n0;
+                            Shader.TileMode tileMode = Shader.TileMode.CLAMP;
+                            mVar.o0 = new BitmapShader(bitmap2, tileMode, tileMode);
+                            Matrix matrix = mVar.p0;
+                            if (matrix == null) {
+                                mVar.p0 = new Matrix();
+                            } else {
+                                matrix.reset();
+                            }
+                            mVar.o0.setLocalMatrix(mVar.p0);
+                            if (mVar.q0 == null) {
+                                Paint paint = new Paint(3);
+                                mVar.q0 = paint;
+                                paint.setColor(-1);
+                            }
+                            mVar.q0.setShader(mVar.o0);
+                            break;
+                        } else {
+                            mVar.n0 = null;
+                            break;
+                        }
+                    }
+                }
+                break;
+        }
     }
 }

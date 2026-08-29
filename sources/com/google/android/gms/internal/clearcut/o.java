@@ -19,15 +19,15 @@ public class o implements Serializable, Iterable {
         this.b = bArr;
     }
 
-    public static o n(int i9, int i10, byte[] bArr) {
+    public static o n(int i10, int i11, byte[] bArr) {
         byte[] copyOfRange;
         switch (d.a) {
             case 0:
-                copyOfRange = Arrays.copyOfRange(bArr, i9, i10 + i9);
+                copyOfRange = Arrays.copyOfRange(bArr, i10, i11 + i10);
                 break;
             default:
-                copyOfRange = new byte[i10];
-                System.arraycopy(bArr, i9, copyOfRange, 0, i10);
+                copyOfRange = new byte[i11];
+                System.arraycopy(bArr, i10, copyOfRange, 0, i11);
                 break;
         }
         return new o(copyOfRange);
@@ -47,9 +47,9 @@ public class o implements Serializable, Iterable {
             return obj.equals(this);
         }
         o oVar = (o) obj;
-        int i9 = this.a;
-        int i10 = oVar.a;
-        if (i9 != 0 && i10 != 0 && i9 != i10) {
+        int i10 = this.a;
+        int i11 = oVar.a;
+        if (i10 != 0 && i11 != 0 && i10 != i11) {
             return false;
         }
         int size = size();
@@ -71,35 +71,35 @@ public class o implements Serializable, Iterable {
             throw new IllegalArgumentException(sb3.toString());
         }
         byte[] bArr = oVar.b;
-        int i11 = i() + size;
-        int i12 = i();
-        int i13 = oVar.i();
-        while (i12 < i11) {
-            if (this.b[i12] != bArr[i13]) {
+        int i12 = i() + size;
+        int i13 = i();
+        int i14 = oVar.i();
+        while (i13 < i12) {
+            if (this.b[i13] != bArr[i14]) {
                 return false;
             }
-            i12++;
             i13++;
+            i14++;
         }
         return true;
     }
 
     public final int hashCode() {
-        int i9 = this.a;
-        if (i9 != 0) {
-            return i9;
+        int i10 = this.a;
+        if (i10 != 0) {
+            return i10;
         }
         int size = size();
-        int i10 = i();
-        int i11 = size;
-        for (int i12 = i10; i12 < i10 + size; i12++) {
-            i11 = (i11 * 31) + this.b[i12];
+        int i11 = i();
+        int i12 = size;
+        for (int i13 = i11; i13 < i11 + size; i13++) {
+            i12 = (i12 * 31) + this.b[i13];
         }
-        if (i11 == 0) {
-            i11 = 1;
+        if (i12 == 0) {
+            i12 = 1;
         }
-        this.a = i11;
-        return i11;
+        this.a = i12;
+        return i12;
     }
 
     public int i() {
@@ -111,8 +111,8 @@ public class o implements Serializable, Iterable {
         return new androidx.datastore.preferences.protobuf.e(this);
     }
 
-    public byte o(int i9) {
-        return this.b[i9];
+    public byte o(int i10) {
+        return this.b[i10];
     }
 
     public int size() {

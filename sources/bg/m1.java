@@ -1,55 +1,290 @@
 package bg;
 
-import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.RectF;
+import android.graphics.ColorFilter;
+import android.graphics.Outline;
+import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
+import androidx.appcompat.widget.ActionBarContainer;
+import nh.f6;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.b6;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.Components.Switch;
+import org.telegram.ui.Components.zz0;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class m1 extends kh.d {
-    public final RectF d0;
-    public boolean e0;
-    public float f0;
-    public final org.telegram.ui.Components.voip.h g0;
+public final class m1 extends Drawable {
+    public final /* synthetic */ int a;
+    public final Object b;
 
-    public m1(Context context, b6 b6Var) {
-        super(context, b6Var, true);
-        this.d0 = new RectF();
-        org.telegram.ui.Components.voip.h hVar = new org.telegram.ui.Components.voip.h();
-        this.g0 = hVar;
-        hVar.n = 1.2f;
-        hVar.k = false;
-        hVar.m = 4.0f;
+    public /* synthetic */ m1(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // kh.d, android.view.View
-    public final void onDraw(Canvas canvas) {
-        if (this.e0) {
-            float f10 = this.f0 + 0.016f;
-            this.f0 = f10;
-            if (f10 > 3.0f) {
-                this.e0 = false;
-            }
-        } else {
-            float f11 = this.f0 - 0.016f;
-            this.f0 = f11;
-            if (f11 < 1.0f) {
-                this.e0 = true;
-            }
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        switch (this.a) {
+            case 0:
+                canvas.save();
+                Drawable drawable = (Drawable) this.b;
+                if (drawable.getBounds() != null) {
+                    canvas.scale(0.8333333f, 0.8333333f, drawable.getBounds().centerX(), drawable.getBounds().centerY());
+                }
+                drawable.draw(canvas);
+                canvas.restore();
+                break;
+            case 1:
+                canvas.save();
+                canvas.translate(getBounds().left, getBounds().top);
+                ((f6) this.b).draw(canvas);
+                canvas.restore();
+                break;
+            case 2:
+                ActionBarContainer actionBarContainer = (ActionBarContainer) this.b;
+                if (!actionBarContainer.h) {
+                    Drawable drawable2 = actionBarContainer.d;
+                    if (drawable2 != null) {
+                        drawable2.draw(canvas);
+                    }
+                    Drawable drawable3 = actionBarContainer.e;
+                    if (drawable3 != null && actionBarContainer.n) {
+                        drawable3.draw(canvas);
+                        break;
+                    }
+                } else {
+                    Drawable drawable4 = actionBarContainer.f;
+                    if (drawable4 != null) {
+                        drawable4.draw(canvas);
+                        break;
+                    }
+                }
+                break;
+            case 3:
+                canvas.save();
+                nh.t3 t3Var = (nh.t3) this.b;
+                canvas.drawPath(t3Var.p0, t3Var.U);
+                canvas.restore();
+                break;
+            case 4:
+                cg.r1 r1Var = (cg.r1) this.b;
+                Rect bounds = getBounds();
+                r1Var.getClass();
+                r1Var.d(bounds.left, 0.0f, bounds.top, bounds.right, 0.0f, bounds.bottom);
+                canvas.drawCircle(getBounds().centerX(), getBounds().centerY(), Math.min(getBounds().width(), getBounds().height()) / 2.0f, r1Var.f);
+                break;
+            case 5:
+                ImageReceiver imageReceiver = (ImageReceiver) this.b;
+                imageReceiver.setImageCoords(getBounds());
+                imageReceiver.draw(canvas);
+                break;
+            case 6:
+                Rect bounds2 = getBounds();
+                canvas.drawCircle(bounds2.centerX(), bounds2.centerY(), AndroidUtilities.dp(18.0f), ((Switch) this.b).F);
+                break;
+            case 7:
+                ((zz0) this.b).c(getBounds().centerX() - (((zz0) this.b).c / 2.0f), getBounds().centerY(), 1.0f, g6.w0(null, g6.G6, false), canvas);
+                break;
+            default:
+                canvas.save();
+                canvas.translate(0.0f, AndroidUtilities.dp(1.0f));
+                ph.p2 p2Var = (ph.p2) this.b;
+                p2Var.E0.setBounds(getBounds());
+                p2Var.E0.draw(canvas);
+                canvas.restore();
+                break;
         }
-        float measuredWidth = getMeasuredWidth();
-        float measuredHeight = getMeasuredHeight();
-        RectF rectF = this.d0;
-        rectF.set(0.0f, 0.0f, measuredWidth, measuredHeight);
-        zf.a1.d().f((-getMeasuredWidth()) * 0.1f * this.f0, 0.0f, getMeasuredWidth(), getMeasuredHeight());
-        canvas.drawRoundRect(rectF, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), zf.a1.d().e());
-        int measuredWidth2 = getMeasuredWidth();
-        org.telegram.ui.Components.voip.h hVar = this.g0;
-        hVar.f = measuredWidth2;
-        hVar.a(AndroidUtilities.dp(8.0f), canvas, rectF, null);
-        super.onDraw(canvas);
-        invalidate();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public int getIntrinsicHeight() {
+        switch (this.a) {
+            case 1:
+                return ((f6) this.b).getHeight();
+            case 5:
+                return AndroidUtilities.dp(30.0f);
+            case 8:
+                return AndroidUtilities.dp(20.0f);
+            default:
+                return super.getIntrinsicHeight();
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public int getIntrinsicWidth() {
+        switch (this.a) {
+            case 1:
+                return ((f6) this.b).getWidth();
+            case 5:
+                return AndroidUtilities.dp(30.0f);
+            case 8:
+                return AndroidUtilities.dp(20.0f);
+            default:
+                return super.getIntrinsicWidth();
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        switch (this.a) {
+            case 0:
+                return ((Drawable) this.b).getOpacity();
+            case 1:
+                return -2;
+            case 2:
+                return 0;
+            case 3:
+                return -2;
+            case 4:
+                return -2;
+            case 5:
+                return -2;
+            case 6:
+                return 0;
+            case 7:
+                return -2;
+            default:
+                return -2;
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public void getOutline(Outline outline) {
+        switch (this.a) {
+            case 2:
+                ActionBarContainer actionBarContainer = (ActionBarContainer) this.b;
+                if (!actionBarContainer.h) {
+                    Drawable drawable = actionBarContainer.d;
+                    if (drawable != null) {
+                        drawable.getOutline(outline);
+                        break;
+                    }
+                } else if (actionBarContainer.f != null) {
+                    actionBarContainer.d.getOutline(outline);
+                    break;
+                }
+                break;
+            default:
+                super.getOutline(outline);
+                break;
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+        switch (this.a) {
+            case 0:
+                ((Drawable) this.b).setAlpha(i10);
+                break;
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+                break;
+            case 5:
+                ((ImageReceiver) this.b).setAlpha(i10 / 255.0f);
+                break;
+            case 6:
+            case 7:
+                break;
+            default:
+                ((ph.p2) this.b).E0.setAlpha(i10);
+                break;
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public void setBounds(Rect rect) {
+        switch (this.a) {
+            case 0:
+                ((Drawable) this.b).setBounds(rect);
+                break;
+            default:
+                super.setBounds(rect);
+                break;
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+        switch (this.a) {
+            case 0:
+                ((Drawable) this.b).setColorFilter(colorFilter);
+                break;
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+                break;
+            case 5:
+                ((ImageReceiver) this.b).setColorFilter(colorFilter);
+                break;
+            case 6:
+            case 7:
+                break;
+            default:
+                ((ph.p2) this.b).E0.setColorFilter(colorFilter);
+                break;
+        }
+    }
+
+    public m1(ActionBarContainer actionBarContainer) {
+        this.a = 2;
+        this.b = actionBarContainer;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public void setBounds(int i10, int i11, int i12, int i13) {
+        switch (this.a) {
+            case 0:
+                ((Drawable) this.b).setBounds(i10, i11, i12, i13);
+                break;
+            default:
+                super.setBounds(i10, i11, i12, i13);
+                break;
+        }
+    }
+
+    public m1(String str) {
+        this.a = 7;
+        this.b = new zz0(str.substring(0, !str.isEmpty() ? 1 : 0), 14.0f, AndroidUtilities.bold());
+    }
+
+    private final void a(int i10) {
+    }
+
+    private final void b(int i10) {
+    }
+
+    private final void c(int i10) {
+    }
+
+    private final void d(int i10) {
+    }
+
+    private final void e(int i10) {
+    }
+
+    private final void f(int i10) {
+    }
+
+    private final void g(ColorFilter colorFilter) {
+    }
+
+    private final void h(ColorFilter colorFilter) {
+    }
+
+    private final void i(ColorFilter colorFilter) {
+    }
+
+    private final void j(ColorFilter colorFilter) {
+    }
+
+    private final void k(ColorFilter colorFilter) {
+    }
+
+    private final void l(ColorFilter colorFilter) {
     }
 }

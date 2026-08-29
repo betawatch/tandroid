@@ -1,26 +1,53 @@
 package org.telegram.ui.Components;
 
+import android.net.Uri;
+import android.text.TextPaint;
+import android.text.style.URLSpan;
 import android.view.View;
-import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class a51 implements Utilities.Callback5, Utilities.Callback5Return {
-    public final /* synthetic */ d51 a;
+public class a51 extends URLSpan {
+    public final boolean a;
+    public final h01 b;
+    public TLObject c;
+    public String d;
 
-    @Override // org.telegram.messenger.Utilities.Callback5Return
-    public Object run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        ((Integer) obj3).getClass();
-        ((Float) obj4).getClass();
-        ((Float) obj5).getClass();
-        return Boolean.valueOf(this.a.W((l41) obj, (View) obj2));
+    public a51(String str) {
+        this(str, (h01) null);
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback5
-    public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        ((Integer) obj3).getClass();
-        ((Float) obj4).getClass();
-        ((Float) obj5).getClass();
-        this.a.V((l41) obj, (View) obj2);
+    @Override // android.text.style.URLSpan, android.text.style.ClickableSpan
+    public void onClick(View view) {
+        String url = getURL();
+        if (!url.startsWith("@")) {
+            ye.d.s(view.getContext(), url);
+            return;
+        }
+        ye.d.p(view.getContext(), Uri.parse("https://t.me/" + url.substring(1)), true, true);
+    }
+
+    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    public void updateDrawState(TextPaint textPaint) {
+        int i10 = textPaint.linkColor;
+        int color = textPaint.getColor();
+        super.updateDrawState(textPaint);
+        h01 h01Var = this.b;
+        if (h01Var != null) {
+            h01Var.a(textPaint);
+        }
+        textPaint.setUnderlineText(i10 == color && !this.a);
+    }
+
+    public a51(String str, int i10) {
+        this(str, (h01) null);
+        this.a = true;
+    }
+
+    public a51(String str, h01 h01Var) {
+        super(str != null ? str.replace((char) 8238, ' ') : str);
+        this.a = false;
+        this.b = h01Var;
     }
 }

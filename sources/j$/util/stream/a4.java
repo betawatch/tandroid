@@ -6,8 +6,8 @@ import j$.util.Spliterator;
 public final class a4 extends t3 {
     public final /* synthetic */ int h;
 
-    public /* synthetic */ a4(int i9) {
-        this.h = i9;
+    public /* synthetic */ a4(int i10) {
+        this.h = i10;
     }
 
     @Override // j$.util.stream.t3

@@ -1,37 +1,22 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
+
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
 public final class h50 {
-    public final int a;
-    public final int b;
+    public final ByteBuffer[] a = new ByteBuffer[10];
+    public final long[] b = new long[10];
+    public final int[] c = new int[10];
+    public int d;
+    public int e;
+    public boolean f;
 
-    public h50(int i9, int i10) {
-        this.a = i9;
-        this.b = i10;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    public h50() {
+        for (int i10 = 0; i10 < 10; i10++) {
+            this.a[i10] = ByteBuffer.allocateDirect(2048);
+            this.a[i10].order(ByteOrder.nativeOrder());
         }
-        if (obj != null && h50.class == obj.getClass()) {
-            h50 h50Var = (h50) obj;
-            if (this.a == h50Var.a && this.b == h50Var.b) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public final int hashCode() {
-        return (this.a * 31) + this.b;
-    }
-
-    public final String toString() {
-        StringBuilder sb2 = new StringBuilder("IntSize(");
-        sb2.append(this.a);
-        sb2.append(", ");
-        return aa.d.l(this.b, ")", sb2);
     }
 }

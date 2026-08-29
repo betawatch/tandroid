@@ -1,34 +1,50 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.voip.VoIPService;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.view.MotionEvent;
+import android.view.VelocityTracker;
+import android.view.ViewConfiguration;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class g20 implements Runnable {
-    public final /* synthetic */ h20 a;
+public final class g20 {
+    public static final int w = ViewConfiguration.getTapTimeout();
+    public final int a;
+    public final int b;
+    public final int c;
+    public final int d;
+    public final h20 f;
+    public final h20 g;
+    public boolean h;
+    public boolean i;
+    public boolean j;
+    public boolean k;
+    public boolean l;
+    public MotionEvent m;
+    public MotionEvent n;
+    public boolean o;
+    public float p;
+    public float q;
+    public float r;
+    public float s;
+    public boolean t;
+    public VelocityTracker v;
+    public long u = ViewConfiguration.getLongPressTimeout();
+    public final a4.d e = new a4.d(this, 8);
 
-    public g20(h20 h20Var) {
-        this.a = h20Var;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        VoIPService sharedInstance = VoIPService.getSharedInstance();
-        if (sharedInstance == null || !sharedInstance.isMicMute()) {
-            return;
+    public g20(Context context, h20 h20Var) {
+        this.f = h20Var;
+        this.g = h20Var;
+        if (context == null) {
+            throw new IllegalArgumentException("Context must not be null");
         }
-        TLRPC.GroupCallParticipant groupCallParticipant = (TLRPC.GroupCallParticipant) sharedInstance.groupCall.participants.f(sharedInstance.getSelfId());
-        if (groupCallParticipant == null || groupCallParticipant.can_self_unmute || !groupCallParticipant.muted || ChatObject.canManageCalls(sharedInstance.getChat())) {
-            h20 h20Var = this.a;
-            AndroidUtilities.runOnUIThread(h20Var.f, 90L);
-            try {
-                h20Var.performHapticFeedback(3, 2);
-            } catch (Exception unused) {
-            }
-            h20Var.c = true;
-        }
+        this.t = true;
+        ViewConfiguration viewConfiguration = ViewConfiguration.get(context);
+        int scaledTouchSlop = viewConfiguration.getScaledTouchSlop();
+        int scaledDoubleTapSlop = viewConfiguration.getScaledDoubleTapSlop();
+        this.c = viewConfiguration.getScaledMinimumFlingVelocity();
+        this.d = viewConfiguration.getScaledMaximumFlingVelocity();
+        this.a = scaledTouchSlop * scaledTouchSlop;
+        this.b = scaledDoubleTapSlop * scaledDoubleTapSlop;
     }
 }

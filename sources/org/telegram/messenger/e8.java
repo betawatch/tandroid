@@ -1,34 +1,26 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class e8 implements RequestDelegate {
+public final /* synthetic */ class e8 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ String c;
-    public final /* synthetic */ String d;
-    public final /* synthetic */ BaseController e;
+    public final /* synthetic */ MediaDataController b;
+    public final /* synthetic */ boolean c;
 
-    public /* synthetic */ e8(BaseController baseController, int i9, String str, String str2, int i10) {
+    public /* synthetic */ e8(MediaDataController mediaDataController, boolean z10, int i10) {
         this.a = i10;
-        this.e = baseController;
-        this.b = i9;
-        this.c = str;
-        this.d = str2;
+        this.b = mediaDataController;
+        this.c = z10;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                ((MediaDataController) this.e).lambda$fetchNewEmojiKeywords$212(this.b, this.c, this.d, tLObject, tL_error);
+                this.b.lambda$loadFeaturedStickers$55(this.c);
                 break;
             default:
-                ((MessagesController) this.e).lambda$checkPromoInfoInternal$169(this.b, this.c, this.d, tLObject, tL_error);
+                this.b.lambda$processLoadedFeaturedStickers$59(this.c);
                 break;
         }
     }

@@ -11,15 +11,15 @@ public final class r8 extends v8 implements DoubleConsumer, j$.util.u0 {
     public final /* synthetic */ int f;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ r8(Spliterator spliterator, int i9) {
+    public /* synthetic */ r8(Spliterator spliterator, int i10) {
         super(spliterator);
-        this.f = i9;
+        this.f = i10;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ r8(Spliterator spliterator, v8 v8Var, int i9) {
+    public /* synthetic */ r8(Spliterator spliterator, v8 v8Var, int i10) {
         super(spliterator, v8Var);
-        this.f = i9;
+        this.f = i10;
     }
 
     public final /* synthetic */ DoubleConsumer andThen(DoubleConsumer doubleConsumer) {

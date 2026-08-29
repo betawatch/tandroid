@@ -6,7 +6,7 @@ import android.os.Parcelable;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public abstract class b {
     public final f a;
@@ -60,14 +60,14 @@ public abstract class b {
         return declaredMethod;
     }
 
-    public abstract boolean e(int i9);
+    public abstract boolean e(int i10);
 
-    public final int f(int i9, int i10) {
-        return !e(i10) ? i9 : ((c) this).e.readInt();
+    public final int f(int i10, int i11) {
+        return !e(i11) ? i10 : ((c) this).e.readInt();
     }
 
-    public final Parcelable g(Parcelable parcelable, int i9) {
-        if (!e(i9)) {
+    public final Parcelable g(Parcelable parcelable, int i10) {
+        if (!e(i10)) {
             return parcelable;
         }
         return ((c) this).e.readParcelable(c.class.getClassLoader());
@@ -94,15 +94,15 @@ public abstract class b {
         }
     }
 
-    public abstract void i(int i9);
+    public abstract void i(int i10);
 
-    public final void j(int i9, int i10) {
-        i(i10);
-        ((c) this).e.writeInt(i9);
+    public final void j(int i10, int i11) {
+        i(i11);
+        ((c) this).e.writeInt(i10);
     }
 
-    public final void k(Parcelable parcelable, int i9) {
-        i(i9);
+    public final void k(Parcelable parcelable, int i10) {
+        i(i10);
         ((c) this).e.writeParcelable(parcelable, 0);
     }
 
@@ -117,12 +117,12 @@ public abstract class b {
             try {
                 d(dVar.getClass()).invoke(null, dVar, a2);
                 Parcel parcel = a2.e;
-                int i9 = a2.i;
-                if (i9 >= 0) {
-                    int i10 = a2.d.get(i9);
+                int i10 = a2.i;
+                if (i10 >= 0) {
+                    int i11 = a2.d.get(i10);
                     int dataPosition = parcel.dataPosition();
-                    parcel.setDataPosition(i10);
-                    parcel.writeInt(dataPosition - i10);
+                    parcel.setDataPosition(i11);
+                    parcel.writeInt(dataPosition - i11);
                     parcel.setDataPosition(dataPosition);
                 }
             } catch (ClassNotFoundException e10) {

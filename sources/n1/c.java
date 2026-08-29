@@ -1,13 +1,14 @@
 package n1;
 
-import g7.y5;
+import bd.p;
+import i7.c7;
 import j$.util.DesugarCollections;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import sc.i;
-import zc.p;
+import kotlin.jvm.internal.j;
+import uc.i;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class c extends i implements p {
     public final /* synthetic */ int a;
@@ -17,10 +18,10 @@ public final class c extends i implements p {
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     /* JADX WARN: Multi-variable type inference failed */
-    public c(p pVar, qc.c cVar, int i9) {
+    public c(p pVar, sc.c cVar, int i10) {
         super(2, cVar);
-        this.a = i9;
-        switch (i9) {
+        this.a = i10;
+        switch (i10) {
             case 1:
                 this.d = (i) pVar;
                 super(2, cVar);
@@ -31,10 +32,10 @@ public final class c extends i implements p {
         }
     }
 
-    /* JADX WARN: Type inference failed for: r1v0, types: [sc.i, zc.p] */
-    /* JADX WARN: Type inference failed for: r1v1, types: [sc.i, zc.p] */
-    @Override // sc.a
-    public final qc.c create(Object obj, qc.c cVar) {
+    /* JADX WARN: Type inference failed for: r1v0, types: [bd.p, uc.i] */
+    /* JADX WARN: Type inference failed for: r1v1, types: [bd.p, uc.i] */
+    @Override // uc.a
+    public final sc.c create(Object obj, sc.c cVar) {
         switch (this.a) {
             case 0:
                 c cVar2 = new c(this.d, cVar, 0);
@@ -47,25 +48,25 @@ public final class c extends i implements p {
         }
     }
 
-    @Override // zc.p
+    @Override // bd.p
     public final Object invoke(Object obj, Object obj2) {
         b bVar = (b) obj;
-        qc.c cVar = (qc.c) obj2;
+        sc.c cVar = (sc.c) obj2;
         switch (this.a) {
         }
-        return ((c) create(bVar, cVar)).invokeSuspend(oc.i.a);
+        return ((c) create(bVar, cVar)).invokeSuspend(qc.i.a);
     }
 
-    /* JADX WARN: Type inference failed for: r1v1, types: [sc.i, zc.p] */
-    /* JADX WARN: Type inference failed for: r5v12, types: [sc.i, zc.p] */
-    @Override // sc.a
+    /* JADX WARN: Type inference failed for: r1v1, types: [bd.p, uc.i] */
+    /* JADX WARN: Type inference failed for: r5v12, types: [bd.p, uc.i] */
+    @Override // uc.a
     public final Object invokeSuspend(Object obj) {
         switch (this.a) {
             case 0:
-                rc.a aVar = rc.a.a;
-                int i9 = this.b;
-                if (i9 == 0) {
-                    y5.b(obj);
+                tc.a aVar = tc.a.a;
+                int i10 = this.b;
+                if (i10 == 0) {
+                    c7.b(obj);
                     b bVar = (b) this.c;
                     this.b = 1;
                     obj = this.d.invoke(bVar, this);
@@ -73,28 +74,28 @@ public final class c extends i implements p {
                         return aVar;
                     }
                 } else {
-                    if (i9 != 1) {
+                    if (i10 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    y5.b(obj);
+                    c7.b(obj);
                 }
                 b bVar2 = (b) obj;
                 bVar2.b.set(true);
                 return bVar2;
             default:
-                rc.a aVar2 = rc.a.a;
-                int i10 = this.b;
-                if (i10 != 0) {
-                    if (i10 != 1) {
+                tc.a aVar2 = tc.a.a;
+                int i11 = this.b;
+                if (i11 != 0) {
+                    if (i11 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
                     b bVar3 = (b) this.c;
-                    y5.b(obj);
+                    c7.b(obj);
                     return bVar3;
                 }
-                y5.b(obj);
+                c7.b(obj);
                 Map unmodifiableMap = DesugarCollections.unmodifiableMap(((b) this.c).a);
-                kotlin.jvm.internal.i.d(unmodifiableMap, "unmodifiableMap(preferencesMap)");
+                j.d(unmodifiableMap, "unmodifiableMap(preferencesMap)");
                 b bVar4 = new b(new LinkedHashMap(unmodifiableMap), false);
                 this.c = bVar4;
                 this.b = 1;

@@ -1,36 +1,66 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
+import android.view.MotionEvent;
 import android.view.View;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class sa0 implements mk0 {
-    public final /* synthetic */ wa0 a;
+public final class sa0 extends z71 {
+    public final /* synthetic */ rb0 P;
 
-    public sa0(wa0 wa0Var) {
-        this.a = wa0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public sa0(rb0 rb0Var, Context context, nb0 nb0Var) {
+        super(context, nb0Var);
+        this.P = rb0Var;
     }
 
-    @Override // org.telegram.ui.Components.mk0
-    public final void a(int i9, View view) {
-        wa0 wa0Var = this.a;
-        if (wa0Var.a != 1 || wa0Var.r.previewMessages.size() <= 1) {
-            return;
-        }
-        int id2 = wa0Var.r.previewMessages.get(i9).getId();
-        boolean z10 = wa0Var.r.selectedIds.get(id2, false);
-        boolean z11 = !z10;
-        if (wa0Var.r.selectedIds.size() == 1 && z10) {
-            return;
+    @Override // org.telegram.ui.Components.z71, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        boolean z10;
+        int i10 = 0;
+        while (true) {
+            View[] viewArr = this.P.f.e;
+            if (i10 >= viewArr.length) {
+                z10 = false;
+                break;
+            }
+            View view = viewArr[i10];
+            if (view != null) {
+                lb0 lb0Var = (lb0) view;
+                if (lb0Var.a == 0) {
+                    z10 = lb0Var.e.i;
+                    break;
+                }
+            }
+            i10++;
         }
         if (z10) {
-            wa0Var.r.selectedIds.delete(id2);
-        } else {
-            wa0Var.r.selectedIds.put(id2, z11);
+            return false;
         }
-        if (view instanceof org.telegram.ui.Cells.t1) {
-            ((org.telegram.ui.Cells.t1) view).L3(z11, z11, true);
+        return A(motionEvent);
+    }
+
+    @Override // org.telegram.ui.Components.z71
+    public final void u() {
+        View view = this.e[0];
+        if (view instanceof lb0) {
+            ((lb0) view).e.W();
         }
-        wa0Var.k(true);
+    }
+
+    @Override // org.telegram.ui.Components.z71
+    public final void w(boolean z10) {
+        rb0 rb0Var = this.P;
+        rb0Var.e.setSelectedTab(rb0Var.f.getPositionAnimated());
+        View[] viewArr = this.e;
+        View view = viewArr[0];
+        if (view instanceof lb0) {
+            ((lb0) view).e.H();
+        }
+        View view2 = viewArr[1];
+        if (view2 instanceof lb0) {
+            ((lb0) view2).e.H();
+        }
     }
 }

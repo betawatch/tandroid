@@ -1,120 +1,50 @@
 package w3;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+import f5.w;
+import i7.h0;
+
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class c implements m3.k {
-    public final b a = new b(null, 1);
-    public final d5.y b = new d5.y(16384);
-    public boolean c;
+public final class c {
+    public final int a;
+    public int b;
+    public int c;
+    public long d;
+    public final boolean e;
+    public final w f;
+    public final w g;
+    public int h;
+    public int i;
 
-    @Override // m3.k
-    public final int b(m3.l lVar, m3.n nVar) {
-        d5.y yVar = this.b;
-        int read = ((m3.h) lVar).read(yVar.a, 0, 16384);
-        if (read == -1) {
-            return -1;
-        }
-        yVar.C(0);
-        yVar.B(read);
-        boolean z10 = this.c;
-        b bVar = this.a;
-        if (!z10) {
-            bVar.k(4, 0L);
-            this.c = true;
-        }
-        bVar.g(yVar);
-        return 0;
+    public c(w wVar, w wVar2, boolean z10) {
+        this.g = wVar;
+        this.f = wVar2;
+        this.e = z10;
+        wVar2.C(12);
+        this.a = wVar2.u();
+        wVar.C(12);
+        this.i = wVar.u();
+        h0.a("first_chunk must be 1", wVar.e() == 1);
+        this.b = -1;
     }
 
-    @Override // m3.k
-    public final void c(m3.m mVar) {
-        this.a.j(mVar, new d0(0, 1));
-        mVar.B();
-        mVar.y(new m3.o(-9223372036854775807L));
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:12:0x003c, code lost:
-    
-        r5.f = 0;
-        r1 = r1 + 1;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:13:0x0044, code lost:
-    
-        if ((r1 - r3) < 8192) goto L13;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:16:0x0088, code lost:
-    
-        return false;
-     */
-    @Override // m3.k
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean f(m3.l lVar) {
-        m3.h hVar;
-        int i9;
-        d5.y yVar = new d5.y(10);
-        int i10 = 0;
-        while (true) {
-            hVar = (m3.h) lVar;
-            hVar.g(yVar.a, 0, 10, false);
-            yVar.C(0);
-            if (yVar.t() != 4801587) {
-                break;
-            }
-            yVar.D(3);
-            int q10 = yVar.q();
-            i10 += q10 + 10;
-            hVar.a(q10, false);
+    public final boolean a() {
+        int i10 = this.b + 1;
+        this.b = i10;
+        if (i10 == this.a) {
+            return false;
         }
-        hVar.f = 0;
-        hVar.a(i10, false);
-        int i11 = i10;
-        loop1: while (true) {
-            int i12 = 0;
-            while (true) {
-                int i13 = 7;
-                hVar.g(yVar.a, 0, 7, false);
-                yVar.C(0);
-                int w8 = yVar.w();
-                if (w8 != 44096 && w8 != 44097) {
-                    break;
-                }
-                i12++;
-                if (i12 >= 4) {
-                    return true;
-                }
-                byte[] bArr = yVar.a;
-                if (bArr.length < 7) {
-                    i9 = -1;
-                } else {
-                    int i14 = ((bArr[2] & 255) << 8) | (bArr[3] & 255);
-                    if (i14 == 65535) {
-                        i14 = ((bArr[4] & 255) << 16) | ((bArr[5] & 255) << 8) | (bArr[6] & 255);
-                    } else {
-                        i13 = 4;
-                    }
-                    if (w8 == 44097) {
-                        i13 += 2;
-                    }
-                    i9 = i14 + i13;
-                }
-                if (i9 == -1) {
-                    break loop1;
-                }
-                hVar.a(i9 - 7, false);
-            }
-            hVar.a(i11, false);
+        boolean z10 = this.e;
+        w wVar = this.f;
+        this.d = z10 ? wVar.v() : wVar.s();
+        if (this.b == this.h) {
+            w wVar2 = this.g;
+            this.c = wVar2.u();
+            wVar2.D(4);
+            int i11 = this.i - 1;
+            this.i = i11;
+            this.h = i11 > 0 ? wVar2.u() - 1 : -1;
         }
-    }
-
-    @Override // m3.k
-    public final void g(long j10, long j11) {
-        this.c = false;
-        this.a.h();
-    }
-
-    @Override // m3.k
-    public final void release() {
+        return true;
     }
 }

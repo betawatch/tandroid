@@ -8,7 +8,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.AnimatedPhoneNumberEditText;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
 public final class bg0 extends AnimatedPhoneNumberEditText {
     public final /* synthetic */ eg0 C;
@@ -20,13 +20,13 @@ public final class bg0 extends AnimatedPhoneNumberEditText {
     }
 
     @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
-    public final void onFocusChanged(boolean z10, int i9, Rect rect) {
-        super.onFocusChanged(z10, i9, rect);
+    public final void onFocusChanged(boolean z10, int i10, Rect rect) {
+        super.onFocusChanged(z10, i10, rect);
         eg0 eg0Var = this.C;
         fg0 fg0Var = eg0Var.R;
-        org.telegram.ui.Components.fc0 fc0Var = eg0Var.f;
-        float f10 = (z10 || eg0Var.a.isFocused()) ? 1.0f : 0.0f;
-        fc0Var.b(f10, f10, true);
+        org.telegram.ui.Components.uc0 uc0Var = eg0Var.f;
+        float f9 = (z10 || eg0Var.a.isFocused()) ? 1.0f : 0.0f;
+        uc0Var.b(f9, f9, true);
         if (!z10) {
             if (eg0Var.x == 2) {
                 eg0Var.setCountryButtonText(null);
@@ -41,15 +41,15 @@ public final class bg0 extends AnimatedPhoneNumberEditText {
     }
 
     @Override // android.widget.TextView, android.view.View, android.view.KeyEvent.Callback
-    public final boolean onKeyDown(int i9, KeyEvent keyEvent) {
+    public final boolean onKeyDown(int i10, KeyEvent keyEvent) {
         eg0 eg0Var = this.C;
-        kj0 kj0Var = eg0Var.a;
-        if (i9 == 67 && eg0Var.b.length() == 0) {
-            kj0Var.requestFocus();
-            kj0Var.setSelection(kj0Var.length());
-            kj0Var.dispatchKeyEvent(keyEvent);
+        ij0 ij0Var = eg0Var.a;
+        if (i10 == 67 && eg0Var.b.length() == 0) {
+            ij0Var.requestFocus();
+            ij0Var.setSelection(ij0Var.length());
+            ij0Var.dispatchKeyEvent(keyEvent);
         }
-        return super.onKeyDown(i9, keyEvent);
+        return super.onKeyDown(i10, keyEvent);
     }
 
     @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View

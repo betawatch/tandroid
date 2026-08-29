@@ -1,64 +1,25 @@
 package l4;
 
-import com.google.android.exoplayer2.upstream.q;
-import com.google.android.exoplayer2.upstream.x0;
-import f7.f5;
-import h3.t0;
-import j4.a1;
-import m3.w;
-import org.telegram.tgnet.ConnectionsManager;
-
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class m extends a {
-    public final int A;
-    public final t0 B;
-    public long C;
-    public boolean D;
-
-    public m(com.google.android.exoplayer2.upstream.m mVar, q qVar, t0 t0Var, int i9, Object obj, long j10, long j11, long j12, int i10, t0 t0Var2) {
-        super(mVar, qVar, t0Var, i9, obj, j10, j11, -9223372036854775807L, -9223372036854775807L, j12);
-        this.A = i10;
-        this.B = t0Var2;
+public final class m implements c1 {
+    @Override // l4.c1
+    public final int d(j3.u0 u0Var, m3.i iVar, int i10) {
+        iVar.setFlags(4);
+        return -4;
     }
 
-    @Override // com.google.android.exoplayer2.upstream.n0
+    @Override // l4.c1
+    public final boolean e() {
+        return true;
+    }
+
+    @Override // l4.c1
+    public final int i(long j10) {
+        return 0;
+    }
+
+    @Override // l4.c1
     public final void a() {
-        x0 x0Var = this.r;
-        g5.b bVar = this.x;
-        d5.a.j(bVar);
-        for (a1 a1Var : (a1[]) bVar.c) {
-            if (a1Var.F != 0) {
-                a1Var.F = 0L;
-                a1Var.z = true;
-            }
-        }
-        w u10 = bVar.u(this.A);
-        u10.c(this.B);
-        try {
-            long open = x0Var.open(this.b.a(this.C));
-            if (open != -1) {
-                open += this.C;
-            }
-            m3.h hVar = new m3.h(this.r, this.C, open);
-            for (int i9 = 0; i9 != -1; i9 = u10.b(hVar, ConnectionsManager.DEFAULT_DATACENTER_ID, true)) {
-                this.C += i9;
-            }
-            u10.e(this.h, 1, (int) this.C, 0, null);
-            f5.a(x0Var);
-            this.D = true;
-        } catch (Throwable th) {
-            f5.a(x0Var);
-            throw th;
-        }
-    }
-
-    @Override // l4.k
-    public final boolean c() {
-        return this.D;
-    }
-
-    @Override // com.google.android.exoplayer2.upstream.n0
-    public final void K() {
     }
 }

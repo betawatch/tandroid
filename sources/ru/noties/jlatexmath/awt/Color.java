@@ -1,6 +1,6 @@
 package ru.noties.jlatexmath.awt;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes4.dex */
 public class Color {
     public static final Color BLACK;
@@ -30,8 +30,8 @@ public class Color {
         RED = color2;
     }
 
-    public Color(int i9) {
-        this.color = i9;
+    public Color(int i10) {
+        this.color = i10;
     }
 
     public static Color decode(String str) {
@@ -58,11 +58,11 @@ public class Color {
         return android.graphics.Color.red(this.color);
     }
 
-    public Color(int i9, int i10, int i11) {
-        this(android.graphics.Color.rgb(i9, i10, i11));
+    public Color(int i10, int i11, int i12) {
+        this(android.graphics.Color.rgb(i10, i11, i12));
     }
 
-    public Color(float f10, float f11, float f12) {
-        this((int) ((f10 * 255.0f) + 0.5f), (int) ((f11 * 255.0f) + 0.5f), (int) ((f12 * 255.0f) + 0.5f));
+    public Color(float f9, float f10, float f11) {
+        this((int) ((f9 * 255.0f) + 0.5f), (int) ((f10 * 255.0f) + 0.5f), (int) ((f11 * 255.0f) + 0.5f));
     }
 }

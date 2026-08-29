@@ -1,24 +1,23 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+import android.content.Context;
+
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class pu0 extends o1.i {
-    public final nu0 a;
-    public final ou0 b;
-    public float c = 1.0f;
+public final class pu0 {
+    public final int a;
+    public final int b;
+    public final ou0 c;
+    public final nu0 d;
+    public final /* synthetic */ qu0 e;
 
-    public pu0(nu0 nu0Var, ou0 ou0Var) {
-        this.a = nu0Var;
-        this.b = ou0Var;
-    }
-
-    @Override // o1.i
-    public final float a(Object obj) {
-        return this.a.get(obj) * this.c;
-    }
-
-    @Override // o1.i
-    public final void b(Object obj, float f10) {
-        this.b.b(obj, f10 / this.c);
+    public pu0(qu0 qu0Var, Context context, int i10) {
+        this.e = qu0Var;
+        this.b = i10;
+        int i11 = qu0Var.W1;
+        qu0Var.W1 = i11 + 1;
+        this.a = (i11 & 65535) | 65536;
+        this.c = new ou0(this, context, i10);
+        this.d = new nu0(qu0Var, context, i10, false);
     }
 }

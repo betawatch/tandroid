@@ -4,14 +4,14 @@ import android.view.View;
 import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class kz0 implements View.OnClickListener {
     public final /* synthetic */ int a;
     public final /* synthetic */ vz0 b;
 
-    public /* synthetic */ kz0(vz0 vz0Var, int i9) {
-        this.a = i9;
+    public /* synthetic */ kz0(vz0 vz0Var, int i10) {
+        this.a = i10;
         this.b = vz0Var;
     }
 
@@ -35,9 +35,9 @@ public final /* synthetic */ class kz0 implements View.OnClickListener {
                 profileActivity3.F4();
                 view.requestLayout();
                 profileActivity3.d.m(profileActivity3.K3);
-                int i9 = profileActivity3.Q5;
-                if (i9 >= 0) {
-                    profileActivity3.c.h1(i9, profileActivity3.R5 - profileActivity3.a.getPaddingTop());
+                int i10 = profileActivity3.Q5;
+                if (i10 >= 0) {
+                    profileActivity3.c.h1(i10, profileActivity3.R5 - profileActivity3.a.getPaddingTop());
                     break;
                 }
                 break;

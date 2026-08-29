@@ -1,21 +1,48 @@
 package com.google.android.gms.internal.play_billing;
 
-import java.lang.reflect.Field;
-import java.security.PrivilegedExceptionAction;
-import sun.misc.Unsafe;
-
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class y2 implements PrivilegedExceptionAction {
-    @Override // java.security.PrivilegedExceptionAction
-    public final /* bridge */ /* synthetic */ Object run() {
-        for (Field field : Unsafe.class.getDeclaredFields()) {
-            field.setAccessible(true);
-            Object obj = field.get(null);
-            if (Unsafe.class.isInstance(obj)) {
-                return (Unsafe) Unsafe.class.cast(obj);
-            }
+public final class y2 extends a3 {
+    @Override // com.google.android.gms.internal.play_billing.a3
+    public final double a(Object obj, long j10) {
+        return Double.longBitsToDouble(this.a.getLong(obj, j10));
+    }
+
+    @Override // com.google.android.gms.internal.play_billing.a3
+    public final float b(Object obj, long j10) {
+        return Float.intBitsToFloat(this.a.getInt(obj, j10));
+    }
+
+    @Override // com.google.android.gms.internal.play_billing.a3
+    public final void c(Object obj, long j10, boolean z10) {
+        if (b3.g) {
+            b3.c(obj, j10, z10 ? (byte) 1 : (byte) 0);
+        } else {
+            b3.d(obj, j10, z10 ? (byte) 1 : (byte) 0);
         }
-        return null;
+    }
+
+    @Override // com.google.android.gms.internal.play_billing.a3
+    public final void d(Object obj, long j10, byte b10) {
+        if (b3.g) {
+            b3.c(obj, j10, b10);
+        } else {
+            b3.d(obj, j10, b10);
+        }
+    }
+
+    @Override // com.google.android.gms.internal.play_billing.a3
+    public final void e(Object obj, long j10, double d) {
+        this.a.putLong(obj, j10, Double.doubleToLongBits(d));
+    }
+
+    @Override // com.google.android.gms.internal.play_billing.a3
+    public final void f(Object obj, long j10, float f9) {
+        this.a.putInt(obj, j10, Float.floatToIntBits(f9));
+    }
+
+    @Override // com.google.android.gms.internal.play_billing.a3
+    public final boolean g(Object obj, long j10) {
+        return b3.g ? b3.m(obj, j10) : b3.n(obj, j10);
     }
 }

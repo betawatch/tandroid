@@ -1,44 +1,32 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class ym extends f2.n0 {
-    public final /* synthetic */ dj r;
+public final /* synthetic */ class ym implements Utilities.Callback {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Utilities.Callback b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ym(dj djVar, Context context) {
-        super(context);
-        this.r = djVar;
+    public /* synthetic */ ym(int i10, Utilities.Callback callback) {
+        this.a = i10;
+        this.b = callback;
     }
 
-    @Override // f2.n0
-    public final int k(int i9, View view) {
-        int i10;
-        jn jnVar = (jn) this.r.V;
-        if (jnVar.R0) {
-            i9 = -1;
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        switch (this.a) {
+            case 0:
+                this.b.run(new ch.e((String) obj));
+                break;
+            default:
+                int[] iArr = (int[]) obj;
+                boolean z10 = false;
+                if (iArr.length >= 1 && iArr[0] == 0) {
+                    z10 = true;
+                }
+                this.b.run(Boolean.valueOf(z10));
+                break;
         }
-        int k10 = super.k(i9, view);
-        if (jnVar.R0) {
-            k10 += AndroidUtilities.dp(160.0f);
-        }
-        if (!jnVar.R0) {
-            k10 = org.telegram.messenger.l0.A(7.0f, jnVar.N0 - AndroidUtilities.statusBarHeight, k10);
-        }
-        if (jnVar.R0 && k10 == 0 && (i10 = jnVar.S0) >= 0) {
-            jn.J(jnVar, i10);
-            jnVar.S0 = -1;
-        }
-        jnVar.R0 = false;
-        return k10;
-    }
-
-    @Override // f2.n0
-    public final int m(int i9) {
-        return super.m(i9) * 2;
     }
 }

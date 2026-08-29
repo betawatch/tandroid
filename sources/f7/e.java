@@ -1,41 +1,23 @@
 package f7;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+import a4.w;
+import org.telegram.ui.th;
+
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class e implements i {
-    public final int a;
+public final class e {
+    public final Object a;
+    public final Object b;
+    public final Object c;
 
-    public e(int i9) {
-        this.a = i9;
+    public e(Object obj, Object obj2, Object obj3) {
+        this.a = obj;
+        this.b = obj2;
+        this.c = obj3;
     }
 
-    @Override // java.lang.annotation.Annotation
-    public final Class annotationType() {
-        return i.class;
-    }
-
-    @Override // java.lang.annotation.Annotation
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (!(obj instanceof i)) {
-            return false;
-        }
-        if (this.a != ((e) ((i) obj)).a) {
-            return false;
-        }
-        Object obj2 = h.a;
-        return obj2.equals(obj2);
-    }
-
-    @Override // java.lang.annotation.Annotation
-    public final int hashCode() {
-        return (this.a ^ 14552422) + (h.a.hashCode() ^ 2041407134);
-    }
-
-    @Override // java.lang.annotation.Annotation
-    public final String toString() {
-        return "@com.google.firebase.encoders.proto.Protobuf(tag=" + this.a + "intEncoding=" + h.a + ')';
+    public final IllegalArgumentException a() {
+        Object obj = this.a;
+        return new IllegalArgumentException(w.o(String.valueOf(obj), "=", String.valueOf(this.c), th.k("Multiple entries with same key: ", String.valueOf(obj), "=", String.valueOf(this.b), " and ")));
     }
 }

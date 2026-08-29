@@ -31,7 +31,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.camera.Camera2Session;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public class Camera2Session {
     private CameraCharacteristics cameraCharacteristics;
@@ -64,7 +64,7 @@ public class Camera2Session {
     private boolean opened = false;
     private final Rect cropRegion = new Rect();
 
-    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
     public class 1 extends CameraDevice.StateCallback {
         final /* synthetic */ String val$cameraId;
 
@@ -84,9 +84,9 @@ public class Camera2Session {
         }
 
         @Override // android.hardware.camera2.CameraDevice.StateCallback
-        public void onError(CameraDevice cameraDevice, int i9) {
+        public void onError(CameraDevice cameraDevice, int i10) {
             Camera2Session.this.cameraDevice = cameraDevice;
-            FileLog.e("Camera2Session camera #" + this.val$cameraId + " received " + i9 + " error");
+            FileLog.e("Camera2Session camera #" + this.val$cameraId + " received " + i10 + " error");
             AndroidUtilities.runOnUIThread(new c(this, 0));
         }
 
@@ -99,7 +99,7 @@ public class Camera2Session {
         }
     }
 
-    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
     public class 2 extends CameraCaptureSession.StateCallback {
         final /* synthetic */ String val$cameraId;
 
@@ -142,22 +142,22 @@ public class Camera2Session {
         }
     }
 
-    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
     public class 3 implements ImageReader.OnImageAvailableListener {
         final /* synthetic */ File val$file;
         final /* synthetic */ int val$orientation;
         final /* synthetic */ Utilities.Callback val$whenDone;
 
-        public 3(File file, Utilities.Callback callback, int i9) {
+        public 3(File file, Utilities.Callback callback, int i10) {
             this.val$file = file;
             this.val$whenDone = callback;
-            this.val$orientation = i9;
+            this.val$orientation = i10;
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public static /* synthetic */ void lambda$onImageAvailable$0(Utilities.Callback callback, int i9) {
+        public static /* synthetic */ void lambda$onImageAvailable$0(Utilities.Callback callback, int i10) {
             if (callback != null) {
-                callback.run(Integer.valueOf(i9));
+                callback.run(Integer.valueOf(i10));
             }
         }
 
@@ -172,7 +172,7 @@ public class Camera2Session {
         */
         public void onImageAvailable(ImageReader imageReader) {
             FileOutputStream fileOutputStream;
-            Throwable th;
+            Throwable th2;
             IOException e10;
             Image acquireLatestImage = imageReader.acquireLatestImage();
             ByteBuffer buffer = acquireLatestImage.getPlanes()[0].getBuffer();
@@ -189,8 +189,8 @@ public class Camera2Session {
                         e10.printStackTrace();
                         acquireLatestImage.close();
                     }
-                } catch (Throwable th2) {
-                    th = th2;
+                } catch (Throwable th3) {
+                    th2 = th3;
                     acquireLatestImage.close();
                     if (fileOutputStream != null) {
                         try {
@@ -199,18 +199,18 @@ public class Camera2Session {
                             e12.printStackTrace();
                         }
                     }
-                    throw th;
+                    throw th2;
                 }
             } catch (IOException e13) {
                 fileOutputStream = null;
                 e10 = e13;
-            } catch (Throwable th3) {
+            } catch (Throwable th4) {
                 fileOutputStream = null;
-                th = th3;
+                th2 = th4;
                 acquireLatestImage.close();
                 if (fileOutputStream != null) {
                 }
-                throw th;
+                throw th2;
             }
             try {
                 fileOutputStream.close();
@@ -218,17 +218,17 @@ public class Camera2Session {
                 e14.printStackTrace();
             }
             final Utilities.Callback callback = this.val$whenDone;
-            final int i9 = this.val$orientation;
+            final int i10 = this.val$orientation;
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.camera.e
                 @Override // java.lang.Runnable
                 public final void run() {
-                    Camera2Session.3.lambda$onImageAvailable$0(callback, i9);
+                    Camera2Session.3.lambda$onImageAvailable$0(callback, i10);
                 }
             });
         }
     }
 
-    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
     public static class CompareSizesByArea implements Comparator<android.util.Size> {
         @Override // java.util.Comparator
         public int compare(android.util.Size size, android.util.Size size2) {
@@ -237,7 +237,7 @@ public class Camera2Session {
     }
 
     private Camera2Session(Context context, boolean z10, String str, android.util.Size size) {
-        float f10 = 1.0f;
+        float f9 = 1.0f;
         this.maxZoom = 1.0f;
         HandlerThread handlerThread = new HandlerThread("tg_camera2");
         this.thread = handlerThread;
@@ -257,11 +257,11 @@ public class Camera2Session {
             CameraCharacteristics cameraCharacteristics = cameraManager.getCameraCharacteristics(str);
             this.cameraCharacteristics = cameraCharacteristics;
             this.sensorSize = (Rect) cameraCharacteristics.get(CameraCharacteristics.SENSOR_INFO_ACTIVE_ARRAY_SIZE);
-            Float f11 = (Float) this.cameraCharacteristics.get(CameraCharacteristics.SCALER_AVAILABLE_MAX_DIGITAL_ZOOM);
-            if (f11 != null && f11.floatValue() >= 1.0f) {
-                f10 = f11.floatValue();
+            Float f10 = (Float) this.cameraCharacteristics.get(CameraCharacteristics.SCALER_AVAILABLE_MAX_DIGITAL_ZOOM);
+            if (f10 != null && f10.floatValue() >= 1.0f) {
+                f9 = f10.floatValue();
             }
-            this.maxZoom = f10;
+            this.maxZoom = f9;
             cameraManager.openCamera(str, r12, this.handler);
         } catch (Exception e10) {
             FileLog.e(e10);
@@ -287,14 +287,14 @@ public class Camera2Session {
         }
     }
 
-    public static android.util.Size chooseOptimalSize(android.util.Size[] sizeArr, int i9, int i10, boolean z10) {
+    public static android.util.Size chooseOptimalSize(android.util.Size[] sizeArr, int i10, int i11, boolean z10) {
         ArrayList arrayList = new ArrayList(sizeArr.length);
         ArrayList arrayList2 = new ArrayList(sizeArr.length);
         for (android.util.Size size : sizeArr) {
-            if (!z10 || (size.getHeight() <= i10 && size.getWidth() <= i9)) {
-                if (size.getHeight() == (size.getWidth() * i10) / i9 && size.getWidth() >= i9 && size.getHeight() >= i10) {
+            if (!z10 || (size.getHeight() <= i11 && size.getWidth() <= i10)) {
+                if (size.getHeight() == (size.getWidth() * i11) / i10 && size.getWidth() >= i10 && size.getHeight() >= i11) {
                     arrayList.add(size);
-                } else if (size.getWidth() * size.getHeight() <= i9 * i10 * 4 && size.getWidth() >= i9 && size.getHeight() >= i10) {
+                } else if (size.getWidth() * size.getHeight() <= i10 * i11 * 4 && size.getWidth() >= i10 && size.getHeight() >= i11) {
                     arrayList2.add(size);
                 }
             }
@@ -302,7 +302,7 @@ public class Camera2Session {
         return arrayList.size() > 0 ? (android.util.Size) Collections.min(arrayList, new CompareSizesByArea()) : arrayList2.size() > 0 ? (android.util.Size) Collections.min(arrayList2, new CompareSizesByArea()) : (android.util.Size) Collections.max(Arrays.asList(sizeArr), new CompareSizesByArea());
     }
 
-    public static Camera2Session create(boolean z10, int i9, int i10) {
+    public static Camera2Session create(boolean z10, int i10, int i11) {
         Camera2Session camera2Session;
         android.util.Size size;
         String str;
@@ -311,7 +311,7 @@ public class Camera2Session {
         try {
             size = null;
             str = null;
-            float f10 = 0.0f;
+            float f9 = 0.0f;
             for (String str2 : cameraManager.getCameraIdList()) {
                 try {
                     CameraCharacteristics cameraCharacteristics = cameraManager.getCameraCharacteristics(str2);
@@ -321,20 +321,20 @@ public class Camera2Session {
                             try {
                                 StreamConfigurationMap streamConfigurationMap = (StreamConfigurationMap) cameraCharacteristics.get(CameraCharacteristics.SCALER_STREAM_CONFIGURATION_MAP);
                                 float width = ((android.util.Size) cameraCharacteristics.get(CameraCharacteristics.SENSOR_INFO_PIXEL_ARRAY_SIZE)) == null ? 0.0f : r14.getWidth() / r14.getHeight();
-                                float f11 = i9 / i10;
-                                if ((f11 >= 1.0f) != (width >= 1.0f)) {
+                                float f10 = i10 / i11;
+                                if ((f10 >= 1.0f) != (width >= 1.0f)) {
                                     width = 1.0f / width;
                                 }
-                                if (f10 > 0.0f) {
-                                    if (Math.abs(f11 - f10) > Math.abs(f11 - width)) {
+                                if (f9 > 0.0f) {
+                                    if (Math.abs(f10 - f9) > Math.abs(f10 - width)) {
                                     }
                                 }
                                 if (streamConfigurationMap != null && Build.VERSION.SDK_INT >= 23) {
-                                    android.util.Size chooseOptimalSize = chooseOptimalSize(streamConfigurationMap.getOutputSizes(SurfaceTexture.class), i9, i10, false);
+                                    android.util.Size chooseOptimalSize = chooseOptimalSize(streamConfigurationMap.getOutputSizes(SurfaceTexture.class), i10, i11, false);
                                     if (chooseOptimalSize != null) {
                                         size = chooseOptimalSize;
                                         str = str2;
-                                        f10 = width;
+                                        f9 = width;
                                     }
                                 }
                             } catch (Exception e10) {
@@ -366,7 +366,7 @@ public class Camera2Session {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     private int getJpegOrientation() {
-        int i9;
+        int i10;
         try {
             Context context = ApplicationLoader.applicationContext;
             if (context == null) {
@@ -375,16 +375,16 @@ public class Camera2Session {
             int rotation = ((WindowManager) context.getSystemService("window")).getDefaultDisplay().getRotation();
             if (rotation != 0) {
                 if (rotation == 1) {
-                    i9 = 90;
+                    i10 = 90;
                 } else if (rotation == 2) {
-                    i9 = 180;
+                    i10 = 180;
                 } else if (rotation == 3) {
-                    i9 = 270;
+                    i10 = 270;
                 }
                 Integer num = (Integer) this.cameraCharacteristics.get(CameraCharacteristics.SENSOR_ORIENTATION);
-                return !this.isFront ? (360 - ((num.intValue() + i9) % 360)) % 360 : ((num.intValue() - i9) + 360) % 360;
+                return !this.isFront ? (360 - ((num.intValue() + i10) % 360)) % 360 : ((num.intValue() - i10) + 360) % 360;
             }
-            i9 = 0;
+            i10 = 0;
             Integer num2 = (Integer) this.cameraCharacteristics.get(CameraCharacteristics.SENSOR_ORIENTATION);
             if (!this.isFront) {
             }
@@ -453,7 +453,7 @@ public class Camera2Session {
             return;
         }
         try {
-            int i9 = 1;
+            int i10 = 1;
             CaptureRequest.Builder createCaptureRequest = cameraDevice.createCaptureRequest(this.recordingVideo ? 3 : this.scanningBarcode ? 2 : 1);
             this.captureRequestBuilder = createCaptureRequest;
             if (this.scanningBarcode) {
@@ -464,11 +464,11 @@ public class Camera2Session {
             CaptureRequest.Builder builder = this.captureRequestBuilder;
             CaptureRequest.Key key = CaptureRequest.FLASH_MODE;
             if (!this.flashing) {
-                i9 = 0;
+                i10 = 0;
             } else if (this.recordingVideo) {
-                i9 = 2;
+                i10 = 2;
             }
-            builder.set(key, Integer.valueOf(i9));
+            builder.set(key, Integer.valueOf(i10));
             if (this.recordingVideo) {
                 this.captureRequestBuilder.set(CaptureRequest.CONTROL_AE_TARGET_FPS_RANGE, new Range(30, 60));
                 this.captureRequestBuilder.set(CaptureRequest.CONTROL_CAPTURE_INTENT, 3);
@@ -502,7 +502,7 @@ public class Camera2Session {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public int getDisplayOrientation() {
-        int i9;
+        int i10;
         try {
             Context context = ApplicationLoader.applicationContext;
             if (context == null) {
@@ -511,16 +511,16 @@ public class Camera2Session {
             int rotation = ((WindowManager) context.getSystemService("window")).getDefaultDisplay().getRotation();
             if (rotation != 0) {
                 if (rotation == 1) {
-                    i9 = 90;
+                    i10 = 90;
                 } else if (rotation == 2) {
-                    i9 = 180;
+                    i10 = 180;
                 } else if (rotation == 3) {
-                    i9 = 270;
+                    i10 = 270;
                 }
                 Integer num = (Integer) this.cameraCharacteristics.get(CameraCharacteristics.SENSOR_ORIENTATION);
-                return !this.isFront ? (360 - ((num.intValue() + i9) % 360)) % 360 : ((num.intValue() - i9) + 360) % 360;
+                return !this.isFront ? (360 - ((num.intValue() + i10) % 360)) % 360 : ((num.intValue() - i10) + 360) % 360;
             }
-            i9 = 0;
+            i10 = 0;
             Integer num2 = (Integer) this.cameraCharacteristics.get(CameraCharacteristics.SENSOR_ORIENTATION);
             if (!this.isFront) {
             }
@@ -595,11 +595,11 @@ public class Camera2Session {
         }
     }
 
-    public void setZoom(float f10) {
+    public void setZoom(float f9) {
         if (!isInitiated() || this.captureRequestBuilder == null || this.cameraDevice == null || this.sensorSize == null) {
             return;
         }
-        this.currentZoom = Utilities.clamp(f10, this.maxZoom, 1.0f);
+        this.currentZoom = Utilities.clamp(f9, this.maxZoom, 1.0f);
         updateCaptureRequest();
         try {
             this.captureSession.setRepeatingRequest(this.captureRequestBuilder.build(), null, this.handler);

@@ -2,35 +2,39 @@ package y7;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.google.android.gms.common.api.Status;
-import com.google.android.gms.common.api.q;
-import g7.p8;
-import java.util.ArrayList;
-import java.util.List;
-import w7.i;
+import com.google.android.gms.internal.cast.o;
+import w5.k;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class f extends y5.a implements q {
-    public static final Parcelable.Creator<f> CREATOR = new i(15);
-    public final List a;
-    public final String b;
+public final class f extends a6.a {
+    public static final Parcelable.Creator<f> CREATOR = new k(10);
+    public final long a;
+    public final a[] b;
+    public final int c;
+    public final boolean d;
 
-    public f(String str, ArrayList arrayList) {
-        this.a = arrayList;
-        this.b = str;
-    }
-
-    @Override // com.google.android.gms.common.api.q
-    public final Status i() {
-        return this.b != null ? Status.e : Status.r;
+    public f(long j10, a[] aVarArr, int i10, boolean z10) {
+        this.a = j10;
+        this.b = aVarArr;
+        this.d = z10;
+        if (z10) {
+            this.c = i10;
+        } else {
+            this.c = -1;
+        }
     }
 
     @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i9) {
-        int q10 = p8.q(parcel, 20293);
-        p8.n(parcel, 1, this.a);
-        p8.l(parcel, 2, this.b);
-        p8.r(parcel, q10);
+    public final void writeToParcel(Parcel parcel, int i10) {
+        int q6 = o.q(parcel, 20293);
+        o.s(parcel, 2, 8);
+        parcel.writeLong(this.a);
+        o.o(parcel, 3, this.b, i10);
+        o.s(parcel, 4, 4);
+        parcel.writeInt(this.c);
+        o.s(parcel, 5, 4);
+        parcel.writeInt(this.d ? 1 : 0);
+        o.r(parcel, q6);
     }
 }

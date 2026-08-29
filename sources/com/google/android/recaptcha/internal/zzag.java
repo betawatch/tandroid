@@ -1,13 +1,12 @@
 package com.google.android.recaptcha.internal;
 
-import g7.y5;
-import hd.f0;
-import qc.c;
-import rc.a;
-import sc.i;
-import zc.p;
+import bd.p;
+import i7.c7;
+import jd.e0;
+import sc.c;
+import uc.i;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 final class zzag extends i implements p {
     int zza;
@@ -22,29 +21,29 @@ final class zzag extends i implements p {
         this.zzc = str;
     }
 
-    @Override // sc.a
+    @Override // uc.a
     public final c create(Object obj, c cVar) {
         zzag zzagVar = new zzag(this.zzb, this.zzc, cVar);
         zzagVar.zzd = obj;
         return zzagVar;
     }
 
-    @Override // zc.p
+    @Override // bd.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzag) create((zzhk) obj, (c) obj2)).invokeSuspend(oc.i.a);
+        return ((zzag) create((zzhk) obj, (c) obj2)).invokeSuspend(qc.i.a);
     }
 
-    @Override // sc.a
+    @Override // uc.a
     public final Object invokeSuspend(Object obj) {
-        a aVar = a.a;
-        int i9 = this.zza;
-        y5.b(obj);
-        if (i9 != 0) {
+        tc.a aVar = tc.a.a;
+        int i10 = this.zza;
+        c7.b(obj);
+        if (i10 != 0) {
             return obj;
         }
         zzaf zzafVar = new zzaf(this.zzb, this.zzc, (zzhk) this.zzd, null);
         this.zza = 1;
-        Object f10 = f0.f(zzafVar, this);
-        return f10 == aVar ? aVar : f10;
+        Object f9 = e0.f(zzafVar, this);
+        return f9 == aVar ? aVar : f9;
     }
 }

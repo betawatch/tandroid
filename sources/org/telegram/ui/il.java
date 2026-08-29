@@ -1,31 +1,55 @@
 package org.telegram.ui;
 
-import android.graphics.Bitmap;
-import java.util.ArrayList;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.VideoEditedInfo;
+import android.app.Activity;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.text.TextPaint;
+import android.view.animation.OvershootInterpolator;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class il extends rt0 {
-    public final /* synthetic */ Bitmap a;
-    public final /* synthetic */ ArrayList b;
-    public final /* synthetic */ qn c;
+public final class il extends org.telegram.ui.Components.g01 {
+    public final /* synthetic */ tn G;
 
-    public il(qn qnVar, Bitmap bitmap, ArrayList arrayList) {
-        this.c = qnVar;
-        this.a = bitmap;
-        this.b = arrayList;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public il(Activity activity, org.telegram.ui.ActionBar.c6 c6Var, tn tnVar) {
+        super(activity);
+        this.G = tnVar;
+        TextPaint textPaint = new TextPaint(1);
+        this.b = textPaint;
+        Paint paint = new Paint(1);
+        this.c = paint;
+        this.d = AndroidUtilities.dp(24.0f);
+        this.e = new OvershootInterpolator();
+        this.D = new org.telegram.ui.Components.fq0(this, 14);
+        this.F = new Path();
+        int v02 = org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.Hi, c6Var);
+        int alpha = Color.alpha(v02);
+        textPaint.setTextSize(AndroidUtilities.dp(15.0f));
+        textPaint.setColor(v02);
+        paint.setColor(v02);
+        paint.setAlpha((int) (alpha * 0.14d));
+        setBackground(org.telegram.ui.ActionBar.g6.b0(AndroidUtilities.dp(6.0f), org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.Fi, c6Var)));
     }
 
-    @Override // org.telegram.ui.rt0, org.telegram.ui.zt0
-    public final ImageReceiver.BitmapHolder j(int i9) {
-        return new ImageReceiver.BitmapHolder(this.a, (String) null, 0);
+    public final void d() {
+        int i10 = -(AndroidUtilities.dp(16.0f) + getMeasuredHeight());
+        tn tnVar = this.G;
+        setTranslationY((tnVar.U.getTop() - tnVar.T0.getMeasuredHeight()) - ((1.0f - getPrepareProgress()) * (r2 + i10)));
     }
 
-    @Override // org.telegram.ui.rt0, org.telegram.ui.zt0
-    public final void o(int i9, VideoEditedInfo videoEditedInfo, boolean z10, int i10, int i11, boolean z11) {
-        this.c.r((MediaController.PhotoEntry) this.b.get(0), videoEditedInfo, z10, i10, 0, z11, 0L);
+    @Override // org.telegram.ui.Components.g01, android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        d();
+    }
+
+    @Override // org.telegram.ui.Components.g01, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, i11);
+        d();
     }
 }

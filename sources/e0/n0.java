@@ -11,7 +11,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class n0 {
     public static String d;
@@ -41,7 +41,7 @@ public final class n0 {
         AppOpsManager appOpsManager = (AppOpsManager) context.getSystemService("appops");
         ApplicationInfo applicationInfo = context.getApplicationInfo();
         String packageName = context.getApplicationContext().getPackageName();
-        int i9 = applicationInfo.uid;
+        int i10 = applicationInfo.uid;
         try {
             Class<?> cls = Class.forName(AppOpsManager.class.getName());
             Class<?> cls2 = Integer.TYPE;
@@ -50,31 +50,31 @@ public final class n0 {
             num.getClass();
         } catch (ClassNotFoundException | IllegalAccessException | NoSuchFieldException | NoSuchMethodException | RuntimeException | InvocationTargetException unused) {
         }
-        return ((Integer) method.invoke(appOpsManager, num, Integer.valueOf(i9), packageName)).intValue() == 0;
+        return ((Integer) method.invoke(appOpsManager, num, Integer.valueOf(i10), packageName)).intValue() == 0;
     }
 
-    public final void b(int i9) {
-        this.b.cancel(null, i9);
+    public final void b(int i10) {
+        this.b.cancel(null, i10);
     }
 
-    public final void d(int i9, Notification notification) {
+    public final void d(int i10, Notification notification) {
         NotificationManager notificationManager = this.b;
         Bundle bundle = notification.extras;
         if (bundle == null || !bundle.getBoolean("android.support.useSideChannel")) {
-            notificationManager.notify(null, i9, notification);
+            notificationManager.notify(null, i10, notification);
             return;
         }
-        j0 j0Var = new j0(this.a.getPackageName(), i9, notification);
+        j0 j0Var = new j0(this.a.getPackageName(), i10, notification);
         synchronized (f) {
             try {
                 if (g == null) {
                     g = new m0(this.a.getApplicationContext());
                 }
                 g.b.obtainMessage(0, j0Var).sendToTarget();
-            } catch (Throwable th) {
-                throw th;
+            } catch (Throwable th2) {
+                throw th2;
             }
         }
-        notificationManager.cancel(null, i9);
+        notificationManager.cancel(null, i10);
     }
 }

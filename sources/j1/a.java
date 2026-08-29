@@ -5,87 +5,87 @@ import android.view.View;
 import android.view.accessibility.AccessibilityManager;
 import android.view.accessibility.AccessibilityNodeInfo;
 import java.util.WeakHashMap;
-import n5.e0;
 import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.n;
 import r0.j0;
-import s0.d;
+import s0.c;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class a extends e0 {
+public final class a extends n {
     public final /* synthetic */ b c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public a(b bVar) {
-        super(21);
+        super(15);
         this.c = bVar;
     }
 
-    @Override // n5.e0
-    public final d P0(int i9) {
-        return new d(AccessibilityNodeInfo.obtain(this.c.j(i9).a));
+    @Override // org.telegram.ui.Components.n
+    public final c g(int i10) {
+        return new c(AccessibilityNodeInfo.obtain(this.c.j(i10).a));
     }
 
-    @Override // n5.e0
-    public final d X0(int i9) {
+    @Override // org.telegram.ui.Components.n
+    public final c i(int i10) {
         b bVar = this.c;
-        int i10 = i9 == 2 ? bVar.k : bVar.l;
-        if (i10 == Integer.MIN_VALUE) {
+        int i11 = i10 == 2 ? bVar.k : bVar.l;
+        if (i11 == Integer.MIN_VALUE) {
             return null;
         }
-        return P0(i10);
+        return g(i11);
     }
 
-    @Override // n5.e0
-    public final boolean c1(int i9, int i10, Bundle bundle) {
-        int i11;
+    @Override // org.telegram.ui.Components.n
+    public final boolean n(int i10, int i11, Bundle bundle) {
         int i12;
+        int i13;
         b bVar = this.c;
         View view = bVar.i;
-        if (i9 == -1) {
+        if (i10 == -1) {
             WeakHashMap weakHashMap = j0.a;
-            return view.performAccessibilityAction(i10, bundle);
+            return view.performAccessibilityAction(i11, bundle);
         }
-        if (i10 != 1) {
-            if (i10 == 2) {
-                if (bVar.l != i9) {
+        if (i11 != 1) {
+            if (i11 == 2) {
+                if (bVar.l != i10) {
                     return false;
                 }
                 bVar.l = TLObject.FLAG_31;
-                bVar.m(i9, 8);
+                bVar.m(i10, 8);
                 return true;
             }
-            if (i10 != 64) {
-                if (i10 != 128) {
-                    return bVar.k(i9, i10);
+            if (i11 != 64) {
+                if (i11 != 128) {
+                    return bVar.k(i10, i11);
                 }
-                if (bVar.k != i9) {
+                if (bVar.k != i10) {
                     return false;
                 }
                 bVar.k = TLObject.FLAG_31;
                 view.invalidate();
-                bVar.m(i9, 65536);
+                bVar.m(i10, 65536);
                 return true;
             }
             AccessibilityManager accessibilityManager = bVar.h;
-            if (accessibilityManager.isEnabled() && accessibilityManager.isTouchExplorationEnabled() && (i12 = bVar.k) != i9) {
-                if (i12 != Integer.MIN_VALUE) {
+            if (accessibilityManager.isEnabled() && accessibilityManager.isTouchExplorationEnabled() && (i13 = bVar.k) != i10) {
+                if (i13 != Integer.MIN_VALUE) {
                     bVar.k = TLObject.FLAG_31;
                     view.invalidate();
-                    bVar.m(i12, 65536);
+                    bVar.m(i13, 65536);
                 }
-                bVar.k = i9;
+                bVar.k = i10;
                 view.invalidate();
-                bVar.m(i9, 32768);
+                bVar.m(i10, 32768);
                 return true;
             }
-        } else if ((view.isFocused() || view.requestFocus()) && (i11 = bVar.l) != i9) {
-            if (i11 != Integer.MIN_VALUE) {
+        } else if ((view.isFocused() || view.requestFocus()) && (i12 = bVar.l) != i10) {
+            if (i12 != Integer.MIN_VALUE) {
                 bVar.l = TLObject.FLAG_31;
-                bVar.m(i11, 8);
+                bVar.m(i12, 8);
             }
-            bVar.l = i9;
-            bVar.m(i9, 8);
+            bVar.l = i10;
+            bVar.m(i10, 8);
             return true;
         }
         return false;

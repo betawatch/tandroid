@@ -1,6 +1,33 @@
 package k3;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+import g5.y;
+import g9.l;
+import j3.c2;
+import j3.v1;
+import l4.x;
+
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public interface b {
+    void a(v1 v1Var);
+
+    void b(a aVar, x xVar);
+
+    void c(a aVar);
+
+    void d(y yVar);
+
+    void e(int i10);
+
+    void f(m3.f fVar);
+
+    void g(c2 c2Var, l lVar);
+
+    void h(x xVar);
+
+    void i(int i10, long j10, a aVar);
+
+    void onRenderedFirstFrame(a aVar);
+
+    void onSeekStarted(a aVar);
 }

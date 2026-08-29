@@ -1,19 +1,38 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
-/* loaded from: classes3.dex */
-public final class c51 extends i51 {
-    public final /* synthetic */ d51 b3;
+import android.net.Uri;
+import android.text.TextPaint;
+import android.text.style.URLSpan;
+import android.view.View;
+import org.telegram.ui.LaunchActivity;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c51(d51 d51Var, d51 d51Var2, d dVar, a51 a51Var, a51 a51Var2) {
-        super(d51Var2, dVar, a51Var, a51Var2);
-        this.b3 = d51Var;
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* loaded from: classes3.dex */
+public final class c51 extends URLSpan {
+    public final h01 a;
+    public boolean b;
+
+    public c51(String str, h01 h01Var) {
+        super(str != null ? str.replace((char) 8238, ' ') : str);
+        this.a = h01Var;
     }
 
-    @Override // org.telegram.ui.Components.wk0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i9, int i10, int i11, int i12) {
-        super.onLayout(z10, i9, i10, i11, i12);
-        this.b3.b = -1;
+    @Override // android.text.style.URLSpan, android.text.style.ClickableSpan
+    public final void onClick(View view) {
+        if (this.b && (view.getContext() instanceof LaunchActivity)) {
+            ((LaunchActivity) view.getContext()).T0 = true;
+        }
+        ye.d.p(view.getContext(), Uri.parse(getURL()), true, true);
+    }
+
+    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        int color = textPaint.getColor();
+        super.updateDrawState(textPaint);
+        h01 h01Var = this.a;
+        if (h01Var != null) {
+            h01Var.a(textPaint);
+            textPaint.setUnderlineText(textPaint.linkColor == color);
+        }
     }
 }

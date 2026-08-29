@@ -1,56 +1,60 @@
 package ch;
 
-import android.view.animation.DecelerateInterpolator;
-import android.view.animation.LinearInterpolator;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.ui.Components.gr;
+import android.graphics.Canvas;
+import android.text.TextUtils;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.MessageObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public abstract class h {
-    public static final DecelerateInterpolator a = new DecelerateInterpolator();
-    public static final LinearInterpolator b;
-    public static final e c;
-    public static final e d;
-    public static final e e;
-    public static final e f;
-    public static final e g;
-    public static final e h;
-    public static final e i;
-    public static final e j;
-    public static final e k;
-    public static final e l;
-    public static final e m;
-    public static final e n;
-    public static final e o;
-    public static final e p;
-    public static final e q;
-    public static final e r;
-    public static final e s;
-    public static final e t;
+public final class h extends bh.h {
+    public final MessageObject b;
+    public final RadialProgress2 c;
 
-    static {
-        LinearInterpolator linearInterpolator = new LinearInterpolator();
-        b = linearInterpolator;
-        c = j.i(new DecelerateInterpolator(), 0, 240, 240, false);
-        d = j.i(linearInterpolator, 0, 240, 240, false);
-        e = j.i(new DecelerateInterpolator(), 220, 240, 240, false);
-        f = j.i(new gr(0.7f, -0.6f, 0.4f, 1.0f), 0, 200, 560, false);
-        g = j.i(new gr(0.7f, -0.6f, 0.4f, 1.0f), 200, 400, 560, true);
-        h = j.i(new DecelerateInterpolator(), 0, ImageReceiver.DEFAULT_CROSSFADE_DURATION, 560, false);
-        i = j.i(new DecelerateInterpolator(), 210, 425, 560, false);
-        gr grVar = gr.h;
-        j = j.i(grVar, 0, 320, 560, false);
-        k = j.i(grVar, 40, 320, 560, false);
-        l = j.i(new DecelerateInterpolator(), 0, MediaDataController.MAX_LINKS_COUNT, 560, false);
-        m = j.i(grVar, 0, 460, 560, false);
-        n = j.i(grVar, 0, 325, 560, false);
-        o = j.i(new DecelerateInterpolator(), ImageReceiver.DEFAULT_CROSSFADE_DURATION, MediaDataController.MAX_LINKS_COUNT, 560, false);
-        p = j.i(new DecelerateInterpolator(), 200, 480, 560, false);
-        q = j.i(grVar, 60, 320, 560, false);
-        r = j.i(grVar, 90, 380, 560, false);
-        s = j.i(grVar, 110, 440, 560, false);
-        t = j.i(new DecelerateInterpolator(), 200, 460, 560, false);
+    public h(MessageObject messageObject) {
+        this.b = messageObject;
+        RadialProgress2 radialProgress2 = new RadialProgress2(null, null);
+        this.c = radialProgress2;
+        TLRPC.Document document = messageObject.getDocument();
+        if (MessageObject.isDocumentHasThumb(document)) {
+            TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(document.thumbs, AndroidUtilities.dp(22.0f), true, null, false);
+            radialProgress2.j(FileLoader.getClosestPhotoSizeWithSize(document.thumbs, AndroidUtilities.dp(44.0f), true, closestPhotoSizeWithSize, true), closestPhotoSizeWithSize, document, messageObject);
+        } else {
+            String artworkUrl = MessageObject.getArtworkUrl(document, true);
+            if (TextUtils.isEmpty(artworkUrl)) {
+                radialProgress2.i(null, null, null);
+            } else {
+                radialProgress2.h(artworkUrl);
+            }
+        }
+        radialProgress2.g(g6.ie, g6.je, g6.uc, g6.vc);
+    }
+
+    @Override // bh.h
+    public final void a(View view) {
+        super.a(view);
+        RadialProgress2 radialProgress2 = this.c;
+        radialProgress2.m(view);
+        radialProgress2.e();
+        radialProgress2.setIcon(0, false, false);
+    }
+
+    @Override // bh.h
+    public final void b() {
+        super.b();
+        this.c.f();
+    }
+
+    @Override // bh.h
+    public final void c(Canvas canvas, int i10, int i11) {
+        RadialProgress2 radialProgress2 = this.c;
+        radialProgress2.setCircleRadius(i10 / 2);
+        radialProgress2.q(0, 0, i10, i11);
+        radialProgress2.draw(canvas);
     }
 }

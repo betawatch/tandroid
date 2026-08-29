@@ -9,9 +9,9 @@ public final class j2 extends k2 {
     public final /* synthetic */ int k;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ j2(t3 t3Var, Spliterator spliterator, LongFunction longFunction, BinaryOperator binaryOperator, int i9) {
+    public /* synthetic */ j2(t3 t3Var, Spliterator spliterator, LongFunction longFunction, BinaryOperator binaryOperator, int i10) {
         super(t3Var, spliterator, longFunction, binaryOperator);
-        this.k = i9;
+        this.k = i10;
     }
 
     @Override // j$.util.stream.k2, j$.util.stream.d

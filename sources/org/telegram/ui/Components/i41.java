@@ -1,56 +1,51 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Typeface;
-import android.text.TextPaint;
-import android.text.style.MetricAffectingSpan;
+import android.content.Context;
+import android.view.MotionEvent;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class i41 extends MetricAffectingSpan {
-    public Typeface a;
-    public int b;
-    public int c;
+public final class i41 extends jl0 {
+    public final /* synthetic */ p41 T2;
+    public final /* synthetic */ s41 U2;
 
-    public i41(Typeface typeface) {
-        this.c = -1;
-        this.a = typeface;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public i41(s41 s41Var, Context context, p41 p41Var) {
+        super(context, null);
+        this.U2 = s41Var;
+        this.T2 = p41Var;
     }
 
-    @Override // android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        int i9 = this.c;
-        if (i9 >= 0) {
-            this.b = org.telegram.ui.ActionBar.f6.w0(null, i9, false);
-        }
-        Typeface typeface = this.a;
-        if (typeface != null) {
-            textPaint.setTypeface(typeface);
-        }
-        int i10 = this.b;
-        if (i10 != 0) {
-            textPaint.setColor(i10);
-        }
-        textPaint.setFlags(textPaint.getFlags() | 128);
+    @Override // org.telegram.ui.Components.jl0
+    public final boolean E0(float f9) {
+        return f9 >= ((float) (AndroidUtilities.dp(58.0f) + this.U2.A));
     }
 
-    @Override // android.text.style.MetricAffectingSpan
-    public final void updateMeasureState(TextPaint textPaint) {
-        Typeface typeface = this.a;
-        if (typeface != null) {
-            textPaint.setTypeface(typeface);
+    @Override // org.telegram.ui.Components.jl0, android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        this.U2.B = true;
+        return super.dispatchTouchEvent(motionEvent);
+    }
+
+    @Override // org.telegram.ui.Components.jl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        return super.onInterceptTouchEvent(motionEvent) || this.T2.d(this, motionEvent);
+    }
+
+    @Override // org.telegram.ui.Components.jl0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        if (this.U2.H != null) {
+            return false;
         }
-        textPaint.setFlags(textPaint.getFlags() | 128);
+        return super.onTouchEvent(motionEvent);
     }
 
-    public i41() {
-        Typeface typeface = Typeface.DEFAULT;
-        this.c = -1;
-        this.a = typeface;
-    }
-
-    public i41(Typeface typeface, int i9) {
-        this.c = -1;
-        this.a = typeface;
-        this.b = i9;
+    @Override // org.telegram.ui.Components.jl0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        if (this.U2.D) {
+            return;
+        }
+        super.requestLayout();
     }
 }

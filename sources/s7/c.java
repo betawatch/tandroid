@@ -1,6 +1,13 @@
 package s7;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+import com.google.android.gms.location.LocationAvailability;
+import com.google.android.gms.location.LocationResult;
+
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class c extends b7.a {
+public abstract class c {
+    public abstract void onLocationResult(LocationResult locationResult);
+
+    public void onLocationAvailability(LocationAvailability locationAvailability) {
+    }
 }

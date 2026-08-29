@@ -1,27 +1,35 @@
 package eb;
 
-import android.util.Log;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.mlkit.vision.common.internal.MobileVisionBase;
+import h7.a9;
+import h7.e9;
+import h7.x8;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class a implements OnFailureListener, y8.d {
-    public static final a a = new a();
-    public static final /* synthetic */ a b = new a();
-    public static final /* synthetic */ a c = new a();
+public final class a {
+    public final a9 a;
+    public final e b;
+    public final ab.d c;
 
-    @Override // y8.d
-    public Object H1(b3.b bVar) {
-        return new c(bVar.x(b.class));
-    }
-
-    @Override // com.google.android.gms.tasks.OnFailureListener
-    public void onFailure(Exception exc) {
-        b9.c cVar = MobileVisionBase.e;
-        if (Log.isLoggable(cVar.b, 6)) {
-            String str = cVar.c;
-            Log.e("MobileVisionBase", str != null ? str.concat("Error preloading model resource") : "Error preloading model resource", exc);
+    public a(e eVar, ab.d dVar) {
+        a9 a2;
+        this.b = eVar;
+        this.c = dVar;
+        String str = true != eVar.g ? "play-services-mlkit-language-id" : "language-id";
+        synchronized (e9.class) {
+            byte b10 = (byte) (((byte) 1) | 2);
+            if (b10 != 3) {
+                StringBuilder sb2 = new StringBuilder();
+                if ((b10 & 1) == 0) {
+                    sb2.append(" enableFirelog");
+                }
+                if ((b10 & 2) == 0) {
+                    sb2.append(" firelogEventType");
+                }
+                throw new IllegalStateException("Missing required properties:".concat(sb2.toString()));
+            }
+            a2 = e9.a(new x8(str));
         }
+        this.a = a2;
     }
 }

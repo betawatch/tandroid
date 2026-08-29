@@ -1,26 +1,25 @@
 package ih;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.y90;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
-/* loaded from: classes4.dex */
-public final class c6 implements RequestDelegate {
-    public final /* synthetic */ long a;
-    public final /* synthetic */ y90 b;
-    public final /* synthetic */ v6 c;
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* loaded from: classes.dex */
+public final class c6 extends FrameLayout {
+    public final /* synthetic */ float a;
 
-    public c6(v6 v6Var, long j10, y90 y90Var) {
-        this.c = v6Var;
-        this.a = j10;
-        this.b = y90Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public c6(Context context, float f9) {
+        super(context);
+        this.a = f9;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new gh.e2(this, tLObject, this.a, this.b, 9));
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        canvas.save();
+        canvas.clipRect(0.0f, 0.0f, getWidth() * this.a, getHeight());
+        super.dispatchDraw(canvas);
+        canvas.restore();
     }
 }

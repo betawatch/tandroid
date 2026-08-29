@@ -1,5 +1,6 @@
 package androidx.fragment.app;
 
+import ag.q1;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
@@ -12,9 +13,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import j7.l1;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public class p extends s implements DialogInterface.OnCancelListener, DialogInterface.OnDismissListener {
     public Handler g0;
@@ -23,7 +25,7 @@ public class p extends s implements DialogInterface.OnCancelListener, DialogInte
     public boolean s0;
     public boolean t0;
     public boolean u0;
-    public final androidx.activity.i h0 = new androidx.activity.i(this, 2);
+    public final q1 h0 = new q1(this, 3);
     public final m i0 = new m(this);
     public final n j0 = new n(this);
     public int k0 = 0;
@@ -31,7 +33,7 @@ public class p extends s implements DialogInterface.OnCancelListener, DialogInte
     public boolean m0 = true;
     public boolean n0 = true;
     public int o0 = -1;
-    public final xa.c q0 = new xa.c(this, 4);
+    public final ha.c q0 = new ha.c(this, 4);
     public boolean v0 = false;
 
     @Override // androidx.fragment.app.s
@@ -75,16 +77,16 @@ public class p extends s implements DialogInterface.OnCancelListener, DialogInte
                     Dialog O = O();
                     this.r0 = O;
                     if (this.n0) {
-                        int i9 = this.k0;
-                        if (i9 != 1 && i9 != 2) {
-                            if (i9 == 3) {
+                        int i10 = this.k0;
+                        if (i10 != 1 && i10 != 2) {
+                            if (i10 == 3) {
                                 Window window = O.getWindow();
                                 if (window != null) {
                                     window.addFlags(24);
                                 }
                             } else {
                                 n10 = n();
-                                if (e2.c.v(n10)) {
+                                if (com.google.android.recaptcha.internal.a.u(n10)) {
                                     this.r0.setOwnerActivity((Activity) n10);
                                 }
                                 this.r0.setCancelable(this.m0);
@@ -95,7 +97,7 @@ public class p extends s implements DialogInterface.OnCancelListener, DialogInte
                         }
                         O.requestWindowFeature(1);
                         n10 = n();
-                        if (e2.c.v(n10)) {
+                        if (com.google.android.recaptcha.internal.a.u(n10)) {
                         }
                         this.r0.setCancelable(this.m0);
                         this.r0.setOnCancelListener(this.i0);
@@ -105,9 +107,9 @@ public class p extends s implements DialogInterface.OnCancelListener, DialogInte
                         this.r0 = null;
                     }
                     this.p0 = false;
-                } catch (Throwable th) {
+                } catch (Throwable th2) {
                     this.p0 = false;
-                    throw th;
+                    throw th2;
                 }
             }
             if (j0.K(2)) {
@@ -136,13 +138,13 @@ public class p extends s implements DialogInterface.OnCancelListener, DialogInte
             onSaveInstanceState.putBoolean("android:dialogShowing", false);
             bundle.putBundle("android:savedDialogState", onSaveInstanceState);
         }
-        int i9 = this.k0;
-        if (i9 != 0) {
-            bundle.putInt("android:style", i9);
-        }
-        int i10 = this.l0;
+        int i10 = this.k0;
         if (i10 != 0) {
-            bundle.putInt("android:theme", i10);
+            bundle.putInt("android:style", i10);
+        }
+        int i11 = this.l0;
+        if (i11 != 0) {
+            bundle.putInt("android:theme", i11);
         }
         boolean z10 = this.m0;
         if (!z10) {
@@ -152,9 +154,9 @@ public class p extends s implements DialogInterface.OnCancelListener, DialogInte
         if (!z11) {
             bundle.putBoolean("android:showsDialog", z11);
         }
-        int i11 = this.o0;
-        if (i11 != -1) {
-            bundle.putInt("android:backStackId", i11);
+        int i12 = this.o0;
+        if (i12 != -1) {
+            bundle.putInt("android:backStackId", i12);
         }
     }
 
@@ -166,7 +168,7 @@ public class p extends s implements DialogInterface.OnCancelListener, DialogInte
             this.s0 = false;
             dialog.show();
             View decorView = this.r0.getWindow().getDecorView();
-            kotlin.jvm.internal.i.e(decorView, "<this>");
+            kotlin.jvm.internal.j.e(decorView, "<this>");
             decorView.setTag(R.id.view_tree_lifecycle_owner, this);
             decorView.setTag(R.id.view_tree_view_model_store_owner, this);
             decorView.setTag(R.id.view_tree_saved_state_registry_owner, this);
@@ -218,12 +220,12 @@ public class p extends s implements DialogInterface.OnCancelListener, DialogInte
             aVar.e(true, true);
             return;
         }
-        j0 p6 = p();
-        int i9 = this.o0;
-        if (i9 < 0) {
-            throw new IllegalArgumentException(j3.r0.l(i9, "Bad id: "));
+        j0 p10 = p();
+        int i10 = this.o0;
+        if (i10 < 0) {
+            throw new IllegalArgumentException(l1.k(i10, "Bad id: "));
         }
-        p6.y(new h0(p6, i9), true);
+        p10.y(new h0(p10, i10), true);
         this.o0 = -1;
     }
 
@@ -231,11 +233,11 @@ public class p extends s implements DialogInterface.OnCancelListener, DialogInte
         if (j0.K(3)) {
             Log.d("FragmentManager", "onCreateDialog called for DialogFragment " + this);
         }
-        return new androidx.activity.n(K(), this.l0);
+        return new androidx.activity.m(K(), this.l0);
     }
 
     @Override // androidx.fragment.app.s
-    public final f7.a0 h() {
+    public final h7.i0 h() {
         return new o(this, new o(this));
     }
 

@@ -1,53 +1,11 @@
 package o5;
 
-import com.google.android.gms.cast.MediaError;
-import java.util.ArrayList;
-
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public abstract class g {
-    public void a() {
-    }
+    public static final /* synthetic */ int a = 0;
 
-    public void c() {
-    }
-
-    public void d() {
-    }
-
-    public void e() {
-    }
-
-    public void f() {
-    }
-
-    public void g() {
-    }
-
-    public void o() {
-    }
-
-    public void b(MediaError mediaError) {
-    }
-
-    public void i(int[] iArr) {
-    }
-
-    public void k(m5.o[] oVarArr) {
-    }
-
-    public void l(int[] iArr) {
-    }
-
-    public void n(int[] iArr) {
-    }
-
-    public void j(int[] iArr, int i9) {
-    }
-
-    public void m(ArrayList arrayList, ArrayList arrayList2, int i9) {
-    }
-
-    public void h(String str, long j10, int i9, long j11, long j12) {
+    static {
+        com.google.android.gms.common.api.d dVar = s5.j.a;
     }
 }

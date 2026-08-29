@@ -1,23 +1,23 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.View;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.MessagesStorage;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class xw0 extends org.telegram.ui.Cells.d8 {
-    public final /* synthetic */ yw0 K;
+public final /* synthetic */ class xw0 implements org.telegram.ui.ActionBar.s0, MessagesStorage.StringCallback {
+    public final /* synthetic */ nx0 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public xw0(yw0 yw0Var, Context context, org.telegram.ui.ActionBar.b6 b6Var) {
-        super(context, b6Var, false);
-        this.K = yw0Var;
+    public /* synthetic */ xw0(nx0 nx0Var) {
+        this.a = nx0Var;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i9, int i10) {
-        yw0 yw0Var = this.K;
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(yw0Var.r.K, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(yw0Var.r.K, TLObject.FLAG_30));
+    @Override // org.telegram.ui.ActionBar.s0
+    public void i(int i10) {
+        nx0.C(this.a, i10);
+    }
+
+    @Override // org.telegram.messenger.MessagesStorage.StringCallback
+    public void run(String str) {
+        new u40(r1.getContext(), r1.k0, null, this.a.resourcesProvider).show();
     }
 }

@@ -1,23 +1,32 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Bitmap;
-import org.telegram.ui.oc1;
+import org.telegram.messenger.ChannelBoostsController;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class qo extends oc1 {
-    public final /* synthetic */ int g2;
+public final /* synthetic */ class qo implements f5.d {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ gp b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ qo(Object obj, Bitmap bitmap, boolean z10, int i9) {
-        super(obj, bitmap, z10);
-        this.g2 = i9;
+    public /* synthetic */ qo(gp gpVar, int i10) {
+        this.a = i10;
+        this.b = gpVar;
     }
 
-    @Override // org.telegram.ui.oc1
-    public final boolean U0() {
-        switch (this.g2) {
+    @Override // f5.d
+    public final void accept(Object obj) {
+        switch (this.a) {
+            case 0:
+                gp gpVar = this.b;
+                gpVar.b0 = (TL_stories.TL_premium_boostsStatus) obj;
+                gpVar.a0 = true;
+                gpVar.E(true);
+                gpVar.Z = false;
+                break;
+            default:
+                gp.m(this.b, (ChannelBoostsController.CanApplyBoost) obj);
+                break;
         }
-        return true;
     }
 }

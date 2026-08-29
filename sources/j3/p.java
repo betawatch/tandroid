@@ -1,23 +1,29 @@
 package j3;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
-/* loaded from: classes.dex */
-public final class p extends Exception {
-    public final int a;
-    public final boolean b;
-    public final h3.t0 c;
+import android.content.Context;
 
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public p(int i9, int i10, int i11, int i12, h3.t0 t0Var, boolean z10, RuntimeException runtimeException) {
-        super(r5.toString(), runtimeException);
-        StringBuilder o6 = e2.c.o("AudioTrack init failed ", i9, " Config(", i10, ", ");
-        r0.y(o6, i11, ", ", i12, ")");
-        o6.append(z10 ? " (recoverable)" : "");
-        this.a = i9;
-        this.b = z10;
-        this.c = t0Var;
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class p implements p8.i {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Context b;
+
+    public /* synthetic */ p(Context context, int i10) {
+        this.a = i10;
+        this.b = context;
+    }
+
+    @Override // p8.i
+    public final Object get() {
+        switch (this.a) {
+            case 0:
+                return new l(this.b);
+            case 1:
+                return new l4.l(this.b, new o3.i());
+            case 2:
+                return new d5.p(this.b, new ab.b(5));
+            default:
+                return com.google.android.exoplayer2.upstream.u.b(this.b);
+        }
     }
 }

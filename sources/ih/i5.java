@@ -1,88 +1,47 @@
 package ih;
 
-import android.content.Context;
-import android.view.MotionEvent;
-import org.telegram.messenger.AndroidUtilities;
+import jh.s9;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.Components.c80;
+import org.telegram.ui.Components.w41;
+import org.telegram.ui.Components.xa;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
-/* loaded from: classes4.dex */
-public final class i5 extends m2.g {
-    public boolean s0;
-    public final /* synthetic */ o5 t0;
-    public final /* synthetic */ o5 u0;
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class i5 implements Utilities.Callback2 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.f3 c;
+    public final /* synthetic */ Object d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public i5(o5 o5Var, Context context) {
-        super(context);
-        this.u0 = o5Var;
-        this.t0 = o5Var;
+    public /* synthetic */ i5(xa xaVar, Object obj, long j10, int i10) {
+        this.a = i10;
+        this.c = xaVar;
+        this.d = obj;
+        this.b = j10;
     }
 
-    public final boolean A(MotionEvent motionEvent) {
-        if (motionEvent.getAction() == 0) {
-            this.s0 = true;
+    @Override // org.telegram.messenger.Utilities.Callback2
+    public final void run(Object obj, Object obj2) {
+        switch (this.a) {
+            case 0:
+                q5.V((q5) this.c, (TL_stars.TL_starGiftUnique) this.d, this.b, (jh.j4) obj, (ye.c) obj2);
+                break;
+            case 1:
+                s9.Q((s9) this.c, (w41) this.d, this.b, (Boolean) obj, (String) obj2);
+                break;
+            default:
+                c80.m((c80) this.c, this.b, (TLRPC.TL_messages_importChatInvite) this.d, (TLRPC.ChatInviteJoinResult) obj, (TLRPC.TL_error) obj2);
+                break;
         }
-        if (this.s0 && this.t0.x <= 0) {
-            try {
-                return super.onInterceptTouchEvent(motionEvent);
-            } catch (Exception unused) {
-            }
-        }
-        return false;
     }
 
-    public final boolean B(MotionEvent motionEvent) {
-        if (motionEvent.getAction() == 0) {
-            this.s0 = true;
-        }
-        if (!this.s0 || this.t0.x > 0) {
-            return false;
-        }
-        return super.onTouchEvent(motionEvent);
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        float currentTopOffset;
-        float y10 = motionEvent.getY();
-        currentTopOffset = this.u0.getCurrentTopOffset();
-        if (y10 >= currentTopOffset || motionEvent.getAction() != 0) {
-            return super.dispatchTouchEvent(motionEvent);
-        }
-        return false;
-    }
-
-    @Override // m2.g, android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        float currentTopOffset;
-        float currentTopOffset2;
-        float y10 = motionEvent.getY();
-        o5 o5Var = this.u0;
-        currentTopOffset = o5Var.getCurrentTopOffset();
-        if (y10 < currentTopOffset) {
-            return false;
-        }
-        currentTopOffset2 = o5Var.getCurrentTopOffset();
-        if (Math.abs(currentTopOffset2 - o5Var.d) > AndroidUtilities.dp(1.0f)) {
-            return false;
-        }
-        return A(motionEvent);
-    }
-
-    @Override // m2.g, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        float currentTopOffset;
-        float currentTopOffset2;
-        float y10 = motionEvent.getY();
-        o5 o5Var = this.u0;
-        currentTopOffset = o5Var.getCurrentTopOffset();
-        if (y10 < currentTopOffset) {
-            return false;
-        }
-        currentTopOffset2 = o5Var.getCurrentTopOffset();
-        if (Math.abs(currentTopOffset2 - o5Var.d) > AndroidUtilities.dp(1.0f)) {
-            return false;
-        }
-        return B(motionEvent);
+    public /* synthetic */ i5(c80 c80Var, long j10, TLRPC.TL_messages_importChatInvite tL_messages_importChatInvite) {
+        this.a = 2;
+        this.c = c80Var;
+        this.b = j10;
+        this.d = tL_messages_importChatInvite;
     }
 }

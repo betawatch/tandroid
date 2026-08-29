@@ -1,73 +1,149 @@
 package z6;
 
-import android.os.Bundle;
-import android.os.Parcel;
-import android.os.Parcelable;
-import g7.p8;
-import java.util.ArrayList;
+import j$.lang.Iterable$-CC;
+import j$.util.Collection;
+import j$.util.Spliterator;
+import j$.util.Spliterators;
+import j$.util.stream.Stream;
+import java.io.Serializable;
+import java.util.AbstractCollection;
 import java.util.Arrays;
+import java.util.Spliterator;
+import java.util.function.Consumer;
+import java.util.function.IntFunction;
+import java.util.function.Predicate;
+import java.util.stream.Stream;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class h extends y5.a {
-    public static final Parcelable.Creator<h> CREATOR = new w7.i(21);
-    public final int a;
-    public final Bundle b;
+public abstract class h extends AbstractCollection implements Serializable, Collection {
+    public static final Object[] a = new Object[0];
 
-    public h(int i9, Bundle bundle) {
-        this.a = i9;
-        this.b = bundle;
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final boolean add(Object obj) {
+        throw new UnsupportedOperationException();
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (!(obj instanceof h)) {
-            return false;
-        }
-        h hVar = (h) obj;
-        Bundle bundle = hVar.b;
-        if (this.a != hVar.a) {
-            return false;
-        }
-        Bundle bundle2 = this.b;
-        if (bundle2 == null) {
-            return bundle == null;
-        }
-        if (bundle == null || bundle2.size() != bundle.size()) {
-            return false;
-        }
-        for (String str : bundle2.keySet()) {
-            if (!bundle.containsKey(str) || !x5.l.l(bundle2.getString(str), bundle.getString(str))) {
-                return false;
-            }
-        }
-        return true;
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final boolean addAll(java.util.Collection collection) {
+        throw new UnsupportedOperationException();
     }
 
-    public final int hashCode() {
-        ArrayList arrayList = new ArrayList();
-        arrayList.add(Integer.valueOf(this.a));
-        Bundle bundle = this.b;
-        if (bundle != null) {
-            for (String str : bundle.keySet()) {
-                arrayList.add(str);
-                String string = bundle.getString(str);
-                if (string != null) {
-                    arrayList.add(string);
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final void clear() {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.lang.Iterable, j$.util.Collection
+    public /* synthetic */ void forEach(Consumer consumer) {
+        Iterable$-CC.$default$forEach(this, consumer);
+    }
+
+    public int i(Object[] objArr) {
+        d0 p10 = p();
+        int i10 = 0;
+        while (p10.hasNext()) {
+            objArr[i10] = p10.next();
+            i10++;
+        }
+        return i10;
+    }
+
+    public int n() {
+        throw new UnsupportedOperationException();
+    }
+
+    public int o() {
+        throw new UnsupportedOperationException();
+    }
+
+    public abstract d0 p();
+
+    @Override // java.util.Collection
+    public /* synthetic */ Stream parallelStream() {
+        return Stream.Wrapper.convert(parallelStream());
+    }
+
+    public Object[] q() {
+        return null;
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final boolean remove(Object obj) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final boolean removeAll(java.util.Collection collection) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.Collection, j$.util.Collection
+    public /* synthetic */ boolean removeIf(Predicate predicate) {
+        return Collection.-CC.$default$removeIf(this, predicate);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final boolean retainAll(java.util.Collection collection) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.Collection, java.lang.Iterable
+    public /* synthetic */ Spliterator spliterator() {
+        return Spliterator.Wrapper.convert(spliterator());
+    }
+
+    @Override // java.util.Collection
+    public /* synthetic */ java.util.stream.Stream stream() {
+        return Stream.Wrapper.convert(stream());
+    }
+
+    @Override // java.util.Collection, j$.util.Collection
+    public /* synthetic */ Object[] toArray(IntFunction intFunction) {
+        Object[] array;
+        array = toArray((Object[]) intFunction.apply(0));
+        return array;
+    }
+
+    @Override // java.util.Collection, j$.util.Collection
+    public /* synthetic */ j$.util.stream.Stream parallelStream() {
+        return Collection.-CC.$default$parallelStream(this);
+    }
+
+    @Override // java.util.Collection, java.lang.Iterable, j$.util.Collection
+    public final j$.util.Spliterator spliterator() {
+        return Spliterators.spliterator(this, 1296);
+    }
+
+    @Override // java.util.Collection, j$.util.Collection
+    public /* synthetic */ j$.util.stream.Stream stream() {
+        return Collection.-CC.$default$stream(this);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final Object[] toArray() {
+        return toArray(a);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection
+    public final Object[] toArray(Object[] objArr) {
+        objArr.getClass();
+        int size = size();
+        int length = objArr.length;
+        if (length < size) {
+            Object[] q6 = q();
+            if (q6 == null) {
+                if (length != 0) {
+                    objArr = Arrays.copyOf(objArr, 0);
                 }
+                objArr = Arrays.copyOf(objArr, size);
+            } else {
+                return Arrays.copyOfRange(q6, o(), n(), objArr.getClass());
             }
+        } else if (length > size) {
+            objArr[size] = null;
         }
-        return Arrays.hashCode(arrayList.toArray(new Object[0]));
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i9) {
-        int q10 = p8.q(parcel, 20293);
-        p8.s(parcel, 1, 4);
-        parcel.writeInt(this.a);
-        p8.b(parcel, 2, this.b);
-        p8.r(parcel, q10);
+        i(objArr);
+        return objArr;
     }
 }

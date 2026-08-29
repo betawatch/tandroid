@@ -1,86 +1,152 @@
 package nh;
 
-import android.content.Context;
-import fh.w4;
-import g7.e6;
-import kh.x8;
+import android.animation.ValueAnimator;
+import android.graphics.Bitmap;
+import android.graphics.RectF;
+import android.net.Uri;
+import android.view.TextureView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.b6;
-import org.telegram.ui.ActionBar.f3;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.Components.i51;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.ui.Components.jr;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes4.dex */
-public final class d0 extends g0 {
-    public final /* synthetic */ j0 h;
+public final class d0 {
+    public int a;
+    public final org.telegram.ui.Components.d6 b;
+    public final ImageReceiver c;
+    public cg.v2 d;
+    public TextureView e;
+    public boolean f;
+    public s h;
+    public boolean m;
+    public o7 n;
+    public ValueAnimator o;
+    public final /* synthetic */ e0 p;
+    public volatile long g = -1;
+    public boolean i = false;
+    public final RectF j = new RectF();
+    public final RectF k = new RectF();
+    public float l = 1.0f;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d0(j0 j0Var, Context context) {
-        super(j0Var, context);
-        int i9;
-        b6 b6Var;
-        b6 b6Var2;
-        b6 b6Var3;
-        this.h = j0Var;
-        AndroidUtilities.removeFromParent(this.b);
-        i9 = ((f3) j0Var).currentAccount;
-        s sVar = new s(j0Var, 3);
-        t tVar = new t(j0Var, 2);
-        b6Var = ((f3) j0Var).resourcesProvider;
-        i51 i51Var = new i51(context, i9, 0, false, sVar, tVar, null, b6Var);
-        this.d = i51Var;
-        i51Var.p1();
-        i51 i51Var2 = this.d;
-        i51Var2.U2.r = false;
-        i51Var2.setClipToPadding(false);
-        this.d.setPadding(0, 0, 0, AndroidUtilities.dp(60.0f) + AndroidUtilities.navigationBarHeight);
-        this.c.addView(j0Var.C, e6.g());
-        this.c.addView(this.d, 0, e6.c(-1.0f, -1));
-        this.c.addView(j0Var.E, e6.g());
-        b6Var2 = ((f3) j0Var).resourcesProvider;
-        org.telegram.ui.ActionBar.k kVar = new org.telegram.ui.ActionBar.k(context, b6Var2);
-        this.a = kVar;
-        kVar.setOccupyStatusBar(false);
-        this.a.setTitleColor(j0Var.getThemedColor(f6.G6));
-        this.a.A(j0Var.getThemedColor(f6.z8), false);
-        org.telegram.ui.ActionBar.k kVar2 = this.a;
-        boolean z10 = j0Var.J;
-        kVar2.setBackButtonImage(z10 ? R.drawable.ic_ab_close : R.drawable.ic_ab_back);
-        this.a.C(j0Var.getThemedColor(f6.y8), false);
-        this.a.setTitle(LocaleController.getString(R.string.CommunityAddAChatToCommunity));
-        this.a.getTitleTextView().setTranslationX(-AndroidUtilities.dp(18.0f));
-        this.a.setActionBarMenuOnItemClick(new w4(this, 9));
-        this.c.addView(this.a, e6.e(-1, 56, 48));
-        this.c.addView(j0Var.A, e6.d(-1, 40.0f, 48, 11.0f, 0.0f, 11.0f, 0.0f));
-        org.telegram.ui.ActionBar.z n10 = this.a.n();
-        n10.setGlassMode(true);
-        n10.setTranslationX(-AndroidUtilities.dp(7.0f));
-        n10.a(3, R.drawable.outline_header_search);
-        Context context2 = getContext();
-        b6Var3 = ((f3) j0Var).resourcesProvider;
-        kh.d dVar = new kh.d(context2, b6Var3, true);
-        j0Var.r = dVar;
-        dVar.e();
-        j0Var.r.setText(LocaleController.getString(R.string.OK));
-        j0Var.r.setOnClickListener(new x8(this, 6));
-        if (z10) {
-            j0Var.r.setVisibility(8);
+    public d0(e0 e0Var) {
+        this.p = e0Var;
+        this.b = new org.telegram.ui.Components.d6(e0Var, 0L, 1200L, jr.g);
+        this.c = new ImageReceiver(e0Var);
+    }
+
+    public final void a(o7 o7Var) {
+        float f9;
+        cg.v2 v2Var = this.d;
+        if (v2Var != null) {
+            v2Var.pause();
+            this.d.release(null);
+            this.d = null;
         }
-        this.c.addView(j0Var.r, e6.f(48.0f, 80, AndroidUtilities.dp(12.0f), 0, AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f) + AndroidUtilities.navigationBarHeight));
-        a();
+        TextureView textureView = this.e;
+        if (textureView != null) {
+            AndroidUtilities.removeFromParent(textureView);
+            this.e = null;
+        }
+        this.f = false;
+        this.n = o7Var;
+        StringBuilder sb2 = new StringBuilder();
+        sb2.append((int) Math.ceil(AndroidUtilities.displaySize.x / AndroidUtilities.density));
+        sb2.append("_");
+        sb2.append((int) Math.ceil(AndroidUtilities.displaySize.y / AndroidUtilities.density));
+        String q6 = a4.w.q(sb2, (o7Var == null || !o7Var.K) ? "" : "_g", "_exif");
+        o7 o7Var2 = this.n;
+        e0 e0Var = this.p;
+        ImageReceiver imageReceiver = this.c;
+        if (o7Var2 == null) {
+            imageReceiver.clearImage();
+        } else if (o7Var2.K) {
+            Bitmap bitmap = o7Var2.M0;
+            if (bitmap != null) {
+                imageReceiver.setImageBitmap(bitmap);
+            } else {
+                Bitmap bitmap2 = o7Var2.b1;
+                if (bitmap2 != null) {
+                    imageReceiver.setImageBitmap(bitmap2);
+                } else {
+                    String str = o7Var2.N;
+                    if (str != null) {
+                        imageReceiver.setImage(str, q6, null, null, 0L);
+                    } else {
+                        imageReceiver.clearImage();
+                    }
+                }
+            }
+            TextureView textureView2 = new TextureView(e0Var.getContext());
+            this.e = textureView2;
+            e0Var.addView(textureView2);
+            cg.v2 v2Var2 = new cg.v2(this, 1);
+            this.d = v2Var2;
+            v2Var2.allowMultipleInstances(true);
+            this.d.with(this.e);
+            this.d.preparePlayer(Uri.fromFile(this.n.L), false, 1.0f);
+            cg.v2 v2Var3 = this.d;
+            if (!e0Var.r0) {
+                o7 o7Var3 = this.n;
+                if (!o7Var3.Y && e0Var.j0) {
+                    f9 = o7Var3.P;
+                    v2Var3.setVolume(f9);
+                    if (e0Var.j0 || e0Var.m0) {
+                        this.d.play();
+                    } else {
+                        this.d.pause();
+                    }
+                }
+            }
+            f9 = 0.0f;
+            v2Var3.setVolume(f9);
+            if (e0Var.j0) {
+            }
+            this.d.play();
+        } else {
+            imageReceiver.setImage(o7Var2.L.getAbsolutePath(), q6, null, null, 0L);
+        }
+        e0Var.invalidate();
     }
 
-    @Override // nh.g0
-    public final float b() {
-        return ff.m0.b(this.h.c.e) * super.b();
-    }
-
-    @Override // nh.g0
-    public final void c() {
-        super.c();
-        this.h.A.setTranslationY(Math.max(AndroidUtilities.dp(8.0f) + AndroidUtilities.statusBarHeight, b() + AndroidUtilities.dp(4.0f)));
+    public final void b(s sVar, boolean z10) {
+        s sVar2 = this.h;
+        if (sVar != null) {
+            this.h = sVar;
+        }
+        ValueAnimator valueAnimator = this.o;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
+            this.o = null;
+        }
+        RectF rectF = this.k;
+        e0 e0Var = this.p;
+        if (z10) {
+            boolean z11 = this.i;
+            RectF rectF2 = this.j;
+            if (z11) {
+                AndroidUtilities.lerp(rectF2, rectF, this.l, rectF2);
+            } else {
+                e0.c(e0Var, rectF2, sVar);
+            }
+            if (sVar == null) {
+                e0.c(e0Var, rectF, sVar2);
+            } else {
+                e0Var.k(rectF, sVar);
+            }
+            this.l = 0.0f;
+            ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+            this.o = ofFloat;
+            ofFloat.addUpdateListener(new cg.c1(this, 5));
+            this.o.addListener(new ag.m0(this, 27));
+            this.o.setInterpolator(jr.h);
+            this.o.setDuration(360L);
+            this.o.start();
+        } else {
+            e0Var.k(rectF, sVar);
+            this.l = 1.0f;
+        }
+        e0Var.invalidate();
+        this.i = true;
     }
 }

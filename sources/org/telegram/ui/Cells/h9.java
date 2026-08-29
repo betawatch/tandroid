@@ -1,158 +1,177 @@
 package org.telegram.ui.Cells;
 
-import android.graphics.Rect;
-import android.text.Layout;
-import android.text.Spanned;
+import android.content.ClipboardManager;
+import android.content.Context;
+import android.os.Build;
+import android.view.ActionMode;
+import android.view.Menu;
+import android.view.MenuItem;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Emoji;
-import org.telegram.ui.Components.wk0;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.LanguageDetector;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.R;
+import org.telegram.ui.Components.k31;
+import org.telegram.ui.b31;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class h9 implements Runnable {
-    public final /* synthetic */ aa a;
+public final class h9 implements ActionMode.Callback {
+    public String a = null;
+    public final /* synthetic */ x9 b;
 
-    public h9(aa aaVar) {
-        this.a = aaVar;
+    public h9(x9 x9Var) {
+        this.b = x9Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        aa aaVar = this.a;
-        g gVar = aaVar.r0;
-        Rect rect = aaVar.B;
-        q9 q9Var = aaVar.a0;
-        v9 v9Var = aaVar.X;
-        if (v9Var == null || aaVar.C == null) {
+    public final void a(Menu menu) {
+        LocaleController.getInstance().getCurrentLocale().getLanguage();
+        MenuItem findItem = menu.findItem(3);
+        if (findItem == null) {
             return;
         }
-        v9 v9Var2 = aaVar.W;
-        CharSequence t10 = aaVar.t(v9Var, true);
-        wk0 wk0Var = aaVar.E;
-        if (wk0Var != null) {
-            wk0Var.I0(false);
+        findItem.setVisible((this.b.l0 == null || ((this.a == null || b31.Y().contains(this.a)) && LanguageDetector.hasSupport())) ? false : true);
+    }
+
+    @Override // android.view.ActionMode.Callback
+    public final boolean onActionItemClicked(ActionMode actionMode, MenuItem menuItem) {
+        CharSequence t10;
+        x9 x9Var = this.b;
+        g gVar = x9Var.r0;
+        if (x9Var.y()) {
+            int itemId = menuItem.getItemId();
+            if (itemId == 16908321) {
+                x9Var.g();
+                return true;
+            }
+            if (itemId != 16908319) {
+                if (itemId == 3) {
+                    if (x9Var.l0 != null) {
+                        String language = LocaleController.getInstance().getCurrentLocale().getLanguage();
+                        org.telegram.ui.v vVar = x9Var.l0;
+                        CharSequence s10 = x9Var.s();
+                        String str = this.a;
+                        g gVar2 = new g(this, 8);
+                        org.telegram.ui.m4 m4Var = vVar.a;
+                        k31.J(m4Var.H, m4Var.I, str, language, s10, null, gVar2);
+                    }
+                    x9Var.v();
+                    return true;
+                }
+                if (itemId == R.id.menu_quote) {
+                    if (x9Var.y()) {
+                        s9 s9Var = x9Var.W;
+                        MessageObject messageObject = s9Var instanceof s1 ? ((s1) s9Var).getMessageObject() : null;
+                        if (messageObject != null && x9Var.s() != null) {
+                            x9Var.J(x9Var.u, x9Var.v, messageObject);
+                            x9Var.f(true);
+                        }
+                    }
+                    x9Var.v();
+                    return true;
+                }
+                if (itemId == 16908320) {
+                    x9Var.E();
+                    x9Var.v();
+                    return true;
+                }
+                if (itemId != 16908322) {
+                    x9Var.f(false);
+                    return true;
+                }
+                x9Var.I();
+                x9Var.v();
+                return true;
+            }
+            if (!x9Var.K() && (t10 = x9Var.t(x9Var.W, false)) != null) {
+                x9Var.u = 0;
+                x9Var.v = t10.length();
+                x9Var.v();
+                x9Var.x();
+                AndroidUtilities.cancelRunOnUIThread(gVar);
+                AndroidUtilities.runOnUIThread(gVar);
+                return true;
+            }
         }
-        int i9 = aaVar.s;
-        int i10 = aaVar.t;
-        if (!rect.isEmpty()) {
-            int i11 = rect.right;
-            if (i9 > i11) {
-                i9 = i11 - 1;
-            }
-            int i12 = rect.left;
-            if (i9 < i12) {
-                i9 = i12 + 1;
-            }
-            int i13 = rect.top;
-            if (i10 < i13) {
-                i10 = i13 + 1;
-            }
-            int i14 = rect.bottom;
-            if (i10 > i14) {
-                i10 = i14 - 1;
-            }
+        return true;
+    }
+
+    @Override // android.view.ActionMode.Callback
+    public final boolean onCreateActionMode(ActionMode actionMode, Menu menu) {
+        menu.add(0, android.R.id.copy, 0, android.R.string.copy);
+        menu.add(0, R.id.menu_quote, 1, LocaleController.getString(R.string.Quote));
+        menu.add(0, 3, 2, LocaleController.getString(R.string.TranslateMessage));
+        menu.add(0, android.R.id.cut, 3, android.R.string.cut);
+        menu.add(0, android.R.id.paste, 4, android.R.string.paste);
+        menu.add(0, android.R.id.selectAll, 5, android.R.string.selectAll);
+        return true;
+    }
+
+    @Override // android.view.ActionMode.Callback
+    public final void onDestroyActionMode(ActionMode actionMode) {
+        if (Build.VERSION.SDK_INT < 23) {
+            this.b.f(false);
         }
-        int i15 = i9;
-        int l10 = aaVar.l(i15, i10, aaVar.c, aaVar.d, v9Var, true);
-        if (l10 >= t10.length()) {
-            aaVar.j(l10, q9Var, true);
-            Layout layout = q9Var.b;
-            if (layout == null) {
-                aaVar.v = -1;
-                aaVar.u = -1;
-                return;
+    }
+
+    @Override // android.view.ActionMode.Callback
+    public final boolean onPrepareActionMode(ActionMode actionMode, Menu menu) {
+        ClipboardManager clipboardManager;
+        x9 x9Var;
+        s9 s9Var;
+        MenuItem findItem = menu.findItem(R.id.menu_quote);
+        if (findItem != null) {
+            findItem.setVisible(this.b.e());
+        }
+        MenuItem findItem2 = menu.findItem(android.R.id.copy);
+        if (findItem2 != null) {
+            findItem2.setVisible(this.b.b());
+        }
+        MenuItem findItem3 = menu.findItem(android.R.id.selectAll);
+        boolean z10 = false;
+        if (findItem3 != null && (s9Var = (x9Var = this.b).W) != null) {
+            CharSequence t10 = x9Var.t(s9Var, false);
+            if (!this.b.b()) {
+                findItem3.setVisible(false);
+            } else if (this.b.k()) {
+                findItem3.setVisible(true);
             } else {
-                int lineCount = layout.getLineCount() - 1;
-                float f10 = i15 - aaVar.c;
-                if (f10 < q9Var.b.getLineRight(lineCount) + AndroidUtilities.dp(4.0f) && f10 > q9Var.b.getLineLeft(lineCount)) {
-                    l10 = t10.length() - 1;
+                x9 x9Var2 = this.b;
+                if (x9Var2.Z || (x9Var2.u <= 0 && x9Var2.v >= t10.length() - 1)) {
+                    findItem3.setVisible(false);
+                } else {
+                    findItem3.setVisible(true);
                 }
             }
         }
-        if (l10 >= 0 && l10 < t10.length() && t10.charAt(l10) != '\n') {
-            int i16 = aaVar.c;
-            int i17 = aaVar.d;
-            aaVar.f(false);
-            aaVar.C.setVisibility(0);
-            aaVar.M(v9Var, v9Var2);
-            aaVar.u = l10;
-            aaVar.v = l10;
-            if (t10 instanceof Spanned) {
-                Spanned spanned = (Spanned) t10;
-                Emoji.EmojiSpan[] emojiSpanArr = (Emoji.EmojiSpan[]) spanned.getSpans(0, t10.length(), Emoji.EmojiSpan.class);
-                int length = emojiSpanArr.length;
-                int i18 = 0;
-                while (true) {
-                    if (i18 >= length) {
-                        org.telegram.ui.Components.t5[] t5VarArr = (org.telegram.ui.Components.t5[]) spanned.getSpans(0, t10.length(), org.telegram.ui.Components.t5.class);
-                        int length2 = t5VarArr.length;
-                        int i19 = 0;
-                        while (true) {
-                            if (i19 >= length2) {
-                                break;
-                            }
-                            org.telegram.ui.Components.t5 t5Var = t5VarArr[i19];
-                            int spanStart = spanned.getSpanStart(t5Var);
-                            int spanEnd = spanned.getSpanEnd(t5Var);
-                            if (l10 >= spanStart && l10 <= spanEnd) {
-                                aaVar.u = spanStart;
-                                aaVar.v = spanEnd;
-                                break;
-                            }
-                            i19++;
-                        }
-                    } else {
-                        Emoji.EmojiSpan emojiSpan = emojiSpanArr[i18];
-                        int spanStart2 = spanned.getSpanStart(emojiSpan);
-                        int spanEnd2 = spanned.getSpanEnd(emojiSpan);
-                        if (l10 >= spanStart2 && l10 <= spanEnd2) {
-                            aaVar.u = spanStart2;
-                            aaVar.v = spanEnd2;
-                            break;
-                        }
-                        i18++;
-                    }
-                }
-            }
-            if (aaVar.u == aaVar.v) {
-                while (true) {
-                    int i20 = aaVar.u;
-                    if (i20 <= 0 || !aa.z(t10.charAt(i20 - 1))) {
-                        break;
-                    } else {
-                        aaVar.u--;
-                    }
-                }
-                while (aaVar.v < t10.length() && aa.z(t10.charAt(aaVar.v))) {
-                    aaVar.v++;
-                }
-            }
-            aaVar.a = i16;
-            aaVar.b = i17;
-            aaVar.W = v9Var;
-            try {
-                aaVar.C.performHapticFeedback(0, 1);
-            } catch (Exception unused) {
-            }
-            AndroidUtilities.cancelRunOnUIThread(gVar);
-            AndroidUtilities.runOnUIThread(gVar);
-            aaVar.V();
-            aaVar.x();
-            if (v9Var2 != null) {
-                v9Var2.invalidate();
-            }
-            g7.a6 a6Var = aaVar.D;
-            if (a6Var != null) {
-                a6Var.a(true);
-            }
-            aaVar.i = true;
-            aaVar.R = true;
-            aaVar.k = true;
-            aaVar.g = 0.0f;
-            aaVar.f = 0.0f;
-            aaVar.G();
+        MenuItem findItem4 = menu.findItem(android.R.id.cut);
+        if (findItem4 != null) {
+            findItem4.setVisible(this.b instanceof th.d3);
         }
-        aaVar.z = false;
-        aaVar.e = false;
+        MenuItem findItem5 = menu.findItem(android.R.id.paste);
+        if (findItem5 != null) {
+            x9 x9Var3 = this.b;
+            if (x9Var3 instanceof th.d3) {
+                try {
+                    w9 w9Var = x9Var3.C;
+                    Context context = w9Var != null ? w9Var.getContext() : ApplicationLoader.applicationContext;
+                    if (context != null && (clipboardManager = (ClipboardManager) context.getSystemService("clipboard")) != null) {
+                        if (clipboardManager.hasPrimaryClip()) {
+                            z10 = true;
+                        }
+                    }
+                } catch (Exception unused) {
+                }
+            }
+            findItem5.setVisible(z10);
+        }
+        if (this.b.l0 == null || !LanguageDetector.hasSupport() || this.b.s() == null) {
+            this.a = null;
+            a(menu);
+        } else {
+            LanguageDetector.detectLanguage(this.b.s().toString(), new g9(this, menu), new g9(this, menu));
+        }
+        return true;
     }
 }

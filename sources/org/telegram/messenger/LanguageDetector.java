@@ -3,16 +3,16 @@ package org.telegram.messenger;
 import android.content.Context;
 import com.google.android.gms.tasks.TaskExecutors;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public class LanguageDetector {
 
-    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
     public interface ExceptionCallback {
         void run(Exception exc);
     }
 
-    /* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+    /* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
     public interface StringCallback {
         void run(String str);
     }
@@ -43,8 +43,8 @@ public class LanguageDetector {
         if (z10) {
             try {
                 Context context = ApplicationLoader.applicationContext;
-                synchronized (ya.g.b) {
-                    ya.g.d(context, TaskExecutors.MAIN_THREAD);
+                synchronized (ab.h.b) {
+                    ab.h.d(context, TaskExecutors.MAIN_THREAD);
                 }
             } catch (IllegalStateException e10) {
                 if (!z10) {
@@ -62,14 +62,14 @@ public class LanguageDetector {
                 }
                 FileLog.e(e11);
                 return;
-            } catch (Throwable th) {
+            } catch (Throwable th2) {
                 if (exceptionCallback != null) {
                     exceptionCallback.run(null);
                 }
-                FileLog.e(th, false);
+                FileLog.e(th2, false);
                 return;
             }
         }
-        com.google.android.gms.internal.play_billing.s1.a().g(str).addOnSuccessListener(new d(stringCallback, 6)).addOnFailureListener(new d(exceptionCallback, 7));
+        h7.l5.a().g(str).addOnSuccessListener(new d(stringCallback, 6)).addOnFailureListener(new d(exceptionCallback, 7));
     }
 }

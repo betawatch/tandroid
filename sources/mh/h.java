@@ -1,38 +1,99 @@
 package mh;
 
-import android.content.Context;
 import android.view.View;
-import org.telegram.ui.ActionBar.b6;
-import org.telegram.ui.Components.i51;
-import org.telegram.ui.Components.k41;
-import org.telegram.ui.Components.l41;
-import org.telegram.ui.Components.wk0;
-import org.telegram.ui.Components.z41;
+import android.view.accessibility.AccessibilityNodeInfo;
+import f2.d1;
+import f2.k1;
+import org.telegram.ui.Cells.q7;
+import org.telegram.ui.Components.bv0;
+import org.telegram.ui.Components.iz;
+import org.telegram.ui.Components.u51;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes4.dex */
-public final class h extends k41 {
-    static {
-        k41.setup(new h());
+public final class h extends iz {
+    public final /* synthetic */ int X = 0;
+    public final Object Y;
+
+    public h() {
+        super(100, false);
+        this.Y = new bv0();
     }
 
-    public static l41 a(int i9, int i10, int i11, CharSequence charSequence, String str) {
-        l41 J = l41.J(h.class);
-        J.d = i9;
-        J.z = i10;
-        J.k = i11;
-        J.l = charSequence;
-        J.m = str;
-        return J;
+    @Override // f2.w0
+    public int A() {
+        switch (this.X) {
+            case 0:
+                return 0;
+            default:
+                return super.A();
+        }
     }
 
-    @Override // org.telegram.ui.Components.k41
-    public final void bindView(View view, l41 l41Var, boolean z10, z41 z41Var, i51 i51Var) {
-        ((i) view).a(l41Var.z, l41Var.k, l41Var.l, l41Var.m);
+    @Override // org.telegram.ui.Components.iz
+    public bv0 D1(int i10) {
+        switch (this.X) {
+            case 0:
+                bv0 bv0Var = (bv0) this.Y;
+                bv0Var.b = 100.0f;
+                bv0Var.a = 100.0f;
+                return bv0Var;
+            default:
+                return super.D1(i10);
+        }
     }
 
-    @Override // org.telegram.ui.Components.k41
-    public final View createView(Context context, wk0 wk0Var, int i9, int i10, b6 b6Var) {
-        return new i(context, b6Var);
+    @Override // f2.w, f2.w0
+    public void U(d1 d1Var, k1 k1Var, View view, s0.c cVar) {
+        switch (this.X) {
+            case 0:
+                super.U(d1Var, k1Var, view, cVar);
+                AccessibilityNodeInfo accessibilityNodeInfo = cVar.a;
+                AccessibilityNodeInfo.CollectionItemInfo collectionItemInfo = accessibilityNodeInfo.getCollectionItemInfo();
+                m8.o oVar = collectionItemInfo != null ? new m8.o(collectionItemInfo) : null;
+                if (oVar != null) {
+                    Object obj = oVar.a;
+                    if (((AccessibilityNodeInfo.CollectionItemInfo) obj).isHeading()) {
+                        accessibilityNodeInfo.setCollectionItemInfo(AccessibilityNodeInfo.CollectionItemInfo.obtain(((AccessibilityNodeInfo.CollectionItemInfo) obj).getRowIndex(), ((AccessibilityNodeInfo.CollectionItemInfo) obj).getRowSpan(), ((AccessibilityNodeInfo.CollectionItemInfo) obj).getColumnIndex(), ((AccessibilityNodeInfo.CollectionItemInfo) obj).getColumnSpan(), false));
+                        break;
+                    }
+                }
+                break;
+            default:
+                super.U(d1Var, k1Var, view, cVar);
+                break;
+        }
+    }
+
+    @Override // f2.j0
+    public int W0(k1 k1Var) {
+        switch (this.X) {
+            case 1:
+                if (!((u51) this.Y).W2) {
+                    break;
+                } else {
+                    break;
+                }
+        }
+        return super.W0(k1Var);
+    }
+
+    @Override // f2.j0
+    public void z0(k1 k1Var, int[] iArr) {
+        switch (this.X) {
+            case 0:
+                super.z0(k1Var, iArr);
+                iArr[1] = Math.max(iArr[1], q7.a(1) * 2);
+                break;
+            default:
+                super.z0(k1Var, iArr);
+                break;
+        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public h(u51 u51Var, int i10) {
+        super(i10, false);
+        this.Y = u51Var;
     }
 }

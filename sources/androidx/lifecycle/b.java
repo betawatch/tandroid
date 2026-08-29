@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class b {
     public final HashMap a = new HashMap();
@@ -32,12 +32,12 @@ public final class b {
                 c cVar = (c) list.get(size);
                 Method method = cVar.b;
                 try {
-                    int i9 = cVar.a;
-                    if (i9 == 0) {
+                    int i10 = cVar.a;
+                    if (i10 == 0) {
                         method.invoke(sVar, null);
-                    } else if (i9 == 1) {
+                    } else if (i10 == 1) {
                         method.invoke(sVar, tVar);
-                    } else if (i9 == 2) {
+                    } else if (i10 == 2) {
                         method.invoke(sVar, tVar, mVar);
                     }
                 } catch (IllegalAccessException e10) {

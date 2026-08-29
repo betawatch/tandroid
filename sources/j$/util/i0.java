@@ -9,19 +9,19 @@ public final /* synthetic */ class i0 implements IntConsumer {
     public final /* synthetic */ int a;
     public final /* synthetic */ Consumer b;
 
-    public /* synthetic */ i0(Consumer consumer, int i9) {
-        this.a = i9;
+    public /* synthetic */ i0(Consumer consumer, int i10) {
+        this.a = i10;
         this.b = consumer;
     }
 
     @Override // java.util.function.IntConsumer
-    public final void accept(int i9) {
+    public final void accept(int i10) {
         switch (this.a) {
             case 0:
-                this.b.accept(Integer.valueOf(i9));
+                this.b.accept(Integer.valueOf(i10));
                 break;
             default:
-                ((j5) this.b).accept(i9);
+                ((j5) this.b).accept(i10);
                 break;
         }
     }

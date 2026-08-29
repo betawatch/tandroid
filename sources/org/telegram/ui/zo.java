@@ -1,17 +1,36 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class zo implements q60 {
-    public final /* synthetic */ hp a;
+public final /* synthetic */ class zo implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ kp b;
 
-    public zo(hp hpVar) {
-        this.a = hpVar;
+    public /* synthetic */ zo(kp kpVar, int i10) {
+        this.a = i10;
+        this.b = kpVar;
     }
 
-    @Override // org.telegram.ui.q60
-    public final void a(r60 r60Var, long j10) {
-        hp hpVar = this.a;
-        hpVar.X(hpVar.getMessagesController().getChat(Long.valueOf(j10)), r60Var);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                kp kpVar = this.b;
+                org.telegram.ui.ActionBar.c2 c2Var = kpVar.r;
+                if (c2Var != null) {
+                    c2Var.setOnCancelListener(new cg(kpVar, 2));
+                    kpVar.showDialog(kpVar.r);
+                    break;
+                }
+                break;
+            case 1:
+                kp kpVar2 = this.b;
+                kpVar2.getMessagesController().loadFullChat(kpVar2.A, 0, true);
+                break;
+            default:
+                kp kpVar3 = this.b;
+                kpVar3.getMessagesController().loadFullChat(kpVar3.A, 0, true);
+                break;
+        }
     }
 }

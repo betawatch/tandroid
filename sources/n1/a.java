@@ -1,19 +1,19 @@
 package n1;
 
+import bd.l;
 import java.util.Map;
-import kotlin.jvm.internal.i;
 import kotlin.jvm.internal.j;
-import zc.l;
+import kotlin.jvm.internal.k;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class a extends j implements l {
+public final class a extends k implements l {
     public static final a b = new a(1);
 
-    @Override // zc.l
+    @Override // bd.l
     public final Object invoke(Object obj) {
         Map.Entry entry = (Map.Entry) obj;
-        i.e(entry, "entry");
+        j.e(entry, "entry");
         return "  " + ((d) entry.getKey()).a + " = " + entry.getValue();
     }
 }

@@ -8,8 +8,8 @@ public final class j1 extends k1 {
     }
 
     @Override // com.google.android.gms.internal.clearcut.k1
-    public final void d(Object obj, long j10, float f10) {
-        this.a.putFloat(obj, j10, f10);
+    public final void d(Object obj, long j10, float f9) {
+        this.a.putFloat(obj, j10, f9);
     }
 
     @Override // com.google.android.gms.internal.clearcut.k1

@@ -1,61 +1,30 @@
 package org.telegram.messenger;
 
-import java.util.HashMap;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.tgnet.TLObject;
+import android.content.Context;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ci implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ SendMessagesHelper b;
-    public final /* synthetic */ TLObject c;
-    public final /* synthetic */ MessageObject d;
-    public final /* synthetic */ String e;
-    public final /* synthetic */ SendMessagesHelper.DelayedMessage f;
-    public final /* synthetic */ boolean h;
-    public final /* synthetic */ SendMessagesHelper.DelayedMessage n;
-    public final /* synthetic */ Object r;
-    public final /* synthetic */ HashMap s;
-    public final /* synthetic */ boolean v;
+    public final /* synthetic */ SecretChatHelper b;
+    public final /* synthetic */ Context c;
+    public final /* synthetic */ org.telegram.ui.ActionBar.c2 d;
 
-    public /* synthetic */ ci(SendMessagesHelper sendMessagesHelper, TLObject tLObject, MessageObject messageObject, String str, SendMessagesHelper.DelayedMessage delayedMessage, boolean z10, SendMessagesHelper.DelayedMessage delayedMessage2, Object obj, HashMap hashMap, boolean z11, int i9) {
-        this.a = i9;
-        this.b = sendMessagesHelper;
-        this.c = tLObject;
-        this.d = messageObject;
-        this.e = str;
-        this.f = delayedMessage;
-        this.h = z10;
-        this.n = delayedMessage2;
-        this.r = obj;
-        this.s = hashMap;
-        this.v = z11;
+    public /* synthetic */ ci(SecretChatHelper secretChatHelper, Context context, org.telegram.ui.ActionBar.c2 c2Var, int i10) {
+        this.a = i10;
+        this.b = secretChatHelper;
+        this.c = context;
+        this.d = c2Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                HashMap hashMap = this.s;
-                boolean z10 = this.v;
-                Object obj = this.r;
-                String str = this.e;
-                this.b.lambda$performSendMessageRequest$77(this.c, this.d, str, this.f, this.h, this.n, obj, hashMap, z10);
-                break;
-            case 1:
-                HashMap hashMap2 = this.s;
-                boolean z11 = this.v;
-                Object obj2 = this.r;
-                String str2 = this.e;
-                this.b.lambda$performSendMessageRequest$78(this.c, this.d, str2, this.f, this.h, this.n, obj2, hashMap2, z11);
+                this.b.lambda$startSecretChat$27(this.c, this.d);
                 break;
             default:
-                HashMap hashMap3 = this.s;
-                boolean z12 = this.v;
-                Object obj3 = this.r;
-                String str3 = this.e;
-                this.b.lambda$performSendMessageRequest$82(this.c, this.d, str3, this.f, this.h, this.n, obj3, hashMap3, z12);
+                this.b.lambda$startSecretChat$29(this.c, this.d);
                 break;
         }
     }

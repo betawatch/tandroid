@@ -1,238 +1,262 @@
 package org.telegram.ui.Components;
 
-import android.animation.TimeInterpolator;
 import android.animation.ValueAnimator;
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.Typeface;
-import android.graphics.drawable.Drawable;
-import android.text.TextPaint;
-import android.text.TextUtils;
 import android.view.View;
-import android.view.accessibility.AccessibilityNodeInfo;
+import android.view.ViewGroup;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.camera.Camera2Session;
+import org.telegram.messenger.camera.CameraSession;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public class j6 extends View {
-    public boolean a;
-    public Drawable b;
-    public final i6 c;
-    public int d;
-    public int e;
-    public CharSequence f;
-    public boolean h;
-    public boolean n;
-    public boolean r;
+public final /* synthetic */ class j6 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public j6(Context context, boolean z10, boolean z11, boolean z12) {
-        super(context);
-        this.n = true;
-        this.r = true;
-        i6 i6Var = new i6(z10, z11, z12, false);
-        this.c = i6Var;
-        i6Var.setCallback(this);
-        i6Var.C = new fg(this, 8);
+    public /* synthetic */ j6(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    public final void a() {
-        this.c.b();
-    }
-
-    public final void b(float f10, long j10, TimeInterpolator timeInterpolator) {
-        this.c.k(f10, j10, timeInterpolator);
-    }
-
-    public final void c(CharSequence charSequence, boolean z10, boolean z11) {
-        boolean z12 = !this.r && z10;
-        this.r = false;
-        i6 i6Var = this.c;
-        if (z12 && !TextUtils.equals(charSequence, i6Var.g)) {
-            if (i6Var.D) {
-                ValueAnimator valueAnimator = i6Var.o;
-                if (valueAnimator != null) {
-                    valueAnimator.cancel();
-                    i6Var.o = null;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        ViewGroup viewGroup;
+        switch (this.a) {
+            case 0:
+                n6 n6Var = (n6) this.b;
+                n6Var.getClass();
+                n6Var.m = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                n6Var.invalidateSelf();
+                Runnable runnable = n6Var.V;
+                if (runnable != null) {
+                    runnable.run();
+                    break;
                 }
-            } else if (i6Var.f()) {
-                this.f = charSequence;
-                this.h = z11;
-                return;
-            }
+                break;
+            case 1:
+                v6 v6Var = (v6) this.b;
+                v6Var.a.setAlpha(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                v6Var.invalidate();
+                break;
+            case 2:
+                g8 g8Var = (g8) this.b;
+                g8Var.F.setCustomPaddingRight(((Integer) valueAnimator.getAnimatedValue()).intValue());
+                g8Var.I.setCustomPaddingRight(((Integer) valueAnimator.getAnimatedValue()).intValue());
+                break;
+            case 3:
+                b9 b9Var = (b9) this.b;
+                b9Var.getClass();
+                b9Var.j0(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                break;
+            case 4:
+                g9 g9Var = (g9) this.b;
+                g9Var.getClass();
+                g9Var.e = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                g9Var.f();
+                break;
+            case 5:
+                v9 v9Var = (v9) this.b;
+                v9Var.getClass();
+                v9Var.g = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                v9Var.invalidateSelf();
+                break;
+            case 6:
+                ka kaVar = (ka) this.b;
+                kaVar.getClass();
+                kaVar.f = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                kaVar.b.invalidate();
+                break;
+            case 7:
+                uc ucVar = (uc) this.b;
+                ucVar.getClass();
+                ucVar.i = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                ucVar.b();
+                break;
+            case 8:
+                og ogVar = (og) this.b;
+                ogVar.getClass();
+                ogVar.W = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                break;
+            case 9:
+                uh uhVar = (uh) this.b;
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                ni niVar = uhVar.e;
+                ph phVar = niVar.t1;
+                phVar.setAlpha(1.0f - floatValue);
+                niVar.A1.setAlpha(floatValue);
+                float dp = floatValue * AndroidUtilities.dp(36.0f);
+                niVar.B1 = dp;
+                phVar.setTranslationY(dp);
+                break;
+            case 10:
+                ph phVar2 = (ph) this.b;
+                ni niVar2 = phVar2.b;
+                niVar2.R1 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                niVar2.y0.invalidate();
+                niVar2.z0.invalidate();
+                phVar2.invalidate();
+                break;
+            case 11:
+                im imVar = (im) this.b;
+                imVar.getClass();
+                imVar.l = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                imVar.O.z.invalidate();
+                break;
+            case 12:
+                no noVar = (no) this.b;
+                noVar.getClass();
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                noVar.d = floatValue2;
+                noVar.setShown(floatValue2);
+                noVar.a(false);
+                break;
+            case 13:
+                gp gpVar = (gp) this.b;
+                gpVar.getClass();
+                gpVar.c0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                gpVar.F.setTranslationY((-AndroidUtilities.dp(7.0f)) * gpVar.c0);
+                break;
+            case 14:
+                pq pqVar = (pq) this.b;
+                pqVar.getClass();
+                pqVar.l = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                View view = pqVar.H;
+                if (view != null) {
+                    view.invalidate();
+                    break;
+                }
+                break;
+            case 15:
+                ir irVar = (ir) this.b;
+                irVar.getClass();
+                irVar.b(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                irVar.invalidateSelf();
+                break;
+            case 16:
+                jv.p((jv) this.b, valueAnimator);
+                break;
+            case 17:
+                av avVar = (av) this.b;
+                avVar.getClass();
+                avVar.e = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                if (avVar.getParent() instanceof View) {
+                    ((View) avVar.getParent()).invalidate();
+                    break;
+                }
+                break;
+            case 18:
+                ev evVar = (ev) this.b;
+                evVar.getClass();
+                float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                evVar.v = floatValue3;
+                TextView textView = evVar.c;
+                textView.setScaleX(1.0f - floatValue3);
+                textView.setScaleY(1.0f - evVar.v);
+                textView.setAlpha(1.0f - evVar.v);
+                TextView textView2 = evVar.d;
+                textView2.setScaleX(evVar.v);
+                textView2.setScaleY(evVar.v);
+                textView2.setAlpha(evVar.v);
+                break;
+            case 19:
+                pv pvVar = (pv) this.b;
+                pvVar.getClass();
+                pvVar.C = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                pvVar.d();
+                break;
+            case 20:
+                rv rvVar = (rv) this.b;
+                rvVar.getClass();
+                rvVar.r = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                rvVar.invalidate();
+                rvVar.requestLayout();
+                rvVar.c();
+                rvVar.s.b.invalidate();
+                break;
+            case 21:
+                ny nyVar = (ny) this.b;
+                nyVar.getClass();
+                nyVar.h = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                nyVar.invalidate();
+                break;
+            case 22:
+                ry ryVar = (ry) this.b;
+                float floatValue4 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                ryVar.w = floatValue4;
+                View view2 = ryVar.v;
+                if (view2 == null) {
+                    bg.d1 d1Var = ryVar.s;
+                    if (d1Var != null) {
+                        d1Var.invalidate();
+                        break;
+                    }
+                } else {
+                    view2.setAlpha(floatValue4);
+                    break;
+                }
+                break;
+            case 23:
+                f00 f00Var = ((xz) this.b).F;
+                f00Var.B.invalidate();
+                f00Var.invalidate();
+                break;
+            case 24:
+                o00 o00Var = (o00) this.b;
+                o00Var.getClass();
+                o00Var.C = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                o00Var.invalidate();
+                break;
+            case 25:
+                w20 w20Var = (w20) this.b;
+                t20 t20Var = w20Var.a;
+                if (!w20Var.B) {
+                    float floatValue5 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                    w20Var.X = floatValue5;
+                    w20Var.Q.setPinnedProgress(floatValue5);
+                    t20Var.setScaleX(1.0f - (w20Var.X * 0.6f));
+                    t20Var.setScaleY(1.0f - (w20Var.X * 0.6f));
+                    if (w20Var.S) {
+                        w20Var.i();
+                        break;
+                    }
+                }
+                break;
+            case 26:
+                s50 s50Var = (s50) this.b;
+                if (!s50Var.j0) {
+                    CameraSession cameraSession = s50Var.k0;
+                    if (cameraSession != null) {
+                        cameraSession.setZoom(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                        break;
+                    }
+                } else {
+                    Camera2Session camera2Session = s50Var.n0;
+                    if (camera2Session != null) {
+                        camera2Session.setZoom(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                        break;
+                    }
+                }
+                break;
+            case 27:
+                x60.P((x60) this.b, valueAnimator);
+                break;
+            case 28:
+                x60 x60Var = ((w60) this.b).e;
+                x60Var.g0 = ((Integer) valueAnimator.getAnimatedValue()).intValue();
+                viewGroup = ((org.telegram.ui.ActionBar.f3) x60Var).containerView;
+                viewGroup.invalidate();
+                break;
+            default:
+                j70 j70Var = (j70) this.b;
+                j70Var.getClass();
+                float floatValue6 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                h70 h70Var = j70Var.x;
+                if (h70Var != null) {
+                    h70Var.setProgress(floatValue6);
+                    break;
+                }
+                break;
         }
-        int e10 = (int) i6Var.e();
-        i6Var.setBounds(getPaddingLeft(), getPaddingTop(), this.d - getPaddingRight(), getMeasuredHeight() - getPaddingBottom());
-        i6Var.q(charSequence, z12, z11);
-        float f10 = e10;
-        if (f10 < i6Var.e() || !(z12 || f10 == i6Var.e())) {
-            requestLayout();
-        }
-    }
-
-    public final int d() {
-        return getPaddingRight() + getPaddingLeft() + ((int) Math.ceil(this.c.d()));
-    }
-
-    public i6 getDrawable() {
-        return this.c;
-    }
-
-    public TextPaint getPaint() {
-        return this.c.a;
-    }
-
-    public float getRightPadding() {
-        return this.c.H;
-    }
-
-    public Drawable getSizeableBackground() {
-        return this.b;
-    }
-
-    public CharSequence getText() {
-        return this.c.g;
-    }
-
-    public int getTextColor() {
-        return this.c.a.getColor();
-    }
-
-    public int getTextHeight() {
-        return getPaint().getFontMetricsInt().descent - getPaint().getFontMetricsInt().ascent;
-    }
-
-    @Override // android.view.View, android.graphics.drawable.Drawable.Callback
-    public final void invalidateDrawable(Drawable drawable) {
-        super.invalidateDrawable(drawable);
-        invalidate();
-    }
-
-    @Override // android.view.View
-    public void onDraw(Canvas canvas) {
-        Drawable drawable = this.b;
-        i6 i6Var = this.c;
-        if (drawable != null && (!this.a || i6Var.g() > 0.0f)) {
-            int d = (int) (i6Var.d() + getPaddingLeft() + getPaddingRight());
-            if ((i6Var.b & 7) == 5) {
-                this.b.setBounds(getWidth() - d, 0, getWidth(), getHeight());
-            } else {
-                this.b.setBounds(0, 0, d, getHeight());
-            }
-            this.b.draw(canvas);
-        }
-        i6Var.setBounds(getPaddingLeft(), getPaddingTop(), getMeasuredWidth() - getPaddingRight(), getMeasuredHeight() - getPaddingBottom());
-        i6Var.draw(canvas);
-    }
-
-    @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        accessibilityNodeInfo.setClassName("android.widget.TextView");
-        accessibilityNodeInfo.setText(getText());
-    }
-
-    @Override // android.view.View
-    public void onMeasure(int i9, int i10) {
-        int size = View.MeasureSpec.getSize(i9);
-        int size2 = View.MeasureSpec.getSize(i10);
-        int i11 = this.e;
-        if (i11 > 0) {
-            size = Math.min(size, i11);
-        }
-        int i12 = this.d;
-        i6 i6Var = this.c;
-        if (i12 != size && getLayoutParams().width != 0) {
-            i6Var.setBounds(getPaddingLeft(), getPaddingTop(), size - getPaddingRight(), size2 - getPaddingBottom());
-            i6Var.q(i6Var.g, false, true);
-        }
-        this.d = size;
-        if (this.n && View.MeasureSpec.getMode(i9) == Integer.MIN_VALUE) {
-            size = getPaddingRight() + getPaddingLeft() + ((int) Math.ceil(i6Var.e()));
-        }
-        setMeasuredDimension(size, size2);
-    }
-
-    public void setAllowCancel(boolean z10) {
-        this.c.D = z10;
-    }
-
-    public void setEllipsizeByGradient(boolean z10) {
-        this.c.n(z10);
-    }
-
-    public void setEmojiCacheType(int i9) {
-        this.c.l = i9;
-    }
-
-    public void setEmojiColor(int i9) {
-        i6 i6Var = this.c;
-        if (i6Var.T != i9) {
-            i6Var.T = i9;
-            i6Var.U = new PorterDuffColorFilter(i9, PorterDuff.Mode.SRC_IN);
-        }
-        invalidate();
-    }
-
-    public void setEmojiColorFilter(ColorFilter colorFilter) {
-        this.c.U = colorFilter;
-        invalidate();
-    }
-
-    public void setGravity(int i9) {
-        this.c.b = i9;
-    }
-
-    public void setHideBackgroundIfEmpty(boolean z10) {
-        this.a = z10;
-    }
-
-    public void setIgnoreRTL(boolean z10) {
-        this.c.E = z10;
-    }
-
-    public void setIncludeFontPadding(boolean z10) {
-        this.c.M = z10;
-    }
-
-    public void setMaxWidth(int i9) {
-        this.e = i9;
-    }
-
-    public void setOnWidthUpdatedListener(Runnable runnable) {
-        this.c.V = runnable;
-    }
-
-    public void setRightPadding(float f10) {
-        i6 i6Var = this.c;
-        i6Var.H = f10;
-        i6Var.invalidateSelf();
-    }
-
-    public void setScaleProperty(float f10) {
-        this.c.v = f10;
-    }
-
-    public void setSizeableBackground(Drawable drawable) {
-        this.b = drawable;
-        invalidate();
-    }
-
-    public void setText(CharSequence charSequence) {
-        c(charSequence, true, true);
-    }
-
-    public void setTextColor(int i9) {
-        this.c.r(i9);
-        invalidate();
-    }
-
-    public void setTextSize(float f10) {
-        this.c.t(f10);
-    }
-
-    public void setTypeface(Typeface typeface) {
-        this.c.u(typeface);
     }
 }

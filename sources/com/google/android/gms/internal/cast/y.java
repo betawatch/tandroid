@@ -14,10 +14,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class y implements v {
-    public static final q5.b s = new q5.b("ConnectivityMonitor", null);
+    public static final s5.b s = new s5.b("ConnectivityMonitor", null);
     public final l4 a;
     public final ConnectivityManager c;
     public boolean f;
@@ -66,8 +66,8 @@ public final class y implements v {
                         ((m4) this.a).execute(new w(this, 0));
                     }
                 }
-            } catch (Throwable th) {
-                throw th;
+            } catch (Throwable th2) {
+                throw th2;
             }
         }
     }

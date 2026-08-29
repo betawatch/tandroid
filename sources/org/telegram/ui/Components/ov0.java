@@ -1,34 +1,46 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.DownloadController;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.MessageObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class ov0 {
-    public MessagesController.PeerColor a;
-    public org.telegram.ui.ActionBar.b6 b;
-    public int c;
-    public int d;
-    public float e;
+public final /* synthetic */ class ov0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ TLRPC.Document b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ MessageObject d;
+    public final /* synthetic */ org.telegram.ui.Cells.s1 e;
+    public final /* synthetic */ TLRPC.TL_messages_stickerSet f;
 
-    public final void a(MessagesController.PeerColor peerColor) {
-        this.a = peerColor;
-        if (peerColor == null) {
-            this.c = org.telegram.ui.ActionBar.f6.v0(org.telegram.ui.ActionBar.f6.A8, this.b);
-            this.d = org.telegram.ui.ActionBar.f6.v0(org.telegram.ui.ActionBar.f6.s8, this.b);
-            this.c = i0.a.d(this.e, this.c, 603979776);
-            this.d = i0.a.d(this.e, this.d, -1);
-            return;
+    public /* synthetic */ ov0(TLRPC.Document document, int i10, MessageObject messageObject, org.telegram.ui.Cells.s1 s1Var, TLRPC.TL_messages_stickerSet tL_messages_stickerSet, int i11) {
+        this.a = i11;
+        this.b = document;
+        this.c = i10;
+        this.d = messageObject;
+        this.e = s1Var;
+        this.f = tL_messages_stickerSet;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                TLRPC.Document document = this.b;
+                String attachFileName = FileLoader.getAttachFileName(document);
+                int i10 = this.c;
+                DownloadController.getInstance(i10).addLoadingFileObserver(attachFileName, this.d, this.e);
+                FileLoader.getInstance(i10).loadFile(document, this.f, 1, 1);
+                break;
+            default:
+                TLRPC.Document document2 = this.b;
+                String attachFileName2 = FileLoader.getAttachFileName(document2);
+                int i11 = this.c;
+                DownloadController.getInstance(i11).addLoadingFileObserver(attachFileName2, this.d, this.e);
+                FileLoader.getInstance(i11).loadFile(document2, this.f, 1, 1);
+                break;
         }
-        int bgColor1 = peerColor.getBgColor1(org.telegram.ui.ActionBar.f6.I.q());
-        int bgColor2 = peerColor.getBgColor2(org.telegram.ui.ActionBar.f6.I.q());
-        org.telegram.ui.ActionBar.b6 b6Var = this.b;
-        int d = i0.a.d(0.75f, bgColor2, bgColor1);
-        int v02 = AndroidUtilities.computePerceivedBrightness(d) > 0.721f ? org.telegram.ui.ActionBar.f6.v0(org.telegram.ui.ActionBar.f6.v6, b6Var) : org.telegram.ui.ActionBar.f6.b(0.08f, -0.08f, d);
-        this.c = v02;
-        this.d = AndroidUtilities.computePerceivedBrightness(v02) > 0.721f ? -16777216 : -1;
-        this.c = i0.a.d(this.e, this.c, 603979776);
-        this.d = i0.a.d(this.e, this.d, -1);
     }
 }

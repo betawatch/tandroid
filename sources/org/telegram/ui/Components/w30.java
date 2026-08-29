@@ -1,87 +1,67 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.ColorFilter;
 import android.graphics.Paint;
-import android.graphics.drawable.Drawable;
-import org.telegram.messenger.AndroidUtilities;
+import android.graphics.Rect;
+import android.util.SparseArray;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class w30 extends Drawable {
-    public byte[] a;
-    public final Paint b = new Paint();
-    public final int[] c = {-1, -2758925, -13805707, -13657655};
+public final class w30 extends qu0 {
+    public final /* synthetic */ z30 b2;
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        byte[] bArr = this.a;
-        if (bArr == null) {
-            return;
-        }
-        int length = bArr.length;
-        int[] iArr = this.c;
-        Paint paint = this.b;
-        if (length == 16) {
-            float floor = (float) Math.floor(Math.min(getBounds().width(), getBounds().height()) / 8.0f);
-            float f10 = 8.0f * floor;
-            float max = Math.max(0.0f, (getBounds().width() - f10) / 2.0f);
-            float max2 = Math.max(0.0f, (getBounds().height() - f10) / 2.0f);
-            int i9 = 0;
-            for (int i10 = 0; i10 < 8; i10++) {
-                int i11 = 0;
-                while (i11 < 8) {
-                    int i12 = i9 + 2;
-                    paint.setColor(iArr[Math.abs((this.a[i9 / 8] >> (i9 % 8)) & 3) % 4]);
-                    float f11 = (i11 * floor) + max;
-                    float f12 = i10 * floor;
-                    canvas.drawRect(f11, f12 + max2, f11 + floor, f12 + floor + max2, paint);
-                    i11++;
-                    i9 = i12;
-                }
-            }
-            return;
-        }
-        float floor2 = (float) Math.floor(Math.min(getBounds().width(), getBounds().height()) / 12.0f);
-        float f13 = 12.0f * floor2;
-        float max3 = Math.max(0.0f, (getBounds().width() - f13) / 2.0f);
-        float max4 = Math.max(0.0f, (getBounds().height() - f13) / 2.0f);
-        int i13 = 0;
-        int i14 = 0;
-        while (i14 < 12) {
-            int i15 = i13;
-            for (int i16 = 0; i16 < 12; i16++) {
-                paint.setColor(iArr[Math.abs((this.a[i15 / 8] >> (i15 % 8)) & 3) % 4]);
-                float f14 = (i16 * floor2) + max3;
-                float f15 = i14 * floor2;
-                canvas.drawRect(f14, f15 + max4, f14 + floor2, f15 + floor2 + max4, paint);
-                i15 += 2;
-            }
-            i14++;
-            i13 = i15;
-        }
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public w30(z30 z30Var, Context context, iu0 iu0Var, z30 z30Var2, v30 v30Var, org.telegram.ui.ActionBar.c6 c6Var) {
+        super(context, 0L, iu0Var, 0, null, null, null, 8, 0, z30Var2, v30Var, 0, c6Var, null);
+        this.b2 = z30Var;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return AndroidUtilities.dp(32.0f);
+    @Override // org.telegram.ui.Components.qu0
+    public final int getInitialTab() {
+        return 8;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return AndroidUtilities.dp(32.0f);
+    @Override // org.telegram.ui.Components.qu0
+    public final String getStoriesHashtag() {
+        return this.b2.b;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return 0;
+    @Override // org.telegram.ui.Components.qu0
+    public final String getStoriesHashtagUsername() {
+        return this.b2.c;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i9) {
+    @Override // org.telegram.ui.Components.qu0
+    public final boolean t0() {
+        return true;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+    @Override // org.telegram.ui.Components.qu0
+    public final void D0(SparseArray sparseArray) {
+    }
+
+    @Override // org.telegram.ui.Components.qu0
+    public final void K0(boolean z10) {
+    }
+
+    @Override // org.telegram.ui.Components.qu0
+    public final void M0(float f9) {
+    }
+
+    @Override // org.telegram.ui.Components.qu0
+    public final void N0(boolean z10) {
+    }
+
+    @Override // org.telegram.ui.Components.qu0
+    public final void b1(boolean z10) {
+    }
+
+    @Override // org.telegram.ui.Components.qu0
+    public final void o0() {
+    }
+
+    @Override // org.telegram.ui.Components.qu0
+    public final void P(Canvas canvas, float f9, Rect rect, Paint paint) {
     }
 }

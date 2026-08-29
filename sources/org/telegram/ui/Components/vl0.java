@@ -1,44 +1,98 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
 import android.graphics.Canvas;
-import android.view.accessibility.AccessibilityNodeInfo;
+import android.graphics.Color;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import android.text.TextPaint;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class vl0 extends s5 {
-    public final y5 d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ ScrollSlidingTextTabStrip f;
+public final class vl0 extends Drawable {
+    public final RectF a = new RectF();
+    public final Paint b;
+    public final TextPaint c;
+    public int d;
+    public String e;
+    public final int f;
+    public int g;
+    public final int h;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public vl0(ScrollSlidingTextTabStrip scrollSlidingTextTabStrip, Context context, int i9) {
-        super(context);
-        this.f = scrollSlidingTextTabStrip;
-        this.e = i9;
-        this.d = new y5(this, 360L, gr.h);
-    }
-
-    @Override // org.telegram.ui.Components.s5, android.widget.TextView, android.view.View
-    public final void onDraw(Canvas canvas) {
-        Canvas canvas2;
-        float e10 = this.d.e(this.f.j0);
-        if (e10 > 0.0f) {
-            canvas2 = canvas;
-            canvas2.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), (int) (AndroidUtilities.lerp(1.0f, 0.5f, e10) * 255.0f));
+    public vl0(int i10) {
+        Paint paint = new Paint(1);
+        this.b = paint;
+        TextPaint textPaint = new TextPaint(1);
+        this.c = textPaint;
+        this.g = 255;
+        this.h = 255;
+        this.f = i10;
+        textPaint.setTextSize(AndroidUtilities.dp(11));
+        textPaint.setTypeface(AndroidUtilities.bold());
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeWidth(AndroidUtilities.dp(1.0f));
+        if (i10 == 0) {
+            this.e = LocaleController.getString(R.string.ScamMessage);
         } else {
-            canvas2 = canvas;
+            this.e = LocaleController.getString(R.string.FakeMessage);
         }
-        super.onDraw(canvas2);
-        if (e10 > 0.0f) {
-            canvas2.restore();
+        this.d = (int) Math.ceil(textPaint.measureText(this.e));
+    }
+
+    public final void a() {
+        String string = this.f == 0 ? LocaleController.getString(R.string.ScamMessage) : LocaleController.getString(R.string.FakeMessage);
+        if (string.equals(this.e)) {
+            return;
+        }
+        this.e = string;
+        this.d = (int) Math.ceil(this.c.measureText(string));
+    }
+
+    public final void b(int i10) {
+        this.c.setColor(i10);
+        this.b.setColor(i10);
+        this.g = Color.alpha(i10);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        Rect bounds = getBounds();
+        RectF rectF = this.a;
+        rectF.set(bounds);
+        canvas.drawRoundRect(rectF, AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), this.b);
+        canvas.drawText(this.e, rectF.left + AndroidUtilities.dp(5.0f), rectF.top + AndroidUtilities.dp(12.0f), this.c);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        return AndroidUtilities.dp(16.0f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        return AndroidUtilities.dp(10.0f) + this.d;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+        if (this.h != i10) {
+            int i11 = (int) ((i10 / 255.0f) * this.g);
+            this.b.setAlpha(i11);
+            this.c.setAlpha(i11);
         }
     }
 
-    @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        accessibilityNodeInfo.setSelected(this.f.r == this.e);
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

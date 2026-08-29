@@ -2,7 +2,7 @@ package com.google.android.exoplayer2.upstream;
 
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class r {
     public int c;
@@ -12,21 +12,21 @@ public final class r {
     public int e = 0;
     public a[] f = new a[100];
 
-    public final synchronized void a(int i9) {
-        boolean z10 = i9 < this.c;
-        this.c = i9;
+    public final synchronized void a(int i10) {
+        boolean z10 = i10 < this.c;
+        this.c = i10;
         if (z10) {
             b();
         }
     }
 
     public final synchronized void b() {
-        int max = Math.max(0, d5.f0.f(this.c, this.b) - this.d);
-        int i9 = this.e;
-        if (max >= i9) {
+        int max = Math.max(0, f5.d0.f(this.c, this.b) - this.d);
+        int i10 = this.e;
+        if (max >= i10) {
             return;
         }
-        Arrays.fill(this.f, max, i9, (Object) null);
+        Arrays.fill(this.f, max, i10, (Object) null);
         this.e = max;
     }
 }

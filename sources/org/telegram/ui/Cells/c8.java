@@ -1,35 +1,45 @@
 package org.telegram.ui.Cells;
 
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageReceiver;
+import android.view.View;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class c8 extends ImageReceiver {
-    public final /* synthetic */ org.telegram.ui.ActionBar.b6 a;
-    public final /* synthetic */ d8 b;
+public final /* synthetic */ class c8 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ i8 b;
 
-    public c8(d8 d8Var, org.telegram.ui.ActionBar.b6 b6Var) {
-        this.b = d8Var;
-        this.a = b6Var;
+    public /* synthetic */ c8(i8 i8Var, int i10) {
+        this.a = i10;
+        this.b = i8Var;
     }
 
-    @Override // org.telegram.messenger.ImageReceiver
-    public final boolean setImageBitmapByKey(Drawable drawable, String str, int i9, boolean z10, int i10) {
-        if (drawable instanceof BitmapDrawable) {
-            d8 d8Var = this.b;
-            if (d8Var.G == 0) {
-                d8Var.G = AndroidUtilities.getDominantColor(((BitmapDrawable) drawable).getBitmap());
-                int i11 = d8Var.G;
-                if (i11 == -1 || i11 == 0) {
-                    d8Var.G = org.telegram.ui.ActionBar.f6.v0(org.telegram.ui.ActionBar.f6.q5, this.a);
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
+            case 0:
+                this.b.getClass();
+                break;
+            default:
+                i8 i8Var = this.b;
+                TextView textView = i8Var.A;
+                TextView textView2 = i8Var.y;
+                cg.d1 d1Var = i8Var.B;
+                if (d1Var.getVisibility() != 0 || !d1Var.r.isEnabled()) {
+                    if (textView2.getVisibility() != 0 || !textView2.isEnabled()) {
+                        if (textView.getVisibility() == 0 && textView.isEnabled()) {
+                            textView.performClick();
+                            break;
+                        }
+                    } else {
+                        textView2.performClick();
+                        break;
+                    }
+                } else {
+                    d1Var.performClick();
+                    break;
                 }
-                d8Var.F.setBackground(org.telegram.ui.ActionBar.f6.b0(AndroidUtilities.dp(12.0f), d8Var.G));
-                invalidate();
-            }
+                break;
         }
-        return super.setImageBitmapByKey(drawable, str, i9, z10, i10);
     }
 }

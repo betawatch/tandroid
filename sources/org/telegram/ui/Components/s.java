@@ -1,344 +1,326 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-import android.graphics.BitmapFactory;
-import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
-import android.os.Build;
-import android.os.Bundle;
-import android.view.KeyEvent;
-import android.view.View;
-import java.io.File;
+import android.content.Context;
+import android.graphics.drawable.GradientDrawable;
+import android.text.SpannableStringBuilder;
+import android.text.TextUtils;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
+import java.util.ArrayList;
+import org.telegram.messenger.AiTonesController;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaController;
+import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.messenger.camera.CameraController;
+import org.telegram.messenger.UserObject;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_aicompose;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class s implements org.telegram.ui.ActionBar.b2, nk0, xb0, yb0, zb0, td.d, ImageReceiver.ImageReceiverDelegate, x4, r0.o, ch.a, t0.f, ok0, CameraController.VideoTakeCallback, org.telegram.ui.Cells.r5, ih.i9, org.telegram.ui.ActionBar.s0, org.telegram.ui.ActionBar.m1, dh.q {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class s extends xa implements NotificationCenter.NotificationCenterDelegate {
+    public final TL_aicompose.AiComposeTone T;
+    public final AiTonesController U;
+    public final ImageView V;
+    public final FrameLayout W;
+    public final TextView X;
+    public final TextView Y;
+    public final FrameLayout Z;
+    public final nh.d a0;
+    public k51 b0;
+    public int c0;
+    public final TL_aicompose.aiComposeToneExample[] d0;
 
-    public /* synthetic */ s(Object obj, int i9) {
-        this.a = i9;
-        this.b = obj;
-    }
-
-    @Override // org.telegram.ui.Components.x4
-    public void B(int i9, int i10, boolean z10) {
-        ((g8) this.b).V0(i9 * 60, i9 == 0 ? 71 : 70);
-    }
-
-    @Override // td.d
-    public /* synthetic */ boolean G() {
-        return false;
-    }
-
-    @Override // td.d
-    public /* synthetic */ boolean I(float f10) {
-        return false;
-    }
-
-    @Override // r0.o
-    public r0.m1 L0(View view, r0.m1 m1Var) {
-        cb cbVar = (cb) this.b;
-        i0.b defaultWindowInsets = AndroidUtilities.getDefaultWindowInsets(m1Var, false);
-        bb bbVar = cbVar.a;
-        if (bbVar != null) {
-            bbVar.setPadding(defaultWindowInsets.a, defaultWindowInsets.b, defaultWindowInsets.c, defaultWindowInsets.d);
+    public s(Context context, TL_aicompose.AiComposeTone aiComposeTone, org.telegram.ui.ActionBar.c6 c6Var) {
+        super(context, null, false, false, false, false, false, 2, c6Var);
+        this.c0 = 0;
+        AiTonesController tonesController = MessagesController.getInstance(this.currentAccount).getTonesController();
+        this.U = tonesController;
+        tonesController.load();
+        this.T = aiComposeTone;
+        TL_aicompose.aiComposeToneExample[] aicomposetoneexampleArr = new TL_aicompose.aiComposeToneExample[MessagesController.getInstance(this.currentAccount).config.aicomposeToneExamplesNum.get()];
+        this.d0 = aicomposetoneexampleArr;
+        if (aiComposeTone instanceof TL_aicompose.TL_aiComposeTone) {
+            aicomposetoneexampleArr[0] = ((TL_aicompose.TL_aiComposeTone) aiComposeTone).example_english;
         }
-        view.requestLayout();
-        return r0.m1.b;
+        ImageView imageView = new ImageView(context);
+        this.V = imageView;
+        imageView.setScaleType(ImageView.ScaleType.CENTER);
+        imageView.setImageResource(R.drawable.ic_close_white);
+        int i10 = org.telegram.ui.ActionBar.g6.G6;
+        imageView.setColorFilter(getThemedColor(i10));
+        imageView.setBackground(org.telegram.ui.ActionBar.g6.f0(org.telegram.ui.ActionBar.g6.l1(0.1f, getThemedColor(i10)), 1, -1));
+        this.containerView.addView(imageView, i7.f6.d(54, 54.0f, 53, 0.0f, 0.0f, 8.0f, 0.0f));
+        i7.h6.b(imageView, 0.1f, 1.5f);
+        imageView.setOnClickListener(new p(this, 0));
+        FrameLayout frameLayout = new FrameLayout(context);
+        this.W = frameLayout;
+        frameLayout.setClipToPadding(false);
+        frameLayout.setClipChildren(false);
+        FrameLayout frameLayout2 = new FrameLayout(context);
+        frameLayout2.setBackground(org.telegram.ui.ActionBar.g6.K(AndroidUtilities.dp(100.0f), org.telegram.ui.ActionBar.g6.v0(org.telegram.ui.ActionBar.g6.d6, c6Var)));
+        frameLayout.addView(frameLayout2, i7.f6.d(100, 100.0f, 17, 0.0f, 0.0f, 0.0f, 0.0f));
+        t9 t9Var = new t9(context);
+        t9Var.setAnimatedEmojiDrawable(new p5(4, this.currentAccount, aiComposeTone.emoji_id));
+        frameLayout2.addView(t9Var, i7.f6.e(64, 64, 17));
+        TextView textView = new TextView(context);
+        this.X = textView;
+        textView.setTextColor(getThemedColor(i10));
+        textView.setTextSize(1, 20.0f);
+        textView.setTypeface(AndroidUtilities.bold());
+        textView.setGravity(17);
+        textView.setText(aiComposeTone.title);
+        TextView textView2 = new TextView(context);
+        this.Y = textView2;
+        textView2.setTextColor(getThemedColor(i10));
+        textView2.setTextSize(1, 14.0f);
+        textView2.setGravity(17);
+        textView2.setText(LocaleController.getString(R.string.AIEditorStyleText));
+        this.e.setTitle(aiComposeTone.title);
+        int i11 = org.telegram.ui.ActionBar.g6.a7;
+        this.behindKeyboardColorKey = i11;
+        setBackgroundColor(getThemedColor(i11));
+        jl0 jl0Var = this.d;
+        int i12 = this.backgroundPaddingLeft;
+        jl0Var.setPadding(i12, 0, i12, AndroidUtilities.dp(66.0f));
+        this.d.setClipToPadding(false);
+        this.d.p1();
+        this.d.setOnItemClickListener(new k(this, 1));
+        this.H = false;
+        this.G = AndroidUtilities.dp(36.0f);
+        this.v = 0.35f;
+        this.K = true;
+        r rVar = new r(this);
+        rVar.m = false;
+        rVar.C = false;
+        rVar.o(jr.h);
+        rVar.n(350L);
+        this.d.setItemAnimator(rVar);
+        FrameLayout frameLayout3 = new FrameLayout(context);
+        frameLayout3.setPadding(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(12.0f));
+        frameLayout3.setBackground(new GradientDrawable(GradientDrawable.Orientation.TOP_BOTTOM, new int[]{org.telegram.ui.ActionBar.g6.l1(0.0f, getThemedColor(i11)), getThemedColor(i11), getThemedColor(i11)}));
+        FrameLayout.LayoutParams e10 = i7.f6.e(-1, -2, 80);
+        int i13 = e10.leftMargin;
+        int i14 = this.backgroundPaddingLeft;
+        e10.leftMargin = i13 + i14;
+        e10.rightMargin += i14;
+        this.containerView.addView(frameLayout3, e10);
+        FrameLayout frameLayout4 = new FrameLayout(context);
+        this.Z = frameLayout4;
+        FrameLayout.LayoutParams d = i7.f6.d(-1, -2.0f, 80, 6.0f, 0.0f, 6.0f, 60.0f);
+        int i15 = d.leftMargin;
+        int i16 = this.backgroundPaddingLeft;
+        d.leftMargin = i15 + i16;
+        d.rightMargin += i16;
+        this.containerView.addView(frameLayout4, d);
+        nh.d o10 = org.telegram.messenger.x3.o(24, context, c6Var, true);
+        this.a0 = o10;
+        o10.setText(LocaleController.getString(U() ? R.string.AIEditorStyleDone : R.string.AIEditorAddStyle));
+        o10.setOnClickListener(new bg.q(this, aiComposeTone, c6Var, 17));
+        frameLayout3.addView(o10, i7.f6.e(-1, 48, 119));
+        this.b0.N(false);
     }
 
-    @Override // ih.i9
-    public void T(long j10, int i9, ih.n3 n3Var) {
-        n3Var.run();
-    }
-
-    @Override // org.telegram.ui.Components.ok0
-    public boolean a(int i9, View view) {
-        Object O;
-        fk fkVar = (fk) this.b;
-        f2.r0 adapter = fkVar.r.getAdapter();
-        yj yjVar = fkVar.v;
-        if (adapter == yjVar) {
-            O = yjVar.E(i9);
-        } else {
-            ek ekVar = fkVar.y;
-            O = ekVar.O(ekVar.S(i9), ekVar.Q(i9));
-        }
-        return fkVar.O(view, O);
-    }
-
-    @Override // org.telegram.ui.Components.nk0
-    public void c(float f10, float f11, int i9, View view) {
-        g0.O((g0) this.b, view, i9, f10);
-    }
-
-    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
-    public void didSetImage(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
-        int i9 = this.a;
-        Object obj = this.b;
-        switch (i9) {
-            case 12:
-                ValueAnimator duration = ValueAnimator.ofFloat(0.0f, 1.0f).setDuration(150L);
-                duration.addUpdateListener(new e6((q6) obj, 1));
-                duration.start();
-                break;
-            default:
-                o9 o9Var = (o9) obj;
-                o9Var.getClass();
-                if (z10 && !z11) {
-                    o9Var.a();
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
-    public /* synthetic */ void didSetImageBitmap(int i9, String str, Drawable drawable) {
-        int i10 = this.a;
-        org.telegram.messenger.g5.a(this, i9, str, drawable);
-    }
-
-    @Override // dh.q
-    public void e(dh.l lVar, float f10, float f11) {
-        ((ot) this.b).c(lVar, f10, f11);
-    }
-
-    @Override // org.telegram.ui.ActionBar.b2
-    public void f(org.telegram.ui.ActionBar.c2 c2Var, int i9) {
-        switch (this.a) {
-            case 0:
-                y.R((y) this.b, c2Var);
-                break;
-            case 2:
-                ((org.telegram.ui.k6) this.b).run();
-                break;
-            case 3:
-                ((bg.i2) this.b).run();
-                break;
-            case 4:
-                ((ff.k0) this.b).run();
-                break;
-            case 5:
-                ((s1) this.b).run();
-                break;
-            case 6:
-                ((pr) this.b).run();
-                break;
-            case 8:
-                ((m2) this.b).run();
-                break;
-            case 17:
-                ((xf) this.b).a.Q0.r();
-                break;
-            case 19:
-                ((org.telegram.ui.wq) this.b).run();
-                MessagesController.getGlobalMainSettings().edit().putBoolean("trimvoicehint", false).apply();
-                break;
-            case 23:
-                ((jn) this.b).b.dismiss();
-                break;
-            default:
-                ((nm) this.b).a.A.r();
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.nk0
-    public /* synthetic */ boolean f1(View view) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.xb0
-    public String g(int i9) {
-        return ((String[]) this.b)[i9];
-    }
-
-    @Override // t0.f
-    public boolean h(t0.j jVar, int i9, Bundle bundle) {
-        dg dgVar = (dg) this.b;
-        ChatActivityEnterView chatActivityEnterView = dgVar.d;
-        if (chatActivityEnterView.g5) {
-            return true;
-        }
-        int i10 = n0.a.a;
-        if (Build.VERSION.SDK_INT >= 25 && (i9 & 1) != 0) {
-            try {
-                jVar.a.f();
-            } catch (Exception unused) {
-                return false;
-            }
-        }
-        t0.i iVar = jVar.a;
-        if (!iVar.j().hasMimeType("image/gif") && !SendMessagesHelper.shouldSendWebPAsSticker(null, iVar.c())) {
-            dgVar.m(iVar.c(), iVar.j().getMimeType(0));
-            return true;
-        }
-        if (chatActivityEnterView.c()) {
-            y4.M(chatActivityEnterView.J2, chatActivityEnterView.K2.a(), new g1(11, dgVar, jVar), chatActivityEnterView.R3);
-            return true;
-        }
-        dgVar.o(jVar, true, 0, 0);
-        return true;
-    }
-
-    @Override // org.telegram.ui.ActionBar.s0
-    public void i(int i9) {
-        bq bqVar = ((cq) this.b).a;
-        if (i9 == 1 || i9 == 2) {
-            bqVar.e(i9 == 2);
-        } else if (i9 == 3) {
-            bqVar.k();
-        }
-    }
-
-    @Override // org.telegram.ui.Components.yb0
-    public void j(int i9) {
-        u2 u2Var = (u2) this.b;
-        if (i9 == 0) {
-            u2Var.run();
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.m1
-    public void k(KeyEvent keyEvent) {
-        org.telegram.ui.ActionBar.o1 o1Var = ((nr) this.b).a;
-        if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && o1Var != null && o1Var.isShowing()) {
-            o1Var.d(true);
-        }
-    }
-
-    @Override // ch.a
-    public void l(Canvas canvas, int i9) {
-        ((lb) this.b).dispatchDrawImplBlur(canvas, i9);
-    }
-
-    @Override // org.telegram.ui.Components.zb0
-    public void m(bc0 bc0Var, int i9) {
-        org.telegram.ui.Cells.u3 u3Var = (org.telegram.ui.Cells.u3) this.b;
-        try {
-            if (i9 == 0) {
-                u3Var.setText(LocaleController.getString(R.string.DisableAutoDeleteTimer));
-            } else {
-                u3Var.setText(LocaleController.getString(R.string.SetAutoDeleteTimer));
-            }
-        } catch (Exception unused) {
-        }
-    }
-
-    @Override // td.d
-    public void n1() {
-        a6 a6Var = (a6) this.b;
-        a6Var.b();
-        a6Var.e();
-    }
-
-    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
-    public /* synthetic */ void onAnimationReady(ImageReceiver imageReceiver) {
-        int i9 = this.a;
-        org.telegram.messenger.g5.b(this, imageReceiver);
-    }
-
-    @Override // org.telegram.messenger.camera.CameraController.VideoTakeCallback
-    public void onFinishVideoRecording(String str, long j10) {
-        int i9;
-        int i10;
-        MediaController.PhotoEntry photoEntry;
-        BitmapFactory.Options options;
-        il ilVar = (il) this.b;
-        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = ilVar.e;
-        ki kiVar = chatAttachAlertPhotoLayout.b;
-        if (ilVar.a == null || kiVar.R || chatAttachAlertPhotoLayout.L == null) {
+    public static void P(s sVar, TL_aicompose.AiComposeTone aiComposeTone, org.telegram.ui.ActionBar.c6 c6Var) {
+        nh.d dVar = sVar.a0;
+        if (!dVar.S || dVar.J) {
             return;
         }
-        ChatAttachAlertPhotoLayout.m1 = false;
-        try {
-            options = new BitmapFactory.Options();
-            options.inJustDecodeBounds = true;
-            BitmapFactory.decodeFile(new File(str).getAbsolutePath(), options);
-            i9 = options.outWidth;
-        } catch (Exception unused) {
-            i9 = 0;
+        if (sVar.U()) {
+            sVar.dismiss();
+            return;
         }
-        try {
-            i10 = options.outHeight;
-        } catch (Exception unused2) {
-            i10 = 0;
-            int i11 = i9;
-            int i12 = ChatAttachAlertPhotoLayout.q1;
-            ChatAttachAlertPhotoLayout.q1 = i12 - 1;
-            photoEntry = new MediaController.PhotoEntry(0, i12, 0L, ilVar.a.getAbsolutePath(), 0, true, i11, i10, 0L);
-            photoEntry.duration = (int) (j10 / 1000.0f);
-            photoEntry.thumbPath = str;
-            if (kiVar.M0 != 0) {
-                MediaController.CropState cropState = new MediaController.CropState();
-                photoEntry.cropState = cropState;
-                cropState.mirrored = true;
-                cropState.freeform = false;
-                cropState.lockedAspectRatio = 1.0f;
+        dVar.setLoading(true);
+        TL_aicompose.saveTone savetone = new TL_aicompose.saveTone();
+        savetone.tone = TL_aicompose.InputAiComposeTone.from(aiComposeTone);
+        ConnectionsManager.getInstance(sVar.currentAccount).sendRequestTyped(savetone, new org.telegram.messenger.a(), new ih.b0(sVar, c6Var, aiComposeTone, 6));
+    }
+
+    public static void Q(final s sVar) {
+        TL_aicompose.AiComposeTone aiComposeTone = sVar.T;
+        if (aiComposeTone instanceof TL_aicompose.TL_aiComposeTone) {
+            int i10 = sVar.c0 + 1;
+            sVar.c0 = i10;
+            TL_aicompose.aiComposeToneExample[] aicomposetoneexampleArr = sVar.d0;
+            if (i10 >= aicomposetoneexampleArr.length) {
+                sVar.c0 = 0;
             }
-            chatAttachAlertPhotoLayout.i0(photoEntry, false, false);
+            final int i11 = sVar.c0;
+            if (aicomposetoneexampleArr[i11] == null) {
+                TL_aicompose.getToneExample gettoneexample = new TL_aicompose.getToneExample();
+                gettoneexample.tone = TL_aicompose.InputAiComposeTone.from(aiComposeTone);
+                gettoneexample.num = i11;
+                ConnectionsManager.getInstance(sVar.currentAccount).sendRequestTyped(gettoneexample, new org.telegram.messenger.a(), new Utilities.Callback2() { // from class: org.telegram.ui.Components.q
+                    @Override // org.telegram.messenger.Utilities.Callback2
+                    public final void run(Object obj, Object obj2) {
+                        TL_aicompose.aiComposeToneExample aicomposetoneexample = (TL_aicompose.aiComposeToneExample) obj;
+                        s sVar2 = s.this;
+                        if (aicomposetoneexample == null) {
+                            sVar2.getClass();
+                        } else {
+                            sVar2.d0[i11] = aicomposetoneexample;
+                            sVar2.b0.N(true);
+                        }
+                    }
+                });
+            }
+            sVar.b0.N(true);
         }
-        int i112 = i9;
-        int i122 = ChatAttachAlertPhotoLayout.q1;
-        ChatAttachAlertPhotoLayout.q1 = i122 - 1;
-        photoEntry = new MediaController.PhotoEntry(0, i122, 0L, ilVar.a.getAbsolutePath(), 0, true, i112, i10, 0L);
-        photoEntry.duration = (int) (j10 / 1000.0f);
-        photoEntry.thumbPath = str;
-        if (kiVar.M0 != 0 && chatAttachAlertPhotoLayout.L.isFrontface()) {
-            MediaController.CropState cropState2 = new MediaController.CropState();
-            photoEntry.cropState = cropState2;
-            cropState2.mirrored = true;
-            cropState2.freeform = false;
-            cropState2.lockedAspectRatio = 1.0f;
+    }
+
+    public static void R(s sVar, ArrayList arrayList, k51 k51Var) {
+        String str;
+        k51Var.A = 1;
+        arrayList.add(w41.B(null));
+        FrameLayout frameLayout = sVar.W;
+        w41 w41Var = new w41(-4);
+        w41Var.c = frameLayout;
+        w41Var.z = -1;
+        w41Var.e = true;
+        arrayList.add(w41Var);
+        arrayList.add(w41.B(null));
+        arrayList.add(w41.l(sVar.X));
+        arrayList.add(w41.C(AndroidUtilities.dp(1.0f)));
+        arrayList.add(w41.l(sVar.Y));
+        arrayList.add(w41.C(AndroidUtilities.dp(24.0f)));
+        TL_aicompose.AiComposeTone aiComposeTone = sVar.T;
+        if (aiComposeTone instanceof TL_aicompose.TL_aiComposeTone) {
+            TL_aicompose.TL_aiComposeTone tL_aiComposeTone = (TL_aicompose.TL_aiComposeTone) aiComposeTone;
+            TL_aicompose.aiComposeToneExample aicomposetoneexample = sVar.d0[sVar.c0];
+            k51Var.U();
+            arrayList.add(p31.a(3, LocaleController.getString(R.string.AIEditorBefore), null, null, null, false, null, new p(sVar, 1)));
+            arrayList.add(t31.a(4, aicomposetoneexample == null ? V() : MessageObject.formatTextWithEntities(aicomposetoneexample.from), false, null, null, null));
+            arrayList.add(p31.b(5, LocaleController.getString(R.string.AIEditorAfter), null, null, null));
+            arrayList.add(t31.a(6, aicomposetoneexample == null ? V() : MessageObject.formatTextWithEntities(aicomposetoneexample.to), false, null, null, null));
+            k51Var.T();
+            TLRPC.User user = tL_aiComposeTone.author_id != 0 ? MessagesController.getInstance(sVar.currentAccount).getUser(Long.valueOf(tL_aiComposeTone.author_id)) : null;
+            String publicUsername = UserObject.getPublicUsername(user);
+            if (user == null) {
+                int i10 = tL_aiComposeTone.installs_count;
+                if (i10 > 0) {
+                    arrayList.add(w41.B(LocaleController.formatPluralString("AIEditorUsedBy", i10, new Object[0])));
+                }
+            } else {
+                StringBuilder sb2 = new StringBuilder();
+                if (tL_aiComposeTone.installs_count > 0) {
+                    str = LocaleController.formatPluralString("AIEditorUsedBy", tL_aiComposeTone.installs_count, new Object[0]) + " ";
+                } else {
+                    str = "";
+                }
+                sb2.append(str);
+                sb2.append(TextUtils.isEmpty(publicUsername) ? LocaleController.formatString(R.string.AIEditorCreatedBy, UserObject.getUserName(user)) : LocaleController.formatString(R.string.AIEditorCreatedBy, u3.c.e("@", publicUsername)));
+                arrayList.add(w41.B(AndroidUtilities.replaceSingleLink(sb2.toString(), sVar.getThemedColor(org.telegram.ui.ActionBar.g6.gc), new org.telegram.ui.vf(29, sVar, tL_aiComposeTone))));
+            }
         }
-        chatAttachAlertPhotoLayout.i0(photoEntry, false, false);
+        arrayList.add(w41.C(AndroidUtilities.dp(32.0f)));
     }
 
-    @Override // ih.i9
-    public boolean y0(long j10, int i9, int i10, int i11, ih.j9 j9Var) {
-        pn pnVar = (pn) ((org.telegram.ui.Cells.l6) this.b).T;
-        ImageReceiver imageReceiver = pnVar.a;
-        j9Var.c = imageReceiver;
-        j9Var.l = imageReceiver;
-        org.telegram.ui.Cells.l6 l6Var = pnVar.C;
-        j9Var.m = l6Var;
-        boolean z10 = l6Var.w;
-        pn pnVar2 = pnVar.G.e;
-        j9Var.a = pnVar2;
-        j9Var.k = pnVar2.getAlpha();
-        j9Var.h = 0.0f;
-        j9Var.i = AndroidUtilities.displaySize.y;
-        j9Var.g = (View) pnVar.getParent();
-        return true;
+    public static void S(s sVar, org.telegram.ui.ActionBar.c6 c6Var, TL_aicompose.AiComposeTone aiComposeTone, TLRPC.TL_error tL_error) {
+        FrameLayout frameLayout = sVar.Z;
+        sVar.a0.setLoading(false);
+        if (tL_error != null) {
+            if ("TONES_SAVED_TOO_MANY".equalsIgnoreCase(tL_error.text)) {
+                g0.o0(sVar.currentAccount, new tc(frameLayout, c6Var));
+                return;
+            } else {
+                org.telegram.ui.th.t(frameLayout, c6Var, tL_error, false);
+                return;
+            }
+        }
+        MessagesController.getInstance(sVar.currentAccount).getTonesController().add(aiComposeTone);
+        sVar.dismiss();
+        org.telegram.ui.ActionBar.o2 U = LaunchActivity.U();
+        if (U != null) {
+            tc.a0(U).p(aiComposeTone.emoji_id, LocaleController.getString(R.string.AIEditorToneAddedTitle), LocaleController.formatString(R.string.AIEditorToneAddedText, aiComposeTone.title)).j();
+        }
     }
 
-    @Override // td.d
-    public /* synthetic */ void D(boolean z10) {
+    public static SpannableStringBuilder V() {
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
+        for (int i10 = 0; i10 < 5; i10++) {
+            if (i10 > 0) {
+                spannableStringBuilder.append((CharSequence) "\n");
+            }
+            int dp = AndroidUtilities.dp((int) (Math.random() * 50.0d));
+            int length = spannableStringBuilder.length();
+            spannableStringBuilder.append((CharSequence) LocaleController.getString(R.string.Loading));
+            d90 d90Var = new d90(null, dp, 0, null);
+            d90Var.f = AndroidUtilities.dp(6.0f);
+            d90Var.h = 0.5f;
+            d90Var.n = true;
+            spannableStringBuilder.setSpan(d90Var, length, spannableStringBuilder.length(), 33);
+        }
+        return spannableStringBuilder;
     }
 
-    @Override // td.d
-    public /* synthetic */ void L() {
+    @Override // org.telegram.ui.Components.xa
+    public final void B(float f9) {
+        ua uaVar = this.e;
+        org.telegram.ui.ActionBar.h5 titleTextView = uaVar.getTitleTextView();
+        if (titleTextView != null) {
+            titleTextView.setAlpha(f9);
+        }
+        float translationY = uaVar.getTranslationY() + AndroidUtilities.statusBarHeight;
+        int height = uaVar.getHeight() - AndroidUtilities.statusBarHeight;
+        this.V.setTranslationY(((1.0f - f9) * AndroidUtilities.dp(28.0f)) + ((height - r2.getHeight()) / 2.0f) + translationY);
     }
 
-    @Override // td.d
-    public /* synthetic */ void b() {
+    public final boolean U() {
+        TL_aicompose.AiComposeTone aiComposeTone = this.T;
+        if (aiComposeTone instanceof TL_aicompose.TL_aiComposeTone) {
+            TL_aicompose.TL_aiComposeTone tL_aiComposeTone = (TL_aicompose.TL_aiComposeTone) aiComposeTone;
+            int i10 = 0;
+            while (true) {
+                AiTonesController aiTonesController = this.U;
+                if (i10 >= aiTonesController.tones.size()) {
+                    break;
+                }
+                TL_aicompose.AiComposeTone aiComposeTone2 = aiTonesController.tones.get(i10);
+                if ((aiComposeTone2 instanceof TL_aicompose.TL_aiComposeTone) && ((TL_aicompose.TL_aiComposeTone) aiComposeTone2).id == tL_aiComposeTone.id) {
+                    return true;
+                }
+                i10++;
+            }
+        }
+        return false;
     }
 
-    @Override // ih.i9
-    public /* synthetic */ void d(boolean z10) {
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+        if (i10 == NotificationCenter.loadedAiComposeTones) {
+            this.a0.setText(LocaleController.getString(U() ? R.string.AIEditorStyleDone : R.string.AIEditorAddStyle));
+        }
     }
 
-    @Override // org.telegram.ui.Components.nk0
-    public /* synthetic */ void g0(View view, float f10, float f11) {
+    @Override // org.telegram.ui.ActionBar.f3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.k2
+    public final void dismiss() {
+        super.dismiss();
+        NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.loadedAiComposeTones);
+    }
+
+    @Override // org.telegram.ui.ActionBar.f3, android.app.Dialog
+    public final void show() {
+        super.show();
+        NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.loadedAiComposeTones);
+    }
+
+    @Override // org.telegram.ui.Components.xa
+    public final il0 v(jl0 jl0Var) {
+        k51 k51Var = new k51(jl0Var, getContext(), this.currentAccount, 0, true, new d(this, 1), this.resourcesProvider);
+        this.b0 = k51Var;
+        k51Var.r = false;
+        return k51Var;
+    }
+
+    @Override // org.telegram.ui.Components.xa
+    public final CharSequence y() {
+        TL_aicompose.AiComposeTone aiComposeTone = this.T;
+        return aiComposeTone == null ? "" : aiComposeTone.title;
     }
 }

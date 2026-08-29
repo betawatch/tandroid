@@ -12,8 +12,8 @@ public final class f0 extends i0 implements h5 {
     }
 
     @Override // j$.util.stream.i0, j$.util.stream.j5, j$.util.stream.h5, java.util.function.IntConsumer
-    public final void accept(int i9) {
-        x(Integer.valueOf(i9));
+    public final void accept(int i10) {
+        x(Integer.valueOf(i10));
     }
 
     @Override // java.util.function.Supplier

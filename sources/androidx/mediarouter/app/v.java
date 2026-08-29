@@ -1,601 +1,268 @@
 package androidx.mediarouter.app;
 
-import android.content.Context;
-import android.content.res.Resources;
-import android.graphics.Bitmap;
-import android.graphics.Color;
-import android.net.Uri;
-import android.os.Bundle;
-import android.support.v4.media.MediaDescriptionCompat;
-import android.support.v4.media.MediaMetadataCompat;
-import android.support.v4.media.session.MediaSessionCompat$Token;
-import android.support.v4.media.session.PlaybackStateCompat;
-import android.text.TextUtils;
+import android.os.Message;
 import android.util.Log;
-import android.view.ContextThemeWrapper;
-import android.view.KeyEvent;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.accessibility.AccessibilityManager;
-import android.view.animation.AccelerateDecelerateInterpolator;
-import android.view.animation.AlphaAnimation;
-import android.view.animation.AnimationSet;
-import android.view.animation.AnimationUtils;
-import android.view.animation.Interpolator;
-import android.view.animation.TranslateAnimation;
-import android.widget.Button;
-import android.widget.FrameLayout;
-import android.widget.ImageButton;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.ListAdapter;
-import android.widget.RelativeLayout;
-import android.widget.SeekBar;
-import android.widget.TextView;
+import androidx.appcompat.widget.Toolbar;
+import bg.d1;
+import f2.n1;
+import i7.f6;
 import j$.util.DesugarCollections;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.concurrent.TimeUnit;
-import org.telegram.messenger.beta.R;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
+import m.j3;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.Components.gp;
+import org.telegram.ui.Components.j30;
+import org.telegram.ui.Components.ni;
+import org.telegram.ui.Components.o6;
+import org.telegram.ui.Components.po;
+import org.telegram.ui.Components.r80;
+import org.telegram.ui.Components.x60;
+import org.telegram.ui.Components.xo;
+import org.telegram.ui.tn;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class v extends g.f {
-    public static final int B0;
-    public Button A;
-    public final androidx.activity.i A0;
-    public ImageButton B;
-    public MediaRouteExpandCollapseButton C;
-    public FrameLayout D;
-    public LinearLayout E;
-    public FrameLayout F;
-    public ImageView G;
-    public TextView H;
-    public TextView I;
-    public TextView J;
-    public final boolean K;
-    public final boolean L;
-    public LinearLayout M;
-    public RelativeLayout N;
-    public LinearLayout O;
-    public View P;
-    public OverlayListView Q;
-    public u R;
-    public ArrayList S;
-    public HashSet T;
-    public HashSet U;
-    public HashSet V;
-    public SeekBar W;
-    public t X;
-    public c2.a0 Y;
-    public int Z;
-    public int a0;
-    public int b0;
-    public final int c0;
-    public HashMap d0;
-    public android.support.v4.media.session.p e0;
-    public final s f0;
-    public PlaybackStateCompat g0;
-    public final c2.c0 h;
-    public MediaDescriptionCompat h0;
-    public r i0;
-    public Bitmap j0;
-    public Uri k0;
-    public boolean l0;
-    public Bitmap m0;
-    public final e n;
-    public int n0;
-    public boolean o0;
-    public boolean p0;
-    public boolean q0;
-    public final c2.a0 r;
-    public boolean r0;
-    public final Context s;
-    public boolean s0;
-    public int t0;
-    public int u0;
-    public boolean v;
-    public int v0;
-    public boolean w;
-    public Interpolator w0;
-    public int x;
-    public final Interpolator x0;
-    public Button y;
-    public final Interpolator y0;
-    public final AccessibilityManager z0;
+public final class v implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    static {
-        Log.isLoggable("MediaRouteCtrlDialog", 3);
-        B0 = (int) TimeUnit.SECONDS.toMillis(30L);
+    public /* synthetic */ v(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public v(Context context) {
-        super(r5, r1 == 0 ? f7.d0.e(r5) : r1);
-        int i9 = 1;
-        ContextThemeWrapper a2 = f7.d0.a(context, true);
-        int g10 = f7.d0.g(a2, R.attr.mediaRouteTheme);
-        this.K = true;
-        this.A0 = new androidx.activity.i(this, 6);
-        Context context2 = getContext();
-        this.s = context2;
-        this.f0 = new s(this, 0);
-        this.h = c2.c0.d(context2);
-        this.L = c2.c0.g();
-        this.n = new e(this, i9);
-        this.r = c2.c0.f();
-        p(c2.c0.e());
-        this.c0 = context2.getResources().getDimensionPixelSize(R.dimen.mr_controller_volume_group_list_padding_top);
-        this.z0 = (AccessibilityManager) context2.getSystemService("accessibility");
-        this.x0 = AnimationUtils.loadInterpolator(a2, R.interpolator.mr_linear_out_slow_in);
-        this.y0 = AnimationUtils.loadInterpolator(a2, R.interpolator.mr_fast_out_slow_in);
-        new AccelerateDecelerateInterpolator();
-    }
-
-    public static void o(int i9, View view) {
-        ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
-        layoutParams.height = i9;
-        view.setLayoutParams(layoutParams);
-    }
-
-    public final void f(int i9, View view) {
-        o oVar = new o(view, view.getLayoutParams().height, i9, 0);
-        oVar.setDuration(this.t0);
-        oVar.setInterpolator(this.w0);
-        view.startAnimation(oVar);
-    }
-
-    public final boolean h() {
-        return (this.h0 == null && this.g0 == null) ? false : true;
-    }
-
-    public final void i(boolean z10) {
-        HashSet hashSet;
-        int firstVisiblePosition = this.Q.getFirstVisiblePosition();
-        for (int i9 = 0; i9 < this.Q.getChildCount(); i9++) {
-            View childAt = this.Q.getChildAt(i9);
-            c2.a0 a0Var = (c2.a0) this.R.getItem(firstVisiblePosition + i9);
-            if (!z10 || (hashSet = this.T) == null || !hashSet.contains(a0Var)) {
-                ((LinearLayout) childAt.findViewById(R.id.volume_item_container)).setVisibility(0);
-                AnimationSet animationSet = new AnimationSet(true);
-                AlphaAnimation alphaAnimation = new AlphaAnimation(1.0f, 1.0f);
-                alphaAnimation.setDuration(0L);
-                animationSet.addAnimation(alphaAnimation);
-                new TranslateAnimation(0.0f, 0.0f, 0.0f, 0.0f).setDuration(0L);
-                animationSet.setFillAfter(true);
-                animationSet.setFillEnabled(true);
-                childAt.clearAnimation();
-                childAt.startAnimation(animationSet);
-            }
-        }
-        ArrayList arrayList = this.Q.a;
-        int size = arrayList.size();
-        int i10 = 0;
-        while (i10 < size) {
-            Object obj = arrayList.get(i10);
-            i10++;
-            q0 q0Var = (q0) obj;
-            q0Var.j = true;
-            q0Var.k = true;
-            we.b bVar = q0Var.l;
-            if (bVar != null) {
-                v vVar = (v) bVar.c;
-                vVar.V.remove((c2.a0) bVar.b);
-                vVar.R.notifyDataSetChanged();
-            }
-        }
-        if (z10) {
-            return;
-        }
-        j(false);
-    }
-
-    public final void j(boolean z10) {
-        this.T = null;
-        this.U = null;
-        this.r0 = false;
-        if (this.s0) {
-            this.s0 = false;
-            t(z10);
-        }
-        this.Q.setEnabled(true);
-    }
-
-    public final int k(int i9, int i10) {
-        return i9 >= i10 ? (int) (((this.x * i10) / i9) + 0.5f) : (int) aa.d.d(this.x, 9.0f, 16.0f, 0.5f);
-    }
-
-    public final int l(boolean z10) {
-        if (!z10 && this.O.getVisibility() != 0) {
-            return 0;
-        }
-        int paddingBottom = this.M.getPaddingBottom() + this.M.getPaddingTop();
-        if (z10) {
-            paddingBottom += this.N.getMeasuredHeight();
-        }
-        if (this.O.getVisibility() == 0) {
-            paddingBottom += this.O.getMeasuredHeight();
-        }
-        return (z10 && this.O.getVisibility() == 0) ? this.P.getMeasuredHeight() + paddingBottom : paddingBottom;
-    }
-
-    public final boolean n() {
-        c2.a0 a0Var = this.r;
-        return a0Var.e() && DesugarCollections.unmodifiableList(a0Var.v).size() > 1;
-    }
-
-    @Override // android.app.Dialog, android.view.Window.Callback
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.w = true;
-        this.h.a(c2.v.c, this.n, 2);
-        p(c2.c0.e());
-    }
-
-    @Override // g.f, g.s, androidx.activity.n, android.app.Dialog
-    public final void onCreate(Bundle bundle) {
-        super.onCreate(bundle);
-        getWindow().setBackgroundDrawableResource(android.R.color.transparent);
-        setContentView(R.layout.mr_controller_material_dialog_b);
-        findViewById(android.R.id.button3).setVisibility(8);
-        q qVar = new q(this, 0);
-        FrameLayout frameLayout = (FrameLayout) findViewById(R.id.mr_expandable_area);
-        this.D = frameLayout;
-        frameLayout.setOnClickListener(new q(this, 1));
-        LinearLayout linearLayout = (LinearLayout) findViewById(R.id.mr_dialog_area);
-        this.E = linearLayout;
-        linearLayout.setOnClickListener(new m());
-        Context context = this.s;
-        int f10 = f7.d0.f(context, 0, R.attr.colorPrimary);
-        if (i0.a.e(f10, f7.d0.f(context, 0, android.R.attr.colorBackground)) < 3.0d) {
-            f10 = f7.d0.f(context, 0, R.attr.colorAccent);
-        }
-        Button button = (Button) findViewById(android.R.id.button2);
-        this.y = button;
-        button.setText(R.string.mr_controller_disconnect);
-        this.y.setTextColor(f10);
-        this.y.setOnClickListener(qVar);
-        Button button2 = (Button) findViewById(android.R.id.button1);
-        this.A = button2;
-        button2.setText(R.string.mr_controller_stop_casting);
-        this.A.setTextColor(f10);
-        this.A.setOnClickListener(qVar);
-        this.J = (TextView) findViewById(R.id.mr_name);
-        ((ImageButton) findViewById(R.id.mr_close)).setOnClickListener(qVar);
-        this.F = (FrameLayout) findViewById(R.id.mr_default_control);
-        q qVar2 = new q(this, 2);
-        ImageView imageView = (ImageView) findViewById(R.id.mr_art);
-        this.G = imageView;
-        imageView.setOnClickListener(qVar2);
-        findViewById(R.id.mr_control_title_container).setOnClickListener(qVar2);
-        this.M = (LinearLayout) findViewById(R.id.mr_media_main_control);
-        this.P = findViewById(R.id.mr_control_divider);
-        this.N = (RelativeLayout) findViewById(R.id.mr_playback_control);
-        this.H = (TextView) findViewById(R.id.mr_control_title);
-        this.I = (TextView) findViewById(R.id.mr_control_subtitle);
-        ImageButton imageButton = (ImageButton) findViewById(R.id.mr_control_playback_ctrl);
-        this.B = imageButton;
-        imageButton.setOnClickListener(qVar);
-        LinearLayout linearLayout2 = (LinearLayout) findViewById(R.id.mr_volume_control);
-        this.O = linearLayout2;
-        linearLayout2.setVisibility(8);
-        SeekBar seekBar = (SeekBar) findViewById(R.id.mr_volume_slider);
-        this.W = seekBar;
-        c2.a0 a0Var = this.r;
-        seekBar.setTag(a0Var);
-        t tVar = new t(this);
-        this.X = tVar;
-        this.W.setOnSeekBarChangeListener(tVar);
-        this.Q = (OverlayListView) findViewById(R.id.mr_volume_group_list);
-        this.S = new ArrayList();
-        u uVar = new u(this, this.Q.getContext(), this.S);
-        this.R = uVar;
-        this.Q.setAdapter((ListAdapter) uVar);
-        this.V = new HashSet();
-        LinearLayout linearLayout3 = this.M;
-        OverlayListView overlayListView = this.Q;
-        boolean n10 = n();
-        int f11 = f7.d0.f(context, 0, R.attr.colorPrimary);
-        int f12 = f7.d0.f(context, 0, R.attr.colorPrimaryDark);
-        if (n10 && f7.d0.b(context, 0) == -570425344) {
-            f12 = f11;
-            f11 = -1;
-        }
-        linearLayout3.setBackgroundColor(f11);
-        overlayListView.setBackgroundColor(f12);
-        linearLayout3.setTag(Integer.valueOf(f11));
-        overlayListView.setTag(Integer.valueOf(f12));
-        MediaRouteVolumeSlider mediaRouteVolumeSlider = (MediaRouteVolumeSlider) this.W;
-        LinearLayout linearLayout4 = this.M;
-        int b10 = f7.d0.b(context, 0);
-        if (Color.alpha(b10) != 255) {
-            b10 = i0.a.h(b10, ((Integer) linearLayout4.getTag()).intValue());
-        }
-        mediaRouteVolumeSlider.a(b10, b10);
-        HashMap hashMap = new HashMap();
-        this.d0 = hashMap;
-        hashMap.put(a0Var, this.W);
-        MediaRouteExpandCollapseButton mediaRouteExpandCollapseButton = (MediaRouteExpandCollapseButton) findViewById(R.id.mr_group_expand_collapse);
-        this.C = mediaRouteExpandCollapseButton;
-        mediaRouteExpandCollapseButton.r = new q(this, 3);
-        this.w0 = this.q0 ? this.x0 : this.y0;
-        this.t0 = context.getResources().getInteger(R.integer.mr_controller_volume_group_list_animation_duration_ms);
-        this.u0 = context.getResources().getInteger(R.integer.mr_controller_volume_group_list_fade_in_duration_ms);
-        this.v0 = context.getResources().getInteger(R.integer.mr_controller_volume_group_list_fade_out_duration_ms);
-        this.v = true;
-        s();
-    }
-
-    @Override // android.app.Dialog, android.view.Window.Callback
-    public final void onDetachedFromWindow() {
-        this.h.h(this.n);
-        p(null);
-        this.w = false;
-        super.onDetachedFromWindow();
-    }
-
-    @Override // g.f, android.app.Dialog, android.view.KeyEvent.Callback
-    public final boolean onKeyDown(int i9, KeyEvent keyEvent) {
-        if (i9 != 25 && i9 != 24) {
-            return super.onKeyDown(i9, keyEvent);
-        }
-        if (this.L || !this.q0) {
-            this.r.k(i9 == 25 ? -1 : 1);
-        }
-        return true;
-    }
-
-    @Override // g.f, android.app.Dialog, android.view.KeyEvent.Callback
-    public final boolean onKeyUp(int i9, KeyEvent keyEvent) {
-        if (i9 == 25 || i9 == 24) {
-            return true;
-        }
-        return super.onKeyUp(i9, keyEvent);
-    }
-
-    public final void p(MediaSessionCompat$Token mediaSessionCompat$Token) {
-        android.support.v4.media.session.p pVar = this.e0;
-        s sVar = this.f0;
-        if (pVar != null) {
-            pVar.e(sVar);
-            this.e0 = null;
-        }
-        if (mediaSessionCompat$Token != null && this.w) {
-            android.support.v4.media.session.p pVar2 = new android.support.v4.media.session.p(this.s, mediaSessionCompat$Token);
-            this.e0 = pVar2;
-            pVar2.d(sVar);
-            MediaMetadataCompat a2 = this.e0.a();
-            this.h0 = a2 != null ? a2.a() : null;
-            this.g0 = this.e0.b();
-            r();
-            q(false);
-        }
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:122:0x00c2  */
-    /* JADX WARN: Removed duplicated region for block: B:48:0x014f  */
-    /* JADX WARN: Removed duplicated region for block: B:51:0x015a  */
-    /* JADX WARN: Removed duplicated region for block: B:54:0x0165  */
-    /* JADX WARN: Removed duplicated region for block: B:68:0x01cc  */
-    /* JADX WARN: Removed duplicated region for block: B:71:0x01d3  */
-    /* JADX WARN: Removed duplicated region for block: B:89:0x015c  */
-    /* JADX WARN: Removed duplicated region for block: B:90:0x0151  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void q(boolean z10) {
-        boolean z11;
-        boolean z12;
-        boolean z13;
-        PlaybackStateCompat playbackStateCompat;
-        int i9;
-        int i10;
-        boolean z14 = true;
-        if (this.Y != null) {
-            this.o0 = true;
-            this.p0 = z10 | this.p0;
-            return;
-        }
-        this.o0 = false;
-        this.p0 = false;
-        c2.a0 a0Var = this.r;
-        if (!a0Var.g() || a0Var.d()) {
-            dismiss();
-            return;
-        }
-        if (this.v) {
-            this.J.setText(a0Var.d);
-            this.y.setVisibility(a0Var.j ? 0 : 8);
-            if (this.l0) {
-                Bitmap bitmap = this.m0;
-                if (bitmap == null || !bitmap.isRecycled()) {
-                    this.G.setImageBitmap(this.m0);
-                    this.G.setBackgroundColor(this.n0);
-                } else {
-                    Log.w("MediaRouteCtrlDialog", "Can't set artwork image with recycled bitmap: " + this.m0);
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        int max;
+        c2.q qVar;
+        c2.q qVar2;
+        c2.q qVar3;
+        Message message;
+        switch (this.a) {
+            case 0:
+                ((b0) this.b).dismiss();
+                return;
+            case 1:
+                e0 e0Var = (e0) this.b;
+                m0 m0Var = e0Var.y;
+                if (m0Var.I != null) {
+                    m0Var.D.removeMessages(2);
                 }
-                this.l0 = false;
-                this.m0 = null;
-                this.n0 = 0;
-            }
-            boolean z15 = this.L;
-            if (z15 || !n()) {
-                if (!this.q0 || z15) {
-                    if (this.K) {
-                        if (((!a0Var.e() || c2.c0.g()) ? a0Var.o : 0) == 1) {
-                            z11 = true;
-                            if (z11) {
-                                if (this.O.getVisibility() == 8) {
-                                    this.O.setVisibility(0);
-                                    this.W.setMax(a0Var.q);
-                                    this.W.setProgress(a0Var.p);
-                                    this.C.setVisibility(n() ? 0 : 8);
-                                }
-                            }
-                        }
-                    }
-                    z11 = false;
-                    if (z11) {
-                    }
-                }
-                this.O.setVisibility(8);
-            } else {
-                this.O.setVisibility(8);
-                this.q0 = true;
-                this.Q.setVisibility(0);
-                this.w0 = this.q0 ? this.x0 : this.y0;
-                t(false);
-            }
-            if (h()) {
-                MediaDescriptionCompat mediaDescriptionCompat = this.h0;
-                CharSequence charSequence = mediaDescriptionCompat == null ? null : mediaDescriptionCompat.b;
-                boolean isEmpty = TextUtils.isEmpty(charSequence);
-                MediaDescriptionCompat mediaDescriptionCompat2 = this.h0;
-                CharSequence charSequence2 = mediaDescriptionCompat2 != null ? mediaDescriptionCompat2.c : null;
-                boolean isEmpty2 = TextUtils.isEmpty(charSequence2);
-                if (a0Var.r != -1) {
-                    this.H.setText(R.string.mr_controller_casting_screen);
+                m0Var.I = e0Var.v;
+                boolean isActivated = view.isActivated();
+                boolean z10 = !isActivated;
+                if (isActivated) {
+                    Integer num = (Integer) m0Var.J.get(e0Var.v.c);
+                    max = num == null ? 1 : Math.max(1, num.intValue());
                 } else {
-                    PlaybackStateCompat playbackStateCompat2 = this.g0;
-                    if (playbackStateCompat2 == null || playbackStateCompat2.a == 0) {
-                        this.H.setText(R.string.mr_controller_no_media_selected);
-                    } else if (isEmpty && isEmpty2) {
-                        this.H.setText(R.string.mr_controller_no_info_available);
+                    max = 0;
+                }
+                e0Var.u(z10);
+                e0Var.x.setProgress(max);
+                e0Var.v.j(max);
+                m0Var.D.sendEmptyMessageDelayed(2, 500L);
+                return;
+            case 2:
+                f0 f0Var = (f0) this.b;
+                c2.d0 d0Var = f0Var.B.w.f;
+                c2.b0 b0Var = f0Var.A;
+                d0Var.getClass();
+                if (b0Var == null) {
+                    throw new NullPointerException("route must not be null");
+                }
+                c2.d0.b();
+                c2.e c3 = c2.d0.c();
+                if (!(c3.e instanceof c2.r)) {
+                    throw new IllegalStateException("There is no currently selected dynamic group route.");
+                }
+                za.c b10 = c3.d.b(b0Var);
+                if (b10 == null || (qVar = (c2.q) b10.b) == null || !qVar.e) {
+                    Log.w("GlobalMediaRouter", "Ignoring attempt to transfer to a non-transferable route.");
+                } else {
+                    ((c2.r) c3.e).o(Collections.singletonList(b0Var.b));
+                }
+                f0Var.w.setVisibility(4);
+                f0Var.x.setVisibility(0);
+                return;
+            case 3:
+                j0 j0Var = (j0) this.b;
+                k0 k0Var = j0Var.I;
+                boolean v = j0Var.v(j0Var.v);
+                boolean z11 = !v;
+                boolean e10 = j0Var.v.e();
+                if (v) {
+                    c2.d0 d0Var2 = k0Var.w.f;
+                    c2.b0 b0Var2 = j0Var.v;
+                    d0Var2.getClass();
+                    if (b0Var2 == null) {
+                        throw new NullPointerException("route must not be null");
+                    }
+                    c2.d0.b();
+                    c2.e c6 = c2.d0.c();
+                    if (!(c6.e instanceof c2.r)) {
+                        throw new IllegalStateException("There is no currently selected dynamic group route.");
+                    }
+                    za.c b11 = c6.d.b(b0Var2);
+                    if (!DesugarCollections.unmodifiableList(c6.d.v).contains(b0Var2) || b11 == null || ((qVar2 = (c2.q) b11.b) != null && !qVar2.c)) {
+                        Log.w("GlobalMediaRouter", "Ignoring attempt to remove a non-unselectable member route : " + b0Var2);
+                    } else if (DesugarCollections.unmodifiableList(c6.d.v).size() <= 1) {
+                        Log.w("GlobalMediaRouter", "Ignoring attempt to remove the last member route.");
                     } else {
-                        if (isEmpty) {
-                            z12 = false;
-                        } else {
-                            this.H.setText(charSequence);
-                            z12 = true;
-                        }
-                        if (!isEmpty2) {
-                            this.I.setText(charSequence2);
-                            z13 = true;
-                            this.H.setVisibility(z12 ? 0 : 8);
-                            this.I.setVisibility(z13 ? 0 : 8);
-                            playbackStateCompat = this.g0;
-                            if (playbackStateCompat != null) {
-                                int i11 = playbackStateCompat.a;
-                                boolean z16 = i11 == 6 || i11 == 3;
-                                Context context = this.B.getContext();
-                                if (z16) {
-                                    if ((this.g0.e & 514) != 0) {
-                                        i9 = R.attr.mediaRoutePauseDrawable;
-                                        i10 = R.string.mr_controller_pause;
-                                        this.B.setVisibility(z14 ? 0 : 8);
-                                        if (z14) {
-                                            this.B.setImageResource(f7.d0.g(context, i9));
-                                            this.B.setContentDescription(context.getResources().getText(i10));
-                                        }
-                                    }
-                                }
-                                if (z16) {
-                                    if ((this.g0.e & 1) != 0) {
-                                        i9 = R.attr.mediaRouteStopDrawable;
-                                        i10 = R.string.mr_controller_stop;
-                                        this.B.setVisibility(z14 ? 0 : 8);
-                                        if (z14) {
-                                        }
-                                    }
-                                }
-                                if (!z16) {
-                                    if ((this.g0.e & 516) != 0) {
-                                        i9 = R.attr.mediaRoutePlayDrawable;
-                                        i10 = R.string.mr_controller_play;
-                                        this.B.setVisibility(z14 ? 0 : 8);
-                                        if (z14) {
-                                        }
-                                    }
-                                }
-                                z14 = false;
-                                i9 = 0;
-                                i10 = 0;
-                                this.B.setVisibility(z14 ? 0 : 8);
-                                if (z14) {
-                                }
+                        ((c2.r) c6.e).n(b0Var2.b);
+                    }
+                } else {
+                    c2.d0 d0Var3 = k0Var.w.f;
+                    c2.b0 b0Var3 = j0Var.v;
+                    d0Var3.getClass();
+                    if (b0Var3 == null) {
+                        throw new NullPointerException("route must not be null");
+                    }
+                    c2.d0.b();
+                    c2.e c10 = c2.d0.c();
+                    if (!(c10.e instanceof c2.r)) {
+                        throw new IllegalStateException("There is no currently selected dynamic group route.");
+                    }
+                    za.c b12 = c10.d.b(b0Var3);
+                    if (DesugarCollections.unmodifiableList(c10.d.v).contains(b0Var3) || b12 == null || (qVar3 = (c2.q) b12.b) == null || !qVar3.d) {
+                        Log.w("GlobalMediaRouter", "Ignoring attempt to add a non-groupable route to dynamic group : " + b0Var3);
+                    } else {
+                        ((c2.r) c10.e).m(b0Var3.b);
+                    }
+                }
+                j0Var.w(z11, !e10);
+                if (e10) {
+                    List unmodifiableList = DesugarCollections.unmodifiableList(k0Var.w.r.v);
+                    for (c2.b0 b0Var4 : DesugarCollections.unmodifiableList(j0Var.v.v)) {
+                        if (unmodifiableList.contains(b0Var4) != z11) {
+                            e0 e0Var2 = (e0) k0Var.w.H.get(b0Var4.c);
+                            if (e0Var2 instanceof j0) {
+                                ((j0) e0Var2).w(z11, true);
                             }
-                        }
-                        z13 = false;
-                        this.H.setVisibility(z12 ? 0 : 8);
-                        this.I.setVisibility(z13 ? 0 : 8);
-                        playbackStateCompat = this.g0;
-                        if (playbackStateCompat != null) {
                         }
                     }
                 }
-                z12 = true;
-                z13 = false;
-                this.H.setVisibility(z12 ? 0 : 8);
-                this.I.setVisibility(z13 ? 0 : 8);
-                playbackStateCompat = this.g0;
-                if (playbackStateCompat != null) {
+                m0 m0Var2 = k0Var.w;
+                c2.b0 b0Var5 = j0Var.v;
+                List unmodifiableList2 = DesugarCollections.unmodifiableList(m0Var2.r.v);
+                int max2 = Math.max(1, unmodifiableList2.size());
+                if (b0Var5.e()) {
+                    Iterator it = DesugarCollections.unmodifiableList(b0Var5.v).iterator();
+                    while (it.hasNext()) {
+                        if (unmodifiableList2.contains((c2.b0) it.next()) != z11) {
+                            max2 += !v ? 1 : -1;
+                        }
+                    }
+                } else {
+                    max2 += v ? -1 : 1;
                 }
-            }
-            t(z10);
-        }
-    }
-
-    public final void r() {
-        MediaDescriptionCompat mediaDescriptionCompat = this.h0;
-        Bitmap bitmap = mediaDescriptionCompat == null ? null : mediaDescriptionCompat.e;
-        Uri uri = mediaDescriptionCompat != null ? mediaDescriptionCompat.f : null;
-        r rVar = this.i0;
-        Bitmap bitmap2 = rVar == null ? this.j0 : rVar.a;
-        Uri uri2 = rVar == null ? this.k0 : rVar.b;
-        if (bitmap2 == bitmap) {
-            if (bitmap2 != null) {
+                boolean z12 = m0Var2.e0 && DesugarCollections.unmodifiableList(m0Var2.r.v).size() > 1;
+                boolean z13 = m0Var2.e0 && max2 >= 2;
+                if (z12 != z13) {
+                    n1 K = m0Var2.E.K(0);
+                    if (K instanceof g0) {
+                        g0 g0Var = (g0) K;
+                        k0Var.D(z13 ? g0Var.A : 0, g0Var.a);
+                        return;
+                    }
+                    return;
+                }
                 return;
-            }
-            if (uri2 != null && uri2.equals(uri)) {
+            case 4:
+                MediaRouteExpandCollapseButton mediaRouteExpandCollapseButton = (MediaRouteExpandCollapseButton) this.b;
+                boolean z14 = mediaRouteExpandCollapseButton.n;
+                mediaRouteExpandCollapseButton.n = !z14;
+                if (z14) {
+                    mediaRouteExpandCollapseButton.setImageDrawable(mediaRouteExpandCollapseButton.e);
+                    mediaRouteExpandCollapseButton.e.start();
+                    mediaRouteExpandCollapseButton.setContentDescription(mediaRouteExpandCollapseButton.f);
+                } else {
+                    mediaRouteExpandCollapseButton.setImageDrawable(mediaRouteExpandCollapseButton.d);
+                    mediaRouteExpandCollapseButton.d.start();
+                    mediaRouteExpandCollapseButton.setContentDescription(mediaRouteExpandCollapseButton.h);
+                }
+                View.OnClickListener onClickListener = mediaRouteExpandCollapseButton.r;
+                if (onClickListener != null) {
+                    onClickListener.onClick(view);
+                    return;
+                }
                 return;
-            }
-            if (uri2 == null && uri == null) {
+            case 5:
+                g.e eVar = (g.e) this.b;
+                Message obtain = (view != eVar.i || (message = eVar.k) == null) ? null : Message.obtain(message);
+                if (obtain != null) {
+                    obtain.sendToTarget();
+                }
+                eVar.z.obtainMessage(1, eVar.b).sendToTarget();
                 return;
-            }
+            case 6:
+                ((k.a) this.b).a();
+                return;
+            case 7:
+                j3 j3Var = ((Toolbar) this.b).a0;
+                l.m mVar = j3Var == null ? null : j3Var.b;
+                if (mVar != null) {
+                    mVar.collapseActionView();
+                    return;
+                }
+                return;
+            case 8:
+                gp gpVar = (gp) this.b;
+                tn tnVar = gpVar.v;
+                ni niVar = new ni(tnVar.getParentActivity(), tnVar, false, false, false, tnVar.getResourceProvider());
+                gpVar.U = niVar;
+                niVar.drawNavigationBar = true;
+                niVar.L1(LocaleController.getString(R.string.ChooseBackground));
+                ni niVar2 = gpVar.U;
+                niVar2.V1 = new xo(gpVar);
+                niVar2.J1(1, false);
+                gpVar.U.r1();
+                gpVar.U.f0.f0();
+                gpVar.U.show();
+                gpVar.V = new d1(gpVar, gpVar.getContext());
+                o6 o6Var = new o6(gpVar.getContext(), true, true, true);
+                gpVar.W = o6Var;
+                o6Var.setTextSize(AndroidUtilities.dp(14.0f));
+                gpVar.W.setText(LocaleController.getString(R.string.SetColorAsBackground));
+                gpVar.W.setGravity(17);
+                o6 o6Var2 = gpVar.W;
+                int i10 = g6.Oh;
+                o6Var2.setTextColor(gpVar.getThemedColor(i10));
+                gpVar.V.addView(gpVar.W, f6.e(-1, -2, 17));
+                d1 d1Var = gpVar.V;
+                int dp = AndroidUtilities.dp(0.0f);
+                int themedColor = gpVar.getThemedColor(g6.d6);
+                int k9 = i0.a.k(gpVar.getThemedColor(i10), 76);
+                d1Var.setBackground(g6.i0(dp, dp, dp, dp, themedColor, k9, k9));
+                gpVar.V.setOnClickListener(new po(gpVar, 0));
+                gpVar.U.n1.addView(gpVar.V, f6.e(-1, -2, 80));
+                return;
+            case 9:
+                x60 x60Var = (x60) this.b;
+                j30 j30Var = (j30) view;
+                if (j30Var.y) {
+                    x60Var.f0 = null;
+                    x60Var.b0.l(j30Var.getUid());
+                    x60Var.Q.b(j30Var);
+                    x60Var.a0(true);
+                    AndroidUtilities.updateVisibleRows(x60Var.d);
+                    return;
+                }
+                j30 j30Var2 = x60Var.f0;
+                if (j30Var2 != null) {
+                    j30Var2.a();
+                }
+                x60Var.f0 = j30Var;
+                j30Var.b();
+                return;
+            default:
+                ((r80) this.b).e.callOnClick();
+                return;
         }
-        if (!n() || this.L) {
-            r rVar2 = this.i0;
-            if (rVar2 != null) {
-                rVar2.cancel(true);
-            }
-            r rVar3 = new r(this);
-            this.i0 = rVar3;
-            rVar3.execute(new Void[0]);
-        }
-    }
-
-    public final void s() {
-        Context context = this.s;
-        int a2 = f7.c0.a(context);
-        getWindow().setLayout(a2, -2);
-        View decorView = getWindow().getDecorView();
-        this.x = (a2 - decorView.getPaddingLeft()) - decorView.getPaddingRight();
-        Resources resources = context.getResources();
-        this.Z = resources.getDimensionPixelSize(R.dimen.mr_controller_volume_group_list_item_icon_size);
-        this.a0 = resources.getDimensionPixelSize(R.dimen.mr_controller_volume_group_list_item_height);
-        this.b0 = resources.getDimensionPixelSize(R.dimen.mr_controller_volume_group_list_max_height);
-        this.j0 = null;
-        this.k0 = null;
-        r();
-        q(false);
-    }
-
-    public final void t(boolean z10) {
-        this.F.requestLayout();
-        this.F.getViewTreeObserver().addOnGlobalLayoutListener(new n(this, z10));
-    }
-
-    public final void u(boolean z10) {
-        int i9 = 0;
-        this.P.setVisibility((this.O.getVisibility() == 0 && z10) ? 0 : 8);
-        LinearLayout linearLayout = this.M;
-        if (this.O.getVisibility() == 8 && !z10) {
-            i9 = 8;
-        }
-        linearLayout.setVisibility(i9);
     }
 }

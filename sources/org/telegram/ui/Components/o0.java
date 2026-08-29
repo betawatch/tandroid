@@ -1,30 +1,31 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.AndroidUtilities;
-
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class o0 implements Runnable {
+public final /* synthetic */ class o0 implements oc0 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ EditTextBoldCursor b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.c2 c;
-    public final /* synthetic */ org.telegram.ui.ActionBar.o2 d;
+    public final /* synthetic */ qc0 b;
+    public final /* synthetic */ qc0 c;
+    public final /* synthetic */ qc0 d;
 
-    public /* synthetic */ o0(EditTextBoldCursor editTextBoldCursor, org.telegram.ui.ActionBar.c2 c2Var, org.telegram.ui.ActionBar.o2 o2Var, int i9) {
-        this.a = i9;
-        this.b = editTextBoldCursor;
-        this.c = c2Var;
-        this.d = o2Var;
+    public /* synthetic */ o0(qc0 qc0Var, qc0 qc0Var2, qc0 qc0Var3, int i10) {
+        this.a = i10;
+        this.b = qc0Var;
+        this.c = qc0Var2;
+        this.d = qc0Var3;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.ui.Components.oc0
+    public final void q(qc0 qc0Var, int i10) {
         switch (this.a) {
             case 0:
-                AndroidUtilities.runOnUIThread(new o0(this.b, this.c, this.d, 1));
+                c5.b(this.b, this.c, this.d);
+                break;
+            case 1:
+                c5.y0(this.b, this.c, this.d);
                 break;
             default:
-                y4.e0(this.b, this.c, this.d);
+                c5.y0(this.b, this.c, this.d);
                 break;
         }
     }

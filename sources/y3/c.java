@@ -1,286 +1,120 @@
 package y3;
 
-import android.media.MediaCodec;
-import android.media.MediaCrypto;
-import android.media.MediaFormat;
-import android.os.Bundle;
-import android.os.Handler;
-import android.os.HandlerThread;
-import android.view.Surface;
-import c2.b1;
-import d5.f0;
-import java.nio.ByteBuffer;
-import pf.o1;
-
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class c implements k {
-    public final MediaCodec a;
-    public final f b;
-    public final e c;
-    public boolean d;
-    public int e = 0;
+public final class c implements o3.k {
+    public final b a = new b(null, 1);
+    public final f5.w b = new f5.w(16384);
+    public boolean c;
 
-    public c(MediaCodec mediaCodec, HandlerThread handlerThread, HandlerThread handlerThread2) {
-        this.a = mediaCodec;
-        this.b = new f(handlerThread);
-        this.c = new e(mediaCodec, handlerThread2);
-    }
-
-    public static void i(c cVar, MediaFormat mediaFormat, Surface surface, MediaCrypto mediaCrypto) {
-        f fVar = cVar.b;
-        MediaCodec mediaCodec = cVar.a;
-        fVar.b(mediaCodec);
-        d5.a.c("configureCodec");
-        mediaCodec.configure(mediaFormat, surface, mediaCrypto, 0);
-        d5.a.q();
-        e eVar = cVar.c;
-        HandlerThread handlerThread = eVar.b;
-        if (!eVar.f) {
-            handlerThread.start();
-            eVar.c = new androidx.mediarouter.app.d(eVar, handlerThread.getLooper());
-            eVar.f = true;
+    @Override // o3.k
+    public final int d(o3.l lVar, o3.n nVar) {
+        f5.w wVar = this.b;
+        int read = ((o3.h) lVar).read(wVar.a, 0, 16384);
+        if (read == -1) {
+            return -1;
         }
-        d5.a.c("startCodec");
-        mediaCodec.start();
-        d5.a.q();
-        cVar.e = 1;
-    }
-
-    public static String j(int i9, String str) {
-        StringBuilder sb2 = new StringBuilder(str);
-        if (i9 == 1) {
-            sb2.append("Audio");
-        } else if (i9 == 2) {
-            sb2.append("Video");
-        } else {
-            sb2.append("Unknown(");
-            sb2.append(i9);
-            sb2.append(")");
+        wVar.C(0);
+        wVar.B(read);
+        boolean z10 = this.c;
+        b bVar = this.a;
+        if (!z10) {
+            bVar.f(4, 0L);
+            this.c = true;
         }
-        return sb2.toString();
+        bVar.c(wVar);
+        return 0;
     }
 
-    @Override // y3.k
-    public final void a(long j10, int i9, int i10, int i11) {
-        e eVar = this.c;
-        RuntimeException runtimeException = (RuntimeException) eVar.d.getAndSet(null);
-        if (runtimeException != null) {
-            throw runtimeException;
-        }
-        d b10 = e.b();
-        b10.a = i9;
-        b10.b = i10;
-        b10.d = j10;
-        b10.e = i11;
-        androidx.mediarouter.app.d dVar = eVar.c;
-        int i12 = f0.a;
-        dVar.obtainMessage(0, b10).sendToTarget();
-    }
-
-    @Override // y3.k
-    public final void b(int i9, long j10) {
-        this.a.releaseOutputBuffer(i9, j10);
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:12:0x001a A[Catch: all -> 0x001c, DONT_GENERATE, TryCatch #0 {all -> 0x001c, blocks: (B:4:0x0005, B:6:0x000f, B:12:0x001a, B:15:0x001e, B:17:0x0023, B:19:0x0027, B:24:0x0036, B:26:0x0032, B:28:0x0038, B:29:0x003a, B:30:0x003b, B:31:0x003d), top: B:3:0x0005 }] */
-    /* JADX WARN: Removed duplicated region for block: B:15:0x001e A[Catch: all -> 0x001c, TryCatch #0 {all -> 0x001c, blocks: (B:4:0x0005, B:6:0x000f, B:12:0x001a, B:15:0x001e, B:17:0x0023, B:19:0x0027, B:24:0x0036, B:26:0x0032, B:28:0x0038, B:29:0x003a, B:30:0x003b, B:31:0x003d), top: B:3:0x0005 }] */
-    @Override // y3.k
+    /* JADX WARN: Code restructure failed: missing block: B:12:0x003c, code lost:
+    
+        r5.f = 0;
+        r1 = r1 + 1;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:13:0x0044, code lost:
+    
+        if ((r1 - r3) < 8192) goto L13;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:16:0x0088, code lost:
+    
+        return false;
+     */
+    @Override // o3.k
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final int c() {
-        boolean z10;
-        f fVar = this.b;
-        synchronized (fVar.a) {
-            try {
-                boolean z11 = true;
-                if (fVar.k <= 0 && !fVar.l) {
-                    z10 = false;
-                    int i9 = -1;
-                    if (!z10) {
-                        return -1;
-                    }
-                    IllegalStateException illegalStateException = fVar.m;
-                    if (illegalStateException != null) {
-                        fVar.m = null;
-                        throw illegalStateException;
-                    }
-                    MediaCodec.CodecException codecException = fVar.j;
-                    if (codecException != null) {
-                        fVar.j = null;
-                        throw codecException;
-                    }
-                    b1 b1Var = fVar.d;
-                    if (b1Var.c != 0) {
-                        z11 = false;
-                    }
-                    if (!z11) {
-                        i9 = b1Var.e();
-                    }
-                    return i9;
-                }
-                z10 = true;
-                int i92 = -1;
-                if (!z10) {
-                }
-            } finally {
+    public final boolean e(o3.l lVar) {
+        o3.h hVar;
+        int i10;
+        f5.w wVar = new f5.w(10);
+        int i11 = 0;
+        while (true) {
+            hVar = (o3.h) lVar;
+            hVar.f(wVar.a, 0, 10, false);
+            wVar.C(0);
+            if (wVar.t() != 4801587) {
+                break;
             }
+            wVar.D(3);
+            int q6 = wVar.q();
+            i11 += q6 + 10;
+            hVar.b(q6, false);
         }
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:12:0x001a A[Catch: all -> 0x001c, DONT_GENERATE, TryCatch #0 {all -> 0x001c, blocks: (B:4:0x0005, B:6:0x000f, B:12:0x001a, B:15:0x001f, B:17:0x0024, B:19:0x0028, B:23:0x0032, B:25:0x0034, B:27:0x003a, B:28:0x0061, B:32:0x0057, B:34:0x0063, B:35:0x0065, B:36:0x0066, B:37:0x0068), top: B:3:0x0005 }] */
-    /* JADX WARN: Removed duplicated region for block: B:15:0x001f A[Catch: all -> 0x001c, TryCatch #0 {all -> 0x001c, blocks: (B:4:0x0005, B:6:0x000f, B:12:0x001a, B:15:0x001f, B:17:0x0024, B:19:0x0028, B:23:0x0032, B:25:0x0034, B:27:0x003a, B:28:0x0061, B:32:0x0057, B:34:0x0063, B:35:0x0065, B:36:0x0066, B:37:0x0068), top: B:3:0x0005 }] */
-    @Override // y3.k
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final int d(MediaCodec.BufferInfo bufferInfo) {
-        boolean z10;
-        f fVar = this.b;
-        synchronized (fVar.a) {
-            try {
-                boolean z11 = true;
-                if (fVar.k <= 0 && !fVar.l) {
-                    z10 = false;
-                    if (!z10) {
-                        return -1;
-                    }
-                    IllegalStateException illegalStateException = fVar.m;
-                    if (illegalStateException != null) {
-                        fVar.m = null;
-                        throw illegalStateException;
-                    }
-                    MediaCodec.CodecException codecException = fVar.j;
-                    if (codecException != null) {
-                        fVar.j = null;
-                        throw codecException;
-                    }
-                    b1 b1Var = fVar.e;
-                    if (b1Var.c != 0) {
-                        z11 = false;
-                    }
-                    if (z11) {
-                        return -1;
-                    }
-                    int e10 = b1Var.e();
-                    if (e10 >= 0) {
-                        d5.a.j(fVar.h);
-                        MediaCodec.BufferInfo bufferInfo2 = (MediaCodec.BufferInfo) fVar.f.remove();
-                        bufferInfo.set(bufferInfo2.offset, bufferInfo2.size, bufferInfo2.presentationTimeUs, bufferInfo2.flags);
-                    } else if (e10 == -2) {
-                        fVar.h = (MediaFormat) fVar.g.remove();
-                    }
-                    return e10;
+        hVar.f = 0;
+        hVar.b(i11, false);
+        int i12 = i11;
+        loop1: while (true) {
+            int i13 = 0;
+            while (true) {
+                int i14 = 7;
+                hVar.f(wVar.a, 0, 7, false);
+                wVar.C(0);
+                int w10 = wVar.w();
+                if (w10 != 44096 && w10 != 44097) {
+                    break;
                 }
-                z10 = true;
-                if (!z10) {
+                i13++;
+                if (i13 >= 4) {
+                    return true;
                 }
-            } finally {
+                byte[] bArr = wVar.a;
+                if (bArr.length < 7) {
+                    i10 = -1;
+                } else {
+                    int i15 = ((bArr[2] & 255) << 8) | (bArr[3] & 255);
+                    if (i15 == 65535) {
+                        i15 = ((bArr[4] & 255) << 16) | ((bArr[5] & 255) << 8) | (bArr[6] & 255);
+                    } else {
+                        i14 = 4;
+                    }
+                    if (w10 == 44097) {
+                        i14 += 2;
+                    }
+                    i10 = i15 + i14;
+                }
+                if (i10 == -1) {
+                    break loop1;
+                }
+                hVar.b(i10 - 7, false);
             }
+            hVar.b(i12, false);
         }
     }
 
-    @Override // y3.k
-    public final void e(int i9, k3.d dVar, long j10) {
-        this.c.c(i9, dVar, j10);
+    @Override // o3.k
+    public final void f(long j10, long j11) {
+        this.c = false;
+        this.a.a();
     }
 
-    @Override // y3.k
-    public final void f(int i9) {
-        this.a.setVideoScalingMode(i9);
+    @Override // o3.k
+    public final void i(o3.m mVar) {
+        this.a.e(mVar, new d0(0, 1));
+        mVar.e1();
+        mVar.D1(new o3.o(-9223372036854775807L));
     }
 
-    @Override // y3.k
-    public final void flush() {
-        this.c.a();
-        this.a.flush();
-        f fVar = this.b;
-        synchronized (fVar.a) {
-            fVar.k++;
-            Handler handler = fVar.c;
-            int i9 = f0.a;
-            handler.post(new o1(fVar, 16));
-        }
-        this.a.start();
-    }
-
-    @Override // y3.k
-    public final void g(Surface surface) {
-        this.a.setOutputSurface(surface);
-    }
-
-    @Override // y3.k
-    public final ByteBuffer getInputBuffer(int i9) {
-        return this.a.getInputBuffer(i9);
-    }
-
-    @Override // y3.k
-    public final ByteBuffer getOutputBuffer(int i9) {
-        return this.a.getOutputBuffer(i9);
-    }
-
-    @Override // y3.k
-    public final MediaFormat getOutputFormat() {
-        MediaFormat mediaFormat;
-        f fVar = this.b;
-        synchronized (fVar.a) {
-            try {
-                mediaFormat = fVar.h;
-                if (mediaFormat == null) {
-                    throw new IllegalStateException();
-                }
-            } catch (Throwable th) {
-                throw th;
-            }
-        }
-        return mediaFormat;
-    }
-
-    @Override // y3.k
-    public final void h(e5.i iVar, Handler handler) {
-        this.a.setOnFrameRenderedListener(new a(this, iVar, 0), handler);
-    }
-
-    @Override // y3.k
+    @Override // o3.k
     public final void release() {
-        try {
-            if (this.e == 1) {
-                e eVar = this.c;
-                if (eVar.f) {
-                    eVar.a();
-                    eVar.b.quit();
-                }
-                eVar.f = false;
-                f fVar = this.b;
-                synchronized (fVar.a) {
-                    fVar.l = true;
-                    fVar.b.quit();
-                    fVar.a();
-                }
-            }
-            this.e = 2;
-            if (this.d) {
-                return;
-            }
-            this.a.release();
-            this.d = true;
-        } catch (Throwable th) {
-            if (!this.d) {
-                this.a.release();
-                this.d = true;
-            }
-            throw th;
-        }
-    }
-
-    @Override // y3.k
-    public final void releaseOutputBuffer(int i9, boolean z10) {
-        this.a.releaseOutputBuffer(i9, z10);
-    }
-
-    @Override // y3.k
-    public final void setParameters(Bundle bundle) {
-        this.a.setParameters(bundle);
     }
 }

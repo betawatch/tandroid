@@ -10,7 +10,7 @@ jadx.core.utils.exceptions.JadxRuntimeException: Init of enum field 'EF2' uses e
 	at jadx.core.dex.visitors.EnumVisitor.visit(EnumVisitor.java:100)
  */
 /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public class a2 {
     public static final w1 c;
@@ -50,9 +50,9 @@ public class a2 {
         f = new a2[]{a2Var, a2Var2, a2Var3, a2Var4, a2Var5, a2Var6, a2Var7, a2Var8, w1Var, x1Var, y1Var, new z1("BYTES", 11, b2.h, 2), new a2("UINT32", 12, b2Var2, 0), new a2("ENUM", 13, b2.n, 0), new a2("SFIXED32", 14, b2Var2, 5), new a2("SFIXED64", 15, b2Var, 1), new a2("SINT32", 16, b2Var2, 0), new a2("SINT64", 17, b2Var, 0)};
     }
 
-    public a2(String str, int i9, b2 b2Var, int i10) {
+    public a2(String str, int i10, b2 b2Var, int i11) {
         this.a = b2Var;
-        this.b = i10;
+        this.b = i11;
     }
 
     public static a2 valueOf(String str) {

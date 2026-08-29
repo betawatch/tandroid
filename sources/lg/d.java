@@ -1,72 +1,52 @@
 package lg;
 
-import h3.z;
+import android.graphics.Rect;
+import android.graphics.RenderNode;
+import android.support.v4.media.session.z;
+import jf.m0;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.b6;
-import org.telegram.ui.ActionBar.f6;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class d implements a {
-    public final b6 a;
-    public c b;
-    public c c;
-    public c d;
-    public c e;
-    public float f;
-    public float h;
-    public float n;
-    public float r;
+public final class d {
+    public final c b;
+    public final c c;
+    public long e;
+    public final RenderNode a = z.c();
+    public final Rect d = new Rect();
 
-    public d(b6 b6Var) {
-        this.a = b6Var;
-        float dpf2 = AndroidUtilities.dpf2(1.0f);
-        float dpf22 = AndroidUtilities.dpf2(0.33333334f);
-        this.n = dpf2;
-        this.r = dpf22;
-        float dpf23 = AndroidUtilities.dpf2(1.0f);
-        float dpf24 = AndroidUtilities.dpf2(0.6666667f);
-        this.f = dpf23;
-        this.h = dpf24;
-    }
-
-    public final int a(c cVar) {
-        if (cVar == null) {
-            return 0;
+    public d(e eVar) {
+        if (eVar.a) {
+            c cVar = new c(eVar, "glass", 0, true);
+            this.c = cVar;
+            cVar.e = 4;
+            cVar.f = 4;
+            cVar.d(AndroidUtilities.dpf2(6.0f), m0.b());
+            c cVar2 = new c(eVar, "blur", 0, false);
+            this.b = cVar2;
+            cVar2.e = 8;
+            cVar2.f = 8;
+            cVar2.c(AndroidUtilities.dpf2(38.34f));
+            return;
         }
-        b6 b6Var = this.a;
-        return cVar.g(b6Var, ((b6Var instanceof ih.b) || b6Var != null) ? b6Var.a() : f6.I.q());
-    }
-
-    public final void b(int i9, int i10) {
-        this.b = new z(i10, i9, 2);
-    }
-
-    public final void c(int i9, int i10) {
-        this.d = new z(i10, i9, 2);
-    }
-
-    public final void d(int i9, int i10) {
-        this.c = new z(i10, i9, 2);
-    }
-
-    @Override // lg.a
-    public final int e() {
-        return a(this.c);
-    }
-
-    @Override // lg.a
-    public final int g() {
-        return a(this.d);
-    }
-
-    @Override // lg.a
-    public final int j() {
-        return a(this.b);
-    }
-
-    @Override // lg.a
-    public final int k() {
-        return a(this.e);
+        if (!eVar.c) {
+            c cVar3 = new c(eVar, "blur", 1, false);
+            this.b = cVar3;
+            cVar3.e = 8;
+            cVar3.f = 8;
+            cVar3.c(AndroidUtilities.dpf2(40.0f));
+            cVar3.e(m0.b());
+            this.c = null;
+            return;
+        }
+        c cVar4 = new c(eVar, "blur", 0, false);
+        this.b = cVar4;
+        boolean z10 = eVar.b;
+        int i10 = z10 ? 16 : 8;
+        int i11 = z10 ? 16 : 8;
+        cVar4.e = i10;
+        cVar4.f = i11;
+        cVar4.d(AndroidUtilities.dpf2(40.0f), m0.b());
+        this.c = null;
     }
 }

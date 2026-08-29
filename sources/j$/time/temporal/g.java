@@ -48,16 +48,16 @@ public abstract class g implements o {
                 if (!j(lVar)) {
                     throw new r("Unsupported field: DayOfQuarter");
                 }
-                long y10 = lVar.y(g.QUARTER_OF_YEAR);
-                if (y10 == 1) {
-                    long y11 = lVar.y(a.YEAR);
+                long y8 = lVar.y(g.QUARTER_OF_YEAR);
+                if (y8 == 1) {
+                    long y10 = lVar.y(a.YEAR);
                     j$.time.chrono.r.c.getClass();
-                    return j$.time.chrono.r.k(y11) ? s.e(1L, 91L) : s.e(1L, 90L);
+                    return j$.time.chrono.r.k(y10) ? s.e(1L, 91L) : s.e(1L, 90L);
                 }
-                if (y10 == 2) {
+                if (y8 == 2) {
                     return s.e(1L, 91L);
                 }
-                if (y10 == 3 || y10 == 4) {
+                if (y8 == 3 || y8 == 4) {
                     return s.e(1L, 92L);
                 }
                 return l();
@@ -70,10 +70,10 @@ public abstract class g implements o {
                 }
                 int j10 = lVar.j(a.DAY_OF_YEAR);
                 int j11 = lVar.j(a.MONTH_OF_YEAR);
-                long y10 = lVar.y(a.YEAR);
-                int i9 = (j11 - 1) / 3;
+                long y8 = lVar.y(a.YEAR);
+                int i10 = (j11 - 1) / 3;
                 j$.time.chrono.r.c.getClass();
-                return j10 - g.a[i9 + (j$.time.chrono.r.k(y10) ? 4 : 0)];
+                return j10 - g.a[i10 + (j$.time.chrono.r.k(y8) ? 4 : 0)];
             }
 
             @Override // j$.time.temporal.o
@@ -217,11 +217,11 @@ public abstract class g implements o {
                 int a2 = a.YEAR.b.a(j10, g.WEEK_BASED_YEAR);
                 LocalDate I = LocalDate.I(temporal);
                 int j11 = I.j(a.DAY_OF_WEEK);
-                int w8 = g.w(I);
-                if (w8 == 53 && g.G(a2) == 52) {
-                    w8 = 52;
+                int w10 = g.w(I);
+                if (w10 == 53 && g.G(a2) == 52) {
+                    w10 = 52;
                 }
-                return temporal.k(LocalDate.of(a2, 1, 4).plusDays(((w8 - 1) * 7) + (j11 - r6.j(r0))));
+                return temporal.k(LocalDate.of(a2, 1, 4).plusDays(((w10 - 1) * 7) + (j11 - r6.j(r0))));
             }
 
             @Override // java.lang.Enum
@@ -234,8 +234,8 @@ public abstract class g implements o {
         a = new int[]{0, 90, 181, 273, 0, 91, 182, 274};
     }
 
-    public static int G(int i9) {
-        LocalDate of2 = LocalDate.of(i9, 1, 1);
+    public static int G(int i10) {
+        LocalDate of2 = LocalDate.of(i10, 1, 1);
         if (of2.K() != DayOfWeek.THURSDAY) {
             return (of2.K() == DayOfWeek.WEDNESDAY && of2.O()) ? 53 : 52;
         }
@@ -245,18 +245,18 @@ public abstract class g implements o {
     public static int w(LocalDate localDate) {
         int ordinal = localDate.K().ordinal();
         int L = localDate.L() - 1;
-        int i9 = (3 - ordinal) + L;
-        int i10 = i9 - ((i9 / 7) * 7);
-        int i11 = i10 - 3;
-        if (i11 < -3) {
-            i11 = i10 + 4;
+        int i10 = (3 - ordinal) + L;
+        int i11 = i10 - ((i10 / 7) * 7);
+        int i12 = i11 - 3;
+        if (i12 < -3) {
+            i12 = i11 + 4;
         }
-        if (L < i11) {
+        if (L < i12) {
             return (int) s.e(1L, G(y(localDate.X(180).U(-1L)))).d;
         }
-        int i12 = ((L - i11) / 7) + 1;
-        if (i12 != 53 || i11 == -3 || (i11 == -2 && localDate.O())) {
-            return i12;
+        int i13 = ((L - i12) / 7) + 1;
+        if (i13 != 53 || i12 == -3 || (i12 == -2 && localDate.O())) {
+            return i13;
         }
         return 1;
     }

@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
 public final class j2 extends f3 {
     public final /* synthetic */ m2 b;
@@ -18,8 +18,8 @@ public final class j2 extends f3 {
     public final /* synthetic */ f3[] e;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j2(Activity activity, b6 b6Var, m2 m2Var, b5[] b5VarArr, o2 o2Var, f3[] f3VarArr) {
-        super(activity, b6Var, true, false);
+    public j2(Activity activity, c6 c6Var, m2 m2Var, b5[] b5VarArr, o2 o2Var, f3[] f3VarArr) {
+        super(activity, c6Var, true, false);
         this.b = m2Var;
         this.c = b5VarArr;
         this.d = o2Var;
@@ -31,11 +31,11 @@ public final class j2 extends f3 {
         ((ActionBarLayout) b5VarArr[0]).c(-1, o2Var);
         ((ActionBarLayout) b5VarArr[0]).c0();
         ViewGroup view = b5VarArr[0].getView();
-        int i9 = this.backgroundPaddingLeft;
-        view.setPadding(i9, 0, i9, 0);
+        int i10 = this.backgroundPaddingLeft;
+        view.setPadding(i10, 0, i10, 0);
         this.containerView = b5VarArr[0].getView();
         setApplyBottomPadding(false);
-        setOnDismissListener(new bg.j(6, o2Var, m2Var));
+        setOnDismissListener(new eg.g(3, o2Var, m2Var));
     }
 
     @Override // org.telegram.ui.ActionBar.f3
@@ -85,7 +85,7 @@ public final class j2 extends f3 {
         o2 o2Var = this.d;
         m2 m2Var = this.b;
         if (m2Var == null || !m2Var.e) {
-            fixNavigationBar(f6.v0(f6.i5, o2Var.getResourceProvider()));
+            fixNavigationBar(g6.v0(g6.i5, o2Var.getResourceProvider()));
         } else {
             AndroidUtilities.setLightNavigationBar((Dialog) f3VarArr[0], true);
         }

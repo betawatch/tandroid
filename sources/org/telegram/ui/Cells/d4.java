@@ -1,67 +1,32 @@
 package org.telegram.ui.Cells;
 
-import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
 import android.graphics.drawable.Drawable;
-import org.telegram.messenger.R;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class d4 extends Drawable {
-    public final Drawable[] a;
+public final class d4 extends FrameLayout {
+    public Drawable a;
+    public TextView b;
 
-    public d4(Context context) {
-        this.a = new Drawable[]{r1, context.getResources().getDrawable(R.drawable.verified_check).mutate()};
-        Drawable mutate = context.getResources().getDrawable(R.drawable.verified_area).mutate();
-        mutate.setColorFilter(new PorterDuffColorFilter(-9063442, PorterDuff.Mode.MULTIPLY));
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        Drawable drawable = this.a;
+        drawable.setBounds(0, getMeasuredHeight() - AndroidUtilities.dp(3.0f), getMeasuredWidth(), getMeasuredHeight());
+        drawable.draw(canvas);
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        int i9 = 0;
-        while (true) {
-            Drawable[] drawableArr = this.a;
-            if (i9 >= drawableArr.length) {
-                return;
-            }
-            drawableArr[i9].setBounds(getBounds());
-            drawableArr[i9].draw(canvas);
-            i9++;
-        }
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(40.0f), TLObject.FLAG_30));
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return this.a[0].getIntrinsicHeight();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return this.a[0].getIntrinsicWidth();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i9) {
-        int i10 = 0;
-        while (true) {
-            Drawable[] drawableArr = this.a;
-            if (i10 >= drawableArr.length) {
-                return;
-            }
-            drawableArr[i10].setAlpha(i9);
-            i10++;
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+    public void setText(String str) {
+        this.b.setText(str);
     }
 }

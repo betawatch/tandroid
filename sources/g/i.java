@@ -7,22 +7,22 @@ import java.util.WeakHashMap;
 import r0.j0;
 import r0.o0;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class i extends o0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
-    public /* synthetic */ i(Object obj, int i9) {
-        this.a = i9;
+    public /* synthetic */ i(Object obj, int i10) {
+        this.a = i10;
         this.b = obj;
     }
 
     @Override // r0.o0, r0.n0
     public void b() {
-        int i9 = this.a;
+        int i10 = this.a;
         Object obj = this.b;
-        switch (i9) {
+        switch (i10) {
             case 0:
                 ((h) obj).b.y.setVisibility(0);
                 break;
@@ -41,9 +41,9 @@ public final class i extends o0 {
 
     @Override // r0.n0
     public final void c() {
-        int i9 = this.a;
+        int i10 = this.a;
         Object obj = this.b;
-        switch (i9) {
+        switch (i10) {
             case 0:
                 q qVar = ((h) obj).b;
                 qVar.y.setAlpha(1.0f);
@@ -57,7 +57,7 @@ public final class i extends o0 {
                 qVar2.C = null;
                 break;
             default:
-                q qVar3 = (q) ((we.b) obj).c;
+                q qVar3 = (q) ((ze.b) obj).b;
                 qVar3.y.setVisibility(8);
                 PopupWindow popupWindow = qVar3.A;
                 if (popupWindow != null) {

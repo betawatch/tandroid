@@ -1,11 +1,10 @@
 package com.google.android.recaptcha.internal;
 
-import oc.f;
 import org.telegram.tgnet.TLObject;
-import rc.a;
-import sc.c;
+import qc.f;
+import uc.c;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 final class zzek extends c {
     /* synthetic */ Object zza;
@@ -13,17 +12,17 @@ final class zzek extends c {
     int zzc;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzek(zzeq zzeqVar, qc.c cVar) {
+    public zzek(zzeq zzeqVar, sc.c cVar) {
         super(cVar);
         this.zzb = zzeqVar;
     }
 
-    @Override // sc.a
+    @Override // uc.a
     public final Object invokeSuspend(Object obj) {
         Object zze;
         this.zza = obj;
         this.zzc |= TLObject.FLAG_31;
         zze = this.zzb.zze(null, 0L, this);
-        return zze == a.a ? zze : new f(zze);
+        return zze == tc.a.a ? zze : new f(zze);
     }
 }

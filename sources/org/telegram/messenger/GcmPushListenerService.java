@@ -3,9 +3,8 @@ package org.telegram.messenger;
 import android.os.Bundle;
 import android.util.Log;
 import com.google.firebase.messaging.FirebaseMessagingService;
-import com.google.firebase.messaging.r;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public class GcmPushListenerService extends FirebaseMessagingService {
     /* JADX INFO: Access modifiers changed from: private */
@@ -18,11 +17,11 @@ public class GcmPushListenerService extends FirebaseMessagingService {
     }
 
     @Override // com.google.firebase.messaging.FirebaseMessagingService
-    public void onMessageReceived(r rVar) {
+    public void onMessageReceived(com.google.firebase.messaging.q qVar) {
         long parseLong;
-        Bundle bundle = rVar.a;
+        Bundle bundle = qVar.a;
         String string = bundle.getString("from");
-        if (rVar.b == null) {
+        if (qVar.b == null) {
             a0.f fVar = new a0.f(0);
             for (String str : bundle.keySet()) {
                 Object obj = bundle.get(str);
@@ -33,9 +32,9 @@ public class GcmPushListenerService extends FirebaseMessagingService {
                     }
                 }
             }
-            rVar.b = fVar;
+            qVar.b = fVar;
         }
-        a0.f fVar2 = rVar.b;
+        a0.f fVar2 = qVar.b;
         Object obj2 = bundle.get("google.sent_time");
         if (obj2 instanceof Long) {
             parseLong = ((Long) obj2).longValue();

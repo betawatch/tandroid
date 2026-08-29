@@ -1,27 +1,20 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.view.View;
-import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class q41 extends x51 {
-    public final /* synthetic */ View M;
-    public final /* synthetic */ TL_stars.TL_starGiftUnique N;
-    public final /* synthetic */ r41 O;
+public final class q41 extends f51 {
+    public final /* synthetic */ d61 b3;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public q41(r41 r41Var, Context context, Runnable runnable, View view, k51 k51Var, org.telegram.ui.ActionBar.b6 b6Var, View view2, TL_stars.TL_starGiftUnique tL_starGiftUnique) {
-        super(r41Var.e, context, runnable, view, k51Var, b6Var);
-        this.O = r41Var;
-        this.M = view2;
-        this.N = tL_starGiftUnique;
+    public q41(d61 d61Var, Context context) {
+        super(d61Var, context);
+        this.b3 = d61Var;
     }
 
-    @Override // org.telegram.ui.x51, android.app.Dialog, android.content.DialogInterface
-    public final void dismiss() {
-        super.dismiss();
-        this.O.e.T0 = null;
+    @Override // androidx.recyclerview.widget.RecyclerView
+    public final void k0(int i10, int i11) {
+        this.b3.h();
     }
 }

@@ -22,7 +22,7 @@ public abstract class p3 extends CountedCompleter implements j5 {
         throw null;
     }
 
-    public /* synthetic */ void accept(int i9) {
+    public /* synthetic */ void accept(int i10) {
         t3.J();
         throw null;
     }
@@ -45,23 +45,23 @@ public abstract class p3 extends CountedCompleter implements j5 {
         return false;
     }
 
-    public p3(Spliterator spliterator, t3 t3Var, int i9) {
+    public p3(Spliterator spliterator, t3 t3Var, int i10) {
         this.a = spliterator;
         this.b = t3Var;
         this.c = d.e(spliterator.estimateSize());
         this.d = 0L;
-        this.e = i9;
+        this.e = i10;
     }
 
-    public p3(p3 p3Var, Spliterator spliterator, long j10, long j11, int i9) {
+    public p3(p3 p3Var, Spliterator spliterator, long j10, long j11, int i10) {
         super(p3Var);
         this.a = spliterator;
         this.b = p3Var.b;
         this.c = p3Var.c;
         this.d = j10;
         this.e = j11;
-        if (j10 < 0 || j11 < 0 || (j10 + j11) - 1 >= i9) {
-            throw new IllegalArgumentException(String.format("offset and length interval [%d, %d + %d) is not within array size interval [0, %d)", Long.valueOf(j10), Long.valueOf(j10), Long.valueOf(j11), Integer.valueOf(i9)));
+        if (j10 < 0 || j11 < 0 || (j10 + j11) - 1 >= i10) {
+            throw new IllegalArgumentException(String.format("offset and length interval [%d, %d + %d) is not within array size interval [0, %d)", Long.valueOf(j10), Long.valueOf(j10), Long.valueOf(j11), Integer.valueOf(i10)));
         }
     }
 
@@ -88,8 +88,8 @@ public abstract class p3 extends CountedCompleter implements j5 {
         if (j10 > j11) {
             throw new IllegalStateException("size passed to Sink.begin exceeds array length");
         }
-        int i9 = (int) this.d;
-        this.f = i9;
-        this.g = i9 + ((int) j11);
+        int i10 = (int) this.d;
+        this.f = i10;
+        this.g = i10 + ((int) j11);
     }
 }

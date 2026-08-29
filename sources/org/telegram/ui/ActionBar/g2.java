@@ -16,7 +16,7 @@ import android.widget.FrameLayout;
 import java.util.WeakHashMap;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
 public final class g2 extends c2 {
     public static final int[] j1 = {R.attr.windowEnterAnimation, R.attr.windowExitAnimation};
@@ -29,13 +29,13 @@ public final class g2 extends c2 {
     public DialogInterface.OnDismissListener f1;
     public boolean g1;
     public long h1;
-    public final p i1;
+    public final q i1;
 
-    public g2(Context context, int i9, b6 b6Var) {
-        super(context, i9, b6Var);
+    public g2(Context context, int i10, c6 c6Var) {
+        super(context, i10, c6Var);
         this.g1 = false;
         this.h1 = 0L;
-        this.i1 = new p(this, 7);
+        this.i1 = new q(this, 7);
     }
 
     public static Activity r(Context context) {
@@ -103,15 +103,15 @@ public final class g2 extends c2 {
         this.a1 = obtainStyledAttributes.getResourceId(1, -1);
         obtainStyledAttributes.recycle();
         this.d0 = true;
-        ViewGroup f10 = f(false);
-        this.c1 = f10;
-        f10.setClickable(true);
+        ViewGroup f9 = f(false);
+        this.c1 = f9;
+        f9.setClickable(true);
         WindowManager.LayoutParams attributes = getWindow().getAttributes();
         FrameLayout frameLayout = new FrameLayout(getContext());
-        frameLayout.setOnClickListener(new x(this, 1));
+        frameLayout.setOnClickListener(new y(this, 1));
         View view = new View(getContext());
         this.d1 = view;
-        view.setBackgroundColor(f6.l1(attributes.dimAmount, -16777216));
+        view.setBackgroundColor(g6.l1(attributes.dimAmount, -16777216));
         frameLayout.addView(this.d1, new FrameLayout.LayoutParams(-1, -1));
         FrameLayout frameLayout2 = new FrameLayout(getContext());
         frameLayout2.addView(this.c1, new FrameLayout.LayoutParams(-1, -2, 17));
@@ -121,14 +121,14 @@ public final class g2 extends c2 {
         FrameLayout frameLayout3 = this.b1;
         WeakHashMap weakHashMap = r0.j0.a;
         r0.z.c(frameLayout3);
-        r0.b0.j(this.b1, new n(frameLayout2, 4));
+        r0.b0.j(this.b1, new o(frameLayout2, 4));
         this.b1.setVisibility(4);
         long j10 = this.h1;
-        p pVar = this.i1;
+        q qVar = this.i1;
         if (j10 == 0) {
-            pVar.run();
+            qVar.run();
         } else {
-            AndroidUtilities.runOnUIThread(pVar, j10);
+            AndroidUtilities.runOnUIThread(qVar, j10);
         }
     }
 }

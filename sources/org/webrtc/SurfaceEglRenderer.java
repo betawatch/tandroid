@@ -5,7 +5,7 @@ import java.util.concurrent.CountDownLatch;
 import org.webrtc.EglBase;
 import org.webrtc.RendererCommon;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes4.dex */
 public class SurfaceEglRenderer extends EglRenderer implements SurfaceHolder.Callback {
     private static final String TAG = "SurfaceEglRenderer";
@@ -50,8 +50,8 @@ public class SurfaceEglRenderer extends EglRenderer implements SurfaceHolder.Cal
                     this.rotatedFrameHeight = videoFrame.getRotatedHeight();
                     this.frameRotation = videoFrame.getRotation();
                 }
-            } catch (Throwable th) {
-                throw th;
+            } catch (Throwable th2) {
+                throw th2;
             }
         }
     }
@@ -91,17 +91,17 @@ public class SurfaceEglRenderer extends EglRenderer implements SurfaceHolder.Cal
     }
 
     @Override // org.webrtc.EglRenderer
-    public void setFpsReduction(float f10) {
+    public void setFpsReduction(float f9) {
         synchronized (this.layoutLock) {
-            this.isRenderingPaused = f10 == 0.0f;
+            this.isRenderingPaused = f9 == 0.0f;
         }
-        super.setFpsReduction(f10);
+        super.setFpsReduction(f9);
     }
 
     @Override // android.view.SurfaceHolder.Callback
-    public void surfaceChanged(SurfaceHolder surfaceHolder, int i9, int i10, int i11) {
+    public void surfaceChanged(SurfaceHolder surfaceHolder, int i10, int i11, int i12) {
         ThreadUtils.checkIsOnMainThread();
-        logD("surfaceChanged: format: " + i9 + " size: " + i10 + "x" + i11);
+        logD("surfaceChanged: format: " + i10 + " size: " + i11 + "x" + i12);
     }
 
     @Override // android.view.SurfaceHolder.Callback
@@ -114,7 +114,7 @@ public class SurfaceEglRenderer extends EglRenderer implements SurfaceHolder.Cal
     public void surfaceDestroyed(SurfaceHolder surfaceHolder) {
         ThreadUtils.checkIsOnMainThread();
         CountDownLatch countDownLatch = new CountDownLatch(1);
-        releaseEglSurface(new org.telegram.ui.ActionBar.p(countDownLatch, 16), false);
+        releaseEglSurface(new org.telegram.ui.ActionBar.q(countDownLatch, 16), false);
         ThreadUtils.awaitUninterruptibly(countDownLatch);
     }
 

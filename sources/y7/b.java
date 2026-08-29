@@ -1,40 +1,33 @@
 package y7;
 
-import android.content.Intent;
 import android.os.Parcel;
+import android.os.ParcelFileDescriptor;
 import android.os.Parcelable;
-import com.google.android.gms.common.api.Status;
-import com.google.android.gms.common.api.q;
-import g7.p8;
-import w7.i;
+import com.google.android.gms.common.data.DataHolder;
+import com.google.android.gms.internal.cast.o;
+import w5.k;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class b extends y5.a implements q {
-    public static final Parcelable.Creator<b> CREATOR = new i(14);
-    public final int a;
-    public final int b;
-    public final Intent c;
-
-    public b(int i9, int i10, Intent intent) {
-        this.a = i9;
-        this.b = i10;
-        this.c = intent;
-    }
-
-    @Override // com.google.android.gms.common.api.q
-    public final Status i() {
-        return this.b == 0 ? Status.e : Status.r;
-    }
+public final class b extends a6.a {
+    public static final Parcelable.Creator<b> CREATOR = new k(13);
+    public String a;
+    public DataHolder b;
+    public ParcelFileDescriptor c;
+    public long d;
+    public byte[] e;
 
     @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i9) {
-        int q10 = p8.q(parcel, 20293);
-        p8.s(parcel, 1, 4);
-        parcel.writeInt(this.a);
-        p8.s(parcel, 2, 4);
-        parcel.writeInt(this.b);
-        p8.k(parcel, 3, this.c, i9);
-        p8.r(parcel, q10);
+    public final void writeToParcel(Parcel parcel, int i10) {
+        int q6 = o.q(parcel, 20293);
+        o.l(parcel, 2, this.a);
+        o.k(parcel, 3, this.b, i10);
+        o.k(parcel, 4, this.c, i10);
+        long j10 = this.d;
+        o.s(parcel, 5, 8);
+        parcel.writeLong(j10);
+        o.c(parcel, 6, this.e);
+        o.r(parcel, q6);
+        this.c = null;
     }
 }

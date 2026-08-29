@@ -1,79 +1,47 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-import android.view.View;
-import android.view.animation.OvershootInterpolator;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public class pc {
-    public View a;
-    public final float b;
-    public final float c;
-    public final float d;
-    public long e;
-    public Runnable f;
-    public ValueAnimator g;
-    public boolean h;
-    public float i;
+public final /* synthetic */ class pc implements Utilities.Callback {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ Object d;
 
-    public pc(View view) {
-        this(view, 1.0f, 5.0f);
+    public /* synthetic */ pc(int i10, mc mcVar, long j10) {
+        this.c = i10;
+        this.d = mcVar;
+        this.b = j10;
     }
 
-    public final float a(float f10) {
-        return e2.c.z(1.0f, this.i, f10, 1.0f - f10);
-    }
-
-    public void b() {
-        View view = this.a;
-        if (view != null) {
-            view.invalidate();
-        }
-        Runnable runnable = this.f;
-        if (runnable != null) {
-            runnable.run();
-        }
-    }
-
-    public final void c(boolean z10) {
-        if (this.h != z10) {
-            this.h = z10;
-            ValueAnimator valueAnimator = this.g;
-            this.g = null;
-            if (valueAnimator != null) {
-                valueAnimator.cancel();
-            }
-            ValueAnimator ofFloat = ValueAnimator.ofFloat(this.i, z10 ? 1.0f : 0.0f);
-            this.g = ofFloat;
-            ofFloat.addUpdateListener(new e6(this, 7));
-            this.g.addListener(new u9(1, this, z10));
-            if (this.h) {
-                this.g.setInterpolator(gr.f);
-                this.g.setDuration((long) (this.b * 60.0f));
-                this.g.setStartDelay(0L);
-            } else {
-                this.g.setInterpolator(new OvershootInterpolator(this.d));
-                this.g.setDuration((long) (this.c * 350.0f));
-                this.g.setStartDelay(this.e);
-            }
-            this.g.start();
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        TLRPC.StickerSet stickerSet;
+        int i10 = this.a;
+        int i11 = this.c;
+        long j10 = this.b;
+        Object obj2 = this.d;
+        switch (i10) {
+            case 0:
+                TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) obj;
+                AndroidUtilities.runOnUIThread(new z2(2, (mc) obj2, (tL_messages_stickerSet == null || (stickerSet = tL_messages_stickerSet.set) == null) ? LocaleController.getString(R.string.AddEmojiNotFound) : i11 == 1 ? AndroidUtilities.replaceTags(LocaleController.formatString("TopicContainsEmojiPackSingle", R.string.TopicContainsEmojiPackSingle, stickerSet.title)) : i11 == 2 ? AndroidUtilities.replaceTags(LocaleController.formatString("StoryContainsEmojiPackSingle", R.string.StoryContainsEmojiPackSingle, stickerSet.title)) : AndroidUtilities.replaceTags(LocaleController.formatString("MessageContainsEmojiPackSingle", R.string.MessageContainsEmojiPackSingle, stickerSet.title))), Math.max(1L, 750 - (System.currentTimeMillis() - j10)));
+                break;
+            default:
+                ((qu0) obj2).getStoriesController().b(i11, j10, (ArrayList) obj);
+                break;
         }
     }
 
-    public pc(View view, float f10, float f11) {
-        this.e = 0L;
-        this.a = view;
-        this.c = f10;
-        this.b = f10;
-        this.d = f11;
-    }
-
-    public pc(kh.e6 e6Var) {
-        this.e = 0L;
-        this.a = e6Var;
-        this.b = 1.5f;
-        this.c = 1.0f;
-        this.d = 2.0f;
+    public /* synthetic */ pc(qu0 qu0Var, long j10, int i10) {
+        this.d = qu0Var;
+        this.b = j10;
+        this.c = i10;
     }
 }

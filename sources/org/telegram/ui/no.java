@@ -1,35 +1,46 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Rect;
-import android.view.MotionEvent;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class no extends org.telegram.ui.Components.in0 {
-    public final /* synthetic */ vo r;
+public final /* synthetic */ class no implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ yo b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public no(vo voVar, Context context, gh.m mVar, org.telegram.ui.ActionBar.b6 b6Var) {
-        super(context, mVar, b6Var, false);
-        this.r = voVar;
+    public /* synthetic */ no(yo yoVar, int i10) {
+        this.a = i10;
+        this.b = yoVar;
     }
 
-    @Override // android.widget.ScrollView, android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        return !this.r.H && super.onInterceptTouchEvent(motionEvent);
-    }
-
-    @Override // android.widget.ScrollView, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        return motionEvent.getAction() != 0 ? super.onTouchEvent(motionEvent) : !this.r.H && super.onTouchEvent(motionEvent);
-    }
-
-    @Override // android.widget.ScrollView, android.view.ViewGroup, android.view.ViewParent
-    public final boolean requestChildRectangleOnScreen(View view, Rect rect, boolean z10) {
-        rect.bottom = AndroidUtilities.dp(60.0f) + rect.bottom;
-        return super.requestChildRectangleOnScreen(view, rect, z10);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                yo yoVar = this.b;
+                yoVar.Y = true;
+                yoVar.b0();
+                break;
+            case 1:
+                yo yoVar2 = this.b;
+                yoVar2.T = yoVar2.getMessagesController().getChat(Long.valueOf(yoVar2.V));
+                yoVar2.Y();
+                break;
+            case 2:
+                this.b.a0(false);
+                break;
+            case 3:
+                yo yoVar3 = this.b;
+                yoVar3.Y = true;
+                if (yoVar3.a.length() > 0) {
+                    yoVar3.W(yoVar3.a.getText().toString());
+                }
+                yoVar3.b0();
+                break;
+            case 4:
+                this.b.Y();
+                break;
+            default:
+                this.b.a0(true);
+                break;
+        }
     }
 }

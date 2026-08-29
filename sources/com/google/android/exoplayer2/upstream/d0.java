@@ -5,8 +5,9 @@ import android.text.TextUtils;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.RandomAccessFile;
+import org.telegram.ui.th;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class d0 extends g {
     public RandomAccessFile a;
@@ -54,7 +55,7 @@ public final class d0 extends g {
         long j10 = qVar.e;
         this.b = uri;
         transferInitializing(qVar);
-        int i9 = 2006;
+        int i10 = 2006;
         try {
             String path = uri.getPath();
             path.getClass();
@@ -78,18 +79,18 @@ public final class d0 extends g {
             }
         } catch (FileNotFoundException e11) {
             if (TextUtils.isEmpty(uri.getQuery()) && TextUtils.isEmpty(uri.getFragment())) {
-                if (d5.f0.a >= 21) {
+                if (f5.d0.a >= 21) {
                     b10 = b0.b(e11.getCause());
                 }
-                i9 = 2005;
-                throw new c0(e11, i9);
+                i10 = 2005;
+                throw new c0(e11, i10);
             }
             String path2 = uri.getPath();
             String query = uri.getQuery();
             String fragment = uri.getFragment();
-            StringBuilder q10 = j3.r0.q("uri has query and/or fragment, which are not supported. Did you call Uri.parse() on a string containing '?' or '#'? Use Uri.fromFile(new File(path)) to avoid this. path=", path2, ",query=", query, ",fragment=");
-            q10.append(fragment);
-            throw new c0(q10.toString(), e11, 1004);
+            StringBuilder k9 = th.k("uri has query and/or fragment, which are not supported. Did you call Uri.parse() on a string containing '?' or '#'? Use Uri.fromFile(new File(path)) to avoid this. path=", path2, ",query=", query, ",fragment=");
+            k9.append(fragment);
+            throw new c0(k9.toString(), e11, 1004);
         } catch (SecurityException e12) {
             throw new c0(e12, 2006);
         } catch (RuntimeException e13) {
@@ -98,8 +99,8 @@ public final class d0 extends g {
     }
 
     @Override // com.google.android.exoplayer2.upstream.j
-    public final int read(byte[] bArr, int i9, int i10) {
-        if (i10 == 0) {
+    public final int read(byte[] bArr, int i10, int i11) {
+        if (i11 == 0) {
             return 0;
         }
         long j10 = this.c;
@@ -108,8 +109,8 @@ public final class d0 extends g {
         }
         try {
             RandomAccessFile randomAccessFile = this.a;
-            int i11 = d5.f0.a;
-            int read = randomAccessFile.read(bArr, i9, (int) Math.min(j10, i10));
+            int i12 = f5.d0.a;
+            int read = randomAccessFile.read(bArr, i10, (int) Math.min(j10, i11));
             if (read > 0) {
                 this.c -= read;
                 bytesTransferred(read);

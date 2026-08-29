@@ -203,38 +203,38 @@ public final class f implements ChronoLocalDateTime, Temporal, j$.time.temporal.
         ChronoUnit chronoUnit = (ChronoUnit) qVar;
         ChronoUnit chronoUnit2 = ChronoUnit.DAYS;
         if (chronoUnit.compareTo(chronoUnit2) >= 0) {
-            b f10 = B.f();
+            b f9 = B.f();
             if (B.b().compareTo(this.b) < 0) {
-                f10 = f10.w(1L, chronoUnit2);
+                f9 = f9.w(1L, chronoUnit2);
             }
-            return this.a.g(f10, qVar);
+            return this.a.g(f9, qVar);
         }
         j$.time.temporal.a aVar = j$.time.temporal.a.EPOCH_DAY;
-        long y10 = B.y(aVar) - this.a.y(aVar);
+        long y8 = B.y(aVar) - this.a.y(aVar);
         switch (e.a[chronoUnit.ordinal()]) {
             case 1:
-                y10 = j$.com.android.tools.r8.a.T(y10, 86400000000000L);
+                y8 = j$.com.android.tools.r8.a.T(y8, 86400000000000L);
                 break;
             case 2:
-                y10 = j$.com.android.tools.r8.a.T(y10, 86400000000L);
+                y8 = j$.com.android.tools.r8.a.T(y8, 86400000000L);
                 break;
             case 3:
-                y10 = j$.com.android.tools.r8.a.T(y10, 86400000L);
+                y8 = j$.com.android.tools.r8.a.T(y8, 86400000L);
                 break;
             case 4:
-                y10 = j$.com.android.tools.r8.a.T(y10, 86400);
+                y8 = j$.com.android.tools.r8.a.T(y8, 86400);
                 break;
             case 5:
-                y10 = j$.com.android.tools.r8.a.T(y10, 1440);
+                y8 = j$.com.android.tools.r8.a.T(y8, 1440);
                 break;
             case 6:
-                y10 = j$.com.android.tools.r8.a.T(y10, 24);
+                y8 = j$.com.android.tools.r8.a.T(y8, 24);
                 break;
             case 7:
-                y10 = j$.com.android.tools.r8.a.T(y10, 2);
+                y8 = j$.com.android.tools.r8.a.T(y8, 2);
                 break;
         }
-        return j$.com.android.tools.r8.a.O(y10, this.b.g(B.b(), qVar));
+        return j$.com.android.tools.r8.a.O(y8, this.b.g(B.b(), qVar));
     }
 
     @Override // j$.time.temporal.m

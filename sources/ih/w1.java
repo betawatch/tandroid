@@ -1,41 +1,41 @@
 package ih;
 
-import android.view.View;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.Components.x60;
-
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
-/* loaded from: classes4.dex */
-public final /* synthetic */ class w1 implements View.OnLongClickListener {
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class w1 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ i4 b;
+    public final /* synthetic */ y1 b;
+    public final /* synthetic */ boolean c;
 
-    public /* synthetic */ w1(i4 i4Var, int i9) {
-        this.a = i9;
-        this.b = i4Var;
+    public /* synthetic */ w1(y1 y1Var, boolean z10, int i10) {
+        this.a = i10;
+        this.b = y1Var;
+        this.c = z10;
     }
 
-    @Override // android.view.View.OnLongClickListener
-    public final boolean onLongClick(View view) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                i4 i4Var = this.b;
-                if (!i4Var.D0(true)) {
-                    x60 F = x60.F(i4Var.F0.v, i4Var.x0, view);
-                    F.c(R.drawable.msg_edit, LocaleController.getString(R.string.LiveStoryMessageEditStars), new x1(i4Var, 6), false);
-                    F.l(R.drawable.menu_delete_paid, LocaleController.getString(R.string.LiveStoryMessageRemoveStars), new x1(i4Var, 7), i4Var.H3 > 0);
-                    F.V(5);
-                    F.U = true;
-                    F.Z();
+                boolean z10 = this.c;
+                y1 y1Var = this.b;
+                if (!z10) {
+                    y1Var.C.setVisibility(8);
+                    break;
+                } else {
+                    y1Var.getClass();
                     break;
                 }
-                break;
             default:
-                i4 i4Var2 = this.b;
-                i4Var2.H0.k(i4Var2.D0(false));
-                break;
+                boolean z11 = this.c;
+                y1 y1Var2 = this.b;
+                if (!z11) {
+                    y1Var2.v.setVisibility(8);
+                    break;
+                } else {
+                    y1Var2.getClass();
+                    break;
+                }
         }
-        return true;
     }
 }

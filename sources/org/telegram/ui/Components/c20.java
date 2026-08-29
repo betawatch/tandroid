@@ -1,136 +1,104 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
+import android.graphics.Paint;
+import android.text.SpannableStringBuilder;
 import android.view.View;
-import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class c20 extends vk0 {
-    public ChatObject.Call c;
-    public final int d;
-    public ArrayList h;
-    public org.telegram.ui.g30 n;
-    public final org.telegram.ui.o50 r;
-    public final ArrayList e = new ArrayList();
-    public final ArrayList f = new ArrayList();
-    public boolean s = false;
+public final class c20 extends LinearLayout {
+    public final nh.d a;
+    public final nh.d b;
+    public final nh.d c;
+    public final long d;
 
-    public c20(ChatObject.Call call, int i9, org.telegram.ui.o50 o50Var) {
-        this.c = call;
-        this.d = i9;
-        this.r = o50Var;
-    }
-
-    @Override // org.telegram.ui.Components.vk0
-    public final boolean D(f2.q1 q1Var) {
-        return false;
-    }
-
-    public final void E(ArrayList arrayList, org.telegram.ui.g30 g30Var) {
-        this.h = arrayList;
-        this.n = g30Var;
-    }
-
-    public final void F(org.telegram.ui.c30 c30Var, boolean z10) {
-        this.s = z10;
-        for (int i9 = 0; i9 < c30Var.getChildCount(); i9++) {
-            View childAt = c30Var.getChildAt(i9);
-            if (childAt instanceof b20) {
-                b20 b20Var = (b20) childAt;
-                if (b20Var.getVideoParticipant() != null) {
-                    b20Var.b(z10);
-                }
-            }
+    public c20(Context context, int i10) {
+        super(context);
+        TLRPC.TL_emojiList a2 = d9.a(i10);
+        setOrientation(1);
+        t9 t9Var = new t9(context);
+        t9Var.setImageDrawable(new xi0(R.raw.utyan_gallery, AndroidUtilities.dp(110.0f), "utyan_gallery", AndroidUtilities.dp(110.0f)));
+        if (!AndroidUtilities.isTablet()) {
+            addView(t9Var, i7.f6.q(110, 110, 49));
         }
-    }
-
-    public final void G(wk0 wk0Var, boolean z10) {
-        if (this.c == null) {
-            return;
-        }
-        ArrayList arrayList = this.e;
-        ArrayList arrayList2 = this.f;
-        if (!z10) {
-            arrayList2.clear();
-            ChatObject.Call call = this.c;
-            if (!call.call.rtmp_stream) {
-                arrayList2.addAll(call.visibleParticipants);
-            }
-            arrayList.clear();
-            ChatObject.Call call2 = this.c;
-            if (!call2.call.rtmp_stream) {
-                arrayList.addAll(call2.visibleVideoParticipants);
-            }
-            l();
-            return;
-        }
-        ArrayList arrayList3 = new ArrayList(arrayList2);
-        ArrayList arrayList4 = new ArrayList(arrayList);
-        arrayList2.clear();
-        ChatObject.Call call3 = this.c;
-        if (!call3.call.rtmp_stream) {
-            arrayList2.addAll(call3.visibleParticipants);
-        }
-        arrayList.clear();
-        ChatObject.Call call4 = this.c;
-        if (!call4.call.rtmp_stream) {
-            arrayList.addAll(call4.visibleVideoParticipants);
-        }
-        f2.s.c(new a20(this, arrayList4, arrayList3), true).b(this);
-        AndroidUtilities.updateVisibleRows(wk0Var);
-    }
-
-    @Override // f2.r0
-    public final int h() {
-        return this.f.size() + this.e.size();
-    }
-
-    @Override // f2.r0
-    public final void v(f2.q1 q1Var, int i9) {
-        TLRPC.GroupCallParticipant groupCallParticipant;
-        ChatObject.VideoParticipant videoParticipant;
-        b20 b20Var = (b20) q1Var.a;
-        ChatObject.VideoParticipant videoParticipant2 = b20Var.f;
-        ArrayList arrayList = this.e;
-        if (i9 < arrayList.size()) {
-            videoParticipant = (ChatObject.VideoParticipant) arrayList.get(i9);
-            groupCallParticipant = ((ChatObject.VideoParticipant) arrayList.get(i9)).participant;
+        TextView h = org.telegram.messenger.x3.h(context, 1, 20.0f);
+        org.telegram.ui.th.s(org.telegram.ui.ActionBar.g6.G6, null, false, h, 1);
+        h.setText(LocaleController.getString(R.string.GalleryAccessAllowAccess));
+        h.setTypeface(AndroidUtilities.bold());
+        addView(h, i7.f6.t(-2, -2, 49, 0, 15, 0, 7));
+        TextView textView = new TextView(context);
+        textView.setTextSize(1, 14.0f);
+        org.telegram.ui.th.s(org.telegram.ui.ActionBar.g6.c7, null, false, textView, 1);
+        textView.setText(LocaleController.getString(UserConfig.getInstance(i10).isPremium() ? R.string.GalleryAccessAllowAccessTextPremium : R.string.GalleryAccessAllowAccessTextNonPremium));
+        textView.setMaxWidth(AndroidUtilities.dp(260.0f));
+        textView.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
+        addView(textView, i7.f6.t(-2, -2, 49, 0, 0, 0, 14));
+        nh.d dVar = new nh.d(context, null, true);
+        this.a = dVar;
+        dVar.e();
+        dVar.g(LocaleController.getString(R.string.GalleryAccessAllowAccessButton), false, true);
+        addView(dVar, i7.f6.q(-2, 44, 49));
+        nh.d dVar2 = new nh.d(context, null, false);
+        this.b = dVar2;
+        dVar2.e();
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("c");
+        spannableStringBuilder.setSpan(new iq(R.drawable.outline_attach_camera_24, 0), 0, 1, 33);
+        spannableStringBuilder.append((CharSequence) "  ").append((CharSequence) LocaleController.getString(R.string.GalleryAccessAllowAccessOpenCamera));
+        dVar2.g(spannableStringBuilder, false, true);
+        addView(dVar2, i7.f6.t(-2, 44, 49, 0, 8, 0, 0));
+        nh.d dVar3 = new nh.d(context, null, false);
+        this.c = dVar3;
+        dVar3.e();
+        dVar3.setVisibility(8);
+        SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder("c");
+        ArrayList<Long> arrayList = a2.document_id;
+        if (arrayList == null || arrayList.isEmpty()) {
+            this.d = 0L;
         } else {
-            int size = i9 - arrayList.size();
-            ArrayList arrayList2 = this.f;
-            if (size >= arrayList2.size()) {
-                return;
-            }
-            groupCallParticipant = (TLRPC.GroupCallParticipant) arrayList2.get(i9 - arrayList.size());
-            videoParticipant = null;
+            long longValue = a2.document_id.get(0).longValue();
+            this.d = longValue;
+            spannableStringBuilder2.setSpan(new y5(longValue, (Paint.FontMetricsInt) null), 0, 1, 33);
+            spannableStringBuilder2.append((CharSequence) "  ");
         }
-        b20Var.e(videoParticipant, groupCallParticipant);
-        if (videoParticipant2 != null && !videoParticipant2.equals(videoParticipant) && b20Var.G && b20Var.getRenderer() != null) {
-            b20Var.b(false);
-            if (videoParticipant != null) {
-                b20Var.b(true);
-                return;
-            }
-            return;
-        }
-        if (b20Var.G) {
-            if (b20Var.getRenderer() == null && videoParticipant != null && this.s) {
-                b20Var.b(true);
-            } else {
-                if (b20Var.getRenderer() == null || videoParticipant != null) {
-                    return;
-                }
-                b20Var.b(false);
-            }
-        }
+        spannableStringBuilder2.append((CharSequence) LocaleController.getString(R.string.UseEmoji));
+        dVar3.g(spannableStringBuilder2, false, true);
+        addView(dVar3, i7.f6.t(-2, 44, 49, 0, 1, 0, 0));
     }
 
-    @Override // f2.r0
-    public final f2.q1 x(ViewGroup viewGroup, int i9) {
-        return new ik0(new b20(this, viewGroup.getContext()));
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_31);
+        int makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(44.0f), TLObject.FLAG_30);
+        nh.d dVar = this.a;
+        dVar.setUseWrapContent(true);
+        nh.d dVar2 = this.b;
+        dVar2.setUseWrapContent(true);
+        nh.d dVar3 = this.c;
+        dVar3.setUseWrapContent(true);
+        dVar.measure(makeMeasureSpec, makeMeasureSpec2);
+        dVar2.measure(makeMeasureSpec, makeMeasureSpec2);
+        dVar3.measure(makeMeasureSpec, makeMeasureSpec2);
+        dVar.setUseWrapContent(false);
+        dVar2.setUseWrapContent(false);
+        dVar3.setUseWrapContent(false);
+        int max = Math.max(Math.max(dVar.getMeasuredWidth(), dVar2.getMeasuredWidth()), dVar3.getMeasuredWidth());
+        dVar.getLayoutParams().width = AndroidUtilities.dp(80.0f) + max;
+        dVar2.getLayoutParams().width = AndroidUtilities.dp(80.0f) + max;
+        dVar3.getLayoutParams().width = AndroidUtilities.dp(80.0f) + max;
+        super.onMeasure(i10, i11);
+    }
+
+    public void setUseAnEmojiVisible(boolean z10) {
+        this.c.setVisibility(z10 ? 0 : 8);
     }
 }

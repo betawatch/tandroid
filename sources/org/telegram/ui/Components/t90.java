@@ -1,18 +1,21 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Paint;
-import org.telegram.tgnet.TLRPC;
+import android.view.accessibility.AccessibilityNodeInfo;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public interface t90 {
-    void A(String str);
-
-    void a(TLRPC.BotInlineResult botInlineResult, boolean z10, int i9);
-
-    Paint.FontMetricsInt h();
-
-    void p(TLRPC.TL_document tL_document, String str, Object obj);
-
-    void y(int i9, int i10, CharSequence charSequence, boolean z10);
+public final class t90 extends org.telegram.ui.iz0 {
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        if (!getImageReceiver().hasNotThumb()) {
+            accessibilityNodeInfo.setVisibleToUser(false);
+            return;
+        }
+        accessibilityNodeInfo.setText(LocaleController.getString(R.string.AccDescrProfilePicture));
+        accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(16, LocaleController.getString(R.string.Open)));
+        accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(32, LocaleController.getString(R.string.AccDescrOpenInPhotoViewer)));
+    }
 }

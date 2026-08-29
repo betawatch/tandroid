@@ -7,7 +7,7 @@ import java.util.Collection;
 import java.util.RandomAccess;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class h1 extends n0 implements i2, RandomAccess {
     public static final h1 d;
@@ -20,29 +20,29 @@ public final class h1 extends n0 implements i2, RandomAccess {
         h1Var.a = false;
     }
 
-    public h1(int i9, int[] iArr) {
+    public h1(int i10, int[] iArr) {
         this.b = iArr;
-        this.c = i9;
+        this.c = i10;
     }
 
     @Override // java.util.AbstractList, java.util.List
-    public final /* synthetic */ void add(int i9, Object obj) {
-        int i10;
+    public final /* synthetic */ void add(int i10, Object obj) {
+        int i11;
         int intValue = ((Integer) obj).intValue();
         i();
-        if (i9 < 0 || i9 > (i10 = this.c)) {
-            throw new IndexOutOfBoundsException(p(i9));
+        if (i10 < 0 || i10 > (i11 = this.c)) {
+            throw new IndexOutOfBoundsException(p(i10));
         }
         int[] iArr = this.b;
-        if (i10 < iArr.length) {
-            System.arraycopy(iArr, i9, iArr, i9 + 1, i10 - i9);
+        if (i11 < iArr.length) {
+            System.arraycopy(iArr, i10, iArr, i10 + 1, i11 - i10);
         } else {
-            int[] iArr2 = new int[((i10 * 3) / 2) + 1];
-            System.arraycopy(iArr, 0, iArr2, 0, i9);
-            System.arraycopy(this.b, i9, iArr2, i9 + 1, this.c - i9);
+            int[] iArr2 = new int[((i11 * 3) / 2) + 1];
+            System.arraycopy(iArr, 0, iArr2, 0, i10);
+            System.arraycopy(this.b, i10, iArr2, i10 + 1, this.c - i10);
             this.b = iArr2;
         }
-        this.b[i9] = intValue;
+        this.b[i10] = intValue;
         this.c++;
         ((AbstractList) this).modCount++;
     }
@@ -56,21 +56,21 @@ public final class h1 extends n0 implements i2, RandomAccess {
             return super.addAll(collection);
         }
         h1 h1Var = (h1) collection;
-        int i9 = h1Var.c;
-        if (i9 == 0) {
+        int i10 = h1Var.c;
+        if (i10 == 0) {
             return false;
         }
-        int i10 = this.c;
-        if (ConnectionsManager.DEFAULT_DATACENTER_ID - i10 < i9) {
+        int i11 = this.c;
+        if (ConnectionsManager.DEFAULT_DATACENTER_ID - i11 < i10) {
             throw new OutOfMemoryError();
         }
-        int i11 = i10 + i9;
+        int i12 = i11 + i10;
         int[] iArr = this.b;
-        if (i11 > iArr.length) {
-            this.b = Arrays.copyOf(iArr, i11);
+        if (i12 > iArr.length) {
+            this.b = Arrays.copyOf(iArr, i12);
         }
         System.arraycopy(h1Var.b, 0, this.b, this.c, h1Var.c);
-        this.c = i11;
+        this.c = i12;
         ((AbstractList) this).modCount++;
         return true;
     }
@@ -93,8 +93,8 @@ public final class h1 extends n0 implements i2, RandomAccess {
             return false;
         }
         int[] iArr = h1Var.b;
-        for (int i9 = 0; i9 < this.c; i9++) {
-            if (this.b[i9] != iArr[i9]) {
+        for (int i10 = 0; i10 < this.c; i10++) {
+            if (this.b[i10] != iArr[i10]) {
                 return false;
             }
         }
@@ -102,18 +102,18 @@ public final class h1 extends n0 implements i2, RandomAccess {
     }
 
     @Override // java.util.AbstractList, java.util.List
-    public final Object get(int i9) {
-        o(i9);
-        return Integer.valueOf(this.b[i9]);
+    public final Object get(int i10) {
+        o(i10);
+        return Integer.valueOf(this.b[i10]);
     }
 
     @Override // com.google.android.gms.internal.vision.n0, java.util.AbstractList, java.util.Collection, java.util.List
     public final int hashCode() {
-        int i9 = 1;
-        for (int i10 = 0; i10 < this.c; i10++) {
-            i9 = (i9 * 31) + this.b[i10];
+        int i10 = 1;
+        for (int i11 = 0; i11 < this.c; i11++) {
+            i10 = (i10 * 31) + this.b[i11];
         }
-        return i9;
+        return i10;
     }
 
     @Override // java.util.AbstractList, java.util.List
@@ -122,81 +122,81 @@ public final class h1 extends n0 implements i2, RandomAccess {
             return -1;
         }
         int intValue = ((Integer) obj).intValue();
-        int i9 = this.c;
-        for (int i10 = 0; i10 < i9; i10++) {
-            if (this.b[i10] == intValue) {
-                return i10;
+        int i10 = this.c;
+        for (int i11 = 0; i11 < i10; i11++) {
+            if (this.b[i11] == intValue) {
+                return i11;
             }
         }
         return -1;
     }
 
-    public final void n(int i9) {
+    public final void n(int i10) {
         i();
-        int i10 = this.c;
+        int i11 = this.c;
         int[] iArr = this.b;
-        if (i10 == iArr.length) {
-            int[] iArr2 = new int[((i10 * 3) / 2) + 1];
-            System.arraycopy(iArr, 0, iArr2, 0, i10);
+        if (i11 == iArr.length) {
+            int[] iArr2 = new int[((i11 * 3) / 2) + 1];
+            System.arraycopy(iArr, 0, iArr2, 0, i11);
             this.b = iArr2;
         }
         int[] iArr3 = this.b;
-        int i11 = this.c;
-        this.c = i11 + 1;
-        iArr3[i11] = i9;
+        int i12 = this.c;
+        this.c = i12 + 1;
+        iArr3[i12] = i10;
     }
 
-    public final void o(int i9) {
-        if (i9 < 0 || i9 >= this.c) {
-            throw new IndexOutOfBoundsException(p(i9));
+    public final void o(int i10) {
+        if (i10 < 0 || i10 >= this.c) {
+            throw new IndexOutOfBoundsException(p(i10));
         }
     }
 
-    public final String p(int i9) {
-        int i10 = this.c;
+    public final String p(int i10) {
+        int i11 = this.c;
         StringBuilder sb2 = new StringBuilder(35);
         sb2.append("Index:");
-        sb2.append(i9);
-        sb2.append(", Size:");
         sb2.append(i10);
+        sb2.append(", Size:");
+        sb2.append(i11);
         return sb2.toString();
     }
 
     @Override // com.google.android.gms.internal.vision.n0, java.util.AbstractList, java.util.List
-    public final /* synthetic */ Object remove(int i9) {
+    public final /* synthetic */ Object remove(int i10) {
         i();
-        o(i9);
+        o(i10);
         int[] iArr = this.b;
-        int i10 = iArr[i9];
-        if (i9 < this.c - 1) {
-            System.arraycopy(iArr, i9 + 1, iArr, i9, (r2 - i9) - 1);
+        int i11 = iArr[i10];
+        if (i10 < this.c - 1) {
+            System.arraycopy(iArr, i10 + 1, iArr, i10, (r2 - i10) - 1);
         }
         this.c--;
         ((AbstractList) this).modCount++;
-        return Integer.valueOf(i10);
+        return Integer.valueOf(i11);
     }
 
     @Override // java.util.AbstractList
-    public final void removeRange(int i9, int i10) {
+    public final void removeRange(int i10, int i11) {
         i();
-        if (i10 < i9) {
+        if (i11 < i10) {
             throw new IndexOutOfBoundsException("toIndex < fromIndex");
         }
         int[] iArr = this.b;
-        System.arraycopy(iArr, i10, iArr, i9, this.c - i10);
-        this.c -= i10 - i9;
+        System.arraycopy(iArr, i11, iArr, i10, this.c - i11);
+        this.c -= i11 - i10;
         ((AbstractList) this).modCount++;
     }
 
     @Override // java.util.AbstractList, java.util.List
-    public final /* synthetic */ Object set(int i9, Object obj) {
+    public final /* synthetic */ Object set(int i10, Object obj) {
         int intValue = ((Integer) obj).intValue();
         i();
-        o(i9);
+        o(i10);
         int[] iArr = this.b;
-        int i10 = iArr[i9];
-        iArr[i9] = intValue;
-        return Integer.valueOf(i10);
+        int i11 = iArr[i10];
+        iArr[i10] = intValue;
+        return Integer.valueOf(i11);
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
@@ -205,11 +205,11 @@ public final class h1 extends n0 implements i2, RandomAccess {
     }
 
     @Override // com.google.android.gms.internal.vision.o1
-    public final /* synthetic */ o1 zza(int i9) {
-        if (i9 < this.c) {
+    public final /* synthetic */ o1 zza(int i10) {
+        if (i10 < this.c) {
             throw new IllegalArgumentException();
         }
-        return new h1(this.c, Arrays.copyOf(this.b, i9));
+        return new h1(this.c, Arrays.copyOf(this.b, i10));
     }
 
     @Override // com.google.android.gms.internal.vision.n0, java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List

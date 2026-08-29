@@ -1,17 +1,70 @@
 package na;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
-/* loaded from: classes.dex */
-public final class e implements n {
-    public final Class a;
+import java.util.ArrayList;
+import java.util.concurrent.atomic.AtomicLong;
+import java.util.concurrent.atomic.AtomicLongArray;
 
-    @Override // na.n
-    public Object Y1() {
-        Class cls = this.a;
-        try {
-            return s.a.a(cls);
-        } catch (Exception e10) {
-            throw new RuntimeException("Unable to create instance of " + cls + ". Registering an InstanceCreator or a TypeAdapter for this type, or adding a no-args constructor may fix this problem.", e10);
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* loaded from: classes.dex */
+public final class e extends u {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ u b;
+
+    public /* synthetic */ e(u uVar, int i10) {
+        this.a = i10;
+        this.b = uVar;
+    }
+
+    @Override // na.u
+    public final Object read(va.a aVar) {
+        switch (this.a) {
+            case 0:
+                return new AtomicLong(((Number) this.b.read(aVar)).longValue());
+            case 1:
+                ArrayList arrayList = new ArrayList();
+                aVar.a();
+                while (aVar.k()) {
+                    arrayList.add(Long.valueOf(((Number) this.b.read(aVar)).longValue()));
+                }
+                aVar.e();
+                int size = arrayList.size();
+                AtomicLongArray atomicLongArray = new AtomicLongArray(size);
+                for (int i10 = 0; i10 < size; i10++) {
+                    atomicLongArray.set(i10, ((Long) arrayList.get(i10)).longValue());
+                }
+                return atomicLongArray;
+            default:
+                if (aVar.x() != 9) {
+                    return this.b.read(aVar);
+                }
+                aVar.t();
+                return null;
+        }
+    }
+
+    @Override // na.u
+    public final void write(va.b bVar, Object obj) {
+        switch (this.a) {
+            case 0:
+                this.b.write(bVar, Long.valueOf(((AtomicLong) obj).get()));
+                break;
+            case 1:
+                AtomicLongArray atomicLongArray = (AtomicLongArray) obj;
+                bVar.b();
+                int length = atomicLongArray.length();
+                for (int i10 = 0; i10 < length; i10++) {
+                    this.b.write(bVar, Long.valueOf(atomicLongArray.get(i10)));
+                }
+                bVar.e();
+                break;
+            default:
+                if (obj == null) {
+                    bVar.i();
+                    break;
+                } else {
+                    this.b.write(bVar, obj);
+                    break;
+                }
         }
     }
 }

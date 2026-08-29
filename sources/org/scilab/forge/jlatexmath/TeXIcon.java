@@ -9,7 +9,7 @@ import ru.noties.jlatexmath.awt.RenderingHints;
 import ru.noties.jlatexmath.awt.geom.AffineTransform;
 import ru.noties.jlatexmath.swing.Icon;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public class TeXIcon implements Icon {
     private static final int MAX_PIXELS = 4096;
@@ -22,15 +22,15 @@ public class TeXIcon implements Icon {
     public boolean isColored;
     private final float size;
 
-    public TeXIcon(Box box, float f10) {
-        this(box, f10, false);
+    public TeXIcon(Box box, float f9) {
+        this(box, f9, false);
     }
 
-    private static int sanitizePx(int i9) {
-        if (i9 < 0 || i9 > 4096) {
+    private static int sanitizePx(int i10) {
+        if (i10 < 0 || i10 > 4096) {
             return 4096;
         }
-        return i9;
+        return i10;
     }
 
     public float getBaseLine() {
@@ -77,7 +77,7 @@ public class TeXIcon implements Icon {
     }
 
     @Override // ru.noties.jlatexmath.swing.Icon
-    public void paintIcon(Component component, Graphics graphics, int i9, int i10) {
+    public void paintIcon(Component component, Graphics graphics, int i10, int i11) {
         Graphics2D graphics2D = (Graphics2D) graphics;
         RenderingHints renderingHints = graphics2D.getRenderingHints();
         AffineTransform transform = graphics2D.getTransform();
@@ -85,8 +85,8 @@ public class TeXIcon implements Icon {
         graphics2D.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
         graphics2D.setRenderingHint(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY);
         graphics2D.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
-        float f10 = this.size;
-        graphics2D.scale(f10, f10);
+        float f9 = this.size;
+        graphics2D.scale(f9, f9);
         Color color2 = this.fg;
         if (color2 != null) {
             graphics2D.setColor(color2);
@@ -96,9 +96,9 @@ public class TeXIcon implements Icon {
             graphics2D.setColor(defaultColor);
         }
         Box box = this.box;
-        float f11 = i9 + this.insets.left;
-        float f12 = this.size;
-        box.draw(graphics2D, f11 / f12, box.getHeight() + ((i10 + r3.top) / f12));
+        float f10 = i10 + this.insets.left;
+        float f11 = this.size;
+        box.draw(graphics2D, f10 / f11, box.getHeight() + ((i11 + r3.top) / f11));
         graphics2D.setRenderingHints(renderingHints);
         graphics2D.setTransform(transform);
         graphics2D.setColor(color);
@@ -108,18 +108,18 @@ public class TeXIcon implements Icon {
         this.fg = color;
     }
 
-    public void setIconHeight(int i9, int i10) {
-        float iconHeight = i9 - getIconHeight();
+    public void setIconHeight(int i10, int i11) {
+        float iconHeight = i10 - getIconHeight();
         if (iconHeight > 0.0f) {
-            this.box = new VerticalBox(this.box, iconHeight, i10);
+            this.box = new VerticalBox(this.box, iconHeight, i11);
         }
     }
 
-    public void setIconWidth(int i9, int i10) {
-        float iconWidth = i9 - getIconWidth();
+    public void setIconWidth(int i10, int i11) {
+        float iconWidth = i10 - getIconWidth();
         if (iconWidth > 0.0f) {
             Box box = this.box;
-            this.box = new HorizontalBox(box, box.getWidth() + iconWidth, i10);
+            this.box = new HorizontalBox(box, box.getWidth() + iconWidth, i11);
         }
     }
 
@@ -128,36 +128,36 @@ public class TeXIcon implements Icon {
         if (z10) {
             return;
         }
-        int i9 = insets.top;
-        float f10 = this.size;
-        insets.top = i9 + ((int) (f10 * 0.18f));
-        insets.bottom += (int) (f10 * 0.18f);
-        insets.left += (int) (f10 * 0.18f);
-        insets.right += (int) (f10 * 0.18f);
+        int i10 = insets.top;
+        float f9 = this.size;
+        insets.top = i10 + ((int) (f9 * 0.18f));
+        insets.bottom += (int) (f9 * 0.18f);
+        insets.left += (int) (f9 * 0.18f);
+        insets.right += (int) (f9 * 0.18f);
     }
 
-    public TeXIcon(Box box, float f10, boolean z10) {
+    public TeXIcon(Box box, float f9, boolean z10) {
         this.insets = new Insets(0, 0, 0, 0);
         this.fg = null;
         this.isColored = false;
         this.box = box;
-        float f11 = defaultSize;
-        f10 = f11 != -1.0f ? f11 : f10;
-        float f12 = magFactor;
-        if (f12 != 0.0f) {
-            this.size = Math.abs(f12) * f10;
+        float f10 = defaultSize;
+        f9 = f10 != -1.0f ? f10 : f9;
+        float f11 = magFactor;
+        if (f11 != 0.0f) {
+            this.size = Math.abs(f11) * f9;
         } else {
-            this.size = f10;
+            this.size = f9;
         }
         if (z10) {
             return;
         }
         Insets insets = this.insets;
-        int i9 = (int) (f10 * 0.18f);
-        insets.top += i9;
-        insets.bottom += i9;
-        insets.left += i9;
-        insets.right += i9;
+        int i10 = (int) (f9 * 0.18f);
+        insets.top += i10;
+        insets.bottom += i10;
+        insets.left += i10;
+        insets.right += i10;
     }
 
     public void setInsets(Insets insets) {

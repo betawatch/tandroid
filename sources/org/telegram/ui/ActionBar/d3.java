@@ -21,10 +21,10 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.camera.CameraView;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.gr;
-import org.telegram.ui.Components.v60;
+import org.telegram.ui.Components.h70;
+import org.telegram.ui.Components.jr;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
 public abstract class d3 extends FrameLayout {
     public boolean A;
@@ -37,7 +37,7 @@ public abstract class d3 extends FrameLayout {
     public boolean e;
     public boolean f;
     public AnimatorSet h;
-    public final d5.p n;
+    public final a5.e n;
     public final Rect r;
     public final Paint s;
     public boolean v;
@@ -59,7 +59,7 @@ public abstract class d3 extends FrameLayout {
         this.x = 0.0f;
         this.y = 0.0f;
         this.B = new Paint(1);
-        this.n = new d5.p();
+        this.n = new a5.e();
         setWillNotDraw(false);
     }
 
@@ -72,10 +72,10 @@ public abstract class d3 extends FrameLayout {
         this.C.onSwipeStarts();
     }
 
-    public final void b(float f10, float f11) {
+    public final void b(float f9, float f10) {
         boolean z10;
         f3 f3Var = this.C;
-        if ((f3Var.containerView.getTranslationY() >= AndroidUtilities.getPixelsInCM(0.8f, false) || (f11 >= 3500.0f && Math.abs(f11) >= Math.abs(f10))) && (f11 >= 0.0f || Math.abs(f11) < 3500.0f)) {
+        if ((f3Var.containerView.getTranslationY() >= AndroidUtilities.getPixelsInCM(0.8f, false) || (f10 >= 3500.0f && Math.abs(f10) >= Math.abs(f9))) && (f10 >= 0.0f || Math.abs(f10) < 3500.0f)) {
             z10 = f3Var.allowCustomAnimation;
             f3Var.allowCustomAnimation = false;
             f3Var.useFastDismiss = true;
@@ -89,7 +89,7 @@ public abstract class d3 extends FrameLayout {
         ofFloat.addUpdateListener(new b3(this, 4));
         this.h.playTogether(ObjectAnimator.ofFloat(f3Var.containerView, "translationY", 0.0f), ofFloat);
         this.h.setDuration((int) ((Math.max(0.0f, r1) / AndroidUtilities.getPixelsInCM(0.8f, false)) * 250.0f));
-        this.h.setInterpolator(gr.f);
+        this.h.setInterpolator(jr.f);
         this.h.addListener(new c3(this, 3));
         NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.stopAllHeavyOperations, 512);
         this.h.start();
@@ -102,25 +102,25 @@ public abstract class d3 extends FrameLayout {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void c(Canvas canvas, float f10) {
+    public final void c(Canvas canvas, float f9) {
         boolean z10;
-        float f11;
+        float f10;
         float max;
-        float f12;
+        float f11;
         boolean z11;
         boolean z12;
-        float f13;
-        int i9;
+        float f12;
         int i10;
-        float f14;
         int i11;
-        int i12 = Build.VERSION.SDK_INT;
+        float f13;
+        int i12;
+        int i13 = Build.VERSION.SDK_INT;
         Paint paint = this.s;
         f3 f3Var = this.C;
-        if (i12 >= 26) {
-            int i13 = f3Var.navBarColorKey;
-            if (i13 >= 0) {
-                paint.setColor(f3Var.getThemedColor(i13));
+        if (i13 >= 26) {
+            int i14 = f3Var.navBarColorKey;
+            if (i14 >= 0) {
+                paint.setColor(f3Var.getThemedColor(i14));
             } else {
                 paint.setColor(f3Var.navBarColor);
             }
@@ -129,50 +129,50 @@ public abstract class d3 extends FrameLayout {
         }
         z10 = f3Var.transitionFromRight;
         if (!z10 || f3Var.containerView.getVisibility() == 0) {
-            float f15 = 0.0f;
+            float f14 = 0.0f;
             if (f3Var.drawNavigationBar) {
-                i11 = f3Var.bottomInset;
+                i12 = f3Var.bottomInset;
             }
-            f11 = f3Var.currentPanTranslationY;
-            if (f11 == 0.0f) {
+            f10 = f3Var.currentPanTranslationY;
+            if (f10 == 0.0f) {
                 return;
             }
             int bottomInset = f3Var.drawNavigationBar ? f3Var.getBottomInset() : 0;
-            if (!f3Var.scrollNavBar && (i12 < 29 || f3.access$1400(f3Var) <= 0)) {
+            if (!f3Var.scrollNavBar && (i13 < 29 || f3.access$1400(f3Var) <= 0)) {
                 max = 0.0f;
             } else if (f3Var.drawDoubleNavigationBar) {
-                f12 = f3Var.currentPanTranslationY;
-                max = Math.max(0.0f, Math.min(bottomInset - f12, f3Var.containerView.getTranslationY()));
+                f11 = f3Var.currentPanTranslationY;
+                max = Math.max(0.0f, Math.min(bottomInset - f11, f3Var.containerView.getTranslationY()));
             } else {
                 max = Math.max(0.0f, f3Var.getBottomInset() - (f3Var.containerView.getMeasuredHeight() - f3Var.containerView.getTranslationY()));
             }
             int alpha = paint.getAlpha();
             z11 = f3Var.transitionFromRight;
             if (z11) {
-                f10 *= f3Var.containerView.getAlpha();
+                f9 *= f3Var.containerView.getAlpha();
             }
             z12 = f3Var.transitionFromRight;
-            int x10 = z12 ? (int) f3Var.containerView.getX() : f3Var.containerView.getLeft();
-            if (f10 < 1.0f) {
-                paint.setAlpha((int) (alpha * f10));
+            int x4 = z12 ? (int) f3Var.containerView.getX() : f3Var.containerView.getLeft();
+            if (f9 < 1.0f) {
+                paint.setAlpha((int) (alpha * f9));
             }
-            f13 = f3Var.currentPanTranslationY;
-            canvas.drawRect(f3Var.backgroundPaddingLeft + x10, ((getMeasuredHeight() - bottomInset) + max) - f13, f3Var.containerView.getRight() - f3Var.backgroundPaddingLeft, getMeasuredHeight() + max, paint);
+            f12 = f3Var.currentPanTranslationY;
+            canvas.drawRect(f3Var.backgroundPaddingLeft + x4, ((getMeasuredHeight() - bottomInset) + max) - f12, f3Var.containerView.getRight() - f3Var.backgroundPaddingLeft, getMeasuredHeight() + max, paint);
             paint.setAlpha(alpha);
-            i9 = f3Var.overlayDrawNavBarColor;
-            if (i9 != 0) {
-                i10 = f3Var.overlayDrawNavBarColor;
-                paint.setColor(i10);
+            i10 = f3Var.overlayDrawNavBarColor;
+            if (i10 != 0) {
+                i11 = f3Var.overlayDrawNavBarColor;
+                paint.setColor(i11);
                 int alpha2 = paint.getAlpha();
                 float navigationBarThirdButtonsFactor = AndroidUtilities.getNavigationBarThirdButtonsFactor(bottomInset);
-                if (f10 < 1.0f) {
-                    paint.setAlpha((int) (alpha2 * f10 * navigationBarThirdButtonsFactor));
+                if (f9 < 1.0f) {
+                    paint.setAlpha((int) (alpha2 * f9 * navigationBarThirdButtonsFactor));
                 } else {
-                    f15 = max;
+                    f14 = max;
                 }
                 if (paint.getAlpha() > 0) {
-                    f14 = f3Var.currentPanTranslationY;
-                    canvas.drawRect(x10 + f3Var.backgroundPaddingLeft, ((getMeasuredHeight() - bottomInset) + f15) - f14, f3Var.containerView.getRight() - f3Var.backgroundPaddingLeft, getMeasuredHeight() + f15, paint);
+                    f13 = f3Var.currentPanTranslationY;
+                    canvas.drawRect(x4 + f3Var.backgroundPaddingLeft, ((getMeasuredHeight() - bottomInset) + f14) - f13, f3Var.containerView.getRight() - f3Var.backgroundPaddingLeft, getMeasuredHeight() + f14, paint);
                 }
                 paint.setAlpha(alpha2);
             }
@@ -182,17 +182,17 @@ public abstract class d3 extends FrameLayout {
     public final boolean d(MotionEvent motionEvent, boolean z10) {
         boolean z11;
         boolean z12;
-        int i9;
-        boolean z13;
         int i10;
+        boolean z13;
+        int i11;
         f3 f3Var = this.C;
         z11 = f3Var.dismissed;
-        int i11 = 0;
+        int i12 = 0;
         if (!z11) {
-            int i12 = 1;
+            int i13 = 1;
             if (!f3Var.onContainerTouchEvent(motionEvent)) {
-                int i13 = 3;
-                int i14 = 2;
+                int i14 = 3;
+                int i15 = 2;
                 if (f3Var.canSwipeToBack(motionEvent) || this.A) {
                     if (motionEvent != null && ((motionEvent.getAction() == 0 || motionEvent.getAction() == 2) && !this.f && !this.e && motionEvent.getPointerCount() == 1)) {
                         this.A = true;
@@ -202,26 +202,26 @@ public abstract class d3 extends FrameLayout {
                         this.e = true;
                         a();
                     } else if (motionEvent != null && motionEvent.getAction() == 2 && motionEvent.getPointerId(0) == this.d) {
-                        float x10 = motionEvent.getX() - this.b;
-                        float y10 = motionEvent.getY() - this.c;
+                        float x4 = motionEvent.getX() - this.b;
+                        float y8 = motionEvent.getY() - this.c;
                         if (this.a == null) {
                             this.a = VelocityTracker.obtain();
                         }
                         this.a.addMovement(motionEvent);
                         z12 = f3Var.disableScroll;
-                        if (!z12 && this.e && !this.f && x10 > 0.0f && x10 / 3.0f > Math.abs(y10)) {
-                            float abs = Math.abs(x10);
-                            i9 = f3Var.touchSlop;
-                            if (abs >= i9) {
+                        if (!z12 && this.e && !this.f && x4 > 0.0f && x4 / 3.0f > Math.abs(y8)) {
+                            float abs = Math.abs(x4);
+                            i10 = f3Var.touchSlop;
+                            if (abs >= i10) {
                                 this.b = (int) motionEvent.getX();
                                 this.e = false;
                                 this.f = true;
                             }
                         }
                         if (this.f) {
-                            float f10 = this.y + x10;
-                            this.y = f10;
-                            f3Var.containerView.setTranslationX(Math.max(f10, 0.0f));
+                            float f9 = this.y + x4;
+                            this.y = f9;
+                            f3Var.containerView.setTranslationX(Math.max(f9, 0.0f));
                             this.b = (int) motionEvent.getX();
                             f3Var.container.invalidate();
                         }
@@ -233,24 +233,24 @@ public abstract class d3 extends FrameLayout {
                         float yVelocity = this.a.getYVelocity();
                         if (this.y >= f3Var.containerView.getMeasuredWidth() / 3.0f || (xVelocity >= 3500.0f && xVelocity >= yVelocity)) {
                             ValueAnimator ofFloat = ValueAnimator.ofFloat(this.y, getMeasuredWidth());
-                            ofFloat.addUpdateListener(new b3(this, i14));
-                            ofFloat.addListener(new c3(this, i12));
-                            gr grVar = gr.h;
-                            ofFloat.setInterpolator(grVar);
+                            ofFloat.addUpdateListener(new b3(this, i15));
+                            ofFloat.addListener(new c3(this, i13));
+                            jr jrVar = jr.h;
+                            ofFloat.setInterpolator(jrVar);
                             ofFloat.setDuration(320L);
                             ofFloat.start();
                             ValueAnimator ofFloat2 = ValueAnimator.ofFloat(1.0f, 0.0f);
-                            ofFloat2.addUpdateListener(new b3(this, i13));
-                            ofFloat2.setInterpolator(grVar);
+                            ofFloat2.addUpdateListener(new b3(this, i14));
+                            ofFloat2.setInterpolator(jrVar);
                             ofFloat2.setDuration(320L);
                             ofFloat2.start();
                         } else {
                             float max = Math.max(this.y, 0.0f);
                             this.y = max;
                             ValueAnimator ofFloat3 = ValueAnimator.ofFloat(max, 0.0f);
-                            ofFloat3.addUpdateListener(new b3(this, i12));
-                            ofFloat3.addListener(new c3(this, i11));
-                            ofFloat3.setInterpolator(gr.f);
+                            ofFloat3.addUpdateListener(new b3(this, i13));
+                            ofFloat3.addListener(new c3(this, i12));
+                            ofFloat3.setInterpolator(jr.f);
                             ofFloat3.setDuration(220L);
                             ofFloat3.start();
                         }
@@ -261,9 +261,9 @@ public abstract class d3 extends FrameLayout {
                     }
                 } else if (f3Var.canDismissWithTouchOutside() && motionEvent != null && ((motionEvent.getAction() == 0 || motionEvent.getAction() == 2) && !this.f && !this.e && motionEvent.getPointerCount() == 1)) {
                     this.b = (int) motionEvent.getX();
-                    int y11 = (int) motionEvent.getY();
-                    this.c = y11;
-                    if (f3Var.isTouchOutside(this.b, y11)) {
+                    int y10 = (int) motionEvent.getY();
+                    this.c = y10;
+                    if (f3Var.isTouchOutside(this.b, y10)) {
                         f3Var.onDismissWithTouchOutside();
                         return true;
                     }
@@ -280,14 +280,14 @@ public abstract class d3 extends FrameLayout {
                         this.a = VelocityTracker.obtain();
                     }
                     float abs2 = Math.abs((int) (motionEvent.getX() - this.b));
-                    float y12 = ((int) motionEvent.getY()) - this.c;
-                    boolean onScrollUp = f3Var.onScrollUp(this.x + y12);
+                    float y11 = ((int) motionEvent.getY()) - this.c;
+                    boolean onScrollUp = f3Var.onScrollUp(this.x + y11);
                     this.a.addMovement(motionEvent);
                     z13 = f3Var.disableScroll;
-                    if (!z13 && this.e && !this.f && y12 > 0.0f && y12 / 3.0f > Math.abs(abs2)) {
-                        float abs3 = Math.abs(y12);
-                        i10 = f3Var.touchSlop;
-                        if (abs3 >= i10) {
+                    if (!z13 && this.e && !this.f && y11 > 0.0f && y11 / 3.0f > Math.abs(abs2)) {
+                        float abs3 = Math.abs(y11);
+                        i11 = f3Var.touchSlop;
+                        if (abs3 >= i11) {
                             this.c = (int) motionEvent.getY();
                             this.e = false;
                             this.f = true;
@@ -295,10 +295,10 @@ public abstract class d3 extends FrameLayout {
                         }
                     }
                     if (this.f) {
-                        float f11 = this.x + y12;
-                        this.x = f11;
+                        float f10 = this.x + y11;
+                        this.x = f10;
                         if (!onScrollUp) {
-                            this.x = Math.max(f11, 0.0f);
+                            this.x = Math.max(f10, 0.0f);
                         }
                         f3Var.containerView.setTranslationY(Math.max(this.x, 0.0f));
                         f3Var.onContainerViewTranslation();
@@ -341,28 +341,28 @@ public abstract class d3 extends FrameLayout {
     */
     public void dispatchDraw(Canvas canvas) {
         Paint paint;
-        int i9;
         int i10;
         int i11;
         int i12;
         int i13;
         int i14;
         int i15;
-        float f10;
         int i16;
+        float f9;
+        int i17;
         f3 f3Var = this.C;
         if (f3Var.containerView != null && this.w > 0) {
-            i16 = f3Var.internalBackgroundColor;
+            i17 = f3Var.internalBackgroundColor;
             Paint paint2 = this.B;
-            paint2.setColor(i16);
+            paint2.setColor(i17);
             canvas.drawRect(0.0f, (f3Var.containerView.getTranslationY() + (getMeasuredHeight() - this.w)) - 1.0f, getMeasuredWidth(), f3Var.containerView.getTranslationY() + getMeasuredHeight(), paint2);
         }
-        int i17 = Build.VERSION.SDK_INT;
+        int i18 = Build.VERSION.SDK_INT;
         Paint paint3 = this.s;
-        if (i17 >= 26) {
-            int i18 = f3Var.navBarColorKey;
-            if (i18 >= 0) {
-                paint3.setColor(f3Var.getThemedColor(i18));
+        if (i18 >= 26) {
+            int i19 = f3Var.navBarColorKey;
+            if (i19 >= 0) {
+                paint3.setColor(f3Var.getThemedColor(i19));
             } else {
                 paint3.setColor(f3Var.navBarColor);
             }
@@ -375,21 +375,21 @@ public abstract class d3 extends FrameLayout {
         if (paint3.getAlpha() >= 255 || !f3Var.drawNavigationBar) {
             super.dispatchDraw(canvas);
         } else {
-            float f11 = 0.0f;
-            if (f3Var.scrollNavBar || (i17 >= 29 && f3.access$1400(f3Var) > 0)) {
-                f11 = Math.max(0.0f, f3Var.getBottomInset() - (f3Var.containerView.getMeasuredHeight() - f3Var.containerView.getTranslationY()));
+            float f10 = 0.0f;
+            if (f3Var.scrollNavBar || (i18 >= 29 && f3.access$1400(f3Var) > 0)) {
+                f10 = Math.max(0.0f, f3Var.getBottomInset() - (f3Var.containerView.getMeasuredHeight() - f3Var.containerView.getTranslationY()));
             }
             int bottomInset = f3Var.drawNavigationBar ? f3Var.getBottomInset() : 0;
             canvas.save();
-            f10 = f3Var.currentPanTranslationY;
-            canvas.clipRect(f3Var.containerView.getLeft() + f3Var.backgroundPaddingLeft, ((getMeasuredHeight() - bottomInset) + f11) - f10, f3Var.containerView.getRight() - f3Var.backgroundPaddingLeft, getMeasuredHeight() + f11, Region.Op.DIFFERENCE);
+            f9 = f3Var.currentPanTranslationY;
+            canvas.clipRect(f3Var.containerView.getLeft() + f3Var.backgroundPaddingLeft, ((getMeasuredHeight() - bottomInset) + f10) - f9, f3Var.containerView.getRight() - f3Var.backgroundPaddingLeft, getMeasuredHeight() + f10, Region.Op.DIFFERENCE);
             super.dispatchDraw(canvas);
             canvas.restore();
         }
         if (f3Var.doNotOverlayNavigationBar) {
             if ((getMeasuredHeight() - f3Var.containerView.getY()) - f3Var.containerView.getMeasuredHeight() > AndroidUtilities.dp(48.0f)) {
-                int i19 = f3Var.behindKeyboardColorKey;
-                paint3.setColor(i19 >= 0 ? f3Var.getThemedColor(i19) : f3Var.behindKeyboardColor);
+                int i20 = f3Var.behindKeyboardColorKey;
+                paint3.setColor(i20 >= 0 ? f3Var.getThemedColor(i20) : f3Var.behindKeyboardColor);
                 canvas.drawRect(f3Var.containerView.getLeft() + f3Var.backgroundPaddingLeft, f3Var.containerView.getMeasuredHeight() + f3Var.containerView.getY(), f3Var.containerView.getRight() - f3Var.backgroundPaddingLeft, getMeasuredHeight(), paint3);
                 return;
             }
@@ -399,25 +399,25 @@ public abstract class d3 extends FrameLayout {
             c(canvas, f3Var.drawDoubleNavigationBar ? f3Var.navigationBarAlpha * 0.7f : 1.0f);
         }
         if (f3Var.drawNavigationBar) {
-            i12 = f3Var.rightInset;
-            if (i12 != 0) {
-                i13 = f3Var.rightInset;
-                i14 = f3Var.leftInset;
-                if (i13 > i14 && f3Var.fullWidth) {
+            i13 = f3Var.rightInset;
+            if (i13 != 0) {
+                i14 = f3Var.rightInset;
+                i15 = f3Var.leftInset;
+                if (i14 > i15 && f3Var.fullWidth) {
                     Point point = AndroidUtilities.displaySize;
                     if (point.x > point.y) {
                         float right = f3Var.containerView.getRight() - f3Var.backgroundPaddingLeft;
                         float translationY = f3Var.containerView.getTranslationY();
                         int right2 = f3Var.containerView.getRight();
-                        i15 = f3Var.rightInset;
+                        i16 = f3Var.rightInset;
                         paint = paint3;
-                        canvas.drawRect(right, translationY, i15 + right2, getMeasuredHeight(), paint);
+                        canvas.drawRect(right, translationY, i16 + right2, getMeasuredHeight(), paint);
                         if (f3Var.drawNavigationBar) {
-                            i9 = f3Var.leftInset;
-                            if (i9 != 0) {
-                                i10 = f3Var.leftInset;
-                                i11 = f3Var.rightInset;
-                                if (i10 > i11 && f3Var.fullWidth) {
+                            i10 = f3Var.leftInset;
+                            if (i10 != 0) {
+                                i11 = f3Var.leftInset;
+                                i12 = f3Var.rightInset;
+                                if (i11 > i12 && f3Var.fullWidth) {
                                     Point point2 = AndroidUtilities.displaySize;
                                     if (point2.x > point2.y) {
                                         canvas.drawRect(0.0f, f3Var.containerView.getTranslationY(), f3Var.containerView.getLeft() + f3Var.backgroundPaddingLeft, getMeasuredHeight(), paint);
@@ -426,8 +426,8 @@ public abstract class d3 extends FrameLayout {
                             }
                         }
                         if (f3Var.containerView.getY() + f3Var.containerView.getMeasuredHeight() >= getMeasuredHeight()) {
-                            int i20 = f3Var.behindKeyboardColorKey;
-                            paint.setColor(i20 >= 0 ? f3Var.getThemedColor(i20) : f3Var.behindKeyboardColor);
+                            int i21 = f3Var.behindKeyboardColorKey;
+                            paint.setColor(i21 >= 0 ? f3Var.getThemedColor(i21) : f3Var.behindKeyboardColor);
                             canvas.drawRect(f3Var.containerView.getLeft() + f3Var.backgroundPaddingLeft, f3Var.containerView.getMeasuredHeight() + f3Var.containerView.getY(), f3Var.containerView.getRight() - f3Var.backgroundPaddingLeft, getMeasuredHeight(), paint);
                             return;
                         }
@@ -456,8 +456,8 @@ public abstract class d3 extends FrameLayout {
 
     @Override // android.view.ViewGroup
     public int getNestedScrollAxes() {
-        d5.p pVar = this.n;
-        return pVar.b | pVar.a;
+        a5.e eVar = this.n;
+        return eVar.b | eVar.a;
     }
 
     @Override // android.view.View
@@ -470,7 +470,7 @@ public abstract class d3 extends FrameLayout {
         Canvas canvas2;
         boolean z10;
         WindowInsets windowInsets;
-        float f10;
+        float f9;
         Paint paint = this.s;
         int alpha = paint.getAlpha();
         f3 f3Var = this.C;
@@ -478,14 +478,14 @@ public abstract class d3 extends FrameLayout {
             canvas2 = canvas;
             z10 = false;
         } else {
-            float f11 = 0.0f;
+            float f10 = 0.0f;
             if (f3Var.scrollNavBar || (Build.VERSION.SDK_INT >= 29 && f3.access$1400(f3Var) > 0)) {
-                f11 = Math.max(0.0f, f3Var.getBottomInset() - (f3Var.containerView.getMeasuredHeight() - f3Var.containerView.getTranslationY()));
+                f10 = Math.max(0.0f, f3Var.getBottomInset() - (f3Var.containerView.getMeasuredHeight() - f3Var.containerView.getTranslationY()));
             }
             int bottomInset = f3Var.drawNavigationBar ? f3Var.getBottomInset() : 0;
             canvas.save();
-            f10 = f3Var.currentPanTranslationY;
-            canvas.clipRect(f3Var.containerView.getLeft() + f3Var.backgroundPaddingLeft, ((getMeasuredHeight() - bottomInset) + f11) - f10, f3Var.containerView.getRight() - f3Var.backgroundPaddingLeft, getMeasuredHeight() + f11, Region.Op.DIFFERENCE);
+            f9 = f3Var.currentPanTranslationY;
+            canvas.clipRect(f3Var.containerView.getLeft() + f3Var.backgroundPaddingLeft, ((getMeasuredHeight() - bottomInset) + f10) - f9, f3Var.containerView.getRight() - f3Var.backgroundPaddingLeft, getMeasuredHeight() + f10, Region.Op.DIFFERENCE);
             canvas2 = canvas;
             z10 = true;
         }
@@ -493,8 +493,8 @@ public abstract class d3 extends FrameLayout {
         if (f3Var.drawNavigationBar) {
             windowInsets = f3Var.lastInsets;
             if (windowInsets != null && f3Var.keyboardHeight != 0) {
-                int i9 = f3Var.behindKeyboardColorKey;
-                paint.setColor(i9 >= 0 ? f3Var.getThemedColor(i9) : f3Var.behindKeyboardColor);
+                int i10 = f3Var.behindKeyboardColorKey;
+                paint.setColor(i10 >= 0 ? f3Var.getThemedColor(i10) : f3Var.behindKeyboardColor);
                 canvas2.drawRect(f3Var.containerView.getLeft() + f3Var.backgroundPaddingLeft, (getMeasuredHeight() - f3Var.keyboardHeight) - (f3Var.drawNavigationBar ? f3Var.getBottomInset() : 0), f3Var.containerView.getRight() - f3Var.backgroundPaddingLeft, getMeasuredHeight() - (f3Var.drawNavigationBar ? f3Var.getBottomInset() : 0), paint);
             }
         }
@@ -562,17 +562,17 @@ public abstract class d3 extends FrameLayout {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void onLayout(boolean z10, int i9, int i10, int i11, int i12) {
-        int i13;
-        Runnable runnable;
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         int i14;
-        f3 f3Var;
+        Runnable runnable;
         int i15;
+        f3 f3Var;
         int i16;
         int i17;
         int i18;
         int i19;
         int i20;
+        int i21;
         WindowInsets windowInsets;
         WindowInsets windowInsets2;
         WindowInsets windowInsets3;
@@ -580,38 +580,38 @@ public abstract class d3 extends FrameLayout {
         long j11;
         boolean z11;
         WindowInsets windowInsets4;
-        float f10;
-        int i21 = i9;
+        float f9;
         int i22 = i10;
         int i23 = i11;
-        int i24 = i12 - this.w;
+        int i24 = i12;
+        int i25 = i13 - this.w;
         f3 f3Var2 = this.C;
-        f3Var2.onContainerLayout(i21, i22, i23, i24);
+        f3Var2.onContainerLayout(i22, i23, i24, i25);
         f3.access$1510(f3Var2);
         ViewGroup viewGroup = f3Var2.containerView;
-        int i25 = 1;
-        int i26 = 2;
-        int i27 = 0;
+        int i26 = 1;
+        int i27 = 2;
+        int i28 = 0;
         if (viewGroup != null) {
-            int measuredHeight = (i24 - i22) - viewGroup.getMeasuredHeight();
+            int measuredHeight = (i25 - i23) - viewGroup.getMeasuredHeight();
             windowInsets2 = f3Var2.lastInsets;
             if (windowInsets2 != null) {
-                i21 += f3Var2.getLeftInset();
-                i23 -= f3Var2.getRightInset();
+                i22 += f3Var2.getLeftInset();
+                i24 -= f3Var2.getRightInset();
                 if (f3Var2.useSmoothKeyboard) {
                     measuredHeight = 0;
                 } else if (!f3Var2.occupyNavigationBar) {
-                    float f11 = measuredHeight;
+                    float f10 = measuredHeight;
                     windowInsets4 = f3Var2.lastInsets;
                     float systemWindowInsetBottom = windowInsets4.getSystemWindowInsetBottom();
-                    f10 = f3Var2.hideSystemVerticalInsetsProgress;
-                    measuredHeight = (int) (f11 - (((1.0f - f10) * systemWindowInsetBottom) - (f3Var2.drawNavigationBar ? 0 : f3Var2.getBottomInset())));
+                    f9 = f3Var2.hideSystemVerticalInsetsProgress;
+                    measuredHeight = (int) (f10 - (((1.0f - f9) * systemWindowInsetBottom) - (f3Var2.drawNavigationBar ? 0 : f3Var2.getBottomInset())));
                     if (Build.VERSION.SDK_INT >= 29) {
                         measuredHeight -= f3.access$1400(f3Var2);
                     }
                 }
             }
-            int measuredWidth = ((i23 - i21) - f3Var2.containerView.getMeasuredWidth()) / 2;
+            int measuredWidth = ((i24 - i22) - f3Var2.containerView.getMeasuredWidth()) / 2;
             windowInsets3 = f3Var2.lastInsets;
             if (windowInsets3 != null) {
                 measuredWidth += f3Var2.getLeftInset();
@@ -631,78 +631,78 @@ public abstract class d3 extends FrameLayout {
             ViewGroup viewGroup2 = f3Var2.containerView;
             viewGroup2.layout(measuredWidth, measuredHeight, viewGroup2.getMeasuredWidth() + measuredWidth, f3Var2.containerView.getMeasuredHeight() + measuredHeight);
         }
-        int i28 = i23;
+        int i29 = i24;
         int childCount = getChildCount();
-        int i29 = 0;
-        while (i29 < childCount) {
-            View childAt = getChildAt(i29);
+        int i30 = 0;
+        while (i30 < childCount) {
+            View childAt = getChildAt(i30);
             if (childAt.getVisibility() == 8 || childAt == f3Var2.containerView) {
                 f3 f3Var3 = f3Var2;
-                i14 = i21;
+                i15 = i22;
                 f3Var = f3Var3;
             } else {
                 int bottomInset = f3Var2.drawNavigationBar ? f3Var2.getBottomInset() : 0;
                 f3 f3Var4 = f3Var2;
-                i14 = i21;
+                i15 = i22;
                 f3Var = f3Var4;
-                if (!f3Var.onCustomLayout(childAt, i14, i22, i28, i24 - bottomInset)) {
+                if (!f3Var.onCustomLayout(childAt, i15, i23, i29, i25 - bottomInset)) {
                     FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) childAt.getLayoutParams();
                     int measuredWidth2 = childAt.getMeasuredWidth();
                     int measuredHeight2 = childAt.getMeasuredHeight();
-                    int i30 = layoutParams.gravity;
-                    if (i30 == -1) {
-                        i30 = 51;
+                    int i31 = layoutParams.gravity;
+                    if (i31 == -1) {
+                        i31 = 51;
                     }
-                    int i31 = i30 & 112;
-                    int i32 = i30 & 7;
-                    if (i32 == i25) {
-                        i15 = (((i28 - i14) - measuredWidth2) / 2) + layoutParams.leftMargin;
-                        i16 = layoutParams.rightMargin;
-                    } else if (i32 != 5) {
-                        i17 = layoutParams.leftMargin;
-                        if (i31 != 16) {
-                            i18 = (((i24 - i10) - measuredHeight2) / 2) + layoutParams.topMargin;
-                            i19 = layoutParams.bottomMargin;
-                        } else if (i31 != 80) {
-                            i20 = layoutParams.topMargin;
+                    int i32 = i31 & 112;
+                    int i33 = i31 & 7;
+                    if (i33 == i26) {
+                        i16 = (((i29 - i15) - measuredWidth2) / 2) + layoutParams.leftMargin;
+                        i17 = layoutParams.rightMargin;
+                    } else if (i33 != 5) {
+                        i18 = layoutParams.leftMargin;
+                        if (i32 != 16) {
+                            i19 = (((i25 - i11) - measuredHeight2) / 2) + layoutParams.topMargin;
+                            i20 = layoutParams.bottomMargin;
+                        } else if (i32 != 80) {
+                            i21 = layoutParams.topMargin;
                             windowInsets = f3Var.lastInsets;
                             if (windowInsets != null) {
-                                i17 += f3Var.getLeftInset();
+                                i18 += f3Var.getLeftInset();
                             }
-                            childAt.layout(i17, i20, measuredWidth2 + i17, measuredHeight2 + i20);
+                            childAt.layout(i18, i21, measuredWidth2 + i18, measuredHeight2 + i21);
                         } else {
-                            i18 = (i24 - i10) - measuredHeight2;
-                            i19 = layoutParams.bottomMargin;
+                            i19 = (i25 - i11) - measuredHeight2;
+                            i20 = layoutParams.bottomMargin;
                         }
-                        i20 = i18 - i19;
+                        i21 = i19 - i20;
                         windowInsets = f3Var.lastInsets;
                         if (windowInsets != null) {
                         }
-                        childAt.layout(i17, i20, measuredWidth2 + i17, measuredHeight2 + i20);
+                        childAt.layout(i18, i21, measuredWidth2 + i18, measuredHeight2 + i21);
                     } else {
-                        i15 = i28 - measuredWidth2;
-                        i16 = layoutParams.rightMargin;
+                        i16 = i29 - measuredWidth2;
+                        i17 = layoutParams.rightMargin;
                     }
-                    i17 = i15 - i16;
-                    if (i31 != 16) {
+                    i18 = i16 - i17;
+                    if (i32 != 16) {
                     }
-                    i20 = i18 - i19;
+                    i21 = i19 - i20;
                     windowInsets = f3Var.lastInsets;
                     if (windowInsets != null) {
                     }
-                    childAt.layout(i17, i20, measuredWidth2 + i17, measuredHeight2 + i20);
+                    childAt.layout(i18, i21, measuredWidth2 + i18, measuredHeight2 + i21);
                 }
             }
-            i29++;
-            int i33 = i14;
+            i30++;
+            int i34 = i15;
             f3Var2 = f3Var;
-            i21 = i33;
-            i22 = i10;
-            i25 = 1;
+            i22 = i34;
+            i23 = i11;
+            i26 = 1;
         }
         f3 f3Var5 = f3Var2;
-        i13 = f3Var5.layoutCount;
-        if (i13 == 0 && (runnable = f3Var5.startAnimationRunnable) != null && !f3Var5.waitingKeyboard) {
+        i14 = f3Var5.layoutCount;
+        if (i14 == 0 && (runnable = f3Var5.startAnimationRunnable) != null && !f3Var5.waitingKeyboard) {
             AndroidUtilities.cancelRunOnUIThread(runnable);
             f3Var5.startAnimationRunnable.run();
             f3Var5.startAnimationRunnable = null;
@@ -732,43 +732,43 @@ public abstract class d3 extends FrameLayout {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void onMeasure(int i9, int i10) {
+    public final void onMeasure(int i10, int i11) {
         WindowInsets windowInsets;
-        int i11;
+        int i12;
         WindowInsets windowInsets2;
         WindowInsets windowInsets3;
         ViewGroup viewGroup;
         int childCount;
         int makeMeasureSpec;
         WindowInsets windowInsets4;
-        float f10;
+        float f9;
         WindowInsets windowInsets5;
         WindowInsets windowInsets6;
         WindowInsets windowInsets7;
+        float f10;
         float f11;
         float f12;
-        float f13;
-        int size = View.MeasureSpec.getSize(i9);
-        int size2 = View.MeasureSpec.getSize(i10);
+        int size = View.MeasureSpec.getSize(i10);
+        int size2 = View.MeasureSpec.getSize(i11);
         View rootView = getRootView();
         Rect rect = this.r;
         getWindowVisibleDisplayFrame(rect);
         f3 f3Var = this.C;
-        int i12 = f3Var.keyboardHeight;
+        int i13 = f3Var.keyboardHeight;
         if (rect.bottom == 0 || rect.top == 0) {
             f3Var.keyboardHeight = 0;
         } else {
             float height = rootView.getHeight();
             if (rect.top != 0) {
-                float f14 = AndroidUtilities.statusBarHeight;
-                f13 = f3Var.hideSystemVerticalInsetsProgress;
-                f11 = (1.0f - f13) * f14;
+                float f13 = AndroidUtilities.statusBarHeight;
+                f12 = f3Var.hideSystemVerticalInsetsProgress;
+                f10 = (1.0f - f12) * f13;
             } else {
-                f11 = 0.0f;
+                f10 = 0.0f;
             }
             float viewInset = AndroidUtilities.getViewInset(rootView);
-            f12 = f3Var.hideSystemVerticalInsetsProgress;
-            f3Var.keyboardHeight = Math.max(0, ((int) ((height - f11) - ((1.0f - f12) * viewInset))) - (rect.bottom - rect.top));
+            f11 = f3Var.hideSystemVerticalInsetsProgress;
+            f3Var.keyboardHeight = Math.max(0, ((int) ((height - f10) - ((1.0f - f11) * viewInset))) - (rect.bottom - rect.top));
             if (f3Var.keyboardHeight < AndroidUtilities.dp(20.0f)) {
                 f3Var.keyboardHeight = 0;
             } else {
@@ -776,11 +776,11 @@ public abstract class d3 extends FrameLayout {
             }
             f3.access$1020(f3Var, f3Var.keyboardHeight);
         }
-        int i13 = f3Var.keyboardHeight;
-        if (i12 != i13) {
+        int i14 = f3Var.keyboardHeight;
+        if (i13 != i14) {
             this.v = true;
         }
-        f3Var.keyboardVisible = i13 > AndroidUtilities.dp(20.0f);
+        f3Var.keyboardVisible = i14 > AndroidUtilities.dp(20.0f);
         windowInsets = f3Var.lastInsets;
         if (windowInsets != null) {
             windowInsets5 = f3Var.lastInsets;
@@ -796,102 +796,102 @@ public abstract class d3 extends FrameLayout {
                 f3.access$1020(f3Var, f3Var.keyboardHeight);
             }
             if (!f3Var.drawNavigationBar && !f3Var.occupyNavigationBar && !f3Var.occupyNavigationBarWithoutKeyboard) {
-                i11 = size2 - f3Var.getBottomInset();
-                this.w = size2 - i11;
+                i12 = size2 - f3Var.getBottomInset();
+                this.w = size2 - i12;
                 setMeasuredDimension(size, size2);
                 f3Var.navigationBarHeight = 0;
                 windowInsets2 = f3Var.lastInsets;
                 if (windowInsets2 != null && !f3Var.occupyNavigationBar) {
                     windowInsets4 = f3Var.lastInsets;
                     float systemWindowInsetBottom = windowInsets4.getSystemWindowInsetBottom();
-                    f10 = f3Var.hideSystemVerticalInsetsProgress;
-                    int i14 = (int) ((1.0f - f10) * systemWindowInsetBottom);
+                    f9 = f3Var.hideSystemVerticalInsetsProgress;
+                    int i15 = (int) ((1.0f - f9) * systemWindowInsetBottom);
                     if (Build.VERSION.SDK_INT >= 29) {
-                        i14 += f3.access$1400(f3Var);
+                        i15 += f3.access$1400(f3Var);
                     }
                     if (f3Var.occupyNavigationBarWithoutKeyboard) {
                     }
-                    size2 -= i14;
-                    f3Var.navigationBarHeight = Math.min(i14, AndroidUtilities.navigationBarHeight);
+                    size2 -= i15;
+                    f3Var.navigationBarHeight = Math.min(i15, AndroidUtilities.navigationBarHeight);
                 }
-                int i15 = size2;
+                int i16 = size2;
                 windowInsets3 = f3Var.lastInsets;
                 if (windowInsets3 != null) {
                     size -= f3Var.getLeftInset() + f3Var.getRightInset();
                 }
-                int i16 = size;
-                f3Var.isPortrait = i16 < i15;
+                int i17 = size;
+                f3Var.isPortrait = i17 < i16;
                 viewGroup = f3Var.containerView;
                 if (viewGroup != null) {
                     if (f3Var.fullWidth) {
-                        viewGroup.measure(View.MeasureSpec.makeMeasureSpec((f3Var.backgroundPaddingLeft * 2) + i16, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(i15, TLObject.FLAG_31));
+                        viewGroup.measure(View.MeasureSpec.makeMeasureSpec((f3Var.backgroundPaddingLeft * 2) + i17, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(i16, TLObject.FLAG_31));
                     } else {
                         if (AndroidUtilities.isTablet()) {
                             float dp = AndroidUtilities.dp(500.0f);
                             Point point = AndroidUtilities.displaySize;
                             makeMeasureSpec = View.MeasureSpec.makeMeasureSpec((f3Var.backgroundPaddingLeft * 2) + ((int) Math.min(dp, Math.min(point.x, point.y) * 0.8f)), TLObject.FLAG_30);
                         } else {
-                            makeMeasureSpec = View.MeasureSpec.makeMeasureSpec((f3Var.backgroundPaddingLeft * 2) + f3Var.getBottomSheetWidth(f3Var.isPortrait, i16, i15), TLObject.FLAG_30);
+                            makeMeasureSpec = View.MeasureSpec.makeMeasureSpec((f3Var.backgroundPaddingLeft * 2) + f3Var.getBottomSheetWidth(f3Var.isPortrait, i17, i16), TLObject.FLAG_30);
                         }
-                        f3Var.containerView.measure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(i15, TLObject.FLAG_31));
+                        f3Var.containerView.measure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(i16, TLObject.FLAG_31));
                     }
                 }
                 childCount = getChildCount();
-                for (int i17 = 0; i17 < childCount; i17++) {
-                    View childAt = getChildAt(i17);
+                for (int i18 = 0; i18 < childCount; i18++) {
+                    View childAt = getChildAt(i18);
                     if (childAt.getVisibility() != 8 && childAt != f3Var.containerView) {
-                        if (childAt instanceof v60) {
-                            measureChildWithMargins(childAt, View.MeasureSpec.makeMeasureSpec(i16, TLObject.FLAG_30), 0, View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), 0);
-                        } else if (!f3Var.onCustomMeasure(childAt, i16, i15)) {
-                            measureChildWithMargins(childAt, View.MeasureSpec.makeMeasureSpec(i16, TLObject.FLAG_30), 0, View.MeasureSpec.makeMeasureSpec(i15, TLObject.FLAG_30), 0);
+                        if (childAt instanceof h70) {
+                            measureChildWithMargins(childAt, View.MeasureSpec.makeMeasureSpec(i17, TLObject.FLAG_30), 0, View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i11), TLObject.FLAG_30), 0);
+                        } else if (!f3Var.onCustomMeasure(childAt, i17, i16)) {
+                            measureChildWithMargins(childAt, View.MeasureSpec.makeMeasureSpec(i17, TLObject.FLAG_30), 0, View.MeasureSpec.makeMeasureSpec(i16, TLObject.FLAG_30), 0);
                         }
                     }
                 }
             }
         }
-        i11 = size2;
-        this.w = size2 - i11;
+        i12 = size2;
+        this.w = size2 - i12;
         setMeasuredDimension(size, size2);
         f3Var.navigationBarHeight = 0;
         windowInsets2 = f3Var.lastInsets;
         if (windowInsets2 != null) {
             windowInsets4 = f3Var.lastInsets;
             float systemWindowInsetBottom2 = windowInsets4.getSystemWindowInsetBottom();
-            f10 = f3Var.hideSystemVerticalInsetsProgress;
-            int i142 = (int) ((1.0f - f10) * systemWindowInsetBottom2);
+            f9 = f3Var.hideSystemVerticalInsetsProgress;
+            int i152 = (int) ((1.0f - f9) * systemWindowInsetBottom2);
             if (Build.VERSION.SDK_INT >= 29) {
             }
             if (f3Var.occupyNavigationBarWithoutKeyboard) {
             }
-            size2 -= i142;
-            f3Var.navigationBarHeight = Math.min(i142, AndroidUtilities.navigationBarHeight);
+            size2 -= i152;
+            f3Var.navigationBarHeight = Math.min(i152, AndroidUtilities.navigationBarHeight);
         }
-        int i152 = size2;
+        int i162 = size2;
         windowInsets3 = f3Var.lastInsets;
         if (windowInsets3 != null) {
         }
-        int i162 = size;
-        f3Var.isPortrait = i162 < i152;
+        int i172 = size;
+        f3Var.isPortrait = i172 < i162;
         viewGroup = f3Var.containerView;
         if (viewGroup != null) {
         }
         childCount = getChildCount();
-        while (i17 < childCount) {
+        while (i18 < childCount) {
         }
     }
 
     @Override // android.view.ViewGroup, android.view.ViewParent
-    public final boolean onNestedFling(View view, float f10, float f11, boolean z10) {
+    public final boolean onNestedFling(View view, float f9, float f10, boolean z10) {
         return false;
     }
 
     @Override // android.view.ViewGroup, android.view.ViewParent
-    public final boolean onNestedPreFling(View view, float f10, float f11) {
+    public final boolean onNestedPreFling(View view, float f9, float f10) {
         return false;
     }
 
     @Override // android.view.ViewGroup, android.view.ViewParent
-    public final void onNestedPreScroll(View view, int i9, int i10, int[] iArr) {
+    public final void onNestedPreScroll(View view, int i10, int i11, int[] iArr) {
         boolean z10;
         f3 f3Var = this.C;
         z10 = f3Var.dismissed;
@@ -900,18 +900,18 @@ public abstract class d3 extends FrameLayout {
         }
         a();
         float translationY = f3Var.containerView.getTranslationY();
-        if (translationY <= 0.0f || i10 <= 0) {
+        if (translationY <= 0.0f || i11 <= 0) {
             return;
         }
-        float f10 = translationY - i10;
-        iArr[1] = i10;
-        f3Var.containerView.setTranslationY(f10 >= 0.0f ? f10 : 0.0f);
+        float f9 = translationY - i11;
+        iArr[1] = i11;
+        f3Var.containerView.setTranslationY(f9 >= 0.0f ? f9 : 0.0f);
         f3Var.onContainerViewTranslation();
         f3Var.container.invalidate();
     }
 
     @Override // android.view.ViewGroup, android.view.ViewParent
-    public final void onNestedScroll(View view, int i9, int i10, int i11, int i12) {
+    public final void onNestedScroll(View view, int i10, int i11, int i12, int i13) {
         boolean z10;
         f3 f3Var = this.C;
         z10 = f3Var.dismissed;
@@ -919,8 +919,8 @@ public abstract class d3 extends FrameLayout {
             return;
         }
         a();
-        if (i12 != 0) {
-            float translationY = f3Var.containerView.getTranslationY() - i12;
+        if (i13 != 0) {
+            float translationY = f3Var.containerView.getTranslationY() - i13;
             if (translationY < 0.0f) {
                 translationY = 0.0f;
             }
@@ -931,9 +931,9 @@ public abstract class d3 extends FrameLayout {
     }
 
     @Override // android.view.ViewGroup, android.view.ViewParent
-    public final void onNestedScrollAccepted(View view, View view2, int i9) {
+    public final void onNestedScrollAccepted(View view, View view2, int i10) {
         boolean z10;
-        this.n.a = i9;
+        this.n.a = i10;
         f3 f3Var = this.C;
         z10 = f3Var.dismissed;
         if (z10 || !f3Var.allowNestedScroll) {
@@ -943,7 +943,7 @@ public abstract class d3 extends FrameLayout {
     }
 
     @Override // android.view.ViewGroup, android.view.ViewParent
-    public final boolean onStartNestedScroll(View view, View view2, int i9) {
+    public final boolean onStartNestedScroll(View view, View view2, int i10) {
         boolean z10;
         f3 f3Var = this.C;
         View view3 = f3Var.nestedScrollChild;
@@ -951,7 +951,7 @@ public abstract class d3 extends FrameLayout {
             return false;
         }
         z10 = f3Var.dismissed;
-        return !z10 && f3Var.allowNestedScroll && i9 == 2 && !f3Var.canDismissWithSwipe();
+        return !z10 && f3Var.allowNestedScroll && i10 == 2 && !f3Var.canDismissWithSwipe();
     }
 
     @Override // android.view.ViewGroup, android.view.ViewParent

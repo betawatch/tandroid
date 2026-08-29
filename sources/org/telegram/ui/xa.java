@@ -1,57 +1,24 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.KeyEvent;
-import android.view.MotionEvent;
-
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class xa extends org.telegram.ui.Components.io {
-    public final /* synthetic */ int s;
-    public final /* synthetic */ org.telegram.ui.ActionBar.o2 v;
+public final class xa extends org.telegram.ui.ActionBar.o1 {
+    public final /* synthetic */ ob o;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public xa(int i9, Context context, org.telegram.ui.ActionBar.o2 o2Var) {
-        super(context);
-        this.s = i9;
-        this.v = o2Var;
-        setOrientation(1);
+    public xa(ob obVar, wa waVar) {
+        super(waVar, -2, -2);
+        this.o = obVar;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchKeyEvent(KeyEvent keyEvent) {
-        ya yaVar;
-        switch (this.s) {
-            case 0:
-                if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (yaVar = ((pb) this.v).F0) != null) {
-                    yaVar.dismiss();
-                }
-                break;
-            default:
-                if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0) {
-                    ((qn) this.v).A7(true);
-                }
-                break;
+    @Override // org.telegram.ui.ActionBar.o1, android.widget.PopupWindow
+    public final void dismiss() {
+        d(true);
+        ob obVar = this.o;
+        if (obVar.F0 != this) {
+            return;
         }
-        return super.dispatchKeyEvent(keyEvent);
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        ya yaVar;
-        switch (this.s) {
-            case 0:
-                boolean dispatchTouchEvent = super.dispatchTouchEvent(motionEvent);
-                if (motionEvent.getAction() == 0 && !dispatchTouchEvent && (yaVar = ((pb) this.v).F0) != null) {
-                    yaVar.dismiss();
-                }
-                return dispatchTouchEvent;
-            default:
-                boolean dispatchTouchEvent2 = super.dispatchTouchEvent(motionEvent);
-                if (motionEvent.getAction() == 0 && !dispatchTouchEvent2) {
-                    ((qn) this.v).A7(true);
-                }
-                return dispatchTouchEvent2;
-        }
+        org.telegram.ui.Components.mc.e();
+        obVar.F0 = null;
     }
 }

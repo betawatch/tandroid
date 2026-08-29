@@ -1,61 +1,71 @@
 package qh;
 
-import java.util.ArrayList;
-import org.telegram.tgnet.tl.TL_iv;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.drawable.Drawable;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.R;
+import org.telegram.ui.ActionBar.g6;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes4.dex */
-public final class a {
-    public static long u = 1;
-    public final long a;
-    public TL_iv.PageBlock b;
-    public int c;
-    public int d;
-    public boolean e;
-    public boolean f;
-    public s g;
-    public ArrayList h;
-    public boolean i;
-    public final ArrayList j;
-    public final ArrayList k;
-    public int l;
-    public int m;
-    public boolean n;
-    public boolean o;
-    public boolean p;
-    public boolean q;
-    public boolean r;
-    public boolean s;
-    public long t;
+public final class a extends Drawable {
+    public int b;
+    public int c = 255;
+    public final Drawable a = ApplicationLoader.applicationContext.getResources().getDrawable(R.drawable.settings_arrow).mutate();
 
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public a(TL_iv.PageBlock pageBlock, int i9, int i10) {
-        this(pageBlock, i9, i10, r4);
-        long j10 = u;
-        u = 1 + j10;
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        float exactCenterX = getBounds().exactCenterX();
+        float exactCenterY = getBounds().exactCenterY();
+        int w02 = g6.w0(null, g6.G6, false);
+        int w03 = g6.w0(null, g6.d6, false);
+        int i10 = this.b;
+        Drawable drawable = this.a;
+        if (i10 != w03) {
+            this.b = w03;
+            drawable.setColorFilter(new PorterDuffColorFilter(w03, PorterDuff.Mode.SRC_IN));
+        }
+        canvas.drawCircle(exactCenterX, exactCenterY, AndroidUtilities.dp(7.6666665f), g6.l0(i0.a.k(w03, this.c)));
+        canvas.drawCircle(exactCenterX, exactCenterY, AndroidUtilities.dp(6.6666665f), g6.l0(i0.a.k(w02, this.c)));
+        jf.r.d(drawable, exactCenterX, exactCenterY, 17);
+        canvas.translate(0.0f, AndroidUtilities.dp(0.66f));
+        canvas.save();
+        canvas.rotate(90.0f, exactCenterX, exactCenterY);
+        jf.r.b(canvas, drawable, 0.8f);
+        canvas.restore();
     }
 
-    public final boolean a() {
-        return this.c > 0 && this.e;
+    @Override // android.graphics.drawable.Drawable
+    public final int getAlpha() {
+        return this.c;
     }
 
-    public final boolean b() {
-        return this.c > 0;
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        return AndroidUtilities.dp(13.333333f);
     }
 
-    public final boolean c() {
-        return this.d > 0;
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        return AndroidUtilities.dp(13.333333f);
     }
 
-    public a(TL_iv.PageBlock pageBlock, int i9, int i10, long j10) {
-        this.j = new ArrayList();
-        this.k = new ArrayList();
-        this.b = pageBlock;
-        this.c = i9;
-        this.d = i10;
-        this.a = j10;
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -3;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+        this.c = i10;
+        this.a.setAlpha(i10);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

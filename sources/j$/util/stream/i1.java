@@ -66,7 +66,7 @@ public abstract class i1 extends a implements LongStream {
     @Override // j$.util.stream.a
     public final boolean L0(Spliterator spliterator, j5 j5Var) {
         LongConsumer m0Var;
-        boolean q10;
+        boolean q6;
         j$.util.a1 U0 = U0(spliterator);
         if (j5Var instanceof LongConsumer) {
             m0Var = (LongConsumer) j5Var;
@@ -79,12 +79,12 @@ public abstract class i1 extends a implements LongStream {
             m0Var = new j$.util.m0(j5Var, 1);
         }
         do {
-            q10 = j5Var.q();
-            if (q10) {
+            q6 = j5Var.q();
+            if (q6) {
                 break;
             }
         } while (U0.tryAdvance(m0Var));
-        return q10;
+        return q6;
     }
 
     @Override // j$.util.stream.t3
@@ -129,7 +129,7 @@ public abstract class i1 extends a implements LongStream {
     @Override // j$.util.stream.LongStream
     public final IntStream A() {
         Objects.requireNonNull(null);
-        return new s(this, v6.p | v6.n, 4);
+        return new s(this, v6.p | v6.n, 3);
     }
 
     @Override // j$.util.stream.LongStream
@@ -174,14 +174,14 @@ public abstract class i1 extends a implements LongStream {
 
     @Override // j$.util.stream.LongStream
     public final LongStream a() {
-        int i9 = w8.a;
+        int i10 = w8.a;
         Objects.requireNonNull(null);
         return new d6(this, w8.a, 1);
     }
 
     @Override // j$.util.stream.LongStream
     public final LongStream c() {
-        int i9 = w8.a;
+        int i10 = w8.a;
         Objects.requireNonNull(null);
         return new d6(this, w8.b, 2);
     }

@@ -5,7 +5,7 @@ import android.os.Message;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class b extends Handler {
     public final ArrayList a = new ArrayList();
@@ -16,122 +16,122 @@ public final class b extends Handler {
         this.c = eVar;
     }
 
-    public static void a(x xVar, int i9, Object obj, int i10) {
-        c0 c0Var = xVar.a;
-        w wVar = xVar.b;
-        int i11 = 65280 & i9;
-        if (i11 != 256) {
-            if (i11 != 512) {
-                if (i11 == 768 && i9 == 769) {
-                    wVar.l((f0) obj);
+    public static void a(y yVar, int i10, Object obj, int i11) {
+        d0 d0Var = yVar.a;
+        x xVar = yVar.b;
+        int i12 = 65280 & i10;
+        if (i12 != 256) {
+            if (i12 != 512) {
+                if (i12 == 768 && i10 == 769) {
+                    xVar.l((g0) obj);
                 }
                 return;
             }
-            switch (i9) {
+            switch (i10) {
                 case 513:
-                    wVar.a();
+                    xVar.a();
                     break;
                 case 514:
-                    wVar.c();
+                    xVar.c();
                     break;
                 case 515:
-                    wVar.b();
+                    xVar.b();
                     break;
             }
         }
-        a0 a0Var = (i9 == 264 || i9 == 262) ? (a0) ((q0.b) obj).b : (a0) obj;
-        a0 a0Var2 = (i9 == 264 || i9 == 262) ? (a0) ((q0.b) obj).a : null;
-        if (a0Var != null) {
+        b0 b0Var = (i10 == 264 || i10 == 262) ? (b0) ((q0.b) obj).b : (b0) obj;
+        b0 b0Var2 = (i10 == 264 || i10 == 262) ? (b0) ((q0.b) obj).a : null;
+        if (b0Var != null) {
             boolean z10 = true;
-            if ((xVar.d & 2) == 0 && !a0Var.h(xVar.c)) {
-                f0 f0Var = c0.c().u;
-                z10 = ((f0Var == null ? false : f0Var.d) && a0Var.d() && i9 == 262 && i10 == 3 && a0Var2 != null) ? true ^ a0Var2.d() : false;
+            if ((yVar.d & 2) == 0 && !b0Var.h(yVar.c)) {
+                g0 g0Var = d0.c().u;
+                z10 = ((g0Var == null ? false : g0Var.d) && b0Var.d() && i10 == 262 && i11 == 3 && b0Var2 != null) ? true ^ b0Var2.d() : false;
             }
             if (z10) {
-                switch (i9) {
+                switch (i10) {
                     case 257:
-                        wVar.d(a0Var);
+                        xVar.d(b0Var);
                         break;
                     case 258:
-                        wVar.f(a0Var);
+                        xVar.f(b0Var);
                         break;
                     case 259:
-                        wVar.e(a0Var);
+                        xVar.e(b0Var);
                         break;
                     case 260:
-                        wVar.k(a0Var);
+                        xVar.k(b0Var);
                         break;
                     case 261:
-                        wVar.getClass();
+                        xVar.getClass();
                         break;
                     case 262:
-                        wVar.h(c0Var, a0Var, i10);
+                        xVar.h(d0Var, b0Var, i11);
                         break;
                     case 263:
-                        wVar.j(c0Var, a0Var, i10);
+                        xVar.j(d0Var, b0Var, i11);
                         break;
                     case 264:
-                        wVar.h(c0Var, a0Var, i10);
+                        xVar.h(d0Var, b0Var, i11);
                         break;
                 }
             }
         }
     }
 
-    public final void b(int i9, Object obj) {
-        obtainMessage(i9, obj).sendToTarget();
+    public final void b(int i10, Object obj) {
+        obtainMessage(i10, obj).sendToTarget();
     }
 
     @Override // android.os.Handler
     public final void handleMessage(Message message) {
-        int q10;
+        int q6;
         ArrayList arrayList = this.a;
         e eVar = this.c;
         ArrayList arrayList2 = eVar.i;
-        p0 p0Var = eVar.s;
-        int i9 = message.what;
+        q0 q0Var = eVar.s;
+        int i10 = message.what;
         Object obj = message.obj;
-        int i10 = message.arg1;
-        if (i9 == 259 && eVar.e().c.equals(((a0) obj).c)) {
+        int i11 = message.arg1;
+        if (i10 == 259 && eVar.e().c.equals(((b0) obj).c)) {
             eVar.o(true);
         }
-        int i11 = 0;
+        int i12 = 0;
         ArrayList arrayList3 = this.b;
-        if (i9 == 262) {
-            a0 a0Var = (a0) ((q0.b) obj).b;
-            p0Var.x(a0Var);
-            if (eVar.v != null && a0Var.d()) {
+        if (i10 == 262) {
+            b0 b0Var = (b0) ((q0.b) obj).b;
+            q0Var.x(b0Var);
+            if (eVar.v != null && b0Var.d()) {
                 int size = arrayList3.size();
-                int i12 = 0;
-                while (i12 < size) {
-                    Object obj2 = arrayList3.get(i12);
-                    i12++;
-                    p0Var.w((a0) obj2);
+                int i13 = 0;
+                while (i13 < size) {
+                    Object obj2 = arrayList3.get(i13);
+                    i13++;
+                    q0Var.w((b0) obj2);
                 }
                 arrayList3.clear();
             }
-        } else if (i9 != 264) {
-            switch (i9) {
+        } else if (i10 != 264) {
+            switch (i10) {
                 case 257:
-                    p0Var.v((a0) obj);
+                    q0Var.v((b0) obj);
                     break;
                 case 258:
-                    p0Var.w((a0) obj);
+                    q0Var.w((b0) obj);
                     break;
                 case 259:
-                    a0 a0Var2 = (a0) obj;
-                    p0Var.getClass();
-                    if (a0Var2.c() != p0Var && (q10 = p0Var.q(a0Var2)) >= 0) {
-                        p0Var.C((o0) p0Var.D.get(q10));
+                    b0 b0Var2 = (b0) obj;
+                    q0Var.getClass();
+                    if (b0Var2.c() != q0Var && (q6 = q0Var.q(b0Var2)) >= 0) {
+                        q0Var.C((p0) q0Var.D.get(q6));
                         break;
                     }
                     break;
             }
         } else {
-            a0 a0Var3 = (a0) ((q0.b) obj).b;
-            arrayList3.add(a0Var3);
-            p0Var.v(a0Var3);
-            p0Var.x(a0Var3);
+            b0 b0Var3 = (b0) ((q0.b) obj).b;
+            arrayList3.add(b0Var3);
+            q0Var.v(b0Var3);
+            q0Var.x(b0Var3);
         }
         try {
             int size2 = arrayList2.size();
@@ -139,24 +139,24 @@ public final class b extends Handler {
                 size2--;
                 if (size2 < 0) {
                     int size3 = arrayList.size();
-                    while (i11 < size3) {
-                        Object obj3 = arrayList.get(i11);
-                        i11++;
-                        a((x) obj3, i9, obj, i10);
+                    while (i12 < size3) {
+                        Object obj3 = arrayList.get(i12);
+                        i12++;
+                        a((y) obj3, i10, obj, i11);
                     }
                     arrayList.clear();
                     return;
                 }
-                c0 c0Var = (c0) ((WeakReference) arrayList2.get(size2)).get();
-                if (c0Var == null) {
+                d0 d0Var = (d0) ((WeakReference) arrayList2.get(size2)).get();
+                if (d0Var == null) {
                     arrayList2.remove(size2);
                 } else {
-                    arrayList.addAll(c0Var.b);
+                    arrayList.addAll(d0Var.b);
                 }
             }
-        } catch (Throwable th) {
+        } catch (Throwable th2) {
             arrayList.clear();
-            throw th;
+            throw th2;
         }
     }
 }

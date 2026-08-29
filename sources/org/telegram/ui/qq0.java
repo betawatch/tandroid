@@ -10,7 +10,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class qq0 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -22,8 +22,8 @@ public final /* synthetic */ class qq0 implements Runnable {
     public final /* synthetic */ Object h;
 
     /* JADX WARN: Multi-variable type inference failed */
-    public /* synthetic */ qq0(pr0 pr0Var, int[] iArr, int[] iArr2, boolean z10, boolean z11, boolean z12) {
-        this.e = pr0Var;
+    public /* synthetic */ qq0(or0 or0Var, int[] iArr, int[] iArr2, boolean z10, boolean z11, boolean z12) {
+        this.e = or0Var;
         this.f = iArr;
         this.h = iArr2;
         this.b = z10;
@@ -34,25 +34,25 @@ public final /* synthetic */ class qq0 implements Runnable {
     /* JADX WARN: Multi-variable type inference failed */
     @Override // java.lang.Runnable
     public final void run() {
-        int i9 = this.a;
+        int i10 = this.a;
         Object obj = this.h;
         Serializable serializable = this.f;
         Object obj2 = this.e;
-        switch (i9) {
+        switch (i10) {
             case 0:
                 PhotoViewer photoViewer = (PhotoViewer) obj2;
                 File file = (File) serializable;
                 MessageObject messageObject = (MessageObject) obj;
                 Drawable[] drawableArr = PhotoViewer.P8;
                 Pair<Integer, Integer> imageOrientation = AndroidUtilities.getImageOrientation(file);
-                int i10 = photoViewer.R3;
-                photoViewer.R3 = i10 - 1;
+                int i11 = photoViewer.R3;
+                photoViewer.R3 = i11 - 1;
                 String absolutePath = file.getAbsolutePath();
                 boolean z10 = this.b;
-                MediaController.PhotoEntry orientation = new MediaController.PhotoEntry(0, i10, 0L, absolutePath, z10 ? 0 : ((Integer) imageOrientation.first).intValue(), z10, 0, 0, 0L).setOrientation(imageOrientation);
+                MediaController.PhotoEntry orientation = new MediaController.PhotoEntry(0, i11, 0L, absolutePath, z10 ? 0 : ((Integer) imageOrientation.first).intValue(), z10, 0, 0, 0L).setOrientation(imageOrientation);
                 photoViewer.Y1 = 2;
                 photoViewer.q2 = false;
-                photoViewer.d = new ct0(photoViewer, photoViewer.d, messageObject, orientation, this.c, this.d);
+                photoViewer.d = new at0(photoViewer, photoViewer.d, messageObject, orientation, this.c, this.d);
                 photoViewer.l1.l();
                 if (photoViewer.Q6 == null) {
                     photoViewer.Q6 = VelocityTracker.obtain();
@@ -60,11 +60,11 @@ public final /* synthetic */ class qq0 implements Runnable {
                 photoViewer.x7 = 3;
                 photoViewer.p3(false, false);
                 photoViewer.j3(true, false);
-                qn qnVar = photoViewer.h4;
-                if (qnVar == null || qnVar.U == null || !qnVar.x9()) {
+                tn tnVar = photoViewer.h4;
+                if (tnVar == null || tnVar.U == null || !tnVar.x9()) {
                     photoViewer.R1();
                 } else {
-                    photoViewer.h4.U.O();
+                    photoViewer.h4.U.P();
                 }
                 photoViewer.H0.setAlpha(255);
                 photoViewer.a0.setAlpha(1.0f);
@@ -78,17 +78,17 @@ public final /* synthetic */ class qq0 implements Runnable {
                 photoViewer.x7 = 0;
                 break;
             default:
-                pr0 pr0Var = (pr0) obj2;
+                or0 or0Var = (or0) obj2;
                 int[] iArr = (int[]) serializable;
-                int i11 = iArr[0] + 1;
-                iArr[0] = i11;
-                int i12 = ((int[]) obj)[0];
-                if (i11 == i12) {
-                    tt0 tt0Var = pr0Var.b.a0;
+                int i12 = iArr[0] + 1;
+                iArr[0] = i12;
+                int i13 = ((int[]) obj)[0];
+                if (i12 == i13) {
+                    rt0 rt0Var = or0Var.b.a0;
                     boolean z11 = this.b;
-                    int i13 = (this.c ? 1 : 0) + (z11 ? 1 : 0);
+                    int i14 = (this.c ? 1 : 0) + (z11 ? 1 : 0);
                     boolean z12 = this.d;
-                    new org.telegram.ui.Components.oc(tt0Var, null).m(i13 + (z12 ? 1 : 0) > 1 ? org.telegram.ui.Components.nc.v : z12 ? i12 > 1 ? org.telegram.ui.Components.nc.s : org.telegram.ui.Components.nc.r : z11 ? i12 > 1 ? org.telegram.ui.Components.nc.n : org.telegram.ui.Components.nc.h : i12 > 1 ? org.telegram.ui.Components.nc.f : org.telegram.ui.Components.nc.e, i12, -115203550, -1, null).j();
+                    new org.telegram.ui.Components.tc(rt0Var, null).m(i14 + (z12 ? 1 : 0) > 1 ? org.telegram.ui.Components.sc.v : z12 ? i13 > 1 ? org.telegram.ui.Components.sc.s : org.telegram.ui.Components.sc.r : z11 ? i13 > 1 ? org.telegram.ui.Components.sc.n : org.telegram.ui.Components.sc.h : i13 > 1 ? org.telegram.ui.Components.sc.f : org.telegram.ui.Components.sc.e, i13, -115203550, -1, null).j();
                     break;
                 }
                 break;

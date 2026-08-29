@@ -1,43 +1,22 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Rect;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class zq0 extends org.telegram.ui.x01 {
-    public final /* synthetic */ eu0 D;
+public final /* synthetic */ class zq0 implements Utilities.Callback {
+    public final /* synthetic */ org.telegram.ui.Cells.p7 a;
+    public final /* synthetic */ float b;
+    public final /* synthetic */ float c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zq0(eu0 eu0Var, Context context, xu0 xu0Var, ih.j6 j6Var, yq0 yq0Var) {
-        super(context, xu0Var, j6Var, yq0Var);
-        this.D = eu0Var;
+    public /* synthetic */ zq0(org.telegram.ui.Cells.p7 p7Var, float f9, float f10) {
+        this.a = p7Var;
+        this.b = f9;
+        this.c = f10;
     }
 
-    @Override // org.telegram.ui.x01
-    public final void a() {
-        dr0 dr0Var;
-        int measuredWidth = getMeasuredWidth();
-        int visualHeight = (int) getVisualHeight();
-        Rect rect = this.B;
-        rect.set(0, 0, measuredWidth, visualHeight);
-        setClipBounds(rect);
-        invalidate();
-        eu0 eu0Var = this.D;
-        xs0[] xs0VarArr = eu0Var.g0;
-        if (xs0VarArr != null) {
-            for (xs0 xs0Var : xs0VarArr) {
-                if (xs0Var != null && (dr0Var = xs0Var.h) != null) {
-                    int paddingLeft = dr0Var.getPaddingLeft();
-                    int Z = eu0Var.Z(xs0Var.B);
-                    int paddingRight = xs0Var.h.getPaddingRight();
-                    dr0 dr0Var2 = xs0Var.h;
-                    int Y = eu0Var.Y(eu0Var.v0());
-                    dr0Var2.a3 = Y;
-                    dr0Var.setPadding(paddingLeft, Z, paddingRight, Y);
-                }
-            }
-        }
-        eu0Var.K();
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        this.a.n(this.b, this.c);
     }
 }

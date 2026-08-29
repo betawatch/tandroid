@@ -1,31 +1,33 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.Utilities;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class tm implements Utilities.Callback {
+public final class tm extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Utilities.Callback b;
+    public final /* synthetic */ on b;
 
-    public /* synthetic */ tm(int i9, Utilities.Callback callback) {
-        this.a = i9;
-        this.b = callback;
+    public /* synthetic */ tm(on onVar, int i10) {
+        this.a = i10;
+        this.b = onVar;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                this.b.run(new zg.e((String) obj));
+                this.b.A.setTranslationY(0.0f);
+                break;
+            case 1:
+                this.b.A.setTranslationY(0.0f);
                 break;
             default:
-                int[] iArr = (int[]) obj;
-                boolean z10 = false;
-                if (iArr.length >= 1 && iArr[0] == 0) {
-                    z10 = true;
-                }
-                this.b.run(Boolean.valueOf(z10));
+                on onVar = this.b;
+                onVar.b1 = false;
+                onVar.A.setTranslationY(0.0f);
+                onVar.a0();
                 break;
         }
     }

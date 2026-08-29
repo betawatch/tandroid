@@ -17,7 +17,7 @@ import android.widget.PopupMenu;
 import java.util.Arrays;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
 public final class g4 extends ActionMode {
     public final Context a;
@@ -109,13 +109,13 @@ public final class g4 extends ActionMode {
         Display defaultDisplay = ((WindowManager) this.a.getSystemService(WindowManager.class)).getDefaultDisplay();
         Point point = this.n;
         defaultDisplay.getRealSize(point);
-        int i9 = point.x;
-        int i10 = point.y;
+        int i10 = point.x;
+        int i11 = point.y;
         Rect rect3 = this.l;
-        rect3.set(0, 0, i9, i10);
-        boolean c10 = c(rect2, rect3);
+        rect3.set(0, 0, i10, i11);
+        boolean c3 = c(rect2, rect3);
         Rect rect4 = this.f;
-        if (c10) {
+        if (c3) {
             Rect rect5 = this.j;
             if (c(rect2, rect5)) {
                 this.s.d = false;
@@ -269,11 +269,11 @@ public final class g4 extends ActionMode {
     }
 
     @Override // android.view.ActionMode
-    public final void setSubtitle(int i9) {
+    public final void setSubtitle(int i10) {
     }
 
     @Override // android.view.ActionMode
-    public final void setTitle(int i9) {
+    public final void setTitle(int i10) {
     }
 
     @Override // android.view.ActionMode

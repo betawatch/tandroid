@@ -1,31 +1,38 @@
 package org.telegram.messenger;
 
-import android.text.Spanned;
-import java.util.Comparator;
-import org.telegram.messenger.RichMessageLayout;
+import android.content.Context;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class nh implements Comparator {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Spanned b;
+public final /* synthetic */ class nh implements Utilities.Callback2 {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
 
-    public /* synthetic */ nh(Spanned spanned, int i9) {
-        this.a = i9;
-        this.b = spanned;
+    public /* synthetic */ nh(Context context, int i10, Utilities.Callback2 callback2) {
+        this.c = callback2;
+        this.d = context;
+        this.b = i10;
     }
 
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
-        int lambda$withReplacements$0;
-        int lambda$new$0;
+    @Override // org.telegram.messenger.Utilities.Callback2
+    public final void run(Object obj, Object obj2) {
         switch (this.a) {
             case 0:
-                lambda$withReplacements$0 = RichMessageLayout.RichBlock.lambda$withReplacements$0(this.b, (org.telegram.ui.Cells.t9) obj, (org.telegram.ui.Cells.t9) obj2);
-                return lambda$withReplacements$0;
+                PasskeysController.lambda$create$7((Utilities.Callback2) this.c, (Context) this.d, this.b, (v0.c) obj, (Throwable) obj2);
+                break;
             default:
-                lambda$new$0 = RichMessageLayout.Text.lambda$new$0(this.b, (RichMessageLayout.RichButtonSpan) obj, (RichMessageLayout.RichButtonSpan) obj2);
-                return lambda$new$0;
+                ((TranslateController) this.c).lambda$pushToSummarize$19(this.b, (Utilities.Callback) this.d, (TLRPC.TL_textWithEntities) obj, (TLRPC.TL_error) obj2);
+                break;
         }
+    }
+
+    public /* synthetic */ nh(TranslateController translateController, int i10, Utilities.Callback callback) {
+        this.c = translateController;
+        this.b = i10;
+        this.d = callback;
     }
 }

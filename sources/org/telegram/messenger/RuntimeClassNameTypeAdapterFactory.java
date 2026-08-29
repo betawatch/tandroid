@@ -6,16 +6,16 @@ import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class RuntimeClassNameTypeAdapterFactory<T> implements la.v {
+public final class RuntimeClassNameTypeAdapterFactory<T> implements na.v {
     private final Class<?> baseType;
-    private final la.a exclusionStrategy;
+    private final na.a exclusionStrategy;
     private final Map<String, Class<?>> labelToSubtype = new LinkedHashMap();
     private final Map<Class<?>, String> subtypeToLabel = new LinkedHashMap();
     private final String typeFieldName;
 
-    private RuntimeClassNameTypeAdapterFactory(Class<?> cls, String str, la.a aVar) {
+    private RuntimeClassNameTypeAdapterFactory(Class<?> cls, String str, na.a aVar) {
         if (str == null || cls == null) {
             throw null;
         }
@@ -24,13 +24,13 @@ public final class RuntimeClassNameTypeAdapterFactory<T> implements la.v {
         this.exclusionStrategy = aVar;
     }
 
-    public static <T> RuntimeClassNameTypeAdapterFactory<T> of(Class<T> cls, String str, la.a aVar) {
+    public static <T> RuntimeClassNameTypeAdapterFactory<T> of(Class<T> cls, String str, na.a aVar) {
         return new RuntimeClassNameTypeAdapterFactory<>(cls, str, aVar);
     }
 
-    @Override // la.v
-    public <R> la.u create(final la.g gVar, final sa.a<R> aVar) {
-        la.a aVar2 = this.exclusionStrategy;
+    @Override // na.v
+    public <R> na.u create(final na.g gVar, final ua.a<R> aVar) {
+        na.a aVar2 = this.exclusionStrategy;
         Class cls = aVar.a;
         Class cls2 = aVar.a;
         if (aVar2.shouldSkipClass(cls.getClass())) {
@@ -39,19 +39,19 @@ public final class RuntimeClassNameTypeAdapterFactory<T> implements la.v {
         final LinkedHashMap linkedHashMap = new LinkedHashMap();
         final LinkedHashMap linkedHashMap2 = new LinkedHashMap();
         if (Object.class.isAssignableFrom(cls2)) {
-            la.u c10 = gVar.c(this, aVar);
-            linkedHashMap.put(cls2.getSimpleName(), c10);
-            linkedHashMap2.put(cls2, c10);
+            na.u c3 = gVar.c(this, aVar);
+            linkedHashMap.put(cls2.getSimpleName(), c3);
+            linkedHashMap2.put(cls2, c3);
         }
-        return new la.u() { // from class: org.telegram.messenger.RuntimeClassNameTypeAdapterFactory.1
-            private la.u getDelegate(Class<?> cls3) {
-                la.u uVar = (la.u) linkedHashMap2.get(cls3);
+        return new na.u() { // from class: org.telegram.messenger.RuntimeClassNameTypeAdapterFactory.1
+            private na.u getDelegate(Class<?> cls3) {
+                na.u uVar = (na.u) linkedHashMap2.get(cls3);
                 if (uVar != null) {
                     return uVar;
                 }
                 for (Map.Entry entry : linkedHashMap2.entrySet()) {
                     if (((Class) entry.getKey()).isAssignableFrom(cls3)) {
-                        return (la.u) entry.getValue();
+                        return (na.u) entry.getValue();
                     }
                 }
                 return null;
@@ -61,27 +61,27 @@ public final class RuntimeClassNameTypeAdapterFactory<T> implements la.v {
             /* JADX WARN: Removed duplicated region for block: B:8:0x0034  */
             /* JADX WARN: Type inference failed for: r4v12, types: [R, java.lang.Object] */
             /* JADX WARN: Type inference failed for: r4v8, types: [R, java.lang.Object] */
-            @Override // la.u
+            @Override // na.u
             /*
                 Code decompiled incorrectly, please refer to instructions dump.
             */
-            public R read(ta.a aVar3) {
+            public R read(va.a aVar3) {
                 boolean z10;
-                la.i iVar;
+                na.i iVar;
                 try {
                     try {
                         aVar3.x();
                         z10 = false;
                         try {
-                            iVar = (la.i) oa.h1.z.read(aVar3);
+                            iVar = (na.i) qa.h1.z.read(aVar3);
                         } catch (EOFException e10) {
                             e = e10;
                             if (!z10) {
-                                throw new la.j(e);
+                                throw new na.j(e);
                             }
-                            iVar = la.k.a;
+                            iVar = na.k.a;
                             iVar.getClass();
-                            if (iVar instanceof la.l) {
+                            if (iVar instanceof na.l) {
                             }
                         }
                     } catch (EOFException e11) {
@@ -89,61 +89,61 @@ public final class RuntimeClassNameTypeAdapterFactory<T> implements la.v {
                         z10 = true;
                     }
                     iVar.getClass();
-                    if (iVar instanceof la.l) {
-                        if (iVar instanceof la.k) {
+                    if (iVar instanceof na.l) {
+                        if (iVar instanceof na.k) {
                             return null;
                         }
                         return gVar.c(RuntimeClassNameTypeAdapterFactory.this, aVar).fromJsonTree(iVar);
                     }
-                    la.i iVar2 = (la.i) iVar.i().a.remove(RuntimeClassNameTypeAdapterFactory.this.typeFieldName);
+                    na.i iVar2 = (na.i) iVar.i().a.remove(RuntimeClassNameTypeAdapterFactory.this.typeFieldName);
                     if (iVar2 == null) {
-                        throw new androidx.car.app.j("cannot deserialize " + RuntimeClassNameTypeAdapterFactory.this.baseType + " because it does not define a field named " + RuntimeClassNameTypeAdapterFactory.this.typeFieldName);
+                        throw new a6.b("cannot deserialize " + RuntimeClassNameTypeAdapterFactory.this.baseType + " because it does not define a field named " + RuntimeClassNameTypeAdapterFactory.this.typeFieldName);
                     }
                     String n10 = iVar2.n();
-                    la.u uVar = (la.u) linkedHashMap.get(n10);
+                    na.u uVar = (na.u) linkedHashMap.get(n10);
                     if (uVar == null) {
                         try {
-                            uVar = gVar.c(RuntimeClassNameTypeAdapterFactory.this, new sa.a(Class.forName(n10)));
+                            uVar = gVar.c(RuntimeClassNameTypeAdapterFactory.this, new ua.a(Class.forName(n10)));
                         } catch (ClassNotFoundException e12) {
-                            throw new androidx.car.app.j(ta.b.d("Cannot find class ", n10), e12);
+                            throw new a6.b(u3.c.e("Cannot find class ", n10), e12);
                         }
                     }
                     return uVar.fromJsonTree(iVar);
-                } catch (IOException e13) {
-                    throw new la.j(e13);
-                } catch (NumberFormatException e14) {
-                    throw new la.j(e14);
-                } catch (ta.d e15) {
-                    throw new la.j(e15);
+                } catch (NumberFormatException e13) {
+                    throw new na.j(e13);
+                } catch (va.c e14) {
+                    throw new na.j(e14);
+                } catch (IOException e15) {
+                    throw new na.j(e15);
                 }
             }
 
-            @Override // la.u
-            public void write(ta.c cVar, R r10) {
-                Class<?> cls3 = r10.getClass();
+            @Override // na.u
+            public void write(va.b bVar, R r6) {
+                Class<?> cls3 = r6.getClass();
                 String simpleName = cls3.getSimpleName();
-                la.u delegate = getDelegate(cls3);
+                na.u delegate = getDelegate(cls3);
                 if (delegate == null) {
-                    throw new androidx.car.app.j("cannot serialize " + cls3.getSimpleName() + "; did you forget to register a subtype?");
+                    throw new a6.b("cannot serialize " + cls3.getSimpleName() + "; did you forget to register a subtype?");
                 }
-                la.i jsonTree = delegate.toJsonTree(r10);
+                na.i jsonTree = delegate.toJsonTree(r6);
                 jsonTree.getClass();
-                if (!(jsonTree instanceof la.l)) {
-                    na.d.l(jsonTree, cVar);
+                if (!(jsonTree instanceof na.l)) {
+                    pa.d.l(jsonTree, bVar);
                     return;
                 }
-                na.m mVar = jsonTree.i().a;
-                if (mVar.containsKey(RuntimeClassNameTypeAdapterFactory.this.typeFieldName)) {
-                    throw new androidx.car.app.j("cannot serialize " + cls3.getSimpleName() + " because it already defines a field named " + RuntimeClassNameTypeAdapterFactory.this.typeFieldName);
+                pa.l lVar = jsonTree.i().a;
+                if (lVar.containsKey(RuntimeClassNameTypeAdapterFactory.this.typeFieldName)) {
+                    throw new a6.b("cannot serialize " + cls3.getSimpleName() + " because it already defines a field named " + RuntimeClassNameTypeAdapterFactory.this.typeFieldName);
                 }
-                la.l lVar = new la.l();
-                lVar.o(RuntimeClassNameTypeAdapterFactory.this.typeFieldName, new la.m(simpleName));
-                Iterator it = ((na.k) mVar.entrySet()).iterator();
+                na.l lVar2 = new na.l();
+                lVar2.o(RuntimeClassNameTypeAdapterFactory.this.typeFieldName, new na.m(simpleName));
+                Iterator it = ((pa.j) lVar.entrySet()).iterator();
                 while (it.hasNext()) {
                     Map.Entry entry = (Map.Entry) it.next();
-                    lVar.o((String) entry.getKey(), (la.i) entry.getValue());
+                    lVar2.o((String) entry.getKey(), (na.i) entry.getValue());
                 }
-                na.d.l(lVar, cVar);
+                pa.d.l(lVar2, bVar);
             }
         }.nullSafe();
     }

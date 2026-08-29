@@ -1,41 +1,48 @@
 package org.telegram.ui;
 
 import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class q71 implements Utilities.Callback5, Utilities.Callback5Return, r0.o {
-    public final /* synthetic */ z71 a;
+public final /* synthetic */ class q71 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ b81 b;
 
-    public /* synthetic */ q71(z71 z71Var) {
-        this.a = z71Var;
+    public /* synthetic */ q71(b81 b81Var, int i10) {
+        this.a = i10;
+        this.b = b81Var;
     }
 
-    @Override // r0.o
-    public r0.m1 L0(View view, r0.m1 m1Var) {
-        i0.b defaultWindowInsets = AndroidUtilities.getDefaultWindowInsets(m1Var, false);
-        int i9 = defaultWindowInsets.d;
-        z71 z71Var = this.a;
-        z71Var.O = i9;
-        z71Var.c.setPadding(0, AndroidUtilities.dp(12.0f) + defaultWindowInsets.b, 0, z71Var.O + z71Var.P);
-        return r0.m1.b;
-    }
-
-    @Override // org.telegram.messenger.Utilities.Callback5Return
-    public Object run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        ((Integer) obj3).getClass();
-        ((Float) obj4).getClass();
-        ((Float) obj5).getClass();
-        return Boolean.valueOf(z71.T(this.a, (org.telegram.ui.Components.l41) obj, (View) obj2));
-    }
-
-    @Override // org.telegram.messenger.Utilities.Callback5
-    public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        ((Integer) obj3).getClass();
-        ((Float) obj4).getClass();
-        ((Float) obj5).getClass();
-        z71.d0(this.a, (org.telegram.ui.Components.l41) obj);
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
+            case 0:
+                b81 b81Var = this.b;
+                ye.d.s(b81Var.getParentActivity(), b81Var.getMessagesController().premiumManageSubscriptionUrl);
+                b81Var.getMessagesController().removeSuggestion(0L, "PREMIUM_GRACE");
+                break;
+            case 1:
+                b81 b81Var2 = this.b;
+                b81Var2.getClass();
+                b81Var2.presentFragment(new i(3));
+                break;
+            case 2:
+                this.b.getMessagesController().removeSuggestion(0L, "VALIDATE_PHONE_NUMBER");
+                break;
+            case 3:
+                b81 b81Var3 = this.b;
+                b81Var3.getClass();
+                b81Var3.presentFragment(new cg1(8, null));
+                break;
+            case 4:
+                this.b.getMessagesController().removeSuggestion(0L, "VALIDATE_PASSWORD");
+                break;
+            case 5:
+                b81.V(this.b);
+                break;
+            default:
+                b81.Y(this.b);
+                break;
+        }
     }
 }

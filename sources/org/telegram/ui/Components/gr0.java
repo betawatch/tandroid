@@ -1,39 +1,25 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Rect;
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
+import android.content.Context;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class gr0 extends f2.y0 {
-    public final /* synthetic */ ar0 a;
+public final class gr0 extends ih.x3 {
+    public final /* synthetic */ qu0 Q;
 
-    public gr0(ar0 ar0Var) {
-        this.a = ar0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public gr0(int i10, long j10, Context context, org.telegram.ui.ActionBar.o2 o2Var, org.telegram.ui.ActionBar.c6 c6Var, qu0 qu0Var) {
+        super(i10, j10, context, o2Var, c6Var);
+        this.Q = qu0Var;
     }
 
-    @Override // f2.y0
-    public final void a(Rect rect, View view, RecyclerView recyclerView, f2.n1 n1Var) {
-        if (!(view instanceof org.telegram.ui.Cells.r7)) {
-            rect.left = 0;
-            rect.top = 0;
-            rect.bottom = 0;
-            rect.right = 0;
-            return;
-        }
-        org.telegram.ui.Cells.r7 r7Var = (org.telegram.ui.Cells.r7) view;
-        ar0 ar0Var = this.a;
-        ar0Var.r.getClass();
-        int R = RecyclerView.R(r7Var);
-        int i9 = ar0Var.s.J;
-        r7Var.T = R < i9;
-        int i10 = R % i9;
-        r7Var.R = i10 == 0;
-        r7Var.S = i10 == i9 - 1;
-        rect.left = 0;
-        rect.top = 0;
-        rect.bottom = 0;
-        rect.right = 0;
+    @Override // ih.x3
+    public final void p(boolean z10) {
+        qu0 qu0Var = this.Q;
+        TextView textView = qu0Var.m0;
+        textView.setVisibility(0);
+        textView.animate().alpha(z10 ? 1.0f : 0.0f).scaleX(z10 ? 1.0f : 0.4f).scaleY(z10 ? 1.0f : 0.4f).withEndAction(new p90(3, this, z10)).start();
+        qu0Var.q1(true);
     }
 }

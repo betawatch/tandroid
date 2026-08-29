@@ -17,7 +17,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public class ChooserTargetServiceCompat extends ChooserTargetService {
     @Override // android.service.chooser.ChooserTargetService
@@ -37,24 +37,24 @@ public class ChooserTargetServiceCompat extends ChooserTargetService {
         ArrayList arrayList = d.a;
         ArrayList arrayList2 = new ArrayList();
         int size = arrayList.size();
-        int i9 = 0;
-        while (i9 < size) {
-            Object obj = arrayList.get(i9);
-            i9++;
+        int i10 = 0;
+        while (i10 < size) {
+            Object obj = arrayList.get(i10);
+            i10++;
             c cVar = (c) obj;
             if (cVar.b.equals(componentName.getClassName())) {
                 b[] bVarArr = cVar.a;
                 int length = bVarArr.length;
-                int i10 = 0;
+                int i11 = 0;
                 while (true) {
-                    if (i10 >= length) {
+                    if (i11 >= length) {
                         break;
                     }
-                    if (intentFilter.hasDataType(bVarArr[i10].a)) {
+                    if (intentFilter.hasDataType(bVarArr[i11].a)) {
                         arrayList2.add(cVar);
                         break;
                     }
-                    i10++;
+                    i11++;
                 }
             }
         }
@@ -70,11 +70,11 @@ public class ChooserTargetServiceCompat extends ChooserTargetService {
             ArrayList arrayList3 = new ArrayList();
             for (g0.c cVar2 : b10) {
                 int size2 = arrayList2.size();
-                int i11 = 0;
+                int i12 = 0;
                 while (true) {
-                    if (i11 < size2) {
-                        Object obj2 = arrayList2.get(i11);
-                        i11++;
+                    if (i12 < size2) {
+                        Object obj2 = arrayList2.get(i12);
+                        i12++;
                         c cVar3 = (c) obj2;
                         if (cVar2.j.containsAll(Arrays.asList(cVar3.c))) {
                             arrayList3.add(new a(cVar2, new ComponentName(applicationContext.getPackageName(), cVar3.b)));
@@ -88,14 +88,14 @@ public class ChooserTargetServiceCompat extends ChooserTargetService {
             }
             Collections.sort(arrayList3);
             ArrayList arrayList4 = new ArrayList();
-            int i12 = ((a) arrayList3.get(0)).a.m;
+            int i13 = ((a) arrayList3.get(0)).a.m;
             int size3 = arrayList3.size();
-            float f10 = 1.0f;
-            int i13 = i12;
-            int i14 = 0;
-            while (i14 < size3) {
-                int i15 = i14 + 1;
-                a aVar = (a) arrayList3.get(i14);
+            float f9 = 1.0f;
+            int i14 = i13;
+            int i15 = 0;
+            while (i15 < size3) {
+                int i16 = i15 + 1;
+                a aVar = (a) arrayList3.get(i15);
                 g0.c cVar4 = aVar.a;
                 try {
                     iconCompat = shortcutInfoCompatSaverImpl.g(cVar4.b);
@@ -105,15 +105,15 @@ public class ChooserTargetServiceCompat extends ChooserTargetService {
                 }
                 Bundle bundle = new Bundle();
                 bundle.putString("android.intent.extra.shortcut.ID", cVar4.b);
-                int i16 = cVar4.m;
-                if (i13 != i16) {
-                    f10 -= 0.01f;
-                    i13 = i16;
+                int i17 = cVar4.m;
+                if (i14 != i17) {
+                    f9 -= 0.01f;
+                    i14 = i17;
                 }
-                float f11 = f10;
-                arrayList4.add(new ChooserTarget(cVar4.e, iconCompat != null ? iconCompat.m(null) : null, f11, aVar.b, bundle));
-                i14 = i15;
-                f10 = f11;
+                float f10 = f9;
+                arrayList4.add(new ChooserTarget(cVar4.e, iconCompat != null ? iconCompat.m(null) : null, f10, aVar.b, bundle));
+                i15 = i16;
+                f9 = f10;
             }
             return arrayList4;
         } catch (Exception e11) {

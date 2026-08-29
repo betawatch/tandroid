@@ -27,7 +27,7 @@ import java.io.InputStream;
 import java.lang.reflect.InvocationTargetException;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public class IconCompat extends CustomVersionedParcelable {
     public static final PorterDuff.Mode k = PorterDuff.Mode.SRC_IN;
@@ -54,8 +54,8 @@ public class IconCompat extends CustomVersionedParcelable {
     }
 
     public static IconCompat a(Bundle bundle) {
-        int i9 = bundle.getInt(TeXSymbolParser.TYPE_ATTR);
-        IconCompat iconCompat = new IconCompat(i9);
+        int i10 = bundle.getInt(TeXSymbolParser.TYPE_ATTR);
+        IconCompat iconCompat = new IconCompat(i10);
         iconCompat.e = bundle.getInt("int1");
         iconCompat.f = bundle.getInt("int2");
         iconCompat.j = bundle.getString("string1");
@@ -65,7 +65,7 @@ public class IconCompat extends CustomVersionedParcelable {
         if (bundle.containsKey("tint_mode")) {
             iconCompat.h = PorterDuff.Mode.valueOf(bundle.getString("tint_mode"));
         }
-        switch (i9) {
+        switch (i10) {
             case -1:
             case 1:
             case 5:
@@ -73,7 +73,7 @@ public class IconCompat extends CustomVersionedParcelable {
                 return iconCompat;
             case 0:
             default:
-                Log.w("IconCompat", "Unknown type " + i9);
+                Log.w("IconCompat", "Unknown type " + i10);
                 return null;
             case 2:
             case 4:
@@ -91,16 +91,16 @@ public class IconCompat extends CustomVersionedParcelable {
         Bitmap createBitmap = Bitmap.createBitmap(min, min, Bitmap.Config.ARGB_8888);
         Canvas canvas = new Canvas(createBitmap);
         Paint paint = new Paint(3);
-        float f10 = min;
-        float f11 = 0.5f * f10;
-        float f12 = 0.9166667f * f11;
+        float f9 = min;
+        float f10 = 0.5f * f9;
+        float f11 = 0.9166667f * f10;
         if (z10) {
-            float f13 = 0.010416667f * f10;
+            float f12 = 0.010416667f * f9;
             paint.setColor(0);
-            paint.setShadowLayer(f13, 0.0f, f10 * 0.020833334f, 1023410176);
-            canvas.drawCircle(f11, f11, f12, paint);
-            paint.setShadowLayer(f13, 0.0f, 0.0f, 503316480);
-            canvas.drawCircle(f11, f11, f12, paint);
+            paint.setShadowLayer(f12, 0.0f, f9 * 0.020833334f, 1023410176);
+            canvas.drawCircle(f10, f10, f11, paint);
+            paint.setShadowLayer(f12, 0.0f, 0.0f, 503316480);
+            canvas.drawCircle(f10, f10, f11, paint);
             paint.clearShadowLayer();
         }
         paint.setColor(-16777216);
@@ -110,7 +110,7 @@ public class IconCompat extends CustomVersionedParcelable {
         matrix.setTranslate((-(bitmap.getWidth() - min)) / 2.0f, (-(bitmap.getHeight() - min)) / 2.0f);
         bitmapShader.setLocalMatrix(matrix);
         paint.setShader(bitmapShader);
-        canvas.drawCircle(f11, f11, f12, paint);
+        canvas.drawCircle(f10, f10, f11, paint);
         canvas.setBitmap(null);
         return createBitmap;
     }
@@ -122,21 +122,21 @@ public class IconCompat extends CustomVersionedParcelable {
         return iconCompat;
     }
 
-    public static IconCompat d(Context context, int i9) {
+    public static IconCompat d(Context context, int i10) {
         context.getClass();
-        return e(context.getResources(), context.getPackageName(), i9);
+        return e(context.getResources(), context.getPackageName(), i10);
     }
 
-    public static IconCompat e(Resources resources, String str, int i9) {
+    public static IconCompat e(Resources resources, String str, int i10) {
         str.getClass();
-        if (i9 == 0) {
+        if (i10 == 0) {
             throw new IllegalArgumentException("Drawable resource ID must not be 0");
         }
         IconCompat iconCompat = new IconCompat(2);
-        iconCompat.e = i9;
+        iconCompat.e = i10;
         if (resources != null) {
             try {
-                iconCompat.b = resources.getResourceName(i9);
+                iconCompat.b = resources.getResourceName(i10);
             } catch (Resources.NotFoundException unused) {
                 throw new IllegalArgumentException("Icon resource cannot be found");
             }
@@ -148,34 +148,34 @@ public class IconCompat extends CustomVersionedParcelable {
     }
 
     public final Bitmap f() {
-        int i9 = this.a;
-        if (i9 == -1 && Build.VERSION.SDK_INT >= 23) {
+        int i10 = this.a;
+        if (i10 == -1 && Build.VERSION.SDK_INT >= 23) {
             Object obj = this.b;
             if (obj instanceof Bitmap) {
                 return (Bitmap) obj;
             }
             return null;
         }
-        if (i9 == 1) {
+        if (i10 == 1) {
             return (Bitmap) this.b;
         }
-        if (i9 == 5) {
+        if (i10 == 5) {
             return b((Bitmap) this.b, true);
         }
         throw new IllegalStateException("called getBitmap() on " + this);
     }
 
     public final int g() {
-        int i9;
-        int i10 = this.a;
-        if (i10 != -1 || (i9 = Build.VERSION.SDK_INT) < 23) {
-            if (i10 == 2) {
+        int i10;
+        int i11 = this.a;
+        if (i11 != -1 || (i10 = Build.VERSION.SDK_INT) < 23) {
+            if (i11 == 2) {
                 return this.e;
             }
             throw new IllegalStateException("called getResId() on " + this);
         }
         Object obj = this.b;
-        if (i9 >= 28) {
+        if (i10 >= 28) {
             return f.i(obj);
         }
         try {
@@ -193,17 +193,17 @@ public class IconCompat extends CustomVersionedParcelable {
     }
 
     public final String h() {
-        int i9;
-        int i10 = this.a;
-        if (i10 != -1 || (i9 = Build.VERSION.SDK_INT) < 23) {
-            if (i10 == 2) {
+        int i10;
+        int i11 = this.a;
+        if (i11 != -1 || (i10 = Build.VERSION.SDK_INT) < 23) {
+            if (i11 == 2) {
                 String str = this.j;
                 return (str == null || TextUtils.isEmpty(str)) ? ((String) this.b).split(":", -1)[0] : this.j;
             }
             throw new IllegalStateException("called getResPackage() on " + this);
         }
         Object obj = this.b;
-        if (i9 >= 28) {
+        if (i10 >= 28) {
             return f.j(obj);
         }
         try {
@@ -221,13 +221,13 @@ public class IconCompat extends CustomVersionedParcelable {
     }
 
     public final int i() {
-        int i9;
-        int i10 = this.a;
-        if (i10 != -1 || (i9 = Build.VERSION.SDK_INT) < 23) {
-            return i10;
+        int i10;
+        int i11 = this.a;
+        if (i11 != -1 || (i10 = Build.VERSION.SDK_INT) < 23) {
+            return i11;
         }
         Object obj = this.b;
-        if (i9 >= 28) {
+        if (i10 >= 28) {
             return f.q(obj);
         }
         try {
@@ -245,16 +245,16 @@ public class IconCompat extends CustomVersionedParcelable {
     }
 
     public final Uri j() {
-        int i9;
-        int i10 = this.a;
-        if (i10 != -1 || (i9 = Build.VERSION.SDK_INT) < 23) {
-            if (i10 == 4 || i10 == 6) {
+        int i10;
+        int i11 = this.a;
+        if (i11 != -1 || (i10 = Build.VERSION.SDK_INT) < 23) {
+            if (i11 == 4 || i11 == 6) {
                 return Uri.parse((String) this.b);
             }
             throw new IllegalStateException("called getUri() on " + this);
         }
         Object obj = this.b;
-        if (i9 >= 28) {
+        if (i10 >= 28) {
             return f.r(obj);
         }
         try {
@@ -405,7 +405,7 @@ public class IconCompat extends CustomVersionedParcelable {
         return sb2.toString();
     }
 
-    public IconCompat(int i9) {
+    public IconCompat(int i10) {
         this.c = null;
         this.d = null;
         this.e = 0;
@@ -413,6 +413,6 @@ public class IconCompat extends CustomVersionedParcelable {
         this.g = null;
         this.h = k;
         this.i = null;
-        this.a = i9;
+        this.a = i10;
     }
 }

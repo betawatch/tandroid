@@ -1,163 +1,43 @@
 package org.telegram.messenger;
 
-import android.content.Context;
-import android.text.TextUtils;
-import android.widget.Toast;
-import java.io.File;
-import java.util.ArrayList;
-import java.util.regex.Pattern;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
+import java.util.Comparator;
+import org.telegram.messenger.SavedMessagesController;
+import org.telegram.messenger.SecretChatHelper;
+import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_phone;
-import org.telegram.ui.Components.jg0;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.a60;
-import org.telegram.ui.dy;
-import org.telegram.ui.hw0;
-import org.telegram.ui.jh0;
-import org.telegram.ui.k21;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class zh implements RequestDelegate {
+public final /* synthetic */ class zh implements Comparator {
     public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
-    public final /* synthetic */ Object g;
 
-    public /* synthetic */ zh(int i9, boolean[] zArr, File file, TL_phone.setCallRating setcallrating, ArrayList arrayList, Context context) {
-        this.a = 3;
-        this.b = i9;
-        this.d = zArr;
-        this.e = file;
-        this.f = setcallrating;
-        this.g = arrayList;
-        this.c = context;
-    }
-
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        int i9 = this.a;
-        int i10 = this.b;
-        Object obj = this.c;
-        Object obj2 = this.g;
-        Object obj3 = this.f;
-        Object obj4 = this.e;
-        Object obj5 = this.d;
-        switch (i9) {
-            case 0:
-                ((SendMessagesHelper) obj5).lambda$performSendDelayedMessage$54((TLRPC.InputFile) obj4, (TLRPC.InputMedia) obj3, (SendMessagesHelper.DelayedMessage) obj2, this.b, (String) obj, tLObject, tL_error);
-                break;
-            case 1:
-                AndroidUtilities.runOnUIThread(new fh.u2((org.telegram.ui.l4) obj5, this.b, (ve.d) obj4, tLObject, (String) obj, (org.telegram.ui.h0) obj3, (TLRPC.TL_messages_getWebPage) obj2));
-                break;
-            case 2:
-                AndroidUtilities.runOnUIThread(new fh.u2(tLObject, (org.telegram.ui.ActionBar.c2) obj5, (Context) obj4, this.b, (TL_phone.exportGroupCallInvite) obj3, (org.telegram.ui.ActionBar.b6) obj2, (a60) obj));
-                break;
-            case 3:
-                boolean[] zArr = (boolean[]) obj5;
-                File file = (File) obj4;
-                TL_phone.setCallRating setcallrating = (TL_phone.setCallRating) obj3;
-                ArrayList arrayList = (ArrayList) obj2;
-                Context context = (Context) obj;
-                if (tLObject instanceof TLRPC.TL_updates) {
-                    MessagesController.getInstance(i10).processUpdates((TLRPC.TL_updates) tLObject, false);
-                }
-                if (zArr[0] && file.exists() && setcallrating.rating < 4) {
-                    SendMessagesHelper.prepareSendingDocument(AccountInstance.getInstance(UserConfig.selectedAccount), file.getAbsolutePath(), file.getAbsolutePath(), null, TextUtils.join(" ", arrayList), "text/plain", 4244000L, null, null, null, null, null, true, 0, null, null, false);
-                    Toast.makeText(context, LocaleController.getString(R.string.CallReportSent), 1).show();
-                    break;
-                }
-                break;
-            case 4:
-                String str = (String) obj;
-                Pattern pattern = LaunchActivity.x1;
-                AndroidUtilities.runOnUIThread(new fh.u2((LaunchActivity) obj5, tLObject, this.b, (dy) obj4, (org.telegram.ui.ActionBar.o2) obj3, (TLRPC.User) obj2, str));
-                break;
-            case 5:
-                AndroidUtilities.runOnUIThread(new x5(tLObject, (org.telegram.ui.ActionBar.o2) obj5, (TLRPC.TL_inputStorePaymentPremiumSubscription) obj4, (hw0) obj3, (n2.e) obj2, this.b, tL_error, (TLRPC.TL_payments_canPurchaseStore) obj));
-                break;
-            default:
-                Context context2 = (Context) obj5;
-                org.telegram.ui.ActionBar.b6 b6Var = (org.telegram.ui.ActionBar.b6) obj4;
-                byte[] bArr = (byte[]) obj3;
-                org.telegram.ui.ActionBar.o2 o2Var = (org.telegram.ui.ActionBar.o2) obj2;
-                jg0 jg0Var = (jg0) obj;
-                if (tLObject == null) {
-                    if (tL_error != null && "AD_EXPIRED".equalsIgnoreCase(tL_error.text)) {
-                        AndroidUtilities.runOnUIThread(new k21(o2Var, context2, b6Var, jg0Var, 1), 200L);
-                        break;
-                    }
-                } else if (!(tLObject instanceof TLRPC.TL_channels_sponsoredMessageReportResultChooseOption)) {
-                    if (!(tLObject instanceof TLRPC.TL_channels_sponsoredMessageReportResultReported)) {
-                        if (tLObject instanceof TLRPC.TL_channels_sponsoredMessageReportResultAdsHidden) {
-                            AndroidUtilities.runOnUIThread(new jh0(o2Var, i10, jg0Var, 8), 200L);
-                            break;
-                        }
-                    } else {
-                        AndroidUtilities.runOnUIThread(new k21(o2Var, context2, b6Var, jg0Var, 0), 200L);
-                        break;
-                    }
-                } else {
-                    AndroidUtilities.runOnUIThread(new fh.k1(tLObject, (Object) context2, (Object) b6Var, (Object) bArr, (Object) o2Var, (Object) jg0Var, 19));
-                    break;
-                }
-                break;
-        }
-    }
-
-    public /* synthetic */ zh(Context context, org.telegram.ui.ActionBar.b6 b6Var, byte[] bArr, org.telegram.ui.ActionBar.o2 o2Var, jg0 jg0Var, int i9) {
-        this.a = 6;
-        this.d = context;
-        this.e = b6Var;
-        this.f = bArr;
-        this.g = o2Var;
-        this.c = jg0Var;
-        this.b = i9;
-    }
-
-    public /* synthetic */ zh(Object obj, TLObject tLObject, Object obj2, Object obj3, int i9, Object obj4, int i10) {
+    public /* synthetic */ zh(int i10) {
         this.a = i10;
-        this.d = obj;
-        this.e = tLObject;
-        this.f = obj2;
-        this.g = obj3;
-        this.b = i9;
-        this.c = obj4;
     }
 
-    public /* synthetic */ zh(org.telegram.ui.ActionBar.c2 c2Var, Context context, int i9, TL_phone.exportGroupCallInvite exportgroupcallinvite, org.telegram.ui.ActionBar.b6 b6Var, a60 a60Var) {
-        this.a = 2;
-        this.d = c2Var;
-        this.e = context;
-        this.b = i9;
-        this.f = exportgroupcallinvite;
-        this.g = b6Var;
-        this.c = a60Var;
-    }
-
-    public /* synthetic */ zh(org.telegram.ui.l4 l4Var, int i9, ve.d dVar, String str, org.telegram.ui.h0 h0Var, TLRPC.TL_messages_getWebPage tL_messages_getWebPage) {
-        this.a = 1;
-        this.d = l4Var;
-        this.b = i9;
-        this.e = dVar;
-        this.c = str;
-        this.f = h0Var;
-        this.g = tL_messages_getWebPage;
-    }
-
-    public /* synthetic */ zh(LaunchActivity launchActivity, int i9, dy dyVar, org.telegram.ui.ActionBar.o2 o2Var, TLRPC.User user, String str) {
-        this.a = 4;
-        this.d = launchActivity;
-        this.b = i9;
-        this.e = dyVar;
-        this.f = o2Var;
-        this.g = user;
-        this.c = str;
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
+        int lambda$updateAllDialogs$0;
+        int lambda$resendMessages$13;
+        int lambda$checkSecretHoles$16;
+        int lambda$saveProxyList$4;
+        int lambda$sortTopics$9;
+        switch (this.a) {
+            case 0:
+                lambda$updateAllDialogs$0 = SavedMessagesController.lambda$updateAllDialogs$0((SavedMessagesController.SavedDialog) obj, (SavedMessagesController.SavedDialog) obj2);
+                return lambda$updateAllDialogs$0;
+            case 1:
+                lambda$resendMessages$13 = SecretChatHelper.lambda$resendMessages$13((TLRPC.Message) obj, (TLRPC.Message) obj2);
+                return lambda$resendMessages$13;
+            case 2:
+                lambda$checkSecretHoles$16 = SecretChatHelper.lambda$checkSecretHoles$16((SecretChatHelper.TL_decryptedMessageHolder) obj, (SecretChatHelper.TL_decryptedMessageHolder) obj2);
+                return lambda$checkSecretHoles$16;
+            case 3:
+                lambda$saveProxyList$4 = SharedConfig.lambda$saveProxyList$4((SharedConfig.ProxyInfo) obj, (SharedConfig.ProxyInfo) obj2);
+                return lambda$saveProxyList$4;
+            default:
+                lambda$sortTopics$9 = TopicsController.lambda$sortTopics$9((TLRPC.TL_forumTopic) obj, (TLRPC.TL_forumTopic) obj2);
+                return lambda$sortTopics$9;
+        }
     }
 }

@@ -1,25 +1,25 @@
 package com.google.android.gms.internal.play_billing;
 
-import f7.z5;
+import h7.m6;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public abstract class l0 extends x0 implements t0 {
     public static final Object d = new Object();
     public static final s0 e = new s0(w0.class);
     public static final boolean f;
-    public static final z5 h;
+    public static final m6 h;
     public volatile Object a;
     public volatile f0 b;
     public volatile k0 c;
 
     static {
         boolean z10;
-        z5 i0Var;
-        Throwable th;
+        m6 i0Var;
         Throwable th2;
+        Throwable th3;
         try {
             z10 = Boolean.parseBoolean(System.getProperty("guava.concurrent.generate_cancellation_cause", "false"));
         } catch (SecurityException unused) {
@@ -27,7 +27,7 @@ public abstract class l0 extends x0 implements t0 {
         }
         f = z10;
         String property = System.getProperty("java.runtime.name", "");
-        Throwable th3 = null;
+        Throwable th4 = null;
         if (property == null || property.contains("Android")) {
             try {
                 i0Var = new j0();
@@ -35,11 +35,11 @@ public abstract class l0 extends x0 implements t0 {
                 try {
                     i0Var = new h0();
                 } catch (Error | Exception e11) {
-                    th3 = e11;
+                    th4 = e11;
                     i0Var = new i0();
                 }
-                th = th3;
-                th2 = e10;
+                th2 = th4;
+                th3 = e10;
             }
         } else {
             try {
@@ -48,15 +48,15 @@ public abstract class l0 extends x0 implements t0 {
                 i0Var = new i0();
             }
         }
-        th = null;
         th2 = null;
+        th3 = null;
         h = i0Var;
-        if (th != null) {
+        if (th2 != null) {
             s0 s0Var = e;
             Logger a2 = s0Var.a();
             Level level = Level.SEVERE;
-            a2.logp(level, "com.google.common.util.concurrent.AbstractFutureState", "<clinit>", "UnsafeAtomicHelper is broken!", th2);
-            s0Var.a().logp(level, "com.google.common.util.concurrent.AbstractFutureState", "<clinit>", "AtomicReferenceFieldUpdaterAtomicHelper is broken!", th);
+            a2.logp(level, "com.google.common.util.concurrent.AbstractFutureState", "<clinit>", "UnsafeAtomicHelper is broken!", th3);
+            s0Var.a().logp(level, "com.google.common.util.concurrent.AbstractFutureState", "<clinit>", "AtomicReferenceFieldUpdaterAtomicHelper is broken!", th2);
         }
     }
 

@@ -1,77 +1,27 @@
 package org.telegram.ui.ActionBar;
 
-import android.content.SharedPreferences;
-import java.io.File;
-import java.util.ArrayList;
-import org.json.JSONObject;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.FileLog;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class y5 {
-    public String a = "";
-    public String b = "";
-    public String c = "";
-    public int d;
-    public int e;
-    public int f;
-    public int g;
-    public int h;
-    public boolean i;
-    public boolean j;
-    public float k;
-    public long l;
-    public long m;
-    public long n;
-    public boolean o;
-    public e6 p;
-    public d6 q;
-    public float r;
-    public ArrayList s;
-    public TLRPC.WallPaper t;
+public enum y5 {
+    h(g6.Af, g6.Bf, g6.Cf, g6.Pf, g6.Qf, g6.Rf),
+    n(g6.Df, g6.Ef, g6.Ff, g6.Sf, g6.Tf, g6.Uf),
+    r(g6.Gf, g6.Hf, g6.If, g6.Vf, g6.Wf, g6.Xf),
+    s(g6.Jf, g6.Kf, g6.Lf, g6.Yf, g6.Zf, g6.ag),
+    v(g6.Mf, g6.Nf, g6.Of, g6.bg, g6.cg, g6.dg);
 
-    public static void a(y5 y5Var) {
-        ApplicationLoader.applicationContext.getSharedPreferences("themeconfig", 0).edit().remove(y5Var.b()).commit();
-        new File(ApplicationLoader.getFilesDirFixed(), y5Var.a).delete();
-        new File(ApplicationLoader.getFilesDirFixed(), y5Var.b).delete();
-    }
+    public final int a;
+    public final int b;
+    public final int c;
+    public final int d;
+    public final int e;
+    public final int f;
 
-    public final String b() {
-        if (this.q == null) {
-            return aa.d.r(new StringBuilder(), this.p.a, "_owp");
-        }
-        StringBuilder sb2 = new StringBuilder();
-        sb2.append(this.p.a);
-        sb2.append("_");
-        return aa.d.l(this.q.a, "_owp", sb2);
-    }
-
-    public final void c() {
-        try {
-            String b10 = b();
-            SharedPreferences.Editor edit = ApplicationLoader.applicationContext.getSharedPreferences("themeconfig", 0).edit();
-            JSONObject jSONObject = new JSONObject();
-            jSONObject.put("wall", this.a);
-            jSONObject.put("owall", this.b);
-            jSONObject.put("pColor", this.d);
-            jSONObject.put("pGrColor", this.e);
-            jSONObject.put("pGrColor2", this.f);
-            jSONObject.put("pGrColor3", this.g);
-            jSONObject.put("pGrAngle", this.h);
-            String str = this.c;
-            if (str == null) {
-                str = "";
-            }
-            jSONObject.put("wallSlug", str);
-            jSONObject.put("wBlur", this.i);
-            jSONObject.put("wMotion", this.j);
-            jSONObject.put("pIntensity", this.k);
-            edit.putString(b10, jSONObject.toString());
-            edit.commit();
-        } catch (Throwable th) {
-            FileLog.e(th);
-        }
+    y5(int i10, int i11, int i12, int i13, int i14, int i15) {
+        this.a = i10;
+        this.b = i11;
+        this.c = i12;
+        this.d = i13;
+        this.e = i14;
+        this.f = i15;
     }
 }

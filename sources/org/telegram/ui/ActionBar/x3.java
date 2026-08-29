@@ -14,7 +14,7 @@ import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.FileLog;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
 public final class x3 extends FrameLayout {
     public b5 a;
@@ -31,15 +31,15 @@ public final class x3 extends FrameLayout {
         i0.b bVar = i0.b.e;
         this.f = bVar;
         this.h = bVar;
-        n nVar = new n(this, 7);
+        o oVar = new o(this, 7);
         WeakHashMap weakHashMap = r0.j0.a;
-        r0.b0.j(this, nVar);
+        r0.b0.j(this, oVar);
         setSystemUiVisibility(1280);
     }
 
     @Override // android.view.ViewGroup
-    public final void addView(View view, int i9, ViewGroup.LayoutParams layoutParams) {
-        super.addView(view, i9, layoutParams);
+    public final void addView(View view, int i10, ViewGroup.LayoutParams layoutParams) {
+        super.addView(view, i10, layoutParams);
         r0.m1 m1Var = this.e;
         if (m1Var != null) {
             if ((view instanceof ActionBarLayout) || view.getTag() == null) {
@@ -72,11 +72,11 @@ public final class x3 extends FrameLayout {
     }
 
     @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i9, int i10, int i11, int i12) {
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         this.c = true;
         int childCount = getChildCount();
-        for (int i13 = 0; i13 < childCount; i13++) {
-            View childAt = getChildAt(i13);
+        for (int i14 = 0; i14 < childCount; i14++) {
+            View childAt = getChildAt(i14);
             if (childAt.getVisibility() != 8) {
                 FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) childAt.getLayoutParams();
                 try {
@@ -93,24 +93,24 @@ public final class x3 extends FrameLayout {
     }
 
     @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i9, int i10) {
-        int size = View.MeasureSpec.getSize(i9);
-        int size2 = View.MeasureSpec.getSize(i10);
+    public final void onMeasure(int i10, int i11) {
+        int size = View.MeasureSpec.getSize(i10);
+        int size2 = View.MeasureSpec.getSize(i11);
         setMeasuredDimension(size, size2);
         i0.b bVar = this.f;
-        int i11 = (size - bVar.a) - bVar.c;
-        int i12 = (size2 - bVar.b) - bVar.d;
+        int i12 = (size - bVar.a) - bVar.c;
+        int i13 = (size2 - bVar.b) - bVar.d;
         Point point = AndroidUtilities.displaySize;
-        point.x = i11;
-        point.y = i12;
+        point.x = i12;
+        point.y = i13;
         int childCount = getChildCount();
-        for (int i13 = 0; i13 < childCount; i13++) {
-            View childAt = getChildAt(i13);
+        for (int i14 = 0; i14 < childCount; i14++) {
+            View childAt = getChildAt(i14);
             if (childAt.getVisibility() != 8) {
                 FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) childAt.getLayoutParams();
                 int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec((size - layoutParams.leftMargin) - layoutParams.rightMargin, TLObject.FLAG_30);
-                int i14 = layoutParams.height;
-                int makeMeasureSpec2 = i14 > 0 ? View.MeasureSpec.makeMeasureSpec(i14, TLObject.FLAG_30) : View.MeasureSpec.makeMeasureSpec((size2 - layoutParams.topMargin) - layoutParams.bottomMargin, TLObject.FLAG_30);
+                int i15 = layoutParams.height;
+                int makeMeasureSpec2 = i15 > 0 ? View.MeasureSpec.makeMeasureSpec(i15, TLObject.FLAG_30) : View.MeasureSpec.makeMeasureSpec((size2 - layoutParams.topMargin) - layoutParams.bottomMargin, TLObject.FLAG_30);
                 if ((childAt instanceof ActionBarLayout) && ((ActionBarLayout) childAt).e0()) {
                     childAt.forceLayout();
                 }
@@ -136,14 +136,14 @@ public final class x3 extends FrameLayout {
         this.b = actionBarLayout;
     }
 
-    public void setInternalNavigationBarColor(int i9) {
+    public void setInternalNavigationBarColor(int i10) {
         Paint paint = this.d;
-        if (paint.getColor() != i9) {
-            paint.setColor(i9);
+        if (paint.getColor() != i10) {
+            paint.setColor(i10);
             invalidate();
             int childCount = getChildCount();
-            for (int i10 = 0; i10 < childCount; i10++) {
-                getChildAt(i10).invalidate();
+            for (int i11 = 0; i11 < childCount; i11++) {
+                getChildAt(i11).invalidate();
             }
         }
     }

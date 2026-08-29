@@ -37,7 +37,7 @@ public final class w0 extends z0 {
 
     @Override // j$.util.stream.BaseStream
     public final BaseStream unordered() {
-        return !v6.ORDERED.m(this.m) ? this : new s(this, v6.r, 2);
+        return !v6.ORDERED.m(this.m) ? this : new s(this, v6.r, 1);
     }
 
     @Override // j$.util.stream.a, j$.util.stream.BaseStream
@@ -51,7 +51,7 @@ public final class w0 extends z0 {
     }
 
     @Override // j$.util.stream.a
-    public final j5 Q0(int i9, j5 j5Var) {
+    public final j5 Q0(int i10, j5 j5Var) {
         throw new UnsupportedOperationException();
     }
 }

@@ -6,17 +6,17 @@ import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.widget.SeekBar;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public class d0 extends SeekBar {
     public final e0 a;
 
-    public d0(Context context, AttributeSet attributeSet, int i9) {
-        super(context, attributeSet, i9);
+    public d0(Context context, AttributeSet attributeSet, int i10) {
+        super(context, attributeSet, i10);
         d3.a(this, getContext());
         e0 e0Var = new e0(this);
         this.a = e0Var;
-        e0Var.b(attributeSet, i9);
+        e0Var.b(attributeSet, i10);
     }
 
     @Override // android.widget.AbsSeekBar, android.widget.ProgressBar, android.view.View

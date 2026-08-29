@@ -4,16 +4,16 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import f7.i5;
+import h7.p5;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public final class u0 extends BroadcastReceiver {
     public Context a;
-    public final i5 b;
+    public final p5 b;
 
-    public u0(i5 i5Var) {
-        this.b = i5Var;
+    public u0(p5 p5Var) {
+        this.b = p5Var;
     }
 
     public final synchronized void a() {
@@ -23,8 +23,8 @@ public final class u0 extends BroadcastReceiver {
                 context.unregisterReceiver(this);
             }
             this.a = null;
-        } catch (Throwable th) {
-            throw th;
+        } catch (Throwable th2) {
+            throw th2;
         }
     }
 

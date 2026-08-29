@@ -1,9 +1,10 @@
 package org.telegram.messenger.voip;
 
 import android.media.AudioTrack;
+import j7.l1;
 import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public class AudioTrackJNI {
     private AudioTrack audioTrack;
@@ -17,8 +18,8 @@ public class AudioTrackJNI {
         this.nativeInst = j10;
     }
 
-    private int getBufferSize(int i9, int i10) {
-        return Math.max(AudioTrack.getMinBufferSize(i10, 4, 2), i9);
+    private int getBufferSize(int i10, int i11) {
+        return Math.max(AudioTrack.getMinBufferSize(i11, 4, 2), i10);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -68,11 +69,11 @@ public class AudioTrackJNI {
         thread.start();
     }
 
-    public void init(int i9, int i10, int i11, int i12) {
+    public void init(int i10, int i11, int i12, int i13) {
         if (this.audioTrack != null) {
             throw new IllegalStateException("already inited");
         }
-        AudioTrack audioTrack = new AudioTrack(0, 48000, i11 == 1 ? 4 : 12, 2, getBufferSize(i12, 48000), 1);
+        AudioTrack audioTrack = new AudioTrack(0, 48000, i12 == 1 ? 4 : 12, 2, getBufferSize(i13, 48000), 1);
         this.audioTrack = audioTrack;
         if (audioTrack.getState() != 1) {
             VLog.w("Error initializing AudioTrack with 48k, trying 44.1k with resampling");
@@ -80,9 +81,9 @@ public class AudioTrackJNI {
                 this.audioTrack.release();
             } catch (Throwable unused) {
             }
-            int bufferSize = getBufferSize(i12 * 6, 44100);
-            VLog.d(j3.r0.l(bufferSize, "buffer size: "));
-            this.audioTrack = new AudioTrack(0, 44100, i11 == 1 ? 4 : 12, 2, bufferSize, 1);
+            int bufferSize = getBufferSize(i13 * 6, 44100);
+            VLog.d(l1.k(bufferSize, "buffer size: "));
+            this.audioTrack = new AudioTrack(0, 44100, i12 == 1 ? 4 : 12, 2, bufferSize, 1);
             this.needResampling = true;
         }
     }

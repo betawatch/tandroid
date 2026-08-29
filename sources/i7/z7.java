@@ -1,0 +1,9 @@
+package i7;
+
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
+/* loaded from: classes.dex */
+public abstract class z7 {
+    public static boolean a(char c3) {
+        return c3 == ' ' || c3 == '\t' || c3 == '\n' || c3 == '\r' || c3 == '\f';
+    }
+}

@@ -1,28 +1,56 @@
 package org.telegram.ui.Components;
 
-import android.graphics.SurfaceTexture;
-import org.telegram.messenger.DispatchQueue;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.text.style.ReplacementSpan;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class gz implements SurfaceTexture.OnFrameAvailableListener {
+public final class gz extends ReplacementSpan {
     public final /* synthetic */ int a;
-    public final /* synthetic */ DispatchQueue b;
 
-    public /* synthetic */ gz(DispatchQueue dispatchQueue, int i9) {
-        this.a = i9;
-        this.b = dispatchQueue;
+    public /* synthetic */ gz(int i10) {
+        this.a = i10;
     }
 
-    @Override // android.graphics.SurfaceTexture.OnFrameAvailableListener
-    public final void onFrameAvailable(SurfaceTexture surfaceTexture) {
+    @Override // android.text.style.ReplacementSpan
+    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f9, int i12, int i13, int i14, Paint paint) {
+        int i15 = this.a;
+    }
+
+    @Override // android.text.style.ReplacementSpan
+    public final int getSize(Paint paint, CharSequence charSequence, int i10, int i11, Paint.FontMetricsInt fontMetricsInt) {
         switch (this.a) {
             case 0:
-                ((hz) this.b).e(false, true, true);
-                break;
+                return (int) paint.measureText(charSequence, i10, i11);
+            case 1:
+                return AndroidUtilities.dp(16.0f);
+            case 2:
+                return AndroidUtilities.dp(12.0f);
+            case 3:
+                return AndroidUtilities.dp(12.0f);
             default:
-                ((w40) this.b).requestRender(true, false);
-                break;
+                return AndroidUtilities.dp(16.0f);
         }
+    }
+
+    public /* synthetic */ gz(boolean z10) {
+        this.a = 0;
+    }
+
+    private final void a(Canvas canvas, CharSequence charSequence, int i10, int i11, float f9, int i12, int i13, int i14, Paint paint) {
+    }
+
+    private final void b(Canvas canvas, CharSequence charSequence, int i10, int i11, float f9, int i12, int i13, int i14, Paint paint) {
+    }
+
+    private final void c(Canvas canvas, CharSequence charSequence, int i10, int i11, float f9, int i12, int i13, int i14, Paint paint) {
+    }
+
+    private final void d(Canvas canvas, CharSequence charSequence, int i10, int i11, float f9, int i12, int i13, int i14, Paint paint) {
+    }
+
+    private final void e(Canvas canvas, CharSequence charSequence, int i10, int i11, float f9, int i12, int i13, int i14, Paint paint) {
     }
 }

@@ -1,304 +1,242 @@
 package w3;
 
-import android.util.Pair;
-import d5.f0;
-import f2.i0;
-import h3.s0;
-import h3.t0;
-import java.util.Arrays;
-import java.util.Collections;
+import f5.w;
+import j7.l1;
+import java.nio.ByteBuffer;
+import java.util.UUID;
+import org.telegram.messenger.TranslateController;
+import q8.z;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
-public final class j implements h {
-    public static final double[] q = {23.976023976023978d, 24.0d, 25.0d, 29.97002997002997d, 30.0d, 50.0d, 59.94005994005994d, 60.0d};
-    public String a;
-    public m3.w b;
-    public final a0 c;
-    public final d5.y d;
-    public final i0 e;
-    public final boolean[] f = new boolean[4];
-    public final i g;
-    public long h;
-    public boolean i;
-    public boolean j;
-    public long k;
-    public long l;
-    public long m;
-    public long n;
-    public boolean o;
-    public boolean p;
+public abstract class j {
+    public static final String[] a = {"Blues", "Classic Rock", "Country", "Dance", "Disco", "Funk", "Grunge", "Hip-Hop", "Jazz", "Metal", "New Age", "Oldies", "Other", "Pop", "R&B", "Rap", "Reggae", "Rock", "Techno", "Industrial", "Alternative", "Ska", "Death Metal", "Pranks", "Soundtrack", "Euro-Techno", "Ambient", "Trip-Hop", "Vocal", "Jazz+Funk", "Fusion", "Trance", "Classical", "Instrumental", "Acid", "House", "Game", "Sound Clip", "Gospel", "Noise", "AlternRock", "Bass", "Soul", "Punk", "Space", "Meditative", "Instrumental Pop", "Instrumental Rock", "Ethnic", "Gothic", "Darkwave", "Techno-Industrial", "Electronic", "Pop-Folk", "Eurodance", "Dream", "Southern Rock", "Comedy", "Cult", "Gangsta", "Top 40", "Christian Rap", "Pop/Funk", "Jungle", "Native American", "Cabaret", "New Wave", "Psychadelic", "Rave", "Showtunes", "Trailer", "Lo-Fi", "Tribal", "Acid Punk", "Acid Jazz", "Polka", "Retro", "Musical", "Rock & Roll", "Hard Rock", "Folk", "Folk-Rock", "National Folk", "Swing", "Fast Fusion", "Bebob", "Latin", "Revival", "Celtic", "Bluegrass", "Avantgarde", "Gothic Rock", "Progressive Rock", "Psychedelic Rock", "Symphonic Rock", "Slow Rock", "Big Band", "Chorus", "Easy Listening", "Acoustic", "Humour", "Speech", "Chanson", "Opera", "Chamber Music", "Sonata", "Symphony", "Booty Bass", "Primus", "Porn Groove", "Satire", "Slow Jam", "Club", "Tango", "Samba", "Folklore", "Ballad", "Power Ballad", "Rhythmic Soul", "Freestyle", "Duet", "Punk Rock", "Drum Solo", "A capella", "Euro-House", "Dance Hall", "Goa", "Drum & Bass", "Club-House", "Hardcore", "Terror", "Indie", "BritPop", "Afro-Punk", "Polsk Punk", "Beat", "Christian Gangsta Rap", "Heavy Metal", "Black Metal", "Crossover", "Contemporary Christian", "Christian Rock", "Merengue", "Salsa", "Thrash Metal", "Anime", "Jpop", "Synthpop", "Abstract", "Art Rock", "Baroque", "Bhangra", "Big beat", "Breakbeat", "Chillout", "Downtempo", "Dub", "EBM", "Eclectic", "Electro", "Electroclash", "Emo", "Experimental", "Garage", "Global", "IDM", "Illbient", "Industro-Goth", "Jam Band", "Krautrock", "Leftfield", "Lounge", "Math Rock", "New Romantic", "Nu-Breakz", "Post-Punk", "Post-Rock", "Psytrance", "Shoegaze", "Space Rock", "Trop Rock", "World Music", "Neoclassical", "Audiobook", "Audio theatre", "Neue Deutsche Welle", "Podcast", "Indie-Rock", "G-Funk", "Dubstep", "Garage Rock", "Psybient"};
+    public static final int[] b = {1769172845, 1769172786, 1769172787, 1769172788, 1769172789, 1769172790, 1769172793, 1635148593, 1752589105, 1751479857, 1635135537, 1836069937, 1836069938, 862401121, 862401122, 862417462, 862417718, 862414134, 862414646, 1295275552, 1295270176, 1714714144, 1801741417, 1295275600, 1903435808, 1297305174, 1684175153, 1769172332, 1885955686};
 
-    public j(a0 a0Var) {
-        this.c = a0Var;
-        i iVar = new i();
-        iVar.d = new byte[128];
-        this.g = iVar;
-        if (a0Var != null) {
-            this.e = new i0(178);
-            this.d = new d5.y();
-        } else {
-            this.e = null;
-            this.d = null;
+    public static byte[] a(UUID uuid, UUID[] uuidArr, byte[] bArr) {
+        int length = (bArr != null ? bArr.length : 0) + 32;
+        if (uuidArr != null) {
+            length += (uuidArr.length * 16) + 4;
         }
-        this.l = -9223372036854775807L;
-        this.n = -9223372036854775807L;
+        ByteBuffer allocate = ByteBuffer.allocate(length);
+        allocate.putInt(length);
+        allocate.putInt(1886614376);
+        allocate.putInt(uuidArr != null ? 16777216 : 0);
+        allocate.putLong(uuid.getMostSignificantBits());
+        allocate.putLong(uuid.getLeastSignificantBits());
+        if (uuidArr != null) {
+            allocate.putInt(uuidArr.length);
+            for (UUID uuid2 : uuidArr) {
+                allocate.putLong(uuid2.getMostSignificantBits());
+                allocate.putLong(uuid2.getLeastSignificantBits());
+            }
+        }
+        if (bArr != null && bArr.length != 0) {
+            allocate.putInt(bArr.length);
+            allocate.put(bArr);
+        }
+        return allocate.array();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:44:0x01ac  */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x01c6  */
-    /* JADX WARN: Removed duplicated region for block: B:51:0x01f5  */
-    /* JADX WARN: Removed duplicated region for block: B:54:0x01f7  */
-    /* JADX WARN: Removed duplicated region for block: B:57:0x01db  */
-    @Override // w3.h
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void g(d5.y yVar) {
-        i iVar;
-        i0 i0Var;
-        int i9;
-        boolean z10;
-        long j10;
-        long j11;
-        long j12;
+    public static g4.e b(int i10, w wVar) {
+        int e10 = wVar.e();
+        if (wVar.e() == 1684108385) {
+            wVar.D(8);
+            String n10 = wVar.n(e10 - 16);
+            return new g4.e(TranslateController.UNKNOWN_LANGUAGE, n10, n10);
+        }
+        f5.a.K("MetadataUtil", "Failed to parse comment attribute: " + nc.k.a(i10));
+        return null;
+    }
+
+    public static g4.a c(w wVar) {
+        int e10 = wVar.e();
+        if (wVar.e() != 1684108385) {
+            f5.a.K("MetadataUtil", "Failed to parse cover art attribute");
+            return null;
+        }
+        int e11 = wVar.e() & 16777215;
+        String str = e11 == 13 ? "image/jpeg" : e11 == 14 ? "image/png" : null;
+        if (str == null) {
+            com.google.android.recaptcha.internal.a.s(e11, "Unrecognized cover art flags: ", "MetadataUtil");
+            return null;
+        }
+        wVar.D(4);
+        int i10 = e10 - 16;
+        byte[] bArr = new byte[i10];
+        wVar.c(0, i10, bArr);
+        return new g4.a(3, str, null, bArr);
+    }
+
+    public static g4.n d(int i10, String str, w wVar) {
+        int e10 = wVar.e();
+        if (wVar.e() == 1684108385 && e10 >= 22) {
+            wVar.D(10);
+            int w10 = wVar.w();
+            if (w10 > 0) {
+                String k9 = l1.k(w10, "");
+                int w11 = wVar.w();
+                if (w11 > 0) {
+                    k9 = k9 + "/" + w11;
+                }
+                return new g4.n(str, null, z.y(k9));
+            }
+        }
+        f5.a.K("MetadataUtil", "Failed to parse index/count attribute: " + nc.k.a(i10));
+        return null;
+    }
+
+    public static o1.a e(byte[] bArr) {
+        w wVar = new w(bArr);
+        if (wVar.c >= 32) {
+            wVar.C(0);
+            if (wVar.e() == wVar.a() + 4 && wVar.e() == 1886614376) {
+                int b10 = nc.k.b(wVar.e());
+                if (b10 > 1) {
+                    com.google.android.recaptcha.internal.a.s(b10, "Unsupported pssh version: ", "PsshAtomUtil");
+                    return null;
+                }
+                UUID uuid = new UUID(wVar.l(), wVar.l());
+                if (b10 == 1) {
+                    wVar.D(wVar.u() * 16);
+                }
+                int u10 = wVar.u();
+                if (u10 == wVar.a()) {
+                    byte[] bArr2 = new byte[u10];
+                    wVar.c(0, u10, bArr2);
+                    return new o1.a(uuid, b10, bArr2);
+                }
+            }
+        }
+        return null;
+    }
+
+    public static g4.n f(int i10, String str, w wVar) {
+        int e10 = wVar.e();
+        if (wVar.e() == 1684108385) {
+            wVar.D(8);
+            return new g4.n(str, null, z.y(wVar.n(e10 - 16)));
+        }
+        f5.a.K("MetadataUtil", "Failed to parse text attribute: " + nc.k.a(i10));
+        return null;
+    }
+
+    public static g4.j g(int i10, String str, w wVar, boolean z10, boolean z11) {
+        int h = h(wVar);
+        if (z11) {
+            h = Math.min(1, h);
+        }
+        if (h >= 0) {
+            return z10 ? new g4.n(str, null, z.y(Integer.toString(h))) : new g4.e(TranslateController.UNKNOWN_LANGUAGE, str, Integer.toString(h));
+        }
+        f5.a.K("MetadataUtil", "Failed to parse uint8 attribute: " + nc.k.a(i10));
+        return null;
+    }
+
+    public static int h(w wVar) {
+        wVar.D(4);
+        if (wVar.e() == 1684108385) {
+            wVar.D(8);
+            return wVar.r();
+        }
+        f5.a.K("MetadataUtil", "Failed to parse uint8 attribute value");
+        return -1;
+    }
+
+    public static boolean i(o3.l lVar, boolean z10, boolean z11) {
+        boolean z12;
         int i10;
-        float f10;
         int i11;
-        float f11;
-        int i12;
-        long j13;
-        d5.a.j(this.b);
-        int i13 = yVar.b;
-        int i14 = yVar.c;
-        byte[] bArr = yVar.a;
-        this.h += yVar.a();
-        this.b.a(yVar.a(), yVar);
-        while (true) {
-            int r10 = d5.a.r(bArr, i13, i14, this.f);
-            iVar = this.g;
-            i0Var = this.e;
-            if (r10 == i14) {
+        long length = lVar.getLength();
+        long j10 = 4096;
+        long j11 = -1;
+        int i12 = (length > (-1L) ? 1 : (length == (-1L) ? 0 : -1));
+        if (i12 != 0 && length <= 4096) {
+            j10 = length;
+        }
+        int i13 = (int) j10;
+        w wVar = new w(64);
+        int i14 = 0;
+        int i15 = 0;
+        boolean z13 = false;
+        while (i15 < i13) {
+            wVar.z(8);
+            if (!lVar.f(wVar.a, i14, 8, true)) {
                 break;
             }
-            int i15 = r10 + 3;
-            int i16 = yVar.a[i15] & 255;
-            int i17 = r10 - i13;
-            if (this.j) {
-                i9 = i14;
+            long s10 = wVar.s();
+            int e10 = wVar.e();
+            if (s10 == 1) {
+                lVar.a(8, 8, wVar.a);
+                wVar.B(16);
+                i10 = i15;
+                s10 = wVar.l();
+                i11 = 16;
             } else {
-                if (i17 > 0) {
-                    iVar.a(i13, r10, bArr);
-                }
-                int i18 = i17 < 0 ? -i17 : 0;
-                if (iVar.a) {
-                    int i19 = iVar.b - i18;
-                    iVar.b = i19;
-                    if (iVar.c == 0 && i16 == 181) {
-                        iVar.c = i19;
-                        i9 = i14;
-                    } else {
-                        iVar.a = false;
-                        String str = this.a;
-                        str.getClass();
-                        byte[] copyOf = Arrays.copyOf(iVar.d, iVar.b);
-                        int i20 = copyOf[4] & 255;
-                        byte b10 = copyOf[5];
-                        i9 = i14;
-                        int i21 = ((b10 & 255) >> 4) | (i20 << 4);
-                        int i22 = (copyOf[6] & 255) | ((b10 & 15) << 8);
-                        int i23 = (copyOf[7] & 240) >> 4;
-                        if (i23 == 2) {
-                            f10 = i22 * 4;
-                            i11 = i21 * 3;
-                        } else if (i23 == 3) {
-                            f10 = i22 * 16;
-                            i11 = i21 * 9;
-                        } else if (i23 != 4) {
-                            f11 = 1.0f;
-                            s0 s0Var = new s0();
-                            s0Var.a = str;
-                            s0Var.o = "video/mpeg2";
-                            s0Var.t = i21;
-                            s0Var.u = i22;
-                            s0Var.x = f11;
-                            s0Var.q = Collections.singletonList(copyOf);
-                            t0 t0Var = new t0(s0Var);
-                            i12 = (copyOf[7] & 15) - 1;
-                            if (i12 >= 0 || i12 >= 8) {
-                                j13 = 0;
-                            } else {
-                                double d = q[i12];
-                                byte b11 = copyOf[iVar.c + 9];
-                                int i24 = (b11 & 96) >> 5;
-                                if (i24 != (b11 & 31)) {
-                                    d = ((i24 + 1.0d) / (r6 + 1)) * d;
-                                }
-                                j13 = (long) (1000000.0d / d);
-                            }
-                            Pair create = Pair.create(t0Var, Long.valueOf(j13));
-                            this.b.c((t0) create.first);
-                            this.k = ((Long) create.second).longValue();
-                            this.j = true;
-                        } else {
-                            f10 = i22 * 121;
-                            i11 = i21 * 100;
-                        }
-                        f11 = f10 / i11;
-                        s0 s0Var2 = new s0();
-                        s0Var2.a = str;
-                        s0Var2.o = "video/mpeg2";
-                        s0Var2.t = i21;
-                        s0Var2.u = i22;
-                        s0Var2.x = f11;
-                        s0Var2.q = Collections.singletonList(copyOf);
-                        t0 t0Var2 = new t0(s0Var2);
-                        i12 = (copyOf[7] & 15) - 1;
-                        if (i12 >= 0) {
-                        }
-                        j13 = 0;
-                        Pair create2 = Pair.create(t0Var2, Long.valueOf(j13));
-                        this.b.c((t0) create2.first);
-                        this.k = ((Long) create2.second).longValue();
-                        this.j = true;
-                    }
-                } else {
-                    i9 = i14;
-                    if (i16 == 179) {
-                        iVar.a = true;
+                if (s10 == 0) {
+                    long length2 = lVar.getLength();
+                    if (length2 != j11) {
+                        s10 = (length2 - lVar.h()) + 8;
                     }
                 }
-                iVar.a(0, 3, i.e);
+                i10 = i15;
+                i11 = 8;
             }
-            if (i0Var != null) {
-                if (i17 > 0) {
-                    i0Var.a(i13, r10, bArr);
-                    i10 = 0;
-                } else {
-                    i10 = -i17;
+            long j12 = i11;
+            if (s10 < j12) {
+                return false;
+            }
+            int i16 = i10 + i11;
+            if (e10 == 1836019574) {
+                i13 += (int) s10;
+                if (i12 != 0 && i13 > length) {
+                    i13 = (int) length;
                 }
-                if (i0Var.e(i10)) {
-                    int J = d5.a.J(i0Var.e, (byte[]) i0Var.f);
-                    int i25 = f0.a;
-                    byte[] bArr2 = (byte[]) i0Var.f;
-                    d5.y yVar2 = this.d;
-                    yVar2.A(J, bArr2);
-                    this.c.a(this.n, yVar2);
+                i15 = i16;
+            } else {
+                if (e10 == 1836019558 || e10 == 1836475768) {
+                    z12 = true;
+                    break;
                 }
-                if (i16 == 178) {
-                    z10 = true;
-                    if (yVar.a[r10 + 2] == 1) {
-                        i0Var.g(i16);
+                int i17 = i12;
+                if ((i16 + s10) - j12 >= i13) {
+                    break;
+                }
+                int i18 = (int) (s10 - j12);
+                i15 = i16 + i18;
+                if (e10 == 1718909296) {
+                    if (i18 < 8) {
+                        return false;
                     }
-                    if (i16 != 0 || i16 == 179) {
-                        int i26 = i9 - r10;
-                        if (this.p && this.j) {
-                            j12 = this.n;
-                            if (j12 != -9223372036854775807L) {
-                                j10 = -9223372036854775807L;
-                                this.b.e(j12, this.o ? 1 : 0, ((int) (this.h - this.m)) - i26, i26, null);
-                                if (this.i || this.p) {
-                                    this.m = this.h - i26;
-                                    j11 = this.l;
-                                    if (j11 == j10) {
-                                        long j14 = this.n;
-                                        j11 = j14 != j10 ? j14 + this.k : j10;
+                    wVar.z(i18);
+                    lVar.a(0, i18, wVar.a);
+                    int i19 = i18 / 4;
+                    for (int i20 = 0; i20 < i19; i20++) {
+                        if (i20 != 1) {
+                            int e11 = wVar.e();
+                            if ((e11 >>> 8) != 3368816 && (e11 != 1751476579 || !z11)) {
+                                for (int i21 = 0; i21 < 29; i21++) {
+                                    if (b[i21] != e11) {
                                     }
-                                    this.n = j11;
-                                    this.o = false;
-                                    this.l = j10;
-                                    this.i = true;
                                 }
-                                this.p = i16 == 0;
                             }
+                            z13 = true;
+                            break;
                         }
-                        j10 = -9223372036854775807L;
-                        if (this.i) {
-                        }
-                        this.m = this.h - i26;
-                        j11 = this.l;
-                        if (j11 == j10) {
-                        }
-                        this.n = j11;
-                        this.o = false;
-                        this.l = j10;
-                        this.i = true;
-                        this.p = i16 == 0;
-                    } else if (i16 == 184) {
-                        this.o = z10;
+                        wVar.D(4);
                     }
-                    i13 = i15;
-                    i14 = i9;
+                    if (!z13) {
+                        return false;
+                    }
+                } else if (i18 != 0) {
+                    lVar.i(i18);
                 }
+                i12 = i17;
             }
-            z10 = true;
-            if (i16 != 0) {
-            }
-            int i262 = i9 - r10;
-            if (this.p) {
-                j12 = this.n;
-                if (j12 != -9223372036854775807L) {
-                }
-            }
-            j10 = -9223372036854775807L;
-            if (this.i) {
-            }
-            this.m = this.h - i262;
-            j11 = this.l;
-            if (j11 == j10) {
-            }
-            this.n = j11;
-            this.o = false;
-            this.l = j10;
-            this.i = true;
-            this.p = i16 == 0;
-            i13 = i15;
-            i14 = i9;
+            j11 = -1;
+            i14 = 0;
         }
-        if (!this.j) {
-            iVar.a(i13, i14, bArr);
-        }
-        if (i0Var != null) {
-            i0Var.a(i13, i14, bArr);
-        }
-    }
-
-    @Override // w3.h
-    public final void h() {
-        d5.a.m(this.f);
-        i iVar = this.g;
-        iVar.a = false;
-        iVar.b = 0;
-        iVar.c = 0;
-        i0 i0Var = this.e;
-        if (i0Var != null) {
-            i0Var.f();
-        }
-        this.h = 0L;
-        this.i = false;
-        this.l = -9223372036854775807L;
-        this.n = -9223372036854775807L;
-    }
-
-    @Override // w3.h
-    public final void j(m3.m mVar, d0 d0Var) {
-        d0Var.a();
-        d0Var.b();
-        this.a = d0Var.e;
-        d0Var.b();
-        this.b = mVar.I(d0Var.d, 2);
-        a0 a0Var = this.c;
-        if (a0Var != null) {
-            a0Var.b(mVar, d0Var);
-        }
-    }
-
-    @Override // w3.h
-    public final void k(int i9, long j10) {
-        this.l = j10;
-    }
-
-    @Override // w3.h
-    public final void i() {
+        z12 = false;
+        return z13 && z10 == z12;
     }
 }

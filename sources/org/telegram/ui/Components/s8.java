@@ -1,39 +1,35 @@
 package org.telegram.ui.Components;
 
-import j$.util.Objects;
-
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
-public final class s8 {
-    public int a;
-    public boolean b;
-    public int c;
-    public int d;
-    public int e;
-    public int f;
+public final class s8 extends org.telegram.ui.ActionBar.k {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ b9 b;
 
-    public final s8 a() {
-        s8 s8Var = new s8();
-        s8Var.c = this.c;
-        s8Var.d = this.d;
-        s8Var.e = this.e;
-        s8Var.f = this.f;
-        s8Var.b = this.b;
-        return s8Var;
+    public /* synthetic */ s8(b9 b9Var, int i10) {
+        this.a = i10;
+        this.b = b9Var;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    @Override // org.telegram.ui.ActionBar.k
+    public final void b(int i10) {
+        switch (this.a) {
+            case 0:
+                if (i10 == -1) {
+                    b9.U(this.b);
+                    break;
+                }
+                break;
+            default:
+                b9 b9Var = this.b;
+                if (i10 == -1) {
+                    b9.U(b9Var);
+                }
+                if (i10 == 1) {
+                    b9Var.f0();
+                    break;
+                }
+                break;
         }
-        if (!(obj instanceof s8)) {
-            return false;
-        }
-        s8 s8Var = (s8) obj;
-        return this.c == s8Var.c && this.d == s8Var.d && this.e == s8Var.e && this.f == s8Var.f;
-    }
-
-    public final int hashCode() {
-        return Objects.hash(Integer.valueOf(this.a), Integer.valueOf(this.c), Integer.valueOf(this.d), Integer.valueOf(this.e), Integer.valueOf(this.f));
     }
 }

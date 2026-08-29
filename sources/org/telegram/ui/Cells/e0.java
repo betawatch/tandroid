@@ -10,10 +10,10 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BotInlineKeyboard;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_keyboard;
-import org.telegram.ui.Components.nz0;
-import org.telegram.ui.Components.p80;
+import org.telegram.ui.Components.c90;
+import org.telegram.ui.Components.zz0;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes3.dex */
 public final class e0 {
     public final Runnable a;
@@ -23,7 +23,7 @@ public final class e0 {
     public float e;
     public int f;
     public int g;
-    public nz0 h;
+    public zz0 h;
     public TL_keyboard.KeyboardInlineButton i;
     public BotInlineKeyboard.ButtonCustom j;
     public BotInlineKeyboard.Button k;
@@ -33,10 +33,10 @@ public final class e0 {
     public final Paint o = new Paint(1);
     public final RectF p = new RectF();
     public final float[] q = new float[8];
-    public p80 r;
+    public c90 r;
     public z s;
     public Drawable t;
-    public org.telegram.ui.Components.k5 u;
+    public org.telegram.ui.Components.p5 u;
     public boolean v;
     public float w;
     public ValueAnimator x;
@@ -47,15 +47,15 @@ public final class e0 {
 
     public final float a() {
         if (this.v) {
-            float f10 = this.w;
-            if (f10 != 1.0f) {
-                float min = (Math.min(40.0f, 1000.0f / AndroidUtilities.screenRefreshRate) / 100.0f) + f10;
+            float f9 = this.w;
+            if (f9 != 1.0f) {
+                float min = (Math.min(40.0f, 1000.0f / AndroidUtilities.screenRefreshRate) / 100.0f) + f9;
                 this.w = min;
                 this.w = Utilities.clamp(min, 1.0f, 0.0f);
                 this.a.run();
             }
         }
-        return e2.c.z(1.0f, this.w, 0.04f, 0.96f);
+        return com.google.android.recaptcha.internal.a.z(1.0f, this.w, 0.04f, 0.96f);
     }
 
     public final void b(boolean z10) {
@@ -70,12 +70,12 @@ public final class e0 {
             if (z10) {
                 return;
             }
-            float f10 = this.w;
-            if (f10 != 0.0f) {
-                ValueAnimator ofFloat = ValueAnimator.ofFloat(f10, 0.0f);
+            float f9 = this.w;
+            if (f9 != 0.0f) {
+                ValueAnimator ofFloat = ValueAnimator.ofFloat(f9, 0.0f);
                 this.x = ofFloat;
                 ofFloat.addUpdateListener(new r(this, 1));
-                this.x.addListener(new mh.x(this, 12));
+                this.x.addListener(new nh.q5(this, 14));
                 this.x.setInterpolator(new OvershootInterpolator(2.0f));
                 this.x.setDuration(350L);
                 this.x.start();

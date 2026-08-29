@@ -1,41 +1,73 @@
 package jh;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.Components.e00;
+import android.view.MotionEvent;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes4.dex */
-public final class m extends e00 {
-    public final Paint Q;
-    public final /* synthetic */ q R;
+public final class m extends EditTextBoldCursor {
+    public final /* synthetic */ int b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m(q qVar, Context context) {
-        super(context, null);
-        this.R = qVar;
-        this.Q = new Paint();
+    public /* synthetic */ m(Context context, int i10) {
+        super(context);
+        this.b = i10;
     }
 
-    @Override // org.telegram.ui.Components.e00
-    public final int getColumnsCount() {
-        return this.R.d;
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.ut, android.view.View
+    public void onDetachedFromWindow() {
+        switch (this.b) {
+            case 0:
+                super.onDetachedFromWindow();
+                AndroidUtilities.hideKeyboard(this);
+                break;
+            case 1:
+                super.onDetachedFromWindow();
+                AndroidUtilities.hideKeyboard(this);
+                break;
+            default:
+                super.onDetachedFromWindow();
+                break;
+        }
     }
 
-    @Override // org.telegram.ui.Components.e00
-    public final int getViewType() {
-        setIsSingleCell(false);
-        return 27;
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
+    public void onMeasure(int i10, int i11) {
+        switch (this.b) {
+            case 2:
+                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(64.0f), TLObject.FLAG_30));
+                break;
+            default:
+                super.onMeasure(i10, i11);
+                break;
+        }
     }
 
-    @Override // org.telegram.ui.Components.e00, android.view.View
-    public final void onDraw(Canvas canvas) {
-        int v02 = f6.v0(f6.d6, this.R.S.c);
-        Paint paint = this.Q;
-        paint.setColor(v02);
-        canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), paint);
-        super.onDraw(canvas);
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
+    public boolean onTouchEvent(MotionEvent motionEvent) {
+        switch (this.b) {
+            case 3:
+                if (motionEvent.getAction() == 0 && !AndroidUtilities.showKeyboard(this)) {
+                    clearFocus();
+                    requestFocus();
+                }
+                break;
+            case 4:
+                if (motionEvent.getAction() == 0 && !AndroidUtilities.showKeyboard(this)) {
+                    clearFocus();
+                    requestFocus();
+                }
+                break;
+            case 5:
+                if (isEnabled()) {
+                    break;
+                }
+                break;
+        }
+        return super.onTouchEvent(motionEvent);
     }
 }

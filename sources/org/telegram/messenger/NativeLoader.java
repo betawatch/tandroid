@@ -9,7 +9,7 @@ import java.io.InputStream;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
-/* compiled from: r8-map-id-11b2057e7e9050c40bb40722946bba2b5eb90c231d630684b08af6cb92d5aac3 */
+/* compiled from: r8-map-id-53ae6996d745fb61649afae8ef429049dda227e2aa02488fda2c3b459d1c2b94 */
 /* loaded from: classes.dex */
 public class NativeLoader {
     private static final String LIB_NAME = "tmessages.49";
@@ -61,8 +61,8 @@ public class NativeLoader {
         if (context != null) {
             try {
                 file = new File((String) ApplicationInfo.class.getField("nativeLibraryDir").get(context.getApplicationInfo()));
-            } catch (Throwable th) {
-                th.printStackTrace();
+            } catch (Throwable th2) {
+                th2.printStackTrace();
             }
             if (file == null) {
                 file = new File(context.getApplicationInfo().dataDir, "lib");
@@ -96,11 +96,11 @@ public class NativeLoader {
                     if (BuildVars.LOGS_ENABLED) {
                         FileLog.d("loaded normal lib");
                     }
-                } catch (Throwable th) {
-                    th.printStackTrace();
+                } catch (Throwable th2) {
+                    th2.printStackTrace();
                     StringBuilder sb2 = log;
                     sb2.append("176: ");
-                    sb2.append(th);
+                    sb2.append(th2);
                     sb2.append("\n");
                     try {
                         System.loadLibrary(LIB_NAME);
@@ -240,8 +240,8 @@ public class NativeLoader {
                     }
                     return false;
                 }
-            } catch (Throwable th) {
-                th = th;
+            } catch (Throwable th2) {
+                th = th2;
                 zipFile = length;
                 if (0 != 0) {
                     try {
@@ -264,8 +264,8 @@ public class NativeLoader {
         } catch (Exception e19) {
             e = e19;
             zipFile2 = null;
-        } catch (Throwable th2) {
-            th = th2;
+        } catch (Throwable th3) {
+            th = th3;
             zipFile = null;
             if (0 != 0) {
             }
